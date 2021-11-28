@@ -1,0 +1,40 @@
+#ifndef INDEX_BUFFER_HPP
+#define INDEX_BUFFER_HPP
+
+namespace Hexeng::Renderer
+{
+
+	class IndexBuffer
+	{
+	private:
+
+		unsigned int m_id;
+
+		unsigned int m_count;
+
+		unsigned int m_type;
+
+	public:
+
+		IndexBuffer() = default;
+
+		IndexBuffer(const void* data, unsigned int type, unsigned int count);
+		~IndexBuffer();
+
+		IndexBuffer(const IndexBuffer&) = delete;
+		IndexBuffer& operator=(const IndexBuffer&) = delete;
+
+		IndexBuffer(IndexBuffer&&) noexcept;
+		IndexBuffer& operator=(IndexBuffer&&) noexcept;
+
+
+		void bind() const;
+		void unbind() const;
+
+		inline unsigned int get_count() const { return m_count; }
+		inline unsigned int get_type() const { return m_type; }
+	};
+
+}
+
+#endif // !INDEX_BUFFER_HPP
