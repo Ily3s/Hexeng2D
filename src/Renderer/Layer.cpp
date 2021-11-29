@@ -29,11 +29,13 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
+	std::vector<ContextualLayer*> contextual_layers;
+
 	ContextualLayer::ContextualLayer(ContextualLayer&& other) noexcept
 		: Layer(std::move(other)), context(other.context)
 	{
-		auto it = std::find(s_contextual_layers.begin(), s_contextual_layers.end(), &other);
-		if (it != s_contextual_layers.end())
+		auto it = std::find(contextual_layers.begin(), contextual_layers.end(), &other);
+		if (it != contextual_layers.end())
 			*it = this;
 	}
 
@@ -41,21 +43,19 @@ namespace Hexeng::Renderer
 	{
 		Layer::operator=(std::move(other));
 		context = other.context;
-		auto it = std::find(s_contextual_layers.begin(), s_contextual_layers.end(), this);
-		if (it != s_contextual_layers.end())
-			s_contextual_layers.erase(it);
-		it = std::find(s_contextual_layers.begin(), s_contextual_layers.end(), &other);
-		if (it != s_contextual_layers.end())
+		auto it = std::find(contextual_layers.begin(), contextual_layers.end(), this);
+		if (it != contextual_layers.end())
+			contextual_layers.erase(it);
+		it = std::find(contextual_layers.begin(), contextual_layers.end(), &other);
+		if (it != contextual_layers.end())
 			*it = this;
 		return *this;
 	}
 
-	std::vector<ContextualLayer*> s_contextual_layers;
-
 	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition)
 		: Layer(mesh_vector), context(condition)
 	{
-		s_contextual_layers.push_back(this);
+		contextual_layers.push_back(this);
 	}
 
 	Layer& Layer::operator+=(const Layer& second)

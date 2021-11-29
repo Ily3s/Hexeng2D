@@ -7,8 +7,6 @@ namespace Hexeng
 {
 
 	extern Vec2<float> cam_position;
-	extern Vec2<float> transform;
-	extern float zoom;
 	extern unsigned int scene;
 
 }

@@ -1,15 +1,14 @@
 #include "Renderer.hpp"
 #include "../Macros.hpp"
 #include "GL/glew.h"
-#include "Basic.shader"
+#include "Presets/Basic.shader"
 #include "../Variables.hpp"
 #include "Uniform.hpp"
 #include "Scene.hpp"
+#include "Presets/InitPresets.hpp"
 
 namespace Hexeng::Renderer
 {
-
-	Shader basic_shader;
 
 	void init()
 	{
@@ -18,11 +17,7 @@ namespace Hexeng::Renderer
 		HXG_SGL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 		HXG_SGL(glBlendEquation(GL_FUNC_ADD));
 
-		basic_shader = { basic_vs, basic_fs };
-
-		static Uniform<Vec2<float>> u_cam{&basic_shader, "u_cam", &cam_position};
-		static Uniform<float> u_zoom{ &basic_shader, "u_zoom", &zoom };
-		static Uniform<Vec2<float>> u_transform{&basic_shader, "u_transform", & transform};
+		Presets::init();
 
 	}
 
@@ -71,25 +66,11 @@ namespace Hexeng::Renderer
 		HXG_SGL(glClear(GL_COLOR_BUFFER_BIT));
 	}
 
-	void draw(const Mesh& mesh)
-	{
-
-		// todo : pre draw event
-
-		mesh.get_texture()->bind();
-		mesh.get_vao()->bind();
-		mesh.get_shader()->bind();
-		HXG_SGL(glDrawElements(GL_TRIANGLES, mesh.get_ib().get_count(), mesh.get_ib().get_type(), nullptr));
-
-		// todo : post draw event
-
-	}
-
 	void draw(const Layer& layer)
 	{
 		for (const auto& mesh : layer.meshes)
 		{
-			draw(*mesh);
+			mesh->draw();
 		}
 	}
 

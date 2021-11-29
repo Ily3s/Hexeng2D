@@ -12,12 +12,10 @@ namespace Hexeng::Renderer
 	public:
 
 		std::vector<Layer*> layers;
-
-		bool cursor;
 		float gravity;
 
 		Scene();
-		Scene(const std::vector<Layer*>&, bool, float g = 0);
+		Scene(const std::vector<Layer*>&, float g = 0);
 
 		void load();
 		void unload();

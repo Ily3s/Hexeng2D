@@ -42,6 +42,8 @@ namespace Hexeng::Renderer
 
 	public:
 
+		VertexLayout() = default;
+
 		VertexLayout(const std::vector<VertexElement>& vertex_elements)
 		{
 			m_elements = vertex_elements;
@@ -49,6 +51,17 @@ namespace Hexeng::Renderer
 			{
 				m_stride += sizeof_type(ve.type) * ve.count;
 			}
+		}
+
+		VertexLayout(VertexLayout&& moving) noexcept
+			:	m_elements (std::move(moving.m_elements)),
+				m_stride(moving.m_stride) {}
+
+		VertexLayout& operator=(VertexLayout&& moving) noexcept
+		{
+			m_elements = std::move(moving.m_elements);
+			m_stride = moving.m_stride;
+			return *this;
 		}
 
 		void add(unsigned int count, unsigned int type)

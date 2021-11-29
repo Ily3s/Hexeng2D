@@ -8,11 +8,11 @@ namespace Hexeng::Renderer
 	{
 	private:
 
-		unsigned int m_id;
+		unsigned int m_id = 0;
 
-		unsigned int m_count;
+		unsigned int m_count = 0;
 
-		unsigned int m_type;
+		unsigned int m_type = 0;
 
 	public:
 

@@ -21,6 +21,11 @@ namespace Hexeng::Renderer
 
 		Uniform(const Shader* shader, const char* uniform_name, const VEC* value_ptr);
 
+		Uniform() = default;
+
+		Uniform(Uniform&&) noexcept;
+		Uniform& operator=(Uniform&&) noexcept;
+
 		void refresh();
 	};
 
@@ -32,6 +37,29 @@ namespace Hexeng::Renderer
 	{
 		int uniform_id = shader->get_uniform(uniform_name);
 		Uniform<VEC>::s_uniform_list.emplace_back(uniform_id, value_ptr, shader);
+	}
+
+	template <typename VEC>
+	Uniform<VEC>::Uniform(Uniform&& moving) noexcept
+		:	id (moving.id),
+			value_ptr(moving.value_ptr),
+			shader(moving.shader)
+	{
+		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
+		if (it != s_uniform_list.end())
+			*it = this;
+	}
+
+	template <typename VEC>
+	Uniform<VEC>& Uniform<VEC>::operator=(Uniform&& moving) noexcept
+	{
+		id = moving.id;
+		value_ptr = moving.value_ptr;
+		shader = moving.shader;
+		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
+		if (it != s_uniform_list.end())
+			*it = this;
+		return *this;
 	}
 
 	template <typename VEC>

@@ -12,14 +12,14 @@ namespace Hexeng::Renderer
 		m_vao.tie(m_vb, layout, m_ib);
 	}
 
-	Mesh::Mesh(Mesh&& moving)
+	Mesh::Mesh(Mesh&& moving) noexcept
 		:	m_vao(std::move(moving.m_vao)),
 			m_texture(moving.m_texture),
 			m_vb(std::move(moving.m_vb)),
 			m_shader(moving.m_shader),
 			m_ib(std::move(moving.m_ib)){}
 
-	Mesh& Mesh::operator=(Mesh&& moving)
+	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
 		m_vao = std::move(moving.m_vao);
 		m_texture = moving.m_texture;
@@ -28,6 +28,20 @@ namespace Hexeng::Renderer
 		m_ib = std::move(moving.m_ib);
 
 		return *this;
+	}
+
+	void Mesh::draw()
+	{
+
+		// todo : pre draw event
+
+		m_texture->bind();
+		m_vao.bind();
+		m_shader->bind();
+		HXG_SGL(glDrawElements(GL_TRIANGLES, m_ib.get_count(), m_ib.get_type(), nullptr));
+
+		// todo : post draw event
+
 	}
 
 }

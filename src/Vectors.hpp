@@ -246,8 +246,8 @@ namespace Hexeng
 			x += other.x;
 			y += other.y;
 			z += other.z;
-			w += other.w
-				return *this;
+			w += other.w;
+			return *this;
 		}
 
 		Vec4& operator-=(const Vec4& other)
@@ -255,8 +255,8 @@ namespace Hexeng
 			x -= other.x;
 			y -= other.y;
 			z -= other.z;
-			w -= other.w
-				return *this;
+			w -= other.w;
+			return *this;
 		}
 
 		Vec4& operator*=(const Vec4& other)
@@ -264,8 +264,8 @@ namespace Hexeng
 			x *= other.x;
 			y *= other.y;
 			z *= other.z;
-			w *= other.w
-				return *this;
+			w *= other.w;
+			return *this;
 		}
 
 		Vec4& operator/=(const Vec4& other)
@@ -273,8 +273,8 @@ namespace Hexeng
 			x /= other.x;
 			y /= other.y;
 			z /= other.z;
-			w /= other.w
-				return *this;
+			w /= other.w;
+			return *this;
 		}
 
 		const Vec4 operator+(const T other)

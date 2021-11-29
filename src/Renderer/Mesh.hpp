@@ -12,7 +12,7 @@ namespace Hexeng::Renderer
 	class Mesh
 	{
 
-	private:
+	protected:
 
 		VertexArray m_vao;
 		VertexBuffer m_vb;
@@ -22,17 +22,21 @@ namespace Hexeng::Renderer
 
 	public:
 
+		Mesh() = default;
+
 		Mesh(const float* vb, const VertexLayout& layout, const unsigned int* ib, Texture* tex, Shader* shader);
 
 		Mesh(Mesh&& moving) noexcept;
 		Mesh& operator=(Mesh&& moving) noexcept;
 
-		inline const Texture* get_texture() const	{ return m_texture; }
-		inline const VertexArray* get_vao() const	{ return &m_vao; }
-		inline const Shader* get_shader() const		{ return m_shader; }
-		inline const IndexBuffer& get_ib() const	{ return m_ib; }
-		inline Texture* access_texture()			{ return m_texture; }
-		inline Shader* access_shader()				{ return m_shader; }
+		inline const Texture* get_texture() const { return m_texture; }
+		inline const VertexArray* get_vao() const { return &m_vao; }
+		inline const Shader* get_shader() const { return m_shader; }
+		inline const IndexBuffer& get_ib() const { return m_ib; }
+		inline Texture* access_texture() { return m_texture; }
+		inline Shader* access_shader() { return m_shader; }
+
+		virtual void draw();
 
 	};
 

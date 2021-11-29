@@ -3,7 +3,7 @@
 
 #define SHADER(x) #x
 
-namespace Hexeng::Renderer
+namespace Hexeng::Renderer::Presets
 {
 
 	const char basic_vs[] = SHADER(

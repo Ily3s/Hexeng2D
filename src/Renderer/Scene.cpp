@@ -10,8 +10,8 @@ namespace Hexeng::Renderer
 		scenes.push_back(this);
 	}
 
-	Scene::Scene(const std::vector<Layer*>& l, bool curs, float g)
-		: layers(l), cursor(curs), gravity(g)
+	Scene::Scene(const std::vector<Layer*>& l, float g)
+		: layers(l), gravity(g)
 	{
 		scenes.push_back(this);
 	}
