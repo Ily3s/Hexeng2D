@@ -33,8 +33,8 @@ namespace Hexeng::Renderer
 		inline const VertexArray* get_vao() const { return &m_vao; }
 		inline const Shader* get_shader() const { return m_shader; }
 		inline const IndexBuffer& get_ib() const { return m_ib; }
-		inline Texture* access_texture() { return m_texture; }
-		inline Shader* access_shader() { return m_shader; }
+		inline Texture*& access_texture() { return m_texture; }
+		inline Shader*& access_shader() { return m_shader; }
 
 		virtual void draw();
 

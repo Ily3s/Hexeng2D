@@ -4,22 +4,37 @@
 
 #include <exception>
 
+// todo : multi shader uniforms
+
 namespace Hexeng::Renderer::Presets
 {
 
-	BasicQuad::BasicQuad(const int* positions, Texture* texture, Shader* shader)
+	IndexBuffer BasicQuad::s_index_buffer;
+
+	BasicQuad::BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos, Shader* shader)
+		: position(pos)
 	{
-		float pos[]
+		float vertex_b[]
 		{
-			toX(positions[0]), toX(positions[1]), 0.0f, 0.0f,
-			toX(positions[2]), toX(positions[3]), 0.0f, 1.0f,
-			toX(positions[4]), toX(positions[5]), 1.0f, 1.0f,
-			toX(positions[6]), toX(positions[7]), 1.0f, 0.0f
+			toX(vertecies[0]), toX(vertecies[1]), 0.0f, 0.0f,
+			toX(vertecies[2]), toX(vertecies[3]), 0.0f, 1.0f,
+			toX(vertecies[4]), toX(vertecies[5]), 1.0f, 1.0f,
+			toX(vertecies[6]), toX(vertecies[7]), 1.0f, 0.0f
 		};
 
-		m_vb = VertexBuffer(pos, sizeof(pos));
+		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
 		m_shader = shader;
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
+	}
+
+	BasicQuad::BasicQuad(BasicQuad&& moving) noexcept
+		: Mesh(std::move(moving)), position(moving.position) {}
+
+	BasicQuad& BasicQuad::operator=(BasicQuad&& moving) noexcept
+	{
+		Mesh::operator=(std::move(moving));
+		position = moving.position;
+		return *this;
 	}
 
 	void BasicQuad::init()
@@ -35,39 +50,74 @@ namespace Hexeng::Renderer::Presets
 
 	void BasicQuad::draw()
 	{
+		transform = toCoord(position);
 		u_transform.refresh();
 		Mesh::draw();
 	}
 
-	BasicRectangle::BasicRectangle(const Vec2<int>& origin, Vec2<int> size, Texture* texture, Shader* shader)
+	BasicRectangle::BasicRectangle(const Vec2<int>& pos, const Vec2<int>& size, Texture* texture, Shader* shader)
 	{
-		float pos[]
+		float vertex_b[]
 		{
-			toX(origin.x) ,				toY(origin.y) ,				0.0f, 0.0f,		// 0
-			toX(origin.x) ,				toY(origin.y + size.y) ,	0.0f, 1.0f,		// 1	
-			toX(origin.x + size.x) ,	toY(origin.y + size.y) ,	1.0f, 1.0f,		// 2	
-			toX(origin.x + size.x) ,	toY(origin.y) ,				1.0f, 0.0f		// 3
+			toX(pos.x) ,			toY(pos.y) ,			0.0f, 0.0f,		// 0
+			toX(pos.x) ,			toY(pos.y + size.y) ,	0.0f, 1.0f,		// 1	
+			toX(pos.x + size.x) ,	toY(pos.y + size.y) ,	1.0f, 1.0f,		// 2	
+			toX(pos.x + size.x) ,	toY(pos.y) ,			1.0f, 0.0f		// 3
 		};
 
-		m_vb = VertexBuffer(pos, sizeof(pos));
+		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
 		m_shader = shader;
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
 	}
 
-	BasicRectangle::BasicRectangle(const Vec2<int>& origin, float size, Texture* texture, Shader* shader)
+	BasicRectangle::BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, Shader* shader)
 	{
-		this->BasicRectangle::BasicRectangle(origin, texture->size() * size, texture, shader);
+		this->BasicRectangle::BasicRectangle(pos, texture->size() * size, texture, shader);
 	}
 
-	BasicSquare::BasicSquare(const Vec2<int>& origin, int size, Texture* texture, Shader* shader)
+	BasicRectangle BasicSquare::s_basic_rec;
+	bool BasicSquare::s_is_init = false;
+
+	BasicSquare::BasicSquare(const Vec2<int>& pos, int size, Texture* texture, Shader* shader)
 	{
-		this->BasicRectangle::BasicRectangle(origin, {size, size}, texture, shader);
+		if (!s_is_init)
+		{
+			s_basic_rec = BasicRectangle({ 0, 0 }, { 100, 100 }, nullptr, nullptr);
+		}
+
+		m_texture = texture;
+		m_shader = shader;
+		position = pos;
+		m_size = (float)size / 100;
 	}
 
-	BasicSquare::BasicSquare(const Vec2<int>& origin, float size, Texture* texture, Shader* shader)
+	BasicSquare::BasicSquare(const Vec2<int>& pos, float size, Texture* texture, Shader* shader)
 	{
 		if (texture->get_height() != texture->get_width())
 			throw(std::exception("excepted texure to be a square"));
-		this->BasicRectangle::BasicRectangle(origin, size, texture, shader);
+
+		if (!s_is_init)
+		{
+			s_basic_rec = BasicRectangle({ 0, 0 }, { 100, 100 }, nullptr, nullptr);
+		}
+
+		m_texture = texture;
+		m_shader = shader;
+		position = pos;
+		m_size = size * texture->get_height() / 100;
+	}
+
+	void BasicSquare::draw()
+	{
+		transform = toCoord(position - position * m_size);
+		u_transform.refresh();
+		float prc_zoom = zoom;
+		zoom *= m_size;
+		u_zoom.refresh();
+		s_basic_rec.access_texture() = m_texture;
+		s_basic_rec.access_shader() = m_shader;
+		s_basic_rec.Mesh::draw();
+		zoom = prc_zoom;
+		u_zoom.refresh();
 	}
 }

@@ -36,7 +36,7 @@ namespace Hexeng::Renderer
 	Uniform<VEC>::Uniform(const Shader* shader, const char* uniform_name, const VEC* value_ptr)
 	{
 		int uniform_id = shader->get_uniform(uniform_name);
-		Uniform<VEC>::s_uniform_list.emplace_back(uniform_id, value_ptr, shader);
+		Uniform<VEC>::s_uniform_list.push_back(this);
 	}
 
 	template <typename VEC>

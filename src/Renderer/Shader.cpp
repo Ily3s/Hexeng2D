@@ -1,4 +1,5 @@
 #include "Shader.hpp"
+#include "../Macros.hpp"
 
 namespace Hexeng::Renderer
 {

@@ -3,6 +3,8 @@
 namespace Hexeng::Renderer
 {
 
+	std::vector<Layer*> layers;
+
 	Layer::Layer(const std::vector<Mesh*>& mesh_vector)
 		: meshes(mesh_vector)
 	{

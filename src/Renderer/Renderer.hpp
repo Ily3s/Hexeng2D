@@ -1,6 +1,8 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#define GLEW_STATIC
+
 #include "Shader.hpp"
 #include "IndexBuffer.hpp"
 #include "VertexArray.hpp"
