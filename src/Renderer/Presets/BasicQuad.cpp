@@ -4,16 +4,32 @@
 
 #include <exception>
 
-// todo : multi shader uniforms
-
 namespace Hexeng::Renderer::Presets
 {
 
 	IndexBuffer BasicQuad::s_index_buffer;
 
+	void BasicQuad::verify_uniforms(Shader* shader)
+	{
+		auto it_cam = std::find(u_cam.shader_list.begin(), u_cam.shader_list.end());
+		auto it_zoom = std::find(u_zoom.shader_list.begin(), u_zoom.shader_list.end());
+		auto it_transform = std::find(u_transform.shader_list.begin(), u_transform.shader_list.end());
+
+		if(it_cam  == u_cam.shader_list.end())
+			throw(std::exception("cam uniform excepted"));
+
+		if(it_zoom  == u_zoom.shader_list.end())
+			throw(std::exception("zoom uniform excepted"));
+
+		if(it_transform  == u_transform.shader_list.end())
+			throw(std::exception("transform uniform excepted"));
+	}
+
 	BasicQuad::BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos, Shader* shader)
 		: position(pos)
 	{
+		verify_uniforms();
+
 		float vertex_b[]
 		{
 			toX(vertecies[0]), toX(vertecies[1]), 0.0f, 0.0f,
@@ -51,12 +67,14 @@ namespace Hexeng::Renderer::Presets
 	void BasicQuad::draw()
 	{
 		transform = toCoord(position);
-		u_transform.refresh();
+		u_transform.refresh(m_shader);
 		Mesh::draw();
 	}
 
 	BasicRectangle::BasicRectangle(const Vec2<int>& pos, const Vec2<int>& size, Texture* texture, Shader* shader)
 	{
+		verify_uniforms();
+
 		float vertex_b[]
 		{
 			toX(pos.x) ,			toY(pos.y) ,			0.0f, 0.0f,		// 0
@@ -80,6 +98,8 @@ namespace Hexeng::Renderer::Presets
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, int size, Texture* texture, Shader* shader)
 	{
+		verify_uniforms();
+
 		if (!s_is_init)
 		{
 			s_basic_rec = BasicRectangle({ 0, 0 }, { 100, 100 }, nullptr, nullptr);
@@ -93,6 +113,8 @@ namespace Hexeng::Renderer::Presets
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, float size, Texture* texture, Shader* shader)
 	{
+		verify_uniforms();
+
 		if (texture->get_height() != texture->get_width())
 			throw(std::exception("excepted texure to be a square"));
 
@@ -110,14 +132,14 @@ namespace Hexeng::Renderer::Presets
 	void BasicSquare::draw()
 	{
 		transform = toCoord(position - position * m_size);
-		u_transform.refresh();
+		u_transform.refresh(m_shader);
 		float prc_zoom = zoom;
 		zoom *= m_size;
-		u_zoom.refresh();
+		u_zoom.refresh(m_shader);
 		s_basic_rec.access_texture() = m_texture;
 		s_basic_rec.access_shader() = m_shader;
 		s_basic_rec.Mesh::draw();
 		zoom = prc_zoom;
-		u_zoom.refresh();
+		u_zoom.refresh(m_shader);
 	}
 }

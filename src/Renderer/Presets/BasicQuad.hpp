@@ -9,6 +9,10 @@ namespace Hexeng::Renderer::Presets
 
 	class BasicQuad : public Mesh
 	{
+	protected :
+
+		void verify_uniforms(Shader* shader);
+
 	public:
 
 		Vec2<int> position{ 0, 0 };
