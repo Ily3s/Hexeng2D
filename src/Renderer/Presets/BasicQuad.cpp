@@ -11,9 +11,9 @@ namespace Hexeng::Renderer::Presets
 
 	void BasicQuad::verify_uniforms(Shader* shader)
 	{
-		auto it_cam = std::find(u_cam.shader_list.begin(), u_cam.shader_list.end());
-		auto it_zoom = std::find(u_zoom.shader_list.begin(), u_zoom.shader_list.end());
-		auto it_transform = std::find(u_transform.shader_list.begin(), u_transform.shader_list.end());
+		auto it_cam = u_cam.shader_list.find(shader);
+		auto it_zoom = u_zoom.shader_list.find(shader);
+		auto it_transform = u_transform.shader_list.find(shader);
 
 		if(it_cam  == u_cam.shader_list.end())
 			throw(std::exception("cam uniform excepted"));
@@ -28,7 +28,7 @@ namespace Hexeng::Renderer::Presets
 	BasicQuad::BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos, Shader* shader)
 		: position(pos)
 	{
-		verify_uniforms();
+		verify_uniforms(shader);
 
 		float vertex_b[]
 		{
@@ -73,7 +73,7 @@ namespace Hexeng::Renderer::Presets
 
 	BasicRectangle::BasicRectangle(const Vec2<int>& pos, const Vec2<int>& size, Texture* texture, Shader* shader)
 	{
-		verify_uniforms();
+		verify_uniforms(shader);
 
 		float vertex_b[]
 		{
@@ -98,7 +98,7 @@ namespace Hexeng::Renderer::Presets
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, int size, Texture* texture, Shader* shader)
 	{
-		verify_uniforms();
+		verify_uniforms(shader);
 
 		if (!s_is_init)
 		{
@@ -113,7 +113,7 @@ namespace Hexeng::Renderer::Presets
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, float size, Texture* texture, Shader* shader)
 	{
-		verify_uniforms();
+		verify_uniforms(shader);
 
 		if (texture->get_height() != texture->get_width())
 			throw(std::exception("excepted texure to be a square"));

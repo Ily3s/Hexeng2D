@@ -6,6 +6,8 @@
 #include "IndexBuffer.hpp"
 #include "Shader.hpp"
 
+#include <functional>
+
 namespace Hexeng::Renderer
 {
 
@@ -21,6 +23,9 @@ namespace Hexeng::Renderer
 		Shader* m_shader;
 
 	public:
+
+		std::function<void()> pre_render_event = nullptr;
+		std::function<void()> post_render_event = nullptr;
 
 		Mesh() = default;
 

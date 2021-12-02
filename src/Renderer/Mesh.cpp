@@ -33,14 +33,16 @@ namespace Hexeng::Renderer
 	void Mesh::draw()
 	{
 
-		// todo : pre draw event
+		if (pre_render_event)
+			pre_render_event();
 
 		m_texture->bind();
 		m_vao.bind();
 		m_shader->bind();
 		HXG_SGL(glDrawElements(GL_TRIANGLES, m_ib.get_count(), m_ib.get_type(), nullptr));
 
-		// todo : post draw event
+		if (post_render_event)
+			post_render_event();
 
 	}
 

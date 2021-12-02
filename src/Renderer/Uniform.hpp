@@ -19,9 +19,9 @@ namespace Hexeng::Renderer
 
 	public :
 
-		int id;
-		const VEC* value_ptr;
-		const Shader* shader;
+		int id = 0;
+		const VEC* value_ptr = nullptr;
+		const Shader* shader = nullptr;
 
 		std::unordered_map<Shader*, int> shader_list;
 
@@ -48,7 +48,7 @@ namespace Hexeng::Renderer
 		: m_uniform_name(uniform_name), shader(shad)
 	{
 		int uniform_id = shader->get_uniform(uniform_name);
-		shader_list.insert({shader, uniform_id});
+		shader_list.insert({shad, uniform_id});
 		Uniform<VEC>::s_uniform_list.push_back(this);
 	}
 
@@ -97,9 +97,9 @@ namespace Hexeng::Renderer
 	template <typename VEC>
 	void Uniform<VEC>::refresh(Shader* shad)
 	{
-		auto it = std::find(shader_list.begin(), shader_list.end(), shad);
+		auto it = shader_list.find(shad);
 		shad->bind();
-		shad->set_uniform(it.second, *value_ptr);
+		shad->set_uniform(it->second, *value_ptr);
 	}
 
 }
