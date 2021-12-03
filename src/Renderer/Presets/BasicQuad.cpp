@@ -138,6 +138,8 @@ namespace Hexeng::Renderer::Presets
 		u_zoom.refresh(m_shader);
 		s_basic_rec.access_texture() = m_texture;
 		s_basic_rec.access_shader() = m_shader;
+		s_basic_rec.pre_render_event = pre_render_event;
+		s_basic_rec.post_render_event = post_render_event;
 		s_basic_rec.Mesh::draw();
 		zoom = prc_zoom;
 		u_zoom.refresh(m_shader);

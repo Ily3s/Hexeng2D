@@ -17,7 +17,9 @@ namespace Hexeng::Renderer
 			m_texture(moving.m_texture),
 			m_vb(std::move(moving.m_vb)),
 			m_shader(moving.m_shader),
-			m_ib(std::move(moving.m_ib)){}
+			m_ib(std::move(moving.m_ib)),
+			pre_render_event(moving.pre_render_event),
+			post_render_event(moving.post_render_event) {}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -26,6 +28,8 @@ namespace Hexeng::Renderer
 		m_vb = std::move(moving.m_vb);
 		m_shader = moving.m_shader;
 		m_ib = std::move(moving.m_ib);
+		pre_render_event = moving.pre_render_event;
+		post_render_event = moving.post_render_event;
 
 		return *this;
 	}
