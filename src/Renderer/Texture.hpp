@@ -2,7 +2,7 @@
 #define TEXTURE_HPP
 
 #include "GL/glew.h"
-#include "stb/Image.hpp"
+#include "stb/Image.h"
 #include "../Vectors.hpp"
 #include <string>
 
