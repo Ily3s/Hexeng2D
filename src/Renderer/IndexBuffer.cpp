@@ -1,7 +1,7 @@
 #ifndef INDEX_BUFFER_TPP
 #define INDEX_BUFFER_TPP
 
-#include "GL/glew.h"
+#include "glad/glad.h"
 #include "IndexBuffer.hpp"
 #include "../Macros.hpp"
 #include "VertexLayout.hpp"

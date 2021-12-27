@@ -1,4 +1,4 @@
-#include "GL/glew.h"
+#include "glad/glad.h"
 #include "VertexBuffer.hpp"
 #include "../Macros.hpp"
 

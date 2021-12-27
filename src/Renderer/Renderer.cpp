@@ -1,6 +1,6 @@
 #include "Renderer.hpp"
 #include "../Macros.hpp"
-#include "GL/glew.h"
+#include "glad/glad.h"
 #include "Presets/Basic.shader"
 #include "../Variables.hpp"
 #include "Uniform.hpp"

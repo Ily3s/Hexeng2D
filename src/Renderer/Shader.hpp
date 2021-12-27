@@ -2,7 +2,7 @@
 #define SHADER_HPP
 
 #include <string>
-#include "GL/glew.h"
+#include "glad/glad.h"
 #include "../Macros.hpp"
 #include "../Vectors.hpp"
 

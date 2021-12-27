@@ -2,7 +2,7 @@
 #define VERTEX_LAYOUT_HPP
 
 #include <vector>
-#include "GL/glew.h"
+#include "glad/glad.h"
 #include "../Macros.hpp"
 
 namespace Hexeng::Renderer
