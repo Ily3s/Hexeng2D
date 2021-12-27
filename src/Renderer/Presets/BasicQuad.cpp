@@ -102,13 +102,13 @@ namespace Hexeng::Renderer::Presets
 
 		if (!s_is_init)
 		{
-			s_basic_rec = BasicRectangle({ 0, 0 }, { 100, 100 }, nullptr, nullptr);
+			s_basic_rec = BasicRectangle({ 0, 0 }, { 1, 1 }, nullptr, nullptr);
 		}
 
 		m_texture = texture;
 		m_shader = shader;
 		position = pos;
-		m_size = (float)size / 100;
+		m_size = static_cast<float>(size);
 	}
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, float size, Texture* texture, Shader* shader)
