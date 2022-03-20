@@ -1,0 +1,65 @@
+#ifndef SHADER_HPP
+#define SHADER_HPP
+
+#include "../Macros.hpp"
+#include <string>
+#include "glad/glad.h"
+#include "../Macros.hpp"
+#include "../Vectors.hpp"
+
+namespace Hexeng::Renderer
+{
+
+	HXG_DECLSPEC class Shader
+	{
+
+	private:
+
+		unsigned int m_id;
+
+		static unsigned int create_shader(const char* vertex_shader, const char* fragment_shader);
+		static unsigned int create_shader(const std::string& vertex_shader, const std::string& fragment_shader);
+
+		static unsigned int compile_shader(GLenum shader_type, const char* src);
+		static unsigned int compile_shader(GLenum shader_type, const std::string& src);
+
+	public:
+
+		HXG_DECLSPEC Shader() = default;
+		 
+		HXG_DECLSPEC Shader(const Shader&) = delete;
+		HXG_DECLSPEC Shader& operator=(const Shader&) = delete;
+		 
+		HXG_DECLSPEC Shader(Shader&&) noexcept;
+		HXG_DECLSPEC Shader& operator=(Shader&&) noexcept;
+		 
+		HXG_DECLSPEC ~Shader();
+		 
+		HXG_DECLSPEC Shader(const char* vertex_shader, const char* fragment_shader);
+		HXG_DECLSPEC Shader(const std::string& vertex_shader, const std::string& fragment_shader);
+		 
+		HXG_DECLSPEC void bind() const;
+		HXG_DECLSPEC void unbind() const;
+		 
+		HXG_DECLSPEC int get_uniform(const char* uniform) const;
+		 
+		static void set_uniform(int uniform, const float value)				{ HXG_GL(glUniform1f(uniform, value)); };
+		static void set_uniform(int uniform, const Vec2<float>& value)		{ HXG_GL(glUniform2f(uniform, value.x, value.y)); };
+		static void set_uniform(int uniform, const Vec3<float>& value)		{ HXG_GL(glUniform3f(uniform, value.x, value.y, value.z)); };
+		static void set_uniform(int uniform, const Vec4<float>& value)		{ HXG_GL(glUniform4f(uniform, value.x, value.y, value.z, value.w)); };
+		
+		static void set_uniform(int uniform, const double value)			{ HXG_GL(glUniform1d(uniform, value)); };
+		static void set_uniform(int uniform, const Vec2<double>& value)		{ HXG_GL(glUniform2d(uniform, value.x, value.y)); };
+		static void set_uniform(int uniform, const Vec3<double>& value)		{ HXG_GL(glUniform3d(uniform, value.x, value.y, value.z)); };
+		static void set_uniform(int uniform, const Vec4<double>& value)		{ HXG_GL(glUniform4d(uniform, value.x, value.y, value.z, value.w)); };
+		
+		static void set_uniform(int uniform, const int value)				{ HXG_GL(glUniform1i(uniform, value)); };
+		static void set_uniform(int uniform, const Vec2<int>& value)		{ HXG_GL(glUniform2i(uniform, value.x, value.y)); };
+		static void set_uniform(int uniform, const Vec3<int>& value)		{ HXG_GL(glUniform3i(uniform, value.x, value.y, value.z)); };
+		static void set_uniform(int uniform, const Vec4<int>& value)		{ HXG_GL(glUniform4i(uniform, value.x, value.y, value.z, value.w)); };
+
+	};
+
+}
+
+#endif // !SHADER_HPP
