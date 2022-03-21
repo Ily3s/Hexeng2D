@@ -13,7 +13,7 @@ int main()
 
 	Renderer::init();
 
-	Renderer::Texture example{ "res/example.png", GL_NEAREST };
+	Renderer::Texture example{ "Sandbox/res/example.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 10.0f, &example, true };
 
 	Renderer::Layer layer_1{ {&square} };

@@ -24,7 +24,7 @@ namespace Hexeng::Renderer
 
 		const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-		Vec2 window_size{ mode->width, mode->height };
+		Vec2<int> window_size{ mode->width, mode->height };
 
 		HXG_GLFW(window = glfwCreateWindow(window_size.x, window_size.y, "Sandbox", 0, NULL));
 
