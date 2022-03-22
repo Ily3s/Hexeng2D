@@ -8,7 +8,6 @@ namespace Hexeng
 {
 
 	HXG_DECLSPEC extern Vec2<float> cam_position;
-	HXG_DECLSPEC extern unsigned int scene;
 
 }
 

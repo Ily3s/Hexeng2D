@@ -137,10 +137,10 @@ namespace Hexeng::Renderer
 
 	void draw_current_scene()
 	{
-		if (scene >= scenes.size())
+		if (scenes.find(scene_id) == scenes.end())
 			return;
 
-		for (Layer* lay : scenes[scene]->layers)
+		for (Layer* lay : scenes[scene_id]->layers)
 		{
 			draw(*lay);
 		}

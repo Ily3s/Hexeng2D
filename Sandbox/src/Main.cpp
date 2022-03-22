@@ -16,8 +16,10 @@ int main()
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 10.0f, &example, true };
 
-	Renderer::Layer layer_1{ {&square}, 0.8f };
-	Renderer::Scene scene_1{ { &layer_1 } };
+	Renderer::Layer main_layer{ {&square}, 0.8f };
+	Renderer::Scene first_scene{ 1, { &main_layer } };
+
+	Renderer::scene_id = 1;
 
 	Hexeng::game_loop([]() {
 		using namespace std::literals::chrono_literals;

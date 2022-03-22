@@ -3,17 +3,13 @@
 namespace Hexeng::Renderer
 {
 
-	std::vector<Scene*> scenes;
+	std::unordered_map<int, Scene*> scenes;
+	int scene_id = 0;
 
-	Scene::Scene()
+	Scene::Scene(int id, const std::vector<Layer*>& l)
+		: layers(l)
 	{
-		scenes.push_back(this);
-	}
-
-	Scene::Scene(const std::vector<Layer*>& l, float g)
-		: layers(l), gravity(g)
-	{
-		scenes.push_back(this);
+		scenes.insert_or_assign(id, this);
 	}
 
 	void Scene::load()
