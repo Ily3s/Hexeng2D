@@ -16,7 +16,7 @@ int main()
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 10.0f, &example, true };
 
-	Renderer::Layer layer_1{ {&square} };
+	Renderer::Layer layer_1{ {&square}, 0.8f };
 	Renderer::Scene scene_1{ { &layer_1 } };
 
 	Hexeng::game_loop([]() {

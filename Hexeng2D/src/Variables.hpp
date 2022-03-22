@@ -2,12 +2,13 @@
 #define VARIABLES_HPP
 
 #include "Vectors.hpp"
+#include "Macros.hpp"
 
 namespace Hexeng
 {
 
-	extern Vec2<float> cam_position;
-	extern unsigned int scene;
+	HXG_DECLSPEC extern Vec2<float> cam_position;
+	HXG_DECLSPEC extern unsigned int scene;
 
 }
 

@@ -21,9 +21,9 @@ namespace Hexeng::Renderer::Presets
 	{
 		basic_shader = Shader(basic_vs, basic_fs);
 
-		u_cam = { &basic_shader, "u_cam", &cam_position };
-		u_zoom = { &basic_shader, "u_zoom", &zoom };
-		u_transform = { &basic_shader, "u_transform", &transform };
+		u_cam = { "u_cam", &cam_position, {&basic_shader} };
+		u_zoom = { "u_zoom",& zoom, {&basic_shader} };
+		u_transform = { "u_transform", &transform, {&basic_shader} };
 
 		basic_vertex_layout = VertexLayout({ VertexElement{ 2, GL_FLOAT }, VertexElement{ 2, GL_FLOAT } });
 

@@ -19,15 +19,13 @@ namespace Hexeng::Renderer
 
 	public :
 
-		int id = 0;
 		const VEC* value_ptr = nullptr;
-		const Shader* shader = nullptr;
 
 		std::unordered_map<Shader*, int> shader_list;
 
 		static std::vector<Uniform*> s_uniform_list;
 
-		Uniform(Shader* shad, const char* uniform_name, const VEC* value_ptr);
+		Uniform(const char* uniform_name, const VEC* value_ptr, const std::vector<Shader*>& shaders);
 
 		Uniform() = default;
 
@@ -44,19 +42,20 @@ namespace Hexeng::Renderer
 	std::vector<Uniform<VEC>*> Uniform<VEC>::s_uniform_list;
 
 	template <typename VEC>
-	Uniform<VEC>::Uniform(Shader* shad, const char* uniform_name, const VEC* value_ptr)
-		: m_uniform_name(uniform_name), shader(shad), value_ptr(value_ptr)
+	Uniform<VEC>::Uniform(const char* uniform_name, const VEC* value_ptr, const std::vector<Shader*>& shaders)
+		: m_uniform_name(uniform_name), value_ptr(value_ptr)
 	{
-		id = shader->get_uniform(uniform_name);
-		shader_list.insert({shad, id});
+		for (Shader* shader : shaders)
+		{
+			int id = shader->get_uniform(uniform_name);
+			shader_list.insert({ shader, id });
+		}
 		Uniform<VEC>::s_uniform_list.push_back(this);
 	}
 
 	template <typename VEC>
 	Uniform<VEC>::Uniform(Uniform&& moving) noexcept
-		:	id (moving.id),
-			value_ptr(moving.value_ptr),
-			shader(moving.shader),
+		:	value_ptr(moving.value_ptr),
 			shader_list(std::move(moving.shader_list)),
 			m_uniform_name(std::move(moving.m_uniform_name))
 	{
@@ -68,9 +67,7 @@ namespace Hexeng::Renderer
 	template <typename VEC>
 	Uniform<VEC>& Uniform<VEC>::operator=(Uniform&& moving) noexcept
 	{
-		id = moving.id;
 		value_ptr = moving.value_ptr;
-		shader = moving.shader;
 		shader_list = std::move(moving.shader_list);
 		m_uniform_name = std::move(moving.m_uniform_name);
 		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
@@ -90,8 +87,11 @@ namespace Hexeng::Renderer
 	template <typename VEC>
 	void Uniform<VEC>::refresh()
 	{
-		shader->bind();
-		shader->set_uniform(id, *value_ptr);
+		for (auto& [shader, id] : shader_list)
+		{
+			shader->bind();
+			shader->set_uniform(id, *value_ptr);
+		}
 	}
 
 	template <typename VEC>
@@ -107,8 +107,7 @@ namespace Hexeng::Renderer
 #define HXG_REFRESH_UNIFORM(TYPE) \
 for (auto& uniform : Uniform<TYPE>::s_uniform_list)\
 {\
-	uniform->shader->bind();\
-	uniform->shader->set_uniform(uniform->id, *(uniform->value_ptr));\
+	uniform->refresh();\
 }""
 
 #endif // !UNIFORM_HPP

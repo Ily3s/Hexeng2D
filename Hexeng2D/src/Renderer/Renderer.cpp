@@ -104,9 +104,26 @@ namespace Hexeng::Renderer
 
 	void draw(const Layer& layer)
 	{
+		float zoom_copy = Presets::zoom;
+		Vec2 cam_copy = cam_position;
+		Presets::zoom *= layer.z_position;
+		if (layer.is_absolute)
+		{
+			Presets::zoom = 1.0f;
+			cam_position = { 0, 0 };
+			Presets::u_cam.refresh();
+		}
+		Presets::u_zoom.refresh();
 		for (const auto& mesh : layer.meshes)
 		{
 			mesh->draw();
+		}
+		Presets::zoom = zoom_copy;
+		Presets::u_zoom.refresh();
+		if (layer.is_absolute)
+		{
+			Presets::u_cam.refresh();
+			cam_position = cam_copy;
 		}
 	}
 

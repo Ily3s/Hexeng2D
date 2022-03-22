@@ -15,8 +15,10 @@ namespace Hexeng::Renderer
 	public:
 
 		std::vector<Mesh*> meshes;
+		float z_position = 1.0f;
+		bool is_absolute = false;
 
-		HXG_DECLSPEC Layer(const std::vector<Mesh*>& mesh_vector);
+		HXG_DECLSPEC Layer(const std::vector<Mesh*>& mesh_vector, float z_pos = 1.0f, bool is_abs = false);
 		 
 		Layer& operator=(const Layer&) = delete;
 		HXG_DECLSPEC Layer(const Layer&) = delete;
@@ -41,7 +43,7 @@ namespace Hexeng::Renderer
 		bool* context;
 
 		ContextualLayer() = default;
-		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition);
+		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos = 1.0f, bool is_abs = true);
 
 		ContextualLayer& operator=(ContextualLayer&&) noexcept;
 		ContextualLayer(ContextualLayer&&) noexcept;

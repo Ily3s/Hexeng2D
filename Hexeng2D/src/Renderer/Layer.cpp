@@ -7,14 +7,16 @@ namespace Hexeng::Renderer
 
 	std::vector<Layer*> layers;
 
-	Layer::Layer(const std::vector<Mesh*>& mesh_vector)
-		: meshes(mesh_vector)
+	Layer::Layer(const std::vector<Mesh*>& mesh_vector, float z_pos, bool is_abs)
+		: meshes(mesh_vector), z_position(z_pos), is_absolute(is_abs)
 	{
+		if (z_pos <= 0)
+			throw(std::exception("intended z_pos to be a positive float"));
 		layers.push_back(this);
 	}
 
 	Layer::Layer(Layer&& other) noexcept
-		: meshes(other.meshes)
+		: meshes(other.meshes), z_position(other.z_position), is_absolute(other.is_absolute)
 	{
 		auto it = std::find(layers.begin(), layers.end(), &other);
 		if (it != layers.end())
@@ -24,6 +26,8 @@ namespace Hexeng::Renderer
 	Layer& Layer::operator=(Layer&& other) noexcept
 	{
 		meshes = other.meshes;
+		z_position = other.z_position;
+		is_absolute = other.is_absolute;
 		auto it = std::find(layers.begin(), layers.end(), this);
 		if (it != layers.end())
 			layers.erase(it);
@@ -56,8 +60,8 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
-	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition)
-		: Layer(mesh_vector), context(condition)
+	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos, bool is_abs)
+		: Layer(mesh_vector, z_pos, is_abs), context(condition)
 	{
 		contextual_layers.push_back(this);
 	}
