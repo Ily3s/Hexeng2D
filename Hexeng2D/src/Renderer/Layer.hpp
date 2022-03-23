@@ -30,8 +30,6 @@ namespace Hexeng::Renderer
 		 
 		HXG_DECLSPEC virtual void unload();
 		HXG_DECLSPEC virtual void load();
-		 
-		HXG_DECLSPEC Layer& operator+=(const Layer& second);
 
 	};
 

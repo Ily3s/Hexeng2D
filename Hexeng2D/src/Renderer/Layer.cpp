@@ -66,13 +66,6 @@ namespace Hexeng::Renderer
 		contextual_layers.push_back(this);
 	}
 
-	Layer& Layer::operator+=(const Layer& second)
-	{
-		for (Mesh* r : second.meshes)
-			meshes.push_back(r);
-		return *this;
-	}
-
 	void Layer::load()
 	{
 		for (auto& rectangle : meshes)
