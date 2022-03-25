@@ -12,6 +12,8 @@ int main()
 {
 	using namespace Hexeng;
 
+	Settings::window_name = "Sandbox";
+
 	Renderer::init();
 
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };

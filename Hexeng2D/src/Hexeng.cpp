@@ -26,4 +26,12 @@ namespace Hexeng
 		}
 	}
 
+	namespace Settings
+	{
+		bool enable_vsync = true;
+		std::string window_name = "Game made with Hexeng2D";
+		bool fullscreen = false;
+		Vec2<int> window_size = { 1280, 720 };
+	}
+
 }

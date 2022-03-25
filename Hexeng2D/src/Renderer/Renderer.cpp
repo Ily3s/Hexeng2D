@@ -7,6 +7,7 @@
 #include "Scene.hpp"
 #include "Presets/InitPresets.hpp"
 #include "Camera.hpp"
+#include "../Hexeng.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -23,10 +24,16 @@ namespace Hexeng::Renderer
 		HXG_GLFW(glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE));
 
 		const GLFWvidmode* mode = glfwGetVideoMode(glfwGetPrimaryMonitor());
+		Vec2<int> screen_size{ mode->width, mode->height };
 
-		Vec2<int> window_size{ mode->width, mode->height };
-
-		HXG_GLFW(window = glfwCreateWindow(window_size.x, window_size.y, "Sandbox", 0, NULL));
+		if (Settings::fullscreen)
+		{
+			HXG_GLFW(window = glfwCreateWindow(screen_size.x, screen_size.y, Settings::window_name.c_str(), glfwGetPrimaryMonitor(), NULL));
+		}
+		else
+		{
+			HXG_GLFW(window = glfwCreateWindow(Settings::window_size.x, Settings::window_size.y, Settings::window_name.c_str(), 0, NULL));
+		}
 
 		HXG_GLFW(glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL));
 
@@ -38,7 +45,7 @@ namespace Hexeng::Renderer
 
 		HXG_GLFW(glfwMakeContextCurrent(window));
 
-		HXG_GLFW(glfwSwapInterval(1));
+		HXG_GLFW(glfwSwapInterval(Settings::enable_vsync));
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
 			exit(-1);
