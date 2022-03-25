@@ -6,7 +6,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class IndexBuffer
+	class HXG_DECLSPEC IndexBuffer
 	{
 	private:
 
@@ -18,19 +18,19 @@ namespace Hexeng::Renderer
 
 	public:
 
-		HXG_DECLSPEC IndexBuffer();
-		 
-		HXG_DECLSPEC IndexBuffer(const void* data, unsigned int type, unsigned int count);
-		HXG_DECLSPEC ~IndexBuffer();
-		 
-		HXG_DECLSPEC IndexBuffer(const IndexBuffer&) = delete;
-		HXG_DECLSPEC IndexBuffer& operator=(const IndexBuffer&) = delete;
-		 
-		HXG_DECLSPEC IndexBuffer(IndexBuffer&&) noexcept;
-		HXG_DECLSPEC IndexBuffer& operator=(IndexBuffer&&) noexcept;
-		  
-		HXG_DECLSPEC void bind() const;
-		HXG_DECLSPEC void unbind() const;
+		IndexBuffer();
+		
+		IndexBuffer(const void* data, unsigned int type, unsigned int count);
+		~IndexBuffer();
+		
+		IndexBuffer(const IndexBuffer&) = delete;
+		IndexBuffer& operator=(const IndexBuffer&) = delete;
+		
+		IndexBuffer(IndexBuffer&&) noexcept;
+		IndexBuffer& operator=(IndexBuffer&&) noexcept;
+		
+		void bind() const;
+		void unbind() const;
 		 
 		inline unsigned int get_count() const { return m_count; }
 		inline unsigned int get_type() const { return m_type; }

@@ -81,7 +81,7 @@ namespace Hexeng::Renderer
 	{
 		shader_list.reserve(shad_list.size());
 		for (Shader* shad : shad_list)
-			shader_list.insert({shad, shad->get_uniform(m_uniform_name)});
+			shader_list.insert({shad, shad->get_uniform(m_uniform_name.c_str())});
 	}
 
 	template <typename VEC>

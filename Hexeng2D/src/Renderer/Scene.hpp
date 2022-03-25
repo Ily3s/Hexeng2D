@@ -7,17 +7,17 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class Scene
+	class HXG_DECLSPEC Scene
 	{
 
 	public:
 
 		std::vector<Layer*> layers;
 
-		HXG_DECLSPEC Scene(int id, const std::vector<Layer*>& layers);
+		Scene(int id, const std::vector<Layer*>& layers);
 
-		HXG_DECLSPEC void load();
-		HXG_DECLSPEC void unload();
+		void load();
+		void unload();
 	};
 
 	HXG_DECLSPEC extern std::unordered_map<int, Scene*> scenes;

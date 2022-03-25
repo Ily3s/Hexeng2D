@@ -10,7 +10,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class Shader
+	class HXG_DECLSPEC Shader
 	{
 
 	private:
@@ -25,23 +25,23 @@ namespace Hexeng::Renderer
 
 	public:
 
-		HXG_DECLSPEC Shader() = default;
-		 
-		HXG_DECLSPEC Shader(const Shader&) = delete;
-		HXG_DECLSPEC Shader& operator=(const Shader&) = delete;
-		 
-		HXG_DECLSPEC Shader(Shader&&) noexcept;
-		HXG_DECLSPEC Shader& operator=(Shader&&) noexcept;
-		 
-		HXG_DECLSPEC ~Shader();
-		 
-		HXG_DECLSPEC Shader(const char* vertex_shader, const char* fragment_shader);
-		HXG_DECLSPEC Shader(const std::string& vertex_shader, const std::string& fragment_shader);
-		 
-		HXG_DECLSPEC void bind() const;
-		HXG_DECLSPEC void unbind() const;
-		 
-		HXG_DECLSPEC int get_uniform(const char* uniform) const;
+		Shader() = default;
+		
+		Shader(const Shader&) = delete;
+		Shader& operator=(const Shader&) = delete;
+		
+		Shader(Shader&&) noexcept;
+		Shader& operator=(Shader&&) noexcept;
+		
+		~Shader();
+		
+		Shader(const char* vertex_shader, const char* fragment_shader);
+		Shader(const std::string& vertex_shader, const std::string& fragment_shader);
+		
+		void bind() const;
+		void unbind() const;
+		
+		int get_uniform(const char* uniform) const;
 		 
 		static void set_uniform(int uniform, const float value)				{ HXG_GL(glUniform1f(uniform, value)); };
 		static void set_uniform(int uniform, const Vec2<float>& value)		{ HXG_GL(glUniform2f(uniform, value.x, value.y)); };

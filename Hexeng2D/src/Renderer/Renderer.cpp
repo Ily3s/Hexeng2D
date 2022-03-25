@@ -3,10 +3,10 @@
 #include "GLFW/glfw3.h"
 #include "glad/glad.h"
 #include "Presets/Basic.shader"
-#include "../Variables.hpp"
 #include "Uniform.hpp"
 #include "Scene.hpp"
 #include "Presets/InitPresets.hpp"
+#include "Camera.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -49,8 +49,8 @@ namespace Hexeng::Renderer
 		HXG_GL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 		HXG_GL(glBlendEquation(GL_FUNC_ADD));
 
+		Camera::init();
 		Presets::init();
-
 	}
 
 	void refresh_uniforms()
@@ -104,26 +104,24 @@ namespace Hexeng::Renderer
 
 	void draw(const Layer& layer)
 	{
-		float zoom_copy = Presets::zoom;
-		Vec2 cam_copy = cam_position;
-		Presets::zoom *= layer.z_position;
+		Vec3 cam_copy = Camera::position;
 		if (layer.is_absolute)
 		{
-			Presets::zoom = 1.0f;
-			cam_position = { 0, 0 };
-			Presets::u_cam.refresh();
+			Camera::position = { 0, 0, 0 };
+			Camera::u_cam.refresh();
+			Camera::zoom = 1.0f;
+			Camera::u_zoom.refresh();
 		}
-		Presets::u_zoom.refresh();
+		else
+			Camera::update_zoom(layer.z_position - Camera::position.z);
 		for (const auto& mesh : layer.meshes)
 		{
 			mesh->draw();
 		}
-		Presets::zoom = zoom_copy;
-		Presets::u_zoom.refresh();
 		if (layer.is_absolute)
 		{
-			Presets::u_cam.refresh();
-			cam_position = cam_copy;
+			Camera::position = cam_copy;
+			Camera::u_cam.refresh();
 		}
 	}
 

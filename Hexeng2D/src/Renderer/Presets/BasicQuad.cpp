@@ -1,6 +1,7 @@
 #include "BasicQuad.hpp"
 #include "../../Functions.hpp"
 #include "InitPresets.hpp"
+#include "../Camera.hpp"
 
 #include <exception>
 
@@ -11,14 +12,14 @@ namespace Hexeng::Renderer::Presets
 
 	void BasicQuad::verify_uniforms(Shader* shader)
 	{
-		auto it_cam = u_cam.shader_list.find(shader);
-		auto it_zoom = u_zoom.shader_list.find(shader);
+		auto it_cam = Camera::u_cam.shader_list.find(shader);
+		auto it_zoom = Camera::u_zoom.shader_list.find(shader);
 		auto it_transform = u_transform.shader_list.find(shader);
 
-		if(it_cam == u_cam.shader_list.end())
+		if(it_cam == Camera::u_cam.shader_list.end())
 			throw(std::exception("cam uniform excepted"));
 
-		if(it_zoom == u_zoom.shader_list.end())
+		if(it_zoom == Camera::u_zoom.shader_list.end())
 			throw(std::exception("zoom uniform excepted"));
 
 		if(it_transform == u_transform.shader_list.end())

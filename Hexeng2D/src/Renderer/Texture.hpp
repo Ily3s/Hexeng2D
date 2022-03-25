@@ -10,7 +10,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class Texture
+	class HXG_DECLSPEC Texture
 	{
 
 	private:
@@ -23,13 +23,13 @@ namespace Hexeng::Renderer
 
 	public:
 
-		HXG_DECLSPEC Texture(const std::string& filepath, unsigned int mag_filter = GL_LINEAR, unsigned int min_filter = GL_LINEAR);
-		HXG_DECLSPEC ~Texture();
-		 
-		HXG_DECLSPEC Texture() = default;
-		 
-		HXG_DECLSPEC void bind(unsigned int slot = GL_TEXTURE0) const;
-		HXG_DECLSPEC void unbind() const;
+		Texture(const std::string& filepath, unsigned int mag_filter = GL_LINEAR, unsigned int min_filter = GL_LINEAR);
+		~Texture();
+		
+		Texture() = default;
+		
+		void bind(unsigned int slot = GL_TEXTURE0) const;
+		void unbind() const;
 		 
 		inline int get_width() const { return m_width; }
 		inline int get_height() const { return m_height; }
@@ -37,14 +37,14 @@ namespace Hexeng::Renderer
 		 
 		Vec2<int> size() const { return { m_width, m_height }; }
 		 
-		HXG_DECLSPEC void unload();
-		HXG_DECLSPEC void load();
-		 
-		HXG_DECLSPEC Texture(const Texture&) = delete;
-		HXG_DECLSPEC Texture& operator=(const Texture&) = delete;
-		 
-		HXG_DECLSPEC Texture(Texture&&) noexcept;
-		HXG_DECLSPEC Texture& operator=(Texture&&) noexcept;
+		void unload();
+		void load();
+		
+		Texture(const Texture&) = delete;
+		Texture& operator=(const Texture&) = delete;
+		
+		Texture(Texture&&) noexcept;
+		Texture& operator=(Texture&&) noexcept;
 	};
 
 }

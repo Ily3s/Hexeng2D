@@ -11,7 +11,7 @@ namespace Hexeng::Renderer
 		: layers(l)
 	{
 		std::sort(layers.begin(), layers.end(), [](Layer* layer1, Layer* layer2) {
-			return layer1->z_position < layer2->z_position; });
+			return layer1->z_position > layer2->z_position; });
 		scenes.insert_or_assign(id, this);
 	}
 

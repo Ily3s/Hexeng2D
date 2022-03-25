@@ -12,7 +12,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class Mesh
+	class HXG_DECLSPEC Mesh
 	{
 
 	protected:
@@ -28,12 +28,12 @@ namespace Hexeng::Renderer
 		std::function<void()> pre_render_event = nullptr;
 		std::function<void()> post_render_event = nullptr;
 
-		HXG_DECLSPEC Mesh();
+		Mesh();
 		
-		HXG_DECLSPEC Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader);
+		Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader);
 		
-		HXG_DECLSPEC Mesh(Mesh&& moving) noexcept;
-		HXG_DECLSPEC Mesh& operator=(Mesh&& moving) noexcept;
+		Mesh(Mesh&& moving) noexcept;
+		Mesh& operator=(Mesh&& moving) noexcept;
 		
 		inline const Texture* get_texture() const { return m_texture; }
 		inline const VertexArray* get_vao() const { return &m_vao; }
@@ -42,7 +42,7 @@ namespace Hexeng::Renderer
 		inline Texture*& access_texture() { return m_texture; }
 		inline Shader*& access_shader() { return m_shader; }
 		
-		HXG_DECLSPEC virtual void draw();
+		virtual void draw();
 		 
 	};
 

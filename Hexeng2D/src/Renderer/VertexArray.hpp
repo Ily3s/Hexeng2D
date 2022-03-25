@@ -9,7 +9,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class VertexArray
+	class HXG_DECLSPEC VertexArray
 	{
 
 	private:
@@ -18,21 +18,21 @@ namespace Hexeng::Renderer
 
 	public:
 
-		HXG_DECLSPEC VertexArray();
-		HXG_DECLSPEC ~VertexArray();
-		 
-		HXG_DECLSPEC VertexArray(const VertexArray&) = delete;
-		HXG_DECLSPEC VertexArray& operator=(const VertexArray&) = delete;
-		 
-		HXG_DECLSPEC VertexArray(VertexArray&&) noexcept;
-		HXG_DECLSPEC VertexArray& operator=(VertexArray&&) noexcept;
-		 
-		HXG_DECLSPEC void tie(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib);
-		HXG_DECLSPEC void tie(const VertexBuffer& vb, const VertexLayout& layout);
-		HXG_DECLSPEC void tie(unsigned int vb, const VertexLayout& layout);
-		 
-		HXG_DECLSPEC void bind() const;
-		HXG_DECLSPEC void unbind() const;
+		VertexArray();
+		~VertexArray();
+		
+		VertexArray(const VertexArray&) = delete;
+		VertexArray& operator=(const VertexArray&) = delete;
+		
+		VertexArray(VertexArray&&) noexcept;
+		VertexArray& operator=(VertexArray&&) noexcept;
+		
+		void tie(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib);
+		void tie(const VertexBuffer& vb, const VertexLayout& layout);
+		void tie(unsigned int vb, const VertexLayout& layout);
+		
+		void bind() const;
+		void unbind() const;
 
 	};
 

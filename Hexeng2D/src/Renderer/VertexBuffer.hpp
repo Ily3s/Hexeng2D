@@ -6,7 +6,7 @@
 namespace Hexeng::Renderer
 {
 
-	HXG_DECLSPEC class VertexBuffer
+	class HXG_DECLSPEC VertexBuffer
 	{
 	private:
 
@@ -14,19 +14,19 @@ namespace Hexeng::Renderer
 
 	public:
 
-		HXG_DECLSPEC VertexBuffer(const VertexBuffer&) = delete;
-		HXG_DECLSPEC VertexBuffer& operator=(const VertexBuffer&) = delete;
-		 
-		HXG_DECLSPEC VertexBuffer();
-		 
-		HXG_DECLSPEC VertexBuffer(VertexBuffer&&) noexcept;
-		HXG_DECLSPEC VertexBuffer& operator=(VertexBuffer&&) noexcept;
-		HXG_DECLSPEC 
-		HXG_DECLSPEC VertexBuffer(const void* data, unsigned int size);
-		HXG_DECLSPEC ~VertexBuffer();
-		 
-		HXG_DECLSPEC void bind() const;
-		HXG_DECLSPEC void unbind() const;
+		VertexBuffer(const VertexBuffer&) = delete;
+		VertexBuffer& operator=(const VertexBuffer&) = delete;
+		
+		VertexBuffer();
+		
+		VertexBuffer(VertexBuffer&&) noexcept;
+		VertexBuffer& operator=(VertexBuffer&&) noexcept;
+		
+		VertexBuffer(const void* data, unsigned int size);
+		~VertexBuffer();
+		
+		void bind() const;
+		void unbind() const;
 	};
 
 }

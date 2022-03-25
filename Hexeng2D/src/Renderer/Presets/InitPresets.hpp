@@ -13,10 +13,6 @@ namespace Hexeng::Renderer::Presets
 	HXG_DECLSPEC extern VertexLayout basic_vertex_layout;
 
 	HXG_DECLSPEC extern Vec2<float> transform;
-	HXG_DECLSPEC extern float zoom;
-
-	HXG_DECLSPEC extern Uniform<Vec2<float>> u_cam;
-	HXG_DECLSPEC extern Uniform<float> u_zoom;
 	HXG_DECLSPEC extern Uniform<Vec2<float>> u_transform;
 
 	HXG_DECLSPEC void init();

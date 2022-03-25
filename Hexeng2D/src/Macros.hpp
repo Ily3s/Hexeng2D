@@ -41,7 +41,7 @@ x;\
 #define HXG_GLFW(x) x
 #endif
 
-#ifdef _EXPORTING
+#ifdef Hexeng2D_EXPORTS
 #define HXG_DECLSPEC    __declspec(dllexport)
 #else
 #define HXG_DECLSPEC    __declspec(dllimport)
