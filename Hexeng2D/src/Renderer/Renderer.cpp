@@ -11,8 +11,6 @@
 
 namespace Hexeng::Renderer
 {
-	
-	GLFWwindow* window = nullptr;
 
 	void init()
 	{
@@ -111,6 +109,9 @@ namespace Hexeng::Renderer
 
 	void draw(const Layer& layer)
 	{
+		if (layer.z_position < Camera::position.z)
+			return;
+
 		Vec3 cam_copy = Camera::position;
 		if (layer.is_absolute)
 		{

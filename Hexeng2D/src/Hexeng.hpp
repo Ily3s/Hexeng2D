@@ -7,8 +7,12 @@
 #include "Macros.hpp"
 #include "Vectors.hpp"
 
+struct GLFWwindow;
+
 namespace Hexeng
 {
+
+	HXG_DECLSPEC extern GLFWwindow* window;
 
 	HXG_DECLSPEC void game_loop(std::function<void()> pre = nullptr, std::function<void()> post = nullptr);
 

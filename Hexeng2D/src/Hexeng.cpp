@@ -4,9 +4,11 @@
 namespace Hexeng
 {
 
+	GLFWwindow* window = nullptr;
+
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
-		while (!glfwWindowShouldClose(Renderer::window))
+		while (!glfwWindowShouldClose(window))
 		{
 			if (pre)
 				pre();
@@ -17,7 +19,7 @@ namespace Hexeng
 
 			Renderer::draw_current_scene();
 
-			HXG_GLFW(glfwSwapBuffers(Renderer::window));
+			HXG_GLFW(glfwSwapBuffers(window));
 
 			HXG_GLFW(glfwPollEvents());
 

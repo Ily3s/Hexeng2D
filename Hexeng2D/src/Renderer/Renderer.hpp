@@ -11,8 +11,6 @@
 #include "../Vectors.hpp"
 #include "Layer.hpp"
 
-class GLFWwindow;
-
 namespace Hexeng::Renderer
 {
 
@@ -25,8 +23,6 @@ namespace Hexeng::Renderer
 	HXG_DECLSPEC void clear();
 
 	HXG_DECLSPEC void refresh_uniforms();
-
-	HXG_DECLSPEC extern GLFWwindow* window;
 
 	HXG_DECLSPEC extern void draw(const Layer& layer);
 

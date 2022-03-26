@@ -14,7 +14,7 @@ namespace Hexeng::Renderer::Presets
 		layout(location = 1) in vec2 text_coord;
 		out vec2 v_text_coord;
 
-		uniform ivec3 u_cam;
+		uniform vec2 u_cam;
 		uniform float u_zoom;
 		uniform vec2 u_transform;
 
