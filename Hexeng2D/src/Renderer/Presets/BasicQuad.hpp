@@ -12,8 +12,6 @@ namespace Hexeng::Renderer::Presets
 	{
 	protected :
 
-		void verify_uniforms(Shader* shader);
-
 		static IndexBuffer s_index_buffer;
 
 	public:

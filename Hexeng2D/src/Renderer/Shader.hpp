@@ -58,6 +58,7 @@ namespace Hexeng::Renderer
 		static void set_uniform(int uniform, const Vec3<int>& value)		{ HXG_GL(glUniform3i(uniform, value.x, value.y, value.z)); };
 		static void set_uniform(int uniform, const Vec4<int>& value)		{ HXG_GL(glUniform4i(uniform, value.x, value.y, value.z, value.w)); };
 
+		unsigned int missing_uniforms();
 	};
 
 }

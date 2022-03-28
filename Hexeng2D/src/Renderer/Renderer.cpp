@@ -54,6 +54,9 @@ namespace Hexeng::Renderer
 		HXG_GL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 		HXG_GL(glBlendEquation(GL_FUNC_ADD));
 
+		u_transform = { "u_transform", &transform, {} };
+		UniformInterface::necessary_uniforms.push_back(&u_transform);
+
 		Camera::init();
 		Presets::init();
 	}
@@ -156,5 +159,8 @@ namespace Hexeng::Renderer
 				draw(*cl);
 		}
 	}
+
+	Vec2<float> transform;
+	Renderer::Uniform<Vec2<float>> u_transform;
 
 }

@@ -37,7 +37,8 @@ int main()
 
 	EventManager::start_looping();
 
-	Hexeng::game_loop([]() {
+	Hexeng::game_loop([]()
+		{
 		using namespace std::literals::chrono_literals;
 		std::this_thread::sleep_for(16ms);
 		});

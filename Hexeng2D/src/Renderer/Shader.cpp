@@ -1,5 +1,7 @@
 #include "Shader.hpp"
 #include "../Macros.hpp"
+#include "Camera.hpp"
+#include "Renderer.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -57,10 +59,18 @@ namespace Hexeng::Renderer
 	}
 
 	Shader::Shader(const char* vs, const char* fs)
-		: m_id(create_shader(vs, fs)) {}
+		: m_id(create_shader(vs, fs))
+	{
+		if (unsigned int missing = missing_uniforms())
+			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+	}
 
 	Shader::Shader(const std::string& vs, const std::string& fs)
-		: m_id(create_shader(vs, fs)) {}
+		: m_id(create_shader(vs, fs))
+	{
+		if (unsigned int missing = missing_uniforms())
+			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+	}
 
 	void Shader::bind() const
 	{
@@ -98,6 +108,21 @@ namespace Hexeng::Renderer
 		m_id = other.m_id;
 		other.m_id = 0;
 		return *this;
+	}
+
+	std::vector<UniformInterface*> UniformInterface::necessary_uniforms;
+
+	unsigned int Shader::missing_uniforms()
+	{
+		unsigned int output = 0;
+
+		for (UniformInterface* ui : UniformInterface::necessary_uniforms)
+		{
+			if (get_uniform(ui->uniform_name.c_str()) == -1)
+				output++;
+		}
+
+		return output;
 	}
 
 }

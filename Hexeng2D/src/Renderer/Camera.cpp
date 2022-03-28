@@ -20,6 +20,8 @@ namespace Hexeng::Renderer
 	{
 		u_cam = { "u_cam", &shader_pos, {} };
 		u_zoom = { "u_zoom",&zoom, {} };
+		UniformInterface::necessary_uniforms.push_back(&u_cam);
+		UniformInterface::necessary_uniforms.push_back(&u_zoom);
 	}
 
 	void Camera::update_zoom(int distance)

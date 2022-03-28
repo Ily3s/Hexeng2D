@@ -1,0 +1,39 @@
+#ifndef MOUVEMENT_HPP
+#define MOUVEMENT_HPP
+
+#include <vector>
+
+#include "../EventManager/EventManager.hpp"
+#include "../Macros.hpp"
+#include "../Vectors.hpp"
+#include "../Renderer/Mesh.hpp"
+
+namespace Hexeng::Physics
+{
+
+	class HXG_DECLSPEC PhysicsVecs
+	{
+	protected:
+
+		static std::vector<PhysicsVecs*> s_vecs;
+
+	public:
+
+		Vec2<float> transform{ 0.0f, 0.0f };
+		Vec2<int> position{ 0, 0 };
+		Vec2<float> velocity{ 0, 0 };
+
+		static Vec2<float> acceleration;
+
+		PhysicsVecs();
+
+		void link(Renderer::Mesh& mesh);
+
+		void update();
+		static void update_vecs();
+		static EventManager::Event update_evt;
+	};
+
+}
+
+#endif

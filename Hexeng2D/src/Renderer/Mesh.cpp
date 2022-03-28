@@ -20,8 +20,7 @@ namespace Hexeng::Renderer
 			m_vb(std::move(moving.m_vb)),
 			m_shader(moving.m_shader),
 			m_ib(std::move(moving.m_ib)),
-			pre_render_event(moving.pre_render_event),
-			post_render_event(moving.post_render_event) {}
+			uniforms(std::move(moving.uniforms)) {}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -30,26 +29,28 @@ namespace Hexeng::Renderer
 		m_vb = std::move(moving.m_vb);
 		m_shader = moving.m_shader;
 		m_ib = std::move(moving.m_ib);
-		pre_render_event = moving.pre_render_event;
-		post_render_event = moving.post_render_event;
+		uniforms = std::move(moving.uniforms);
 
 		return *this;
 	}
 
 	void Mesh::draw()
 	{
+		m_shader->bind();
 
-		if (pre_render_event)
-			pre_render_event();
+		for (auto& [uniform, value] : uniforms)
+		{
+			uniform->refresh(m_shader, value);
+		}
 
 		m_texture->bind();
 		m_vao.bind();
-		m_shader->bind();
 		HXG_GL(glDrawElements(GL_TRIANGLES, m_ib->get_count(), m_ib->get_type(), nullptr));
 
-		if (post_render_event)
-			post_render_event();
-
+		for (auto& [uniform, value] : uniforms)
+		{
+			uniform->refresh(m_shader);
+		}
 	}
 
 }

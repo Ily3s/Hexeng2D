@@ -10,18 +10,27 @@
 namespace Hexeng::Renderer
 {
 
-	template <typename VEC>
-	class Uniform
+	class UniformInterface
 	{
-	private :
+	public :
 
-		std::string m_uniform_name;
+		UniformInterface() = default;
 
+		std::unordered_map<Shader*, int> shader_list;
+		std::string uniform_name;
+
+		static std::vector<UniformInterface*> necessary_uniforms;
+
+		virtual void refresh(Shader* shad, void* value) = 0;
+		virtual void refresh(Shader* shad) = 0;
+	};
+
+	template <typename VEC>
+	class Uniform : public UniformInterface
+	{
 	public :
 
 		const VEC* value_ptr = nullptr;
-
-		std::unordered_map<Shader*, int> shader_list;
 
 		static std::vector<Uniform*> s_uniform_list;
 
@@ -35,19 +44,21 @@ namespace Hexeng::Renderer
 		void add_shaders(const std::vector<Shader*>& shad_list);
 
 		void refresh();
-		void refresh(Shader* shad);
+		void refresh(Shader* shad) override;
+		void refresh(Shader* shad, void* value) override;
 	};
 
 	template <typename VEC>
 	std::vector<Uniform<VEC>*> Uniform<VEC>::s_uniform_list;
 
 	template <typename VEC>
-	Uniform<VEC>::Uniform(const char* uniform_name, const VEC* value_ptr, const std::vector<Shader*>& shaders)
-		: m_uniform_name(uniform_name), value_ptr(value_ptr)
+	Uniform<VEC>::Uniform(const char* uniform_name_arg, const VEC* value_ptr, const std::vector<Shader*>& shaders)
+		: value_ptr(value_ptr)
 	{
+		uniform_name = std::string(uniform_name_arg);
 		for (Shader* shader : shaders)
 		{
-			int id = shader->get_uniform(uniform_name);
+			int id = shader->get_uniform(uniform_name_arg);
 			shader_list.insert({ shader, id });
 		}
 		Uniform<VEC>::s_uniform_list.push_back(this);
@@ -57,7 +68,7 @@ namespace Hexeng::Renderer
 	Uniform<VEC>::Uniform(Uniform&& moving) noexcept
 		:	value_ptr(moving.value_ptr),
 			shader_list(std::move(moving.shader_list)),
-			m_uniform_name(std::move(moving.m_uniform_name))
+			uniform_name(std::move(moving.uniform_name))
 	{
 		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
 		if (it != s_uniform_list.end())
@@ -69,7 +80,7 @@ namespace Hexeng::Renderer
 	{
 		value_ptr = moving.value_ptr;
 		shader_list = std::move(moving.shader_list);
-		m_uniform_name = std::move(moving.m_uniform_name);
+		uniform_name = std::move(moving.uniform_name);
 		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
 		if (it != s_uniform_list.end())
 			*it = this;
@@ -81,7 +92,7 @@ namespace Hexeng::Renderer
 	{
 		shader_list.reserve(shad_list.size());
 		for (Shader* shad : shad_list)
-			shader_list.insert({shad, shad->get_uniform(m_uniform_name.c_str())});
+			shader_list.insert({shad, shad->get_uniform(uniform_name.c_str())});
 	}
 
 	template <typename VEC>
@@ -100,6 +111,14 @@ namespace Hexeng::Renderer
 		auto it = shader_list.find(shad);
 		shad->bind();
 		shad->set_uniform(it->second, *value_ptr);
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::refresh(Shader* shad, void* value)
+	{
+		auto it = shader_list.find(shad);
+		shad->bind();
+		shad->set_uniform(it->second, *(static_cast<VEC*>(value)));
 	}
 
 }

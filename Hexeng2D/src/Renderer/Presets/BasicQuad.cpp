@@ -2,6 +2,7 @@
 #include "../../Functions.hpp"
 #include "InitPresets.hpp"
 #include "../Camera.hpp"
+#include "../Renderer.hpp"
 
 #include <exception>
 
@@ -10,27 +11,9 @@ namespace Hexeng::Renderer::Presets
 
 	IndexBuffer BasicQuad::s_index_buffer;
 
-	void BasicQuad::verify_uniforms(Shader* shader)
-	{
-		auto it_cam = Camera::u_cam.shader_list.find(shader);
-		auto it_zoom = Camera::u_zoom.shader_list.find(shader);
-		auto it_transform = u_transform.shader_list.find(shader);
-
-		if(it_cam == Camera::u_cam.shader_list.end())
-			throw(std::exception("cam uniform excepted"));
-
-		if(it_zoom == Camera::u_zoom.shader_list.end())
-			throw(std::exception("zoom uniform excepted"));
-
-		if(it_transform == u_transform.shader_list.end())
-			throw(std::exception("transform uniform excepted"));
-	}
-
 	BasicQuad::BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos, Shader* shader)
 		: position(pos)
 	{
-		verify_uniforms(shader);
-
 		float vertex_b[]
 		{
 			toX(vertecies[0]), toX(vertecies[1]), 0.0f, 0.0f,
@@ -77,8 +60,6 @@ namespace Hexeng::Renderer::Presets
 
 	BasicRectangle::BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)
 	{
-		verify_uniforms(shader);
-
 		if (centered)
 			pos -= (size/2);
 
