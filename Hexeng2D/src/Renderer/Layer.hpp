@@ -16,7 +16,6 @@ namespace Hexeng::Renderer
 
 		std::vector<Mesh*> meshes;
 		float z_position = 1.0f;
-		bool is_absolute = false;
 
 		Layer(const std::vector<Mesh*>& mesh_vector, float z_pos = 1.0f, bool is_abs = false);
 		 
@@ -31,6 +30,7 @@ namespace Hexeng::Renderer
 		virtual void unload();
 		virtual void load();
 
+		std::vector<std::pair<UniformInterface*, void*>> uniforms;
 	};
 
 	class HXG_DECLSPEC ContextualLayer : public Layer

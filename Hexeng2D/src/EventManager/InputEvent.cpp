@@ -11,7 +11,7 @@ namespace Hexeng::EventManager
 		pertick = pertick_arg;
 		action = action_arg;
 		condition = [key_code]() {return glfwGetKey(window, key_code); };
-		events.insert({ this, pertick });
+		events.push_back({ this, pertick });
 	}
 
 	MouseButtonEvent::MouseButtonEvent(int button_code, std::function<void(void)> action_arg, unsigned int pertick_arg)
@@ -19,7 +19,7 @@ namespace Hexeng::EventManager
 		pertick = pertick_arg;
 		action = action_arg;
 		condition = [button_code]() {return glfwGetMouseButton(window, button_code); };
-		events.insert({ this, pertick });
+		events.push_back({ this, pertick });
 	}
 
 	ScrollEvent* ScrollEvent::get()

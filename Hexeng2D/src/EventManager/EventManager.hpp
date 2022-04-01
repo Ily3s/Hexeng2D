@@ -24,13 +24,22 @@ namespace Hexeng::EventManager
 		Event(std::function<bool(void)> condition, std::function<void(void)> action, unsigned int pertick = 1);
 
 		Event() = default;
+
+		Event(const Event&) = delete;
+		Event& operator=(const Event&) = delete;
+
+		Event(Event&&) noexcept;
+		Event& operator=(Event&&) noexcept;
+
 	};
 
 	HXG_DECLSPEC extern Vec2<double> mouse_position;
-	HXG_DECLSPEC extern std::unordered_map<Event*, unsigned int> events;
+	HXG_DECLSPEC extern std::vector<std::pair<Event*, unsigned int>> events;
 
 	HXG_DECLSPEC void start_looping();
 	HXG_DECLSPEC void stop_looping();
+
+	HXG_DECLSPEC extern uint64_t current_tick;
 
 }
 

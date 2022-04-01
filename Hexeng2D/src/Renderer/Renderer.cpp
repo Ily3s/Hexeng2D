@@ -115,24 +115,21 @@ namespace Hexeng::Renderer
 		if (layer.z_position < Camera::position.z)
 			return;
 
-		Vec3 cam_copy = Camera::position;
-		if (layer.is_absolute)
+		Camera::update_zoom(layer.z_position - Camera::position.z);
+
+		for (auto& [uniform, value] : layer.uniforms)
 		{
-			Camera::position = { 0, 0, 0 };
-			Camera::u_cam.refresh();
-			Camera::zoom = 1.0f;
-			Camera::u_zoom.refresh();
+			uniform->refresh(value);
 		}
-		else
-			Camera::update_zoom(layer.z_position - Camera::position.z);
+
 		for (const auto& mesh : layer.meshes)
 		{
 			mesh->draw();
 		}
-		if (layer.is_absolute)
+
+		for (auto& [uniform, value] : layer.uniforms)
 		{
-			Camera::position = cam_copy;
-			Camera::u_cam.refresh();
+			uniform->refresh();
 		}
 	}
 

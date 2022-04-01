@@ -14,11 +14,10 @@ namespace Hexeng::Renderer
 
 		Camera() = default;
 
-		static Vec2<float> shader_pos;
-
 	public :
 
 		static Vec3<int> position;
+		static Vec2<float> shader_pos;
 		static int fov;
 		static float zoom;
 

@@ -1,4 +1,8 @@
+#include <limits>
+
 #include "Layer.hpp"
+#include "Camera.hpp"
+#include "Renderer.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -8,15 +12,24 @@ namespace Hexeng::Renderer
 	std::vector<Layer*> layers;
 
 	Layer::Layer(const std::vector<Mesh*>& mesh_vector, float z_pos, bool is_abs)
-		: meshes(mesh_vector), z_position(z_pos), is_absolute(is_abs)
+		: meshes(mesh_vector), z_position(z_pos)
 	{
 		if (z_pos <= 0)
 			throw(std::exception("intended z_pos to be a positive float"));
+
+		if (is_abs)
+		{
+			static float one = 1.0f;
+			uniforms.push_back({ &Camera::u_zoom, &one });
+			uniforms.push_back({ &u_transform, &Camera::shader_pos });
+			z_position = INT_MAX;
+		}
+
 		layers.push_back(this);
 	}
 
 	Layer::Layer(Layer&& other) noexcept
-		: meshes(other.meshes), z_position(other.z_position), is_absolute(other.is_absolute)
+		: meshes(other.meshes), z_position(other.z_position), uniforms(std::move(other.uniforms))
 	{
 		auto it = std::find(layers.begin(), layers.end(), &other);
 		if (it != layers.end())
@@ -27,7 +40,7 @@ namespace Hexeng::Renderer
 	{
 		meshes = other.meshes;
 		z_position = other.z_position;
-		is_absolute = other.is_absolute;
+		uniforms = std::move(other.uniforms);
 		auto it = std::find(layers.begin(), layers.end(), this);
 		if (it != layers.end())
 			layers.erase(it);

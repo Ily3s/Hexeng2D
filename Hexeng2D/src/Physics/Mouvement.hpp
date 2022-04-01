@@ -13,6 +13,10 @@ namespace Hexeng::Physics
 
 	class HXG_DECLSPEC PhysicsVecs
 	{
+	private :
+
+		uint64_t m_last_tick = 0;
+
 	protected:
 
 		static std::vector<PhysicsVecs*> s_vecs;
@@ -21,7 +25,10 @@ namespace Hexeng::Physics
 
 		Vec2<float> transform{ 0.0f, 0.0f };
 		Vec2<int> position{ 0, 0 };
+		Vec2<int> instant_speed{ 0, 0 };
 		Vec2<float> velocity{ 0, 0 };
+
+		void move(Vec2<int> offset);
 
 		static Vec2<float> acceleration;
 

@@ -33,6 +33,7 @@ namespace Hexeng::Renderer
 		 
 		inline int get_width() const { return m_width; }
 		inline int get_height() const { return m_height; }
+		inline Vec2<int> get_size() const { return { m_width, m_height }; }
 		inline unsigned int get_id() const { return m_id; }
 		 
 		Vec2<int> size() const { return { m_width, m_height }; }

@@ -11,42 +11,41 @@ namespace Hexeng::Physics
 			s_colliders.push_back(this);
 	}
 
-	EventManager::Event HitBox::collisions_evt{ []() {return true; }, load_collisions };
-
 	void HitBox::load_collisions()
 	{
 		if (s_colliders.size() > 1)
 		{
-			for (int i1 = 0; i1 < s_colliders.size(); i1++)
+			for (int i1 = 0; i1 < s_colliders.size() - 1; i1++)
 			{
 				HitBox& hb1 = *s_colliders[i1];
 				for (int i2 = i1+1; i2 < s_colliders.size(); i2++)
 				{
 					HitBox& hb2 = *s_colliders[i2];
-					if (int temp = is_colliding(hb1, hb2))
+					std::pair<RectangleHitBox*, RectangleHitBox*> temp = is_colliding(hb1, hb2);
+					if (temp.first)
 					{
 						hb1.on_collision(temp);
-						hb2.on_collision(temp);
+						hb2.on_collision({ temp.second, temp.first });
 					}
 				}
 			}
 		}
 	}
 
-	int HitBox::is_colliding(const HitBox& hb1, const HitBox& hb2)
+	std::pair<RectangleHitBox*, RectangleHitBox*> HitBox::is_colliding(HitBox& hb1, HitBox& hb2)
 	{
-		for (const auto& rec1 : hb1.m_rectangles)
+		for (auto& rec1 : hb1.m_rectangles)
 		{
-			for (const auto& rec2 : hb2.m_rectangles)
+			for (auto& rec2 : hb2.m_rectangles)
 			{
 				if (int temp = is_colliding(rec1, rec2))
-					return temp;
+					return { &rec1, &rec2 };
 			}
 		}
-		return 0;
+		return { nullptr, nullptr };
 	}
 
-	int HitBox::is_colliding(const RectangleHitBox& hb1, const RectangleHitBox& hb2)
+	bool HitBox::is_colliding(const RectangleHitBox& hb1, const RectangleHitBox& hb2)
 	{
 		bool cond1x = hb1.min.x > hb2.min.x && hb1.min.x < hb2.max.x;
 		bool cond2x = hb1.max.x > hb2.min.x && hb1.max.x < hb2.max.x;
@@ -60,6 +59,6 @@ namespace Hexeng::Physics
 
 		bool condy = cond1y || cond2y || cond3y;
 
-		return condx ? 1 : condy ? 2 : 0;
+		return condx && condy;
 	}
 }

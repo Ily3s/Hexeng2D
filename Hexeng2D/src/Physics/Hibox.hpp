@@ -12,6 +12,9 @@ namespace Hexeng::Physics
 	struct HXG_DECLSPEC RectangleHitBox
 	{
 		Vec2<int> min, max;
+		Vec2<int> size;
+
+		RectangleHitBox(Vec2<int> min, Vec2<int> max) : min(min), max(max), size(max - min) {}
 	};
 
 	class HXG_DECLSPEC HitBox
@@ -28,10 +31,10 @@ namespace Hexeng::Physics
 
 		static EventManager::Event collisions_evt;
 		static void load_collisions();
-		static int is_colliding(const HitBox& hb1, const HitBox& hb2);
-		static int is_colliding(const RectangleHitBox& hb1, const RectangleHitBox& hb2);
+		static std::pair<RectangleHitBox*, RectangleHitBox*> is_colliding(HitBox& hb1, HitBox& hb2);
+		static bool is_colliding(const RectangleHitBox& hb1, const RectangleHitBox& hb2);
 
-		virtual void on_collision(int x_or_y) {};
+		virtual void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) {};
 	};
 }
 

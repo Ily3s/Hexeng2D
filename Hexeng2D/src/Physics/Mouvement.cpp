@@ -18,13 +18,21 @@ namespace Hexeng::Physics
 		mesh.uniforms.push_back({ &Renderer::u_transform, &transform });
 	}
 
-	EventManager::Event PhysicsVecs::update_evt{ []() {return true; }, update_vecs };
+	void PhysicsVecs::move(Vec2<int> offset)
+	{
+		position += offset;
+		if (EventManager::current_tick != m_last_tick)
+			instant_speed = offset;
+		else
+			instant_speed += offset;
+
+		m_last_tick = EventManager::current_tick;
+	}
 
 	void PhysicsVecs::update()
 	{
 		velocity += acceleration;
-		position.x += velocity.x;
-		position.y += velocity.y;
+		move({ (int)velocity.x, (int)velocity.y });
 		transform = toCoord(position);
 	}
 

@@ -23,6 +23,8 @@ namespace Hexeng::Renderer
 
 		virtual void refresh(Shader* shad, void* value) = 0;
 		virtual void refresh(Shader* shad) = 0;
+		virtual void refresh() = 0;
+		virtual void refresh(void* value) = 0;
 	};
 
 	template <typename VEC>
@@ -46,6 +48,7 @@ namespace Hexeng::Renderer
 		void refresh();
 		void refresh(Shader* shad) override;
 		void refresh(Shader* shad, void* value) override;
+		void refresh(void* value) override;
 	};
 
 	template <typename VEC>
@@ -118,7 +121,17 @@ namespace Hexeng::Renderer
 	{
 		auto it = shader_list.find(shad);
 		shad->bind();
-		shad->set_uniform(it->second, *(static_cast<VEC*>(value)));
+		shad->set_uniform(it->second, *(reinterpret_cast<VEC*>(value)));
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::refresh(void* value)
+	{
+		for (auto& [shader, id] : shader_list)
+		{
+			shader->bind();
+			shader->set_uniform(id, *(reinterpret_cast<VEC*>(value)));
+		}
 	}
 
 }
