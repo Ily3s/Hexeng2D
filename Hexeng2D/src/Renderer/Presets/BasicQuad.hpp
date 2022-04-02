@@ -27,8 +27,6 @@ namespace Hexeng::Renderer::Presets
 		HXG_DECLSPEC BasicQuad(BasicQuad&&) noexcept;
 		HXG_DECLSPEC BasicQuad& operator=(BasicQuad&&) noexcept;
 
-		HXG_DECLSPEC void draw() override;
-
 		static inline void stop() { s_index_buffer.~IndexBuffer(); }
 
 	};

@@ -49,13 +49,6 @@ namespace Hexeng::Renderer::Presets
 		s_index_buffer = IndexBuffer(index_buffer, GL_UNSIGNED_BYTE, 6);
 	}
 
-	void BasicQuad::draw()
-	{
-		transform = toCoord(position);
-		u_transform.refresh(m_shader);
-		Mesh::draw();
-	}
-
 	BasicQuad::BasicQuad() = default;
 
 	BasicRectangle::BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)

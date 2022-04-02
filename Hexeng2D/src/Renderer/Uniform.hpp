@@ -6,6 +6,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include "Macros.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -34,8 +35,6 @@ namespace Hexeng::Renderer
 
 		const VEC* value_ptr = nullptr;
 
-		static std::vector<Uniform*> s_uniform_list;
-
 		Uniform(const char* uniform_name, const VEC* value_ptr, const std::vector<Shader*>& shaders);
 
 		Uniform() = default;
@@ -51,8 +50,7 @@ namespace Hexeng::Renderer
 		void refresh(void* value) override;
 	};
 
-	template <typename VEC>
-	std::vector<Uniform<VEC>*> Uniform<VEC>::s_uniform_list;
+	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
 
 	template <typename VEC>
 	Uniform<VEC>::Uniform(const char* uniform_name_arg, const VEC* value_ptr, const std::vector<Shader*>& shaders)
@@ -64,7 +62,7 @@ namespace Hexeng::Renderer
 			int id = shader->get_uniform(uniform_name_arg);
 			shader_list.insert({ shader, id });
 		}
-		Uniform<VEC>::s_uniform_list.push_back(this);
+		uniform_list.push_back(this);
 	}
 
 	template <typename VEC>
@@ -73,8 +71,8 @@ namespace Hexeng::Renderer
 			shader_list(std::move(moving.shader_list)),
 			uniform_name(std::move(moving.uniform_name))
 	{
-		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
-		if (it != s_uniform_list.end())
+		auto it = std::find(uniform_list.begin(), uniform_list.end(), &moving);
+		if (it != uniform_list.end())
 			*it = this;
 	}
 
@@ -84,8 +82,8 @@ namespace Hexeng::Renderer
 		value_ptr = moving.value_ptr;
 		shader_list = std::move(moving.shader_list);
 		uniform_name = std::move(moving.uniform_name);
-		auto it = std::find(s_uniform_list.begin(), s_uniform_list.end(), &moving);
-		if (it != s_uniform_list.end())
+		auto it = std::find(uniform_list.begin(), uniform_list.end(), &moving);
+		if (it != uniform_list.end())
 			*it = this;
 		return *this;
 	}
@@ -135,11 +133,5 @@ namespace Hexeng::Renderer
 	}
 
 }
-
-#define HXG_REFRESH_UNIFORM(TYPE) \
-for (auto& uniform : Uniform<TYPE>::s_uniform_list)\
-{\
-	uniform->refresh();\
-}""
 
 #endif // !UNIFORM_HPP

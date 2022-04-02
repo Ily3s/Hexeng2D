@@ -3,36 +3,52 @@
 
 namespace Hexeng::Physics
 {
-	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, bool is_solid)
-		: HitBox(rectangles, true), m_is_solid(is_solid)
+	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity)
+		: HitBox(rectangles, true, solidity)
 	{
 		s_entities.push_back(this);
 	}
 
 	void PhysicsEntity::on_collision(std::pair<RectangleHitBox*, RectangleHitBox*> collisioners)
 	{
-		if (m_is_solid)
-			return;
+		collisioners.first->min.x = collisioners.first->prev_min.x;
+		collisioners.first->max.x = collisioners.first->prev_max.x;
 
-		collisioners.first->min.x -= instant_speed.x;
-		collisioners.first->max.x -= instant_speed.x;
+		Vec2<int> bckp = { collisioners.second->min.x, collisioners.second->max.x };
 
-		if (!is_colliding(*collisioners.first, *collisioners.second))
+		collisioners.second->min.x = collisioners.second->prev_min.x;
+		collisioners.second->max.x = collisioners.second->prev_max.x;
+
+		bool is_still_collisioning = is_colliding(*collisioners.first, *collisioners.second);
+
+		collisioners.first->min.x += instant_speed.x;
+		collisioners.first->max.x += instant_speed.x;
+
+		collisioners.second->min.x = bckp.x;
+		collisioners.second->max.x = bckp.y;
+
+		if (!is_still_collisioning)
 		{
-			collisioners.first->min.x += instant_speed.x;
-			collisioners.first->max.x += instant_speed.x;
-			position.x -= instant_speed.x;
+			if (collisioners.first->prev_min.x < collisioners.second->prev_min.x)
+				position.x += collisioners.second->min.x - collisioners.first->max.x;
+			else
+				position.x += collisioners.second->max.x - collisioners.first->min.x;
+
 			velocity.x = 0;
 			instant_speed.x = 0;
 		}
 		else
 		{
-			collisioners.first->min.x += instant_speed.x;
-			collisioners.first->max.x += instant_speed.x;
-			position.y -= instant_speed.y;
+			if (collisioners.first->prev_min.y < collisioners.second->prev_min.y)
+				position.y += collisioners.second->min.y - collisioners.first->max.y;
+			else
+				position.y += collisioners.second->max.y - collisioners.first->min.y;
+
 			velocity.y = 0;
 			instant_speed.y = 0;
 		}
+
+		update_rec_position(*collisioners.first);
 	}
 
 	std::vector<PhysicsEntity*> PhysicsEntity::s_entities;
@@ -46,10 +62,15 @@ namespace Hexeng::Physics
 	void PhysicsEntity::update_positions()
 	{
 		for (auto& rec : m_rectangles)
-		{
-			rec.min = position - rec.size / 2;
-			rec.max = position + rec.size / 2;
-		}
+			update_rec_position(rec);
+	}
+
+	void PhysicsEntity::update_rec_position(RectangleHitBox& rec)
+	{
+		rec.prev_max = rec.max;
+		rec.prev_min = rec.min;
+		rec.min = position - rec.size / 2;
+		rec.max = position + rec.size / 2;
 	}
 
 	EventManager::Event PhysicsEntity::update_position_evt{ []() {return true; }, update_positions_all };

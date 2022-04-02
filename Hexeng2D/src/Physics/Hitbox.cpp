@@ -4,8 +4,8 @@ namespace Hexeng::Physics
 {
 	std::vector<HitBox*> HitBox::s_colliders;
 
-	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, bool enable_collision)
-		: m_rectangles(rectangles)
+	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision)
+		: m_rectangles(rectangles), m_solidity(solidity)
 	{
 		if (enable_collision)
 			s_colliders.push_back(this);
@@ -24,8 +24,10 @@ namespace Hexeng::Physics
 					std::pair<RectangleHitBox*, RectangleHitBox*> temp = is_colliding(hb1, hb2);
 					if (temp.first)
 					{
-						hb1.on_collision(temp);
-						hb2.on_collision({ temp.second, temp.first });
+						if (hb1.m_solidity > hb2.m_solidity)
+							hb2.on_collision({ temp.second, temp.first });
+						else
+							hb1.on_collision(temp);
 					}
 				}
 			}
@@ -49,15 +51,17 @@ namespace Hexeng::Physics
 	{
 		bool cond1x = hb1.min.x > hb2.min.x && hb1.min.x < hb2.max.x;
 		bool cond2x = hb1.max.x > hb2.min.x && hb1.max.x < hb2.max.x;
-		bool cond3x = hb1.min.x < hb2.min.x && hb1.max.x > hb2.max.x;
+		bool cond3x = hb2.min.x > hb1.min.x && hb2.min.x < hb1.max.x;
+		bool cond4x = hb2.max.x > hb1.min.x && hb2.max.x < hb1.max.x;
 
-		bool condx = cond1x || cond2x || cond3x;
+		bool condx = cond1x || cond2x || cond3x || cond4x;
 
 		bool cond1y = hb1.min.y > hb2.min.y && hb1.min.y < hb2.max.y;
 		bool cond2y = hb1.max.y > hb2.min.y && hb1.max.y < hb2.max.y;
-		bool cond3y = hb1.min.y < hb2.min.y&& hb1.max.y > hb2.max.y;
+		bool cond3y = hb2.min.y > hb1.min.y && hb2.min.y < hb1.max.y;
+		bool cond4y = hb2.max.y > hb1.min.y && hb2.max.y < hb1.max.y;
 
-		bool condy = cond1y || cond2y || cond3y;
+		bool condy = cond1y || cond2y || cond3y || cond4y;
 
 		return condx && condy;
 	}

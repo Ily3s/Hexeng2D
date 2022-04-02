@@ -61,23 +61,12 @@ namespace Hexeng::Renderer
 		Presets::init();
 	}
 
+	std::vector<UniformInterface*> uniform_list;
+
 	void refresh_uniforms()
 	{
-		HXG_REFRESH_UNIFORM(float);
-		HXG_REFRESH_UNIFORM(double);
-		HXG_REFRESH_UNIFORM(int);
-
-		HXG_REFRESH_UNIFORM(Vec2<float>);
-		HXG_REFRESH_UNIFORM(Vec2<double>);
-		HXG_REFRESH_UNIFORM(Vec2<int>);
-
-		HXG_REFRESH_UNIFORM(Vec3<float>);
-		HXG_REFRESH_UNIFORM(Vec3<double>);
-		HXG_REFRESH_UNIFORM(Vec3<int>);
-
-		HXG_REFRESH_UNIFORM(Vec4<float>);
-		HXG_REFRESH_UNIFORM(Vec4<double>);
-		HXG_REFRESH_UNIFORM(Vec4<int>);
+		for (UniformInterface* ui : uniform_list)
+			ui->refresh();
 	}
 
 	void stop()

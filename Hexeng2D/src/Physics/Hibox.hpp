@@ -12,22 +12,24 @@ namespace Hexeng::Physics
 	struct HXG_DECLSPEC RectangleHitBox
 	{
 		Vec2<int> min, max;
+		Vec2<int> prev_min, prev_max;
 		Vec2<int> size;
 
-		RectangleHitBox(Vec2<int> min, Vec2<int> max) : min(min), max(max), size(max - min) {}
+		RectangleHitBox(Vec2<int> min, Vec2<int> max) : min(min), max(max), size(max - min), prev_min(min), prev_max(max) {}
 	};
 
 	class HXG_DECLSPEC HitBox
 	{
-	protected :
+	protected:
 
 		std::vector<RectangleHitBox> m_rectangles;
+		int m_solidity;
 
 		static std::vector<HitBox*> s_colliders;
 
-	public :
+	public:
 
-		HitBox(const std::vector<RectangleHitBox>& rectangles, bool enable_collision = true);
+		HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision = true);
 
 		static EventManager::Event collisions_evt;
 		static void load_collisions();
