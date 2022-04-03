@@ -17,7 +17,7 @@ namespace Hexeng::Physics
 		static void update_positions_all();
 		void update_positions();
 		void update_rec_position(RectangleHitBox& rec);
-		static EventManager::Event update_position_evt;
+		static EventManager::EventGate update_position_evt;
 
 	public :
 

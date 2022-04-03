@@ -33,6 +33,13 @@ namespace Hexeng::EventManager
 
 	};
 
+	class HXG_DECLSPEC EventGate : public Event
+	{
+	public :
+
+		EventGate(std::function<void(void)> evt, unsigned int pertick = 1);
+	};
+
 	HXG_DECLSPEC extern Vec2<double> mouse_position;
 	HXG_DECLSPEC extern std::vector<std::pair<Event*, unsigned int>> events;
 

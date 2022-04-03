@@ -73,8 +73,8 @@ namespace Hexeng::Physics
 		rec.max = position + rec.size / 2;
 	}
 
-	EventManager::Event PhysicsEntity::update_position_evt{ []() {return true; }, update_positions_all };
-	EventManager::Event HitBox::collisions_evt{ []() {return true; }, load_collisions };
-	EventManager::Event PhysicsVecs::update_evt{ []() {return true; }, update_vecs };
+	EventManager::EventGate PhysicsEntity::update_position_evt	{ update_positions_all };
+	EventManager::EventGate HitBox::collisions_evt				{ load_collisions };
+	EventManager::EventGate PhysicsVecs::update_evt				{ update_vecs };
 
 }

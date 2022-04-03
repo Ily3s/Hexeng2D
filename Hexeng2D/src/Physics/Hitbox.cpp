@@ -18,7 +18,7 @@ namespace Hexeng::Physics
 			for (int i1 = 0; i1 < s_colliders.size() - 1; i1++)
 			{
 				HitBox& hb1 = *s_colliders[i1];
-				for (int i2 = i1+1; i2 < s_colliders.size(); i2++)
+				for (int i2 = i1 + 1; i2 < s_colliders.size(); i2++)
 				{
 					HitBox& hb2 = *s_colliders[i2];
 					std::pair<RectangleHitBox*, RectangleHitBox*> temp = is_colliding(hb1, hb2);
@@ -64,5 +64,74 @@ namespace Hexeng::Physics
 		bool condy = cond1y || cond2y || cond3y || cond4y;
 
 		return condx && condy;
+	}
+
+	From HitBox::where_colliding(HitBox& hb1, HitBox& hb2)
+	{
+		auto collision_pair = is_colliding(hb1, hb2);
+
+		if (!collision_pair.first)
+			return From::NOWHERE;
+
+		auto bckp1 = hb1.view_prev_state();
+		auto bckp2 = hb2.view_prev_state();
+
+		if (is_colliding(hb1, hb2).first)
+			return From::NOWHERE;
+
+		hb1.m_rectangles = bckp1;
+		hb2.m_rectangles = bckp2;
+
+		bckp1 = hb1.view_prev_state_x();
+		bckp2 = hb2.view_prev_state_x();
+
+		bool collision_in_x = !is_colliding(hb1, hb2).first;
+
+		hb1.m_rectangles = bckp1;
+		hb2.m_rectangles = bckp2;
+
+		if (collision_in_x)
+			return collision_pair.first->min.x < collision_pair.second->min.x ? From::LEFT : From::RIGHT;
+		else
+			return collision_pair.first->min.y < collision_pair.second->min.y ? From::BOT : From::TOP;
+	}
+
+	std::vector<RectangleHitBox> HitBox::view_prev_state()
+	{
+		std::vector<RectangleHitBox> bckp = m_rectangles;
+
+		for (auto& rec : m_rectangles)
+		{
+			rec.min = rec.prev_min;
+			rec.max = rec.prev_max;
+		}
+
+		return bckp;
+	}
+
+	std::vector<RectangleHitBox> HitBox::view_prev_state_x()
+	{
+		std::vector<RectangleHitBox> bckp = m_rectangles;
+
+		for (auto& rec : m_rectangles)
+		{
+			rec.min.x = rec.prev_min.x;
+			rec.max.x = rec.prev_max.x;
+		}
+
+		return bckp;
+	}
+
+	std::vector<RectangleHitBox> HitBox::view_prev_state_y()
+	{
+		std::vector<RectangleHitBox> bckp = m_rectangles;
+
+		for (auto& rec : m_rectangles)
+		{
+			rec.min.x = rec.prev_min.x;
+			rec.max.x = rec.prev_max.x;
+		}
+
+		return bckp;
 	}
 }

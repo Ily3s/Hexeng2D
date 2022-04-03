@@ -38,7 +38,7 @@ namespace Hexeng::Physics
 
 		void update();
 		static void update_vecs();
-		static EventManager::Event update_evt;
+		static EventManager::EventGate update_evt;
 	};
 
 }

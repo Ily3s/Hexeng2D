@@ -19,6 +19,14 @@ namespace Hexeng::EventManager
 		events.push_back({ this, pertick });
 	}
 
+	EventGate::EventGate(std::function<void(void)> evt, unsigned int pertick_para)
+	{
+		action = evt;
+		pertick = pertick_para;
+		condition = []() {return true; };
+		events.push_back({ this, pertick });
+	}
+
 	std::vector<std::pair<Event*, unsigned int>>::iterator find(std::vector<std::pair<Event*, unsigned int>>& vec, Event* searching)
 	{
 		for (std::vector<std::pair<Event*, unsigned int>>::iterator it = vec.begin(); it < vec.end(); it++)

@@ -15,6 +15,8 @@ namespace Hexeng
 		float& G = Vec3<float>::y;
 		float& B = Vec3<float>::z;
 
+		using Vec3<float>::operator=;
+
 		bool operator==(const Color3& second)
 		{
 			return R == second.R && G == second.G && B == second.B;
@@ -34,6 +36,8 @@ namespace Hexeng
 		float& G = Vec4<float>::y;
 		float& B = Vec4<float>::z;
 		float& A = Vec4<float>::w;
+
+		using Vec4<float>::operator*;
 
 		bool operator==(const Color4& second)
 		{
