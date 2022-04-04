@@ -42,6 +42,23 @@ namespace Hexeng::Renderer::Presets
 
 	);
 
+	const char line_fs[] = SHADER(
+
+		\n#version 330 core\n
+
+		in vec2 v_text_coord;
+		out vec4 color;
+
+		uniform sampler2D u_Texture;
+		uniform vec3 u_color;
+
+		void main()
+		{
+			color = vec4(u_color, 1.0);
+		}
+
+	);
+
 }
 
 #endif // !BASIC_SHADER

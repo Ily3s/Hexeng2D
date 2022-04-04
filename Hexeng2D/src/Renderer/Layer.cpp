@@ -73,10 +73,11 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
-	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos, bool is_abs)
+	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos, bool is_abs, bool is_global)
 		: Layer(mesh_vector, z_pos, is_abs), context(condition)
 	{
-		contextual_layers.push_back(this);
+		if (is_global)
+			contextual_layers.push_back(this);
 	}
 
 	void Layer::load()

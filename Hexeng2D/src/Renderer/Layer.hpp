@@ -41,7 +41,7 @@ namespace Hexeng::Renderer
 		bool* context = nullptr;
 
 		ContextualLayer() = default;
-		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos = 1.0f, bool is_abs = true);
+		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos = 1.0f, bool is_abs = true, bool is_global = true);
 
 		ContextualLayer& operator=(ContextualLayer&&) noexcept;
 		ContextualLayer(ContextualLayer&&) noexcept;

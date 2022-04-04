@@ -1,12 +1,16 @@
 #include "Physics.hpp"
 #include "../EventManager/EventManager.hpp"
+#include "../Renderer/Renderer.hpp"
 
 namespace Hexeng::Physics
 {
-	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity)
-		: HitBox(rectangles, true, solidity)
+	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity, int scene)
+		: HitBox(rectangles, true, solidity, scene)
 	{
 		s_entities.push_back(this);
+
+		for (auto& visualliser : visuallisers)
+			visualliser.uniforms.push_back({ &Renderer::u_transform, &transform });
 	}
 
 	void PhysicsEntity::on_collision(std::pair<RectangleHitBox*, RectangleHitBox*> collisioners)

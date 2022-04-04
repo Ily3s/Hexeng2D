@@ -18,6 +18,7 @@ namespace Hexeng::Renderer
 
 	protected:
 
+		GLenum m_type = GL_TRIANGLES;
 		VertexArray m_vao;
 		VertexBuffer m_vb;
 		const IndexBuffer* m_ib;
@@ -28,7 +29,7 @@ namespace Hexeng::Renderer
 
 		Mesh();
 
-		Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader);
+		Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
 
 		Mesh(Mesh&& moving) noexcept;
 		Mesh& operator=(Mesh&& moving) noexcept;

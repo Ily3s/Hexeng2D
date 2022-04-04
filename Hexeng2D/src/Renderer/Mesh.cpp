@@ -5,11 +5,12 @@ namespace Hexeng::Renderer
 
 	Mesh::Mesh() = default;
 
-	Mesh::Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader)
+	Mesh::Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
 		:	m_vb(vb, sizeof(vb)),
 			m_ib(ib),
 			m_texture(tex),
-			m_shader(shader)
+			m_shader(shader),
+			m_type(type)
 	{
 		m_vao.tie(m_vb, layout, *m_ib);
 	}
@@ -20,7 +21,8 @@ namespace Hexeng::Renderer
 			m_vb(std::move(moving.m_vb)),
 			m_shader(moving.m_shader),
 			m_ib(std::move(moving.m_ib)),
-			uniforms(std::move(moving.uniforms)) {}
+			uniforms(std::move(moving.uniforms)),
+			m_type(moving.m_type) {}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -30,6 +32,7 @@ namespace Hexeng::Renderer
 		m_shader = moving.m_shader;
 		m_ib = std::move(moving.m_ib);
 		uniforms = std::move(moving.uniforms);
+		m_type = moving.m_type;
 
 		return *this;
 	}
@@ -39,18 +42,19 @@ namespace Hexeng::Renderer
 		m_shader->bind();
 
 		for (auto& [uniform, value] : uniforms)
-		{
 			uniform->refresh(m_shader, value);
+
+		if (m_texture)
+		{
+			m_texture->bind();
 		}
 
-		m_texture->bind();
 		m_vao.bind();
-		HXG_GL(glDrawElements(GL_TRIANGLES, m_ib->get_count(), m_ib->get_type(), nullptr));
+
+		HXG_GL(glDrawElements(m_type, m_ib->get_count(), m_ib->get_type(), nullptr));
 
 		for (auto& [uniform, value] : uniforms)
-		{
 			uniform->refresh(m_shader);
-		}
 	}
 
 }

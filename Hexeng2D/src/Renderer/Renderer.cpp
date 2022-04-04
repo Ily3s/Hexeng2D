@@ -54,6 +54,8 @@ namespace Hexeng::Renderer
 		HXG_GL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 		HXG_GL(glBlendEquation(GL_FUNC_ADD));
 
+		HXG_GL(glLineWidth(2.0f));
+
 		u_transform = { "u_transform", &transform, {} };
 		UniformInterface::necessary_uniforms.push_back(&u_transform);
 
@@ -76,8 +78,34 @@ namespace Hexeng::Renderer
 			for (const auto& mesh : layer->meshes)
 			{
 				mesh->~Mesh();
-				mesh->get_texture()->~Texture();
+				if (mesh->get_texture())
+					mesh->get_texture()->~Texture();
 				mesh->access_shader()->~Shader();
+			}
+		}
+
+		for (ContextualLayer*& layer : contextual_layers)
+		{
+			for (const auto& mesh : layer->meshes)
+			{
+				mesh->~Mesh();
+				if (mesh->get_texture())
+					mesh->get_texture()->~Texture();
+				mesh->access_shader()->~Shader();
+			}
+		}
+
+		for (auto& [id, scene] : scenes)
+		{
+			for (ContextualLayer*& layer : scene->contextual_layers)
+			{
+				for (const auto& mesh : layer->meshes)
+				{
+					mesh->~Mesh();
+					if (mesh->get_texture())
+						mesh->get_texture()->~Texture();
+					mesh->access_shader()->~Shader();
+				}
 			}
 		}
 
@@ -128,6 +156,11 @@ namespace Hexeng::Renderer
 		{
 			draw(*lay);
 		}
+		for (ContextualLayer* cl : scenes[scene_parameter]->contextual_layers)
+		{
+			if (*cl->context)
+				draw(*cl);
+		}
 	}
 
 	void draw_current_scene()
@@ -135,10 +168,8 @@ namespace Hexeng::Renderer
 		if (scenes.find(scene_id) == scenes.end())
 			return;
 
-		for (Layer* lay : scenes[scene_id]->layers)
-		{
-			draw(*lay);
-		}
+		draw_scene(scene_id);
+
 		for (ContextualLayer* cl : contextual_layers)
 		{
 			if (*cl->context)

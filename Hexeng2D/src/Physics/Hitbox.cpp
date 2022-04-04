@@ -1,26 +1,102 @@
 #include "Hibox.hpp"
+#include "Hexeng.hpp"
+#include "Renderer/Scene.hpp"
 
 namespace Hexeng::Physics
 {
-	std::vector<HitBox*> HitBox::s_colliders;
+	std::unordered_map<int, std::vector<HitBox*>> HitBox::s_colliders;
 
-	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision)
+	std::unordered_map <int, Renderer::ContextualLayer> HitBox::visuallisers_layers;
+	bool HitBox::m_enable_visuallisers = false;
+
+	Color3 green{ 0.0f, 1.0f, 0.0f };
+	Color3 blue{ 0.0f, 0.0f, 1.0f };
+
+	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, int scene, bool enable_collision)
 		: m_rectangles(rectangles), m_solidity(solidity)
 	{
 		if (enable_collision)
-			s_colliders.push_back(this);
+			s_colliders[scene].push_back(this);
+
+		for (const auto& rec : rectangles)
+		{
+			visuallisers.emplace_back(rec.min, rec.size);
+			if (enable_collision)
+				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &green });
+			else
+				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &blue });
+			visuallisers_layers[scene].meshes.push_back(&visuallisers.back());
+		}
+
+		visuallisers_layers[scene].context = &m_enable_visuallisers;
+	}
+
+	HitBox::HitBox(HitBox&& other) noexcept
+		: m_rectangles(std::move(other.m_rectangles)), m_solidity(other.m_solidity), visuallisers(std::move(other.visuallisers))
+	{
+		for (auto& [i, vec] : s_colliders)
+		{
+			auto it = std::find(vec.begin(), vec.end(), &other);
+			if (it != vec.end())
+				*it = this;
+		}
+	}
+
+	HitBox& HitBox::operator=(HitBox&& other) noexcept
+	{
+		m_rectangles = std::move(other.m_rectangles);
+		m_solidity = other.m_solidity;
+		visuallisers = std::move(other.visuallisers);
+
+		for (auto& [i, vec] : s_colliders)
+		{
+			auto it = std::find(vec.begin(), vec.end(), this);
+			if (it != vec.end())
+				vec.erase(it);
+		}
+
+		for (auto& [i, vec] : s_colliders)
+		{
+			auto it = std::find(vec.begin(), vec.end(), &other);
+			if (it != vec.end())
+				*it = this;
+		}
+
+		return *this;
+	}
+
+	void HitBox::enable_visuallisers()
+	{
+		static bool is_init = false;
+		if (!is_init)
+		{
+			for (auto& [scene, cl] : visuallisers_layers)
+				Renderer::scenes[scene]->contextual_layers.push_back(&cl);
+			is_init = true;
+		}
+		m_enable_visuallisers = true;
+	}
+
+	bool HitBox::are_visuallisers_enabled()
+	{
+		return m_enable_visuallisers;
+	}
+
+	void HitBox::disable_visuallisers()
+	{
+		m_enable_visuallisers = false;
 	}
 
 	void HitBox::load_collisions()
 	{
-		if (s_colliders.size() > 1)
+		if (s_colliders[scene_id].size() > 1)
 		{
-			for (int i1 = 0; i1 < s_colliders.size() - 1; i1++)
+			for (int i1 = 0; i1 < s_colliders[scene_id].size() - 1; i1++)
 			{
-				HitBox& hb1 = *s_colliders[i1];
-				for (int i2 = i1 + 1; i2 < s_colliders.size(); i2++)
+				HitBox& hb1 = *s_colliders[scene_id][i1];
+				for (int i2 = i1 + 1; i2 < s_colliders[scene_id].size(); i2++)
 				{
-					HitBox& hb2 = *s_colliders[i2];
+					HitBox& hb2 = *s_colliders[scene_id][i2];
 					std::pair<RectangleHitBox*, RectangleHitBox*> temp = is_colliding(hb1, hb2);
 					if (temp.first)
 					{
@@ -134,4 +210,11 @@ namespace Hexeng::Physics
 
 		return bckp;
 	}
+
+	void HitBox::set_visuallisers_z(int z_pos)
+	{
+		for (auto& [scene, cl] : visuallisers_layers)
+			cl.z_position = z_pos;
+	}
+
 }

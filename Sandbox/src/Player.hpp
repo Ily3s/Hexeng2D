@@ -31,7 +31,7 @@ Player* Player::instance = nullptr;
 
 Player::Player(Vec2<int> pos, float size, Renderer::Texture* tex)
 	: mesh({ 0, 0 }, size, tex, true),
-	physics({ {-tex->get_size()*size / 2, tex->get_size()*size / 2} }, 1)
+	physics({ {-tex->get_size()*size / 2, tex->get_size()*size / 2} }, 1, 1)
 {
 	physics.position = pos;
 	physics.link(mesh);

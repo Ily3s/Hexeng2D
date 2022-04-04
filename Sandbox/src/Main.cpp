@@ -32,7 +32,7 @@ int main()
 
 	Renderer::Texture frame_tex{ "res/frame.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
-	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
+	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, 1, false };
 
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example, true };
@@ -65,7 +65,7 @@ int main()
 	Renderer::Layer back_ground2{ {&square2}, 800 };
 	Renderer::Scene first_scene{ 1, { &fore_ground , &back_ground1, &back_ground2 } };
 
-	Renderer::scene_id = 1;
+	scene_id = 1;
 
 	EventManager::KeyEvent go_up{ 87, [&player]() {player.physics.move({0, 4}); } };
 	EventManager::KeyEvent go_left{ 65, [&player]() {player.physics.move({-4, 0}); } };
@@ -74,7 +74,13 @@ int main()
 
 	EventManager::ScrollEvent::get()->callback = [](double amount) {Renderer::Camera::position.z += amount * 10; Renderer::Camera::refresh_pos(); };
 
-	Physics::HitBox hb = Physics::HitBox({ {{2000, -250}, {2500, 250}} }, 10);
+	Physics::HitBox hb = Physics::HitBox({ {{2000, -250}, {2500, 250}} }, 10, 1);
+
+	Physics::HitBox::set_visuallisers_z(750);
+
+	EventManager::KeyPressEvent debug_mode{ 256,[]()
+		{if (Physics::HitBox::are_visuallisers_enabled()) { Physics::HitBox::disable_visuallisers(); }
+		else { Physics::HitBox::enable_visuallisers(); } } };
 
 	EventManager::start_looping();
 

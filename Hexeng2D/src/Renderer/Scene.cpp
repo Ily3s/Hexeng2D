@@ -5,7 +5,6 @@ namespace Hexeng::Renderer
 {
 
 	std::unordered_map<int, Scene*> scenes;
-	int scene_id = 0;
 
 	Scene::Scene(int id, const std::vector<Layer*>& l)
 		: layers(l)

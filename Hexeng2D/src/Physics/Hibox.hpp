@@ -2,10 +2,13 @@
 #define HITBOX_HPP
 
 #include <vector>
+#include <unordered_map>
 
 #include "../Macros.hpp"
 #include "../Vectors.hpp"
 #include "../EventManager/EventManager.hpp"
+#include "../Renderer/Layer.hpp"
+#include "../Renderer/Presets/BasicQuad.hpp"
 
 namespace Hexeng::Physics
 {
@@ -34,11 +37,21 @@ namespace Hexeng::Physics
 		std::vector<RectangleHitBox> m_rectangles;
 		int m_solidity;
 
-		static std::vector<HitBox*> s_colliders;
+		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
+
+		static std::unordered_map <int, Renderer::ContextualLayer> visuallisers_layers;
+		std::vector<Renderer::Presets::DebugRectangle> visuallisers{};
+		static bool m_enable_visuallisers;
 
 	public:
 
-		HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision = true);
+		HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, int scene, bool enable_collision = true);
+
+		HitBox(const HitBox&) = delete;
+		HitBox& operator=(const HitBox&) = delete;
+
+		HitBox(HitBox&&) noexcept;
+		HitBox& operator=(HitBox&&) noexcept;
 
 		static EventManager::EventGate collisions_evt;
 		static void load_collisions();
@@ -52,6 +65,11 @@ namespace Hexeng::Physics
 		static From where_colliding(HitBox& hb1, HitBox& hb2);
 
 		virtual void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) {};
+
+		static void set_visuallisers_z(int z_pos);
+		static void enable_visuallisers();
+		static void disable_visuallisers();
+		static bool are_visuallisers_enabled();
 	};
 }
 

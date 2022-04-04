@@ -16,6 +16,8 @@ namespace Hexeng
 
 	HXG_DECLSPEC void game_loop(std::function<void()> pre = nullptr, std::function<void()> post = nullptr);
 
+	HXG_DECLSPEC extern int scene_id;
+
 	namespace Settings
 	{
 

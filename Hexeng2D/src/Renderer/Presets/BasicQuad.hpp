@@ -8,49 +8,94 @@
 namespace Hexeng::Renderer::Presets
 {
 
-	HXG_DECLSPEC class BasicQuad : public Mesh
+	class HXG_DECLSPEC BasicQuad : public Mesh
 	{
-	protected :
+	protected:
 
 		static IndexBuffer s_index_buffer;
+		static IndexBuffer s_edge_index_buffer;
 
 	public:
 
 		Vec2<int> position{ 0, 0 };
 
-		HXG_DECLSPEC static void init();
+		static void init();
 
-		HXG_DECLSPEC BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos = { 0, 0 }, Shader* shader = &basic_shader);
+		BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos = { 0, 0 }, Shader* shader = &basic_shader);
 
-		HXG_DECLSPEC BasicQuad();
+		BasicQuad() = default;
 
-		HXG_DECLSPEC BasicQuad(BasicQuad&&) noexcept;
-		HXG_DECLSPEC BasicQuad& operator=(BasicQuad&&) noexcept;
+		BasicQuad(BasicQuad&&) noexcept;
+		BasicQuad& operator=(BasicQuad&&) noexcept;
 
-		static inline void stop() { s_index_buffer.~IndexBuffer(); }
+		~BasicQuad() = default;
 
-	};
-
-	HXG_DECLSPEC class BasicRectangle : public BasicQuad
-	{
-	public:
-
-		HXG_DECLSPEC BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
-		HXG_DECLSPEC BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, bool centerd = false, Shader* shader = &basic_shader);
-
-		HXG_DECLSPEC BasicRectangle();
+		static inline void stop() { s_index_buffer.~IndexBuffer(); s_edge_index_buffer.~IndexBuffer(); }
 
 	};
 
-	HXG_DECLSPEC class BasicSquare : public BasicRectangle
+	class HXG_DECLSPEC BasicRectangle : public virtual BasicQuad
 	{
 	public:
 
-		HXG_DECLSPEC BasicSquare(const Vec2<int>& pos, int size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
-		HXG_DECLSPEC BasicSquare(const Vec2<int>& pos, float size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
+		BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
+		BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, bool centerd = false, Shader* shader = &basic_shader);
 
-		HXG_DECLSPEC BasicSquare();
+		BasicRectangle() = default;
+		~BasicRectangle() = default;
 
+		BasicRectangle(BasicRectangle&&) noexcept;
+		BasicRectangle& operator=(BasicRectangle&&) noexcept;
+	};
+
+	class HXG_DECLSPEC BasicSquare : public BasicRectangle
+	{
+	public:
+
+		BasicSquare(const Vec2<int>& pos, int size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
+		BasicSquare(const Vec2<int>& pos, float size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
+
+		BasicSquare() = default;
+		~BasicSquare() = default;
+
+		BasicSquare(BasicSquare&&) noexcept;
+		BasicSquare& operator=(BasicSquare&&) noexcept;
+	};
+
+	class HXG_DECLSPEC DebugQuad : public virtual BasicQuad
+	{
+	public:
+
+		DebugQuad(const int* vertecies, const Vec2<int>& pos = { 0, 0 }, Shader* shader = &line_shader);
+
+		DebugQuad() = default;
+
+		DebugQuad(DebugQuad&&) noexcept;
+		DebugQuad& operator=(DebugQuad&&) noexcept;
+	};
+
+	class HXG_DECLSPEC DebugRectangle : public virtual DebugQuad, public virtual BasicRectangle
+	{
+	public:
+
+		DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered = false, Shader* shader = &line_shader);
+
+		DebugRectangle() = default;
+
+		DebugRectangle(DebugRectangle&&) noexcept;
+		DebugRectangle& operator=(DebugRectangle&&) noexcept;
+	};
+
+	class HXG_DECLSPEC DebugSquare : public virtual DebugRectangle, public virtual BasicSquare
+	{
+	public:
+
+		DebugSquare(const Vec2<int>& pos, int size, bool centered = false, Shader* shader = &line_shader);
+
+		DebugSquare() = default;
+
+		DebugSquare(DebugSquare&&) noexcept;
+		DebugSquare& operator=(DebugSquare&&) noexcept;
 	};
 
 }

@@ -33,6 +33,23 @@ namespace Hexeng::EventManager
 		static ScrollEvent* get();
 	};
 
+	class HXG_DECLSPEC KeyPressEvent
+	{
+	private :
+
+		static std::vector<KeyPressEvent*> events;
+
+		static void key_callback(GLFWwindow* win, int key, int, int action, int);
+
+	public :
+
+		std::function<void(void)> action;
+		int key_code;
+		int mode;
+
+		KeyPressEvent(int key_code, std::function<void(void)> action, int mode = GLFW_PRESS);
+	};
+
 }
 
 #endif
