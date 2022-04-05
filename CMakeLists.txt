@@ -11,5 +11,7 @@ find_package(OpenGL REQUIRED)
 
 add_subdirectory(Hexeng2D)
 add_subdirectory(Sandbox)
+add_subdirectory(EmptyProject)
 
 add_dependencies(Sandbox Hexeng2D)
+add_dependencies(EmptyProject Hexeng2D)
