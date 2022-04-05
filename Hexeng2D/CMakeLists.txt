@@ -1,6 +1,23 @@
 file(GLOB_RECURSE HXG_SOURCES *.cpp *.c)
 file(GLOB_RECURSE HXG_HEADERS *.hpp *.h)
 
+if(WIN32)
+    add_compile_definitions(_GLFW_WIN32)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_init.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_monitor.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_window.c)
+elseif(UNIX)
+	add_compile_definitions(_GLFW_X11)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_init.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_joystick.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_monitor.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_thread.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_time.c)
+    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_window.c)
+else()
+	message( FATAL_ERROR "GLFW requires a windows or a unix-like system")
+endif()
+
 add_library(Hexeng2D SHARED ${HXG_SOURCES} ${HXG_HEADERS})
 
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
@@ -8,9 +25,3 @@ target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependenc
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glad/include)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/al-soft/include)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/stb/include)
-
-if (CMAKE_GENERATOR_PLATFORM MATCHES "Win32")
-	target_link_libraries(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/lib/Win32/glfw3.lib)
-else ()
-	target_link_libraries(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/lib/x64/glfw3.lib)
-endif()

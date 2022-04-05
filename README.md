@@ -31,15 +31,14 @@ You can rename EmptyProject and build your game in it or you can compile the eng
 
 <ins>**Notes :**</ins>
 
-- For the moment, Hexeng2D (officially) supports only Windows
 - The recommanded configuration is Visual Studio on Windows
-- The only tested configuration is :
+- Here are the tested configurations :
     - OS : Windows 10
     - Architecture : Win32, x64
     - IDE : Visual Studio 16 2019
     - Plateforms : Debug, Release
     - GPU : Nvidia GTX 1050, latest drivers
-    - Screen : 1920px * 1080px, 60hz
+    - Screen : FHD, 16:9, 60hz
 
 ***
 
