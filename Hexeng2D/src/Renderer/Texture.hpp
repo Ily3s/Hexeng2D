@@ -3,7 +3,7 @@
 
 #include "../Macros.hpp"
 #include "glad/glad.h"
-#include "stb/Image.h"
+#include "stb/stb_image.h"
 #include "../Vectors.hpp"
 #include <string>
 

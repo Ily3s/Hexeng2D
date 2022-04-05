@@ -10,14 +10,14 @@ Hexeng2D is (meant to be) an open source cross-plateform 2d game engine framewor
 
 <ins>**1. Clone the repository:**</ins>
 
-Open git bash and execute the command `cd *dest_folder*` with *dest_folder* being the path to the folder you want Hexeng2D in.
+Open git bash and execute the command `cd *dest_folder*` with \*dest_folder\* being the path to the folder you want Hexeng2D in.
 Then, execute the command `git clone https://github.com/Ily3s/Hexeng2D`
 
 <ins>**2. Use CMake:**</ins>
 
 Open a terminal that has the cmake command (for example, the vs terminal has cmake).
 Go the the *dest_folder* you have Hexeng2D in with `cd *dest_folder*`.
-Then use the command `cmake . -G "*IDE*"` with *IDE* being the IDE you are using.
+Then use the command `cmake . -G "*IDE*" -A *platform*` with \*IDE\* being the IDE you are using and \*platform\* being the platform/architecture you want to build your game on.
 
 <ins>**3. How to use :**</ins>
 
@@ -31,11 +31,11 @@ You can rename EmptyProject and build your game in it or you can compile the eng
 
 <ins>**Notes :**</ins>
 
-- For the moment, Hexeng2D only supports 32 bits architectures
+- For the moment, Hexeng2D (officially) supports only Windows
 - The recommanded configuration is Visual Studio on Windows
 - The only tested configuration is :
     - OS : Windows 10
-    - Architecture : Win32
+    - Architecture : Win32, x64
     - IDE : Visual Studio 16 2019
     - Plateforms : Debug, Release
     - GPU : Nvidia GTX 1050, latest drivers
