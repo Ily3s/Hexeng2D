@@ -10,14 +10,14 @@ Hexeng2D is (meant to be) an open source cross-plateform 2d game engine framewor
 
 <ins>**1. Clone the repository:**</ins>
 
-Open git bash and execute the command 'cd *dest_folder*' with *dest_folder* being the path to the folder you want Hexeng2D in.
-Then, execute the command 'git clone https://github.com/Ily3s/Hexeng2D'
+Open git bash and execute the command `cd *dest_folder*` with *dest_folder* being the path to the folder you want Hexeng2D in.
+Then, execute the command `git clone https://github.com/Ily3s/Hexeng2D`
 
 <ins>**2. Use CMake:**</ins>
 
 Open a terminal that has the cmake command (for example, the vs terminal has cmake).
-Go the the folder you have Hexeng2D in with 'cd'.
-Then use the command 'cmake . -G "*IDE*"' with *IDE* being the IDE you are using.
+Go the the *dest_folder* you have Hexeng2D in with `cd *dest_folder*`.
+Then use the command `cmake . -G "*IDE*"` with *IDE* being the IDE you are using.
 
 <ins>**3. How to use :**</ins>
 
@@ -47,4 +47,4 @@ You can rename EmptyProject and build your game in it or you can compile the eng
 
  **In short : Unfinished**
 
-For the moment, I don't recommand Hexeng2D to make a game, but keep an eye on it, eventually, it will get good.
+For the moment, I don't recommand Hexeng2D to make a game, but keep an eye on it, it will get good.
