@@ -2,6 +2,7 @@
 #include "../Macros.hpp"
 #include "Camera.hpp"
 #include "Renderer.hpp"
+#include "Uniform.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -123,6 +124,17 @@ namespace Hexeng::Renderer
 		}
 
 		return output;
+	}
+
+	void Shader::add_uniforms(const std::vector<UniformInterface*>& uniforms)
+	{
+		for (UniformInterface* ui : uniforms)
+			ui->add_shaders({ this });
+	}
+
+	void Shader::add_necessary_uniforms()
+	{
+		add_uniforms(UniformInterface::necessary_uniforms);
 	}
 
 }

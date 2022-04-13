@@ -25,8 +25,8 @@ int main()
 	Renderer::init();
 
 	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
-	Renderer::Camera::u_cam.add_shaders({ &custom_shader });
-	Renderer::Camera::u_zoom.add_shaders({ &custom_shader });
+	custom_shader.add_necessary_uniforms();
+
 	Color3 color{ 0.0f, 0.0f, 1.0f };
 	Renderer::Uniform<Color3> u_color = { "u_color", &color, {&custom_shader} };
 
@@ -35,9 +35,9 @@ int main()
 	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, 1, false };
 
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };
-	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example, true };
-	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example, true };
-	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example };
+	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example };
+	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example };
+	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example, false };
 
 	Player player{ {0, 0 }, 5.0f, &example };
 

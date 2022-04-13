@@ -1,14 +1,18 @@
 #ifndef SHADER_HPP
 #define SHADER_HPP
 
-#include "../Macros.hpp"
 #include <string>
+#include <vector>
+
+#include "../Macros.hpp"
 #include "glad/glad.h"
 #include "../Macros.hpp"
 #include "../Vectors.hpp"
 
 namespace Hexeng::Renderer
 {
+
+	class UniformInterface;
 
 	class HXG_DECLSPEC Shader
 	{
@@ -40,6 +44,9 @@ namespace Hexeng::Renderer
 		
 		void bind() const;
 		void unbind() const;
+
+		void add_uniforms(const std::vector<UniformInterface*>& uniforms);
+		void add_necessary_uniforms();
 		
 		int get_uniform(const char* uniform) const;
 		 

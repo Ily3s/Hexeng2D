@@ -17,6 +17,8 @@ namespace Hexeng::Physics
 
 		uint64_t m_last_tick = 0;
 
+		Renderer::Mesh* m_mesh = nullptr;
+
 	protected:
 
 		static std::vector<PhysicsVecs*> s_vecs;

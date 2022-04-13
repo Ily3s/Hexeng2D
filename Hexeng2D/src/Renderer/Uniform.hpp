@@ -20,12 +20,19 @@ namespace Hexeng::Renderer
 		std::unordered_map<Shader*, int> shader_list;
 		std::string uniform_name;
 
-		static std::vector<UniformInterface*> necessary_uniforms;
+		static HXG_DECLSPEC std::vector<UniformInterface*> necessary_uniforms;
 
 		virtual void refresh(Shader* shad, void* value) = 0;
 		virtual void refresh(Shader* shad) = 0;
 		virtual void refresh() = 0;
 		virtual void refresh(void* value) = 0;
+
+		void add_shaders(const std::vector<Shader*>& shad_list)
+		{
+			shader_list.reserve(shad_list.size());
+			for (Shader* shad : shad_list)
+				shader_list.insert({ shad, shad->get_uniform(uniform_name.c_str()) });
+		}
 	};
 
 	template <typename VEC>
@@ -41,8 +48,6 @@ namespace Hexeng::Renderer
 
 		Uniform(Uniform&&) noexcept;
 		Uniform& operator=(Uniform&&) noexcept;
-
-		void add_shaders(const std::vector<Shader*>& shad_list);
 
 		void refresh();
 		void refresh(Shader* shad) override;
@@ -86,14 +91,6 @@ namespace Hexeng::Renderer
 		if (it != uniform_list.end())
 			*it = this;
 		return *this;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::add_shaders(const std::vector<Shader*>& shad_list)
-	{
-		shader_list.reserve(shad_list.size());
-		for (Shader* shad : shad_list)
-			shader_list.insert({shad, shad->get_uniform(uniform_name.c_str())});
 	}
 
 	template <typename VEC>

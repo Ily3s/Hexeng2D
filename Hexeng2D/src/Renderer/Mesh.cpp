@@ -1,18 +1,22 @@
 #include "Mesh.hpp"
+#include "../Functions.hpp"
+#include "Renderer.hpp"
 
 namespace Hexeng::Renderer
 {
 
 	Mesh::Mesh() = default;
 
-	Mesh::Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
+	Mesh::Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
 		:	m_vb(vb, sizeof(vb)),
 			m_ib(ib),
 			m_texture(tex),
 			m_shader(shader),
-			m_type(type)
+			m_type(type),
+			position(pos)
 	{
 		m_vao.tie(m_vb, layout, *m_ib);
+		uniforms.push_back({ &u_transform, &transform });
 	}
 
 	Mesh::Mesh(Mesh&& moving) noexcept
@@ -22,7 +26,9 @@ namespace Hexeng::Renderer
 			m_shader(moving.m_shader),
 			m_ib(std::move(moving.m_ib)),
 			uniforms(std::move(moving.uniforms)),
-			m_type(moving.m_type) {}
+			m_type(moving.m_type),
+			position(moving.position),
+			transform(moving.transform) {}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -33,6 +39,8 @@ namespace Hexeng::Renderer
 		m_ib = std::move(moving.m_ib);
 		uniforms = std::move(moving.uniforms);
 		m_type = moving.m_type;
+		position = moving.position;
+		transform = moving.transform;
 
 		return *this;
 	}
@@ -40,6 +48,8 @@ namespace Hexeng::Renderer
 	void Mesh::draw()
 	{
 		m_shader->bind();
+
+		update_position();
 
 		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(m_shader, value);
@@ -55,6 +65,11 @@ namespace Hexeng::Renderer
 
 		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(m_shader);
+	}
+
+	void Mesh::update_position()
+	{
+		transform = toCoord(position);
 	}
 
 }

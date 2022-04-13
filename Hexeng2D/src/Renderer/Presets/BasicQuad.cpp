@@ -12,8 +12,7 @@ namespace Hexeng::Renderer::Presets
 	IndexBuffer BasicQuad::s_index_buffer;
 	IndexBuffer BasicQuad::s_edge_index_buffer;
 
-	BasicQuad::BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos, Shader* shader)
-		: position(pos)
+	BasicQuad::BasicQuad(const int* vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader)
 	{
 		float vertex_b[]
 		{
@@ -27,6 +26,8 @@ namespace Hexeng::Renderer::Presets
 		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
 		m_shader = shader;
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
+		position = pos;
+		uniforms.push_back({ &u_transform, &transform });
 	}
 
 	void BasicQuad::init()
@@ -52,15 +53,16 @@ namespace Hexeng::Renderer::Presets
 
 	BasicRectangle::BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)
 	{
+		Vec2<int> relative_pos = { 0, 0 };
 		if (centered)
-			pos -= (size / 2);
+			relative_pos -= (size / 2);
 
 		float vertex_b[]
 		{
-			toX(pos.x) ,			toY(pos.y) ,			0.0f, 0.0f,		// 0
-			toX(pos.x) ,			toY(pos.y + size.y) ,	0.0f, 1.0f,		// 1	
-			toX(pos.x + size.x) ,	toY(pos.y + size.y) ,	1.0f, 1.0f,		// 2	
-			toX(pos.x + size.x) ,	toY(pos.y) ,			1.0f, 0.0f		// 3
+			toX(relative_pos.x) ,			toY(relative_pos.y) ,			0.0f, 0.0f,		// 0
+			toX(relative_pos.x) ,			toY(relative_pos.y + size.y) ,	0.0f, 1.0f,		// 1	
+			toX(relative_pos.x + size.x) ,	toY(relative_pos.y + size.y) ,	1.0f, 1.0f,		// 2	
+			toX(relative_pos.x + size.x) ,	toY(relative_pos.y) ,			1.0f, 0.0f		// 3
 		};
 
 		m_texture = texture;
@@ -68,6 +70,8 @@ namespace Hexeng::Renderer::Presets
 		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
 		m_shader = shader;
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
+		position = pos;
+		uniforms.push_back({ &u_transform, &transform });
 	}
 
 	DebugRectangle::DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)
@@ -102,7 +106,7 @@ namespace Hexeng::Renderer::Presets
 	}
 
 	DebugQuad::DebugQuad(const int* vertecies, const Vec2<int>& pos, Shader* shader)
-		: BasicQuad(vertecies, nullptr, pos, shader)
+		: BasicQuad(vertecies, pos, nullptr, shader)
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
@@ -155,12 +159,11 @@ namespace Hexeng::Renderer::Presets
 		: BasicQuad(std::move(other)) {}
 
 	BasicQuad::BasicQuad(BasicQuad&& moving) noexcept
-		: Mesh(std::move(moving)), position(moving.position) {}
+		: Mesh(std::move(moving)) {}
 
 	BasicQuad& BasicQuad::operator=(BasicQuad&& moving) noexcept
 	{
 		Mesh::operator=(std::move(moving));
-		position = moving.position;
 		return *this;
 	}
 }

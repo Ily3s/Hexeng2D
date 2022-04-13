@@ -17,11 +17,9 @@ namespace Hexeng::Renderer::Presets
 
 	public:
 
-		Vec2<int> position{ 0, 0 };
-
 		static void init();
 
-		BasicQuad(const int* vertecies, Texture* texture, const Vec2<int>& pos = { 0, 0 }, Shader* shader = &basic_shader);
+		BasicQuad(const int* vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader = &basic_shader);
 
 		BasicQuad() = default;
 
@@ -38,8 +36,8 @@ namespace Hexeng::Renderer::Presets
 	{
 	public:
 
-		BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
-		BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, bool centerd = false, Shader* shader = &basic_shader);
+		BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
+		BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, bool centerd = true, Shader* shader = &basic_shader);
 
 		BasicRectangle() = default;
 		~BasicRectangle() = default;
@@ -52,8 +50,8 @@ namespace Hexeng::Renderer::Presets
 	{
 	public:
 
-		BasicSquare(const Vec2<int>& pos, int size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
-		BasicSquare(const Vec2<int>& pos, float size, Texture* texture, bool centered = false, Shader* shader = &basic_shader);
+		BasicSquare(const Vec2<int>& pos, int size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
+		BasicSquare(const Vec2<int>& pos, float size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
 
 		BasicSquare() = default;
 		~BasicSquare() = default;
@@ -66,7 +64,7 @@ namespace Hexeng::Renderer::Presets
 	{
 	public:
 
-		DebugQuad(const int* vertecies, const Vec2<int>& pos = { 0, 0 }, Shader* shader = &line_shader);
+		DebugQuad(const int* vertecies, const Vec2<int>& pos, Shader* shader = &line_shader);
 
 		DebugQuad() = default;
 
@@ -78,7 +76,7 @@ namespace Hexeng::Renderer::Presets
 	{
 	public:
 
-		DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered = false, Shader* shader = &line_shader);
+		DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered = true, Shader* shader = &line_shader);
 
 		DebugRectangle() = default;
 

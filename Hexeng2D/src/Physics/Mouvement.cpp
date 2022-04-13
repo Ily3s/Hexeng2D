@@ -13,11 +13,6 @@ namespace Hexeng::Physics
 		s_vecs.push_back(this);
 	}
 
-	void PhysicsVecs::link(Renderer::Mesh& mesh)
-	{
-		mesh.uniforms.push_back({ &Renderer::u_transform, &transform });
-	}
-
 	void PhysicsVecs::move(Vec2<int> offset)
 	{
 		position += offset;
@@ -33,7 +28,14 @@ namespace Hexeng::Physics
 	{
 		velocity += acceleration;
 		move({ (int)velocity.x, (int)velocity.y });
+		if (m_mesh)
+			m_mesh->position = position;
 		transform = toCoord(position);
+	}
+
+	void PhysicsVecs::link(Renderer::Mesh& mesh)
+	{
+		m_mesh = &mesh;
 	}
 
 	void PhysicsVecs::update_vecs()

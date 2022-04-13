@@ -29,7 +29,7 @@ namespace Hexeng::Renderer
 
 		Mesh();
 
-		Mesh(const float* vb, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
+		Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
 
 		Mesh(Mesh&& moving) noexcept;
 		Mesh& operator=(Mesh&& moving) noexcept;
@@ -40,6 +40,11 @@ namespace Hexeng::Renderer
 		inline const IndexBuffer* get_ib() const { return m_ib; }
 		inline Texture*& access_texture() { return m_texture; }
 		inline Shader*& access_shader() { return m_shader; }
+
+		Vec2<int> position{ 0, 0 };
+		Vec2<float> transform{ 0.0f, 0.0f };
+
+		void update_position();
 
 		virtual void draw();
 

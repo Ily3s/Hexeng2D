@@ -1,5 +1,5 @@
 file(GLOB_RECURSE SB_SOURCES src/*.cpp)
-file(GLOB_RECURSE SB_LIB_HEADERS src/*.hpp)
+file(GLOB_RECURSE SB_HEADERS src/*.hpp)
 
 add_executable(Sandbox ${SB_SOURCES} ${SB_HEADERS})
 
