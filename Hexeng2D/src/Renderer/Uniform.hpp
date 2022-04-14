@@ -115,6 +115,8 @@ namespace Hexeng::Renderer
 	void Uniform<VEC>::refresh(Shader* shad, void* value)
 	{
 		auto it = shader_list.find(shad);
+		if (it == shader_list.end())
+			return;
 		shad->bind();
 		shad->set_uniform(it->second, *(reinterpret_cast<VEC*>(value)));
 	}

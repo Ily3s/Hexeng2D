@@ -25,6 +25,7 @@ namespace Hexeng
 		HXG_DECLSPEC extern std::string window_name;
 		HXG_DECLSPEC extern bool fullscreen;
 		HXG_DECLSPEC extern Vec2<int> window_size;
+		HXG_DECLSPEC float get_ratio();
 
 	}
 

@@ -44,6 +44,8 @@ namespace Hexeng::Renderer
 		Vec2<int> position{ 0, 0 };
 		Vec2<float> transform{ 0.0f, 0.0f };
 
+		float rotation = 0;
+
 		void update_position();
 
 		virtual void draw();

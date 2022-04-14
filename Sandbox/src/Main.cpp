@@ -67,10 +67,13 @@ int main()
 
 	scene_id = 1;
 
-	EventManager::KeyEvent go_up{ 87, [&player]() {player.physics.move({0, 4}); } };
-	EventManager::KeyEvent go_left{ 65, [&player]() {player.physics.move({-4, 0}); } };
-	EventManager::KeyEvent go_down{ 83, [&player]() {player.physics.move({0, -4}); } };
-	EventManager::KeyEvent go_right{ 68, [&player]() {player.physics.move({4, 0}); } };
+	EventManager::KeyEvent go_up{ 87, [&player]() {player.physics.move({0, 4}); } };		// W
+	EventManager::KeyEvent go_left{ 65, [&player]() {player.physics.move({-4, 0}); } };		// A
+	EventManager::KeyEvent go_down{ 83, [&player]() {player.physics.move({0, -4}); } };		// S
+	EventManager::KeyEvent go_right{ 68, [&player]() {player.physics.move({4, 0}); } };		// D
+
+	EventManager::KeyEvent rotate_left{ 81, [&player]() {player.mesh.rotation -= 1.0f; } };	// Q
+	EventManager::KeyEvent rotate_right{ 69, [&player]() {player.mesh.rotation += 1.0f; } };// E
 
 	EventManager::ScrollEvent::get()->callback = [](double amount) {Renderer::Camera::position.z += amount * 10; Renderer::Camera::refresh_pos(); };
 

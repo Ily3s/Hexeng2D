@@ -17,6 +17,7 @@ namespace Hexeng::Renderer
 	{
 		m_vao.tie(m_vb, layout, *m_ib);
 		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
 	}
 
 	Mesh::Mesh(Mesh&& moving) noexcept
@@ -28,7 +29,8 @@ namespace Hexeng::Renderer
 			uniforms(std::move(moving.uniforms)),
 			m_type(moving.m_type),
 			position(moving.position),
-			transform(moving.transform) {}
+			transform(moving.transform),
+			rotation(moving.rotation) {}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -41,6 +43,7 @@ namespace Hexeng::Renderer
 		m_type = moving.m_type;
 		position = moving.position;
 		transform = moving.transform;
+		rotation = moving.rotation;
 
 		return *this;
 	}

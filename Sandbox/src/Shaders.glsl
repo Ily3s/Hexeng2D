@@ -5,7 +5,7 @@
 
 const char custom_fs[] = SHADER(
 
-	\n#version 330 core\n
+	\n#version 460 core\n
 
 	in vec2 v_text_coord;
 	out vec4 color;

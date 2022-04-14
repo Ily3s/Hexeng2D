@@ -6,9 +6,10 @@
 namespace Hexeng::Renderer::Presets
 {
 
-	const char basic_vs[] = SHADER(
+	const char basic_vs[] = SHADER
+	(
 
-		\n#version 330 core\n
+		\n#version 460 core\n
 
 		layout(location = 0) in vec4 position;
 		layout(location = 1) in vec2 text_coord;
@@ -17,18 +18,28 @@ namespace Hexeng::Renderer::Presets
 		uniform vec2 u_cam;
 		uniform float u_zoom;
 		uniform vec2 u_transform;
+		uniform float u_rotation_angle;
+		uniform ivec2 u_window_size;
+
+		float to_radian(float degree)
+		{
+			return degree * 3.1415926538 / 180;
+		}
 
 		void main()
 		{
-			gl_Position = vec4((position.xy - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
+			float angle = to_radian(u_rotation_angle);
+			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
+			gl_Position = vec4((pos - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
 			v_text_coord = text_coord;
 		}
 
 	);
 
-	const char basic_fs[] = SHADER(
+	const char basic_fs[] = SHADER
+	(
 
-		\n#version 330 core\n
+		\n#version 460 core\n
 
 		in vec2 v_text_coord;
 		out vec4 color;
@@ -42,9 +53,10 @@ namespace Hexeng::Renderer::Presets
 
 	);
 
-	const char line_fs[] = SHADER(
+	const char line_fs[] = SHADER
+	(
 
-		\n#version 330 core\n
+		\n#version 460 core\n
 
 		in vec2 v_text_coord;
 		out vec4 color;

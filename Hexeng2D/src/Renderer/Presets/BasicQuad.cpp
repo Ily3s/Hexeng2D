@@ -28,6 +28,7 @@ namespace Hexeng::Renderer::Presets
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
 		position = pos;
 		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
 	}
 
 	void BasicQuad::init()
@@ -72,6 +73,7 @@ namespace Hexeng::Renderer::Presets
 		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
 		position = pos;
 		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
 	}
 
 	DebugRectangle::DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)
