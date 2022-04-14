@@ -1,7 +1,7 @@
 #include <cmath>
 
 #include "Camera.hpp"
-#include "../Functions.hpp"
+#include "../Hexeng.hpp"
 
 #define PI 3.14159265359
 

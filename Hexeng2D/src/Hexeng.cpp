@@ -1,5 +1,6 @@
 #include "Hexeng.hpp"
 #include "Renderer/Renderer.hpp"
+#include "Color.hpp"
 
 namespace Hexeng
 {

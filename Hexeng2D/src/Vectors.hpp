@@ -11,6 +11,9 @@ namespace Hexeng
 	{
 		T x, y;
 
+		Vec2() = default;
+		Vec2(T x, T y) : x(x), y(y) {}
+
 		Vec2 operator+(const Vec2& other) const
 		{
 			return { x + other.x, y + other.y };
@@ -122,6 +125,9 @@ namespace Hexeng
 	struct Vec3
 	{
 		T x, y, z;
+
+		Vec3() = default;
+		Vec3(T x, T y, T z) : x(x), y(y), z(z) {}
 
 		Vec3 operator+(const Vec3& other) const
 		{
@@ -242,6 +248,9 @@ namespace Hexeng
 	struct Vec4
 	{
 		T x, y, z, w;
+
+		Vec4() = default;
+		Vec4(T x, T y, T z, T w) : x(x), y(y), z(z), w(w) {}
 
 		Vec4 operator+(const Vec4& other) const
 		{

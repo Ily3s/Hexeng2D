@@ -1,6 +1,6 @@
 #include "Mesh.hpp"
-#include "../Functions.hpp"
 #include "Renderer.hpp"
+#include "../Hexeng.hpp"
 
 namespace Hexeng::Renderer
 {

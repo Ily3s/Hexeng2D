@@ -9,9 +9,6 @@ namespace Hexeng::Physics
 	std::unordered_map <int, Renderer::ContextualLayer> HitBox::visuallisers_layers;
 	bool HitBox::m_enable_visuallisers = false;
 
-	Color3 green{ 0.0f, 1.0f, 0.0f };
-	Color3 blue{ 0.0f, 0.0f, 1.0f };
-
 	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, int scene, bool enable_collision)
 		: m_rectangles(rectangles), m_solidity(solidity)
 	{
@@ -22,9 +19,9 @@ namespace Hexeng::Physics
 		{
 			visuallisers.emplace_back(rec.min + rec.size/2, rec.size);
 			if (enable_collision)
-				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &green });
+				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &Color3::green });
 			else
-				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &blue });
+				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &Color3::blue });
 			visuallisers_layers[scene].meshes.push_back(&visuallisers.back());
 		}
 

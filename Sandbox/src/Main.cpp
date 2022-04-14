@@ -18,6 +18,7 @@
 
 int main()
 {
+	
 	using namespace Hexeng;
 
 	Settings::window_name = "Sandbox";
@@ -46,19 +47,19 @@ int main()
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
 			 if (from == Physics::From::BOT)
-				 color = { 1.0f, 0.0f, 0.0f };
+				 color = Color3::red;
 			 else if (from == Physics::From::TOP)
-				 color = { 0.0f, 1.0f, 0.0f };
+				 color = Color3::green;
 			 else if (from == Physics::From::LEFT)
-				 color = { 0.0f, 0.0f, 1.0f };
+				 color = Color3::blue;
 			 else if (from == Physics::From::RIGHT)
-				 color = { 1.0f, 1.0f, 0.0f };
+				 color = Color3::yellow;
 		 }
 	}};
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&color]() {color = { 1.0f, 1.0f, 1.0f }; } };
+		[&color]() {color = Color3::white; } };
 
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };

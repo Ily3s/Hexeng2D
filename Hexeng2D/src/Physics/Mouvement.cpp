@@ -1,6 +1,6 @@
 #include "Mouvement.hpp"
-#include "../Functions.hpp"
 #include "../Renderer/Renderer.hpp"
+#include "../Hexeng.hpp"
 
 namespace Hexeng::Physics
 {
