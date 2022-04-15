@@ -24,7 +24,6 @@ namespace Hexeng::Renderer
 		static Uniform<Vec2<float>> u_cam;
 		static Uniform<float> u_zoom;
 
-		static void init();
 		static void update_zoom(int distance);
 		static void refresh_pos();
 	};

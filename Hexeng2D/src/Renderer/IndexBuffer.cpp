@@ -5,6 +5,7 @@
 #include "IndexBuffer.hpp"
 #include "../Macros.hpp"
 #include "VertexLayout.hpp"
+#include "Renderer.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -18,6 +19,8 @@ namespace Hexeng::Renderer
 		HXG_GL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id));
 		HXG_GL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof_type(type), data, GL_STATIC_DRAW));
 		HXG_GL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0));
+
+		ToBeDelete(this, [this]() { this->~IndexBuffer(); });
 	}
 
 	IndexBuffer::~IndexBuffer()
@@ -43,7 +46,10 @@ namespace Hexeng::Renderer
 		: m_id(other.m_id), m_count(other.m_count), m_type(other.m_type)
 	{
 		other.m_id = 0;
+		ToBeDelete(this, [this]() { this->~IndexBuffer(); });
+		ToBeDelete::remove(&other);
 	}
+
 	IndexBuffer& IndexBuffer::operator=(IndexBuffer&& other) noexcept
 	{
 		if (m_id)
@@ -52,6 +58,10 @@ namespace Hexeng::Renderer
 		m_count = other.m_count;
 		m_type = other.m_type;
 		other.m_id = 0;
+
+		ToBeDelete::remove(&other);
+		ToBeDelete(this, [this]() { this->~IndexBuffer(); });
+
 		return *this;
 	}
 

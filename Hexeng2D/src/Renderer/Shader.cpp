@@ -64,6 +64,8 @@ namespace Hexeng::Renderer
 	{
 		if (unsigned int missing = missing_uniforms())
 			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+
+		ToBeDelete(this, [this]() { this->~Shader(); });
 	}
 
 	Shader::Shader(const std::string& vs, const std::string& fs)
@@ -71,6 +73,8 @@ namespace Hexeng::Renderer
 	{
 		if (unsigned int missing = missing_uniforms())
 			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+
+		ToBeDelete(this, [this]() { this->~Shader(); });
 	}
 
 	void Shader::bind() const
@@ -102,12 +106,18 @@ namespace Hexeng::Renderer
 		: m_id(other.m_id)
 	{
 		other.m_id = 0;
+		ToBeDelete(this, [this]() { this->~Shader(); });
+		ToBeDelete::remove(&other);
 	}
 
 	Shader& Shader::operator=(Shader&& other) noexcept
 	{
 		m_id = other.m_id;
 		other.m_id = 0;
+
+		ToBeDelete(this, [this]() { this->~Shader(); });
+		ToBeDelete::remove(&other);
+
 		return *this;
 	}
 

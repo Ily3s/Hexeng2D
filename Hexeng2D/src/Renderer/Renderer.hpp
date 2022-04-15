@@ -40,6 +40,32 @@ namespace Hexeng::Renderer
 
 	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
 
+	class HXG_DECLSPEC ToBeInit
+	{
+	private:
+
+		friend void init();
+		static bool start_init;
+
+	public:
+
+		ToBeInit(std::function<void(void)> init_object, int order = 0);
+	};
+
+	class HXG_DECLSPEC ToBeDelete
+	{
+	private:
+
+		friend void stop();
+		static std::unordered_map<void*, std::function<void(void)>> objects;
+
+	public:
+
+		ToBeDelete(void* obj_ptr, std::function<void(void)> delete_function);
+
+		static void remove(void* obj_ptr);
+	};
+
 }
 
 #endif // !RENDERER_HPP

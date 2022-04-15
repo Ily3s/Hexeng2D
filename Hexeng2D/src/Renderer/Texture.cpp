@@ -23,13 +23,15 @@ namespace Hexeng::Renderer
 
 		if (local_buffer)
 			stbi_image_free(local_buffer);
+
+		ToBeDelete(this, [this]() { this->~Texture(); });
 	}
 
 	Texture::~Texture()
 	{
 		if (m_id)
 		{
-			HXG_GL(glDeleteTextures(1, &m_id));
+			glDeleteTextures(1, &m_id);
 			m_id = 0;
 		}
 	}
@@ -39,6 +41,8 @@ namespace Hexeng::Renderer
 		m_mag_filter(other.m_mag_filter), m_min_filter(other.m_min_filter), m_id(other.m_id)
 	{
 		other.m_id = 0;
+		ToBeDelete(this, [this]() { this->~Texture(); });
+		ToBeDelete::remove(&other);
 	}
 
 	Texture& Texture::operator=(Texture&& other) noexcept
@@ -51,6 +55,10 @@ namespace Hexeng::Renderer
 		m_min_filter = other.m_min_filter;
 		m_width = other.m_width;
 		other.m_id = 0;
+
+		ToBeDelete::remove(&other);
+		ToBeDelete(this, [this]() { this->~Texture(); });
+
 		return *this;
 	}
 

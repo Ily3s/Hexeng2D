@@ -2,6 +2,7 @@
 
 #include "Camera.hpp"
 #include "../Hexeng.hpp"
+#include "Renderer.hpp"
 
 #define PI 3.14159265359
 
@@ -16,13 +17,13 @@ namespace Hexeng::Renderer
 	Uniform<Vec2<float>> Camera::u_cam;
 	Uniform<float> Camera::u_zoom;
 
-	void Camera::init()
-	{
-		u_cam = { "u_cam", &shader_pos, {} };
-		u_zoom = { "u_zoom",&zoom, {} };
-		UniformInterface::necessary_uniforms.push_back(&u_cam);
-		UniformInterface::necessary_uniforms.push_back(&u_zoom);
-	}
+	ToBeInit init_cam
+	{ []() {
+		Camera::u_cam = { "u_cam", &Camera::shader_pos, {} };
+		Camera::u_zoom = { "u_zoom",&Camera::zoom, {} };
+		UniformInterface::necessary_uniforms.push_back(&Camera::u_cam);
+		UniformInterface::necessary_uniforms.push_back(&Camera::u_zoom);
+	} };
 
 	void Camera::update_zoom(int distance)
 	{

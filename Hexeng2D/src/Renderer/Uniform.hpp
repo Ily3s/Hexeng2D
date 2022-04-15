@@ -1,11 +1,13 @@
 #ifndef UNIFORM_HPP
 #define UNIFORM_HPP
 
-#include "../Vectors.hpp"
-#include "Shader.hpp"
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <cassert>
+
+#include "../Vectors.hpp"
+#include "Shader.hpp"
 #include "Macros.hpp"
 
 namespace Hexeng::Renderer
@@ -107,6 +109,7 @@ namespace Hexeng::Renderer
 	void Uniform<VEC>::refresh(Shader* shad)
 	{
 		auto it = shader_list.find(shad);
+		assert(it != shader_list.end());
 		shad->bind();
 		shad->set_uniform(it->second, *value_ptr);
 	}
@@ -115,8 +118,7 @@ namespace Hexeng::Renderer
 	void Uniform<VEC>::refresh(Shader* shad, void* value)
 	{
 		auto it = shader_list.find(shad);
-		if (it == shader_list.end())
-			return;
+		assert(it != shader_list.end());
 		shad->bind();
 		shad->set_uniform(it->second, *(reinterpret_cast<VEC*>(value)));
 	}

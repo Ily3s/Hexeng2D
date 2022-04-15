@@ -48,6 +48,7 @@ namespace Hexeng::Renderer
 
 	};
 
+	// global_layers incoming
 	HXG_DECLSPEC extern std::vector<Layer*> layers;
 	HXG_DECLSPEC extern std::vector<ContextualLayer*> contextual_layers;
 

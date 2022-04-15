@@ -16,7 +16,6 @@ namespace Hexeng::Renderer::Presets
 	HXG_DECLSPEC extern Color3 color;
 	HXG_DECLSPEC extern VertexLayout basic_vertex_layout;
 
-	HXG_DECLSPEC void init();
 	HXG_DECLSPEC void stop();
 
 }

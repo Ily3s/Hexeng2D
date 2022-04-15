@@ -1,3 +1,5 @@
+#include <algorithm>
+
 #include "Renderer.hpp"
 #include "../Macros.hpp"
 #include "GLFW/glfw3.h"
@@ -5,9 +7,9 @@
 #include "Presets/Basic.shader"
 #include "Uniform.hpp"
 #include "Scene.hpp"
-#include "Presets/InitPresets.hpp"
 #include "Camera.hpp"
 #include "../Hexeng.hpp"
+#include "Presets/Presets.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -56,16 +58,36 @@ namespace Hexeng::Renderer
 
 		HXG_GL(glLineWidth(2.0f));
 
-		u_transform = { "u_transform", &transform, {} };
-		u_rotation_angle = { "u_rotation_angle", &rotation_angle, {} };
-		u_window_size = { "u_window_size", &Settings::window_size, {} };
+		ToBeInit::start_init = true;
+		ToBeInit([]() {});
+	}
 
-		UniformInterface::necessary_uniforms.push_back(&u_transform);
-		UniformInterface::necessary_uniforms.push_back(&u_window_size);
-		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);
+	bool ToBeInit::start_init = false;
 
-		Camera::init();
-		Presets::init();
+	ToBeInit::ToBeInit(std::function<void(void)> init_object, int order)
+	{
+		using TBIO = std::pair<std::function<void(void)>, int>;
+		static std::vector<TBIO> objects;
+		objects.emplace_back(init_object, order);
+
+		if (start_init)
+		{
+			std::sort(objects.begin(), objects.end(), [](const TBIO& obj1, const TBIO& obj2) {return obj1.second < obj2.second; });
+			for (auto& [init_function, order] : objects)
+				init_function();
+		}
+	}
+
+	std::unordered_map<void*, std::function<void(void)>> ToBeDelete::objects;
+
+	ToBeDelete::ToBeDelete(void* obj_ptr, std::function<void(void)> delete_function)
+	{
+		objects.insert({ obj_ptr, delete_function });
+	}
+
+	void ToBeDelete::remove(void* obj_ptr)
+	{
+		objects.erase(obj_ptr);
 	}
 
 	std::vector<UniformInterface*> uniform_list;
@@ -78,43 +100,8 @@ namespace Hexeng::Renderer
 
 	void stop()
 	{
-		for (Layer*& layer : layers)
-		{
-			for (const auto& mesh : layer->meshes)
-			{
-				mesh->~Mesh();
-				if (mesh->get_texture())
-					mesh->get_texture()->~Texture();
-				mesh->access_shader()->~Shader();
-			}
-		}
-
-		for (ContextualLayer*& layer : contextual_layers)
-		{
-			for (const auto& mesh : layer->meshes)
-			{
-				mesh->~Mesh();
-				if (mesh->get_texture())
-					mesh->get_texture()->~Texture();
-				mesh->access_shader()->~Shader();
-			}
-		}
-
-		for (auto& [id, scene] : scenes)
-		{
-			for (ContextualLayer*& layer : scene->contextual_layers)
-			{
-				for (const auto& mesh : layer->meshes)
-				{
-					mesh->~Mesh();
-					if (mesh->get_texture())
-						mesh->get_texture()->~Texture();
-					mesh->access_shader()->~Shader();
-				}
-			}
-		}
-
-		Presets::stop();
+		for (auto& [ptr, delete_function] : ToBeDelete::objects)
+			delete_function();
 
 		glfwTerminate();
 	}
@@ -185,6 +172,16 @@ namespace Hexeng::Renderer
 	Uniform<Vec2<float>> u_transform;
 	Uniform<float> u_rotation_angle;
 	Uniform<Vec2<int>> u_window_size;
+
+	ToBeInit init_uniforms
+	{ []() {
+		u_transform = { "u_transform", &transform, {} };
+		u_rotation_angle = { "u_rotation_angle", &rotation_angle, {} };
+		u_window_size = { "u_window_size", &Settings::window_size, {} };
+		UniformInterface::necessary_uniforms.push_back(&u_transform);
+		UniformInterface::necessary_uniforms.push_back(&u_window_size);
+		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);
+	} };
 
 	Vec2<float> transform;
 	float rotation_angle = 0;

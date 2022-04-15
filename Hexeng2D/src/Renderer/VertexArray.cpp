@@ -1,5 +1,6 @@
 #include "VertexArray.hpp"
 #include "../Macros.hpp"
+#include "Renderer.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -7,6 +8,7 @@ namespace Hexeng::Renderer
 	VertexArray::VertexArray()
 	{
 		HXG_GL(glGenVertexArrays(1, &m_id));
+		ToBeDelete(this, [this]() { this->~VertexArray(); });
 	}
 
 	VertexArray::~VertexArray()
@@ -73,6 +75,8 @@ namespace Hexeng::Renderer
 		: m_id(va.m_id)
 	{
 		va.m_id = 0;
+		ToBeDelete(this, [this]() { this->~VertexArray(); });
+		ToBeDelete::remove(&va);
 	}
 
 	VertexArray& VertexArray::operator=(VertexArray&& va) noexcept
@@ -81,6 +85,10 @@ namespace Hexeng::Renderer
 			HXG_GL(glDeleteBuffers(1, &m_id));
 		m_id = va.m_id;
 		va.m_id = 0;
+
+		ToBeDelete::remove(&va);
+		ToBeDelete(this, [this]() { this->~VertexArray(); });
+
 		return *this;
 	}
 
