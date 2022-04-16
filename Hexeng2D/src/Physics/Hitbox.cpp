@@ -1,20 +1,17 @@
 #include "Hibox.hpp"
 #include "Hexeng.hpp"
-#include "Renderer/Scene.hpp"
+#include "Scene.hpp"
 
 namespace Hexeng::Physics
 {
 	std::unordered_map<int, std::vector<HitBox*>> HitBox::s_colliders;
 
 	std::unordered_map <int, Renderer::ContextualLayer> HitBox::visuallisers_layers;
-	bool HitBox::m_enable_visuallisers = false;
+	bool HitBox::enable_visuallisers = false;
 
-	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, int scene, bool enable_collision)
-		: m_rectangles(rectangles), m_solidity(solidity)
+	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision)
+		: m_rectangles(rectangles), m_solidity(solidity), enable_collision(enable_collision)
 	{
-		if (enable_collision)
-			s_colliders[scene].push_back(this);
-
 		for (const auto& rec : rectangles)
 		{
 			visuallisers.emplace_back(rec.min + rec.size/2, rec.size);
@@ -22,14 +19,11 @@ namespace Hexeng::Physics
 				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &Color3::green });
 			else
 				visuallisers.back().uniforms.push_back({ &Renderer::Presets::u_color, &Color3::blue });
-			visuallisers_layers[scene].meshes.push_back(&visuallisers.back());
 		}
-
-		visuallisers_layers[scene].context = &m_enable_visuallisers;
 	}
 
 	HitBox::HitBox(HitBox&& other) noexcept
-		: m_rectangles(std::move(other.m_rectangles)), m_solidity(other.m_solidity), visuallisers(std::move(other.visuallisers))
+		: m_rectangles(std::move(other.m_rectangles)), m_solidity(other.m_solidity), visuallisers(std::move(other.visuallisers)), enable_collision(other.enable_collision)
 	{
 		for (auto& [i, vec] : s_colliders)
 		{
@@ -44,6 +38,7 @@ namespace Hexeng::Physics
 		m_rectangles = std::move(other.m_rectangles);
 		m_solidity = other.m_solidity;
 		visuallisers = std::move(other.visuallisers);
+		enable_collision = other.enable_collision;
 
 		for (auto& [i, vec] : s_colliders)
 		{
@@ -60,28 +55,6 @@ namespace Hexeng::Physics
 		}
 
 		return *this;
-	}
-
-	void HitBox::enable_visuallisers()
-	{
-		static bool is_init = false;
-		if (!is_init)
-		{
-			for (auto& [scene, cl] : visuallisers_layers)
-				Renderer::scenes[scene]->contextual_layers.push_back(&cl);
-			is_init = true;
-		}
-		m_enable_visuallisers = true;
-	}
-
-	bool HitBox::are_visuallisers_enabled()
-	{
-		return m_enable_visuallisers;
-	}
-
-	void HitBox::disable_visuallisers()
-	{
-		m_enable_visuallisers = false;
 	}
 
 	void HitBox::load_collisions()

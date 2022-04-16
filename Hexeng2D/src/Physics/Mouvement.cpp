@@ -1,17 +1,12 @@
 #include "Mouvement.hpp"
 #include "../Renderer/Renderer.hpp"
 #include "../Hexeng.hpp"
+#include "../Scene.hpp"
 
 namespace Hexeng::Physics
 {
-	std::vector<PhysicsVecs*> PhysicsVecs::s_vecs;
 
 	Vec2<float> PhysicsVecs::acceleration{ 0.0f, 0.0f };
-
-	PhysicsVecs::PhysicsVecs()
-	{
-		s_vecs.push_back(this);
-	}
 
 	void PhysicsVecs::move(Vec2<int> offset)
 	{
@@ -40,7 +35,7 @@ namespace Hexeng::Physics
 
 	void PhysicsVecs::update_vecs()
 	{
-		for (PhysicsVecs* vec : s_vecs)
+		for (PhysicsVecs* vec : scenes[scene_id]->physics_vecs)
 			vec->update();
 	}
 

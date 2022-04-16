@@ -10,6 +10,11 @@
 #include "../Renderer/Layer.hpp"
 #include "../Renderer/Presets/BasicQuad.hpp"
 
+namespace Hexeng
+{
+	class Scene;
+}
+
 namespace Hexeng::Physics
 {
 	struct HXG_DECLSPEC RectangleHitBox
@@ -34,18 +39,20 @@ namespace Hexeng::Physics
 	{
 	protected:
 
+		friend class Scene;
+
 		std::vector<RectangleHitBox> m_rectangles;
 		int m_solidity;
+		bool enable_collision;
 
 		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
 
 		static std::unordered_map <int, Renderer::ContextualLayer> visuallisers_layers;
-		std::vector<Renderer::Presets::DebugRectangle> visuallisers{};
-		static bool m_enable_visuallisers;
+		std::vector<Renderer::Presets::DebugRectangle> visuallisers;
 
 	public:
 
-		HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, int scene, bool enable_collision = true);
+		HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision = true);
 
 		HitBox(const HitBox&) = delete;
 		HitBox& operator=(const HitBox&) = delete;
@@ -67,9 +74,7 @@ namespace Hexeng::Physics
 		virtual void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) {};
 
 		static void set_visuallisers_z(int z_pos);
-		static void enable_visuallisers();
-		static void disable_visuallisers();
-		static bool are_visuallisers_enabled();
+		static bool enable_visuallisers;
 	};
 }
 

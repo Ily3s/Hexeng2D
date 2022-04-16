@@ -4,8 +4,8 @@
 
 namespace Hexeng::Physics
 {
-	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity, int scene)
-		: HitBox(rectangles, true, solidity, scene)
+	PhysicsEntity::PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity)
+		: HitBox(rectangles, solidity, true), PhysicsVecs()
 	{
 		s_entities.push_back(this);
 

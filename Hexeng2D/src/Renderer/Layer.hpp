@@ -4,10 +4,18 @@
 #include "../Macros.hpp"
 #include "Shader.hpp"
 #include "Mesh.hpp"
+#include "Hexeng.hpp"
+
 #include <vector>
 
 namespace Hexeng::Renderer
 {
+
+	enum class Position
+	{
+		ABSOLUTE,
+		RELATIVE
+	};
 
 	class HXG_DECLSPEC Layer
 	{
@@ -15,9 +23,11 @@ namespace Hexeng::Renderer
 	public:
 
 		std::vector<Mesh*> meshes;
-		float z_position = 1.0f;
+		int z_position = 1;
+		Range range = Range::LOCAL;
+		Position position_mode = Position::RELATIVE;
 
-		Layer(const std::vector<Mesh*>& mesh_vector, float z_pos = 1.0f, bool is_abs = false);
+		Layer(const std::vector<Mesh*>& mesh_vector, int z_pos, Position pos = Position::RELATIVE, Range range = Range::LOCAL);
 		 
 		Layer& operator=(const Layer&) = delete;
 		Layer(const Layer&) = delete;
@@ -25,7 +35,7 @@ namespace Hexeng::Renderer
 		Layer& operator=(Layer&&) noexcept;
 		Layer(Layer&&) noexcept;
 		
-		Layer();
+		Layer() = default;
 		
 		virtual void unload();
 		virtual void load();
@@ -41,16 +51,15 @@ namespace Hexeng::Renderer
 		bool* context = nullptr;
 
 		ContextualLayer() = default;
-		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, float z_pos = 1.0f, bool is_abs = true, bool is_global = true);
+		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, int z_pos = 1, Position pos = Position::ABSOLUTE, Range range = Range::GLOBAL);
 
 		ContextualLayer& operator=(ContextualLayer&&) noexcept;
 		ContextualLayer(ContextualLayer&&) noexcept;
 
 	};
 
-	// global_layers incoming
-	HXG_DECLSPEC extern std::vector<Layer*> layers;
-	HXG_DECLSPEC extern std::vector<ContextualLayer*> contextual_layers;
+	HXG_DECLSPEC extern std::vector<Layer*> global_layers;
+	HXG_DECLSPEC extern std::vector<ContextualLayer*> global_contextual_layers;
 
 }
 

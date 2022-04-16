@@ -5,7 +5,7 @@
 #include "Renderer/Renderer.hpp"
 #include "Renderer/Presets/BasicQuad.hpp"
 #include "Renderer/Layer.hpp"
-#include "Renderer/Scene.hpp"
+#include "Scene.hpp"
 #include "Renderer/Camera.hpp"
 #include "EventManager/EventManager.hpp"
 #include "EventManager/InputEvent.hpp"
@@ -33,7 +33,7 @@ int main()
 
 	Renderer::Texture frame_tex{ "res/frame.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
-	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, 1, false };
+	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
 
 	Renderer::Texture example{ "res/example.png", GL_NEAREST };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example };
@@ -55,16 +55,24 @@ int main()
 			 else if (from == Physics::From::RIGHT)
 				 color = Color3::yellow;
 		 }
-	}};
+	}, Range::LOCAL };
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&color]() {color = Color3::white; } };
+		[&color]() {color = Color3::white; }, Range::LOCAL };
 
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
-	Renderer::Scene first_scene{ 1, { &fore_ground , &back_ground1, &back_ground2 } };
+
+	Physics::HitBox hb = Physics::HitBox({ {{2000, -250}, {2500, 250}} }, 10);
+
+	Scene first_scene{ 1, {
+		{ SceneComponent::LAYERS, { &fore_ground , &back_ground1, &back_ground2 } },
+		{ SceneComponent::EVENTS, { &in_frame, &not_in_frame } },
+		{ SceneComponent::HITBOXES, { &hb, &frame_hb } },
+		{ SceneComponent::PHYS_ENTITIES, { &player.physics } }
+	} };
 
 	scene_id = 1;
 
@@ -78,21 +86,13 @@ int main()
 
 	EventManager::ScrollEvent::get()->callback = [](double amount) {Renderer::Camera::position.z += amount * 10; Renderer::Camera::refresh_pos(); };
 
-	Physics::HitBox hb = Physics::HitBox({ {{2000, -250}, {2500, 250}} }, 10, 1);
-
 	Physics::HitBox::set_visuallisers_z(750);
 
-	EventManager::KeyPressEvent debug_mode{ 256,[]()
-		{if (Physics::HitBox::are_visuallisers_enabled()) { Physics::HitBox::disable_visuallisers(); }
-		else { Physics::HitBox::enable_visuallisers(); } } };
+	EventManager::KeyPressEvent debug_mode{ 256,[]() { Physics::HitBox::enable_visuallisers = !Physics::HitBox::enable_visuallisers; } }; // ESCAPE
 
 	EventManager::start_looping();
 
-	Hexeng::game_loop([]()
-		{
-			using namespace std::literals::chrono_literals;
-			std::this_thread::sleep_for(16ms);
-		});
+	Hexeng::game_loop();
 
 	EventManager::stop_looping();
 

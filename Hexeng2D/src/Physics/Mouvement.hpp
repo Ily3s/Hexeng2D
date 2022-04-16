@@ -19,10 +19,6 @@ namespace Hexeng::Physics
 
 		Renderer::Mesh* m_mesh = nullptr;
 
-	protected:
-
-		static std::vector<PhysicsVecs*> s_vecs;
-
 	public:
 
 		Vec2<float> transform{ 0.0f, 0.0f };
@@ -33,8 +29,6 @@ namespace Hexeng::Physics
 		void move(Vec2<int> offset);
 
 		static Vec2<float> acceleration;
-
-		PhysicsVecs();
 
 		void link(Renderer::Mesh& mesh);
 

@@ -10,14 +10,14 @@ namespace Hexeng::EventManager
 	{
 	public:
 
-		KeyEvent(int key_code, std::function<void(void)> action, unsigned int pertick = 1);
+		KeyEvent(int key_code, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
 	};
 
 	class HXG_DECLSPEC MouseButtonEvent : public Event
 	{
 	public:
 
-		MouseButtonEvent(int button_code, std::function<void(void)> action, unsigned int pertick = 1);
+		MouseButtonEvent(int button_code, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
 	};
 
 	class HXG_DECLSPEC ScrollEvent

@@ -27,7 +27,7 @@ namespace Hexeng::Renderer
 
 	HXG_DECLSPEC extern void draw(const Layer& layer);
 
-	HXG_DECLSPEC extern void draw_scene(unsigned int scene_parameter);
+	HXG_DECLSPEC extern void draw_scene(int scene_parameter);
 
 	HXG_DECLSPEC extern void draw_current_scene();
 
@@ -65,6 +65,8 @@ namespace Hexeng::Renderer
 
 		static void remove(void* obj_ptr);
 	};
+
+	HXG_DECLSPEC extern std::vector<std::function<void(void)>> pending_actions;
 
 }
 

@@ -1,5 +1,5 @@
-#ifndef INIT_PRESETS_HPP
-#define INIT_PRESETS_HPP
+#ifndef PRESETS_HPP
+#define PRESETS_HPP
 
 #include "../../Macros.hpp"
 #include "../Shader.hpp"
@@ -20,4 +20,4 @@ namespace Hexeng::Renderer::Presets
 
 }
 
-#endif // !INIT_PRESETS_HPP
+#endif // !PRESETS_HPP

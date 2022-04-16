@@ -1,30 +1,32 @@
 #include <chrono>
 
-#include "GLFW/glfw3.h"
-
-#include "../Hexeng.hpp"
 #include "EventManager.hpp"
-#include "InputEvent.hpp"
+#include "../Scene.hpp"
+
+#include "GLFW/glfw3.h"
 
 namespace Hexeng::EventManager
 {
 	std::thread event_thread;
 
 	Vec2<double> mouse_position{ 0, 0 };
-	std::vector<std::pair<Event*, unsigned int>> events{};
+	std::vector<std::pair<Event*, unsigned int>> global_events;
 
-	Event::Event(std::function<bool(void)> condition, std::function<void(void)> action, unsigned int pertick)
-		: condition(condition), action(action), pertick(pertick)
+	Event::Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range, unsigned int pertick)
+		: condition(condition), action(action), pertick(pertick), range(range)
 	{
-		events.push_back({ this, pertick });
+		if (range == Range::GLOBAL)
+			global_events.push_back({ this, pertick });
 	}
 
-	EventGate::EventGate(std::function<void(void)> evt, unsigned int pertick_para)
+	EventGate::EventGate(std::function<void(void)> evt, Range range_para, unsigned int pertick_para)
 	{
 		action = evt;
 		pertick = pertick_para;
 		condition = []() {return true; };
-		events.push_back({ this, pertick });
+		range = range_para;
+		if (range == Range::GLOBAL)
+			global_events.push_back({ this, pertick });
 	}
 
 	std::vector<std::pair<Event*, unsigned int>>::iterator find(std::vector<std::pair<Event*, unsigned int>>& vec, Event* searching)
@@ -38,12 +40,15 @@ namespace Hexeng::EventManager
 	}
 
 	Event::Event(Event&& other) noexcept
-		: condition(other.condition), action(other.action), pertick(other.pertick)
+		: condition(other.condition), action(other.action), pertick(other.pertick), range(other.range)
 	{
-		auto it = find(events, &other);
-		if (it != events.end())
-			events.erase(it);
-		events.push_back({ this, pertick });
+		if (range == Range::GLOBAL)
+		{
+			auto it = find(global_events, &other);
+			if (it != global_events.end())
+				global_events.erase(it);
+			global_events.push_back({ this, pertick });
+		}
 	}
 
 	Event& Event::operator=(Event&& other) noexcept
@@ -52,13 +57,21 @@ namespace Hexeng::EventManager
 		action = other.action;
 		pertick = other.pertick;
 
-		auto it = find(events, &other);
-		if (it != events.end())
-			events.erase(it);
-		it = find(events, this);
-		if (it != events.end())
-			events.erase(it);
-		events.push_back({ this, pertick });
+		if (other.range == Range::GLOBAL)
+		{
+			auto it = find(global_events, &other);
+			if (it != global_events.end())
+				global_events.erase(it);
+		}
+		if (range == Range::GLOBAL)
+		{
+			auto it = find(global_events, this);
+			if (it != global_events.end())
+				global_events.erase(it);
+			global_events.push_back({ this, pertick });
+		}
+
+		range = other.range;
 
 		return *this;
 	}
@@ -87,7 +100,18 @@ namespace Hexeng::EventManager
 
 			HXG_GLFW(glfwGetCursorPos(window, &mouse_position.x, &mouse_position.y));
 
-			for (auto& [evt, tick] : events)
+			for (auto& [evt, tick] : global_events)
+			{
+				if (tick > 1)
+					tick--;
+				else if (evt->condition())
+				{
+					evt->action();
+					tick = evt->pertick;
+				}
+			}
+
+			for (auto& [evt, tick] : scenes[scene_id]->events)
 			{
 				if (tick > 1)
 					tick--;

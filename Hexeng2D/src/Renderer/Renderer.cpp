@@ -121,33 +121,26 @@ namespace Hexeng::Renderer
 
 	void draw(const Layer& layer)
 	{
-		if (layer.z_position < Camera::position.z)
+		if (layer.z_position < Camera::position.z && layer.position_mode == Position::RELATIVE)
 			return;
 
 		Camera::update_zoom(layer.z_position - Camera::position.z);
 
 		for (auto& [uniform, value] : layer.uniforms)
-		{
 			uniform->refresh(value);
-		}
 
 		for (const auto& mesh : layer.meshes)
-		{
 			mesh->draw();
-		}
 
 		for (auto& [uniform, value] : layer.uniforms)
-		{
 			uniform->refresh();
-		}
 	}
 
-	void draw_scene(unsigned int scene_parameter)
+	void draw_scene(int scene_parameter)
 	{
 		for (Layer* lay : scenes[scene_parameter]->layers)
-		{
 			draw(*lay);
-		}
+
 		for (ContextualLayer* cl : scenes[scene_parameter]->contextual_layers)
 		{
 			if (*cl->context)
@@ -155,14 +148,24 @@ namespace Hexeng::Renderer
 		}
 	}
 
+	std::vector<std::function<void(void)>> pending_actions;
+
 	void draw_current_scene()
 	{
+		for (auto& action : pending_actions)
+			action();
+
+		pending_actions.clear();
+
 		if (scenes.find(scene_id) == scenes.end())
 			return;
 
 		draw_scene(scene_id);
 
-		for (ContextualLayer* cl : contextual_layers)
+		for (Layer* l : global_layers)
+			draw(*l);
+
+		for (ContextualLayer* cl : global_contextual_layers)
 		{
 			if (*cl->context)
 				draw(*cl);

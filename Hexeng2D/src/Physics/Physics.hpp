@@ -21,7 +21,7 @@ namespace Hexeng::Physics
 
 	public :
 
-		PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity, int scene);
+		PhysicsEntity(std::vector<RectangleHitBox> rectangles, int solidity);
 
 		void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) override;
 

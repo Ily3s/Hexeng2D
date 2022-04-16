@@ -7,8 +7,6 @@ namespace Hexeng
 
 	GLFWwindow* window = nullptr;
 
-	int scene_id = 0;
-
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
 		while (!glfwWindowShouldClose(window))
