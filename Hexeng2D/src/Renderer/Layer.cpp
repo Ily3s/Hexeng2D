@@ -107,13 +107,19 @@ namespace Hexeng::Renderer
 	void Layer::load()
 	{
 		for (auto& mesh : meshes)
-			mesh->access_texture()->load();
+		{
+			if (mesh->access_texture())
+				mesh->access_texture()->load();
+		}
 	}
 
 	void Layer::unload()
 	{
 		for (auto& mesh : meshes)
-			mesh->access_texture()->unload();
+		{
+			if (mesh->access_texture())
+				mesh->access_texture()->unload();
+		}
 	}
 
 }

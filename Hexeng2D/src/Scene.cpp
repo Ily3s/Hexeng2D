@@ -82,12 +82,18 @@ namespace Hexeng
 	{
 		for (auto layer : layers)
 			layer->load();
+
+		for (auto cl : contextual_layers)
+			cl->load();
 	}
 
 	void Scene::unload()
 	{
 		for (auto layer : layers)
 			layer->unload();
+
+		for (auto cl : contextual_layers)
+			cl->unload();
 	}
 
 	void Scene::switch_scene(int new_scene_id)

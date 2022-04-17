@@ -1,6 +1,7 @@
 #include "Hexeng.hpp"
 #include "Renderer/Renderer.hpp"
 #include "Color.hpp"
+#include "Scene.hpp"
 
 namespace Hexeng
 {
@@ -9,6 +10,18 @@ namespace Hexeng
 
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
+		Renderer::pending_actions.push_back([]()
+			{
+				for (auto& [id, scene] : scenes)
+					scene->unload();
+
+				scenes[scene_id]->load();
+				for (auto& layer : Renderer::global_layers)
+					layer->load();
+				for (auto& cl : Renderer::global_contextual_layers)
+					cl->load();
+			});
+
 		while (!glfwWindowShouldClose(window))
 		{
 			if (pre)
