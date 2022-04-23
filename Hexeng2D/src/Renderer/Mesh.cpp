@@ -30,7 +30,16 @@ namespace Hexeng::Renderer
 			m_type(moving.m_type),
 			position(moving.position),
 			transform(moving.transform),
-			rotation(moving.rotation) {}
+			rotation(moving.rotation) 
+	{
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &Renderer::u_transform)
+				value_ptr = &transform;
+			if (ui == &Renderer::u_rotation_angle)
+				value_ptr = &rotation;
+		}
+	}
 
 	Mesh& Mesh::operator=(Mesh&& moving) noexcept
 	{
@@ -45,6 +54,14 @@ namespace Hexeng::Renderer
 		transform = moving.transform;
 		rotation = moving.rotation;
 
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &Renderer::u_transform)
+				value_ptr = &transform;
+			if (ui == &Renderer::u_rotation_angle)
+				value_ptr = &rotation;
+		}
+
 		return *this;
 	}
 
@@ -57,7 +74,7 @@ namespace Hexeng::Renderer
 		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(m_shader, value);
 
-		if (m_texture)
+ 		if (m_texture)
 		{
 			m_texture->bind();
 		}

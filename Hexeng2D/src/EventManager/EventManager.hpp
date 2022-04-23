@@ -42,6 +42,23 @@ namespace Hexeng::EventManager
 		EventGate(std::function<void(void)> evt, Range range = Range::GLOBAL, unsigned int pertick = 1);
 	};
 
+	class HXG_DECLSPEC RendererEvent : public Event
+	{
+	public :
+
+		std::function<void(void)> internal_action;
+
+		RendererEvent() = default;
+		RendererEvent(std::function<bool(void)> condition, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
+	};
+
+	class HXG_DECLSPEC RendererEventGate : public RendererEvent
+	{
+	public :
+
+		RendererEventGate(std::function<void(void)> evt, Range range = Range::GLOBAL, unsigned int pertick = 1);
+	};
+
 	HXG_DECLSPEC extern Vec2<double> mouse_position;
 	HXG_DECLSPEC extern std::vector<std::pair<Event*, unsigned int>> global_events;
 

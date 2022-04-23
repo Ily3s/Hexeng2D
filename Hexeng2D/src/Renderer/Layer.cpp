@@ -12,9 +12,6 @@ namespace Hexeng::Renderer
 	Layer::Layer(const std::vector<Mesh*>& mesh_vector, int z_pos, Position pos, Range range)
 		: meshes(mesh_vector), z_position(z_pos), range(range), position_mode(pos)
 	{
-		if (z_pos <= 0)
-			throw(std::exception("intended z_pos to be a positive float"));
-
 		if (position_mode == Position::ABSOLUTE)
 		{
 			static float one = 1.0f;
@@ -102,6 +99,17 @@ namespace Hexeng::Renderer
 	{
 		if (range == Range::GLOBAL)
 			global_contextual_layers.push_back(this);
+	}
+
+	HXG_DECLSPEC std::vector<Mesh*> fusion(std::vector<std::vector<Mesh*>> bidim_v)
+	{
+		std::vector<Mesh*> output;
+		for (auto& v : bidim_v)
+		{
+			for (auto& mesh : v)
+				output.push_back(mesh);
+		}
+		return output;
 	}
 
 	void Layer::load()

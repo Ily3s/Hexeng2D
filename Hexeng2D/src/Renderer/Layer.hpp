@@ -58,6 +58,8 @@ namespace Hexeng::Renderer
 
 	};
 
+	HXG_DECLSPEC std::vector<Mesh*> fusion(std::vector<std::vector<Mesh*>>);
+
 	HXG_DECLSPEC extern std::vector<Layer*> global_layers;
 	HXG_DECLSPEC extern std::vector<ContextualLayer*> global_contextual_layers;
 

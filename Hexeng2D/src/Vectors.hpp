@@ -121,6 +121,11 @@ namespace Hexeng
 		}
 	};
 
+	inline Vec2<int> operator*(Vec2<int> vec, float factor)
+	{
+		return { (int)((float)vec.x * factor), (int)((float)vec.y * factor) };
+	}
+
 	template <typename T>
 	struct Vec3
 	{

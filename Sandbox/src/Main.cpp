@@ -11,6 +11,7 @@
 #include "EventManager/InputEvent.hpp"
 #include "Physics/Physics.hpp"
 #include "Renderer/Presets/Basic.shader"
+#include "Renderer/Text.hpp"
 #include "Color.hpp"
 
 #include "Player.hpp"
@@ -18,12 +19,16 @@
 
 int main()
 {
-	
+
 	using namespace Hexeng;
 
 	Settings::window_name = "Sandbox";
 
 	Renderer::init();
+
+	Renderer::Font kunstler{ "res/KUNSTLER.TTF" };
+
+	Renderer::Text txt{ U"Hello, World !\nHello", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
 
 	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
@@ -42,7 +47,7 @@ int main()
 
 	Player player{ {0, 0 }, 5.0f, &example };
 
-	EventManager::EventGate in_frame{[&color, &frame_hb, &player]()
+	EventManager::EventGate in_frame{ [&color, &frame_hb, &player]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
@@ -61,6 +66,7 @@ int main()
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
 		[&color]() {color = Color3::white; }, Range::LOCAL };
 
+	Renderer::Layer UI_layer{ txt.chars, 0, Renderer::Position::ABSOLUTE };
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
@@ -68,7 +74,7 @@ int main()
 	Physics::HitBox hb = Physics::HitBox({ {{2000, -250}, {2500, 250}} }, 10);
 
 	Scene first_scene{ 1, {
-		{ SceneComponent::LAYERS, { &fore_ground , &back_ground1, &back_ground2 } },
+		{ SceneComponent::LAYERS, { &fore_ground , &back_ground1, &back_ground2, &UI_layer } },
 		{ SceneComponent::EVENTS, { &in_frame, &not_in_frame } },
 		{ SceneComponent::HITBOXES, { &hb, &frame_hb } },
 		{ SceneComponent::PHYS_ENTITIES, { &player.physics } }

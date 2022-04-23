@@ -17,13 +17,17 @@ namespace Hexeng::Renderer
 
 		unsigned int m_id;
 		std::string m_filepath;
-		unsigned int m_mag_filter, m_min_filter;
+		unsigned int m_mag_filter = GL_LINEAR, m_min_filter = GL_LINEAR;
 
 		int m_width = 0, m_height = 0, m_BPP = 0;
+
+		bool m_no_onload = false;
 
 	public:
 
 		Texture(const std::string& filepath, unsigned int mag_filter = GL_LINEAR, unsigned int min_filter = GL_LINEAR);
+		Texture(const uint8_t* pixel_buffer, const Vec2<int>& size, GLuint sized_format = GL_RGBA8, GLuint base_format = GL_RGBA);
+
 		~Texture();
 		
 		Texture() = default;
@@ -35,7 +39,7 @@ namespace Hexeng::Renderer
 		inline int get_height() const { return m_height; }
 		inline Vec2<int> get_size() const { return { m_width, m_height }; }
 		inline unsigned int get_id() const { return m_id; }
-		 
+		
 		Vec2<int> size() const { return { m_width, m_height }; }
 		 
 		void unload();

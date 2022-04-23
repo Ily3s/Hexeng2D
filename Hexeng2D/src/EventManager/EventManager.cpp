@@ -2,6 +2,7 @@
 
 #include "EventManager.hpp"
 #include "../Scene.hpp"
+#include "../Renderer/Renderer.hpp"
 
 #include "GLFW/glfw3.h"
 
@@ -25,6 +26,28 @@ namespace Hexeng::EventManager
 		pertick = pertick_para;
 		condition = []() {return true; };
 		range = range_para;
+		if (range == Range::GLOBAL)
+			global_events.push_back({ this, pertick });
+	}
+
+	RendererEvent::RendererEvent(std::function<bool(void)> condition_para, std::function<void(void)> action, Range range_para, unsigned int pertick_para)
+		: internal_action(action)
+	{
+		condition = condition_para;
+		range = range_para;
+		pertick = pertick_para;
+		action = [this]() {Renderer::pending_actions.push_back(internal_action); };
+		if (range == Range::GLOBAL)
+			global_events.push_back({ this, pertick });
+	}
+
+	RendererEventGate::RendererEventGate(std::function<void(void)> evt, Range range_para, unsigned int pertick_para)
+	{
+		internal_action = evt;
+		pertick = pertick_para;
+		range = range_para;
+		condition = []() {return true; };
+		action = [this]() {Renderer::pending_actions.push_back(internal_action); };
 		if (range == Range::GLOBAL)
 			global_events.push_back({ this, pertick });
 	}
