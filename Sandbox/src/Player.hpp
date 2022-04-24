@@ -20,7 +20,8 @@ private:
 
 public:
 
-	Renderer::Presets::BasicRectangle mesh;
+	Renderer::Presets::BasicRectangle rec;
+	Renderer::SuperMesh mesh;
 	Physics::PhysicsEntity physics;
 
 	Player(Vec2<int> pos, float size, Renderer::Texture* tex);
@@ -30,7 +31,8 @@ public:
 Player* Player::instance = nullptr;
 
 Player::Player(Vec2<int> pos, float size, Renderer::Texture* tex)
-	: mesh({ 0, 0 }, size, tex, true),
+	: rec({ 0, 0 }, size, tex, true),
+	mesh({ &rec }),
 	physics({ { -tex->get_size()*size / 2, tex->get_size()*size / 2} }, 1)
 {
 	physics.position = pos;

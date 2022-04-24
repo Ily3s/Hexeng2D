@@ -35,6 +35,13 @@ namespace Hexeng::Renderer
 			for (Shader* shad : shad_list)
 				shader_list.insert({ shad, shad->get_uniform(uniform_name.c_str()) });
 		}
+
+		virtual void sum_val(void* val1, void* val2) = 0;
+		virtual void substract_val(void* val1, void* val2) = 0;
+		virtual void mult_val(void* val1, void* val2) = 0;
+		virtual void div_val(void* val1, void* val2) = 0;
+		virtual void inverse_val(void* val) = 0;
+
 	};
 
 	template <typename VEC>
@@ -55,6 +62,12 @@ namespace Hexeng::Renderer
 		void refresh(Shader* shad) override;
 		void refresh(Shader* shad, void* value) override;
 		void refresh(void* value) override;
+
+		void sum_val(void* val1, void* val2) override;
+		void substract_val(void* val1, void* val2) override;
+		void mult_val(void* val1, void* val2) override;
+		void div_val(void* val1, void* val2) override;
+		void inverse_val(void* val) override;
 	};
 
 	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
@@ -131,6 +144,36 @@ namespace Hexeng::Renderer
 			shader->bind();
 			shader->set_uniform(id, *(reinterpret_cast<VEC*>(value)));
 		}
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::sum_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 += *(VEC*)val2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::substract_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 -= *(VEC*)val2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::mult_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 *= *(VEC*)val2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::div_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 /= *(VEC*)val2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::inverse_val(void* val)
+	{
+		*(VEC*)val = -*(VEC*)val;
 	}
 
 }

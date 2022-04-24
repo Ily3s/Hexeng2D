@@ -28,7 +28,7 @@ int main()
 
 	Renderer::Font kunstler{ "res/KUNSTLER.TTF" };
 
-	Renderer::Text txt{ U"Hello, World !\nHello", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
+	Renderer::Text txt{ U"Hello, World !", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
 
 	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
@@ -45,7 +45,7 @@ int main()
 	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example };
 	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example, false };
 
-	Player player{ {0, 0 }, 5.0f, &example };
+	Player player{ {0, 0}, 5.0f, &example };
 
 	EventManager::EventGate in_frame{ [&color, &frame_hb, &player]()
 	{

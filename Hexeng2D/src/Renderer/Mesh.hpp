@@ -18,16 +18,18 @@ namespace Hexeng::Renderer
 
 	protected:
 
+		friend class SuperMesh;
+
 		GLenum m_type = GL_TRIANGLES;
 		VertexArray m_vao;
 		VertexBuffer m_vb;
-		const IndexBuffer* m_ib;
-		Texture* m_texture;
-		Shader* m_shader;
+		const IndexBuffer* m_ib = nullptr;
+		Texture* m_texture = nullptr;
+		Shader* m_shader = nullptr;
 
 	public:
 
-		Mesh();
+		Mesh() = default;
 
 		Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
 
@@ -50,8 +52,27 @@ namespace Hexeng::Renderer
 
 		virtual void draw();
 
-		// for obscure reasons, unordered_map doesn't work here (error when destructor get called)
 		std::vector<std::pair<UniformInterface*, void*>> uniforms;
+	};
+
+	class HXG_DECLSPEC SuperMesh : public Mesh
+	{
+	public :
+
+		std::vector<Mesh*> meshes;
+
+		SuperMesh(std::vector<Mesh*>&& meshes);
+
+		SuperMesh() = default;
+
+		SuperMesh(const SuperMesh&) = delete;
+		SuperMesh& operator=(const SuperMesh&) = delete;
+
+		SuperMesh(SuperMesh&&) noexcept;
+		SuperMesh& operator=(SuperMesh&&) noexcept;
+
+		void draw() override;
+
 	};
 
 }

@@ -5,8 +5,6 @@
 namespace Hexeng::Renderer
 {
 
-	Mesh::Mesh() = default;
-
 	Mesh::Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
 		:	m_vb(vb, sizeof(vb)),
 			m_ib(ib),
@@ -90,6 +88,72 @@ namespace Hexeng::Renderer
 	void Mesh::update_position()
 	{
 		transform = toCoord(position);
+	}
+
+	SuperMesh::SuperMesh(std::vector<Mesh*>&& meshes)
+		: meshes(std::move(meshes))
+	{
+		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
+	}
+
+	SuperMesh::SuperMesh(SuperMesh&& other) noexcept
+		: Mesh(std::move(other))
+	{
+		meshes = std::move(other.meshes);
+	}
+
+	SuperMesh& SuperMesh::operator=(SuperMesh&& other) noexcept
+	{
+		Mesh::operator=(std::move(other));
+		meshes = std::move(other.meshes);
+
+		return *this;
+	}
+
+	void SuperMesh::draw()
+	{
+		for (auto& mesh : meshes)
+		{
+			for (auto& [ui, val] : uniforms)
+			{
+				bool not_found = true;
+
+				for (auto& [mesh_ui, mesh_val] : mesh->uniforms)
+				{
+					if (mesh_ui == ui)
+					{
+						ui->sum_val(mesh_val, val);
+						not_found = false;
+						continue;
+					}
+				}
+
+				if (not_found)
+					mesh->uniforms.emplace_back(ui, val);
+			}
+
+			mesh->position += position;
+
+			mesh->draw();
+
+			mesh->position -= position;
+
+			for (auto& [ui, val] : uniforms)
+			{
+				for (auto& [mesh_ui, mesh_val] : mesh->uniforms)
+				{
+					if (mesh_ui == ui)
+					{
+						ui->substract_val(mesh_val, val);
+						continue;
+					}
+				}
+			}
+		}
+
+		for (auto& [ui, val] : uniforms)
+			ui->refresh();
 	}
 
 }
