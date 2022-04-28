@@ -73,9 +73,7 @@ namespace Hexeng::Renderer
 			uniform->refresh(m_shader, value);
 
  		if (m_texture)
-		{
 			m_texture->bind();
-		}
 
 		m_vao.bind();
 

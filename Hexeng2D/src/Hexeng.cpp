@@ -14,7 +14,7 @@ namespace Hexeng
 			{
 				for (auto& [id, scene] : scenes)
 					scene->unload();
-
+		
 				scenes[scene_id]->load();
 				for (auto& layer : Renderer::global_layers)
 					layer->load();

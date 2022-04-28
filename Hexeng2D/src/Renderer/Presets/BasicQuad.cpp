@@ -85,7 +85,7 @@ namespace Hexeng::Renderer::Presets
 
 	BasicRectangle::BasicRectangle(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
 	{
-		this->BasicRectangle::BasicRectangle(pos, texture->size() * size, texture, centered, shader);
+		this->BasicRectangle::BasicRectangle(pos, texture->get_size() * size, texture, centered, shader);
 	}
 
 	BasicSquare::BasicSquare(const Vec2<int>& pos, int size, Texture* texture, bool centered, Shader* shader)

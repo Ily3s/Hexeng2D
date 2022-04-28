@@ -4,7 +4,6 @@
 #include "../Macros.hpp"
 #include "GLFW/glfw3.h"
 #include "glad/glad.h"
-#include "Presets/Basic.shader"
 #include "Uniform.hpp"
 #include "Scene.hpp"
 #include "Camera.hpp"

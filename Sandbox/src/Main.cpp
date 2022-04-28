@@ -10,7 +10,7 @@
 #include "EventManager/EventManager.hpp"
 #include "EventManager/InputEvent.hpp"
 #include "Physics/Physics.hpp"
-#include "Renderer/Presets/Basic.shader"
+#include "Renderer/Presets/Basic.glsl"
 #include "Renderer/Text.hpp"
 #include "Color.hpp"
 
@@ -33,40 +33,40 @@ int main()
 	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
 
-	Color3 color{ 0.0f, 0.0f, 1.0f };
-	Renderer::Uniform<Color3> u_color = { "u_color", &color, {&custom_shader} };
+	Color3 frame_color{ 1.0f, 1.0f, 1.0f };
+	Renderer::Uniform<Color3> u_color = { "u_color", &frame_color, {&custom_shader} };
 
-	Renderer::Texture frame_tex{ "res/frame.png", GL_NEAREST };
+	Renderer::Texture frame_tex{ "res/frame.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Presets::BasicSquare frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
 	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
 
-	Renderer::Texture example{ "res/example.png", GL_NEAREST };
+	Renderer::Texture example{ "res/example.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example };
 	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example };
 	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example, false };
 
 	Player player{ {0, 0}, 5.0f, &example };
 
-	EventManager::EventGate in_frame{ [&color, &frame_hb, &player]()
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
 			 if (from == Physics::From::BOT)
-				 color = Color3::red;
+				 frame_color = Color3::red;
 			 else if (from == Physics::From::TOP)
-				 color = Color3::green;
+				 frame_color = Color3::green;
 			 else if (from == Physics::From::LEFT)
-				 color = Color3::blue;
+				 frame_color = Color3::blue;
 			 else if (from == Physics::From::RIGHT)
-				 color = Color3::yellow;
+				 frame_color = Color3::yellow;
 		 }
 	}, Range::LOCAL };
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&color]() {color = Color3::white; }, Range::LOCAL };
+		[&frame_color]() {frame_color = Color3::white; }, Range::LOCAL };
 
-	Renderer::Layer UI_layer{ txt.chars, 0, Renderer::Position::ABSOLUTE };
+	Renderer::Layer UI_layer{ {&txt}, 0, Renderer::Position::ABSOLUTE };
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };

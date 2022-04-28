@@ -13,6 +13,7 @@ namespace Hexeng::Renderer::Presets
 	HXG_DECLSPEC extern Shader basic_shader;
 	HXG_DECLSPEC extern Shader line_shader;
 	HXG_DECLSPEC extern Shader font_shader;
+	HXG_DECLSPEC extern Shader tex_vector_shader;
 	HXG_DECLSPEC extern Uniform<Color3> u_color;
 	HXG_DECLSPEC extern Color3 color;
 	HXG_DECLSPEC extern VertexLayout basic_vertex_layout;

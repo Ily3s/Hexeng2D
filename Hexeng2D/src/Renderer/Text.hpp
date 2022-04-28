@@ -26,9 +26,10 @@ namespace Hexeng::Renderer
 	{
 	public :
 
-		std::unordered_map<char32_t, Texture> font_map;
+		TextureVector texture{ {{TexSett::BASE_FORMAT, GL_RED}, {TexSett::SIZED_FORMAT, GL_R8}} };
+		std::unordered_map<char32_t, TexCoord> char_map;
 		float quality = 0.1f;
-		stbtt_fontinfo font_info;
+		stbtt_fontinfo font_info{};
 		std::unique_ptr<uint8_t[]> file_buffer = nullptr;
 		int line_height = 0, line_offset = 0;
 		float get_advancement(int c);
@@ -62,15 +63,10 @@ namespace Hexeng::Renderer
 		BOT
 	};
 
-	class HXG_DECLSPEC Text
+	class HXG_DECLSPEC Text : public Mesh
 	{
-	private :
-
-		std::vector<Presets::BasicRectangle> m_chars;
-
 	public :
 
-		std::vector<Mesh*> chars;
 		Color3 color;
 
 		Text(std::u32string text, Font&, Vec2<int> position, int font_size,
@@ -81,6 +77,10 @@ namespace Hexeng::Renderer
 
 		Text(Text&&) noexcept = default;
 		Text& operator=(Text&&) noexcept = default;
+
+	private :
+
+		IndexBuffer m_index_buffer;
 	};
 
 }
