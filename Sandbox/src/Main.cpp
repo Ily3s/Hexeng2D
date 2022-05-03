@@ -9,6 +9,7 @@
 #include "Renderer/Camera.hpp"
 #include "EventManager/EventManager.hpp"
 #include "EventManager/InputEvent.hpp"
+#include "EventManager/Button.hpp"
 #include "Physics/Physics.hpp"
 #include "Renderer/Presets/Basic.glsl"
 #include "Renderer/Text.hpp"
@@ -25,11 +26,7 @@ int main()
 	Settings::window_name = "Sandbox";
 
 	Renderer::init();
-
-	Renderer::Font kunstler{ "res/KUNSTLER.TTF" };
-
-	Renderer::Text txt{ U"Hello, World !", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
-
+	
 	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
 
@@ -66,7 +63,43 @@ int main()
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
 		[&frame_color]() {frame_color = Color3::white; }, Range::LOCAL };
 
-	Renderer::Layer UI_layer{ {&txt}, 0, Renderer::Position::ABSOLUTE };
+	Renderer::Font kunstler{ "res/KUNSTLER.TTF" };
+	Renderer::Text txt{ U"Hello, World !", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
+
+	Renderer::Texture arrow_unhover{ "res/arrow_unhover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
+	Renderer::Texture arrow_hover{ "res/arrow_hover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
+
+	Vec2<int> top_left = { - 1920 / 2, 1080 / 2 };
+	Renderer::Presets::BasicSquare arrow_up{ top_left + Vec2<int>(115, -50), 50, &arrow_unhover };
+	Renderer::Presets::BasicSquare arrow_down{ top_left + Vec2<int>(115, -190), 50, &arrow_unhover };
+	arrow_down.rotation = 180;
+	Renderer::Presets::BasicSquare arrow_left{ top_left + Vec2<int>(45, -120), 50, &arrow_unhover };
+	arrow_left.rotation = -90;
+	Renderer::Presets::BasicSquare arrow_right{ top_left + Vec2<int>(185, -120), 50, &arrow_unhover };
+	arrow_right.rotation = 90;
+
+	EventManager::Button up_btn{ arrow_up.get_min(), arrow_up.get_max(), []() { return true; }, {
+		{ EventManager::ButtonEvent::HOVER, [&arrow_up, &arrow_hover]() { arrow_up.access_texture() = &arrow_hover; } },
+		{ EventManager::ButtonEvent::UNHOVER, [&arrow_up, &arrow_unhover]() { arrow_up.access_texture() = &arrow_unhover; } },
+		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({0, player.speed}); }}
+	} };
+	EventManager::Button down_btn{ arrow_down.get_min(), arrow_down.get_max(), []() { return true; }, {
+		{ EventManager::ButtonEvent::HOVER, [&arrow_down, &arrow_hover]() { arrow_down.access_texture() = &arrow_hover; } },
+		{ EventManager::ButtonEvent::UNHOVER, [&arrow_down, &arrow_unhover]() { arrow_down.access_texture() = &arrow_unhover; } },
+		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({0, -player.speed}); }}
+	} };
+	EventManager::Button left_btn{ arrow_left.get_min(), arrow_left.get_max(), []() { return true; }, {
+		{ EventManager::ButtonEvent::HOVER, [&arrow_left, &arrow_hover]() { arrow_left.access_texture() = &arrow_hover; } },
+		{ EventManager::ButtonEvent::UNHOVER, [&arrow_left, &arrow_unhover]() { arrow_left.access_texture() = &arrow_unhover; } },
+		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({-player.speed, 0}); }}
+	} };
+	EventManager::Button right_btn{ arrow_right.get_min(), arrow_right.get_max(), []() { return true; }, {
+		{ EventManager::ButtonEvent::HOVER, [&arrow_right, &arrow_hover]() { arrow_right.access_texture() = &arrow_hover; } },
+		{ EventManager::ButtonEvent::UNHOVER, [&arrow_right, &arrow_unhover]() { arrow_right.access_texture() = &arrow_unhover; } },
+		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({player.speed, 0}); }}
+	} };
+
+	Renderer::Layer UI_layer{ {&txt, &arrow_up, &arrow_down, &arrow_left, &arrow_right}, 0, Renderer::Position::ABSOLUTE };
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
@@ -82,13 +115,13 @@ int main()
 
 	scene_id = 1;
 
-	EventManager::KeyEvent go_up{ 87, [&player]() {player.physics.move({0, 4}); } };		// W
-	EventManager::KeyEvent go_left{ 65, [&player]() {player.physics.move({-4, 0}); } };		// A
-	EventManager::KeyEvent go_down{ 83, [&player]() {player.physics.move({0, -4}); } };		// S
-	EventManager::KeyEvent go_right{ 68, [&player]() {player.physics.move({4, 0}); } };		// D
+	EventManager::KeyEvent go_up{ 87, [&player]() {player.physics.move({0, player.speed}); } };			// W
+	EventManager::KeyEvent go_left{ 65, [&player]() {player.physics.move({-player.speed, 0}); } };		// A
+	EventManager::KeyEvent go_down{ 83, [&player]() {player.physics.move({0, -player.speed}); } };		// S
+	EventManager::KeyEvent go_right{ 68, [&player]() {player.physics.move({player.speed, 0}); } };		// D
 
-	EventManager::KeyEvent rotate_left{ 81, [&player]() {player.mesh.rotation -= 1.0f; } };	// Q
-	EventManager::KeyEvent rotate_right{ 69, [&player]() {player.mesh.rotation += 1.0f; } };// E
+	EventManager::KeyEvent rotate_left{ 81, [&player]() {player.mesh.rotation -= 1.0f; } };				// Q
+	EventManager::KeyEvent rotate_right{ 69, [&player]() {player.mesh.rotation += 1.0f; } };			// E
 
 	EventManager::ScrollEvent::get()->callback = [](double amount) {Renderer::Camera::position.z += amount * 10; Renderer::Camera::refresh_pos(); };
 

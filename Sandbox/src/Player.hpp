@@ -23,9 +23,9 @@ public:
 	Renderer::Presets::BasicRectangle rec;
 	Renderer::SuperMesh mesh;
 	Physics::PhysicsEntity physics;
+	int speed = 4;
 
 	Player(Vec2<int> pos, float size, Renderer::Texture* tex);
-
 };
 
 Player* Player::instance = nullptr;

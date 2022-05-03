@@ -34,6 +34,10 @@ namespace Hexeng::Renderer::Presets
 
 	class HXG_DECLSPEC BasicRectangle : public virtual BasicQuad
 	{
+	private :
+
+		Vec2<int> m_min{0, 0}, m_max{0, 0}, m_size{0, 0};
+
 	public:
 
 		BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
@@ -44,6 +48,10 @@ namespace Hexeng::Renderer::Presets
 
 		BasicRectangle(BasicRectangle&&) noexcept;
 		BasicRectangle& operator=(BasicRectangle&&) noexcept;
+
+		inline Vec2<int> get_min() { return m_min; }
+		inline Vec2<int> get_max() { return m_max; }
+		inline Vec2<int> get_size() { return m_size; }
 	};
 
 	class HXG_DECLSPEC BasicSquare : public BasicRectangle

@@ -35,7 +35,7 @@ namespace Hexeng::Renderer
 		Texture() = default;
 
 		void bind(unsigned int slot = GL_TEXTURE0) const;
-		void unbind() const;
+		static void unbind();
 		 
 		void unload();
 		void load();

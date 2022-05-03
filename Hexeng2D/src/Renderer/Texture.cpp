@@ -131,7 +131,7 @@ namespace Hexeng::Renderer
 		HXG_GL(glBindTexture(GL_TEXTURE_2D, m_id));
 	}
 
-	void Texture::unbind() const
+	void Texture::unbind()
 	{
 		HXG_GL(glBindTexture(GL_TEXTURE_2D, 0));
 	}

@@ -1,6 +1,8 @@
 #ifndef INPUT_EVENT_HPP
 #define INPUT_EVENT_HPP
 
+#include "GLFW/glfw3.h"
+
 #include "EventManager.hpp"
 
 namespace Hexeng::EventManager
@@ -44,10 +46,15 @@ namespace Hexeng::EventManager
 	public :
 
 		std::function<void(void)> action;
-		int key_code;
-		int mode;
+		int key_code = GLFW_MOUSE_BUTTON_1;
+		int mode = GLFW_PRESS;
 
 		KeyPressEvent(int key_code, std::function<void(void)> action, int mode = GLFW_PRESS);
+
+		KeyPressEvent() = default;
+
+		KeyPressEvent(KeyPressEvent&&) noexcept = default;
+		KeyPressEvent& operator=(KeyPressEvent&&) noexcept = default;
 	};
 
 }

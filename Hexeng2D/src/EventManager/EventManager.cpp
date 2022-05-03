@@ -80,15 +80,15 @@ namespace Hexeng::EventManager
 		action = other.action;
 		pertick = other.pertick;
 
-		if (other.range == Range::GLOBAL)
-		{
-			auto it = find(global_events, &other);
-			if (it != global_events.end())
-				global_events.erase(it);
-		}
 		if (range == Range::GLOBAL)
 		{
 			auto it = find(global_events, this);
+			if (it != global_events.end())
+				global_events.erase(it);
+		}
+		if (other.range == Range::GLOBAL)
+		{
+			auto it = find(global_events, &other);
 			if (it != global_events.end())
 				global_events.erase(it);
 			global_events.push_back({ this, pertick });
@@ -122,6 +122,9 @@ namespace Hexeng::EventManager
 			auto start_point = std::chrono::high_resolution_clock::now();
 
 			HXG_GLFW(glfwGetCursorPos(window, &mouse_position.x, &mouse_position.y));
+			mouse_position.y = 0.5 * Settings::window_size.y - mouse_position.y;
+			mouse_position.x -= 0.5 * Settings::window_size.x;
+			mouse_position /= (double)Settings::window_size.y / 1080;
 
 			for (auto& [evt, tick] : global_events)
 			{

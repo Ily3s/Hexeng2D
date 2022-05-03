@@ -72,8 +72,10 @@ namespace Hexeng::Renderer
 		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(m_shader, value);
 
- 		if (m_texture)
+		if (m_texture)
 			m_texture->bind();
+		else
+			Texture::unbind();
 
 		m_vao.bind();
 

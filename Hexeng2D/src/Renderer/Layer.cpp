@@ -18,7 +18,6 @@ namespace Hexeng::Renderer
 			static Vec2<float> zero{ 0.0f, 0.0f };
 			uniforms.push_back({ &Camera::u_zoom, &one });
 			uniforms.push_back({ &Camera::u_cam, &zero });
-			z_position = -INT_MAX;
 		}
 
 		if (range == Range::GLOBAL)

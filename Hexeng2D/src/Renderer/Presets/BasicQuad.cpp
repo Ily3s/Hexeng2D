@@ -52,10 +52,14 @@ namespace Hexeng::Renderer::Presets
 	}
 
 	BasicRectangle::BasicRectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)
+		: m_size(size)
 	{
 		Vec2<int> relative_pos = { 0, 0 };
 		if (centered)
 			relative_pos -= (size / 2);
+
+		m_min = relative_pos + pos;
+		m_max = m_min + size;
 
 		float vertex_b[]
 		{
@@ -135,6 +139,10 @@ namespace Hexeng::Renderer::Presets
 	BasicRectangle& BasicRectangle::operator=(BasicRectangle&& other) noexcept
 	{
 		BasicQuad::operator=(std::move(other));
+		m_min = other.m_min;
+		m_max = other.m_max;
+		m_size = other.m_size;
+
 		return *this;
 	}
 
@@ -157,7 +165,7 @@ namespace Hexeng::Renderer::Presets
 		: BasicQuad(std::move(other)) {}
 
 	BasicRectangle::BasicRectangle(BasicRectangle&& other) noexcept
-		: BasicQuad(std::move(other)) {}
+		: BasicQuad(std::move(other)), m_min(other.m_min), m_max(other.m_max), m_size(other.m_size) {}
 
 	BasicQuad::BasicQuad(BasicQuad&& moving) noexcept
 		: Mesh(std::move(moving)) {}
