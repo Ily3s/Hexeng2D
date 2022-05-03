@@ -12,7 +12,6 @@ namespace Hexeng
 	enum class HXG_DECLSPEC SceneComponent
 	{
 		LAYERS,
-		CONTEXTUAL_LAYERS,
 		EVENTS,
 		HITBOXES,
 		PHYS_VECS,
@@ -25,11 +24,10 @@ namespace Hexeng
 	public:
 
 		std::vector<Renderer::Layer*> layers;
-		std::vector<Renderer::ContextualLayer*> contextual_layers;
 		std::vector<std::pair<EventManager::Event*, unsigned int>> events;
 		std::vector<Physics::PhysicsVecs*> physics_vecs;
 
-		Scene(int id, const std::vector<std::pair<SceneComponent, std::vector<void*>>>& components);
+		Scene(int id, const std::unordered_map<SceneComponent, std::vector<void*>>& components);
 
 		void load();
 		void unload();

@@ -59,6 +59,20 @@ namespace Hexeng::Renderer
 
 		ToBeInit::start_init = true;
 		ToBeInit([]() {});
+
+		pending_actions.push_back([]()
+			{
+				for (auto& [id, scene] : scenes)
+				{
+					scene->unload();
+					scene->layers.reserve(scene->layers.size() + global_layers.size());
+					for (Layer* gl : global_layers)
+						scene->layers.push_back(gl);
+					std::sort(scene->layers.begin(), scene->layers.end(), [](Layer* layer1, Layer* layer2) {
+						return layer1->z_position > layer2->z_position; });
+				}
+				scenes[scene_id]->load();
+			});
 	}
 
 	bool ToBeInit::start_init = false;
@@ -118,33 +132,10 @@ namespace Hexeng::Renderer
 		HXG_GL(glClear(GL_COLOR_BUFFER_BIT));
 	}
 
-	void draw(const Layer& layer)
-	{
-		if (layer.z_position < Camera::position.z && layer.position_mode == Position::RELATIVE)
-			return;
-
-		Camera::update_zoom(layer.z_position - Camera::position.z);
-
-		for (auto& [uniform, value] : layer.uniforms)
-			uniform->refresh(value);
-
-		for (const auto& mesh : layer.meshes)
-			mesh->draw();
-
-		for (auto& [uniform, value] : layer.uniforms)
-			uniform->refresh();
-	}
-
 	void draw_scene(int scene_parameter)
 	{
 		for (Layer* lay : scenes[scene_parameter]->layers)
-			draw(*lay);
-
-		for (ContextualLayer* cl : scenes[scene_parameter]->contextual_layers)
-		{
-			if (*cl->context)
-				draw(*cl);
-		}
+			lay->draw();
 	}
 
 	std::vector<std::function<void(void)>> pending_actions;
@@ -160,15 +151,6 @@ namespace Hexeng::Renderer
 			return;
 
 		draw_scene(scene_id);
-
-		for (Layer* l : global_layers)
-			draw(*l);
-
-		for (ContextualLayer* cl : global_contextual_layers)
-		{
-			if (*cl->context)
-				draw(*cl);
-		}
 	}
 
 	Uniform<Vec2<float>> u_transform;

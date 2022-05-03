@@ -23,7 +23,7 @@ namespace Hexeng::Renderer
 	public:
 
 		std::vector<Mesh*> meshes;
-		int z_position = 1;
+		int z_position = 0;
 		Range range = Range::LOCAL;
 		Position position_mode = Position::RELATIVE;
 
@@ -39,6 +39,8 @@ namespace Hexeng::Renderer
 		
 		virtual void unload();
 		virtual void load();
+
+		virtual void draw();
 
 		std::vector<std::pair<UniformInterface*, void*>> uniforms;
 	};
@@ -56,12 +58,12 @@ namespace Hexeng::Renderer
 		ContextualLayer& operator=(ContextualLayer&&) noexcept;
 		ContextualLayer(ContextualLayer&&) noexcept;
 
+		void draw() override;
 	};
 
 	HXG_DECLSPEC std::vector<Mesh*> fusion(std::vector<std::vector<Mesh*>>);
 
 	HXG_DECLSPEC extern std::vector<Layer*> global_layers;
-	HXG_DECLSPEC extern std::vector<ContextualLayer*> global_contextual_layers;
 
 }
 

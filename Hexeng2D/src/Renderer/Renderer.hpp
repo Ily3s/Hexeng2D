@@ -25,8 +25,6 @@ namespace Hexeng::Renderer
 
 	HXG_DECLSPEC void refresh_uniforms();
 
-	HXG_DECLSPEC extern void draw(const Layer& layer);
-
 	HXG_DECLSPEC extern void draw_scene(int scene_parameter);
 
 	HXG_DECLSPEC extern void draw_current_scene();

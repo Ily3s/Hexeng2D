@@ -129,4 +129,41 @@ namespace Hexeng::Renderer
 		}
 	}
 
+	void Layer::draw()
+	{
+		if (z_position < Camera::position.z && position_mode == Position::RELATIVE)
+			return;
+
+		Camera::update_zoom(z_position - Camera::position.z);
+
+		for (auto& [uniform, value] : uniforms)
+			uniform->refresh(value);
+
+		for (const auto& mesh : meshes)
+			mesh->draw();
+
+		for (auto& [uniform, value] : uniforms)
+			uniform->refresh();
+	}
+
+	void ContextualLayer::draw()
+	{
+		if (!*context)
+			return;
+
+		if (z_position < Camera::position.z && position_mode == Position::RELATIVE)
+			return;
+
+		Camera::update_zoom(z_position - Camera::position.z);
+
+		for (auto& [uniform, value] : uniforms)
+			uniform->refresh(value);
+
+		for (const auto& mesh : meshes)
+			mesh->draw();
+
+		for (auto& [uniform, value] : uniforms)
+			uniform->refresh();
+	}
+
 }
