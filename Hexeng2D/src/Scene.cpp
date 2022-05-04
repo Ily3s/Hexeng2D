@@ -22,7 +22,7 @@ namespace Hexeng
 
 			case SceneComponent::EVENTS :
 				for (EventManager::Event* evt : *(std::vector<EventManager::Event*>*)&component)
-					events.emplace_back(evt, evt->pertick);
+					events.push_back(evt);
 				break;
 
 			case SceneComponent::HITBOXES :

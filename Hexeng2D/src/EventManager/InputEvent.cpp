@@ -12,7 +12,7 @@ namespace Hexeng::EventManager
 		condition = [key_code]() {return glfwGetKey(window, key_code); };
 		range = range_para;
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 	}
 
 	MouseButtonEvent::MouseButtonEvent(int button_code, std::function<void(void)> action_arg, Range range_para, unsigned int pertick_arg)
@@ -22,7 +22,7 @@ namespace Hexeng::EventManager
 		condition = [button_code]() {return glfwGetMouseButton(window, button_code); };
 		range = range_para;
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 	}
 
 	ScrollEvent* ScrollEvent::get()

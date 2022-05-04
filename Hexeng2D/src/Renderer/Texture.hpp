@@ -2,7 +2,7 @@
 #define TEXTURE_HPP
 
 #include <string>
-#include <vector>
+#include <unordered_map>
 
 #include "../Macros.hpp"
 #include "glad/glad.h"
@@ -21,7 +21,7 @@ namespace Hexeng::Renderer
 		BPP
 	};
 
-	using TexSettList = std::vector<std::pair<TexSett, GLuint>>;
+	using TexSettList = std::unordered_map<TexSett, GLuint>;
 
 	class HXG_DECLSPEC Texture
 	{

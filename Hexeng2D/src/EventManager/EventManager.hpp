@@ -20,10 +20,11 @@ namespace Hexeng::EventManager
 
 		std::function<bool(void)> condition = nullptr;
 		std::function<void(void)> action = nullptr;
-		unsigned int pertick = 1;
+		uint32_t pertick = 1;
+		uint32_t clock = 0;
 		Range range;
 
-		Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
+		Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range = Range::GLOBAL, uint32_t pertick = 1);
 
 		Event() = default;
 
@@ -60,7 +61,7 @@ namespace Hexeng::EventManager
 	};
 
 	HXG_DECLSPEC extern Vec2<double> mouse_position;
-	HXG_DECLSPEC extern std::vector<std::pair<Event*, unsigned int>> global_events;
+	HXG_DECLSPEC extern std::vector<Event*> global_events;
 
 	HXG_DECLSPEC void start_looping();
 	HXG_DECLSPEC void stop_looping();

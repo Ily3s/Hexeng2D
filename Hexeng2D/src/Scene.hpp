@@ -24,7 +24,7 @@ namespace Hexeng
 	public:
 
 		std::vector<Renderer::Layer*> layers;
-		std::vector<std::pair<EventManager::Event*, unsigned int>> events;
+		std::vector<EventManager::Event*> events;
 		std::vector<Physics::PhysicsVecs*> physics_vecs;
 
 		Scene(int id, const std::unordered_map<SceneComponent, std::vector<void*>>& components);

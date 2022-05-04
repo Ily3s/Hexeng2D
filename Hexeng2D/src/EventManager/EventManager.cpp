@@ -11,13 +11,13 @@ namespace Hexeng::EventManager
 	std::thread event_thread;
 
 	Vec2<double> mouse_position{ 0, 0 };
-	std::vector<std::pair<Event*, unsigned int>> global_events;
+	std::vector<Event*> global_events;
 
-	Event::Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range, unsigned int pertick)
-		: condition(condition), action(action), pertick(pertick), range(range)
+	Event::Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range, uint32_t pertick)
+		: condition(condition), action(action), pertick(pertick), range(range), clock(pertick - 1)
 	{
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 	}
 
 	EventGate::EventGate(std::function<void(void)> evt, Range range_para, unsigned int pertick_para)
@@ -27,7 +27,7 @@ namespace Hexeng::EventManager
 		condition = []() {return true; };
 		range = range_para;
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 	}
 
 	RendererEvent::RendererEvent(std::function<bool(void)> condition_para, std::function<void(void)> action, Range range_para, unsigned int pertick_para)
@@ -38,7 +38,7 @@ namespace Hexeng::EventManager
 		pertick = pertick_para;
 		action = [this]() {Renderer::pending_actions.push_back(internal_action); };
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 	}
 
 	RendererEventGate::RendererEventGate(std::function<void(void)> evt, Range range_para, unsigned int pertick_para)
@@ -49,28 +49,18 @@ namespace Hexeng::EventManager
 		condition = []() {return true; };
 		action = [this]() {Renderer::pending_actions.push_back(internal_action); };
 		if (range == Range::GLOBAL)
-			global_events.push_back({ this, pertick });
-	}
-
-	std::vector<std::pair<Event*, unsigned int>>::iterator find(std::vector<std::pair<Event*, unsigned int>>& vec, Event* searching)
-	{
-		for (std::vector<std::pair<Event*, unsigned int>>::iterator it = vec.begin(); it < vec.end(); it++)
-		{
-			if (it->first == searching)
-				return it;
-		}
-		return vec.end();
+			global_events.push_back(this);
 	}
 
 	Event::Event(Event&& other) noexcept
-		: condition(other.condition), action(other.action), pertick(other.pertick), range(other.range)
+		: condition(other.condition), action(other.action), pertick(other.pertick), range(other.range), clock(other.clock)
 	{
 		if (range == Range::GLOBAL)
 		{
-			auto it = find(global_events, &other);
+			auto it = std::find(global_events.begin(), global_events.end(), &other);
 			if (it != global_events.end())
 				global_events.erase(it);
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 		}
 	}
 
@@ -79,19 +69,20 @@ namespace Hexeng::EventManager
 		condition = other.condition;
 		action = other.action;
 		pertick = other.pertick;
+		clock = other.clock;
 
 		if (range == Range::GLOBAL)
 		{
-			auto it = find(global_events, this);
+			auto it = std::find(global_events.begin(), global_events.end(), this);
 			if (it != global_events.end())
 				global_events.erase(it);
 		}
 		if (other.range == Range::GLOBAL)
 		{
-			auto it = find(global_events, &other);
+			auto it = std::find(global_events.begin(), global_events.end(), &other);
 			if (it != global_events.end())
 				global_events.erase(it);
-			global_events.push_back({ this, pertick });
+			global_events.push_back(this);
 		}
 
 		range = other.range;
@@ -126,25 +117,25 @@ namespace Hexeng::EventManager
 			mouse_position.x -= 0.5 * Settings::window_size.x;
 			mouse_position /= (double)Settings::window_size.y / 1080;
 
-			for (auto& [evt, tick] : global_events)
+			for (auto evt : global_events)
 			{
-				if (tick > 1)
-					tick--;
+				if (evt->clock > 0)
+					evt->clock--;
 				else if (evt->condition())
 				{
 					evt->action();
-					tick = evt->pertick;
+					evt->clock = evt->pertick - 1;
 				}
 			}
 
-			for (auto& [evt, tick] : scenes[scene_id]->events)
+			for (auto evt : scenes[scene_id]->events)
 			{
-				if (tick > 1)
-					tick--;
+				if (evt->clock > 0)
+					evt->clock--;
 				else if (evt->condition())
 				{
 					evt->action();
-					tick = evt->pertick;
+					evt->clock = evt->pertick - 1;
 				}
 			}
 
