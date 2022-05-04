@@ -51,7 +51,7 @@ namespace Hexeng::Renderer
 
 		const VEC* value_ptr = nullptr;
 
-		Uniform(const char* uniform_name, const VEC* value_ptr, const std::vector<Shader*>& shaders);
+		Uniform(const char* uniform_name, const VEC* value_ptr = nullptr, const std::vector<Shader*>& shaders = {});
 
 		Uniform() = default;
 
@@ -111,6 +111,9 @@ namespace Hexeng::Renderer
 	template <typename VEC>
 	void Uniform<VEC>::refresh()
 	{
+		if (!value_ptr)
+			return;
+
 		for (auto& [shader, id] : shader_list)
 		{
 			shader->bind();
@@ -121,6 +124,9 @@ namespace Hexeng::Renderer
 	template <typename VEC>
 	void Uniform<VEC>::refresh(Shader* shad)
 	{
+		if (!value_ptr)
+			return;
+
 		auto it = shader_list.find(shad);
 		assert(it != shader_list.end());
 		shad->bind();

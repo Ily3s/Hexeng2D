@@ -156,18 +156,18 @@ namespace Hexeng::Renderer
 	Uniform<Vec2<float>> u_transform;
 	Uniform<float> u_rotation_angle;
 	Uniform<Vec2<int>> u_window_size;
+	Uniform<float> u_scale;
 
 	ToBeInit init_uniforms
 	{ []() {
-		u_transform = { "u_transform", &transform, {} };
-		u_rotation_angle = { "u_rotation_angle", &rotation_angle, {} };
-		u_window_size = { "u_window_size", &Settings::window_size, {} };
+		u_transform = { "u_transform" };
+		u_rotation_angle = { "u_rotation_angle" };
+		u_window_size = { "u_window_size", &Settings::window_size };
+		u_scale = { "u_scale" };
 		UniformInterface::necessary_uniforms.push_back(&u_transform);
 		UniformInterface::necessary_uniforms.push_back(&u_window_size);
 		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);
+		UniformInterface::necessary_uniforms.push_back(&u_scale);
 	} };
-
-	Vec2<float> transform;
-	float rotation_angle = 0;
 
 }

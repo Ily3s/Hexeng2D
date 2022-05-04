@@ -15,19 +15,13 @@ namespace Hexeng::Renderer::Presets
 	{
 		float vertex_b[]
 		{
-			toX(vertecies[0]), toX(vertecies[1]), 0.0f, 0.0f,
-			toX(vertecies[2]), toX(vertecies[3]), 0.0f, 1.0f,
-			toX(vertecies[4]), toX(vertecies[5]), 1.0f, 1.0f,
-			toX(vertecies[6]), toX(vertecies[7]), 1.0f, 0.0f
+			toX(vertecies[0]), toY(vertecies[1]), 0.0f, 0.0f,
+			toX(vertecies[2]), toY(vertecies[3]), 0.0f, 1.0f,
+			toX(vertecies[4]), toY(vertecies[5]), 1.0f, 1.0f,
+			toX(vertecies[6]), toY(vertecies[7]), 1.0f, 0.0f
 		};
 
-		m_ib = &s_index_buffer;
-		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
-		m_shader = shader;
-		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
-		position = pos;
-		uniforms.push_back({ &u_transform, &transform });
-		uniforms.push_back({ &u_rotation_angle, &rotation });
+		this->Mesh::Mesh(vertex_b, 4*4*sizeof(float), pos, basic_vertex_layout, &s_index_buffer, texture, shader);
 	}
 
 	void BasicQuad::init()
@@ -61,22 +55,15 @@ namespace Hexeng::Renderer::Presets
 		m_min = relative_pos + pos;
 		m_max = m_min + size;
 
-		float vertex_b[]
+		int vertecies[]
 		{
-			toX(relative_pos.x) ,			toY(relative_pos.y) ,			0.0f, 0.0f,		// 0
-			toX(relative_pos.x) ,			toY(relative_pos.y + size.y) ,	0.0f, 1.0f,		// 1	
-			toX(relative_pos.x + size.x) ,	toY(relative_pos.y + size.y) ,	1.0f, 1.0f,		// 2	
-			toX(relative_pos.x + size.x) ,	toY(relative_pos.y) ,			1.0f, 0.0f		// 3
+			relative_pos.x,			 relative_pos.y,
+			relative_pos.x,			 relative_pos.y + size.y,
+			relative_pos.x + size.x, relative_pos.y + size.y,
+			relative_pos.x + size.x, relative_pos.y,
 		};
 
-		m_texture = texture;
-		m_ib = &s_index_buffer;
-		m_vb = VertexBuffer(vertex_b, sizeof(vertex_b));
-		m_shader = shader;
-		m_vao.tie(m_vb, basic_vertex_layout, s_index_buffer);
-		position = pos;
-		uniforms.push_back({ &u_transform, &transform });
-		uniforms.push_back({ &u_rotation_angle, &rotation });
+		this->BasicQuad::BasicQuad(vertecies, pos, texture, shader);
 	}
 
 	DebugRectangle::DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)

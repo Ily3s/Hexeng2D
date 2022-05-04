@@ -32,9 +32,7 @@ namespace Hexeng::Renderer
 	HXG_DECLSPEC extern Uniform<Vec2<float>> u_transform;
 	HXG_DECLSPEC extern Uniform<float> u_rotation_angle;
 	HXG_DECLSPEC extern Uniform<Vec2<int>> u_window_size;
-
-	HXG_DECLSPEC extern Vec2<float> transform;
-	HXG_DECLSPEC extern float rotation_angle;
+	HXG_DECLSPEC extern Uniform<float> u_scale;
 
 	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
 

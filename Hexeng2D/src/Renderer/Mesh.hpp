@@ -31,7 +31,7 @@ namespace Hexeng::Renderer
 
 		Mesh() = default;
 
-		Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
+		Mesh(const float* vb, size_t vb_size, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type = GL_TRIANGLES);
 
 		Mesh(Mesh&& moving) noexcept;
 		Mesh& operator=(Mesh&& moving) noexcept;
@@ -45,6 +45,7 @@ namespace Hexeng::Renderer
 
 		Vec2<int> position{ 0, 0 };
 		Vec2<float> transform{ 0.0f, 0.0f };
+		float scale = 1.0f;
 
 		float rotation = 0;
 

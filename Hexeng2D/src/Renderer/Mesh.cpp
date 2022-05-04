@@ -5,8 +5,8 @@
 namespace Hexeng::Renderer
 {
 
-	Mesh::Mesh(const float* vb, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
-		:	m_vb(vb, sizeof(vb)),
+	Mesh::Mesh(const float* vb, size_t vb_size, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
+		:	m_vb(vb, vb_size),
 			m_ib(ib),
 			m_texture(tex),
 			m_shader(shader),
@@ -16,6 +16,7 @@ namespace Hexeng::Renderer
 		m_vao.tie(m_vb, layout, *m_ib);
 		uniforms.push_back({ &u_transform, &transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
+		uniforms.push_back({ &u_scale, &scale });
 	}
 
 	Mesh::Mesh(Mesh&& moving) noexcept
@@ -28,14 +29,17 @@ namespace Hexeng::Renderer
 			m_type(moving.m_type),
 			position(moving.position),
 			transform(moving.transform),
-			rotation(moving.rotation) 
+			rotation(moving.rotation),
+			scale(moving.scale)
 	{
 		for (auto& [ui, value_ptr] : uniforms)
 		{
-			if (ui == &Renderer::u_transform)
+			if (ui == &u_transform)
 				value_ptr = &transform;
-			if (ui == &Renderer::u_rotation_angle)
+			if (ui == &u_rotation_angle)
 				value_ptr = &rotation;
+			if (ui == &u_scale)
+				value_ptr = &scale;
 		}
 	}
 
@@ -51,13 +55,16 @@ namespace Hexeng::Renderer
 		position = moving.position;
 		transform = moving.transform;
 		rotation = moving.rotation;
+		scale = moving.scale;
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{
-			if (ui == &Renderer::u_transform)
+			if (ui == &u_transform)
 				value_ptr = &transform;
-			if (ui == &Renderer::u_rotation_angle)
+			else if (ui == &u_rotation_angle)
 				value_ptr = &rotation;
+			else if (ui == &u_scale)
+				value_ptr = &scale;
 		}
 
 		return *this;

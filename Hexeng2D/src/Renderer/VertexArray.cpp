@@ -82,7 +82,7 @@ namespace Hexeng::Renderer
 	VertexArray& VertexArray::operator=(VertexArray&& va) noexcept
 	{
 		if (m_id)
-			HXG_GL(glDeleteBuffers(1, &m_id));
+			HXG_GL(glDeleteVertexArrays(1, &m_id));
 		m_id = va.m_id;
 		va.m_id = 0;
 

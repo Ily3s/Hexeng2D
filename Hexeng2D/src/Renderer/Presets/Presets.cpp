@@ -13,7 +13,6 @@ namespace Hexeng::Renderer::Presets
 	Shader font_shader;
 	Shader tex_vector_shader;
 	Uniform<Color3> u_color;
-	Color3 color{ 0.0f, 0.0f, 0.0f };
 	VertexLayout basic_vertex_layout;
 
 	ToBeInit init_presets
@@ -28,9 +27,9 @@ namespace Hexeng::Renderer::Presets
 		font_shader.add_necessary_uniforms();
 		tex_vector_shader.add_necessary_uniforms();
 
-		u_color = { "u_color", &color, {&line_shader, &font_shader} };
+		u_color = { "u_color", nullptr , {&line_shader, &font_shader} };
 
-		basic_vertex_layout = VertexLayout({ VertexElement{ 2, GL_FLOAT }, VertexElement{ 2, GL_FLOAT } });
+		basic_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
 
 		BasicQuad::init();
 	}, 1 };

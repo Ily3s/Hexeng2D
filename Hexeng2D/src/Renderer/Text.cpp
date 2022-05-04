@@ -73,13 +73,6 @@ namespace Hexeng::Renderer
 				font.add_char(c);
 		}
 
-		m_texture = &font.texture;
-		m_shader = &Presets::font_shader;
-		uniforms.push_back({ &u_transform, &transform });
-		uniforms.push_back({ &u_rotation_angle, &rotation });
-		uniforms.push_back({ &Presets::u_color, &color });
-		position = pos;
-
 		size_t countless_chars_nb = std::count(text.begin(), text.end(), ' ') + std::count(text.begin(), text.end(), '\n');
 
 		float* raw_vb = new float[16 * (text.size() - countless_chars_nb)];
@@ -97,12 +90,12 @@ namespace Hexeng::Renderer
 			first_it = second_it;
 		}
 
-		pos = { 0, 0 };
+		Vec2<int> relative_pos = { 0, 0 };
 
 		uint32_t vb_index = 0, ib_index = 0, vertecies_nb = 0;
 		for (const std::u32string& line : lines)
 		{
-			Vec2<int> current_pos{ pos };
+			Vec2<int> current_pos{ relative_pos };
 			int width = 0;
 
 			for (char32_t c : line)
@@ -162,15 +155,14 @@ namespace Hexeng::Renderer
 				current_pos.x += font.get_advancement(c) * size;
 			}
 		
-			pos.y -= font.line_offset * size;
+			relative_pos.y -= font.line_offset * size;
 		}
-		
+
 		m_index_buffer = IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
-		m_ib = &m_index_buffer;
 
-		m_vb = VertexBuffer(raw_vb, vb_index*4);
+		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Presets::basic_vertex_layout, &m_index_buffer, &font.texture, &Presets::font_shader);
 
-		m_vao.tie(m_vb, Presets::basic_vertex_layout, m_index_buffer);
+		uniforms.push_back({ &Presets::u_color, &color });
 
 		delete[] raw_vb;
 		delete[] raw_ib;
