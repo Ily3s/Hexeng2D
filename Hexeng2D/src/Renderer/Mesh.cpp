@@ -102,6 +102,7 @@ namespace Hexeng::Renderer
 	{
 		uniforms.push_back({ &u_transform, &transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
+		uniforms.push_back({ &u_scale, &scale });
 	}
 
 	SuperMesh::SuperMesh(SuperMesh&& other) noexcept
@@ -130,7 +131,7 @@ namespace Hexeng::Renderer
 				{
 					if (mesh_ui == ui)
 					{
-						ui->sum_val(mesh_val, val);
+						ui->fusion_val(mesh_val, val);
 						not_found = false;
 						continue;
 					}
@@ -152,7 +153,7 @@ namespace Hexeng::Renderer
 				{
 					if (mesh_ui == ui)
 					{
-						ui->substract_val(mesh_val, val);
+						ui->unfusion_val(mesh_val, val);
 						continue;
 					}
 				}

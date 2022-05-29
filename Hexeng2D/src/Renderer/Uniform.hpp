@@ -13,6 +13,14 @@
 namespace Hexeng::Renderer
 {
 
+	enum class UniformFusionMode
+	{
+		SUM,
+		SUBSTRACT,
+		MULTIPLY,
+		DIVIDE
+	};
+
 	class UniformInterface
 	{
 	public :
@@ -21,6 +29,8 @@ namespace Hexeng::Renderer
 
 		std::unordered_map<Shader*, int> shader_list;
 		std::string uniform_name;
+
+		UniformFusionMode fusion_mode = UniformFusionMode::SUM;
 
 		static HXG_DECLSPEC std::vector<UniformInterface*> necessary_uniforms;
 
@@ -36,6 +46,56 @@ namespace Hexeng::Renderer
 				shader_list.insert({ shad, shad->get_uniform(uniform_name.c_str()) });
 		}
 
+		void fusion_val(void* val1, void* val2)
+		{
+			switch (fusion_mode)
+			{
+			case UniformFusionMode::SUM :
+				sum_val(val1, val2);
+				break;
+
+			case UniformFusionMode::SUBSTRACT :
+				substract_val(val1, val2);
+				break;
+
+			case UniformFusionMode::MULTIPLY :
+				mult_val(val1, val2);
+				break;
+
+			case UniformFusionMode::DIVIDE :
+				div_val(val1, val2);
+				break;
+
+			default :
+				break;
+			}
+		}
+
+		void unfusion_val(void* val1, void* val2)
+		{
+			switch (fusion_mode)
+			{
+			case UniformFusionMode::SUM:
+				substract_val(val1, val2);
+				break;
+
+			case UniformFusionMode::SUBSTRACT:
+				sum_val(val1, val2);
+				break;
+
+			case UniformFusionMode::MULTIPLY:
+				div_val(val1, val2);
+				break;
+
+			case UniformFusionMode::DIVIDE:
+				mult_val(val1, val2);
+				break;
+
+			default:
+				break;
+			}
+		}
+
 		virtual void sum_val(void* val1, void* val2) = 0;
 		virtual void substract_val(void* val1, void* val2) = 0;
 		virtual void mult_val(void* val1, void* val2) = 0;
@@ -44,6 +104,21 @@ namespace Hexeng::Renderer
 
 	};
 
+	enum class UniformArgType
+	{
+		// const char *
+		NAME,
+		// const VEC *
+		CONTROLLLER,
+		// const std::vector<Shader*>*
+		SHADERS,
+		// const UniformFusionMode *
+		FUSION_MODE
+	};
+
+	using UniformArg = std::pair<UniformArgType, const void*>;
+	using UniformArgs = std::unordered_map<UniformArgType, const void*>;
+
 	template <typename VEC>
 	class Uniform : public UniformInterface
 	{
@@ -51,9 +126,7 @@ namespace Hexeng::Renderer
 
 		const VEC* value_ptr = nullptr;
 
-		Uniform(const char* uniform_name, const VEC* value_ptr = nullptr, const std::vector<Shader*>& shaders = {});
-
-		Uniform() = default;
+		Uniform(const UniformArgs& arguments = {});
 
 		Uniform(Uniform&&) noexcept;
 		Uniform& operator=(Uniform&&) noexcept;
@@ -73,14 +146,35 @@ namespace Hexeng::Renderer
 	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
 
 	template <typename VEC>
-	Uniform<VEC>::Uniform(const char* uniform_name_arg, const VEC* value_ptr, const std::vector<Shader*>& shaders)
-		: value_ptr(value_ptr)
+	Uniform<VEC>::Uniform(const UniformArgs& arguments)
 	{
-		uniform_name = std::string(uniform_name_arg);
-		for (Shader* shader : shaders)
+		for (const auto& [arg_t, val] : arguments)
 		{
-			int id = shader->get_uniform(uniform_name_arg);
-			shader_list.insert({ shader, id });
+			switch (arg_t)
+			{
+			case UniformArgType::NAME :
+				uniform_name = std::string(reinterpret_cast<const char*>(val));
+				break;
+			
+			case UniformArgType::CONTROLLLER :
+				value_ptr = reinterpret_cast<const VEC*>(val);
+				break;
+
+			case UniformArgType::SHADERS :
+				for (Shader* shader : *reinterpret_cast<const std::vector<Shader*>*>(val))
+				{
+					int id = shader->get_uniform(uniform_name.c_str());
+					shader_list.insert({ shader, id });
+				}
+				break;
+
+			case UniformArgType::FUSION_MODE :
+				fusion_mode = *reinterpret_cast<const UniformFusionMode*>(&val);
+				break;
+
+			default :
+				break;
+			}
 		}
 		uniform_list.push_back(this);
 	}
@@ -89,7 +183,8 @@ namespace Hexeng::Renderer
 	Uniform<VEC>::Uniform(Uniform&& moving) noexcept
 		:	value_ptr(moving.value_ptr),
 			shader_list(std::move(moving.shader_list)),
-			uniform_name(std::move(moving.uniform_name))
+			uniform_name(std::move(moving.uniform_name)),
+			fusion_mode(moving.fusion_mode)
 	{
 		auto it = std::find(uniform_list.begin(), uniform_list.end(), &moving);
 		if (it != uniform_list.end())
@@ -102,6 +197,7 @@ namespace Hexeng::Renderer
 		value_ptr = moving.value_ptr;
 		shader_list = std::move(moving.shader_list);
 		uniform_name = std::move(moving.uniform_name);
+		fusion_mode = moving.fusion_mode;
 		auto it = std::find(uniform_list.begin(), uniform_list.end(), &moving);
 		if (it != uniform_list.end())
 			*it = this;

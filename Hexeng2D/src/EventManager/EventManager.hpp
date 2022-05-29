@@ -22,7 +22,7 @@ namespace Hexeng::EventManager
 		std::function<void(void)> action = nullptr;
 		uint32_t pertick = 1;
 		uint32_t clock = 0;
-		Range range;
+		Range range = Range::GLOBAL;
 
 		Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range = Range::GLOBAL, uint32_t pertick = 1);
 

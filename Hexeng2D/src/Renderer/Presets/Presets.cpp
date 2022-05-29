@@ -27,7 +27,8 @@ namespace Hexeng::Renderer::Presets
 		font_shader.add_necessary_uniforms();
 		tex_vector_shader.add_necessary_uniforms();
 
-		u_color = { "u_color", nullptr , {&line_shader, &font_shader} };
+		u_color = {{{UniformArgType::NAME, "u_color"}}};
+		u_color.add_shaders({ &line_shader, &font_shader });
 
 		basic_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
 

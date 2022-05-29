@@ -160,10 +160,11 @@ namespace Hexeng::Renderer
 
 	ToBeInit init_uniforms
 	{ []() {
-		u_transform = { "u_transform" };
-		u_rotation_angle = { "u_rotation_angle" };
-		u_window_size = { "u_window_size", &Settings::window_size };
-		u_scale = { "u_scale" };
+		u_transform = {{{UniformArgType::NAME, "u_transform"}}};
+		u_rotation_angle = { {{UniformArgType::NAME, "u_rotation_angle"}} };
+		u_window_size = { {{UniformArgType::NAME, "u_window_size"},
+							{UniformArgType::CONTROLLLER, &Settings::window_size } } };
+		u_scale = { { {UniformArgType::NAME, "u_scale"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::MULTIPLY} } };
 		UniformInterface::necessary_uniforms.push_back(&u_transform);
 		UniformInterface::necessary_uniforms.push_back(&u_window_size);
 		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);

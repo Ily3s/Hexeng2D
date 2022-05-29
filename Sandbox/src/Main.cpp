@@ -31,7 +31,12 @@ int main()
 	custom_shader.add_necessary_uniforms();
 
 	Color3 frame_color{ 1.0f, 1.0f, 1.0f };
-	Renderer::Uniform<Color3> u_color = { "u_color", &frame_color, {&custom_shader} };
+	std::vector<Renderer::Shader*> sh{ &custom_shader };
+	Renderer::Uniform<Color3> u_color{ {
+		{Renderer::UniformArgType::NAME, "u_color"},
+		{Renderer::UniformArgType::CONTROLLLER, &frame_color},
+		{Renderer::UniformArgType::SHADERS, &sh} } };
+	u_color.add_shaders({ &custom_shader });
 
 	Renderer::Texture frame_tex{ "res/frame.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Presets::BasicSquare frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };

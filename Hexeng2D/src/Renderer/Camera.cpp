@@ -19,8 +19,10 @@ namespace Hexeng::Renderer
 
 	ToBeInit init_cam
 	{ []() {
-		Camera::u_cam = { "u_cam", &Camera::shader_pos, {} };
-		Camera::u_zoom = { "u_zoom",&Camera::zoom, {} };
+		Camera::u_cam = { {	{UniformArgType::NAME, "u_cam"},
+							{UniformArgType::CONTROLLLER, &Camera::shader_pos} } };
+		Camera::u_zoom = {{ {UniformArgType::NAME, "u_zoom"},
+							{UniformArgType::CONTROLLLER, &Camera::zoom} } };
 		UniformInterface::necessary_uniforms.push_back(&Camera::u_cam);
 		UniformInterface::necessary_uniforms.push_back(&Camera::u_zoom);
 	} };
