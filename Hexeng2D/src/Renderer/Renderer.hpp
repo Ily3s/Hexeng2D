@@ -64,6 +64,8 @@ namespace Hexeng::Renderer
 
 	HXG_DECLSPEC extern std::vector<std::function<void(void)>> pending_actions;
 
+	HXG_DECLSPEC extern float frame_time;
+
 }
 
 #endif // !RENDERER_HPP

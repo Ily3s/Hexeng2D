@@ -9,6 +9,7 @@
 #include "Camera.hpp"
 #include "../Hexeng.hpp"
 #include "Presets/Presets.hpp"
+#include "Animation.hpp"
 
 namespace Hexeng::Renderer
 {
@@ -139,18 +140,29 @@ namespace Hexeng::Renderer
 	}
 
 	std::vector<std::function<void(void)>> pending_actions;
+	float frame_time = 0.0f;
 
 	void draw_current_scene()
 	{
+		auto start = std::chrono::high_resolution_clock::now();
+
 		for (auto& action : pending_actions)
 			action();
 
 		pending_actions.clear();
 
+		Animation::update_animations();
+
 		if (scenes.find(scene_id) == scenes.end())
 			return;
 
 		draw_scene(scene_id);
+
+		auto end = std::chrono::high_resolution_clock::now();
+
+		std::chrono::duration<float> duration = end - start;
+
+		frame_time = duration.count() * 1000;
 	}
 
 	Uniform<Vec2<float>> u_transform;
