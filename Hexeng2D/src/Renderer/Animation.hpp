@@ -21,10 +21,11 @@ namespace Hexeng::Renderer
 	{
 	public :
 
-		Animation(std::vector<AnimationStep> steps, std::function<void(void)> terminate);
+		Animation(std::vector<AnimationStep> steps, std::function<void(void)> terminate, bool repeat = false);
 
 		std::vector<AnimationStep> steps;
 		std::function<void(void)> terminate;
+		bool repeat = false;
 
 		void play();
 		void stop();

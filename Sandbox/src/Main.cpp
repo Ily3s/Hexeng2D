@@ -14,6 +14,7 @@
 #include "Renderer/Presets/Basic.glsl"
 #include "Renderer/Text.hpp"
 #include "Color.hpp"
+#include "Renderer/Animation.hpp"
 
 #include "Player.hpp"
 #include "Shaders.glsl"
@@ -46,6 +47,12 @@ int main()
 	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example };
 	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example };
 	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example, false };
+
+	Renderer::Animation anim_sq{ { 
+		{[&square](float t) {square.rotation += t * 9; }, [&square, &frame_tex]() {square.access_texture() = &frame_tex; }, 100},
+		{[&square](float t) {square.rotation -= t * 9; }, [&square, &example]() {square.access_texture() = &example; }, 100} },
+		[&square, &example]() {square.access_texture() = &example; square.rotation = 0; }, true };
+	anim_sq.play();
 
 	Player player{ {0, 0}, 5.0f, &example };
 
