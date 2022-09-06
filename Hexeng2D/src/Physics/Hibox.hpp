@@ -8,7 +8,7 @@
 #include "../Vectors.hpp"
 #include "../EventManager/EventManager.hpp"
 #include "../Renderer/Layer.hpp"
-#include "../Renderer/Presets/BasicQuad.hpp"
+#include "../Renderer/Quad.hpp"
 
 namespace Hexeng
 {
@@ -48,7 +48,7 @@ namespace Hexeng::Physics
 		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
 
 		static std::unordered_map <int, Renderer::ContextualLayer> visuallisers_layers;
-		std::vector<Renderer::Presets::DebugRectangle> visuallisers;
+		std::vector<Renderer::DebugRectangle> visuallisers;
 
 	public:
 

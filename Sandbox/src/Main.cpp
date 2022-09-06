@@ -3,7 +3,7 @@
 
 #include "Hexeng.hpp"
 #include "Renderer/Renderer.hpp"
-#include "Renderer/Presets/BasicQuad.hpp"
+#include "Renderer/Quad.hpp"
 #include "Renderer/Layer.hpp"
 #include "Scene.hpp"
 #include "Renderer/Camera.hpp"
@@ -11,7 +11,7 @@
 #include "EventManager/InputEvent.hpp"
 #include "EventManager/Button.hpp"
 #include "Physics/Physics.hpp"
-#include "Renderer/Presets/Basic.glsl"
+#include "Renderer/DefaultShaders.glsl"
 #include "Renderer/Text.hpp"
 #include "Color.hpp"
 #include "Renderer/Animation.hpp"
@@ -28,7 +28,7 @@ int main()
 
 	Renderer::init();
 	
-	Renderer::Shader custom_shader{ Hexeng::Renderer::Presets::basic_vs, custom_fs };
+	Renderer::Shader custom_shader{ Hexeng::Renderer::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
 
 	Color3 frame_color{ 1.0f, 1.0f, 1.0f };
@@ -40,13 +40,13 @@ int main()
 	u_color.add_shaders({ &custom_shader });
 
 	Renderer::Texture frame_tex{ "res/frame.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
-	Renderer::Presets::BasicSquare frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
+	Renderer::Square frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
 	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
 
 	Renderer::Texture example{ "res/example.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
-	Renderer::Presets::BasicSquare square{ { 0, 0 }, 5.0f, &example };
-	Renderer::Presets::BasicSquare square2{ { -100, -100 }, 35.0f, &example };
-	Renderer::Presets::BasicSquare square3{ { 2000, -250 }, 500, &example, false };
+	Renderer::Square square{ { 0, 0 }, 5.0f, &example };
+	Renderer::Square square2{ { -100, -100 }, 35.0f, &example };
+	Renderer::Square square3{ { 2000, -250 }, 500, &example, false };
 
 	Renderer::Animation anim_sq{ { 
 		{[&square](float t) {square.rotation += t * 9; }, [&square, &frame_tex]() {square.access_texture() = &frame_tex; }, 100},
@@ -82,12 +82,12 @@ int main()
 	Renderer::Texture arrow_hover{ "res/arrow_hover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 
 	Vec2<int> top_left = { - 1920 / 2, 1080 / 2 };
-	Renderer::Presets::BasicSquare arrow_up{ top_left + Vec2<int>(115, -50), 50, &arrow_unhover };
-	Renderer::Presets::BasicSquare arrow_down{ top_left + Vec2<int>(115, -190), 50, &arrow_unhover };
+	Renderer::Square arrow_up{ top_left + Vec2<int>(115, -50), 50, &arrow_unhover };
+	Renderer::Square arrow_down{ top_left + Vec2<int>(115, -190), 50, &arrow_unhover };
 	arrow_down.rotation = 180;
-	Renderer::Presets::BasicSquare arrow_left{ top_left + Vec2<int>(45, -120), 50, &arrow_unhover };
+	Renderer::Square arrow_left{ top_left + Vec2<int>(45, -120), 50, &arrow_unhover };
 	arrow_left.rotation = -90;
-	Renderer::Presets::BasicSquare arrow_right{ top_left + Vec2<int>(185, -120), 50, &arrow_unhover };
+	Renderer::Square arrow_right{ top_left + Vec2<int>(185, -120), 50, &arrow_unhover };
 	arrow_right.rotation = 90;
 
 	EventManager::Button up_btn{ arrow_up.get_min(), arrow_up.get_max(), []() { return true; }, {

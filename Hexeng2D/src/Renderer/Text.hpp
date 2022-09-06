@@ -9,7 +9,7 @@
 
 #include "Texture.hpp"
 #include "../Macros.hpp"
-#include "Presets/BasicQuad.hpp"
+#include "Quad.hpp"
 #include "../Color.hpp"
 
 namespace Hexeng::Renderer

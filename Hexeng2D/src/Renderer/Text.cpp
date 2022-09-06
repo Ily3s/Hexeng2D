@@ -160,9 +160,9 @@ namespace Hexeng::Renderer
 
 		m_index_buffer = IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
 
-		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Presets::basic_vertex_layout, &m_index_buffer, &font.texture, &Presets::font_shader);
+		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Quad::s_vertex_layout, &m_index_buffer, &font.texture, &font_shader);
 
-		uniforms.push_back({ &Presets::u_color, &color });
+		uniforms.push_back({ &u_color, &color });
 
 		delete[] raw_vb;
 		delete[] raw_ib;

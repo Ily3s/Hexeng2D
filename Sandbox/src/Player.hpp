@@ -20,7 +20,7 @@ private:
 
 public:
 
-	Renderer::Presets::BasicRectangle rec;
+	Renderer::Rectangle rec;
 	Renderer::SuperMesh mesh;
 	Physics::PhysicsEntity physics;
 	int speed = 4;

@@ -1,19 +1,14 @@
-#include "Presets.hpp"
-#include "Basic.glsl"
-#include "BasicQuad.hpp"
-#include "../Uniform.hpp"
-#include "../Camera.hpp"
-#include "../Renderer.hpp"
+#include "DefaultShaders.hpp"
+#include "DefaultShaders.glsl"
+#include "Renderer.hpp"
 
-namespace Hexeng::Renderer::Presets
+namespace Hexeng::Renderer
 {
-
 	Shader basic_shader;
 	Shader line_shader;
 	Shader font_shader;
 	Shader tex_vector_shader;
 	Uniform<Color3> u_color;
-	VertexLayout basic_vertex_layout;
 
 	ToBeInit init_presets
 	{ []() {
@@ -29,18 +24,6 @@ namespace Hexeng::Renderer::Presets
 
 		u_color = {{{UniformArgType::NAME, "u_color"}}};
 		u_color.add_shaders({ &line_shader, &font_shader });
-
-		basic_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
-
-		BasicQuad::init();
 	}, 1 };
-
-	void stop()
-	{
-		BasicQuad::stop();
-
-		basic_shader.~Shader();
-		line_shader.~Shader();
-	}
 
 }

@@ -8,7 +8,6 @@
 #include "Scene.hpp"
 #include "Camera.hpp"
 #include "../Hexeng.hpp"
-#include "Presets/Presets.hpp"
 #include "Animation.hpp"
 
 namespace Hexeng::Renderer
