@@ -8,8 +8,10 @@ namespace Hexeng
 {
 
 	template <typename T>
-	struct Vec2
+	class Vec2
 	{
+	public :
+
 		T x, y;
 
 		Vec2() = default;
@@ -145,8 +147,10 @@ namespace Hexeng
 	}
 
 	template <typename T>
-	struct Vec3
+	class Vec3
 	{
+	public :
+
 		T x, y, z;
 
 		Vec3() = default;
@@ -285,8 +289,10 @@ namespace Hexeng
 	}
 
 	template <typename T>
-	struct Vec4
+	class Vec4
 	{
+	public :
+
 		T x, y, z, w;
 
 		Vec4() = default;
