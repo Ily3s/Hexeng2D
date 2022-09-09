@@ -20,6 +20,16 @@ namespace Hexeng
 		template <typename T2>
 		Vec2<T>(Vec2<T2> other) : x((T)other.x), y((T)other.y) {}
 
+		static Vec2 abs(const Vec2& other)
+		{
+			return { std::abs(other.x), std::abs(other.y) };
+		}
+
+		T len() const
+		{
+			return (x ^ 2 + y ^ 2) ^ 0.5;
+		}
+
 		Vec2 operator+(const Vec2& other) const
 		{
 			return { x + other.x, y + other.y };
@@ -68,22 +78,22 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec2 operator+(const T other) const
+		Vec2 operator+(const T& other) const
 		{
 			return { x + other, y + other };
 		}
 
-		Vec2 operator-(const T other) const
+		Vec2 operator-(const T& other) const
 		{
 			return { x - other, y - other };
 		}
 
-		Vec2 operator*(const T other) const
+		Vec2 operator*(const T& other) const
 		{
 			return { x * other, y * other };
 		}
 
-		Vec2 operator/(const T other) const
+		Vec2 operator/(const T& other) const
 		{
 			return { x / other, y / other };
 		}
@@ -93,37 +103,42 @@ namespace Hexeng
 			return { -x, -y };
 		}
 
-		Vec2& operator+=(const T other)
+		Vec2& operator+=(const T& other)
 		{
 			x += other;
 			y += other;
 			return *this;
 		}
 
-		Vec2& operator-=(const T other)
+		Vec2& operator-=(const T& other)
 		{
 			x -= other;
 			y -= other;
 			return *this;
 		}
 
-		Vec2& operator*=(const T other)
+		Vec2& operator*=(const T& other)
 		{
 			x *= other;
 			y *= other;
 			return *this;
 		}
 
-		Vec2& operator/=(const T other)
+		Vec2& operator/=(const T& other)
 		{
 			x /= other;
 			y /= other;
 			return *this;
 		}
 
-		static Vec2 abs(const Vec2& other)
+		bool operator==(const Vec2& other) const
 		{
-			return { std::abs(other.x), std::abs(other.y) };
+			return x == other.x && y == other.y;
+		}
+
+		bool operator!=(const Vec2& other) const
+		{
+			return !(operator==(other));
 		}
 	};
 
@@ -158,6 +173,16 @@ namespace Hexeng
 
 		template <typename T2>
 		Vec3<T>(Vec3<T2> other) : x((T)other.x), y((T)other.y), z((T)other.z) {}
+
+		static Vec3 abs(const Vec3& other)
+		{
+			return { std::abs(other.x), std::abs(other.y), std::abs(other.z) };
+		}
+
+		T len() const
+		{
+			return (x ^ 2 + y ^ 2 + z ^ 2) ^ 0.5;
+		}
 
 		Vec3 operator+(const Vec3& other) const
 		{
@@ -216,27 +241,27 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec3 operator+(const T other) const
+		Vec3 operator+(const T& other) const
 		{
 			return { x + other, y + other, z + other };
 		}
 
-		Vec3 operator-(const T other) const
+		Vec3 operator-(const T& other) const
 		{
 			return { x - other, y - other, z - other };
 		}
 
-		Vec3 operator*(const T other) const
+		Vec3 operator*(const T& other) const
 		{
 			return { x * other, y * other, z * other };
 		}
 
-		Vec3 operator/(const T other) const
+		Vec3 operator/(const T& other) const
 		{
 			return { x / other, y / other, z / other };
 		}
 
-		Vec3& operator+=(const T other)
+		Vec3& operator+=(const T& other)
 		{
 			x += other;
 			y += other;
@@ -244,7 +269,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec3& operator-=(const T other)
+		Vec3& operator-=(const T& other)
 		{
 			x -= other;
 			y -= other;
@@ -252,7 +277,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec3& operator*=(const T other)
+		Vec3& operator*=(const T& other)
 		{
 			x *= other;
 			y *= other;
@@ -260,7 +285,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec3& operator/=(const T other)
+		Vec3& operator/=(const T& other)
 		{
 			x /= other;
 			y /= other;
@@ -268,9 +293,14 @@ namespace Hexeng
 			return *this;
 		}
 
-		static Vec3 abs(const Vec3& other)
+		bool operator==(const Vec3& other) const
 		{
-			return { std::abs(other.x), std::abs(other.y), std::abs(other.z) };
+			return x == other.x && y == other.y && z == other.z;
+		}
+
+		bool operator!=(const Vec3& other) const
+		{
+			return !(operator==(other));
 		}
 	};
 
@@ -300,6 +330,16 @@ namespace Hexeng
 
 		template <typename T2>
 		Vec4<T>(Vec4<T2> other) : x((T)other.x), y((T)other.y), z((T)other.z), w((T)other.w) {}
+
+		static Vec4 abs(const Vec4& other)
+		{
+			return { std::abs(other.x), std::abs(other.y), std::abs(other.z), std::abs(other.w) };
+		}
+
+		T len() const
+		{
+			return (x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2) ^ 0.5;
+		}
 
 		Vec4 operator+(const Vec4& other) const
 		{
@@ -362,27 +402,27 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec4 operator+(const T other) const
+		Vec4 operator+(const T& other) const
 		{
 			return { x + other, y + other, z + other, w + other };
 		}
 
-		Vec4 operator-(const T other) const
+		Vec4 operator-(const T& other) const
 		{
 			return { x - other, y - other, z - other, w - other };
 		}
 
-		Vec4 operator*(const T other) const
+		Vec4 operator*(const T& other) const
 		{
 			return { x * other, y * other, z * other, w * other };
 		}
 
-		Vec4 operator/(const T other) const
+		Vec4 operator/(const T& other) const
 		{
 			return { x / other, y / other, z / other, w / other };
 		}
 
-		Vec4& operator+=(const T other)
+		Vec4& operator+=(const T& other)
 		{
 			x += other;
 			y += other;
@@ -391,7 +431,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec4& operator-=(const T other)
+		Vec4& operator-=(const T& other)
 		{
 			x -= other;
 			y -= other;
@@ -400,7 +440,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec4& operator*=(const T other)
+		Vec4& operator*=(const T& other)
 		{
 			x *= other;
 			y *= other;
@@ -409,7 +449,7 @@ namespace Hexeng
 			return *this;
 		}
 
-		Vec4& operator/=(const T other)
+		Vec4& operator/=(const T& other)
 		{
 			x /= other;
 			y /= other;
@@ -418,9 +458,14 @@ namespace Hexeng
 			return *this;
 		}
 
-		static Vec4 abs(const Vec4& other)
+		bool operator==(const Vec4& other) const
 		{
-			return { std::abs(other.x), std::abs(other.y), std::abs(other.z), std::abs(other.w) };
+			return x == other.x && y == other.y && z == other.z && w == other.w;
+		}
+
+		bool operator!=(const Vec4& other) const
+		{
+			return !(operator==(other));
 		}
 	};
 

@@ -40,6 +40,9 @@ namespace Hexeng
 		using Vec3<float>::operator*=;
 		using Vec3<float>::operator/=;
 
+		using Vec3<float>::operator==;
+		using Vec3<float>::operator!=;
+
 		Color3(std::string hex_code)
 		{
 			assert(hex_code.size() == 7 && "A color3 hexcode must be in the format \"#xxxxxx\"");
@@ -105,6 +108,9 @@ namespace Hexeng
 		using Vec4<float>::operator-=;
 		using Vec4<float>::operator*=;
 		using Vec4<float>::operator/=;
+
+		using Vec4<float>::operator==;
+		using Vec4<float>::operator!=;
 
 		Color4(std::string hex_code)
 		{
