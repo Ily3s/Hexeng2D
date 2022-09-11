@@ -27,8 +27,8 @@ namespace Hexeng::Renderer
 	{
 	public :
 
-		Texture(const std::string& filepath, const TexSettList& settings);
-		Texture(uint8_t*&& pixel_buffer, Vec2<int> size, const TexSettList& settings);
+		Texture(const std::string& filepath, const TexSettList& settings = {});
+		Texture(uint8_t*&& pixel_buffer, Vec2<int> size, const TexSettList& settings = {});
 
 		~Texture();
 		
@@ -81,8 +81,8 @@ namespace Hexeng::Renderer
 		TextureVector(TextureVector&&) noexcept;
 		TextureVector& operator=(TextureVector&&) noexcept;
 
-		TextureVector(const std::string& filepath, const TexSettList& settings);
-		TextureVector(uint8_t*&& tex_buffer, Vec2<int> size, const TexSettList& settings);
+		TextureVector(const std::string& filepath, const TexSettList& settings = {});
+		TextureVector(uint8_t*&& tex_buffer, Vec2<int> size, const TexSettList& settings = {});
 		TextureVector(const TexSettList& settings);
 
 		void push(const uint8_t* tex_buffer, Vec2<int> size);

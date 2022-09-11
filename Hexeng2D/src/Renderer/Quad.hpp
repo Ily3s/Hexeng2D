@@ -20,7 +20,7 @@ namespace Hexeng::Renderer
 
 	public:
 
-		static VertexLayout s_vertex_layout;
+		static VertexLayout vertex_layout;
 
 		Quad(const int* vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader = &basic_shader);
 

@@ -1,0 +1,193 @@
+#include <cassert>
+
+#include "BatchRenderer.hpp"
+#include "Renderer.hpp"
+
+namespace Hexeng::Renderer
+{
+
+	VertexLayout BatchQuad::vertex_layout;
+
+	ToBeInit init_vl{ []() {
+		BatchQuad::vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT }, { 1, GL_FLOAT } });
+	} };
+
+	TextureAtlas::TextureAtlas(const std::string& filepath, const Vec2<int>& cell_size, const TexSettList& settings)
+		: Texture(filepath, settings), m_cell_size(cell_size)
+	{
+		assert((m_size.x % cell_size.x == 0) && (m_size.y % cell_size.y == 0) && "Invalid TextureAtlas format");
+	}
+
+	TextureAtlas::TextureAtlas(TextureAtlas&& other) noexcept
+		: Texture(std::move(other)), m_cell_size(other.m_cell_size) {}
+
+	TextureAtlas& TextureAtlas::operator=(TextureAtlas&& other) noexcept
+	{
+		Texture::operator=(std::move(other));
+		m_cell_size = other.m_cell_size;
+		return *this;
+	}
+
+	const Vec2<int>& TextureAtlas::get_cell_size() const
+	{
+		return m_cell_size;
+	}
+
+	BatchInstance::BatchInstance(TextureAtlas* tex_atlas, Shader* shader)
+		: texture_atlas(tex_atlas)
+	{
+		m_shader = shader;
+
+		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
+		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_color, &color });
+	}
+
+	BatchInstance::BatchInstance(BatchInstance&& other) noexcept
+		: Mesh(std::move(other)),
+		m_raw_ib(std::move(other.m_raw_ib)), m_raw_vb(std::move(other.m_raw_vb)), m_quads(std::move(other.m_quads)),
+		color(other.color), texture_atlas(other.texture_atlas), m_index_buffer(std::move(other.m_index_buffer)), m_uniforms_id(other.m_uniforms_id)
+	{
+		for (auto quad : m_quads)
+			quad->m_batch_instance = this;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_color)
+				value_ptr = &color;
+		}
+	}
+
+	BatchInstance& BatchInstance::operator=(BatchInstance&& other) noexcept
+	{
+		Mesh::operator=(std::move(other));
+		m_raw_ib = std::move(other.m_raw_ib);
+		m_raw_vb = std::move(other.m_raw_vb);
+		m_quads = std::move(other.m_quads);
+		color = other.color;
+		texture_atlas = other.texture_atlas;
+		m_index_buffer = std::move(other.m_index_buffer);
+		m_uniforms_id = other.m_uniforms_id;
+
+		for (auto quad : m_quads)
+			quad->m_batch_instance = this;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_color)
+				value_ptr = &color;
+		}
+
+		return *this;
+	}
+
+	void BatchInstance::add_quad(BatchQuad* quad, const Vec2<int>& tex_coords_p)
+	{
+		float tex_coords[4]
+		{
+			static_cast<float>(tex_coords_p.x * texture_atlas->get_cell_size().x) / texture_atlas->get_width(), // xmin
+			static_cast<float>((tex_coords_p.x + 1) * texture_atlas->get_cell_size().x) / texture_atlas->get_width(), // xmax
+			static_cast<float>(tex_coords_p.y * texture_atlas->get_cell_size().y) / texture_atlas->get_height(), // ymin
+			static_cast<float>((tex_coords_p.y + 1) * texture_atlas->get_cell_size().y) / texture_atlas->get_height() // ymax
+		};
+
+		m_raw_ib.reserve(m_raw_ib.size() + 6);
+
+		uint32_t last_index = m_raw_ib.size()/6 * 4;
+
+		m_raw_ib.emplace_back(last_index + 0);
+		m_raw_ib.emplace_back(last_index + 1);
+		m_raw_ib.emplace_back(last_index + 2);
+		m_raw_ib.emplace_back(last_index + 2);
+		m_raw_ib.emplace_back(last_index + 3);
+		m_raw_ib.emplace_back(last_index + 0);
+
+		int halfcell_x = static_cast<int>(static_cast<float>(texture_atlas->get_cell_size().x) / 2 * quad->scale);
+		int halfcell_y = static_cast<int>(static_cast<float>(texture_atlas->get_cell_size().y) / 2 * quad->scale);
+
+		quad->scale = 1.0f;
+
+		float vertecies[20]
+		{
+			toX(-halfcell_x), toY(-halfcell_y), tex_coords[0], tex_coords[2], static_cast<float>(m_quads.size()),
+			toX(-halfcell_x), toY(+halfcell_y), tex_coords[0], tex_coords[3], static_cast<float>(m_quads.size()),
+			toX(+halfcell_x), toY(+halfcell_y), tex_coords[1], tex_coords[3], static_cast<float>(m_quads.size()),
+			toX(+halfcell_x), toY(-halfcell_y), tex_coords[1], tex_coords[2], static_cast<float>(m_quads.size())
+		};
+
+		m_raw_vb.insert(m_raw_vb.end(), std::begin(vertecies), std::end(vertecies));
+
+		m_quads.push_back(quad);
+
+		float quad_uniforms[4]
+		{
+			toX(quad->position.x), toY(quad->position.y),
+			quad->scale, quad->rotation
+		};
+
+		m_uniforms.insert(m_uniforms.end(), std::begin(quad_uniforms), std::end(quad_uniforms));
+	}
+
+	void BatchInstance::construct_batch()
+	{
+		m_vb = { &m_raw_vb[0], static_cast<uint32_t>(80 * m_quads.size()) };
+		m_index_buffer = { &m_raw_ib[0], GL_UNSIGNED_INT, static_cast<uint32_t>(m_raw_ib.size()) };
+		m_ib = &m_index_buffer;
+		m_texture = texture_atlas;
+		m_vao.tie(m_vb, BatchQuad::vertex_layout, m_index_buffer);
+
+		m_uniforms_id = m_shader->get_uniform("u_quads_uniforms");
+	}
+
+	void BatchInstance::draw()
+	{
+		m_shader->bind();
+
+		for (size_t i = 0; i < m_quads.size(); i++)
+		{
+			auto& quad = *m_quads[i];
+			m_uniforms[i * 4 + 0] = toX(quad.position.x);
+			m_uniforms[i * 4 + 1] = toX(quad.position.y);
+			m_uniforms[i * 4 + 2] = quad.scale;
+			m_uniforms[i * 4 + 3] = quad.rotation;
+		}
+
+		HXG_GL(glUniform1fv(m_uniforms_id, m_quads.size() * 4, &m_uniforms[0]));
+
+		Mesh::draw();
+	}
+
+	BatchQuad::BatchQuad(BatchInstance* bi, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size_p, float rotation_p)
+		: position(pos), scale(size_p), rotation(rotation_p), m_batch_instance(bi)
+	{
+		bi->add_quad(this, tex_coords);
+	}
+
+	BatchQuad::BatchQuad(BatchQuad&& other) noexcept
+		: position(other.position), scale(other.scale), rotation(other.rotation), m_batch_instance(other.m_batch_instance)
+	{
+		auto& quads = m_batch_instance->m_quads;
+		auto it = std::find(quads.begin(), quads.end(), &other);
+		assert(it != quads.end());
+		*it = this;
+	}
+
+	BatchQuad& BatchQuad::operator=(BatchQuad&& other) noexcept
+	{
+		assert(!m_batch_instance && "this has to be initialized by the default constructor");
+
+		position = other.position;
+		scale = other.scale;
+		rotation = other.rotation;
+		m_batch_instance = other.m_batch_instance;
+
+		auto& quads = m_batch_instance->m_quads;
+		auto it = std::find(quads.begin(), quads.end(), &other);
+		assert(it != quads.end());
+		*it = this;
+
+		return *this;
+	}
+
+}

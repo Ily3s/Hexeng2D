@@ -160,7 +160,7 @@ namespace Hexeng::Renderer
 
 		m_index_buffer = IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
 
-		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Quad::s_vertex_layout, &m_index_buffer, &font.texture, &font_shader);
+		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Quad::vertex_layout, &m_index_buffer, &font.texture, &font_shader);
 
 		uniforms.push_back({ &u_color, &color });
 

@@ -15,6 +15,7 @@
 #include "Renderer/Text.hpp"
 #include "Color.hpp"
 #include "Renderer/Animation.hpp"
+#include "Renderer/BatchRenderer.hpp"
 
 #include "Player.hpp"
 #include "Shaders.glsl"
@@ -90,6 +91,19 @@ int main()
 	Renderer::Square arrow_right{ top_left + Vec2<int>(185, -120), 50, &arrow_unhover };
 	arrow_right.rotation = 90;
 
+	Renderer::TextureAtlas grid_atlas{ "res/GridAtlas.png", Vec2<int>(16, 16), {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
+
+	Renderer::BatchInstance batch_test{ &grid_atlas };
+	Renderer::BatchQuad batch_quad_1{ &batch_test, {0, 0}, {-2000, 2000}, 30.0f };
+	Renderer::BatchQuad batch_quad_2{ &batch_test, {1, 0}, {2000, 2000}, 30.0f };
+	batch_test.construct_batch();
+
+	Renderer::Animation animate_batch{ {
+		{[&batch_quad_1, &batch_quad_2](float t)
+		{batch_quad_1.rotation += 10 * t; batch_quad_2.rotation -= 10 * t; },
+		[]() {}, 100} }, []() {}, true };
+	animate_batch.play();
+
 	EventManager::Button up_btn{ arrow_up.get_min(), arrow_up.get_max(), []() { return true; }, {
 		{ EventManager::ButtonEvent::HOVER, [&arrow_up, &arrow_hover]() { arrow_up.access_texture() = &arrow_hover; } },
 		{ EventManager::ButtonEvent::UNHOVER, [&arrow_up, &arrow_unhover]() { arrow_up.access_texture() = &arrow_unhover; } },
@@ -112,7 +126,7 @@ int main()
 	} };
 
 	Renderer::Layer UI_layer{ {&txt, &arrow_up, &arrow_down, &arrow_left, &arrow_right}, 0, Renderer::Position::ABSOLUTE };
-	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame}, 750 };
+	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame, &batch_test}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
 

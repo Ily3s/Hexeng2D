@@ -10,7 +10,7 @@ namespace Hexeng::Renderer
 
 	IndexBuffer Quad::s_index_buffer;
 	IndexBuffer Quad::s_edge_index_buffer;
-	VertexLayout Quad::s_vertex_layout;
+	VertexLayout Quad::vertex_layout;
 
 	Quad::Quad(const int* vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader)
 	{
@@ -22,7 +22,7 @@ namespace Hexeng::Renderer
 			toX(vertecies[6]), toY(vertecies[7]), 1.0f, 0.0f
 		};
 
-		this->Mesh::Mesh(vertex_b, 4*4*sizeof(float), pos, s_vertex_layout, &s_index_buffer, texture, shader);
+		this->Mesh::Mesh(vertex_b, 4*4*sizeof(float), pos, vertex_layout, &s_index_buffer, texture, shader);
 	}
 
 	ToBeInit Quad::init_components
@@ -42,7 +42,7 @@ namespace Hexeng::Renderer
 			0, 2
 		};
 
-		s_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
+		vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
 		s_index_buffer = IndexBuffer(index_buffer, GL_UNSIGNED_BYTE, 6);
 		s_edge_index_buffer = IndexBuffer(edge_index_buffer, GL_UNSIGNED_BYTE, 10);
 	}, 1 };
@@ -73,7 +73,7 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
+		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
 	}
 
 	Rectangle::Rectangle(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
@@ -96,7 +96,7 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
+		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
 	}
 
 	DebugQuad::DebugQuad(const int* vertecies, const Vec2<int>& pos, Shader* shader)
@@ -104,7 +104,7 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
+		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
 	}
 
 	DebugQuad& DebugQuad::operator=(DebugQuad&& other) noexcept
