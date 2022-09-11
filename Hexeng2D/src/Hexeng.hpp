@@ -37,6 +37,8 @@ namespace Hexeng
 		GLOBAL
 	};
 
+	HXG_DECLSPEC extern float frame_time;
+
 }
 
 #endif

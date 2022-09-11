@@ -10,12 +10,16 @@ namespace Hexeng
 
 	GLFWwindow* window = nullptr;
 
+	float frame_time = 0.0f;
+
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
 		while (!glfwWindowShouldClose(window))
 		{
 			if (pre)
 				pre();
+
+			auto start = std::chrono::high_resolution_clock::now();
 
 			Renderer::clear();
 
@@ -26,6 +30,10 @@ namespace Hexeng
 			HXG_GLFW(glfwSwapBuffers(window));
 
 			HXG_GLFW(glfwPollEvents());
+
+			auto end = std::chrono::high_resolution_clock::now();
+
+			frame_time = static_cast<float>(end.time_since_epoch().count() - start.time_since_epoch().count()) / 1000000;
 
 			if (post)
 				post();

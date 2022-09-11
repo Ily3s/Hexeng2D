@@ -139,12 +139,9 @@ namespace Hexeng::Renderer
 	}
 
 	std::vector<std::function<void(void)>> pending_actions;
-	float frame_time = 0.0f;
 
 	void draw_current_scene()
 	{
-		auto start = std::chrono::high_resolution_clock::now();
-
 		for (auto& action : pending_actions)
 			action();
 
@@ -156,12 +153,6 @@ namespace Hexeng::Renderer
 			return;
 
 		draw_scene(scene_id);
-
-		auto end = std::chrono::high_resolution_clock::now();
-
-		std::chrono::duration<float> duration = end - start;
-
-		frame_time = duration.count() * 1000;
 	}
 
 	Uniform<Vec2<float>> u_transform;

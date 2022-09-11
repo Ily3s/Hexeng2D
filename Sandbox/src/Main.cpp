@@ -50,8 +50,8 @@ int main()
 	Renderer::Square square3{ { 2000, -250 }, 500, &example, false };
 
 	Renderer::Animation anim_sq{ { 
-		{[&square](float t) {square.rotation += t * 9; }, [&square, &frame_tex]() {square.access_texture() = &frame_tex; }, 100},
-		{[&square](float t) {square.rotation -= t * 9; }, [&square, &example]() {square.access_texture() = &example; }, 100} },
+		{[&square](float t) {square.rotation += 1.0f/10 * t; }, [&square, &frame_tex]() {square.access_texture() = &frame_tex; }, 10000},
+		{[&square](float t) {square.rotation -= 1.0f/10 * t; }, [&square, &example]() {square.access_texture() = &example; }, 10000} },
 		[&square, &example]() {square.access_texture() = &example; square.rotation = 0; }, true };
 	anim_sq.play();
 
@@ -100,7 +100,7 @@ int main()
 
 	Renderer::Animation animate_batch{ {
 		{[&batch_quad_1, &batch_quad_2](float t)
-		{batch_quad_1.rotation += 10 * t; batch_quad_2.rotation -= 10 * t; },
+		{batch_quad_1.rotation += 1.0f/100 * t; batch_quad_2.rotation -= 1.0f/100 * t; },
 		[]() {}, 100} }, []() {}, true };
 	animate_batch.play();
 
