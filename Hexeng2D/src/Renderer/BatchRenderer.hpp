@@ -59,7 +59,7 @@ namespace Hexeng::Renderer
 		std::vector<float> m_raw_vb;
 
 		std::vector<float> m_uniforms;
-		int m_uniforms_id;
+		int m_uniforms_id = -1;
 
 		friend class BatchQuad;
 

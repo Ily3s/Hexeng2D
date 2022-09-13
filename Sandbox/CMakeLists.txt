@@ -8,6 +8,7 @@ target_include_directories(Sandbox PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../Hexeng2
 target_include_directories(Sandbox PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../Hexeng2D/dependencies/glad/include)
 target_include_directories(Sandbox PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../Hexeng2D/dependencies/al-soft/include)
 target_include_directories(Sandbox PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../Hexeng2D/dependencies/stb/include)
+target_include_directories(Sandbox PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../Hexeng2D/dependencies/portaudio/include)
 
 get_property(isMultiConfig GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
 if(isMultiConfig)

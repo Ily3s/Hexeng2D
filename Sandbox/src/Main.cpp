@@ -16,6 +16,7 @@
 #include "Color.hpp"
 #include "Renderer/Animation.hpp"
 #include "Renderer/BatchRenderer.hpp"
+#include "Audio/Audio.hpp"
 
 #include "Player.hpp"
 #include "Shaders.glsl"
@@ -28,6 +29,7 @@ int main()
 	Settings::window_name = "Sandbox";
 
 	Renderer::init();
+	Audio::init();
 	
 	Renderer::Shader custom_shader{ Hexeng::Renderer::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
@@ -57,18 +59,27 @@ int main()
 
 	Player player{ {0, 0}, 5.0f, &example };
 
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player]()
+	Audio::Sound coin{ "res/Coin.wav" };
+	coin.play();
+
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &coin]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
 			 if (from == Physics::From::BOT)
+			 {
 				 frame_color = Color3::red;
+				 coin.stop();
+			 }
 			 else if (from == Physics::From::TOP)
 				 frame_color = Color3::green;
 			 else if (from == Physics::From::LEFT)
 				 frame_color = Color3::blue;
 			 else if (from == Physics::From::RIGHT)
+			 {
 				 frame_color = Color3::yellow;
+				 coin.play();
+			 }
 		 }
 	}, Range::LOCAL };
 
@@ -158,6 +169,8 @@ int main()
 	EventManager::start_looping();
 
 	Hexeng::game_loop();
+
+	Audio::terminate();
 
 	EventManager::stop_looping();
 

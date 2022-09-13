@@ -84,6 +84,8 @@ namespace Hexeng::Renderer
 
 	void BatchInstance::add_quad(BatchQuad* quad, const Vec2<int>& tex_coords_p)
 	{
+		assert(m_quads.size() < 250 && "1 BatchInstance is limited to 250 quads");
+
 		float tex_coords[4]
 		{
 			static_cast<float>(tex_coords_p.x * texture_atlas->get_cell_size().x) / texture_atlas->get_width(), // xmin
