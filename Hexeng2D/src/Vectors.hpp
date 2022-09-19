@@ -27,7 +27,7 @@ namespace Hexeng
 
 		T len() const
 		{
-			return (x ^ 2 + y ^ 2) ^ 0.5;
+			return std::sqrt(std::pow(x, 2) + std::pow(y, 2));
 		}
 
 		Vec2 operator+(const Vec2& other) const
@@ -181,7 +181,7 @@ namespace Hexeng
 
 		T len() const
 		{
-			return (x ^ 2 + y ^ 2 + z ^ 2) ^ 0.5;
+			return std::sqrt(std::pow(x, 2) + std::pow(y, 2) + std::pow(z, 2));
 		}
 
 		Vec3 operator+(const Vec3& other) const
@@ -338,7 +338,7 @@ namespace Hexeng
 
 		T len() const
 		{
-			return (x ^ 2 + y ^ 2 + z ^ 2 + w ^ 2) ^ 0.5;
+			return std::sqrt(std::pow(x, 2) + std::pow(y, 2) + std::pow(z, 2) + std::pow(w, 2));
 		}
 
 		Vec4 operator+(const Vec4& other) const

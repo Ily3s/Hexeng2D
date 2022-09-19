@@ -25,6 +25,9 @@ namespace Hexeng
 		HXG_DECLSPEC extern Vec2<int> window_size;
 		HXG_DECLSPEC float get_ratio();
 
+		HXG_DECLSPEC extern float master_volume;
+		HXG_DECLSPEC extern float sound_volume;
+		HXG_DECLSPEC extern float music_volume;
 	}
 
 	inline float toX(int pixels) { return static_cast<float>(pixels) / (static_cast<float>(1080) * Settings::get_ratio() / 2); }

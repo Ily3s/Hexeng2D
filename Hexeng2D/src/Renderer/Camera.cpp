@@ -10,6 +10,8 @@ namespace Hexeng::Renderer
 {
 
 	Vec3<int> Camera::position = { 0, 0, 0 };
+	Vec2<int> Camera::m_xy_position = {0, 0};
+	const Vec2<int>* Camera::xy_position = &Camera::m_xy_position;
 	Vec2<float> Camera::shader_pos = { 0.0f, 0.0f };
 	int Camera::fov = 120;
 	float Camera::zoom = 1.0f;
@@ -29,6 +31,7 @@ namespace Hexeng::Renderer
 
 	void Camera::update_zoom(int distance)
 	{
+		m_xy_position = { position.x, position.y };
 		double radius = std::tan(fov / 2 * PI / 180) * distance;
 		double surface = PI * std::pow(radius, 2);
 		zoom = 1920*1080 * 1/surface;

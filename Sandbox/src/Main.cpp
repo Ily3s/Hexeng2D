@@ -59,27 +59,18 @@ int main()
 
 	Player player{ {0, 0}, 5.0f, &example };
 
-	Audio::Sound coin{ "res/Coin.wav" };
-	coin.play();
-
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &coin]()
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame ]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
 			 if (from == Physics::From::BOT)
-			 {
 				 frame_color = Color3::red;
-				 coin.stop();
-			 }
 			 else if (from == Physics::From::TOP)
 				 frame_color = Color3::green;
 			 else if (from == Physics::From::LEFT)
 				 frame_color = Color3::blue;
 			 else if (from == Physics::From::RIGHT)
-			 {
 				 frame_color = Color3::yellow;
-				 coin.play();
-			 }
 		 }
 	}, Range::LOCAL };
 
@@ -108,6 +99,12 @@ int main()
 	Renderer::BatchQuad batch_quad_1{ &batch_test, {0, 0}, {-2000, 2000}, 30.0f };
 	Renderer::BatchQuad batch_quad_2{ &batch_test, {1, 0}, {2000, 2000}, 30.0f };
 	batch_test.construct_batch();
+
+	Audio::Music music{ "res/LostSky.wav" };
+	music.play();
+	//Audio::Sound sound{ "res/SoundEffect.wav" };
+	//sound.play(&batch_quad_1.position);
+	//sound.play(&batch_quad_2.position);
 
 	Renderer::Animation animate_batch{ {
 		{[&batch_quad_1, &batch_quad_2](float t)

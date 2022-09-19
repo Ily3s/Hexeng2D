@@ -51,6 +51,10 @@ namespace Hexeng
 		{
 			return static_cast<float>(window_size.x) / window_size.y;
 		}
+
+		float master_volume = 1.0f;
+		float sound_volume = 1.0f;
+		float music_volume = 1.0f;
 	}
 
 }
