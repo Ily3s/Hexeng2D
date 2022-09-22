@@ -1,5 +1,6 @@
 #include <thread>
 #include <chrono>
+#include <filesystem>
 
 #include "Hexeng.hpp"
 #include "Renderer/Renderer.hpp"
@@ -17,6 +18,7 @@
 #include "Renderer/Animation.hpp"
 #include "Renderer/BatchRenderer.hpp"
 #include "Audio/Audio.hpp"
+#include "SaveSystem.hpp"
 
 #include "Player.hpp"
 #include "Shaders.glsl"
@@ -59,18 +61,36 @@ int main()
 
 	Player player{ {0, 0}, 5.0f, &example };
 
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame ]()
+	std::filesystem::create_directory("saves");
+
+	SaveFile save_file;
+	int32_t save_var = 0;
+	save_file.add_var({ 1, &save_var, 4 });
+
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame, &save_var, &save_file]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
 			 if (from == Physics::From::BOT)
+			 {
+				 save_file.save("saves/test.save");
 				 frame_color = Color3::red;
+			 }
 			 else if (from == Physics::From::TOP)
+			 {
+				 save_file.load("saves/test.save");
 				 frame_color = Color3::green;
+			 }
 			 else if (from == Physics::From::LEFT)
+			 {
+				 std::cout << save_var << std::endl;
 				 frame_color = Color3::blue;
+			 }
 			 else if (from == Physics::From::RIGHT)
+			 {
+				 save_var++;
 				 frame_color = Color3::yellow;
+			 }
 		 }
 	}, Range::LOCAL };
 
