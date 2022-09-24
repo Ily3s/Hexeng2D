@@ -9,22 +9,23 @@
 namespace Hexeng
 {
 
-	struct HXG_DECLSPEC SaveVar
+	class HXG_DECLSPEC SaveVar
 	{
+	public :
+
 		uint64_t id = 0;
 		void* value = nullptr;
+		uint64_t unit_size = 0;
 		std::function<uint64_t(void** val_ptr)> get_size = nullptr;
 		std::function<void(uint64_t, void** val_ptr)> reserve = nullptr;
 
 		SaveVar() = default;
 
-		SaveVar(uint64_t id_p, void* val_p,
+		SaveVar(uint64_t id_p, void* val_p, uint64_t unit_size_p,
 			std::function<uint64_t(void** val_ptr)> get_size_p,
-			std::function<void(uint64_t, void** val_ptr)> reserve_p)
-			: id(id_p), value(val_p), get_size(get_size_p), reserve(reserve_p) {}
+			std::function<void(uint64_t, void** val_ptr)> reserve_p);
 
-		SaveVar(uint64_t id_p, void* val_p, uint64_t size_p)
-			: id(id_p), value(val_p), get_size([size_p](void**) {return size_p; }), reserve([](uint64_t, void**) {}) {}
+		SaveVar(uint64_t id_p, void* val_p, uint64_t size_p, uint64_t unit_size_p);
 	};
 
 	class HXG_DECLSPEC SaveFile

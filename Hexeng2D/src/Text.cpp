@@ -251,7 +251,7 @@ namespace Hexeng
 
 	std::unordered_map<std::u32string, size_t> Language::s_reference;
 
-	constexpr char32_t native_bom = U'\U0000FEFF';
+	static char32_t native_bom = U'\U0000FEFF';
 
 	Language::Language(const std::string& filepath)
 	{

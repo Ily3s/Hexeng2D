@@ -65,7 +65,7 @@ int main()
 
 	SaveFile save_file;
 	int32_t save_var = 0;
-	save_file.add_var({ 1, &save_var, 4 });
+	save_file.add_var({ 1, &save_var, 4, 4 });
 
 	Language English{ "res/languages/English.txt" };
 	Language French{ "res/languages/French.txt" };
