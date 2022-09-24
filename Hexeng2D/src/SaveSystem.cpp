@@ -60,17 +60,16 @@ namespace Hexeng
 		m_file.close();
 
 		uint64_t header_size = *header;
-		save_buffer += header_size;
+
+		uint8_t* save_buffer_safe = save_buffer + header_size;
 
 		for (size_t i = 1; i < (header_size-1)/8; i+=2)
 		{
 			auto& var = m_var_map[header[i]];
 			var.reserve(header[i + 1], &var.value);
-			memcpy(var.value, save_buffer, header[i + 1]);
-			save_buffer += header[i + 1];
+			memcpy(var.value, save_buffer_safe, header[i + 1]);
+			save_buffer_safe += header[i + 1];
 		}
-
-		save_buffer -= total_size;
 
 		delete[] save_buffer;
 	}

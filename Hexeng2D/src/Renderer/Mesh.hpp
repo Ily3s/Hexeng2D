@@ -26,6 +26,7 @@ namespace Hexeng::Renderer
 		const IndexBuffer* m_ib = nullptr;
 		Texture* m_texture = nullptr;
 		Shader* m_shader = nullptr;
+		const VertexLayout* m_layout = nullptr;
 
 	public:
 

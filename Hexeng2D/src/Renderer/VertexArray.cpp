@@ -89,7 +89,7 @@ namespace Hexeng::Renderer
 		ToBeDelete::remove(&va);
 		ToBeDelete(this, [this]() { this->~VertexArray(); });
 
-		return *this;
+ 		return *this;
 	}
 
 }

@@ -11,7 +11,8 @@ namespace Hexeng::Renderer
 			m_texture(tex),
 			m_shader(shader),
 			m_type(type),
-			position(pos)
+			position(pos),
+			m_layout(&layout)
 	{
 		m_vao.tie(m_vb, layout, *m_ib);
 		uniforms.push_back({ &u_transform, &transform });
@@ -30,8 +31,11 @@ namespace Hexeng::Renderer
 			position(moving.position),
 			transform(moving.transform),
 			rotation(moving.rotation),
-			scale(moving.scale)
+			scale(moving.scale),
+			m_layout(moving.m_layout)
 	{
+		m_vao.tie(m_vb, *m_layout, *m_ib);
+
 		for (auto& [ui, value_ptr] : uniforms)
 		{
 			if (ui == &u_transform)
@@ -49,13 +53,16 @@ namespace Hexeng::Renderer
 		m_texture = moving.m_texture;
 		m_vb = std::move(moving.m_vb);
 		m_shader = moving.m_shader;
-		m_ib = std::move(moving.m_ib);
+		m_ib = moving.m_ib;
 		uniforms = std::move(moving.uniforms);
 		m_type = moving.m_type;
 		position = moving.position;
 		transform = moving.transform;
 		rotation = moving.rotation;
 		scale = moving.scale;
+		m_layout = moving.m_layout;
+
+		m_vao.tie(m_vb, *m_layout, *m_ib);
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{
@@ -91,7 +98,7 @@ namespace Hexeng::Renderer
 		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(m_shader);
 	}
-
+	
 	void Mesh::update_position()
 	{
 		transform = toCoord(position);

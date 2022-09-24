@@ -10,6 +10,8 @@ namespace Hexeng::Renderer
 
 	VertexBuffer::VertexBuffer(const void* data, unsigned int size)
 	{
+		HXG_GL(glBindVertexArray(0));
+
 		HXG_GL(glGenBuffers(1, &m_id));
 		HXG_GL(glBindBuffer(GL_ARRAY_BUFFER, m_id));
 		HXG_GL(glBufferData(GL_ARRAY_BUFFER, size, data, GL_STATIC_DRAW));

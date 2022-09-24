@@ -15,6 +15,8 @@ namespace Hexeng::Renderer
 	IndexBuffer::IndexBuffer(const void* data, unsigned int type, unsigned int count)
 		: m_count(count), m_type(type)
 	{
+		HXG_GL(glBindVertexArray(0));
+
 		HXG_GL(glGenBuffers(1, &m_id));
 		HXG_GL(glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_id));
 		HXG_GL(glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof_type(type), data, GL_STATIC_DRAW));

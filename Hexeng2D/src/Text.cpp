@@ -3,9 +3,9 @@
 #include <cassert>
 
 #include "Text.hpp"
-#include "Renderer.hpp"
+#include "Renderer/Renderer.hpp"
 
-namespace Hexeng::Renderer
+namespace Hexeng
 {
 
 	Font::Font(const std::string& path, float quality) : quality(quality)
@@ -65,7 +65,7 @@ namespace Hexeng::Renderer
 	}
 
 	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color3 c3)
-		: color(c3)
+		: color(c3), m_text(text), m_font(&font), m_pos(pos), m_font_size(font_size), m_ha(h_align), m_va(v_align)
 	{
 		for (char32_t c : text)
 		{
@@ -125,7 +125,7 @@ namespace Hexeng::Renderer
 
 				if (c != ' ')
 				{
- 					const TexCoord& coords = font.char_map[c];
+ 					const Renderer::TexCoord& coords = font.char_map[c];
 					Vec2<int> tex_size = coords.top_right - coords.bot_left;
 
 					raw_vb[vb_index] = toX(current_pos.x); raw_vb[vb_index + 1] = toY(current_pos.y);
@@ -158,14 +158,165 @@ namespace Hexeng::Renderer
 			relative_pos.y -= font.line_offset * size;
 		}
 
-		m_index_buffer = IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
+		m_index_buffer = Renderer::IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
 
-		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Quad::vertex_layout, &m_index_buffer, &font.texture, &font_shader);
+		this->Mesh::Mesh(raw_vb, vb_index * 4, pos, Renderer::Quad::vertex_layout, &m_index_buffer, &font.texture, &Renderer::font_shader);
 
-		uniforms.push_back({ &u_color, &color });
+		uniforms.push_back({ &Renderer::u_color, &color });
 
 		delete[] raw_vb;
 		delete[] raw_ib;
+	}
+
+	std::vector<Text*> Text::s_translated_texts;
+
+	Text::Text(const Language** language, std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color3 c3)
+		: Text((*language)->get_translation(text), font, pos, font_size, h_align, v_align)
+	{
+		m_language = language;
+		m_text = text;
+		s_translated_texts.push_back(this);
+	}
+
+	Text::Text(Text&& other) noexcept
+		: Mesh(std::move(other)), m_text(std::move(other.m_text)), m_index_buffer(std::move(other.m_index_buffer)),
+		m_font(other.m_font), m_pos(other.m_pos), m_font_size(other.m_font_size),
+		m_ha(other.m_ha), m_va(other.m_va), m_language(other.m_language), color(other.color)
+	{
+		m_ib = &m_index_buffer;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &Renderer::u_color)
+				value_ptr = &color;
+		}
+
+		if (m_language)
+		{
+			auto it = std::find(s_translated_texts.begin(), s_translated_texts.end(), &other);
+			*it = this;
+		}
+
+		other.m_language = nullptr;
+	}
+
+	Text& Text::operator=(Text&& other) noexcept
+	{
+		Mesh::operator=(std::move(other));
+		m_index_buffer = std::move(other.m_index_buffer);
+		m_ib = &m_index_buffer;
+		m_text = std::move(other.m_text);
+		m_font = other.m_font;
+		m_pos = other.m_pos;
+		m_font_size = other.m_font_size;
+		m_ha = other.m_ha;
+		m_va = other.m_va;
+		color = other.color;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &Renderer::u_color)
+				value_ptr = &color;
+		}
+
+		if (m_language)
+		{
+			auto it = std::find(s_translated_texts.begin(), s_translated_texts.end(), this);
+			s_translated_texts.erase(it);
+		}
+
+		m_language = other.m_language;
+
+		if (m_language)
+		{
+			auto it = std::find(s_translated_texts.begin(), s_translated_texts.end(), &other);
+			*it = this;
+		}
+
+		other.m_language = nullptr;
+
+		return *this;
+	}
+
+	void Text::reload_language()
+	{
+		Renderer::pending_actions.push_back([]() {
+			for (Text* text : s_translated_texts)
+			{
+				*text = { text->m_language, text->m_text, *text->m_font, text->m_pos,
+					text->m_font_size, text->m_ha, text->m_va, text->color };
+			}
+			});
+	}
+
+	std::unordered_map<std::u32string, size_t> Language::s_reference;
+
+	constexpr char32_t native_bom = U'\U0000FEFF';
+
+	Language::Language(const std::string& filepath)
+	{
+		std::ifstream language_file(filepath, std::ios::binary);
+
+		language_file.seekg(0, std::ios::end);
+		size_t size = (size_t)language_file.tellg() - 4;
+		language_file.seekg(0, std::ios::beg);
+
+		char32_t bom = 0;
+		language_file.read((char*)&bom, 4);
+
+		char32_t* file_buffer = new char32_t[size / 4];
+		language_file.read((char*)file_buffer, size);
+
+		if (bom != native_bom)
+		{
+			char* endian_correct = new char[size];
+			char* data = (char*)file_buffer;
+			for (size_t i = 0; i < size; i+=4)
+			{
+				endian_correct[i] = data[i+3];
+				endian_correct[i+1] = data[i+2];
+				endian_correct[i+2] = data[i+1];
+				endian_correct[i+3] = data[i];
+			}
+
+			delete[] file_buffer;
+			file_buffer = (char32_t*)endian_correct;
+		}
+
+		size_t line_count = 0;
+		size_t char_index = 0;
+
+		for (bool keep_going = true; keep_going; line_count++)
+		{
+			std::u32string line;
+			for (bool endl_reached = false; !endl_reached; char_index++)
+			{
+				if (char_index >= size / 4)
+				{
+					keep_going = false;
+					break;
+				}
+				if (file_buffer[char_index] == U'\n')
+					endl_reached = true;
+				else
+					line.push_back(file_buffer[char_index]);
+			}
+			m_language_table.insert({ line_count, line });
+		}
+
+		delete[] file_buffer;
+	}
+
+	void Language::set_reference_language(const Language* language)
+	{
+		s_reference.clear();
+		for (auto& [i, str] : language->m_language_table)
+			s_reference.insert({str, i});
+	}
+
+	const std::u32string& Language::get_translation(const std::u32string& input) const
+	{
+		return m_language_table.find(s_reference.find(input)->second)->second;
 	}
 
 }

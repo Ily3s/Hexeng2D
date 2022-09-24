@@ -13,7 +13,7 @@
 #include "EventManager/Button.hpp"
 #include "Physics/Physics.hpp"
 #include "Renderer/DefaultShaders.glsl"
-#include "Renderer/Text.hpp"
+#include "Text.hpp"
 #include "Color.hpp"
 #include "Renderer/Animation.hpp"
 #include "Renderer/BatchRenderer.hpp"
@@ -67,7 +67,15 @@ int main()
 	int32_t save_var = 0;
 	save_file.add_var({ 1, &save_var, 4 });
 
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame, &save_var, &save_file]()
+	Language English{ "res/languages/English.txt" };
+	Language French{ "res/languages/French.txt" };
+
+	Language::set_reference_language(&English);
+	const Language* language = &English;
+
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame,
+										&save_var, &save_file,
+										&language, &French, &English]()
 	{
 		 if (Physics::From from = Physics::HitBox::where_colliding(player.physics , frame_hb); from != Physics::From::NOWHERE)
 		 {
@@ -85,11 +93,15 @@ int main()
 			 {
 				 std::cout << save_var << std::endl;
 				 frame_color = Color3::blue;
+				 language = &French;
+				 Text::reload_language();
 			 }
 			 else if (from == Physics::From::RIGHT)
 			 {
 				 save_var++;
 				 frame_color = Color3::yellow;
+				 language = &English;
+				 Text::reload_language();
 			 }
 		 }
 	}, Range::LOCAL };
@@ -98,8 +110,8 @@ int main()
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
 		[&frame_color]() {frame_color = Color3::white; }, Range::LOCAL };
 
-	Renderer::Font kunstler{ "res/KUNSTLER.TTF" };
-	Renderer::Text txt{ U"Hello, World !", kunstler, {0, 580}, 200, Renderer::HorizontalAlign::CENTER, Renderer::VerticalAlign::TOP, Color3::white };
+	Font kunstler{ "res/KUNSTLER.TTF" };
+	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color3::white };
 
 	Renderer::Texture arrow_unhover{ "res/arrow_unhover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Texture arrow_hover{ "res/arrow_hover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
@@ -153,7 +165,7 @@ int main()
 		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({player.speed, 0}); }}
 	} };
 
-	Renderer::Layer UI_layer{ {&txt, &arrow_up, &arrow_down, &arrow_left, &arrow_right}, 0, Renderer::Position::ABSOLUTE };
+	Renderer::Layer UI_layer{ { &txt, &arrow_up, &arrow_down, &arrow_left, &arrow_right}, 0, Renderer::Position::ABSOLUTE };
 	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame, &batch_test}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
