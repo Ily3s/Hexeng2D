@@ -41,10 +41,20 @@ x;\
 #define HXG_GLFW(x) x
 #endif
 
-#ifdef Hexeng2D_EXPORTS
-#define HXG_DECLSPEC    __declspec(dllexport)
+#ifdef _MSC_VER
+    #ifdef Hexeng2D_EXPORTS
+        #define HXG_DECLSPEC __declspec(dllexport)
+    #else
+        #define HXG_DECLSPEC __declspec(dllimport)
+    #endif
+#elif defined(__GNUC__)
+    #ifdef Hexeng2D_EXPORTS
+        #define HXG_DECLSPEC __attribute__((visibility("default")))
+    #else
+        #define HXG_DECLSPEC
+    #endif
 #else
-#define HXG_DECLSPEC    __declspec(dllimport)
+    #define  HXG_DECLSPEC
 #endif
 
 #endif // !MACROS_HPP

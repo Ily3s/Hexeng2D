@@ -62,8 +62,8 @@
 
 #include <stdio.h>                          // just for some development printfs
 
-#include "PortAudio/portaudio.h"
-#include "../../common/pa_util.h"
+#include "portaudio.h"
+#include "pa_util.h"
 #include "pa_win_wdmks_utils.h"
 
 

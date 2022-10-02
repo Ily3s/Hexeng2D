@@ -1,55 +1,44 @@
-file(GLOB_RECURSE HXG_SOURCES *.cpp *.c)
-file(GLOB_RECURSE HXG_HEADERS *.hpp *.h)
+file(GLOB_RECURSE HXG_SOURCES src/*.cpp src/*.c)
+file(GLOB_RECURSE HXG_HEADERS src/*.hpp src/*.h)
+
+file(GLOB_RECURSE GLAD_FILES dependencies/glad/*.c dependencies/glad/*.h)
+file(GLOB_RECURSE STB_FILES dependencies/stb/*.c dependencies/stb/*.h)
+
+add_subdirectory(dependencies/glfw)
+add_subdirectory(dependencies/portaudio)
 
 if(WIN32)
 
     add_compile_definitions(_GLFW_WIN32)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_init.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_monitor.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/x11_window.c)
-
     add_compile_definitions(PA_USE_DS)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/unix/pa_unix_hostapis.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/unix/pa_unix_util.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/alsa/pa_linux_alsa.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.c)
 
 elseif(UNIX)
 
 	add_compile_definitions(_GLFW_X11)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_init.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_joystick.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_monitor.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_thread.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_time.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/src/win32_window.c)
-
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_win_coinitialize.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_win_hostapis.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_win_util.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_win_waveformat.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_win_wdmks_utils.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/os/win/pa_x86_plain_converters.c)
 
     if(APPLE)
     add_compile_definitions(PA_USE_COREAUDIO)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/alsa/pa_linux_alsa.c)
     else()
     add_compile_definitions(PA_USE_ALSA)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.c)
-    list(REMOVE_ITEM HXG_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.c)
     endif()
 
 endif()
 
-add_library(Hexeng2D SHARED ${HXG_SOURCES} ${HXG_HEADERS})
+add_library(Hexeng2D SHARED ${HXG_SOURCES} ${HXG_HEADERS} ${GLAD_FILES} ${STB_FILES})
+
+add_dependencies(Hexeng2D glfw)
+add_dependencies(Hexeng2D portaudio_static)
+
+target_link_libraries(Hexeng2D PUBLIC glfw)
+target_link_libraries(Hexeng2D PUBLIC portaudio_static)
+
+if (UNIX)
+    find_package(X11 REQUIRED)
+    target_link_libraries(Hexeng2D PUBLIC ${X11_LIBRARIES})
+endif()
 
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glfw/include)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/glad/include)
-target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/al-soft/include)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/stb/include)
 target_include_directories(Hexeng2D PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/dependencies/portaudio/include)

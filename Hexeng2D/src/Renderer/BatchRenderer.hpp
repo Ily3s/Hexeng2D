@@ -29,6 +29,8 @@ namespace Hexeng::Renderer
 		const Vec2<int>& get_cell_size() const;
 	};
 
+    class BatchQuad;
+
 	class HXG_DECLSPEC BatchInstance : public Mesh
 	{
 	public :

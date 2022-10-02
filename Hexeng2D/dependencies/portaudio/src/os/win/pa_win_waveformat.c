@@ -42,8 +42,8 @@
     #include <mmreg.h> /* for WAVEFORMATEX */
 #endif
 
-#include "PortAudio/portaudio.h"
-#include "PortAudio/pa_win_waveformat.h"
+#include "portaudio.h"
+#include "pa_win_waveformat.h"
 
 
 #if !defined(WAVE_FORMAT_EXTENSIBLE)

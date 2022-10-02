@@ -46,7 +46,7 @@
  to manage and communicate with host API implementations.
 */
 
-#include "PortAudio/portaudio.h"
+#include "portaudio.h"
 
 /**
 The PA_NO_* host API macros are now deprecated in favor of PA_USE_* macros.

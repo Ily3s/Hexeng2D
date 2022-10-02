@@ -45,7 +45,7 @@
 */
 
 #include "pa_win_ds_dynlink.h"
-#include "../../common/pa_debugprint.h"
+#include "pa_debugprint.h"
 
 PaWinDsDSoundEntryPoints paWinDsDSoundEntryPoints = { 0, 0, 0, 0, 0, 0, 0 };
 

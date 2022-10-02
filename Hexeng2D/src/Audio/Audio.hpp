@@ -5,7 +5,7 @@
 #include <vector>
 #include <memory>
 
-#include "PortAudio/portaudio.h"
+#include "portaudio.h"
 
 #include "../Macros.hpp"
 #include "../Vectors.hpp"

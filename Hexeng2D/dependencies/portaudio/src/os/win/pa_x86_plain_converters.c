@@ -39,8 +39,8 @@
 
 #include "pa_x86_plain_converters.h"
 
-#include "../../common/pa_converters.h"
-#include "../../common/pa_dither.h"
+#include "pa_converters.h"
+#include "pa_dither.h"
 
 /*
     the main reason these versions are faster than the equivalent C versions

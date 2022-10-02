@@ -1,3 +1,5 @@
+#include <string.h>
+
 #include "SaveSystem.hpp"
 
 namespace Hexeng

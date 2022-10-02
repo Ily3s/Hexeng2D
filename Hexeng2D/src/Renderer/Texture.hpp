@@ -3,6 +3,7 @@
 
 #include <string>
 #include <unordered_map>
+#include <vector>
 
 #include "../Macros.hpp"
 #include "glad/glad.h"

@@ -19,11 +19,12 @@ namespace Hexeng::Renderer
 		{
 			int lenght;
 			HXG_GL(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght));
-			char* message = (char*)_malloca(lenght);
+			char* message = new char[lenght];
 			HXG_GL(glGetShaderInfoLog(id, lenght, &lenght, message));
 			std::cout << "Failed to compile " << (shader_type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
 			std::cout << message << std::endl;
 			HXG_GL(glDeleteShader(id));
+            delete[] message;
 			return 0;
 		}
 		return id;

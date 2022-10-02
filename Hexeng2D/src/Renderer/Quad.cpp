@@ -1,9 +1,9 @@
+#include <exception>
+
 #include "Quad.hpp"
 #include "Camera.hpp"
 #include "Renderer.hpp"
 #include "../Hexeng.hpp"
-
-#include <exception>
 
 namespace Hexeng::Renderer
 {
@@ -22,7 +22,7 @@ namespace Hexeng::Renderer
 			toX(vertecies[6]), toY(vertecies[7]), 1.0f, 0.0f
 		};
 
-		this->Mesh::Mesh(vertex_b, 4*4*sizeof(float), pos, vertex_layout, &s_index_buffer, texture, shader);
+		this->Mesh::operator=({vertex_b, 4*4*sizeof(float), pos, vertex_layout, &s_index_buffer, texture, shader});
 	}
 
 	ToBeInit Quad::init_components
@@ -65,7 +65,7 @@ namespace Hexeng::Renderer
 			relative_pos.x + size.x, relative_pos.y,
 		};
 
-		this->Quad::Quad(vertecies, pos, texture, shader);
+		this->Quad::operator=({vertecies, pos, texture, shader});
 	}
 
 	DebugRectangle::DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)
@@ -78,7 +78,7 @@ namespace Hexeng::Renderer
 
 	Rectangle::Rectangle(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
 	{
-		this->Rectangle::Rectangle(pos, texture->get_size() * size, texture, centered, shader);
+		this->Rectangle::operator=({pos, texture->get_size() * size, texture, centered, shader});
 	}
 
 	Square::Square(const Vec2<int>& pos, int size, Texture* texture, bool centered, Shader* shader)
@@ -88,7 +88,7 @@ namespace Hexeng::Renderer
 		: Rectangle(pos, size, texture, centered, shader)
 	{
 		if (texture && texture->get_height() != texture->get_width())
-			throw(std::exception("excepted texure to be a square"));
+			throw(std::runtime_error("excepted texure to be a square"));
 	}
 
 	DebugSquare::DebugSquare(const Vec2<int>& pos, int size, bool centered, Shader* shader)

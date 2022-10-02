@@ -75,19 +75,19 @@
 #endif
 #endif
 
-#include "../../common/pa_util.h"
-#include "../../common/pa_allocation.h"
-#include "../../common/pa_hostapi.h"
-#include "../../common/pa_stream.h"
-#include "../../common/pa_cpuload.h"
-#include "../../common/pa_process.h"
-#include "../../common/pa_debugprint.h"
+#include "pa_util.h"
+#include "pa_allocation.h"
+#include "pa_hostapi.h"
+#include "pa_stream.h"
+#include "pa_cpuload.h"
+#include "pa_process.h"
+#include "pa_debugprint.h"
 
-#include "PortAudio/pa_win_ds.h"
+#include "pa_win_ds.h"
 #include "pa_win_ds_dynlink.h"
-#include "PortAudio/pa_win_waveformat.h"
-#include "../../os/win/pa_win_wdmks_utils.h"
-#include "../../os/win/pa_win_coinitialize.h"
+#include "pa_win_waveformat.h"
+#include "pa_win_wdmks_utils.h"
+#include "pa_win_coinitialize.h"
 
 #if (defined(WIN32) && (defined(_MSC_VER) && (_MSC_VER >= 1200))) /* MSC version 6 and above */
 #pragma comment( lib, "dsound.lib" )

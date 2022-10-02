@@ -49,7 +49,7 @@
 #include "options_cmake.h"
 #endif
 
-#include "../../common/pa_hostapi.h"
+#include "pa_hostapi.h"
 
 
 #ifdef __cplusplus

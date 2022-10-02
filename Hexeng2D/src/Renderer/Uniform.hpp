@@ -5,6 +5,7 @@
 #include <unordered_map>
 #include <string>
 #include <cassert>
+#include <algorithm>
 
 #include "../Vectors.hpp"
 #include "Shader.hpp"
@@ -181,11 +182,11 @@ namespace Hexeng::Renderer
 
 	template <typename VEC>
 	Uniform<VEC>::Uniform(Uniform&& moving) noexcept
-		:	value_ptr(moving.value_ptr),
-			shader_list(std::move(moving.shader_list)),
-			uniform_name(std::move(moving.uniform_name)),
-			fusion_mode(moving.fusion_mode)
+		:	value_ptr(moving.value_ptr)
 	{
+        shader_list = std::move(moving.shader_list);
+        uniform_name = std::move(moving.uniform_name);
+        fusion_mode = moving.fusion_mode;
 		auto it = std::find(uniform_list.begin(), uniform_list.end(), &moving);
 		if (it != uniform_list.end())
 			*it = this;

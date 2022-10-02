@@ -200,7 +200,7 @@
 */
 
 
-#include "PortAudio/portaudio.h"
+#include "portaudio.h"
 #include "pa_converters.h"
 #include "pa_dither.h"
 

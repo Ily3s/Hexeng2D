@@ -39,7 +39,7 @@ namespace Hexeng::Physics
 	{
 	protected:
 
-		friend class Scene;
+		friend class Hexeng::Scene;
 
 		std::vector<RectangleHitBox> m_rectangles;
 		int m_solidity;

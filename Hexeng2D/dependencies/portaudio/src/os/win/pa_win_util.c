@@ -54,7 +54,7 @@
     #endif
 #endif
 
-#include "../../common/pa_util.h"
+#include "pa_util.h"
 
 /*
    Track memory allocations to avoid leaks.

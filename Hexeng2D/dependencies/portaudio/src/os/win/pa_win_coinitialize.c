@@ -45,9 +45,9 @@
 #include <windows.h>
 #include <objbase.h>
 
-#include "PortAudio/portaudio.h"
-#include "../../common/pa_util.h"
-#include "../../common/pa_debugprint.h"
+#include "portaudio.h"
+#include "pa_util.h"
+#include "pa_debugprint.h"
 
 #include "pa_win_coinitialize.h"
 

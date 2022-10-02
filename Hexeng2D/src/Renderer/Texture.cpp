@@ -79,7 +79,7 @@ namespace Hexeng::Renderer
 			}
 		}
 
-		assert(!necessary.size(), "Missing some necessary texture setting(s)");
+		assert(!necessary.size() && "Missing some necessary texture setting(s)");
 	}
 
 	Texture::~Texture()
