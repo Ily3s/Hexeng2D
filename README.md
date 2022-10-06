@@ -2,22 +2,37 @@
 
 ![Hexeng2D Logo](/Resources/hexeng2d_logo.png)
 
-Hexeng2D is (meant to be) an open source cross-plateform 2d game engine framework for c++. It is currently in an early state of developpement.
+Hexeng2D is the project of an open source cross-plateform 2D Game Engine framework, written in c++.
+
+For the moment however, Hexeng2D is in an early stage of developpement in wich there is no documentation, cross-plateform is not guarented and some bugs might be there. Also the code is pretty messy and unsafe.
 
 ***
 
-## How to get started
+## Installation and Setup
 
-<ins>**1. Clone the repository:**</ins>
+<ins>**0. Prerequisites on linux :**</ins>
 
-Open git bash and execute the command `cd *dest_folder*` with \*dest_folder\* being the path to the folder you want Hexeng2D in.
-Then, execute the command `git clone https://github.com/Ily3s/Hexeng2D`
+- Make sure you have X11 installed on your machine. If you don't, run the command specified [here](https://www.glfw.org/docs/3.3/compile.html#compile_deps_x11)
 
-<ins>**2. Use CMake:**</ins>
+- Make sure you have alsa-dev installed on your machine. If you don't, run :
+    - `sudo apt-get install libasound2-dev` on debian based distributions
+    - `sudo dnf install alsa-lib-devel`on fedora and similar.
+If you're neither on debian based nor on fedora and similar, try to search for how to install alsa-dev on your distribution.
 
-Open a terminal that has the cmake command (for example, the vs terminal has cmake).
-Go the the *dest_folder* you have Hexeng2D in with `cd *dest_folder*`.
-Then use the command `cmake . -G "*IDE*" -A *platform*` with \*IDE\* being the IDE you are using and \*platform\* being the platform/architecture you want to build your game on.
+- Make sure OpenGL dev package is installed, if it's not, install it (in most distributions it's called libgl-dev).
+
+<ins>**1. Clone the repository :**</ins>
+
+In a terminal (git bash if you're on windows, the classic terminal on linux), run the following commands :
+`cd <destination>`
+`git clone https://github.com/Ily3s/Hexeng2D`
+
+<ins>**2. Precompile using CMake:**</ins>
+
+In a terminal that includes cmake (for example, the vs terminal on windows), run the following commands :
+`cd <destination>`
+`cmake . -G <IDE> -A <platform>`
+Note that the plateform can be left unspecified
 
 <ins>**3. How to use :**</ins>
 
@@ -27,23 +42,30 @@ Cmake will output a project with at least 3 sub projects :
 - Sandbox is a demo of the engine that I use to test and debug the engine.
 - EmptyProject is an empty project that you can use to build your game
 
-You can rename EmptyProject and build your game in it or you can compile the engine binaries, take all its headers and link Hexeng2D to your project as you want.
+You can rename EmptyProject and build your game in it or you can compile the engine binaries, take all its headers and link Hexeng2D to your project as you want. Note that if you go for the second option, you will also have to take Hexeng2D dependencies headers.
 
-<ins>**Notes :**</ins>
-
-- The recommanded configuration is Visual Studio on Windows
-- Here are the tested configurations :
-    - OS : Windows 10
-    - Architecture : Win32, x64
-    - IDE : Visual Studio 16 2019
-    - Plateforms : Debug, Release
-    - GPU : Nvidia GTX 1050, latest drivers
-    - Screen : FHD, 16:9, 60hz
+<ins>**Note :**</ins> The recommanded configuration is Visual Studio 2022 on Windows
 
 ***
 
-## Current Developpement State
+## Features
 
- **In short : Unfinished**
+I could do a nice and little presentation of all the great features of my software at the top of the README file, but screw that, I'm a software engineer not a salesman, so here is a quick enumeration instead :
 
-For the moment, I don't recommand Hexeng2D to make a game, but keep an eye on it, it will get good.
+- Classic Rendering
+- Batch Rendering
+- Text Rendering
+- Audio Player
+- Language System
+(notice how I make each first letter in upper case so it seems to be a big thing, I'm so good at selling my things, ain't I)
+- Physics Engine and HitBoxes
+- Saves System
+- Quads Rendering
+- Animations System
+- Event Manager System
+- Layers System
+- Camera System
+(the last two basically just means there is depth and a z coordinate going on)
+- Scenes System
+
+These were the big features of the engine, hope you had fun reading that.
