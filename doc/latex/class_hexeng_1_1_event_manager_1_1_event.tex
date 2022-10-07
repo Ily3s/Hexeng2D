@@ -14,7 +14,7 @@ Inheritance diagram for Hexeng\+::Event\+Manager\+::Event\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}{Event}} (std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
-\item 
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, action is executed (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if condition is true.  \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}{Event}} ()=default
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ab38283183a3091dcaafbd42572cd75e4}{Event}} (const \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&)=delete
@@ -40,6 +40,12 @@ Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+One tick of the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} is set to 10ms. If the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} is overloaded however, it can be more than 10ms. 
+\end{DoxyNote}
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}\label{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}} 
 \index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
@@ -47,6 +53,15 @@ Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203
 \doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(void)$>$}]{condition,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL},  }\item[{uint32\+\_\+t}]{pertick = {\ttfamily 1} }\end{DoxyParamCaption})}
 
+
+
+Every pertick ticks, action is executed (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if condition is true.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}\label{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}} 
 \index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
 \index{Event@{Event}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}

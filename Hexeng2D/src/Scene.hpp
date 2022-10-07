@@ -36,6 +36,8 @@ namespace Hexeng
 	};
 
 	HXG_DECLSPEC extern std::unordered_map<int, Scene*> scenes;
+
+	/// @note You shouldn't modify that var during the game loop, instead, call switch_scene
 	HXG_DECLSPEC extern int scene_id;
 
 }

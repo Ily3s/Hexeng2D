@@ -107,17 +107,18 @@ Inheritance diagram for Hexeng::EventManager::Event:</div>
   <img src="class_hexeng_1_1_event_manager_1_1_event.png" usemap="#Hexeng::EventManager::Event_map" alt=""/>
   <map id="Hexeng::EventManager::Event_map" name="Hexeng::EventManager::Event_map">
 <area href="class_hexeng_1_1_event_manager_1_1_button.html" alt="Hexeng::EventManager::Button" shape="rect" coords="0,56,261,80"/>
-<area href="class_hexeng_1_1_event_manager_1_1_event_gate.html" alt="Hexeng::EventManager::EventGate" shape="rect" coords="271,56,532,80"/>
+<area href="class_hexeng_1_1_event_manager_1_1_event_gate.html" title="A gate to the EventManager loop" alt="Hexeng::EventManager::EventGate" shape="rect" coords="271,56,532,80"/>
 <area href="class_hexeng_1_1_event_manager_1_1_key_event.html" alt="Hexeng::EventManager::KeyEvent" shape="rect" coords="542,56,803,80"/>
 <area href="class_hexeng_1_1_event_manager_1_1_mouse_button_event.html" alt="Hexeng::EventManager::MouseButtonEvent" shape="rect" coords="813,56,1074,80"/>
-<area href="class_hexeng_1_1_event_manager_1_1_renderer_event.html" alt="Hexeng::EventManager::RendererEvent" shape="rect" coords="1084,56,1345,80"/>
-<area href="class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html" alt="Hexeng::EventManager::RendererEventGate" shape="rect" coords="1084,112,1345,136"/>
+<area href="class_hexeng_1_1_event_manager_1_1_renderer_event.html" title="An event but has access to the renderer and opengl" alt="Hexeng::EventManager::RendererEvent" shape="rect" coords="1084,56,1345,80"/>
+<area href="class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html" title="RendererEventGate is to RendererEvent what EventGate is to Event" alt="Hexeng::EventManager::RendererEventGate" shape="rect" coords="1084,112,1345,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5711271a518fa6c88c1f2bdd11cd5ef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a5711271a518fa6c88c1f2bdd11cd5ef0">Event</a> (std::function&lt; bool(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33">condition</a>, std::function&lt; void(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a187f6edfdf2757eac90456c96360180d">action</a>, Range <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1">range</a>=Range::GLOBAL, uint32_t <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a3452a062fff71cef6c5e3e4d28d06d07">pertick</a>=1)</td></tr>
+<tr class="memdesc:a5711271a518fa6c88c1f2bdd11cd5ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every pertick ticks, action is executed (in the <a class="el" href="namespace_hexeng_1_1_event_manager.html">EventManager</a> loop) if condition is true.   <a href="class_hexeng_1_1_event_manager_1_1_event.html#a5711271a518fa6c88c1f2bdd11cd5ef0">More...</a><br /></td></tr>
 <tr class="separator:a5711271a518fa6c88c1f2bdd11cd5ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2691ff0955f087b58a7712a7dd9a3650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a2691ff0955f087b58a7712a7dd9a3650">Event</a> ()=default</td></tr>
 <tr class="separator:a2691ff0955f087b58a7712a7dd9a3650"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -143,7 +144,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8c53eed00aff203970a95f6ad3e6ebd1"><td class="memItemLeft" align="right" valign="top">Range&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1">range</a> = Range::GLOBAL</td></tr>
 <tr class="separator:a8c53eed00aff203970a95f6ad3e6ebd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section note"><dt>Note</dt><dd>One tick of the <a class="el" href="namespace_hexeng_1_1_event_manager.html">EventManager</a> is set to 10ms. If the <a class="el" href="namespace_hexeng_1_1_event_manager.html">EventManager</a> is overloaded however, it can be more than 10ms. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a5711271a518fa6c88c1f2bdd11cd5ef0" name="a5711271a518fa6c88c1f2bdd11cd5ef0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5711271a518fa6c88c1f2bdd11cd5ef0">&#9670;&#160;</a></span>Event() <span class="overload">[1/4]</span></h2>
 
@@ -181,6 +184,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Every pertick ticks, action is executed (in the <a class="el" href="namespace_hexeng_1_1_event_manager.html">EventManager</a> loop) if condition is true.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">range</td><td>If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

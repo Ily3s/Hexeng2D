@@ -4,7 +4,7 @@
 
 Hexeng2D is the project of an open source cross-plateform 2D Game Engine framework, written in c++.
 
-For the moment however, Hexeng2D is in an early stage of developpement in wich there is no documentation, cross-plateform is not guarented and some bugs might be there. Also the code is pretty messy and unsafe.
+For the moment however, Hexeng2D is in an early stage of developpement in wich cross-plateform is not guarented and some bugs might be there. Also the code is pretty messy and unsafe.
 
 ***
 
@@ -43,6 +43,8 @@ Cmake will output a project with at least 3 sub projects :
 - EmptyProject is an empty project that you can use to build your game
 
 You can rename EmptyProject and build your game in it or you can compile the engine binaries, take all its headers and link Hexeng2D to your project as you want. Note that if you go for the second option, you will also have to take Hexeng2D dependencies headers.
+
+To get started, I recommand that you take a look at the Sandbox sub-broject in order for you to understand how the engine works. Also you can find the documentation in this repo at doc/html/index.html
 
 <ins>**Note :**</ins> The recommanded configuration is Visual Studio 2022 on Windows
 

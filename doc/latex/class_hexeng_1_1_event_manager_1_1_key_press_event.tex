@@ -2,13 +2,18 @@
 \label{class_hexeng_1_1_event_manager_1_1_key_press_event}\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
 
 
+Unlike other events, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{Key\+Press\+Event}} isn\textquotesingle{}t related to the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop.   
+
+
+
+
 {\ttfamily \#include $<$Input\+Event.\+hpp$>$}
 
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_ab30c70312cd777ea6ea223fc5b3b662d}{Key\+Press\+Event}} (int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_ab6ffbd5b38009e2835ad865e47b0480c}{key\+\_\+code}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a909320563ae20ba7953849984f220b07}{action}}, int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a8114518cd6b0ae6d48230e53915fabec}{mode}}=GLFW\+\_\+\+PRESS)
-\item 
+\begin{DoxyCompactList}\small\item\em Executes action each time the key or button key\+\_\+code is triggered in the \char`\"{}mode\char`\"{} mode  \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a2a2514d6c784ab1f0ca43186da6826ac}{Key\+Press\+Event}} ()=default
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a7e9d578f77147b57c45c82f02494ed6c}{Key\+Press\+Event}} (\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{Key\+Press\+Event}} \&\&) noexcept=default
@@ -26,6 +31,9 @@ int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a8114518
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Unlike other events, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{Key\+Press\+Event}} isn\textquotesingle{}t related to the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop.  
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_key_press_event_ab30c70312cd777ea6ea223fc5b3b662d}\label{class_hexeng_1_1_event_manager_1_1_key_press_event_ab30c70312cd777ea6ea223fc5b3b662d}} 
 \index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!KeyPressEvent@{KeyPressEvent}}
@@ -33,6 +41,17 @@ int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a8114518
 \doxysubsubsection{\texorpdfstring{KeyPressEvent()}{KeyPressEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::\+Key\+Press\+Event (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+code,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{int}]{mode = {\ttfamily GLFW\+\_\+PRESS} }\end{DoxyParamCaption})}
 
+
+
+Executes action each time the key or button key\+\_\+code is triggered in the \char`\"{}mode\char`\"{} mode  
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+code} & A glfw key or button code\\
+\hline
+{\em mode} & The mode of the trigger (GLFW\+\_\+\+PRESS, GLFW\+\_\+\+RELEASE, ...)\\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_key_press_event_a2a2514d6c784ab1f0ca43186da6826ac}\label{class_hexeng_1_1_event_manager_1_1_key_press_event_a2a2514d6c784ab1f0ca43186da6826ac}} 
 \index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!KeyPressEvent@{KeyPressEvent}}
 \index{KeyPressEvent@{KeyPressEvent}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}

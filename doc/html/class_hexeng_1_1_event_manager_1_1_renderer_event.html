@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_event_manager_1_1_ren
 </div><!--header-->
 <div class="contents">
 
+<p>An event but has access to the renderer and opengl   
+ <a href="class_hexeng_1_1_event_manager_1_1_renderer_event.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_event_manager_8hpp_source.html">EventManager.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Hexeng::EventManager::RendererEvent:</div>
@@ -107,7 +110,7 @@ Inheritance diagram for Hexeng::EventManager::RendererEvent:</div>
   <img src="class_hexeng_1_1_event_manager_1_1_renderer_event.png" usemap="#Hexeng::EventManager::RendererEvent_map" alt=""/>
   <map id="Hexeng::EventManager::RendererEvent_map" name="Hexeng::EventManager::RendererEvent_map">
 <area href="class_hexeng_1_1_event_manager_1_1_event.html" alt="Hexeng::EventManager::Event" shape="rect" coords="0,0,261,24"/>
-<area href="class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html" alt="Hexeng::EventManager::RendererEventGate" shape="rect" coords="0,112,261,136"/>
+<area href="class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html" title="RendererEventGate is to RendererEvent what EventGate is to Event" alt="Hexeng::EventManager::RendererEventGate" shape="rect" coords="0,112,261,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -116,9 +119,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a107f2d492312a7e4d9efe27a06351944"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_renderer_event.html#a107f2d492312a7e4d9efe27a06351944">RendererEvent</a> ()=default</td></tr>
 <tr class="separator:a107f2d492312a7e4d9efe27a06351944"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a163de93bb87fc069b7766f0f1c773201"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_renderer_event.html#a163de93bb87fc069b7766f0f1c773201">RendererEvent</a> (std::function&lt; bool(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33">condition</a>, std::function&lt; void(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a187f6edfdf2757eac90456c96360180d">action</a>, Range <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1">range</a>=Range::GLOBAL, unsigned int <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a3452a062fff71cef6c5e3e4d28d06d07">pertick</a>=1)</td></tr>
+<tr class="memdesc:a163de93bb87fc069b7766f0f1c773201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every pertick ticks, action is pushed back in the pending renderer actions list if condition is true.   <a href="class_hexeng_1_1_event_manager_1_1_renderer_event.html#a163de93bb87fc069b7766f0f1c773201">More...</a><br /></td></tr>
 <tr class="separator:a163de93bb87fc069b7766f0f1c773201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_hexeng_1_1_event_manager_1_1_event')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html">Hexeng::EventManager::Event</a></td></tr>
 <tr class="memitem:a5711271a518fa6c88c1f2bdd11cd5ef0 inherit pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a5711271a518fa6c88c1f2bdd11cd5ef0">Event</a> (std::function&lt; bool(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33">condition</a>, std::function&lt; void(void)&gt; <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a187f6edfdf2757eac90456c96360180d">action</a>, Range <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1">range</a>=Range::GLOBAL, uint32_t <a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a3452a062fff71cef6c5e3e4d28d06d07">pertick</a>=1)</td></tr>
+<tr class="memdesc:a5711271a518fa6c88c1f2bdd11cd5ef0 inherit pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every pertick ticks, action is executed (in the <a class="el" href="namespace_hexeng_1_1_event_manager.html">EventManager</a> loop) if condition is true.   <a href="class_hexeng_1_1_event_manager_1_1_event.html#a5711271a518fa6c88c1f2bdd11cd5ef0">More...</a><br /></td></tr>
 <tr class="separator:a5711271a518fa6c88c1f2bdd11cd5ef0 inherit pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2691ff0955f087b58a7712a7dd9a3650 inherit pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a2691ff0955f087b58a7712a7dd9a3650">Event</a> ()=default</td></tr>
 <tr class="separator:a2691ff0955f087b58a7712a7dd9a3650 inherit pub_methods_class_hexeng_1_1_event_manager_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,7 +152,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8c53eed00aff203970a95f6ad3e6ebd1 inherit pub_attribs_class_hexeng_1_1_event_manager_1_1_event"><td class="memItemLeft" align="right" valign="top">Range&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1">range</a> = Range::GLOBAL</td></tr>
 <tr class="separator:a8c53eed00aff203970a95f6ad3e6ebd1 inherit pub_attribs_class_hexeng_1_1_event_manager_1_1_event"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An event but has access to the renderer and opengl  </p>
+<dl class="section note"><dt>Note</dt><dd>The event isn't triggered until the next frame but it can be triggered multiple times within a frame. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a107f2d492312a7e4d9efe27a06351944" name="a107f2d492312a7e4d9efe27a06351944"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a107f2d492312a7e4d9efe27a06351944">&#9670;&#160;</a></span>RendererEvent() <span class="overload">[1/2]</span></h2>
 
@@ -210,6 +218,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Every pertick ticks, action is pushed back in the pending renderer actions list if condition is true.  </p>
+<p >All the actions in the pending renderer actions list are executed the next frame. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">range</td><td>If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
