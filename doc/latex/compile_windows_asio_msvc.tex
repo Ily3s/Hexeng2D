@@ -1,0 +1,101 @@
+\hypertarget{compile_windows_asio_msvc_comp_win_asiomsvc1}{}\doxysection{Portaudio Windows ASIO with MSVC}\label{compile_windows_asio_msvc_comp_win_asiomsvc1}
+This tutorial describes how to build Port\+Audio with ASIO support using MSVC {\itshape from scratch}, without an existing Visual Studio project. For instructions for building Port\+Audio (including ASIO support) using the bundled Visual Studio project file see the compiling instructions for \mbox{\hyperlink{compile_windows}{Building Port\+Audio for Windows using Microsoft Visual Studio}}.
+
+ASIO is a low latency audio API from Steinberg. To compile an ASIO application, you must first download the ASIO SDK from Steinberg. You also need to obtain ASIO drivers for your audio device. Download the ASIO SDK from Steinberg at \href{http://www.steinberg.net/en/company/developer.html}{\texttt{ http\+://www.\+steinberg.\+net/en/company/developer.\+html}} . The SDK is free but you will need to set up a developer account with Steinberg.
+
+This tutorial assumes that you have 3 directories set up at the same level (side by side), one containing Port\+Audio, one containing the ASIO SDK and one containing your Visual Studio project\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{/ASIOSDK2 }
+\DoxyCodeLine{/\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{/DirContainingYourVisualStudioProject  (should directly contain the .sln, .vcproj or .vcprojx etc.)}
+
+\end{DoxyCode}
+
+
+First, make sure that the Steinberg SDK and the portaudio files are \char`\"{}side by side\char`\"{} in the same directory.
+
+Open Microsoft Visual C++ and create a new blank Console exe Project/\+Workspace in that same directory.
+
+For example, the paths for all three groups might read like this\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{C:\(\backslash\)Program Files\(\backslash\)Microsoft Visual Studio\(\backslash\)VC98\(\backslash\)My Projects\(\backslash\)ASIOSDK2}
+\DoxyCodeLine{C:\(\backslash\)Program Files\(\backslash\)Microsoft Visual Studio\(\backslash\)VC98\(\backslash\)My Projects\(\backslash\)portaudio}
+\DoxyCodeLine{C:\(\backslash\)Program Files\(\backslash\)Microsoft Visual Studio\(\backslash\)VC98\(\backslash\)My Projects\(\backslash\)Sawtooth}
+
+\end{DoxyCode}
+
+
+Next, add the following Steinberg ASIO SDK files to the project Source Files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{asio.cpp                        (ASIOSDK2\(\backslash\)common)}
+\DoxyCodeLine{asiodrivers.cpp                 (ASIOSDK2\(\backslash\)host)}
+\DoxyCodeLine{asiolist.cpp                    (ASIOSDK2\(\backslash\)host\(\backslash\)pc)}
+
+\end{DoxyCode}
+
+
+Then, add the following Port\+Audio files to the project Source Files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pa\_asio.cpp                     (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)hostapi\(\backslash\)asio)}
+\DoxyCodeLine{pa\_allocation.c                 (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_converters.c                 (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_cpuload.c                    (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_dither.c                     (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_front.c                      (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_process.c                    (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_ringbuffer.c                 (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_stream.c                     (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_trace.c                      (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)common)}
+\DoxyCodeLine{pa\_win\_hostapis.c               (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)os\(\backslash\)win)}
+\DoxyCodeLine{pa\_win\_util.c                   (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)os\(\backslash\)win)}
+\DoxyCodeLine{pa\_win\_coinitialize.c           (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)os\(\backslash\)win)}
+\DoxyCodeLine{pa\_win\_waveformat.c             (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)os\(\backslash\)win)}
+\DoxyCodeLine{pa\_x86\_plain\_converters.c       (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)\mbox{\hyperlink{glad_8h_a2a98ddb6f79ec1048ff9e15cdd2422ba}{src}}\(\backslash\)os\(\backslash\)win)}
+\DoxyCodeLine{paex\_saw.c                      (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)examples)  (Or another file containing \mbox{\hyperlink{pa__devs_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}() }
+\DoxyCodeLine{                                                      for the console exe to be built.)}
+
+\end{DoxyCode}
+
+
+Although not strictly necessary, you may also want to add the following files to the project Header Files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceportaudio}{portaudio}}.h                     (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)include)}
+\DoxyCodeLine{pa\_asio.h                       (\mbox{\hyperlink{namespaceportaudio}{portaudio}}\(\backslash\)include)}
+
+\end{DoxyCode}
+
+
+These header files define the interfaces to the Port\+Audio API.
+
+Next, go to Project Settings \texorpdfstring{$>$}{>} All Configurations \texorpdfstring{$>$}{>} C/\+C++ \texorpdfstring{$>$}{>} Preprocessor \texorpdfstring{$>$}{>} Preprocessor Definitions and add PA\+\_\+\+USE\+\_\+\+ASIO=1 to any entries that might be there.
+
+eg\+: WIN32;\+\_\+\+CONSOLE;\+\_\+\+MBCS changes to WIN32;\+\_\+\+CONSOLE,\+\_\+\+MBCS;PA\+\_\+\+USE\+\_\+\+ASIO=1
+
+Then, on the same Project Settings tab, go down to Additional Include Directories (in VS2010 you\textquotesingle{}ll find this setting under C/\+C++ \texorpdfstring{$>$}{>} General) and enter the following relative include paths\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{..\(\backslash\)portaudio\(\backslash\)include;..\(\backslash\)portaudio\(\backslash\)src\(\backslash\)common;..\(\backslash\)portaudio\(\backslash\)src\(\backslash\)os\(\backslash\)win;..\(\backslash\)asiosdk2\(\backslash\)common;..\(\backslash\)asiosdk2\(\backslash\)host;..\(\backslash\)asiosdk2\(\backslash\)host\(\backslash\)pc}
+
+\end{DoxyCode}
+
+
+You\textquotesingle{}ll need to make sure the relative paths are correct for the particular directory layout you\textquotesingle{}re using. The above should work fine if you use the side-\/by-\/side layout we recommended earlier.
+
+Some source code in the ASIO SDK is not compatible with the Win32 API UNICODE mode (The ASIO SDK expects the non-\/\+Unicode Win32 API). Therefore you need to make sure your project is set to not use Unicode. You do this by setting the project Character Set to \char`\"{}\+Use Multi-\/\+Byte Character Set\char`\"{} (NOT \char`\"{}\+Use Unicode Character Set\char`\"{}). In VS2010 the Character Set option can be found at Configuration Properties \texorpdfstring{$>$}{>} General \texorpdfstring{$>$}{>} Character Set. (An alternative to setting the project to non-\/\+Unicode is to patch asiolist.\+cpp to work when UNICODE is defined\+: put \#undef UNICODE at the top of the file before windows.\+h is included.)
+
+You should now be able to build any of the test executables in the portaudio\textbackslash{}examples directory. We suggest that you start with \mbox{\hyperlink{paex__saw_8c}{paex\+\_\+saw.\+c}} because it\textquotesingle{}s one of the simplest example files.
+
+--- Chris Share, Tom Mc\+Candless, Ross Bencina
+
+Back to the Tutorial\+: \mbox{\hyperlink{tutorial_start}{Port\+Audio Tutorials}} 

@@ -1,0 +1,109 @@
+\hypertarget{pa__linux__alsa_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+linux\+\_\+alsa.h File Reference}
+\label{pa__linux__alsa_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_linux\_alsa.h@{Hexeng2D/dependencies/portaudio/include/pa\_linux\_alsa.h}}
+
+
+ALSA-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} \mbox{\hyperlink{pa__linux__alsa_8h_a8f4a367ba01a76664eac8522af151d7e}{Pa\+Alsa\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8h_ac33a394742540a3b6666d77698a72e82}{Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info}} (\mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} $\ast$info)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8h_accc41e7fd89dc0a6163d54a4f25fb242}{Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int enable)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8h_ac31edeb99ef568fc89418d77bd4ca624}{Pa\+Alsa\+\_\+\+Get\+Stream\+Input\+Card}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int $\ast$card)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8h_a04d7cd7252120eadf0ab3141ba5a7d93}{Pa\+Alsa\+\_\+\+Get\+Stream\+Output\+Card}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int $\ast$card)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8h_a76f60d6f1ba6a298c038a9f3a6dccc53}{Pa\+Alsa\+\_\+\+Set\+Num\+Periods}} (int num\+Periods)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8h_a2992cf7c30de5aaea222ec762fc56ad1}{Pa\+Alsa\+\_\+\+Set\+Retries\+Busy}} (int retries)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8h_a7517c2e54801c8bd73c2f6db30aeaff9}{Pa\+Alsa\+\_\+\+Set\+Library\+Path\+Name}} (const char $\ast$path\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ALSA-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8h_a8f4a367ba01a76664eac8522af151d7e}\label{pa__linux__alsa_8h_a8f4a367ba01a76664eac8522af151d7e}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsaStreamInfo@{PaAlsaStreamInfo}}
+\index{PaAlsaStreamInfo@{PaAlsaStreamInfo}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsaStreamInfo}{PaAlsaStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} \mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8h_accc41e7fd89dc0a6163d54a4f25fb242}\label{pa__linux__alsa_8h_accc41e7fd89dc0a6163d54a4f25fb242}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_EnableRealtimeScheduling@{PaAlsa\_EnableRealtimeScheduling}}
+\index{PaAlsa\_EnableRealtimeScheduling@{PaAlsa\_EnableRealtimeScheduling}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_EnableRealtimeScheduling()}{PaAlsa\_EnableRealtimeScheduling()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int}]{enable }\end{DoxyParamCaption})}
+
+Instruct whether to enable real-\/time priority when starting the audio thread.
+
+If this is turned on by the stream is started, the audio callback thread will be created with the FIFO scheduling policy, which is suitable for realtime operation. \mbox{\Hypertarget{pa__linux__alsa_8h_ac31edeb99ef568fc89418d77bd4ca624}\label{pa__linux__alsa_8h_ac31edeb99ef568fc89418d77bd4ca624}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_GetStreamInputCard@{PaAlsa\_GetStreamInputCard}}
+\index{PaAlsa\_GetStreamInputCard@{PaAlsa\_GetStreamInputCard}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_GetStreamInputCard()}{PaAlsa\_GetStreamInputCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Get\+Stream\+Input\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int $\ast$}]{card }\end{DoxyParamCaption})}
+
+Get the ALSA-\/lib card index of this stream\textquotesingle{}s input device. \mbox{\Hypertarget{pa__linux__alsa_8h_a04d7cd7252120eadf0ab3141ba5a7d93}\label{pa__linux__alsa_8h_a04d7cd7252120eadf0ab3141ba5a7d93}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_GetStreamOutputCard@{PaAlsa\_GetStreamOutputCard}}
+\index{PaAlsa\_GetStreamOutputCard@{PaAlsa\_GetStreamOutputCard}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_GetStreamOutputCard()}{PaAlsa\_GetStreamOutputCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Get\+Stream\+Output\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int $\ast$}]{card }\end{DoxyParamCaption})}
+
+Get the ALSA-\/lib card index of this stream\textquotesingle{}s output device. \mbox{\Hypertarget{pa__linux__alsa_8h_ac33a394742540a3b6666d77698a72e82}\label{pa__linux__alsa_8h_ac33a394742540a3b6666d77698a72e82}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_InitializeStreamInfo@{PaAlsa\_InitializeStreamInfo}}
+\index{PaAlsa\_InitializeStreamInfo@{PaAlsa\_InitializeStreamInfo}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_InitializeStreamInfo()}{PaAlsa\_InitializeStreamInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+Initialize host API specific structure, call this before setting relevant attributes. \mbox{\Hypertarget{pa__linux__alsa_8h_a7517c2e54801c8bd73c2f6db30aeaff9}\label{pa__linux__alsa_8h_a7517c2e54801c8bd73c2f6db30aeaff9}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_SetLibraryPathName@{PaAlsa\_SetLibraryPathName}}
+\index{PaAlsa\_SetLibraryPathName@{PaAlsa\_SetLibraryPathName}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetLibraryPathName()}{PaAlsa\_SetLibraryPathName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Set\+Library\+Path\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path\+Name }\end{DoxyParamCaption})}
+
+Set the path and name of ALSA library file if Port\+Audio is configured to load it dynamically (see PA\+\_\+\+ALSA\+\_\+\+DYNAMIC). This setting will overwrite the default name set by PA\+\_\+\+ALSA\+\_\+\+PATHNAME define. 
+\begin{DoxyParams}{Parameters}
+{\em path\+Name} & Full path with filename. Only filename can be used, but dlopen() will lookup default searchable directories (/usr/lib;/usr/local/lib) then. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__linux__alsa_8h_a76f60d6f1ba6a298c038a9f3a6dccc53}\label{pa__linux__alsa_8h_a76f60d6f1ba6a298c038a9f3a6dccc53}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_SetNumPeriods@{PaAlsa\_SetNumPeriods}}
+\index{PaAlsa\_SetNumPeriods@{PaAlsa\_SetNumPeriods}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetNumPeriods()}{PaAlsa\_SetNumPeriods()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Set\+Num\+Periods (\begin{DoxyParamCaption}\item[{int}]{num\+Periods }\end{DoxyParamCaption})}
+
+Set the number of periods (buffer fragments) to configure devices with.
+
+By default the number of periods is 4, this is the lowest number of periods that works well on the author\textquotesingle{}s soundcard. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Periods} & The number of periods. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__linux__alsa_8h_a2992cf7c30de5aaea222ec762fc56ad1}\label{pa__linux__alsa_8h_a2992cf7c30de5aaea222ec762fc56ad1}} 
+\index{pa\_linux\_alsa.h@{pa\_linux\_alsa.h}!PaAlsa\_SetRetriesBusy@{PaAlsa\_SetRetriesBusy}}
+\index{PaAlsa\_SetRetriesBusy@{PaAlsa\_SetRetriesBusy}!pa\_linux\_alsa.h@{pa\_linux\_alsa.h}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetRetriesBusy()}{PaAlsa\_SetRetriesBusy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Set\+Retries\+Busy (\begin{DoxyParamCaption}\item[{int}]{retries }\end{DoxyParamCaption})}
+
+Set the maximum number of times to retry opening busy device (sleeping for a short interval inbetween). 

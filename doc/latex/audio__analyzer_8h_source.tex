@@ -1,0 +1,148 @@
+\hypertarget{audio__analyzer_8h_source}{}\doxysection{audio\+\_\+analyzer.\+h}
+\label{audio__analyzer_8h_source}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/audio\_analyzer.h@{Hexeng2D/dependencies/portaudio/qa/loopback/src/audio\_analyzer.h}}
+\mbox{\hyperlink{audio__analyzer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 \textcolor{comment}{/*}}
+\DoxyCodeLine{3 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Latest Version at: http://www.portaudio.com}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Copyright (c) 1999-\/2010 Phil Burk and Ross Bencina}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{9 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{10 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{12 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{17 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{20 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{21 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{22 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{23 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{24 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{25 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{26 \textcolor{comment}{ */}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/*}}
+\DoxyCodeLine{29 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{30 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{33 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{34 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{36 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{37 \textcolor{comment}{ */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#ifndef \_AUDIO\_ANALYZER\_H}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define \_AUDIO\_ANALYZER\_H}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{biquad__filter_8h}{biquad\_filter.h}}"{}}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define MATH\_PI  (3.141592653589793238462643)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define MATH\_TWO\_PI  (2.0 * MATH\_PI)}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_qa_sine_generator__s}{PaQaSineGenerator\_s}}}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_sine_generator__s_a6a53658f28e435c3c7bdd47e36859826}{phase}};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_sine_generator__s_a7939455f258b2ba52aade79672f3d5ea}{phaseIncrement}};}
+\DoxyCodeLine{51     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_sine_generator__s_ae73569f3aa4212befb0fc87df74d6a7d}{frequency}};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_sine_generator__s_a8f0027443ba30c1c5e57c88364cec465}{amplitude}};}
+\DoxyCodeLine{53 \} \mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{PaQaSineGenerator}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording\_s}}}
+\DoxyCodeLine{57 \{}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_recording__s_abbed46e34e27ff432484f20eb6604185}{maxFrames}};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{float}    *\mbox{\hyperlink{struct_pa_qa_recording__s_a0881fb1e483b51cd2a828ac786728f93}{buffer}};}
+\DoxyCodeLine{62     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_recording__s_a0da5f9ac0c45a0051ce5c50cc1e05731}{numFrames}};}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_recording__s_a0a16e04122d6509e3efd524744b1e1df}{sampleRate}};}
+\DoxyCodeLine{64 \} \mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{PaQaRecording}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_qa_test_tone__s}{PaQaTestTone\_s}}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_test_tone__s_a90c802d23c98b9b340772c2bf2c14a84}{samplesPerFrame}};}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_test_tone__s_a094a7dd30970e8def532ac7ea38f6b31}{startDelay}};}
+\DoxyCodeLine{70     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_test_tone__s_a204af537989a744626b4aabeb9e2d3a9}{sampleRate}};}
+\DoxyCodeLine{71     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_test_tone__s_ab6e6a027870ba348bbce705bf5c196e5}{frequency}};}
+\DoxyCodeLine{72     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_test_tone__s_a94af989158aefe3bd584700022836a55}{amplitude}};}
+\DoxyCodeLine{73 \} \mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{PaQaTestTone}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_qa_analysis_result__s}{PaQaAnalysisResult\_s}}}
+\DoxyCodeLine{76 \{}
+\DoxyCodeLine{77     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct_pa_qa_analysis_result__s_affa94b0959c600449a9473337ddd8abd}{valid}};}
+\DoxyCodeLine{79     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_aa01cd3b08f4331d42e541a5525b5a5ef}{latency}};}
+\DoxyCodeLine{80     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_a3db306b382cb9b01f4954e078f1f0d4c}{amplitudeRatio}};}
+\DoxyCodeLine{81     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_ab23ac837dc1cc396ab58326efea278ba}{popAmplitude}};}
+\DoxyCodeLine{82     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_aa803a3ce07fc930d172f019881cb5b44}{popPosition}};}
+\DoxyCodeLine{83     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_adf01d50ef45ca2a38f961659b0b5e39e}{numDroppedFrames}};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_a5465c8dc21981f08bce260e864882808}{droppedFramesPosition}};}
+\DoxyCodeLine{85     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_aeb484763fda64f2ad66d30f1e7538290}{numAddedFrames}};}
+\DoxyCodeLine{86     \textcolor{keywordtype}{double}    \mbox{\hyperlink{struct_pa_qa_analysis_result__s_a54d571e9c681cdaf3901744c0dd84d10}{addedFramesPosition}};}
+\DoxyCodeLine{87 \} \mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{PaQaAnalysisResult}};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{/*================================================================*/}}
+\DoxyCodeLine{91 \textcolor{comment}{/*================= General DSP Tools ============================*/}}
+\DoxyCodeLine{92 \textcolor{comment}{/*================================================================*/}}
+\DoxyCodeLine{97 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a9c930334efac22cea25f83543823d995}{PaQa\_GetNthFrequency}}( \textcolor{keywordtype}{double} baseFrequency, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}} );}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_a0d053fe46ae855fa1401098ea08efa88}{PaQa\_EraseBuffer}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numFrames, \textcolor{keywordtype}{int} samplesPerFrame );}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_a3511746af23da7b237a81abcd5103e0e}{PaQa\_MixSine}}( \mbox{\hyperlink{struct_pa_qa_sine_generator__s}{PaQaSineGenerator}} *generator, \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_ad86d65280abda9882edea429362b7c64}{PaQa\_WriteSine}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}},}
+\DoxyCodeLine{104                      \textcolor{keywordtype}{double} frequency, \textcolor{keywordtype}{double} amplitude );}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{109 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_aa0ca89d66590535656409fd3466e1997}{PaQa\_GenerateCrack}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_aa3695cc2693120119d3e2f7ee3cad473}{PaQa\_ComputePhaseDifference}}( \textcolor{keywordtype}{double} phase1, \textcolor{keywordtype}{double} phase2 );}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{116 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a8be3a62d7063764c0f1fbbe0f2fdfec8}{PaQa\_MeasureArea}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numFrames, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}}  );}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{121 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a2c9261859914b9de91ab823e7ba39e8b}{PaQa\_MeasureCrossingSlope}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numFrames );}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_a5b15fa5f9ffe7d147b31f747c40ff49b}{PaQa\_SetupSineGenerator}}( \mbox{\hyperlink{struct_pa_qa_sine_generator__s}{PaQaSineGenerator}} *generator, \textcolor{keywordtype}{double} frequency, \textcolor{keywordtype}{double} amplitude, \textcolor{keywordtype}{double} frameRate );}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{comment}{/*================================================================*/}}
+\DoxyCodeLine{130 \textcolor{comment}{/*================= Recordings ===================================*/}}
+\DoxyCodeLine{131 \textcolor{comment}{/*================================================================*/}}
+\DoxyCodeLine{135  \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_a93b734e5ffce0b4aebcb41a210bcf2ba}{PaQa\_InitializeRecording}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{int} maxSamples, \textcolor{keywordtype}{int} sampleRate );}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{140  \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_a75b79fa3e7ebd8814532f4e6771f1d0b}{PaQa\_TerminateRecording}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording );}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{145 \textcolor{keywordtype}{void} \mbox{\hyperlink{audio__analyzer_8h_a89f3a57c92da52f6ebdb4ee3633db3b2}{PaQa\_FilterRecording}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *input, \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *output, \mbox{\hyperlink{struct_biquad_filter__s}{BiquadFilter}} *\mbox{\hyperlink{glad_8h_ab0762b2c24f4aab7c062c0710f8a3788}{filter}} );}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_ad176a266e1bb48a3107f50755127fac8}{PaQa\_SaveRecordingToWaveFile}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *filename );}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{153 \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_a7cf446a82066abc234f0170f10adc8b8}{PaQa\_WriteRecording}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{156 \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_a74079de339ec5f428d495cddb5e3b573}{PaQa\_WriteSilence}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{int} numSamples );}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_a45471b2da58d5831059bda8c87628085}{PaQa\_RecordFreeze}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{int} numSamples );}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_addffeae72a884cce43ade4621c9b23c3}{PaQa\_CorrelateSine}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{double} frequency, \textcolor{keywordtype}{double} frameRate,}
+\DoxyCodeLine{161                            \textcolor{keywordtype}{int} startFrame, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{double} *phasePtr );}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a8f61990e727c1eb1e278cce3b18b4375}{PaQa\_FindFirstMatch}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples, \textcolor{keywordtype}{double} tolerance  );}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{169 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a134d28401b6cd71d28ed3a4291032a54}{PaQa\_MeasureSineAmplitudeBySlope}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording,}
+\DoxyCodeLine{170                                          \textcolor{keywordtype}{double} frequency, \textcolor{keywordtype}{double} frameRate,}
+\DoxyCodeLine{171                                          \textcolor{keywordtype}{int} startFrame, \textcolor{keywordtype}{int} numFrames );}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_aca03218918e6dd68c79c6cc60bc21384}{PaQa\_MeasureRootMeanSquare}}( \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numFrames );}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{179 \textcolor{keywordtype}{double} \mbox{\hyperlink{audio__analyzer_8h_a36b44ac4b3ba2e3de200de15ee7a25ea}{PaQa\_CompareAmplitudes}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \textcolor{keywordtype}{int} startAt, \textcolor{keywordtype}{float} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{int} numSamples );}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{185 \textcolor{keywordtype}{int} \mbox{\hyperlink{audio__analyzer_8h_a6232297ca356c8753050d169966525b6}{PaQa\_AnalyseRecording}}( \mbox{\hyperlink{struct_pa_qa_recording__s}{PaQaRecording}} *recording, \mbox{\hyperlink{struct_pa_qa_test_tone__s}{PaQaTestTone}} *testTone, \mbox{\hyperlink{struct_pa_qa_analysis_result__s}{PaQaAnalysisResult}} *analysisResult );}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_AUDIO\_ANALYZER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,554 @@
+\hypertarget{pa__process_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+process.c File Reference}
+\label{pa__process_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_process.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_process.c}}
+
+
+Buffer Processor implementation.  
+
+
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__process_8c_a48bc1b8e31a22ba7847b71a8be74c9ec}{PA\+\_\+\+FRAMES\+\_\+\+PER\+\_\+\+TEMP\+\_\+\+BUFFER\+\_\+\+WHEN\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+IS\+\_\+\+UNKNOWN\+\_\+}}~1024
+\item 
+\#define \mbox{\hyperlink{pa__process_8c_ab7eb8ca4a0b166fe7dac06709bb2a903}{PA\+\_\+\+MIN\+\_\+}}(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})~( ((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})$<$(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})) ? (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) \+: (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}) )
+\item 
+\#define \mbox{\hyperlink{pa__process_8c_a66dd38c379668b47250fa2f958337599}{PA\+\_\+\+MAX\+\_\+}}(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})~(((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) $>$ (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})) ? (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) \+: (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__process_8c_aaae7001566f528cf2d3cd453bf05c5d5}{Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, int input\+Channel\+Count, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} user\+Input\+Sample\+Format, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} host\+Input\+Sample\+Format, int output\+Channel\+Count, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} user\+Output\+Sample\+Format, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} host\+Output\+Sample\+Format, double sample\+Rate, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} stream\+Flags, unsigned long frames\+Per\+User\+Buffer, unsigned long frames\+Per\+Host\+Buffer, \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}} host\+Buffer\+Size\+Mode, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_acf4e607f9c25ec2db5efd02ef1adb188}{Pa\+Util\+\_\+\+Terminate\+Buffer\+Processor}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a454635d7cd026eec37f3ab3d27afc38e}{Pa\+Util\+\_\+\+Reset\+Buffer\+Processor}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_ae5a4104d7132396436e179825e2a3847}{Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Input\+Latency\+Frames}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_a853a8cd0e8d214406aa83ef3ef3d1102}{Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Output\+Latency\+Frames}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a0f0a94dec2b29ecb9843deb00a889bea}{Pa\+Util\+\_\+\+Set\+Input\+Frame\+Count}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned long frame\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a3d34489fac9940436629e312524d9f94}{Pa\+Util\+\_\+\+Set\+No\+Input}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a4f955cb25ee2e3fc515fa69b9e6decb3}{Pa\+Util\+\_\+\+Set\+Input\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_ab3b6507f21701058bd152f0c99f3c294}{Pa\+Util\+\_\+\+Set\+Interleaved\+Input\+Channels}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int first\+Channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int channel\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a8d212598491770776ed954c780242c58}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Input\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_af9c0de32c43ab8b683f52b60e4d36ef1}{Pa\+Util\+\_\+\+Set2nd\+Input\+Frame\+Count}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned long frame\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_aaa4f355de07fd01aedcffbc2bf5b773d}{Pa\+Util\+\_\+\+Set2nd\+Input\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a4cfe24a64dfb9c59e8ca8db3e0e7453a}{Pa\+Util\+\_\+\+Set2nd\+Interleaved\+Input\+Channels}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int first\+Channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int channel\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_aab1ee9d5038ea12c00ca6b35273d626e}{Pa\+Util\+\_\+\+Set2nd\+Non\+Interleaved\+Input\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a1dc65eb1e69dd6739e4dad4d74bf3785}{Pa\+Util\+\_\+\+Set\+Output\+Frame\+Count}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned long frame\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_ad8300bdb4ebf2aaad4b0bf8813af5695}{Pa\+Util\+\_\+\+Set\+No\+Output}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a0ba1528b3182674480658aeda9de3f12}{Pa\+Util\+\_\+\+Set\+Output\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_adba29b453fea9e5abfba02dbcb01bd09}{Pa\+Util\+\_\+\+Set\+Interleaved\+Output\+Channels}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int first\+Channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int channel\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a8e34320d8d2da92d5568721f64bcc27c}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Output\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a9b1a6821b653a03060db293d5824cc86}{Pa\+Util\+\_\+\+Set2nd\+Output\+Frame\+Count}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned long frame\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a3e7b8840ef8d2367ca7d441cca4371e2}{Pa\+Util\+\_\+\+Set2nd\+Output\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_ab57804b38f9a6f732d9486b66d412e13}{Pa\+Util\+\_\+\+Set2nd\+Interleaved\+Output\+Channels}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int first\+Channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, unsigned int channel\+Count)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a8320da4e144d848ec902698bb4e6648c}{Pa\+Util\+\_\+\+Set2nd\+Non\+Interleaved\+Output\+Channel}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned int channel, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__process_8c_a1388263b1c5b765797abe767af6dbe80}{Pa\+Util\+\_\+\+Begin\+Buffer\+Processing}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} callback\+Status\+Flags)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_a2bce3edf65753593f4f4005e917ad9e4}{Pa\+Util\+\_\+\+End\+Buffer\+Processing}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, int $\ast$stream\+Callback\+Result)
+\item 
+int \mbox{\hyperlink{pa__process_8c_aa718d784f39b7daad2cc4775677c2e84}{Pa\+Util\+\_\+\+Is\+Buffer\+Processor\+Output\+Empty}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_ad0eca03235f47de0591865f8097df4d0}{Pa\+Util\+\_\+\+Copy\+Input}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frame\+Count)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_a61859778b9d4997a6be1de038136fcf4}{Pa\+Util\+\_\+\+Copy\+Output}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frame\+Count)
+\item 
+unsigned long \mbox{\hyperlink{pa__process_8c_a97a69b3418e367ca1c5abf78cfa260fb}{Pa\+Util\+\_\+\+Zero\+Output}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp, unsigned long frame\+Count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Buffer Processor implementation. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__process_8c_a48bc1b8e31a22ba7847b71a8be74c9ec}\label{pa__process_8c_a48bc1b8e31a22ba7847b71a8be74c9ec}} 
+\index{pa\_process.c@{pa\_process.c}!PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_@{PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_}}
+\index{PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_@{PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_}{PA\_FRAMES\_PER\_TEMP\_BUFFER\_WHEN\_HOST\_BUFFER\_SIZE\_IS\_UNKNOWN\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+FRAMES\+\_\+\+PER\+\_\+\+TEMP\+\_\+\+BUFFER\+\_\+\+WHEN\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+IS\+\_\+\+UNKNOWN\+\_\+~1024}
+
+\mbox{\Hypertarget{pa__process_8c_a66dd38c379668b47250fa2f958337599}\label{pa__process_8c_a66dd38c379668b47250fa2f958337599}} 
+\index{pa\_process.c@{pa\_process.c}!PA\_MAX\_@{PA\_MAX\_}}
+\index{PA\_MAX\_@{PA\_MAX\_}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MAX\_}{PA\_MAX\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MAX\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}} }\end{DoxyParamCaption})~(((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) $>$ (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})) ? (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) \+: (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))}
+
+\mbox{\Hypertarget{pa__process_8c_ab7eb8ca4a0b166fe7dac06709bb2a903}\label{pa__process_8c_ab7eb8ca4a0b166fe7dac06709bb2a903}} 
+\index{pa\_process.c@{pa\_process.c}!PA\_MIN\_@{PA\_MIN\_}}
+\index{PA\_MIN\_@{PA\_MIN\_}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MIN\_}{PA\_MIN\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MIN\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}} }\end{DoxyParamCaption})~( ((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})$<$(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})) ? (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}) \+: (\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}) )}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__process_8c_a1388263b1c5b765797abe767af6dbe80}\label{pa__process_8c_a1388263b1c5b765797abe767af6dbe80}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_BeginBufferProcessing@{PaUtil\_BeginBufferProcessing}}
+\index{PaUtil\_BeginBufferProcessing@{PaUtil\_BeginBufferProcessing}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_BeginBufferProcessing()}{PaUtil\_BeginBufferProcessing()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Begin\+Buffer\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{\mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$}]{time\+Info,  }\item[{\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}}]{callback\+Status\+Flags }\end{DoxyParamCaption})}
+
+Commence processing a host buffer (or a pair of host buffers in the full-\/duplex case) for a callback stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+{\em time\+Info} & Timing information for the first sample of the host \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer(s)}}. This information may be adjusted when buffer adaption is being performed.\\
+\hline
+{\em callback\+Status\+Flags} & Flags indicating whether underruns and overruns have occurred since the last time the buffer processor was called. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_ad0eca03235f47de0591865f8097df4d0}\label{pa__process_8c_ad0eca03235f47de0591865f8097df4d0}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_CopyInput@{PaUtil\_CopyInput}}
+\index{PaUtil\_CopyInput@{PaUtil\_CopyInput}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_CopyInput()}{PaUtil\_CopyInput()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Copy\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{buffer,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+Copy samples from host input channels set up by the Pa\+Util\+\_\+\+Set$\ast$\+Input\+Channels functions to a user supplied buffer. This function is intended for use with blocking read/write streams. Copies the minimum of the number of user frames (specified by the frame\+Count parameter) and the number of available host frames (specified in a previous call to Set\+Input\+Frame\+Count()).
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+{\em buffer} & A pointer to the user buffer pointer, or a pointer to a pointer to an array of user buffer pointers for a non-\/interleaved stream. It is important that this parameter points to a copy of the user buffer pointers, not to the actual user buffer pointers, because this function updates the pointers before returning.\\
+\hline
+{\em frame\+Count} & The number of frames of data in the \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer(s)}} pointed to by the buffer parameter.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of frames copied. The buffer \mbox{\hyperlink{glad_8h_a233635a5878bad16cd0b314d8773733c}{pointer(s)}} pointed to by the buffer parameter are advanced to point to the frame(s) following the last one filled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__process_8c_a61859778b9d4997a6be1de038136fcf4}\label{pa__process_8c_a61859778b9d4997a6be1de038136fcf4}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_CopyOutput@{PaUtil\_CopyOutput}}
+\index{PaUtil\_CopyOutput@{PaUtil\_CopyOutput}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_CopyOutput()}{PaUtil\_CopyOutput()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Copy\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{bp,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{buffer,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__process_8c_a2bce3edf65753593f4f4005e917ad9e4}\label{pa__process_8c_a2bce3edf65753593f4f4005e917ad9e4}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_EndBufferProcessing@{PaUtil\_EndBufferProcessing}}
+\index{PaUtil\_EndBufferProcessing@{PaUtil\_EndBufferProcessing}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_EndBufferProcessing()}{PaUtil\_EndBufferProcessing()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+End\+Buffer\+Processing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{int $\ast$}]{callback\+Result }\end{DoxyParamCaption})}
+
+Finish processing a host buffer (or a pair of host buffers in the full-\/duplex case) for a callback stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+{\em callback\+Result} & On input, indicates a previous callback result, and on exit, the result of the user stream callback, if it is called. On entry callback\+Result should contain one of \{ pa\+Continue, pa\+Complete, or pa\+Abort\}. If pa\+Complete is passed, the stream callback will not be called but any audio that was generated by previous stream callbacks will be copied to the output \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer(s)}}. You can check whether the buffer processor\textquotesingle{}s internal buffer is empty by calling Pa\+Util\+\_\+\+Is\+Buffer\+Processor\+Output\+Empty.\\
+\hline
+\end{DoxyParams}
+If the stream callback is called its result is stored in $\ast$callback\+Result. If the stream callback returns pa\+Complete or pa\+Abort, all output buffers will be full of valid data -\/ some of which may be zeros to account for data that wasn\textquotesingle{}t generated by the terminating callback.
+
+\begin{DoxyReturn}{Returns}
+The number of frames processed. This usually corresponds to the number of frames specified by the Pa\+Util\+\_\+\+Set$\ast$\+Frame\+Count functions, except in the pa\+Util\+Variable\+Host\+Buffer\+Size\+Partial\+Usage\+Allowed buffer size mode when a smaller value may be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__process_8c_ae5a4104d7132396436e179825e2a3847}\label{pa__process_8c_ae5a4104d7132396436e179825e2a3847}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_GetBufferProcessorInputLatencyFrames@{PaUtil\_GetBufferProcessorInputLatencyFrames}}
+\index{PaUtil\_GetBufferProcessorInputLatencyFrames@{PaUtil\_GetBufferProcessorInputLatencyFrames}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetBufferProcessorInputLatencyFrames()}{PaUtil\_GetBufferProcessorInputLatencyFrames()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Input\+Latency\+Frames (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Retrieve the input latency of a buffer processor, in frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor examine.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The input latency introduced by the buffer processor, in frames.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a92a70efcd9dd7c8e1ea735580dee7e4a}{Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Output\+Latency\+Frames}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a853a8cd0e8d214406aa83ef3ef3d1102}\label{pa__process_8c_a853a8cd0e8d214406aa83ef3ef3d1102}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_GetBufferProcessorOutputLatencyFrames@{PaUtil\_GetBufferProcessorOutputLatencyFrames}}
+\index{PaUtil\_GetBufferProcessorOutputLatencyFrames@{PaUtil\_GetBufferProcessorOutputLatencyFrames}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetBufferProcessorOutputLatencyFrames()}{PaUtil\_GetBufferProcessorOutputLatencyFrames()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Output\+Latency\+Frames (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Retrieve the output latency of a buffer processor, in frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor examine.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output latency introduced by the buffer processor, in frames.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a4871dfd93b00739e0dafdd4ea7671c9a}{Pa\+Util\+\_\+\+Get\+Buffer\+Processor\+Input\+Latency\+Frames}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_aaae7001566f528cf2d3cd453bf05c5d5}\label{pa__process_8c_aaae7001566f528cf2d3cd453bf05c5d5}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_InitializeBufferProcessor@{PaUtil\_InitializeBufferProcessor}}
+\index{PaUtil\_InitializeBufferProcessor@{PaUtil\_InitializeBufferProcessor}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeBufferProcessor()}{PaUtil\_InitializeBufferProcessor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{int}]{input\+Channel\+Count,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{user\+Input\+Sample\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{host\+Input\+Sample\+Format,  }\item[{int}]{output\+Channel\+Count,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{user\+Output\+Sample\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{host\+Output\+Sample\+Format,  }\item[{double}]{sample\+Rate,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{stream\+Flags,  }\item[{unsigned long}]{frames\+Per\+User\+Buffer,  }\item[{unsigned long}]{frames\+Per\+Host\+Buffer,  }\item[{\mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}}}]{host\+Buffer\+Size\+Mode,  }\item[{\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$}]{stream\+Callback,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Initialize a buffer processor\textquotesingle{}s representation stored in a \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} structure. Be sure to call Pa\+Util\+\_\+\+Terminate\+Buffer\+Processor after finishing with a buffer processor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor structure to initialize.\\
+\hline
+{\em input\+Channel\+Count} & The number of input channels as passed to Pa\+\_\+\+Open\+Stream or 0 for an output-\/only stream.\\
+\hline
+{\em user\+Input\+Sample\+Format} & Format of user input samples, as passed to Pa\+\_\+\+Open\+Stream. This parameter is ignored for ouput-\/only streams.\\
+\hline
+{\em host\+Input\+Sample\+Format} & Format of host input samples. This parameter is ignored for output-\/only streams. See note about host buffer interleave below.\\
+\hline
+{\em output\+Channel\+Count} & The number of output channels as passed to Pa\+\_\+\+Open\+Stream or 0 for an input-\/only stream.\\
+\hline
+{\em user\+Output\+Sample\+Format} & Format of user output samples, as passed to Pa\+\_\+\+Open\+Stream. This parameter is ignored for input-\/only streams.\\
+\hline
+{\em host\+Output\+Sample\+Format} & Format of host output samples. This parameter is ignored for input-\/only streams. See note about host buffer interleave below.\\
+\hline
+{\em sample\+Rate} & Sample rate of the stream. The more accurate this is the better -\/ it is used for updating time stamps when adapting buffers.\\
+\hline
+{\em stream\+Flags} & Stream flags as passed to Pa\+\_\+\+Open\+Stream, this parameter is used for selecting special sample conversion options such as clipping and dithering.\\
+\hline
+{\em frames\+Per\+User\+Buffer} & Number of frames per user buffer, as requested by the frames\+Per\+Buffer parameter to Pa\+\_\+\+Open\+Stream. This parameter may be zero to indicate that the user will accept any (and varying) buffer sizes.\\
+\hline
+{\em frames\+Per\+Host\+Buffer} & Specifies the number of frames per host buffer for the fixed buffer size mode, and the maximum number of frames per host buffer for the bounded host buffer size mode. It is ignored for the other modes.\\
+\hline
+{\em host\+Buffer\+Size\+Mode} & A mode flag indicating the size variability of host buffers that will be passed to the buffer processor. See Pa\+Util\+Host\+Buffer\+Size\+Mode for further details.\\
+\hline
+{\em stream\+Callback} & The user stream callback passed to Pa\+\_\+\+Open\+Stream.\\
+\hline
+{\em user\+Data} & The user data field passed to Pa\+\_\+\+Open\+Stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The interleave flag is ignored for host buffer formats. Host interleave is determined by the use of different Set\+Input and Set\+Output functions.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+An error code indicating whether the initialization was successful. If the error code is not Pa\+No\+Error, the buffer processor was not initialized and should not be used.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}}, \mbox{\hyperlink{pa__process_8h_af872943fc77bbc32f0196e86f16a7c24}{Pa\+Util\+\_\+\+Terminate\+Buffer\+Processor}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_aa718d784f39b7daad2cc4775677c2e84}\label{pa__process_8c_aa718d784f39b7daad2cc4775677c2e84}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_IsBufferProcessorOutputEmpty@{PaUtil\_IsBufferProcessorOutputEmpty}}
+\index{PaUtil\_IsBufferProcessorOutputEmpty@{PaUtil\_IsBufferProcessorOutputEmpty}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_IsBufferProcessorOutputEmpty()}{PaUtil\_IsBufferProcessorOutputEmpty()}}
+{\footnotesize\ttfamily int Pa\+Util\+\_\+\+Is\+Buffer\+Processor\+Output\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Determine whether any callback generated output remains in the buffer processor\textquotesingle{}s internal buffers. This method may be used to determine when to continue calling \mbox{\hyperlink{pa__process_8h_afbbc470b417a31de0b9944d476adaaa0}{Pa\+Util\+\_\+\+End\+Buffer\+Processing()}} after the callback has returned a callback\+Result of pa\+Complete.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns non-\/zero when callback generated output remains in the internal buffer and zero (0) when there internal buffer contains no callback generated data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__process_8c_a454635d7cd026eec37f3ab3d27afc38e}\label{pa__process_8c_a454635d7cd026eec37f3ab3d27afc38e}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_ResetBufferProcessor@{PaUtil\_ResetBufferProcessor}}
+\index{PaUtil\_ResetBufferProcessor@{PaUtil\_ResetBufferProcessor}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ResetBufferProcessor()}{PaUtil\_ResetBufferProcessor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Reset\+Buffer\+Processor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Clear any internally buffered data. If you call Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor in your Open\+Stream routine, make sure you call Pa\+Util\+\_\+\+Reset\+Buffer\+Processor in your Start\+Stream call.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor to reset. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_aaa4f355de07fd01aedcffbc2bf5b773d}\label{pa__process_8c_aaa4f355de07fd01aedcffbc2bf5b773d}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndInputChannel@{PaUtil\_Set2ndInputChannel}}
+\index{PaUtil\_Set2ndInputChannel@{PaUtil\_Set2ndInputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndInputChannel()}{PaUtil\_Set2ndInputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Input\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{stride }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the input buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a98b89245c209d2a0b367ed8d82bde5ca}{Pa\+Util\+\_\+\+Set\+Input\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_af9c0de32c43ab8b683f52b60e4d36ef1}\label{pa__process_8c_af9c0de32c43ab8b683f52b60e4d36ef1}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndInputFrameCount@{PaUtil\_Set2ndInputFrameCount}}
+\index{PaUtil\_Set2ndInputFrameCount@{PaUtil\_Set2ndInputFrameCount}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndInputFrameCount()}{PaUtil\_Set2ndInputFrameCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Input\+Frame\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the input buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a5201db0d922fac6e3b513bf8c4d59149}{Pa\+Util\+\_\+\+Set\+Input\+Frame\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a4cfe24a64dfb9c59e8ca8db3e0e7453a}\label{pa__process_8c_a4cfe24a64dfb9c59e8ca8db3e0e7453a}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndInterleavedInputChannels@{PaUtil\_Set2ndInterleavedInputChannels}}
+\index{PaUtil\_Set2ndInterleavedInputChannels@{PaUtil\_Set2ndInterleavedInputChannels}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndInterleavedInputChannels()}{PaUtil\_Set2ndInterleavedInputChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Interleaved\+Input\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{first\+Channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the input buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_ab62cb33b10a25676a03a0bc0c0134eaa}{Pa\+Util\+\_\+\+Set\+Interleaved\+Input\+Channels}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_ab57804b38f9a6f732d9486b66d412e13}\label{pa__process_8c_ab57804b38f9a6f732d9486b66d412e13}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndInterleavedOutputChannels@{PaUtil\_Set2ndInterleavedOutputChannels}}
+\index{PaUtil\_Set2ndInterleavedOutputChannels@{PaUtil\_Set2ndInterleavedOutputChannels}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndInterleavedOutputChannels()}{PaUtil\_Set2ndInterleavedOutputChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Interleaved\+Output\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{first\+Channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the output buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a3e31c5710305b2beb153f8f39b922623}{Pa\+Util\+\_\+\+Set\+Interleaved\+Output\+Channels}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_aab1ee9d5038ea12c00ca6b35273d626e}\label{pa__process_8c_aab1ee9d5038ea12c00ca6b35273d626e}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndNonInterleavedInputChannel@{PaUtil\_Set2ndNonInterleavedInputChannel}}
+\index{PaUtil\_Set2ndNonInterleavedInputChannel@{PaUtil\_Set2ndNonInterleavedInputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndNonInterleavedInputChannel()}{PaUtil\_Set2ndNonInterleavedInputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Non\+Interleaved\+Input\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the input buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a309097fe924b746ac3e05260993abb42}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Input\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a8320da4e144d848ec902698bb4e6648c}\label{pa__process_8c_a8320da4e144d848ec902698bb4e6648c}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndNonInterleavedOutputChannel@{PaUtil\_Set2ndNonInterleavedOutputChannel}}
+\index{PaUtil\_Set2ndNonInterleavedOutputChannel@{PaUtil\_Set2ndNonInterleavedOutputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndNonInterleavedOutputChannel()}{PaUtil\_Set2ndNonInterleavedOutputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Non\+Interleaved\+Output\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the output buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a8108f7e3e890843830654e7cc4d176f1}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Output\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a3e7b8840ef8d2367ca7d441cca4371e2}\label{pa__process_8c_a3e7b8840ef8d2367ca7d441cca4371e2}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndOutputChannel@{PaUtil\_Set2ndOutputChannel}}
+\index{PaUtil\_Set2ndOutputChannel@{PaUtil\_Set2ndOutputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndOutputChannel()}{PaUtil\_Set2ndOutputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Output\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{stride }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the output buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a7d622722b03549d8f274aae5b8e5a93c}{Pa\+Util\+\_\+\+Set\+Output\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a9b1a6821b653a03060db293d5824cc86}\label{pa__process_8c_a9b1a6821b653a03060db293d5824cc86}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_Set2ndOutputFrameCount@{PaUtil\_Set2ndOutputFrameCount}}
+\index{PaUtil\_Set2ndOutputFrameCount@{PaUtil\_Set2ndOutputFrameCount}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Set2ndOutputFrameCount()}{PaUtil\_Set2ndOutputFrameCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set2nd\+Output\+Frame\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+Use for the second buffer half when the output buffer is split in two halves. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_aafe79d7110067c783ec401e8961bebe8}{Pa\+Util\+\_\+\+Set\+Output\+Frame\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a4f955cb25ee2e3fc515fa69b9e6decb3}\label{pa__process_8c_a4f955cb25ee2e3fc515fa69b9e6decb3}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetInputChannel@{PaUtil\_SetInputChannel}}
+\index{PaUtil\_SetInputChannel@{PaUtil\_SetInputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetInputChannel()}{PaUtil\_SetInputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Input\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{stride }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to a host input channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em channel} & The channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+{\em stride} & The stride from one sample to the next, in samples. For interleaved host buffers, the stride will usually be the same as the number of channels in the buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a0f0a94dec2b29ecb9843deb00a889bea}\label{pa__process_8c_a0f0a94dec2b29ecb9843deb00a889bea}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetInputFrameCount@{PaUtil\_SetInputFrameCount}}
+\index{PaUtil\_SetInputFrameCount@{PaUtil\_SetInputFrameCount}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetInputFrameCount()}{PaUtil\_SetInputFrameCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Input\+Frame\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+Set the number of frames in the input host \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer(s)}} specified by the Pa\+Util\+\_\+\+Set$\ast$\+Input\+Channel functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+{\em frame\+Count} & The number of host input frames. A 0 frame\+Count indicates to use the frames\+Per\+Host\+Buffer value passed to Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a46c4eca9005b038a32877bdcebc1dbc9}{Pa\+Util\+\_\+\+Set\+No\+Input}}, \mbox{\hyperlink{pa__process_8h_a98b89245c209d2a0b367ed8d82bde5ca}{Pa\+Util\+\_\+\+Set\+Input\+Channel}}, \mbox{\hyperlink{pa__process_8h_ab62cb33b10a25676a03a0bc0c0134eaa}{Pa\+Util\+\_\+\+Set\+Interleaved\+Input\+Channels}}, \mbox{\hyperlink{pa__process_8h_a309097fe924b746ac3e05260993abb42}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Input\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_ab3b6507f21701058bd152f0c99f3c294}\label{pa__process_8c_ab3b6507f21701058bd152f0c99f3c294}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetInterleavedInputChannels@{PaUtil\_SetInterleavedInputChannels}}
+\index{PaUtil\_SetInterleavedInputChannels@{PaUtil\_SetInterleavedInputChannels}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetInterleavedInputChannels()}{PaUtil\_SetInterleavedInputChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Interleaved\+Input\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{first\+Channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to an number of interleaved host input channels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em first\+Channel} & The first channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+{\em channel\+Count} & The number of interleaved channels in the buffer. If channel\+Count is zero, the number of channels specified to Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_adba29b453fea9e5abfba02dbcb01bd09}\label{pa__process_8c_adba29b453fea9e5abfba02dbcb01bd09}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetInterleavedOutputChannels@{PaUtil\_SetInterleavedOutputChannels}}
+\index{PaUtil\_SetInterleavedOutputChannels@{PaUtil\_SetInterleavedOutputChannels}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetInterleavedOutputChannels()}{PaUtil\_SetInterleavedOutputChannels()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Interleaved\+Output\+Channels (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{first\+Channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{channel\+Count }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to a number of interleaved host output channels.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em first\+Channel} & The first channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+{\em channel\+Count} & The number of interleaved channels in the buffer. If channel\+Count is zero, the number of channels specified to Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor will be used. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a3d34489fac9940436629e312524d9f94}\label{pa__process_8c_a3d34489fac9940436629e312524d9f94}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetNoInput@{PaUtil\_SetNoInput}}
+\index{PaUtil\_SetNoInput@{PaUtil\_SetNoInput}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetNoInput()}{PaUtil\_SetNoInput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+No\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Indicate that no input is available. This function should be used when priming the output of a full-\/duplex stream opened with the pa\+Prime\+Output\+Buffers\+Using\+Stream\+Callback flag. Note that it is not necessary to call this or any other Pa\+Util\+\_\+\+Set$\ast$\+Input$\ast$ functions for ouput-\/only streams.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a8d212598491770776ed954c780242c58}\label{pa__process_8c_a8d212598491770776ed954c780242c58}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetNonInterleavedInputChannel@{PaUtil\_SetNonInterleavedInputChannel}}
+\index{PaUtil\_SetNonInterleavedInputChannel@{PaUtil\_SetNonInterleavedInputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetNonInterleavedInputChannel()}{PaUtil\_SetNonInterleavedInputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Input\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to one non-\/interleaved host output channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em channel} & The channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a8e34320d8d2da92d5568721f64bcc27c}\label{pa__process_8c_a8e34320d8d2da92d5568721f64bcc27c}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetNonInterleavedOutputChannel@{PaUtil\_SetNonInterleavedOutputChannel}}
+\index{PaUtil\_SetNonInterleavedOutputChannel@{PaUtil\_SetNonInterleavedOutputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetNonInterleavedOutputChannel()}{PaUtil\_SetNonInterleavedOutputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Output\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to one non-\/interleaved host output channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em channel} & The channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_ad8300bdb4ebf2aaad4b0bf8813af5695}\label{pa__process_8c_ad8300bdb4ebf2aaad4b0bf8813af5695}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetNoOutput@{PaUtil\_SetNoOutput}}
+\index{PaUtil\_SetNoOutput@{PaUtil\_SetNoOutput}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetNoOutput()}{PaUtil\_SetNoOutput()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+No\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Indicate that the output will be discarded. This function should be used when implementing the pa\+Never\+Drop\+Input mode for full duplex streams.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a0ba1528b3182674480658aeda9de3f12}\label{pa__process_8c_a0ba1528b3182674480658aeda9de3f12}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetOutputChannel@{PaUtil\_SetOutputChannel}}
+\index{PaUtil\_SetOutputChannel@{PaUtil\_SetOutputChannel}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetOutputChannel()}{PaUtil\_SetOutputChannel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Output\+Channel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned int}]{channel,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{unsigned int}]{stride }\end{DoxyParamCaption})}
+
+Provide the buffer processor with a pointer to a host output channel.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor. \\
+\hline
+{\em channel} & The channel number. \\
+\hline
+{\em data} & The buffer. \\
+\hline
+{\em stride} & The stride from one sample to the next, in samples. For interleaved host buffers, the stride will usually be the same as the number of channels in the buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__process_8c_a1dc65eb1e69dd6739e4dad4d74bf3785}\label{pa__process_8c_a1dc65eb1e69dd6739e4dad4d74bf3785}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_SetOutputFrameCount@{PaUtil\_SetOutputFrameCount}}
+\index{PaUtil\_SetOutputFrameCount@{PaUtil\_SetOutputFrameCount}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetOutputFrameCount()}{PaUtil\_SetOutputFrameCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Output\+Frame\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+
+Set the number of frames in the output host \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer(s)}} specified by the Pa\+Util\+\_\+\+Set$\ast$\+Output\+Channel functions.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor.\\
+\hline
+{\em frame\+Count} & The number of host output frames. A 0 frame\+Count indicates to use the frames\+Per\+Host\+Buffer value passed to Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_a7d622722b03549d8f274aae5b8e5a93c}{Pa\+Util\+\_\+\+Set\+Output\+Channel}}, \mbox{\hyperlink{pa__process_8h_a3e31c5710305b2beb153f8f39b922623}{Pa\+Util\+\_\+\+Set\+Interleaved\+Output\+Channels}}, \mbox{\hyperlink{pa__process_8h_a8108f7e3e890843830654e7cc4d176f1}{Pa\+Util\+\_\+\+Set\+Non\+Interleaved\+Output\+Channel}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_acf4e607f9c25ec2db5efd02ef1adb188}\label{pa__process_8c_acf4e607f9c25ec2db5efd02ef1adb188}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_TerminateBufferProcessor@{PaUtil\_TerminateBufferProcessor}}
+\index{PaUtil\_TerminateBufferProcessor@{PaUtil\_TerminateBufferProcessor}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_TerminateBufferProcessor()}{PaUtil\_TerminateBufferProcessor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Terminate\+Buffer\+Processor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{buffer\+Processor }\end{DoxyParamCaption})}
+
+Terminate a buffer processor\textquotesingle{}s representation. Deallocates any temporary buffers allocated by Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer\+Processor} & The buffer processor structure to terminate.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__process_8h_adbf068f554a245c493eb0817ad8bc67e}{Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor}}. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__process_8c_a97a69b3418e367ca1c5abf78cfa260fb}\label{pa__process_8c_a97a69b3418e367ca1c5abf78cfa260fb}} 
+\index{pa\_process.c@{pa\_process.c}!PaUtil\_ZeroOutput@{PaUtil\_ZeroOutput}}
+\index{PaUtil\_ZeroOutput@{PaUtil\_ZeroOutput}!pa\_process.c@{pa\_process.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ZeroOutput()}{PaUtil\_ZeroOutput()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Zero\+Output (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{bp,  }\item[{unsigned long}]{frame\+Count }\end{DoxyParamCaption})}
+

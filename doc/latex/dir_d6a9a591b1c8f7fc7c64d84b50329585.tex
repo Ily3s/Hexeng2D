@@ -1,0 +1,95 @@
+\hypertarget{dir_d6a9a591b1c8f7fc7c64d84b50329585}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test Directory Reference}
+\label{dir_d6a9a591b1c8f7fc7c64d84b50329585}\index{Hexeng2D/dependencies/portaudio/test Directory Reference@{Hexeng2D/dependencies/portaudio/test Directory Reference}}
+\doxysubsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \mbox{\hyperlink{pa__minlat_8c}{pa\+\_\+minlat.\+c}}
+\begin{DoxyCompactList}\small\item\em Experiment with different numbers of buffers to determine the minimum latency for a computer. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest1_8c}{patest1.\+c}}
+\begin{DoxyCompactList}\small\item\em Ring modulate the audio input with a sine wave for 20 seconds. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__buffer_8c}{patest\+\_\+buffer.\+c}}
+\begin{DoxyCompactList}\small\item\em Test opening streams with different buffer sizes. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__callbackstop_8c}{patest\+\_\+callbackstop.\+c}}
+\begin{DoxyCompactList}\small\item\em Test the pa\+Complete callback result code. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__clip_8c}{patest\+\_\+clip.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave for several seconds at an amplitude that would require clipping. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__converters_8c}{patest\+\_\+converters.\+c}}
+\begin{DoxyCompactList}\small\item\em Tests the converter functions in \mbox{\hyperlink{pa__converters_8c}{pa\+\_\+converters.\+c}}. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__dither_8c}{patest\+\_\+dither.\+c}}
+\begin{DoxyCompactList}\small\item\em Attempt to hear difference between dithered and non-\/dithered signal. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c}{patest\+\_\+dsound\+\_\+find\+\_\+best\+\_\+latency\+\_\+params.\+c}}
+\item 
+file \mbox{\hyperlink{patest__dsound__low__level__latency__params_8c}{patest\+\_\+dsound\+\_\+low\+\_\+level\+\_\+latency\+\_\+params.\+c}}
+\item 
+file \mbox{\hyperlink{patest__dsound__surround_8c}{patest\+\_\+dsound\+\_\+surround.\+c}}
+\item 
+file \mbox{\hyperlink{patest__hang_8c}{patest\+\_\+hang.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine then hang audio callback to test watchdog. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__in__overflow_8c}{patest\+\_\+in\+\_\+overflow.\+c}}
+\begin{DoxyCompactList}\small\item\em Count input overflows (using pa\+Input\+Overflow flag) under overloaded and normal conditions. This test uses the same method to overload the stream as does \mbox{\hyperlink{patest__out__underflow_8c}{patest\+\_\+out\+\_\+underflow.\+c}} -- it generates sine waves until the cpu load exceeds a certain level. However this test is only concerned with input and so doesn\textquotesingle{}t output any sound. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__jack__wasapi_8c}{patest\+\_\+jack\+\_\+wasapi.\+c}}
+\item 
+file \mbox{\hyperlink{patest__latency_8c}{patest\+\_\+latency.\+c}}
+\begin{DoxyCompactList}\small\item\em Hear the latency caused by big buffers. Play a sine wave and change frequency based on letter input. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__leftright_8c}{patest\+\_\+leftright.\+c}}
+\begin{DoxyCompactList}\small\item\em Play different tone sine waves that alternate between left and right channel. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__longsine_8c}{patest\+\_\+longsine.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave until ENTER hit. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__many_8c}{patest\+\_\+many.\+c}}
+\begin{DoxyCompactList}\small\item\em Start and stop the Port\+Audio Driver multiple times. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__maxsines_8c}{patest\+\_\+maxsines.\+c}}
+\begin{DoxyCompactList}\small\item\em How many sine waves can we calculate and play in less than 80\% CPU Load. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__mono_8c}{patest\+\_\+mono.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a monophonic sine wave using the Portable Audio api for several seconds. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__multi__sine_8c}{patest\+\_\+multi\+\_\+sine.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a different sine wave on each channel. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__out__underflow_8c}{patest\+\_\+out\+\_\+underflow.\+c}}
+\begin{DoxyCompactList}\small\item\em Count output underflows (using pa\+Output\+Underflow flag) under overloaded and normal conditions. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__prime_8c}{patest\+\_\+prime.\+c}}
+\begin{DoxyCompactList}\small\item\em Test stream priming mode. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__read__record_8c}{patest\+\_\+read\+\_\+record.\+c}}
+\begin{DoxyCompactList}\small\item\em Record input into an array; Save array to a file; Playback recorded data. Implemented using the blocking API (\mbox{\hyperlink{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}{Pa\+\_\+\+Read\+Stream()}}, \mbox{\hyperlink{portaudio_8h_a075a6efb503a728213bdae24347ed27d}{Pa\+\_\+\+Write\+Stream()}} ) \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__ringmix_8c}{patest\+\_\+ringmix.\+c}}
+\begin{DoxyCompactList}\small\item\em Ring modulate inputs to left output, mix inputs to right output. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__sine8_8c}{patest\+\_\+sine8.\+c}}
+\begin{DoxyCompactList}\small\item\em Test 8 bit data\+: play a sine wave for several seconds. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__sine__channelmaps_8c}{patest\+\_\+sine\+\_\+channelmaps.\+c}}
+\begin{DoxyCompactList}\small\item\em Plays sine waves using sme simple channel maps. Designed for use with Core\+Audio, but should made to work with other APIs. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__sine__formats_8c}{patest\+\_\+sine\+\_\+formats.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave for several seconds. Test various data formats. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__sine__srate_8c}{patest\+\_\+sine\+\_\+srate.\+c}}
+\item 
+file \mbox{\hyperlink{patest__sine__time_8c}{patest\+\_\+sine\+\_\+time.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave for several seconds, pausing in the middle. Uses the \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}} call. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__start__stop_8c}{patest\+\_\+start\+\_\+stop.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave for several seconds. Start and stop the stream multiple times. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__stop_8c}{patest\+\_\+stop.\+c}}
+\begin{DoxyCompactList}\small\item\em Test different ways of stopping audio. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__stop__playout_8c}{patest\+\_\+stop\+\_\+playout.\+c}}
+\begin{DoxyCompactList}\small\item\em Test whether all queued samples are played when \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} is used with a callback or read/write stream, or when the callback returns pa\+Complete. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c}{patest\+\_\+suggested\+\_\+vs\+\_\+streaminfo\+\_\+latency.\+c}}
+\begin{DoxyCompactList}\small\item\em Print suggested vs. \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} reported actual latency. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8py}{patest\+\_\+suggested\+\_\+vs\+\_\+streaminfo\+\_\+latency.\+py}}
+\item 
+file \mbox{\hyperlink{patest__sync_8c}{patest\+\_\+sync.\+c}}
+\begin{DoxyCompactList}\small\item\em Test time stamping and synchronization of audio and video. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__timing_8c}{patest\+\_\+timing.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a sine wave for several seconds, and spits out a ton of timing info while it\textquotesingle{}s at it. Based on patest\+\_\+sine.\+c. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__toomanysines_8c}{patest\+\_\+toomanysines.\+c}}
+\begin{DoxyCompactList}\small\item\em Play more sine waves than we can handle in real time as a stress test. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__two__rates_8c}{patest\+\_\+two\+\_\+rates.\+c}}
+\begin{DoxyCompactList}\small\item\em Play two streams at different rates to make sure they don\textquotesingle{}t interfere. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__underflow_8c}{patest\+\_\+underflow.\+c}}
+\begin{DoxyCompactList}\small\item\em Simulate an output buffer underflow condition. Tests whether the stream can be stopped when underflowing buffers. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__unplug_8c}{patest\+\_\+unplug.\+c}}
+\begin{DoxyCompactList}\small\item\em Debug a crash involving unplugging a USB device. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__wire_8c}{patest\+\_\+wire.\+c}}
+\begin{DoxyCompactList}\small\item\em Pass input directly to output. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__wmme__find__best__latency__params_8c}{patest\+\_\+wmme\+\_\+find\+\_\+best\+\_\+latency\+\_\+params.\+c}}
+\item 
+file \mbox{\hyperlink{patest__wmme__low__level__latency__params_8c}{patest\+\_\+wmme\+\_\+low\+\_\+level\+\_\+latency\+\_\+params.\+c}}
+\item 
+file \mbox{\hyperlink{patest__write__stop_8c}{patest\+\_\+write\+\_\+stop.\+c}}
+\begin{DoxyCompactList}\small\item\em Play a few seconds of silence followed by a few cycles of a sine wave. Tests to make sure that pa\+\_\+\+Stop\+Stream() completes playback in blocking I/O. \end{DoxyCompactList}\item 
+file \mbox{\hyperlink{patest__write__stop__hang__illegal_8c}{patest\+\_\+write\+\_\+stop\+\_\+hang\+\_\+illegal.\+c}}
+\end{DoxyCompactItemize}

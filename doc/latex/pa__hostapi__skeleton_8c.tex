@@ -1,0 +1,73 @@
+\hypertarget{pa__hostapi__skeleton_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/skeleton/pa\+\_\+hostapi\+\_\+skeleton.c File Reference}
+\label{pa__hostapi__skeleton_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/skeleton/pa\_hostapi\_skeleton.c@{Hexeng2D/dependencies/portaudio/src/hostapi/skeleton/pa\_hostapi\_skeleton.c}}
+
+
+Skeleton implementation of support for a host API.  
+
+
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_skeleton_host_api_representation}{Pa\+Skeleton\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_skeleton_stream}{Pa\+Skeleton\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__hostapi__skeleton_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}{PA\+\_\+\+SKELETON\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR}}(error\+Code,  error\+Text)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}{pa\+In\+Development}}, error\+Code, error\+Text )
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_skeleton_stream}{Pa\+Skeleton\+Stream}} \mbox{\hyperlink{pa__hostapi__skeleton_8c_ad996e85e7e45063f3ab0f3ebc3ba5f03}{Pa\+Skeleton\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__hostapi__skeleton_8c_ab19eac71cf1b8f40082355b83f0afe93}{Pa\+Skeleton\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Skeleton implementation of support for a host API. 
+
+This file is provided as a starting point for implementing support for a new host API. It provides examples of how the common code can be used.
+
+\begin{DoxyNote}{Note}
+IMPLEMENT ME comments are used to indicate functionality which much be customised for each implementation. 
+\end{DoxyNote}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__hostapi__skeleton_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}\label{pa__hostapi__skeleton_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}} 
+\index{pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}!PA\_SKELETON\_SET\_LAST\_HOST\_ERROR@{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}}
+\index{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR@{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}!pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SKELETON\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code,  }\item[{}]{error\+Text }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}{pa\+In\+Development}}, error\+Code, error\+Text )}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__hostapi__skeleton_8c_ad996e85e7e45063f3ab0f3ebc3ba5f03}\label{pa__hostapi__skeleton_8c_ad996e85e7e45063f3ab0f3ebc3ba5f03}} 
+\index{pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}!PaSkeletonStream@{PaSkeletonStream}}
+\index{PaSkeletonStream@{PaSkeletonStream}!pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}}
+\doxysubsubsection{\texorpdfstring{PaSkeletonStream}{PaSkeletonStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_skeleton_stream}{Pa\+Skeleton\+Stream}} \mbox{\hyperlink{struct_pa_skeleton_stream}{Pa\+Skeleton\+Stream}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__hostapi__skeleton_8c_ab19eac71cf1b8f40082355b83f0afe93}\label{pa__hostapi__skeleton_8c_ab19eac71cf1b8f40082355b83f0afe93}} 
+\index{pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}!PaSkeleton\_Initialize@{PaSkeleton\_Initialize}}
+\index{PaSkeleton\_Initialize@{PaSkeleton\_Initialize}!pa\_hostapi\_skeleton.c@{pa\_hostapi\_skeleton.c}}
+\doxysubsubsection{\texorpdfstring{PaSkeleton\_Initialize()}{PaSkeleton\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Skeleton\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+

@@ -1,0 +1,335 @@
+\hypertarget{pa__linux__asihpi_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/asihpi/pa\+\_\+linux\+\_\+asihpi.c File Reference}
+\label{pa__linux__asihpi_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/asihpi/pa\_linux\_asihpi.c@{Hexeng2D/dependencies/portaudio/src/hostapi/asihpi/pa\_linux\_asihpi.c}}
+
+
+Host API implementation supporting Audio\+Science cards via the Linux HPI interface.  
+
+
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$asihpi/hpi.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+unix\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+converters.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_asi_hpi_host_api_representation}{Pa\+Asi\+Hpi\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asi_hpi_stream}{Pa\+Asi\+Hpi\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_info}{Pa\+Asi\+Hpi\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_a1f91423a116e967bfd1e0bf686c48452}{PA\+\_\+\+ENSURE\+\_\+}}(expr)
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_aa80f1ff5c54e64e7a165b879030fabb1}{PA\+\_\+\+UNLESS\+\_\+}}(expr,  pa\+Error)
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_a1f3166749a79c33dd5f5bcc2c94bad8c}{PA\+\_\+\+ASIHPI\+\_\+\+UNLESS\+\_\+}}(expr,  pa\+Error)
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_a3bc6c480e242083e83f787eb3cb81833}{PA\+\_\+\+ASIHPI\+\_\+\+REPORT\+\_\+\+ERROR\+\_\+}}(hpi\+Error\+Code)
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_acebea7ce0e959421c271bea9c1985b95}{PA\+\_\+\+ASIHPI\+\_\+\+AVAILABLE\+\_\+\+FORMATS\+\_\+}}~(\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}} $\vert$ \mbox{\hyperlink{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}{pa\+Int32}} $\vert$ \mbox{\hyperlink{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}{pa\+Int24}} $\vert$ \mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}} $\vert$ \mbox{\hyperlink{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}{pa\+UInt8}})
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_acf0737511ef6ce9aa8d588542d02fad5}{PA\+\_\+\+ASIHPI\+\_\+\+USE\+\_\+\+BBM\+\_\+}}~1
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_a66be6c722e2466a7c6eb3138f4bbea0b}{PA\+\_\+\+ASIHPI\+\_\+\+MIN\+\_\+\+FRAMES\+\_\+}}~1152
+\item 
+\#define \mbox{\hyperlink{pa__linux__asihpi_8c_a844787c5015845c0601c0a396dbfaf56}{PA\+\_\+\+ASIHPI\+\_\+\+MIN\+\_\+\+POLLING\+\_\+\+INTERVAL\+\_\+}}~10
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_host_api_representation}{Pa\+Asi\+Hpi\+Host\+Api\+Representation}} \mbox{\hyperlink{pa__linux__asihpi_8c_aca0f78a50e6760c763e459033a34b9e2}{Pa\+Asi\+Hpi\+Host\+Api\+Representation}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}} \mbox{\hyperlink{pa__linux__asihpi_8c_a174c1db403951efd09349efa0735b1bf}{Pa\+Asi\+Hpi\+Device\+Info}}
+\item 
+typedef enum \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}{Pa\+Asi\+Hpi\+Stream\+State}} \mbox{\hyperlink{pa__linux__asihpi_8c_a03492f4d253e301cf025ccd4b84d0d9c}{Pa\+Asi\+Hpi\+Stream\+State}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}} \mbox{\hyperlink{pa__linux__asihpi_8c_ad552dfc3afa5ec58ad88db3b9cdfce5f}{Pa\+Asi\+Hpi\+Stream\+Component}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream}{Pa\+Asi\+Hpi\+Stream}} \mbox{\hyperlink{pa__linux__asihpi_8c_a2106ebd5707e6996b3db5e2c72705c11}{Pa\+Asi\+Hpi\+Stream}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_info}{Pa\+Asi\+Hpi\+Stream\+Info}} \mbox{\hyperlink{pa__linux__asihpi_8c_acad6cfff3e41e22c1912139ea705b39f}{Pa\+Asi\+Hpi\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}{Pa\+Asi\+Hpi\+Stream\+State}} \{ \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0c31ed3930c0d25d68ed82e06273f9be}{pa\+Asi\+Hpi\+Stopped\+State}} =0
+, \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a3d86790040fb5570cb955a9bec1a288e}{pa\+Asi\+Hpi\+Active\+State}} =1
+, \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0188ca40210ba62871ac2224749185d1}{pa\+Asi\+Hpi\+Callback\+Finished\+State}} =2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__asihpi_8c_a35ba54c5bea6b14989d1de373b6961f1}{Pa\+Asi\+Hpi\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Host API implementation supporting Audio\+Science cards via the Linux HPI interface. 
+
+\doxyparagraph*{Overview}
+
+This is a Port\+Audio implementation for the Audio\+Science HPI Audio API on the Linux platform. Audio\+Science makes a range of audio adapters customised for the broadcasting industry, with support for both Windows and Linux. More information on their products can be found on their website\+: \begin{DoxyVerb}http://www.audioscience.com
+\end{DoxyVerb}
+ Documentation for the HPI API can be found at\+: \begin{DoxyVerb}http://www.audioscience.com/internet/download/sdk/hpi_usermanual_html/html/index.html
+\end{DoxyVerb}
+ The Linux HPI driver itself (a kernel module + library) can be downloaded from\+: \begin{DoxyVerb}http://www.audioscience.com/internet/download/linux_drivers.htm
+\end{DoxyVerb}
+ \doxyparagraph*{Implementation strategy}
+
+Note$\ast$ Ideally, Audio\+Science cards should be handled by the Port\+Audio ALSA implementation on Linux, as ALSA is the preferred Linux soundcard API. The existence of this host API implementation might therefore seem a bit flawed. Unfortunately, at the time of the creation of this implementation (June 2006), the PA ALSA implementation could not make use of the existing Audio\+Science ALSA driver. PA ALSA uses the \char`\"{}memory-\/mapped\char`\"{} (mmap) ALSA access mode to interact with the ALSA library, while the Audio\+Science ALSA driver only supports the \char`\"{}read-\/write\char`\"{} access mode. The appropriate solution to this problem is to add \char`\"{}read-\/write\char`\"{} support to Port\+Audio ALSA, thereby extending the range of soundcards it supports (Audio\+Science cards are not the only ones with this problem). Given the author\textquotesingle{}s limited knowledge of ALSA and the simplicity of the HPI API, the second-\/best solution was born...
+
+The following mapping between HPI and PA was followed\+: HPI subsystem =\texorpdfstring{$>$}{>} Port\+Audio host API HPI adapter =\texorpdfstring{$>$}{>} nothing specific HPI stream =\texorpdfstring{$>$}{>} Port\+Audio device
+
+Each HPI stream is either input or output (not both), and can support different channel counts, sampling rates and sample formats. It is therefore a more natural fit to a PA device. A PA stream can therefore combine two HPI streams (one input and one output) into a \char`\"{}full-\/duplex\char`\"{} stream. These HPI streams can even be on different physical adapters. The two streams ought to be sample-\/synchronised when they reside on the same adapter, as most Audio\+Science adapters derive their ADC and DAC clocks from one master clock. When combining two adapters into one full-\/duplex stream, however, the use of a word clock connection between the adapters is strongly recommended.
+
+The HPI interface is inherently blocking, making use of read and write calls to transfer data between user buffers and driver buffers. The callback interface therefore requires a helper thread (\char`\"{}callback engine\char`\"{}) which periodically transfers data (one thread per PA stream, in fact). The current implementation explicitly sleeps via \mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\+\_\+\+Sleep()}} until enough samples can be transferred (select() or poll() would be better, but currently seems impossible...). The thread implementation makes use of the Unix thread helper functions and some pthread calls here and there. If a unified PA thread exists, this host API implementation might also compile on Windows, as this is the only real Linux-\/specific part of the code.
+
+There is no inherent fixed buffer size in the HPI interface, as in some other host APIs. The Port\+Audio implementation contains a buffer that is allocated during Open\+Stream and used to transfer data between the callback and the HPI driver buffer. The size of this buffer is quite flexible and is derived from latency suggestions and matched to the requested callback buffer size as far as possible. It can become quite huge, as the Audio\+Science cards are typically geared towards higher-\/latency applications and contain large hardware buffers.
+
+The HPI interface natively supports most common sample formats and sample rates (some conversion is done on the adapter itself).
+
+Stream time is measured based on the number of processed frames, which is adjusted by the number of frames currently buffered by the HPI driver.
+
+There is basic support for detecting overflow and underflow. The HPI interface does not explicitly indicate this, so thresholds on buffer levels are used in combination with stream state. Recovery from overflow and underflow is left to the PA client.
+
+Blocking streams are also implemented. It makes use of the same polling routines that the callback interface uses, in order to prevent the allocation of variable-\/sized buffers during reading and writing. The frames\+Per\+Buffer parameter is therefore still relevant, and this can be increased in the blocking case to improve efficiency.
+
+The implementation contains extensive reporting macros (slightly modified PA\+\_\+\+ENSURE and PA\+\_\+\+UNLESS versions) and a useful stream dump routine to provide debugging feedback.
+
+Output buffer priming via the user callback (i.\+e. pa\+Prime\+Output\+Buffers\+Using\+Stream\+Callback and friends) is not implemented yet. All output is primed with silence. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__linux__asihpi_8c_acebea7ce0e959421c271bea9c1985b95}\label{pa__linux__asihpi_8c_acebea7ce0e959421c271bea9c1985b95}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_AVAILABLE\_FORMATS\_@{PA\_ASIHPI\_AVAILABLE\_FORMATS\_}}
+\index{PA\_ASIHPI\_AVAILABLE\_FORMATS\_@{PA\_ASIHPI\_AVAILABLE\_FORMATS\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_AVAILABLE\_FORMATS\_}{PA\_ASIHPI\_AVAILABLE\_FORMATS\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+AVAILABLE\+\_\+\+FORMATS\+\_\+~(\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}} $\vert$ \mbox{\hyperlink{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}{pa\+Int32}} $\vert$ \mbox{\hyperlink{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}{pa\+Int24}} $\vert$ \mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}} $\vert$ \mbox{\hyperlink{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}{pa\+UInt8}})}
+
+Sample formats available natively on Audio\+Science hardware \mbox{\Hypertarget{pa__linux__asihpi_8c_a66be6c722e2466a7c6eb3138f4bbea0b}\label{pa__linux__asihpi_8c_a66be6c722e2466a7c6eb3138f4bbea0b}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_MIN\_FRAMES\_@{PA\_ASIHPI\_MIN\_FRAMES\_}}
+\index{PA\_ASIHPI\_MIN\_FRAMES\_@{PA\_ASIHPI\_MIN\_FRAMES\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_MIN\_FRAMES\_}{PA\_ASIHPI\_MIN\_FRAMES\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+MIN\+\_\+\+FRAMES\+\_\+~1152}
+
+Minimum number of frames in HPI buffer (for either data or available space). If buffer contains less data/space, it indicates xrun or completion. \mbox{\Hypertarget{pa__linux__asihpi_8c_a844787c5015845c0601c0a396dbfaf56}\label{pa__linux__asihpi_8c_a844787c5015845c0601c0a396dbfaf56}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_@{PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_}}
+\index{PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_@{PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_}{PA\_ASIHPI\_MIN\_POLLING\_INTERVAL\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+MIN\+\_\+\+POLLING\+\_\+\+INTERVAL\+\_\+~10}
+
+Minimum polling interval in milliseconds, which determines minimum host buffer size \mbox{\Hypertarget{pa__linux__asihpi_8c_a3bc6c480e242083e83f787eb3cb81833}\label{pa__linux__asihpi_8c_a3bc6c480e242083e83f787eb3cb81833}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_REPORT\_ERROR\_@{PA\_ASIHPI\_REPORT\_ERROR\_}}
+\index{PA\_ASIHPI\_REPORT\_ERROR\_@{PA\_ASIHPI\_REPORT\_ERROR\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_REPORT\_ERROR\_}{PA\_ASIHPI\_REPORT\_ERROR\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+REPORT\+\_\+\+ERROR\+\_\+(\begin{DoxyParamCaption}\item[{}]{hpi\+Error\+Code }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{char} szError[256]; \(\backslash\)}
+\DoxyCodeLine{        HPI\_GetErrorText( hpiError, szError ); \(\backslash\)}
+\DoxyCodeLine{        PA\_DEBUG(( \textcolor{stringliteral}{"{}HPI error \%d occurred: \%s\(\backslash\)n"{}}, hpiError, szError )); \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* PaUtil\_SetLastHostErrorInfo should only be used in the main thread */} \(\backslash\)}
+\DoxyCodeLine{        if( pthread\_equal( pthread\_self(), \mbox{\hyperlink{pa__unix__util_8c_a786fbebfd9d315bc39dec32568a4dfe1}{paUnixMainThread}} ) ) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}{paInDevelopment}}, (hpiErrorCode), szError ); \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}( 0 );}
+
+\end{DoxyCode}
+Report HPI error code and text \mbox{\Hypertarget{pa__linux__asihpi_8c_a1f3166749a79c33dd5f5bcc2c94bad8c}\label{pa__linux__asihpi_8c_a1f3166749a79c33dd5f5bcc2c94bad8c}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_UNLESS\_@{PA\_ASIHPI\_UNLESS\_}}
+\index{PA\_ASIHPI\_UNLESS\_@{PA\_ASIHPI\_UNLESS\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_UNLESS\_}{PA\_ASIHPI\_UNLESS\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+UNLESS\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{pa\+Error }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        hpi\_err\_t hpiError = (expr); \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* If HPI error occurred */} \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( hpiError ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{char} szError[256]; \(\backslash\)}
+\DoxyCodeLine{        HPI\_GetErrorText( hpiError, szError ); \(\backslash\)}
+\DoxyCodeLine{        PA\_DEBUG(( \textcolor{stringliteral}{"{}HPI error \%d occurred: \%s\(\backslash\)n"{}}, hpiError, szError )); \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* This message will always be displayed, even if debug info is disabled */} \(\backslash\)}
+\DoxyCodeLine{            PA\_DEBUG(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__jack_8c_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            if( (paError) == \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{paUnanticipatedHostError}} ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            PA\_DEBUG(( \textcolor{stringliteral}{"{}Host error description: \%s\(\backslash\)n"{}}, szError )); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{comment}{/* PaUtil\_SetLastHostErrorInfo should only be used in the main thread */} \(\backslash\)}
+\DoxyCodeLine{            if( pthread\_equal( pthread\_self(), \mbox{\hyperlink{pa__unix__util_8c_a786fbebfd9d315bc39dec32568a4dfe1}{paUnixMainThread}} ) ) \(\backslash\)}
+\DoxyCodeLine{                \{ \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}{paInDevelopment}}, hpiError, szError ); \(\backslash\)}
+\DoxyCodeLine{                \} \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        \textcolor{comment}{/* If paNoError is specified, continue as usual */} \(\backslash\)}
+\DoxyCodeLine{            \textcolor{comment}{/* (useful if you only want to print out the debug messages above) */} \(\backslash\)}
+\DoxyCodeLine{        if( (paError) < 0 ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            result = (paError); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}( 0 );}
+
+\end{DoxyCode}
+Check return value of HPI function, and map it to Pa\+Error \mbox{\Hypertarget{pa__linux__asihpi_8c_acf0737511ef6ce9aa8d588542d02fad5}\label{pa__linux__asihpi_8c_acf0737511ef6ce9aa8d588542d02fad5}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ASIHPI\_USE\_BBM\_@{PA\_ASIHPI\_USE\_BBM\_}}
+\index{PA\_ASIHPI\_USE\_BBM\_@{PA\_ASIHPI\_USE\_BBM\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIHPI\_USE\_BBM\_}{PA\_ASIHPI\_USE\_BBM\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIHPI\+\_\+\+USE\+\_\+\+BBM\+\_\+~1}
+
+Enable background bus mastering (BBM) for buffer transfers, if available (see HPI docs) \mbox{\Hypertarget{pa__linux__asihpi_8c_a1f91423a116e967bfd1e0bf686c48452}\label{pa__linux__asihpi_8c_a1f91423a116e967bfd1e0bf686c48452}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_ENSURE\_@{PA\_ENSURE\_}}
+\index{PA\_ENSURE\_@{PA\_ENSURE\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ENSURE\_}{PA\_ENSURE\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ENSURE\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} paError = (expr); \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( paError < \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            PA\_DEBUG(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__jack_8c_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            result = paError; \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0);}
+
+\end{DoxyCode}
+Evaluate expression, and return on any Port\+Audio errors \mbox{\Hypertarget{pa__linux__asihpi_8c_aa80f1ff5c54e64e7a165b879030fabb1}\label{pa__linux__asihpi_8c_aa80f1ff5c54e64e7a165b879030fabb1}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PA\_UNLESS\_@{PA\_UNLESS\_}}
+\index{PA\_UNLESS\_@{PA\_UNLESS\_}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_UNLESS\_}{PA\_UNLESS\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+UNLESS\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{pa\+Error }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (expr) == 0 ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            PA\_DEBUG(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__jack_8c_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            result = (paError); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}( 0 );}
+
+\end{DoxyCode}
+Assert expression, else return the provided Pa\+Error 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__linux__asihpi_8c_a174c1db403951efd09349efa0735b1bf}\label{pa__linux__asihpi_8c_a174c1db403951efd09349efa0735b1bf}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiDeviceInfo@{PaAsiHpiDeviceInfo}}
+\index{PaAsiHpiDeviceInfo@{PaAsiHpiDeviceInfo}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiDeviceInfo}{PaAsiHpiDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}} \mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}}}
+
+Device data \mbox{\Hypertarget{pa__linux__asihpi_8c_aca0f78a50e6760c763e459033a34b9e2}\label{pa__linux__asihpi_8c_aca0f78a50e6760c763e459033a34b9e2}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiHostApiRepresentation@{PaAsiHpiHostApiRepresentation}}
+\index{PaAsiHpiHostApiRepresentation@{PaAsiHpiHostApiRepresentation}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiHostApiRepresentation}{PaAsiHpiHostApiRepresentation}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_host_api_representation}{Pa\+Asi\+Hpi\+Host\+Api\+Representation}} \mbox{\hyperlink{struct_pa_asi_hpi_host_api_representation}{Pa\+Asi\+Hpi\+Host\+Api\+Representation}}}
+
+Host API global data \mbox{\Hypertarget{pa__linux__asihpi_8c_a2106ebd5707e6996b3db5e2c72705c11}\label{pa__linux__asihpi_8c_a2106ebd5707e6996b3db5e2c72705c11}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiStream@{PaAsiHpiStream}}
+\index{PaAsiHpiStream@{PaAsiHpiStream}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiStream}{PaAsiHpiStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream}{Pa\+Asi\+Hpi\+Stream}} \mbox{\hyperlink{struct_pa_asi_hpi_stream}{Pa\+Asi\+Hpi\+Stream}}}
+
+Stream data \mbox{\Hypertarget{pa__linux__asihpi_8c_ad552dfc3afa5ec58ad88db3b9cdfce5f}\label{pa__linux__asihpi_8c_ad552dfc3afa5ec58ad88db3b9cdfce5f}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiStreamComponent}{PaAsiHpiStreamComponent}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}}}
+
+Stream component data (associated with one direction, i.\+e. either input or output) \mbox{\Hypertarget{pa__linux__asihpi_8c_acad6cfff3e41e22c1912139ea705b39f}\label{pa__linux__asihpi_8c_acad6cfff3e41e22c1912139ea705b39f}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiStreamInfo@{PaAsiHpiStreamInfo}}
+\index{PaAsiHpiStreamInfo@{PaAsiHpiStreamInfo}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiStreamInfo}{PaAsiHpiStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asi_hpi_stream_info}{Pa\+Asi\+Hpi\+Stream\+Info}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_info}{Pa\+Asi\+Hpi\+Stream\+Info}}}
+
+Stream state information, collected together for convenience \mbox{\Hypertarget{pa__linux__asihpi_8c_a03492f4d253e301cf025ccd4b84d0d9c}\label{pa__linux__asihpi_8c_a03492f4d253e301cf025ccd4b84d0d9c}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiStreamState@{PaAsiHpiStreamState}}
+\index{PaAsiHpiStreamState@{PaAsiHpiStreamState}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiStreamState}{PaAsiHpiStreamState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}{Pa\+Asi\+Hpi\+Stream\+State}} \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}{Pa\+Asi\+Hpi\+Stream\+State}}}
+
+Stream state as defined by Port\+Audio. It seems that the host API implementation has to keep track of the Port\+Audio stream state. Please note that this is NOT the same as the state of the underlying HPI stream. By separating these two concepts, a lot of flexibility is gained. There is a rough match between the two, of course, but forcing a precise match is difficult. For example, HPI\+\_\+\+STATE\+\_\+\+DRAINED can occur during the Active state of Port\+Audio (due to underruns) and also during Call\+Back\+Finished in the case of an output stream. Similarly, HPI\+\_\+\+STATE\+\_\+\+STOPPED mostly coincides with the Stopped Port\+Audio state, by may also occur in the Callback\+Finished state when recording is finished.
+
+Here is a rough match-\/up\+:
+
+Port\+Audio state =\texorpdfstring{$>$}{>} HPI state \DoxyHorRuler{0}
+ Active =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+RECORDING, HPI\+\_\+\+STATE\+\_\+\+PLAYING, (HPI\+\_\+\+STATE\+\_\+\+DRAINED) Stopped =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+STOPPED Callback\+Finished =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+STOPPED, HPI\+\_\+\+STATE\+\_\+\+DRAINED 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}\label{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpiStreamState@{PaAsiHpiStreamState}}
+\index{PaAsiHpiStreamState@{PaAsiHpiStreamState}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpiStreamState}{PaAsiHpiStreamState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45}{Pa\+Asi\+Hpi\+Stream\+State}}}
+
+Stream state as defined by Port\+Audio. It seems that the host API implementation has to keep track of the Port\+Audio stream state. Please note that this is NOT the same as the state of the underlying HPI stream. By separating these two concepts, a lot of flexibility is gained. There is a rough match between the two, of course, but forcing a precise match is difficult. For example, HPI\+\_\+\+STATE\+\_\+\+DRAINED can occur during the Active state of Port\+Audio (due to underruns) and also during Call\+Back\+Finished in the case of an output stream. Similarly, HPI\+\_\+\+STATE\+\_\+\+STOPPED mostly coincides with the Stopped Port\+Audio state, by may also occur in the Callback\+Finished state when recording is finished.
+
+Here is a rough match-\/up\+:
+
+Port\+Audio state =\texorpdfstring{$>$}{>} HPI state \DoxyHorRuler{0}
+ Active =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+RECORDING, HPI\+\_\+\+STATE\+\_\+\+PLAYING, (HPI\+\_\+\+STATE\+\_\+\+DRAINED) Stopped =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+STOPPED Callback\+Finished =\texorpdfstring{$>$}{>} HPI\+\_\+\+STATE\+\_\+\+STOPPED, HPI\+\_\+\+STATE\+\_\+\+DRAINED \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAsiHpiStoppedState@{paAsiHpiStoppedState}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!paAsiHpiStoppedState@{paAsiHpiStoppedState}}}\mbox{\Hypertarget{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0c31ed3930c0d25d68ed82e06273f9be}\label{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0c31ed3930c0d25d68ed82e06273f9be}} 
+pa\+Asi\+Hpi\+Stopped\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAsiHpiActiveState@{paAsiHpiActiveState}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!paAsiHpiActiveState@{paAsiHpiActiveState}}}\mbox{\Hypertarget{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a3d86790040fb5570cb955a9bec1a288e}\label{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a3d86790040fb5570cb955a9bec1a288e}} 
+pa\+Asi\+Hpi\+Active\+State&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAsiHpiCallbackFinishedState@{paAsiHpiCallbackFinishedState}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!paAsiHpiCallbackFinishedState@{paAsiHpiCallbackFinishedState}}}\mbox{\Hypertarget{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0188ca40210ba62871ac2224749185d1}\label{pa__linux__asihpi_8c_a984c1b93fe39c6de0fbc20fff3f6ec45a0188ca40210ba62871ac2224749185d1}} 
+pa\+Asi\+Hpi\+Callback\+Finished\+State&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__linux__asihpi_8c_a35ba54c5bea6b14989d1de373b6961f1}\label{pa__linux__asihpi_8c_a35ba54c5bea6b14989d1de373b6961f1}} 
+\index{pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}!PaAsiHpi\_Initialize@{PaAsiHpi\_Initialize}}
+\index{PaAsiHpi\_Initialize@{PaAsiHpi\_Initialize}!pa\_linux\_asihpi.c@{pa\_linux\_asihpi.c}}
+\doxysubsubsection{\texorpdfstring{PaAsiHpi\_Initialize()}{PaAsiHpi\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asi\+Hpi\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api\+Index }\end{DoxyParamCaption})}
+
+Initialize host API implementation. This is the only function exported beyond this file. It is called by Port\+Audio to initialize the host API. It stores API info, finds and registers all devices, and sets up callback and blocking interfaces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api} & Pointer to host API struct\\
+\hline
+{\em host\+Api\+Index} & Index of current (HPI) host API\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Port\+Audio error code 
+\end{DoxyReturn}

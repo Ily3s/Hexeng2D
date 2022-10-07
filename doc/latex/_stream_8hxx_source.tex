@@ -1,0 +1,75 @@
+\hypertarget{_stream_8hxx_source}{}\doxysection{Stream.\+hxx}
+\label{_stream_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/Stream.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/Stream.hxx}}
+\mbox{\hyperlink{_stream_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_STREAM\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_STREAM\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{// Forward declaration(s):}}
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     \textcolor{keyword}{class }StreamParameters;}
+\DoxyCodeLine{12 \}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{// Declaration(s):}}
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 }
+\DoxyCodeLine{34     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36     \textcolor{keyword}{public}:}
+\DoxyCodeLine{37         \textcolor{comment}{// Opening/closing:}}
+\DoxyCodeLine{38         \textcolor{keyword}{virtual} \mbox{\hyperlink{classportaudio_1_1_stream_a2f817fa08f53b6bfd5b21cd1e4ff8017}{\string~Stream}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}{close}}();}
+\DoxyCodeLine{41         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_stream_adde8369cef2dda64269ec98acda7e6b0}{isOpen}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \textcolor{comment}{// Additional set up:}}
+\DoxyCodeLine{44         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_stream_af8ce6e44b26fbb06c2cc997400bb0190}{setStreamFinishedCallback}}(\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{PaStreamFinishedCallback}} *callback);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{comment}{// State management:}}
+\DoxyCodeLine{47         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_stream_aa6d924b80c15d05c44462c013ede4b82}{start}}();}
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_stream_a24215c2e6e1da8784ba4fdc5ada5870b}{stop}}();}
+\DoxyCodeLine{49         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_stream_a318edab97a30e0b5101c70e993efc1b5}{abort}}();}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_stream_a9053e15a7bb2cc609a20125c09ee5e6b}{isStopped}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_stream_a46a4ffbc55ca8fa46448202b8bb4b4f7}{isActive}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54         \textcolor{comment}{// Stream info (time-\/constant, but might become time-\/variant soon):}}
+\DoxyCodeLine{55         \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} \mbox{\hyperlink{classportaudio_1_1_stream_abb20de898fea0ed5ce6e6523faececb0}{inputLatency}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{56         \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} \mbox{\hyperlink{classportaudio_1_1_stream_a276d10b4f9abaf596264ef36617a9636}{outputLatency}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{57         \textcolor{keywordtype}{double} \mbox{\hyperlink{classportaudio_1_1_stream_a00cff4e7219de127e15755c92e6ed07a}{sampleRate}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{comment}{// Stream info (time-\/varying):}}
+\DoxyCodeLine{60         \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} \mbox{\hyperlink{classportaudio_1_1_stream_a74e9a8c877e8c70530fc21df7be5de09}{time}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{comment}{// Accessors for PortAudio PaStream, useful for interfacing }}
+\DoxyCodeLine{63         \textcolor{comment}{// with PortAudio add-\/ons (such as PortMixer) for instance:}}
+\DoxyCodeLine{64         \textcolor{keyword}{const} \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{classportaudio_1_1_stream_ac9caba0d169cc2377943c9b958e2dc02}{paStream}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{65         \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{classportaudio_1_1_stream_ac9caba0d169cc2377943c9b958e2dc02}{paStream}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{68         \mbox{\hyperlink{classportaudio_1_1_stream_a33e6dfdd637fd4d13b4847f0323c5e21}{Stream}}(); \textcolor{comment}{// abstract class}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{classportaudio_1_1_stream_a6bae9e3e4a73b78044d9b42115929bbb}{stream\_}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \textcolor{keyword}{private}:}
+\DoxyCodeLine{73         \mbox{\hyperlink{classportaudio_1_1_stream_a33e6dfdd637fd4d13b4847f0323c5e21}{Stream}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{74         \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{75     \};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_STREAM\_HXX}}
+\DoxyCodeLine{82 }
+
+\end{DoxyCode}

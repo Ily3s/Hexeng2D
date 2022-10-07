@@ -1,0 +1,308 @@
+\hypertarget{pa__asio_8cpp}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/asio/pa\+\_\+asio.cpp File Reference}
+\label{pa__asio_8cpp}\index{Hexeng2D/dependencies/portaudio/src/hostapi/asio/pa\_asio.cpp@{Hexeng2D/dependencies/portaudio/src/hostapi/asio/pa\_asio.cpp}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$new$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+asio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+coinitialize.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}asiosys.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}asio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}asiodrivers.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}iasiothiscallresolver.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_driver_info}{Pa\+Asio\+Driver\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_host_api_representation}{Pa\+Asio\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_device_info}{Pa\+Asio\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_stream}{Pa\+Asio\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a6402e8b8594280624585b8fd643bfb65}{WIN32}}
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_ac4dc35e43085bd67137978b643ef52ca}{CARBON\+\_\+\+COMPATIBLE}}~(0)
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a226794e311389512c90be7f00a5d630e}{PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR}}(error\+Code,  error\+Text)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}{pa\+ASIO}}, error\+Code, error\+Text )
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a58e6dde4da6f4ae3bef3872d83b10f69}{PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+SYSTEM\+\_\+\+ERROR}}(error\+Code)~    Pa\+Asio\+\_\+\+Set\+Last\+System\+Error( error\+Code )
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_ad7919a3bee4b170200f02f669a4aa459}{PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+ASIO\+\_\+\+ERROR}}(asio\+Error)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}{pa\+ASIO}}, asio\+Error, Pa\+Asio\+\_\+\+Get\+Asio\+Error\+Text( asio\+Error ) )
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_aedcbfad29e7dc3f8cd62b6135f6c29b5}{PA\+\_\+\+SWAP32\+\_\+}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$>$$>$24) $\vert$ ((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$>$$>$8)\&0x\+FF00) $\vert$ ((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$<$$<$8)\&0x\+FF0000) $\vert$ (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$<$$<$24));
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a69d020162e08d8f2e0d58a4f1361cbaf}{PA\+\_\+\+SWAP\+\_\+}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})~temp=\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}; \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}; \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} = temp;
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a77d8595aeb17c41aa2c3dd98050148c6}{PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+}}~13   /$\ast$ must be the same number of elements as in the array below $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__asio_8cpp_a7c6d480084a165486ff2ff4c9f8115b6}{ASIO64to\+Double}}(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})~((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}).lo + (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}).hi $\ast$ \mbox{\hyperlink{pa__asio_8cpp_a4f17b4f3eeffeed3e0505e229dd633fa}{two\+Raised\+To32}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asio_driver_info}{Pa\+Asio\+Driver\+Info}} \mbox{\hyperlink{pa__asio_8cpp_a09c7c1c4bf6f47ce8095a952472d69cc}{Pa\+Asio\+Driver\+Info}}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}{Pa\+Asio\+Buffer\+Converter}}(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, long, long)
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asio_device_info}{Pa\+Asio\+Device\+Info}} \mbox{\hyperlink{pa__asio_8cpp_a4fe72af3846a4dc3827d291af498c8cf}{Pa\+Asio\+Device\+Info}}
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__asio_8cpp_a222d0bb872ee6f7c6cbd5d7085fe1c77}{Is\+Debugger\+Present\+Ptr}}) (VOID)
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}} \mbox{\hyperlink{pa__asio_8cpp_a5dd51f6f796ef032b0bae5c61aff716c}{Pa\+Asio\+Stream\+Blocking\+State}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asio_stream}{Pa\+Asio\+Stream}} \mbox{\hyperlink{pa__asio_8cpp_a1baabada947a962d43ee8e0540c555fd}{Pa\+Asio\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_aa84b8c879af0b4a3f59c6bf4339fad0e}{Pa\+Asio\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api\+Index)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__asio_8cpp_a975d918d911252f4e6f68dffc18ba49a}{Asio\+Sample\+Type\+LOG}} (ASIOSample\+Type \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_a95dbac9747083dcee51b1e0e4695a912}{Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, long $\ast$min\+Buffer\+Size\+Frames, long $\ast$max\+Buffer\+Size\+Frames, long $\ast$preferred\+Buffer\+Size\+Frames, long $\ast$granularity)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_ac9449ca8f0aedaa7b93027cdca3d6ba3}{Pa\+Asio\+\_\+\+Show\+Control\+Panel}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$system\+Specific)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_abaafacb711225e7c6158fff3b3e8b87a}{Pa\+Asio\+\_\+\+Get\+Input\+Channel\+Name}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int channel\+Index, const char $\ast$$\ast$channel\+Name)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_a97bd5b2192c1321a492ba24d7ef843fa}{Pa\+Asio\+\_\+\+Get\+Output\+Channel\+Name}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int channel\+Index, const char $\ast$$\ast$channel\+Name)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8cpp_abd2852360116a698308bfd3034dfcf09}{Pa\+Asio\+\_\+\+Set\+Stream\+Sample\+Rate}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, double sample\+Rate)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Asio\+Drivers $\ast$ \mbox{\hyperlink{pa__asio_8cpp_a6b3fd458b9c902296568943abcfd00ae}{asio\+Drivers}}
+\item 
+\mbox{\hyperlink{pa__asio_8cpp_a222d0bb872ee6f7c6cbd5d7085fe1c77}{Is\+Debugger\+Present\+Ptr}} \mbox{\hyperlink{pa__asio_8cpp_a725af3e55ff36679409873c046128927}{Is\+Debugger\+Present\+\_\+}} = 0
+\item 
+const double \mbox{\hyperlink{pa__asio_8cpp_a4f17b4f3eeffeed3e0505e229dd633fa}{two\+Raised\+To32}} = 4294967296.
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Note that specific support for pa\+Input\+Underflow, pa\+Output\+Overflow and pa\+Never\+Drop\+Input is not necessary or possible with this driver due to the synchronous full duplex double-\/buffered architecture of ASIO. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__asio_8cpp_a7c6d480084a165486ff2ff4c9f8115b6}\label{pa__asio_8cpp_a7c6d480084a165486ff2ff4c9f8115b6}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!ASIO64toDouble@{ASIO64toDouble}}
+\index{ASIO64toDouble@{ASIO64toDouble}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{ASIO64toDouble}{ASIO64toDouble}}
+{\footnotesize\ttfamily \#define ASIO64to\+Double(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}).lo + (\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}).hi $\ast$ \mbox{\hyperlink{pa__asio_8cpp_a4f17b4f3eeffeed3e0505e229dd633fa}{two\+Raised\+To32}})}
+
+\mbox{\Hypertarget{pa__asio_8cpp_ac4dc35e43085bd67137978b643ef52ca}\label{pa__asio_8cpp_ac4dc35e43085bd67137978b643ef52ca}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!CARBON\_COMPATIBLE@{CARBON\_COMPATIBLE}}
+\index{CARBON\_COMPATIBLE@{CARBON\_COMPATIBLE}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{CARBON\_COMPATIBLE}{CARBON\_COMPATIBLE}}
+{\footnotesize\ttfamily \#define CARBON\+\_\+\+COMPATIBLE~(0)}
+
+\mbox{\Hypertarget{pa__asio_8cpp_ad7919a3bee4b170200f02f669a4aa459}\label{pa__asio_8cpp_ad7919a3bee4b170200f02f669a4aa459}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_ASIO\_SET\_LAST\_ASIO\_ERROR@{PA\_ASIO\_SET\_LAST\_ASIO\_ERROR}}
+\index{PA\_ASIO\_SET\_LAST\_ASIO\_ERROR@{PA\_ASIO\_SET\_LAST\_ASIO\_ERROR}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIO\_SET\_LAST\_ASIO\_ERROR}{PA\_ASIO\_SET\_LAST\_ASIO\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+ASIO\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{asio\+Error }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}{pa\+ASIO}}, asio\+Error, Pa\+Asio\+\_\+\+Get\+Asio\+Error\+Text( asio\+Error ) )}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a226794e311389512c90be7f00a5d630e}\label{pa__asio_8cpp_a226794e311389512c90be7f00a5d630e}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_ASIO\_SET\_LAST\_HOST\_ERROR@{PA\_ASIO\_SET\_LAST\_HOST\_ERROR}}
+\index{PA\_ASIO\_SET\_LAST\_HOST\_ERROR@{PA\_ASIO\_SET\_LAST\_HOST\_ERROR}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIO\_SET\_LAST\_HOST\_ERROR}{PA\_ASIO\_SET\_LAST\_HOST\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code,  }\item[{}]{error\+Text }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}{pa\+ASIO}}, error\+Code, error\+Text )}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a58e6dde4da6f4ae3bef3872d83b10f69}\label{pa__asio_8cpp_a58e6dde4da6f4ae3bef3872d83b10f69}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR@{PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR}}
+\index{PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR@{PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR}{PA\_ASIO\_SET\_LAST\_SYSTEM\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASIO\+\_\+\+SET\+\_\+\+LAST\+\_\+\+SYSTEM\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code }\end{DoxyParamCaption})~    Pa\+Asio\+\_\+\+Set\+Last\+System\+Error( error\+Code )}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a77d8595aeb17c41aa2c3dd98050148c6}\label{pa__asio_8cpp_a77d8595aeb17c41aa2c3dd98050148c6}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+\index{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+~13   /$\ast$ must be the same number of elements as in the array below $\ast$/}
+
+\mbox{\Hypertarget{pa__asio_8cpp_aedcbfad29e7dc3f8cd62b6135f6c29b5}\label{pa__asio_8cpp_aedcbfad29e7dc3f8cd62b6135f6c29b5}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_SWAP32\_@{PA\_SWAP32\_}}
+\index{PA\_SWAP32\_@{PA\_SWAP32\_}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_SWAP32\_}{PA\_SWAP32\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SWAP32\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$>$$>$24) $\vert$ ((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$>$$>$8)\&0x\+FF00) $\vert$ ((\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$<$$<$8)\&0x\+FF0000) $\vert$ (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}$<$$<$24));}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a69d020162e08d8f2e0d58a4f1361cbaf}\label{pa__asio_8cpp_a69d020162e08d8f2e0d58a4f1361cbaf}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PA\_SWAP\_@{PA\_SWAP\_}}
+\index{PA\_SWAP\_@{PA\_SWAP\_}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PA\_SWAP\_}{PA\_SWAP\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SWAP\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} }\end{DoxyParamCaption})~temp=\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}; \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}; \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} = temp;}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a6402e8b8594280624585b8fd643bfb65}\label{pa__asio_8cpp_a6402e8b8594280624585b8fd643bfb65}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!WIN32@{WIN32}}
+\index{WIN32@{WIN32}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{WIN32}{WIN32}}
+{\footnotesize\ttfamily \#define WIN32}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__asio_8cpp_a222d0bb872ee6f7c6cbd5d7085fe1c77}\label{pa__asio_8cpp_a222d0bb872ee6f7c6cbd5d7085fe1c77}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!IsDebuggerPresentPtr@{IsDebuggerPresentPtr}}
+\index{IsDebuggerPresentPtr@{IsDebuggerPresentPtr}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{IsDebuggerPresentPtr}{IsDebuggerPresentPtr}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ Is\+Debugger\+Present\+Ptr) (VOID)}
+
+\mbox{\Hypertarget{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}\label{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsioBufferConverter@{PaAsioBufferConverter}}
+\index{PaAsioBufferConverter@{PaAsioBufferConverter}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsioBufferConverter}{PaAsioBufferConverter}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Asio\+Buffer\+Converter(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, long, long)}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a4fe72af3846a4dc3827d291af498c8cf}\label{pa__asio_8cpp_a4fe72af3846a4dc3827d291af498c8cf}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsioDeviceInfo@{PaAsioDeviceInfo}}
+\index{PaAsioDeviceInfo@{PaAsioDeviceInfo}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsioDeviceInfo}{PaAsioDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asio_device_info}{Pa\+Asio\+Device\+Info}} \mbox{\hyperlink{struct_pa_asio_device_info}{Pa\+Asio\+Device\+Info}}}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a09c7c1c4bf6f47ce8095a952472d69cc}\label{pa__asio_8cpp_a09c7c1c4bf6f47ce8095a952472d69cc}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsioDriverInfo@{PaAsioDriverInfo}}
+\index{PaAsioDriverInfo@{PaAsioDriverInfo}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsioDriverInfo}{PaAsioDriverInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asio_driver_info}{Pa\+Asio\+Driver\+Info}} \mbox{\hyperlink{struct_pa_asio_driver_info}{Pa\+Asio\+Driver\+Info}}}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a1baabada947a962d43ee8e0540c555fd}\label{pa__asio_8cpp_a1baabada947a962d43ee8e0540c555fd}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsioStream@{PaAsioStream}}
+\index{PaAsioStream@{PaAsioStream}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsioStream}{PaAsioStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asio_stream}{Pa\+Asio\+Stream}} \mbox{\hyperlink{struct_pa_asio_stream}{Pa\+Asio\+Stream}}}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a5dd51f6f796ef032b0bae5c61aff716c}\label{pa__asio_8cpp_a5dd51f6f796ef032b0bae5c61aff716c}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsioStreamBlockingState}{PaAsioStreamBlockingState}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}} \mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}}}
+
+A data structure specifically for storing blocking i/o related data. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__asio_8cpp_a975d918d911252f4e6f68dffc18ba49a}\label{pa__asio_8cpp_a975d918d911252f4e6f68dffc18ba49a}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!AsioSampleTypeLOG@{AsioSampleTypeLOG}}
+\index{AsioSampleTypeLOG@{AsioSampleTypeLOG}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{AsioSampleTypeLOG()}{AsioSampleTypeLOG()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Asio\+Sample\+Type\+LOG (\begin{DoxyParamCaption}\item[{ASIOSample\+Type}]{type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a95dbac9747083dcee51b1e0e4695a912}\label{pa__asio_8cpp_a95dbac9747083dcee51b1e0e4695a912}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_GetAvailableBufferSizes@{PaAsio\_GetAvailableBufferSizes}}
+\index{PaAsio\_GetAvailableBufferSizes@{PaAsio\_GetAvailableBufferSizes}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetAvailableBufferSizes()}{PaAsio\_GetAvailableBufferSizes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{long $\ast$}]{min\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{max\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{preferred\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{granularity }\end{DoxyParamCaption})}
+
+Retrieve legal native buffer sizes for the specified device, in sample frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The global index of the device about which the query is being made. \\
+\hline
+{\em min\+Buffer\+Size\+Frames} & A pointer to the location which will receive the minimum buffer size value. \\
+\hline
+{\em max\+Buffer\+Size\+Frames} & A pointer to the location which will receive the maximum buffer size value. \\
+\hline
+{\em preferred\+Buffer\+Size\+Frames} & A pointer to the location which will receive the preferred buffer size value. \\
+\hline
+{\em granularity} & A pointer to the location which will receive the \char`\"{}granularity\char`\"{}. This value determines the step size used to compute the legal values between min\+Buffer\+Size\+Frames and max\+Buffer\+Size\+Frames. If granularity is -\/1 then available buffer size values are powers of two.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+ASIOGet\+Buffer\+Size in the ASIO SDK.
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+\+: this function used to be called Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values. There is a \#define that maps Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values to this function for backwards compatibility. 
+\end{DoxyNote}
+\mbox{\Hypertarget{pa__asio_8cpp_abaafacb711225e7c6158fff3b3e8b87a}\label{pa__asio_8cpp_abaafacb711225e7c6158fff3b3e8b87a}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_GetInputChannelName@{PaAsio\_GetInputChannelName}}
+\index{PaAsio\_GetInputChannelName@{PaAsio\_GetInputChannelName}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetInputChannelName()}{PaAsio\_GetInputChannelName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Input\+Channel\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{channel\+Index,  }\item[{const char $\ast$$\ast$}]{channel\+Name }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa\+\_\+\+Terminate is called.
+
+The string will be no longer than 32 characters including the null terminator. \mbox{\Hypertarget{pa__asio_8cpp_a97bd5b2192c1321a492ba24d7ef843fa}\label{pa__asio_8cpp_a97bd5b2192c1321a492ba24d7ef843fa}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_GetOutputChannelName@{PaAsio\_GetOutputChannelName}}
+\index{PaAsio\_GetOutputChannelName@{PaAsio\_GetOutputChannelName}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetOutputChannelName()}{PaAsio\_GetOutputChannelName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Output\+Channel\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{channel\+Index,  }\item[{const char $\ast$$\ast$}]{channel\+Name }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa\+\_\+\+Terminate is called.
+
+The string will be no longer than 32 characters including the null terminator. \mbox{\Hypertarget{pa__asio_8cpp_aa84b8c879af0b4a3f59c6bf4339fad0e}\label{pa__asio_8cpp_aa84b8c879af0b4a3f59c6bf4339fad0e}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_Initialize@{PaAsio\_Initialize}}
+\index{PaAsio\_Initialize@{PaAsio\_Initialize}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_Initialize()}{PaAsio\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__asio_8cpp_abd2852360116a698308bfd3034dfcf09}\label{pa__asio_8cpp_abd2852360116a698308bfd3034dfcf09}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_SetStreamSampleRate@{PaAsio\_SetStreamSampleRate}}
+\index{PaAsio\_SetStreamSampleRate@{PaAsio\_SetStreamSampleRate}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_SetStreamSampleRate()}{PaAsio\_SetStreamSampleRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Set\+Stream\+Sample\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+Set the sample rate of an open pa\+ASIO stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to operate on. \\
+\hline
+{\em sample\+Rate} & The new sample rate.\\
+\hline
+\end{DoxyParams}
+Note that this function may fail if the stream is already running and the ASIO driver does not support switching the sample rate of a running stream.
+
+Returns pa\+Incompatible\+Stream\+Host\+Api if stream is not a pa\+ASIO stream. \mbox{\Hypertarget{pa__asio_8cpp_ac9449ca8f0aedaa7b93027cdca3d6ba3}\label{pa__asio_8cpp_ac9449ca8f0aedaa7b93027cdca3d6ba3}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!PaAsio\_ShowControlPanel@{PaAsio\_ShowControlPanel}}
+\index{PaAsio\_ShowControlPanel@{PaAsio\_ShowControlPanel}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_ShowControlPanel()}{PaAsio\_ShowControlPanel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Show\+Control\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{system\+Specific }\end{DoxyParamCaption})}
+
+Display the ASIO control panel for the specified device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The global index of the device whose control panel is to be displayed. \\
+\hline
+{\em system\+Specific} & On Windows, the calling application\textquotesingle{}s main window handle, on Macintosh this value should be zero. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__asio_8cpp_a6b3fd458b9c902296568943abcfd00ae}\label{pa__asio_8cpp_a6b3fd458b9c902296568943abcfd00ae}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!asioDrivers@{asioDrivers}}
+\index{asioDrivers@{asioDrivers}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{asioDrivers}{asioDrivers}}
+{\footnotesize\ttfamily Asio\+Drivers$\ast$ asio\+Drivers\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a725af3e55ff36679409873c046128927}\label{pa__asio_8cpp_a725af3e55ff36679409873c046128927}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!IsDebuggerPresent\_@{IsDebuggerPresent\_}}
+\index{IsDebuggerPresent\_@{IsDebuggerPresent\_}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{IsDebuggerPresent\_}{IsDebuggerPresent\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__asio_8cpp_a222d0bb872ee6f7c6cbd5d7085fe1c77}{Is\+Debugger\+Present\+Ptr}} Is\+Debugger\+Present\+\_\+ = 0}
+
+\mbox{\Hypertarget{pa__asio_8cpp_a4f17b4f3eeffeed3e0505e229dd633fa}\label{pa__asio_8cpp_a4f17b4f3eeffeed3e0505e229dd633fa}} 
+\index{pa\_asio.cpp@{pa\_asio.cpp}!twoRaisedTo32@{twoRaisedTo32}}
+\index{twoRaisedTo32@{twoRaisedTo32}!pa\_asio.cpp@{pa\_asio.cpp}}
+\doxysubsubsection{\texorpdfstring{twoRaisedTo32}{twoRaisedTo32}}
+{\footnotesize\ttfamily const double two\+Raised\+To32 = 4294967296.}
+

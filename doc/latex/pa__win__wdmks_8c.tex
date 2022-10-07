@@ -1,0 +1,495 @@
+\hypertarget{pa__win__wdmks_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wdmks/pa\+\_\+win\+\_\+wdmks.c File Reference}
+\label{pa__win__wdmks_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wdmks/pa\_win\_wdmks.c@{Hexeng2D/dependencies/portaudio/src/hostapi/wdmks/pa\_win\_wdmks.c}}
+
+
+Portaudio WDM-\/\+KS host API.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$wchar.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+memorybarrier.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+trace.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+waveformat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+wdmks.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$winioctl.\+h$>$}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$setupapi.\+h$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include $<$ks.\+h$>$}\newline
+{\ttfamily \#include $<$ksmedia.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_av_rt_entry_points}{Pa\+Win\+WDMKSAv\+Rt\+Entry\+Points}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_muxed_input}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Muxed\+Input}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_pin}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Pin}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_filter}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Filter}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_device_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_host_api_representation}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_____d_a_t_a_p_a_c_k_e_t}{\+\_\+\+\_\+\+DATAPACKET}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_i_o_packet}{\+\_\+\+\_\+\+Pa\+IOPacket}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_i_o_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+IOInfo}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_wdm_stream}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_process_thread_info}{\+\_\+\+\_\+\+Pa\+Process\+Thread\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_win_w_d_m_scan_device_infos_results}{\+\_\+\+\_\+\+Pa\+Win\+WDMScan\+Device\+Infos\+Results}}
+\item 
+struct \mbox{\hyperlink{struct_____pa_usb_terminal_g_u_i_d_to_name}{\+\_\+\+\_\+\+Pa\+Usb\+Terminal\+GUIDTo\+Name}}
+\item 
+struct \mbox{\hyperlink{struct_pa_name_hash_index}{Pa\+Name\+Hash\+Index}}
+\item 
+struct \mbox{\hyperlink{struct_pa_name_hash_object}{Pa\+Name\+Hash\+Object}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a4fd900251a6b37db5201519ce085695c}{PA\+\_\+\+LOGE\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a5a33d3ea6a9a13288f01233236e17c44}{PA\+\_\+\+LOGL\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_adad5f0b12993256d88ee25ebee3e0bca}{DRV\+\_\+\+QUERYDEVICEINTERFACE}}~(DRV\+\_\+\+RESERVED + 12)
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a12fe28580c2caabf3c97130411605dd4}{DRV\+\_\+\+QUERYDEVICEINTERFACESIZE}}~(DRV\+\_\+\+RESERVED + 13)
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a1ed56124518c5cb5bac27422912327e6}{PA\+\_\+\+HP\+\_\+\+TRACE}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__trace_8h_ade6031f4912c0cef34f49e0e87eb94ae}{Pa\+Util\+\_\+\+Add\+High\+Speed\+Log\+Message}} \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} ;
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a4df7ba9195cdae8d2a7a47ae0421b567}{PA\+\_\+\+WDMKS\+\_\+\+USE\+\_\+\+CATEGORY\+\_\+\+FOR\+\_\+\+PIN\+\_\+\+NAMES}}~1
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_ae9a0f0ff7059ae7fd026ac46f65ed9b9}{CREATE\+\_\+\+THREAD\+\_\+\+FUNCTION}}~(HANDLE)\+\_\+beginthreadex
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}}~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}}~extern
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks_8c_a63e227993b75fd9a2658b34234bf3366}{MAXIMUM\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+CHANNELS}}~256
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef DWORD \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} \mbox{\hyperlink{pa__win__wdmks_8c_a055163a2257c29ab3084cd304d1ffb92}{KSCREATEPIN}}(HANDLE, \mbox{\hyperlink{ks_8h_a72d034c26a7ddbb791a5e3d070ef0e5b}{PKSPIN\+\_\+\+CONNECT}}, ACCESS\+\_\+\+MASK, PHANDLE)
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}} \mbox{\hyperlink{pa__win__wdmks_8c_a03463b504994b3dd573ea3a8293bcea3}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}} $\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_ac506a8f6f8a5251e2e94066faccb7d16}{PPA\+\_\+\+AVRT\+\_\+\+PRIORITY}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_filter}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Filter}} \mbox{\hyperlink{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}{Pa\+Win\+Wdm\+Filter}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_pin}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Pin}} \mbox{\hyperlink{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}{Pa\+Win\+Wdm\+Pin}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_stream}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Stream}} \mbox{\hyperlink{pa__win__wdmks_8c_a41c57e03e58e2456ec901b8337ce6791}{Pa\+Win\+Wdm\+Stream}}
+\item 
+typedef \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_a5c6efedb86e3f590184c4595820e68b9}{Function\+Get\+Pin\+Audio\+Position}}) (\mbox{\hyperlink{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}{Pa\+Win\+Wdm\+Pin}} $\ast$, unsigned long $\ast$)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_af3fcb71d44986590898882b6b1ca82f5}{Function\+Memory\+Barrier}}) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_process_thread_info}{\+\_\+\+\_\+\+Pa\+Process\+Thread\+Info}} \mbox{\hyperlink{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}{Pa\+Process\+Thread\+Info}}
+\item 
+typedef \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_a648f640b2f250d09332384c98a242d5d}{Function\+Pin\+Handler}}) (\mbox{\hyperlink{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}{Pa\+Process\+Thread\+Info}} $\ast$p\+Info, unsigned event\+Index)
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}{\+\_\+\+\_\+\+Pa\+Stream\+Start\+Enum}} \mbox{\hyperlink{pa__win__wdmks_8c_a9172eda0b34c302afdf40182b4be56cd}{Pa\+Stream\+Start\+Enum}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_muxed_input}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Muxed\+Input}} \mbox{\hyperlink{pa__win__wdmks_8c_a8f5146cf44fc86130c51c8a444d1f802}{Pa\+Win\+Wdm\+Muxed\+Input}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_device_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Device\+Info}} \mbox{\hyperlink{pa__win__wdmks_8c_a9d8ca5caff48cf51ee30cfb380914c1b}{Pa\+Win\+Wdm\+Device\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_host_api_representation}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Host\+Api\+Representation}} \mbox{\hyperlink{pa__win__wdmks_8c_a488cd930d08c0a3262f97bdab1e700b3}{Pa\+Win\+Wdm\+Host\+Api\+Representation}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____d_a_t_a_p_a_c_k_e_t}{\+\_\+\+\_\+\+DATAPACKET}} \mbox{\hyperlink{pa__win__wdmks_8c_a9278c943b72326711bc96f63ea2efbbd}{DATAPACKET}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_i_o_packet}{\+\_\+\+\_\+\+Pa\+IOPacket}} \mbox{\hyperlink{pa__win__wdmks_8c_aabfca0d0c3ae84e0450457237ed4e1e2}{Pa\+IOPacket}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_i_o_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+IOInfo}} \mbox{\hyperlink{pa__win__wdmks_8c_a1b5d20dbaeb61a71588e2afbb27b3d59}{Pa\+Win\+Wdm\+IOInfo}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_win_w_d_m_scan_device_infos_results}{\+\_\+\+\_\+\+Pa\+Win\+WDMScan\+Device\+Infos\+Results}} \mbox{\hyperlink{pa__win__wdmks_8c_abbe496e25d61c7050a642ec2dbfb4047}{Pa\+Win\+WDMScan\+Device\+Infos\+Results}}
+\item 
+typedef const \mbox{\hyperlink{struct_k_s_t_o_p_o_l_o_g_y___c_o_n_n_e_c_t_i_o_n}{KSTOPOLOGY\+\_\+\+CONNECTION}} $\ast$($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_a929985347c76f0c9121b6bfae4adf96d}{TFn\+Get\+Connection}}) (const \mbox{\hyperlink{struct_k_s_t_o_p_o_l_o_g_y___c_o_n_n_e_c_t_i_o_n}{KSTOPOLOGY\+\_\+\+CONNECTION}} $\ast$, \mbox{\hyperlink{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}{Pa\+Win\+Wdm\+Filter}} $\ast$, int)
+\item 
+typedef struct \mbox{\hyperlink{struct_____pa_usb_terminal_g_u_i_d_to_name}{\+\_\+\+\_\+\+Pa\+Usb\+Terminal\+GUIDTo\+Name}} \mbox{\hyperlink{pa__win__wdmks_8c_acdfa33af5da510963195c66293766feb}{Pa\+Usb\+Terminal\+GUIDTo\+Name}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}{\+\_\+tag\+\_\+\+EAlias}} \mbox{\hyperlink{pa__win__wdmks_8c_a6969ea8c23954308ddc867868826d3d9}{EAlias}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_name_hash_index}{Pa\+Name\+Hash\+Index}} \mbox{\hyperlink{pa__win__wdmks_8c_a0a6acaf2abd6520d454238ace26c1093}{Pa\+Name\+Hash\+Index}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_name_hash_object}{Pa\+Name\+Hash\+Object}} \mbox{\hyperlink{pa__win__wdmks_8c_ac1e3b74a52699d15e005cc56e7affba5}{Pa\+Name\+Hash\+Object}}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_ada66fed498da9c7e21d12a239b65fb47}{TSet\+Input\+Frame\+Count}}) (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$, unsigned long)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_aa61cecfbd8805d72ee3d84e504c3c833}{TSet\+Input\+Channel}}) (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$, unsigned int, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}} \{ \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884a6627750d6c81485298bdc0c779f8d1d6}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+LOW}} = -\/1
+, \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884ac373f8d46e872a052340070e06b3ae07}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aed71aa0f94fc663d031ca72dc2775272}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+HIGH}}
+, \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aaddd13240b8b15d145e282c8ef36a108}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+CRITICAL}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}{\+\_\+\+\_\+\+Pa\+Stream\+Start\+Enum}} \{ \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a46bc3f5ea073342703b3dd6904d564a7}{Stream\+Start\+\_\+k\+Ok}}
+, \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5ab05b936607a5bdb4dad033e21a349c7a}{Stream\+Start\+\_\+k\+Failed}}
+, \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a015288f4751df2a3c5680952db2ebc97}{Stream\+Start\+\_\+k\+Cnt}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}{\+\_\+tag\+\_\+\+EAlias}} \{ \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcbae12bf2522f9b69283147ea566401be2b}{Alias\+\_\+k\+Render}} = (1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}0)
+, \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba45df6c4cd301906a68e4ec8ff6b023ac}{Alias\+\_\+k\+Capture}} = (1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}1)
+, \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba2cb0d7e662be977a49066c7167073fdb}{Alias\+\_\+k\+Realtime}} = (1\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}2)
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wdmks_8c_a69eb4c041d72171b7053264130e50a46}{Pa\+Win\+Wdm\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} \mbox{\hyperlink{pa__win__wdmks_8c_a7575d59c6ddcacfebfe2831e1743cff7}{Processing\+Thread}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+HMODULE \mbox{\hyperlink{pa__win__wdmks_8c_a899ecd269a5995deeb6433a13297e6e7}{Dll\+Ks\+User}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_a055163a2257c29ab3084cd304d1ffb92}{KSCREATEPIN}} $\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_a6d5e1e7c5625b65ea3efb5169e7320ac}{Function\+Ks\+Create\+Pin}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Portaudio WDM-\/\+KS host API. 
+
+\begin{DoxyNote}{Note}
+This is the implementation of the Portaudio host API using the Windows WDM/\+Kernel Streaming API in order to enable very low latency playback and recording on all modern Windows platforms (e.\+g. 2K, XP, Vista, Win7) Note\+: This API accesses the device drivers below the usual KMIXER component which is normally used to enable multi-\/client mixing and format conversion. That means that it will lock out all other users of a device for the duration of active stream using those devices 
+\end{DoxyNote}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8c_ae9a0f0ff7059ae7fd026ac46f65ed9b9}\label{pa__win__wdmks_8c_ae9a0f0ff7059ae7fd026ac46f65ed9b9}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!CREATE\_THREAD\_FUNCTION@{CREATE\_THREAD\_FUNCTION}}
+\index{CREATE\_THREAD\_FUNCTION@{CREATE\_THREAD\_FUNCTION}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{CREATE\_THREAD\_FUNCTION}{CREATE\_THREAD\_FUNCTION}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+THREAD\+\_\+\+FUNCTION~(HANDLE)\+\_\+beginthreadex}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_adad5f0b12993256d88ee25ebee3e0bca}\label{pa__win__wdmks_8c_adad5f0b12993256d88ee25ebee3e0bca}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!DRV\_QUERYDEVICEINTERFACE@{DRV\_QUERYDEVICEINTERFACE}}
+\index{DRV\_QUERYDEVICEINTERFACE@{DRV\_QUERYDEVICEINTERFACE}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{DRV\_QUERYDEVICEINTERFACE}{DRV\_QUERYDEVICEINTERFACE}}
+{\footnotesize\ttfamily \#define DRV\+\_\+\+QUERYDEVICEINTERFACE~(DRV\+\_\+\+RESERVED + 12)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a12fe28580c2caabf3c97130411605dd4}\label{pa__win__wdmks_8c_a12fe28580c2caabf3c97130411605dd4}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!DRV\_QUERYDEVICEINTERFACESIZE@{DRV\_QUERYDEVICEINTERFACESIZE}}
+\index{DRV\_QUERYDEVICEINTERFACESIZE@{DRV\_QUERYDEVICEINTERFACESIZE}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{DRV\_QUERYDEVICEINTERFACESIZE}{DRV\_QUERYDEVICEINTERFACESIZE}}
+{\footnotesize\ttfamily \#define DRV\+\_\+\+QUERYDEVICEINTERFACESIZE~(DRV\+\_\+\+RESERVED + 13)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}\label{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!EXTERN\_C@{EXTERN\_C}}
+\index{EXTERN\_C@{EXTERN\_C}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{EXTERN\_C}{EXTERN\_C}}
+{\footnotesize\ttfamily \#define EXTERN\+\_\+C~extern}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a63e227993b75fd9a2658b34234bf3366}\label{pa__win__wdmks_8c_a63e227993b75fd9a2658b34234bf3366}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!MAXIMUM\_NUMBER\_OF\_CHANNELS@{MAXIMUM\_NUMBER\_OF\_CHANNELS}}
+\index{MAXIMUM\_NUMBER\_OF\_CHANNELS@{MAXIMUM\_NUMBER\_OF\_CHANNELS}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{MAXIMUM\_NUMBER\_OF\_CHANNELS}{MAXIMUM\_NUMBER\_OF\_CHANNELS}}
+{\footnotesize\ttfamily \#define MAXIMUM\+\_\+\+NUMBER\+\_\+\+OF\+\_\+\+CHANNELS~256}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a1ed56124518c5cb5bac27422912327e6}\label{pa__win__wdmks_8c_a1ed56124518c5cb5bac27422912327e6}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_HP\_TRACE@{PA\_HP\_TRACE}}
+\index{PA\_HP\_TRACE@{PA\_HP\_TRACE}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_HP\_TRACE}{PA\_HP\_TRACE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+HP\+\_\+\+TRACE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__trace_8h_ade6031f4912c0cef34f49e0e87eb94ae}{Pa\+Util\+\_\+\+Add\+High\+Speed\+Log\+Message}} \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} ;}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a4fd900251a6b37db5201519ce085695c}\label{pa__win__wdmks_8c_a4fd900251a6b37db5201519ce085695c}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_LOGE\_@{PA\_LOGE\_}}
+\index{PA\_LOGE\_@{PA\_LOGE\_}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGE\_}{PA\_LOGE\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGE\+\_\+}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a5a33d3ea6a9a13288f01233236e17c44}\label{pa__win__wdmks_8c_a5a33d3ea6a9a13288f01233236e17c44}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_LOGL\_@{PA\_LOGL\_}}
+\index{PA\_LOGL\_@{PA\_LOGL\_}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGL\_}{PA\_LOGL\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGL\+\_\+}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_ad744bd36cb3631b1dc11beb41dcc238c}\label{pa__win__wdmks_8c_ad744bd36cb3631b1dc11beb41dcc238c}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}}
+\index{PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_FUNC}{PA\_THREAD\_FUNC}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+FUNC~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a4df7ba9195cdae8d2a7a47ae0421b567}\label{pa__win__wdmks_8c_a4df7ba9195cdae8d2a7a47ae0421b567}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES@{PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES}}
+\index{PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES@{PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES}{PA\_WDMKS\_USE\_CATEGORY\_FOR\_PIN\_NAMES}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WDMKS\+\_\+\+USE\+\_\+\+CATEGORY\+\_\+\+FOR\+\_\+\+PIN\+\_\+\+NAMES~1}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8c_a9278c943b72326711bc96f63ea2efbbd}\label{pa__win__wdmks_8c_a9278c943b72326711bc96f63ea2efbbd}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!DATAPACKET@{DATAPACKET}}
+\index{DATAPACKET@{DATAPACKET}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{DATAPACKET}{DATAPACKET}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____d_a_t_a_p_a_c_k_e_t}{\+\_\+\+\_\+\+DATAPACKET}} \mbox{\hyperlink{pa__win__wdmks_8c_a9278c943b72326711bc96f63ea2efbbd}{DATAPACKET}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a6969ea8c23954308ddc867868826d3d9}\label{pa__win__wdmks_8c_a6969ea8c23954308ddc867868826d3d9}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!EAlias@{EAlias}}
+\index{EAlias@{EAlias}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{EAlias}{EAlias}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}{\+\_\+tag\+\_\+\+EAlias}} \mbox{\hyperlink{pa__win__wdmks_8c_a6969ea8c23954308ddc867868826d3d9}{EAlias}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a5c6efedb86e3f590184c4595820e68b9}\label{pa__win__wdmks_8c_a5c6efedb86e3f590184c4595820e68b9}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!FunctionGetPinAudioPosition@{FunctionGetPinAudioPosition}}
+\index{FunctionGetPinAudioPosition@{FunctionGetPinAudioPosition}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{FunctionGetPinAudioPosition}{FunctionGetPinAudioPosition}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ Function\+Get\+Pin\+Audio\+Position) (\mbox{\hyperlink{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}{Pa\+Win\+Wdm\+Pin}} $\ast$, unsigned long $\ast$)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_af3fcb71d44986590898882b6b1ca82f5}\label{pa__win__wdmks_8c_af3fcb71d44986590898882b6b1ca82f5}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!FunctionMemoryBarrier@{FunctionMemoryBarrier}}
+\index{FunctionMemoryBarrier@{FunctionMemoryBarrier}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{FunctionMemoryBarrier}{FunctionMemoryBarrier}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Function\+Memory\+Barrier) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a648f640b2f250d09332384c98a242d5d}\label{pa__win__wdmks_8c_a648f640b2f250d09332384c98a242d5d}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!FunctionPinHandler@{FunctionPinHandler}}
+\index{FunctionPinHandler@{FunctionPinHandler}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{FunctionPinHandler}{FunctionPinHandler}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ Function\+Pin\+Handler) (\mbox{\hyperlink{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}{Pa\+Process\+Thread\+Info}} $\ast$p\+Info, unsigned event\+Index)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a055163a2257c29ab3084cd304d1ffb92}\label{pa__win__wdmks_8c_a055163a2257c29ab3084cd304d1ffb92}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!KSCREATEPIN@{KSCREATEPIN}}
+\index{KSCREATEPIN@{KSCREATEPIN}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{KSCREATEPIN}{KSCREATEPIN}}
+{\footnotesize\ttfamily typedef DWORD \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KSCREATEPIN(HANDLE, \mbox{\hyperlink{ks_8h_a72d034c26a7ddbb791a5e3d070ef0e5b}{PKSPIN\+\_\+\+CONNECT}}, ACCESS\+\_\+\+MASK, PHANDLE)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a03463b504994b3dd573ea3a8293bcea3}\label{pa__win__wdmks_8c_a03463b504994b3dd573ea3a8293bcea3}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_AVRT\_PRIORITY@{PA\_AVRT\_PRIORITY}}
+\index{PA\_AVRT\_PRIORITY@{PA\_AVRT\_PRIORITY}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PA\_AVRT\_PRIORITY}{PA\_AVRT\_PRIORITY}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}} \mbox{\hyperlink{pa__win__wdmks_8c_a03463b504994b3dd573ea3a8293bcea3}{PA\+\_\+\+AVRT\+\_\+\+PRIORITY}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_aabfca0d0c3ae84e0450457237ed4e1e2}\label{pa__win__wdmks_8c_aabfca0d0c3ae84e0450457237ed4e1e2}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaIOPacket@{PaIOPacket}}
+\index{PaIOPacket@{PaIOPacket}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaIOPacket}{PaIOPacket}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_i_o_packet}{\+\_\+\+\_\+\+Pa\+IOPacket}} \mbox{\hyperlink{pa__win__wdmks_8c_aabfca0d0c3ae84e0450457237ed4e1e2}{Pa\+IOPacket}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a0a6acaf2abd6520d454238ace26c1093}\label{pa__win__wdmks_8c_a0a6acaf2abd6520d454238ace26c1093}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaNameHashIndex@{PaNameHashIndex}}
+\index{PaNameHashIndex@{PaNameHashIndex}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaNameHashIndex}{PaNameHashIndex}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_name_hash_index}{Pa\+Name\+Hash\+Index}} \mbox{\hyperlink{struct_pa_name_hash_index}{Pa\+Name\+Hash\+Index}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_ac1e3b74a52699d15e005cc56e7affba5}\label{pa__win__wdmks_8c_ac1e3b74a52699d15e005cc56e7affba5}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaNameHashObject@{PaNameHashObject}}
+\index{PaNameHashObject@{PaNameHashObject}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaNameHashObject}{PaNameHashObject}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_name_hash_object}{Pa\+Name\+Hash\+Object}} \mbox{\hyperlink{struct_pa_name_hash_object}{Pa\+Name\+Hash\+Object}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}\label{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaProcessThreadInfo@{PaProcessThreadInfo}}
+\index{PaProcessThreadInfo@{PaProcessThreadInfo}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaProcessThreadInfo}{PaProcessThreadInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_process_thread_info}{\+\_\+\+\_\+\+Pa\+Process\+Thread\+Info}} \mbox{\hyperlink{pa__win__wdmks_8c_ac11d18d40d2d3d9de06b2bec09bc4d78}{Pa\+Process\+Thread\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a9172eda0b34c302afdf40182b4be56cd}\label{pa__win__wdmks_8c_a9172eda0b34c302afdf40182b4be56cd}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaStreamStartEnum@{PaStreamStartEnum}}
+\index{PaStreamStartEnum@{PaStreamStartEnum}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaStreamStartEnum}{PaStreamStartEnum}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}{\+\_\+\+\_\+\+Pa\+Stream\+Start\+Enum}} \mbox{\hyperlink{pa__win__wdmks_8c_a9172eda0b34c302afdf40182b4be56cd}{Pa\+Stream\+Start\+Enum}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_acdfa33af5da510963195c66293766feb}\label{pa__win__wdmks_8c_acdfa33af5da510963195c66293766feb}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaUsbTerminalGUIDToName@{PaUsbTerminalGUIDToName}}
+\index{PaUsbTerminalGUIDToName@{PaUsbTerminalGUIDToName}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaUsbTerminalGUIDToName}{PaUsbTerminalGUIDToName}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_usb_terminal_g_u_i_d_to_name}{\+\_\+\+\_\+\+Pa\+Usb\+Terminal\+GUIDTo\+Name}} \mbox{\hyperlink{pa__win__wdmks_8c_acdfa33af5da510963195c66293766feb}{Pa\+Usb\+Terminal\+GUIDTo\+Name}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a9d8ca5caff48cf51ee30cfb380914c1b}\label{pa__win__wdmks_8c_a9d8ca5caff48cf51ee30cfb380914c1b}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmDeviceInfo@{PaWinWdmDeviceInfo}}
+\index{PaWinWdmDeviceInfo@{PaWinWdmDeviceInfo}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmDeviceInfo}{PaWinWdmDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_device_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Device\+Info}} \mbox{\hyperlink{pa__win__wdmks_8c_a9d8ca5caff48cf51ee30cfb380914c1b}{Pa\+Win\+Wdm\+Device\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}\label{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmFilter@{PaWinWdmFilter}}
+\index{PaWinWdmFilter@{PaWinWdmFilter}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmFilter}{PaWinWdmFilter}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_filter}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Filter}} \mbox{\hyperlink{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}{Pa\+Win\+Wdm\+Filter}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a488cd930d08c0a3262f97bdab1e700b3}\label{pa__win__wdmks_8c_a488cd930d08c0a3262f97bdab1e700b3}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmHostApiRepresentation@{PaWinWdmHostApiRepresentation}}
+\index{PaWinWdmHostApiRepresentation@{PaWinWdmHostApiRepresentation}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmHostApiRepresentation}{PaWinWdmHostApiRepresentation}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_host_api_representation}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Host\+Api\+Representation}} \mbox{\hyperlink{pa__win__wdmks_8c_a488cd930d08c0a3262f97bdab1e700b3}{Pa\+Win\+Wdm\+Host\+Api\+Representation}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a1b5d20dbaeb61a71588e2afbb27b3d59}\label{pa__win__wdmks_8c_a1b5d20dbaeb61a71588e2afbb27b3d59}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmIOInfo@{PaWinWdmIOInfo}}
+\index{PaWinWdmIOInfo@{PaWinWdmIOInfo}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmIOInfo}{PaWinWdmIOInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_i_o_info}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+IOInfo}} \mbox{\hyperlink{pa__win__wdmks_8c_a1b5d20dbaeb61a71588e2afbb27b3d59}{Pa\+Win\+Wdm\+IOInfo}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a8f5146cf44fc86130c51c8a444d1f802}\label{pa__win__wdmks_8c_a8f5146cf44fc86130c51c8a444d1f802}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmMuxedInput@{PaWinWdmMuxedInput}}
+\index{PaWinWdmMuxedInput@{PaWinWdmMuxedInput}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmMuxedInput}{PaWinWdmMuxedInput}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_muxed_input}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Muxed\+Input}} \mbox{\hyperlink{pa__win__wdmks_8c_a8f5146cf44fc86130c51c8a444d1f802}{Pa\+Win\+Wdm\+Muxed\+Input}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}\label{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmPin@{PaWinWdmPin}}
+\index{PaWinWdmPin@{PaWinWdmPin}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmPin}{PaWinWdmPin}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_pin}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Pin}} \mbox{\hyperlink{pa__win__wdmks_8c_a1b9a07297c7f8093f59fc4b333c9ba68}{Pa\+Win\+Wdm\+Pin}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_abbe496e25d61c7050a642ec2dbfb4047}\label{pa__win__wdmks_8c_abbe496e25d61c7050a642ec2dbfb4047}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWDMScanDeviceInfosResults@{PaWinWDMScanDeviceInfosResults}}
+\index{PaWinWDMScanDeviceInfosResults@{PaWinWDMScanDeviceInfosResults}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWDMScanDeviceInfosResults}{PaWinWDMScanDeviceInfosResults}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_w_d_m_scan_device_infos_results}{\+\_\+\+\_\+\+Pa\+Win\+WDMScan\+Device\+Infos\+Results}} \mbox{\hyperlink{pa__win__wdmks_8c_abbe496e25d61c7050a642ec2dbfb4047}{Pa\+Win\+WDMScan\+Device\+Infos\+Results}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a41c57e03e58e2456ec901b8337ce6791}\label{pa__win__wdmks_8c_a41c57e03e58e2456ec901b8337ce6791}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdmStream@{PaWinWdmStream}}
+\index{PaWinWdmStream@{PaWinWdmStream}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdmStream}{PaWinWdmStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____pa_win_wdm_stream}{\+\_\+\+\_\+\+Pa\+Win\+Wdm\+Stream}} \mbox{\hyperlink{pa__win__wdmks_8c_a41c57e03e58e2456ec901b8337ce6791}{Pa\+Win\+Wdm\+Stream}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_ac506a8f6f8a5251e2e94066faccb7d16}\label{pa__win__wdmks_8c_ac506a8f6f8a5251e2e94066faccb7d16}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PPA\_AVRT\_PRIORITY@{PPA\_AVRT\_PRIORITY}}
+\index{PPA\_AVRT\_PRIORITY@{PPA\_AVRT\_PRIORITY}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PPA\_AVRT\_PRIORITY}{PPA\_AVRT\_PRIORITY}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}} $\ast$ \mbox{\hyperlink{pa__win__wdmks_8c_ac506a8f6f8a5251e2e94066faccb7d16}{PPA\+\_\+\+AVRT\+\_\+\+PRIORITY}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a929985347c76f0c9121b6bfae4adf96d}\label{pa__win__wdmks_8c_a929985347c76f0c9121b6bfae4adf96d}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!TFnGetConnection@{TFnGetConnection}}
+\index{TFnGetConnection@{TFnGetConnection}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{TFnGetConnection}{TFnGetConnection}}
+{\footnotesize\ttfamily typedef const \mbox{\hyperlink{struct_k_s_t_o_p_o_l_o_g_y___c_o_n_n_e_c_t_i_o_n}{KSTOPOLOGY\+\_\+\+CONNECTION}} $\ast$($\ast$ TFn\+Get\+Connection) (const \mbox{\hyperlink{struct_k_s_t_o_p_o_l_o_g_y___c_o_n_n_e_c_t_i_o_n}{KSTOPOLOGY\+\_\+\+CONNECTION}} $\ast$, \mbox{\hyperlink{pa__win__wdmks_8c_add25dc7e76c77419d4520c774371efe4}{Pa\+Win\+Wdm\+Filter}} $\ast$, int)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_aa61cecfbd8805d72ee3d84e504c3c833}\label{pa__win__wdmks_8c_aa61cecfbd8805d72ee3d84e504c3c833}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!TSetInputChannel@{TSetInputChannel}}
+\index{TSetInputChannel@{TSetInputChannel}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{TSetInputChannel}{TSetInputChannel}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ TSet\+Input\+Channel) (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$, unsigned int, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned int)}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_ada66fed498da9c7e21d12a239b65fb47}\label{pa__win__wdmks_8c_ada66fed498da9c7e21d12a239b65fb47}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!TSetInputFrameCount@{TSetInputFrameCount}}
+\index{TSetInputFrameCount@{TSetInputFrameCount}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{TSetInputFrameCount}{TSetInputFrameCount}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ TSet\+Input\+Frame\+Count) (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$, unsigned long)}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}\label{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!\_\_PaStreamStartEnum@{\_\_PaStreamStartEnum}}
+\index{\_\_PaStreamStartEnum@{\_\_PaStreamStartEnum}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{\_\_PaStreamStartEnum}{\_\_PaStreamStartEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5}{\+\_\+\+\_\+\+Pa\+Stream\+Start\+Enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamStart\_kOk@{StreamStart\_kOk}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!StreamStart\_kOk@{StreamStart\_kOk}}}\mbox{\Hypertarget{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a46bc3f5ea073342703b3dd6904d564a7}\label{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a46bc3f5ea073342703b3dd6904d564a7}} 
+Stream\+Start\+\_\+k\+Ok&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamStart\_kFailed@{StreamStart\_kFailed}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!StreamStart\_kFailed@{StreamStart\_kFailed}}}\mbox{\Hypertarget{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5ab05b936607a5bdb4dad033e21a349c7a}\label{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5ab05b936607a5bdb4dad033e21a349c7a}} 
+Stream\+Start\+\_\+k\+Failed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamStart\_kCnt@{StreamStart\_kCnt}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!StreamStart\_kCnt@{StreamStart\_kCnt}}}\mbox{\Hypertarget{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a015288f4751df2a3c5680952db2ebc97}\label{pa__win__wdmks_8c_abf83566c082ff992efb67a6a533c7ec5a015288f4751df2a3c5680952db2ebc97}} 
+Stream\+Start\+\_\+k\+Cnt&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}\label{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!\_PA\_AVRT\_PRIORITY@{\_PA\_AVRT\_PRIORITY}}
+\index{\_PA\_AVRT\_PRIORITY@{\_PA\_AVRT\_PRIORITY}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_AVRT\_PRIORITY}{\_PA\_AVRT\_PRIORITY}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884}{\+\_\+\+PA\+\_\+\+AVRT\+\_\+\+PRIORITY}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_AVRT\_PRIORITY\_LOW@{PA\_AVRT\_PRIORITY\_LOW}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_AVRT\_PRIORITY\_LOW@{PA\_AVRT\_PRIORITY\_LOW}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884a6627750d6c81485298bdc0c779f8d1d6}\label{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884a6627750d6c81485298bdc0c779f8d1d6}} 
+PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_AVRT\_PRIORITY\_NORMAL@{PA\_AVRT\_PRIORITY\_NORMAL}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_AVRT\_PRIORITY\_NORMAL@{PA\_AVRT\_PRIORITY\_NORMAL}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884ac373f8d46e872a052340070e06b3ae07}\label{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884ac373f8d46e872a052340070e06b3ae07}} 
+PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_AVRT\_PRIORITY\_HIGH@{PA\_AVRT\_PRIORITY\_HIGH}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_AVRT\_PRIORITY\_HIGH@{PA\_AVRT\_PRIORITY\_HIGH}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aed71aa0f94fc663d031ca72dc2775272}\label{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aed71aa0f94fc663d031ca72dc2775272}} 
+PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PA\_AVRT\_PRIORITY\_CRITICAL@{PA\_AVRT\_PRIORITY\_CRITICAL}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PA\_AVRT\_PRIORITY\_CRITICAL@{PA\_AVRT\_PRIORITY\_CRITICAL}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aaddd13240b8b15d145e282c8ef36a108}\label{pa__win__wdmks_8c_a2ed6fe22cba98e98dc797f66315d3884aaddd13240b8b15d145e282c8ef36a108}} 
+PA\+\_\+\+AVRT\+\_\+\+PRIORITY\+\_\+\+CRITICAL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}\label{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!\_tag\_EAlias@{\_tag\_EAlias}}
+\index{\_tag\_EAlias@{\_tag\_EAlias}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{\_tag\_EAlias}{\_tag\_EAlias}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcb}{\+\_\+tag\+\_\+\+EAlias}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Alias\_kRender@{Alias\_kRender}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!Alias\_kRender@{Alias\_kRender}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcbae12bf2522f9b69283147ea566401be2b}\label{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcbae12bf2522f9b69283147ea566401be2b}} 
+Alias\+\_\+k\+Render&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Alias\_kCapture@{Alias\_kCapture}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!Alias\_kCapture@{Alias\_kCapture}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba45df6c4cd301906a68e4ec8ff6b023ac}\label{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba45df6c4cd301906a68e4ec8ff6b023ac}} 
+Alias\+\_\+k\+Capture&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Alias\_kRealtime@{Alias\_kRealtime}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!Alias\_kRealtime@{Alias\_kRealtime}}}\mbox{\Hypertarget{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba2cb0d7e662be977a49066c7167073fdb}\label{pa__win__wdmks_8c_a05a5c67ee1c75fcecd2e93c969ac3fcba2cb0d7e662be977a49066c7167073fdb}} 
+Alias\+\_\+k\+Realtime&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8c_a69eb4c041d72171b7053264130e50a46}\label{pa__win__wdmks_8c_a69eb4c041d72171b7053264130e50a46}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!PaWinWdm\_Initialize@{PaWinWdm\_Initialize}}
+\index{PaWinWdm\_Initialize@{PaWinWdm\_Initialize}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdm\_Initialize()}{PaWinWdm\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Wdm\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a7575d59c6ddcacfebfe2831e1743cff7}\label{pa__win__wdmks_8c_a7575d59c6ddcacfebfe2831e1743cff7}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!ProcessingThread@{ProcessingThread}}
+\index{ProcessingThread@{ProcessingThread}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{ProcessingThread()}{ProcessingThread()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} Processing\+Thread (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Param }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8c_a899ecd269a5995deeb6433a13297e6e7}\label{pa__win__wdmks_8c_a899ecd269a5995deeb6433a13297e6e7}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!DllKsUser@{DllKsUser}}
+\index{DllKsUser@{DllKsUser}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{DllKsUser}{DllKsUser}}
+{\footnotesize\ttfamily HMODULE Dll\+Ks\+User = NULL}
+
+\mbox{\Hypertarget{pa__win__wdmks_8c_a6d5e1e7c5625b65ea3efb5169e7320ac}\label{pa__win__wdmks_8c_a6d5e1e7c5625b65ea3efb5169e7320ac}} 
+\index{pa\_win\_wdmks.c@{pa\_win\_wdmks.c}!FunctionKsCreatePin@{FunctionKsCreatePin}}
+\index{FunctionKsCreatePin@{FunctionKsCreatePin}!pa\_win\_wdmks.c@{pa\_win\_wdmks.c}}
+\doxysubsubsection{\texorpdfstring{FunctionKsCreatePin}{FunctionKsCreatePin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_a055163a2257c29ab3084cd304d1ffb92}{KSCREATEPIN}} $\ast$ Function\+Ks\+Create\+Pin = NULL}
+

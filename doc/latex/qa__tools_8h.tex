@@ -1,0 +1,107 @@
+\hypertarget{qa__tools_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/qa\+\_\+tools.h File Reference}
+\label{qa__tools_8h}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/qa\_tools.h@{Hexeng2D/dependencies/portaudio/qa/loopback/src/qa\_tools.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{qa__tools_8h_ab91b54409a2bc9579a9ef7b166b28ef8}{QA\+\_\+\+ASSERT\+\_\+\+TRUE}}(\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  flag)
+\item 
+\#define \mbox{\hyperlink{qa__tools_8h_a236d0b49165b23edd501e3562ae14485}{QA\+\_\+\+ASSERT\+\_\+\+EQUALS}}(\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  expected,  actual)
+\item 
+\#define \mbox{\hyperlink{qa__tools_8h_aab3a1d80d89ca253fe6229730db464a6}{QA\+\_\+\+ASSERT\+\_\+\+CLOSE}}(\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  expected,  actual,  tolerance)
+\item 
+\#define \mbox{\hyperlink{qa__tools_8h_a7b7a778fc5894fc14595ed4f7754c0ae}{QA\+\_\+\+ASSERT\+\_\+\+CLOSE\+\_\+\+INT}}(\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  expected,  actual,  tolerance)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}{g\+\_\+tests\+Passed}}
+\item 
+int \mbox{\hyperlink{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}{g\+\_\+tests\+Failed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{qa__tools_8h_aab3a1d80d89ca253fe6229730db464a6}\label{qa__tools_8h_aab3a1d80d89ca253fe6229730db464a6}} 
+\index{qa\_tools.h@{qa\_tools.h}!QA\_ASSERT\_CLOSE@{QA\_ASSERT\_CLOSE}}
+\index{QA\_ASSERT\_CLOSE@{QA\_ASSERT\_CLOSE}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{QA\_ASSERT\_CLOSE}{QA\_ASSERT\_CLOSE}}
+{\footnotesize\ttfamily \#define QA\+\_\+\+ASSERT\+\_\+\+CLOSE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  }\item[{}]{expected,  }\item[{}]{actual,  }\item[{}]{tolerance }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (fabs((expected)-\/(actual))>(tolerance)) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        printf( \textcolor{stringliteral}{"{}\%s:\%d -\/ ERROR -\/ \%s, expected \%f, got \%f, tol=\%f\(\backslash\)n"{}}, \_\_FILE\_\_, \_\_LINE\_\_, \mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}}, ((\textcolor{keywordtype}{double})(expected)), ((\textcolor{keywordtype}{double})(actual)), ((\textcolor{keywordtype}{double})(tolerance)) ); \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}{g\_testsFailed}}++; \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \mbox{\hyperlink{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}{g\_testsPassed}}++;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{qa__tools_8h_a7b7a778fc5894fc14595ed4f7754c0ae}\label{qa__tools_8h_a7b7a778fc5894fc14595ed4f7754c0ae}} 
+\index{qa\_tools.h@{qa\_tools.h}!QA\_ASSERT\_CLOSE\_INT@{QA\_ASSERT\_CLOSE\_INT}}
+\index{QA\_ASSERT\_CLOSE\_INT@{QA\_ASSERT\_CLOSE\_INT}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{QA\_ASSERT\_CLOSE\_INT}{QA\_ASSERT\_CLOSE\_INT}}
+{\footnotesize\ttfamily \#define QA\+\_\+\+ASSERT\+\_\+\+CLOSE\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  }\item[{}]{expected,  }\item[{}]{actual,  }\item[{}]{tolerance }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if} (abs((expected)-\/(actual))>(tolerance)) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        printf( \textcolor{stringliteral}{"{}\%s:\%d -\/ ERROR -\/ \%s, expected \%d, got \%d, tol=\%d\(\backslash\)n"{}}, \_\_FILE\_\_, \_\_LINE\_\_, \mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}}, ((\textcolor{keywordtype}{int})(expected)), ((\textcolor{keywordtype}{int})(actual)), ((\textcolor{keywordtype}{int})(tolerance)) ); \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}{g\_testsFailed}}++; \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \mbox{\hyperlink{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}{g\_testsPassed}}++;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{qa__tools_8h_a236d0b49165b23edd501e3562ae14485}\label{qa__tools_8h_a236d0b49165b23edd501e3562ae14485}} 
+\index{qa\_tools.h@{qa\_tools.h}!QA\_ASSERT\_EQUALS@{QA\_ASSERT\_EQUALS}}
+\index{QA\_ASSERT\_EQUALS@{QA\_ASSERT\_EQUALS}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{QA\_ASSERT\_EQUALS}{QA\_ASSERT\_EQUALS}}
+{\footnotesize\ttfamily \#define QA\+\_\+\+ASSERT\+\_\+\+EQUALS(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  }\item[{}]{expected,  }\item[{}]{actual }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( ((expected) != (actual)) ) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        printf( \textcolor{stringliteral}{"{}\%s:\%d -\/ ERROR -\/ \%s, expected \%d, got \%d\(\backslash\)n"{}}, \_\_FILE\_\_, \_\_LINE\_\_, \mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}}, expected, actual ); \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}{g\_testsFailed}}++; \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \mbox{\hyperlink{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}{g\_testsPassed}}++;}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{qa__tools_8h_ab91b54409a2bc9579a9ef7b166b28ef8}\label{qa__tools_8h_ab91b54409a2bc9579a9ef7b166b28ef8}} 
+\index{qa\_tools.h@{qa\_tools.h}!QA\_ASSERT\_TRUE@{QA\_ASSERT\_TRUE}}
+\index{QA\_ASSERT\_TRUE@{QA\_ASSERT\_TRUE}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{QA\_ASSERT\_TRUE}{QA\_ASSERT\_TRUE}}
+{\footnotesize\ttfamily \#define QA\+\_\+\+ASSERT\+\_\+\+TRUE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}},  }\item[{}]{flag }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( !(flag) ) \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        printf( \textcolor{stringliteral}{"{}\%s:\%d -\/ ERROR -\/ \%s\(\backslash\)n"{}}, \_\_FILE\_\_, \_\_LINE\_\_, \mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}} ); \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}{g\_testsFailed}}++; \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{    \} \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{else} \mbox{\hyperlink{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}{g\_testsPassed}}++;}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}\label{qa__tools_8h_abc551f796bcb00b87be6ed28f3cb0446}} 
+\index{qa\_tools.h@{qa\_tools.h}!g\_testsFailed@{g\_testsFailed}}
+\index{g\_testsFailed@{g\_testsFailed}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{g\_testsFailed}{g\_testsFailed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Failed\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}\label{qa__tools_8h_a76cd77e50cf6ecedced8c3c04acc8fed}} 
+\index{qa\_tools.h@{qa\_tools.h}!g\_testsPassed@{g\_testsPassed}}
+\index{g\_testsPassed@{g\_testsPassed}!qa\_tools.h@{qa\_tools.h}}
+\doxysubsubsection{\texorpdfstring{g\_testsPassed}{g\_testsPassed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Passed\hspace{0.3cm}{\ttfamily [extern]}}
+
+Accumulate counts for how many tests pass or fail. 

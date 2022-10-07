@@ -1,0 +1,102 @@
+\hypertarget{paex__mono__asio__channel__select_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/examples/paex\+\_\+mono\+\_\+asio\+\_\+channel\+\_\+select.c File Reference}
+\label{paex__mono__asio__channel__select_8c}\index{Hexeng2D/dependencies/portaudio/examples/paex\_mono\_asio\_channel\_select.c@{Hexeng2D/dependencies/portaudio/examples/paex\_mono\_asio\_channel\_select.c}}
+
+
+Play a monophonic sine wave on a specific ASIO channel.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+asio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(10)
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae2d3a48fb01bbc0fe795724379434d05}{AMPLITUDE}}~(0.\+8)
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_a6ee1df754f053739d33f2d477bdd3c10}{OUTPUT\+\_\+\+DEVICE}}~\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}()
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{paex__mono__asio__channel__select_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paex__mono__asio__channel__select_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play a monophonic sine wave on a specific ASIO channel. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_ae2d3a48fb01bbc0fe795724379434d05}\label{paex__mono__asio__channel__select_8c_ae2d3a48fb01bbc0fe795724379434d05}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!AMPLITUDE@{AMPLITUDE}}
+\index{AMPLITUDE@{AMPLITUDE}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{AMPLITUDE}{AMPLITUDE}}
+{\footnotesize\ttfamily \#define AMPLITUDE~(0.\+8)}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{paex__mono__asio__channel__select_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{paex__mono__asio__channel__select_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(10)}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_a6ee1df754f053739d33f2d477bdd3c10}\label{paex__mono__asio__channel__select_8c_a6ee1df754f053739d33f2d477bdd3c10}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!OUTPUT\_DEVICE@{OUTPUT\_DEVICE}}
+\index{OUTPUT\_DEVICE@{OUTPUT\_DEVICE}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_DEVICE}{OUTPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+DEVICE~\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}()}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{paex__mono__asio__channel__select_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_a032503e76d6f69bc67e99e909c8125da}\label{paex__mono__asio__channel__select_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paex__mono__asio__channel__select_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{paex__mono__asio__channel__select_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}!main@{main}}
+\index{main@{main}!paex\_mono\_asio\_channel\_select.c@{paex\_mono\_asio\_channel\_select.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

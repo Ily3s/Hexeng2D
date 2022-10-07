@@ -1,0 +1,136 @@
+\hypertarget{struct_pa_asi_hpi_stream}{}\doxysection{Pa\+Asi\+Hpi\+Stream Struct Reference}
+\label{struct_pa_asi_hpi_stream}\index{PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_a9c4b93e3228c1659e33f1f48d269c849}{base\+Stream\+Rep}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_af369ced5674ff0a5f622a1b58232bfc4}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_a80292f716701b4bd9ba52e27dea4d00c}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_a73f6f13ff2d5dd03ef5df9946b5d9f5f}{allocations}}
+\item 
+\mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}} $\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_a5c0b414b7ab1b1f2fef8fa5512a1e944}{input}}
+\item 
+\mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}} $\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_aafbaf53953d492ea86a8a80159860974}{output}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_aef07ecb3b6d4d1dcb1669d4e3925ebdb}{polling\+Interval}}
+\item 
+int \mbox{\hyperlink{struct_pa_asi_hpi_stream_a9ec09a8e74639bef0acf580cb33f9a35}{callback\+Mode}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_asi_hpi_stream_abcaf386b2ddf78d402841682d6b9ff2c}{max\+Frames\+Per\+Host\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_pa_asi_hpi_stream_a4310add2bc6454a4a9a2aeede23a4fea}{never\+Drop\+Input}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_a9950b6297cfa3e55110a4e079606e9e3}{blocking\+User\+Buffer\+Copy}}
+\item 
+\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} \mbox{\hyperlink{struct_pa_asi_hpi_stream_ab1b5110d6b838483c92f1e914da6abee}{thread}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_a3d0fb974d92bab23a1f2eab9519e4e08}{state}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_a3b0ba003d3177d66b4f89a7d8b6ee659}{callback\+Abort}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_aa85410e770efbd7cfed99452c314809f}{callback\+Finished}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stream data 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_a73f6f13ff2d5dd03ef5df9946b5d9f5f}\label{struct_pa_asi_hpi_stream_a73f6f13ff2d5dd03ef5df9946b5d9f5f}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!allocations@{allocations}}
+\index{allocations@{allocations}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{allocations}{allocations}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}}$\ast$ Pa\+Asi\+Hpi\+Stream\+::allocations}
+
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_a9c4b93e3228c1659e33f1f48d269c849}\label{struct_pa_asi_hpi_stream_a9c4b93e3228c1659e33f1f48d269c849}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!baseStreamRep@{baseStreamRep}}
+\index{baseStreamRep@{baseStreamRep}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{baseStreamRep}{baseStreamRep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Asi\+Hpi\+Stream\+::base\+Stream\+Rep}
+
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_a9950b6297cfa3e55110a4e079606e9e3}\label{struct_pa_asi_hpi_stream_a9950b6297cfa3e55110a4e079606e9e3}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!blockingUserBufferCopy@{blockingUserBufferCopy}}
+\index{blockingUserBufferCopy@{blockingUserBufferCopy}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{blockingUserBufferCopy}{blockingUserBufferCopy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asi\+Hpi\+Stream\+::blocking\+User\+Buffer\+Copy}
+
+Contains copy of user buffers, used by blocking interface to transfer non-\/interleaved data. It went here instead of to each stream component, as the stream component buffer setup in Pa\+Asi\+Hpi\+\_\+\+Setup\+Buffers doesn\textquotesingle{}t know the stream details such as callback\+Mode. (Maybe a problem later if Read\+Stream and Write\+Stream happens concurrently on same stream.) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_a80292f716701b4bd9ba52e27dea4d00c}\label{struct_pa_asi_hpi_stream_a80292f716701b4bd9ba52e27dea4d00c}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Asi\+Hpi\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_a3b0ba003d3177d66b4f89a7d8b6ee659}\label{struct_pa_asi_hpi_stream_a3b0ba003d3177d66b4f89a7d8b6ee659}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!callbackAbort@{callbackAbort}}
+\index{callbackAbort@{callbackAbort}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{callbackAbort}{callbackAbort}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Asi\+Hpi\+Stream\+::callback\+Abort}
+
+Hard abort, i.\+e. drop frames? \mbox{\Hypertarget{struct_pa_asi_hpi_stream_aa85410e770efbd7cfed99452c314809f}\label{struct_pa_asi_hpi_stream_aa85410e770efbd7cfed99452c314809f}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!callbackFinished@{callbackFinished}}
+\index{callbackFinished@{callbackFinished}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{callbackFinished}{callbackFinished}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Asi\+Hpi\+Stream\+::callback\+Finished}
+
+True if stream stopped via exiting callback with pa\+Complete/pa\+Abort flag (as opposed to explicit call to Stop\+Stream/\+Abort\+Stream) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_a9ec09a8e74639bef0acf580cb33f9a35}\label{struct_pa_asi_hpi_stream_a9ec09a8e74639bef0acf580cb33f9a35}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!callbackMode@{callbackMode}}
+\index{callbackMode@{callbackMode}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{callbackMode}{callbackMode}}
+{\footnotesize\ttfamily int Pa\+Asi\+Hpi\+Stream\+::callback\+Mode}
+
+Are we running in callback mode? \mbox{\Hypertarget{struct_pa_asi_hpi_stream_af369ced5674ff0a5f622a1b58232bfc4}\label{struct_pa_asi_hpi_stream_af369ced5674ff0a5f622a1b58232bfc4}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Asi\+Hpi\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_a5c0b414b7ab1b1f2fef8fa5512a1e944}\label{struct_pa_asi_hpi_stream_a5c0b414b7ab1b1f2fef8fa5512a1e944}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!input@{input}}
+\index{input@{input}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{input}{input}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}}$\ast$ Pa\+Asi\+Hpi\+Stream\+::input}
+
+Separate structs for input and output sides of stream \mbox{\Hypertarget{struct_pa_asi_hpi_stream_abcaf386b2ddf78d402841682d6b9ff2c}\label{struct_pa_asi_hpi_stream_abcaf386b2ddf78d402841682d6b9ff2c}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!maxFramesPerHostBuffer@{maxFramesPerHostBuffer}}
+\index{maxFramesPerHostBuffer@{maxFramesPerHostBuffer}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{maxFramesPerHostBuffer}{maxFramesPerHostBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Asi\+Hpi\+Stream\+::max\+Frames\+Per\+Host\+Buffer}
+
+Number of frames to transfer at a time to/from HPI \mbox{\Hypertarget{struct_pa_asi_hpi_stream_a4310add2bc6454a4a9a2aeede23a4fea}\label{struct_pa_asi_hpi_stream_a4310add2bc6454a4a9a2aeede23a4fea}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!neverDropInput@{neverDropInput}}
+\index{neverDropInput@{neverDropInput}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{neverDropInput}{neverDropInput}}
+{\footnotesize\ttfamily int Pa\+Asi\+Hpi\+Stream\+::never\+Drop\+Input}
+
+Indicates that the stream is in the pa\+Never\+Drop\+Input mode \mbox{\Hypertarget{struct_pa_asi_hpi_stream_aafbaf53953d492ea86a8a80159860974}\label{struct_pa_asi_hpi_stream_aafbaf53953d492ea86a8a80159860974}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!output@{output}}
+\index{output@{output}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_asi_hpi_stream_component}{Pa\+Asi\+Hpi\+Stream\+Component}} $\ast$ Pa\+Asi\+Hpi\+Stream\+::output}
+
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_aef07ecb3b6d4d1dcb1669d4e3925ebdb}\label{struct_pa_asi_hpi_stream_aef07ecb3b6d4d1dcb1669d4e3925ebdb}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!pollingInterval@{pollingInterval}}
+\index{pollingInterval@{pollingInterval}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{pollingInterval}{pollingInterval}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+::polling\+Interval}
+
+Polling interval (in milliseconds) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_a3d0fb974d92bab23a1f2eab9519e4e08}\label{struct_pa_asi_hpi_stream_a3d0fb974d92bab23a1f2eab9519e4e08}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!state@{state}}
+\index{state@{state}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Asi\+Hpi\+Stream\+::state}
+
+Port\+Audio stream state (Active/\+Stopped/\+Callback\+Finished) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_ab1b5110d6b838483c92f1e914da6abee}\label{struct_pa_asi_hpi_stream_ab1b5110d6b838483c92f1e914da6abee}} 
+\index{PaAsiHpiStream@{PaAsiHpiStream}!thread@{thread}}
+\index{thread@{thread}!PaAsiHpiStream@{PaAsiHpiStream}}
+\doxysubsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} Pa\+Asi\+Hpi\+Stream\+::thread}
+
+Helper thread which will deliver data to user callback 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/asihpi/\mbox{\hyperlink{pa__linux__asihpi_8c}{pa\+\_\+linux\+\_\+asihpi.\+c}}\end{DoxyCompactItemize}

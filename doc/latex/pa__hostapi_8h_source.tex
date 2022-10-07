@@ -1,0 +1,201 @@
+\hypertarget{pa__hostapi_8h_source}{}\doxysection{pa\+\_\+hostapi.\+h}
+\label{pa__hostapi_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_hostapi.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_hostapi.h}}
+\mbox{\hyperlink{pa__hostapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_HOSTAPI\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_HOSTAPI\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library}}
+\DoxyCodeLine{6 \textcolor{comment}{ * host api representation}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ * Copyright (c) 1999-\/2008 Ross Bencina, Phil Burk}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{12 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{13 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{17 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{20 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{24 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{25 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{26 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{27 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{28 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/*}}
+\DoxyCodeLine{32 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{33 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{34 \textcolor{comment}{ *}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{36 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{37 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{38 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{39 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{40 \textcolor{comment}{ */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#ifndef PA\_USE\_SKELETON}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define PA\_USE\_SKELETON 0}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#elif (PA\_USE\_SKELETON != 0) \&\& (PA\_USE\_SKELETON != 1)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#undef PA\_USE\_SKELETON}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define PA\_USE\_SKELETON 1}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#if defined(PA\_NO\_ASIO) || defined(PA\_NO\_DS) || defined(PA\_NO\_WMME) || defined(PA\_NO\_WASAPI) || defined(PA\_NO\_WDMKS)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#error "{}Portaudio: PA\_NO\_<APINAME> is no longer supported, please remove definition and use PA\_USE\_<APINAME> instead"{}}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#ifndef PA\_USE\_ASIO}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define PA\_USE\_ASIO 0}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#elif (PA\_USE\_ASIO != 0) \&\& (PA\_USE\_ASIO != 1)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#undef PA\_USE\_ASIO}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PA\_USE\_ASIO 1}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#ifndef PA\_USE\_DS}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PA\_USE\_DS 0}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#elif (PA\_USE\_DS != 0) \&\& (PA\_USE\_DS != 1)}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#undef PA\_USE\_DS}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define PA\_USE\_DS 1}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifndef PA\_USE\_WMME}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define PA\_USE\_WMME 0}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#elif (PA\_USE\_WMME != 0) \&\& (PA\_USE\_WMME != 1)}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#undef PA\_USE\_WMME}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define PA\_USE\_WMME 1}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#ifndef PA\_USE\_WASAPI}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define PA\_USE\_WASAPI 0}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#elif (PA\_USE\_WASAPI != 0) \&\& (PA\_USE\_WASAPI != 1)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#undef PA\_USE\_WASAPI}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PA\_USE\_WASAPI 1}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#ifndef PA\_USE\_WDMKS}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define PA\_USE\_WDMKS 0}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#elif (PA\_USE\_WDMKS != 0) \&\& (PA\_USE\_WDMKS != 1)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#undef PA\_USE\_WDMKS}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define PA\_USE\_WDMKS 1}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{/* Set default values for Unix based APIs. */}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#if defined(PA\_NO\_OSS) || defined(PA\_NO\_ALSA) || defined(PA\_NO\_JACK) || defined(PA\_NO\_COREAUDIO) || defined(PA\_NO\_SGI) || defined(PA\_NO\_ASIHPI)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#error "{}Portaudio: PA\_NO\_<APINAME> is no longer supported, please remove definition and use PA\_USE\_<APINAME> instead"{}}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#ifndef PA\_USE\_OSS}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define PA\_USE\_OSS 0}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#elif (PA\_USE\_OSS != 0) \&\& (PA\_USE\_OSS != 1)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#undef PA\_USE\_OSS}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define PA\_USE\_OSS 1}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#ifndef PA\_USE\_ALSA}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define PA\_USE\_ALSA 0}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#elif (PA\_USE\_ALSA != 0) \&\& (PA\_USE\_ALSA != 1)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#undef PA\_USE\_ALSA}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define PA\_USE\_ALSA 1}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#ifndef PA\_USE\_JACK}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define PA\_USE\_JACK 0}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#elif (PA\_USE\_JACK != 0) \&\& (PA\_USE\_JACK != 1)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#undef PA\_USE\_JACK}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PA\_USE\_JACK 1}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#ifndef PA\_USE\_SGI}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define PA\_USE\_SGI 0}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#elif (PA\_USE\_SGI != 0) \&\& (PA\_USE\_SGI != 1)}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#undef PA\_USE\_SGI}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define PA\_USE\_SGI 1}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifndef PA\_USE\_COREAUDIO}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define PA\_USE\_COREAUDIO 0}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#elif (PA\_USE\_COREAUDIO != 0) \&\& (PA\_USE\_COREAUDIO != 1)}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#undef PA\_USE\_COREAUDIO}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define PA\_USE\_COREAUDIO 1}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#ifndef PA\_USE\_ASIHPI}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define PA\_USE\_ASIHPI 0}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#elif (PA\_USE\_ASIHPI != 0) \&\& (PA\_USE\_ASIHPI != 1)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#undef PA\_USE\_ASIHPI}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define PA\_USE\_ASIHPI 1}}
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{157 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{158 \{}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 }
+\DoxyCodeLine{167 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info}{PaUtilPrivatePaFrontHostApiInfo}} \{}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info_a5d7f8026ea1a9ada67d6f83906b4ba19}{baseDeviceIndex}};}
+\DoxyCodeLine{171 \}\mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info}{PaUtilPrivatePaFrontHostApiInfo}};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{182 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_host_api_specific_stream_info_header}{PaUtilHostApiSpecificStreamInfoHeader}}}
+\DoxyCodeLine{183 \{}
+\DoxyCodeLine{184     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_host_api_specific_stream_info_header_a5d849a7ce54b016c9c2603163bd074f5}{size}};             }
+\DoxyCodeLine{185     \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{struct_pa_util_host_api_specific_stream_info_header_aff56933cb47b596b6786dee809d0b29f}{hostApiType}};    }
+\DoxyCodeLine{186     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_host_api_specific_stream_info_header_ac680579e35ad683da774a3dd1cb38174}{version}};          }
+\DoxyCodeLine{187 \} \mbox{\hyperlink{struct_pa_util_host_api_specific_stream_info_header}{PaUtilHostApiSpecificStreamInfoHeader}};}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{194 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} \{}
+\DoxyCodeLine{195     \mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info}{PaUtilPrivatePaFrontHostApiInfo}} \mbox{\hyperlink{struct_pa_util_host_api_representation_a5bef19eb1f47b8b5153d5f2fb76699eb}{privatePaFrontInfo}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{204     \mbox{\hyperlink{struct_pa_host_api_info}{PaHostApiInfo}} \mbox{\hyperlink{struct_pa_util_host_api_representation_a9c443aa6cf07d3c46167a91b274a9e94}{info}};}
+\DoxyCodeLine{205 }
+\DoxyCodeLine{206     \mbox{\hyperlink{struct_pa_device_info}{PaDeviceInfo}}** \mbox{\hyperlink{struct_pa_util_host_api_representation_a48dcfdf57e6d12d33314929ac213ae28}{deviceInfos}};}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{213     \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (*\mbox{\hyperlink{struct_pa_util_host_api_representation_a832b3f01b9d9a84b5442e27d365f8b9f}{Terminate}})( \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} *hostApi );}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{310     \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} (*\mbox{\hyperlink{struct_pa_util_host_api_representation_aa415b57fadf39a49d6bc5740f06089e4}{OpenStream}})( \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} *hostApi,}
+\DoxyCodeLine{311                            \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}** \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}},}
+\DoxyCodeLine{312                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *inputParameters,}
+\DoxyCodeLine{313                            \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *outputParameters,}
+\DoxyCodeLine{314                            \textcolor{keywordtype}{double} sampleRate,}
+\DoxyCodeLine{315                            \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesPerCallback,}
+\DoxyCodeLine{316                            \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{PaStreamFlags}} streamFlags,}
+\DoxyCodeLine{317                            \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}} *streamCallback,}
+\DoxyCodeLine{318                            \textcolor{keywordtype}{void} *userData );}
+\DoxyCodeLine{319 }
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} (*\mbox{\hyperlink{struct_pa_util_host_api_representation_a54205572c891d43272de45be0994c377}{IsFormatSupported}})( \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} *hostApi,}
+\DoxyCodeLine{322                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *inputParameters,}
+\DoxyCodeLine{323                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *outputParameters,}
+\DoxyCodeLine{324                                   \textcolor{keywordtype}{double} sampleRate );}
+\DoxyCodeLine{325 \} \mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}};}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 }
+\DoxyCodeLine{339 \textcolor{keyword}{typedef} \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__hostapi_8h_ab0c89969a0c6107e7bf8e8f96adaa72d}{PaUtilHostApiInitializer}}( \mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}}**, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}} );}
+\DoxyCodeLine{340 }
+\DoxyCodeLine{341 }
+\DoxyCodeLine{356 \textcolor{keyword}{extern} \mbox{\hyperlink{pa__hostapi_8h_ab0c89969a0c6107e7bf8e8f96adaa72d}{PaUtilHostApiInitializer}} *\mbox{\hyperlink{pa__hostapi_8h_a383c15c810f1403d26bb07524bd0935f}{paHostApiInitializers}}[];}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 }
+\DoxyCodeLine{359 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{360 \}}
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_HOSTAPI\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

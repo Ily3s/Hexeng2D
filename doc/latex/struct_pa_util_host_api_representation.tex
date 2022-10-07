@@ -1,0 +1,157 @@
+\hypertarget{struct_pa_util_host_api_representation}{}\doxysection{Pa\+Util\+Host\+Api\+Representation Struct Reference}
+\label{struct_pa_util_host_api_representation}\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+
+
+{\ttfamily \#include $<$pa\+\_\+hostapi.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info}{Pa\+Util\+Private\+Pa\+Front\+Host\+Api\+Info}} \mbox{\hyperlink{struct_pa_util_host_api_representation_a5bef19eb1f47b8b5153d5f2fb76699eb}{private\+Pa\+Front\+Info}}
+\item 
+\mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} \mbox{\hyperlink{struct_pa_util_host_api_representation_a9c443aa6cf07d3c46167a91b274a9e94}{info}}
+\item 
+\mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_util_host_api_representation_a48dcfdf57e6d12d33314929ac213ae28}{device\+Infos}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{struct_pa_util_host_api_representation_a832b3f01b9d9a84b5442e27d365f8b9f}{Terminate}} )(struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ \mbox{\hyperlink{struct_pa_util_host_api_representation_aa415b57fadf39a49d6bc5740f06089e4}{Open\+Stream}} )(struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate, unsigned long frames\+Per\+Callback, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} stream\+Flags, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ \mbox{\hyperlink{struct_pa_util_host_api_representation_a54205572c891d43272de45be0994c377}{Is\+Format\+Supported}} )(struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure representing the interface to a host API. Contains both concrete data and pointers to functions which implement the interface. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_util_host_api_representation_a48dcfdf57e6d12d33314929ac213ae28}\label{struct_pa_util_host_api_representation_a48dcfdf57e6d12d33314929ac213ae28}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!deviceInfos@{deviceInfos}}
+\index{deviceInfos@{deviceInfos}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{deviceInfos}{deviceInfos}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}}$\ast$$\ast$ Pa\+Util\+Host\+Api\+Representation\+::device\+Infos}
+
+\mbox{\Hypertarget{struct_pa_util_host_api_representation_a9c443aa6cf07d3c46167a91b274a9e94}\label{struct_pa_util_host_api_representation_a9c443aa6cf07d3c46167a91b274a9e94}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!info@{info}}
+\index{info@{info}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{info}{info}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} Pa\+Util\+Host\+Api\+Representation\+::info}
+
+The host api implementation should populate the info field. In the case of info.\+default\+Input\+Device and info.\+default\+Output\+Device the values stored should be 0 based indices within the host api\textquotesingle{}s own device index range (0 to device\+Count). These values will be converted to global device indices by pa\+\_\+front after \mbox{\hyperlink{pa__hostapi_8h_ab0c89969a0c6107e7bf8e8f96adaa72d}{Pa\+Util\+Host\+Api\+Initializer()}} returns. \mbox{\Hypertarget{struct_pa_util_host_api_representation_a54205572c891d43272de45be0994c377}\label{struct_pa_util_host_api_representation_a54205572c891d43272de45be0994c377}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!IsFormatSupported@{IsFormatSupported}}
+\index{IsFormatSupported@{IsFormatSupported}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{IsFormatSupported}{IsFormatSupported}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ Pa\+Util\+Host\+Api\+Representation\+::\+Is\+Format\+Supported) (struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate)}
+
+\mbox{\Hypertarget{struct_pa_util_host_api_representation_aa415b57fadf39a49d6bc5740f06089e4}\label{struct_pa_util_host_api_representation_aa415b57fadf39a49d6bc5740f06089e4}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!OpenStream@{OpenStream}}
+\index{OpenStream@{OpenStream}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{OpenStream}{OpenStream}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$ Pa\+Util\+Host\+Api\+Representation\+::\+Open\+Stream) (struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate, unsigned long frames\+Per\+Callback, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} stream\+Flags, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)}
+
+The input\+Parameters and output\+Parameters pointers should not be saved as they will not remain valid after Open\+Stream is called.
+
+The following guarantees are made about parameters to ($\ast$\+Open\+Stream)()\+: \begin{DoxyVerb}[NOTE: the following list up to *END PA FRONT VALIDATIONS* should be
+    kept in sync with the one for ValidateOpenStreamParameters and
+    Pa_OpenStream in pa_front.c]
+
+PaHostApiRepresentation *hostApi
+    - is valid for this implementation
+
+PaStream** stream
+    - is non-null
+
+- at least one of inputParameters & outputParmeters is valid (not NULL)
+
+- if inputParameters & outputParmeters are both valid, that
+    inputParameters->device & outputParmeters->device  both use the same host api
+
+PaDeviceIndex inputParameters->device
+    - is within range (0 to Pa_CountDevices-1) Or:
+    - is paUseHostApiSpecificDeviceSpecification and
+        inputParameters->hostApiSpecificStreamInfo is non-NULL and refers
+        to a valid host api
+
+int inputParameters->numChannels
+    - if inputParameters->device is not paUseHostApiSpecificDeviceSpecification, numInputChannels is > 0
+    - upper bound is NOT validated against device capabilities
+
+PaSampleFormat inputParameters->sampleFormat
+    - is one of the sample formats defined in portaudio.h
+
+void *inputParameters->hostApiSpecificStreamInfo
+    - if supplied its hostApi field matches the input device's host Api
+
+PaDeviceIndex outputParmeters->device
+    - is within range (0 to Pa_CountDevices-1)
+
+int outputParmeters->numChannels
+    - if inputDevice is valid, numInputChannels is > 0
+    - upper bound is NOT validated against device capabilities
+
+PaSampleFormat outputParmeters->sampleFormat
+    - is one of the sample formats defined in portaudio.h
+
+void *outputParmeters->hostApiSpecificStreamInfo
+    - if supplied its hostApi field matches the output device's host Api
+
+double sampleRate
+    - is not an 'absurd' rate (less than 1000. or greater than 384000.)
+    - sampleRate is NOT validated against device capabilities
+
+PaStreamFlags streamFlags
+    - unused platform neutral flags are zero
+    - paNeverDropInput is only used for full-duplex callback streams
+        with variable buffer size (paFramesPerBufferUnspecified)
+
+[*END PA FRONT VALIDATIONS*]
+\end{DoxyVerb}
+
+
+The following validations MUST be performed by ($\ast$\+Open\+Stream)()\+: \begin{DoxyVerb}- check that input device can support numInputChannels
+
+- check that input device can support inputSampleFormat, or that
+    we have the capability to convert from outputSampleFormat to
+    a native format
+
+- if inputStreamInfo is supplied, validate its contents,
+    or return an error if no inputStreamInfo is expected
+
+- check that output device can support numOutputChannels
+
+- check that output device can support outputSampleFormat, or that
+    we have the capability to convert from outputSampleFormat to
+    a native format
+
+- if outputStreamInfo is supplied, validate its contents,
+    or return an error if no outputStreamInfo is expected
+
+- if a full duplex stream is requested, check that the combination
+    of input and output parameters is supported
+
+- check that the device supports sampleRate
+
+- alter sampleRate to a close allowable rate if necessary
+
+- validate inputLatency and outputLatency
+
+- validate any platform specific flags, if flags are supplied they
+    must be valid.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{struct_pa_util_host_api_representation_a5bef19eb1f47b8b5153d5f2fb76699eb}\label{struct_pa_util_host_api_representation_a5bef19eb1f47b8b5153d5f2fb76699eb}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!privatePaFrontInfo@{privatePaFrontInfo}}
+\index{privatePaFrontInfo@{privatePaFrontInfo}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{privatePaFrontInfo}{privatePaFrontInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_private_pa_front_host_api_info}{Pa\+Util\+Private\+Pa\+Front\+Host\+Api\+Info}} Pa\+Util\+Host\+Api\+Representation\+::private\+Pa\+Front\+Info}
+
+\mbox{\Hypertarget{struct_pa_util_host_api_representation_a832b3f01b9d9a84b5442e27d365f8b9f}\label{struct_pa_util_host_api_representation_a832b3f01b9d9a84b5442e27d365f8b9f}} 
+\index{PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}!Terminate@{Terminate}}
+\index{Terminate@{Terminate}!PaUtilHostApiRepresentation@{PaUtilHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{Terminate}{Terminate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Pa\+Util\+Host\+Api\+Representation\+::\+Terminate) (struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api)}
+
+($\ast$\+Terminate)() is guaranteed to be called with a valid $<$host\+Api$>$ parameter, which was previously returned from the same implementation\textquotesingle{}s initializer. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/common/\mbox{\hyperlink{pa__hostapi_8h}{pa\+\_\+hostapi.\+h}}\end{DoxyCompactItemize}

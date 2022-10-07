@@ -1,0 +1,27 @@
+var struct_i_audio_midrange_vtbl =
+[
+    [ "__in_ecount", "struct_i_audio_midrange_vtbl.html#a9915442c9325e75441d3fceb4acba2c0", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#abe4a74bb3ea73ec744bc779582a3a952", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#a008b1e8a2afc46a8a9749351d2af029b", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#aa7c7d0d14601f17371eeaa5e302da517", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#a9f7d438a3656008e52dae10b44a68136", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#af69bf31996d8203249e3d29b93501392", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#ad0593f3ca08f7a0d98f3b93fc84c5067", null ],
+    [ "HRESULT", "struct_i_audio_midrange_vtbl.html#af883c71489969baaff5006a41375d785", null ],
+    [ "ULONG", "struct_i_audio_midrange_vtbl.html#a4ae51feb0628f9e09c999dc37503c5d5", null ],
+    [ "ULONG", "struct_i_audio_midrange_vtbl.html#ad118787060ea6dc40329b80dc25a8ded", null ],
+    [ "cChannels", "struct_i_audio_midrange_vtbl.html#a581ad81f4b0a1af5b95b02100a092690", null ],
+    [ "fLevelDB", "struct_i_audio_midrange_vtbl.html#ad73d63c4ecaa6446a53feb1e6bcfb0cf", null ],
+    [ "fLevelDB", "struct_i_audio_midrange_vtbl.html#a575bd31ba20fb4926ac8e38428ae9659", null ],
+    [ "nChannel", "struct_i_audio_midrange_vtbl.html#ac2ba7cd3ad889e27ed7d2014c00877ca", null ],
+    [ "pcChannels", "struct_i_audio_midrange_vtbl.html#a8ae63f95c6a0e78d2dd6ff802d69f947", null ],
+    [ "pfLevelDB", "struct_i_audio_midrange_vtbl.html#a84379d22ae1c1201da8a8ad7663b9793", null ],
+    [ "pfMaxLevelDB", "struct_i_audio_midrange_vtbl.html#aa232429db6fad449ab80aa31598399c7", null ],
+    [ "pfMinLevelDB", "struct_i_audio_midrange_vtbl.html#a6318b039c0da4920bf16da37a1c80568", null ],
+    [ "pfStepping", "struct_i_audio_midrange_vtbl.html#a382fb50e024b6b37d02cbefa594e9f8c", null ],
+    [ "pguidEventContext", "struct_i_audio_midrange_vtbl.html#ae4a9758067e08540743362b953da12bb", null ],
+    [ "pguidEventContext", "struct_i_audio_midrange_vtbl.html#a289baa5a5a7e94a1528939f1e838ef7c", null ],
+    [ "pguidEventContext", "struct_i_audio_midrange_vtbl.html#ab0b10ee57bc0d511ac57684dc71a7061", null ],
+    [ "ppvObject", "struct_i_audio_midrange_vtbl.html#acd73bdd66898a770860001a0dfa153de", null ],
+    [ "riid", "struct_i_audio_midrange_vtbl.html#a8bed12d78dba93d5870f9a53554488c2", null ]
+];

@@ -1,0 +1,175 @@
+\hypertarget{pa__converters_8h_source}{}\doxysection{pa\+\_\+converters.\+h}
+\label{pa__converters_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.h}}
+\mbox{\hyperlink{pa__converters_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_CONVERTERS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_CONVERTERS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library sample conversion mechanism}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Phil Burk, Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}  \textcolor{comment}{/* for PaSampleFormat */}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{52 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{69 \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{pa__converters_8h_a74195475fe92d6b7b71de247f2b08184}{PaUtil\_SelectClosestAvailableFormat}}(}
+\DoxyCodeLine{70         \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} availableFormats, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}} );}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{comment}{/* high level conversions functions for use by implementations */}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}}(}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} *destinationBuffer, \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} destinationStride,}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} *sourceBuffer, \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} sourceStride,}
+\DoxyCodeLine{93     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}}, \textcolor{keyword}{struct} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}} *ditherGenerator );}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{107 \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}}* \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{PaUtil\_SelectConverter}}( \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} sourceFormat,}
+\DoxyCodeLine{108         \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} destinationFormat, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{PaStreamFlags}} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} );}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{119 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}}(}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} *destinationBuffer, \textcolor{keywordtype}{signed} \textcolor{keywordtype}{int} destinationStride, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}} );}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 }
+\DoxyCodeLine{128 \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}}* \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{PaUtil\_SelectZeroer}}( \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} destinationFormat );}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{131 \textcolor{comment}{/* low level functions and data structures which may be used for}}
+\DoxyCodeLine{132 \textcolor{comment}{    substituting conversion functions */}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 }
+\DoxyCodeLine{138 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{139     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a64701b747f08157a7e51eb167c2984bf}{Float32\_To\_Int32}};}
+\DoxyCodeLine{140     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a6ce00388d960201d8bcdf1e0fe04c1e7}{Float32\_To\_Int32\_Dither}};}
+\DoxyCodeLine{141     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a8fc5021de2523d81f2b4e01b0cf3bb87}{Float32\_To\_Int32\_Clip}};}
+\DoxyCodeLine{142     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a2e77a1a47e4018a4494197f95a7292b2}{Float32\_To\_Int32\_DitherClip}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a1d8ec1d1317b8bee63c1528282046394}{Float32\_To\_Int24}};}
+\DoxyCodeLine{145     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a0997447841c29b23d35da7c0623dc73d}{Float32\_To\_Int24\_Dither}};}
+\DoxyCodeLine{146     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a291efd6facea4de4d4f13d6dfefcf7ca}{Float32\_To\_Int24\_Clip}};}
+\DoxyCodeLine{147     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a4fbad41daae148fd43ebd1961d764e31}{Float32\_To\_Int24\_DitherClip}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a862bd862c373016ff4cb42362d4188aa}{Float32\_To\_Int16}};}
+\DoxyCodeLine{150     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a6f44a10b6e0fdd6703ddbf222824680b}{Float32\_To\_Int16\_Dither}};}
+\DoxyCodeLine{151     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a224dbdb27b7c497a43be0ac3628f4313}{Float32\_To\_Int16\_Clip}};}
+\DoxyCodeLine{152     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_aff1328d2334cef2836d4ff6dc7f5077d}{Float32\_To\_Int16\_DitherClip}};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a0daeb8fb3c880f6c08b3182e5b1604a4}{Float32\_To\_Int8}};}
+\DoxyCodeLine{155     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a206dcfac5181a45ef22c3f88411989e5}{Float32\_To\_Int8\_Dither}};}
+\DoxyCodeLine{156     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a2d1a63569dd768d4d482ce29c86b8792}{Float32\_To\_Int8\_Clip}};}
+\DoxyCodeLine{157     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_aac911fb6884627bc329a8c8cb74a7f23}{Float32\_To\_Int8\_DitherClip}};}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a16cb19ba65abf6fb4cca324e3836b937}{Float32\_To\_UInt8}};}
+\DoxyCodeLine{160     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a30c83c4ce7f1a546a8179c505dca8ae6}{Float32\_To\_UInt8\_Dither}};}
+\DoxyCodeLine{161     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a5275ac0893adb09ca0873c61c937309d}{Float32\_To\_UInt8\_Clip}};}
+\DoxyCodeLine{162     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a9d89e0192b8162e50edb545e95d875c0}{Float32\_To\_UInt8\_DitherClip}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a8972c97142ce75cf251a9e76e687e312}{Int32\_To\_Float32}};}
+\DoxyCodeLine{165     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a374be7d29ed710b488d0980e540a3823}{Int32\_To\_Int24}};}
+\DoxyCodeLine{166     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a2e120380bc1f476c88805f4425eda05c}{Int32\_To\_Int24\_Dither}};}
+\DoxyCodeLine{167     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ab3d7c1e04c7bc6d750b0ade5c60635ce}{Int32\_To\_Int16}};}
+\DoxyCodeLine{168     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a2d7fd46de928fa784d3b74b718c265a8}{Int32\_To\_Int16\_Dither}};}
+\DoxyCodeLine{169     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a7201612642789047cea27f922324c508}{Int32\_To\_Int8}};}
+\DoxyCodeLine{170     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a7b5fec6aef6cf4ad6d70301083f5107e}{Int32\_To\_Int8\_Dither}};}
+\DoxyCodeLine{171     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_afd0348c310748ad681344e775e4a6c80}{Int32\_To\_UInt8}};}
+\DoxyCodeLine{172     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a9660a8833606cd1f70796b11cced9496}{Int32\_To\_UInt8\_Dither}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a5f94481df4abfd3eb09321dd3ed348b1}{Int24\_To\_Float32}};}
+\DoxyCodeLine{175     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_aa627b4b50c5768277f69d952747b9d72}{Int24\_To\_Int32}};}
+\DoxyCodeLine{176     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a2a9d1a2f5457aceb7e6a687b2918b9a6}{Int24\_To\_Int16}};}
+\DoxyCodeLine{177     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a11fdace81e507c56b732f8015235a802}{Int24\_To\_Int16\_Dither}};}
+\DoxyCodeLine{178     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a917428fa6f2abebe37da9361a50ffade}{Int24\_To\_Int8}};}
+\DoxyCodeLine{179     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_af3a9b0e8c0eb34bceccea89dcfb865fc}{Int24\_To\_Int8\_Dither}};}
+\DoxyCodeLine{180     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a9591a7dd771f729ad3909d95b6ee66ef}{Int24\_To\_UInt8}};}
+\DoxyCodeLine{181     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ade2bc8ee129fda10efcfb14861559f5c}{Int24\_To\_UInt8\_Dither}};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ab32188637bd1a2d7fa7550d66c3b379b}{Int16\_To\_Float32}};}
+\DoxyCodeLine{184     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a1c73520d0c78bfbbc4ec5971d1cbae11}{Int16\_To\_Int32}};}
+\DoxyCodeLine{185     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a756e0ef56a671b20110f869ab2e0908e}{Int16\_To\_Int24}};}
+\DoxyCodeLine{186     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ab9be9617571f652b36a568dcf96ce8dd}{Int16\_To\_Int8}};}
+\DoxyCodeLine{187     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a31a224c28be90b537292f603736153b9}{Int16\_To\_Int8\_Dither}};}
+\DoxyCodeLine{188     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a7f5e61b0513db80bacd3979626eae18e}{Int16\_To\_UInt8}};}
+\DoxyCodeLine{189     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a74b1e7234626dab3016bcc9cef1bb466}{Int16\_To\_UInt8\_Dither}};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a69d0077c015e6ea7b804cbc3c150694e}{Int8\_To\_Float32}};}
+\DoxyCodeLine{192     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_abfdf69c3b6a1484cb42590453b102044}{Int8\_To\_Int32}};}
+\DoxyCodeLine{193     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a673c2c892f6cc9f4ed0f1604e23756ea}{Int8\_To\_Int24}};}
+\DoxyCodeLine{194     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ad91ea7c4b281a3c7662dda87e9bf34ab}{Int8\_To\_Int16}};}
+\DoxyCodeLine{195     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ac7562cee94f56fa8141d19506522e16d}{Int8\_To\_UInt8}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a5ace878d3d25ffe6e6cd4a53477f748c}{UInt8\_To\_Float32}};}
+\DoxyCodeLine{198     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a380da3ace6a93b492bee6be133579c35}{UInt8\_To\_Int32}};}
+\DoxyCodeLine{199     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a4ef3d4ced585f42bf87eaaf249eec785}{UInt8\_To\_Int24}};}
+\DoxyCodeLine{200     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a528a5c5de94630da91f487edddab8d26}{UInt8\_To\_Int16}};}
+\DoxyCodeLine{201     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a26de7b4f39c4039149712252d7fec098}{UInt8\_To\_Int8}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_aad050de93061e769c88bc81c07207c23}{Copy\_8\_To\_8}};       \textcolor{comment}{/* copy without any conversion */}}
+\DoxyCodeLine{204     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_ac4705d4b95c245196c5653dbccfcbbb9}{Copy\_16\_To\_16}};     \textcolor{comment}{/* copy without any conversion */}}
+\DoxyCodeLine{205     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a54a78a163a0a0371951fd202199c6436}{Copy\_24\_To\_24}};     \textcolor{comment}{/* copy without any conversion */}}
+\DoxyCodeLine{206     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_converter_table_a84473be550e04bb6802d5e6338c814de}{Copy\_32\_To\_32}};     \textcolor{comment}{/* copy without any conversion */}}
+\DoxyCodeLine{207 \} \mbox{\hyperlink{struct_pa_util_converter_table}{PaUtilConverterTable}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 }
+\DoxyCodeLine{227 \textcolor{keyword}{extern} \mbox{\hyperlink{struct_pa_util_converter_table}{PaUtilConverterTable}} \mbox{\hyperlink{pa__converters_8h_ad600a701983981d00371cb22ed6fb648}{paConverters}};}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{229 }
+\DoxyCodeLine{233 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}\{}
+\DoxyCodeLine{234     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_zeroer_table_ac1c2f1378f4ef904a85f068f89e6cfac}{ZeroU8}}; \textcolor{comment}{/* unsigned 8 bit, zero == 128 */}}
+\DoxyCodeLine{235     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_zeroer_table_a2d49dbb7533f517c11cbd1e262d5ce25}{Zero8}};}
+\DoxyCodeLine{236     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_zeroer_table_abfca3a1322dcf1895946fe75ec3fc73d}{Zero16}};}
+\DoxyCodeLine{237     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_zeroer_table_aad3b88d178671fa2ba7e0eb034aa3f72}{Zero24}};}
+\DoxyCodeLine{238     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_zeroer_table_a94e1a6aa731b624e5fb8f12296f1dea5}{Zero32}};}
+\DoxyCodeLine{239 \} \mbox{\hyperlink{struct_pa_util_zeroer_table}{PaUtilZeroerTable}};}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241 }
+\DoxyCodeLine{258 \textcolor{keyword}{extern} \mbox{\hyperlink{struct_pa_util_zeroer_table}{PaUtilZeroerTable}} \mbox{\hyperlink{pa__converters_8h_a5c96b77dd6fb2969291dbbb09c5fec94}{paZeroers}};}
+\DoxyCodeLine{259 }
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{261 \}}
+\DoxyCodeLine{262 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{263 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_CONVERTERS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

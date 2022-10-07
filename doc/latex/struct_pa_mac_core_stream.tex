@@ -1,0 +1,291 @@
+\hypertarget{struct_pa_mac_core_stream}{}\doxysection{Pa\+Mac\+Core\+Stream Struct Reference}
+\label{struct_pa_mac_core_stream}\index{PaMacCoreStream@{PaMacCoreStream}}
+
+
+{\ttfamily \#include $<$pa\+\_\+mac\+\_\+core\+\_\+internal.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a2db0c1fbc59ffd1ce39420043567034f}{STOPPED}} = 0
+, \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a9ccbe914a7f2cda7757a109e259d707c}{CALLBACK\+\_\+\+STOPPED}} = 1
+, \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ad7a565d0dc9a0f8056f8c308daf07234}{STOPPING}} = 2
+, \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ae9d399d5b7b458c6509601a9e4770c30}{ACTIVE}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_mac_core_stream_a37e7f3609f183162f0938ae24dd838f7}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_mac_core_stream_a589be1f91f8332bba6cc1b0b006f9b80}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_mac_core_stream_aa4c9fb315b5a2a91164f62d40e1f35a7}{buffer\+Processor}}
+\item 
+bool \mbox{\hyperlink{struct_pa_mac_core_stream_ac6468bfef6a09086a8ba75bd1825b3f4}{buffer\+Processor\+Is\+Initialized}}
+\item 
+Audio\+Unit \mbox{\hyperlink{struct_pa_mac_core_stream_a18489f920abd98c28ec23a08129a2a94}{input\+Unit}}
+\item 
+Audio\+Unit \mbox{\hyperlink{struct_pa_mac_core_stream_a834e659582a0b68100a0095ac6d45c7e}{output\+Unit}}
+\item 
+Audio\+Device\+ID \mbox{\hyperlink{struct_pa_mac_core_stream_a84ab00c3940677753cbcfaa0b4497817}{input\+Device}}
+\item 
+Audio\+Device\+ID \mbox{\hyperlink{struct_pa_mac_core_stream_ae982506be4fb075f57798b322893c477}{output\+Device}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_a8117390b82eb0f6aa238c1c0272f96b2}{user\+In\+Chan}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_aa672c86d838eb7f11ee03e939b7a58e5}{user\+Out\+Chan}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_a33e3792b0bebe4a05a5e794ec087e4c3}{input\+Frames\+Per\+Buffer}}
+\item 
+size\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_a6ba0534d56d18552f4dd23b5922b6caa}{output\+Frames\+Per\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} \mbox{\hyperlink{struct_pa_mac_core_stream_aeb24427958d583443b64443a9e25cdec}{blio}}
+\item 
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_mac_core_stream_a1c12d9d7f7f8174127c8ae35b96991dd}{input\+Ring\+Buffer}}
+\item 
+Audio\+Converter\+Ref \mbox{\hyperlink{struct_pa_mac_core_stream_ab3d6f024b40670367b5bbbe1444cba92}{input\+SRConverter}}
+\item 
+Audio\+Buffer\+List \mbox{\hyperlink{struct_pa_mac_core_stream_aa214b3f78a40dd23797a512b0892a098}{input\+Audio\+Buffer\+List}}
+\item 
+Audio\+Time\+Stamp \mbox{\hyperlink{struct_pa_mac_core_stream_aa9eec45ab4d032a62a5edf9815aa95c5}{start\+Time}}
+\item 
+volatile uint32\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_af65db3bdd18d4356f16fe5c2b23f7d5d}{xrun\+Flags}}
+\item 
+enum Pa\+Mac\+Core\+Stream\+:: \{ ... \}  \mbox{\hyperlink{struct_pa_mac_core_stream_aefae48cab23ed2d64c196c420d7f2387}{state}}
+\item 
+double \mbox{\hyperlink{struct_pa_mac_core_stream_a3e945d299bff5c01d6e8a4f6bd8dfffb}{sample\+Rate}}
+\item 
+\mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} \mbox{\hyperlink{struct_pa_mac_core_stream_a784e07f3c2e4f2e03989aab2614687b1}{input\+Properties}}
+\item 
+\mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} \mbox{\hyperlink{struct_pa_mac_core_stream_a7d1be4951510dd36b84abd1cc7daf49a}{output\+Properties}}
+\item 
+int \mbox{\hyperlink{struct_pa_mac_core_stream_a94404e181cea0bc1d2c82b2e6f541366}{timing\+Information\+Mutex\+Is\+Initialized}}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{struct_pa_mac_core_stream_ab03af1e2679f505b0ab8ad629a0b4a34}{timing\+Information\+Mutex}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a169f40774042f35654987a0d5daa369d}{timestamp\+Offset\+Combined}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a478d46d9d93bdc6d3cdb2009236c1d9e}{timestamp\+Offset\+Input\+Device}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a81525a1ff3c1cb96a57d44c5ca70f7c4}{timestamp\+Offset\+Output\+Device}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a8835149b249b0d65891cb7b7104bbd53}{timestamp\+Offset\+Combined\+\_\+io\+Proc\+Copy}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a5214bc58179dd3ab933567bff3eb0c71}{timestamp\+Offset\+Input\+Device\+\_\+io\+Proc\+Copy}}
+\item 
+Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a4eb660a54787d8965d59a774b21ab454}{timestamp\+Offset\+Output\+Device\+\_\+io\+Proc\+Copy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612}\label{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPED@{STOPPED}!PaMacCoreStream@{PaMacCoreStream}}\index{PaMacCoreStream@{PaMacCoreStream}!STOPPED@{STOPPED}}}\mbox{\Hypertarget{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a2db0c1fbc59ffd1ce39420043567034f}\label{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a2db0c1fbc59ffd1ce39420043567034f}} 
+STOPPED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CALLBACK\_STOPPED@{CALLBACK\_STOPPED}!PaMacCoreStream@{PaMacCoreStream}}\index{PaMacCoreStream@{PaMacCoreStream}!CALLBACK\_STOPPED@{CALLBACK\_STOPPED}}}\mbox{\Hypertarget{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a9ccbe914a7f2cda7757a109e259d707c}\label{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a9ccbe914a7f2cda7757a109e259d707c}} 
+CALLBACK\+\_\+\+STOPPED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOPPING@{STOPPING}!PaMacCoreStream@{PaMacCoreStream}}\index{PaMacCoreStream@{PaMacCoreStream}!STOPPING@{STOPPING}}}\mbox{\Hypertarget{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ad7a565d0dc9a0f8056f8c308daf07234}\label{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ad7a565d0dc9a0f8056f8c308daf07234}} 
+STOPPING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ACTIVE@{ACTIVE}!PaMacCoreStream@{PaMacCoreStream}}\index{PaMacCoreStream@{PaMacCoreStream}!ACTIVE@{ACTIVE}}}\mbox{\Hypertarget{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ae9d399d5b7b458c6509601a9e4770c30}\label{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ae9d399d5b7b458c6509601a9e4770c30}} 
+ACTIVE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aeb24427958d583443b64443a9e25cdec}\label{struct_pa_mac_core_stream_aeb24427958d583443b64443a9e25cdec}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!blio@{blio}}
+\index{blio@{blio}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{blio}{blio}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} Pa\+Mac\+Core\+Stream\+::blio}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aa4c9fb315b5a2a91164f62d40e1f35a7}\label{struct_pa_mac_core_stream_aa4c9fb315b5a2a91164f62d40e1f35a7}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Mac\+Core\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_ac6468bfef6a09086a8ba75bd1825b3f4}\label{struct_pa_mac_core_stream_ac6468bfef6a09086a8ba75bd1825b3f4}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!bufferProcessorIsInitialized@{bufferProcessorIsInitialized}}
+\index{bufferProcessorIsInitialized@{bufferProcessorIsInitialized}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessorIsInitialized}{bufferProcessorIsInitialized}}
+{\footnotesize\ttfamily bool Pa\+Mac\+Core\+Stream\+::buffer\+Processor\+Is\+Initialized}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a589be1f91f8332bba6cc1b0b006f9b80}\label{struct_pa_mac_core_stream_a589be1f91f8332bba6cc1b0b006f9b80}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Mac\+Core\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aa214b3f78a40dd23797a512b0892a098}\label{struct_pa_mac_core_stream_aa214b3f78a40dd23797a512b0892a098}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputAudioBufferList@{inputAudioBufferList}}
+\index{inputAudioBufferList@{inputAudioBufferList}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputAudioBufferList}{inputAudioBufferList}}
+{\footnotesize\ttfamily Audio\+Buffer\+List Pa\+Mac\+Core\+Stream\+::input\+Audio\+Buffer\+List}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a84ab00c3940677753cbcfaa0b4497817}\label{struct_pa_mac_core_stream_a84ab00c3940677753cbcfaa0b4497817}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputDevice@{inputDevice}}
+\index{inputDevice@{inputDevice}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputDevice}{inputDevice}}
+{\footnotesize\ttfamily Audio\+Device\+ID Pa\+Mac\+Core\+Stream\+::input\+Device}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a33e3792b0bebe4a05a5e794ec087e4c3}\label{struct_pa_mac_core_stream_a33e3792b0bebe4a05a5e794ec087e4c3}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputFramesPerBuffer@{inputFramesPerBuffer}}
+\index{inputFramesPerBuffer@{inputFramesPerBuffer}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputFramesPerBuffer}{inputFramesPerBuffer}}
+{\footnotesize\ttfamily size\+\_\+t Pa\+Mac\+Core\+Stream\+::input\+Frames\+Per\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a784e07f3c2e4f2e03989aab2614687b1}\label{struct_pa_mac_core_stream_a784e07f3c2e4f2e03989aab2614687b1}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputProperties@{inputProperties}}
+\index{inputProperties@{inputProperties}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputProperties}{inputProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} Pa\+Mac\+Core\+Stream\+::input\+Properties}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a1c12d9d7f7f8174127c8ae35b96991dd}\label{struct_pa_mac_core_stream_a1c12d9d7f7f8174127c8ae35b96991dd}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputRingBuffer@{inputRingBuffer}}
+\index{inputRingBuffer@{inputRingBuffer}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputRingBuffer}{inputRingBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} Pa\+Mac\+Core\+Stream\+::input\+Ring\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_ab3d6f024b40670367b5bbbe1444cba92}\label{struct_pa_mac_core_stream_ab3d6f024b40670367b5bbbe1444cba92}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputSRConverter@{inputSRConverter}}
+\index{inputSRConverter@{inputSRConverter}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputSRConverter}{inputSRConverter}}
+{\footnotesize\ttfamily Audio\+Converter\+Ref Pa\+Mac\+Core\+Stream\+::input\+SRConverter}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a18489f920abd98c28ec23a08129a2a94}\label{struct_pa_mac_core_stream_a18489f920abd98c28ec23a08129a2a94}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!inputUnit@{inputUnit}}
+\index{inputUnit@{inputUnit}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{inputUnit}{inputUnit}}
+{\footnotesize\ttfamily Audio\+Unit Pa\+Mac\+Core\+Stream\+::input\+Unit}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_ae982506be4fb075f57798b322893c477}\label{struct_pa_mac_core_stream_ae982506be4fb075f57798b322893c477}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!outputDevice@{outputDevice}}
+\index{outputDevice@{outputDevice}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{outputDevice}{outputDevice}}
+{\footnotesize\ttfamily Audio\+Device\+ID Pa\+Mac\+Core\+Stream\+::output\+Device}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a6ba0534d56d18552f4dd23b5922b6caa}\label{struct_pa_mac_core_stream_a6ba0534d56d18552f4dd23b5922b6caa}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!outputFramesPerBuffer@{outputFramesPerBuffer}}
+\index{outputFramesPerBuffer@{outputFramesPerBuffer}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{outputFramesPerBuffer}{outputFramesPerBuffer}}
+{\footnotesize\ttfamily size\+\_\+t Pa\+Mac\+Core\+Stream\+::output\+Frames\+Per\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a7d1be4951510dd36b84abd1cc7daf49a}\label{struct_pa_mac_core_stream_a7d1be4951510dd36b84abd1cc7daf49a}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!outputProperties@{outputProperties}}
+\index{outputProperties@{outputProperties}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{outputProperties}{outputProperties}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} Pa\+Mac\+Core\+Stream\+::output\+Properties}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a834e659582a0b68100a0095ac6d45c7e}\label{struct_pa_mac_core_stream_a834e659582a0b68100a0095ac6d45c7e}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!outputUnit@{outputUnit}}
+\index{outputUnit@{outputUnit}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{outputUnit}{outputUnit}}
+{\footnotesize\ttfamily Audio\+Unit Pa\+Mac\+Core\+Stream\+::output\+Unit}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a3e945d299bff5c01d6e8a4f6bd8dfffb}\label{struct_pa_mac_core_stream_a3e945d299bff5c01d6e8a4f6bd8dfffb}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!sampleRate@{sampleRate}}
+\index{sampleRate@{sampleRate}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{sampleRate}{sampleRate}}
+{\footnotesize\ttfamily double Pa\+Mac\+Core\+Stream\+::sample\+Rate}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aa9eec45ab4d032a62a5edf9815aa95c5}\label{struct_pa_mac_core_stream_aa9eec45ab4d032a62a5edf9815aa95c5}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!startTime@{startTime}}
+\index{startTime@{startTime}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{startTime}{startTime}}
+{\footnotesize\ttfamily Audio\+Time\+Stamp Pa\+Mac\+Core\+Stream\+::start\+Time}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aefae48cab23ed2d64c196c420d7f2387}\label{struct_pa_mac_core_stream_aefae48cab23ed2d64c196c420d7f2387}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!state@{state}}
+\index{state@{state}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily enum  \{ ... \}  Pa\+Mac\+Core\+Stream\+::state}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a37e7f3609f183162f0938ae24dd838f7}\label{struct_pa_mac_core_stream_a37e7f3609f183162f0938ae24dd838f7}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Mac\+Core\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a169f40774042f35654987a0d5daa369d}\label{struct_pa_mac_core_stream_a169f40774042f35654987a0d5daa369d}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetCombined@{timestampOffsetCombined}}
+\index{timestampOffsetCombined@{timestampOffsetCombined}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetCombined}{timestampOffsetCombined}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Combined}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a8835149b249b0d65891cb7b7104bbd53}\label{struct_pa_mac_core_stream_a8835149b249b0d65891cb7b7104bbd53}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetCombined\_ioProcCopy@{timestampOffsetCombined\_ioProcCopy}}
+\index{timestampOffsetCombined\_ioProcCopy@{timestampOffsetCombined\_ioProcCopy}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetCombined\_ioProcCopy}{timestampOffsetCombined\_ioProcCopy}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Combined\+\_\+io\+Proc\+Copy}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a478d46d9d93bdc6d3cdb2009236c1d9e}\label{struct_pa_mac_core_stream_a478d46d9d93bdc6d3cdb2009236c1d9e}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetInputDevice@{timestampOffsetInputDevice}}
+\index{timestampOffsetInputDevice@{timestampOffsetInputDevice}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetInputDevice}{timestampOffsetInputDevice}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Input\+Device}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a5214bc58179dd3ab933567bff3eb0c71}\label{struct_pa_mac_core_stream_a5214bc58179dd3ab933567bff3eb0c71}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetInputDevice\_ioProcCopy@{timestampOffsetInputDevice\_ioProcCopy}}
+\index{timestampOffsetInputDevice\_ioProcCopy@{timestampOffsetInputDevice\_ioProcCopy}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetInputDevice\_ioProcCopy}{timestampOffsetInputDevice\_ioProcCopy}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Input\+Device\+\_\+io\+Proc\+Copy}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a81525a1ff3c1cb96a57d44c5ca70f7c4}\label{struct_pa_mac_core_stream_a81525a1ff3c1cb96a57d44c5ca70f7c4}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetOutputDevice@{timestampOffsetOutputDevice}}
+\index{timestampOffsetOutputDevice@{timestampOffsetOutputDevice}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetOutputDevice}{timestampOffsetOutputDevice}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Output\+Device}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a4eb660a54787d8965d59a774b21ab454}\label{struct_pa_mac_core_stream_a4eb660a54787d8965d59a774b21ab454}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timestampOffsetOutputDevice\_ioProcCopy@{timestampOffsetOutputDevice\_ioProcCopy}}
+\index{timestampOffsetOutputDevice\_ioProcCopy@{timestampOffsetOutputDevice\_ioProcCopy}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timestampOffsetOutputDevice\_ioProcCopy}{timestampOffsetOutputDevice\_ioProcCopy}}
+{\footnotesize\ttfamily Float64 Pa\+Mac\+Core\+Stream\+::timestamp\+Offset\+Output\+Device\+\_\+io\+Proc\+Copy}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_ab03af1e2679f505b0ab8ad629a0b4a34}\label{struct_pa_mac_core_stream_ab03af1e2679f505b0ab8ad629a0b4a34}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timingInformationMutex@{timingInformationMutex}}
+\index{timingInformationMutex@{timingInformationMutex}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timingInformationMutex}{timingInformationMutex}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t Pa\+Mac\+Core\+Stream\+::timing\+Information\+Mutex}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a94404e181cea0bc1d2c82b2e6f541366}\label{struct_pa_mac_core_stream_a94404e181cea0bc1d2c82b2e6f541366}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!timingInformationMutexIsInitialized@{timingInformationMutexIsInitialized}}
+\index{timingInformationMutexIsInitialized@{timingInformationMutexIsInitialized}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{timingInformationMutexIsInitialized}{timingInformationMutexIsInitialized}}
+{\footnotesize\ttfamily int Pa\+Mac\+Core\+Stream\+::timing\+Information\+Mutex\+Is\+Initialized}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_a8117390b82eb0f6aa238c1c0272f96b2}\label{struct_pa_mac_core_stream_a8117390b82eb0f6aa238c1c0272f96b2}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!userInChan@{userInChan}}
+\index{userInChan@{userInChan}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{userInChan}{userInChan}}
+{\footnotesize\ttfamily size\+\_\+t Pa\+Mac\+Core\+Stream\+::user\+In\+Chan}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_aa672c86d838eb7f11ee03e939b7a58e5}\label{struct_pa_mac_core_stream_aa672c86d838eb7f11ee03e939b7a58e5}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!userOutChan@{userOutChan}}
+\index{userOutChan@{userOutChan}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{userOutChan}{userOutChan}}
+{\footnotesize\ttfamily size\+\_\+t Pa\+Mac\+Core\+Stream\+::user\+Out\+Chan}
+
+\mbox{\Hypertarget{struct_pa_mac_core_stream_af65db3bdd18d4356f16fe5c2b23f7d5d}\label{struct_pa_mac_core_stream_af65db3bdd18d4356f16fe5c2b23f7d5d}} 
+\index{PaMacCoreStream@{PaMacCoreStream}!xrunFlags@{xrunFlags}}
+\index{xrunFlags@{xrunFlags}!PaMacCoreStream@{PaMacCoreStream}}
+\doxysubsubsection{\texorpdfstring{xrunFlags}{xrunFlags}}
+{\footnotesize\ttfamily volatile uint32\+\_\+t Pa\+Mac\+Core\+Stream\+::xrun\+Flags}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/coreaudio/\mbox{\hyperlink{pa__mac__core__internal_8h}{pa\+\_\+mac\+\_\+core\+\_\+internal.\+h}}\end{DoxyCompactItemize}

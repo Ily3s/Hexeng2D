@@ -1,0 +1,44 @@
+\hypertarget{pa__jack_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+jack.h File Reference}
+\label{pa__jack_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_jack.h@{Hexeng2D/dependencies/portaudio/include/pa\_jack.h}}
+
+
+JACK-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__jack_8h_a20862b4b1a9dacea0deac5bedd225fc6}{Pa\+Jack\+\_\+\+Set\+Client\+Name}} (const char $\ast$\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__jack_8h_a0582bde20a75bf2a8e70c46c71ac9a5e}{Pa\+Jack\+\_\+\+Get\+Client\+Name}} (const char $\ast$$\ast$client\+Name)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+JACK-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__jack_8h_a0582bde20a75bf2a8e70c46c71ac9a5e}\label{pa__jack_8h_a0582bde20a75bf2a8e70c46c71ac9a5e}} 
+\index{pa\_jack.h@{pa\_jack.h}!PaJack\_GetClientName@{PaJack\_GetClientName}}
+\index{PaJack\_GetClientName@{PaJack\_GetClientName}!pa\_jack.h@{pa\_jack.h}}
+\doxysubsubsection{\texorpdfstring{PaJack\_GetClientName()}{PaJack\_GetClientName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Jack\+\_\+\+Get\+Client\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{client\+Name }\end{DoxyParamCaption})}
+
+Get the JACK client name used by PA JACK.
+
+The caller is responsible for freeing the returned pointer. \mbox{\Hypertarget{pa__jack_8h_a20862b4b1a9dacea0deac5bedd225fc6}\label{pa__jack_8h_a20862b4b1a9dacea0deac5bedd225fc6}} 
+\index{pa\_jack.h@{pa\_jack.h}!PaJack\_SetClientName@{PaJack\_SetClientName}}
+\index{PaJack\_SetClientName@{PaJack\_SetClientName}!pa\_jack.h@{pa\_jack.h}}
+\doxysubsubsection{\texorpdfstring{PaJack\_SetClientName()}{PaJack\_SetClientName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Jack\+\_\+\+Set\+Client\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+Set the JACK client name.
+
+During Pa\+\_\+\+Initialize, When PA JACK connects as a client of the JACK server, it requests a certain name, which is for instance prepended to port names. By default this name is \char`\"{}\+Port\+Audio\char`\"{}. The JACK server may append a suffix to the client name, in order to avoid clashes among clients that try to connect with the same name (e.\+g., different PA JACK clients).
+
+This function must be called before Pa\+\_\+\+Initialize, otherwise it won\textquotesingle{}t have any effect. Note that the string is not copied, but instead referenced directly, so it must not be freed for as long as PA might need it. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__jack_8h_a0582bde20a75bf2a8e70c46c71ac9a5e}{Pa\+Jack\+\_\+\+Get\+Client\+Name}} 
+\end{DoxySeeAlso}

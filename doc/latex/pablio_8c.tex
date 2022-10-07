@@ -1,0 +1,77 @@
+\hypertarget{pablio_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/pablio/pablio.c File Reference}
+\label{pablio_8c}\index{Hexeng2D/dependencies/portaudio/pablio/pablio.c@{Hexeng2D/dependencies/portaudio/pablio/pablio.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pablio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pablio_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(256)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{pablio_8c_a0bed383fd3e6bdde37078b2e138d2911}{Write\+Audio\+Stream}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$a\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, long num\+Frames)
+\item 
+long \mbox{\hyperlink{pablio_8c_aea5e44f7cb20ac3cebea094303b8ee5c}{Read\+Audio\+Stream}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$a\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, long num\+Frames)
+\item 
+long \mbox{\hyperlink{pablio_8c_a5f0ac667f4a430ca62a53aeebc60db76}{Get\+Audio\+Stream\+Writeable}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$a\+Stream)
+\item 
+long \mbox{\hyperlink{pablio_8c_a16b2ab20d33b183bfe4dcb55c8152445}{Get\+Audio\+Stream\+Readable}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$a\+Stream)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pablio_8c_a73f2b19154194904ed44bf3d7d70d214}{Open\+Audio\+Stream}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$$\ast$rwbl\+Ptr, double sample\+Rate, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, long \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pablio_8c_a76d7a0bac49985d736d89095b7052549}{Close\+Audio\+Stream}} (\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$a\+Stream)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pablio_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{pablio_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{pablio.c@{pablio.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(256)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pablio_8c_a76d7a0bac49985d736d89095b7052549}\label{pablio_8c_a76d7a0bac49985d736d89095b7052549}} 
+\index{pablio.c@{pablio.c}!CloseAudioStream@{CloseAudioStream}}
+\index{CloseAudioStream@{CloseAudioStream}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{CloseAudioStream()}{CloseAudioStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Close\+Audio\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$}]{a\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pablio_8c_a16b2ab20d33b183bfe4dcb55c8152445}\label{pablio_8c_a16b2ab20d33b183bfe4dcb55c8152445}} 
+\index{pablio.c@{pablio.c}!GetAudioStreamReadable@{GetAudioStreamReadable}}
+\index{GetAudioStreamReadable@{GetAudioStreamReadable}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{GetAudioStreamReadable()}{GetAudioStreamReadable()}}
+{\footnotesize\ttfamily long Get\+Audio\+Stream\+Readable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$}]{a\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pablio_8c_a5f0ac667f4a430ca62a53aeebc60db76}\label{pablio_8c_a5f0ac667f4a430ca62a53aeebc60db76}} 
+\index{pablio.c@{pablio.c}!GetAudioStreamWriteable@{GetAudioStreamWriteable}}
+\index{GetAudioStreamWriteable@{GetAudioStreamWriteable}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{GetAudioStreamWriteable()}{GetAudioStreamWriteable()}}
+{\footnotesize\ttfamily long Get\+Audio\+Stream\+Writeable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$}]{a\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pablio_8c_a73f2b19154194904ed44bf3d7d70d214}\label{pablio_8c_a73f2b19154194904ed44bf3d7d70d214}} 
+\index{pablio.c@{pablio.c}!OpenAudioStream@{OpenAudioStream}}
+\index{OpenAudioStream@{OpenAudioStream}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{OpenAudioStream()}{OpenAudioStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Open\+Audio\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$$\ast$}]{rwbl\+Ptr,  }\item[{double}]{sample\+Rate,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{format,  }\item[{long}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pablio_8c_aea5e44f7cb20ac3cebea094303b8ee5c}\label{pablio_8c_aea5e44f7cb20ac3cebea094303b8ee5c}} 
+\index{pablio.c@{pablio.c}!ReadAudioStream@{ReadAudioStream}}
+\index{ReadAudioStream@{ReadAudioStream}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{ReadAudioStream()}{ReadAudioStream()}}
+{\footnotesize\ttfamily long Read\+Audio\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$}]{a\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{long}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pablio_8c_a0bed383fd3e6bdde37078b2e138d2911}\label{pablio_8c_a0bed383fd3e6bdde37078b2e138d2911}} 
+\index{pablio.c@{pablio.c}!WriteAudioStream@{WriteAudioStream}}
+\index{WriteAudioStream@{WriteAudioStream}!pablio.c@{pablio.c}}
+\doxysubsubsection{\texorpdfstring{WriteAudioStream()}{WriteAudioStream()}}
+{\footnotesize\ttfamily long Write\+Audio\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\+\_\+\+Stream}} $\ast$}]{a\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{long}]{num\+Frames }\end{DoxyParamCaption})}
+

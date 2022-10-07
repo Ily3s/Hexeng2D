@@ -1,0 +1,67 @@
+\hypertarget{struct_pa_win_direct_sound_stream_info}{}\doxysection{Pa\+Win\+Direct\+Sound\+Stream\+Info Struct Reference}
+\label{struct_pa_win_direct_sound_stream_info}\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+
+
+{\ttfamily \#include $<$pa\+\_\+win\+\_\+ds.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_a628ca7f8b755a42182a76f9e88202ea0}{size}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_a86baa9ebeb0f10ca2f4fe24c41cd3bea}{host\+Api\+Type}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_a9baec8b75c5b93b59217625b790bebbe}{version}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_a72f9dcac1303ba51fd1e36965a7cda46}{flags}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_adb9fc9098994e07ac7e1e7e9ac2175d7}{frames\+Per\+Buffer}}
+\item 
+\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} \mbox{\hyperlink{struct_pa_win_direct_sound_stream_info_aa9282b945c2331e1dd3f13b64fa7e927}{channel\+Mask}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_aa9282b945c2331e1dd3f13b64fa7e927}\label{struct_pa_win_direct_sound_stream_info_aa9282b945c2331e1dd3f13b64fa7e927}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!channelMask@{channelMask}}
+\index{channelMask@{channelMask}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{channelMask}{channelMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} Pa\+Win\+Direct\+Sound\+Stream\+Info\+::channel\+Mask}
+
+support for WAVEFORMATEXTENSIBLE channel masks. If flags contains pa\+Win\+Direct\+Sound\+Use\+Channel\+Mask this allows you to specify which speakers to address in a multichannel stream. Constants for channel\+Mask are specified in \mbox{\hyperlink{pa__win__waveformat_8h}{pa\+\_\+win\+\_\+waveformat.\+h}} \mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_a72f9dcac1303ba51fd1e36965a7cda46}\label{struct_pa_win_direct_sound_stream_info_a72f9dcac1303ba51fd1e36965a7cda46}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!flags@{flags}}
+\index{flags@{flags}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned long Pa\+Win\+Direct\+Sound\+Stream\+Info\+::flags}
+
+enable other features of this struct \mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_adb9fc9098994e07ac7e1e7e9ac2175d7}\label{struct_pa_win_direct_sound_stream_info_adb9fc9098994e07ac7e1e7e9ac2175d7}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!framesPerBuffer@{framesPerBuffer}}
+\index{framesPerBuffer@{framesPerBuffer}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{framesPerBuffer}{framesPerBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Win\+Direct\+Sound\+Stream\+Info\+::frames\+Per\+Buffer}
+
+low-\/level latency setting support Sets the size of the Direct\+Sound host buffer. When flags contains the pa\+Win\+Direct\+Sound\+Use\+Low\+Level\+Latency\+Parameters this size will be used instead of interpreting the generic latency parameters to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}. If the flag is not set this value is ignored.
+
+If the stream is a full duplex stream the implementation requires that the values of frames\+Per\+Buffer for input and output match (if both are specified). \mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_a86baa9ebeb0f10ca2f4fe24c41cd3bea}\label{struct_pa_win_direct_sound_stream_info_a86baa9ebeb0f10ca2f4fe24c41cd3bea}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!hostApiType@{hostApiType}}
+\index{hostApiType@{hostApiType}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{hostApiType}{hostApiType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} Pa\+Win\+Direct\+Sound\+Stream\+Info\+::host\+Api\+Type}
+
+pa\+Direct\+Sound \mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_a628ca7f8b755a42182a76f9e88202ea0}\label{struct_pa_win_direct_sound_stream_info_a628ca7f8b755a42182a76f9e88202ea0}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!size@{size}}
+\index{size@{size}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily unsigned long Pa\+Win\+Direct\+Sound\+Stream\+Info\+::size}
+
+sizeof(\+Pa\+Win\+Direct\+Sound\+Stream\+Info) \mbox{\Hypertarget{struct_pa_win_direct_sound_stream_info_a9baec8b75c5b93b59217625b790bebbe}\label{struct_pa_win_direct_sound_stream_info_a9baec8b75c5b93b59217625b790bebbe}} 
+\index{PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}!version@{version}}
+\index{version@{version}!PaWinDirectSoundStreamInfo@{PaWinDirectSoundStreamInfo}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily unsigned long Pa\+Win\+Direct\+Sound\+Stream\+Info\+::version}
+
+2 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/include/\mbox{\hyperlink{pa__win__ds_8h}{pa\+\_\+win\+\_\+ds.\+h}}\end{DoxyCompactItemize}

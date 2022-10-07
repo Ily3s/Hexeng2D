@@ -1,0 +1,143 @@
+\hypertarget{pa__unix__oss_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/oss/pa\+\_\+unix\+\_\+oss.c File Reference}
+\label{pa__unix__oss_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/oss/pa\_unix\_oss.c@{Hexeng2D/dependencies/portaudio/src/hostapi/oss/pa\_unix\_oss.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$sys/ioctl.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/poll.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$semaphore.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+unix\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_o_s_s_host_api_representation}{Pa\+OSSHost\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_oss_stream_component}{Pa\+Oss\+Stream\+Component}}
+\item 
+struct \mbox{\hyperlink{struct_pa_oss_stream}{Pa\+Oss\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__unix__oss_8c_af6598be0b460d5228f0c6f386d9bf306}{ENSURE\+\_\+}}(expr,  code)
+\item 
+\#define \mbox{\hyperlink{pa__unix__oss_8c_aec73a2ca552a1d579edc3e438dca805e}{AFMT\+\_\+\+S16\+\_\+\+NE}}~Get\+\_\+\+AFMT\+\_\+\+S16\+\_\+\+NE()
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_oss_stream}{Pa\+Oss\+Stream}} \mbox{\hyperlink{pa__unix__oss_8c_a9b697b11aeb5d2c6e335f87e1342ce07}{Pa\+Oss\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791f}{Stream\+Mode}} \{ \mbox{\hyperlink{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791faee4552042ee189f6046abc4a7ba35a7c}{Stream\+Mode\+\_\+\+In}}
+, \mbox{\hyperlink{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791fa2d79178c2be03f37e753d279113f93ed}{Stream\+Mode\+\_\+\+Out}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__oss_8c_af5c5907fd84ab3bea3a107d7ff4d4c04}{Pa\+OSS\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api\+Index)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__oss_8c_acbff329a34e7d0af90f65a35b845ed7e}{Pa\+Util\+\_\+\+Initialize\+Device\+Info}} (\mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} $\ast$device\+Info, const char $\ast$\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api\+Index, int max\+Input\+Channels, int max\+Output\+Channels, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} default\+Low\+Input\+Latency, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} default\+Low\+Output\+Latency, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} default\+High\+Input\+Latency, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} default\+High\+Output\+Latency, double default\+Sample\+Rate, \mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$allocations)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__unix__oss_8c_aec73a2ca552a1d579edc3e438dca805e}\label{pa__unix__oss_8c_aec73a2ca552a1d579edc3e438dca805e}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!AFMT\_S16\_NE@{AFMT\_S16\_NE}}
+\index{AFMT\_S16\_NE@{AFMT\_S16\_NE}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{AFMT\_S16\_NE}{AFMT\_S16\_NE}}
+{\footnotesize\ttfamily \#define AFMT\+\_\+\+S16\+\_\+\+NE~Get\+\_\+\+AFMT\+\_\+\+S16\+\_\+\+NE()}
+
+\mbox{\Hypertarget{pa__unix__oss_8c_af6598be0b460d5228f0c6f386d9bf306}\label{pa__unix__oss_8c_af6598be0b460d5228f0c6f386d9bf306}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!ENSURE\_@{ENSURE\_}}
+\index{ENSURE\_@{ENSURE\_}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{ENSURE\_}{ENSURE\_}}
+{\footnotesize\ttfamily \#define ENSURE\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{code }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (sysErr\_ = (expr)) < 0 ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            \textcolor{comment}{/* PaUtil\_SetLastHostErrorInfo should only be used in the main thread */} \(\backslash\)}
+\DoxyCodeLine{            if( (code) == \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{paUnanticipatedHostError}} \&\& pthread\_self() == mainThread\_ ) \(\backslash\)}
+\DoxyCodeLine{            \{ \(\backslash\)}
+\DoxyCodeLine{                PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea9afdcbf978e7b8b48db08a7c5208ebe4}{paOSS}}, sysErr\_, strerror( errno ) ); \(\backslash\)}
+\DoxyCodeLine{            \} \(\backslash\)}
+\DoxyCodeLine{            \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_DebugPrint(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__jack_8c_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            result = (code); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}( 0 );}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__unix__oss_8c_a9b697b11aeb5d2c6e335f87e1342ce07}\label{pa__unix__oss_8c_a9b697b11aeb5d2c6e335f87e1342ce07}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!PaOssStream@{PaOssStream}}
+\index{PaOssStream@{PaOssStream}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{PaOssStream}{PaOssStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_oss_stream}{Pa\+Oss\+Stream}} \mbox{\hyperlink{struct_pa_oss_stream}{Pa\+Oss\+Stream}}}
+
+Implementation specific representation of a Pa\+Stream. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791f}\label{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791f}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!StreamMode@{StreamMode}}
+\index{StreamMode@{StreamMode}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{StreamMode}{StreamMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791f}{Stream\+Mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamMode\_In@{StreamMode\_In}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!StreamMode\_In@{StreamMode\_In}}}\mbox{\Hypertarget{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791faee4552042ee189f6046abc4a7ba35a7c}\label{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791faee4552042ee189f6046abc4a7ba35a7c}} 
+Stream\+Mode\+\_\+\+In&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamMode\_Out@{StreamMode\_Out}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!StreamMode\_Out@{StreamMode\_Out}}}\mbox{\Hypertarget{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791fa2d79178c2be03f37e753d279113f93ed}\label{pa__unix__oss_8c_a5b53090612b0845fc9b0fa2ac6cb791fa2d79178c2be03f37e753d279113f93ed}} 
+Stream\+Mode\+\_\+\+Out&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__unix__oss_8c_af5c5907fd84ab3bea3a107d7ff4d4c04}\label{pa__unix__oss_8c_af5c5907fd84ab3bea3a107d7ff4d4c04}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!PaOSS\_Initialize@{PaOSS\_Initialize}}
+\index{PaOSS\_Initialize@{PaOSS\_Initialize}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{PaOSS\_Initialize()}{PaOSS\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+OSS\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api\+Index }\end{DoxyParamCaption})}
+
+Initialize the OSS API implementation.
+
+This function will initialize host API datastructures and query host devices for information.
+
+Aspect Device\+Capabilities\+: Enumeration of host API devices is initiated from here
+
+Aspect Free\+Resources\+: If an error is encountered under way we have to free each resource allocated in this function, this happens with the usual \char`\"{}error\char`\"{} label. \mbox{\Hypertarget{pa__unix__oss_8c_acbff329a34e7d0af90f65a35b845ed7e}\label{pa__unix__oss_8c_acbff329a34e7d0af90f65a35b845ed7e}} 
+\index{pa\_unix\_oss.c@{pa\_unix\_oss.c}!PaUtil\_InitializeDeviceInfo@{PaUtil\_InitializeDeviceInfo}}
+\index{PaUtil\_InitializeDeviceInfo@{PaUtil\_InitializeDeviceInfo}!pa\_unix\_oss.c@{pa\_unix\_oss.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeDeviceInfo()}{PaUtil\_InitializeDeviceInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Initialize\+Device\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} $\ast$}]{device\+Info,  }\item[{const char $\ast$}]{name,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api\+Index,  }\item[{int}]{max\+Input\+Channels,  }\item[{int}]{max\+Output\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}]{default\+Low\+Input\+Latency,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}]{default\+Low\+Output\+Latency,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}]{default\+High\+Input\+Latency,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}]{default\+High\+Output\+Latency,  }\item[{double}]{default\+Sample\+Rate,  }\item[{\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$}]{allocations }\end{DoxyParamCaption})}
+

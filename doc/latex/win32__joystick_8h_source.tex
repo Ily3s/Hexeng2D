@@ -1,0 +1,62 @@
+\hypertarget{win32__joystick_8h_source}{}\doxysection{win32\+\_\+joystick.\+h}
+\label{win32__joystick_8h_source}\index{Hexeng2D/dependencies/glfw/src/win32\_joystick.h@{Hexeng2D/dependencies/glfw/src/win32\_joystick.h}}
+\mbox{\hyperlink{win32__joystick_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 Win32 -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2006-\/2017 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{7 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{8 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{11 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{12 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{15 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{16 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{17 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{20 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{21 \textcolor{comment}{//}}
+\DoxyCodeLine{22 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{23 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{//}}
+\DoxyCodeLine{25 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_JOYSTICK\_STATE         \_GLFWjoystickWin32 win32}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_JOYSTICK\_STATE struct \{ int dummyLibraryJoystick; \}}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_MAPPING\_NAME "{}Windows"{}}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// Joystick element (axis, button or slider)}}
+\DoxyCodeLine{33 \textcolor{comment}{//}}
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wjoyobject_win32}{\_GLFWjoyobjectWin32}}}
+\DoxyCodeLine{35 \{}
+\DoxyCodeLine{36     \textcolor{keywordtype}{int}                     \mbox{\hyperlink{struct___g_l_f_wjoyobject_win32_ac62dc9fc2e6bdb16ed0d9b0adef0d501}{offset}};}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int}                     \mbox{\hyperlink{struct___g_l_f_wjoyobject_win32_a7e9c2d4ab9ba15af12493d314c5686a3}{type}};}
+\DoxyCodeLine{38 \} \mbox{\hyperlink{struct___g_l_f_wjoyobject_win32}{\_GLFWjoyobjectWin32}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// Win32-\/specific per-\/joystick data}}
+\DoxyCodeLine{41 \textcolor{comment}{//}}
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wjoystick_win32}{\_GLFWjoystickWin32}}}
+\DoxyCodeLine{43 \{}
+\DoxyCodeLine{44     \mbox{\hyperlink{struct___g_l_f_wjoyobject_win32}{\_GLFWjoyobjectWin32}}*    \mbox{\hyperlink{struct___g_l_f_wjoystick_win32_a1f3f2f40a0fbbd266c98d84c44af427b}{objects}};}
+\DoxyCodeLine{45     \textcolor{keywordtype}{int}                     \mbox{\hyperlink{struct___g_l_f_wjoystick_win32_a35725b8f9243a1e9d17816632718fcf1}{objectCount}};}
+\DoxyCodeLine{46     IDirectInputDevice8W*   \mbox{\hyperlink{struct___g_l_f_wjoystick_win32_acca11e13163b1177aa6cdb3bbb4b6f8a}{device}};}
+\DoxyCodeLine{47     DWORD                   \mbox{\hyperlink{struct___g_l_f_wjoystick_win32_aec098737446fcdc91b67772b64716c1b}{index}};}
+\DoxyCodeLine{48     GUID                    \mbox{\hyperlink{struct___g_l_f_wjoystick_win32_ac549c3ad63172ef086fff3932db10082}{guid}};}
+\DoxyCodeLine{49 \} \mbox{\hyperlink{struct___g_l_f_wjoystick_win32}{\_GLFWjoystickWin32}};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{win32__joystick_8h_af70e0a81539e43a26ffb84a14a5d6de0}{\_glfwInitJoysticksWin32}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{53 \textcolor{keywordtype}{void} \mbox{\hyperlink{win32__joystick_8h_a219b355c48800354e45f6091d7b2e564}{\_glfwTerminateJoysticksWin32}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \mbox{\hyperlink{win32__joystick_8h_a58cafa45ca625cc01aee93124c190b13}{\_glfwDetectJoystickConnectionWin32}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{55 \textcolor{keywordtype}{void} \mbox{\hyperlink{win32__joystick_8h_a0075ab897c58609717fddb588970c268}{\_glfwDetectJoystickDisconnectionWin32}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{56 }
+
+\end{DoxyCode}

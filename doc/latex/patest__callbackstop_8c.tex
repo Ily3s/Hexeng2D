@@ -1,0 +1,91 @@
+\hypertarget{patest__callbackstop_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+callbackstop.c File Reference}
+\label{patest__callbackstop_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_callbackstop.c@{Hexeng2D/dependencies/portaudio/test/patest\_callbackstop.c}}
+
+
+Test the pa\+Complete callback result code.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_test_data}{Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(5)
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_ae5301d7305b7b25a73685c7019aca33d}{NUM\+\_\+\+LOOPS}}~(4)
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(67)
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__callbackstop_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__callbackstop_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test the pa\+Complete callback result code. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__callbackstop_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__callbackstop_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(67)}
+
+\mbox{\Hypertarget{patest__callbackstop_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__callbackstop_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__callbackstop_8c_ae5301d7305b7b25a73685c7019aca33d}\label{patest__callbackstop_8c_ae5301d7305b7b25a73685c7019aca33d}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!NUM\_LOOPS@{NUM\_LOOPS}}
+\index{NUM\_LOOPS@{NUM\_LOOPS}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_LOOPS}{NUM\_LOOPS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+LOOPS~(4)}
+
+\mbox{\Hypertarget{patest__callbackstop_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__callbackstop_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(5)}
+
+\mbox{\Hypertarget{patest__callbackstop_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__callbackstop_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__callbackstop_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__callbackstop_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__callbackstop_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__callbackstop_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_callbackstop.c@{patest\_callbackstop.c}!main@{main}}
+\index{main@{main}!patest\_callbackstop.c@{patest\_callbackstop.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

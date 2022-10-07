@@ -1,0 +1,57 @@
+These tutorials takes you through a hands-\/on example of using Port\+Audio to make sound. If you\textquotesingle{}d prefer to start with a top-\/down overview of the Port\+Audio API, check out the \mbox{\hyperlink{api_overview}{Port\+Audio API Overview}}.\hypertarget{tutorial_start_tut_start1}{}\doxysection{Downloading}\label{tutorial_start_tut_start1}
+First thing you need to do is download the Port\+Audio source code either \href{http://www.portaudio.com/download.html}{\texttt{ as a tarball from the website}}, or \href{http://www.portaudio.com/usingsvn.html}{\texttt{ from the Subversion Repository}}.\hypertarget{tutorial_start_tut_start2}{}\doxysection{Compiling}\label{tutorial_start_tut_start2}
+Once you\textquotesingle{}ve downloaded Port\+Audio you\textquotesingle{}ll need to compile it, which of course, depends on your environment\+:
+
+
+\begin{DoxyItemize}
+\item Windows
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{compile_windows}{Building Port\+Audio for Windows using Microsoft Visual Studio}}
+\item \mbox{\hyperlink{compile_windows_mingw}{Building Portaudio for Windows with Min\+GW}}
+\item \mbox{\hyperlink{compile_windows_asio_msvc}{Building Portaudio for Windows with ASIO support using MSVC}}
+\end{DoxyItemize}
+\item Mac OS X
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{compile_mac_coreaudio}{Building Portaudio for Mac OS X}}
+\end{DoxyItemize}
+\item POSIX
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{compile_linux}{Building Portaudio for Linux}}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+You can also use CMake to generate project files for Port\+Audio on Windows, OS X or Linux or include Port\+Audio easily in your own CMake project. See \mbox{\hyperlink{compile_cmake}{Port\+Audio on Windows, OS X or Linux via. CMake}}.
+
+Many platforms with GCC/make can use the simple ./configure \&\& make combination and simply use the resulting libraries in their code.\hypertarget{tutorial_start_tut_start3}{}\doxysection{Programming with Port\+Audio}\label{tutorial_start_tut_start3}
+Below are the steps to writing a Port\+Audio application using the callback technique\+:
+
+
+\begin{DoxyItemize}
+\item Write a callback function that will be called by Port\+Audio when audio processing is needed.
+\item Initialize the PA library and open a stream for audio I/O.
+\item Start the stream. Your callback function will be now be called repeatedly by PA in the background.
+\item In your callback you can read audio data from the input\+Buffer and/or write data to the output\+Buffer.
+\item Stop the stream by returning 1 from your callback, or by calling a stop function.
+\item Close the stream and terminate the library.
+\end{DoxyItemize}
+
+In addition to this \char`\"{}\+Callback\char`\"{} architecture, V19 also supports a \char`\"{}\+Blocking I/\+O\char`\"{} model which uses read and write calls which may be more familiar to non-\/audio programmers. Note that at this time, not all APIs support this functionality.
+
+In this tutorial, we\textquotesingle{}ll show how to use the callback architecture to play a sawtooth wave. Much of the tutorial is taken from the file \mbox{\hyperlink{paex__saw_8c}{paex\+\_\+saw.\+c}}, which is part of the Port\+Audio distribution. When you\textquotesingle{}re done with this tutorial, you\textquotesingle{}ll be armed with the basic knowledge you need to write an audio program. If you need more sample code, look in the \char`\"{}examples\char`\"{} and \char`\"{}test\char`\"{} directory of the Port\+Audio distribution. Another great source of info is the \mbox{\hyperlink{portaudio_8h}{portaudio.\+h}} Doxygen page, which documents the entire V19 API. Also see the page for \href{https://github.com/PortAudio/portaudio/wiki/Tips}{\texttt{ tips on programming Port\+Audio}} on the Port\+Audio wiki.\hypertarget{tutorial_start_tut_start4}{}\doxysection{Programming Tutorial Contents}\label{tutorial_start_tut_start4}
+
+\begin{DoxyItemize}
+\item \mbox{\hyperlink{writing_a_callback}{Writing a Callback Function}}
+\item \mbox{\hyperlink{initializing_portaudio}{Initializing Port\+Audio}}
+\item \mbox{\hyperlink{open_default_stream}{Opening a Stream Using Defaults}}
+\item \mbox{\hyperlink{start_stop_abort}{Starting, Stopping and Aborting a Stream}}
+\item \mbox{\hyperlink{terminating_portaudio}{Closing a Stream and Terminating Port\+Audio}}
+\item \mbox{\hyperlink{utility_functions}{Utility Functions}}
+\item \mbox{\hyperlink{querying_devices}{Enumerating and Querying Port\+Audio Devices}}
+\item \mbox{\hyperlink{blocking_read_write}{Blocking Read/\+Write Functions}}
+\end{DoxyItemize}
+
+If you are upgrading from V18, you may want to look at the \href{http://www.portaudio.com/docs/proposals/index.html}{\texttt{ Proposed Enhancements to Port\+Audio}}, which describes the differences between V18 and V19.
+
+Once you have a basic understanding of how to use Port\+Audio, you might be interested in \mbox{\hyperlink{exploring}{Exploring Port\+Audio}}.
+
+Next\+: \mbox{\hyperlink{writing_a_callback}{Writing a Callback Function}} 

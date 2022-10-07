@@ -1,0 +1,74 @@
+\hypertarget{struct_pa_host_api_info}{}\doxysection{Pa\+Host\+Api\+Info Struct Reference}
+\label{struct_pa_host_api_info}\index{PaHostApiInfo@{PaHostApiInfo}}
+
+
+{\ttfamily \#include $<$portaudio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_pa_host_api_info_a1f3a8c465488e7af8024237256d80c14}{struct\+Version}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{struct_pa_host_api_info_a5424bfcdf9f73b17cddc89e827a45d3f}{type}}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_pa_host_api_info_a78afe5d557543c82cd9773229e25a8ec}{name}}
+\item 
+int \mbox{\hyperlink{struct_pa_host_api_info_a44e3adfaba0117a6780e2493468c96b1}{device\+Count}}
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{struct_pa_host_api_info_a85a62057c3479d3efaa477d8562cf21d}{default\+Input\+Device}}
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{struct_pa_host_api_info_a62632690b5f7906d3c9bfdab91e7f4b2}{default\+Output\+Device}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure containing information about a particular host API. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_host_api_info_a85a62057c3479d3efaa477d8562cf21d}\label{struct_pa_host_api_info_a85a62057c3479d3efaa477d8562cf21d}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!defaultInputDevice@{defaultInputDevice}}
+\index{defaultInputDevice@{defaultInputDevice}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{defaultInputDevice}{defaultInputDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+Host\+Api\+Info\+::default\+Input\+Device}
+
+The default input device for this host API. The value will be a device index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count()}}-\/1), or pa\+No\+Device if no default input device is available. \mbox{\Hypertarget{struct_pa_host_api_info_a62632690b5f7906d3c9bfdab91e7f4b2}\label{struct_pa_host_api_info_a62632690b5f7906d3c9bfdab91e7f4b2}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!defaultOutputDevice@{defaultOutputDevice}}
+\index{defaultOutputDevice@{defaultOutputDevice}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{defaultOutputDevice}{defaultOutputDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+Host\+Api\+Info\+::default\+Output\+Device}
+
+The default output device for this host API. The value will be a device index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count()}}-\/1), or pa\+No\+Device if no default output device is available. \mbox{\Hypertarget{struct_pa_host_api_info_a44e3adfaba0117a6780e2493468c96b1}\label{struct_pa_host_api_info_a44e3adfaba0117a6780e2493468c96b1}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!deviceCount@{deviceCount}}
+\index{deviceCount@{deviceCount}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{deviceCount}{deviceCount}}
+{\footnotesize\ttfamily int Pa\+Host\+Api\+Info\+::device\+Count}
+
+The number of devices belonging to this host API. This field may be used in conjunction with \mbox{\hyperlink{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}{Pa\+\_\+\+Host\+Api\+Device\+Index\+To\+Device\+Index()}} to enumerate all devices for this host API. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}{Pa\+\_\+\+Host\+Api\+Device\+Index\+To\+Device\+Index}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_pa_host_api_info_a78afe5d557543c82cd9773229e25a8ec}\label{struct_pa_host_api_info_a78afe5d557543c82cd9773229e25a8ec}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!name@{name}}
+\index{name@{name}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char$\ast$ Pa\+Host\+Api\+Info\+::name}
+
+A textual description of the host API for display on user interfaces. \mbox{\Hypertarget{struct_pa_host_api_info_a1f3a8c465488e7af8024237256d80c14}\label{struct_pa_host_api_info_a1f3a8c465488e7af8024237256d80c14}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!structVersion@{structVersion}}
+\index{structVersion@{structVersion}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{structVersion}{structVersion}}
+{\footnotesize\ttfamily int Pa\+Host\+Api\+Info\+::struct\+Version}
+
+this is struct version 1 \mbox{\Hypertarget{struct_pa_host_api_info_a5424bfcdf9f73b17cddc89e827a45d3f}\label{struct_pa_host_api_info_a5424bfcdf9f73b17cddc89e827a45d3f}} 
+\index{PaHostApiInfo@{PaHostApiInfo}!type@{type}}
+\index{type@{type}!PaHostApiInfo@{PaHostApiInfo}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} Pa\+Host\+Api\+Info\+::type}
+
+The well known unique identifier of this host API \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/include/\mbox{\hyperlink{portaudio_8h}{portaudio.\+h}}\end{DoxyCompactItemize}

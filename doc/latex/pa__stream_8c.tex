@@ -1,0 +1,108 @@
+\hypertarget{pa__stream_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+stream.c File Reference}
+\label{pa__stream_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_stream.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_stream.c}}
+
+
+Stream interfaces, representation structures and helper functions used to interface between \mbox{\hyperlink{pa__front_8c}{pa\+\_\+front.\+c}} host API implementations.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__stream_8c_a7ae912708e0bb060028f25e6f95333b7}{Pa\+Util\+\_\+\+Initialize\+Stream\+Interface}} (\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} $\ast$stream\+Interface, \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Close)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Start)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Stop)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Abort)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Is\+Stopped)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Is\+Active)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}($\ast$Get\+Time)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), double($\ast$Get\+Cpu\+Load)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Read)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long), \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$Write)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long), signed long($\ast$Get\+Read\+Available)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$), signed long($\ast$Get\+Write\+Available)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$))
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__stream_8c_a0e3a44086f5baa62308dfd6df77396e0}{Pa\+Util\+\_\+\+Initialize\+Stream\+Representation}} (\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} $\ast$stream\+Representation, \mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} $\ast$stream\+Interface, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__stream_8c_ac30f6c0d3138ef52c63c94fd1a53ea86}{Pa\+Util\+\_\+\+Terminate\+Stream\+Representation}} (\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} $\ast$stream\+Representation)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__stream_8c_ae7a66186864e1f27f9e274e1de562219}{Pa\+Util\+\_\+\+Dummy\+Read}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__stream_8c_a827035da5bb7141143595519b0c0edc7}{Pa\+Util\+\_\+\+Dummy\+Write}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+signed long \mbox{\hyperlink{pa__stream_8c_aa43032a8fcb0d7b271f6049e4dc69e5c}{Pa\+Util\+\_\+\+Dummy\+Get\+Read\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+signed long \mbox{\hyperlink{pa__stream_8c_aa4742249759bc11f31590db47cd19c2b}{Pa\+Util\+\_\+\+Dummy\+Get\+Write\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+double \mbox{\hyperlink{pa__stream_8c_aba19e5ce44bb3621b6ca257959c30b43}{Pa\+Util\+\_\+\+Dummy\+Get\+Cpu\+Load}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stream interfaces, representation structures and helper functions used to interface between \mbox{\hyperlink{pa__front_8c}{pa\+\_\+front.\+c}} host API implementations. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__stream_8c_aba19e5ce44bb3621b6ca257959c30b43}\label{pa__stream_8c_aba19e5ce44bb3621b6ca257959c30b43}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_DummyGetCpuLoad@{PaUtil\_DummyGetCpuLoad}}
+\index{PaUtil\_DummyGetCpuLoad@{PaUtil\_DummyGetCpuLoad}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DummyGetCpuLoad()}{PaUtil\_DummyGetCpuLoad()}}
+{\footnotesize\ttfamily double Pa\+Util\+\_\+\+Dummy\+Get\+Cpu\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Dummy Get\+Cpu\+Load function for use in an interface to a read/write stream. Pass to the Get\+Cpu\+Load parameter of Pa\+Util\+\_\+\+Initialize\+Stream\+Interface. \begin{DoxyReturn}{Returns}
+Returns 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__stream_8c_aa43032a8fcb0d7b271f6049e4dc69e5c}\label{pa__stream_8c_aa43032a8fcb0d7b271f6049e4dc69e5c}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_DummyGetReadAvailable@{PaUtil\_DummyGetReadAvailable}}
+\index{PaUtil\_DummyGetReadAvailable@{PaUtil\_DummyGetReadAvailable}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DummyGetReadAvailable()}{PaUtil\_DummyGetReadAvailable()}}
+{\footnotesize\ttfamily signed long Pa\+Util\+\_\+\+Dummy\+Get\+Read\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Dummy Get\+Read\+Available function for use in interfaces to callback based streams. Pass to the Get\+Read\+Available parameter of Pa\+Util\+\_\+\+Initialize\+Stream\+Interface. \begin{DoxyReturn}{Returns}
+An error code indicating that the function has no effect because the stream is a callback stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__stream_8c_aa4742249759bc11f31590db47cd19c2b}\label{pa__stream_8c_aa4742249759bc11f31590db47cd19c2b}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_DummyGetWriteAvailable@{PaUtil\_DummyGetWriteAvailable}}
+\index{PaUtil\_DummyGetWriteAvailable@{PaUtil\_DummyGetWriteAvailable}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DummyGetWriteAvailable()}{PaUtil\_DummyGetWriteAvailable()}}
+{\footnotesize\ttfamily signed long Pa\+Util\+\_\+\+Dummy\+Get\+Write\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Dummy Get\+Write\+Available function for use in interfaces to callback based streams. Pass to the Get\+Write\+Available parameter of Pa\+Util\+\_\+\+Initialize\+Stream\+Interface. \begin{DoxyReturn}{Returns}
+An error code indicating that the function has no effect because the stream is a callback stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__stream_8c_ae7a66186864e1f27f9e274e1de562219}\label{pa__stream_8c_ae7a66186864e1f27f9e274e1de562219}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_DummyRead@{PaUtil\_DummyRead}}
+\index{PaUtil\_DummyRead@{PaUtil\_DummyRead}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DummyRead()}{PaUtil\_DummyRead()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Dummy\+Read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+Dummy Read function for use in interfaces to a callback based streams. Pass to the Read parameter of Pa\+Util\+\_\+\+Initialize\+Stream\+Interface. \begin{DoxyReturn}{Returns}
+An error code indicating that the function has no effect because the stream is a callback stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__stream_8c_a827035da5bb7141143595519b0c0edc7}\label{pa__stream_8c_a827035da5bb7141143595519b0c0edc7}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_DummyWrite@{PaUtil\_DummyWrite}}
+\index{PaUtil\_DummyWrite@{PaUtil\_DummyWrite}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DummyWrite()}{PaUtil\_DummyWrite()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Dummy\+Write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+Dummy Write function for use in an interfaces to callback based streams. Pass to the Write parameter of Pa\+Util\+\_\+\+Initialize\+Stream\+Interface. \begin{DoxyReturn}{Returns}
+An error code indicating that the function has no effect because the stream is a callback stream. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__stream_8c_a7ae912708e0bb060028f25e6f95333b7}\label{pa__stream_8c_a7ae912708e0bb060028f25e6f95333b7}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_InitializeStreamInterface@{PaUtil\_InitializeStreamInterface}}
+\index{PaUtil\_InitializeStreamInterface@{PaUtil\_InitializeStreamInterface}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeStreamInterface()}{PaUtil\_InitializeStreamInterface()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Initialize\+Stream\+Interface (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} $\ast$}]{stream\+Interface,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Close,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Start,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Stop,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Abort,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Is\+Stopped,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Is\+Active,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Get\+Time,  }\item[{double($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Get\+Cpu\+Load,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long)}]{Read,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long)}]{Write,  }\item[{signed long($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Get\+Read\+Available,  }\item[{signed long($\ast$)(\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$)}]{Get\+Write\+Available }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__stream_8c_a0e3a44086f5baa62308dfd6df77396e0}\label{pa__stream_8c_a0e3a44086f5baa62308dfd6df77396e0}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_InitializeStreamRepresentation@{PaUtil\_InitializeStreamRepresentation}}
+\index{PaUtil\_InitializeStreamRepresentation@{PaUtil\_InitializeStreamRepresentation}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeStreamRepresentation()}{PaUtil\_InitializeStreamRepresentation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Initialize\+Stream\+Representation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} $\ast$}]{stream\+Representation,  }\item[{\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} $\ast$}]{stream\+Interface,  }\item[{\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$}]{stream\+Callback,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Initialize a \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__stream_8h_a0e3a44086f5baa62308dfd6df77396e0}{Pa\+Util\+\_\+\+Initialize\+Stream\+Representation}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__stream_8c_ac30f6c0d3138ef52c63c94fd1a53ea86}\label{pa__stream_8c_ac30f6c0d3138ef52c63c94fd1a53ea86}} 
+\index{pa\_stream.c@{pa\_stream.c}!PaUtil\_TerminateStreamRepresentation@{PaUtil\_TerminateStreamRepresentation}}
+\index{PaUtil\_TerminateStreamRepresentation@{PaUtil\_TerminateStreamRepresentation}!pa\_stream.c@{pa\_stream.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_TerminateStreamRepresentation()}{PaUtil\_TerminateStreamRepresentation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Terminate\+Stream\+Representation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} $\ast$}]{stream\+Representation }\end{DoxyParamCaption})}
+
+Clean up a \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} structure previously initialized by a call to Pa\+Util\+\_\+\+Initialize\+Stream\+Representation.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__stream_8h_a0e3a44086f5baa62308dfd6df77396e0}{Pa\+Util\+\_\+\+Initialize\+Stream\+Representation}} 
+\end{DoxySeeAlso}

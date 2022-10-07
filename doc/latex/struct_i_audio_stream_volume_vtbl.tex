@@ -1,0 +1,159 @@
+\hypertarget{struct_i_audio_stream_volume_vtbl}{}\doxysection{IAudio\+Stream\+Volume\+Vtbl Struct Reference}
+\label{struct_i_audio_stream_volume_vtbl}\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+
+
+{\ttfamily \#include $<$audioclient.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a080f97754171865032ed9c0a1ad6a710}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a4e0397b1a745e3eabb2eb8d36aa35d27}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a94d0ef3ae2e2185a617ee64269d2e1a7}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Channel\+Count)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a41db04c655f42bbc3c173a8069e8d854}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Channel\+Volume)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_ade8c125032d53613283d88d0c21571a5}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Channel\+Volume)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a8acedac27960a91591947b00949d0b8f}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+All\+Volumes)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a6f3d54f7901625fdf624ed19476e6699}{\+\_\+\+\_\+in\+\_\+ecount}} (\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dw\+Count}}) const float $\ast$pf\+Volumes)
+\item 
+\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a89a1650992c3195cd3cfdb2601c8b707}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+All\+Volumes)(\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a2b240c0cf02ab10b4f0aadcdc4b11a4c}{\+\_\+\+\_\+out\+\_\+ecount}} (\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dw\+Count}}) float $\ast$pf\+Volumes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_aa0b28249abbeee71ae2b852d9950b4ff}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a59cd8b13777d8692e2e9b9cb2f3fdeef}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT32 $\ast$ \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a2d190b0784dfb69966bb939efea621fb}{pdw\+Count}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}{dw\+Index}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const float \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a214cca90cdceed4f5f2e2b9e2b601110}{f\+Level}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a94c2d7ee2965c34db6b8ecdce92979d4}{pf\+Level}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dw\+Count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a6f3d54f7901625fdf624ed19476e6699}\label{struct_i_audio_stream_volume_vtbl_a6f3d54f7901625fdf624ed19476e6699}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!\_\_in\_ecount@{\_\_in\_ecount}}
+\index{\_\_in\_ecount@{\_\_in\_ecount}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{\_\_in\_ecount()}{\_\_in\_ecount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 IAudio\+Stream\+Volume\+Vtbl\+::\+\_\+\+\_\+in\+\_\+ecount (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dw\+Count}}}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a2b240c0cf02ab10b4f0aadcdc4b11a4c}\label{struct_i_audio_stream_volume_vtbl_a2b240c0cf02ab10b4f0aadcdc4b11a4c}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!\_\_out\_ecount@{\_\_out\_ecount}}
+\index{\_\_out\_ecount@{\_\_out\_ecount}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{\_\_out\_ecount()}{\_\_out\_ecount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 IAudio\+Stream\+Volume\+Vtbl\+::\+\_\+\+\_\+out\+\_\+ecount (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dw\+Count}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a89a1650992c3195cd3cfdb2601c8b707}\label{struct_i_audio_stream_volume_vtbl_a89a1650992c3195cd3cfdb2601c8b707}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+All\+Volumes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a94d0ef3ae2e2185a617ee64269d2e1a7}\label{struct_i_audio_stream_volume_vtbl_a94d0ef3ae2e2185a617ee64269d2e1a7}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Channel\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_ade8c125032d53613283d88d0c21571a5}\label{struct_i_audio_stream_volume_vtbl_ade8c125032d53613283d88d0c21571a5}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Channel\+Volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}\label{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a8acedac27960a91591947b00949d0b8f}\label{struct_i_audio_stream_volume_vtbl_a8acedac27960a91591947b00949d0b8f}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+All\+Volumes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a41db04c655f42bbc3c173a8069e8d854}\label{struct_i_audio_stream_volume_vtbl_a41db04c655f42bbc3c173a8069e8d854}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Channel\+Volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a080f97754171865032ed9c0a1ad6a710}\label{struct_i_audio_stream_volume_vtbl_a080f97754171865032ed9c0a1ad6a710}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a4e0397b1a745e3eabb2eb8d36aa35d27}\label{struct_i_audio_stream_volume_vtbl_a4e0397b1a745e3eabb2eb8d36aa35d27}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IAudio\+Stream\+Volume\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}\label{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!dwCount@{dwCount}}
+\index{dwCount@{dwCount}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{dwCount}{dwCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 IAudio\+Stream\+Volume\+Vtbl\+::dw\+Count}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}\label{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!dwIndex@{dwIndex}}
+\index{dwIndex@{dwIndex}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{dwIndex}{dwIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 IAudio\+Stream\+Volume\+Vtbl\+::dw\+Index}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a214cca90cdceed4f5f2e2b9e2b601110}\label{struct_i_audio_stream_volume_vtbl_a214cca90cdceed4f5f2e2b9e2b601110}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!fLevel@{fLevel}}
+\index{fLevel@{fLevel}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevel}{fLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const float IAudio\+Stream\+Volume\+Vtbl\+::f\+Level}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a2d190b0784dfb69966bb939efea621fb}\label{struct_i_audio_stream_volume_vtbl_a2d190b0784dfb69966bb939efea621fb}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!pdwCount@{pdwCount}}
+\index{pdwCount@{pdwCount}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{pdwCount}{pdwCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT32$\ast$ IAudio\+Stream\+Volume\+Vtbl\+::pdw\+Count}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a94c2d7ee2965c34db6b8ecdce92979d4}\label{struct_i_audio_stream_volume_vtbl_a94c2d7ee2965c34db6b8ecdce92979d4}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!pfLevel@{pfLevel}}
+\index{pfLevel@{pfLevel}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfLevel}{pfLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT32 \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Stream\+Volume\+Vtbl\+::pf\+Level}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_a59cd8b13777d8692e2e9b9cb2f3fdeef}\label{struct_i_audio_stream_volume_vtbl_a59cd8b13777d8692e2e9b9cb2f3fdeef}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IAudio\+Stream\+Volume\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_audio_stream_volume_vtbl_aa0b28249abbeee71ae2b852d9950b4ff}\label{struct_i_audio_stream_volume_vtbl_aa0b28249abbeee71ae2b852d9950b4ff}} 
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!riid@{riid}}
+\index{riid@{riid}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IAudio\+Stream\+Volume\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{audioclient_8h}{audioclient.\+h}}\end{DoxyCompactItemize}

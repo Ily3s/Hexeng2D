@@ -1,0 +1,68 @@
+\hypertarget{classportaudio_1_1_auto_system}{}\doxysection{portaudio\+::Auto\+System Class Reference}
+\label{classportaudio_1_1_auto_system}\index{portaudio::AutoSystem@{portaudio::AutoSystem}}
+
+
+{\ttfamily \#include $<$Auto\+System.\+hxx$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_auto_system_ae516b8cd738cb76ecd82e423ae670f58}{Auto\+System}} (bool \mbox{\hyperlink{classportaudio_1_1_auto_system_a6acb42f8ad73c7ea22512f12181aa26c}{initialize}}=true)
+\item 
+\mbox{\hyperlink{classportaudio_1_1_auto_system_aea5bad4f2025d9cacc793a0e287cedb4}{$\sim$\+Auto\+System}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_auto_system_a6acb42f8ad73c7ea22512f12181aa26c}{initialize}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_auto_system_a8a2c15af84ef28b5e254a8f589023875}{terminate}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}@brief A RAII idiom class to ensure automatic clean-up when an exception is 
+raised.
+
+A simple helper class which uses the 'Resource Acquisition is Initialization' 
+idiom (RAII). Use this class to initialize/terminate the System rather than 
+using System directly. AutoSystem must be created on stack and must be valid 
+throughout the time you wish to use PortAudioCpp. Your 'main' function might be 
+a good place for it.
+
+To avoid having to type portaudio::System::instance().xyz() all the time, it's usually 
+a good idea to make a reference to the System which can be accessed directly.
+@verbatim
+\end{DoxyVerb}
+ /// portaudio\+::\+Auto\+Sys auto\+Sys; /// \mbox{\hyperlink{classportaudio_1_1_system}{portaudio\+::\+System}} \&sys = \mbox{\hyperlink{classportaudio_1_1_system_a460800fc5a870298eb4d3f281253ddf4}{portaudio\+::\+System\+::instance()}}; ///  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_auto_system_ae516b8cd738cb76ecd82e423ae670f58}\label{classportaudio_1_1_auto_system_ae516b8cd738cb76ecd82e423ae670f58}} 
+\index{portaudio::AutoSystem@{portaudio::AutoSystem}!AutoSystem@{AutoSystem}}
+\index{AutoSystem@{AutoSystem}!portaudio::AutoSystem@{portaudio::AutoSystem}}
+\doxysubsubsection{\texorpdfstring{AutoSystem()}{AutoSystem()}}
+{\footnotesize\ttfamily portaudio\+::\+Auto\+System\+::\+Auto\+System (\begin{DoxyParamCaption}\item[{bool}]{initialize = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_auto_system_aea5bad4f2025d9cacc793a0e287cedb4}\label{classportaudio_1_1_auto_system_aea5bad4f2025d9cacc793a0e287cedb4}} 
+\index{portaudio::AutoSystem@{portaudio::AutoSystem}!````~AutoSystem@{$\sim$AutoSystem}}
+\index{````~AutoSystem@{$\sim$AutoSystem}!portaudio::AutoSystem@{portaudio::AutoSystem}}
+\doxysubsubsection{\texorpdfstring{$\sim$AutoSystem()}{~AutoSystem()}}
+{\footnotesize\ttfamily portaudio\+::\+Auto\+System\+::$\sim$\+Auto\+System (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_auto_system_a6acb42f8ad73c7ea22512f12181aa26c}\label{classportaudio_1_1_auto_system_a6acb42f8ad73c7ea22512f12181aa26c}} 
+\index{portaudio::AutoSystem@{portaudio::AutoSystem}!initialize@{initialize}}
+\index{initialize@{initialize}!portaudio::AutoSystem@{portaudio::AutoSystem}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Auto\+System\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_auto_system_a8a2c15af84ef28b5e254a8f589023875}\label{classportaudio_1_1_auto_system_a8a2c15af84ef28b5e254a8f589023875}} 
+\index{portaudio::AutoSystem@{portaudio::AutoSystem}!terminate@{terminate}}
+\index{terminate@{terminate}!portaudio::AutoSystem@{portaudio::AutoSystem}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Auto\+System\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_auto_system_8hxx}{Auto\+System.\+hxx}}\end{DoxyCompactItemize}

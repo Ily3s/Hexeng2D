@@ -1,0 +1,62 @@
+In addition to the functions described elsewhere in this tutorial, Port\+Audio provides a number of Utility functions that are useful in a variety of circumstances. You\textquotesingle{}ll want to read the \mbox{\hyperlink{portaudio_8h}{portaudio.\+h}} reference, which documents the entire V19 API for details, but we\textquotesingle{}ll try to cover the basics here.\hypertarget{utility_functions_tut_util2}{}\doxysection{Version Information}\label{utility_functions_tut_util2}
+Port\+Audio offers two functions to determine the Port\+Audio Version. This is most useful when you are using Port\+Audio as a dynamic library, but it may also be useful at other times.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}             \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\_GetVersion}} (\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\textcolor{keyword}{const} \textcolor{keywordtype}{char} *    \mbox{\hyperlink{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}{Pa\_GetVersionText}} (\textcolor{keywordtype}{void})}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util3}{}\doxysection{Error Text}\label{utility_functions_tut_util3}
+Port\+Audio allows you to get error text from an error number.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \textcolor{keywordtype}{char} *    \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}} (\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} errorCode)}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util4}{}\doxysection{Stream State}\label{utility_functions_tut_util4}
+Port\+Audio Streams exist in 3 states\+: Active, Stopped, and Callback Stopped. If a stream is in callback stopped state, you\textquotesingle{}ll need to stop it before you can start it again. If you need to query the state of a Port\+Audio stream, there are two functions for doing so\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}     \mbox{\hyperlink{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}{Pa\_IsStreamStopped}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}     \mbox{\hyperlink{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}{Pa\_IsStreamActive}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util5}{}\doxysection{Stream Info}\label{utility_functions_tut_util5}
+If you need to retrieve info about a given stream, such as latency, and sample rate info, there\textquotesingle{}s a function for that too\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_info}{PaStreamInfo}} *    \mbox{\hyperlink{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}{Pa\_GetStreamInfo}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util6}{}\doxysection{Stream Time}\label{utility_functions_tut_util6}
+If you need to synchronise other activities such as display updates or MIDI output with the Port\+Audio callback you need to know the current time according to the same timebase used by the stream callback timestamps.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}  \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\_GetStreamTime}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util6CPU}{}\doxysection{Usage}\label{utility_functions_tut_util6CPU}
+To determine how much CPU is being used by the callback, use these\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double}  \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\_GetStreamCpuLoad}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})}
+
+\end{DoxyCode}
+\hypertarget{utility_functions_tut_util7}{}\doxysection{Other utilities}\label{utility_functions_tut_util7}
+These functions allow you to determine the size of a sample from its format and sleep for a given amount of time. The sleep function should not be used for precise timing or synchronization because it makes few guarantees about the exact length of time it waits. It is most useful for testing.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{portaudio_8h_a541ed0b734df2631bc4c229acf92abc1}{Pa\_GetSampleSize}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}})}
+\DoxyCodeLine{\textcolor{keywordtype}{void}    \mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\_Sleep}} (\textcolor{keywordtype}{long} msec)}
+
+\end{DoxyCode}
+
+
+Previous\+: \mbox{\hyperlink{terminating_portaudio}{Closing a Stream and Terminating Port\+Audio}} $\vert$ Next\+: \mbox{\hyperlink{querying_devices}{Enumerating and Querying Port\+Audio Devices}} 

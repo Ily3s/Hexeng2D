@@ -9,10 +9,8 @@
 namespace Hexeng
 {
 
-	class HXG_DECLSPEC SaveVar
+	struct HXG_DECLSPEC SaveVar
 	{
-	public :
-
 		uint64_t id = 0;
 		void* value = nullptr;
 		uint64_t unit_size = 0;
@@ -28,15 +26,30 @@ namespace Hexeng
 		SaveVar(uint64_t id_p, void* val_p, uint64_t size_p, uint64_t unit_size_p);
 	};
 
+	/// <summary>
+	/// A save instance. It isn't closely related to a filepath but rather to a bunch of variables references.
+	/// </summary>
 	class HXG_DECLSPEC SaveFile
 	{
 	public :
 
 		SaveFile() = default;
 
+		/// <summary>
+		/// Add a variable to the instance
+		/// </summary>
 		void add_var(const SaveVar& var);
 
+		/// <summary>
+		/// Create or overwrite a save file at filepath that stores all the variables of the instance.
+		/// </summary>
+		/// <param name="filepath">Has to be a valid filepath to a file in an existing directory</param>
 		void save(const std::string& filepath);
+
+		/// <summary>
+		/// Set the variables of the instance to what's in the file at filepath.
+		/// </summary>
+		/// <param name="filepath">Has to be the path to a save that exists and has been previously created with save()</param>
 		void load(const std::string& filepath);
 
 	private :

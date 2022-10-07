@@ -1,0 +1,176 @@
+\hypertarget{struct_pa_oss_stream}{}\doxysection{Pa\+Oss\+Stream Struct Reference}
+\label{struct_pa_oss_stream}\index{PaOssStream@{PaOssStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_oss_stream_a0d731c9d8936b9303931b5c5fbc40f7e}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_oss_stream_aa62961e9043374ae1517162fcdeec84d}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_oss_stream_a0b2602b258a473831c538c58b568a0f6}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} \mbox{\hyperlink{struct_pa_oss_stream_abed200ca0a101d18139b4773d41526f6}{threading}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_a07e910fb0e37c6edd896bb26652f2731}{shared\+Device}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_oss_stream_a0f4eb82448f8ed9c9fbb6637c864d61c}{frames\+Per\+Host\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_abd3e8fb7cc3560fda0f0827055058915}{triggered}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_ae0985c22b9f0382faede4f48cd2071ea}{is\+Active}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_a3c19a7322bb3dc1426ee448c821724bc}{is\+Stopped}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_ab6ce13dd52a50ff036c85bddb0259859}{last\+Pos\+Ptr}}
+\item 
+double \mbox{\hyperlink{struct_pa_oss_stream_a90d0de71db73bc00497e7a2fce9c2ce4}{last\+Stream\+Bytes}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_a3710a34d8822deb12fb6edcfc1abc6c9}{frames\+Processed}}
+\item 
+double \mbox{\hyperlink{struct_pa_oss_stream_a43cf201ba8bace361a7c34ecf707c8cd}{sample\+Rate}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_a20a58bc0a5255b639b1ea40fce962261}{callback\+Mode}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_oss_stream_af8fd6b50f04c65318fbc6ed298cc9520}{callback\+Stop}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_oss_stream_a27bbffabcaa98b6302ffa2dbd1836f1a}{callback\+Abort}}
+\item 
+\mbox{\hyperlink{struct_pa_oss_stream_component}{Pa\+Oss\+Stream\+Component}} $\ast$ \mbox{\hyperlink{struct_pa_oss_stream_a8f72686fa2b8f688bb41363c6dcf097c}{capture}}
+\item 
+\mbox{\hyperlink{struct_pa_oss_stream_component}{Pa\+Oss\+Stream\+Component}} $\ast$ \mbox{\hyperlink{struct_pa_oss_stream_ad0a29997c2144457023c2557357418fd}{playback}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_oss_stream_a0640a35e51badac6cb590bf436749766}{poll\+Timeout}}
+\item 
+sem\+\_\+t \mbox{\hyperlink{struct_pa_oss_stream_ae7d78176c917f2ca1ee2fc9a55ef833e}{semaphore}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation specific representation of a Pa\+Stream. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_oss_stream_a0b2602b258a473831c538c58b568a0f6}\label{struct_pa_oss_stream_a0b2602b258a473831c538c58b568a0f6}} 
+\index{PaOssStream@{PaOssStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Oss\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a27bbffabcaa98b6302ffa2dbd1836f1a}\label{struct_pa_oss_stream_a27bbffabcaa98b6302ffa2dbd1836f1a}} 
+\index{PaOssStream@{PaOssStream}!callbackAbort@{callbackAbort}}
+\index{callbackAbort@{callbackAbort}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{callbackAbort}{callbackAbort}}
+{\footnotesize\ttfamily volatile int Pa\+Oss\+Stream\+::callback\+Abort}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a20a58bc0a5255b639b1ea40fce962261}\label{struct_pa_oss_stream_a20a58bc0a5255b639b1ea40fce962261}} 
+\index{PaOssStream@{PaOssStream}!callbackMode@{callbackMode}}
+\index{callbackMode@{callbackMode}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{callbackMode}{callbackMode}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::callback\+Mode}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_af8fd6b50f04c65318fbc6ed298cc9520}\label{struct_pa_oss_stream_af8fd6b50f04c65318fbc6ed298cc9520}} 
+\index{PaOssStream@{PaOssStream}!callbackStop@{callbackStop}}
+\index{callbackStop@{callbackStop}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{callbackStop}{callbackStop}}
+{\footnotesize\ttfamily volatile int Pa\+Oss\+Stream\+::callback\+Stop}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a8f72686fa2b8f688bb41363c6dcf097c}\label{struct_pa_oss_stream_a8f72686fa2b8f688bb41363c6dcf097c}} 
+\index{PaOssStream@{PaOssStream}!capture@{capture}}
+\index{capture@{capture}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{capture}{capture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_oss_stream_component}{Pa\+Oss\+Stream\+Component}}$\ast$ Pa\+Oss\+Stream\+::capture}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_aa62961e9043374ae1517162fcdeec84d}\label{struct_pa_oss_stream_aa62961e9043374ae1517162fcdeec84d}} 
+\index{PaOssStream@{PaOssStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Oss\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a0f4eb82448f8ed9c9fbb6637c864d61c}\label{struct_pa_oss_stream_a0f4eb82448f8ed9c9fbb6637c864d61c}} 
+\index{PaOssStream@{PaOssStream}!framesPerHostBuffer@{framesPerHostBuffer}}
+\index{framesPerHostBuffer@{framesPerHostBuffer}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{framesPerHostBuffer}{framesPerHostBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Oss\+Stream\+::frames\+Per\+Host\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a3710a34d8822deb12fb6edcfc1abc6c9}\label{struct_pa_oss_stream_a3710a34d8822deb12fb6edcfc1abc6c9}} 
+\index{PaOssStream@{PaOssStream}!framesProcessed@{framesProcessed}}
+\index{framesProcessed@{framesProcessed}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{framesProcessed}{framesProcessed}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::frames\+Processed}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_ae0985c22b9f0382faede4f48cd2071ea}\label{struct_pa_oss_stream_ae0985c22b9f0382faede4f48cd2071ea}} 
+\index{PaOssStream@{PaOssStream}!isActive@{isActive}}
+\index{isActive@{isActive}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{isActive}{isActive}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::is\+Active}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a3c19a7322bb3dc1426ee448c821724bc}\label{struct_pa_oss_stream_a3c19a7322bb3dc1426ee448c821724bc}} 
+\index{PaOssStream@{PaOssStream}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{isStopped}{isStopped}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::is\+Stopped}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_ab6ce13dd52a50ff036c85bddb0259859}\label{struct_pa_oss_stream_ab6ce13dd52a50ff036c85bddb0259859}} 
+\index{PaOssStream@{PaOssStream}!lastPosPtr@{lastPosPtr}}
+\index{lastPosPtr@{lastPosPtr}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{lastPosPtr}{lastPosPtr}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::last\+Pos\+Ptr}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a90d0de71db73bc00497e7a2fce9c2ce4}\label{struct_pa_oss_stream_a90d0de71db73bc00497e7a2fce9c2ce4}} 
+\index{PaOssStream@{PaOssStream}!lastStreamBytes@{lastStreamBytes}}
+\index{lastStreamBytes@{lastStreamBytes}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{lastStreamBytes}{lastStreamBytes}}
+{\footnotesize\ttfamily double Pa\+Oss\+Stream\+::last\+Stream\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_ad0a29997c2144457023c2557357418fd}\label{struct_pa_oss_stream_ad0a29997c2144457023c2557357418fd}} 
+\index{PaOssStream@{PaOssStream}!playback@{playback}}
+\index{playback@{playback}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{playback}{playback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_oss_stream_component}{Pa\+Oss\+Stream\+Component}} $\ast$ Pa\+Oss\+Stream\+::playback}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a0640a35e51badac6cb590bf436749766}\label{struct_pa_oss_stream_a0640a35e51badac6cb590bf436749766}} 
+\index{PaOssStream@{PaOssStream}!pollTimeout@{pollTimeout}}
+\index{pollTimeout@{pollTimeout}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{pollTimeout}{pollTimeout}}
+{\footnotesize\ttfamily unsigned long Pa\+Oss\+Stream\+::poll\+Timeout}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a43cf201ba8bace361a7c34ecf707c8cd}\label{struct_pa_oss_stream_a43cf201ba8bace361a7c34ecf707c8cd}} 
+\index{PaOssStream@{PaOssStream}!sampleRate@{sampleRate}}
+\index{sampleRate@{sampleRate}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{sampleRate}{sampleRate}}
+{\footnotesize\ttfamily double Pa\+Oss\+Stream\+::sample\+Rate}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_ae7d78176c917f2ca1ee2fc9a55ef833e}\label{struct_pa_oss_stream_ae7d78176c917f2ca1ee2fc9a55ef833e}} 
+\index{PaOssStream@{PaOssStream}!semaphore@{semaphore}}
+\index{semaphore@{semaphore}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{semaphore}{semaphore}}
+{\footnotesize\ttfamily sem\+\_\+t Pa\+Oss\+Stream\+::semaphore}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a07e910fb0e37c6edd896bb26652f2731}\label{struct_pa_oss_stream_a07e910fb0e37c6edd896bb26652f2731}} 
+\index{PaOssStream@{PaOssStream}!sharedDevice@{sharedDevice}}
+\index{sharedDevice@{sharedDevice}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{sharedDevice}{sharedDevice}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::shared\+Device}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_a0d731c9d8936b9303931b5c5fbc40f7e}\label{struct_pa_oss_stream_a0d731c9d8936b9303931b5c5fbc40f7e}} 
+\index{PaOssStream@{PaOssStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Oss\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_abed200ca0a101d18139b4773d41526f6}\label{struct_pa_oss_stream_abed200ca0a101d18139b4773d41526f6}} 
+\index{PaOssStream@{PaOssStream}!threading@{threading}}
+\index{threading@{threading}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{threading}{threading}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} Pa\+Oss\+Stream\+::threading}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_abd3e8fb7cc3560fda0f0827055058915}\label{struct_pa_oss_stream_abd3e8fb7cc3560fda0f0827055058915}} 
+\index{PaOssStream@{PaOssStream}!triggered@{triggered}}
+\index{triggered@{triggered}!PaOssStream@{PaOssStream}}
+\doxysubsubsection{\texorpdfstring{triggered}{triggered}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+::triggered}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/oss/\mbox{\hyperlink{pa__unix__oss_8c}{pa\+\_\+unix\+\_\+oss.\+c}}\end{DoxyCompactItemize}

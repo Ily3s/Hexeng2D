@@ -1,0 +1,98 @@
+\hypertarget{pa__mac__core__blocking_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/coreaudio/pa\+\_\+mac\+\_\+core\+\_\+blocking.c File Reference}
+\label{pa__mac__core__blocking_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_blocking.c@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_blocking.c}}
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+blocking.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$libkern/\+OSAtomic.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_a2c9ba3f25ece458a7a5856c4ee4f6432}{initialize\+Blio\+Ring\+Buffers}} (\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$blio, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} input\+Sample\+Format, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} output\+Sample\+Format, long ring\+Buffer\+Size\+In\+Frames, int in\+Chan, int out\+Chan)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_aedd64041043bb6cba5713d9a12c26ebf}{reset\+Blio\+Ring\+Buffers}} (\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$blio)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_a96df2ab1655f2c2d1d524c7c960f8319}{destroy\+Blio\+Ring\+Buffers}} (\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$blio)
+\item 
+int \mbox{\hyperlink{pa__mac__core__blocking_8c_af2c9d8aead26742638f8cfb73f07ca8f}{Blio\+Callback}} (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output, unsigned long frame\+Count, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_a08972ca355b9e048bb4cdadea2fc2887}{Read\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames\+Requested)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_a0f3ed83a6771215a186f1a2e73d861a0}{Write\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames\+Requested)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__blocking_8c_a71c28efe7cf5d4765d1e7efa9c1cd8ad}{wait\+Until\+Blio\+Write\+Buffer\+Is\+Empty}} (\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$blio, double sample\+Rate, size\+\_\+t frames\+Per\+Buffer)
+\item 
+signed long \mbox{\hyperlink{pa__mac__core__blocking_8c_a82aa1e30985c7924247e8f45fc356d46}{Get\+Stream\+Read\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+signed long \mbox{\hyperlink{pa__mac__core__blocking_8c_ad7ee6bd74b3109101f1eb4ca0514c8b0}{Get\+Stream\+Write\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation required for blocking I/O. It is separated from \mbox{\hyperlink{pa__mac__core_8c}{pa\+\_\+mac\+\_\+core.\+c}} simply to ease development. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_af2c9d8aead26742638f8cfb73f07ca8f}\label{pa__mac__core__blocking_8c_af2c9d8aead26742638f8cfb73f07ca8f}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!BlioCallback@{BlioCallback}}
+\index{BlioCallback@{BlioCallback}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{BlioCallback()}{BlioCallback()}}
+{\footnotesize\ttfamily int Blio\+Callback (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{input,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{output,  }\item[{unsigned long}]{frame\+Count,  }\item[{const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$}]{time\+Info,  }\item[{\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}}]{status\+Flags,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a96df2ab1655f2c2d1d524c7c960f8319}\label{pa__mac__core__blocking_8c_a96df2ab1655f2c2d1d524c7c960f8319}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!destroyBlioRingBuffers@{destroyBlioRingBuffers}}
+\index{destroyBlioRingBuffers@{destroyBlioRingBuffers}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{destroyBlioRingBuffers()}{destroyBlioRingBuffers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} destroy\+Blio\+Ring\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$}]{blio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a82aa1e30985c7924247e8f45fc356d46}\label{pa__mac__core__blocking_8c_a82aa1e30985c7924247e8f45fc356d46}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!GetStreamReadAvailable@{GetStreamReadAvailable}}
+\index{GetStreamReadAvailable@{GetStreamReadAvailable}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{GetStreamReadAvailable()}{GetStreamReadAvailable()}}
+{\footnotesize\ttfamily static signed long Get\+Stream\+Read\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_ad7ee6bd74b3109101f1eb4ca0514c8b0}\label{pa__mac__core__blocking_8c_ad7ee6bd74b3109101f1eb4ca0514c8b0}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!GetStreamWriteAvailable@{GetStreamWriteAvailable}}
+\index{GetStreamWriteAvailable@{GetStreamWriteAvailable}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{GetStreamWriteAvailable()}{GetStreamWriteAvailable()}}
+{\footnotesize\ttfamily static signed long Get\+Stream\+Write\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a2c9ba3f25ece458a7a5856c4ee4f6432}\label{pa__mac__core__blocking_8c_a2c9ba3f25ece458a7a5856c4ee4f6432}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!initializeBlioRingBuffers@{initializeBlioRingBuffers}}
+\index{initializeBlioRingBuffers@{initializeBlioRingBuffers}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{initializeBlioRingBuffers()}{initializeBlioRingBuffers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} initialize\+Blio\+Ring\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$}]{blio,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{input\+Sample\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{output\+Sample\+Format,  }\item[{long}]{ring\+Buffer\+Size\+In\+Frames,  }\item[{int}]{in\+Chan,  }\item[{int}]{out\+Chan }\end{DoxyParamCaption})}
+
+This should be called with the relevant info when initializing a stream for callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ring\+Buffer\+Size\+In\+Frames} & must be a power of 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a08972ca355b9e048bb4cdadea2fc2887}\label{pa__mac__core__blocking_8c_a08972ca355b9e048bb4cdadea2fc2887}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!ReadStream@{ReadStream}}
+\index{ReadStream@{ReadStream}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{ReadStream()}{ReadStream()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Read\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames\+Requested }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000035}{Todo}}]REVIEW\+: consider what to do if the input overflows. do we requeue all of the buffers? should we be running a thread to make sure they are always queued? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}} \end{DoxyRefDesc}
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_aedd64041043bb6cba5713d9a12c26ebf}\label{pa__mac__core__blocking_8c_aedd64041043bb6cba5713d9a12c26ebf}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!resetBlioRingBuffers@{resetBlioRingBuffers}}
+\index{resetBlioRingBuffers@{resetBlioRingBuffers}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{resetBlioRingBuffers()}{resetBlioRingBuffers()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} reset\+Blio\+Ring\+Buffers (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$}]{blio }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a71c28efe7cf5d4765d1e7efa9c1cd8ad}\label{pa__mac__core__blocking_8c_a71c28efe7cf5d4765d1e7efa9c1cd8ad}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!waitUntilBlioWriteBufferIsEmpty@{waitUntilBlioWriteBufferIsEmpty}}
+\index{waitUntilBlioWriteBufferIsEmpty@{waitUntilBlioWriteBufferIsEmpty}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{waitUntilBlioWriteBufferIsEmpty()}{waitUntilBlioWriteBufferIsEmpty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} wait\+Until\+Blio\+Write\+Buffer\+Is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_blio}{Pa\+Mac\+Blio}} $\ast$}]{blio,  }\item[{double}]{sample\+Rate,  }\item[{size\+\_\+t}]{frames\+Per\+Buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__blocking_8c_a0f3ed83a6771215a186f1a2e73d861a0}\label{pa__mac__core__blocking_8c_a0f3ed83a6771215a186f1a2e73d861a0}} 
+\index{pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}!WriteStream@{WriteStream}}
+\index{WriteStream@{WriteStream}!pa\_mac\_core\_blocking.c@{pa\_mac\_core\_blocking.c}}
+\doxysubsubsection{\texorpdfstring{WriteStream()}{WriteStream()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Write\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames\+Requested }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000036}{Todo}}]REVIEW\+: consider what to do if the output underflows. do we requeue all the existing buffers with zeros? should we run a separate thread to keep the buffers enqueued at all times? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}} \end{DoxyRefDesc}

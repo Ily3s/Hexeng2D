@@ -1,0 +1,58 @@
+\hypertarget{pa__win__waveformat_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/win/pa\+\_\+win\+\_\+waveformat.c File Reference}
+\label{pa__win__waveformat_8c}\index{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_waveformat.c@{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_waveformat.c}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+waveformat.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8c_a97cbfca9458338218863c675bea01194}{WAVE\+\_\+\+FORMAT\+\_\+\+EXTENSIBLE}}~0x\+FFFE
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__waveformat_8c_ab26e932e222866ce6d1590e2d7e33896}{Pa\+Win\+\_\+\+Sample\+Format\+To\+Linear\+Wave\+Format\+Tag}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__win__waveformat_8c_a0d39d3ba4a04ea6c0274544ebeb2f33b}{Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Ex}} (\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$wave\+Format, int num\+Channels, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format, int wave\+Format\+Tag, double sample\+Rate)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__win__waveformat_8c_ac3391f1ab413c0cebd9be096e6092667}{Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Extensible}} (\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$wave\+Format, int num\+Channels, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format, int wave\+Format\+Tag, double sample\+Rate, \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} channel\+Mask)
+\item 
+\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} \mbox{\hyperlink{pa__win__waveformat_8c_a896ca4135770c9fcaa5ae16f7a51a703}{Pa\+Win\+\_\+\+Default\+Channel\+Mask}} (int num\+Channels)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__waveformat_8c_a97cbfca9458338218863c675bea01194}\label{pa__win__waveformat_8c_a97cbfca9458338218863c675bea01194}} 
+\index{pa\_win\_waveformat.c@{pa\_win\_waveformat.c}!WAVE\_FORMAT\_EXTENSIBLE@{WAVE\_FORMAT\_EXTENSIBLE}}
+\index{WAVE\_FORMAT\_EXTENSIBLE@{WAVE\_FORMAT\_EXTENSIBLE}!pa\_win\_waveformat.c@{pa\_win\_waveformat.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_EXTENSIBLE}{WAVE\_FORMAT\_EXTENSIBLE}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+\+EXTENSIBLE~0x\+FFFE}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__waveformat_8c_a896ca4135770c9fcaa5ae16f7a51a703}\label{pa__win__waveformat_8c_a896ca4135770c9fcaa5ae16f7a51a703}} 
+\index{pa\_win\_waveformat.c@{pa\_win\_waveformat.c}!PaWin\_DefaultChannelMask@{PaWin\_DefaultChannelMask}}
+\index{PaWin\_DefaultChannelMask@{PaWin\_DefaultChannelMask}!pa\_win\_waveformat.c@{pa\_win\_waveformat.c}}
+\doxysubsubsection{\texorpdfstring{PaWin\_DefaultChannelMask()}{PaWin\_DefaultChannelMask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} Pa\+Win\+\_\+\+Default\+Channel\+Mask (\begin{DoxyParamCaption}\item[{int}]{num\+Channels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8c_a0d39d3ba4a04ea6c0274544ebeb2f33b}\label{pa__win__waveformat_8c_a0d39d3ba4a04ea6c0274544ebeb2f33b}} 
+\index{pa\_win\_waveformat.c@{pa\_win\_waveformat.c}!PaWin\_InitializeWaveFormatEx@{PaWin\_InitializeWaveFormatEx}}
+\index{PaWin\_InitializeWaveFormatEx@{PaWin\_InitializeWaveFormatEx}!pa\_win\_waveformat.c@{pa\_win\_waveformat.c}}
+\doxysubsubsection{\texorpdfstring{PaWin\_InitializeWaveFormatEx()}{PaWin\_InitializeWaveFormatEx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Ex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$}]{wave\+Format,  }\item[{int}]{num\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format,  }\item[{int}]{wave\+Format\+Tag,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8c_ac3391f1ab413c0cebd9be096e6092667}\label{pa__win__waveformat_8c_ac3391f1ab413c0cebd9be096e6092667}} 
+\index{pa\_win\_waveformat.c@{pa\_win\_waveformat.c}!PaWin\_InitializeWaveFormatExtensible@{PaWin\_InitializeWaveFormatExtensible}}
+\index{PaWin\_InitializeWaveFormatExtensible@{PaWin\_InitializeWaveFormatExtensible}!pa\_win\_waveformat.c@{pa\_win\_waveformat.c}}
+\doxysubsubsection{\texorpdfstring{PaWin\_InitializeWaveFormatExtensible()}{PaWin\_InitializeWaveFormatExtensible()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Extensible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$}]{wave\+Format,  }\item[{int}]{num\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format,  }\item[{int}]{wave\+Format\+Tag,  }\item[{double}]{sample\+Rate,  }\item[{\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}}}]{channel\+Mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8c_ab26e932e222866ce6d1590e2d7e33896}\label{pa__win__waveformat_8c_ab26e932e222866ce6d1590e2d7e33896}} 
+\index{pa\_win\_waveformat.c@{pa\_win\_waveformat.c}!PaWin\_SampleFormatToLinearWaveFormatTag@{PaWin\_SampleFormatToLinearWaveFormatTag}}
+\index{PaWin\_SampleFormatToLinearWaveFormatTag@{PaWin\_SampleFormatToLinearWaveFormatTag}!pa\_win\_waveformat.c@{pa\_win\_waveformat.c}}
+\doxysubsubsection{\texorpdfstring{PaWin\_SampleFormatToLinearWaveFormatTag()}{PaWin\_SampleFormatToLinearWaveFormatTag()}}
+{\footnotesize\ttfamily int Pa\+Win\+\_\+\+Sample\+Format\+To\+Linear\+Wave\+Format\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format }\end{DoxyParamCaption})}
+

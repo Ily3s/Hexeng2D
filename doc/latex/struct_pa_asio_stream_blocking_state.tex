@@ -1,0 +1,152 @@
+\hypertarget{struct_pa_asio_stream_blocking_state}{}\doxysection{Pa\+Asio\+Stream\+Blocking\+State Struct Reference}
+\label{struct_pa_asio_stream_blocking_state}\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_ad0635a7fb4c70db4dbcc4da40301fd5f}{stop\+Flag}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a8fa83147d1da88898a4161f07eb8bc16}{write\+Buffers\+Requested}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a90210659b71bfbb266c89a834b6ce72b}{read\+Frames\+Requested}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_ac41f9b20abaf565ddee10ba390f2c9e7}{write\+Buffers\+Requested\+Flag}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_ac000da4cb444d7c90b6263e87566b1fb}{read\+Frames\+Requested\+Flag}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a3e5e248be829e756ecbff62175f474fd}{write\+Buffers\+Ready\+Event}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_ab10d5241d6bc83f9ca91e8cbcff2abe6}{read\+Frames\+Ready\+Event}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_af4645b9cd24335efe520d1a1894d39e6}{write\+Ring\+Buffer\+Data}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a45031877aa21279da777339eee2b1156}{read\+Ring\+Buffer\+Data}}
+\item 
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_ab9875e6148cce05acff1774e0cbb4bd5}{write\+Ring\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a5ae8106505c2ad1fd79f03274071ad1b}{read\+Ring\+Buffer}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a3367c2abcf6ecd151b370b80e196a0fe}{write\+Ring\+Buffer\+Initial\+Frames}}
+\item 
+const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_adbca9a38efb53888c4d0578125058a2e}{write\+Stream\+Buffer}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a6c1cd19d9bee99ff976b75877cfb566f}{read\+Stream\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_af8989602749763446edf9eeb34975ada}{buffer\+Processor}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a3a15447e096a4c7d08b970351894ba3c}{output\+Underflow\+Flag}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_blocking_state_a601d69041f7e015cb337591afd59319b}{input\+Overflow\+Flag}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A data structure specifically for storing blocking i/o related data. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_af8989602749763446edf9eeb34975ada}\label{struct_pa_asio_stream_blocking_state_af8989602749763446edf9eeb34975ada}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Asio\+Stream\+Blocking\+State\+::buffer\+Processor}
+
+Buffer processor, used to handle the blocking i/o ring buffers. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a601d69041f7e015cb337591afd59319b}\label{struct_pa_asio_stream_blocking_state_a601d69041f7e015cb337591afd59319b}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!inputOverflowFlag@{inputOverflowFlag}}
+\index{inputOverflowFlag@{inputOverflowFlag}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{inputOverflowFlag}{inputOverflowFlag}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+Blocking\+State\+::input\+Overflow\+Flag}
+
+Flag to signal an input overflow from within the callback function. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a3a15447e096a4c7d08b970351894ba3c}\label{struct_pa_asio_stream_blocking_state_a3a15447e096a4c7d08b970351894ba3c}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!outputUnderflowFlag@{outputUnderflowFlag}}
+\index{outputUnderflowFlag@{outputUnderflowFlag}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{outputUnderflowFlag}{outputUnderflowFlag}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+Blocking\+State\+::output\+Underflow\+Flag}
+
+Flag to signal an output underflow from within the callback function. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_ab10d5241d6bc83f9ca91e8cbcff2abe6}\label{struct_pa_asio_stream_blocking_state_ab10d5241d6bc83f9ca91e8cbcff2abe6}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readFramesReadyEvent@{readFramesReadyEvent}}
+\index{readFramesReadyEvent@{readFramesReadyEvent}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readFramesReadyEvent}{readFramesReadyEvent}}
+{\footnotesize\ttfamily HANDLE Pa\+Asio\+Stream\+Blocking\+State\+::read\+Frames\+Ready\+Event}
+
+Event to signal that requested input frames are available. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a90210659b71bfbb266c89a834b6ce72b}\label{struct_pa_asio_stream_blocking_state_a90210659b71bfbb266c89a834b6ce72b}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readFramesRequested@{readFramesRequested}}
+\index{readFramesRequested@{readFramesRequested}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readFramesRequested}{readFramesRequested}}
+{\footnotesize\ttfamily unsigned long Pa\+Asio\+Stream\+Blocking\+State\+::read\+Frames\+Requested}
+
+The number of available input frames, requested by the Read\+Stream() function. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_ac000da4cb444d7c90b6263e87566b1fb}\label{struct_pa_asio_stream_blocking_state_ac000da4cb444d7c90b6263e87566b1fb}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readFramesRequestedFlag@{readFramesRequestedFlag}}
+\index{readFramesRequestedFlag@{readFramesRequestedFlag}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readFramesRequestedFlag}{readFramesRequestedFlag}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+Blocking\+State\+::read\+Frames\+Requested\+Flag}
+
+Flag to indicate that Read\+Stream() requires more input frames to be available. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a5ae8106505c2ad1fd79f03274071ad1b}\label{struct_pa_asio_stream_blocking_state_a5ae8106505c2ad1fd79f03274071ad1b}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readRingBuffer@{readRingBuffer}}
+\index{readRingBuffer@{readRingBuffer}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readRingBuffer}{readRingBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} Pa\+Asio\+Stream\+Blocking\+State\+::read\+Ring\+Buffer}
+
+Frame-\/aligned blocking i/o ring buffer to store input data (interleaved user format). \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a45031877aa21279da777339eee2b1156}\label{struct_pa_asio_stream_blocking_state_a45031877aa21279da777339eee2b1156}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readRingBufferData@{readRingBufferData}}
+\index{readRingBufferData@{readRingBufferData}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readRingBufferData}{readRingBufferData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Asio\+Stream\+Blocking\+State\+::read\+Ring\+Buffer\+Data}
+
+The actual ring buffer memory, used by the input ring buffer. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a6c1cd19d9bee99ff976b75877cfb566f}\label{struct_pa_asio_stream_blocking_state_a6c1cd19d9bee99ff976b75877cfb566f}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!readStreamBuffer@{readStreamBuffer}}
+\index{readStreamBuffer@{readStreamBuffer}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{readStreamBuffer}{readStreamBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asio\+Stream\+Blocking\+State\+::read\+Stream\+Buffer}
+
+Temp buffer, used by Read\+Stream() for handling non-\/interleaved data. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_ad0635a7fb4c70db4dbcc4da40301fd5f}\label{struct_pa_asio_stream_blocking_state_ad0635a7fb4c70db4dbcc4da40301fd5f}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!stopFlag@{stopFlag}}
+\index{stopFlag@{stopFlag}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{stopFlag}{stopFlag}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+Blocking\+State\+::stop\+Flag}
+
+Flag indicating that block processing is to be stopped. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a3e5e248be829e756ecbff62175f474fd}\label{struct_pa_asio_stream_blocking_state_a3e5e248be829e756ecbff62175f474fd}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeBuffersReadyEvent@{writeBuffersReadyEvent}}
+\index{writeBuffersReadyEvent@{writeBuffersReadyEvent}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeBuffersReadyEvent}{writeBuffersReadyEvent}}
+{\footnotesize\ttfamily HANDLE Pa\+Asio\+Stream\+Blocking\+State\+::write\+Buffers\+Ready\+Event}
+
+Event to signal that requested output buffers are available. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a8fa83147d1da88898a4161f07eb8bc16}\label{struct_pa_asio_stream_blocking_state_a8fa83147d1da88898a4161f07eb8bc16}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeBuffersRequested@{writeBuffersRequested}}
+\index{writeBuffersRequested@{writeBuffersRequested}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeBuffersRequested}{writeBuffersRequested}}
+{\footnotesize\ttfamily unsigned long Pa\+Asio\+Stream\+Blocking\+State\+::write\+Buffers\+Requested}
+
+The number of available output buffers, requested by the Write\+Stream() function. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_ac41f9b20abaf565ddee10ba390f2c9e7}\label{struct_pa_asio_stream_blocking_state_ac41f9b20abaf565ddee10ba390f2c9e7}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeBuffersRequestedFlag@{writeBuffersRequestedFlag}}
+\index{writeBuffersRequestedFlag@{writeBuffersRequestedFlag}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeBuffersRequestedFlag}{writeBuffersRequestedFlag}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+Blocking\+State\+::write\+Buffers\+Requested\+Flag}
+
+Flag to indicate that Write\+Stream() has requested more output buffers to be available. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_ab9875e6148cce05acff1774e0cbb4bd5}\label{struct_pa_asio_stream_blocking_state_ab9875e6148cce05acff1774e0cbb4bd5}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeRingBuffer@{writeRingBuffer}}
+\index{writeRingBuffer@{writeRingBuffer}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeRingBuffer}{writeRingBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} Pa\+Asio\+Stream\+Blocking\+State\+::write\+Ring\+Buffer}
+
+Frame-\/aligned blocking i/o ring buffer to store output data (interleaved user format). \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_af4645b9cd24335efe520d1a1894d39e6}\label{struct_pa_asio_stream_blocking_state_af4645b9cd24335efe520d1a1894d39e6}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeRingBufferData@{writeRingBufferData}}
+\index{writeRingBufferData@{writeRingBufferData}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeRingBufferData}{writeRingBufferData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Asio\+Stream\+Blocking\+State\+::write\+Ring\+Buffer\+Data}
+
+The actual ring buffer memory, used by the output ring buffer. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_a3367c2abcf6ecd151b370b80e196a0fe}\label{struct_pa_asio_stream_blocking_state_a3367c2abcf6ecd151b370b80e196a0fe}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeRingBufferInitialFrames@{writeRingBufferInitialFrames}}
+\index{writeRingBufferInitialFrames@{writeRingBufferInitialFrames}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeRingBufferInitialFrames}{writeRingBufferInitialFrames}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+Blocking\+State\+::write\+Ring\+Buffer\+Initial\+Frames}
+
+The initial number of silent frames within the output ring buffer. \mbox{\Hypertarget{struct_pa_asio_stream_blocking_state_adbca9a38efb53888c4d0578125058a2e}\label{struct_pa_asio_stream_blocking_state_adbca9a38efb53888c4d0578125058a2e}} 
+\index{PaAsioStreamBlockingState@{PaAsioStreamBlockingState}!writeStreamBuffer@{writeStreamBuffer}}
+\index{writeStreamBuffer@{writeStreamBuffer}!PaAsioStreamBlockingState@{PaAsioStreamBlockingState}}
+\doxysubsubsection{\texorpdfstring{writeStreamBuffer}{writeStreamBuffer}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asio\+Stream\+Blocking\+State\+::write\+Stream\+Buffer}
+
+Temp buffer, used by Write\+Stream() for handling non-\/interleaved data. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/asio/\mbox{\hyperlink{pa__asio_8cpp}{pa\+\_\+asio.\+cpp}}\end{DoxyCompactItemize}

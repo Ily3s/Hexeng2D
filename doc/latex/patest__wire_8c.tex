@@ -1,0 +1,161 @@
+\hypertarget{patest__wire_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+wire.c File Reference}
+\label{patest__wire_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_wire.c@{Hexeng2D/dependencies/portaudio/test/patest\_wire.c}}
+
+
+Pass input directly to output.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_wire_config__s}{Wire\+Config\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a9015b8bf0e206ab59680c0b01953f8ec}{USE\+\_\+\+FLOAT\+\_\+\+INPUT}}~(1)
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a11356b92dec905cd80e59d5ac4b0f0ed}{USE\+\_\+\+FLOAT\+\_\+\+OUTPUT}}~(1)
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_aa1b206a793cada70067ae4e6754de62b}{INPUT\+\_\+\+FORMAT}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_af3a4ed009493a68cf88077e10d73c746}{OUTPUT\+\_\+\+FORMAT}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a67035501eddf4712d6532ff7ae705d75}{CONVERT\+\_\+\+IN\+\_\+\+TO\+\_\+\+OUT}}(in)~((\mbox{\hyperlink{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}{OUTPUT\+\_\+\+SAMPLE}}) ((in) $\ast$ \mbox{\hyperlink{patest__wire_8c_aede1fe1b27bff89ce70ebd4eb259eed0}{g\+In\+Out\+Scaler}}))
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_ae0dd4d667c4c2d5b6104a5c97db72aba}{INPUT\+\_\+\+DEVICE}}~(\mbox{\hyperlink{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}{Pa\+\_\+\+Get\+Default\+Input\+Device}}())
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a6ee1df754f053739d33f2d477bdd3c10}{OUTPUT\+\_\+\+DEVICE}}~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())
+\item 
+\#define \mbox{\hyperlink{patest__wire_8c_a6a4b7cc27ddd8e4a322dd04723834040}{CHECK\+\_\+\+FLAG\+\_\+\+COUNT}}(member)~    if( config-\/$>$member $>$ 0 ) printf(\char`\"{}FLAGS SET\+: \char`\"{} \#member \char`\"{} = \%d\textbackslash{}n\char`\"{}, config-\/$>$member );
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_wire_config__s}{Wire\+Config\+\_\+s}} \mbox{\hyperlink{patest__wire_8c_ab93e3b34c2010f679ef21001811e2401}{Wire\+Config\+\_\+t}}
+\item 
+typedef float \mbox{\hyperlink{patest__wire_8c_ab522f18988f2e75f999b4156744fd8d1}{INPUT\+\_\+\+SAMPLE}}
+\item 
+typedef float \mbox{\hyperlink{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}{OUTPUT\+\_\+\+SAMPLE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{patest__wire_8c_aede1fe1b27bff89ce70ebd4eb259eed0}{g\+In\+Out\+Scaler}} = 1.\+0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Pass input directly to output. 
+
+Note that some HW devices, for example many ISA audio cards on PCs, do NOT support full duplex! For a PC, you normally need a PCI based audio card such as the SBLive.
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}}
+\end{DoxyAuthor}
+While adapting to V19-\/\+API, I excluded configs with frames\+Per\+Callback=0 because of an assert in file pa\+\_\+common/pa\+\_\+process.\+c. Pieter, Oct 9, 2003. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__wire_8c_a6a4b7cc27ddd8e4a322dd04723834040}\label{patest__wire_8c_a6a4b7cc27ddd8e4a322dd04723834040}} 
+\index{patest\_wire.c@{patest\_wire.c}!CHECK\_FLAG\_COUNT@{CHECK\_FLAG\_COUNT}}
+\index{CHECK\_FLAG\_COUNT@{CHECK\_FLAG\_COUNT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{CHECK\_FLAG\_COUNT}{CHECK\_FLAG\_COUNT}}
+{\footnotesize\ttfamily \#define CHECK\+\_\+\+FLAG\+\_\+\+COUNT(\begin{DoxyParamCaption}\item[{}]{member }\end{DoxyParamCaption})~    if( config-\/$>$member $>$ 0 ) printf(\char`\"{}FLAGS SET\+: \char`\"{} \#member \char`\"{} = \%d\textbackslash{}n\char`\"{}, config-\/$>$member );}
+
+\mbox{\Hypertarget{patest__wire_8c_a67035501eddf4712d6532ff7ae705d75}\label{patest__wire_8c_a67035501eddf4712d6532ff7ae705d75}} 
+\index{patest\_wire.c@{patest\_wire.c}!CONVERT\_IN\_TO\_OUT@{CONVERT\_IN\_TO\_OUT}}
+\index{CONVERT\_IN\_TO\_OUT@{CONVERT\_IN\_TO\_OUT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{CONVERT\_IN\_TO\_OUT}{CONVERT\_IN\_TO\_OUT}}
+{\footnotesize\ttfamily \#define CONVERT\+\_\+\+IN\+\_\+\+TO\+\_\+\+OUT(\begin{DoxyParamCaption}\item[{}]{in }\end{DoxyParamCaption})~((\mbox{\hyperlink{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}{OUTPUT\+\_\+\+SAMPLE}}) ((in) $\ast$ \mbox{\hyperlink{patest__wire_8c_aede1fe1b27bff89ce70ebd4eb259eed0}{g\+In\+Out\+Scaler}}))}
+
+\mbox{\Hypertarget{patest__wire_8c_ae0dd4d667c4c2d5b6104a5c97db72aba}\label{patest__wire_8c_ae0dd4d667c4c2d5b6104a5c97db72aba}} 
+\index{patest\_wire.c@{patest\_wire.c}!INPUT\_DEVICE@{INPUT\_DEVICE}}
+\index{INPUT\_DEVICE@{INPUT\_DEVICE}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{INPUT\_DEVICE}{INPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define INPUT\+\_\+\+DEVICE~(\mbox{\hyperlink{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}{Pa\+\_\+\+Get\+Default\+Input\+Device}}())}
+
+\mbox{\Hypertarget{patest__wire_8c_aa1b206a793cada70067ae4e6754de62b}\label{patest__wire_8c_aa1b206a793cada70067ae4e6754de62b}} 
+\index{patest\_wire.c@{patest\_wire.c}!INPUT\_FORMAT@{INPUT\_FORMAT}}
+\index{INPUT\_FORMAT@{INPUT\_FORMAT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{INPUT\_FORMAT}{INPUT\_FORMAT}}
+{\footnotesize\ttfamily \#define INPUT\+\_\+\+FORMAT~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{patest__wire_8c_a6ee1df754f053739d33f2d477bdd3c10}\label{patest__wire_8c_a6ee1df754f053739d33f2d477bdd3c10}} 
+\index{patest\_wire.c@{patest\_wire.c}!OUTPUT\_DEVICE@{OUTPUT\_DEVICE}}
+\index{OUTPUT\_DEVICE@{OUTPUT\_DEVICE}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_DEVICE}{OUTPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+DEVICE~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())}
+
+\mbox{\Hypertarget{patest__wire_8c_af3a4ed009493a68cf88077e10d73c746}\label{patest__wire_8c_af3a4ed009493a68cf88077e10d73c746}} 
+\index{patest\_wire.c@{patest\_wire.c}!OUTPUT\_FORMAT@{OUTPUT\_FORMAT}}
+\index{OUTPUT\_FORMAT@{OUTPUT\_FORMAT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_FORMAT}{OUTPUT\_FORMAT}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+FORMAT~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{patest__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_wire.c@{patest\_wire.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__wire_8c_a9015b8bf0e206ab59680c0b01953f8ec}\label{patest__wire_8c_a9015b8bf0e206ab59680c0b01953f8ec}} 
+\index{patest\_wire.c@{patest\_wire.c}!USE\_FLOAT\_INPUT@{USE\_FLOAT\_INPUT}}
+\index{USE\_FLOAT\_INPUT@{USE\_FLOAT\_INPUT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{USE\_FLOAT\_INPUT}{USE\_FLOAT\_INPUT}}
+{\footnotesize\ttfamily \#define USE\+\_\+\+FLOAT\+\_\+\+INPUT~(1)}
+
+\mbox{\Hypertarget{patest__wire_8c_a11356b92dec905cd80e59d5ac4b0f0ed}\label{patest__wire_8c_a11356b92dec905cd80e59d5ac4b0f0ed}} 
+\index{patest\_wire.c@{patest\_wire.c}!USE\_FLOAT\_OUTPUT@{USE\_FLOAT\_OUTPUT}}
+\index{USE\_FLOAT\_OUTPUT@{USE\_FLOAT\_OUTPUT}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{USE\_FLOAT\_OUTPUT}{USE\_FLOAT\_OUTPUT}}
+{\footnotesize\ttfamily \#define USE\+\_\+\+FLOAT\+\_\+\+OUTPUT~(1)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__wire_8c_ab522f18988f2e75f999b4156744fd8d1}\label{patest__wire_8c_ab522f18988f2e75f999b4156744fd8d1}} 
+\index{patest\_wire.c@{patest\_wire.c}!INPUT\_SAMPLE@{INPUT\_SAMPLE}}
+\index{INPUT\_SAMPLE@{INPUT\_SAMPLE}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{INPUT\_SAMPLE}{INPUT\_SAMPLE}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{patest__wire_8c_ab522f18988f2e75f999b4156744fd8d1}{INPUT\+\_\+\+SAMPLE}}}
+
+\mbox{\Hypertarget{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}\label{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}} 
+\index{patest\_wire.c@{patest\_wire.c}!OUTPUT\_SAMPLE@{OUTPUT\_SAMPLE}}
+\index{OUTPUT\_SAMPLE@{OUTPUT\_SAMPLE}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_SAMPLE}{OUTPUT\_SAMPLE}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{patest__wire_8c_a82fa296fc4f2d31bc1aba2408d91d096}{OUTPUT\+\_\+\+SAMPLE}}}
+
+\mbox{\Hypertarget{patest__wire_8c_ab93e3b34c2010f679ef21001811e2401}\label{patest__wire_8c_ab93e3b34c2010f679ef21001811e2401}} 
+\index{patest\_wire.c@{patest\_wire.c}!WireConfig\_t@{WireConfig\_t}}
+\index{WireConfig\_t@{WireConfig\_t}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{WireConfig\_t}{WireConfig\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_wire_config__s}{Wire\+Config\+\_\+s}} \mbox{\hyperlink{patest__wire_8c_ab93e3b34c2010f679ef21001811e2401}{Wire\+Config\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_wire.c@{patest\_wire.c}!main@{main}}
+\index{main@{main}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{patest__wire_8c_aede1fe1b27bff89ce70ebd4eb259eed0}\label{patest__wire_8c_aede1fe1b27bff89ce70ebd4eb259eed0}} 
+\index{patest\_wire.c@{patest\_wire.c}!gInOutScaler@{gInOutScaler}}
+\index{gInOutScaler@{gInOutScaler}!patest\_wire.c@{patest\_wire.c}}
+\doxysubsubsection{\texorpdfstring{gInOutScaler}{gInOutScaler}}
+{\footnotesize\ttfamily double g\+In\+Out\+Scaler = 1.\+0}
+

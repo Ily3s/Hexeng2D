@@ -1,0 +1,111 @@
+\hypertarget{compile_mac_coreaudio_comp_mac_ca_1}{}\doxysection{Requirements}\label{compile_mac_coreaudio_comp_mac_ca_1}
+OS X 10.\+4 or later. Port\+Audio v19 currently only compiles and runs on OS X version 10.\+4 or later. Because of its heavy reliance on memory barriers, it\textquotesingle{}s not clear how easy it would be to back-\/port Port\+Audio to OS X version 10.\+3. Leopard support requires the 2007 snapshot or later.
+
+Apple\textquotesingle{}s Xcode and its related tools installed in the default location. There is no Xcode project for Port\+Audio.
+
+Mac 10.\+4 SDK. Look for \char`\"{}/\+Developer/\+SDKs/\+Mac\+OSX10.\+4u.\+sdk\char`\"{} folder on your system. It may be installed with XCode. If not then you can download it from Apple Developer Connection. \href{http://connect.apple.com/}{\texttt{ http\+://connect.\+apple.\+com/}}\hypertarget{compile_mac_coreaudio_comp_mac_ca_2}{}\doxysection{Building}\label{compile_mac_coreaudio_comp_mac_ca_2}
+To build Port\+Audio, simply use the Unix-\/style \char`\"{}./configure \&\& make\char`\"{}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure \&\& make}
+
+\end{DoxyCode}
+
+
+You do {\bfseries{not}} need to do \char`\"{}make install\char`\"{}, and we don\textquotesingle{}t recommend it; however, you may be using software that instructs you to do so, in which case you should follow those instructions. (Note from Phil\+: I had to do \char`\"{}sudo make install\char`\"{} after the command above, otherwise XCode complained that it could not find \char`\"{}/usr/local/lib/libportaudio.\+dylib\char`\"{} when I compiled an example.)
+
+The result of these steps will be a file named \char`\"{}libportaudio.\+dylib\char`\"{} in the directory \char`\"{}usr/local/lib/\char`\"{}.
+
+By default, this will create universal binaries and therefore requires the Universal SDK from Apple, included with XCode 2.\+1 and higher.\hypertarget{compile_mac_coreaudio_comp_mac_ca_3}{}\doxysection{Other Build Options}\label{compile_mac_coreaudio_comp_mac_ca_3}
+There are a variety of other options for building Port\+Audio. The default described above is recommended as it is the most supported and tested; however, your needs may differ and require other options, which are described below.\hypertarget{_}{}\doxysubsection{}\label{_}
+By default, Port\+Audio is built as a universal binary. This includes 64-\/bit versions if you are compiling on 10.\+5, Leopard. If you want a \char`\"{}thin\char`\"{}, or single architecture library, you have two options\+:
+
+build a non-\/universal library using configure options. use lipo(1) on whatever part of the library you plan to use.
+
+Note that the first option may require an extremely recent version of Port\+Audio (February 5th \textquotesingle{}08 at least).\hypertarget{_}{}\doxysubsection{}\label{_}
+To build a non-\/universal library for the host architecture, simply use the {\itshape --disable-\/mac-\/universal} option with configure.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure -\/-\/disable-\/mac-\/universal \&\& make}
+
+\end{DoxyCode}
+
+
+The {\itshape --disable-\/mac-\/universal} option may also be used in conjunction with environment variables to give you more control over the universal binary build process. For example, to build a universal binary for the i386 and ppc architectures using the 10.\+4u sdk (which is the default on 10.\+4, but not 10.\+5), you might specify this configure command line\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CFLAGS=\textcolor{stringliteral}{"{}-\/O2 -\/g -\/Wall -\/arch i386 -\/arch ppc -\/isysroot /Developer/SDKs/MacOSX10.4u.sdk -\/mmacosx-\/version-\/min=10.3"{}} \(\backslash\)}
+\DoxyCodeLine{  LDFLAGS=\textcolor{stringliteral}{"{}-\/arch i386 -\/arch ppc -\/isysroot /Developer/SDKs/MacOSX10.4u.sdk -\/mmacosx-\/version-\/min=10.3"{}} \(\backslash\)}
+\DoxyCodeLine{  ./configure -\/-\/disable-\/mac-\/universal -\/-\/disable-\/dependency-\/tracking}
+
+\end{DoxyCode}
+
+
+For more info, see Apple\textquotesingle{}s documentation on the matter\+:
+
+\href{http://developer.apple.com/technotes/tn2005/tn2137.html}{\texttt{ http\+://developer.\+apple.\+com/technotes/tn2005/tn2137.\+html}} \href{http://developer.apple.com/documentation/Porting/Conceptual/PortingUnix/intro/chapter_1_section_1.html}{\texttt{ http\+://developer.\+apple.\+com/documentation/\+Porting/\+Conceptual/\+Porting\+Unix/intro/chapter\+\_\+1\+\_\+section\+\_\+1.\+html}}\hypertarget{_}{}\doxysubsection{}\label{_}
+The second option is to build normally, and use lipo (1) to extract the architectures you want. For example, if you want a \char`\"{}thin\char`\"{}, i386 library only\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{lipo lib/.libs/libportaudio.a -\/thin i386 -\/output libportaudio.a}
+
+\end{DoxyCode}
+
+
+or if you want to extract a single architecture fat file\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{lipo lib/.libs/libportaudio.a -\/extract i386 -\/output libportaudio.a}
+
+\end{DoxyCode}
+\hypertarget{_}{}\doxysubsection{}\label{_}
+By default, Port\+Audio on the mac is built without any debugging options. This is because asserts are generally inappropriate for a production environment and debugging information has been suspected, though not proven, to cause trouble with some interfaces. If you would like to compile with debugging, you must run configure with the appropriate flags. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure -\/-\/enable-\/mac-\/debug \&\& make}
+
+\end{DoxyCode}
+
+
+This will enable -\/g and disable -\/DNDEBUG which will effectively enable asserts.\hypertarget{compile_mac_coreaudio_comp_mac_ca_4}{}\doxysection{Using the Library in XCode Projects}\label{compile_mac_coreaudio_comp_mac_ca_4}
+If you are planning to follow the rest of the tutorial, several project types will work. You can create a \char`\"{}\+Standard Tool\char`\"{} under \char`\"{}\+Command Line Utility\char`\"{}. If you are not following the rest of the tutorial, any type of project should work with Port\+Audio, but these instructions may not work perfectly.
+
+Once you\textquotesingle{}ve compiled Port\+Audio, the easiest and recommended way to use Port\+Audio in your XCode project is to add \char`\"{}$<$portaudio$>$/include/portaudio.\+h\char`\"{} and \char`\"{}$<$portaudio$>$/lib/.\+libs/libportaudio.\+a\char`\"{} to your project. Because \char`\"{}$<$portaudio$>$/lib/.\+libs/\char`\"{} is a hidden directory, you won\textquotesingle{}t be able to navigate to it using the finder or the standard Mac OS file dialogs by clicking on files and folders. You can use command-\/shift-\/G in the finder to specify the exact path, or, from the shell, if you are in the portaudio directory, you can enter this command\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{open lib/.libs}
+
+\end{DoxyCode}
+
+
+Then drag the \char`\"{}libportaudio.\+a\char`\"{} file into your XCode project and place it in the \char`\"{}\+External Frameworks and Libraries\char`\"{} group, if the project type has it. If not you can simply add it to the top level folder of the project.
+
+You will need to add the following frameworks to your XCode project\+:
+
+
+\begin{DoxyItemize}
+\item Core\+Audio.\+framework
+\item Audio\+Toolbox.\+framework
+\item Audio\+Unit.\+framework
+\item Core\+Services.\+framework
+\item Core\+Foundation.\+framework
+\end{DoxyItemize}\hypertarget{compile_mac_coreaudio_comp_mac_ca_5}{}\doxysection{Using the Library in Other Projects}\label{compile_mac_coreaudio_comp_mac_ca_5}
+For gcc/\+Make style projects, include \char`\"{}include/portaudio.\+h\char`\"{} and link \char`\"{}libportaudio.\+a\char`\"{}, and use the frameworks listed in the previous section. How you do so depends on your build.\hypertarget{compile_mac_coreaudio_comp_mac_ca_6}{}\doxysection{Using Mac-\/only Extensions to Port\+Audio}\label{compile_mac_coreaudio_comp_mac_ca_6}
+For additional, Mac-\/only extensions to the Port\+Audio interface, you may also want to grab \char`\"{}include/pa\+\_\+mac\+\_\+core.\+h\char`\"{}. This file contains some special, mac-\/only features relating to sample-\/rate conversion, channel mapping, performance and device hogging. See \char`\"{}src/hostapi/coreaudio/notes.\+txt\char`\"{} for more details on these features.\hypertarget{compile_mac_coreaudio_comp_mac_ca_7}{}\doxysection{What Happened to Makefile.\+darwin?}\label{compile_mac_coreaudio_comp_mac_ca_7}
+Note, there used to be a special makefile just for darwin. This is no longer supported because you can build universal binaries from the standard configure routine. If you find this file in your directory structure it means you have an outdated version of Port\+Audio.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{make -\/\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}} Makefile.darwin}
+
+\end{DoxyCode}
+
+
+Back to the Tutorial\+: \mbox{\hyperlink{tutorial_start}{Port\+Audio Tutorials}} 

@@ -1,0 +1,79 @@
+\hypertarget{pa__win__coinitialize_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/win/pa\+\_\+win\+\_\+coinitialize.h File Reference}
+\label{pa__win__coinitialize_8h}\index{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_coinitialize.h@{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_coinitialize.h}}
+
+
+Microsoft COM initialization routines.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}}
+\begin{DoxyCompactList}\small\item\em Data type used to hold the result of an attempt to initialize COM using Pa\+Win\+Util\+\_\+\+Co\+Initialize. Must be retained between a call to Pa\+Win\+Util\+\_\+\+Co\+Initialize and a matching call to Pa\+Win\+Util\+\_\+\+Co\+Uninitialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} \mbox{\hyperlink{pa__win__coinitialize_8h_abf21de64af10aee252b395a00947ba73}{Pa\+Win\+Util\+Com\+Initialization\+Result}}
+\begin{DoxyCompactList}\small\item\em Data type used to hold the result of an attempt to initialize COM using Pa\+Win\+Util\+\_\+\+Co\+Initialize. Must be retained between a call to Pa\+Win\+Util\+\_\+\+Co\+Initialize and a matching call to Pa\+Win\+Util\+\_\+\+Co\+Uninitialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__coinitialize_8h_a9839b804bf6920677e3ef262ea5f9e75}{Pa\+Win\+Util\+\_\+\+Co\+Initialize}} (\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} host\+Api\+Type, \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} $\ast$com\+Initialization\+Result)
+\begin{DoxyCompactList}\small\item\em Initialize Microsoft COM subsystem on the current thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__win__coinitialize_8h_adf8a7e487441c8b976cf6fadbc830d7e}{Pa\+Win\+Util\+\_\+\+Co\+Uninitialize}} (\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} host\+Api\+Type, \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} $\ast$com\+Initialization\+Result)
+\begin{DoxyCompactList}\small\item\em Uninitialize the Microsoft COM subsystem on the current thread using the result of a previous call to Pa\+Win\+Util\+\_\+\+Co\+Initialize. Must be called on the same thread as Pa\+Win\+Util\+\_\+\+Co\+Initialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Microsoft COM initialization routines. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__coinitialize_8h_abf21de64af10aee252b395a00947ba73}\label{pa__win__coinitialize_8h_abf21de64af10aee252b395a00947ba73}} 
+\index{pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}!PaWinUtilComInitializationResult@{PaWinUtilComInitializationResult}}
+\index{PaWinUtilComInitializationResult@{PaWinUtilComInitializationResult}!pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}}
+\doxysubsubsection{\texorpdfstring{PaWinUtilComInitializationResult}{PaWinUtilComInitializationResult}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} \mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}}}
+
+
+
+Data type used to hold the result of an attempt to initialize COM using Pa\+Win\+Util\+\_\+\+Co\+Initialize. Must be retained between a call to Pa\+Win\+Util\+\_\+\+Co\+Initialize and a matching call to Pa\+Win\+Util\+\_\+\+Co\+Uninitialize. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__coinitialize_8h_a9839b804bf6920677e3ef262ea5f9e75}\label{pa__win__coinitialize_8h_a9839b804bf6920677e3ef262ea5f9e75}} 
+\index{pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}!PaWinUtil\_CoInitialize@{PaWinUtil\_CoInitialize}}
+\index{PaWinUtil\_CoInitialize@{PaWinUtil\_CoInitialize}!pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}}
+\doxysubsubsection{\texorpdfstring{PaWinUtil\_CoInitialize()}{PaWinUtil\_CoInitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Util\+\_\+\+Co\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}]{host\+Api\+Type,  }\item[{\mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} $\ast$}]{com\+Initialization\+Result }\end{DoxyParamCaption})}
+
+
+
+Initialize Microsoft COM subsystem on the current thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Type} & the host API type id of the caller. Used for error reporting.\\
+\hline
+{\em com\+Initialization\+Result} & An output parameter. The value pointed to by this parameter stores information required by Pa\+Win\+Util\+\_\+\+Co\+Uninitialize to correctly uninitialize COM. The value should be retained and later passed to Pa\+Win\+Util\+\_\+\+Co\+Uninitialize.\\
+\hline
+\end{DoxyParams}
+If Pa\+Win\+Util\+\_\+\+Co\+Initialize returns pa\+No\+Error, the caller must later call Pa\+Win\+Util\+\_\+\+Co\+Uninitialize once. \mbox{\Hypertarget{pa__win__coinitialize_8h_adf8a7e487441c8b976cf6fadbc830d7e}\label{pa__win__coinitialize_8h_adf8a7e487441c8b976cf6fadbc830d7e}} 
+\index{pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}!PaWinUtil\_CoUninitialize@{PaWinUtil\_CoUninitialize}}
+\index{PaWinUtil\_CoUninitialize@{PaWinUtil\_CoUninitialize}!pa\_win\_coinitialize.h@{pa\_win\_coinitialize.h}}
+\doxysubsubsection{\texorpdfstring{PaWinUtil\_CoUninitialize()}{PaWinUtil\_CoUninitialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Win\+Util\+\_\+\+Co\+Uninitialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}]{host\+Api\+Type,  }\item[{\mbox{\hyperlink{struct_pa_win_util_com_initialization_result}{Pa\+Win\+Util\+Com\+Initialization\+Result}} $\ast$}]{com\+Initialization\+Result }\end{DoxyParamCaption})}
+
+
+
+Uninitialize the Microsoft COM subsystem on the current thread using the result of a previous call to Pa\+Win\+Util\+\_\+\+Co\+Initialize. Must be called on the same thread as Pa\+Win\+Util\+\_\+\+Co\+Initialize. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Type} & the host API type id of the caller. Used for error reporting.\\
+\hline
+{\em com\+Initialization\+Result} & An input parameter. A pointer to a value previously initialized by a call to Pa\+Win\+Util\+\_\+\+Co\+Initialize. \\
+\hline
+\end{DoxyParams}

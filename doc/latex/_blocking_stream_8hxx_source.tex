@@ -1,0 +1,48 @@
+\hypertarget{_blocking_stream_8hxx_source}{}\doxysection{Blocking\+Stream.\+hxx}
+\label{_blocking_stream_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/BlockingStream.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/BlockingStream.hxx}}
+\mbox{\hyperlink{_blocking_stream_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_BLOCKINGSTREAM\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_BLOCKINGSTREAM\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_stream_8hxx}{portaudiocpp/Stream.hxx}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{18     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_blocking_stream}{BlockingStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a3f8ebe1d69bdb7404dc31a82ed92c75f}{BlockingStream}}();}
+\DoxyCodeLine{22         \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a3f8ebe1d69bdb7404dc31a82ed92c75f}{BlockingStream}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{StreamParameters}} \&parameters);}
+\DoxyCodeLine{23         \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a1e5fd91291bd9ddc11230af99807cf52}{\string~BlockingStream}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a8a2667b58c73636709a1794d33bd51ec}{open}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{StreamParameters}} \&parameters);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_blocking_stream_ada24f8f708601f135b02eb2b79eb99e8}{read}}(\textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numFrames);}
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a1d64d957903a522ada1e834412cad3df}{write}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numFrames);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a578d76124e2d273b5a613f93ffefce1f}{availableReadSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{31         \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a777352a901df8158f31ba23940fcbe22}{availableWriteSize}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{private}:}
+\DoxyCodeLine{34         \mbox{\hyperlink{classportaudio_1_1_blocking_stream_a3f8ebe1d69bdb7404dc31a82ed92c75f}{BlockingStream}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{BlockingStream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{35         \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{BlockingStream}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{BlockingStream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \} \textcolor{comment}{// portaudio}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_BLOCKINGSTREAM\_HXX}}
+\DoxyCodeLine{45 }
+
+\end{DoxyCode}

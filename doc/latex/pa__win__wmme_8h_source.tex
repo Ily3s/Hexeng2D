@@ -1,0 +1,147 @@
+\hypertarget{pa__win__wmme_8h_source}{}\doxysection{pa\+\_\+win\+\_\+wmme.\+h}
+\label{pa__win__wmme_8h_source}\index{Hexeng2D/dependencies/portaudio/include/pa\_win\_wmme.h@{Hexeng2D/dependencies/portaudio/include/pa\_win\_wmme.h}}
+\mbox{\hyperlink{pa__win__wmme_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_WIN\_WMME\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_WIN\_WMME\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{6 \textcolor{comment}{ * MME specific extensions}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2000 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__win__waveformat_8h}{pa\_win\_waveformat.h}}"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{50 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{51 \{}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/* The following are flags which can be set in}}
+\DoxyCodeLine{56 \textcolor{comment}{  PaWinMmeStreamInfo's flags field.}}
+\DoxyCodeLine{57 \textcolor{comment}{*/}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define paWinMmeUseLowLevelLatencyParameters            (0x01)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define paWinMmeUseMultipleDevices                      (0x02)  }\textcolor{comment}{/* use mme specific multiple device feature */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define paWinMmeUseChannelMask                          (0x04)}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{/* By default, the mme implementation drops the processing thread's priority}}
+\DoxyCodeLine{64 \textcolor{comment}{    to THREAD\_PRIORITY\_NORMAL and sleeps the thread if the CPU load exceeds 100\%}}
+\DoxyCodeLine{65 \textcolor{comment}{    This flag disables any priority throttling. The processing thread will always}}
+\DoxyCodeLine{66 \textcolor{comment}{    run at THREAD\_PRIORITY\_TIME\_CRITICAL.}}
+\DoxyCodeLine{67 \textcolor{comment}{*/}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define paWinMmeDontThrottleOverloadedProcessingThread  (0x08)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{/*  Flags for non-\/PCM spdif passthrough.}}
+\DoxyCodeLine{71 \textcolor{comment}{*/}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define paWinMmeWaveFormatDolbyAc3Spdif                 (0x10)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define paWinMmeWaveFormatWmaSpdif                      (0x20)}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count}{PaWinMmeDeviceAndChannelCount}}\{}
+\DoxyCodeLine{77     \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}} \mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count_afeb111df3482e661fa903bbc0ee0f908}{device}};}
+\DoxyCodeLine{78     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count_ab022a761007bd0a86305da52e70ed32b}{channelCount}};}
+\DoxyCodeLine{79 \}\mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count}{PaWinMmeDeviceAndChannelCount}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_win_mme_stream_info}{PaWinMmeStreamInfo}}\{}
+\DoxyCodeLine{83     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a62c0f8888229904962efdbec924d2527}{size}};             }
+\DoxyCodeLine{84     \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a393237910fb36b3f42396a365184ce01}{hostApiType}};    }
+\DoxyCodeLine{85     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a881694ff44db0af4d0f3067453c3db38}{version}};          }
+\DoxyCodeLine{87     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a3c253061ac0a54f2298f979343af90c4}{flags}};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{/* low-\/level latency setting support}}
+\DoxyCodeLine{90 \textcolor{comment}{        These settings control the number and size of host buffers in order}}
+\DoxyCodeLine{91 \textcolor{comment}{        to set latency. They will be used instead of the generic parameters}}
+\DoxyCodeLine{92 \textcolor{comment}{        to Pa\_OpenStream() if flags contains the PaWinMmeUseLowLevelLatencyParameters}}
+\DoxyCodeLine{93 \textcolor{comment}{        flag.}}
+\DoxyCodeLine{94 \textcolor{comment}{}}
+\DoxyCodeLine{95 \textcolor{comment}{        If PaWinMmeStreamInfo structures with PaWinMmeUseLowLevelLatencyParameters}}
+\DoxyCodeLine{96 \textcolor{comment}{        are supplied for both input and output in a full duplex stream, then the}}
+\DoxyCodeLine{97 \textcolor{comment}{        input and output framesPerBuffer must be the same, or the larger of the}}
+\DoxyCodeLine{98 \textcolor{comment}{        two must be a multiple of the smaller, otherwise a}}
+\DoxyCodeLine{99 \textcolor{comment}{        paIncompatibleHostApiSpecificStreamInfo error will be returned from}}
+\DoxyCodeLine{100 \textcolor{comment}{        Pa\_OpenStream().}}
+\DoxyCodeLine{101 \textcolor{comment}{    */}}
+\DoxyCodeLine{102     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a187a4ecd4f51bb767eccbf9e9e19781b}{framesPerBuffer}};}
+\DoxyCodeLine{103     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_aec154a2fcc5f3267e9007b2b46d4368c}{bufferCount}};  \textcolor{comment}{/* formerly numBuffers */}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105     \textcolor{comment}{/* multiple devices per direction support}}
+\DoxyCodeLine{106 \textcolor{comment}{        If flags contains the PaWinMmeUseMultipleDevices flag,}}
+\DoxyCodeLine{107 \textcolor{comment}{        this functionality will be used, otherwise the device parameter to}}
+\DoxyCodeLine{108 \textcolor{comment}{        Pa\_OpenStream() will be used instead.}}
+\DoxyCodeLine{109 \textcolor{comment}{        If devices are specified here, the corresponding device parameter}}
+\DoxyCodeLine{110 \textcolor{comment}{        to Pa\_OpenStream() should be set to paUseHostApiSpecificDeviceSpecification,}}
+\DoxyCodeLine{111 \textcolor{comment}{        otherwise an paInvalidDevice error will result.}}
+\DoxyCodeLine{112 \textcolor{comment}{        The total number of channels across all specified devices}}
+\DoxyCodeLine{113 \textcolor{comment}{        must agree with the corresponding channelCount parameter to}}
+\DoxyCodeLine{114 \textcolor{comment}{        Pa\_OpenStream() otherwise a paInvalidChannelCount error will result.}}
+\DoxyCodeLine{115 \textcolor{comment}{    */}}
+\DoxyCodeLine{116     \mbox{\hyperlink{struct_pa_win_mme_device_and_channel_count}{PaWinMmeDeviceAndChannelCount}} *\mbox{\hyperlink{struct_pa_win_mme_stream_info_a5418cc496f75d7f93de251fa1953aba3}{devices}};}
+\DoxyCodeLine{117     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_mme_stream_info_af811daf754308ad195bdd16cefcc99dd}{deviceCount}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119     \textcolor{comment}{/*}}
+\DoxyCodeLine{120 \textcolor{comment}{        support for WAVEFORMATEXTENSIBLE channel masks. If flags contains}}
+\DoxyCodeLine{121 \textcolor{comment}{        paWinMmeUseChannelMask this allows you to specify which speakers}}
+\DoxyCodeLine{122 \textcolor{comment}{        to address in a multichannel stream. Constants for channelMask}}
+\DoxyCodeLine{123 \textcolor{comment}{        are specified in pa\_win\_waveformat.h}}
+\DoxyCodeLine{124 \textcolor{comment}{}}
+\DoxyCodeLine{125 \textcolor{comment}{    */}}
+\DoxyCodeLine{126     \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{PaWinWaveFormatChannelMask}} \mbox{\hyperlink{struct_pa_win_mme_stream_info_a8ee3a7c32e2e393826e306472a034bd1}{channelMask}};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \}\mbox{\hyperlink{struct_pa_win_mme_stream_info}{PaWinMmeStreamInfo}};}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{140 \textcolor{keywordtype}{int} \mbox{\hyperlink{pa__win__wmme_8h_aaa47c87fb51f29024ad2db1c3ba85db5}{PaWinMME\_GetStreamInputHandleCount}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{153 HWAVEIN \mbox{\hyperlink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{PaWinMME\_GetStreamInputHandle}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \textcolor{keywordtype}{int} handleIndex );}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{165 \textcolor{keywordtype}{int} \mbox{\hyperlink{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7}{PaWinMME\_GetStreamOutputHandleCount}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 }
+\DoxyCodeLine{178 HWAVEOUT \mbox{\hyperlink{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6}{PaWinMME\_GetStreamOutputHandle}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \textcolor{keywordtype}{int} handleIndex );}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{182 \}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_WIN\_WMME\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

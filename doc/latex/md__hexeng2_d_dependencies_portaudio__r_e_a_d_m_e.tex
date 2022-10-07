@@ -1,0 +1,48 @@
+Port\+Audio is a portable audio I/O library designed for cross-\/platform support of audio. It uses either a callback mechanism to request audio processing, or blocking read/write calls to buffer data between the native audio subsystem and the client. Audio can be processed in various formats, including 32 bit floating point, and will be converted to the native format internally.\hypertarget{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Documentation\+:}\label{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Documentation is available at \href{http://www.portaudio.com/docs/}{\texttt{ http\+://www.\+portaudio.\+com/docs/}}
+\item Or at {\ttfamily /doc/html/index.html} after running Doxygen.
+\item Also see {\ttfamily src/common/portaudio.\+h} for the API spec.
+\item And see the {\ttfamily examples/} and {\ttfamily test/} directories for many examples of usage. (We suggest {\ttfamily \mbox{\hyperlink{paex__saw_8c}{examples/paex\+\_\+saw.\+c}}} for an example.)
+\end{DoxyItemize}
+
+For information on compiling programs with Port\+Audio, please see the tutorial at\+:
+
+\href{http://portaudio.com/docs/v19-doxydocs/tutorial_start.html}{\texttt{ http\+://portaudio.\+com/docs/v19-\/doxydocs/tutorial\+\_\+start.\+html}}
+
+We have an active mailing list for user and developer discussions. Please feel free to join. See \href{http://www.portaudio.com}{\texttt{ http\+://www.\+portaudio.\+com}} for details.\hypertarget{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Important Files and Folders\+:}\label{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md3}
+\begin{DoxyVerb}include/portaudio.h     = header file for PortAudio API. Specifies API. 
+src/common/             = platform independent code, host independent 
+                          code for all implementations.
+src/os                  = os specific (but host api neutral) code
+src/hostapi             = implementations for different host apis
+\end{DoxyVerb}
+\hypertarget{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{Host API Implementations\+:}\label{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md4}
+\begin{DoxyVerb}src/hostapi/alsa        = Advanced Linux Sound Architecture (ALSA)
+src/hostapi/asihpi      = AudioScience HPI
+src/hostapi/asio        = ASIO for Windows and Macintosh
+src/hostapi/coreaudio   = Macintosh Core Audio for OS X
+src/hostapi/dsound      = Windows Direct Sound
+src/hostapi/jack        = JACK Audio Connection Kit
+src/hostapi/oss         = Unix Open Sound System (OSS)
+src/hostapi/wasapi      = Windows Vista WASAPI
+src/hostapi/wdmks       = Windows WDM Kernel Streaming
+src/hostapi/wmme        = Windows MultiMedia Extensions (MME)
+\end{DoxyVerb}
+\hypertarget{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{Test Programs\+:}\label{md__hexeng2_d_dependencies_portaudio__r_e_a_d_m_e_autotoc_md5}
+\begin{DoxyVerb}test/pa_fuzz.c         = guitar fuzz box
+test/pa_devs.c         = print a list of available devices
+test/pa_minlat.c       = determine minimum latency for your machine
+test/paqa_devs.c       = self test that opens all devices
+test/paqa_errs.c       = test error detection and reporting
+test/patest_clip.c     = hear a sine wave clipped and unclipped
+test/patest_dither.c   = hear effects of dithering (extremely subtle)
+test/patest_pink.c     = fun with pink noise
+test/patest_record.c   = record and playback some audio
+test/patest_maxsines.c = how many sine waves can we play? Tests Pa_GetCPULoad().
+test/patest_sine.c     = output a sine wave in a simple PA app
+test/patest_sync.c     = test synchronization of audio and video
+test/patest_wire.c     = pass input to output, wire simulator
+\end{DoxyVerb}
+ 

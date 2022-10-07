@@ -1,0 +1,137 @@
+\hypertarget{classportaudio_1_1_pa_exception}{}\doxysection{portaudio\+::Pa\+Exception Class Reference}
+\label{classportaudio_1_1_pa_exception}\index{portaudio::PaException@{portaudio::PaException}}
+
+
+Wrapper for Port\+Audio error codes to C++ exceptions.  
+
+
+
+
+{\ttfamily \#include $<$Exception.\+hxx$>$}
+
+Inheritance diagram for portaudio\+::Pa\+Exception\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classportaudio_1_1_pa_exception}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_pa_exception_a6b7027b327f4dc62f6bd6665f9478e53}{Pa\+Exception}} (\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} error)
+\begin{DoxyCompactList}\small\item\em Wraps a Port\+Audio error into a Port\+Audio\+Cpp \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}}. ///. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_pa_exception_a2e9f4bf2a93e639d04bc5007e83b6f38}{what}} () const  throw ()
+\begin{DoxyCompactList}\small\item\em Alias for \mbox{\hyperlink{classportaudio_1_1_pa_exception_a04af4115db35d7ecf3409446917874d4}{pa\+Error\+Text()}}, to have std\+::exception compliance. ///. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{classportaudio_1_1_pa_exception_abaeda7999dad61f9d64b563a38df45ff}{pa\+Error}} () const
+\begin{DoxyCompactList}\small\item\em Returns the Port\+Audio error code (Pa\+Error). ///. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_pa_exception_a04af4115db35d7ecf3409446917874d4}{pa\+Error\+Text}} () const
+\begin{DoxyCompactList}\small\item\em Returns the error as a (zero-\/terminated) text string. ///. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classportaudio_1_1_pa_exception_a106b643722a8289d22c91f4225511ca6}{is\+Host\+Api\+Error}} () const
+\begin{DoxyCompactList}\small\item\em Returns true is the error is a \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} error. ///. \end{DoxyCompactList}\item 
+long \mbox{\hyperlink{classportaudio_1_1_pa_exception_a6b05d8bf1857b04e70951e18a6cc9725}{last\+Host\+Api\+Error}} () const
+\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_pa_exception_aec85e21e6015d95ed6c410b02c9a0077}{last\+Host\+Api\+Error\+Text}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_pa_exception_a8ead42c006b218b15edc7ee9f5ce5960}{operator==}} (const \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_pa_exception_aa18eec4ceb0cd6ae67951ca23c246857}{operator!=}} (const \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}} \&rhs) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Wrapper for Port\+Audio error codes to C++ exceptions. 
+
+It wraps up Port\+Audio\textquotesingle{}s error handling mechanism using C++ exceptions and is derived from std\+::exception for easy exception handling and to ease integration with other code.
+
+To know what exceptions each function may throw, look up the errors that can occur in the Port\+Audio documentation for the equivalent functions.
+
+Some functions are likely to throw an exception (such as Stream\+::open(), etc) and these should always be called in try\{\} catch\{\} blocks and the thrown exceptions should be handled properly (ie. the application shouldn\textquotesingle{}t just abort, but merely display a warning dialog to the user or something). However nearly all functions in Port\+Audio\+Cpp are capable of throwing exceptions. When a function like \mbox{\hyperlink{classportaudio_1_1_stream_a9053e15a7bb2cc609a20125c09ee5e6b}{Stream\+::is\+Stopped()}} throws an exception, it\textquotesingle{}s such an exceptional state that it\textquotesingle{}s not likely that it can be recovered. Pa\+Exceptions such as these can \`{}`safely'\textquotesingle{} be left to be handled by some outer catch-\/all-\/like mechanism for unrecoverable errors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a6b7027b327f4dc62f6bd6665f9478e53}\label{classportaudio_1_1_pa_exception_a6b7027b327f4dc62f6bd6665f9478e53}} 
+\index{portaudio::PaException@{portaudio::PaException}!PaException@{PaException}}
+\index{PaException@{PaException}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{PaException()}{PaException()}}
+{\footnotesize\ttfamily portaudio\+::\+Pa\+Exception\+::\+Pa\+Exception (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Wraps a Port\+Audio error into a Port\+Audio\+Cpp \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}}. ///. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a106b643722a8289d22c91f4225511ca6}\label{classportaudio_1_1_pa_exception_a106b643722a8289d22c91f4225511ca6}} 
+\index{portaudio::PaException@{portaudio::PaException}!isHostApiError@{isHostApiError}}
+\index{isHostApiError@{isHostApiError}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{isHostApiError()}{isHostApiError()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Pa\+Exception\+::is\+Host\+Api\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true is the error is a \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} error. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a6b05d8bf1857b04e70951e18a6cc9725}\label{classportaudio_1_1_pa_exception_a6b05d8bf1857b04e70951e18a6cc9725}} 
+\index{portaudio::PaException@{portaudio::PaException}!lastHostApiError@{lastHostApiError}}
+\index{lastHostApiError@{lastHostApiError}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{lastHostApiError()}{lastHostApiError()}}
+{\footnotesize\ttfamily long portaudio\+::\+Pa\+Exception\+::last\+Host\+Api\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the last \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} error (which is the current one if \mbox{\hyperlink{classportaudio_1_1_pa_exception_a106b643722a8289d22c91f4225511ca6}{is\+Host\+Api\+Error()}} returns true) as an error code. \mbox{\Hypertarget{classportaudio_1_1_pa_exception_aec85e21e6015d95ed6c410b02c9a0077}\label{classportaudio_1_1_pa_exception_aec85e21e6015d95ed6c410b02c9a0077}} 
+\index{portaudio::PaException@{portaudio::PaException}!lastHostApiErrorText@{lastHostApiErrorText}}
+\index{lastHostApiErrorText@{lastHostApiErrorText}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{lastHostApiErrorText()}{lastHostApiErrorText()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Pa\+Exception\+::last\+Host\+Api\+Error\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the last \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} error (which is the current one if \mbox{\hyperlink{classportaudio_1_1_pa_exception_a106b643722a8289d22c91f4225511ca6}{is\+Host\+Api\+Error()}} returns true) as a (zero-\/terminated) text string, if it\textquotesingle{}s available. \mbox{\Hypertarget{classportaudio_1_1_pa_exception_aa18eec4ceb0cd6ae67951ca23c246857}\label{classportaudio_1_1_pa_exception_aa18eec4ceb0cd6ae67951ca23c246857}} 
+\index{portaudio::PaException@{portaudio::PaException}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Pa\+Exception\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a8ead42c006b218b15edc7ee9f5ce5960}\label{classportaudio_1_1_pa_exception_a8ead42c006b218b15edc7ee9f5ce5960}} 
+\index{portaudio::PaException@{portaudio::PaException}!operator==@{operator==}}
+\index{operator==@{operator==}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Pa\+Exception\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_abaeda7999dad61f9d64b563a38df45ff}\label{classportaudio_1_1_pa_exception_abaeda7999dad61f9d64b563a38df45ff}} 
+\index{portaudio::PaException@{portaudio::PaException}!paError@{paError}}
+\index{paError@{paError}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{paError()}{paError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} portaudio\+::\+Pa\+Exception\+::pa\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the Port\+Audio error code (Pa\+Error). ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a04af4115db35d7ecf3409446917874d4}\label{classportaudio_1_1_pa_exception_a04af4115db35d7ecf3409446917874d4}} 
+\index{portaudio::PaException@{portaudio::PaException}!paErrorText@{paErrorText}}
+\index{paErrorText@{paErrorText}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{paErrorText()}{paErrorText()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Pa\+Exception\+::pa\+Error\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the error as a (zero-\/terminated) text string. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_pa_exception_a2e9f4bf2a93e639d04bc5007e83b6f38}\label{classportaudio_1_1_pa_exception_a2e9f4bf2a93e639d04bc5007e83b6f38}} 
+\index{portaudio::PaException@{portaudio::PaException}!what@{what}}
+\index{what@{what}!portaudio::PaException@{portaudio::PaException}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Pa\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const throw ( ) \hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Alias for \mbox{\hyperlink{classportaudio_1_1_pa_exception_a04af4115db35d7ecf3409446917874d4}{pa\+Error\+Text()}}, to have std\+::exception compliance. ///. 
+
+
+
+Implements \mbox{\hyperlink{classportaudio_1_1_exception_a06896bb22e4d0ffe64b3437cac48f342}{portaudio\+::\+Exception}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_exception_8hxx}{Exception.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_exception_8cxx}{Exception.\+cxx}}\end{DoxyCompactItemize}

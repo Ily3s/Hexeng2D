@@ -1,0 +1,427 @@
+\hypertarget{classcom_1_1portaudio_1_1_port_audio}{}\doxysection{com.\+portaudio.\+Port\+Audio Class Reference}
+\label{classcom_1_1portaudio_1_1_port_audio}\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a472cdb12b5c715b463e9a0f9754e6794}{get\+Version}} ()
+\item 
+static native String \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_af0f4312152d15a594aaa978fa8f7bc33}{get\+Version\+Text}} ()
+\item 
+static native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a056b212026d02c19607d81a4faf8a4b0}{initialize}} ()
+\item 
+static native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2d20afde68cdc2834850cda643717cfe}{terminate}} ()
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a687ec58fa9debb2c9a15dc885b389537}{get\+Device\+Count}} ()
+\item 
+static \mbox{\hyperlink{classcom_1_1portaudio_1_1_device_info}{Device\+Info}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a5a7313844e5ac030a8129c845f173130}{get\+Device\+Info}} (int \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a5b8711db178f99c4980dee9b46ac810a}{get\+Host\+Api\+Count}} ()
+\item 
+static \mbox{\hyperlink{classcom_1_1portaudio_1_1_host_api_info}{Host\+Api\+Info}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ad9feef9e0a5da56914633c2f2482543c}{get\+Host\+Api\+Info}} (int \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a4ad822032493ff1144000f5673daf569}{host\+Api\+Type\+Id\+To\+Host\+Api\+Index}} (int host\+Api\+Type)
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a6403a73147c43aca3fa733e4ba71c67c}{host\+Api\+Device\+Index\+To\+Device\+Index}} (int host\+Api\+Index, int api\+Device\+Index)
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a10036af29e71cc9f07e63bfd6030045b}{get\+Default\+Input\+Device}} ()
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ad0f16ff3269d3b8166a7581de751c427}{get\+Default\+Output\+Device}} ()
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ae44bdce73311d1ecbaf9667ab58628de}{get\+Default\+Host\+Api}} ()
+\item 
+static native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ac1f0b8268c0819eced0aea804b28638a}{is\+Format\+Supported}} (\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}} input\+Stream\+Parameters, \mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}} output\+Stream\+Parameters, int sample\+Rate)
+\item 
+static \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream}{Blocking\+Stream}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a32cbdd9a1e8f4cb1c0ad475a6cbc579b}{open\+Stream}} (\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}} input\+Stream\+Parameters, \mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}} output\+Stream\+Parameters, int sample\+Rate, int frames\+Per\+Buffer, int \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2f395bc99fe477caba5d221849e14697}{FLAG\+\_\+\+CLIP\+\_\+\+OFF}} = (1 $<$$<$ 0)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a8b21f44b7fd8e5e78a314b5a043e4196}{FLAG\+\_\+\+DITHER\+\_\+\+OFF}} = (1 $<$$<$ 1)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2d96208f8de10d8b5888aeaf5e43fa57}{FORMAT\+\_\+\+FLOAT\+\_\+32}} = (1 $<$$<$ 0)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ae9b9140287ddfa452a78a90762b8e2c2}{FORMAT\+\_\+\+INT\+\_\+32}} = (1 $<$$<$ 1)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a7a63350a8781554741a49c72753551dd}{FORMAT\+\_\+\+INT\+\_\+24}} = (1 $<$$<$ 2)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a038b2ecc4e7aff2cd9159d6c1acb2f17}{FORMAT\+\_\+\+INT\+\_\+16}} = (1 $<$$<$ 3)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a598b92996b1e04767e4138d9851a800b}{FORMAT\+\_\+\+INT\+\_\+8}} = (1 $<$$<$ 4)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a1f0cadf5525b51a67a75c02f22014ed0}{FORMAT\+\_\+\+UINT\+\_\+8}} = (1 $<$$<$ 5)
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a5aeefa7a9316b0fd60265a3b336e7a40}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+DEV}} = 0
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a6a986e1b33fc0f6dfb6c7d562a4d51d9}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+DIRECTSOUND}} = 1
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_aa5aa443407edd49f2aefe05c05a05cd3}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+MME}} = 2
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ada483f7837f8bba9cc062f7fd068bf6f}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+ASIO}} = 3
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a3e994d6f1b8393c1fadf330fc18b5649}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+SOUNDMANAGER}} = 4
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ab0408bbb1b5312837354f6622ed56da5}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+COREAUDIO}} = 5
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a0cb0af6edee17cf295e8049704022d00}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+OSS}} = 7
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2cf938238890b34503d58db47a454e72}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+ALSA}} = 8
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a034414578c6cb7d1ef05dbb97d4030ef}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+AL}} = 9
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a9947391c7afe60e9bfef0b8362ab9467}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+BEOS}} = 10
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a61826bf26d326ff98510f1274f6f3f5b}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+WDMKS}} = 11
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a883a151e9c2fa3df4bc2a246441dcf65}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+JACK}} = 12
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a878906a801ec0974c8379defcbb1a45f}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+WASAPI}} = 13
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ad72258e139b9133a8f20723e8aefa184}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+AUDIOSCIENCE}} = 14
+\item 
+static final int \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_ab2432d2945896284335ab4adcf4b9ddf}{HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+COUNT}} = 15
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Java methods that call \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} via JNI. This is a portable audio I/O library that can be used as an alternative to Java\+Sound.
+
+Please see the \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} documentation for a full explanation.
+
+\href{http://portaudio.com/docs/}{\texttt{ http\+://portaudio.\+com/docs/}} \href{http://portaudio.com/docs/v19-doxydocs/portaudio_8h.html}{\texttt{ http\+://portaudio.\+com/docs/v19-\/doxydocs/portaudio\+\_\+8h.\+html}}
+
+This Java binding does not support audio callbacks because an audio callback should never block. Calling into a Java virtual machine might block for garbage collection or synchronization. So only the blocking read/write mode is supported.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream}{Blocking\+Stream}} 
+
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_device_info}{Device\+Info}} 
+
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_host_api_info}{Host\+Api\+Info}} 
+
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_info}{Stream\+Info}} 
+
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Phil Burk 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ae44bdce73311d1ecbaf9667ab58628de}\label{classcom_1_1portaudio_1_1_port_audio_ae44bdce73311d1ecbaf9667ab58628de}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getDefaultHostApi@{getDefaultHostApi}}
+\index{getDefaultHostApi@{getDefaultHostApi}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getDefaultHostApi()}{getDefaultHostApi()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Default\+Host\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a10036af29e71cc9f07e63bfd6030045b}\label{classcom_1_1portaudio_1_1_port_audio_a10036af29e71cc9f07e63bfd6030045b}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getDefaultInputDevice@{getDefaultInputDevice}}
+\index{getDefaultInputDevice@{getDefaultInputDevice}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getDefaultInputDevice()}{getDefaultInputDevice()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Default\+Input\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ad0f16ff3269d3b8166a7581de751c427}\label{classcom_1_1portaudio_1_1_port_audio_ad0f16ff3269d3b8166a7581de751c427}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getDefaultOutputDevice@{getDefaultOutputDevice}}
+\index{getDefaultOutputDevice@{getDefaultOutputDevice}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getDefaultOutputDevice()}{getDefaultOutputDevice()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Default\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a687ec58fa9debb2c9a15dc885b389537}\label{classcom_1_1portaudio_1_1_port_audio_a687ec58fa9debb2c9a15dc885b389537}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getDeviceCount@{getDeviceCount}}
+\index{getDeviceCount@{getDeviceCount}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getDeviceCount()}{getDeviceCount()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Device\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the number of available devices. The number of available devices may be zero. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a5a7313844e5ac030a8129c845f173130}\label{classcom_1_1portaudio_1_1_port_audio_a5a7313844e5ac030a8129c845f173130}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getDeviceInfo@{getDeviceInfo}}
+\index{getDeviceInfo@{getDeviceInfo}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getDeviceInfo()}{getDeviceInfo()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classcom_1_1portaudio_1_1_device_info}{Device\+Info}} com.\+portaudio.\+Port\+Audio.\+get\+Device\+Info (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & A valid device index in the range 0 to (\mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a687ec58fa9debb2c9a15dc885b389537}{get\+Device\+Count()}}-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An \mbox{\hyperlink{classcom_1_1portaudio_1_1_device_info}{Device\+Info}} structure. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Runtime\+Exception} & if the device parameter is out of range. \\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a5b8711db178f99c4980dee9b46ac810a}\label{classcom_1_1portaudio_1_1_port_audio_a5b8711db178f99c4980dee9b46ac810a}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getHostApiCount@{getHostApiCount}}
+\index{getHostApiCount@{getHostApiCount}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getHostApiCount()}{getHostApiCount()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Host\+Api\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the number of available host APIs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ad9feef9e0a5da56914633c2f2482543c}\label{classcom_1_1portaudio_1_1_port_audio_ad9feef9e0a5da56914633c2f2482543c}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getHostApiInfo@{getHostApiInfo}}
+\index{getHostApiInfo@{getHostApiInfo}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getHostApiInfo()}{getHostApiInfo()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classcom_1_1portaudio_1_1_host_api_info}{Host\+Api\+Info}} com.\+portaudio.\+Port\+Audio.\+get\+Host\+Api\+Info (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+information about the Host API 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a472cdb12b5c715b463e9a0f9754e6794}\label{classcom_1_1portaudio_1_1_port_audio_a472cdb12b5c715b463e9a0f9754e6794}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getVersion()}{getVersion()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+get\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+the release number of the currently running \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} build, eg 1900. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_af0f4312152d15a594aaa978fa8f7bc33}\label{classcom_1_1portaudio_1_1_port_audio_af0f4312152d15a594aaa978fa8f7bc33}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!getVersionText@{getVersionText}}
+\index{getVersionText@{getVersionText}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{getVersionText()}{getVersionText()}}
+{\footnotesize\ttfamily static native String com.\+portaudio.\+Port\+Audio.\+get\+Version\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\begin{DoxyReturn}{Returns}
+a textual description of the current \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} build, eg \char`\"{}\+Port\+Audio V19-\/devel 13 October 2002\char`\"{}. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a6403a73147c43aca3fa733e4ba71c67c}\label{classcom_1_1portaudio_1_1_port_audio_a6403a73147c43aca3fa733e4ba71c67c}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!hostApiDeviceIndexToDeviceIndex@{hostApiDeviceIndexToDeviceIndex}}
+\index{hostApiDeviceIndexToDeviceIndex@{hostApiDeviceIndexToDeviceIndex}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{hostApiDeviceIndexToDeviceIndex()}{hostApiDeviceIndexToDeviceIndex()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+host\+Api\+Device\+Index\+To\+Device\+Index (\begin{DoxyParamCaption}\item[{int}]{host\+Api\+Index,  }\item[{int}]{api\+Device\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Index} & A valid host API index ranging from 0 to (\mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a5b8711db178f99c4980dee9b46ac810a}{get\+Host\+Api\+Count()}}-\/1) \\
+\hline
+{\em api\+Device\+Index} & A valid per-\/host device index in the range 0 to (get\+Host\+Api\+Info(host\+Api).device\+Count-\/1) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+standard \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} device index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a4ad822032493ff1144000f5673daf569}\label{classcom_1_1portaudio_1_1_port_audio_a4ad822032493ff1144000f5673daf569}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!hostApiTypeIdToHostApiIndex@{hostApiTypeIdToHostApiIndex}}
+\index{hostApiTypeIdToHostApiIndex@{hostApiTypeIdToHostApiIndex}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{hostApiTypeIdToHostApiIndex()}{hostApiTypeIdToHostApiIndex()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+host\+Api\+Type\+Id\+To\+Host\+Api\+Index (\begin{DoxyParamCaption}\item[{int}]{host\+Api\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Type} & A unique host API identifier, for example HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+COREAUDIO. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a runtime host API index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a056b212026d02c19607d81a4faf8a4b0}\label{classcom_1_1portaudio_1_1_port_audio_a056b212026d02c19607d81a4faf8a4b0}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!initialize@{initialize}}
+\index{initialize@{initialize}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily static native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Port\+Audio.\+initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Library initialization function -\/ call this before using \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}}. This function initializes internal data structures and prepares underlying host APIs for use. With the exception of \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a472cdb12b5c715b463e9a0f9754e6794}{get\+Version()}}, \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_af0f4312152d15a594aaa978fa8f7bc33}{get\+Version\+Text()}}, and get\+Error\+Text(), this function MUST be called before using any other \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} API functions. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ac1f0b8268c0819eced0aea804b28638a}\label{classcom_1_1portaudio_1_1_port_audio_ac1f0b8268c0819eced0aea804b28638a}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!isFormatSupported@{isFormatSupported}}
+\index{isFormatSupported@{isFormatSupported}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{isFormatSupported()}{isFormatSupported()}}
+{\footnotesize\ttfamily static native int com.\+portaudio.\+Port\+Audio.\+is\+Format\+Supported (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}}}]{input\+Stream\+Parameters,  }\item[{\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}}}]{output\+Stream\+Parameters,  }\item[{int}]{sample\+Rate }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream\+Parameters} & input description, may be null \\
+\hline
+{\em output\+Stream\+Parameters} & output description, may be null \\
+\hline
+{\em sample\+Rate} & typically 44100 or 48000, or maybe 22050, 16000, 8000, 96000 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if supported or a negative error 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a32cbdd9a1e8f4cb1c0ad475a6cbc579b}\label{classcom_1_1portaudio_1_1_port_audio_a32cbdd9a1e8f4cb1c0ad475a6cbc579b}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!openStream@{openStream}}
+\index{openStream@{openStream}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{openStream()}{openStream()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream}{Blocking\+Stream}} com.\+portaudio.\+Port\+Audio.\+open\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}}}]{input\+Stream\+Parameters,  }\item[{\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_parameters}{Stream\+Parameters}}}]{output\+Stream\+Parameters,  }\item[{int}]{sample\+Rate,  }\item[{int}]{frames\+Per\+Buffer,  }\item[{int}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Stream\+Parameters} & input description, may be null \\
+\hline
+{\em output\+Stream\+Parameters} & output description, may be null \\
+\hline
+{\em sample\+Rate} & typically 44100 or 48000, or maybe 22050, 16000, 8000, 96000 \\
+\hline
+{\em frames\+Per\+Buffer} & \\
+\hline
+{\em flags} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a2d20afde68cdc2834850cda643717cfe}\label{classcom_1_1portaudio_1_1_port_audio_a2d20afde68cdc2834850cda643717cfe}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!terminate@{terminate}}
+\index{terminate@{terminate}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily static native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Port\+Audio.\+terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Library termination function -\/ call this when finished using \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}}. This function deallocates all resources allocated by \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} since it was initialized by a call to \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a056b212026d02c19607d81a4faf8a4b0}{initialize()}}. In cases where Pa\+\_\+\+Initialise() has been called multiple times, each call must be matched with a corresponding call to \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2d20afde68cdc2834850cda643717cfe}{terminate()}}. The final matching call to \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio_a2d20afde68cdc2834850cda643717cfe}{terminate()}} will automatically close any \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} streams that are still open. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a2f395bc99fe477caba5d221849e14697}\label{classcom_1_1portaudio_1_1_port_audio_a2f395bc99fe477caba5d221849e14697}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FLAG\_CLIP\_OFF@{FLAG\_CLIP\_OFF}}
+\index{FLAG\_CLIP\_OFF@{FLAG\_CLIP\_OFF}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FLAG\_CLIP\_OFF}{FLAG\_CLIP\_OFF}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FLAG\+\_\+\+CLIP\+\_\+\+OFF = (1 $<$$<$ 0)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a8b21f44b7fd8e5e78a314b5a043e4196}\label{classcom_1_1portaudio_1_1_port_audio_a8b21f44b7fd8e5e78a314b5a043e4196}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FLAG\_DITHER\_OFF@{FLAG\_DITHER\_OFF}}
+\index{FLAG\_DITHER\_OFF@{FLAG\_DITHER\_OFF}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FLAG\_DITHER\_OFF}{FLAG\_DITHER\_OFF}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FLAG\+\_\+\+DITHER\+\_\+\+OFF = (1 $<$$<$ 1)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a2d96208f8de10d8b5888aeaf5e43fa57}\label{classcom_1_1portaudio_1_1_port_audio_a2d96208f8de10d8b5888aeaf5e43fa57}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_FLOAT\_32@{FORMAT\_FLOAT\_32}}
+\index{FORMAT\_FLOAT\_32@{FORMAT\_FLOAT\_32}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_FLOAT\_32}{FORMAT\_FLOAT\_32}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+FLOAT\+\_\+32 = (1 $<$$<$ 0)\hspace{0.3cm}{\ttfamily [static]}}
+
+Sample Formats \mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a038b2ecc4e7aff2cd9159d6c1acb2f17}\label{classcom_1_1portaudio_1_1_port_audio_a038b2ecc4e7aff2cd9159d6c1acb2f17}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_INT\_16@{FORMAT\_INT\_16}}
+\index{FORMAT\_INT\_16@{FORMAT\_INT\_16}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_INT\_16}{FORMAT\_INT\_16}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+INT\+\_\+16 = (1 $<$$<$ 3)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a7a63350a8781554741a49c72753551dd}\label{classcom_1_1portaudio_1_1_port_audio_a7a63350a8781554741a49c72753551dd}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_INT\_24@{FORMAT\_INT\_24}}
+\index{FORMAT\_INT\_24@{FORMAT\_INT\_24}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_INT\_24}{FORMAT\_INT\_24}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+INT\+\_\+24 = (1 $<$$<$ 2)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ae9b9140287ddfa452a78a90762b8e2c2}\label{classcom_1_1portaudio_1_1_port_audio_ae9b9140287ddfa452a78a90762b8e2c2}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_INT\_32@{FORMAT\_INT\_32}}
+\index{FORMAT\_INT\_32@{FORMAT\_INT\_32}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_INT\_32}{FORMAT\_INT\_32}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+INT\+\_\+32 = (1 $<$$<$ 1)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a598b92996b1e04767e4138d9851a800b}\label{classcom_1_1portaudio_1_1_port_audio_a598b92996b1e04767e4138d9851a800b}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_INT\_8@{FORMAT\_INT\_8}}
+\index{FORMAT\_INT\_8@{FORMAT\_INT\_8}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_INT\_8}{FORMAT\_INT\_8}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+INT\+\_\+8 = (1 $<$$<$ 4)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a1f0cadf5525b51a67a75c02f22014ed0}\label{classcom_1_1portaudio_1_1_port_audio_a1f0cadf5525b51a67a75c02f22014ed0}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!FORMAT\_UINT\_8@{FORMAT\_UINT\_8}}
+\index{FORMAT\_UINT\_8@{FORMAT\_UINT\_8}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_UINT\_8}{FORMAT\_UINT\_8}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+FORMAT\+\_\+\+UINT\+\_\+8 = (1 $<$$<$ 5)\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a034414578c6cb7d1ef05dbb97d4030ef}\label{classcom_1_1portaudio_1_1_port_audio_a034414578c6cb7d1ef05dbb97d4030ef}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_AL@{HOST\_API\_TYPE\_AL}}
+\index{HOST\_API\_TYPE\_AL@{HOST\_API\_TYPE\_AL}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_AL}{HOST\_API\_TYPE\_AL}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+AL = 9\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a2cf938238890b34503d58db47a454e72}\label{classcom_1_1portaudio_1_1_port_audio_a2cf938238890b34503d58db47a454e72}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_ALSA@{HOST\_API\_TYPE\_ALSA}}
+\index{HOST\_API\_TYPE\_ALSA@{HOST\_API\_TYPE\_ALSA}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_ALSA}{HOST\_API\_TYPE\_ALSA}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+ALSA = 8\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ada483f7837f8bba9cc062f7fd068bf6f}\label{classcom_1_1portaudio_1_1_port_audio_ada483f7837f8bba9cc062f7fd068bf6f}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_ASIO@{HOST\_API\_TYPE\_ASIO}}
+\index{HOST\_API\_TYPE\_ASIO@{HOST\_API\_TYPE\_ASIO}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_ASIO}{HOST\_API\_TYPE\_ASIO}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+ASIO = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ad72258e139b9133a8f20723e8aefa184}\label{classcom_1_1portaudio_1_1_port_audio_ad72258e139b9133a8f20723e8aefa184}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_AUDIOSCIENCE@{HOST\_API\_TYPE\_AUDIOSCIENCE}}
+\index{HOST\_API\_TYPE\_AUDIOSCIENCE@{HOST\_API\_TYPE\_AUDIOSCIENCE}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_AUDIOSCIENCE}{HOST\_API\_TYPE\_AUDIOSCIENCE}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+AUDIOSCIENCE = 14\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a9947391c7afe60e9bfef0b8362ab9467}\label{classcom_1_1portaudio_1_1_port_audio_a9947391c7afe60e9bfef0b8362ab9467}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_BEOS@{HOST\_API\_TYPE\_BEOS}}
+\index{HOST\_API\_TYPE\_BEOS@{HOST\_API\_TYPE\_BEOS}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_BEOS}{HOST\_API\_TYPE\_BEOS}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+BEOS = 10\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ab0408bbb1b5312837354f6622ed56da5}\label{classcom_1_1portaudio_1_1_port_audio_ab0408bbb1b5312837354f6622ed56da5}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_COREAUDIO@{HOST\_API\_TYPE\_COREAUDIO}}
+\index{HOST\_API\_TYPE\_COREAUDIO@{HOST\_API\_TYPE\_COREAUDIO}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_COREAUDIO}{HOST\_API\_TYPE\_COREAUDIO}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+COREAUDIO = 5\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_ab2432d2945896284335ab4adcf4b9ddf}\label{classcom_1_1portaudio_1_1_port_audio_ab2432d2945896284335ab4adcf4b9ddf}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_COUNT@{HOST\_API\_TYPE\_COUNT}}
+\index{HOST\_API\_TYPE\_COUNT@{HOST\_API\_TYPE\_COUNT}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_COUNT}{HOST\_API\_TYPE\_COUNT}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+COUNT = 15\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a5aeefa7a9316b0fd60265a3b336e7a40}\label{classcom_1_1portaudio_1_1_port_audio_a5aeefa7a9316b0fd60265a3b336e7a40}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_DEV@{HOST\_API\_TYPE\_DEV}}
+\index{HOST\_API\_TYPE\_DEV@{HOST\_API\_TYPE\_DEV}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_DEV}{HOST\_API\_TYPE\_DEV}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+DEV = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+These HOST\+\_\+\+API\+\_\+\+TYPES will not change in the future. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a6a986e1b33fc0f6dfb6c7d562a4d51d9}\label{classcom_1_1portaudio_1_1_port_audio_a6a986e1b33fc0f6dfb6c7d562a4d51d9}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_DIRECTSOUND@{HOST\_API\_TYPE\_DIRECTSOUND}}
+\index{HOST\_API\_TYPE\_DIRECTSOUND@{HOST\_API\_TYPE\_DIRECTSOUND}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_DIRECTSOUND}{HOST\_API\_TYPE\_DIRECTSOUND}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+DIRECTSOUND = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a883a151e9c2fa3df4bc2a246441dcf65}\label{classcom_1_1portaudio_1_1_port_audio_a883a151e9c2fa3df4bc2a246441dcf65}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_JACK@{HOST\_API\_TYPE\_JACK}}
+\index{HOST\_API\_TYPE\_JACK@{HOST\_API\_TYPE\_JACK}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_JACK}{HOST\_API\_TYPE\_JACK}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+JACK = 12\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_aa5aa443407edd49f2aefe05c05a05cd3}\label{classcom_1_1portaudio_1_1_port_audio_aa5aa443407edd49f2aefe05c05a05cd3}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_MME@{HOST\_API\_TYPE\_MME}}
+\index{HOST\_API\_TYPE\_MME@{HOST\_API\_TYPE\_MME}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_MME}{HOST\_API\_TYPE\_MME}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+MME = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a0cb0af6edee17cf295e8049704022d00}\label{classcom_1_1portaudio_1_1_port_audio_a0cb0af6edee17cf295e8049704022d00}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_OSS@{HOST\_API\_TYPE\_OSS}}
+\index{HOST\_API\_TYPE\_OSS@{HOST\_API\_TYPE\_OSS}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_OSS}{HOST\_API\_TYPE\_OSS}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+OSS = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a3e994d6f1b8393c1fadf330fc18b5649}\label{classcom_1_1portaudio_1_1_port_audio_a3e994d6f1b8393c1fadf330fc18b5649}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_SOUNDMANAGER@{HOST\_API\_TYPE\_SOUNDMANAGER}}
+\index{HOST\_API\_TYPE\_SOUNDMANAGER@{HOST\_API\_TYPE\_SOUNDMANAGER}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_SOUNDMANAGER}{HOST\_API\_TYPE\_SOUNDMANAGER}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+SOUNDMANAGER = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+Apple Sound Manager. Obsolete. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a878906a801ec0974c8379defcbb1a45f}\label{classcom_1_1portaudio_1_1_port_audio_a878906a801ec0974c8379defcbb1a45f}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_WASAPI@{HOST\_API\_TYPE\_WASAPI}}
+\index{HOST\_API\_TYPE\_WASAPI@{HOST\_API\_TYPE\_WASAPI}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_WASAPI}{HOST\_API\_TYPE\_WASAPI}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+WASAPI = 13\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_port_audio_a61826bf26d326ff98510f1274f6f3f5b}\label{classcom_1_1portaudio_1_1_port_audio_a61826bf26d326ff98510f1274f6f3f5b}} 
+\index{com.portaudio.PortAudio@{com.portaudio.PortAudio}!HOST\_API\_TYPE\_WDMKS@{HOST\_API\_TYPE\_WDMKS}}
+\index{HOST\_API\_TYPE\_WDMKS@{HOST\_API\_TYPE\_WDMKS}!com.portaudio.PortAudio@{com.portaudio.PortAudio}}
+\doxysubsubsection{\texorpdfstring{HOST\_API\_TYPE\_WDMKS}{HOST\_API\_TYPE\_WDMKS}}
+{\footnotesize\ttfamily final int com.\+portaudio.\+Port\+Audio.\+HOST\+\_\+\+API\+\_\+\+TYPE\+\_\+\+WDMKS = 11\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/java/jportaudio/src/com/portaudio/\mbox{\hyperlink{_port_audio_8java}{Port\+Audio.\+java}}\end{DoxyCompactItemize}

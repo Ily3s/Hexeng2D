@@ -1,0 +1,30 @@
+\hypertarget{ksguid_8h_source}{}\doxysection{ksguid.\+h}
+\label{ksguid_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/ksguid.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/ksguid.h}}
+\mbox{\hyperlink{ksguid_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#define INITGUID}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <guiddef.h>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef DECLSPEC\_SELECTANY}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define DECLSPEC\_SELECTANY \_\_declspec(selectany)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifdef DEFINE\_GUIDEX}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#undef DEFINE\_GUIDEX}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define DEFINE\_GUIDEX(name) EXTERN\_C const CDECL GUID DECLSPEC\_SELECTANY name = \{ STATICGUIDOF(name) \}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define DEFINE\_GUIDEX(name) const CDECL GUID DECLSPEC\_SELECTANY name = \{ STATICGUIDOF(name) \}}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#ifndef STATICGUIDOF}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define STATICGUIDOF(guid) STATIC\_\#\#guid}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef DEFINE\_WAVEFORMATEX\_GUID}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define DEFINE\_WAVEFORMATEX\_GUID(x) (USHORT)(x),0x0000,0x0010,0x80,0x00,0x00,0xaa,0x00,0x38,0x9b,0x71}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

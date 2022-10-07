@@ -1,0 +1,62 @@
+\hypertarget{_system_host_api_iterator_8hxx_source}{}\doxysection{System\+Host\+Api\+Iterator.\+hxx}
+\label{_system_host_api_iterator_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/SystemHostApiIterator.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/SystemHostApiIterator.hxx}}
+\mbox{\hyperlink{_system_host_api_iterator_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_SYSTEMHOSTAPIITERATOR\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_SYSTEMHOSTAPIITERATOR\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_8hxx}{portaudiocpp/System.hxx}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// Forward declaration(s):}}
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }HostApi;}
+\DoxyCodeLine{17 \}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// Declaration(s):}}
+\DoxyCodeLine{22 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{23 \{}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{31     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{System::HostApiIterator}}}
+\DoxyCodeLine{32     \{}
+\DoxyCodeLine{33     \textcolor{keyword}{public}:}
+\DoxyCodeLine{34         \textcolor{keyword}{typedef} std::bidirectional\_iterator\_tag \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a988f4cdc91839dd257b7d82be627cdf7}{iterator\_category}};}
+\DoxyCodeLine{35         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_af385cfcc28e7f735be44ce2702f12854}{value\_type}};}
+\DoxyCodeLine{36         \textcolor{keyword}{typedef} ptrdiff\_t \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_aa3af97941dbfe27b3d2160543b434cc1}{difference\_type}};}
+\DoxyCodeLine{37         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} * \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_aa3b63526bdfe9451e34c172fad7acfd9}{pointer}};}
+\DoxyCodeLine{38         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a6cf02d44899c4036dc8ef6c11c9758f5}{reference}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_acc41261a4706cc1258b8e125250345ec}{operator*}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{41         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} *\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a8f24eedfc41d8a803ab43354552b264b}{operator-\/>}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a9bd563e83a19f128cd913b91910f8ddc}{operator++}}();}
+\DoxyCodeLine{44         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a9bd563e83a19f128cd913b91910f8ddc}{operator++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{45         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a90878b70c9c3837016d2c7c613743f4e}{operator-\/-\/}}();}
+\DoxyCodeLine{46         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a90878b70c9c3837016d2c7c613743f4e}{operator-\/-\/}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a418bbb1834cacadaae8d16779cf1d463}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{49         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator_a4564b5d0320a775f5f9466aab4489761}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{private}:}
+\DoxyCodeLine{52         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system}{System}};}
+\DoxyCodeLine{53         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} **ptr\_;}
+\DoxyCodeLine{54     \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_SYSTEMHOSTAPIITERATOR\_HXX}}
+
+\end{DoxyCode}

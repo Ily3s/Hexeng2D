@@ -1,0 +1,27 @@
+var struct_i_per_channel_db_level_vtbl =
+[
+    [ "__in_ecount", "struct_i_per_channel_db_level_vtbl.html#a9159ecedb638b8baac4c5c88144e4f83", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a71498035f22ff02298ca12c2a25248ed", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a9b846ade8c9130adc61f7377dd0477f6", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a3d4f33f6f6b296a6637cf4baa62236c2", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a7f645423469a3c771073c2fc9079d95a", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a85f0c04608bd8e7f9e40fd1cce0f1e85", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#a80f8029c8ca12d8adc6fd11aa18fb31a", null ],
+    [ "HRESULT", "struct_i_per_channel_db_level_vtbl.html#ad87716c7742eeebf6e271b2dd0589e2d", null ],
+    [ "ULONG", "struct_i_per_channel_db_level_vtbl.html#a2050c25ca9da38655d033710ebb3cab8", null ],
+    [ "ULONG", "struct_i_per_channel_db_level_vtbl.html#ae9db232d721113571f528bbda49aee69", null ],
+    [ "cChannels", "struct_i_per_channel_db_level_vtbl.html#abd4bea7c51e69f5dafa135abea6b4895", null ],
+    [ "fLevelDB", "struct_i_per_channel_db_level_vtbl.html#a21a9e765be9c09e77c7a53cadd7435dd", null ],
+    [ "fLevelDB", "struct_i_per_channel_db_level_vtbl.html#a8f3128a3cce09ddc2d54b64ab9ecd6c3", null ],
+    [ "nChannel", "struct_i_per_channel_db_level_vtbl.html#a4416cf4648bb0072e1db43ee9091b879", null ],
+    [ "pcChannels", "struct_i_per_channel_db_level_vtbl.html#add781cb1077b643d5a4ae262fe04ab51", null ],
+    [ "pfLevelDB", "struct_i_per_channel_db_level_vtbl.html#af63650d368bd6535fcd8a0cfade000c8", null ],
+    [ "pfMaxLevelDB", "struct_i_per_channel_db_level_vtbl.html#af650b533957b678679fa268532c66b89", null ],
+    [ "pfMinLevelDB", "struct_i_per_channel_db_level_vtbl.html#ae658285790b7bc0f64ac53f1d105a22f", null ],
+    [ "pfStepping", "struct_i_per_channel_db_level_vtbl.html#ac4ffba3347c3456150477ea5120e2b48", null ],
+    [ "pguidEventContext", "struct_i_per_channel_db_level_vtbl.html#af25af43000a3c05672e7798acf124bd9", null ],
+    [ "pguidEventContext", "struct_i_per_channel_db_level_vtbl.html#a95bed2b6a9834aae9b52293b316f96b5", null ],
+    [ "pguidEventContext", "struct_i_per_channel_db_level_vtbl.html#a71cfe76a5f22face38b07f38699ac57a", null ],
+    [ "ppvObject", "struct_i_per_channel_db_level_vtbl.html#aaae39a4f557b7a63f008bd17c60fe41e", null ],
+    [ "riid", "struct_i_per_channel_db_level_vtbl.html#a87a0865cb34acf93f1b7bcee11d4e9ab", null ]
+];

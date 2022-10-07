@@ -1,0 +1,218 @@
+\hypertarget{cocoa__platform_8h_source}{}\doxysection{cocoa\+\_\+platform.\+h}
+\label{cocoa__platform_8h_source}\index{Hexeng2D/dependencies/glfw/src/cocoa\_platform.h@{Hexeng2D/dependencies/glfw/src/cocoa\_platform.h}}
+\mbox{\hyperlink{cocoa__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 macOS -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2009-\/2019 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{7 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{8 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{11 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{12 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{15 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{16 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{17 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{20 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{21 \textcolor{comment}{//}}
+\DoxyCodeLine{22 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{23 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{//}}
+\DoxyCodeLine{25 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <dlfcn.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <Carbon/Carbon.h>}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{// NOTE: All of NSGL was deprecated in the 10.14 SDK}}
+\DoxyCodeLine{33 \textcolor{comment}{//       This disables the pointless warnings for every symbol we use}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define GL\_SILENCE\_DEPRECATION}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#if defined(\_\_OBJC\_\_)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#import <Cocoa/Cocoa.h>}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{cocoa__platform_8h_a6ca49e267a019c46a02191d2d11620b6}{id}};}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{comment}{// NOTE: Many Cocoa enum values have been renamed and we need to build across}}
+\DoxyCodeLine{43 \textcolor{comment}{//       SDK versions where one is unavailable or the other deprecated}}
+\DoxyCodeLine{44 \textcolor{comment}{//       We use the newer names in code and these macros to handle compatibility}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if MAC\_OS\_X\_VERSION\_MAX\_ALLOWED < 101200}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{ \#define NSBitmapFormatAlphaNonpremultiplied NSAlphaNonpremultipliedBitmapFormat}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{ \#define NSEventMaskAny NSAnyEventMask}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{ \#define NSEventMaskKeyUp NSKeyUpMask}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{ \#define NSEventModifierFlagCapsLock NSAlphaShiftKeyMask}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{ \#define NSEventModifierFlagCommand NSCommandKeyMask}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{ \#define NSEventModifierFlagControl NSControlKeyMask}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{ \#define NSEventModifierFlagDeviceIndependentFlagsMask NSDeviceIndependentModifierFlagsMask}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{ \#define NSEventModifierFlagOption NSAlternateKeyMask}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{ \#define NSEventModifierFlagShift NSShiftKeyMask}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{ \#define NSEventTypeApplicationDefined NSApplicationDefined}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{ \#define NSWindowStyleMaskBorderless NSBorderlessWindowMask}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{ \#define NSWindowStyleMaskClosable NSClosableWindowMask}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{ \#define NSWindowStyleMaskMiniaturizable NSMiniaturizableWindowMask}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{ \#define NSWindowStyleMaskResizable NSResizableWindowMask}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{ \#define NSWindowStyleMaskTitled NSTitledWindowMask}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abb605a7700670dd8420cc3841b939444}{VkFlags}} \mbox{\hyperlink{cocoa__platform_8h_a14404bdb209ed794c16c4f334fd4bb72}{VkMacOSSurfaceCreateFlagsMVK}};}
+\DoxyCodeLine{64 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abb605a7700670dd8420cc3841b939444}{VkFlags}} \mbox{\hyperlink{cocoa__platform_8h_aae18aa7224ec796b5da935a8d72bdda3}{VkMetalSurfaceCreateFlagsEXT}};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k}{VkMacOSSurfaceCreateInfoMVK}}}
+\DoxyCodeLine{67 \{}
+\DoxyCodeLine{68     \mbox{\hyperlink{internal_8h_aff9f2b99398eb80a2b5a146bc5534ce8}{VkStructureType}}                 \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k_a0481299a494983a09cae465f5d3ee2c9}{sType}};}
+\DoxyCodeLine{69     \textcolor{keyword}{const} \textcolor{keywordtype}{void}*                     \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k_a1794ccebd9e99fedd6d2598f9914444b}{pNext}};}
+\DoxyCodeLine{70     \mbox{\hyperlink{cocoa__platform_8h_a14404bdb209ed794c16c4f334fd4bb72}{VkMacOSSurfaceCreateFlagsMVK}}    \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k_abd512a37bda1e8eb6b378d69091ae086}{flags}};}
+\DoxyCodeLine{71     \textcolor{keyword}{const} \textcolor{keywordtype}{void}*                     \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k_ae8a44db651a353abb488704df9b7129b}{pView}};}
+\DoxyCodeLine{72 \} \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k}{VkMacOSSurfaceCreateInfoMVK}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t}{VkMetalSurfaceCreateInfoEXT}}}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \mbox{\hyperlink{internal_8h_aff9f2b99398eb80a2b5a146bc5534ce8}{VkStructureType}}                 \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t_a906dabb9d8f3c49d19c9a4bb9e91a4e4}{sType}};}
+\DoxyCodeLine{77     \textcolor{keyword}{const} \textcolor{keywordtype}{void}*                     \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t_a8cb9858ba081488898f553f98513a793}{pNext}};}
+\DoxyCodeLine{78     \mbox{\hyperlink{cocoa__platform_8h_aae18aa7224ec796b5da935a8d72bdda3}{VkMetalSurfaceCreateFlagsEXT}}    \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t_a337e7107ee29d9856884329d78c40ff2}{flags}};}
+\DoxyCodeLine{79     \textcolor{keyword}{const} \textcolor{keywordtype}{void}*                     \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t_a155830803d6d62104242b387b8300866}{pLayer}};}
+\DoxyCodeLine{80 \} \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t}{VkMetalSurfaceCreateInfoEXT}};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}} (\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} *\mbox{\hyperlink{cocoa__platform_8h_ab2687cc7bf8e358e33493cd6d03d5719}{PFN\_vkCreateMacOSSurfaceMVK}})(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}},\textcolor{keyword}{const} \mbox{\hyperlink{struct_vk_mac_o_s_surface_create_info_m_v_k}{VkMacOSSurfaceCreateInfoMVK}}*,\textcolor{keyword}{const} \mbox{\hyperlink{internal_8h_ad81262c34caa3ad7db4411d07f298b1d}{VkAllocationCallbacks}}*,\mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*);}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}} (\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} *\mbox{\hyperlink{cocoa__platform_8h_a8641dabc3c27896ae83eee97378a305d}{PFN\_vkCreateMetalSurfaceEXT}})(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}},\textcolor{keyword}{const} \mbox{\hyperlink{struct_vk_metal_surface_create_info_e_x_t}{VkMetalSurfaceCreateInfoEXT}}*,\textcolor{keyword}{const} \mbox{\hyperlink{internal_8h_ad81262c34caa3ad7db4411d07f298b1d}{VkAllocationCallbacks}}*,\mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{posix__thread_8h}{posix\_thread.h}}"{}}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{cocoa__joystick_8h}{cocoa\_joystick.h}}"{}}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{nsgl__context_8h}{nsgl\_context.h}}"{}}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{egl__context_8h}{egl\_context.h}}"{}}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{osmesa__context_8h}{osmesa\_context.h}}"{}}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define \_glfw\_dlopen(name) dlopen(name, RTLD\_LAZY | RTLD\_LOCAL)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define \_glfw\_dlclose(handle) dlclose(handle)}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define \_glfw\_dlsym(handle, name) dlsym(handle, name)}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_NATIVE\_WINDOW  ((EGLNativeWindowType) window-\/>ns.layer)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_NATIVE\_DISPLAY EGL\_DEFAULT\_DISPLAY}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_WINDOW\_STATE         \_GLFWwindowNS  ns}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE \_GLFWlibraryNS ns}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_TIMER\_STATE  \_GLFWtimerNS   ns}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_MONITOR\_STATE        \_GLFWmonitorNS ns}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CURSOR\_STATE         \_GLFWcursorNS  ns}}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{comment}{// HIToolbox.framework pointer typedefs}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define kTISPropertyUnicodeKeyLayoutData \_glfw.ns.tis.kPropertyUnicodeKeyLayoutData}}
+\DoxyCodeLine{106 \textcolor{keyword}{typedef} TISInputSourceRef (*\mbox{\hyperlink{cocoa__platform_8h_a72a0ccbedaac666af1a88063ed08a6d0}{PFN\_TISCopyCurrentKeyboardLayoutInputSource}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define TISCopyCurrentKeyboardLayoutInputSource \_glfw.ns.tis.CopyCurrentKeyboardLayoutInputSource}}
+\DoxyCodeLine{108 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* (*PFN\_TISGetInputSourceProperty)(TISInputSourceRef,CFStringRef);}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define TISGetInputSourceProperty \_glfw.ns.tis.GetInputSourceProperty}}
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} UInt8 (*\mbox{\hyperlink{cocoa__platform_8h_a83c8472c4652357183d8763fe1c43c88}{PFN\_LMGetKbdType}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define LMGetKbdType \_glfw.ns.tis.GetKbdType}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \textcolor{comment}{// Cocoa-\/specific per-\/window data}}
+\DoxyCodeLine{115 \textcolor{comment}{//}}
+\DoxyCodeLine{116 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wwindow_n_s}{\_GLFWwindowNS}}}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     \textcolor{keywordtype}{id}              \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a2a4f012e935383d09b043e4376099160}{object}};}
+\DoxyCodeLine{119     \textcolor{keywordtype}{id}              \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a97ed2f5df9e3df607bb3ce0dc0512e66}{delegate}};}
+\DoxyCodeLine{120     \textcolor{keywordtype}{id}              \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a58bca42aa517b4df7049ae5f7e179ce5}{view}};}
+\DoxyCodeLine{121     \textcolor{keywordtype}{id}              \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_adcc9751c33d4d0f8b7805c70b87a274c}{layer}};}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_aba794b171b420bd12e584102718dd8d8}{maximized}};}
+\DoxyCodeLine{124     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_ab9489a36a7c62346136e3608b09b40a1}{occluded}};}
+\DoxyCodeLine{125     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a4daffa2fc86a5c1e08448bb66e1d3590}{retina}};}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127     \textcolor{comment}{// Cached window properties to filter out duplicate events}}
+\DoxyCodeLine{128     \textcolor{keywordtype}{int}             \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a2021f816702ff4291f4233390e327ca9}{width}}, \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a3c1fd6b77ea5a654c6f8a6f94c000da2}{height}};}
+\DoxyCodeLine{129     \textcolor{keywordtype}{int}             \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a7509ebede4d15d543c1023d44c25b2dd}{fbWidth}}, \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a27a8fea5bb97a12b26b512b70839511b}{fbHeight}};}
+\DoxyCodeLine{130     \textcolor{keywordtype}{float}           \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_ac79b7ec60fef530cd8379d6c55cc319b}{xscale}}, \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_aacaab4080a1a56e89a53bc3da899b191}{yscale}};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     \textcolor{comment}{// The total sum of the distances the cursor has been warped}}
+\DoxyCodeLine{133     \textcolor{comment}{// since the last cursor motion event was processed}}
+\DoxyCodeLine{134     \textcolor{comment}{// This is kept to counteract Cocoa doing the same internally}}
+\DoxyCodeLine{135     \textcolor{keywordtype}{double}          \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a555c7d7b038ef8ad4c3dbfc9028ba876}{cursorWarpDeltaX}}, \mbox{\hyperlink{struct___g_l_f_wwindow_n_s_a5e1e0b5476a0a670edfc62cfbec712bb}{cursorWarpDeltaY}};}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \} \mbox{\hyperlink{struct___g_l_f_wwindow_n_s}{\_GLFWwindowNS}};}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 \textcolor{comment}{// Cocoa-\/specific global data}}
+\DoxyCodeLine{140 \textcolor{comment}{//}}
+\DoxyCodeLine{141 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_n_s}{\_GLFWlibraryNS}}}
+\DoxyCodeLine{142 \{}
+\DoxyCodeLine{143     CGEventSourceRef    \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_ae0297b6477cfe5406d6cad47791ff524}{eventSource}};}
+\DoxyCodeLine{144     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_ac9bef9b96260dd26ad1a9e7287b4d812}{delegate}};}
+\DoxyCodeLine{145     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}            \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a554108547fc19827a484e6ea081db00f}{finishedLaunching}};}
+\DoxyCodeLine{146     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}            \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_ad8ad77fbd27eebcef8d5cb033ab0e6ea}{cursorHidden}};}
+\DoxyCodeLine{147     TISInputSourceRef   \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a0f5eff37bafb4c2eaddf8ba2ec1360e2}{inputSource}};}
+\DoxyCodeLine{148     IOHIDManagerRef     \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a3d2f5238158b7433be1f4e61df37b82d}{hidManager}};}
+\DoxyCodeLine{149     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a3173595db852c86e0b5ca99611275f32}{unicodeData}};}
+\DoxyCodeLine{150     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_ac2dad25afbf3b551482d81ede0678fa8}{helper}};}
+\DoxyCodeLine{151     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a8837d4147c80790b7c4c9890818261e0}{keyUpMonitor}};}
+\DoxyCodeLine{152     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_aa070c6433c921e5b62877b510780408f}{nibObjects}};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{char}                \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a9c6d9a8a25c8a02ed64a268fad88ba69}{keynames}}[\mbox{\hyperlink{group__keys_ga442cbaef7bfb9a4ba13594dd7fbf2789}{GLFW\_KEY\_LAST}} + 1][17];}
+\DoxyCodeLine{155     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}           \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a5999f3adcf4d63b293bad735ba7f7f3a}{keycodes}}[256];}
+\DoxyCodeLine{156     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}           \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a4625ab0c8e3f2d4a57c0a101034fbfa2}{scancodes}}[\mbox{\hyperlink{group__keys_ga442cbaef7bfb9a4ba13594dd7fbf2789}{GLFW\_KEY\_LAST}} + 1];}
+\DoxyCodeLine{157     \textcolor{keywordtype}{char}*               \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a194b216799b8f6e02d5153ad53f9b4da}{clipboardString}};}
+\DoxyCodeLine{158     CGPoint             \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a3d3a67c517278e6991aa6bbdd3047ac4}{cascadePoint}};}
+\DoxyCodeLine{159     \textcolor{comment}{// Where to place the cursor when re-\/enabled}}
+\DoxyCodeLine{160     \textcolor{keywordtype}{double}              \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a93e4d1c23cf55dd073b61d9f8436ade9}{restoreCursorPosX}}, \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a55f14c4b5ad2723de5e6217c550f45aa}{restoreCursorPosY}};}
+\DoxyCodeLine{161     \textcolor{comment}{// The window whose disabled cursor mode is active}}
+\DoxyCodeLine{162     \mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}*        \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a69cc5672029442fc8a9587e155ef7636}{disabledCursorWindow}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{165         CFBundleRef     \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a4092245999e589dc59c5d90f47c51fc0}{bundle}};}
+\DoxyCodeLine{166         \mbox{\hyperlink{cocoa__platform_8h_a72a0ccbedaac666af1a88063ed08a6d0}{PFN\_TISCopyCurrentKeyboardLayoutInputSource}} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a332008478c35c35cf5eedf2ff7f8513b}{CopyCurrentKeyboardLayoutInputSource}};}
+\DoxyCodeLine{167         \mbox{\hyperlink{cocoa__platform_8h_a843483ae376ea9b657c6ee2c9b746ed5}{PFN\_TISGetInputSourceProperty}} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_aac719437d912cfe8792ee2c068177016}{GetInputSourceProperty}};}
+\DoxyCodeLine{168         \mbox{\hyperlink{cocoa__platform_8h_a83c8472c4652357183d8763fe1c43c88}{PFN\_LMGetKbdType}} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a76160446e7250a0cd655d1c72031e211}{GetKbdType}};}
+\DoxyCodeLine{169         CFStringRef     \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_aa612dad7ef8c29f419f54e02c4466ddc}{kPropertyUnicodeKeyLayoutData}};}
+\DoxyCodeLine{170     \} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_a284af56e69abd9c9198fce7df2057488}{tis}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s}{\_GLFWlibraryNS}};}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{comment}{// Cocoa-\/specific per-\/monitor data}}
+\DoxyCodeLine{175 \textcolor{comment}{//}}
+\DoxyCodeLine{176 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wmonitor_n_s}{\_GLFWmonitorNS}}}
+\DoxyCodeLine{177 \{}
+\DoxyCodeLine{178     CGDirectDisplayID   \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s_abe7227de7971669512a8448962927652}{displayID}};}
+\DoxyCodeLine{179     CGDisplayModeRef    \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s_af7a340549b552ac7715eecc374e8de88}{previousMode}};}
+\DoxyCodeLine{180     uint32\_t            \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s_a0d57aadff800a614e0ea769b3b3c99d3}{unitNumber}};}
+\DoxyCodeLine{181     \textcolor{keywordtype}{id}                  \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s_ae8adf32dfdf6110e40287c76da7e0cc3}{screen}};}
+\DoxyCodeLine{182     \textcolor{keywordtype}{double}              \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s_a369316e35478c5c734eb11bfb2e0ecda}{fallbackRefreshRate}};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \} \mbox{\hyperlink{struct___g_l_f_wmonitor_n_s}{\_GLFWmonitorNS}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \textcolor{comment}{// Cocoa-\/specific per-\/cursor data}}
+\DoxyCodeLine{187 \textcolor{comment}{//}}
+\DoxyCodeLine{188 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcursor_n_s}{\_GLFWcursorNS}}}
+\DoxyCodeLine{189 \{}
+\DoxyCodeLine{190     \textcolor{keywordtype}{id}              \mbox{\hyperlink{struct___g_l_f_wcursor_n_s_a863a8b16c5105f5ccde6c2149d66373c}{object}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \} \mbox{\hyperlink{struct___g_l_f_wcursor_n_s}{\_GLFWcursorNS}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{comment}{// Cocoa-\/specific global timer data}}
+\DoxyCodeLine{195 \textcolor{comment}{//}}
+\DoxyCodeLine{196 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wtimer_n_s}{\_GLFWtimerNS}}}
+\DoxyCodeLine{197 \{}
+\DoxyCodeLine{198     uint64\_t        \mbox{\hyperlink{struct___g_l_f_wtimer_n_s_adfd434dcfe1b44d3419584706aefbd85}{frequency}};}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \} \mbox{\hyperlink{struct___g_l_f_wtimer_n_s}{\_GLFWtimerNS}};}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 \textcolor{keywordtype}{void} \mbox{\hyperlink{cocoa__platform_8h_a111b3e3aae5e9d74046ea1980ae4d2d3}{\_glfwInitTimerNS}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{keywordtype}{void} \mbox{\hyperlink{cocoa__platform_8h_af80ef4003623e26e842c72c6fc5666ae}{\_glfwPollMonitorsNS}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{206 \textcolor{keywordtype}{void} \mbox{\hyperlink{cocoa__platform_8h_ab9bea8895a54b593404797696663f6ee}{\_glfwSetVideoModeNS}}(\mbox{\hyperlink{struct___g_l_f_wmonitor}{\_GLFWmonitor}}* monitor, \textcolor{keyword}{const} \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}}* desired);}
+\DoxyCodeLine{207 \textcolor{keywordtype}{void} \mbox{\hyperlink{cocoa__platform_8h_a2048e4d4e33a8344cb38f7de19e14b6c}{\_glfwRestoreVideoModeNS}}(\mbox{\hyperlink{struct___g_l_f_wmonitor}{\_GLFWmonitor}}* monitor);}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209 \textcolor{keywordtype}{float} \mbox{\hyperlink{cocoa__platform_8h_a283d1c441c4cd978cc5725f71bac269d}{\_glfwTransformYNS}}(\textcolor{keywordtype}{float} \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}});}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211 \textcolor{keywordtype}{void}* \mbox{\hyperlink{cocoa__platform_8h_a45a78b0fcb9b240d40637fe540fa45e5}{\_glfwLoadLocalVulkanLoaderNS}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{212 }
+
+\end{DoxyCode}

@@ -1,0 +1,74 @@
+\hypertarget{recplay_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/oss/recplay.c File Reference}
+\label{recplay_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/oss/recplay.c@{Hexeng2D/dependencies/portaudio/src/hostapi/oss/recplay.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include $<$sys/soundcard.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{recplay_8c_a7206e1a3cf67c8d51a3732252593a0fb}{NUM\+\_\+\+BYTES}}~(64$\ast$1024)
+\item 
+\#define \mbox{\hyperlink{recplay_8c_ad51ded0bbd705f02f73fc60c0b721ced}{BLOCK\+\_\+\+SIZE}}~(4$\ast$1024)
+\item 
+\#define \mbox{\hyperlink{recplay_8c_a73ed4be5c2afc6b3c6d872c67f06b27b}{AUDIO}}~\char`\"{}/dev/dsp\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{recplay_8c_ae0665038b72011f5c680c660fcb59459}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{recplay_8c_adbbab5cb2248179d231690a1a02ff977}{buffer}} \mbox{[}\mbox{\hyperlink{recplay_8c_a7206e1a3cf67c8d51a3732252593a0fb}{NUM\+\_\+\+BYTES}}\mbox{]}
+\item 
+int \mbox{\hyperlink{recplay_8c_a5f3f2c0e6dfb622a8d3b467ad06d212f}{audio\+Dev}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{recplay_8c_a73ed4be5c2afc6b3c6d872c67f06b27b}\label{recplay_8c_a73ed4be5c2afc6b3c6d872c67f06b27b}} 
+\index{recplay.c@{recplay.c}!AUDIO@{AUDIO}}
+\index{AUDIO@{AUDIO}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{AUDIO}{AUDIO}}
+{\footnotesize\ttfamily \#define AUDIO~\char`\"{}/dev/dsp\char`\"{}}
+
+\mbox{\Hypertarget{recplay_8c_ad51ded0bbd705f02f73fc60c0b721ced}\label{recplay_8c_ad51ded0bbd705f02f73fc60c0b721ced}} 
+\index{recplay.c@{recplay.c}!BLOCK\_SIZE@{BLOCK\_SIZE}}
+\index{BLOCK\_SIZE@{BLOCK\_SIZE}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{BLOCK\_SIZE}{BLOCK\_SIZE}}
+{\footnotesize\ttfamily \#define BLOCK\+\_\+\+SIZE~(4$\ast$1024)}
+
+\mbox{\Hypertarget{recplay_8c_a7206e1a3cf67c8d51a3732252593a0fb}\label{recplay_8c_a7206e1a3cf67c8d51a3732252593a0fb}} 
+\index{recplay.c@{recplay.c}!NUM\_BYTES@{NUM\_BYTES}}
+\index{NUM\_BYTES@{NUM\_BYTES}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_BYTES}{NUM\_BYTES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+BYTES~(64$\ast$1024)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{recplay_8c_ae0665038b72011f5c680c660fcb59459}\label{recplay_8c_ae0665038b72011f5c680c660fcb59459}} 
+\index{recplay.c@{recplay.c}!main@{main}}
+\index{main@{main}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{recplay_8c_a5f3f2c0e6dfb622a8d3b467ad06d212f}\label{recplay_8c_a5f3f2c0e6dfb622a8d3b467ad06d212f}} 
+\index{recplay.c@{recplay.c}!audioDev@{audioDev}}
+\index{audioDev@{audioDev}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{audioDev}{audioDev}}
+{\footnotesize\ttfamily int audio\+Dev = 0}
+
+\mbox{\Hypertarget{recplay_8c_adbbab5cb2248179d231690a1a02ff977}\label{recplay_8c_adbbab5cb2248179d231690a1a02ff977}} 
+\index{recplay.c@{recplay.c}!buffer@{buffer}}
+\index{buffer@{buffer}!recplay.c@{recplay.c}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily char \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}\mbox{[}\mbox{\hyperlink{recplay_8c_a7206e1a3cf67c8d51a3732252593a0fb}{NUM\+\_\+\+BYTES}}\mbox{]}}
+

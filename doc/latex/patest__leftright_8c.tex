@@ -1,0 +1,95 @@
+\hypertarget{patest__leftright_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+leftright.c File Reference}
+\label{patest__leftright_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_leftright.c@{Hexeng2D/dependencies/portaudio/test/patest\_leftright.c}}
+
+
+Play different tone sine waves that alternate between left and right channel.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(8)
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(512)
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\item 
+\#define \mbox{\hyperlink{patest__leftright_8c_a7e8a2ef880701eccb8a00ccb5198ceda}{BALANCE\+\_\+\+DELTA}}~(0.\+001)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__leftright_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play different tone sine waves that alternate between left and right channel. 
+
+The low tone should be on the left channel.
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__leftright_8c_a7e8a2ef880701eccb8a00ccb5198ceda}\label{patest__leftright_8c_a7e8a2ef880701eccb8a00ccb5198ceda}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!BALANCE\_DELTA@{BALANCE\_DELTA}}
+\index{BALANCE\_DELTA@{BALANCE\_DELTA}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{BALANCE\_DELTA}{BALANCE\_DELTA}}
+{\footnotesize\ttfamily \#define BALANCE\+\_\+\+DELTA~(0.\+001)}
+
+\mbox{\Hypertarget{patest__leftright_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__leftright_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(512)}
+
+\mbox{\Hypertarget{patest__leftright_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__leftright_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__leftright_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__leftright_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(8)}
+
+\mbox{\Hypertarget{patest__leftright_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__leftright_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__leftright_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__leftright_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__leftright_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__leftright_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_leftright.c@{patest\_leftright.c}!main@{main}}
+\index{main@{main}!patest\_leftright.c@{patest\_leftright.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

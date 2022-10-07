@@ -1,0 +1,47 @@
+\hypertarget{_callback_interface_8hxx_source}{}\doxysection{Callback\+Interface.\+hxx}
+\label{_callback_interface_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/CallbackInterface.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/CallbackInterface.hxx}}
+\mbox{\hyperlink{_callback_interface_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_CALLBACKINTERFACE\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_CALLBACKINTERFACE\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{18     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_callback_interface}{CallbackInterface}}}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20     \textcolor{keyword}{public}:}
+\DoxyCodeLine{21         \textcolor{keyword}{virtual} \mbox{\hyperlink{classportaudio_1_1_callback_interface_aff738795256daba5ca89efeebf155203}{\string~CallbackInterface}}() \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_callback_interface_a33607387b7d2cd30afd5bbea4a7389a8}{paCallbackFun}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{void} *outputBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numFrames, }
+\DoxyCodeLine{24             \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}} *timeInfo, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags) = 0;}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{namespace }impl}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{32         \{}
+\DoxyCodeLine{33             \textcolor{keywordtype}{int} \mbox{\hyperlink{namespaceportaudio_1_1impl_aed5b1714d87972dec1744b028e746038}{callbackInterfaceToPaCallbackAdapter}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{void} *outputBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numFrames, }
+\DoxyCodeLine{34                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}} *timeInfo, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags, }
+\DoxyCodeLine{35                 \textcolor{keywordtype}{void} *userData);}
+\DoxyCodeLine{36         \} \textcolor{comment}{// extern "{}C"{}}}
+\DoxyCodeLine{37     \}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_CALLBACKINTERFACE\_HXX}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\hypertarget{_index_buffer_8hpp_source}{}\doxysection{Index\+Buffer.\+hpp}
+\label{_index_buffer_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/IndexBuffer.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/IndexBuffer.hpp}}
+\mbox{\hyperlink{_index_buffer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INDEX\_BUFFER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INDEX\_BUFFER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}}
+\DoxyCodeLine{10     \{}
+\DoxyCodeLine{11     \textcolor{keyword}{private}:}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_id = 0;}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_count = 0;}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_type = 0;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{public}:}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer_ac550624749f6834c4e7ec230feeec4b8}{IndexBuffer}}();}
+\DoxyCodeLine{22         }
+\DoxyCodeLine{23         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* data, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} count);}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{\string~IndexBuffer}}();}
+\DoxyCodeLine{25         }
+\DoxyCodeLine{26         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer_a024fe4b3c94439c4bcc4dfcb9f408fc5}{IndexBuffer}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer_a6f47cc24a4da823259c55f1a8b2294d5}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{28         }
+\DoxyCodeLine{29         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\&\&) noexcept;}
+\DoxyCodeLine{30         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\&\&) noexcept;}
+\DoxyCodeLine{31         }
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} bind() const;}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} unbind() const;}
+\DoxyCodeLine{34          }
+\DoxyCodeLine{35         inline \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} get\_count()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_count; \}}
+\DoxyCodeLine{36         \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer_a84af9e4f4ea7d34c39c29c31ff2bd811}{get\_type}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_type; \}}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !INDEX\_BUFFER\_HPP}}
+
+\end{DoxyCode}

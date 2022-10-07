@@ -1,0 +1,337 @@
+\hypertarget{pa__unix__util_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/unix/pa\+\_\+unix\+\_\+util.h File Reference}
+\label{pa__unix__util_8h}\index{Hexeng2D/dependencies/portaudio/src/os/unix/pa\_unix\_util.h@{Hexeng2D/dependencies/portaudio/src/os/unix/pa\_unix\_util.h}}
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}}
+\item 
+struct \mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}}
+\item 
+struct \mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_aea604351950df064043e9512ef7a222f}{PA\+\_\+\+MIN}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})~( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) $<$ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) ? (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \+: (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) )
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a4bc529f0326c76adbfea99f629a119bf}{PA\+\_\+\+MAX}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}})~( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) $>$ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) ? (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \+: (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) )
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}(expr)~(expr)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a5e9dbdaa9b7f8c085c47d5956bde3691}{STRINGIZE\+\_\+\+HELPER}}(expr)~\#expr
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}(expr)~\mbox{\hyperlink{pa__jack_8c_a5e9dbdaa9b7f8c085c47d5956bde3691}{STRINGIZE\+\_\+\+HELPER}}(expr)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_adaa396943350072fdd811837f9bead54}{PA\+\_\+\+UNLESS}}(expr,  code)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a2b87696eb7e08bcdbf3abc631780fa74}{PA\+\_\+\+ENSURE}}(expr)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a70a9602df8dcb5495c3ea6d967a0e807}{PA\+\_\+\+ASSERT\+\_\+\+CALL}}(expr,  success)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_aba9526ea8f0dd5b0603f3c81e5e1f9b8}{PA\+\_\+\+ENSURE\+\_\+\+SYSTEM}}(expr,  success)
+\item 
+\#define \mbox{\hyperlink{pa__unix__util_8h_a055995dcdc8dc582299a32f56500f0e1}{Pa\+Unix\+Threading\+\_\+\+EXIT}}(result)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_abec767adc928dfb8a8afa46a596cd828}{Pa\+Util\+\_\+\+Initialize\+Threading}} (\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$threading)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__unix__util_8h_a2c519ba45de8cb5907a5f0648405b9cd}{Pa\+Util\+\_\+\+Terminate\+Threading}} (\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$threading)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a8e9b99116311cbfda679ce1d252562d4}{Pa\+Util\+\_\+\+Start\+Threading}} (\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$threading, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$($\ast$thread\+Routine)(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$), \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a02b4c61d57c95e1ae0768cd21bf04538}{Pa\+Util\+\_\+\+Cancel\+Threading}} (\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$threading, int wait, \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} $\ast$exit\+Result)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a8404184f8c9faff3dd921a12f79d836d}{Pa\+Unix\+Mutex\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$self)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a02e089c1b5a1dfef9b11462c65c280f2}{Pa\+Unix\+Mutex\+\_\+\+Terminate}} (\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$self)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a254077b3b33653765a397e41fa59a4d1}{Pa\+Unix\+Mutex\+\_\+\+Lock}} (\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$self)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a32dd4f5abd53fb23a2f5349fa5c63d5e}{Pa\+Unix\+Mutex\+\_\+\+Unlock}} (\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$self)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a6c83a9b672f10a482daa7da6eb21b0d5}{Pa\+Unix\+Threading\+\_\+\+Initialize}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a1ea876bbbde993a851b1081065e4d5d8}{Pa\+Unix\+Thread\+\_\+\+New}} (\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$self, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$($\ast$thread\+Func)(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$), \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$thread\+Arg, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} wait\+For\+Child, int rt\+Sched)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a2f251ad2c037e1a573c1a5cb564b1afe}{Pa\+Unix\+Thread\+\_\+\+Terminate}} (\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$self, int wait, \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} $\ast$exit\+Result)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_ab4ffae4c3e89df03d105effda5f29434}{Pa\+Unix\+Thread\+\_\+\+Prepare\+Notify}} (\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$self)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__unix__util_8h_a75d9c22a1e8e18d99cb532a5cf3da8d0}{Pa\+Unix\+Thread\+\_\+\+Notify\+Parent}} (\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$self)
+\item 
+int \mbox{\hyperlink{pa__unix__util_8h_a80a12f3ba5d557f3b16177737817ae19}{Pa\+Unix\+Thread\+\_\+\+Stop\+Requested}} (\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$self)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pthread\+\_\+t \mbox{\hyperlink{pa__unix__util_8h_a786fbebfd9d315bc39dec32568a4dfe1}{pa\+Unix\+Main\+Thread}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__unix__util_8h_a70a9602df8dcb5495c3ea6d967a0e807}\label{pa__unix__util_8h_a70a9602df8dcb5495c3ea6d967a0e807}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_ASSERT\_CALL@{PA\_ASSERT\_CALL}}
+\index{PA\_ASSERT\_CALL@{PA\_ASSERT\_CALL}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_ASSERT\_CALL}{PA\_ASSERT\_CALL}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ASSERT\+\_\+\+CALL(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{success }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    paUtilErr\_ = (expr); \(\backslash\)}
+\DoxyCodeLine{    assert( success == paUtilErr\_ );}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__unix__util_8h_a2b87696eb7e08bcdbf3abc631780fa74}\label{pa__unix__util_8h_a2b87696eb7e08bcdbf3abc631780fa74}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_ENSURE@{PA\_ENSURE}}
+\index{PA\_ENSURE@{PA\_ENSURE}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_ENSURE}{PA\_ENSURE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ENSURE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (paUtilErr\_ = (expr)) < \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_DebugPrint(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            result = paUtilErr\_; \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__unix__util_8h_aba9526ea8f0dd5b0603f3c81e5e1f9b8}\label{pa__unix__util_8h_aba9526ea8f0dd5b0603f3c81e5e1f9b8}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_ENSURE\_SYSTEM@{PA\_ENSURE\_SYSTEM}}
+\index{PA\_ENSURE\_SYSTEM@{PA\_ENSURE\_SYSTEM}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_ENSURE\_SYSTEM}{PA\_ENSURE\_SYSTEM}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ENSURE\+\_\+\+SYSTEM(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{success }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (paUtilErr\_ = (expr)) != success ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            \textcolor{comment}{/* PaUtil\_SetLastHostErrorInfo should only be used in the main thread */} \(\backslash\)}
+\DoxyCodeLine{            if( pthread\_equal(pthread\_self(), \mbox{\hyperlink{pa__unix__util_8h_a786fbebfd9d315bc39dec32568a4dfe1}{paUnixMainThread}}) ) \(\backslash\)}
+\DoxyCodeLine{            \{ \(\backslash\)}
+\DoxyCodeLine{                PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5fb23d8b2cf3e2e714298de5ab1b83e1}{paALSA}}, paUtilErr\_, strerror( paUtilErr\_ ) ); \(\backslash\)}
+\DoxyCodeLine{            \} \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_DebugPrint( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} ); \(\backslash\)}
+\DoxyCodeLine{            result = \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{paUnanticipatedHostError}}; \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}( 0 );}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__unix__util_8h_a4bc529f0326c76adbfea99f629a119bf}\label{pa__unix__util_8h_a4bc529f0326c76adbfea99f629a119bf}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_MAX@{PA\_MAX}}
+\index{PA\_MAX@{PA\_MAX}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_MAX}{PA\_MAX}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MAX(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} }\end{DoxyParamCaption})~( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) $>$ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) ? (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \+: (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) )}
+
+\mbox{\Hypertarget{pa__unix__util_8h_aea604351950df064043e9512ef7a222f}\label{pa__unix__util_8h_aea604351950df064043e9512ef7a222f}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_MIN@{PA\_MIN}}
+\index{PA\_MIN@{PA\_MIN}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_MIN}{PA\_MIN}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MIN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}} }\end{DoxyParamCaption})~( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) $<$ (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) ? (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \+: (\mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y}}) )}
+
+\mbox{\Hypertarget{pa__unix__util_8h_adaa396943350072fdd811837f9bead54}\label{pa__unix__util_8h_adaa396943350072fdd811837f9bead54}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PA\_UNLESS@{PA\_UNLESS}}
+\index{PA\_UNLESS@{PA\_UNLESS}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PA\_UNLESS}{PA\_UNLESS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+UNLESS(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{code }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (expr) == 0 ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_DebugPrint(( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} )); \(\backslash\)}
+\DoxyCodeLine{            result = (code); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0);}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__unix__util_8h_a055995dcdc8dc582299a32f56500f0e1}\label{pa__unix__util_8h_a055995dcdc8dc582299a32f56500f0e1}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThreading\_EXIT@{PaUnixThreading\_EXIT}}
+\index{PaUnixThreading\_EXIT@{PaUnixThreading\_EXIT}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThreading\_EXIT}{PaUnixThreading\_EXIT}}
+{\footnotesize\ttfamily \#define Pa\+Unix\+Threading\+\_\+\+EXIT(\begin{DoxyParamCaption}\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}* pres = NULL; \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} != (result) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            pres = malloc( \textcolor{keyword}{sizeof} (\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}}) ); \(\backslash\)}
+\DoxyCodeLine{            *pres = (result); \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        pthread\_exit( pres ); \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0);}
+
+\end{DoxyCode}
+Perish, passing on eventual error code.
+
+A thin wrapper around pthread\+\_\+exit, will automatically pass on any error code to the joining thread. If the result indicates an error, i.\+e. it is not equal to pa\+No\+Error, this function will automatically allocate a pointer so the error is passed on with pthread\+\_\+exit. If the result indicates that all is well however, only a NULL pointer will be handed to pthread\+\_\+exit. Thus, the joining thread should check whether a non-\/\+NULL result pointer is obtained from pthread\+\_\+join and make sure to free it. 
+\begin{DoxyParams}{Parameters}
+{\em result} & The error code to pass on to the joining thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}\label{pa__unix__util_8h_a8fdb5acc9bc207e117671b79ddf1df0f}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!STRINGIZE@{STRINGIZE}}
+\index{STRINGIZE@{STRINGIZE}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{STRINGIZE}{STRINGIZE}}
+{\footnotesize\ttfamily \#define STRINGIZE(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__jack_8c_a5e9dbdaa9b7f8c085c47d5956bde3691}{STRINGIZE\+\_\+\+HELPER}}(expr)}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a5e9dbdaa9b7f8c085c47d5956bde3691}\label{pa__unix__util_8h_a5e9dbdaa9b7f8c085c47d5956bde3691}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!STRINGIZE\_HELPER@{STRINGIZE\_HELPER}}
+\index{STRINGIZE\_HELPER@{STRINGIZE\_HELPER}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{STRINGIZE\_HELPER}{STRINGIZE\_HELPER}}
+{\footnotesize\ttfamily \#define STRINGIZE\+\_\+\+HELPER(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~\#expr}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}\label{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!UNLIKELY@{UNLIKELY}}
+\index{UNLIKELY@{UNLIKELY}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{UNLIKELY}{UNLIKELY}}
+{\footnotesize\ttfamily \#define UNLIKELY(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~(expr)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__unix__util_8h_a8404184f8c9faff3dd921a12f79d836d}\label{pa__unix__util_8h_a8404184f8c9faff3dd921a12f79d836d}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixMutex\_Initialize@{PaUnixMutex\_Initialize}}
+\index{PaUnixMutex\_Initialize@{PaUnixMutex\_Initialize}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixMutex\_Initialize()}{PaUnixMutex\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Mutex\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a254077b3b33653765a397e41fa59a4d1}\label{pa__unix__util_8h_a254077b3b33653765a397e41fa59a4d1}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixMutex\_Lock@{PaUnixMutex\_Lock}}
+\index{PaUnixMutex\_Lock@{PaUnixMutex\_Lock}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixMutex\_Lock()}{PaUnixMutex\_Lock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Mutex\+\_\+\+Lock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+Lock mutex.
+
+We\textquotesingle{}re disabling thread cancellation while the thread is holding a lock, so mutexes are properly unlocked at termination time. \mbox{\Hypertarget{pa__unix__util_8h_a02e089c1b5a1dfef9b11462c65c280f2}\label{pa__unix__util_8h_a02e089c1b5a1dfef9b11462c65c280f2}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixMutex\_Terminate@{PaUnixMutex\_Terminate}}
+\index{PaUnixMutex\_Terminate@{PaUnixMutex\_Terminate}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixMutex\_Terminate()}{PaUnixMutex\_Terminate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Mutex\+\_\+\+Terminate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a32dd4f5abd53fb23a2f5349fa5c63d5e}\label{pa__unix__util_8h_a32dd4f5abd53fb23a2f5349fa5c63d5e}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixMutex\_Unlock@{PaUnixMutex\_Unlock}}
+\index{PaUnixMutex\_Unlock@{PaUnixMutex\_Unlock}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixMutex\_Unlock()}{PaUnixMutex\_Unlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Mutex\+\_\+\+Unlock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+Unlock mutex.
+
+Thread cancellation is enabled again after the mutex is properly unlocked. \mbox{\Hypertarget{pa__unix__util_8h_a1ea876bbbde993a851b1081065e4d5d8}\label{pa__unix__util_8h_a1ea876bbbde993a851b1081065e4d5d8}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThread\_New@{PaUnixThread\_New}}
+\index{PaUnixThread\_New@{PaUnixThread\_New}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThread\_New()}{PaUnixThread\_New()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Thread\+\_\+\+New (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$}]{self,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$($\ast$)(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$)}]{thread\+Func,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{thread\+Arg,  }\item[{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}]{wait\+For\+Child,  }\item[{int}]{rt\+Sched }\end{DoxyParamCaption})}
+
+Spawn a thread.
+
+Intended for spawning the callback thread from the main thread. This function can even block (for a certain time or indefinitely) until notified by the callback thread (using Pa\+Unix\+Thread\+\_\+\+Notify\+Parent), which can be useful in order to make sure that callback has commenced before returning from Pa\+\_\+\+Start\+Stream. 
+\begin{DoxyParams}{Parameters}
+{\em thread\+Func} & The function to be executed in the child thread. \\
+\hline
+{\em wait\+For\+Child} & If not 0, wait for child thread to call Pa\+Unix\+Thread\+\_\+\+Notify\+Parent. Less than 0 means wait for ever, greater than 0 wait for the specified time. \\
+\hline
+{\em rt\+Sched} & Enable realtime scheduling? \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\+: If timed out waiting on child, pa\+Timed\+Out. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__unix__util_8h_a75d9c22a1e8e18d99cb532a5cf3da8d0}\label{pa__unix__util_8h_a75d9c22a1e8e18d99cb532a5cf3da8d0}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThread\_NotifyParent@{PaUnixThread\_NotifyParent}}
+\index{PaUnixThread\_NotifyParent@{PaUnixThread\_NotifyParent}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThread\_NotifyParent()}{PaUnixThread\_NotifyParent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Thread\+\_\+\+Notify\+Parent (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+Notify waiting parent thread.
+
+\begin{DoxyReturn}{Returns}
+\+: If parent timed out waiting, pa\+Timed\+Out. If parent was never waiting, pa\+Internal\+Error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__unix__util_8h_ab4ffae4c3e89df03d105effda5f29434}\label{pa__unix__util_8h_ab4ffae4c3e89df03d105effda5f29434}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThread\_PrepareNotify@{PaUnixThread\_PrepareNotify}}
+\index{PaUnixThread\_PrepareNotify@{PaUnixThread\_PrepareNotify}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThread\_PrepareNotify()}{PaUnixThread\_PrepareNotify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Thread\+\_\+\+Prepare\+Notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+Prepare to notify waiting parent thread.
+
+An internal lock must be held before the parent is notified in Pa\+Unix\+Thread\+\_\+\+Notify\+Parent, call this to acquire it beforehand. \begin{DoxyReturn}{Returns}
+\+: If parent is not waiting, pa\+Internal\+Error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__unix__util_8h_a80a12f3ba5d557f3b16177737817ae19}\label{pa__unix__util_8h_a80a12f3ba5d557f3b16177737817ae19}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThread\_StopRequested@{PaUnixThread\_StopRequested}}
+\index{PaUnixThread\_StopRequested@{PaUnixThread\_StopRequested}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThread\_StopRequested()}{PaUnixThread\_StopRequested()}}
+{\footnotesize\ttfamily int Pa\+Unix\+Thread\+\_\+\+Stop\+Requested (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$}]{self }\end{DoxyParamCaption})}
+
+Has the parent thread requested this thread to stop? \mbox{\Hypertarget{pa__unix__util_8h_a2f251ad2c037e1a573c1a5cb564b1afe}\label{pa__unix__util_8h_a2f251ad2c037e1a573c1a5cb564b1afe}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThread\_Terminate@{PaUnixThread\_Terminate}}
+\index{PaUnixThread\_Terminate@{PaUnixThread\_Terminate}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThread\_Terminate()}{PaUnixThread\_Terminate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Thread\+\_\+\+Terminate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} $\ast$}]{self,  }\item[{int}]{wait,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} $\ast$}]{exit\+Result }\end{DoxyParamCaption})}
+
+Terminate thread.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wait} & If true, request that background thread stop and wait until it does, else cancel it. \\
+\hline
+{\em exit\+Result} & If non-\/null this will upon return contain the exit status of the thread. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__unix__util_8h_a6c83a9b672f10a482daa7da6eb21b0d5}\label{pa__unix__util_8h_a6c83a9b672f10a482daa7da6eb21b0d5}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUnixThreading\_Initialize@{PaUnixThreading\_Initialize}}
+\index{PaUnixThreading\_Initialize@{PaUnixThreading\_Initialize}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUnixThreading\_Initialize()}{PaUnixThreading\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Unix\+Threading\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Initialize global threading state. \mbox{\Hypertarget{pa__unix__util_8h_a02b4c61d57c95e1ae0768cd21bf04538}\label{pa__unix__util_8h_a02b4c61d57c95e1ae0768cd21bf04538}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUtil\_CancelThreading@{PaUtil\_CancelThreading}}
+\index{PaUtil\_CancelThreading@{PaUtil\_CancelThreading}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_CancelThreading()}{PaUtil\_CancelThreading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Cancel\+Threading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$}]{threading,  }\item[{int}]{wait,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} $\ast$}]{exit\+Result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__unix__util_8h_abec767adc928dfb8a8afa46a596cd828}\label{pa__unix__util_8h_abec767adc928dfb8a8afa46a596cd828}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUtil\_InitializeThreading@{PaUtil\_InitializeThreading}}
+\index{PaUtil\_InitializeThreading@{PaUtil\_InitializeThreading}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeThreading()}{PaUtil\_InitializeThreading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Initialize\+Threading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$}]{threading }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a8e9b99116311cbfda679ce1d252562d4}\label{pa__unix__util_8h_a8e9b99116311cbfda679ce1d252562d4}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUtil\_StartThreading@{PaUtil\_StartThreading}}
+\index{PaUtil\_StartThreading@{PaUtil\_StartThreading}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_StartThreading()}{PaUtil\_StartThreading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Start\+Threading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$}]{threading,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$($\ast$)(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$)}]{thread\+Routine,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__unix__util_8h_a2c519ba45de8cb5907a5f0648405b9cd}\label{pa__unix__util_8h_a2c519ba45de8cb5907a5f0648405b9cd}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!PaUtil\_TerminateThreading@{PaUtil\_TerminateThreading}}
+\index{PaUtil\_TerminateThreading@{PaUtil\_TerminateThreading}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_TerminateThreading()}{PaUtil\_TerminateThreading()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Terminate\+Threading (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_threading}{Pa\+Util\+Threading}} $\ast$}]{threading }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__unix__util_8h_a786fbebfd9d315bc39dec32568a4dfe1}\label{pa__unix__util_8h_a786fbebfd9d315bc39dec32568a4dfe1}} 
+\index{pa\_unix\_util.h@{pa\_unix\_util.h}!paUnixMainThread@{paUnixMainThread}}
+\index{paUnixMainThread@{paUnixMainThread}!pa\_unix\_util.h@{pa\_unix\_util.h}}
+\doxysubsubsection{\texorpdfstring{paUnixMainThread}{paUnixMainThread}}
+{\footnotesize\ttfamily pthread\+\_\+t pa\+Unix\+Main\+Thread\hspace{0.3cm}{\ttfamily [extern]}}
+

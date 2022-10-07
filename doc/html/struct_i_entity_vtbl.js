@@ -1,0 +1,27 @@
+var struct_i_entity_vtbl =
+[
+    [ "HRESULT", "struct_i_entity_vtbl.html#ab7f6a8bb87d7d216d78958ddd42f70f8", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a27731a69b52d4cb337f4cccc3161b206", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a439e174a7e536dd50845dcedb2162d35", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a098b1f757b88078a3fc0915717d543ba", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#aa0ba25fab034e9859b51e790274c795a", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a0dcdd96064e2bfc71d056cb148d9d680", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a513e110e6fd4b67ebf4ed83cce6cb267", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#aa391db7249a7325fba40ce3c3c6e95b2", null ],
+    [ "HRESULT", "struct_i_entity_vtbl.html#a0abacc7d5af04ebcfc054b9de47ef5c0", null ],
+    [ "ULONG", "struct_i_entity_vtbl.html#a149ed03da292bd3dfab9e014794a2914", null ],
+    [ "ULONG", "struct_i_entity_vtbl.html#a9fe1c4fe46cfe517bb3a53398f4a910f", null ],
+    [ "pBaseEntity", "struct_i_entity_vtbl.html#ae76ca5d36442b81aecf724bf081fe779", null ],
+    [ "pMetaData", "struct_i_entity_vtbl.html#a8f9dfcaa757d33b4e78273af11973c5c", null ],
+    [ "pNamedEntities", "struct_i_entity_vtbl.html#a0656e65ddb28feffabbb3b5598e81034", null ],
+    [ "ppNamedEntity", "struct_i_entity_vtbl.html#a10a10f8cb4c08721d8324373ddcefd91", null ],
+    [ "ppszName", "struct_i_entity_vtbl.html#aff93fd576f7385df45b4ed44ecc5684a", null ],
+    [ "ppszPhrase", "struct_i_entity_vtbl.html#a5fe7f19486767bfa533a27ac3226aa86", null ],
+    [ "ppvObject", "struct_i_entity_vtbl.html#ae26d0307d103c71d110222926f098d9a", null ],
+    [ "pRelationship", "struct_i_entity_vtbl.html#a87bd270163599046d4e94ee4008fa4e2", null ],
+    [ "pRelationships", "struct_i_entity_vtbl.html#adaacc2095df5e2ba3143f85cffdd569d", null ],
+    [ "pszRelationName", "struct_i_entity_vtbl.html#a128c7c88f8a9b01cb371ef1ae61f9b7c", null ],
+    [ "pszValue", "struct_i_entity_vtbl.html#a945e59a6b4797715e5d7c6682ea96562", null ],
+    [ "riid", "struct_i_entity_vtbl.html#a4a6865cdfb04bc5ba92c56c6d360eeef", null ],
+    [ "riid", "struct_i_entity_vtbl.html#a4a6865cdfb04bc5ba92c56c6d360eeef", null ]
+];

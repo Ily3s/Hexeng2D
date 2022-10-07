@@ -1,0 +1,143 @@
+\hypertarget{struct_i_simple_audio_volume_vtbl}{}\doxysection{ISimple\+Audio\+Volume\+Vtbl Struct Reference}
+\label{struct_i_simple_audio_volume_vtbl}\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+
+
+{\ttfamily \#include $<$audioclient.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_af6e622d5bb8861e1c203ff3d138f8cd0}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_aac9857f7115bb6e70a98279902d43acb}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_aef9d404b160d05b0794cbdca203e7cab}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Master\+Volume)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a11db593063b045ef0620f8388317c410}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Master\+Volume)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a86f92477da980e5d73917865db684ee5}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Mute)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_acf16ea486050c2dc6df9a481713c0ee2}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Mute)(\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a3ac3e9a09d98c902de6fe173aa868bc1}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a13d23c293f79d9717749349baeaf5dce}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a25f46aa26265c8ca1522802f3f2ba1c7}{f\+Level}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_ad5ffe5e09cd10c0c145f8b83b9b2af81}{Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_adac9e6ab94d274122b56d561abde6b35}{pf\+Level}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const BOOL \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a4d2e8166304b1d7630b9fdf4faca4d67}{b\+Mute}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const BOOL \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a8fa97fd6965de87b110334273eb4fbf7}{Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} BOOL $\ast$ \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_ad5daabadd9726de484b3ea6e7ec07e91}{pb\+Mute}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a11db593063b045ef0620f8388317c410}\label{struct_i_simple_audio_volume_vtbl_a11db593063b045ef0620f8388317c410}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Master\+Volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_acf16ea486050c2dc6df9a481713c0ee2}\label{struct_i_simple_audio_volume_vtbl_acf16ea486050c2dc6df9a481713c0ee2}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Mute }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}\label{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE ISimple\+Audio\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_aef9d404b160d05b0794cbdca203e7cab}\label{struct_i_simple_audio_volume_vtbl_aef9d404b160d05b0794cbdca203e7cab}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Master\+Volume }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a86f92477da980e5d73917865db684ee5}\label{struct_i_simple_audio_volume_vtbl_a86f92477da980e5d73917865db684ee5}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Mute }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_af6e622d5bb8861e1c203ff3d138f8cd0}\label{struct_i_simple_audio_volume_vtbl_af6e622d5bb8861e1c203ff3d138f8cd0}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_aac9857f7115bb6e70a98279902d43acb}\label{struct_i_simple_audio_volume_vtbl_aac9857f7115bb6e70a98279902d43acb}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ISimple\+Audio\+Volume\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a4d2e8166304b1d7630b9fdf4faca4d67}\label{struct_i_simple_audio_volume_vtbl_a4d2e8166304b1d7630b9fdf4faca4d67}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!bMute@{bMute}}
+\index{bMute@{bMute}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{bMute}{bMute}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const BOOL ISimple\+Audio\+Volume\+Vtbl\+::b\+Mute}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_ad5ffe5e09cd10c0c145f8b83b9b2af81}\label{struct_i_simple_audio_volume_vtbl_ad5ffe5e09cd10c0c145f8b83b9b2af81}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!EventContext@{EventContext}}
+\index{EventContext@{EventContext}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{EventContext}{EventContext}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} ISimple\+Audio\+Volume\+Vtbl\+::\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a8fa97fd6965de87b110334273eb4fbf7}\label{struct_i_simple_audio_volume_vtbl_a8fa97fd6965de87b110334273eb4fbf7}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!EventContext@{EventContext}}
+\index{EventContext@{EventContext}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{EventContext}{EventContext}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const BOOL \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} ISimple\+Audio\+Volume\+Vtbl\+::\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a25f46aa26265c8ca1522802f3f2ba1c7}\label{struct_i_simple_audio_volume_vtbl_a25f46aa26265c8ca1522802f3f2ba1c7}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!fLevel@{fLevel}}
+\index{fLevel@{fLevel}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevel}{fLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float ISimple\+Audio\+Volume\+Vtbl\+::f\+Level}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_ad5daabadd9726de484b3ea6e7ec07e91}\label{struct_i_simple_audio_volume_vtbl_ad5daabadd9726de484b3ea6e7ec07e91}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!pbMute@{pbMute}}
+\index{pbMute@{pbMute}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{pbMute}{pbMute}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} BOOL$\ast$ ISimple\+Audio\+Volume\+Vtbl\+::pb\+Mute}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_adac9e6ab94d274122b56d561abde6b35}\label{struct_i_simple_audio_volume_vtbl_adac9e6ab94d274122b56d561abde6b35}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!pfLevel@{pfLevel}}
+\index{pfLevel@{pfLevel}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfLevel}{pfLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ ISimple\+Audio\+Volume\+Vtbl\+::pf\+Level}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a13d23c293f79d9717749349baeaf5dce}\label{struct_i_simple_audio_volume_vtbl_a13d23c293f79d9717749349baeaf5dce}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ ISimple\+Audio\+Volume\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_simple_audio_volume_vtbl_a3ac3e9a09d98c902de6fe173aa868bc1}\label{struct_i_simple_audio_volume_vtbl_a3ac3e9a09d98c902de6fe173aa868bc1}} 
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!riid@{riid}}
+\index{riid@{riid}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID ISimple\+Audio\+Volume\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{audioclient_8h}{audioclient.\+h}}\end{DoxyCompactItemize}

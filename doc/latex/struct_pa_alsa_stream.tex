@@ -1,0 +1,181 @@
+\hypertarget{struct_pa_alsa_stream}{}\doxysection{Pa\+Alsa\+Stream Struct Reference}
+\label{struct_pa_alsa_stream}\index{PaAlsaStream@{PaAlsaStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_alsa_stream_addaeac8fe364c5ff592d34c51102490f}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_alsa_stream_a29f7550cda202836040ec8d6dd0d6aea}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_alsa_stream_acd44698cd6e3508f0d41c877ba5b436a}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} \mbox{\hyperlink{struct_pa_alsa_stream_a78a3ab135792aa210042183dabab28ca}{thread}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_alsa_stream_a02214e72205abdc3e8cc0564c2e5a8e6}{frames\+Per\+User\+Buffer}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_alsa_stream_a975c6b88b478a9408d81e84de435369f}{max\+Frames\+Per\+Host\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_a6977d63a92f8a3e044a8c6f5e1a2cc31}{prime\+Buffers}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_ad122ee597668cb143bc79be9712f382e}{callback\+Mode}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_a07464a14e43b11c9e5de064ed33fae70}{pcms\+Synced}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_a950d643d1442448a51072e83debc40be}{rt\+Sched}}
+\item 
+struct pollfd $\ast$ \mbox{\hyperlink{struct_pa_alsa_stream_aa2e24a0415a19cf1e2f95dd69af76e4c}{pfds}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_afd9058a227a6b8d8eae41f033c7955ae}{poll\+Timeout}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_alsa_stream_a118a04f7270ac45c669d5cec7a410119}{callback\+\_\+finished}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_alsa_stream_ab572de6c0a951967b3a47713427858d3}{callback\+Abort}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_alsa_stream_a6bd474f11d49f98eb08f0558b17b5cd3}{is\+Active}}
+\item 
+\mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} \mbox{\hyperlink{struct_pa_alsa_stream_aba5481778876188e52785adf8e0ce793}{state\+Mtx}}
+\item 
+int \mbox{\hyperlink{struct_pa_alsa_stream_ac0213bb3155e96b4445af2ccbc6c6641}{never\+Drop\+Input}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_alsa_stream_a1158444fe763d7def459e7e7d99bedb1}{underrun}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_alsa_stream_a3a8accd426fdfb836f6e692648ced93e}{overrun}}
+\item 
+\mbox{\hyperlink{struct_pa_alsa_stream_component}{Pa\+Alsa\+Stream\+Component}} \mbox{\hyperlink{struct_pa_alsa_stream_ad8d739f23295022c802125ef47c142cd}{capture}}
+\item 
+\mbox{\hyperlink{struct_pa_alsa_stream_component}{Pa\+Alsa\+Stream\+Component}} \mbox{\hyperlink{struct_pa_alsa_stream_a82ea139e41016b139932dbf649c30741}{playback}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_alsa_stream_acd44698cd6e3508f0d41c877ba5b436a}\label{struct_pa_alsa_stream_acd44698cd6e3508f0d41c877ba5b436a}} 
+\index{PaAlsaStream@{PaAlsaStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Alsa\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a118a04f7270ac45c669d5cec7a410119}\label{struct_pa_alsa_stream_a118a04f7270ac45c669d5cec7a410119}} 
+\index{PaAlsaStream@{PaAlsaStream}!callback\_finished@{callback\_finished}}
+\index{callback\_finished@{callback\_finished}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{callback\_finished}{callback\_finished}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Alsa\+Stream\+::callback\+\_\+finished}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_ab572de6c0a951967b3a47713427858d3}\label{struct_pa_alsa_stream_ab572de6c0a951967b3a47713427858d3}} 
+\index{PaAlsaStream@{PaAlsaStream}!callbackAbort@{callbackAbort}}
+\index{callbackAbort@{callbackAbort}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{callbackAbort}{callbackAbort}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Alsa\+Stream\+::callback\+Abort}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_ad122ee597668cb143bc79be9712f382e}\label{struct_pa_alsa_stream_ad122ee597668cb143bc79be9712f382e}} 
+\index{PaAlsaStream@{PaAlsaStream}!callbackMode@{callbackMode}}
+\index{callbackMode@{callbackMode}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{callbackMode}{callbackMode}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::callback\+Mode}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_ad8d739f23295022c802125ef47c142cd}\label{struct_pa_alsa_stream_ad8d739f23295022c802125ef47c142cd}} 
+\index{PaAlsaStream@{PaAlsaStream}!capture@{capture}}
+\index{capture@{capture}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{capture}{capture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_alsa_stream_component}{Pa\+Alsa\+Stream\+Component}} Pa\+Alsa\+Stream\+::capture}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a29f7550cda202836040ec8d6dd0d6aea}\label{struct_pa_alsa_stream_a29f7550cda202836040ec8d6dd0d6aea}} 
+\index{PaAlsaStream@{PaAlsaStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Alsa\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a02214e72205abdc3e8cc0564c2e5a8e6}\label{struct_pa_alsa_stream_a02214e72205abdc3e8cc0564c2e5a8e6}} 
+\index{PaAlsaStream@{PaAlsaStream}!framesPerUserBuffer@{framesPerUserBuffer}}
+\index{framesPerUserBuffer@{framesPerUserBuffer}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{framesPerUserBuffer}{framesPerUserBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Alsa\+Stream\+::frames\+Per\+User\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a6bd474f11d49f98eb08f0558b17b5cd3}\label{struct_pa_alsa_stream_a6bd474f11d49f98eb08f0558b17b5cd3}} 
+\index{PaAlsaStream@{PaAlsaStream}!isActive@{isActive}}
+\index{isActive@{isActive}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{isActive}{isActive}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Alsa\+Stream\+::is\+Active}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a975c6b88b478a9408d81e84de435369f}\label{struct_pa_alsa_stream_a975c6b88b478a9408d81e84de435369f}} 
+\index{PaAlsaStream@{PaAlsaStream}!maxFramesPerHostBuffer@{maxFramesPerHostBuffer}}
+\index{maxFramesPerHostBuffer@{maxFramesPerHostBuffer}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{maxFramesPerHostBuffer}{maxFramesPerHostBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Alsa\+Stream\+::max\+Frames\+Per\+Host\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_ac0213bb3155e96b4445af2ccbc6c6641}\label{struct_pa_alsa_stream_ac0213bb3155e96b4445af2ccbc6c6641}} 
+\index{PaAlsaStream@{PaAlsaStream}!neverDropInput@{neverDropInput}}
+\index{neverDropInput@{neverDropInput}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{neverDropInput}{neverDropInput}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::never\+Drop\+Input}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a3a8accd426fdfb836f6e692648ced93e}\label{struct_pa_alsa_stream_a3a8accd426fdfb836f6e692648ced93e}} 
+\index{PaAlsaStream@{PaAlsaStream}!overrun@{overrun}}
+\index{overrun@{overrun}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{overrun}{overrun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Alsa\+Stream\+::overrun}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a07464a14e43b11c9e5de064ed33fae70}\label{struct_pa_alsa_stream_a07464a14e43b11c9e5de064ed33fae70}} 
+\index{PaAlsaStream@{PaAlsaStream}!pcmsSynced@{pcmsSynced}}
+\index{pcmsSynced@{pcmsSynced}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{pcmsSynced}{pcmsSynced}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::pcms\+Synced}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_aa2e24a0415a19cf1e2f95dd69af76e4c}\label{struct_pa_alsa_stream_aa2e24a0415a19cf1e2f95dd69af76e4c}} 
+\index{PaAlsaStream@{PaAlsaStream}!pfds@{pfds}}
+\index{pfds@{pfds}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{pfds}{pfds}}
+{\footnotesize\ttfamily struct pollfd$\ast$ Pa\+Alsa\+Stream\+::pfds}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a82ea139e41016b139932dbf649c30741}\label{struct_pa_alsa_stream_a82ea139e41016b139932dbf649c30741}} 
+\index{PaAlsaStream@{PaAlsaStream}!playback@{playback}}
+\index{playback@{playback}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{playback}{playback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_alsa_stream_component}{Pa\+Alsa\+Stream\+Component}} Pa\+Alsa\+Stream\+::playback}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_afd9058a227a6b8d8eae41f033c7955ae}\label{struct_pa_alsa_stream_afd9058a227a6b8d8eae41f033c7955ae}} 
+\index{PaAlsaStream@{PaAlsaStream}!pollTimeout@{pollTimeout}}
+\index{pollTimeout@{pollTimeout}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{pollTimeout}{pollTimeout}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::poll\+Timeout}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a6977d63a92f8a3e044a8c6f5e1a2cc31}\label{struct_pa_alsa_stream_a6977d63a92f8a3e044a8c6f5e1a2cc31}} 
+\index{PaAlsaStream@{PaAlsaStream}!primeBuffers@{primeBuffers}}
+\index{primeBuffers@{primeBuffers}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{primeBuffers}{primeBuffers}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::prime\+Buffers}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a950d643d1442448a51072e83debc40be}\label{struct_pa_alsa_stream_a950d643d1442448a51072e83debc40be}} 
+\index{PaAlsaStream@{PaAlsaStream}!rtSched@{rtSched}}
+\index{rtSched@{rtSched}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{rtSched}{rtSched}}
+{\footnotesize\ttfamily int Pa\+Alsa\+Stream\+::rt\+Sched}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_aba5481778876188e52785adf8e0ce793}\label{struct_pa_alsa_stream_aba5481778876188e52785adf8e0ce793}} 
+\index{PaAlsaStream@{PaAlsaStream}!stateMtx@{stateMtx}}
+\index{stateMtx@{stateMtx}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{stateMtx}{stateMtx}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_unix_mutex}{Pa\+Unix\+Mutex}} Pa\+Alsa\+Stream\+::state\+Mtx}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_addaeac8fe364c5ff592d34c51102490f}\label{struct_pa_alsa_stream_addaeac8fe364c5ff592d34c51102490f}} 
+\index{PaAlsaStream@{PaAlsaStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Alsa\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a78a3ab135792aa210042183dabab28ca}\label{struct_pa_alsa_stream_a78a3ab135792aa210042183dabab28ca}} 
+\index{PaAlsaStream@{PaAlsaStream}!thread@{thread}}
+\index{thread@{thread}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_unix_thread}{Pa\+Unix\+Thread}} Pa\+Alsa\+Stream\+::thread}
+
+\mbox{\Hypertarget{struct_pa_alsa_stream_a1158444fe763d7def459e7e7d99bedb1}\label{struct_pa_alsa_stream_a1158444fe763d7def459e7e7d99bedb1}} 
+\index{PaAlsaStream@{PaAlsaStream}!underrun@{underrun}}
+\index{underrun@{underrun}!PaAlsaStream@{PaAlsaStream}}
+\doxysubsubsection{\texorpdfstring{underrun}{underrun}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Alsa\+Stream\+::underrun}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/alsa/\mbox{\hyperlink{pa__linux__alsa_8c}{pa\+\_\+linux\+\_\+alsa.\+c}}\end{DoxyCompactItemize}

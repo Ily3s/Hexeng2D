@@ -1,0 +1,198 @@
+\hypertarget{classportaudio_1_1_stream_parameters}{}\doxysection{portaudio\+::Stream\+Parameters Class Reference}
+\label{classportaudio_1_1_stream_parameters}\index{portaudio::StreamParameters@{portaudio::StreamParameters}}
+
+
+The entire set of parameters needed to configure and open a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}.  
+
+
+
+
+{\ttfamily \#include $<$Stream\+Parameters.\+hxx$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_stream_parameters_a6191380c00b1172dcb8c3e2552df7789}{Stream\+Parameters}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor; does nothing. ///. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classportaudio_1_1_stream_parameters_a3d53dd00a082b28164ddcf4aa948dcbc}{Stream\+Parameters}} (const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&\mbox{\hyperlink{classportaudio_1_1_stream_parameters_ae542d042811e1ed75b3d6b3ce5882129}{input\+Parameters}}, const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&\mbox{\hyperlink{classportaudio_1_1_stream_parameters_a9367d27c08eb1c5af6ded564f76be116}{output\+Parameters}}, double \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a20e9acd6baff0ca860ced33670e9775a}{sample\+Rate}}, unsigned long \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a0be45742823949ebd00d92f0bff20426}{frames\+Per\+Buffer}}, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a50f0e69ad3864633f3dbfda4f419aeae}{set\+Input\+Parameters}} (const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&parameters)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_afa10a9527898ad809d6dc85c58a9bdb0}{set\+Output\+Parameters}} (const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&parameters)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a0f7fa5712fd169f941c2ae189a450c15}{set\+Sample\+Rate}} (double \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a20e9acd6baff0ca860ced33670e9775a}{sample\+Rate}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a99647981a8bea195f6514b9a8a598c8e}{set\+Frames\+Per\+Buffer}} (unsigned long \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a0be45742823949ebd00d92f0bff20426}{frames\+Per\+Buffer}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a6995197ed506fd468f6d36bce7ac8b96}{set\+Flag}} (\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} flag)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a9d6ccd3e4c6ba2c6341282176d32e9bb}{unset\+Flag}} (\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} flag)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a6d53ec7c9c1828f838fe423897344d12}{clear\+Flags}} ()
+\begin{DoxyCompactList}\small\item\em Clears or `unsets' all set flags. ///. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classportaudio_1_1_stream_parameters_ad24fe8d02b719cf36a5ea55eaf982ec4}{is\+Supported}} () const
+\item 
+\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& \mbox{\hyperlink{classportaudio_1_1_stream_parameters_ae542d042811e1ed75b3d6b3ce5882129}{input\+Parameters}} ()
+\item 
+const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a59899b09aa85a3545ac6770f38253da7}{input\+Parameters}} () const
+\item 
+\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a9367d27c08eb1c5af6ded564f76be116}{output\+Parameters}} ()
+\item 
+const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a807fe9d5b1c22efb48381cc51a249b5d}{output\+Parameters}} () const
+\item 
+double \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a20e9acd6baff0ca860ced33670e9775a}{sample\+Rate}} () const
+\item 
+unsigned long \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a0be45742823949ebd00d92f0bff20426}{frames\+Per\+Buffer}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a55564728ea6b06d8ad8dbf5e67a8a0bd}{flags}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_stream_parameters_af3c04d164cded023c4cafccf0218c1cf}{is\+Flag\+Set}} (\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} flag) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The entire set of parameters needed to configure and open a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. 
+
+It contains parameters of input, output and shared parameters. Using the \mbox{\hyperlink{classportaudio_1_1_stream_parameters_ad24fe8d02b719cf36a5ea55eaf982ec4}{is\+Supported()}} method, the \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} can be checked if opening a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} using this \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} would succeed or not. Accessors are provided to higher-\/level parameters aswell as the lower-\/level parameters which are mainly intended for internal use. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a6191380c00b1172dcb8c3e2552df7789}\label{classportaudio_1_1_stream_parameters_a6191380c00b1172dcb8c3e2552df7789}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!StreamParameters@{StreamParameters}}
+\index{StreamParameters@{StreamParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{StreamParameters()}{StreamParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily portaudio\+::\+Stream\+Parameters\+::\+Stream\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor; does nothing. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a3d53dd00a082b28164ddcf4aa948dcbc}\label{classportaudio_1_1_stream_parameters_a3d53dd00a082b28164ddcf4aa948dcbc}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!StreamParameters@{StreamParameters}}
+\index{StreamParameters@{StreamParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{StreamParameters()}{StreamParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily portaudio\+::\+Stream\+Parameters\+::\+Stream\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&}]{input\+Parameters,  }\item[{const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&}]{output\+Parameters,  }\item[{double}]{sample\+Rate,  }\item[{unsigned long}]{frames\+Per\+Buffer,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flags }\end{DoxyParamCaption})}
+
+Sets up the all parameters needed to open either a half-\/duplex or full-\/duplex \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Parameters} & The parameters for the input direction of the to-\/be opened \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} or \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_ab6a4f9365a6971fff3067dbb5f124364}{Direction\+Specific\+Stream\+Parameters\+::null()}} for an output-\/only \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. \\
+\hline
+{\em output\+Parameters} & The parameters for the output direction of the to-\/be opened \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} or \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_ab6a4f9365a6971fff3067dbb5f124364}{Direction\+Specific\+Stream\+Parameters\+::null()}} for an input-\/only \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. \\
+\hline
+{\em sample\+Rate} & The to-\/be opened \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}\textquotesingle{}s sample rate in Hz. \\
+\hline
+{\em frames\+Per\+Buffer} & The number of frames per buffer for a \mbox{\hyperlink{classportaudio_1_1_callback_stream}{Callback\+Stream}}, or the preferred buffer granularity for a \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{Blocking\+Stream}}. \\
+\hline
+{\em flags} & The flags for the to-\/be opened \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}; default pa\+No\+Flag. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a6d53ec7c9c1828f838fe423897344d12}\label{classportaudio_1_1_stream_parameters_a6d53ec7c9c1828f838fe423897344d12}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!clearFlags@{clearFlags}}
+\index{clearFlags@{clearFlags}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{clearFlags()}{clearFlags()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::clear\+Flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clears or `unsets' all set flags. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a55564728ea6b06d8ad8dbf5e67a8a0bd}\label{classportaudio_1_1_stream_parameters_a55564728ea6b06d8ad8dbf5e67a8a0bd}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!flags@{flags}}
+\index{flags@{flags}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} portaudio\+::\+Stream\+Parameters\+::flags (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns all currently set flags as a binary combined integer value (Pa\+Stream\+Flags). Use \mbox{\hyperlink{classportaudio_1_1_stream_parameters_af3c04d164cded023c4cafccf0218c1cf}{is\+Flag\+Set()}} to avoid dealing with the bitmasks. \mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a0be45742823949ebd00d92f0bff20426}\label{classportaudio_1_1_stream_parameters_a0be45742823949ebd00d92f0bff20426}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!framesPerBuffer@{framesPerBuffer}}
+\index{framesPerBuffer@{framesPerBuffer}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{framesPerBuffer()}{framesPerBuffer()}}
+{\footnotesize\ttfamily unsigned long portaudio\+::\+Stream\+Parameters\+::frames\+Per\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_ae542d042811e1ed75b3d6b3ce5882129}\label{classportaudio_1_1_stream_parameters_ae542d042811e1ed75b3d6b3ce5882129}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!inputParameters@{inputParameters}}
+\index{inputParameters@{inputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{inputParameters()}{inputParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& portaudio\+::\+Stream\+Parameters\+::input\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a59899b09aa85a3545ac6770f38253da7}\label{classportaudio_1_1_stream_parameters_a59899b09aa85a3545ac6770f38253da7}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!inputParameters@{inputParameters}}
+\index{inputParameters@{inputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{inputParameters()}{inputParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& portaudio\+::\+Stream\+Parameters\+::input\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_af3c04d164cded023c4cafccf0218c1cf}\label{classportaudio_1_1_stream_parameters_af3c04d164cded023c4cafccf0218c1cf}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!isFlagSet@{isFlagSet}}
+\index{isFlagSet@{isFlagSet}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{isFlagSet()}{isFlagSet()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Stream\+Parameters\+::is\+Flag\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flag }\end{DoxyParamCaption}) const}
+
+Returns true if the specified flag is currently set or false if it isn\textquotesingle{}t. \mbox{\Hypertarget{classportaudio_1_1_stream_parameters_ad24fe8d02b719cf36a5ea55eaf982ec4}\label{classportaudio_1_1_stream_parameters_ad24fe8d02b719cf36a5ea55eaf982ec4}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!isSupported@{isSupported}}
+\index{isSupported@{isSupported}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{isSupported()}{isSupported()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Stream\+Parameters\+::is\+Supported (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a9367d27c08eb1c5af6ded564f76be116}\label{classportaudio_1_1_stream_parameters_a9367d27c08eb1c5af6ded564f76be116}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!outputParameters@{outputParameters}}
+\index{outputParameters@{outputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{outputParameters()}{outputParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& portaudio\+::\+Stream\+Parameters\+::output\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a807fe9d5b1c22efb48381cc51a249b5d}\label{classportaudio_1_1_stream_parameters_a807fe9d5b1c22efb48381cc51a249b5d}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!outputParameters@{outputParameters}}
+\index{outputParameters@{outputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{outputParameters()}{outputParameters()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \& portaudio\+::\+Stream\+Parameters\+::output\+Parameters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a20e9acd6baff0ca860ced33670e9775a}\label{classportaudio_1_1_stream_parameters_a20e9acd6baff0ca860ced33670e9775a}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!sampleRate@{sampleRate}}
+\index{sampleRate@{sampleRate}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{sampleRate()}{sampleRate()}}
+{\footnotesize\ttfamily double portaudio\+::\+Stream\+Parameters\+::sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a6995197ed506fd468f6d36bce7ac8b96}\label{classportaudio_1_1_stream_parameters_a6995197ed506fd468f6d36bce7ac8b96}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!setFlag@{setFlag}}
+\index{setFlag@{setFlag}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{setFlag()}{setFlag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::set\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flag }\end{DoxyParamCaption})}
+
+Sets the specified flag or does nothing when the flag is already set. Doesn\textquotesingle{}t `unset' any previously existing flags (use \mbox{\hyperlink{classportaudio_1_1_stream_parameters_a6d53ec7c9c1828f838fe423897344d12}{clear\+Flags()}} for that). \mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a99647981a8bea195f6514b9a8a598c8e}\label{classportaudio_1_1_stream_parameters_a99647981a8bea195f6514b9a8a598c8e}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!setFramesPerBuffer@{setFramesPerBuffer}}
+\index{setFramesPerBuffer@{setFramesPerBuffer}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{setFramesPerBuffer()}{setFramesPerBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::set\+Frames\+Per\+Buffer (\begin{DoxyParamCaption}\item[{unsigned long}]{frames\+Per\+Buffer }\end{DoxyParamCaption})}
+
+Either the number of frames per buffer for a \mbox{\hyperlink{classportaudio_1_1_callback_stream}{Callback\+Stream}}, or the preferred buffer granularity for a \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{Blocking\+Stream}}. See Port\+Audio documentation. \mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a50f0e69ad3864633f3dbfda4f419aeae}\label{classportaudio_1_1_stream_parameters_a50f0e69ad3864633f3dbfda4f419aeae}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!setInputParameters@{setInputParameters}}
+\index{setInputParameters@{setInputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{setInputParameters()}{setInputParameters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::set\+Input\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&}]{parameters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_afa10a9527898ad809d6dc85c58a9bdb0}\label{classportaudio_1_1_stream_parameters_afa10a9527898ad809d6dc85c58a9bdb0}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!setOutputParameters@{setOutputParameters}}
+\index{setOutputParameters@{setOutputParameters}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{setOutputParameters()}{setOutputParameters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::set\+Output\+Parameters (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} \&}]{parameters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a0f7fa5712fd169f941c2ae189a450c15}\label{classportaudio_1_1_stream_parameters_a0f7fa5712fd169f941c2ae189a450c15}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!setSampleRate@{setSampleRate}}
+\index{setSampleRate@{setSampleRate}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{setSampleRate()}{setSampleRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::set\+Sample\+Rate (\begin{DoxyParamCaption}\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+Sets the requested sample rate. If this sample rate isn\textquotesingle{}t supported by the hardware, the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} will fail to open. The real-\/life sample rate used might differ slightly due to imperfections in the sound card hardware; use \mbox{\hyperlink{classportaudio_1_1_stream_a00cff4e7219de127e15755c92e6ed07a}{Stream\+::sample\+Rate()}} to retrieve the best known estimate for this value. \mbox{\Hypertarget{classportaudio_1_1_stream_parameters_a9d6ccd3e4c6ba2c6341282176d32e9bb}\label{classportaudio_1_1_stream_parameters_a9d6ccd3e4c6ba2c6341282176d32e9bb}} 
+\index{portaudio::StreamParameters@{portaudio::StreamParameters}!unsetFlag@{unsetFlag}}
+\index{unsetFlag@{unsetFlag}!portaudio::StreamParameters@{portaudio::StreamParameters}}
+\doxysubsubsection{\texorpdfstring{unsetFlag()}{unsetFlag()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+Parameters\+::unset\+Flag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flag }\end{DoxyParamCaption})}
+
+Unsets the specified flag or does nothing if the flag isn\textquotesingle{}t set. Doesn\textquotesingle{}t affect any other flags. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_stream_parameters_8hxx}{Stream\+Parameters.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_stream_parameters_8cxx}{Stream\+Parameters.\+cxx}}\end{DoxyCompactItemize}

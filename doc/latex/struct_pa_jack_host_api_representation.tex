@@ -1,0 +1,141 @@
+\hypertarget{struct_pa_jack_host_api_representation}{}\doxysection{Pa\+Jack\+Host\+Api\+Representation Struct Reference}
+\label{struct_pa_jack_host_api_representation}\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} \mbox{\hyperlink{struct_pa_jack_host_api_representation_ae48a62bf0169aab8612d7435f10cf9d7}{common\+Host\+Api\+Rep}}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} \mbox{\hyperlink{struct_pa_jack_host_api_representation_a1a68d0e2089e255ebdb7fb001d9d3b60}{callback\+Stream\+Interface}}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} \mbox{\hyperlink{struct_pa_jack_host_api_representation_acaf1738e1054ff56d469cab3202acebf}{blocking\+Stream\+Interface}}
+\item 
+\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$ \mbox{\hyperlink{struct_pa_jack_host_api_representation_a5665589d64d32a510b85346b23da38c0}{device\+Info\+Memory}}
+\item 
+jack\+\_\+client\+\_\+t $\ast$ \mbox{\hyperlink{struct_pa_jack_host_api_representation_a42d2cc0802246a6829096862bddd9123}{jack\+\_\+client}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_host_api_representation_a4cef17ffae2034e74e82a44c7526c5ca}{jack\+\_\+buffer\+\_\+size}}
+\item 
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{struct_pa_jack_host_api_representation_a6fb33fc101d36b95c209a0c6c696ec44}{host\+Api\+Index}}
+\item 
+pthread\+\_\+mutex\+\_\+t \mbox{\hyperlink{struct_pa_jack_host_api_representation_a46492bb237e9f6edd9de5936a9cb62e3}{mtx}}
+\item 
+pthread\+\_\+cond\+\_\+t \mbox{\hyperlink{struct_pa_jack_host_api_representation_a14fb0a838735f2302de25324fd7754a3}{cond}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_jack_host_api_representation_a898327259b30794d861226ac6c8ec54a}{input\+Base}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_jack_host_api_representation_aa341e520075c927035d08185496ad49a}{output\+Base}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_jack_host_api_representation_ace0bf7028cfbb7dc8d5965f95197b315}{xrun}}
+\item 
+struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}} $\ast$volatile \mbox{\hyperlink{struct_pa_jack_host_api_representation_a17b82d1944981cbf6734327e86e6da44}{to\+Add}}
+\item 
+struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}} $\ast$volatile $\ast$volatile \mbox{\hyperlink{struct_pa_jack_host_api_representation_a7512c18421ff64ed1e78efa05f4d9138}{to\+Remove}}
+\item 
+struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}} $\ast$ \mbox{\hyperlink{struct_pa_jack_host_api_representation_a1284c04d683a42a143e15d81485df227}{process\+Queue}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_host_api_representation_aae228468d5b858e77f0d6ff432dc35d0}{jack\+Is\+Down}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_acaf1738e1054ff56d469cab3202acebf}\label{struct_pa_jack_host_api_representation_acaf1738e1054ff56d469cab3202acebf}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!blockingStreamInterface@{blockingStreamInterface}}
+\index{blockingStreamInterface@{blockingStreamInterface}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{blockingStreamInterface}{blockingStreamInterface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} Pa\+Jack\+Host\+Api\+Representation\+::blocking\+Stream\+Interface}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a1a68d0e2089e255ebdb7fb001d9d3b60}\label{struct_pa_jack_host_api_representation_a1a68d0e2089e255ebdb7fb001d9d3b60}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!callbackStreamInterface@{callbackStreamInterface}}
+\index{callbackStreamInterface@{callbackStreamInterface}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{callbackStreamInterface}{callbackStreamInterface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} Pa\+Jack\+Host\+Api\+Representation\+::callback\+Stream\+Interface}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_ae48a62bf0169aab8612d7435f10cf9d7}\label{struct_pa_jack_host_api_representation_ae48a62bf0169aab8612d7435f10cf9d7}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!commonHostApiRep@{commonHostApiRep}}
+\index{commonHostApiRep@{commonHostApiRep}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{commonHostApiRep}{commonHostApiRep}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} Pa\+Jack\+Host\+Api\+Representation\+::common\+Host\+Api\+Rep}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a14fb0a838735f2302de25324fd7754a3}\label{struct_pa_jack_host_api_representation_a14fb0a838735f2302de25324fd7754a3}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!cond@{cond}}
+\index{cond@{cond}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{cond}{cond}}
+{\footnotesize\ttfamily pthread\+\_\+cond\+\_\+t Pa\+Jack\+Host\+Api\+Representation\+::cond}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a5665589d64d32a510b85346b23da38c0}\label{struct_pa_jack_host_api_representation_a5665589d64d32a510b85346b23da38c0}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!deviceInfoMemory@{deviceInfoMemory}}
+\index{deviceInfoMemory@{deviceInfoMemory}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{deviceInfoMemory}{deviceInfoMemory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}}$\ast$ Pa\+Jack\+Host\+Api\+Representation\+::device\+Info\+Memory}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a6fb33fc101d36b95c209a0c6c696ec44}\label{struct_pa_jack_host_api_representation_a6fb33fc101d36b95c209a0c6c696ec44}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!hostApiIndex@{hostApiIndex}}
+\index{hostApiIndex@{hostApiIndex}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{hostApiIndex}{hostApiIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} Pa\+Jack\+Host\+Api\+Representation\+::host\+Api\+Index}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a898327259b30794d861226ac6c8ec54a}\label{struct_pa_jack_host_api_representation_a898327259b30794d861226ac6c8ec54a}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!inputBase@{inputBase}}
+\index{inputBase@{inputBase}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{inputBase}{inputBase}}
+{\footnotesize\ttfamily unsigned long Pa\+Jack\+Host\+Api\+Representation\+::input\+Base}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a4cef17ffae2034e74e82a44c7526c5ca}\label{struct_pa_jack_host_api_representation_a4cef17ffae2034e74e82a44c7526c5ca}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!jack\_buffer\_size@{jack\_buffer\_size}}
+\index{jack\_buffer\_size@{jack\_buffer\_size}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{jack\_buffer\_size}{jack\_buffer\_size}}
+{\footnotesize\ttfamily int Pa\+Jack\+Host\+Api\+Representation\+::jack\+\_\+buffer\+\_\+size}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a42d2cc0802246a6829096862bddd9123}\label{struct_pa_jack_host_api_representation_a42d2cc0802246a6829096862bddd9123}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!jack\_client@{jack\_client}}
+\index{jack\_client@{jack\_client}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{jack\_client}{jack\_client}}
+{\footnotesize\ttfamily jack\+\_\+client\+\_\+t$\ast$ Pa\+Jack\+Host\+Api\+Representation\+::jack\+\_\+client}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_aae228468d5b858e77f0d6ff432dc35d0}\label{struct_pa_jack_host_api_representation_aae228468d5b858e77f0d6ff432dc35d0}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!jackIsDown@{jackIsDown}}
+\index{jackIsDown@{jackIsDown}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{jackIsDown}{jackIsDown}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Host\+Api\+Representation\+::jack\+Is\+Down}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a46492bb237e9f6edd9de5936a9cb62e3}\label{struct_pa_jack_host_api_representation_a46492bb237e9f6edd9de5936a9cb62e3}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!mtx@{mtx}}
+\index{mtx@{mtx}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily pthread\+\_\+mutex\+\_\+t Pa\+Jack\+Host\+Api\+Representation\+::mtx}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_aa341e520075c927035d08185496ad49a}\label{struct_pa_jack_host_api_representation_aa341e520075c927035d08185496ad49a}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!outputBase@{outputBase}}
+\index{outputBase@{outputBase}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{outputBase}{outputBase}}
+{\footnotesize\ttfamily unsigned long Pa\+Jack\+Host\+Api\+Representation\+::output\+Base}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a1284c04d683a42a143e15d81485df227}\label{struct_pa_jack_host_api_representation_a1284c04d683a42a143e15d81485df227}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!processQueue@{processQueue}}
+\index{processQueue@{processQueue}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{processQueue}{processQueue}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}}$\ast$ Pa\+Jack\+Host\+Api\+Representation\+::process\+Queue}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a17b82d1944981cbf6734327e86e6da44}\label{struct_pa_jack_host_api_representation_a17b82d1944981cbf6734327e86e6da44}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!toAdd@{toAdd}}
+\index{toAdd@{toAdd}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{toAdd}{toAdd}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}}$\ast$ volatile Pa\+Jack\+Host\+Api\+Representation\+::to\+Add}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_a7512c18421ff64ed1e78efa05f4d9138}\label{struct_pa_jack_host_api_representation_a7512c18421ff64ed1e78efa05f4d9138}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!toRemove@{toRemove}}
+\index{toRemove@{toRemove}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{toRemove}{toRemove}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}}$\ast$ volatile $\ast$ volatile Pa\+Jack\+Host\+Api\+Representation\+::to\+Remove}
+
+\mbox{\Hypertarget{struct_pa_jack_host_api_representation_ace0bf7028cfbb7dc8d5965f95197b315}\label{struct_pa_jack_host_api_representation_ace0bf7028cfbb7dc8d5965f95197b315}} 
+\index{PaJackHostApiRepresentation@{PaJackHostApiRepresentation}!xrun@{xrun}}
+\index{xrun@{xrun}!PaJackHostApiRepresentation@{PaJackHostApiRepresentation}}
+\doxysubsubsection{\texorpdfstring{xrun}{xrun}}
+{\footnotesize\ttfamily volatile int Pa\+Jack\+Host\+Api\+Representation\+::xrun}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/jack/\mbox{\hyperlink{pa__jack_8c}{pa\+\_\+jack.\+c}}\end{DoxyCompactItemize}

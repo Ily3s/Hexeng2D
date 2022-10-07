@@ -1,0 +1,107 @@
+\hypertarget{paex__read__write__wire_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/examples/paex\+\_\+read\+\_\+write\+\_\+wire.c File Reference}
+\label{paex__read__write__wire_8c}\index{Hexeng2D/dependencies/portaudio/examples/paex\_read\_write\_wire.c@{Hexeng2D/dependencies/portaudio/examples/paex\_read\_write\_wire.c}}
+
+
+Tests full duplex blocking I/O by passing input straight to output.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(512)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(10)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_a8c203331ac5d5a31682470255ec6ecad}{DITHER\+\_\+\+FLAG}}~(0)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_a06e14a08d61a627aefbfe1f3ecd5db95}{PA\+\_\+\+SAMPLE\+\_\+\+TYPE}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_ae25e0da7cdb20c758a56dc6aece92ba7}{SAMPLE\+\_\+\+SIZE}}~(4)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_aaa64e1de9b094f2505ee39f58f41d530}{SAMPLE\+\_\+\+SILENCE}}~(0.\+0f)
+\item 
+\#define \mbox{\hyperlink{paex__read__write__wire_8c_afa608810761d45850a5a954e8eda94c7}{PRINTF\+\_\+\+S\+\_\+\+FORMAT}}~\char`\"{}\%.\+8f\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paex__read__write__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tests full duplex blocking I/O by passing input straight to output. 
+
+\begin{DoxyAuthor}{Author}
+Bjorn Roche. XO Audio LLC for Z-\/\+Systems Engineering. 
+
+based on code by\+: Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+
+based on code by\+: Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paex__read__write__wire_8c_a8c203331ac5d5a31682470255ec6ecad}\label{paex__read__write__wire_8c_a8c203331ac5d5a31682470255ec6ecad}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!DITHER\_FLAG@{DITHER\_FLAG}}
+\index{DITHER\_FLAG@{DITHER\_FLAG}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{DITHER\_FLAG}{DITHER\_FLAG}}
+{\footnotesize\ttfamily \#define DITHER\+\_\+\+FLAG~(0)}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{paex__read__write__wire_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(512)}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{paex__read__write__wire_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(10)}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_a06e14a08d61a627aefbfe1f3ecd5db95}\label{paex__read__write__wire_8c_a06e14a08d61a627aefbfe1f3ecd5db95}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}}
+\index{PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SAMPLE\_TYPE}{PA\_SAMPLE\_TYPE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SAMPLE\+\_\+\+TYPE~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_afa608810761d45850a5a954e8eda94c7}\label{paex__read__write__wire_8c_afa608810761d45850a5a954e8eda94c7}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!PRINTF\_S\_FORMAT@{PRINTF\_S\_FORMAT}}
+\index{PRINTF\_S\_FORMAT@{PRINTF\_S\_FORMAT}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_S\_FORMAT}{PRINTF\_S\_FORMAT}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+S\+\_\+\+FORMAT~\char`\"{}\%.\+8f\char`\"{}}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{paex__read__write__wire_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_aaa64e1de9b094f2505ee39f58f41d530}\label{paex__read__write__wire_8c_aaa64e1de9b094f2505ee39f58f41d530}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!SAMPLE\_SILENCE@{SAMPLE\_SILENCE}}
+\index{SAMPLE\_SILENCE@{SAMPLE\_SILENCE}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_SILENCE}{SAMPLE\_SILENCE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+SILENCE~(0.\+0f)}
+
+\mbox{\Hypertarget{paex__read__write__wire_8c_ae25e0da7cdb20c758a56dc6aece92ba7}\label{paex__read__write__wire_8c_ae25e0da7cdb20c758a56dc6aece92ba7}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!SAMPLE\_SIZE@{SAMPLE\_SIZE}}
+\index{SAMPLE\_SIZE@{SAMPLE\_SIZE}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_SIZE}{SAMPLE\_SIZE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+SIZE~(4)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paex__read__write__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{paex__read__write__wire_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}!main@{main}}
+\index{main@{main}!paex\_read\_write\_wire.c@{paex\_read\_write\_wire.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

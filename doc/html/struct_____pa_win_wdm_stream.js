@@ -1,0 +1,26 @@
+var struct_____pa_win_wdm_stream =
+[
+    [ "allocGroup", "struct_____pa_win_wdm_stream.html#a4dd31c3219fcd2e7cfd39dbf2006d08d", null ],
+    [ "bufferProcessor", "struct_____pa_win_wdm_stream.html#a2c900cef33bbe8ae112f0de607c61335", null ],
+    [ "capture", "struct_____pa_win_wdm_stream.html#a31e13c53819af64975bdc06cdc8a164d", null ],
+    [ "cpuLoadMeasurer", "struct_____pa_win_wdm_stream.html#ad77f1764e2de9c5a9d2b05ee1a4565ee", null ],
+    [ "deviceInputChannels", "struct_____pa_win_wdm_stream.html#ae9c3eec995fc49fa3fadb925430b359c", null ],
+    [ "deviceOutputChannels", "struct_____pa_win_wdm_stream.html#aea3f97d4daebbcf1865bcce7103e5e1b", null ],
+    [ "eventAbort", "struct_____pa_win_wdm_stream.html#a2ec042a491ca1d0d8a071f4c4901e4c4", null ],
+    [ "eventStreamStart", "struct_____pa_win_wdm_stream.html#a03f53464c73a442fdb86f340fe54e369", null ],
+    [ "hostApiStreamInfo", "struct_____pa_win_wdm_stream.html#a3dbf6fed2412e92984b34fba10cbfeb5", null ],
+    [ "oldProcessPriority", "struct_____pa_win_wdm_stream.html#a0ab2edba0df711bbda00f8030f290db0", null ],
+    [ "render", "struct_____pa_win_wdm_stream.html#a29a9901256d26f88976f259bac0605e8", null ],
+    [ "ringBuffer", "struct_____pa_win_wdm_stream.html#adece2546e5f0f11c92aa5ddd757bc251", null ],
+    [ "ringBufferData", "struct_____pa_win_wdm_stream.html#aad0c5a37686d5d36e970628c720348fd", null ],
+    [ "streamAbort", "struct_____pa_win_wdm_stream.html#acaa0f377d2148764a2c6dd97c75e87d7", null ],
+    [ "streamActive", "struct_____pa_win_wdm_stream.html#a1f917538ec25eacc82713745052815f1", null ],
+    [ "streamFlags", "struct_____pa_win_wdm_stream.html#a515c790a2cfb6e012e152dc1713feb5c", null ],
+    [ "streamRepresentation", "struct_____pa_win_wdm_stream.html#a7e4e2c52c81ca859f290909b0e9868a6", null ],
+    [ "streamStarted", "struct_____pa_win_wdm_stream.html#ab3122c31d95fb7481d45e375fa9a5a3f", null ],
+    [ "streamStop", "struct_____pa_win_wdm_stream.html#a970f778b68693673b00fedf8ff4f201d", null ],
+    [ "streamThread", "struct_____pa_win_wdm_stream.html#a696e6c139cc0dfad91ab108dbf446a12", null ],
+    [ "threadResult", "struct_____pa_win_wdm_stream.html#a3fde31efa009b90dc634e4cb24507976", null ],
+    [ "userInputChannels", "struct_____pa_win_wdm_stream.html#ac89b1708e9a4877523c85ed6961d4fe7", null ],
+    [ "userOutputChannels", "struct_____pa_win_wdm_stream.html#a4d0bdb5754a747c2be09c7a3829efa9c", null ]
+];

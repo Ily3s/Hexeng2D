@@ -1,0 +1,662 @@
+\hypertarget{audioclient_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/audioclient.h File Reference}
+\label{audioclient_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/audioclient.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/audioclient.h}}
+{\ttfamily \#include \char`\"{}rpc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rpcndr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}windows.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ole2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wtypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unknwn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Audio\+Session\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include $<$ks.\+h$>$}\newline
+{\ttfamily \#include $<$ksmedia.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudio\+Client\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudio\+Render\+Client\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudio\+Capture\+Client\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudio\+Clock\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimple\+Audio\+Volume\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudio\+Stream\+Volume\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannel\+Audio\+Volume\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ad76a32846c87da46b8d59d882ad6b4c0}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~475
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a3aa613463387b2f7fb1c62b198c906e6}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~100
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_add0efb6a1957aac40c2cb2c803f0d969}{\+\_\+\+\_\+\+IAudio\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a33e9f326e98ff680c2046b4405a3abeb}{\+\_\+\+\_\+\+IAudio\+Render\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_af7df4f4898c118735ced368ee50e1e57}{\+\_\+\+\_\+\+IAudio\+Capture\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a4d25e37794f1397712f514698279b140}{\+\_\+\+\_\+\+IAudio\+Clock\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a550822442d85e220e7a89bf7ed930365}{\+\_\+\+\_\+\+ISimple\+Audio\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a3691f16fb10bcd35f4c9b2953ec415c2}{\+\_\+\+\_\+\+IAudio\+Stream\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ad60169e6a66f6b8148c2752a116dbcda}{\+\_\+\+\_\+\+IChannel\+Audio\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a5cee4c580f5497f2a1a40c05869d04d7}{\+\_\+\+IKs\+Control\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aefcbeb6e62c9777d4a8ed88b7a645977}{\+\_\+\+\_\+\+IAudio\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ad88f6c30d703824241c47fda2c4c5d5b}{\+\_\+\+\_\+\+IAudio\+Render\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ac84ef45bdb25d764992bfb6c592b5ea1}{\+\_\+\+\_\+\+IAudio\+Capture\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a6b467745cb64776c1f1abe0b9de79013}{AUDIOCLOCK\+\_\+\+CHARACTERISTIC\+\_\+\+FIXED\+\_\+\+FREQ}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a6684d164609e093c9fdb7f97d997948c}{\+\_\+\+\_\+\+IAudio\+Clock\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a350b93590a28e7df146181e1966149e1}{\+\_\+\+\_\+\+ISimple\+Audio\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ac9bff937b51ead9596a94233b7f81a37}{\+\_\+\+\_\+\+IAudio\+Stream\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a322beb1672a8e18ad9b89e528fe18946}{\+\_\+\+\_\+\+IChannel\+Audio\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a00d7b415969556d794cde55b2b247017}{FACILITY\+\_\+\+AUDCLNT}}~0x889
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})~MAKE\+\_\+\+HRESULT(SEVERITY\+\_\+\+ERROR, \mbox{\hyperlink{audioclient_8h_a00d7b415969556d794cde55b2b247017}{FACILITY\+\_\+\+AUDCLNT}}, \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})~MAKE\+\_\+\+SCODE(SEVERITY\+\_\+\+SUCCESS, \mbox{\hyperlink{audioclient_8h_a00d7b415969556d794cde55b2b247017}{FACILITY\+\_\+\+AUDCLNT}}, \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ad71a098f509fdba05f4e637431af9df2}{AUDCLNT\+\_\+\+E\+\_\+\+NOT\+\_\+\+INITIALIZED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x001)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a0e85d50bec0cd9ae0db8dc1f66043ce2}{AUDCLNT\+\_\+\+E\+\_\+\+ALREADY\+\_\+\+INITIALIZED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x002)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a882d32a14cb9161550c665696e4ba077}{AUDCLNT\+\_\+\+E\+\_\+\+WRONG\+\_\+\+ENDPOINT\+\_\+\+TYPE}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x003)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ab9febab2969833cc01d755b7bb464886}{AUDCLNT\+\_\+\+E\+\_\+\+DEVICE\+\_\+\+INVALIDATED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x004)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_afd17ac3442c02117d5cb760745a6b5f4}{AUDCLNT\+\_\+\+E\+\_\+\+NOT\+\_\+\+STOPPED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x005)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aba06602a1bcdc59e4a584f6119c5ce19}{AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+TOO\+\_\+\+LARGE}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x006)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_afab5c55ceb4566d9a5b05a749847dc0b}{AUDCLNT\+\_\+\+E\+\_\+\+OUT\+\_\+\+OF\+\_\+\+ORDER}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x007)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_ab6abf418757067f0f0565b73b13303e7}{AUDCLNT\+\_\+\+E\+\_\+\+UNSUPPORTED\+\_\+\+FORMAT}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x008)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a19a07a1eb6cd62aa8c13d2cdac19066b}{AUDCLNT\+\_\+\+E\+\_\+\+INVALID\+\_\+\+SIZE}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x009)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a776d670cb9724115698a8b6f6b6cbe8a}{AUDCLNT\+\_\+\+E\+\_\+\+DEVICE\+\_\+\+IN\+\_\+\+USE}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00a)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a09cc095f51e13dda32d2892cbe1da394}{AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+OPERATION\+\_\+\+PENDING}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00b)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a1c5d6730a41f1bcdf5569d512626ea0f}{AUDCLNT\+\_\+\+E\+\_\+\+THREAD\+\_\+\+NOT\+\_\+\+REGISTERED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00c)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a2689c79541940427e5eed0aefc88ad00}{AUDCLNT\+\_\+\+E\+\_\+\+EXCLUSIVE\+\_\+\+MODE\+\_\+\+NOT\+\_\+\+ALLOWED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00e)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aae539e4c7647e87747c5e8060c2190ac}{AUDCLNT\+\_\+\+E\+\_\+\+ENDPOINT\+\_\+\+CREATE\+\_\+\+FAILED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00f)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a2d103b4200b8271d88b32676dcdf0293}{AUDCLNT\+\_\+\+E\+\_\+\+SERVICE\+\_\+\+NOT\+\_\+\+RUNNING}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x010)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a478d78eefb1c725408402a4045a53785}{AUDCLNT\+\_\+\+E\+\_\+\+EVENTHANDLE\+\_\+\+NOT\+\_\+\+EXPECTED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x011)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_acc4dbb07b92ae89aa0e0c62d97f06b33}{AUDCLNT\+\_\+\+E\+\_\+\+EXCLUSIVE\+\_\+\+MODE\+\_\+\+ONLY}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x012)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a0bdfda00c294f99cd38b95910c4f3c1a}{AUDCLNT\+\_\+\+E\+\_\+\+BUFDURATION\+\_\+\+PERIOD\+\_\+\+NOT\+\_\+\+EQUAL}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x013)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aacc37aef367caddbbe9e453abd3d851a}{AUDCLNT\+\_\+\+E\+\_\+\+EVENTHANDLE\+\_\+\+NOT\+\_\+\+SET}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x014)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a3c8b8378149e052030d34297e117f921}{AUDCLNT\+\_\+\+E\+\_\+\+INCORRECT\+\_\+\+BUFFER\+\_\+\+SIZE}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x015)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a6b0df930699b9255c67ff1a35800bed6}{AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+ERROR}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x016)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aab4d3f69ada8ff0c7e5578e2d77f7ff4}{AUDCLNT\+\_\+\+E\+\_\+\+CPUUSAGE\+\_\+\+EXCEEDED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x017)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_aefe9792eb9de1c3607c05dca19c70a8c}{AUDCLNT\+\_\+\+S\+\_\+\+BUFFER\+\_\+\+EMPTY}}~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x001)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a1f278fde24a2e623818c126b52dc41ce}{AUDCLNT\+\_\+\+S\+\_\+\+THREAD\+\_\+\+ALREADY\+\_\+\+REGISTERED}}~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x002)
+\item 
+\#define \mbox{\hyperlink{audioclient_8h_a1eaebd8428c2516bee9323f74160a811}{AUDCLNT\+\_\+\+S\+\_\+\+POSITION\+\_\+\+STALLED}}~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x003)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}} \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}} \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}} \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudio\+Clock}} \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudio\+Clock}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}}
+\item 
+typedef interface \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannel\+Audio\+Volume}} \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannel\+Audio\+Volume}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudio\+Client\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a8f729eda260a2f3a94d5b5d4ae4d58e6}{IAudio\+Client\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudio\+Render\+Client\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a160815b69a7f79dbac6b1fde43b32905}{IAudio\+Render\+Client\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudio\+Capture\+Client\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a088fd004472db42ddbface0f4d14e7f3}{IAudio\+Capture\+Client\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudio\+Clock\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a21dfe547125f1446e73372f359006d0c}{IAudio\+Clock\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimple\+Audio\+Volume\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a35ce1396c39b1c8332ab63a42b8075c7}{ISimple\+Audio\+Volume\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudio\+Stream\+Volume\+Vtbl}} \mbox{\hyperlink{audioclient_8h_a53c64d9ad9990b477e7eef1f1c98578d}{IAudio\+Stream\+Volume\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannel\+Audio\+Volume\+Vtbl}} \mbox{\hyperlink{audioclient_8h_aef6c37600dd5e4d80ffee25b70fc1b7f}{IChannel\+Audio\+Volume\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589a}{\+\_\+\+AUDCLNT\+\_\+\+BUFFERFLAGS}} \{ \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aad6ffc05249d99301124a1a1235dbbfdb}{AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+DATA\+\_\+\+DISCONTINUITY}} = 0x1
+, \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa620b66922033e10a4ff864ff6a8975a0}{AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+SILENT}} = 0x2
+, \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa9c787c6f99db793566d95554b9e92ac8}{AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+TIMESTAMP\+\_\+\+ERROR}} = 0x4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_ac0826bfd90eb31d2b541f6b20d548754}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_a669ff1b614ab14c84fa5c9cf34ef53a9}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a1d181241a66c99b1d7ca0a950e2da904}{IID\+\_\+\+IAudio\+Client}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a46adbae934f4c0619841137f4676c8ea}{IID\+\_\+\+IAudio\+Render\+Client}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_aafb60c940e006a4bb990685b8a6d402e}{IID\+\_\+\+IAudio\+Capture\+Client}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_a61e33450bb695edd778c64154613ec24}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0003\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_ab6440de14179db2a2dd7701d30b55551}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0003\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a08697e2e15fe39cdc5644c2884a22e4e}{IID\+\_\+\+IAudio\+Clock}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a543077c535509f82bfb13f807be26994}{IID\+\_\+\+ISimple\+Audio\+Volume}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_ac43f627252f2e6640c3f9be49218e65d}{IID\+\_\+\+IAudio\+Stream\+Volume}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a3b4951c891ecc1f83c4ad7560368c02c}{IID\+\_\+\+IChannel\+Audio\+Volume}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_a090bcc97e5e923528edb64182d06b5f7}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0007\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{audioclient_8h_afd137ad42f2ee642ba876dfcf544bb5e}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0007\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{audioclient_8h_af7df4f4898c118735ced368ee50e1e57}\label{audioclient_8h_af7df4f4898c118735ced368ee50e1e57}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_@{\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_@{\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}{\_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Capture\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_ac84ef45bdb25d764992bfb6c592b5ea1}\label{audioclient_8h_ac84ef45bdb25d764992bfb6c592b5ea1}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}{\_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Capture\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_add0efb6a1957aac40c2cb2c803f0d969}\label{audioclient_8h_add0efb6a1957aac40c2cb2c803f0d969}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioClient\_FWD\_DEFINED\_\_@{\_\_IAudioClient\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioClient\_FWD\_DEFINED\_\_@{\_\_IAudioClient\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioClient\_FWD\_DEFINED\_\_}{\_\_IAudioClient\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_aefcbeb6e62c9777d4a8ed88b7a645977}\label{audioclient_8h_aefcbeb6e62c9777d4a8ed88b7a645977}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioClient\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioClient\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioClient\_INTERFACE\_DEFINED\_\_}{\_\_IAudioClient\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a4d25e37794f1397712f514698279b140}\label{audioclient_8h_a4d25e37794f1397712f514698279b140}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioClock\_FWD\_DEFINED\_\_@{\_\_IAudioClock\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioClock\_FWD\_DEFINED\_\_@{\_\_IAudioClock\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioClock\_FWD\_DEFINED\_\_}{\_\_IAudioClock\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Clock\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a6684d164609e093c9fdb7f97d997948c}\label{audioclient_8h_a6684d164609e093c9fdb7f97d997948c}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioClock\_INTERFACE\_DEFINED\_\_@{\_\_IAudioClock\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioClock\_INTERFACE\_DEFINED\_\_@{\_\_IAudioClock\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioClock\_INTERFACE\_DEFINED\_\_}{\_\_IAudioClock\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Clock\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a33e9f326e98ff680c2046b4405a3abeb}\label{audioclient_8h_a33e9f326e98ff680c2046b4405a3abeb}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioRenderClient\_FWD\_DEFINED\_\_@{\_\_IAudioRenderClient\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioRenderClient\_FWD\_DEFINED\_\_@{\_\_IAudioRenderClient\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioRenderClient\_FWD\_DEFINED\_\_}{\_\_IAudioRenderClient\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Render\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_ad88f6c30d703824241c47fda2c4c5d5b}\label{audioclient_8h_ad88f6c30d703824241c47fda2c4c5d5b}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_@{\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}{\_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Render\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a3691f16fb10bcd35f4c9b2953ec415c2}\label{audioclient_8h_a3691f16fb10bcd35f4c9b2953ec415c2}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_@{\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_@{\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}{\_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Stream\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_ac9bff937b51ead9596a94233b7f81a37}\label{audioclient_8h_ac9bff937b51ead9596a94233b7f81a37}} 
+\index{audioclient.h@{audioclient.h}!\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_@{\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_@{\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}{\_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Stream\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_ad60169e6a66f6b8148c2752a116dbcda}\label{audioclient_8h_ad60169e6a66f6b8148c2752a116dbcda}} 
+\index{audioclient.h@{audioclient.h}!\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_@{\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}}
+\index{\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_@{\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}{\_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IChannel\+Audio\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a322beb1672a8e18ad9b89e528fe18946}\label{audioclient_8h_a322beb1672a8e18ad9b89e528fe18946}} 
+\index{audioclient.h@{audioclient.h}!\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_@{\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_@{\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}{\_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IChannel\+Audio\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a550822442d85e220e7a89bf7ed930365}\label{audioclient_8h_a550822442d85e220e7a89bf7ed930365}} 
+\index{audioclient.h@{audioclient.h}!\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_@{\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}}
+\index{\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_@{\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}{\_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISimple\+Audio\+Volume\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a350b93590a28e7df146181e1966149e1}\label{audioclient_8h_a350b93590a28e7df146181e1966149e1}} 
+\index{audioclient.h@{audioclient.h}!\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_@{\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_@{\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}{\_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISimple\+Audio\+Volume\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_ad76a32846c87da46b8d59d882ad6b4c0}\label{audioclient_8h_ad76a32846c87da46b8d59d882ad6b4c0}} 
+\index{audioclient.h@{audioclient.h}!\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~475}
+
+\mbox{\Hypertarget{audioclient_8h_a3aa613463387b2f7fb1c62b198c906e6}\label{audioclient_8h_a3aa613463387b2f7fb1c62b198c906e6}} 
+\index{audioclient.h@{audioclient.h}!\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~100}
+
+\mbox{\Hypertarget{audioclient_8h_a5cee4c580f5497f2a1a40c05869d04d7}\label{audioclient_8h_a5cee4c580f5497f2a1a40c05869d04d7}} 
+\index{audioclient.h@{audioclient.h}!\_IKsControl\_@{\_IKsControl\_}}
+\index{\_IKsControl\_@{\_IKsControl\_}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_IKsControl\_}{\_IKsControl\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+IKs\+Control\+\_\+}
+
+\mbox{\Hypertarget{audioclient_8h_a0e85d50bec0cd9ae0db8dc1f66043ce2}\label{audioclient_8h_a0e85d50bec0cd9ae0db8dc1f66043ce2}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_ALREADY\_INITIALIZED@{AUDCLNT\_E\_ALREADY\_INITIALIZED}}
+\index{AUDCLNT\_E\_ALREADY\_INITIALIZED@{AUDCLNT\_E\_ALREADY\_INITIALIZED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_ALREADY\_INITIALIZED}{AUDCLNT\_E\_ALREADY\_INITIALIZED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+ALREADY\+\_\+\+INITIALIZED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x002)}
+
+\mbox{\Hypertarget{audioclient_8h_a0bdfda00c294f99cd38b95910c4f3c1a}\label{audioclient_8h_a0bdfda00c294f99cd38b95910c4f3c1a}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL@{AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL}}
+\index{AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL@{AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL}{AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFDURATION\+\_\+\+PERIOD\+\_\+\+NOT\+\_\+\+EQUAL~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x013)}
+
+\mbox{\Hypertarget{audioclient_8h_a09cc095f51e13dda32d2892cbe1da394}\label{audioclient_8h_a09cc095f51e13dda32d2892cbe1da394}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING@{AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING}}
+\index{AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING@{AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING}{AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+OPERATION\+\_\+\+PENDING~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00b)}
+
+\mbox{\Hypertarget{audioclient_8h_a6b0df930699b9255c67ff1a35800bed6}\label{audioclient_8h_a6b0df930699b9255c67ff1a35800bed6}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_BUFFER\_SIZE\_ERROR@{AUDCLNT\_E\_BUFFER\_SIZE\_ERROR}}
+\index{AUDCLNT\_E\_BUFFER\_SIZE\_ERROR@{AUDCLNT\_E\_BUFFER\_SIZE\_ERROR}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFFER\_SIZE\_ERROR}{AUDCLNT\_E\_BUFFER\_SIZE\_ERROR}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+ERROR~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x016)}
+
+\mbox{\Hypertarget{audioclient_8h_aba06602a1bcdc59e4a584f6119c5ce19}\label{audioclient_8h_aba06602a1bcdc59e4a584f6119c5ce19}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_BUFFER\_TOO\_LARGE@{AUDCLNT\_E\_BUFFER\_TOO\_LARGE}}
+\index{AUDCLNT\_E\_BUFFER\_TOO\_LARGE@{AUDCLNT\_E\_BUFFER\_TOO\_LARGE}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFFER\_TOO\_LARGE}{AUDCLNT\_E\_BUFFER\_TOO\_LARGE}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+TOO\+\_\+\+LARGE~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x006)}
+
+\mbox{\Hypertarget{audioclient_8h_aab4d3f69ada8ff0c7e5578e2d77f7ff4}\label{audioclient_8h_aab4d3f69ada8ff0c7e5578e2d77f7ff4}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_CPUUSAGE\_EXCEEDED@{AUDCLNT\_E\_CPUUSAGE\_EXCEEDED}}
+\index{AUDCLNT\_E\_CPUUSAGE\_EXCEEDED@{AUDCLNT\_E\_CPUUSAGE\_EXCEEDED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_CPUUSAGE\_EXCEEDED}{AUDCLNT\_E\_CPUUSAGE\_EXCEEDED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+CPUUSAGE\+\_\+\+EXCEEDED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x017)}
+
+\mbox{\Hypertarget{audioclient_8h_a776d670cb9724115698a8b6f6b6cbe8a}\label{audioclient_8h_a776d670cb9724115698a8b6f6b6cbe8a}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_DEVICE\_IN\_USE@{AUDCLNT\_E\_DEVICE\_IN\_USE}}
+\index{AUDCLNT\_E\_DEVICE\_IN\_USE@{AUDCLNT\_E\_DEVICE\_IN\_USE}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_DEVICE\_IN\_USE}{AUDCLNT\_E\_DEVICE\_IN\_USE}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+DEVICE\+\_\+\+IN\+\_\+\+USE~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00a)}
+
+\mbox{\Hypertarget{audioclient_8h_ab9febab2969833cc01d755b7bb464886}\label{audioclient_8h_ab9febab2969833cc01d755b7bb464886}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_DEVICE\_INVALIDATED@{AUDCLNT\_E\_DEVICE\_INVALIDATED}}
+\index{AUDCLNT\_E\_DEVICE\_INVALIDATED@{AUDCLNT\_E\_DEVICE\_INVALIDATED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_DEVICE\_INVALIDATED}{AUDCLNT\_E\_DEVICE\_INVALIDATED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+DEVICE\+\_\+\+INVALIDATED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x004)}
+
+\mbox{\Hypertarget{audioclient_8h_aae539e4c7647e87747c5e8060c2190ac}\label{audioclient_8h_aae539e4c7647e87747c5e8060c2190ac}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED@{AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED}}
+\index{AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED@{AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED}{AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+ENDPOINT\+\_\+\+CREATE\+\_\+\+FAILED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00f)}
+
+\mbox{\Hypertarget{audioclient_8h_a478d78eefb1c725408402a4045a53785}\label{audioclient_8h_a478d78eefb1c725408402a4045a53785}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED@{AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED}}
+\index{AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED@{AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED}{AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+EVENTHANDLE\+\_\+\+NOT\+\_\+\+EXPECTED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x011)}
+
+\mbox{\Hypertarget{audioclient_8h_aacc37aef367caddbbe9e453abd3d851a}\label{audioclient_8h_aacc37aef367caddbbe9e453abd3d851a}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET@{AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET}}
+\index{AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET@{AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET}{AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+EVENTHANDLE\+\_\+\+NOT\+\_\+\+SET~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x014)}
+
+\mbox{\Hypertarget{audioclient_8h_a2689c79541940427e5eed0aefc88ad00}\label{audioclient_8h_a2689c79541940427e5eed0aefc88ad00}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED@{AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED}}
+\index{AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED@{AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED}{AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+EXCLUSIVE\+\_\+\+MODE\+\_\+\+NOT\+\_\+\+ALLOWED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00e)}
+
+\mbox{\Hypertarget{audioclient_8h_acc4dbb07b92ae89aa0e0c62d97f06b33}\label{audioclient_8h_acc4dbb07b92ae89aa0e0c62d97f06b33}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY@{AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY}}
+\index{AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY@{AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY}{AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+EXCLUSIVE\+\_\+\+MODE\+\_\+\+ONLY~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x012)}
+
+\mbox{\Hypertarget{audioclient_8h_a3c8b8378149e052030d34297e117f921}\label{audioclient_8h_a3c8b8378149e052030d34297e117f921}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE@{AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE}}
+\index{AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE@{AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE}{AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+INCORRECT\+\_\+\+BUFFER\+\_\+\+SIZE~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x015)}
+
+\mbox{\Hypertarget{audioclient_8h_a19a07a1eb6cd62aa8c13d2cdac19066b}\label{audioclient_8h_a19a07a1eb6cd62aa8c13d2cdac19066b}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_INVALID\_SIZE@{AUDCLNT\_E\_INVALID\_SIZE}}
+\index{AUDCLNT\_E\_INVALID\_SIZE@{AUDCLNT\_E\_INVALID\_SIZE}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_INVALID\_SIZE}{AUDCLNT\_E\_INVALID\_SIZE}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+INVALID\+\_\+\+SIZE~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x009)}
+
+\mbox{\Hypertarget{audioclient_8h_ad71a098f509fdba05f4e637431af9df2}\label{audioclient_8h_ad71a098f509fdba05f4e637431af9df2}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_NOT\_INITIALIZED@{AUDCLNT\_E\_NOT\_INITIALIZED}}
+\index{AUDCLNT\_E\_NOT\_INITIALIZED@{AUDCLNT\_E\_NOT\_INITIALIZED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_NOT\_INITIALIZED}{AUDCLNT\_E\_NOT\_INITIALIZED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+NOT\+\_\+\+INITIALIZED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x001)}
+
+\mbox{\Hypertarget{audioclient_8h_afd17ac3442c02117d5cb760745a6b5f4}\label{audioclient_8h_afd17ac3442c02117d5cb760745a6b5f4}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_NOT\_STOPPED@{AUDCLNT\_E\_NOT\_STOPPED}}
+\index{AUDCLNT\_E\_NOT\_STOPPED@{AUDCLNT\_E\_NOT\_STOPPED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_NOT\_STOPPED}{AUDCLNT\_E\_NOT\_STOPPED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+NOT\+\_\+\+STOPPED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x005)}
+
+\mbox{\Hypertarget{audioclient_8h_afab5c55ceb4566d9a5b05a749847dc0b}\label{audioclient_8h_afab5c55ceb4566d9a5b05a749847dc0b}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_OUT\_OF\_ORDER@{AUDCLNT\_E\_OUT\_OF\_ORDER}}
+\index{AUDCLNT\_E\_OUT\_OF\_ORDER@{AUDCLNT\_E\_OUT\_OF\_ORDER}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_OUT\_OF\_ORDER}{AUDCLNT\_E\_OUT\_OF\_ORDER}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+OUT\+\_\+\+OF\+\_\+\+ORDER~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x007)}
+
+\mbox{\Hypertarget{audioclient_8h_a2d103b4200b8271d88b32676dcdf0293}\label{audioclient_8h_a2d103b4200b8271d88b32676dcdf0293}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_SERVICE\_NOT\_RUNNING@{AUDCLNT\_E\_SERVICE\_NOT\_RUNNING}}
+\index{AUDCLNT\_E\_SERVICE\_NOT\_RUNNING@{AUDCLNT\_E\_SERVICE\_NOT\_RUNNING}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_SERVICE\_NOT\_RUNNING}{AUDCLNT\_E\_SERVICE\_NOT\_RUNNING}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+SERVICE\+\_\+\+NOT\+\_\+\+RUNNING~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x010)}
+
+\mbox{\Hypertarget{audioclient_8h_a1c5d6730a41f1bcdf5569d512626ea0f}\label{audioclient_8h_a1c5d6730a41f1bcdf5569d512626ea0f}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_THREAD\_NOT\_REGISTERED@{AUDCLNT\_E\_THREAD\_NOT\_REGISTERED}}
+\index{AUDCLNT\_E\_THREAD\_NOT\_REGISTERED@{AUDCLNT\_E\_THREAD\_NOT\_REGISTERED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_THREAD\_NOT\_REGISTERED}{AUDCLNT\_E\_THREAD\_NOT\_REGISTERED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+THREAD\+\_\+\+NOT\+\_\+\+REGISTERED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x00c)}
+
+\mbox{\Hypertarget{audioclient_8h_ab6abf418757067f0f0565b73b13303e7}\label{audioclient_8h_ab6abf418757067f0f0565b73b13303e7}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_UNSUPPORTED\_FORMAT@{AUDCLNT\_E\_UNSUPPORTED\_FORMAT}}
+\index{AUDCLNT\_E\_UNSUPPORTED\_FORMAT@{AUDCLNT\_E\_UNSUPPORTED\_FORMAT}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_UNSUPPORTED\_FORMAT}{AUDCLNT\_E\_UNSUPPORTED\_FORMAT}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+UNSUPPORTED\+\_\+\+FORMAT~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x008)}
+
+\mbox{\Hypertarget{audioclient_8h_a882d32a14cb9161550c665696e4ba077}\label{audioclient_8h_a882d32a14cb9161550c665696e4ba077}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE@{AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE}}
+\index{AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE@{AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE}{AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+WRONG\+\_\+\+ENDPOINT\+\_\+\+TYPE~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x003)}
+
+\mbox{\Hypertarget{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}\label{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_ERR@{AUDCLNT\_ERR}}
+\index{AUDCLNT\_ERR@{AUDCLNT\_ERR}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_ERR}{AUDCLNT\_ERR}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+ERR(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} }\end{DoxyParamCaption})~MAKE\+\_\+\+HRESULT(SEVERITY\+\_\+\+ERROR, \mbox{\hyperlink{audioclient_8h_a00d7b415969556d794cde55b2b247017}{FACILITY\+\_\+\+AUDCLNT}}, \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})}
+
+\mbox{\Hypertarget{audioclient_8h_aefe9792eb9de1c3607c05dca19c70a8c}\label{audioclient_8h_aefe9792eb9de1c3607c05dca19c70a8c}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_S\_BUFFER\_EMPTY@{AUDCLNT\_S\_BUFFER\_EMPTY}}
+\index{AUDCLNT\_S\_BUFFER\_EMPTY@{AUDCLNT\_S\_BUFFER\_EMPTY}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_S\_BUFFER\_EMPTY}{AUDCLNT\_S\_BUFFER\_EMPTY}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+S\+\_\+\+BUFFER\+\_\+\+EMPTY~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x001)}
+
+\mbox{\Hypertarget{audioclient_8h_a1eaebd8428c2516bee9323f74160a811}\label{audioclient_8h_a1eaebd8428c2516bee9323f74160a811}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_S\_POSITION\_STALLED@{AUDCLNT\_S\_POSITION\_STALLED}}
+\index{AUDCLNT\_S\_POSITION\_STALLED@{AUDCLNT\_S\_POSITION\_STALLED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_S\_POSITION\_STALLED}{AUDCLNT\_S\_POSITION\_STALLED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+S\+\_\+\+POSITION\+\_\+\+STALLED~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x003)}
+
+\mbox{\Hypertarget{audioclient_8h_a1f278fde24a2e623818c126b52dc41ce}\label{audioclient_8h_a1f278fde24a2e623818c126b52dc41ce}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED@{AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED}}
+\index{AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED@{AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED}{AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+S\+\_\+\+THREAD\+\_\+\+ALREADY\+\_\+\+REGISTERED~\mbox{\hyperlink{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}{AUDCLNT\+\_\+\+SUCCESS}}(0x002)}
+
+\mbox{\Hypertarget{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}\label{audioclient_8h_a5031be54040aa8cd6f182b5998b6df71}} 
+\index{audioclient.h@{audioclient.h}!AUDCLNT\_SUCCESS@{AUDCLNT\_SUCCESS}}
+\index{AUDCLNT\_SUCCESS@{AUDCLNT\_SUCCESS}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_SUCCESS}{AUDCLNT\_SUCCESS}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+SUCCESS(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} }\end{DoxyParamCaption})~MAKE\+\_\+\+SCODE(SEVERITY\+\_\+\+SUCCESS, \mbox{\hyperlink{audioclient_8h_a00d7b415969556d794cde55b2b247017}{FACILITY\+\_\+\+AUDCLNT}}, \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}})}
+
+\mbox{\Hypertarget{audioclient_8h_a6b467745cb64776c1f1abe0b9de79013}\label{audioclient_8h_a6b467745cb64776c1f1abe0b9de79013}} 
+\index{audioclient.h@{audioclient.h}!AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ@{AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ}}
+\index{AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ@{AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ}{AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ}}
+{\footnotesize\ttfamily \#define AUDIOCLOCK\+\_\+\+CHARACTERISTIC\+\_\+\+FIXED\+\_\+\+FREQ~0x00000001}
+
+\mbox{\Hypertarget{audioclient_8h_a00d7b415969556d794cde55b2b247017}\label{audioclient_8h_a00d7b415969556d794cde55b2b247017}} 
+\index{audioclient.h@{audioclient.h}!FACILITY\_AUDCLNT@{FACILITY\_AUDCLNT}}
+\index{FACILITY\_AUDCLNT@{FACILITY\_AUDCLNT}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{FACILITY\_AUDCLNT}{FACILITY\_AUDCLNT}}
+{\footnotesize\ttfamily \#define FACILITY\+\_\+\+AUDCLNT~0x889}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}\label{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}} 
+\index{audioclient.h@{audioclient.h}!IAudioCaptureClient@{IAudioCaptureClient}}
+\index{IAudioCaptureClient@{IAudioCaptureClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioCaptureClient}{IAudioCaptureClient}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}} \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}}
+
+\mbox{\Hypertarget{audioclient_8h_a088fd004472db42ddbface0f4d14e7f3}\label{audioclient_8h_a088fd004472db42ddbface0f4d14e7f3}} 
+\index{audioclient.h@{audioclient.h}!IAudioCaptureClientVtbl@{IAudioCaptureClientVtbl}}
+\index{IAudioCaptureClientVtbl@{IAudioCaptureClientVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioCaptureClientVtbl}{IAudioCaptureClientVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudio\+Capture\+Client\+Vtbl}} \mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudio\+Capture\+Client\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}\label{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}} 
+\index{audioclient.h@{audioclient.h}!IAudioClient@{IAudioClient}}
+\index{IAudioClient@{IAudioClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioClient}{IAudioClient}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}} \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}}}
+
+\mbox{\Hypertarget{audioclient_8h_a8f729eda260a2f3a94d5b5d4ae4d58e6}\label{audioclient_8h_a8f729eda260a2f3a94d5b5d4ae4d58e6}} 
+\index{audioclient.h@{audioclient.h}!IAudioClientVtbl@{IAudioClientVtbl}}
+\index{IAudioClientVtbl@{IAudioClientVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioClientVtbl}{IAudioClientVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudio\+Client\+Vtbl}} \mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudio\+Client\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}\label{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}} 
+\index{audioclient.h@{audioclient.h}!IAudioClock@{IAudioClock}}
+\index{IAudioClock@{IAudioClock}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioClock}{IAudioClock}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudio\+Clock}} \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudio\+Clock}}}
+
+\mbox{\Hypertarget{audioclient_8h_a21dfe547125f1446e73372f359006d0c}\label{audioclient_8h_a21dfe547125f1446e73372f359006d0c}} 
+\index{audioclient.h@{audioclient.h}!IAudioClockVtbl@{IAudioClockVtbl}}
+\index{IAudioClockVtbl@{IAudioClockVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioClockVtbl}{IAudioClockVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudio\+Clock\+Vtbl}} \mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudio\+Clock\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_a3d3202e827ce9328a16178551d97746e}\label{audioclient_8h_a3d3202e827ce9328a16178551d97746e}} 
+\index{audioclient.h@{audioclient.h}!IAudioRenderClient@{IAudioRenderClient}}
+\index{IAudioRenderClient@{IAudioRenderClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioRenderClient}{IAudioRenderClient}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}} \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}}
+
+\mbox{\Hypertarget{audioclient_8h_a160815b69a7f79dbac6b1fde43b32905}\label{audioclient_8h_a160815b69a7f79dbac6b1fde43b32905}} 
+\index{audioclient.h@{audioclient.h}!IAudioRenderClientVtbl@{IAudioRenderClientVtbl}}
+\index{IAudioRenderClientVtbl@{IAudioRenderClientVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioRenderClientVtbl}{IAudioRenderClientVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudio\+Render\+Client\+Vtbl}} \mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudio\+Render\+Client\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}\label{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}} 
+\index{audioclient.h@{audioclient.h}!IAudioStreamVolume@{IAudioStreamVolume}}
+\index{IAudioStreamVolume@{IAudioStreamVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioStreamVolume}{IAudioStreamVolume}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}} \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudio\+Stream\+Volume}}}
+
+\mbox{\Hypertarget{audioclient_8h_a53c64d9ad9990b477e7eef1f1c98578d}\label{audioclient_8h_a53c64d9ad9990b477e7eef1f1c98578d}} 
+\index{audioclient.h@{audioclient.h}!IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}}
+\index{IAudioStreamVolumeVtbl@{IAudioStreamVolumeVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IAudioStreamVolumeVtbl}{IAudioStreamVolumeVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudio\+Stream\+Volume\+Vtbl}} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudio\+Stream\+Volume\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}\label{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}} 
+\index{audioclient.h@{audioclient.h}!IChannelAudioVolume@{IChannelAudioVolume}}
+\index{IChannelAudioVolume@{IChannelAudioVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IChannelAudioVolume}{IChannelAudioVolume}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannel\+Audio\+Volume}} \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannel\+Audio\+Volume}}}
+
+\mbox{\Hypertarget{audioclient_8h_aef6c37600dd5e4d80ffee25b70fc1b7f}\label{audioclient_8h_aef6c37600dd5e4d80ffee25b70fc1b7f}} 
+\index{audioclient.h@{audioclient.h}!IChannelAudioVolumeVtbl@{IChannelAudioVolumeVtbl}}
+\index{IChannelAudioVolumeVtbl@{IChannelAudioVolumeVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IChannelAudioVolumeVtbl}{IChannelAudioVolumeVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannel\+Audio\+Volume\+Vtbl}} \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannel\+Audio\+Volume\+Vtbl}}}
+
+\mbox{\Hypertarget{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}\label{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}} 
+\index{audioclient.h@{audioclient.h}!ISimpleAudioVolume@{ISimpleAudioVolume}}
+\index{ISimpleAudioVolume@{ISimpleAudioVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{ISimpleAudioVolume}{ISimpleAudioVolume}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}} \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimple\+Audio\+Volume}}}
+
+\mbox{\Hypertarget{audioclient_8h_a35ce1396c39b1c8332ab63a42b8075c7}\label{audioclient_8h_a35ce1396c39b1c8332ab63a42b8075c7}} 
+\index{audioclient.h@{audioclient.h}!ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}}
+\index{ISimpleAudioVolumeVtbl@{ISimpleAudioVolumeVtbl}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{ISimpleAudioVolumeVtbl}{ISimpleAudioVolumeVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimple\+Audio\+Volume\+Vtbl}} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimple\+Audio\+Volume\+Vtbl}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589a}\label{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589a}} 
+\index{audioclient.h@{audioclient.h}!\_AUDCLNT\_BUFFERFLAGS@{\_AUDCLNT\_BUFFERFLAGS}}
+\index{\_AUDCLNT\_BUFFERFLAGS@{\_AUDCLNT\_BUFFERFLAGS}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_AUDCLNT\_BUFFERFLAGS}{\_AUDCLNT\_BUFFERFLAGS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589a}{\+\_\+\+AUDCLNT\+\_\+\+BUFFERFLAGS}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDCLNT\_BUFFERFLAGS\_DATA\_DISCONTINUITY@{AUDCLNT\_BUFFERFLAGS\_DATA\_DISCONTINUITY}!audioclient.h@{audioclient.h}}\index{audioclient.h@{audioclient.h}!AUDCLNT\_BUFFERFLAGS\_DATA\_DISCONTINUITY@{AUDCLNT\_BUFFERFLAGS\_DATA\_DISCONTINUITY}}}\mbox{\Hypertarget{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aad6ffc05249d99301124a1a1235dbbfdb}\label{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aad6ffc05249d99301124a1a1235dbbfdb}} 
+AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+DATA\+\_\+\+DISCONTINUITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDCLNT\_BUFFERFLAGS\_SILENT@{AUDCLNT\_BUFFERFLAGS\_SILENT}!audioclient.h@{audioclient.h}}\index{audioclient.h@{audioclient.h}!AUDCLNT\_BUFFERFLAGS\_SILENT@{AUDCLNT\_BUFFERFLAGS\_SILENT}}}\mbox{\Hypertarget{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa620b66922033e10a4ff864ff6a8975a0}\label{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa620b66922033e10a4ff864ff6a8975a0}} 
+AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+SILENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AUDCLNT\_BUFFERFLAGS\_TIMESTAMP\_ERROR@{AUDCLNT\_BUFFERFLAGS\_TIMESTAMP\_ERROR}!audioclient.h@{audioclient.h}}\index{audioclient.h@{audioclient.h}!AUDCLNT\_BUFFERFLAGS\_TIMESTAMP\_ERROR@{AUDCLNT\_BUFFERFLAGS\_TIMESTAMP\_ERROR}}}\mbox{\Hypertarget{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa9c787c6f99db793566d95554b9e92ac8}\label{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa9c787c6f99db793566d95554b9e92ac8}} 
+AUDCLNT\+\_\+\+BUFFERFLAGS\+\_\+\+TIMESTAMP\+\_\+\+ERROR&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{audioclient_8h_ac0826bfd90eb31d2b541f6b20d548754}\label{audioclient_8h_ac0826bfd90eb31d2b541f6b20d548754}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_a669ff1b614ab14c84fa5c9cf34ef53a9}\label{audioclient_8h_a669ff1b614ab14c84fa5c9cf34ef53a9}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_a61e33450bb695edd778c64154613ec24}\label{audioclient_8h_a61e33450bb695edd778c64154613ec24}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0003\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_ab6440de14179db2a2dd7701d30b55551}\label{audioclient_8h_ab6440de14179db2a2dd7701d30b55551}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0003\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_a090bcc97e5e923528edb64182d06b5f7}\label{audioclient_8h_a090bcc97e5e923528edb64182d06b5f7}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0007\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_afd137ad42f2ee642ba876dfcf544bb5e}\label{audioclient_8h_afd137ad42f2ee642ba876dfcf544bb5e}} 
+\index{audioclient.h@{audioclient.h}!\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+audioclient\+\_\+0000\+\_\+0007\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{audioclient_8h_aafb60c940e006a4bb990685b8a6d402e}\label{audioclient_8h_aafb60c940e006a4bb990685b8a6d402e}} 
+\index{audioclient.h@{audioclient.h}!IID\_IAudioCaptureClient@{IID\_IAudioCaptureClient}}
+\index{IID\_IAudioCaptureClient@{IID\_IAudioCaptureClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioCaptureClient}{IID\_IAudioCaptureClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Capture\+Client}
+
+\mbox{\Hypertarget{audioclient_8h_a1d181241a66c99b1d7ca0a950e2da904}\label{audioclient_8h_a1d181241a66c99b1d7ca0a950e2da904}} 
+\index{audioclient.h@{audioclient.h}!IID\_IAudioClient@{IID\_IAudioClient}}
+\index{IID\_IAudioClient@{IID\_IAudioClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioClient}{IID\_IAudioClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Client}
+
+\mbox{\Hypertarget{audioclient_8h_a08697e2e15fe39cdc5644c2884a22e4e}\label{audioclient_8h_a08697e2e15fe39cdc5644c2884a22e4e}} 
+\index{audioclient.h@{audioclient.h}!IID\_IAudioClock@{IID\_IAudioClock}}
+\index{IID\_IAudioClock@{IID\_IAudioClock}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioClock}{IID\_IAudioClock}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Clock}
+
+\mbox{\Hypertarget{audioclient_8h_a46adbae934f4c0619841137f4676c8ea}\label{audioclient_8h_a46adbae934f4c0619841137f4676c8ea}} 
+\index{audioclient.h@{audioclient.h}!IID\_IAudioRenderClient@{IID\_IAudioRenderClient}}
+\index{IID\_IAudioRenderClient@{IID\_IAudioRenderClient}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioRenderClient}{IID\_IAudioRenderClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Render\+Client}
+
+\mbox{\Hypertarget{audioclient_8h_ac43f627252f2e6640c3f9be49218e65d}\label{audioclient_8h_ac43f627252f2e6640c3f9be49218e65d}} 
+\index{audioclient.h@{audioclient.h}!IID\_IAudioStreamVolume@{IID\_IAudioStreamVolume}}
+\index{IID\_IAudioStreamVolume@{IID\_IAudioStreamVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioStreamVolume}{IID\_IAudioStreamVolume}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Stream\+Volume}
+
+\mbox{\Hypertarget{audioclient_8h_a3b4951c891ecc1f83c4ad7560368c02c}\label{audioclient_8h_a3b4951c891ecc1f83c4ad7560368c02c}} 
+\index{audioclient.h@{audioclient.h}!IID\_IChannelAudioVolume@{IID\_IChannelAudioVolume}}
+\index{IID\_IChannelAudioVolume@{IID\_IChannelAudioVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IChannelAudioVolume}{IID\_IChannelAudioVolume}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IChannel\+Audio\+Volume}
+
+\mbox{\Hypertarget{audioclient_8h_a543077c535509f82bfb13f807be26994}\label{audioclient_8h_a543077c535509f82bfb13f807be26994}} 
+\index{audioclient.h@{audioclient.h}!IID\_ISimpleAudioVolume@{IID\_ISimpleAudioVolume}}
+\index{IID\_ISimpleAudioVolume@{IID\_ISimpleAudioVolume}!audioclient.h@{audioclient.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ISimpleAudioVolume}{IID\_ISimpleAudioVolume}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ISimple\+Audio\+Volume}
+

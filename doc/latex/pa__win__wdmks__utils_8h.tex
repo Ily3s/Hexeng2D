@@ -1,0 +1,35 @@
+\hypertarget{pa__win__wdmks__utils_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/win/pa\+\_\+win\+\_\+wdmks\+\_\+utils.h File Reference}
+\label{pa__win__wdmks__utils_8h}\index{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_wdmks\_utils.h@{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_wdmks\_utils.h}}
+
+
+Utilities for working with the Windows WDM KS API.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__wdmks__utils_8h_a71529a34736bde9e802d5daecf41c60c}{Pa\+Win\+\_\+\+WDMKS\+\_\+\+Query\+Filter\+Maximum\+Channel\+Count}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$wchar\+Device\+Path, int is\+Input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utilities for working with the Windows WDM KS API. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wdmks__utils_8h_a71529a34736bde9e802d5daecf41c60c}\label{pa__win__wdmks__utils_8h_a71529a34736bde9e802d5daecf41c60c}} 
+\index{pa\_win\_wdmks\_utils.h@{pa\_win\_wdmks\_utils.h}!PaWin\_WDMKS\_QueryFilterMaximumChannelCount@{PaWin\_WDMKS\_QueryFilterMaximumChannelCount}}
+\index{PaWin\_WDMKS\_QueryFilterMaximumChannelCount@{PaWin\_WDMKS\_QueryFilterMaximumChannelCount}!pa\_win\_wdmks\_utils.h@{pa\_win\_wdmks\_utils.h}}
+\doxysubsubsection{\texorpdfstring{PaWin\_WDMKS\_QueryFilterMaximumChannelCount()}{PaWin\_WDMKS\_QueryFilterMaximumChannelCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+\_\+\+WDMKS\+\_\+\+Query\+Filter\+Maximum\+Channel\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{wchar\+Device\+Path,  }\item[{int}]{is\+Input }\end{DoxyParamCaption})}
+
+Query for the maximum number of channels supported by any pin of the specified device. Returns 0 if the query fails for any reason.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wchar\+Device\+Path} & A system level PnP interface path, supplied as a WCHAR unicode string. Declared as void$\ast$ to avoid introducing a dependency on wchar\+\_\+t here.\\
+\hline
+{\em is\+Input} & A flag specifying whether to query for input (non-\/zero) or output (zero) channels. \\
+\hline
+\end{DoxyParams}

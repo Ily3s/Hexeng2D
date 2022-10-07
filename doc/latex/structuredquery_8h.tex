@@ -1,0 +1,1485 @@
+\hypertarget{structuredquery_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/structuredquery.h File Reference}
+\label{structuredquery_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/structuredquery.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/structuredquery.h}}
+{\ttfamily \#include \char`\"{}rpc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rpcndr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}windows.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ole2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}oaidl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ocidl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}propidl.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_query_parser_vtbl}{IQuery\+Parser\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_condition_factory_vtbl}{ICondition\+Factory\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_query_solution_vtbl}{IQuery\+Solution\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_condition_vtbl}{ICondition\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_condition_generator_vtbl}{ICondition\+Generator\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_rich_chunk_vtbl}{IRich\+Chunk\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_interval_vtbl}{IInterval\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_meta_data_vtbl}{IMeta\+Data\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_entity_vtbl}{IEntity\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_relationship_vtbl}{IRelationship\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_named_entity_vtbl}{INamed\+Entity\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_schema_provider_vtbl}{ISchema\+Provider\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_token_collection_vtbl}{IToken\+Collection\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_named_entity_collector_vtbl}{INamed\+Entity\+Collector\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_schema_localizer_support_vtbl}{ISchema\+Localizer\+Support\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_query_parser_manager_vtbl}{IQuery\+Parser\+Manager\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ad76a32846c87da46b8d59d882ad6b4c0}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~475
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a3aa613463387b2f7fb1c62b198c906e6}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~100
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a1a95f7ce7c6762ce9cfd2a216bd39d24}{\+\_\+\+\_\+\+IQuery\+Parser\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a8d224cf9bb32d723f258512a244b1ea1}{\+\_\+\+\_\+\+ICondition\+Factory\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ab1d1affb06a2d0d22721ff4e50fac111}{\+\_\+\+\_\+\+IQuery\+Solution\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a17da61756e756581714cc2532fcf5f88}{\+\_\+\+\_\+\+ICondition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a29af54c52582203d4edc152e47da6c8d}{\+\_\+\+\_\+\+ICondition\+Generator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a83e5bf56e6aeeadafc23d7cd5aaa7bd0}{\+\_\+\+\_\+\+IRich\+Chunk\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a1f642bf78c4c0f19eefca80167b6115a}{\+\_\+\+\_\+\+IInterval\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a25f9a82b31bdaaeb5af122303c1f1185}{\+\_\+\+\_\+\+IMeta\+Data\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a21fe93b0a0b7529461e91c1350138172}{\+\_\+\+\_\+\+IEntity\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_afb83905a1f5fd5d06fc479e6fbb3ab66}{\+\_\+\+\_\+\+IRelationship\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_abb08ef0c42139203ba43d125ce030291}{\+\_\+\+\_\+\+INamed\+Entity\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a69b4ae08ff2fc113115d1bbc2ebcbcf5}{\+\_\+\+\_\+\+ISchema\+Provider\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a706d841819d5e4f893d4640a889e8511}{\+\_\+\+\_\+\+IToken\+Collection\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ab539c75dcb94b785357c489b34f91967}{\+\_\+\+\_\+\+INamed\+Entity\+Collector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_abc28bac7a1500d292b4eaeef65dcf391}{\+\_\+\+\_\+\+ISchema\+Localizer\+Support\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ad837c2b9caf550aade53e9181862aa88}{\+\_\+\+\_\+\+IQuery\+Parser\+Manager\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a73e034cfa2eaf6d5182b5487b6a8459c}{\+\_\+\+\_\+\+Query\+Parser\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ab5424e0da60408ed18de12a37d725487}{\+\_\+\+\_\+\+Negation\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ab20267dbe5fd71033e4e37317a07a0bf}{\+\_\+\+\_\+\+Compound\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ae6c20d8f7e12401c9d8038b33a76f85b}{\+\_\+\+\_\+\+Leaf\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ac09de04ef02d13383bfbf120eafb4e5e}{\+\_\+\+\_\+\+Condition\+Factory\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ae23d50a9dc323f8fb3aab8de3d1f44e4}{\+\_\+\+\_\+\+Interval\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ae2dd810e9216d309013203a53a906353}{\+\_\+\+\_\+\+Query\+Parser\+Manager\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ae0da77bceb6318a59c20c384764a52a0}{\+\_\+\+\_\+\+IQuery\+Parser\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_aab17b03b9434139e58a7880f8d729c10}{\+\_\+\+\_\+\+ICondition\+Factory\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_af0b1f3879158a1c99b0ac73b3378ca19}{\+\_\+\+\_\+\+IQuery\+Solution\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ae75dc600848afebc95b913b96b1485b5}{\+\_\+\+\_\+\+ICondition\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_afbc5a921676452beae94e239eb5b1b37}{\+\_\+\+\_\+\+ICondition\+Generator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a73c39e87fca6317e47f80f184c802065}{\+\_\+\+\_\+\+IRich\+Chunk\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a2f9a86fb30ef5bb3b99a9d487a60a948}{\+\_\+\+\_\+\+IInterval\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a23b0df0b070a5e65ef4c725199b30d85}{\+\_\+\+\_\+\+IMeta\+Data\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a43b4cf9a6f6c5eaace7e5fab0f3fd2a2}{\+\_\+\+\_\+\+IEntity\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a64f48c9780fae762369c97f33336158f}{\+\_\+\+\_\+\+IRelationship\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_ac0fdb1aa112dfdc5a6d4ab5033bb2c8d}{\+\_\+\+\_\+\+INamed\+Entity\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_aa1efb390b5876e17ea25a186be0f684b}{\+\_\+\+\_\+\+ISchema\+Provider\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a1b82f8b0bab3d56739e9f4d261399134}{\+\_\+\+\_\+\+IToken\+Collection\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_aa9d19345d0d518306c3eedbff33f58d5}{\+\_\+\+\_\+\+INamed\+Entity\+Collector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_acf504e036eb932ec5bd3cc092b323f3b}{\+\_\+\+\_\+\+ISchema\+Localizer\+Support\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a3f143da50fd36e570cb0ef3940b4332b}{\+\_\+\+\_\+\+IQuery\+Parser\+Manager\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{structuredquery_8h_a9152ac8bfe235c01c692c7dc9fb97fb8}{\+\_\+\+\_\+\+Structured\+Query1\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}} \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}{IQuery\+Solution}} \mbox{\hyperlink{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}{IQuery\+Solution}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}} \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} \mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}{IInterval}} \mbox{\hyperlink{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}{IInterval}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}{IMeta\+Data}} \mbox{\hyperlink{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}{IMeta\+Data}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}{IEntity}} \mbox{\hyperlink{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}{IEntity}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}{IRelationship}} \mbox{\hyperlink{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}{IRelationship}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}{INamed\+Entity}} \mbox{\hyperlink{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}{INamed\+Entity}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}} \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}} \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}{ISchema\+Localizer\+Support}} \mbox{\hyperlink{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}{ISchema\+Localizer\+Support}}
+\item 
+typedef interface \mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} \mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}{Query\+Parser}} \mbox{\hyperlink{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}{Query\+Parser}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}{Negation\+Condition}} \mbox{\hyperlink{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}{Negation\+Condition}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a05919065e24905152c3539f75221682e}{Compound\+Condition}} \mbox{\hyperlink{structuredquery_8h_a05919065e24905152c3539f75221682e}{Compound\+Condition}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}{Leaf\+Condition}} \mbox{\hyperlink{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}{Leaf\+Condition}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}{Condition\+Factory}} \mbox{\hyperlink{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}{Condition\+Factory}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}{Interval}} \mbox{\hyperlink{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}{Interval}}
+\item 
+typedef struct \mbox{\hyperlink{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}{Query\+Parser\+Manager}} \mbox{\hyperlink{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}{Query\+Parser\+Manager}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}{tag\+CONDITION\+\_\+\+TYPE}} \mbox{\hyperlink{structuredquery_8h_a6ed80d069cc90674b8a42c3a1d7420e6}{CONDITION\+\_\+\+TYPE}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}{tag\+CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}} \mbox{\hyperlink{structuredquery_8h_a1ad678e4d1676c0f103c28ce606846e4}{STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}} \mbox{\hyperlink{structuredquery_8h_a6ec2d8eb5fc7fb185388f98d1ffd7c57}{STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}} \mbox{\hyperlink{structuredquery_8h_a69e12a86779c1c9daf2cb8088475d537}{STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}}
+\item 
+typedef int \mbox{\hyperlink{structuredquery_8h_af7283d5befe8e1a74ae3dd0609fde9e7}{STRUCTURED\+\_\+\+QUERY\+\_\+\+RESOLVE\+\_\+\+OPTION}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bc}{tag\+INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}} \mbox{\hyperlink{structuredquery_8h_a3a4a1fb379b0eac9eb29016a6869eec3}{INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}{tag\+QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_query_parser_vtbl}{IQuery\+Parser\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a64c4f11addf732ab75b2ea227f895461}{IQuery\+Parser\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_condition_factory_vtbl}{ICondition\+Factory\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a5ed45a2da5cc7b69efc7740b82310ca3}{ICondition\+Factory\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_query_solution_vtbl}{IQuery\+Solution\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a44a0442c004c6f963a384687a02f64e9}{IQuery\+Solution\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_condition_vtbl}{ICondition\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_af2ebd7518668947bef27ef30204d4e62}{ICondition\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_condition_generator_vtbl}{ICondition\+Generator\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a108951f373e37c41f2057984f9bd2569}{ICondition\+Generator\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_rich_chunk_vtbl}{IRich\+Chunk\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a3bcdf12fe9968b518e4956009ff5b934}{IRich\+Chunk\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_interval_vtbl}{IInterval\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a7d3ce283d9c1e355e0635fa78f82ab2f}{IInterval\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_meta_data_vtbl}{IMeta\+Data\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_ae39a0b59a56e4b77dc57d0cc8d16c284}{IMeta\+Data\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_entity_vtbl}{IEntity\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_ae29c0b92575b0e12ea328b2520d1f020}{IEntity\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_relationship_vtbl}{IRelationship\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a021c3f191809921de76a5add3b2ea1b0}{IRelationship\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_named_entity_vtbl}{INamed\+Entity\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_ab667a2a143c1822bbf0de4341b9ed56a}{INamed\+Entity\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_schema_provider_vtbl}{ISchema\+Provider\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a254d8e2f74a6f008694fa354f77de7eb}{ISchema\+Provider\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_token_collection_vtbl}{IToken\+Collection\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a2e82105e1675cc02ba7194dcc4fd9df0}{IToken\+Collection\+Vtbl}}
+\item 
+typedef enum \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+0001}} \mbox{\hyperlink{structuredquery_8h_a73a68924e41477117d1598b2ca799161}{NAMED\+\_\+\+ENTITY\+\_\+\+CERTAINTY}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_named_entity_collector_vtbl}{INamed\+Entity\+Collector\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_aebc54d6a0c2e49558c951ea43421bd90}{INamed\+Entity\+Collector\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_schema_localizer_support_vtbl}{ISchema\+Localizer\+Support\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_aa1cab2b4166568a8b92e2a3e52654b74}{ISchema\+Localizer\+Support\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_query_parser_manager_vtbl}{IQuery\+Parser\+Manager\+Vtbl}} \mbox{\hyperlink{structuredquery_8h_a4a3ca2ad1d4fb6bce70277e479ca4c79}{IQuery\+Parser\+Manager\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}{tag\+CONDITION\+\_\+\+TYPE}} \{ \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141da64fdb5dd50f4c3f9421e96b5cffffe02}{CT\+\_\+\+AND\+\_\+\+CONDITION}} = 0
+, \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141da47a2e1275a1deb4479d4dc5c7bdd0320}{CT\+\_\+\+OR\+\_\+\+CONDITION}} = ( CT\+\_\+\+AND\+\_\+\+CONDITION + 1 )
+, \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141da773b3779d8bd6ac19dfc0354d105c7ad}{CT\+\_\+\+NOT\+\_\+\+CONDITION}} = ( CT\+\_\+\+OR\+\_\+\+CONDITION + 1 )
+, \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141dad01af7d9f4a0a18d2ceb1dcfac3f835f}{CT\+\_\+\+LEAF\+\_\+\+CONDITION}} = ( CT\+\_\+\+NOT\+\_\+\+CONDITION + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}{tag\+CONDITION\+\_\+\+OPERATION}} \{ \newline
+\mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aed78a88b413d97f1d1915a8accb1aa44}{COP\+\_\+\+IMPLICIT}} = 0
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ab53df96f120890ecdc938568522e36fa}{COP\+\_\+\+EQUAL}} = ( COP\+\_\+\+IMPLICIT + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a82198a5d9ecdbacd9ff4be96f210b5bc}{COP\+\_\+\+NOTEQUAL}} = ( COP\+\_\+\+EQUAL + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac6d4537956f54b315e7e87f5cd8c9f21}{COP\+\_\+\+LESSTHAN}} = ( COP\+\_\+\+NOTEQUAL + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae8619bc14662306cf1fb07d1c1402faa}{COP\+\_\+\+GREATERTHAN}} = ( COP\+\_\+\+LESSTHAN + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5af7324288731c6b1b4b7b8c58c8b909ee}{COP\+\_\+\+LESSTHANOREQUAL}} = ( COP\+\_\+\+GREATERTHAN + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aee8c6f8f43795591786bde40d6319871}{COP\+\_\+\+GREATERTHANOREQUAL}} = ( COP\+\_\+\+LESSTHANOREQUAL + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae95faf17e333d90c746e5a319079395f}{COP\+\_\+\+VALUE\+\_\+\+STARTSWITH}} = ( COP\+\_\+\+GREATERTHANOREQUAL + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a13031336f82dcb9c4eab86cc153c4bca}{COP\+\_\+\+VALUE\+\_\+\+ENDSWITH}} = ( COP\+\_\+\+VALUE\+\_\+\+STARTSWITH + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a2a94c0461c5da59f7221f13481ee20e3}{COP\+\_\+\+VALUE\+\_\+\+CONTAINS}} = ( COP\+\_\+\+VALUE\+\_\+\+ENDSWITH + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac54511d302b5a50d4075d50b6084217a}{COP\+\_\+\+VALUE\+\_\+\+NOTCONTAINS}} = ( COP\+\_\+\+VALUE\+\_\+\+CONTAINS + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a371676475863936ef398df0b7c9eef67}{COP\+\_\+\+DOSWILDCARDS}} = ( COP\+\_\+\+VALUE\+\_\+\+NOTCONTAINS + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a096590c5098629e2e1dd585a152b0bd0}{COP\+\_\+\+WORD\+\_\+\+EQUAL}} = ( COP\+\_\+\+DOSWILDCARDS + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5acdcd6227a42e00ed7929db1c9b1e76a0}{COP\+\_\+\+WORD\+\_\+\+STARTSWITH}} = ( COP\+\_\+\+WORD\+\_\+\+EQUAL + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae82f57ce25b89ab078e679303fc1d3aa}{COP\+\_\+\+APPLICATION\+\_\+\+SPECIFIC}} = ( COP\+\_\+\+WORD\+\_\+\+STARTSWITH + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}} \{ \newline
+\mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea53c69eebda6debc8b0e4bb5540f8b7a8}{SQSO\+\_\+\+SCHEMA}} = 0
+, \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea8e26d6e3d4ce9c5852a914e2f99acf6c}{SQSO\+\_\+\+LOCALE\+\_\+\+WORD\+\_\+\+BREAKING}} = ( SQSO\+\_\+\+SCHEMA + 1 )
+, \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eafb176349383327527d0ef736bbaaa1e2}{SQSO\+\_\+\+WORD\+\_\+\+BREAKER}} = ( SQSO\+\_\+\+LOCALE\+\_\+\+WORD\+\_\+\+BREAKING + 1 )
+, \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea03c43f9a5e0186fa3b2cbadf0df7731e}{SQSO\+\_\+\+NATURAL\+\_\+\+SYNTAX}} = ( SQSO\+\_\+\+WORD\+\_\+\+BREAKER + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea1d213c22cea61602313b2d35eb1ea890}{SQSO\+\_\+\+AUTOMATIC\+\_\+\+WILDCARD}} = ( SQSO\+\_\+\+NATURAL\+\_\+\+SYNTAX + 1 )
+, \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eab8e5b1b89ace55c47e9b54b8caa39e01}{SQSO\+\_\+\+TRACE\+\_\+\+LEVEL}} = ( SQSO\+\_\+\+AUTOMATIC\+\_\+\+WILDCARD + 1 )
+, \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eadc2c7b9fa8f827eb1991fa1fe5dac78b}{SQSO\+\_\+\+LANGUAGE\+\_\+\+KEYWORDS}} = ( SQSO\+\_\+\+TRACE\+\_\+\+LEVEL + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}} \{ \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a04e73ca0f2f5ebead7e0efdba5f3220e}{SQMO\+\_\+\+VIRTUAL\+\_\+\+PROPERTY}} = 0
+, \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1aae9578dae9ebe759cc8a197dc6578e29}{SQMO\+\_\+\+DEFAULT\+\_\+\+PROPERTY}} = ( SQMO\+\_\+\+VIRTUAL\+\_\+\+PROPERTY + 1 )
+, \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a0dc0365b1a1037a7f2fdf34a8cd60a13}{SQMO\+\_\+\+GENERATOR\+\_\+\+FOR\+\_\+\+TYPE}} = ( SQMO\+\_\+\+DEFAULT\+\_\+\+PROPERTY + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}} \{ \newline
+\mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea519765859619b618aeba9ce2bc04fb5b}{SQPE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea9426854f31069319d7110f5cb13008f4}{SQPE\+\_\+\+EXTRA\+\_\+\+OPENING\+\_\+\+PARENTHESIS}} = ( SQPE\+\_\+\+NONE + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eaf8b977377b122041b753a4575fcd9253}{SQPE\+\_\+\+EXTRA\+\_\+\+CLOSING\+\_\+\+PARENTHESIS}} = ( SQPE\+\_\+\+EXTRA\+\_\+\+OPENING\+\_\+\+PARENTHESIS + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eab268bb5df4f2f3b3c7a6acbb3c429905}{SQPE\+\_\+\+IGNORED\+\_\+\+MODIFIER}} = ( SQPE\+\_\+\+EXTRA\+\_\+\+CLOSING\+\_\+\+PARENTHESIS + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea0c62bfc5dca26e693df2b36da26f26c2}{SQPE\+\_\+\+IGNORED\+\_\+\+CONNECTOR}} = ( SQPE\+\_\+\+IGNORED\+\_\+\+MODIFIER + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea7fe53bd23aba3da93777894641419f99}{SQPE\+\_\+\+IGNORED\+\_\+\+KEYWORD}} = ( SQPE\+\_\+\+IGNORED\+\_\+\+CONNECTOR + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea6fb040100643a5f1f0bc0319baa5a303}{SQPE\+\_\+\+UNHANDLED}} = ( SQPE\+\_\+\+IGNORED\+\_\+\+KEYWORD + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1a}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+RESOLVE\+\_\+\+OPTION}} \{ \newline
+\mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0e07e1e15f01445e2620c6fc183e49dc}{SQRO\+\_\+\+DONT\+\_\+\+RESOLVE\+\_\+\+DATETIME}} = 0x1
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aade60e93e99c13fe30ffa61370d022d19}{SQRO\+\_\+\+ALWAYS\+\_\+\+ONE\+\_\+\+INTERVAL}} = 0x2
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa45d3b9dcf103498d1a23e9836f83417c}{SQRO\+\_\+\+DONT\+\_\+\+SIMPLIFY\+\_\+\+CONDITION\+\_\+\+TREES}} = 0x4
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa7ea20d62ec59e884b17c9d8fdc679107}{SQRO\+\_\+\+DONT\+\_\+\+MAP\+\_\+\+RELATIONS}} = 0x8
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa71ca968e50afc8f0238a3b423713eae6}{SQRO\+\_\+\+DONT\+\_\+\+RESOLVE\+\_\+\+RANGES}} = 0x10
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aab00527649f10b1acdcdfe548e63218eb}{SQRO\+\_\+\+DONT\+\_\+\+REMOVE\+\_\+\+UNRESTRICTED\+\_\+\+KEYWORDS}} = 0x20
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0c0679dc6715c6ca5ed3aaa4d7412a48}{SQRO\+\_\+\+DONT\+\_\+\+SPLIT\+\_\+\+WORDS}} = 0x40
+, \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa346f98bcc26a0e442da2ce8194f460f1}{SQRO\+\_\+\+IGNORE\+\_\+\+PHRASE\+\_\+\+ORDER}} = 0x80
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bc}{tag\+INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}} \{ \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bcab9b0e0c788f46e5e0880e9c4626560bd}{ILK\+\_\+\+EXPLICIT\+\_\+\+INCLUDED}} = 0
+, \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bca3b798d4ce05644feae608b8abd5a167a}{ILK\+\_\+\+EXPLICIT\+\_\+\+EXCLUDED}} = ( ILK\+\_\+\+EXPLICIT\+\_\+\+INCLUDED + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bcafc04515ea4485841fc286f51065866e6}{ILK\+\_\+\+NEGATIVE\+\_\+\+INFINITY}} = ( ILK\+\_\+\+EXPLICIT\+\_\+\+EXCLUDED + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bca20c58d351b549658081c2c0d99485b83}{ILK\+\_\+\+POSITIVE\+\_\+\+INFINITY}} = ( ILK\+\_\+\+NEGATIVE\+\_\+\+INFINITY + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}{tag\+QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \{ \newline
+\mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a4623c3387a39a2a02277e750f3ec8fcb}{QPMO\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+NAME}} = 0
+, \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a33b7807439b6823f044cd0970f64db17}{QPMO\+\_\+\+PRELOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH}} = ( QPMO\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+NAME + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab89054ab31f4998374c16fc7dd5265fa}{QPMO\+\_\+\+UNLOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH}} = ( QPMO\+\_\+\+PRELOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a2bca6f87a87fd6d2d8568dfb98a7a74d}{QPMO\+\_\+\+LOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH}} = ( QPMO\+\_\+\+UNLOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH + 1 )
+, \newline
+\mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab112766dbdbf2d3530892e6f0fd3f922}{QPMO\+\_\+\+APPEND\+\_\+\+LCID\+\_\+\+TO\+\_\+\+LOCALIZED\+\_\+\+PATH}} = ( QPMO\+\_\+\+LOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a721d64911ec092d9e1ebbb0c4e5b743b}{QPMO\+\_\+\+LOCALIZER\+\_\+\+SUPPORT}} = ( QPMO\+\_\+\+APPEND\+\_\+\+LCID\+\_\+\+TO\+\_\+\+LOCALIZED\+\_\+\+PATH + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+0001}} \{ \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa295296157cbea77c453bc537a926a7c7}{NEC\+\_\+\+LOW}} = 0
+, \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa4e6b9a14d502518049da77ff2ffb2c9a}{NEC\+\_\+\+MEDIUM}} = ( NEC\+\_\+\+LOW + 1 )
+, \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa31646de208a5324d384b47038a4e6d1b}{NEC\+\_\+\+HIGH}} = ( NEC\+\_\+\+MEDIUM + 1 )
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_a46cec07e960973768eaa70116575472f}{BSTR\+\_\+\+User\+Size}} (unsigned long $\ast$, unsigned long, BSTR $\ast$)
+\item 
+unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_a8f01065c5cc481aab7a751fd40683473}{BSTR\+\_\+\+User\+Marshal}} (unsigned long $\ast$, unsigned char $\ast$, BSTR $\ast$)
+\item 
+unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_a4d6d879755204c7b478b0db660fb722c}{BSTR\+\_\+\+User\+Unmarshal}} (unsigned long $\ast$, unsigned char $\ast$, BSTR $\ast$)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_a8f8e55ab6c43f7ae93304e41b92cd98d}{BSTR\+\_\+\+User\+Free}} (unsigned long $\ast$, BSTR $\ast$)
+\item 
+unsigned long \+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_ad32e3725cb1d731a72e5fcee61fdca17}{LPSAFEARRAY\+\_\+\+User\+Size}} (unsigned long $\ast$, unsigned long, LPSAFEARRAY $\ast$)
+\item 
+unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_a05fef30ce7f35c62e1d172f3bed871a8}{LPSAFEARRAY\+\_\+\+User\+Marshal}} (unsigned long $\ast$, unsigned char $\ast$, LPSAFEARRAY $\ast$)
+\item 
+unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_ae322d67682ee2e77516c730ea7eb9b57}{LPSAFEARRAY\+\_\+\+User\+Unmarshal}} (unsigned long $\ast$, unsigned char $\ast$, LPSAFEARRAY $\ast$)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+\+\_\+\+RPC\+\_\+\+USER \mbox{\hyperlink{structuredquery_8h_adde5a8aa9c927c41ec7a4ac8c7c3548f}{LPSAFEARRAY\+\_\+\+User\+Free}} (unsigned long $\ast$, LPSAFEARRAY $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_a5ceb4074e7f5201df1609a12296df692}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_aa9f4a401ecffbacf8e1692493c766e70}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a6f5d86de00f9ca1e466b6105e8a78abe}{IID\+\_\+\+IQuery\+Parser}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a7879813af34af4716efffd8b99360231}{IID\+\_\+\+ICondition\+Factory}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_ae0c60bdd1374c6e4fb7cf7101ead8b99}{IID\+\_\+\+IQuery\+Solution}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a24890335a6a770db0176be95042e8053}{IID\+\_\+\+ICondition}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a67d07a7daca4b4f8936b91eeff52cd3b}{IID\+\_\+\+ICondition\+Generator}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_acc777fce72743d85cb0d6bdcd8be9832}{IID\+\_\+\+IRich\+Chunk}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a16a4040887c8a13a9a7d652ae5f8a0ba}{IID\+\_\+\+IInterval}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a89bd3626d37476aa403856c372e1e12d}{IID\+\_\+\+IMeta\+Data}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_a8a7c97b5532858809a55b4ecf113adbb}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0008\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_a8bcb9b63c0b93bb658db715204d03778}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0008\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_add460ffff85f65aa6e3bbe90c5b46c4e}{IID\+\_\+\+IEntity}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_ac7cc0d3304250d40cf3bfb1a317d7352}{IID\+\_\+\+IRelationship}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_aaf900239406d30ea02fb2caf3ab866b4}{IID\+\_\+\+INamed\+Entity}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a2830af80657531818249c70b6f5e7a01}{IID\+\_\+\+ISchema\+Provider}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a65a8808173c75c4f90412eeda965dad2}{IID\+\_\+\+IToken\+Collection}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_a6dd4a73e9846254bc8fa0474b17806d4}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{structuredquery_8h_a813212bfd1035d3767b9943c2341ba8a}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_ad04fe3fd483bb5bd09d72ea1cb28ffe7}{IID\+\_\+\+INamed\+Entity\+Collector}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_a18e18962b5ccfdcf8fa76b4a2619ea48}{IID\+\_\+\+ISchema\+Localizer\+Support}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_ab68411677d540d23033c43629a2b7429}{IID\+\_\+\+IQuery\+Parser\+Manager}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{structuredquery_8h_ade10be5c35605876b86ebb4628baeec4}{LIBID\+\_\+\+Structured\+Query1}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_aa999941c6602aaf9f3ce036d40107244}{CLSID\+\_\+\+Query\+Parser}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_aab4676fdecba1cab04fac8e367e88330}{CLSID\+\_\+\+Negation\+Condition}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_a7fd38dd86889816362d99447dbd71343}{CLSID\+\_\+\+Compound\+Condition}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_acc3d29a0f7868321c5e8443ff0a53661}{CLSID\+\_\+\+Leaf\+Condition}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_a7c7e8644295d2d070141584e3738ffe7}{CLSID\+\_\+\+Condition\+Factory}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_a1e6f3f5eb2f9d66fef22b30028e6d449}{CLSID\+\_\+\+Interval}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{structuredquery_8h_a6f96ddf8cdeb047f3aaaa7aef58ce7cc}{CLSID\+\_\+\+Query\+Parser\+Manager}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{structuredquery_8h_ab20267dbe5fd71033e4e37317a07a0bf}\label{structuredquery_8h_ab20267dbe5fd71033e4e37317a07a0bf}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_CompoundCondition\_FWD\_DEFINED\_\_@{\_\_CompoundCondition\_FWD\_DEFINED\_\_}}
+\index{\_\_CompoundCondition\_FWD\_DEFINED\_\_@{\_\_CompoundCondition\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_CompoundCondition\_FWD\_DEFINED\_\_}{\_\_CompoundCondition\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Compound\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ac09de04ef02d13383bfbf120eafb4e5e}\label{structuredquery_8h_ac09de04ef02d13383bfbf120eafb4e5e}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ConditionFactory\_FWD\_DEFINED\_\_@{\_\_ConditionFactory\_FWD\_DEFINED\_\_}}
+\index{\_\_ConditionFactory\_FWD\_DEFINED\_\_@{\_\_ConditionFactory\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ConditionFactory\_FWD\_DEFINED\_\_}{\_\_ConditionFactory\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Condition\+Factory\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a17da61756e756581714cc2532fcf5f88}\label{structuredquery_8h_a17da61756e756581714cc2532fcf5f88}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ICondition\_FWD\_DEFINED\_\_@{\_\_ICondition\_FWD\_DEFINED\_\_}}
+\index{\_\_ICondition\_FWD\_DEFINED\_\_@{\_\_ICondition\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ICondition\_FWD\_DEFINED\_\_}{\_\_ICondition\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ae75dc600848afebc95b913b96b1485b5}\label{structuredquery_8h_ae75dc600848afebc95b913b96b1485b5}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ICondition\_INTERFACE\_DEFINED\_\_@{\_\_ICondition\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ICondition\_INTERFACE\_DEFINED\_\_@{\_\_ICondition\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ICondition\_INTERFACE\_DEFINED\_\_}{\_\_ICondition\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a8d224cf9bb32d723f258512a244b1ea1}\label{structuredquery_8h_a8d224cf9bb32d723f258512a244b1ea1}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IConditionFactory\_FWD\_DEFINED\_\_@{\_\_IConditionFactory\_FWD\_DEFINED\_\_}}
+\index{\_\_IConditionFactory\_FWD\_DEFINED\_\_@{\_\_IConditionFactory\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConditionFactory\_FWD\_DEFINED\_\_}{\_\_IConditionFactory\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+Factory\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_aab17b03b9434139e58a7880f8d729c10}\label{structuredquery_8h_aab17b03b9434139e58a7880f8d729c10}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_@{\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_@{\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_}{\_\_IConditionFactory\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+Factory\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a29af54c52582203d4edc152e47da6c8d}\label{structuredquery_8h_a29af54c52582203d4edc152e47da6c8d}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IConditionGenerator\_FWD\_DEFINED\_\_@{\_\_IConditionGenerator\_FWD\_DEFINED\_\_}}
+\index{\_\_IConditionGenerator\_FWD\_DEFINED\_\_@{\_\_IConditionGenerator\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConditionGenerator\_FWD\_DEFINED\_\_}{\_\_IConditionGenerator\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+Generator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_afbc5a921676452beae94e239eb5b1b37}\label{structuredquery_8h_afbc5a921676452beae94e239eb5b1b37}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_@{\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_@{\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_}{\_\_IConditionGenerator\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ICondition\+Generator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a21fe93b0a0b7529461e91c1350138172}\label{structuredquery_8h_a21fe93b0a0b7529461e91c1350138172}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IEntity\_FWD\_DEFINED\_\_@{\_\_IEntity\_FWD\_DEFINED\_\_}}
+\index{\_\_IEntity\_FWD\_DEFINED\_\_@{\_\_IEntity\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IEntity\_FWD\_DEFINED\_\_}{\_\_IEntity\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IEntity\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a43b4cf9a6f6c5eaace7e5fab0f3fd2a2}\label{structuredquery_8h_a43b4cf9a6f6c5eaace7e5fab0f3fd2a2}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IEntity\_INTERFACE\_DEFINED\_\_@{\_\_IEntity\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IEntity\_INTERFACE\_DEFINED\_\_@{\_\_IEntity\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IEntity\_INTERFACE\_DEFINED\_\_}{\_\_IEntity\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IEntity\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a1f642bf78c4c0f19eefca80167b6115a}\label{structuredquery_8h_a1f642bf78c4c0f19eefca80167b6115a}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IInterval\_FWD\_DEFINED\_\_@{\_\_IInterval\_FWD\_DEFINED\_\_}}
+\index{\_\_IInterval\_FWD\_DEFINED\_\_@{\_\_IInterval\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IInterval\_FWD\_DEFINED\_\_}{\_\_IInterval\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IInterval\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a2f9a86fb30ef5bb3b99a9d487a60a948}\label{structuredquery_8h_a2f9a86fb30ef5bb3b99a9d487a60a948}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IInterval\_INTERFACE\_DEFINED\_\_@{\_\_IInterval\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IInterval\_INTERFACE\_DEFINED\_\_@{\_\_IInterval\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IInterval\_INTERFACE\_DEFINED\_\_}{\_\_IInterval\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IInterval\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a25f9a82b31bdaaeb5af122303c1f1185}\label{structuredquery_8h_a25f9a82b31bdaaeb5af122303c1f1185}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IMetaData\_FWD\_DEFINED\_\_@{\_\_IMetaData\_FWD\_DEFINED\_\_}}
+\index{\_\_IMetaData\_FWD\_DEFINED\_\_@{\_\_IMetaData\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMetaData\_FWD\_DEFINED\_\_}{\_\_IMetaData\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMeta\+Data\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a23b0df0b070a5e65ef4c725199b30d85}\label{structuredquery_8h_a23b0df0b070a5e65ef4c725199b30d85}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IMetaData\_INTERFACE\_DEFINED\_\_@{\_\_IMetaData\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMetaData\_INTERFACE\_DEFINED\_\_@{\_\_IMetaData\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMetaData\_INTERFACE\_DEFINED\_\_}{\_\_IMetaData\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMeta\+Data\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_abb08ef0c42139203ba43d125ce030291}\label{structuredquery_8h_abb08ef0c42139203ba43d125ce030291}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_INamedEntity\_FWD\_DEFINED\_\_@{\_\_INamedEntity\_FWD\_DEFINED\_\_}}
+\index{\_\_INamedEntity\_FWD\_DEFINED\_\_@{\_\_INamedEntity\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_INamedEntity\_FWD\_DEFINED\_\_}{\_\_INamedEntity\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+INamed\+Entity\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ac0fdb1aa112dfdc5a6d4ab5033bb2c8d}\label{structuredquery_8h_ac0fdb1aa112dfdc5a6d4ab5033bb2c8d}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_INamedEntity\_INTERFACE\_DEFINED\_\_@{\_\_INamedEntity\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_INamedEntity\_INTERFACE\_DEFINED\_\_@{\_\_INamedEntity\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_INamedEntity\_INTERFACE\_DEFINED\_\_}{\_\_INamedEntity\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+INamed\+Entity\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ab539c75dcb94b785357c489b34f91967}\label{structuredquery_8h_ab539c75dcb94b785357c489b34f91967}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_INamedEntityCollector\_FWD\_DEFINED\_\_@{\_\_INamedEntityCollector\_FWD\_DEFINED\_\_}}
+\index{\_\_INamedEntityCollector\_FWD\_DEFINED\_\_@{\_\_INamedEntityCollector\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_INamedEntityCollector\_FWD\_DEFINED\_\_}{\_\_INamedEntityCollector\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+INamed\+Entity\+Collector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_aa9d19345d0d518306c3eedbff33f58d5}\label{structuredquery_8h_aa9d19345d0d518306c3eedbff33f58d5}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_@{\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_@{\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_}{\_\_INamedEntityCollector\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+INamed\+Entity\+Collector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ae23d50a9dc323f8fb3aab8de3d1f44e4}\label{structuredquery_8h_ae23d50a9dc323f8fb3aab8de3d1f44e4}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_Interval\_FWD\_DEFINED\_\_@{\_\_Interval\_FWD\_DEFINED\_\_}}
+\index{\_\_Interval\_FWD\_DEFINED\_\_@{\_\_Interval\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_Interval\_FWD\_DEFINED\_\_}{\_\_Interval\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Interval\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a1a95f7ce7c6762ce9cfd2a216bd39d24}\label{structuredquery_8h_a1a95f7ce7c6762ce9cfd2a216bd39d24}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQueryParser\_FWD\_DEFINED\_\_@{\_\_IQueryParser\_FWD\_DEFINED\_\_}}
+\index{\_\_IQueryParser\_FWD\_DEFINED\_\_@{\_\_IQueryParser\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQueryParser\_FWD\_DEFINED\_\_}{\_\_IQueryParser\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Parser\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ae0da77bceb6318a59c20c384764a52a0}\label{structuredquery_8h_ae0da77bceb6318a59c20c384764a52a0}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQueryParser\_INTERFACE\_DEFINED\_\_@{\_\_IQueryParser\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IQueryParser\_INTERFACE\_DEFINED\_\_@{\_\_IQueryParser\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQueryParser\_INTERFACE\_DEFINED\_\_}{\_\_IQueryParser\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Parser\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ad837c2b9caf550aade53e9181862aa88}\label{structuredquery_8h_ad837c2b9caf550aade53e9181862aa88}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQueryParserManager\_FWD\_DEFINED\_\_@{\_\_IQueryParserManager\_FWD\_DEFINED\_\_}}
+\index{\_\_IQueryParserManager\_FWD\_DEFINED\_\_@{\_\_IQueryParserManager\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQueryParserManager\_FWD\_DEFINED\_\_}{\_\_IQueryParserManager\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Parser\+Manager\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a3f143da50fd36e570cb0ef3940b4332b}\label{structuredquery_8h_a3f143da50fd36e570cb0ef3940b4332b}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_@{\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_@{\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_}{\_\_IQueryParserManager\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Parser\+Manager\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ab1d1affb06a2d0d22721ff4e50fac111}\label{structuredquery_8h_ab1d1affb06a2d0d22721ff4e50fac111}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQuerySolution\_FWD\_DEFINED\_\_@{\_\_IQuerySolution\_FWD\_DEFINED\_\_}}
+\index{\_\_IQuerySolution\_FWD\_DEFINED\_\_@{\_\_IQuerySolution\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQuerySolution\_FWD\_DEFINED\_\_}{\_\_IQuerySolution\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Solution\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_af0b1f3879158a1c99b0ac73b3378ca19}\label{structuredquery_8h_af0b1f3879158a1c99b0ac73b3378ca19}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_@{\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_@{\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_}{\_\_IQuerySolution\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IQuery\+Solution\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_afb83905a1f5fd5d06fc479e6fbb3ab66}\label{structuredquery_8h_afb83905a1f5fd5d06fc479e6fbb3ab66}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IRelationship\_FWD\_DEFINED\_\_@{\_\_IRelationship\_FWD\_DEFINED\_\_}}
+\index{\_\_IRelationship\_FWD\_DEFINED\_\_@{\_\_IRelationship\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IRelationship\_FWD\_DEFINED\_\_}{\_\_IRelationship\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IRelationship\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a64f48c9780fae762369c97f33336158f}\label{structuredquery_8h_a64f48c9780fae762369c97f33336158f}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IRelationship\_INTERFACE\_DEFINED\_\_@{\_\_IRelationship\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IRelationship\_INTERFACE\_DEFINED\_\_@{\_\_IRelationship\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IRelationship\_INTERFACE\_DEFINED\_\_}{\_\_IRelationship\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IRelationship\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a83e5bf56e6aeeadafc23d7cd5aaa7bd0}\label{structuredquery_8h_a83e5bf56e6aeeadafc23d7cd5aaa7bd0}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IRichChunk\_FWD\_DEFINED\_\_@{\_\_IRichChunk\_FWD\_DEFINED\_\_}}
+\index{\_\_IRichChunk\_FWD\_DEFINED\_\_@{\_\_IRichChunk\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IRichChunk\_FWD\_DEFINED\_\_}{\_\_IRichChunk\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IRich\+Chunk\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a73c39e87fca6317e47f80f184c802065}\label{structuredquery_8h_a73c39e87fca6317e47f80f184c802065}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_IRichChunk\_INTERFACE\_DEFINED\_\_@{\_\_IRichChunk\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IRichChunk\_INTERFACE\_DEFINED\_\_@{\_\_IRichChunk\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IRichChunk\_INTERFACE\_DEFINED\_\_}{\_\_IRichChunk\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IRich\+Chunk\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_abc28bac7a1500d292b4eaeef65dcf391}\label{structuredquery_8h_abc28bac7a1500d292b4eaeef65dcf391}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_@{\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_}}
+\index{\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_@{\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_}{\_\_ISchemaLocalizerSupport\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISchema\+Localizer\+Support\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_acf504e036eb932ec5bd3cc092b323f3b}\label{structuredquery_8h_acf504e036eb932ec5bd3cc092b323f3b}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_@{\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_@{\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_}{\_\_ISchemaLocalizerSupport\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISchema\+Localizer\+Support\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a69b4ae08ff2fc113115d1bbc2ebcbcf5}\label{structuredquery_8h_a69b4ae08ff2fc113115d1bbc2ebcbcf5}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ISchemaProvider\_FWD\_DEFINED\_\_@{\_\_ISchemaProvider\_FWD\_DEFINED\_\_}}
+\index{\_\_ISchemaProvider\_FWD\_DEFINED\_\_@{\_\_ISchemaProvider\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISchemaProvider\_FWD\_DEFINED\_\_}{\_\_ISchemaProvider\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISchema\+Provider\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_aa1efb390b5876e17ea25a186be0f684b}\label{structuredquery_8h_aa1efb390b5876e17ea25a186be0f684b}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_@{\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_@{\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_}{\_\_ISchemaProvider\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISchema\+Provider\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a706d841819d5e4f893d4640a889e8511}\label{structuredquery_8h_a706d841819d5e4f893d4640a889e8511}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ITokenCollection\_FWD\_DEFINED\_\_@{\_\_ITokenCollection\_FWD\_DEFINED\_\_}}
+\index{\_\_ITokenCollection\_FWD\_DEFINED\_\_@{\_\_ITokenCollection\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ITokenCollection\_FWD\_DEFINED\_\_}{\_\_ITokenCollection\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IToken\+Collection\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a1b82f8b0bab3d56739e9f4d261399134}\label{structuredquery_8h_a1b82f8b0bab3d56739e9f4d261399134}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_@{\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_@{\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_}{\_\_ITokenCollection\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IToken\+Collection\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ae6c20d8f7e12401c9d8038b33a76f85b}\label{structuredquery_8h_ae6c20d8f7e12401c9d8038b33a76f85b}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_LeafCondition\_FWD\_DEFINED\_\_@{\_\_LeafCondition\_FWD\_DEFINED\_\_}}
+\index{\_\_LeafCondition\_FWD\_DEFINED\_\_@{\_\_LeafCondition\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_LeafCondition\_FWD\_DEFINED\_\_}{\_\_LeafCondition\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Leaf\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ab5424e0da60408ed18de12a37d725487}\label{structuredquery_8h_ab5424e0da60408ed18de12a37d725487}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_NegationCondition\_FWD\_DEFINED\_\_@{\_\_NegationCondition\_FWD\_DEFINED\_\_}}
+\index{\_\_NegationCondition\_FWD\_DEFINED\_\_@{\_\_NegationCondition\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_NegationCondition\_FWD\_DEFINED\_\_}{\_\_NegationCondition\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Negation\+Condition\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_a73e034cfa2eaf6d5182b5487b6a8459c}\label{structuredquery_8h_a73e034cfa2eaf6d5182b5487b6a8459c}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_QueryParser\_FWD\_DEFINED\_\_@{\_\_QueryParser\_FWD\_DEFINED\_\_}}
+\index{\_\_QueryParser\_FWD\_DEFINED\_\_@{\_\_QueryParser\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_QueryParser\_FWD\_DEFINED\_\_}{\_\_QueryParser\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Query\+Parser\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ae2dd810e9216d309013203a53a906353}\label{structuredquery_8h_ae2dd810e9216d309013203a53a906353}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_QueryParserManager\_FWD\_DEFINED\_\_@{\_\_QueryParserManager\_FWD\_DEFINED\_\_}}
+\index{\_\_QueryParserManager\_FWD\_DEFINED\_\_@{\_\_QueryParserManager\_FWD\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_QueryParserManager\_FWD\_DEFINED\_\_}{\_\_QueryParserManager\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Query\+Parser\+Manager\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{structuredquery_8h_ad76a32846c87da46b8d59d882ad6b4c0}\label{structuredquery_8h_ad76a32846c87da46b8d59d882ad6b4c0}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~475}
+
+\mbox{\Hypertarget{structuredquery_8h_a3aa613463387b2f7fb1c62b198c906e6}\label{structuredquery_8h_a3aa613463387b2f7fb1c62b198c906e6}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~100}
+
+\mbox{\Hypertarget{structuredquery_8h_a9152ac8bfe235c01c692c7dc9fb97fb8}\label{structuredquery_8h_a9152ac8bfe235c01c692c7dc9fb97fb8}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_@{\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_}}
+\index{\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_@{\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_}{\_\_StructuredQuery1\_LIBRARY\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Structured\+Query1\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{structuredquery_8h_a05919065e24905152c3539f75221682e}\label{structuredquery_8h_a05919065e24905152c3539f75221682e}} 
+\index{structuredquery.h@{structuredquery.h}!CompoundCondition@{CompoundCondition}}
+\index{CompoundCondition@{CompoundCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CompoundCondition}{CompoundCondition}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a05919065e24905152c3539f75221682e}{Compound\+Condition}} \mbox{\hyperlink{structuredquery_8h_a05919065e24905152c3539f75221682e}{Compound\+Condition}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}\label{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}} 
+\index{structuredquery.h@{structuredquery.h}!CONDITION\_OPERATION@{CONDITION\_OPERATION}}
+\index{CONDITION\_OPERATION@{CONDITION\_OPERATION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CONDITION\_OPERATION}{CONDITION\_OPERATION}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}{tag\+CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a6ed80d069cc90674b8a42c3a1d7420e6}\label{structuredquery_8h_a6ed80d069cc90674b8a42c3a1d7420e6}} 
+\index{structuredquery.h@{structuredquery.h}!CONDITION\_TYPE@{CONDITION\_TYPE}}
+\index{CONDITION\_TYPE@{CONDITION\_TYPE}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CONDITION\_TYPE}{CONDITION\_TYPE}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}{tag\+CONDITION\+\_\+\+TYPE}} \mbox{\hyperlink{structuredquery_8h_a6ed80d069cc90674b8a42c3a1d7420e6}{CONDITION\+\_\+\+TYPE}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}\label{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}} 
+\index{structuredquery.h@{structuredquery.h}!ConditionFactory@{ConditionFactory}}
+\index{ConditionFactory@{ConditionFactory}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ConditionFactory}{ConditionFactory}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}{Condition\+Factory}} \mbox{\hyperlink{structuredquery_8h_a9554c50ec70123d2b8f3e1a7f84ce6e6}{Condition\+Factory}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}\label{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}} 
+\index{structuredquery.h@{structuredquery.h}!ICondition@{ICondition}}
+\index{ICondition@{ICondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ICondition}{ICondition}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}} \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}\label{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}} 
+\index{structuredquery.h@{structuredquery.h}!IConditionFactory@{IConditionFactory}}
+\index{IConditionFactory@{IConditionFactory}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IConditionFactory}{IConditionFactory}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a5ed45a2da5cc7b69efc7740b82310ca3}\label{structuredquery_8h_a5ed45a2da5cc7b69efc7740b82310ca3}} 
+\index{structuredquery.h@{structuredquery.h}!IConditionFactoryVtbl@{IConditionFactoryVtbl}}
+\index{IConditionFactoryVtbl@{IConditionFactoryVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IConditionFactoryVtbl}{IConditionFactoryVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_condition_factory_vtbl}{ICondition\+Factory\+Vtbl}} \mbox{\hyperlink{struct_i_condition_factory_vtbl}{ICondition\+Factory\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}\label{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}} 
+\index{structuredquery.h@{structuredquery.h}!IConditionGenerator@{IConditionGenerator}}
+\index{IConditionGenerator@{IConditionGenerator}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IConditionGenerator}{IConditionGenerator}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} \mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a108951f373e37c41f2057984f9bd2569}\label{structuredquery_8h_a108951f373e37c41f2057984f9bd2569}} 
+\index{structuredquery.h@{structuredquery.h}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IConditionGeneratorVtbl}{IConditionGeneratorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_condition_generator_vtbl}{ICondition\+Generator\+Vtbl}} \mbox{\hyperlink{struct_i_condition_generator_vtbl}{ICondition\+Generator\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_af2ebd7518668947bef27ef30204d4e62}\label{structuredquery_8h_af2ebd7518668947bef27ef30204d4e62}} 
+\index{structuredquery.h@{structuredquery.h}!IConditionVtbl@{IConditionVtbl}}
+\index{IConditionVtbl@{IConditionVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IConditionVtbl}{IConditionVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_condition_vtbl}{ICondition\+Vtbl}} \mbox{\hyperlink{struct_i_condition_vtbl}{ICondition\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}\label{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}} 
+\index{structuredquery.h@{structuredquery.h}!IEntity@{IEntity}}
+\index{IEntity@{IEntity}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IEntity}{IEntity}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}{IEntity}} \mbox{\hyperlink{structuredquery_8h_a9dd08456b6bfe208b5aa2ea5c533b490}{IEntity}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ae29c0b92575b0e12ea328b2520d1f020}\label{structuredquery_8h_ae29c0b92575b0e12ea328b2520d1f020}} 
+\index{structuredquery.h@{structuredquery.h}!IEntityVtbl@{IEntityVtbl}}
+\index{IEntityVtbl@{IEntityVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IEntityVtbl}{IEntityVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_entity_vtbl}{IEntity\+Vtbl}} \mbox{\hyperlink{struct_i_entity_vtbl}{IEntity\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}\label{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}} 
+\index{structuredquery.h@{structuredquery.h}!IInterval@{IInterval}}
+\index{IInterval@{IInterval}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IInterval}{IInterval}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}{IInterval}} \mbox{\hyperlink{structuredquery_8h_a0bf098cafe33ebeb06adb20e72b66f27}{IInterval}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a7d3ce283d9c1e355e0635fa78f82ab2f}\label{structuredquery_8h_a7d3ce283d9c1e355e0635fa78f82ab2f}} 
+\index{structuredquery.h@{structuredquery.h}!IIntervalVtbl@{IIntervalVtbl}}
+\index{IIntervalVtbl@{IIntervalVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IIntervalVtbl}{IIntervalVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_interval_vtbl}{IInterval\+Vtbl}} \mbox{\hyperlink{struct_i_interval_vtbl}{IInterval\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}\label{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}} 
+\index{structuredquery.h@{structuredquery.h}!IMetaData@{IMetaData}}
+\index{IMetaData@{IMetaData}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IMetaData}{IMetaData}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}{IMeta\+Data}} \mbox{\hyperlink{structuredquery_8h_a586ffbe8894bb76ced4a747f82f0e13c}{IMeta\+Data}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ae39a0b59a56e4b77dc57d0cc8d16c284}\label{structuredquery_8h_ae39a0b59a56e4b77dc57d0cc8d16c284}} 
+\index{structuredquery.h@{structuredquery.h}!IMetaDataVtbl@{IMetaDataVtbl}}
+\index{IMetaDataVtbl@{IMetaDataVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IMetaDataVtbl}{IMetaDataVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_meta_data_vtbl}{IMeta\+Data\+Vtbl}} \mbox{\hyperlink{struct_i_meta_data_vtbl}{IMeta\+Data\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}\label{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}} 
+\index{structuredquery.h@{structuredquery.h}!INamedEntity@{INamedEntity}}
+\index{INamedEntity@{INamedEntity}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{INamedEntity}{INamedEntity}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}{INamed\+Entity}} \mbox{\hyperlink{structuredquery_8h_a362b4bd35d6ac9db4ca890a7847c8b21}{INamed\+Entity}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}\label{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}} 
+\index{structuredquery.h@{structuredquery.h}!INamedEntityCollector@{INamedEntityCollector}}
+\index{INamedEntityCollector@{INamedEntityCollector}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{INamedEntityCollector}{INamedEntityCollector}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}} \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}}}
+
+\mbox{\Hypertarget{structuredquery_8h_aebc54d6a0c2e49558c951ea43421bd90}\label{structuredquery_8h_aebc54d6a0c2e49558c951ea43421bd90}} 
+\index{structuredquery.h@{structuredquery.h}!INamedEntityCollectorVtbl@{INamedEntityCollectorVtbl}}
+\index{INamedEntityCollectorVtbl@{INamedEntityCollectorVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{INamedEntityCollectorVtbl}{INamedEntityCollectorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_named_entity_collector_vtbl}{INamed\+Entity\+Collector\+Vtbl}} \mbox{\hyperlink{struct_i_named_entity_collector_vtbl}{INamed\+Entity\+Collector\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ab667a2a143c1822bbf0de4341b9ed56a}\label{structuredquery_8h_ab667a2a143c1822bbf0de4341b9ed56a}} 
+\index{structuredquery.h@{structuredquery.h}!INamedEntityVtbl@{INamedEntityVtbl}}
+\index{INamedEntityVtbl@{INamedEntityVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{INamedEntityVtbl}{INamedEntityVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_named_entity_vtbl}{INamed\+Entity\+Vtbl}} \mbox{\hyperlink{struct_i_named_entity_vtbl}{INamed\+Entity\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}\label{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}} 
+\index{structuredquery.h@{structuredquery.h}!Interval@{Interval}}
+\index{Interval@{Interval}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{Interval}{Interval}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}{Interval}} \mbox{\hyperlink{structuredquery_8h_aaf2b87053de26e4b42b9080f96979381}{Interval}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a3a4a1fb379b0eac9eb29016a6869eec3}\label{structuredquery_8h_a3a4a1fb379b0eac9eb29016a6869eec3}} 
+\index{structuredquery.h@{structuredquery.h}!INTERVAL\_LIMIT\_KIND@{INTERVAL\_LIMIT\_KIND}}
+\index{INTERVAL\_LIMIT\_KIND@{INTERVAL\_LIMIT\_KIND}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{INTERVAL\_LIMIT\_KIND}{INTERVAL\_LIMIT\_KIND}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bc}{tag\+INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}} \mbox{\hyperlink{structuredquery_8h_a3a4a1fb379b0eac9eb29016a6869eec3}{INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}\label{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}} 
+\index{structuredquery.h@{structuredquery.h}!IQueryParser@{IQueryParser}}
+\index{IQueryParser@{IQueryParser}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQueryParser}{IQueryParser}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}} \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}\label{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}} 
+\index{structuredquery.h@{structuredquery.h}!IQueryParserManager@{IQueryParserManager}}
+\index{IQueryParserManager@{IQueryParserManager}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQueryParserManager}{IQueryParserManager}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} \mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a4a3ca2ad1d4fb6bce70277e479ca4c79}\label{structuredquery_8h_a4a3ca2ad1d4fb6bce70277e479ca4c79}} 
+\index{structuredquery.h@{structuredquery.h}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQueryParserManagerVtbl}{IQueryParserManagerVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_query_parser_manager_vtbl}{IQuery\+Parser\+Manager\+Vtbl}} \mbox{\hyperlink{struct_i_query_parser_manager_vtbl}{IQuery\+Parser\+Manager\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a64c4f11addf732ab75b2ea227f895461}\label{structuredquery_8h_a64c4f11addf732ab75b2ea227f895461}} 
+\index{structuredquery.h@{structuredquery.h}!IQueryParserVtbl@{IQueryParserVtbl}}
+\index{IQueryParserVtbl@{IQueryParserVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQueryParserVtbl}{IQueryParserVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_query_parser_vtbl}{IQuery\+Parser\+Vtbl}} \mbox{\hyperlink{struct_i_query_parser_vtbl}{IQuery\+Parser\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}\label{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}} 
+\index{structuredquery.h@{structuredquery.h}!IQuerySolution@{IQuerySolution}}
+\index{IQuerySolution@{IQuerySolution}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQuerySolution}{IQuerySolution}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}{IQuery\+Solution}} \mbox{\hyperlink{structuredquery_8h_a34bdc4e4bd6e4cc32567fef04b30b355}{IQuery\+Solution}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a44a0442c004c6f963a384687a02f64e9}\label{structuredquery_8h_a44a0442c004c6f963a384687a02f64e9}} 
+\index{structuredquery.h@{structuredquery.h}!IQuerySolutionVtbl@{IQuerySolutionVtbl}}
+\index{IQuerySolutionVtbl@{IQuerySolutionVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IQuerySolutionVtbl}{IQuerySolutionVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_query_solution_vtbl}{IQuery\+Solution\+Vtbl}} \mbox{\hyperlink{struct_i_query_solution_vtbl}{IQuery\+Solution\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}\label{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}} 
+\index{structuredquery.h@{structuredquery.h}!IRelationship@{IRelationship}}
+\index{IRelationship@{IRelationship}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IRelationship}{IRelationship}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}{IRelationship}} \mbox{\hyperlink{structuredquery_8h_a5aa9a48a6dd1c5903470c9ee0e3c80e9}{IRelationship}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a021c3f191809921de76a5add3b2ea1b0}\label{structuredquery_8h_a021c3f191809921de76a5add3b2ea1b0}} 
+\index{structuredquery.h@{structuredquery.h}!IRelationshipVtbl@{IRelationshipVtbl}}
+\index{IRelationshipVtbl@{IRelationshipVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IRelationshipVtbl}{IRelationshipVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_relationship_vtbl}{IRelationship\+Vtbl}} \mbox{\hyperlink{struct_i_relationship_vtbl}{IRelationship\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}\label{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}} 
+\index{structuredquery.h@{structuredquery.h}!IRichChunk@{IRichChunk}}
+\index{IRichChunk@{IRichChunk}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IRichChunk}{IRichChunk}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a3bcdf12fe9968b518e4956009ff5b934}\label{structuredquery_8h_a3bcdf12fe9968b518e4956009ff5b934}} 
+\index{structuredquery.h@{structuredquery.h}!IRichChunkVtbl@{IRichChunkVtbl}}
+\index{IRichChunkVtbl@{IRichChunkVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IRichChunkVtbl}{IRichChunkVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_rich_chunk_vtbl}{IRich\+Chunk\+Vtbl}} \mbox{\hyperlink{struct_i_rich_chunk_vtbl}{IRich\+Chunk\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}\label{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}} 
+\index{structuredquery.h@{structuredquery.h}!ISchemaLocalizerSupport@{ISchemaLocalizerSupport}}
+\index{ISchemaLocalizerSupport@{ISchemaLocalizerSupport}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ISchemaLocalizerSupport}{ISchemaLocalizerSupport}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}{ISchema\+Localizer\+Support}} \mbox{\hyperlink{structuredquery_8h_a8e28e35aee8684b664d1bbf9c126ff86}{ISchema\+Localizer\+Support}}}
+
+\mbox{\Hypertarget{structuredquery_8h_aa1cab2b4166568a8b92e2a3e52654b74}\label{structuredquery_8h_aa1cab2b4166568a8b92e2a3e52654b74}} 
+\index{structuredquery.h@{structuredquery.h}!ISchemaLocalizerSupportVtbl@{ISchemaLocalizerSupportVtbl}}
+\index{ISchemaLocalizerSupportVtbl@{ISchemaLocalizerSupportVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ISchemaLocalizerSupportVtbl}{ISchemaLocalizerSupportVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_schema_localizer_support_vtbl}{ISchema\+Localizer\+Support\+Vtbl}} \mbox{\hyperlink{struct_i_schema_localizer_support_vtbl}{ISchema\+Localizer\+Support\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}\label{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}} 
+\index{structuredquery.h@{structuredquery.h}!ISchemaProvider@{ISchemaProvider}}
+\index{ISchemaProvider@{ISchemaProvider}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ISchemaProvider}{ISchemaProvider}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}} \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a254d8e2f74a6f008694fa354f77de7eb}\label{structuredquery_8h_a254d8e2f74a6f008694fa354f77de7eb}} 
+\index{structuredquery.h@{structuredquery.h}!ISchemaProviderVtbl@{ISchemaProviderVtbl}}
+\index{ISchemaProviderVtbl@{ISchemaProviderVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ISchemaProviderVtbl}{ISchemaProviderVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_schema_provider_vtbl}{ISchema\+Provider\+Vtbl}} \mbox{\hyperlink{struct_i_schema_provider_vtbl}{ISchema\+Provider\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}\label{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}} 
+\index{structuredquery.h@{structuredquery.h}!ITokenCollection@{ITokenCollection}}
+\index{ITokenCollection@{ITokenCollection}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ITokenCollection}{ITokenCollection}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a2e82105e1675cc02ba7194dcc4fd9df0}\label{structuredquery_8h_a2e82105e1675cc02ba7194dcc4fd9df0}} 
+\index{structuredquery.h@{structuredquery.h}!ITokenCollectionVtbl@{ITokenCollectionVtbl}}
+\index{ITokenCollectionVtbl@{ITokenCollectionVtbl}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{ITokenCollectionVtbl}{ITokenCollectionVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_token_collection_vtbl}{IToken\+Collection\+Vtbl}} \mbox{\hyperlink{struct_i_token_collection_vtbl}{IToken\+Collection\+Vtbl}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}\label{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}} 
+\index{structuredquery.h@{structuredquery.h}!LeafCondition@{LeafCondition}}
+\index{LeafCondition@{LeafCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LeafCondition}{LeafCondition}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}{Leaf\+Condition}} \mbox{\hyperlink{structuredquery_8h_a941d2343b360f56f5a617f4c44b14cb7}{Leaf\+Condition}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a73a68924e41477117d1598b2ca799161}\label{structuredquery_8h_a73a68924e41477117d1598b2ca799161}} 
+\index{structuredquery.h@{structuredquery.h}!NAMED\_ENTITY\_CERTAINTY@{NAMED\_ENTITY\_CERTAINTY}}
+\index{NAMED\_ENTITY\_CERTAINTY@{NAMED\_ENTITY\_CERTAINTY}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{NAMED\_ENTITY\_CERTAINTY}{NAMED\_ENTITY\_CERTAINTY}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+0001}} \mbox{\hyperlink{structuredquery_8h_a73a68924e41477117d1598b2ca799161}{NAMED\+\_\+\+ENTITY\+\_\+\+CERTAINTY}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}\label{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}} 
+\index{structuredquery.h@{structuredquery.h}!NegationCondition@{NegationCondition}}
+\index{NegationCondition@{NegationCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{NegationCondition}{NegationCondition}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}{Negation\+Condition}} \mbox{\hyperlink{structuredquery_8h_a71c5caefad20d7a8807785ea2c4cfbba}{Negation\+Condition}}}
+
+\mbox{\Hypertarget{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}\label{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}} 
+\index{structuredquery.h@{structuredquery.h}!QUERY\_PARSER\_MANAGER\_OPTION@{QUERY\_PARSER\_MANAGER\_OPTION}}
+\index{QUERY\_PARSER\_MANAGER\_OPTION@{QUERY\_PARSER\_MANAGER\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{QUERY\_PARSER\_MANAGER\_OPTION}{QUERY\_PARSER\_MANAGER\_OPTION}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}{tag\+QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}\label{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}} 
+\index{structuredquery.h@{structuredquery.h}!QueryParser@{QueryParser}}
+\index{QueryParser@{QueryParser}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{QueryParser}{QueryParser}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}{Query\+Parser}} \mbox{\hyperlink{structuredquery_8h_a4ad821dcd7877e716f9286cc2e7c5f8a}{Query\+Parser}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}\label{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}} 
+\index{structuredquery.h@{structuredquery.h}!QueryParserManager@{QueryParserManager}}
+\index{QueryParserManager@{QueryParserManager}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{QueryParserManager}{QueryParserManager}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}{Query\+Parser\+Manager}} \mbox{\hyperlink{structuredquery_8h_a783b00b22955d8d9accb20f9f5a542db}{Query\+Parser\+Manager}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a6ec2d8eb5fc7fb185388f98d1ffd7c57}\label{structuredquery_8h_a6ec2d8eb5fc7fb185388f98d1ffd7c57}} 
+\index{structuredquery.h@{structuredquery.h}!STRUCTURED\_QUERY\_MULTIOPTION@{STRUCTURED\_QUERY\_MULTIOPTION}}
+\index{STRUCTURED\_QUERY\_MULTIOPTION@{STRUCTURED\_QUERY\_MULTIOPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{STRUCTURED\_QUERY\_MULTIOPTION}{STRUCTURED\_QUERY\_MULTIOPTION}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}} \mbox{\hyperlink{structuredquery_8h_a6ec2d8eb5fc7fb185388f98d1ffd7c57}{STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a69e12a86779c1c9daf2cb8088475d537}\label{structuredquery_8h_a69e12a86779c1c9daf2cb8088475d537}} 
+\index{structuredquery.h@{structuredquery.h}!STRUCTURED\_QUERY\_PARSE\_ERROR@{STRUCTURED\_QUERY\_PARSE\_ERROR}}
+\index{STRUCTURED\_QUERY\_PARSE\_ERROR@{STRUCTURED\_QUERY\_PARSE\_ERROR}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{STRUCTURED\_QUERY\_PARSE\_ERROR}{STRUCTURED\_QUERY\_PARSE\_ERROR}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}} \mbox{\hyperlink{structuredquery_8h_a69e12a86779c1c9daf2cb8088475d537}{STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}}}
+
+\mbox{\Hypertarget{structuredquery_8h_af7283d5befe8e1a74ae3dd0609fde9e7}\label{structuredquery_8h_af7283d5befe8e1a74ae3dd0609fde9e7}} 
+\index{structuredquery.h@{structuredquery.h}!STRUCTURED\_QUERY\_RESOLVE\_OPTION@{STRUCTURED\_QUERY\_RESOLVE\_OPTION}}
+\index{STRUCTURED\_QUERY\_RESOLVE\_OPTION@{STRUCTURED\_QUERY\_RESOLVE\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{STRUCTURED\_QUERY\_RESOLVE\_OPTION}{STRUCTURED\_QUERY\_RESOLVE\_OPTION}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{structuredquery_8h_af7283d5befe8e1a74ae3dd0609fde9e7}{STRUCTURED\+\_\+\+QUERY\+\_\+\+RESOLVE\+\_\+\+OPTION}}}
+
+\mbox{\Hypertarget{structuredquery_8h_a1ad678e4d1676c0f103c28ce606846e4}\label{structuredquery_8h_a1ad678e4d1676c0f103c28ce606846e4}} 
+\index{structuredquery.h@{structuredquery.h}!STRUCTURED\_QUERY\_SINGLE\_OPTION@{STRUCTURED\_QUERY\_SINGLE\_OPTION}}
+\index{STRUCTURED\_QUERY\_SINGLE\_OPTION@{STRUCTURED\_QUERY\_SINGLE\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{STRUCTURED\_QUERY\_SINGLE\_OPTION}{STRUCTURED\_QUERY\_SINGLE\_OPTION}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}} \mbox{\hyperlink{structuredquery_8h_a1ad678e4d1676c0f103c28ce606846e4}{STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}\label{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001@{\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001@{\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001}{\_\_MIDL\_\_\_MIDL\_itf\_structuredquery\_0000\_0013\_0001}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a9ca174995224a886ec759e75c3eff1ba}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+0001}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEC\_LOW@{NEC\_LOW}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!NEC\_LOW@{NEC\_LOW}}}\mbox{\Hypertarget{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa295296157cbea77c453bc537a926a7c7}\label{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa295296157cbea77c453bc537a926a7c7}} 
+NEC\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEC\_MEDIUM@{NEC\_MEDIUM}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!NEC\_MEDIUM@{NEC\_MEDIUM}}}\mbox{\Hypertarget{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa4e6b9a14d502518049da77ff2ffb2c9a}\label{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa4e6b9a14d502518049da77ff2ffb2c9a}} 
+NEC\+\_\+\+MEDIUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NEC\_HIGH@{NEC\_HIGH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!NEC\_HIGH@{NEC\_HIGH}}}\mbox{\Hypertarget{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa31646de208a5324d384b47038a4e6d1b}\label{structuredquery_8h_a9ca174995224a886ec759e75c3eff1baa31646de208a5324d384b47038a4e6d1b}} 
+NEC\+\_\+\+HIGH&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}} 
+\index{structuredquery.h@{structuredquery.h}!tagCONDITION\_OPERATION@{tagCONDITION\_OPERATION}}
+\index{tagCONDITION\_OPERATION@{tagCONDITION\_OPERATION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagCONDITION\_OPERATION}{tagCONDITION\_OPERATION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5}{tag\+CONDITION\+\_\+\+OPERATION}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_IMPLICIT@{COP\_IMPLICIT}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_IMPLICIT@{COP\_IMPLICIT}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aed78a88b413d97f1d1915a8accb1aa44}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aed78a88b413d97f1d1915a8accb1aa44}} 
+COP\+\_\+\+IMPLICIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_EQUAL@{COP\_EQUAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_EQUAL@{COP\_EQUAL}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ab53df96f120890ecdc938568522e36fa}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ab53df96f120890ecdc938568522e36fa}} 
+COP\+\_\+\+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_NOTEQUAL@{COP\_NOTEQUAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_NOTEQUAL@{COP\_NOTEQUAL}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a82198a5d9ecdbacd9ff4be96f210b5bc}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a82198a5d9ecdbacd9ff4be96f210b5bc}} 
+COP\+\_\+\+NOTEQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_LESSTHAN@{COP\_LESSTHAN}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_LESSTHAN@{COP\_LESSTHAN}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac6d4537956f54b315e7e87f5cd8c9f21}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac6d4537956f54b315e7e87f5cd8c9f21}} 
+COP\+\_\+\+LESSTHAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_GREATERTHAN@{COP\_GREATERTHAN}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_GREATERTHAN@{COP\_GREATERTHAN}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae8619bc14662306cf1fb07d1c1402faa}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae8619bc14662306cf1fb07d1c1402faa}} 
+COP\+\_\+\+GREATERTHAN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_LESSTHANOREQUAL@{COP\_LESSTHANOREQUAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_LESSTHANOREQUAL@{COP\_LESSTHANOREQUAL}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5af7324288731c6b1b4b7b8c58c8b909ee}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5af7324288731c6b1b4b7b8c58c8b909ee}} 
+COP\+\_\+\+LESSTHANOREQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_GREATERTHANOREQUAL@{COP\_GREATERTHANOREQUAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_GREATERTHANOREQUAL@{COP\_GREATERTHANOREQUAL}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aee8c6f8f43795591786bde40d6319871}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5aee8c6f8f43795591786bde40d6319871}} 
+COP\+\_\+\+GREATERTHANOREQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_VALUE\_STARTSWITH@{COP\_VALUE\_STARTSWITH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_VALUE\_STARTSWITH@{COP\_VALUE\_STARTSWITH}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae95faf17e333d90c746e5a319079395f}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae95faf17e333d90c746e5a319079395f}} 
+COP\+\_\+\+VALUE\+\_\+\+STARTSWITH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_VALUE\_ENDSWITH@{COP\_VALUE\_ENDSWITH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_VALUE\_ENDSWITH@{COP\_VALUE\_ENDSWITH}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a13031336f82dcb9c4eab86cc153c4bca}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a13031336f82dcb9c4eab86cc153c4bca}} 
+COP\+\_\+\+VALUE\+\_\+\+ENDSWITH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_VALUE\_CONTAINS@{COP\_VALUE\_CONTAINS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_VALUE\_CONTAINS@{COP\_VALUE\_CONTAINS}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a2a94c0461c5da59f7221f13481ee20e3}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a2a94c0461c5da59f7221f13481ee20e3}} 
+COP\+\_\+\+VALUE\+\_\+\+CONTAINS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_VALUE\_NOTCONTAINS@{COP\_VALUE\_NOTCONTAINS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_VALUE\_NOTCONTAINS@{COP\_VALUE\_NOTCONTAINS}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac54511d302b5a50d4075d50b6084217a}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ac54511d302b5a50d4075d50b6084217a}} 
+COP\+\_\+\+VALUE\+\_\+\+NOTCONTAINS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_DOSWILDCARDS@{COP\_DOSWILDCARDS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_DOSWILDCARDS@{COP\_DOSWILDCARDS}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a371676475863936ef398df0b7c9eef67}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a371676475863936ef398df0b7c9eef67}} 
+COP\+\_\+\+DOSWILDCARDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_WORD\_EQUAL@{COP\_WORD\_EQUAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_WORD\_EQUAL@{COP\_WORD\_EQUAL}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a096590c5098629e2e1dd585a152b0bd0}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5a096590c5098629e2e1dd585a152b0bd0}} 
+COP\+\_\+\+WORD\+\_\+\+EQUAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_WORD\_STARTSWITH@{COP\_WORD\_STARTSWITH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_WORD\_STARTSWITH@{COP\_WORD\_STARTSWITH}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5acdcd6227a42e00ed7929db1c9b1e76a0}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5acdcd6227a42e00ed7929db1c9b1e76a0}} 
+COP\+\_\+\+WORD\+\_\+\+STARTSWITH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COP\_APPLICATION\_SPECIFIC@{COP\_APPLICATION\_SPECIFIC}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!COP\_APPLICATION\_SPECIFIC@{COP\_APPLICATION\_SPECIFIC}}}\mbox{\Hypertarget{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae82f57ce25b89ab078e679303fc1d3aa}\label{structuredquery_8h_a61c46d90fe9cf62fd03e4c6770464ab5ae82f57ce25b89ab078e679303fc1d3aa}} 
+COP\+\_\+\+APPLICATION\+\_\+\+SPECIFIC&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}\label{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}} 
+\index{structuredquery.h@{structuredquery.h}!tagCONDITION\_TYPE@{tagCONDITION\_TYPE}}
+\index{tagCONDITION\_TYPE@{tagCONDITION\_TYPE}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagCONDITION\_TYPE}{tagCONDITION\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_ac64446d4e3601228f41b8089c678141d}{tag\+CONDITION\+\_\+\+TYPE}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_AND\_CONDITION@{CT\_AND\_CONDITION}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!CT\_AND\_CONDITION@{CT\_AND\_CONDITION}}}\mbox{\Hypertarget{structuredquery_8h_ac64446d4e3601228f41b8089c678141da64fdb5dd50f4c3f9421e96b5cffffe02}\label{structuredquery_8h_ac64446d4e3601228f41b8089c678141da64fdb5dd50f4c3f9421e96b5cffffe02}} 
+CT\+\_\+\+AND\+\_\+\+CONDITION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_OR\_CONDITION@{CT\_OR\_CONDITION}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!CT\_OR\_CONDITION@{CT\_OR\_CONDITION}}}\mbox{\Hypertarget{structuredquery_8h_ac64446d4e3601228f41b8089c678141da47a2e1275a1deb4479d4dc5c7bdd0320}\label{structuredquery_8h_ac64446d4e3601228f41b8089c678141da47a2e1275a1deb4479d4dc5c7bdd0320}} 
+CT\+\_\+\+OR\+\_\+\+CONDITION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_NOT\_CONDITION@{CT\_NOT\_CONDITION}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!CT\_NOT\_CONDITION@{CT\_NOT\_CONDITION}}}\mbox{\Hypertarget{structuredquery_8h_ac64446d4e3601228f41b8089c678141da773b3779d8bd6ac19dfc0354d105c7ad}\label{structuredquery_8h_ac64446d4e3601228f41b8089c678141da773b3779d8bd6ac19dfc0354d105c7ad}} 
+CT\+\_\+\+NOT\+\_\+\+CONDITION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CT\_LEAF\_CONDITION@{CT\_LEAF\_CONDITION}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!CT\_LEAF\_CONDITION@{CT\_LEAF\_CONDITION}}}\mbox{\Hypertarget{structuredquery_8h_ac64446d4e3601228f41b8089c678141dad01af7d9f4a0a18d2ceb1dcfac3f835f}\label{structuredquery_8h_ac64446d4e3601228f41b8089c678141dad01af7d9f4a0a18d2ceb1dcfac3f835f}} 
+CT\+\_\+\+LEAF\+\_\+\+CONDITION&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_a468365d94514f234a55244118d8890bc}\label{structuredquery_8h_a468365d94514f234a55244118d8890bc}} 
+\index{structuredquery.h@{structuredquery.h}!tagINTERVAL\_LIMIT\_KIND@{tagINTERVAL\_LIMIT\_KIND}}
+\index{tagINTERVAL\_LIMIT\_KIND@{tagINTERVAL\_LIMIT\_KIND}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagINTERVAL\_LIMIT\_KIND}{tagINTERVAL\_LIMIT\_KIND}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a468365d94514f234a55244118d8890bc}{tag\+INTERVAL\+\_\+\+LIMIT\+\_\+\+KIND}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ILK\_EXPLICIT\_INCLUDED@{ILK\_EXPLICIT\_INCLUDED}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!ILK\_EXPLICIT\_INCLUDED@{ILK\_EXPLICIT\_INCLUDED}}}\mbox{\Hypertarget{structuredquery_8h_a468365d94514f234a55244118d8890bcab9b0e0c788f46e5e0880e9c4626560bd}\label{structuredquery_8h_a468365d94514f234a55244118d8890bcab9b0e0c788f46e5e0880e9c4626560bd}} 
+ILK\+\_\+\+EXPLICIT\+\_\+\+INCLUDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ILK\_EXPLICIT\_EXCLUDED@{ILK\_EXPLICIT\_EXCLUDED}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!ILK\_EXPLICIT\_EXCLUDED@{ILK\_EXPLICIT\_EXCLUDED}}}\mbox{\Hypertarget{structuredquery_8h_a468365d94514f234a55244118d8890bca3b798d4ce05644feae608b8abd5a167a}\label{structuredquery_8h_a468365d94514f234a55244118d8890bca3b798d4ce05644feae608b8abd5a167a}} 
+ILK\+\_\+\+EXPLICIT\+\_\+\+EXCLUDED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ILK\_NEGATIVE\_INFINITY@{ILK\_NEGATIVE\_INFINITY}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!ILK\_NEGATIVE\_INFINITY@{ILK\_NEGATIVE\_INFINITY}}}\mbox{\Hypertarget{structuredquery_8h_a468365d94514f234a55244118d8890bcafc04515ea4485841fc286f51065866e6}\label{structuredquery_8h_a468365d94514f234a55244118d8890bcafc04515ea4485841fc286f51065866e6}} 
+ILK\+\_\+\+NEGATIVE\+\_\+\+INFINITY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ILK\_POSITIVE\_INFINITY@{ILK\_POSITIVE\_INFINITY}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!ILK\_POSITIVE\_INFINITY@{ILK\_POSITIVE\_INFINITY}}}\mbox{\Hypertarget{structuredquery_8h_a468365d94514f234a55244118d8890bca20c58d351b549658081c2c0d99485b83}\label{structuredquery_8h_a468365d94514f234a55244118d8890bca20c58d351b549658081c2c0d99485b83}} 
+ILK\+\_\+\+POSITIVE\+\_\+\+INFINITY&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}} 
+\index{structuredquery.h@{structuredquery.h}!tagQUERY\_PARSER\_MANAGER\_OPTION@{tagQUERY\_PARSER\_MANAGER\_OPTION}}
+\index{tagQUERY\_PARSER\_MANAGER\_OPTION@{tagQUERY\_PARSER\_MANAGER\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagQUERY\_PARSER\_MANAGER\_OPTION}{tagQUERY\_PARSER\_MANAGER\_OPTION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0}{tag\+QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_SCHEMA\_BINARY\_NAME@{QPMO\_SCHEMA\_BINARY\_NAME}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_SCHEMA\_BINARY\_NAME@{QPMO\_SCHEMA\_BINARY\_NAME}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a4623c3387a39a2a02277e750f3ec8fcb}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a4623c3387a39a2a02277e750f3ec8fcb}} 
+QPMO\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+NAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_PRELOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_PRELOCALIZED\_SCHEMA\_BINARY\_PATH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_PRELOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_PRELOCALIZED\_SCHEMA\_BINARY\_PATH}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a33b7807439b6823f044cd0970f64db17}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a33b7807439b6823f044cd0970f64db17}} 
+QPMO\+\_\+\+PRELOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_UNLOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_UNLOCALIZED\_SCHEMA\_BINARY\_PATH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_UNLOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_UNLOCALIZED\_SCHEMA\_BINARY\_PATH}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab89054ab31f4998374c16fc7dd5265fa}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab89054ab31f4998374c16fc7dd5265fa}} 
+QPMO\+\_\+\+UNLOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_LOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_LOCALIZED\_SCHEMA\_BINARY\_PATH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_LOCALIZED\_SCHEMA\_BINARY\_PATH@{QPMO\_LOCALIZED\_SCHEMA\_BINARY\_PATH}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a2bca6f87a87fd6d2d8568dfb98a7a74d}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a2bca6f87a87fd6d2d8568dfb98a7a74d}} 
+QPMO\+\_\+\+LOCALIZED\+\_\+\+SCHEMA\+\_\+\+BINARY\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_APPEND\_LCID\_TO\_LOCALIZED\_PATH@{QPMO\_APPEND\_LCID\_TO\_LOCALIZED\_PATH}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_APPEND\_LCID\_TO\_LOCALIZED\_PATH@{QPMO\_APPEND\_LCID\_TO\_LOCALIZED\_PATH}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab112766dbdbf2d3530892e6f0fd3f922}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0ab112766dbdbf2d3530892e6f0fd3f922}} 
+QPMO\+\_\+\+APPEND\+\_\+\+LCID\+\_\+\+TO\+\_\+\+LOCALIZED\+\_\+\+PATH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{QPMO\_LOCALIZER\_SUPPORT@{QPMO\_LOCALIZER\_SUPPORT}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!QPMO\_LOCALIZER\_SUPPORT@{QPMO\_LOCALIZER\_SUPPORT}}}\mbox{\Hypertarget{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a721d64911ec092d9e1ebbb0c4e5b743b}\label{structuredquery_8h_a4f3e752330bd18645c8cd54be92a80c0a721d64911ec092d9e1ebbb0c4e5b743b}} 
+QPMO\+\_\+\+LOCALIZER\+\_\+\+SUPPORT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}\label{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}} 
+\index{structuredquery.h@{structuredquery.h}!tagSTRUCTURED\_QUERY\_MULTIOPTION@{tagSTRUCTURED\_QUERY\_MULTIOPTION}}
+\index{tagSTRUCTURED\_QUERY\_MULTIOPTION@{tagSTRUCTURED\_QUERY\_MULTIOPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagSTRUCTURED\_QUERY\_MULTIOPTION}{tagSTRUCTURED\_QUERY\_MULTIOPTION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_afbab471f0f68b867185f31a223208fc1}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+MULTIOPTION}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQMO\_VIRTUAL\_PROPERTY@{SQMO\_VIRTUAL\_PROPERTY}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQMO\_VIRTUAL\_PROPERTY@{SQMO\_VIRTUAL\_PROPERTY}}}\mbox{\Hypertarget{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a04e73ca0f2f5ebead7e0efdba5f3220e}\label{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a04e73ca0f2f5ebead7e0efdba5f3220e}} 
+SQMO\+\_\+\+VIRTUAL\+\_\+\+PROPERTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQMO\_DEFAULT\_PROPERTY@{SQMO\_DEFAULT\_PROPERTY}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQMO\_DEFAULT\_PROPERTY@{SQMO\_DEFAULT\_PROPERTY}}}\mbox{\Hypertarget{structuredquery_8h_afbab471f0f68b867185f31a223208fc1aae9578dae9ebe759cc8a197dc6578e29}\label{structuredquery_8h_afbab471f0f68b867185f31a223208fc1aae9578dae9ebe759cc8a197dc6578e29}} 
+SQMO\+\_\+\+DEFAULT\+\_\+\+PROPERTY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQMO\_GENERATOR\_FOR\_TYPE@{SQMO\_GENERATOR\_FOR\_TYPE}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQMO\_GENERATOR\_FOR\_TYPE@{SQMO\_GENERATOR\_FOR\_TYPE}}}\mbox{\Hypertarget{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a0dc0365b1a1037a7f2fdf34a8cd60a13}\label{structuredquery_8h_afbab471f0f68b867185f31a223208fc1a0dc0365b1a1037a7f2fdf34a8cd60a13}} 
+SQMO\+\_\+\+GENERATOR\+\_\+\+FOR\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}} 
+\index{structuredquery.h@{structuredquery.h}!tagSTRUCTURED\_QUERY\_PARSE\_ERROR@{tagSTRUCTURED\_QUERY\_PARSE\_ERROR}}
+\index{tagSTRUCTURED\_QUERY\_PARSE\_ERROR@{tagSTRUCTURED\_QUERY\_PARSE\_ERROR}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagSTRUCTURED\_QUERY\_PARSE\_ERROR}{tagSTRUCTURED\_QUERY\_PARSE\_ERROR}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+PARSE\+\_\+\+ERROR}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_NONE@{SQPE\_NONE}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_NONE@{SQPE\_NONE}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea519765859619b618aeba9ce2bc04fb5b}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea519765859619b618aeba9ce2bc04fb5b}} 
+SQPE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_EXTRA\_OPENING\_PARENTHESIS@{SQPE\_EXTRA\_OPENING\_PARENTHESIS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_EXTRA\_OPENING\_PARENTHESIS@{SQPE\_EXTRA\_OPENING\_PARENTHESIS}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea9426854f31069319d7110f5cb13008f4}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea9426854f31069319d7110f5cb13008f4}} 
+SQPE\+\_\+\+EXTRA\+\_\+\+OPENING\+\_\+\+PARENTHESIS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_EXTRA\_CLOSING\_PARENTHESIS@{SQPE\_EXTRA\_CLOSING\_PARENTHESIS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_EXTRA\_CLOSING\_PARENTHESIS@{SQPE\_EXTRA\_CLOSING\_PARENTHESIS}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eaf8b977377b122041b753a4575fcd9253}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eaf8b977377b122041b753a4575fcd9253}} 
+SQPE\+\_\+\+EXTRA\+\_\+\+CLOSING\+\_\+\+PARENTHESIS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_IGNORED\_MODIFIER@{SQPE\_IGNORED\_MODIFIER}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_IGNORED\_MODIFIER@{SQPE\_IGNORED\_MODIFIER}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eab268bb5df4f2f3b3c7a6acbb3c429905}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46eab268bb5df4f2f3b3c7a6acbb3c429905}} 
+SQPE\+\_\+\+IGNORED\+\_\+\+MODIFIER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_IGNORED\_CONNECTOR@{SQPE\_IGNORED\_CONNECTOR}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_IGNORED\_CONNECTOR@{SQPE\_IGNORED\_CONNECTOR}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea0c62bfc5dca26e693df2b36da26f26c2}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea0c62bfc5dca26e693df2b36da26f26c2}} 
+SQPE\+\_\+\+IGNORED\+\_\+\+CONNECTOR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_IGNORED\_KEYWORD@{SQPE\_IGNORED\_KEYWORD}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_IGNORED\_KEYWORD@{SQPE\_IGNORED\_KEYWORD}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea7fe53bd23aba3da93777894641419f99}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea7fe53bd23aba3da93777894641419f99}} 
+SQPE\+\_\+\+IGNORED\+\_\+\+KEYWORD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQPE\_UNHANDLED@{SQPE\_UNHANDLED}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQPE\_UNHANDLED@{SQPE\_UNHANDLED}}}\mbox{\Hypertarget{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea6fb040100643a5f1f0bc0319baa5a303}\label{structuredquery_8h_a8c65338a33b4aa43b721347ea9bfe46ea6fb040100643a5f1f0bc0319baa5a303}} 
+SQPE\+\_\+\+UNHANDLED&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1a}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1a}} 
+\index{structuredquery.h@{structuredquery.h}!tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION@{tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION}}
+\index{tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION@{tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION}{tagSTRUCTURED\_QUERY\_RESOLVE\_OPTION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1a}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+RESOLVE\+\_\+\+OPTION}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_RESOLVE\_DATETIME@{SQRO\_DONT\_RESOLVE\_DATETIME}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_RESOLVE\_DATETIME@{SQRO\_DONT\_RESOLVE\_DATETIME}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0e07e1e15f01445e2620c6fc183e49dc}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0e07e1e15f01445e2620c6fc183e49dc}} 
+SQRO\+\_\+\+DONT\+\_\+\+RESOLVE\+\_\+\+DATETIME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_ALWAYS\_ONE\_INTERVAL@{SQRO\_ALWAYS\_ONE\_INTERVAL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_ALWAYS\_ONE\_INTERVAL@{SQRO\_ALWAYS\_ONE\_INTERVAL}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aade60e93e99c13fe30ffa61370d022d19}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aade60e93e99c13fe30ffa61370d022d19}} 
+SQRO\+\_\+\+ALWAYS\+\_\+\+ONE\+\_\+\+INTERVAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_SIMPLIFY\_CONDITION\_TREES@{SQRO\_DONT\_SIMPLIFY\_CONDITION\_TREES}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_SIMPLIFY\_CONDITION\_TREES@{SQRO\_DONT\_SIMPLIFY\_CONDITION\_TREES}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa45d3b9dcf103498d1a23e9836f83417c}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa45d3b9dcf103498d1a23e9836f83417c}} 
+SQRO\+\_\+\+DONT\+\_\+\+SIMPLIFY\+\_\+\+CONDITION\+\_\+\+TREES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_MAP\_RELATIONS@{SQRO\_DONT\_MAP\_RELATIONS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_MAP\_RELATIONS@{SQRO\_DONT\_MAP\_RELATIONS}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa7ea20d62ec59e884b17c9d8fdc679107}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa7ea20d62ec59e884b17c9d8fdc679107}} 
+SQRO\+\_\+\+DONT\+\_\+\+MAP\+\_\+\+RELATIONS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_RESOLVE\_RANGES@{SQRO\_DONT\_RESOLVE\_RANGES}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_RESOLVE\_RANGES@{SQRO\_DONT\_RESOLVE\_RANGES}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa71ca968e50afc8f0238a3b423713eae6}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa71ca968e50afc8f0238a3b423713eae6}} 
+SQRO\+\_\+\+DONT\+\_\+\+RESOLVE\+\_\+\+RANGES&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_REMOVE\_UNRESTRICTED\_KEYWORDS@{SQRO\_DONT\_REMOVE\_UNRESTRICTED\_KEYWORDS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_REMOVE\_UNRESTRICTED\_KEYWORDS@{SQRO\_DONT\_REMOVE\_UNRESTRICTED\_KEYWORDS}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aab00527649f10b1acdcdfe548e63218eb}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aab00527649f10b1acdcdfe548e63218eb}} 
+SQRO\+\_\+\+DONT\+\_\+\+REMOVE\+\_\+\+UNRESTRICTED\+\_\+\+KEYWORDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_DONT\_SPLIT\_WORDS@{SQRO\_DONT\_SPLIT\_WORDS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_DONT\_SPLIT\_WORDS@{SQRO\_DONT\_SPLIT\_WORDS}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0c0679dc6715c6ca5ed3aaa4d7412a48}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa0c0679dc6715c6ca5ed3aaa4d7412a48}} 
+SQRO\+\_\+\+DONT\+\_\+\+SPLIT\+\_\+\+WORDS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQRO\_IGNORE\_PHRASE\_ORDER@{SQRO\_IGNORE\_PHRASE\_ORDER}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQRO\_IGNORE\_PHRASE\_ORDER@{SQRO\_IGNORE\_PHRASE\_ORDER}}}\mbox{\Hypertarget{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa346f98bcc26a0e442da2ce8194f460f1}\label{structuredquery_8h_a8cc607c5f00d4b63d0eff3ffb66bde1aa346f98bcc26a0e442da2ce8194f460f1}} 
+SQRO\+\_\+\+IGNORE\+\_\+\+PHRASE\+\_\+\+ORDER&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}} 
+\index{structuredquery.h@{structuredquery.h}!tagSTRUCTURED\_QUERY\_SINGLE\_OPTION@{tagSTRUCTURED\_QUERY\_SINGLE\_OPTION}}
+\index{tagSTRUCTURED\_QUERY\_SINGLE\_OPTION@{tagSTRUCTURED\_QUERY\_SINGLE\_OPTION}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{tagSTRUCTURED\_QUERY\_SINGLE\_OPTION}{tagSTRUCTURED\_QUERY\_SINGLE\_OPTION}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9e}{tag\+STRUCTURED\+\_\+\+QUERY\+\_\+\+SINGLE\+\_\+\+OPTION}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_SCHEMA@{SQSO\_SCHEMA}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_SCHEMA@{SQSO\_SCHEMA}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea53c69eebda6debc8b0e4bb5540f8b7a8}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea53c69eebda6debc8b0e4bb5540f8b7a8}} 
+SQSO\+\_\+\+SCHEMA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_LOCALE\_WORD\_BREAKING@{SQSO\_LOCALE\_WORD\_BREAKING}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_LOCALE\_WORD\_BREAKING@{SQSO\_LOCALE\_WORD\_BREAKING}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea8e26d6e3d4ce9c5852a914e2f99acf6c}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea8e26d6e3d4ce9c5852a914e2f99acf6c}} 
+SQSO\+\_\+\+LOCALE\+\_\+\+WORD\+\_\+\+BREAKING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_WORD\_BREAKER@{SQSO\_WORD\_BREAKER}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_WORD\_BREAKER@{SQSO\_WORD\_BREAKER}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eafb176349383327527d0ef736bbaaa1e2}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eafb176349383327527d0ef736bbaaa1e2}} 
+SQSO\+\_\+\+WORD\+\_\+\+BREAKER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_NATURAL\_SYNTAX@{SQSO\_NATURAL\_SYNTAX}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_NATURAL\_SYNTAX@{SQSO\_NATURAL\_SYNTAX}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea03c43f9a5e0186fa3b2cbadf0df7731e}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea03c43f9a5e0186fa3b2cbadf0df7731e}} 
+SQSO\+\_\+\+NATURAL\+\_\+\+SYNTAX&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_AUTOMATIC\_WILDCARD@{SQSO\_AUTOMATIC\_WILDCARD}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_AUTOMATIC\_WILDCARD@{SQSO\_AUTOMATIC\_WILDCARD}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea1d213c22cea61602313b2d35eb1ea890}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9ea1d213c22cea61602313b2d35eb1ea890}} 
+SQSO\+\_\+\+AUTOMATIC\+\_\+\+WILDCARD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_TRACE\_LEVEL@{SQSO\_TRACE\_LEVEL}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_TRACE\_LEVEL@{SQSO\_TRACE\_LEVEL}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eab8e5b1b89ace55c47e9b54b8caa39e01}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eab8e5b1b89ace55c47e9b54b8caa39e01}} 
+SQSO\+\_\+\+TRACE\+\_\+\+LEVEL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SQSO\_LANGUAGE\_KEYWORDS@{SQSO\_LANGUAGE\_KEYWORDS}!structuredquery.h@{structuredquery.h}}\index{structuredquery.h@{structuredquery.h}!SQSO\_LANGUAGE\_KEYWORDS@{SQSO\_LANGUAGE\_KEYWORDS}}}\mbox{\Hypertarget{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eadc2c7b9fa8f827eb1991fa1fe5dac78b}\label{structuredquery_8h_adc15adf16f36c836c25411d9d85b8d9eadc2c7b9fa8f827eb1991fa1fe5dac78b}} 
+SQSO\+\_\+\+LANGUAGE\+\_\+\+KEYWORDS&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{structuredquery_8h_a8f8e55ab6c43f7ae93304e41b92cd98d}\label{structuredquery_8h_a8f8e55ab6c43f7ae93304e41b92cd98d}} 
+\index{structuredquery.h@{structuredquery.h}!BSTR\_UserFree@{BSTR\_UserFree}}
+\index{BSTR\_UserFree@{BSTR\_UserFree}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{BSTR\_UserFree()}{BSTR\_UserFree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+\+\_\+\+RPC\+\_\+\+USER BSTR\+\_\+\+User\+Free (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{BSTR $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_a8f01065c5cc481aab7a751fd40683473}\label{structuredquery_8h_a8f01065c5cc481aab7a751fd40683473}} 
+\index{structuredquery.h@{structuredquery.h}!BSTR\_UserMarshal@{BSTR\_UserMarshal}}
+\index{BSTR\_UserMarshal@{BSTR\_UserMarshal}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{BSTR\_UserMarshal()}{BSTR\_UserMarshal()}}
+{\footnotesize\ttfamily unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER BSTR\+\_\+\+User\+Marshal (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned char $\ast$}]{,  }\item[{BSTR $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_a46cec07e960973768eaa70116575472f}\label{structuredquery_8h_a46cec07e960973768eaa70116575472f}} 
+\index{structuredquery.h@{structuredquery.h}!BSTR\_UserSize@{BSTR\_UserSize}}
+\index{BSTR\_UserSize@{BSTR\_UserSize}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{BSTR\_UserSize()}{BSTR\_UserSize()}}
+{\footnotesize\ttfamily unsigned long \+\_\+\+\_\+\+RPC\+\_\+\+USER BSTR\+\_\+\+User\+Size (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned long}]{,  }\item[{BSTR $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_a4d6d879755204c7b478b0db660fb722c}\label{structuredquery_8h_a4d6d879755204c7b478b0db660fb722c}} 
+\index{structuredquery.h@{structuredquery.h}!BSTR\_UserUnmarshal@{BSTR\_UserUnmarshal}}
+\index{BSTR\_UserUnmarshal@{BSTR\_UserUnmarshal}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{BSTR\_UserUnmarshal()}{BSTR\_UserUnmarshal()}}
+{\footnotesize\ttfamily unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER BSTR\+\_\+\+User\+Unmarshal (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned char $\ast$}]{,  }\item[{BSTR $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_adde5a8aa9c927c41ec7a4ac8c7c3548f}\label{structuredquery_8h_adde5a8aa9c927c41ec7a4ac8c7c3548f}} 
+\index{structuredquery.h@{structuredquery.h}!LPSAFEARRAY\_UserFree@{LPSAFEARRAY\_UserFree}}
+\index{LPSAFEARRAY\_UserFree@{LPSAFEARRAY\_UserFree}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LPSAFEARRAY\_UserFree()}{LPSAFEARRAY\_UserFree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+\+\_\+\+RPC\+\_\+\+USER LPSAFEARRAY\+\_\+\+User\+Free (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{LPSAFEARRAY $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_a05fef30ce7f35c62e1d172f3bed871a8}\label{structuredquery_8h_a05fef30ce7f35c62e1d172f3bed871a8}} 
+\index{structuredquery.h@{structuredquery.h}!LPSAFEARRAY\_UserMarshal@{LPSAFEARRAY\_UserMarshal}}
+\index{LPSAFEARRAY\_UserMarshal@{LPSAFEARRAY\_UserMarshal}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LPSAFEARRAY\_UserMarshal()}{LPSAFEARRAY\_UserMarshal()}}
+{\footnotesize\ttfamily unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER LPSAFEARRAY\+\_\+\+User\+Marshal (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned char $\ast$}]{,  }\item[{LPSAFEARRAY $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_ad32e3725cb1d731a72e5fcee61fdca17}\label{structuredquery_8h_ad32e3725cb1d731a72e5fcee61fdca17}} 
+\index{structuredquery.h@{structuredquery.h}!LPSAFEARRAY\_UserSize@{LPSAFEARRAY\_UserSize}}
+\index{LPSAFEARRAY\_UserSize@{LPSAFEARRAY\_UserSize}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LPSAFEARRAY\_UserSize()}{LPSAFEARRAY\_UserSize()}}
+{\footnotesize\ttfamily unsigned long \+\_\+\+\_\+\+RPC\+\_\+\+USER LPSAFEARRAY\+\_\+\+User\+Size (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned long}]{,  }\item[{LPSAFEARRAY $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{structuredquery_8h_ae322d67682ee2e77516c730ea7eb9b57}\label{structuredquery_8h_ae322d67682ee2e77516c730ea7eb9b57}} 
+\index{structuredquery.h@{structuredquery.h}!LPSAFEARRAY\_UserUnmarshal@{LPSAFEARRAY\_UserUnmarshal}}
+\index{LPSAFEARRAY\_UserUnmarshal@{LPSAFEARRAY\_UserUnmarshal}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LPSAFEARRAY\_UserUnmarshal()}{LPSAFEARRAY\_UserUnmarshal()}}
+{\footnotesize\ttfamily unsigned char $\ast$\+\_\+\+\_\+\+RPC\+\_\+\+USER LPSAFEARRAY\+\_\+\+User\+Unmarshal (\begin{DoxyParamCaption}\item[{unsigned long $\ast$}]{,  }\item[{unsigned char $\ast$}]{,  }\item[{LPSAFEARRAY $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{structuredquery_8h_a5ceb4074e7f5201df1609a12296df692}\label{structuredquery_8h_a5ceb4074e7f5201df1609a12296df692}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_aa9f4a401ecffbacf8e1692493c766e70}\label{structuredquery_8h_aa9f4a401ecffbacf8e1692493c766e70}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0000\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_a8a7c97b5532858809a55b4ecf113adbb}\label{structuredquery_8h_a8a7c97b5532858809a55b4ecf113adbb}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0008\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_a8bcb9b63c0b93bb658db715204d03778}\label{structuredquery_8h_a8bcb9b63c0b93bb658db715204d03778}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0008\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0008\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_a6dd4a73e9846254bc8fa0474b17806d4}\label{structuredquery_8h_a6dd4a73e9846254bc8fa0474b17806d4}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_a813212bfd1035d3767b9943c2341ba8a}\label{structuredquery_8h_a813212bfd1035d3767b9943c2341ba8a}} 
+\index{structuredquery.h@{structuredquery.h}!\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_structuredquery\_0000\_0013\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+structuredquery\+\_\+0000\+\_\+0013\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{structuredquery_8h_a7fd38dd86889816362d99447dbd71343}\label{structuredquery_8h_a7fd38dd86889816362d99447dbd71343}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_CompoundCondition@{CLSID\_CompoundCondition}}
+\index{CLSID\_CompoundCondition@{CLSID\_CompoundCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_CompoundCondition}{CLSID\_CompoundCondition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Compound\+Condition}
+
+\mbox{\Hypertarget{structuredquery_8h_a7c7e8644295d2d070141584e3738ffe7}\label{structuredquery_8h_a7c7e8644295d2d070141584e3738ffe7}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_ConditionFactory@{CLSID\_ConditionFactory}}
+\index{CLSID\_ConditionFactory@{CLSID\_ConditionFactory}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_ConditionFactory}{CLSID\_ConditionFactory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Condition\+Factory}
+
+\mbox{\Hypertarget{structuredquery_8h_a1e6f3f5eb2f9d66fef22b30028e6d449}\label{structuredquery_8h_a1e6f3f5eb2f9d66fef22b30028e6d449}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_Interval@{CLSID\_Interval}}
+\index{CLSID\_Interval@{CLSID\_Interval}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_Interval}{CLSID\_Interval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Interval}
+
+\mbox{\Hypertarget{structuredquery_8h_acc3d29a0f7868321c5e8443ff0a53661}\label{structuredquery_8h_acc3d29a0f7868321c5e8443ff0a53661}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_LeafCondition@{CLSID\_LeafCondition}}
+\index{CLSID\_LeafCondition@{CLSID\_LeafCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_LeafCondition}{CLSID\_LeafCondition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Leaf\+Condition}
+
+\mbox{\Hypertarget{structuredquery_8h_aab4676fdecba1cab04fac8e367e88330}\label{structuredquery_8h_aab4676fdecba1cab04fac8e367e88330}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_NegationCondition@{CLSID\_NegationCondition}}
+\index{CLSID\_NegationCondition@{CLSID\_NegationCondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_NegationCondition}{CLSID\_NegationCondition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Negation\+Condition}
+
+\mbox{\Hypertarget{structuredquery_8h_aa999941c6602aaf9f3ce036d40107244}\label{structuredquery_8h_aa999941c6602aaf9f3ce036d40107244}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_QueryParser@{CLSID\_QueryParser}}
+\index{CLSID\_QueryParser@{CLSID\_QueryParser}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_QueryParser}{CLSID\_QueryParser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Query\+Parser}
+
+\mbox{\Hypertarget{structuredquery_8h_a6f96ddf8cdeb047f3aaaa7aef58ce7cc}\label{structuredquery_8h_a6f96ddf8cdeb047f3aaaa7aef58ce7cc}} 
+\index{structuredquery.h@{structuredquery.h}!CLSID\_QueryParserManager@{CLSID\_QueryParserManager}}
+\index{CLSID\_QueryParserManager@{CLSID\_QueryParserManager}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_QueryParserManager}{CLSID\_QueryParserManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Query\+Parser\+Manager}
+
+\mbox{\Hypertarget{structuredquery_8h_a24890335a6a770db0176be95042e8053}\label{structuredquery_8h_a24890335a6a770db0176be95042e8053}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_ICondition@{IID\_ICondition}}
+\index{IID\_ICondition@{IID\_ICondition}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ICondition}{IID\_ICondition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ICondition}
+
+\mbox{\Hypertarget{structuredquery_8h_a7879813af34af4716efffd8b99360231}\label{structuredquery_8h_a7879813af34af4716efffd8b99360231}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IConditionFactory@{IID\_IConditionFactory}}
+\index{IID\_IConditionFactory@{IID\_IConditionFactory}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IConditionFactory}{IID\_IConditionFactory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ICondition\+Factory}
+
+\mbox{\Hypertarget{structuredquery_8h_a67d07a7daca4b4f8936b91eeff52cd3b}\label{structuredquery_8h_a67d07a7daca4b4f8936b91eeff52cd3b}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IConditionGenerator@{IID\_IConditionGenerator}}
+\index{IID\_IConditionGenerator@{IID\_IConditionGenerator}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IConditionGenerator}{IID\_IConditionGenerator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ICondition\+Generator}
+
+\mbox{\Hypertarget{structuredquery_8h_add460ffff85f65aa6e3bbe90c5b46c4e}\label{structuredquery_8h_add460ffff85f65aa6e3bbe90c5b46c4e}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IEntity@{IID\_IEntity}}
+\index{IID\_IEntity@{IID\_IEntity}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IEntity}{IID\_IEntity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IEntity}
+
+\mbox{\Hypertarget{structuredquery_8h_a16a4040887c8a13a9a7d652ae5f8a0ba}\label{structuredquery_8h_a16a4040887c8a13a9a7d652ae5f8a0ba}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IInterval@{IID\_IInterval}}
+\index{IID\_IInterval@{IID\_IInterval}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IInterval}{IID\_IInterval}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IInterval}
+
+\mbox{\Hypertarget{structuredquery_8h_a89bd3626d37476aa403856c372e1e12d}\label{structuredquery_8h_a89bd3626d37476aa403856c372e1e12d}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IMetaData@{IID\_IMetaData}}
+\index{IID\_IMetaData@{IID\_IMetaData}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMetaData}{IID\_IMetaData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMeta\+Data}
+
+\mbox{\Hypertarget{structuredquery_8h_aaf900239406d30ea02fb2caf3ab866b4}\label{structuredquery_8h_aaf900239406d30ea02fb2caf3ab866b4}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_INamedEntity@{IID\_INamedEntity}}
+\index{IID\_INamedEntity@{IID\_INamedEntity}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_INamedEntity}{IID\_INamedEntity}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+INamed\+Entity}
+
+\mbox{\Hypertarget{structuredquery_8h_ad04fe3fd483bb5bd09d72ea1cb28ffe7}\label{structuredquery_8h_ad04fe3fd483bb5bd09d72ea1cb28ffe7}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_INamedEntityCollector@{IID\_INamedEntityCollector}}
+\index{IID\_INamedEntityCollector@{IID\_INamedEntityCollector}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_INamedEntityCollector}{IID\_INamedEntityCollector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+INamed\+Entity\+Collector}
+
+\mbox{\Hypertarget{structuredquery_8h_a6f5d86de00f9ca1e466b6105e8a78abe}\label{structuredquery_8h_a6f5d86de00f9ca1e466b6105e8a78abe}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IQueryParser@{IID\_IQueryParser}}
+\index{IID\_IQueryParser@{IID\_IQueryParser}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IQueryParser}{IID\_IQueryParser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IQuery\+Parser}
+
+\mbox{\Hypertarget{structuredquery_8h_ab68411677d540d23033c43629a2b7429}\label{structuredquery_8h_ab68411677d540d23033c43629a2b7429}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IQueryParserManager@{IID\_IQueryParserManager}}
+\index{IID\_IQueryParserManager@{IID\_IQueryParserManager}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IQueryParserManager}{IID\_IQueryParserManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IQuery\+Parser\+Manager}
+
+\mbox{\Hypertarget{structuredquery_8h_ae0c60bdd1374c6e4fb7cf7101ead8b99}\label{structuredquery_8h_ae0c60bdd1374c6e4fb7cf7101ead8b99}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IQuerySolution@{IID\_IQuerySolution}}
+\index{IID\_IQuerySolution@{IID\_IQuerySolution}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IQuerySolution}{IID\_IQuerySolution}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IQuery\+Solution}
+
+\mbox{\Hypertarget{structuredquery_8h_ac7cc0d3304250d40cf3bfb1a317d7352}\label{structuredquery_8h_ac7cc0d3304250d40cf3bfb1a317d7352}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IRelationship@{IID\_IRelationship}}
+\index{IID\_IRelationship@{IID\_IRelationship}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IRelationship}{IID\_IRelationship}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IRelationship}
+
+\mbox{\Hypertarget{structuredquery_8h_acc777fce72743d85cb0d6bdcd8be9832}\label{structuredquery_8h_acc777fce72743d85cb0d6bdcd8be9832}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_IRichChunk@{IID\_IRichChunk}}
+\index{IID\_IRichChunk@{IID\_IRichChunk}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IRichChunk}{IID\_IRichChunk}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IRich\+Chunk}
+
+\mbox{\Hypertarget{structuredquery_8h_a18e18962b5ccfdcf8fa76b4a2619ea48}\label{structuredquery_8h_a18e18962b5ccfdcf8fa76b4a2619ea48}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_ISchemaLocalizerSupport@{IID\_ISchemaLocalizerSupport}}
+\index{IID\_ISchemaLocalizerSupport@{IID\_ISchemaLocalizerSupport}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ISchemaLocalizerSupport}{IID\_ISchemaLocalizerSupport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ISchema\+Localizer\+Support}
+
+\mbox{\Hypertarget{structuredquery_8h_a2830af80657531818249c70b6f5e7a01}\label{structuredquery_8h_a2830af80657531818249c70b6f5e7a01}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_ISchemaProvider@{IID\_ISchemaProvider}}
+\index{IID\_ISchemaProvider@{IID\_ISchemaProvider}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ISchemaProvider}{IID\_ISchemaProvider}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ISchema\+Provider}
+
+\mbox{\Hypertarget{structuredquery_8h_a65a8808173c75c4f90412eeda965dad2}\label{structuredquery_8h_a65a8808173c75c4f90412eeda965dad2}} 
+\index{structuredquery.h@{structuredquery.h}!IID\_ITokenCollection@{IID\_ITokenCollection}}
+\index{IID\_ITokenCollection@{IID\_ITokenCollection}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ITokenCollection}{IID\_ITokenCollection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IToken\+Collection}
+
+\mbox{\Hypertarget{structuredquery_8h_ade10be5c35605876b86ebb4628baeec4}\label{structuredquery_8h_ade10be5c35605876b86ebb4628baeec4}} 
+\index{structuredquery.h@{structuredquery.h}!LIBID\_StructuredQuery1@{LIBID\_StructuredQuery1}}
+\index{LIBID\_StructuredQuery1@{LIBID\_StructuredQuery1}!structuredquery.h@{structuredquery.h}}
+\doxysubsubsection{\texorpdfstring{LIBID\_StructuredQuery1}{LIBID\_StructuredQuery1}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} LIBID\+\_\+\+Structured\+Query1}
+

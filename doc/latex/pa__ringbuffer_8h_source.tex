@@ -1,0 +1,115 @@
+\hypertarget{pa__ringbuffer_8h_source}{}\doxysection{pa\+\_\+ringbuffer.\+h}
+\label{pa__ringbuffer_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_ringbuffer.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_ringbuffer.h}}
+\mbox{\hyperlink{pa__ringbuffer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_RINGBUFFER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_RINGBUFFER\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Ring Buffer utility.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Author: Phil Burk, http://www.softsynth.com}}
+\DoxyCodeLine{9 \textcolor{comment}{ * modified for SMP safety on OS X by Bjorn Roche.}}
+\DoxyCodeLine{10 \textcolor{comment}{ * also allowed for const where possible.}}
+\DoxyCodeLine{11 \textcolor{comment}{ * modified for multiple-\/byte-\/sized data elements by Sven Fischer}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * Note that this is safe only for a single-\/thread reader}}
+\DoxyCodeLine{14 \textcolor{comment}{ * and a single-\/thread writer.}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * This program is distributed with the PortAudio Portable Audio Library.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * For more information see: http://www.portaudio.com}}
+\DoxyCodeLine{18 \textcolor{comment}{ * Copyright (c) 1999-\/2000 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{19 \textcolor{comment}{ *}}
+\DoxyCodeLine{20 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{21 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{22 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{24 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{25 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{26 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{27 \textcolor{comment}{ *}}
+\DoxyCodeLine{28 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{29 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{33 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{34 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{35 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{36 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{37 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{38 \textcolor{comment}{ */}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/*}}
+\DoxyCodeLine{41 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{42 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{43 \textcolor{comment}{ *}}
+\DoxyCodeLine{44 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{45 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{46 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{47 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{48 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{49 \textcolor{comment}{ */}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include <sys/types.h>}}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} int32\_t \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}};}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#elif defined( \_\_GNUC\_\_ )}}
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}};}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#elif (\_MSC\_VER >= 1400)}}
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}};}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) || defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}};}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{89 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{90 \{}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}}}
+\DoxyCodeLine{94 \{}
+\DoxyCodeLine{95     \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_ae4e41eb1cc214406adb26203d4643371}{bufferSize}}; }
+\DoxyCodeLine{96     \textcolor{keyword}{volatile} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_ad2ae4e486eca6d273eed2e06f1d57aec}{writeIndex}}; }
+\DoxyCodeLine{97     \textcolor{keyword}{volatile} \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_aae25b99beddc44ae0efe8ae2ef341401}{readIndex}};  }
+\DoxyCodeLine{98     \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_a15f2f074f86d67747ac3d7cddd722d3e}{bigMask}};    }
+\DoxyCodeLine{99     \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_a852c77d20c925439882cdb4dc9d1c0c9}{smallMask}};  }
+\DoxyCodeLine{100     \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}}  \mbox{\hyperlink{struct_pa_util_ring_buffer_a5a7585b4f9929cb74e2fcf6d0e0be072}{elementSizeBytes}}; }
+\DoxyCodeLine{101     \textcolor{keywordtype}{char}  *\mbox{\hyperlink{struct_pa_util_ring_buffer_ac16a18dca2fc3becee50d159cf2074f2}{buffer}};    }
+\DoxyCodeLine{102 \}\mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{117 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_ac59abf83ad9ad72e1971ac406b0e67a8}{PaUtil\_InitializeRingBuffer}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementSizeBytes, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount, \textcolor{keywordtype}{void} *dataPtr );}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__ringbuffer_8h_a5d0da19fd934ad23afe8bafebfdc81e7}{PaUtil\_FlushRingBuffer}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf );}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{131 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_af53b4365e12a70524fd4ca0d59476097}{PaUtil\_GetRingBufferWriteAvailable}}( \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf );}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{139 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_a40786e9932b9f988be2accfce19d5ea4}{PaUtil\_GetRingBufferReadAvailable}}( \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf );}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{151 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_a2767b217dc115e4f20db8ea206ca9520}{PaUtil\_WriteRingBuffer}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount );}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{163 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_af6d879da3efb3894ef3956310bb3918e}{PaUtil\_ReadRingBuffer}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount );}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{185 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_a5c0ed00cc826518012a780544c31b31e}{PaUtil\_GetRingBufferWriteRegions}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount,}
+\DoxyCodeLine{186                                        \textcolor{keywordtype}{void} **dataPtr1, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} *sizePtr1,}
+\DoxyCodeLine{187                                        \textcolor{keywordtype}{void} **dataPtr2, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} *sizePtr2 );}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{197 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_ad38033c3d1cef68a44b7ccb0cf318236}{PaUtil\_AdvanceRingBufferWriteIndex}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount );}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{219 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_a0e1ef06e0ee328c9da54755cf889913d}{PaUtil\_GetRingBufferReadRegions}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount,}
+\DoxyCodeLine{220                                       \textcolor{keywordtype}{void} **dataPtr1, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} *sizePtr1,}
+\DoxyCodeLine{221                                       \textcolor{keywordtype}{void} **dataPtr2, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} *sizePtr2 );}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{231 \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{pa__ringbuffer_8h_a7acc44292930d2911445b41f982a6a73}{PaUtil\_AdvanceRingBufferReadIndex}}( \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} *rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} elementCount );}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{234 \}}
+\DoxyCodeLine{235 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_RINGBUFFER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

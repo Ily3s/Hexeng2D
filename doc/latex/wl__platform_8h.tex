@@ -1,0 +1,593 @@
+\hypertarget{wl__platform_8h}{}\doxysection{Hexeng2\+D/dependencies/glfw/src/wl\+\_\+platform.h File Reference}
+\label{wl__platform_8h}\index{Hexeng2D/dependencies/glfw/src/wl\_platform.h@{Hexeng2D/dependencies/glfw/src/wl\_platform.h}}
+{\ttfamily \#include $<$wayland-\/client.\+h$>$}\newline
+{\ttfamily \#include $<$xkbcommon/xkbcommon.\+h$>$}\newline
+{\ttfamily \#include $<$dlfcn.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}posix\+\_\+thread.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}posix\+\_\+time.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}null\+\_\+joystick.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xkb\+\_\+unicode.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}egl\+\_\+context.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}osmesa\+\_\+context.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/xdg-\/shell-\/client-\/protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/xdg-\/decoration-\/client-\/protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/viewporter-\/client-\/protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/relative-\/pointer-\/unstable-\/v1-\/client-\/protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/pointer-\/constraints-\/unstable-\/v1-\/client-\/protocol.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}wayland-\/idle-\/inhibit-\/unstable-\/v1-\/client-\/protocol.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}
+\item 
+struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}}
+\item 
+struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}}
+\item 
+struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}{\+\_\+glfw\+\_\+dlopen}}(\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})~dlopen(\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, RTLD\+\_\+\+LAZY $\vert$ RTLD\+\_\+\+LOCAL)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}{\+\_\+glfw\+\_\+dlclose}}(handle)~dlclose(handle)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}{\+\_\+glfw\+\_\+dlsym}}(handle,  \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})~dlsym(handle, \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW}}~((EGLNative\+Window\+Type) window-\/$>$wl.\+native)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a10726291463db08cf815a0170e85548a}{\+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY}}~((EGLNative\+Display\+Type) \+\_\+glfw.\+wl.\+display)
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}  wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad666193a847340c128970216fc00f92c}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE}}~\mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}  wl
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Context; \}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}{\+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE}}~struct \{ int dummy\+Library\+Context; \}
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af0849f9b39044874257dae01cf1ab056}{wl\+\_\+cursor\+\_\+theme\+\_\+load}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+load
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f}{wl\+\_\+cursor\+\_\+theme\+\_\+destroy}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f}{wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor}}~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+get\+\_\+cursor
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76}{wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer}}~\+\_\+glfw.\+wl.\+cursor.\+image\+\_\+get\+\_\+buffer
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea}{wl\+\_\+egl\+\_\+window\+\_\+create}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+create
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb}{wl\+\_\+egl\+\_\+window\+\_\+destroy}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+destroy
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129}{wl\+\_\+egl\+\_\+window\+\_\+resize}}~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+resize
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651}{xkb\+\_\+context\+\_\+new}}~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+new
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444}{xkb\+\_\+context\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a46b7585bcf515582df56effb765548ff}{xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+new\+\_\+from\+\_\+string
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56}{xkb\+\_\+keymap\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ae00a697007ff6fb26df721434e95043a}{xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+mod\+\_\+get\+\_\+index
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1}{xkb\+\_\+keymap\+\_\+key\+\_\+repeats}}~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+repeats
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c}{xkb\+\_\+state\+\_\+new}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+new
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504}{xkb\+\_\+state\+\_\+unref}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+unref
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8}{xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+syms
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a}{xkb\+\_\+state\+\_\+update\+\_\+mask}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+update\+\_\+mask
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aaff941989f1ba31063f6f81f9f34f595}{xkb\+\_\+state\+\_\+serialize\+\_\+mods}}~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+serialize\+\_\+mods
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH}}~4
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_abbd514b1fca6f13fe14c45f91478e033}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+TOP}}~24
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_aa626e680b43b163df2478262d214ee33}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+VERTICAL}}~(\mbox{\hyperlink{wl__platform_8h_abbd514b1fca6f13fe14c45f91478e033}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+TOP}} + \mbox{\hyperlink{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH}})
+\item 
+\#define \mbox{\hyperlink{wl__platform_8h_a37b0c386c98843eeeb28e5723227d49f}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+HORIZONTAL}}~(2 $\ast$ \mbox{\hyperlink{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{internal_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{Vk\+Wayland\+Surface\+Create\+Flags\+KHR}}
+\item 
+typedef struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}
+\item 
+typedef \mbox{\hyperlink{internal_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} $\ast$ \mbox{\hyperlink{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}{PFN\+\_\+vk\+Create\+Wayland\+Surface\+KHR}}) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} $\ast$, const \mbox{\hyperlink{internal_8h_ad81262c34caa3ad7db4411d07f298b1d}{Vk\+Allocation\+Callbacks}} $\ast$, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} $\ast$)
+\item 
+typedef \mbox{\hyperlink{internal_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} $\ast$ \mbox{\hyperlink{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}{PFN\+\_\+vk\+Get\+Physical\+Device\+Wayland\+Presentation\+Support\+KHR}}) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, uint32\+\_\+t, struct wl\+\_\+display $\ast$)
+\item 
+typedef struct wl\+\_\+cursor\+\_\+theme $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+load}}) (const char $\ast$, int, struct wl\+\_\+shm $\ast$)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+destroy}}) (struct wl\+\_\+cursor\+\_\+theme $\ast$)
+\item 
+typedef struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}} $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}{PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor}}) (struct wl\+\_\+cursor\+\_\+theme $\ast$, const char $\ast$)
+\item 
+typedef struct wl\+\_\+buffer $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}{PFN\+\_\+wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer}}) (struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}} $\ast$)
+\item 
+typedef struct wl\+\_\+egl\+\_\+window $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+create}}) (struct wl\+\_\+surface $\ast$, int, int)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+destroy}}) (struct wl\+\_\+egl\+\_\+window $\ast$)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_adcf78e57b989ea0e561208099dada945}{PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+resize}}) (struct wl\+\_\+egl\+\_\+window $\ast$, int, int, int, int)
+\item 
+typedef struct xkb\+\_\+context $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}{PFN\+\_\+xkb\+\_\+context\+\_\+new}}) (enum xkb\+\_\+context\+\_\+flags)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}{PFN\+\_\+xkb\+\_\+context\+\_\+unref}}) (struct xkb\+\_\+context $\ast$)
+\item 
+typedef struct xkb\+\_\+keymap $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}{PFN\+\_\+xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string}}) (struct xkb\+\_\+context $\ast$, const char $\ast$, enum xkb\+\_\+keymap\+\_\+format, enum xkb\+\_\+keymap\+\_\+compile\+\_\+flags)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}{PFN\+\_\+xkb\+\_\+keymap\+\_\+unref}}) (struct xkb\+\_\+keymap $\ast$)
+\item 
+typedef xkb\+\_\+mod\+\_\+index\+\_\+t($\ast$ \mbox{\hyperlink{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}{PFN\+\_\+xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index}}) (struct xkb\+\_\+keymap $\ast$, const char $\ast$)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}{PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+repeats}}) (struct xkb\+\_\+keymap $\ast$, xkb\+\_\+keycode\+\_\+t)
+\item 
+typedef struct xkb\+\_\+state $\ast$($\ast$ \mbox{\hyperlink{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}{PFN\+\_\+xkb\+\_\+state\+\_\+new}}) (struct xkb\+\_\+keymap $\ast$)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}{PFN\+\_\+xkb\+\_\+state\+\_\+unref}}) (struct xkb\+\_\+state $\ast$)
+\item 
+typedef int($\ast$ \mbox{\hyperlink{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}{PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms}}) (struct xkb\+\_\+state $\ast$, xkb\+\_\+keycode\+\_\+t, const xkb\+\_\+keysym\+\_\+t $\ast$$\ast$)
+\item 
+typedef enum xkb\+\_\+state\+\_\+component($\ast$ \mbox{\hyperlink{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}{PFN\+\_\+xkb\+\_\+state\+\_\+update\+\_\+mask}}) (struct xkb\+\_\+state $\ast$, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t)
+\item 
+typedef xkb\+\_\+mod\+\_\+mask\+\_\+t($\ast$ \mbox{\hyperlink{wl__platform_8h_a963602febce41dbde7c037aaba7b7c0d}{PFN\+\_\+xkb\+\_\+state\+\_\+serialize\+\_\+mods}}) (struct xkb\+\_\+state $\ast$, enum xkb\+\_\+state\+\_\+component)
+\item 
+typedef enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a55173b590d4140e345ceeb03f906d101}{\+\_\+\+GLFWdecoration\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}} \mbox{\hyperlink{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4}{\+\_\+\+GLFWwindow\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} \mbox{\hyperlink{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755}{\+\_\+\+GLFWlibrary\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0}{\+\_\+\+GLFWmonitor\+Wayland}}
+\item 
+typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86}{\+\_\+\+GLFWcursor\+Wayland}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \{ \newline
+\mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}{main\+Window}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}{top\+Decoration}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}{left\+Decoration}}
+, \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}{right\+Decoration}}
+, \newline
+\mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}{bottom\+Decoration}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}{\+\_\+glfw\+Add\+Output\+Wayland}} (uint32\+\_\+t \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, uint32\+\_\+t version)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{wl__platform_8h_a37b0c386c98843eeeb28e5723227d49f}\label{wl__platform_8h_a37b0c386c98843eeeb28e5723227d49f}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_DECORATION\_HORIZONTAL@{\_GLFW\_DECORATION\_HORIZONTAL}}
+\index{\_GLFW\_DECORATION\_HORIZONTAL@{\_GLFW\_DECORATION\_HORIZONTAL}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_DECORATION\_HORIZONTAL}{\_GLFW\_DECORATION\_HORIZONTAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+HORIZONTAL~(2 $\ast$ \mbox{\hyperlink{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH}})}
+
+\mbox{\Hypertarget{wl__platform_8h_abbd514b1fca6f13fe14c45f91478e033}\label{wl__platform_8h_abbd514b1fca6f13fe14c45f91478e033}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_DECORATION\_TOP@{\_GLFW\_DECORATION\_TOP}}
+\index{\_GLFW\_DECORATION\_TOP@{\_GLFW\_DECORATION\_TOP}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_DECORATION\_TOP}{\_GLFW\_DECORATION\_TOP}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+TOP~24}
+
+\mbox{\Hypertarget{wl__platform_8h_aa626e680b43b163df2478262d214ee33}\label{wl__platform_8h_aa626e680b43b163df2478262d214ee33}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_DECORATION\_VERTICAL@{\_GLFW\_DECORATION\_VERTICAL}}
+\index{\_GLFW\_DECORATION\_VERTICAL@{\_GLFW\_DECORATION\_VERTICAL}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_DECORATION\_VERTICAL}{\_GLFW\_DECORATION\_VERTICAL}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+VERTICAL~(\mbox{\hyperlink{wl__platform_8h_abbd514b1fca6f13fe14c45f91478e033}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+TOP}} + \mbox{\hyperlink{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}{\+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH}})}
+
+\mbox{\Hypertarget{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}\label{wl__platform_8h_ab0aa0ee53d9e7cb2f315acc731a9a977}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_DECORATION\_WIDTH@{\_GLFW\_DECORATION\_WIDTH}}
+\index{\_GLFW\_DECORATION\_WIDTH@{\_GLFW\_DECORATION\_WIDTH}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_DECORATION\_WIDTH}{\_GLFW\_DECORATION\_WIDTH}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+DECORATION\+\_\+\+WIDTH~4}
+
+\mbox{\Hypertarget{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}\label{wl__platform_8h_ad1dc145aa72a5a4504d2015bb11f6559}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlclose@{\_glfw\_dlclose}}
+\index{\_glfw\_dlclose@{\_glfw\_dlclose}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlclose}{\_glfw\_dlclose}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlclose(\begin{DoxyParamCaption}\item[{}]{handle }\end{DoxyParamCaption})~dlclose(handle)}
+
+\mbox{\Hypertarget{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}\label{wl__platform_8h_a5f5a84d37427a3f54af2e1b5667bc569}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlopen@{\_glfw\_dlopen}}
+\index{\_glfw\_dlopen@{\_glfw\_dlopen}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlopen}{\_glfw\_dlopen}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlopen(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}} }\end{DoxyParamCaption})~dlopen(\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, RTLD\+\_\+\+LAZY $\vert$ RTLD\+\_\+\+LOCAL)}
+
+\mbox{\Hypertarget{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}\label{wl__platform_8h_ac0795db0183d348f2867cc5a6322bfbc}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfw\_dlsym@{\_glfw\_dlsym}}
+\index{\_glfw\_dlsym@{\_glfw\_dlsym}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_dlsym}{\_glfw\_dlsym}}
+{\footnotesize\ttfamily \#define \+\_\+glfw\+\_\+dlsym(\begin{DoxyParamCaption}\item[{}]{handle,  }\item[{}]{\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}} }\end{DoxyParamCaption})~dlsym(handle, \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})}
+
+\mbox{\Hypertarget{wl__platform_8h_a10726291463db08cf815a0170e85548a}\label{wl__platform_8h_a10726291463db08cf815a0170e85548a}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+\index{\_GLFW\_EGL\_NATIVE\_DISPLAY@{\_GLFW\_EGL\_NATIVE\_DISPLAY}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_DISPLAY}{\_GLFW\_EGL\_NATIVE\_DISPLAY}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+DISPLAY~((EGLNative\+Display\+Type) \+\_\+glfw.\+wl.\+display)}
+
+\mbox{\Hypertarget{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957}\label{wl__platform_8h_a66a01ba2539c9e2945327fa24a21b957}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+\index{\_GLFW\_EGL\_NATIVE\_WINDOW@{\_GLFW\_EGL\_NATIVE\_WINDOW}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_EGL\_NATIVE\_WINDOW}{\_GLFW\_EGL\_NATIVE\_WINDOW}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+EGL\+\_\+\+NATIVE\+\_\+\+WINDOW~((EGLNative\+Window\+Type) window-\/$>$wl.\+native)}
+
+\mbox{\Hypertarget{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}\label{wl__platform_8h_aaac762d1c5730e6bb09d4985b483f5bb}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_CONTEXT\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Context; \}}
+
+\mbox{\Hypertarget{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}\label{wl__platform_8h_a4551a5d24dca0d3f0b1602b9406f14c7}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_CURSOR\_STATE@{\_GLFW\_PLATFORM\_CURSOR\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_CURSOR\_STATE}{\_GLFW\_PLATFORM\_CURSOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+CURSOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}  wl}
+
+\mbox{\Hypertarget{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}\label{wl__platform_8h_a7e5e60a7f6cf8303a918a7b11ab6aa2b}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+CONTEXT\+\_\+\+STATE~struct \{ int dummy\+Library\+Context; \}}
+
+\mbox{\Hypertarget{wl__platform_8h_ad666193a847340c128970216fc00f92c}\label{wl__platform_8h_ad666193a847340c128970216fc00f92c}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+LIBRARY\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} wl}
+
+\mbox{\Hypertarget{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}\label{wl__platform_8h_ac966d3fd4ae66b36e123c4cb3a6a215f}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+\index{\_GLFW\_PLATFORM\_MONITOR\_STATE@{\_GLFW\_PLATFORM\_MONITOR\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_MONITOR\_STATE}{\_GLFW\_PLATFORM\_MONITOR\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+MONITOR\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} wl}
+
+\mbox{\Hypertarget{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}\label{wl__platform_8h_aa26f1423e34d4c3fb9533850ebf06e21}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+\index{\_GLFW\_PLATFORM\_WINDOW\_STATE@{\_GLFW\_PLATFORM\_WINDOW\_STATE}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFW\_PLATFORM\_WINDOW\_STATE}{\_GLFW\_PLATFORM\_WINDOW\_STATE}}
+{\footnotesize\ttfamily \#define \+\_\+\+GLFW\+\_\+\+PLATFORM\+\_\+\+WINDOW\+\_\+\+STATE~\mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}  wl}
+
+\mbox{\Hypertarget{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76}\label{wl__platform_8h_a3ea54f5b113ff9dccacb3d379b02ae76}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_image\_get\_buffer@{wl\_cursor\_image\_get\_buffer}}
+\index{wl\_cursor\_image\_get\_buffer@{wl\_cursor\_image\_get\_buffer}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_image\_get\_buffer}{wl\_cursor\_image\_get\_buffer}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer~\+\_\+glfw.\+wl.\+cursor.\+image\+\_\+get\+\_\+buffer}
+
+\mbox{\Hypertarget{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f}\label{wl__platform_8h_af4ea3aeb622e33ebef78a5456e1f177f}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_destroy@{wl\_cursor\_theme\_destroy}}
+\index{wl\_cursor\_theme\_destroy@{wl\_cursor\_theme\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_destroy}{wl\_cursor\_theme\_destroy}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+destroy~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+destroy}
+
+\mbox{\Hypertarget{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f}\label{wl__platform_8h_a987f4277f2574417ab58ebdb8f5de58f}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_get\_cursor@{wl\_cursor\_theme\_get\_cursor}}
+\index{wl\_cursor\_theme\_get\_cursor@{wl\_cursor\_theme\_get\_cursor}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_get\_cursor}{wl\_cursor\_theme\_get\_cursor}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+get\+\_\+cursor}
+
+\mbox{\Hypertarget{wl__platform_8h_af0849f9b39044874257dae01cf1ab056}\label{wl__platform_8h_af0849f9b39044874257dae01cf1ab056}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_cursor\_theme\_load@{wl\_cursor\_theme\_load}}
+\index{wl\_cursor\_theme\_load@{wl\_cursor\_theme\_load}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_cursor\_theme\_load}{wl\_cursor\_theme\_load}}
+{\footnotesize\ttfamily \#define wl\+\_\+cursor\+\_\+theme\+\_\+load~\+\_\+glfw.\+wl.\+cursor.\+theme\+\_\+load}
+
+\mbox{\Hypertarget{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea}\label{wl__platform_8h_ab794adced13a3bdc0757c2994e82f9ea}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_create@{wl\_egl\_window\_create}}
+\index{wl\_egl\_window\_create@{wl\_egl\_window\_create}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_create}{wl\_egl\_window\_create}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+create~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+create}
+
+\mbox{\Hypertarget{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb}\label{wl__platform_8h_adf173779ebc5cf85253a4d34918fd2cb}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_destroy@{wl\_egl\_window\_destroy}}
+\index{wl\_egl\_window\_destroy@{wl\_egl\_window\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_destroy}{wl\_egl\_window\_destroy}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+destroy~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+destroy}
+
+\mbox{\Hypertarget{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129}\label{wl__platform_8h_a9c997ab2ede20b608025a74e6fb54129}} 
+\index{wl\_platform.h@{wl\_platform.h}!wl\_egl\_window\_resize@{wl\_egl\_window\_resize}}
+\index{wl\_egl\_window\_resize@{wl\_egl\_window\_resize}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{wl\_egl\_window\_resize}{wl\_egl\_window\_resize}}
+{\footnotesize\ttfamily \#define wl\+\_\+egl\+\_\+window\+\_\+resize~\+\_\+glfw.\+wl.\+egl.\+window\+\_\+resize}
+
+\mbox{\Hypertarget{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651}\label{wl__platform_8h_ad3db83b8a04c02fad16d7f0eb9253651}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_context\_new@{xkb\_context\_new}}
+\index{xkb\_context\_new@{xkb\_context\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_context\_new}{xkb\_context\_new}}
+{\footnotesize\ttfamily \#define xkb\+\_\+context\+\_\+new~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+new}
+
+\mbox{\Hypertarget{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444}\label{wl__platform_8h_a7d4180d6a0192d57ed6bab2162b12444}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_context\_unref@{xkb\_context\_unref}}
+\index{xkb\_context\_unref@{xkb\_context\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_context\_unref}{xkb\_context\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+context\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+context\+\_\+unref}
+
+\mbox{\Hypertarget{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1}\label{wl__platform_8h_a454cb66a6161b4d9fbfde69bf1b1adb1}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_key\_repeats@{xkb\_keymap\_key\_repeats}}
+\index{xkb\_keymap\_key\_repeats@{xkb\_keymap\_key\_repeats}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_key\_repeats}{xkb\_keymap\_key\_repeats}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+key\+\_\+repeats~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+key\+\_\+repeats}
+
+\mbox{\Hypertarget{wl__platform_8h_ae00a697007ff6fb26df721434e95043a}\label{wl__platform_8h_ae00a697007ff6fb26df721434e95043a}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_mod\_get\_index@{xkb\_keymap\_mod\_get\_index}}
+\index{xkb\_keymap\_mod\_get\_index@{xkb\_keymap\_mod\_get\_index}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_mod\_get\_index}{xkb\_keymap\_mod\_get\_index}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+mod\+\_\+get\+\_\+index}
+
+\mbox{\Hypertarget{wl__platform_8h_a46b7585bcf515582df56effb765548ff}\label{wl__platform_8h_a46b7585bcf515582df56effb765548ff}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_new\_from\_string@{xkb\_keymap\_new\_from\_string}}
+\index{xkb\_keymap\_new\_from\_string@{xkb\_keymap\_new\_from\_string}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_new\_from\_string}{xkb\_keymap\_new\_from\_string}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+new\+\_\+from\+\_\+string}
+
+\mbox{\Hypertarget{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56}\label{wl__platform_8h_a9707d19b164550101c688f6a8ad4cb56}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_keymap\_unref@{xkb\_keymap\_unref}}
+\index{xkb\_keymap\_unref@{xkb\_keymap\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_keymap\_unref}{xkb\_keymap\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+keymap\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+keymap\+\_\+unref}
+
+\mbox{\Hypertarget{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8}\label{wl__platform_8h_aae3ce4ad2452936ecc298d83cec75af8}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_key\_get\_syms@{xkb\_state\_key\_get\_syms}}
+\index{xkb\_state\_key\_get\_syms@{xkb\_state\_key\_get\_syms}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_key\_get\_syms}{xkb\_state\_key\_get\_syms}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+key\+\_\+get\+\_\+syms}
+
+\mbox{\Hypertarget{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c}\label{wl__platform_8h_a3d5fc2dfd183f89bba226cdbc168608c}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_new@{xkb\_state\_new}}
+\index{xkb\_state\_new@{xkb\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_new}{xkb\_state\_new}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+new~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+new}
+
+\mbox{\Hypertarget{wl__platform_8h_aaff941989f1ba31063f6f81f9f34f595}\label{wl__platform_8h_aaff941989f1ba31063f6f81f9f34f595}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_serialize\_mods@{xkb\_state\_serialize\_mods}}
+\index{xkb\_state\_serialize\_mods@{xkb\_state\_serialize\_mods}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_serialize\_mods}{xkb\_state\_serialize\_mods}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+serialize\+\_\+mods~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+serialize\+\_\+mods}
+
+\mbox{\Hypertarget{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504}\label{wl__platform_8h_a924ddb1dc7e73e83e207b2a1dc911504}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_unref@{xkb\_state\_unref}}
+\index{xkb\_state\_unref@{xkb\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_unref}{xkb\_state\_unref}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+unref~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+unref}
+
+\mbox{\Hypertarget{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a}\label{wl__platform_8h_af6ad24764ac986922fc1040d48fd568a}} 
+\index{wl\_platform.h@{wl\_platform.h}!xkb\_state\_update\_mask@{xkb\_state\_update\_mask}}
+\index{xkb\_state\_update\_mask@{xkb\_state\_update\_mask}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{xkb\_state\_update\_mask}{xkb\_state\_update\_mask}}
+{\footnotesize\ttfamily \#define xkb\+\_\+state\+\_\+update\+\_\+mask~\+\_\+glfw.\+wl.\+xkb.\+state\+\_\+update\+\_\+mask}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86}\label{wl__platform_8h_ab9e42e1bf8aaa05d5b515907e683af86}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWcursorWayland@{\_GLFWcursorWayland}}
+\index{\_GLFWcursorWayland@{\_GLFWcursorWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWcursorWayland}{\_GLFWcursorWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\+\_\+\+GLFWcursor\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413}\label{wl__platform_8h_a9f07c6758fc7aa2504854077676e7413}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}}
+\index{\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationSideWayland}{\_GLFWdecorationSideWayland}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}} \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_a55173b590d4140e345ceeb03f906d101}\label{wl__platform_8h_a55173b590d4140e345ceeb03f906d101}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationWayland@{\_GLFWdecorationWayland}}
+\index{\_GLFWdecorationWayland@{\_GLFWdecorationWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationWayland}{\_GLFWdecorationWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\+\_\+\+GLFWdecoration\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755}\label{wl__platform_8h_aea3fbae5be24849acafc096b9f5eb755}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWlibraryWayland@{\_GLFWlibraryWayland}}
+\index{\_GLFWlibraryWayland@{\_GLFWlibraryWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWlibraryWayland}{\_GLFWlibraryWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\+\_\+\+GLFWlibrary\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0}\label{wl__platform_8h_ab91578847da8ca2e148753a63f84d9a0}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWmonitorWayland@{\_GLFWmonitorWayland}}
+\index{\_GLFWmonitorWayland@{\_GLFWmonitorWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWmonitorWayland}{\_GLFWmonitorWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\+\_\+\+GLFWmonitor\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4}\label{wl__platform_8h_a5deeeabe0fcb994f43b6c2364e02edc4}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWwindowWayland@{\_GLFWwindowWayland}}
+\index{\_GLFWwindowWayland@{\_GLFWwindowWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWwindowWayland}{\_GLFWwindowWayland}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\+\_\+\+GLFWwindow\+Wayland}}}
+
+\mbox{\Hypertarget{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}\label{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_vkCreateWaylandSurfaceKHR@{PFN\_vkCreateWaylandSurfaceKHR}}
+\index{PFN\_vkCreateWaylandSurfaceKHR@{PFN\_vkCreateWaylandSurfaceKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkCreateWaylandSurfaceKHR}{PFN\_vkCreateWaylandSurfaceKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{internal_8h_abe3614d1bd40772bc2398a4a86ea4a45}{Vk\+Result}}(\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} $\ast$ PFN\+\_\+vk\+Create\+Wayland\+Surface\+KHR) (\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{Vk\+Instance}}, const \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} $\ast$, const \mbox{\hyperlink{internal_8h_ad81262c34caa3ad7db4411d07f298b1d}{Vk\+Allocation\+Callbacks}} $\ast$, \mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{Vk\+Surface\+KHR}} $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}\label{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}}
+\index{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR@{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{internal_8h_ae5d9faf75f583010e32ee49087a15326}{Vk\+Bool32}}(\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} $\ast$ PFN\+\_\+vk\+Get\+Physical\+Device\+Wayland\+Presentation\+Support\+KHR) (\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{Vk\+Physical\+Device}}, uint32\+\_\+t, struct wl\+\_\+display $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}\label{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_image\_get\_buffer@{PFN\_wl\_cursor\_image\_get\_buffer}}
+\index{PFN\_wl\_cursor\_image\_get\_buffer@{PFN\_wl\_cursor\_image\_get\_buffer}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_image\_get\_buffer}{PFN\_wl\_cursor\_image\_get\_buffer}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+buffer $\ast$($\ast$ PFN\+\_\+wl\+\_\+cursor\+\_\+image\+\_\+get\+\_\+buffer) (struct \mbox{\hyperlink{structwl__cursor__image}{wl\+\_\+cursor\+\_\+image}} $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}\label{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_destroy@{PFN\_wl\_cursor\_theme\_destroy}}
+\index{PFN\_wl\_cursor\_theme\_destroy@{PFN\_wl\_cursor\_theme\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_destroy}{PFN\_wl\_cursor\_theme\_destroy}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+destroy) (struct wl\+\_\+cursor\+\_\+theme $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}\label{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_get\_cursor@{PFN\_wl\_cursor\_theme\_get\_cursor}}
+\index{PFN\_wl\_cursor\_theme\_get\_cursor@{PFN\_wl\_cursor\_theme\_get\_cursor}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_get\_cursor}{PFN\_wl\_cursor\_theme\_get\_cursor}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structwl__cursor}{wl\+\_\+cursor}} $\ast$($\ast$ PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+get\+\_\+cursor) (struct wl\+\_\+cursor\+\_\+theme $\ast$, const char $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}\label{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_cursor\_theme\_load@{PFN\_wl\_cursor\_theme\_load}}
+\index{PFN\_wl\_cursor\_theme\_load@{PFN\_wl\_cursor\_theme\_load}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_cursor\_theme\_load}{PFN\_wl\_cursor\_theme\_load}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+cursor\+\_\+theme $\ast$($\ast$ PFN\+\_\+wl\+\_\+cursor\+\_\+theme\+\_\+load) (const char $\ast$, int, struct wl\+\_\+shm $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}\label{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_create@{PFN\_wl\_egl\_window\_create}}
+\index{PFN\_wl\_egl\_window\_create@{PFN\_wl\_egl\_window\_create}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_create}{PFN\_wl\_egl\_window\_create}}
+{\footnotesize\ttfamily typedef struct wl\+\_\+egl\+\_\+window $\ast$($\ast$ PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+create) (struct wl\+\_\+surface $\ast$, int, int)}
+
+\mbox{\Hypertarget{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}\label{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_destroy@{PFN\_wl\_egl\_window\_destroy}}
+\index{PFN\_wl\_egl\_window\_destroy@{PFN\_wl\_egl\_window\_destroy}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_destroy}{PFN\_wl\_egl\_window\_destroy}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+destroy) (struct wl\+\_\+egl\+\_\+window $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_adcf78e57b989ea0e561208099dada945}\label{wl__platform_8h_adcf78e57b989ea0e561208099dada945}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_wl\_egl\_window\_resize@{PFN\_wl\_egl\_window\_resize}}
+\index{PFN\_wl\_egl\_window\_resize@{PFN\_wl\_egl\_window\_resize}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_wl\_egl\_window\_resize}{PFN\_wl\_egl\_window\_resize}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+wl\+\_\+egl\+\_\+window\+\_\+resize) (struct wl\+\_\+egl\+\_\+window $\ast$, int, int, int, int)}
+
+\mbox{\Hypertarget{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}\label{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_context\_new@{PFN\_xkb\_context\_new}}
+\index{PFN\_xkb\_context\_new@{PFN\_xkb\_context\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_context\_new}{PFN\_xkb\_context\_new}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+context $\ast$($\ast$ PFN\+\_\+xkb\+\_\+context\+\_\+new) (enum xkb\+\_\+context\+\_\+flags)}
+
+\mbox{\Hypertarget{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}\label{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_context\_unref@{PFN\_xkb\_context\_unref}}
+\index{PFN\_xkb\_context\_unref@{PFN\_xkb\_context\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_context\_unref}{PFN\_xkb\_context\_unref}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+xkb\+\_\+context\+\_\+unref) (struct xkb\+\_\+context $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}\label{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_key\_repeats@{PFN\_xkb\_keymap\_key\_repeats}}
+\index{PFN\_xkb\_keymap\_key\_repeats@{PFN\_xkb\_keymap\_key\_repeats}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_key\_repeats}{PFN\_xkb\_keymap\_key\_repeats}}
+{\footnotesize\ttfamily typedef int($\ast$ PFN\+\_\+xkb\+\_\+keymap\+\_\+key\+\_\+repeats) (struct xkb\+\_\+keymap $\ast$, xkb\+\_\+keycode\+\_\+t)}
+
+\mbox{\Hypertarget{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}\label{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_mod\_get\_index@{PFN\_xkb\_keymap\_mod\_get\_index}}
+\index{PFN\_xkb\_keymap\_mod\_get\_index@{PFN\_xkb\_keymap\_mod\_get\_index}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_mod\_get\_index}{PFN\_xkb\_keymap\_mod\_get\_index}}
+{\footnotesize\ttfamily typedef xkb\+\_\+mod\+\_\+index\+\_\+t($\ast$ PFN\+\_\+xkb\+\_\+keymap\+\_\+mod\+\_\+get\+\_\+index) (struct xkb\+\_\+keymap $\ast$, const char $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}\label{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_new\_from\_string@{PFN\_xkb\_keymap\_new\_from\_string}}
+\index{PFN\_xkb\_keymap\_new\_from\_string@{PFN\_xkb\_keymap\_new\_from\_string}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_new\_from\_string}{PFN\_xkb\_keymap\_new\_from\_string}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+keymap $\ast$($\ast$ PFN\+\_\+xkb\+\_\+keymap\+\_\+new\+\_\+from\+\_\+string) (struct xkb\+\_\+context $\ast$, const char $\ast$, enum xkb\+\_\+keymap\+\_\+format, enum xkb\+\_\+keymap\+\_\+compile\+\_\+flags)}
+
+\mbox{\Hypertarget{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}\label{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_keymap\_unref@{PFN\_xkb\_keymap\_unref}}
+\index{PFN\_xkb\_keymap\_unref@{PFN\_xkb\_keymap\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_keymap\_unref}{PFN\_xkb\_keymap\_unref}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+xkb\+\_\+keymap\+\_\+unref) (struct xkb\+\_\+keymap $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}\label{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_key\_get\_syms@{PFN\_xkb\_state\_key\_get\_syms}}
+\index{PFN\_xkb\_state\_key\_get\_syms@{PFN\_xkb\_state\_key\_get\_syms}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_key\_get\_syms}{PFN\_xkb\_state\_key\_get\_syms}}
+{\footnotesize\ttfamily typedef int($\ast$ PFN\+\_\+xkb\+\_\+state\+\_\+key\+\_\+get\+\_\+syms) (struct xkb\+\_\+state $\ast$, xkb\+\_\+keycode\+\_\+t, const xkb\+\_\+keysym\+\_\+t $\ast$$\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}\label{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_new@{PFN\_xkb\_state\_new}}
+\index{PFN\_xkb\_state\_new@{PFN\_xkb\_state\_new}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_new}{PFN\_xkb\_state\_new}}
+{\footnotesize\ttfamily typedef struct xkb\+\_\+state $\ast$($\ast$ PFN\+\_\+xkb\+\_\+state\+\_\+new) (struct xkb\+\_\+keymap $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a963602febce41dbde7c037aaba7b7c0d}\label{wl__platform_8h_a963602febce41dbde7c037aaba7b7c0d}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_serialize\_mods@{PFN\_xkb\_state\_serialize\_mods}}
+\index{PFN\_xkb\_state\_serialize\_mods@{PFN\_xkb\_state\_serialize\_mods}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_serialize\_mods}{PFN\_xkb\_state\_serialize\_mods}}
+{\footnotesize\ttfamily typedef xkb\+\_\+mod\+\_\+mask\+\_\+t($\ast$ PFN\+\_\+xkb\+\_\+state\+\_\+serialize\+\_\+mods) (struct xkb\+\_\+state $\ast$, enum xkb\+\_\+state\+\_\+component)}
+
+\mbox{\Hypertarget{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}\label{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_unref@{PFN\_xkb\_state\_unref}}
+\index{PFN\_xkb\_state\_unref@{PFN\_xkb\_state\_unref}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_unref}{PFN\_xkb\_state\_unref}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ PFN\+\_\+xkb\+\_\+state\+\_\+unref) (struct xkb\+\_\+state $\ast$)}
+
+\mbox{\Hypertarget{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}\label{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}} 
+\index{wl\_platform.h@{wl\_platform.h}!PFN\_xkb\_state\_update\_mask@{PFN\_xkb\_state\_update\_mask}}
+\index{PFN\_xkb\_state\_update\_mask@{PFN\_xkb\_state\_update\_mask}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{PFN\_xkb\_state\_update\_mask}{PFN\_xkb\_state\_update\_mask}}
+{\footnotesize\ttfamily typedef enum xkb\+\_\+state\+\_\+component($\ast$ PFN\+\_\+xkb\+\_\+state\+\_\+update\+\_\+mask) (struct xkb\+\_\+state $\ast$, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+mod\+\_\+mask\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t, xkb\+\_\+layout\+\_\+index\+\_\+t)}
+
+\mbox{\Hypertarget{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}\label{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}} 
+\index{wl\_platform.h@{wl\_platform.h}!VkWaylandSurfaceCreateFlagsKHR@{VkWaylandSurfaceCreateFlagsKHR}}
+\index{VkWaylandSurfaceCreateFlagsKHR@{VkWaylandSurfaceCreateFlagsKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkWaylandSurfaceCreateFlagsKHR}{VkWaylandSurfaceCreateFlagsKHR}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{internal_8h_abb605a7700670dd8420cc3841b939444}{Vk\+Flags}} \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{Vk\+Wayland\+Surface\+Create\+Flags\+KHR}}}
+
+\mbox{\Hypertarget{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f}\label{wl__platform_8h_a1806f7a43bfa7c3b5dccc83f9a110f9f}} 
+\index{wl\_platform.h@{wl\_platform.h}!VkWaylandSurfaceCreateInfoKHR@{VkWaylandSurfaceCreateInfoKHR}}
+\index{VkWaylandSurfaceCreateInfoKHR@{VkWaylandSurfaceCreateInfoKHR}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{VkWaylandSurfaceCreateInfoKHR}{VkWaylandSurfaceCreateInfoKHR}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}} \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{Vk\+Wayland\+Surface\+Create\+Info\+KHR}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}}
+\index{\_GLFWdecorationSideWayland@{\_GLFWdecorationSideWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_GLFWdecorationSideWayland}{\_GLFWdecorationSideWayland}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\+\_\+\+GLFWdecoration\+Side\+Wayland}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mainWindow@{mainWindow}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!mainWindow@{mainWindow}}}\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}} 
+main\+Window&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{topDecoration@{topDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!topDecoration@{topDecoration}}}\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}} 
+top\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{leftDecoration@{leftDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!leftDecoration@{leftDecoration}}}\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}} 
+left\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rightDecoration@{rightDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!rightDecoration@{rightDecoration}}}\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}} 
+right\+Decoration&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bottomDecoration@{bottomDecoration}!wl\_platform.h@{wl\_platform.h}}\index{wl\_platform.h@{wl\_platform.h}!bottomDecoration@{bottomDecoration}}}\mbox{\Hypertarget{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}\label{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}} 
+bottom\+Decoration&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}\label{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}} 
+\index{wl\_platform.h@{wl\_platform.h}!\_glfwAddOutputWayland@{\_glfwAddOutputWayland}}
+\index{\_glfwAddOutputWayland@{\_glfwAddOutputWayland}!wl\_platform.h@{wl\_platform.h}}
+\doxysubsubsection{\texorpdfstring{\_glfwAddOutputWayland()}{\_glfwAddOutputWayland()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Add\+Output\+Wayland (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{name,  }\item[{uint32\+\_\+t}]{version }\end{DoxyParamCaption})}
+

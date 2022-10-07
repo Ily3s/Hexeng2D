@@ -1,0 +1,131 @@
+\hypertarget{com__portaudio___port_audio_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/bindings/java/c/src/com\+\_\+portaudio\+\_\+\+Port\+Audio.c File Reference}
+\label{com__portaudio___port_audio_8c}\index{Hexeng2D/dependencies/portaudio/bindings/java/c/src/com\_portaudio\_PortAudio.c@{Hexeng2D/dependencies/portaudio/bindings/java/c/src/com\_portaudio\_PortAudio.c}}
+{\ttfamily \#include \char`\"{}com\+\_\+portaudio\+\_\+\+Port\+Audio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jpa\+\_\+tools.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_aa59e29fb004458df067cfb57c14860a8}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Version}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jstring JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ac6dc392acea2981679f35ee3260059a3}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Version\+Text}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ad5d0923d107924923f6e67d903419941}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+initialize}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a537cfffcee2a99d63179d5dd63bd3dc8}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+terminate}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ac5152779239fe2a511935cbf49d265a9}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Device\+Count}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a65dfaf247b9e26e458078ccf1948acd4}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Device\+Info}} (JNIEnv $\ast$env, jclass clazz, jint \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, jobject device\+Info)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_af3597a84420cedb30153ff4612e462d0}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Host\+Api\+Count}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a488d44e48baa3f90a900658eea697c03}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+host\+Api\+Type\+Id\+To\+Host\+Api\+Index}} (JNIEnv $\ast$env, jclass clazz, jint host\+Api\+Type)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_add0fc73b9a10cf6fc89094471b21d772}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+host\+Api\+Device\+Index\+To\+Device\+Index}} (JNIEnv $\ast$env, jclass clazz, jint host\+Api\+Index, jint api\+Device\+Index)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a8864df571a06fbbbccd76be534daa9e1}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Host\+Api\+Info}} (JNIEnv $\ast$env, jclass clazz, jint \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}}, jobject host\+Api\+Info)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ab9e6059f5ff2b0aa70eb0c36c544acd9}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Input\+Device}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a48261c95e7e325ef43028c4bccb0781d}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Output\+Device}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ad7c1791d5d2dab63bd30d3e8d399b29e}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Host\+Api}} (JNIEnv $\ast$env, jclass clazz)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_ab2bd8ec12c6d02631823f59fbb84fa4d}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+is\+Format\+Supported}} (JNIEnv $\ast$env, jclass clazz, jobject in\+Params, jobject out\+Params, jint sample\+Rate)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___port_audio_8c_a842713057317683e72a601ee405ca0a3}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+open\+Stream}} (JNIEnv $\ast$env, jclass clazz, jobject blocking\+Stream, jobject in\+Params, jobject out\+Params, jint sample\+Rate, jint frames\+Per\+Buffer, jint \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ad7c1791d5d2dab63bd30d3e8d399b29e}\label{com__portaudio___port_audio_8c_ad7c1791d5d2dab63bd30d3e8d399b29e}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getDefaultHostApi@{Java\_com\_portaudio\_PortAudio\_getDefaultHostApi}}
+\index{Java\_com\_portaudio\_PortAudio\_getDefaultHostApi@{Java\_com\_portaudio\_PortAudio\_getDefaultHostApi}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getDefaultHostApi()}{Java\_com\_portaudio\_PortAudio\_getDefaultHostApi()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Host\+Api (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ab9e6059f5ff2b0aa70eb0c36c544acd9}\label{com__portaudio___port_audio_8c_ab9e6059f5ff2b0aa70eb0c36c544acd9}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice@{Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice}}
+\index{Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice@{Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice()}{Java\_com\_portaudio\_PortAudio\_getDefaultInputDevice()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Input\+Device (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a48261c95e7e325ef43028c4bccb0781d}\label{com__portaudio___port_audio_8c_a48261c95e7e325ef43028c4bccb0781d}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice@{Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice}}
+\index{Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice@{Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice()}{Java\_com\_portaudio\_PortAudio\_getDefaultOutputDevice()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Default\+Output\+Device (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ac5152779239fe2a511935cbf49d265a9}\label{com__portaudio___port_audio_8c_ac5152779239fe2a511935cbf49d265a9}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getDeviceCount@{Java\_com\_portaudio\_PortAudio\_getDeviceCount}}
+\index{Java\_com\_portaudio\_PortAudio\_getDeviceCount@{Java\_com\_portaudio\_PortAudio\_getDeviceCount}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getDeviceCount()}{Java\_com\_portaudio\_PortAudio\_getDeviceCount()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Device\+Count (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a65dfaf247b9e26e458078ccf1948acd4}\label{com__portaudio___port_audio_8c_a65dfaf247b9e26e458078ccf1948acd4}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getDeviceInfo@{Java\_com\_portaudio\_PortAudio\_getDeviceInfo}}
+\index{Java\_com\_portaudio\_PortAudio\_getDeviceInfo@{Java\_com\_portaudio\_PortAudio\_getDeviceInfo}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getDeviceInfo()}{Java\_com\_portaudio\_PortAudio\_getDeviceInfo()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Device\+Info (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jint}]{index,  }\item[{jobject}]{device\+Info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_af3597a84420cedb30153ff4612e462d0}\label{com__portaudio___port_audio_8c_af3597a84420cedb30153ff4612e462d0}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getHostApiCount@{Java\_com\_portaudio\_PortAudio\_getHostApiCount}}
+\index{Java\_com\_portaudio\_PortAudio\_getHostApiCount@{Java\_com\_portaudio\_PortAudio\_getHostApiCount}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getHostApiCount()}{Java\_com\_portaudio\_PortAudio\_getHostApiCount()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Host\+Api\+Count (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a8864df571a06fbbbccd76be534daa9e1}\label{com__portaudio___port_audio_8c_a8864df571a06fbbbccd76be534daa9e1}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getHostApiInfo@{Java\_com\_portaudio\_PortAudio\_getHostApiInfo}}
+\index{Java\_com\_portaudio\_PortAudio\_getHostApiInfo@{Java\_com\_portaudio\_PortAudio\_getHostApiInfo}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getHostApiInfo()}{Java\_com\_portaudio\_PortAudio\_getHostApiInfo()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Host\+Api\+Info (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jint}]{index,  }\item[{jobject}]{host\+Api\+Info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_aa59e29fb004458df067cfb57c14860a8}\label{com__portaudio___port_audio_8c_aa59e29fb004458df067cfb57c14860a8}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getVersion@{Java\_com\_portaudio\_PortAudio\_getVersion}}
+\index{Java\_com\_portaudio\_PortAudio\_getVersion@{Java\_com\_portaudio\_PortAudio\_getVersion}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getVersion()}{Java\_com\_portaudio\_PortAudio\_getVersion()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Version (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ac6dc392acea2981679f35ee3260059a3}\label{com__portaudio___port_audio_8c_ac6dc392acea2981679f35ee3260059a3}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_getVersionText@{Java\_com\_portaudio\_PortAudio\_getVersionText}}
+\index{Java\_com\_portaudio\_PortAudio\_getVersionText@{Java\_com\_portaudio\_PortAudio\_getVersionText}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_getVersionText()}{Java\_com\_portaudio\_PortAudio\_getVersionText()}}
+{\footnotesize\ttfamily JNIEXPORT jstring JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+get\+Version\+Text (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_add0fc73b9a10cf6fc89094471b21d772}\label{com__portaudio___port_audio_8c_add0fc73b9a10cf6fc89094471b21d772}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex@{Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex}}
+\index{Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex@{Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex()}{Java\_com\_portaudio\_PortAudio\_hostApiDeviceIndexToDeviceIndex()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+host\+Api\+Device\+Index\+To\+Device\+Index (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jint}]{host\+Api\+Index,  }\item[{jint}]{api\+Device\+Index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a488d44e48baa3f90a900658eea697c03}\label{com__portaudio___port_audio_8c_a488d44e48baa3f90a900658eea697c03}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex@{Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex}}
+\index{Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex@{Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex()}{Java\_com\_portaudio\_PortAudio\_hostApiTypeIdToHostApiIndex()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+host\+Api\+Type\+Id\+To\+Host\+Api\+Index (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jint}]{host\+Api\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ad5d0923d107924923f6e67d903419941}\label{com__portaudio___port_audio_8c_ad5d0923d107924923f6e67d903419941}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_initialize@{Java\_com\_portaudio\_PortAudio\_initialize}}
+\index{Java\_com\_portaudio\_PortAudio\_initialize@{Java\_com\_portaudio\_PortAudio\_initialize}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_initialize()}{Java\_com\_portaudio\_PortAudio\_initialize()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+initialize (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_ab2bd8ec12c6d02631823f59fbb84fa4d}\label{com__portaudio___port_audio_8c_ab2bd8ec12c6d02631823f59fbb84fa4d}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_isFormatSupported@{Java\_com\_portaudio\_PortAudio\_isFormatSupported}}
+\index{Java\_com\_portaudio\_PortAudio\_isFormatSupported@{Java\_com\_portaudio\_PortAudio\_isFormatSupported}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_isFormatSupported()}{Java\_com\_portaudio\_PortAudio\_isFormatSupported()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+is\+Format\+Supported (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jobject}]{in\+Params,  }\item[{jobject}]{out\+Params,  }\item[{jint}]{sample\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a842713057317683e72a601ee405ca0a3}\label{com__portaudio___port_audio_8c_a842713057317683e72a601ee405ca0a3}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_openStream@{Java\_com\_portaudio\_PortAudio\_openStream}}
+\index{Java\_com\_portaudio\_PortAudio\_openStream@{Java\_com\_portaudio\_PortAudio\_openStream}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_openStream()}{Java\_com\_portaudio\_PortAudio\_openStream()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+open\+Stream (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz,  }\item[{jobject}]{blocking\+Stream,  }\item[{jobject}]{in\+Params,  }\item[{jobject}]{out\+Params,  }\item[{jint}]{sample\+Rate,  }\item[{jint}]{frames\+Per\+Buffer,  }\item[{jint}]{flags }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___port_audio_8c_a537cfffcee2a99d63179d5dd63bd3dc8}\label{com__portaudio___port_audio_8c_a537cfffcee2a99d63179d5dd63bd3dc8}} 
+\index{com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}!Java\_com\_portaudio\_PortAudio\_terminate@{Java\_com\_portaudio\_PortAudio\_terminate}}
+\index{Java\_com\_portaudio\_PortAudio\_terminate@{Java\_com\_portaudio\_PortAudio\_terminate}!com\_portaudio\_PortAudio.c@{com\_portaudio\_PortAudio.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_PortAudio\_terminate()}{Java\_com\_portaudio\_PortAudio\_terminate()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Port\+Audio\+\_\+terminate (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{clazz }\end{DoxyParamCaption})}
+

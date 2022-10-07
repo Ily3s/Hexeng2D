@@ -2,8 +2,35 @@
 #define MACROS_HPP
 
 #include <iostream>
+#include <cassert>
 
+/// @note HXG_DEBUG_LEVEL Should be defined before including this file.
+/// Possible values : 0, 1, 2, 3
+#ifndef HXG_DEBUG_LEVEL
 #ifdef _DEBUG
+#define HXG_DEBUG_LEVEL 2
+#else
+#define HXG_DEBUG_LEVEL 1
+#endif
+#endif
+
+#if HXG_DEBUG_LEVEL >= 2
+#define HXG_LOG_ERROR(str) assert("[ERROR]" && str && false)
+#elif HXG_DEBUG_LEVEL == 1
+#define HXG_LOG_ERROR(str) std::cout << "[ERROR] " << str << std::endl
+#elif HXG_DEBUG_LEVEL == 0
+#define HXG_LOG_ERROR(str)
+#endif
+
+#if HXG_DEBUG_LEVEL >= 3
+#define HXG_LOG_WARNING(str) assert("[WARNING]" && str && false)
+#elif HXG_DEBUG_LEVEL >= 1
+#define HXG_LOG_WARNING(str) std::cout << "[WARNING] " << str << std::endl;
+#elif HXG_DEBUG_LEVEL == 0
+#define HXG_LOG_WARNING(str)
+#endif
+
+#if HXG_DEBUG_LEVEL >= 2
 #define HXG_GL(x) \
 \
 while (glGetError() != GL_NO_ERROR);\
@@ -22,7 +49,7 @@ x;\
 #define HXG_GL(x) x
 #endif
 
-#ifdef _DEBUG
+#if HXG_DEBUG_LEVEL >= 2
 #define HXG_GLFW(x) \
 \
 while (glfwGetError(NULL) != GLFW_NO_ERROR);\

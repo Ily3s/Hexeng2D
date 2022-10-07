@@ -1,0 +1,25 @@
+var pa__mac__core__utilities_8c =
+[
+    [ "PaMacXRunListNode_s", "struct_pa_mac_x_run_list_node__s.html", "struct_pa_mac_x_run_list_node__s" ],
+    [ "PaMacXRunListNode", "pa__mac__core__utilities_8c.html#a7422eb79482bd9b8a3724250f63c41b7", null ],
+    [ "addToXRunListenerList", "pa__mac__core__utilities_8c.html#a4a6c93eb4c745bc1c212355e9cf17972", null ],
+    [ "AudioDeviceSetPropertyNowAndWaitForChange", "pa__mac__core__utilities_8c.html#a1c6368ba4f896a08088d392adfae2224", null ],
+    [ "computeRingBufferSize", "pa__mac__core__utilities_8c.html#a61fdbb7fe209deca10dc73721c91fee4", null ],
+    [ "destroyXRunListenerList", "pa__mac__core__utilities_8c.html#a0ba69142cb9781407dfd477616040692", null ],
+    [ "initializeXRunListenerList", "pa__mac__core__utilities_8c.html#a46514b837249b8e7919af45550505d2a", null ],
+    [ "PaMacCore_AudioDeviceAddPropertyListener", "pa__mac__core__utilities_8c.html#a8b0bf53495688d364ca0372c5ea38bd1", null ],
+    [ "PaMacCore_AudioDeviceGetProperty", "pa__mac__core__utilities_8c.html#acbb9c0b68c6861b681b3a8567bb2e736", null ],
+    [ "PaMacCore_AudioDeviceGetPropertySize", "pa__mac__core__utilities_8c.html#a58b3a1fcd21ac9b6adc588fea8630e50", null ],
+    [ "PaMacCore_AudioDeviceRemovePropertyListener", "pa__mac__core__utilities_8c.html#af89bdb9fd0e1b7c1b0a9773086672e72", null ],
+    [ "PaMacCore_AudioDeviceSetProperty", "pa__mac__core__utilities_8c.html#a3ef56b98b3bad55a459bdc4969a61687", null ],
+    [ "PaMacCore_AudioHardwareGetProperty", "pa__mac__core__utilities_8c.html#af3f1f3948bd981838a315de8f1b21ad5", null ],
+    [ "PaMacCore_AudioHardwareGetPropertySize", "pa__mac__core__utilities_8c.html#a4c9f32160c41f990d71f94686510dbd4", null ],
+    [ "PaMacCore_AudioStreamGetProperty", "pa__mac__core__utilities_8c.html#a9b807293afa08c645efe9176a09b1836", null ],
+    [ "PaMacCore_SetError", "pa__mac__core__utilities_8c.html#a13501102f029a53953c3f59ddc934c80", null ],
+    [ "PaMacCore_SetUnixError", "pa__mac__core__utilities_8c.html#a76322f701d584e5fc668348c209a73c9", null ],
+    [ "propertyProc", "pa__mac__core__utilities_8c.html#acb84077561ddd46fde457bf906c9e29d", null ],
+    [ "removeFromXRunListenerList", "pa__mac__core__utilities_8c.html#a632eeced2955b271af52e8731e3a49ee", null ],
+    [ "setBestFramesPerBuffer", "pa__mac__core__utilities_8c.html#a525354d1368777e71d58a88be42277b1", null ],
+    [ "setBestSampleRateForDevice", "pa__mac__core__utilities_8c.html#a0f6bb3a8d2c8f1664a69e14240c1294a", null ],
+    [ "xrunCallback", "pa__mac__core__utilities_8c.html#a72d634db35745bd80f4b717be5a5dc35", null ]
+];

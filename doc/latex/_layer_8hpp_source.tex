@@ -1,0 +1,76 @@
+\hypertarget{_layer_8hpp_source}{}\doxysection{Layer.\+hpp}
+\label{_layer_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Layer.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Layer.hpp}}
+\mbox{\hyperlink{_layer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef LAYER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define LAYER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_shader_8hpp}{Shader.hpp}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_hexeng_8hpp}{Hexeng.hpp}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{ABSOLUTE}},}
+\DoxyCodeLine{17         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{RELATIVE}}}
+\DoxyCodeLine{18     \};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{public}:}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         std::vector<Mesh*> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_adaa973b2e9083dbbf5494ebe5216e166}{meshes}};}
+\DoxyCodeLine{26         \textcolor{keywordtype}{int} z\_position = 0;}
+\DoxyCodeLine{27         Range range = Range::LOCAL;}
+\DoxyCodeLine{28         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} position\_mode = Position::RELATIVE;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\textcolor{keyword}{const} std::vector<Mesh*>\& mesh\_vector, \textcolor{keywordtype}{int} z\_pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos = Position::RELATIVE, Range range = Range::LOCAL);}
+\DoxyCodeLine{31          }
+\DoxyCodeLine{32         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{33         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}{Layer}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{34         }
+\DoxyCodeLine{35         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
+\DoxyCodeLine{36         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
+\DoxyCodeLine{37         }
+\DoxyCodeLine{38         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}() = default;}
+\DoxyCodeLine{39         }
+\DoxyCodeLine{40         virtual \textcolor{keywordtype}{void} unload();}
+\DoxyCodeLine{41         virtual \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         virtual \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         std::vector<std::pair<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, \textcolor{keywordtype}{void}*>> uniforms;}
+\DoxyCodeLine{46     \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}} : public \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{keyword}{public}:}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \textcolor{keywordtype}{bool}* context = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}{ContextualLayer}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{56         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}}(\textcolor{keyword}{const} std::vector<Mesh*>\& mesh\_vector, \textcolor{keywordtype}{bool}* condition, \textcolor{keywordtype}{int} z\_pos = 1, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos = Position::ABSOLUTE, Range range = Range::GLOBAL);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}}\&\&) noexcept;}
+\DoxyCodeLine{59         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{ContextualLayer}}\&\&) noexcept;}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \textcolor{keywordtype}{void} draw() override;}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*> fusion(std::vector<std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*>>);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} extern std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}*> global\_layers;}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !LAYER\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,99 @@
+\hypertarget{jpa__tools_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/bindings/java/c/src/jpa\+\_\+tools.c File Reference}
+\label{jpa__tools_8c}\index{Hexeng2D/dependencies/portaudio/bindings/java/c/src/jpa\_tools.c@{Hexeng2D/dependencies/portaudio/bindings/java/c/src/jpa\_tools.c}}
+{\ttfamily \#include \char`\"{}com\+\_\+portaudio\+\_\+\+Port\+Audio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jpa\+\_\+tools.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+jint \mbox{\hyperlink{jpa__tools_8c_a4b417c59dd7e276d173d2c0e63ee5f1b}{jpa\+\_\+\+Get\+Int\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{jpa__tools_8c_aa4179cc1bec196c9568c1d5283d03948}{jpa\+\_\+\+Set\+Int\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name, jint \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\item 
+jlong \mbox{\hyperlink{jpa__tools_8c_ab80118f18bb28789d5ec62bba1b78155}{jpa\+\_\+\+Get\+Long\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{jpa__tools_8c_a6da709dd09a0e2771cfcaead671aab1f}{jpa\+\_\+\+Set\+Long\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name, jlong \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{jpa__tools_8c_a77d439f9d4194416d34d093ac15c855c}{jpa\+\_\+\+Set\+Double\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name, jdouble \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\item 
+jdouble \mbox{\hyperlink{jpa__tools_8c_a5b398a9dd84d613d188491fc584f5994}{jpa\+\_\+\+Get\+Double\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{jpa__tools_8c_a42f94e22c6455623dd45ab5f9dced92b}{jpa\+\_\+\+Set\+String\+Field}} (JNIEnv $\ast$env, jclass cls, jobject obj, const char $\ast$field\+Name, const char $\ast$\mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\item 
+\mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$ \mbox{\hyperlink{jpa__tools_8c_a77240703212fd39641effb5b45d9d49f}{jpa\+\_\+\+Fill\+Stream\+Parameters}} (JNIEnv $\ast$env, jobject jstream\+Param, \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$my\+Params)
+\item 
+jint \mbox{\hyperlink{jpa__tools_8c_a5acce41ca8a1b66025f0b4d20c3b040c}{jpa\+\_\+\+Throw\+Error}} (JNIEnv $\ast$env, const char $\ast$\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}})
+\item 
+jint \mbox{\hyperlink{jpa__tools_8c_a6ddd698047fe5a3d597faa748a7ef09d}{jpa\+\_\+\+Check\+Error}} (JNIEnv $\ast$env, \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} err)
+\item 
+\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ \mbox{\hyperlink{jpa__tools_8c_aa6a646117c1834d7daa7c42235564e1f}{jpa\+\_\+\+Get\+Stream\+Pointer}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{jpa__tools_8c_a6ddd698047fe5a3d597faa748a7ef09d}\label{jpa__tools_8c_a6ddd698047fe5a3d597faa748a7ef09d}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_CheckError@{jpa\_CheckError}}
+\index{jpa\_CheckError@{jpa\_CheckError}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_CheckError()}{jpa\_CheckError()}}
+{\footnotesize\ttfamily jint jpa\+\_\+\+Check\+Error (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a77240703212fd39641effb5b45d9d49f}\label{jpa__tools_8c_a77240703212fd39641effb5b45d9d49f}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_FillStreamParameters@{jpa\_FillStreamParameters}}
+\index{jpa\_FillStreamParameters@{jpa\_FillStreamParameters}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_FillStreamParameters()}{jpa\_FillStreamParameters()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$ jpa\+\_\+\+Fill\+Stream\+Parameters (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{jstream\+Param,  }\item[{\mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{my\+Params }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a5b398a9dd84d613d188491fc584f5994}\label{jpa__tools_8c_a5b398a9dd84d613d188491fc584f5994}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_GetDoubleField@{jpa\_GetDoubleField}}
+\index{jpa\_GetDoubleField@{jpa\_GetDoubleField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_GetDoubleField()}{jpa\_GetDoubleField()}}
+{\footnotesize\ttfamily jdouble jpa\+\_\+\+Get\+Double\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a4b417c59dd7e276d173d2c0e63ee5f1b}\label{jpa__tools_8c_a4b417c59dd7e276d173d2c0e63ee5f1b}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_GetIntField@{jpa\_GetIntField}}
+\index{jpa\_GetIntField@{jpa\_GetIntField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_GetIntField()}{jpa\_GetIntField()}}
+{\footnotesize\ttfamily jint jpa\+\_\+\+Get\+Int\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_ab80118f18bb28789d5ec62bba1b78155}\label{jpa__tools_8c_ab80118f18bb28789d5ec62bba1b78155}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_GetLongField@{jpa\_GetLongField}}
+\index{jpa\_GetLongField@{jpa\_GetLongField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_GetLongField()}{jpa\_GetLongField()}}
+{\footnotesize\ttfamily jlong jpa\+\_\+\+Get\+Long\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_aa6a646117c1834d7daa7c42235564e1f}\label{jpa__tools_8c_aa6a646117c1834d7daa7c42235564e1f}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_GetStreamPointer@{jpa\_GetStreamPointer}}
+\index{jpa\_GetStreamPointer@{jpa\_GetStreamPointer}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_GetStreamPointer()}{jpa\_GetStreamPointer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ jpa\+\_\+\+Get\+Stream\+Pointer (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a77d439f9d4194416d34d093ac15c855c}\label{jpa__tools_8c_a77d439f9d4194416d34d093ac15c855c}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_SetDoubleField@{jpa\_SetDoubleField}}
+\index{jpa\_SetDoubleField@{jpa\_SetDoubleField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_SetDoubleField()}{jpa\_SetDoubleField()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} jpa\+\_\+\+Set\+Double\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name,  }\item[{jdouble}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_aa4179cc1bec196c9568c1d5283d03948}\label{jpa__tools_8c_aa4179cc1bec196c9568c1d5283d03948}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_SetIntField@{jpa\_SetIntField}}
+\index{jpa\_SetIntField@{jpa\_SetIntField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_SetIntField()}{jpa\_SetIntField()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} jpa\+\_\+\+Set\+Int\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name,  }\item[{jint}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a6da709dd09a0e2771cfcaead671aab1f}\label{jpa__tools_8c_a6da709dd09a0e2771cfcaead671aab1f}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_SetLongField@{jpa\_SetLongField}}
+\index{jpa\_SetLongField@{jpa\_SetLongField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_SetLongField()}{jpa\_SetLongField()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} jpa\+\_\+\+Set\+Long\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name,  }\item[{jlong}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a42f94e22c6455623dd45ab5f9dced92b}\label{jpa__tools_8c_a42f94e22c6455623dd45ab5f9dced92b}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_SetStringField@{jpa\_SetStringField}}
+\index{jpa\_SetStringField@{jpa\_SetStringField}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_SetStringField()}{jpa\_SetStringField()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} jpa\+\_\+\+Set\+String\+Field (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jclass}]{cls,  }\item[{jobject}]{obj,  }\item[{const char $\ast$}]{field\+Name,  }\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jpa__tools_8c_a5acce41ca8a1b66025f0b4d20c3b040c}\label{jpa__tools_8c_a5acce41ca8a1b66025f0b4d20c3b040c}} 
+\index{jpa\_tools.c@{jpa\_tools.c}!jpa\_ThrowError@{jpa\_ThrowError}}
+\index{jpa\_ThrowError@{jpa\_ThrowError}!jpa\_tools.c@{jpa\_tools.c}}
+\doxysubsubsection{\texorpdfstring{jpa\_ThrowError()}{jpa\_ThrowError()}}
+{\footnotesize\ttfamily jint jpa\+\_\+\+Throw\+Error (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{const char $\ast$}]{message }\end{DoxyParamCaption})}
+

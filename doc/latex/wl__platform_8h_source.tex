@@ -1,0 +1,365 @@
+\hypertarget{wl__platform_8h_source}{}\doxysection{wl\+\_\+platform.\+h}
+\label{wl__platform_8h_source}\index{Hexeng2D/dependencies/glfw/src/wl\_platform.h@{Hexeng2D/dependencies/glfw/src/wl\_platform.h}}
+\mbox{\hyperlink{wl__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 Wayland -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2014 Jonas Ådahl <jadahl@gmail.com>}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{7 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{8 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{11 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{12 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{15 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{16 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{17 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{20 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{21 \textcolor{comment}{//}}
+\DoxyCodeLine{22 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{23 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{//}}
+\DoxyCodeLine{25 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <wayland-\/client.h>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <xkbcommon/xkbcommon.h>}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifdef HAVE\_XKBCOMMON\_COMPOSE\_H}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <xkbcommon/xkbcommon-\/compose.h>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <dlfcn.h>}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abb605a7700670dd8420cc3841b939444}{VkFlags}} \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{VkWaylandSurfaceCreateFlagsKHR}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{VkWaylandSurfaceCreateInfoKHR}}}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     \mbox{\hyperlink{internal_8h_aff9f2b99398eb80a2b5a146bc5534ce8}{VkStructureType}}                 \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r_adcee5594c6de411fcf6c612c40ddf995}{sType}};}
+\DoxyCodeLine{39     \textcolor{keyword}{const} \textcolor{keywordtype}{void}*                     \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r_ab02396cf38337050246c694f37be79cf}{pNext}};}
+\DoxyCodeLine{40     \mbox{\hyperlink{wl__platform_8h_a36e579e4f2092ce7a427191251c5cc33}{VkWaylandSurfaceCreateFlagsKHR}}  \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r_a2e424bf1f0e533f78c82061a2d4c2176}{flags}};}
+\DoxyCodeLine{41     \textcolor{keyword}{struct }wl\_display*              \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r_a4f49bbd03fe6e25deca11749756af037}{display}};}
+\DoxyCodeLine{42     \textcolor{keyword}{struct }wl\_surface*              \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r_ac980b3618f9e9b7c741d0b85f351ff02}{surface}};}
+\DoxyCodeLine{43 \} \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{VkWaylandSurfaceCreateInfoKHR}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_abe3614d1bd40772bc2398a4a86ea4a45}{VkResult}} (\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} *\mbox{\hyperlink{wl__platform_8h_a76222e93358f10e2b01bd5115dc01038}{PFN\_vkCreateWaylandSurfaceKHR}})(\mbox{\hyperlink{internal_8h_a25ae5082a7c01af345570ed09d724881}{VkInstance}},\textcolor{keyword}{const} \mbox{\hyperlink{struct_vk_wayland_surface_create_info_k_h_r}{VkWaylandSurfaceCreateInfoKHR}}*,\textcolor{keyword}{const} \mbox{\hyperlink{internal_8h_ad81262c34caa3ad7db4411d07f298b1d}{VkAllocationCallbacks}}*,\mbox{\hyperlink{internal_8h_a09787d7da5f3146095ed80ceccc2d794}{VkSurfaceKHR}}*);}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} \mbox{\hyperlink{internal_8h_ae5d9faf75f583010e32ee49087a15326}{VkBool32}} (\mbox{\hyperlink{glad_8h_a428a91acf2c2439dc1a257708ee1f805}{APIENTRY}} *\mbox{\hyperlink{wl__platform_8h_ab2aa7548ffded3123627790f8bce8c95}{PFN\_vkGetPhysicalDeviceWaylandPresentationSupportKHR}})(\mbox{\hyperlink{internal_8h_aa9acbee1e762fde021511a1b47678a38}{VkPhysicalDevice}},uint32\_t,\textcolor{keyword}{struct }wl\_display*);}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{posix__thread_8h}{posix\_thread.h}}"{}}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{posix__time_8h}{posix\_time.h}}"{}}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_linux\_\_}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{linux__joystick_8h}{linux\_joystick.h}}"{}}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{null__joystick_8h}{null\_joystick.h}}"{}}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{xkb__unicode_8h}{xkb\_unicode.h}}"{}}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{egl__context_8h}{egl\_context.h}}"{}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{osmesa__context_8h}{osmesa\_context.h}}"{}}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#include "{}wayland-\/xdg-\/shell-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#include "{}wayland-\/xdg-\/decoration-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#include "{}wayland-\/viewporter-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}wayland-\/relative-\/pointer-\/unstable-\/v1-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include "{}wayland-\/pointer-\/constraints-\/unstable-\/v1-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include "{}wayland-\/idle-\/inhibit-\/unstable-\/v1-\/client-\/protocol.h"{}}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define \_glfw\_dlopen(name) dlopen(name, RTLD\_LAZY | RTLD\_LOCAL)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define \_glfw\_dlclose(handle) dlclose(handle)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_glfw\_dlsym(handle, name) dlsym(handle, name)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_NATIVE\_WINDOW         ((EGLNativeWindowType) window-\/>wl.native)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_NATIVE\_DISPLAY        ((EGLNativeDisplayType) \_glfw.wl.display)}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_WINDOW\_STATE         \_GLFWwindowWayland  wl}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE \_GLFWlibraryWayland wl}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_MONITOR\_STATE        \_GLFWmonitorWayland wl}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CURSOR\_STATE         \_GLFWcursorWayland  wl}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CONTEXT\_STATE         struct \{ int dummyContext; \}}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE struct \{ int dummyLibraryContext; \}}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor__image}{wl\_cursor\_image}} \{}
+\DoxyCodeLine{82     uint32\_t \mbox{\hyperlink{structwl__cursor__image_ae3ad787b093ed17c7b80c1f68b8bc236}{width}};}
+\DoxyCodeLine{83     uint32\_t \mbox{\hyperlink{structwl__cursor__image_a3beb05169f4a5c2e5f3b60bc6c235faf}{height}};}
+\DoxyCodeLine{84     uint32\_t \mbox{\hyperlink{structwl__cursor__image_a34a471c3a3cd1e26fdeda0ee6c32d8d7}{hotspot\_x}};}
+\DoxyCodeLine{85     uint32\_t \mbox{\hyperlink{structwl__cursor__image_a07718c95b5251d661ed6277d9b8a15c6}{hotspot\_y}};}
+\DoxyCodeLine{86     uint32\_t \mbox{\hyperlink{structwl__cursor__image_af4f4f82446d4b2eadd92b00ec78bc0ec}{delay}};}
+\DoxyCodeLine{87 \};}
+\DoxyCodeLine{88 \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor}{wl\_cursor}} \{}
+\DoxyCodeLine{89     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{structwl__cursor_a5e23e930ca254b9e131e498de57d660f}{image\_count}};}
+\DoxyCodeLine{90     \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor__image}{wl\_cursor\_image}}** \mbox{\hyperlink{structwl__cursor_a2b491ea1f88515c8ab1d9921ad27ca66}{images}};}
+\DoxyCodeLine{91     \textcolor{keywordtype}{char}* \mbox{\hyperlink{structwl__cursor_a4cbd30ac6e7535e8e976eaccea70309f}{name}};}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }wl\_cursor\_theme* (* PFN\_wl\_cursor\_theme\_load)(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*, int, \textcolor{keyword}{struct }wl\_shm*);}
+\DoxyCodeLine{94 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}{PFN\_wl\_cursor\_theme\_destroy}})(\textcolor{keyword}{struct }wl\_cursor\_theme*);}
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor}{wl\_cursor}}* (* PFN\_wl\_cursor\_theme\_get\_cursor)(\textcolor{keyword}{struct }wl\_cursor\_theme*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }wl\_buffer* (* PFN\_wl\_cursor\_image\_get\_buffer)(\textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor__image}{wl\_cursor\_image}}*);}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define wl\_cursor\_theme\_load \_glfw.wl.cursor.theme\_load}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define wl\_cursor\_theme\_destroy \_glfw.wl.cursor.theme\_destroy}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define wl\_cursor\_theme\_get\_cursor \_glfw.wl.cursor.theme\_get\_cursor}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define wl\_cursor\_image\_get\_buffer \_glfw.wl.cursor.image\_get\_buffer}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }wl\_egl\_window* (* PFN\_wl\_egl\_window\_create)(\textcolor{keyword}{struct }wl\_surface*, int, int);}
+\DoxyCodeLine{103 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}{PFN\_wl\_egl\_window\_destroy}})(\textcolor{keyword}{struct }wl\_egl\_window*);}
+\DoxyCodeLine{104 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_adcf78e57b989ea0e561208099dada945}{PFN\_wl\_egl\_window\_resize}})(\textcolor{keyword}{struct }wl\_egl\_window*, int, int, int, int);}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define wl\_egl\_window\_create \_glfw.wl.egl.window\_create}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define wl\_egl\_window\_destroy \_glfw.wl.egl.window\_destroy}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define wl\_egl\_window\_resize \_glfw.wl.egl.window\_resize}}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }xkb\_context* (* PFN\_xkb\_context\_new)(\textcolor{keyword}{enum} xkb\_context\_flags);}
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}{PFN\_xkb\_context\_unref}})(\textcolor{keyword}{struct }xkb\_context*);}
+\DoxyCodeLine{111 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }xkb\_keymap* (* PFN\_xkb\_keymap\_new\_from\_string)(\textcolor{keyword}{struct }xkb\_context*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, \textcolor{keyword}{enum} xkb\_keymap\_format, \textcolor{keyword}{enum} xkb\_keymap\_compile\_flags);}
+\DoxyCodeLine{112 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}{PFN\_xkb\_keymap\_unref}})(\textcolor{keyword}{struct }xkb\_keymap*);}
+\DoxyCodeLine{113 \textcolor{keyword}{typedef} xkb\_mod\_index\_t (* \mbox{\hyperlink{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}{PFN\_xkb\_keymap\_mod\_get\_index}})(\textcolor{keyword}{struct }xkb\_keymap*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{114 \textcolor{keyword}{typedef} int (* \mbox{\hyperlink{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}{PFN\_xkb\_keymap\_key\_repeats}})(\textcolor{keyword}{struct }xkb\_keymap*, xkb\_keycode\_t);}
+\DoxyCodeLine{115 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }xkb\_state* (* PFN\_xkb\_state\_new)(\textcolor{keyword}{struct }xkb\_keymap*);}
+\DoxyCodeLine{116 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* \mbox{\hyperlink{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}{PFN\_xkb\_state\_unref}})(\textcolor{keyword}{struct }xkb\_state*);}
+\DoxyCodeLine{117 \textcolor{keyword}{typedef} int (* \mbox{\hyperlink{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}{PFN\_xkb\_state\_key\_get\_syms}})(\textcolor{keyword}{struct }xkb\_state*, xkb\_keycode\_t, \textcolor{keyword}{const} xkb\_keysym\_t**);}
+\DoxyCodeLine{118 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} xkb\_state\_component (* \mbox{\hyperlink{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}{PFN\_xkb\_state\_update\_mask}})(\textcolor{keyword}{struct }xkb\_state*, xkb\_mod\_mask\_t, xkb\_mod\_mask\_t, xkb\_mod\_mask\_t, xkb\_layout\_index\_t, xkb\_layout\_index\_t, xkb\_layout\_index\_t);}
+\DoxyCodeLine{119 \textcolor{keyword}{typedef} xkb\_mod\_mask\_t (* \mbox{\hyperlink{wl__platform_8h_a963602febce41dbde7c037aaba7b7c0d}{PFN\_xkb\_state\_serialize\_mods}})(\textcolor{keyword}{struct }xkb\_state*, \textcolor{keyword}{enum} xkb\_state\_component);}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define xkb\_context\_new \_glfw.wl.xkb.context\_new}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define xkb\_context\_unref \_glfw.wl.xkb.context\_unref}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#define xkb\_keymap\_new\_from\_string \_glfw.wl.xkb.keymap\_new\_from\_string}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#define xkb\_keymap\_unref \_glfw.wl.xkb.keymap\_unref}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define xkb\_keymap\_mod\_get\_index \_glfw.wl.xkb.keymap\_mod\_get\_index}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define xkb\_keymap\_key\_repeats \_glfw.wl.xkb.keymap\_key\_repeats}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define xkb\_state\_new \_glfw.wl.xkb.state\_new}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define xkb\_state\_unref \_glfw.wl.xkb.state\_unref}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define xkb\_state\_key\_get\_syms \_glfw.wl.xkb.state\_key\_get\_syms}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define xkb\_state\_update\_mask \_glfw.wl.xkb.state\_update\_mask}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define xkb\_state\_serialize\_mods \_glfw.wl.xkb.state\_serialize\_mods}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#ifdef HAVE\_XKBCOMMON\_COMPOSE\_H}}
+\DoxyCodeLine{133 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }xkb\_compose\_table* (* PFN\_xkb\_compose\_table\_new\_from\_locale)(\textcolor{keyword}{struct }xkb\_context*, \textcolor{keyword}{const} \textcolor{keywordtype}{char}*, \textcolor{keyword}{enum} xkb\_compose\_compile\_flags);}
+\DoxyCodeLine{134 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* PFN\_xkb\_compose\_table\_unref)(\textcolor{keyword}{struct }xkb\_compose\_table*);}
+\DoxyCodeLine{135 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }xkb\_compose\_state* (* PFN\_xkb\_compose\_state\_new)(\textcolor{keyword}{struct }xkb\_compose\_table*, \textcolor{keyword}{enum} xkb\_compose\_state\_flags);}
+\DoxyCodeLine{136 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (* PFN\_xkb\_compose\_state\_unref)(\textcolor{keyword}{struct }xkb\_compose\_state*);}
+\DoxyCodeLine{137 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} xkb\_compose\_feed\_result (* PFN\_xkb\_compose\_state\_feed)(\textcolor{keyword}{struct }xkb\_compose\_state*, xkb\_keysym\_t);}
+\DoxyCodeLine{138 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} xkb\_compose\_status (* PFN\_xkb\_compose\_state\_get\_status)(\textcolor{keyword}{struct }xkb\_compose\_state*);}
+\DoxyCodeLine{139 \textcolor{keyword}{typedef} xkb\_keysym\_t (* PFN\_xkb\_compose\_state\_get\_one\_sym)(\textcolor{keyword}{struct }xkb\_compose\_state*);}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define xkb\_compose\_table\_new\_from\_locale \_glfw.wl.xkb.compose\_table\_new\_from\_locale}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define xkb\_compose\_table\_unref \_glfw.wl.xkb.compose\_table\_unref}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define xkb\_compose\_state\_new \_glfw.wl.xkb.compose\_state\_new}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define xkb\_compose\_state\_unref \_glfw.wl.xkb.compose\_state\_unref}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define xkb\_compose\_state\_feed \_glfw.wl.xkb.compose\_state\_feed}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define xkb\_compose\_state\_get\_status \_glfw.wl.xkb.compose\_state\_get\_status}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define xkb\_compose\_state\_get\_one\_sym \_glfw.wl.xkb.compose\_state\_get\_one\_sym}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define \_GLFW\_DECORATION\_WIDTH 4}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define \_GLFW\_DECORATION\_TOP 24}}
+\DoxyCodeLine{151 \textcolor{preprocessor}{\#define \_GLFW\_DECORATION\_VERTICAL (\_GLFW\_DECORATION\_TOP + \_GLFW\_DECORATION\_WIDTH)}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define \_GLFW\_DECORATION\_HORIZONTAL (2 * \_GLFW\_DECORATION\_WIDTH)}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\_GLFWdecorationSideWayland}}}
+\DoxyCodeLine{155 \{}
+\DoxyCodeLine{156     \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acab46a673d9ca7e2f82c3cdd4cc7118e6b}{mainWindow}},}
+\DoxyCodeLine{157     \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca7d386fd3327b79f545efc42b71938684}{topDecoration}},}
+\DoxyCodeLine{158     \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca9a7153928697fcf33642ce73e6d4c3e4}{leftDecoration}},}
+\DoxyCodeLine{159     \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1acaa31414385e2e07a6c5b5e1bc3ae93dfc}{rightDecoration}},}
+\DoxyCodeLine{160     \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1aca3393de96e9dcdda8d91fcfbbc616b550}{bottomDecoration}},}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162 \} \mbox{\hyperlink{wl__platform_8h_ad60a0a27370d399e4f9fd58d1eeef1ac}{\_GLFWdecorationSideWayland}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}}}
+\DoxyCodeLine{165 \{}
+\DoxyCodeLine{166     \textcolor{keyword}{struct }wl\_surface*          \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland_a678beb110293206af7c8a94703f238ee}{surface}};}
+\DoxyCodeLine{167     \textcolor{keyword}{struct }wl\_subsurface*       \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland_a2f76d05c392f2508cfd233598f000a1f}{subsurface}};}
+\DoxyCodeLine{168     \textcolor{keyword}{struct }wp\_viewport*         \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland_a4e0bf13d36fac7e8de71c2c389e308bf}{viewport}};}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \} \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}};}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{comment}{// Wayland-\/specific per-\/window data}}
+\DoxyCodeLine{173 \textcolor{comment}{//}}
+\DoxyCodeLine{174 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\_GLFWwindowWayland}}}
+\DoxyCodeLine{175 \{}
+\DoxyCodeLine{176     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ae7a74e82083246545e7caf62bb839cf3}{width}}, \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4db9e7087b799ac1d45ba74214347e9d}{height}};}
+\DoxyCodeLine{177     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_add22e05f7cce932e4e90a35c0b1fb430}{visible}};}
+\DoxyCodeLine{178     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ac93fc033f79480e6401a1cb66340c16f}{maximized}};}
+\DoxyCodeLine{179     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a791c3840dc234bfb7feb8935ce23a75f}{hovered}};}
+\DoxyCodeLine{180     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ad5491743c29adf82ac47ed4d9de60a49}{transparent}};}
+\DoxyCodeLine{181     \textcolor{keyword}{struct }wl\_surface*          \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a1245cc6dddb436bed05453cfaab7093a}{surface}};}
+\DoxyCodeLine{182     \textcolor{keyword}{struct }wl\_egl\_window*       \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a8d6277d6ea667fcef929dea4624510a8}{native}};}
+\DoxyCodeLine{183     \textcolor{keyword}{struct }wl\_shell\_surface*    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a9763f7ce160ddb94fb23c7268618237e}{shellSurface}};}
+\DoxyCodeLine{184     \textcolor{keyword}{struct }wl\_callback*         \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a89673e8d23f9b390e9294685605c3cf0}{callback}};}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{187         \textcolor{keyword}{struct }xdg\_surface*     \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a8ee97828153efb2c7e66fcfa09cdf686}{surface}};}
+\DoxyCodeLine{188         \textcolor{keyword}{struct }xdg\_toplevel*    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a72a94f91b3ac6c973f53f7e9cc0f560b}{toplevel}};}
+\DoxyCodeLine{189         \textcolor{keyword}{struct }zxdg\_toplevel\_decoration\_v1* \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a848fd2c1b3a440168b71b1f9f3080596}{decoration}};}
+\DoxyCodeLine{190     \} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a79358b323165dc0e5849846414d1b3f7}{xdg}};}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192     \mbox{\hyperlink{struct___g_l_f_wcursor}{\_GLFWcursor}}*                \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a872dbd1fe8731988ae5be6c94e3293d4}{currentCursor}};}
+\DoxyCodeLine{193     \textcolor{keywordtype}{double}                      \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4fa337c9768c3bd451db24603d548069}{cursorPosX}}, \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ac8a5b3ad373c2fd3c6ec4b171dab5af4}{cursorPosY}};}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195     \textcolor{keywordtype}{char}*                       \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_af83f39d1172fc1ebedb33d6ea77f03ec}{title}};}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{comment}{// We need to track the monitors the window spans on to calculate the}}
+\DoxyCodeLine{198     \textcolor{comment}{// optimal scaling factor.}}
+\DoxyCodeLine{199     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_aa38d0343058e1ad1e24c619ab4d6ed70}{scale}};}
+\DoxyCodeLine{200     \mbox{\hyperlink{struct___g_l_f_wmonitor}{\_GLFWmonitor}}**              \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a0febe4239626689c8443bc675c10cfa0}{monitors}};}
+\DoxyCodeLine{201     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_afb1e06d097ad0ce19eab5eaeacca6467}{monitorsCount}};}
+\DoxyCodeLine{202     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a130a3f4605089714cd799d8439047b60}{monitorsSize}};}
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{205         \textcolor{keyword}{struct }zwp\_relative\_pointer\_v1*    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a3f31da3d66b010ef9f399e8c35f1e16f}{relativePointer}};}
+\DoxyCodeLine{206         \textcolor{keyword}{struct }zwp\_locked\_pointer\_v1*      \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a056ef50c72f289dbf9c671ee4f14e286}{lockedPointer}};}
+\DoxyCodeLine{207     \} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ad3ef1154a66fdca4efe763182dcd09de}{pointerLock}};}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keyword}{struct }zwp\_idle\_inhibitor\_v1*          \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a7054e326a924acf2143475ccbca9bfbf}{idleInhibitor}};}
+\DoxyCodeLine{210 }
+\DoxyCodeLine{211     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                    \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a4f731e843a7af52770dbfa9c38beae03}{wasFullscreen}};}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{214         \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                           \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a20055529569ec53cce5591a00708f97e}{serverSide}};}
+\DoxyCodeLine{215         \textcolor{keyword}{struct }wl\_buffer*                  \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a007a9a2477c6baea9337610def507cea}{buffer}};}
+\DoxyCodeLine{216         \mbox{\hyperlink{struct___g_l_f_wdecoration_wayland}{\_GLFWdecorationWayland}}             top, \mbox{\hyperlink{glad_8h_a6358510bdde486b81c7951ee5c470ee4}{left}}, right, \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_ab5085cc694337df30d46501a1a4f93e5}{bottom}};}
+\DoxyCodeLine{217         \textcolor{keywordtype}{int}                                \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_acf4c4089a77ebaa598db8cf49486674c}{focus}};}
+\DoxyCodeLine{218     \} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland_a335366a11e6974c7cf0f38bfd4aa7262}{decorations}};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \} \mbox{\hyperlink{struct___g_l_f_wwindow_wayland}{\_GLFWwindowWayland}};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222 \textcolor{comment}{// Wayland-\/specific global data}}
+\DoxyCodeLine{223 \textcolor{comment}{//}}
+\DoxyCodeLine{224 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\_GLFWlibraryWayland}}}
+\DoxyCodeLine{225 \{}
+\DoxyCodeLine{226     \textcolor{keyword}{struct }wl\_display*          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aab4897d208fc385b88f79fb2b270dc87}{display}};}
+\DoxyCodeLine{227     \textcolor{keyword}{struct }wl\_registry*         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af6db7990e9aba4a8e8181d7af47e1e04}{registry}};}
+\DoxyCodeLine{228     \textcolor{keyword}{struct }wl\_compositor*       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af4994494133067735cb44dd6d12e3685}{compositor}};}
+\DoxyCodeLine{229     \textcolor{keyword}{struct }wl\_subcompositor*    \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a80c8c468ef39b13e29d804ef5ac11a21}{subcompositor}};}
+\DoxyCodeLine{230     \textcolor{keyword}{struct }wl\_shell*            \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a858438e91cdcb083301be689d731a472}{shell}};}
+\DoxyCodeLine{231     \textcolor{keyword}{struct }wl\_shm*              \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a0e04e8537088a81cc7dca0f8e425a643}{shm}};}
+\DoxyCodeLine{232     \textcolor{keyword}{struct }wl\_seat*             \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a87a3ec167f64c5ceba6af43d88d60609}{seat}};}
+\DoxyCodeLine{233     \textcolor{keyword}{struct }wl\_pointer*          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a0a8a79e530c7c8c372fd2969ace8548b}{pointer}};}
+\DoxyCodeLine{234     \textcolor{keyword}{struct }wl\_keyboard*         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aeb9d53924c1245126d9b3910f9cc9d1d}{keyboard}};}
+\DoxyCodeLine{235     \textcolor{keyword}{struct }wl\_data\_device\_manager*          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a0c61de08f429a03324a1f4f7c51210b4}{dataDeviceManager}};}
+\DoxyCodeLine{236     \textcolor{keyword}{struct }wl\_data\_device*      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_acb1878a1514048a71ff1d123f98f604b}{dataDevice}};}
+\DoxyCodeLine{237     \textcolor{keyword}{struct }wl\_data\_offer*       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ac444a30aad5d5fad85b7f77debd1089e}{dataOffer}};}
+\DoxyCodeLine{238     \textcolor{keyword}{struct }wl\_data\_source*      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ad67cffc895e57569788917cba8e19d9a}{dataSource}};}
+\DoxyCodeLine{239     \textcolor{keyword}{struct }xdg\_wm\_base*         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a32adab93bca4b0c2166f1fc342266486}{wmBase}};}
+\DoxyCodeLine{240     \textcolor{keyword}{struct }zxdg\_decoration\_manager\_v1*      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6c2e3b84b983ad39fb862db706cf9eb8}{decorationManager}};}
+\DoxyCodeLine{241     \textcolor{keyword}{struct }wp\_viewporter*       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af6f378505225a6c927b9378c92753403}{viewporter}};}
+\DoxyCodeLine{242     \textcolor{keyword}{struct }zwp\_relative\_pointer\_manager\_v1* \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ad50cfe61a1a5bceabc42a64af6eb4b5c}{relativePointerManager}};}
+\DoxyCodeLine{243     \textcolor{keyword}{struct }zwp\_pointer\_constraints\_v1*      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a05406b1f2fef45c6101f700b5fd34e50}{pointerConstraints}};}
+\DoxyCodeLine{244     \textcolor{keyword}{struct }zwp\_idle\_inhibit\_manager\_v1*     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af5ec88ddbf2b5608f35c66f1244075da}{idleInhibitManager}};}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a247dba132e42812c28bcce2d03e7d97c}{compositorVersion}};}
+\DoxyCodeLine{247     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a1077fca5a8097b03bc9007950d95054a}{seatVersion}};}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{keyword}{struct }wl\_cursor\_theme*     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a7bade3077144f1d0651a1e9e4b7f9f5e}{cursorTheme}};}
+\DoxyCodeLine{250     \textcolor{keyword}{struct }wl\_cursor\_theme*     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a8bed0a4ef741dc2470db418c3ff89866}{cursorThemeHiDPI}};}
+\DoxyCodeLine{251     \textcolor{keyword}{struct }wl\_surface*          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a089f2c5e526bd46b1c0be1e98f746f0b}{cursorSurface}};}
+\DoxyCodeLine{252     \textcolor{keyword}{const} \textcolor{keywordtype}{char}*                 \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a07ad3ea29588a83e1cff7d06826940b1}{cursorPreviousName}};}
+\DoxyCodeLine{253     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a544f0402b6950220cb7003917f1197b3}{cursorTimerfd}};}
+\DoxyCodeLine{254     uint32\_t                    \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a06d6c0697b351ccc2767b67855d3edc4}{serial}};}
+\DoxyCodeLine{255 }
+\DoxyCodeLine{256     int32\_t                     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ac7eab892b0dfec240a86a783ec26f74d}{keyboardRepeatRate}};}
+\DoxyCodeLine{257     int32\_t                     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a5783a85c3062f00adf12d3925e474bcf}{keyboardRepeatDelay}};}
+\DoxyCodeLine{258     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a7e0abacb2792cbcc7f93aa184c7e7f0f}{keyboardLastKey}};}
+\DoxyCodeLine{259     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ab6e024e0ea286ebbd77740ddb10ecb5e}{keyboardLastScancode}};}
+\DoxyCodeLine{260     \textcolor{keywordtype}{char}*                       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a262e38782b13901b91c38d591b7a5498}{clipboardString}};}
+\DoxyCodeLine{261     \textcolor{keywordtype}{size\_t}                      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aea217e1855f05c209f1214333bc7cac6}{clipboardSize}};}
+\DoxyCodeLine{262     \textcolor{keywordtype}{char}*                       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a38e3cf708c04669e10895c202e10315d}{clipboardSendString}};}
+\DoxyCodeLine{263     \textcolor{keywordtype}{size\_t}                      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a9d70ba663912cbfab64cd38ea7b6a228}{clipboardSendSize}};}
+\DoxyCodeLine{264     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a1dd1fdbcbfb1b23ccb5567931ec72a03}{timerfd}};}
+\DoxyCodeLine{265     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}                   \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ae2e16d1941f9c79b72bacdb2d92490e6}{keycodes}}[256];}
+\DoxyCodeLine{266     \textcolor{keywordtype}{short} \textcolor{keywordtype}{int}                   \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a1d05fd9a7e97eab0db87ed5377babd36}{scancodes}}[\mbox{\hyperlink{group__keys_ga442cbaef7bfb9a4ba13594dd7fbf2789}{GLFW\_KEY\_LAST}} + 1];}
+\DoxyCodeLine{267 }
+\DoxyCodeLine{268     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{269         \textcolor{keywordtype}{void}*                   \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6fba32c719730bbaaeb8b757518ca0d1}{handle}};}
+\DoxyCodeLine{270         \textcolor{keyword}{struct }xkb\_context*     \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a8b9aefe6759a3bead8cf220a90676c36}{context}};}
+\DoxyCodeLine{271         \textcolor{keyword}{struct }xkb\_keymap*      \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a2752444822b5a3730cafa4cde39b689b}{keymap}};}
+\DoxyCodeLine{272         \textcolor{keyword}{struct }xkb\_state*       \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aaa5aa646c2b9970f994c21acc295c8c3}{state}};}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#ifdef HAVE\_XKBCOMMON\_COMPOSE\_H}}
+\DoxyCodeLine{275         \textcolor{keyword}{struct }xkb\_compose\_state* composeState;}
+\DoxyCodeLine{276 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a56c6308483ddf03a214f973468acf130}{controlMask}};}
+\DoxyCodeLine{279         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a63c05a12652f8ce9938b0493ba25cc36}{altMask}};}
+\DoxyCodeLine{280         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a3c644656508527f6fd134e69fdaf8954}{shiftMask}};}
+\DoxyCodeLine{281         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a3f669ca22083326bff49878fb3c8c3fd}{superMask}};}
+\DoxyCodeLine{282         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a377f64c384073b4e481edd2206ca335e}{capsLockMask}};}
+\DoxyCodeLine{283         xkb\_mod\_mask\_t          \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a466b79900039219441234bf6dd017e1a}{numLockMask}};}
+\DoxyCodeLine{284         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}            \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ae93ba386644cdaafed29159cf8c769f5}{modifiers}};}
+\DoxyCodeLine{285 }
+\DoxyCodeLine{286         \mbox{\hyperlink{wl__platform_8h_aab405d705b491d12d417d43653efb8b9}{PFN\_xkb\_context\_new}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6a1b5fa63340bd608b3967944a39a525}{context\_new}};}
+\DoxyCodeLine{287         \mbox{\hyperlink{wl__platform_8h_aeb826e6dece848b0e71cf98fcf3b6a34}{PFN\_xkb\_context\_unref}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aa6695c98c6a6aacdaae68e39342f55a5}{context\_unref}};}
+\DoxyCodeLine{288         \mbox{\hyperlink{wl__platform_8h_a1f100e9e4aa5cfcc5562924155012055}{PFN\_xkb\_keymap\_new\_from\_string}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a499b26a6b9d73eed115afcadbf09c83b}{keymap\_new\_from\_string}};}
+\DoxyCodeLine{289         \mbox{\hyperlink{wl__platform_8h_aa0778d7d934b96bf500f046368de1f45}{PFN\_xkb\_keymap\_unref}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a1b1de2091c20364ab811568cd9e4669d}{keymap\_unref}};}
+\DoxyCodeLine{290         \mbox{\hyperlink{wl__platform_8h_a41d7cec916693645a46216cec1c0c6d7}{PFN\_xkb\_keymap\_mod\_get\_index}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_abd1921c182962f545e51432af09dd2b4}{keymap\_mod\_get\_index}};}
+\DoxyCodeLine{291         \mbox{\hyperlink{wl__platform_8h_a10dd25305b8984d748e0c35db025106e}{PFN\_xkb\_keymap\_key\_repeats}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af3a0a4b3ae76f4ae4920ba32674f5186}{keymap\_key\_repeats}};}
+\DoxyCodeLine{292         \mbox{\hyperlink{wl__platform_8h_a20d60af617a47b1dbebcacc4cffb369a}{PFN\_xkb\_state\_new}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a634cf17aedec38c72df94407a52ff09a}{state\_new}};}
+\DoxyCodeLine{293         \mbox{\hyperlink{wl__platform_8h_a04a57f9f8326bd39a1525e4e0edd4951}{PFN\_xkb\_state\_unref}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a026f349cd401ff155b23863bab94e343}{state\_unref}};}
+\DoxyCodeLine{294         \mbox{\hyperlink{wl__platform_8h_ac93bb3679df2634f72bb35e1587b0459}{PFN\_xkb\_state\_key\_get\_syms}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a28f989c3d39d148aeb00b782cea8c560}{state\_key\_get\_syms}};}
+\DoxyCodeLine{295         \mbox{\hyperlink{wl__platform_8h_a872e4657e3e1127caeb678c0b253b4f0}{PFN\_xkb\_state\_update\_mask}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a57ee5909ad16d6831cb62c4b27c5baee}{state\_update\_mask}};}
+\DoxyCodeLine{296         \mbox{\hyperlink{wl__platform_8h_a963602febce41dbde7c037aaba7b7c0d}{PFN\_xkb\_state\_serialize\_mods}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_abc4214464d1afe120c6c4dd6b63d512e}{state\_serialize\_mods}};}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#ifdef HAVE\_XKBCOMMON\_COMPOSE\_H}}
+\DoxyCodeLine{299         PFN\_xkb\_compose\_table\_new\_from\_locale compose\_table\_new\_from\_locale;}
+\DoxyCodeLine{300         PFN\_xkb\_compose\_table\_unref compose\_table\_unref;}
+\DoxyCodeLine{301         PFN\_xkb\_compose\_state\_new compose\_state\_new;}
+\DoxyCodeLine{302         PFN\_xkb\_compose\_state\_unref compose\_state\_unref;}
+\DoxyCodeLine{303         PFN\_xkb\_compose\_state\_feed compose\_state\_feed;}
+\DoxyCodeLine{304         PFN\_xkb\_compose\_state\_get\_status compose\_state\_get\_status;}
+\DoxyCodeLine{305         PFN\_xkb\_compose\_state\_get\_one\_sym compose\_state\_get\_one\_sym;}
+\DoxyCodeLine{306 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{307     \} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aa7abffdae6412e8a419e54e1f95360ce}{xkb}};}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}*                \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6504e83b31618fd79369d278408496b8}{pointerFocus}};}
+\DoxyCodeLine{310     \mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}*                \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a150674da20d6497dec4d66080edb4ed7}{keyboardFocus}};}
+\DoxyCodeLine{311 }
+\DoxyCodeLine{312     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{313         \textcolor{keywordtype}{void}*                   handle;}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315         \mbox{\hyperlink{wl__platform_8h_a97c17b89b36185eaf2c492ddc20644de}{PFN\_wl\_cursor\_theme\_load}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a460dcda6171f4c4b7024c1e800971a69}{theme\_load}};}
+\DoxyCodeLine{316         \mbox{\hyperlink{wl__platform_8h_a028b3d9313486c63f918b370f4290b46}{PFN\_wl\_cursor\_theme\_destroy}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_ac6359ad019b55c26a99304ad2df31850}{theme\_destroy}};}
+\DoxyCodeLine{317         \mbox{\hyperlink{wl__platform_8h_acb234d6f651a7980af64e4ff4367eaf9}{PFN\_wl\_cursor\_theme\_get\_cursor}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_aaf27c5f0765a8077722c0bd7827d4bb7}{theme\_get\_cursor}};}
+\DoxyCodeLine{318         \mbox{\hyperlink{wl__platform_8h_a3e1d2df516e6a041fa3edf6d13a2c2d9}{PFN\_wl\_cursor\_image\_get\_buffer}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_af4db36424aec40b431503bbc06804fb6}{image\_get\_buffer}};}
+\DoxyCodeLine{319     \} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a60157a4e1f4e3109eb4d901e2d317499}{cursor}};}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321     \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{322         \textcolor{keywordtype}{void}*                   \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6fba32c719730bbaaeb8b757518ca0d1}{handle}};}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324         \mbox{\hyperlink{wl__platform_8h_adacdd6e2d2a0660619ede36efd042c99}{PFN\_wl\_egl\_window\_create}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a375d4c42d385db14e42dfaee1d9725cb}{window\_create}};}
+\DoxyCodeLine{325         \mbox{\hyperlink{wl__platform_8h_a2727d08bef446572e6f9e26801506ae1}{PFN\_wl\_egl\_window\_destroy}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a59f724961cfe6637dd3dd6d904d5b4fa}{window\_destroy}};}
+\DoxyCodeLine{326         \mbox{\hyperlink{wl__platform_8h_adcf78e57b989ea0e561208099dada945}{PFN\_wl\_egl\_window\_resize}} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a98dd8ae02e93fd6dbc3ac7942cae93b9}{window\_resize}};}
+\DoxyCodeLine{327     \} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland_a6a9ef9b84a41a1538909587e4d907055}{egl}};}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_wayland}{\_GLFWlibraryWayland}};}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{comment}{// Wayland-\/specific per-\/monitor data}}
+\DoxyCodeLine{332 \textcolor{comment}{//}}
+\DoxyCodeLine{333 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\_GLFWmonitorWayland}}}
+\DoxyCodeLine{334 \{}
+\DoxyCodeLine{335     \textcolor{keyword}{struct }wl\_output*           \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_a2c736144d989a2fbc3a1eb6088ee9705}{output}};}
+\DoxyCodeLine{336     uint32\_t                    \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_acaa3487833fc0608d1d9ed173f0d9847}{name}};}
+\DoxyCodeLine{337     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_a700e0ff483fcbe4376f9e25ece6a0f85}{currentMode}};}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_a5f0f991409f35f64ba5ba68f80f2aa45}{x}};}
+\DoxyCodeLine{340     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_a3e64b76803000be41abacc0045486cda}{y}};}
+\DoxyCodeLine{341     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland_a7f39dce4375566da803f3441350a8c8a}{scale}};}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \} \mbox{\hyperlink{struct___g_l_f_wmonitor_wayland}{\_GLFWmonitorWayland}};}
+\DoxyCodeLine{344 }
+\DoxyCodeLine{345 \textcolor{comment}{// Wayland-\/specific per-\/cursor data}}
+\DoxyCodeLine{346 \textcolor{comment}{//}}
+\DoxyCodeLine{347 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\_GLFWcursorWayland}}}
+\DoxyCodeLine{348 \{}
+\DoxyCodeLine{349     \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor}{wl\_cursor}}*           \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a3ec239d3ce61706c04ea3d51c9d4e85b}{cursor}};}
+\DoxyCodeLine{350     \textcolor{keyword}{struct }\mbox{\hyperlink{structwl__cursor}{wl\_cursor}}*           \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a7379dffd4fb8939955b27b92c1d3e03b}{cursorHiDPI}};}
+\DoxyCodeLine{351     \textcolor{keyword}{struct }wl\_buffer*           \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a0001276ff2d1c51c8059cfe4ad48aed0}{buffer}};}
+\DoxyCodeLine{352     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_ab8d34850bc04dad0d900a4fdf1b503dc}{width}}, \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a82da430425752b10026d8d9a119efb99}{height}};}
+\DoxyCodeLine{353     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a21136cecf3cbb7ecdba1ab5bf29d9050}{xhot}}, \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a4aa9d790b2e10cb97120ede960f7f9ef}{yhot}};}
+\DoxyCodeLine{354     \textcolor{keywordtype}{int}                         \mbox{\hyperlink{struct___g_l_f_wcursor_wayland_a18e43887e4ce789eaa0f0ca811fb9b35}{currentImage}};}
+\DoxyCodeLine{355 \} \mbox{\hyperlink{struct___g_l_f_wcursor_wayland}{\_GLFWcursorWayland}};}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{keywordtype}{void} \mbox{\hyperlink{wl__platform_8h_a4061b6ec759c796455591e25a0de8c4b}{\_glfwAddOutputWayland}}(uint32\_t \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}, uint32\_t version);}
+\DoxyCodeLine{359 }
+
+\end{DoxyCode}

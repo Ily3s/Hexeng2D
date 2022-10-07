@@ -1,0 +1,113 @@
+\hypertarget{patest__sine8_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+sine8.c File Reference}
+\label{patest__sine8_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_sine8.c@{Hexeng2D/dependencies/portaudio/test/patest\_sine8.c}}
+
+
+Test 8 bit data\+: play a sine wave for several seconds.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(8)
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_a4f31ea07d0213669e1551861c23cfe90}{TEST\+\_\+\+UNSIGNED}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_a0cad294d05664a3f9e84977f9d12f24c}{TEST\+\_\+\+FORMAT}}~\mbox{\hyperlink{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}{pa\+Int8}}
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_aac1866175a2578574fc07c16e566c4fc}{SILENCE}}~((\mbox{\hyperlink{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}{sample\+\_\+t}})0x00)
+\item 
+\#define \mbox{\hyperlink{patest__sine8_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \mbox{\hyperlink{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}{sample\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__sine8_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test 8 bit data\+: play a sine wave for several seconds. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__sine8_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__sine8_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__sine8_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__sine8_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(8)}
+
+\mbox{\Hypertarget{patest__sine8_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__sine8_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__sine8_8c_aac1866175a2578574fc07c16e566c4fc}\label{patest__sine8_8c_aac1866175a2578574fc07c16e566c4fc}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!SILENCE@{SILENCE}}
+\index{SILENCE@{SILENCE}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{SILENCE}{SILENCE}}
+{\footnotesize\ttfamily \#define SILENCE~((\mbox{\hyperlink{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}{sample\+\_\+t}})0x00)}
+
+\mbox{\Hypertarget{patest__sine8_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__sine8_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+\mbox{\Hypertarget{patest__sine8_8c_a0cad294d05664a3f9e84977f9d12f24c}\label{patest__sine8_8c_a0cad294d05664a3f9e84977f9d12f24c}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!TEST\_FORMAT@{TEST\_FORMAT}}
+\index{TEST\_FORMAT@{TEST\_FORMAT}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_FORMAT}{TEST\_FORMAT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FORMAT~\mbox{\hyperlink{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}{pa\+Int8}}}
+
+\mbox{\Hypertarget{patest__sine8_8c_a4f31ea07d0213669e1551861c23cfe90}\label{patest__sine8_8c_a4f31ea07d0213669e1551861c23cfe90}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!TEST\_UNSIGNED@{TEST\_UNSIGNED}}
+\index{TEST\_UNSIGNED@{TEST\_UNSIGNED}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_UNSIGNED}{TEST\_UNSIGNED}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+UNSIGNED~(0)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}\label{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!sample\_t@{sample\_t}}
+\index{sample\_t@{sample\_t}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{sample\_t}{sample\_t}}
+{\footnotesize\ttfamily typedef char \mbox{\hyperlink{patest__sine8_8c_a9703299d57ef5c71621a587f77705d03}{sample\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__sine8_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__sine8_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_sine8.c@{patest\_sine8.c}!main@{main}}
+\index{main@{main}!patest\_sine8.c@{patest\_sine8.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

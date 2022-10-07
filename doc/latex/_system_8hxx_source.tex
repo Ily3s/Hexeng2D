@@ -1,0 +1,100 @@
+\hypertarget{_system_8hxx_source}{}\doxysection{System.\+hxx}
+\label{_system_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/System.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/System.hxx}}
+\mbox{\hyperlink{_system_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_SYSTEM\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_SYSTEM\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// Forward declaration(s):}}
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     \textcolor{keyword}{class }Device;}
+\DoxyCodeLine{14     \textcolor{keyword}{class }Stream;}
+\DoxyCodeLine{15     \textcolor{keyword}{class }HostApi;}
+\DoxyCodeLine{16 \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// Declaration(s):}}
+\DoxyCodeLine{21 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system}{System}}}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{public}:}
+\DoxyCodeLine{41         \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}}; \textcolor{comment}{// forward declaration}}
+\DoxyCodeLine{42         \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}}; \textcolor{comment}{// forward declaration}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_system_a9aef78d18d05f4577976db4e84005d62}{version}}();}
+\DoxyCodeLine{47         \textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{classportaudio_1_1_system_a638193e901c3171260a3d27014db6950}{versionText}}();}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_system_acc01c2860b8c61bbac130761b4b5f9c5}{initialize}}();}
+\DoxyCodeLine{50         \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_system_ac54f9502c074df4593e481aa0d95f1c2}{terminate}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_system}{System}} \&\mbox{\hyperlink{classportaudio_1_1_system_a460800fc5a870298eb4d3f281253ddf4}{instance}}();}
+\DoxyCodeLine{53         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_system_a7a9b8a049e8398e1b586c76a0a4293fb}{exists}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{comment}{// host apis:}}
+\DoxyCodeLine{58         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \mbox{\hyperlink{classportaudio_1_1_system_a9643a9a535125d468280fa2bec5f043b}{hostApisBegin}}();}
+\DoxyCodeLine{59         \mbox{\hyperlink{classportaudio_1_1_system_1_1_host_api_iterator}{HostApiIterator}} \mbox{\hyperlink{classportaudio_1_1_system_aec200ed7d0882ef56a044f0de2a1729b}{hostApisEnd}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} \&\mbox{\hyperlink{classportaudio_1_1_system_a8055f40b3e79fde47b198620b41513b9}{defaultHostApi}}();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} \&\mbox{\hyperlink{classportaudio_1_1_system_a42c1842674b6195197846fe9ecb02909}{hostApiByTypeId}}(\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}});}
+\DoxyCodeLine{64         \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} \&\mbox{\hyperlink{classportaudio_1_1_system_a6bafdef091da71ae2b86bae38ff23ef6}{hostApiByIndex}}(\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_system_a208baeae6d73f27503348aa39d395fee}{hostApiCount}}();}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{comment}{// devices:}}
+\DoxyCodeLine{71         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \mbox{\hyperlink{classportaudio_1_1_system_af3eb75f33944c43e94505dc9dc5eea7c}{devicesBegin}}();}
+\DoxyCodeLine{72         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \mbox{\hyperlink{classportaudio_1_1_system_a1a0a705757f6fb82f3ad18ae270bd14a}{devicesEnd}}();}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_system_a53e704fcd14e822f70f7e4b3a6d63847}{defaultInputDevice}}();}
+\DoxyCodeLine{75         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_system_a696573d9c09fceb0d0224c77dc453606}{defaultOutputDevice}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_system_a32021f6e5dff4b43f8a7740bdf0919fb}{deviceByIndex}}(\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}});}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_system_a6caacefe7e4e4ba1237f4c669c01f897}{deviceCount}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_system_a997eda6fef320339b92c6205b4221c48}{nullDevice}}();}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85         \textcolor{comment}{// misc:}}
+\DoxyCodeLine{86         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_system_ade1d243e5bf979f63b0a32db64cf42e4}{sleep}}(\textcolor{keywordtype}{long} msec);}
+\DoxyCodeLine{87         \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_system_abf122b3e224eb5712654008d55dddad2}{sizeOfSample}}(\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}});}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{keyword}{private}:}
+\DoxyCodeLine{90         \mbox{\hyperlink{classportaudio_1_1_system}{System}}();}
+\DoxyCodeLine{91         \mbox{\hyperlink{classportaudio_1_1_system}{\string~System}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_system}{System}} *instance\_;}
+\DoxyCodeLine{94         \textcolor{keyword}{static} \textcolor{keywordtype}{int} initCount\_;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}} **hostApis\_;}
+\DoxyCodeLine{97         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} **devices\_;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} *nullDevice\_;}
+\DoxyCodeLine{100     \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_SYSTEM\_HXX}}
+\DoxyCodeLine{107 }
+
+\end{DoxyCode}

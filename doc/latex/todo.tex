@@ -1,0 +1,58 @@
+
+\begin{DoxyRefList}
+\item[Member \mbox{\hyperlink{pa__front_8c_a92f56f88cbd14da0e8e03077e835d104}{Pa\+\_\+\+Close\+Stream}} (Pa\+Stream $\ast$stream)]\label{todo__todo000010}%
+\Hypertarget{todo__todo000010}%
+REVIEW\+: shouldn\textquotesingle{}t we close anyway? see\+: \href{http://www.portaudio.com/trac/ticket/115}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/115}}  
+\item[File \mbox{\hyperlink{pa__converters_8c}{pa\+\_\+converters.c}} ]\label{todo__todo000002}%
+\Hypertarget{todo__todo000002}%
+Consider whether functions which dither but don\textquotesingle{}t clip should exist, V18 automatically enabled clipping whenever dithering was selected. Perhaps we should do the same. see\+: \char`\"{}require clipping for dithering sample conversion functions?\char`\"{} \href{http://www.portaudio.com/trac/ticket/112}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/112}}
+
+\label{todo__todo000003}%
+\Hypertarget{todo__todo000003}%
+implement the converters marked IMPLEMENT ME\+: Int32\+\_\+\+To\+\_\+\+Int24\+\_\+\+Dither, Int32\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+Int16\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither see\+: \char`\"{}some conversion functions are not implemented in pa\+\_\+converters.\+c\char`\"{} \href{http://www.portaudio.com/trac/ticket/35}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/35}}
+
+\label{todo__todo000004}%
+\Hypertarget{todo__todo000004}%
+review the converters marked REVIEW\+: Float32\+\_\+\+To\+\_\+\+Int32, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Dither, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Clip, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Dither\+Clip, Int32\+\_\+\+To\+\_\+\+Int16\+\_\+\+Dither, Int32\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+Int32  
+\item[File \mbox{\hyperlink{pa__cpuload_8c}{pa\+\_\+cpuload.c}} ]\label{todo__todo000005}%
+\Hypertarget{todo__todo000005}%
+Dynamically calculate the coefficients used to smooth the CPU Load Measurements over time to provide a uniform characterisation of CPU Load independent of rate at which Pa\+Util\+\_\+\+Begin\+Cpu\+Load\+Measurement / Pa\+Util\+\_\+\+End\+Cpu\+Load\+Measurement are called. see \href{http://www.portaudio.com/trac/ticket/113}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/113}}  
+\item[Member \mbox{\hyperlink{pa__front_8c_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\+\_\+\+Get\+Error\+Text}} (Pa\+Error error\+Code)]\label{todo__todo000008}%
+\Hypertarget{todo__todo000008}%
+could catenate the last host error text to result in the case of pa\+Unanticipated\+Host\+Error. see\+: \href{http://www.portaudio.com/trac/ticket/114}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/114}}  
+\item[File \mbox{\hyperlink{patest__toomanysines_8c}{patest\+\_\+toomanysines.c}} ]\label{todo__todo000037}%
+\Hypertarget{todo__todo000037}%
+This may not be needed now that we have \char`\"{}patest\+\_\+out\+\_\+overflow.\+c\char`\"{}.  
+\item[Member \mbox{\hyperlink{pa__cpuload_8h_a8c29cc1cf3b6fd9bf18a2c3fc9f0ef2a}{Pa\+Util\+\_\+\+End\+Cpu\+Load\+Measurement}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer, unsigned long frames\+Processed)]\label{todo__todo000006}%
+\Hypertarget{todo__todo000006}%
+these coefficients shouldn\textquotesingle{}t be hardwired see\+: \href{http://www.portaudio.com/trac/ticket/113}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/113}}  
+\item[Member \mbox{\hyperlink{pa__win__wmme_8c_af8f8a8ef4c1f1a39686109801807a4ee}{Processing\+Thread\+Proc}} (void $\ast$p\+Arg)]\label{todo__todo000023}%
+\Hypertarget{todo__todo000023}%
+FIXME/\+REVIEW\+: can\textquotesingle{}t return host error info from an asynchronous thread. see \href{http://www.portaudio.com/trac/ticket/143}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/143}} 
+
+\label{todo__todo000024}%
+\Hypertarget{todo__todo000024}%
+ if all of the other buffers are also ready then we discard all but the most recent. This is an input buffer overflow. FIXME\+: these buffers should be passed to the callback in a pa\+Never\+Drop\+Input stream. \href{http://www.portaudio.com/trac/ticket/142}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/142}}
+
+\label{todo__todo000025}%
+\Hypertarget{todo__todo000025}%
+implement input\+Buffer\+Adc\+Time 
+
+\label{todo__todo000026}%
+\Hypertarget{todo__todo000026}%
+FIXME\+: should probably reset the output device immediately once the callback returns pa\+Abort see\+: \href{http://www.portaudio.com/trac/ticket/141}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/141}} 
+
+\label{todo__todo000027}%
+\Hypertarget{todo__todo000027}%
+need to handle Pa\+Never\+Drop\+Input here where necessary 
+
+\label{todo__todo000022}%
+\Hypertarget{todo__todo000022}%
+support pa\+Input\+Underflow, pa\+Output\+Overflow and pa\+Never\+Drop\+Input  
+\item[Member \mbox{\hyperlink{pa__mac__core__internal_8h_a3aa8874a48f232c61d4101706df2b269}{Read\+Stream}} (Pa\+Stream $\ast$stream, void $\ast$buffer, unsigned long frames)]\label{todo__todo000035}%
+\Hypertarget{todo__todo000035}%
+REVIEW\+: consider what to do if the input overflows. do we requeue all of the buffers? should we be running a thread to make sure they are always queued? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}}  
+\item[Member \mbox{\hyperlink{pa__mac__core__internal_8h_a3520d8a8ca48a25c9b99708f6033811d}{Write\+Stream}} (Pa\+Stream $\ast$stream, const void $\ast$buffer, unsigned long frames)]\label{todo__todo000036}%
+\Hypertarget{todo__todo000036}%
+REVIEW\+: consider what to do if the output underflows. do we requeue all the existing buffers with zeros? should we run a separate thread to keep the buffers enqueued at all times? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}} 
+\end{DoxyRefList}

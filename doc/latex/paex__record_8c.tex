@@ -1,0 +1,129 @@
+\hypertarget{paex__record_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/examples/paex\+\_\+record.c File Reference}
+\label{paex__record_8c}\index{Hexeng2D/dependencies/portaudio/examples/paex\_record.c@{Hexeng2D/dependencies/portaudio/examples/paex\_record.c}}
+
+
+Record input into an array; Save array to a file; Playback recorded data.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(512)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(5)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_ae5597ce31d23d11493e6e674fe257d73}{NUM\+\_\+\+CHANNELS}}~(2)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_a8c203331ac5d5a31682470255ec6ecad}{DITHER\+\_\+\+FLAG}}~(0)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_a9fc6ec34f3f79e787707baee7a98a29f}{WRITE\+\_\+\+TO\+\_\+\+FILE}}~(0)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_a06e14a08d61a627aefbfe1f3ecd5db95}{PA\+\_\+\+SAMPLE\+\_\+\+TYPE}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_aaa64e1de9b094f2505ee39f58f41d530}{SAMPLE\+\_\+\+SILENCE}}~(0.\+0f)
+\item 
+\#define \mbox{\hyperlink{paex__record_8c_afa608810761d45850a5a954e8eda94c7}{PRINTF\+\_\+\+S\+\_\+\+FORMAT}}~\char`\"{}\%.\+8f\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \mbox{\hyperlink{paex__record_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paex__record_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Record input into an array; Save array to a file; Playback recorded data. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paex__record_8c_a8c203331ac5d5a31682470255ec6ecad}\label{paex__record_8c_a8c203331ac5d5a31682470255ec6ecad}} 
+\index{paex\_record.c@{paex\_record.c}!DITHER\_FLAG@{DITHER\_FLAG}}
+\index{DITHER\_FLAG@{DITHER\_FLAG}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{DITHER\_FLAG}{DITHER\_FLAG}}
+{\footnotesize\ttfamily \#define DITHER\+\_\+\+FLAG~(0)}
+
+\mbox{\Hypertarget{paex__record_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{paex__record_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{paex\_record.c@{paex\_record.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(512)}
+
+\mbox{\Hypertarget{paex__record_8c_ae5597ce31d23d11493e6e674fe257d73}\label{paex__record_8c_ae5597ce31d23d11493e6e674fe257d73}} 
+\index{paex\_record.c@{paex\_record.c}!NUM\_CHANNELS@{NUM\_CHANNELS}}
+\index{NUM\_CHANNELS@{NUM\_CHANNELS}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_CHANNELS}{NUM\_CHANNELS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+CHANNELS~(2)}
+
+\mbox{\Hypertarget{paex__record_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{paex__record_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{paex\_record.c@{paex\_record.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(5)}
+
+\mbox{\Hypertarget{paex__record_8c_a06e14a08d61a627aefbfe1f3ecd5db95}\label{paex__record_8c_a06e14a08d61a627aefbfe1f3ecd5db95}} 
+\index{paex\_record.c@{paex\_record.c}!PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}}
+\index{PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SAMPLE\_TYPE}{PA\_SAMPLE\_TYPE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SAMPLE\+\_\+\+TYPE~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{paex__record_8c_afa608810761d45850a5a954e8eda94c7}\label{paex__record_8c_afa608810761d45850a5a954e8eda94c7}} 
+\index{paex\_record.c@{paex\_record.c}!PRINTF\_S\_FORMAT@{PRINTF\_S\_FORMAT}}
+\index{PRINTF\_S\_FORMAT@{PRINTF\_S\_FORMAT}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{PRINTF\_S\_FORMAT}{PRINTF\_S\_FORMAT}}
+{\footnotesize\ttfamily \#define PRINTF\+\_\+\+S\+\_\+\+FORMAT~\char`\"{}\%.\+8f\char`\"{}}
+
+\mbox{\Hypertarget{paex__record_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{paex__record_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{paex\_record.c@{paex\_record.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{paex__record_8c_aaa64e1de9b094f2505ee39f58f41d530}\label{paex__record_8c_aaa64e1de9b094f2505ee39f58f41d530}} 
+\index{paex\_record.c@{paex\_record.c}!SAMPLE\_SILENCE@{SAMPLE\_SILENCE}}
+\index{SAMPLE\_SILENCE@{SAMPLE\_SILENCE}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_SILENCE}{SAMPLE\_SILENCE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+SILENCE~(0.\+0f)}
+
+\mbox{\Hypertarget{paex__record_8c_a9fc6ec34f3f79e787707baee7a98a29f}\label{paex__record_8c_a9fc6ec34f3f79e787707baee7a98a29f}} 
+\index{paex\_record.c@{paex\_record.c}!WRITE\_TO\_FILE@{WRITE\_TO\_FILE}}
+\index{WRITE\_TO\_FILE@{WRITE\_TO\_FILE}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{WRITE\_TO\_FILE}{WRITE\_TO\_FILE}}
+{\footnotesize\ttfamily \#define WRITE\+\_\+\+TO\+\_\+\+FILE~(0)}
+
+Set to 1 if you want to capture the recording to a file. 
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{paex__record_8c_a5a95753fed006cd1d78bda53bda5580a}\label{paex__record_8c_a5a95753fed006cd1d78bda53bda5580a}} 
+\index{paex\_record.c@{paex\_record.c}!SAMPLE@{SAMPLE}}
+\index{SAMPLE@{SAMPLE}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE}{SAMPLE}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paex__record_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{paex__record_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{paex\_record.c@{paex\_record.c}!main@{main}}
+\index{main@{main}!paex\_record.c@{paex\_record.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

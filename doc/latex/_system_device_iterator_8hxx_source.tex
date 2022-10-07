@@ -1,0 +1,65 @@
+\hypertarget{_system_device_iterator_8hxx_source}{}\doxysection{System\+Device\+Iterator.\+hxx}
+\label{_system_device_iterator_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/SystemDeviceIterator.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/SystemDeviceIterator.hxx}}
+\mbox{\hyperlink{_system_device_iterator_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_SYSTEMDEVICEITERATOR\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_SYSTEMDEVICEITERATOR\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <iterator>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_8hxx}{portaudiocpp/System.hxx}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// Forward declaration(s):}}
+\DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16     \textcolor{keyword}{class }Device;}
+\DoxyCodeLine{17     \textcolor{keyword}{class }HostApi;}
+\DoxyCodeLine{18 \}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{// Declaration(s):}}
+\DoxyCodeLine{23 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{24 \{}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     }
+\DoxyCodeLine{34     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{System::DeviceIterator}}}
+\DoxyCodeLine{35     \{}
+\DoxyCodeLine{36     \textcolor{keyword}{public}:}
+\DoxyCodeLine{37         \textcolor{keyword}{typedef} std::bidirectional\_iterator\_tag \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a937d4b9bc319a53285b5f67fb784aeb3}{iterator\_category}};}
+\DoxyCodeLine{38         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a7a5edd66daeb6546c7717d2514e7804e}{value\_type}};}
+\DoxyCodeLine{39         \textcolor{keyword}{typedef} ptrdiff\_t \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a249b0344098059e35dc0340b20879bf4}{difference\_type}};}
+\DoxyCodeLine{40         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} * \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_aacd426e630b8d6526f7a0570dfafa8ee}{pointer}};}
+\DoxyCodeLine{41         \textcolor{keyword}{typedef} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a828c6489c4aaecc29cee8d861aee349f}{reference}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_aff747c2c816c6eae9eab4df201ff9082}{operator*}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{44         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} *\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_af83cde029aec04ef3b2d81de3a87c1a8}{operator-\/>}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_ac63d62792265b7b015d4bfe2a3261354}{operator++}}();}
+\DoxyCodeLine{47         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_ac63d62792265b7b015d4bfe2a3261354}{operator++}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{48         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \&\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a73017a4fdb10f8960ec0302723a85b23}{operator-\/-\/}}();}
+\DoxyCodeLine{49         \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a73017a4fdb10f8960ec0302723a85b23}{operator-\/-\/}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_ae917a5a479113259f33f1a72b9fdc095}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_addf6289b6785406779efbe5dbb91af58}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{DeviceIterator}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{private}:}
+\DoxyCodeLine{55         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_system}{System}};}
+\DoxyCodeLine{56         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_host_api}{HostApi}};}
+\DoxyCodeLine{57         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} **ptr\_;}
+\DoxyCodeLine{58     \};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_SYSTEMDEVICEITERATOR\_HXX}}
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}

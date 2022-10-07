@@ -1,0 +1,252 @@
+\hypertarget{audio__analyzer_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/audio\+\_\+analyzer.c File Reference}
+\label{audio__analyzer_8c}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/audio\_analyzer.c@{Hexeng2D/dependencies/portaudio/qa/loopback/src/audio\_analyzer.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}qa\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}audio\+\_\+analyzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}write\+\_\+wav.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{audio__analyzer_8c_a016e9520d8018f5c1252776eaf21b347}{PAQA\+\_\+\+POP\+\_\+\+THRESHOLD}}~(0.\+04)
+\item 
+\#define \mbox{\hyperlink{audio__analyzer_8c_af0b23eedf2352de4c1eff77e1401730c}{NUM\+\_\+\+SAMPLES}}~(200)
+\item 
+\#define \mbox{\hyperlink{audio__analyzer_8c_ad4d796b98c583d49e83adabd74a63bf6}{MAX\+\_\+\+BUFFER\+\_\+\+SIZE}}~2048
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a9c930334efac22cea25f83543823d995}{Pa\+Qa\+\_\+\+Get\+Nth\+Frequency}} (double base\+Frequency, int \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a0d053fe46ae855fa1401098ea08efa88}{Pa\+Qa\+\_\+\+Erase\+Buffer}} (float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames, int samples\+Per\+Frame)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a5b15fa5f9ffe7d147b31f747c40ff49b}{Pa\+Qa\+\_\+\+Setup\+Sine\+Generator}} (\mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} $\ast$generator, double frequency, double amplitude, double frame\+Rate)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a3511746af23da7b237a81abcd5103e0e}{Pa\+Qa\+\_\+\+Mix\+Sine}} (\mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} $\ast$generator, float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Samples, int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_affb588de87b9064d3af8d645b65cff5b}{Pa\+Qa\+\_\+\+Generate\+Crack\+DISABLED}} (float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Samples, int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a13f48cb441107ed8d398bb6c63f802ae}{Pa\+Qa\+\_\+\+Initialize\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, int max\+Frames, int frame\+Rate)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a75b79fa3e7ebd8814532f4e6771f1d0b}{Pa\+Qa\+\_\+\+Terminate\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a2d62bebaad42618015497e0c80be4324}{Pa\+Qa\+\_\+\+Write\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames, int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a12ccb2fbd5fe3bf93b8cd79bd7985ca1}{Pa\+Qa\+\_\+\+Write\+Silence}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, int num\+Frames)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_ad876645a8a56487a53473d914d36c502}{Pa\+Qa\+\_\+\+Record\+Freeze}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, int num\+Frames)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_ad176a266e1bb48a3107f50755127fac8}{Pa\+Qa\+\_\+\+Save\+Recording\+To\+Wave\+File}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, const char $\ast$filename)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a2c9261859914b9de91ab823e7ba39e8b}{Pa\+Qa\+\_\+\+Measure\+Crossing\+Slope}} (float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a134d28401b6cd71d28ed3a4291032a54}{Pa\+Qa\+\_\+\+Measure\+Sine\+Amplitude\+By\+Slope}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, double frequency, double frame\+Rate, int start\+Frame, int num\+Frames)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a7f26dbd09af0cc0cf873e84d7ec0a13b}{Pa\+Qa\+\_\+\+Correlate\+Sine}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, double frequency, double frame\+Rate, int start\+Frame, int num\+Frames, double $\ast$phase\+Ptr)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a89f3a57c92da52f6ebdb4ee3633db3b2}{Pa\+Qa\+\_\+\+Filter\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$input, \mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$output, \mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$\mbox{\hyperlink{glad_8h_ab0762b2c24f4aab7c062c0710f8a3788}{filter}})
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_ad6a738fa0bb8d1f1d4d6c4f354c57d9d}{Pa\+Qa\+\_\+\+Find\+First\+Match}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames, double threshold)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a8be3a62d7063764c0f1fbbe0f2fdfec8}{Pa\+Qa\+\_\+\+Measure\+Area}} (float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames, int \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}})
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_aca03218918e6dd68c79c6cc60bc21384}{Pa\+Qa\+\_\+\+Measure\+Root\+Mean\+Square}} (float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_a1d09e6452bd3a8c0537c0d1c7585b3fa}{Pa\+Qa\+\_\+\+Compare\+Amplitudes}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, int start\+At, float $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+double \mbox{\hyperlink{audio__analyzer_8c_aa3695cc2693120119d3e2f7ee3cad473}{Pa\+Qa\+\_\+\+Compute\+Phase\+Difference}} (double phase1, double phase2)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a4039fbc279401ddba45fc9ee1ca5797d}{Pa\+Qa\+\_\+\+Measure\+Latency}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, \mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$test\+Tone, \mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$analysis\+Result)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{audio__analyzer_8c_a631518e6a5897a8a64ae34f8d0250bdb}{Pa\+Qa\+\_\+\+Fade\+In\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, int start\+Frame, int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_aef129fd055155c5d019b9e891bd2a14c}{Pa\+Qa\+\_\+\+Detect\+Pop}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, \mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$test\+Tone, \mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$analysis\+Result)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a099e7057eac9b60d6c9f1b8db76cede5}{Pa\+Qa\+\_\+\+Detect\+Phase\+Error}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, \mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$test\+Tone, \mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$analysis\+Result)
+\item 
+int \mbox{\hyperlink{audio__analyzer_8c_a6232297ca356c8753050d169966525b6}{Pa\+Qa\+\_\+\+Analyse\+Recording}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, \mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$test\+Tone, \mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$analysis\+Result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{audio__analyzer_8c_ad4d796b98c583d49e83adabd74a63bf6}\label{audio__analyzer_8c_ad4d796b98c583d49e83adabd74a63bf6}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}}
+\index{MAX\_BUFFER\_SIZE@{MAX\_BUFFER\_SIZE}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BUFFER\_SIZE}{MAX\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BUFFER\+\_\+\+SIZE~2048}
+
+\mbox{\Hypertarget{audio__analyzer_8c_af0b23eedf2352de4c1eff77e1401730c}\label{audio__analyzer_8c_af0b23eedf2352de4c1eff77e1401730c}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!NUM\_SAMPLES@{NUM\_SAMPLES}}
+\index{NUM\_SAMPLES@{NUM\_SAMPLES}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SAMPLES}{NUM\_SAMPLES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SAMPLES~(200)}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a016e9520d8018f5c1252776eaf21b347}\label{audio__analyzer_8c_a016e9520d8018f5c1252776eaf21b347}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PAQA\_POP\_THRESHOLD@{PAQA\_POP\_THRESHOLD}}
+\index{PAQA\_POP\_THRESHOLD@{PAQA\_POP\_THRESHOLD}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PAQA\_POP\_THRESHOLD}{PAQA\_POP\_THRESHOLD}}
+{\footnotesize\ttfamily \#define PAQA\+\_\+\+POP\+\_\+\+THRESHOLD~(0.\+04)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{audio__analyzer_8c_a6232297ca356c8753050d169966525b6}\label{audio__analyzer_8c_a6232297ca356c8753050d169966525b6}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_AnalyseRecording@{PaQa\_AnalyseRecording}}
+\index{PaQa\_AnalyseRecording@{PaQa\_AnalyseRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_AnalyseRecording()}{PaQa\_AnalyseRecording()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Analyse\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$}]{test\+Tone,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$}]{analysis\+Result }\end{DoxyParamCaption})}
+
+Analyse a recording of a sine wave. Measure latency and look for dropped frames, etc. \mbox{\Hypertarget{audio__analyzer_8c_a1d09e6452bd3a8c0537c0d1c7585b3fa}\label{audio__analyzer_8c_a1d09e6452bd3a8c0537c0d1c7585b3fa}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_CompareAmplitudes@{PaQa\_CompareAmplitudes}}
+\index{PaQa\_CompareAmplitudes@{PaQa\_CompareAmplitudes}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_CompareAmplitudes()}{PaQa\_CompareAmplitudes()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Compare\+Amplitudes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{int}]{start\+At,  }\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Samples }\end{DoxyParamCaption})}
+
+Compare the amplitudes of these two signals. Return ratio of recorded signal over buffer signal. \mbox{\Hypertarget{audio__analyzer_8c_aa3695cc2693120119d3e2f7ee3cad473}\label{audio__analyzer_8c_aa3695cc2693120119d3e2f7ee3cad473}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_ComputePhaseDifference@{PaQa\_ComputePhaseDifference}}
+\index{PaQa\_ComputePhaseDifference@{PaQa\_ComputePhaseDifference}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_ComputePhaseDifference()}{PaQa\_ComputePhaseDifference()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Compute\+Phase\+Difference (\begin{DoxyParamCaption}\item[{double}]{phase1,  }\item[{double}]{phase2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a7f26dbd09af0cc0cf873e84d7ec0a13b}\label{audio__analyzer_8c_a7f26dbd09af0cc0cf873e84d7ec0a13b}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_CorrelateSine@{PaQa\_CorrelateSine}}
+\index{PaQa\_CorrelateSine@{PaQa\_CorrelateSine}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_CorrelateSine()}{PaQa\_CorrelateSine()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Correlate\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{double}]{frequency,  }\item[{double}]{frame\+Rate,  }\item[{int}]{start\+Frame,  }\item[{int}]{num\+Frames,  }\item[{double $\ast$}]{phase\+Ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a099e7057eac9b60d6c9f1b8db76cede5}\label{audio__analyzer_8c_a099e7057eac9b60d6c9f1b8db76cede5}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_DetectPhaseError@{PaQa\_DetectPhaseError}}
+\index{PaQa\_DetectPhaseError@{PaQa\_DetectPhaseError}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_DetectPhaseError()}{PaQa\_DetectPhaseError()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Detect\+Phase\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$}]{test\+Tone,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$}]{analysis\+Result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_aef129fd055155c5d019b9e891bd2a14c}\label{audio__analyzer_8c_aef129fd055155c5d019b9e891bd2a14c}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_DetectPop@{PaQa\_DetectPop}}
+\index{PaQa\_DetectPop@{PaQa\_DetectPop}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_DetectPop()}{PaQa\_DetectPop()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Detect\+Pop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$}]{test\+Tone,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$}]{analysis\+Result }\end{DoxyParamCaption})}
+
+Apply notch filter and high pass filter then detect remaining energy. \mbox{\Hypertarget{audio__analyzer_8c_a0d053fe46ae855fa1401098ea08efa88}\label{audio__analyzer_8c_a0d053fe46ae855fa1401098ea08efa88}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_EraseBuffer@{PaQa\_EraseBuffer}}
+\index{PaQa\_EraseBuffer@{PaQa\_EraseBuffer}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_EraseBuffer()}{PaQa\_EraseBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Erase\+Buffer (\begin{DoxyParamCaption}\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Frames,  }\item[{int}]{samples\+Per\+Frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a631518e6a5897a8a64ae34f8d0250bdb}\label{audio__analyzer_8c_a631518e6a5897a8a64ae34f8d0250bdb}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_FadeInRecording@{PaQa\_FadeInRecording}}
+\index{PaQa\_FadeInRecording@{PaQa\_FadeInRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_FadeInRecording()}{PaQa\_FadeInRecording()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Fade\+In\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{int}]{start\+Frame,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a89f3a57c92da52f6ebdb4ee3633db3b2}\label{audio__analyzer_8c_a89f3a57c92da52f6ebdb4ee3633db3b2}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_FilterRecording@{PaQa\_FilterRecording}}
+\index{PaQa\_FilterRecording@{PaQa\_FilterRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_FilterRecording()}{PaQa\_FilterRecording()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Filter\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{input,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{output,  }\item[{\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$}]{filter }\end{DoxyParamCaption})}
+
+Apply a biquad filter to the audio from the input recording and write it to the output recording. \mbox{\Hypertarget{audio__analyzer_8c_ad6a738fa0bb8d1f1d4d6c4f354c57d9d}\label{audio__analyzer_8c_ad6a738fa0bb8d1f1d4d6c4f354c57d9d}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_FindFirstMatch@{PaQa\_FindFirstMatch}}
+\index{PaQa\_FindFirstMatch@{PaQa\_FindFirstMatch}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_FindFirstMatch()}{PaQa\_FindFirstMatch()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Find\+First\+Match (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Frames,  }\item[{double}]{threshold }\end{DoxyParamCaption})}
+
+Scan until we get a correlation of a single that goes over the tolerance level, peaks then drops to half the peak. Look for inverse correlation as well. \mbox{\Hypertarget{audio__analyzer_8c_affb588de87b9064d3af8d645b65cff5b}\label{audio__analyzer_8c_affb588de87b9064d3af8d645b65cff5b}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_GenerateCrackDISABLED@{PaQa\_GenerateCrackDISABLED}}
+\index{PaQa\_GenerateCrackDISABLED@{PaQa\_GenerateCrackDISABLED}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_GenerateCrackDISABLED()}{PaQa\_GenerateCrackDISABLED()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Generate\+Crack\+DISABLED (\begin{DoxyParamCaption}\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Samples,  }\item[{int}]{stride }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a9c930334efac22cea25f83543823d995}\label{audio__analyzer_8c_a9c930334efac22cea25f83543823d995}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_GetNthFrequency@{PaQa\_GetNthFrequency}}
+\index{PaQa\_GetNthFrequency@{PaQa\_GetNthFrequency}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_GetNthFrequency()}{PaQa\_GetNthFrequency()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Get\+Nth\+Frequency (\begin{DoxyParamCaption}\item[{double}]{base\+Frequency,  }\item[{int}]{index }\end{DoxyParamCaption})}
+
+Calculate Nth frequency of a series for use in testing multiple channels. Series should avoid harmonic overlap between channels. \mbox{\Hypertarget{audio__analyzer_8c_a13f48cb441107ed8d398bb6c63f802ae}\label{audio__analyzer_8c_a13f48cb441107ed8d398bb6c63f802ae}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_InitializeRecording@{PaQa\_InitializeRecording}}
+\index{PaQa\_InitializeRecording@{PaQa\_InitializeRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_InitializeRecording()}{PaQa\_InitializeRecording()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Initialize\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{int}]{max\+Samples,  }\item[{int}]{sample\+Rate }\end{DoxyParamCaption})}
+
+Allocate memory for containing a mono audio signal. Set up recording for writing. \mbox{\Hypertarget{audio__analyzer_8c_a8be3a62d7063764c0f1fbbe0f2fdfec8}\label{audio__analyzer_8c_a8be3a62d7063764c0f1fbbe0f2fdfec8}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MeasureArea@{PaQa\_MeasureArea}}
+\index{PaQa\_MeasureArea@{PaQa\_MeasureArea}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureArea()}{PaQa\_MeasureArea()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Measure\+Area (\begin{DoxyParamCaption}\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Frames,  }\item[{int}]{stride }\end{DoxyParamCaption})}
+
+Measure the area under the curve by summing absolute value of each value. \mbox{\Hypertarget{audio__analyzer_8c_a2c9261859914b9de91ab823e7ba39e8b}\label{audio__analyzer_8c_a2c9261859914b9de91ab823e7ba39e8b}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MeasureCrossingSlope@{PaQa\_MeasureCrossingSlope}}
+\index{PaQa\_MeasureCrossingSlope@{PaQa\_MeasureCrossingSlope}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureCrossingSlope()}{PaQa\_MeasureCrossingSlope()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Measure\+Crossing\+Slope (\begin{DoxyParamCaption}\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})}
+
+Measure slope of the positive zero crossings. \mbox{\Hypertarget{audio__analyzer_8c_a4039fbc279401ddba45fc9ee1ca5797d}\label{audio__analyzer_8c_a4039fbc279401ddba45fc9ee1ca5797d}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MeasureLatency@{PaQa\_MeasureLatency}}
+\index{PaQa\_MeasureLatency@{PaQa\_MeasureLatency}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureLatency()}{PaQa\_MeasureLatency()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Measure\+Latency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_a8534543528ccfffefe970c2e8f224201}{Pa\+Qa\+Test\+Tone}} $\ast$}]{test\+Tone,  }\item[{\mbox{\hyperlink{audio__analyzer_8h_ab5af9d8e192ddbcb5af7bebc3052144f}{Pa\+Qa\+Analysis\+Result}} $\ast$}]{analysis\+Result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_aca03218918e6dd68c79c6cc60bc21384}\label{audio__analyzer_8c_aca03218918e6dd68c79c6cc60bc21384}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MeasureRootMeanSquare@{PaQa\_MeasureRootMeanSquare}}
+\index{PaQa\_MeasureRootMeanSquare@{PaQa\_MeasureRootMeanSquare}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureRootMeanSquare()}{PaQa\_MeasureRootMeanSquare()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Measure\+Root\+Mean\+Square (\begin{DoxyParamCaption}\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_a134d28401b6cd71d28ed3a4291032a54}\label{audio__analyzer_8c_a134d28401b6cd71d28ed3a4291032a54}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MeasureSineAmplitudeBySlope@{PaQa\_MeasureSineAmplitudeBySlope}}
+\index{PaQa\_MeasureSineAmplitudeBySlope@{PaQa\_MeasureSineAmplitudeBySlope}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureSineAmplitudeBySlope()}{PaQa\_MeasureSineAmplitudeBySlope()}}
+{\footnotesize\ttfamily double Pa\+Qa\+\_\+\+Measure\+Sine\+Amplitude\+By\+Slope (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{double}]{frequency,  }\item[{double}]{frame\+Rate,  }\item[{int}]{start\+Frame,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})}
+
+Estimate the original amplitude of a clipped sine wave by measuring its average slope at the zero crossings. \mbox{\Hypertarget{audio__analyzer_8c_a3511746af23da7b237a81abcd5103e0e}\label{audio__analyzer_8c_a3511746af23da7b237a81abcd5103e0e}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_MixSine@{PaQa\_MixSine}}
+\index{PaQa\_MixSine@{PaQa\_MixSine}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MixSine()}{PaQa\_MixSine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Mix\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} $\ast$}]{generator,  }\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Samples,  }\item[{int}]{stride }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_ad876645a8a56487a53473d914d36c502}\label{audio__analyzer_8c_ad876645a8a56487a53473d914d36c502}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_RecordFreeze@{PaQa\_RecordFreeze}}
+\index{PaQa\_RecordFreeze@{PaQa\_RecordFreeze}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RecordFreeze()}{PaQa\_RecordFreeze()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Record\+Freeze (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{audio__analyzer_8c_ad176a266e1bb48a3107f50755127fac8}\label{audio__analyzer_8c_ad176a266e1bb48a3107f50755127fac8}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_SaveRecordingToWaveFile@{PaQa\_SaveRecordingToWaveFile}}
+\index{PaQa\_SaveRecordingToWaveFile@{PaQa\_SaveRecordingToWaveFile}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_SaveRecordingToWaveFile()}{PaQa\_SaveRecordingToWaveFile()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Save\+Recording\+To\+Wave\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{const char $\ast$}]{filename }\end{DoxyParamCaption})}
+
+Write recording to WAV file. \mbox{\Hypertarget{audio__analyzer_8c_a5b15fa5f9ffe7d147b31f747c40ff49b}\label{audio__analyzer_8c_a5b15fa5f9ffe7d147b31f747c40ff49b}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_SetupSineGenerator@{PaQa\_SetupSineGenerator}}
+\index{PaQa\_SetupSineGenerator@{PaQa\_SetupSineGenerator}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_SetupSineGenerator()}{PaQa\_SetupSineGenerator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Setup\+Sine\+Generator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} $\ast$}]{generator,  }\item[{double}]{frequency,  }\item[{double}]{amplitude,  }\item[{double}]{frame\+Rate }\end{DoxyParamCaption})}
+
+Prepare an oscillator that can generate a sine tone for testing. \mbox{\Hypertarget{audio__analyzer_8c_a75b79fa3e7ebd8814532f4e6771f1d0b}\label{audio__analyzer_8c_a75b79fa3e7ebd8814532f4e6771f1d0b}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_TerminateRecording@{PaQa\_TerminateRecording}}
+\index{PaQa\_TerminateRecording@{PaQa\_TerminateRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_TerminateRecording()}{PaQa\_TerminateRecording()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Terminate\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording }\end{DoxyParamCaption})}
+
+Free memory allocated by Pa\+Qa\+\_\+\+Initialize\+Recording. \mbox{\Hypertarget{audio__analyzer_8c_a2d62bebaad42618015497e0c80be4324}\label{audio__analyzer_8c_a2d62bebaad42618015497e0c80be4324}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_WriteRecording@{PaQa\_WriteRecording}}
+\index{PaQa\_WriteRecording@{PaQa\_WriteRecording}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_WriteRecording()}{PaQa\_WriteRecording()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Write\+Recording (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{float $\ast$}]{buffer,  }\item[{int}]{num\+Samples,  }\item[{int}]{stride }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em stride} & is the spacing of samples to skip in the input buffer. To use every samples pass 1. To use every other sample pass 2. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{audio__analyzer_8c_a12ccb2fbd5fe3bf93b8cd79bd7985ca1}\label{audio__analyzer_8c_a12ccb2fbd5fe3bf93b8cd79bd7985ca1}} 
+\index{audio\_analyzer.c@{audio\_analyzer.c}!PaQa\_WriteSilence@{PaQa\_WriteSilence}}
+\index{PaQa\_WriteSilence@{PaQa\_WriteSilence}!audio\_analyzer.c@{audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_WriteSilence()}{PaQa\_WriteSilence()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Write\+Silence (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{int}]{num\+Samples }\end{DoxyParamCaption})}
+
+Write zeros into a recording. 

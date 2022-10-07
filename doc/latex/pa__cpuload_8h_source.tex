@@ -1,0 +1,69 @@
+\hypertarget{pa__cpuload_8h_source}{}\doxysection{pa\+\_\+cpuload.\+h}
+\label{pa__cpuload_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_cpuload.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_cpuload.h}}
+\mbox{\hyperlink{pa__cpuload_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_CPULOAD\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_CPULOAD\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library CPU Load measurement functions}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Portable CPU load measurement facility.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ * Copyright (c) 2002 Ross Bencina}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{12 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{13 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{17 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{20 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{24 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{25 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{26 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{27 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{28 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/*}}
+\DoxyCodeLine{32 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{33 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{34 \textcolor{comment}{ *}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{36 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{37 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{38 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{39 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{40 \textcolor{comment}{ */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{51 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{57     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_pa_util_cpu_load_measurer_a302323c24d72fb4d07c81150121484a0}{samplingPeriod}};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_pa_util_cpu_load_measurer_add48e8254754c024b704b06cd0251b23}{measurementStartTime}};}
+\DoxyCodeLine{59     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_pa_util_cpu_load_measurer_acca79b65aa1cce1c1dd4879bbbc79150}{averageLoad}};}
+\DoxyCodeLine{60 \} \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}; }
+\DoxyCodeLine{62 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__cpuload_8h_a8cffac188367367b6c5c5ed8e0b1fe46}{PaUtil\_InitializeCpuLoadMeasurer}}( \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}* measurer, \textcolor{keywordtype}{double} sampleRate );}
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__cpuload_8h_a83fdceefb7dff41725ba4f1f13a80f79}{PaUtil\_BeginCpuLoadMeasurement}}( \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}* measurer );}
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__cpuload_8h_a8c29cc1cf3b6fd9bf18a2c3fc9f0ef2a}{PaUtil\_EndCpuLoadMeasurement}}( \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}* measurer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesProcessed );}
+\DoxyCodeLine{65 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__cpuload_8h_a31e622efc7504297b2191c3fe616b2ee}{PaUtil\_ResetCpuLoadMeasurer}}( \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}* measurer );}
+\DoxyCodeLine{66 \textcolor{keywordtype}{double} \mbox{\hyperlink{pa__cpuload_8h_af7bff59bbfe46a388e21633bf49ea0d6}{PaUtil\_GetCpuLoad}}( \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}}* measurer );}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{70 \}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_CPULOAD\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

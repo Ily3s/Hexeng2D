@@ -1,0 +1,91 @@
+\hypertarget{patest__two__rates_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+two\+\_\+rates.c File Reference}
+\label{patest__two__rates_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_two\_rates.c@{Hexeng2D/dependencies/portaudio/test/patest\_two\_rates.c}}
+
+
+Play two streams at different rates to make sure they don\textquotesingle{}t interfere.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_a6ee1df754f053739d33f2d477bdd3c10}{OUTPUT\+\_\+\+DEVICE}}~(Pa\+\_\+\+Get\+Default\+Output\+Device\+ID())
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_a4d3b705a0477e3ffae44d30360c0c4b2}{SAMPLE\+\_\+\+RATE\+\_\+1}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_a0aff83c4245afc27b250977e2adff9fd}{SAMPLE\+\_\+\+RATE\+\_\+2}}~(48000)
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(256)
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_a1854c5451a684e97c2caf32f4eed6690}{FREQ\+\_\+\+INCR}}~(0.\+1)
+\item 
+\#define \mbox{\hyperlink{patest__two__rates_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__two__rates_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play two streams at different rates to make sure they don\textquotesingle{}t interfere. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__two__rates_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__two__rates_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(256)}
+
+\mbox{\Hypertarget{patest__two__rates_8c_a1854c5451a684e97c2caf32f4eed6690}\label{patest__two__rates_8c_a1854c5451a684e97c2caf32f4eed6690}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!FREQ\_INCR@{FREQ\_INCR}}
+\index{FREQ\_INCR@{FREQ\_INCR}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{FREQ\_INCR}{FREQ\_INCR}}
+{\footnotesize\ttfamily \#define FREQ\+\_\+\+INCR~(0.\+1)}
+
+\mbox{\Hypertarget{patest__two__rates_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__two__rates_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__two__rates_8c_a6ee1df754f053739d33f2d477bdd3c10}\label{patest__two__rates_8c_a6ee1df754f053739d33f2d477bdd3c10}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!OUTPUT\_DEVICE@{OUTPUT\_DEVICE}}
+\index{OUTPUT\_DEVICE@{OUTPUT\_DEVICE}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_DEVICE}{OUTPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+DEVICE~(Pa\+\_\+\+Get\+Default\+Output\+Device\+ID())}
+
+\mbox{\Hypertarget{patest__two__rates_8c_a4d3b705a0477e3ffae44d30360c0c4b2}\label{patest__two__rates_8c_a4d3b705a0477e3ffae44d30360c0c4b2}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!SAMPLE\_RATE\_1@{SAMPLE\_RATE\_1}}
+\index{SAMPLE\_RATE\_1@{SAMPLE\_RATE\_1}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE\_1}{SAMPLE\_RATE\_1}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE\+\_\+1~(44100)}
+
+\mbox{\Hypertarget{patest__two__rates_8c_a0aff83c4245afc27b250977e2adff9fd}\label{patest__two__rates_8c_a0aff83c4245afc27b250977e2adff9fd}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!SAMPLE\_RATE\_2@{SAMPLE\_RATE\_2}}
+\index{SAMPLE\_RATE\_2@{SAMPLE\_RATE\_2}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE\_2}{SAMPLE\_RATE\_2}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE\+\_\+2~(48000)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__two__rates_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__two__rates_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_two\_rates.c@{patest\_two\_rates.c}!main@{main}}
+\index{main@{main}!patest\_two\_rates.c@{patest\_two\_rates.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

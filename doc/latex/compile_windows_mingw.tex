@@ -1,0 +1,37 @@
+\hypertarget{compile_windows_mingw_comp_mingw1}{}\doxysection{Portaudio for Windows With Min\+GW}\label{compile_windows_mingw_comp_mingw1}
+{\bfseries{This document contains old or out-\/of-\/date information. Please see a draft of new Min\+GW information on our Wiki\+: \href{https://github.com/PortAudio/portaudio/wiki/Notes_about_building_PortAudio_with_MinGW}{\texttt{ Port\+Audio Wiki\+: Notes about building Port\+Audio with Min\+GW}}}}
+
+= Min\+GW/\+MSYS =
+
+From the \mbox{[}\href{http://www.mingw.org}{\texttt{ http\+://www.\+mingw.\+org}} Min\+GW projectpage\mbox{]}\+:
+
+Min\+GW\+: A collection of freely available and freely distributable Windows specific header files and import libraries, augmenting the GNU Compiler Collection, (GCC), and its associated tools, (GNU binutils). Min\+GW provides a complete Open Source programming tool set which is suitable for the development of native Windows programs that do not depend on any 3rd-\/party C runtime DLLs.
+
+MSYS\+: A Minimal SYStem providing a POSIX compatible Bourne shell environment, with a small collection of UNIX command line tools. Primarily developed as a means to execute the configure scripts and Makefiles used to build Open Source software, but also useful as a general purpose command line interface to replace Windows cmd.\+exe.
+
+Min\+GW provides a compiler/linker toolchain while MSYS is required to actually run the Port\+Audio configure script.
+
+Once Min\+GW and MSYS are installed (see the \mbox{[}\href{http://www.mingw.org/MinGWiki}{\texttt{ http\+://www.\+mingw.\+org/\+Min\+GWiki}} Min\+GW-\/\+Wiki\mbox{]}) open an MSYS shell and run the famous\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure}
+\DoxyCodeLine{make}
+\DoxyCodeLine{make install}
+
+\end{DoxyCode}
+
+
+The above should create a working version though you might want to provide \textquotesingle{}--prefix=\texorpdfstring{$<$}{<}path-\/to-\/install-\/dir\texorpdfstring{$>$}{>}\textquotesingle{} to configure.
+
+\textquotesingle{}./configure --help\textquotesingle{} gives details as to what can be tinkered with.
+
+--- Mikael Magnusson
+
+To update your copy or check out a fresh copy of the source
+
+\mbox{[}wiki\+:Using\+The\+Port\+Audio\+Svn\+Repository SVN instructions\mbox{]}
+
+--- Bob !\+Mc\+Gwier
+
+Back to the Tutorial\+: \mbox{\hyperlink{tutorial_start}{Port\+Audio Tutorials}} 

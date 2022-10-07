@@ -1,0 +1,138 @@
+\hypertarget{pa__debugprint_8h_source}{}\doxysection{pa\+\_\+debugprint.\+h}
+\label{pa__debugprint_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.h}}
+\mbox{\hyperlink{pa__debugprint_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_LOG\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_LOG\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Log file redirector function}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright (c) 1999-\/2006 Ross Bencina, Phil Burk}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{8 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{9 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{12 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{16 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{19 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{20 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{21 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{24 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{25 \textcolor{comment}{ */}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/*}}
+\DoxyCodeLine{28 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{29 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{32 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{33 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{34 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{35 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{44 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{45 \{}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__debugprint_8h_a775ad90aa83e8a15e724f1b0fc55a0d3}{PaUtil\_DebugPrint}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, ... );}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/*}}
+\DoxyCodeLine{54 \textcolor{comment}{    The basic format for log messages is described below. If you need to}}
+\DoxyCodeLine{55 \textcolor{comment}{    add any log messages, please follow this format.}}
+\DoxyCodeLine{56 \textcolor{comment}{}}
+\DoxyCodeLine{57 \textcolor{comment}{    Function entry (void function):}}
+\DoxyCodeLine{58 \textcolor{comment}{}}
+\DoxyCodeLine{59 \textcolor{comment}{        "{}FunctionName called.\(\backslash\)n"{}}}
+\DoxyCodeLine{60 \textcolor{comment}{}}
+\DoxyCodeLine{61 \textcolor{comment}{    Function entry (non void function):}}
+\DoxyCodeLine{62 \textcolor{comment}{}}
+\DoxyCodeLine{63 \textcolor{comment}{        "{}FunctionName called:\(\backslash\)n"{}}}
+\DoxyCodeLine{64 \textcolor{comment}{        "{}\(\backslash\)tParam1Type param1: param1Value\(\backslash\)n"{}}}
+\DoxyCodeLine{65 \textcolor{comment}{        "{}\(\backslash\)tParam2Type param2: param2Value\(\backslash\)n"{}      (etc...)}}
+\DoxyCodeLine{66 \textcolor{comment}{}}
+\DoxyCodeLine{67 \textcolor{comment}{}}
+\DoxyCodeLine{68 \textcolor{comment}{    Function exit (no return value):}}
+\DoxyCodeLine{69 \textcolor{comment}{}}
+\DoxyCodeLine{70 \textcolor{comment}{        "{}FunctionName returned.\(\backslash\)n"{}}}
+\DoxyCodeLine{71 \textcolor{comment}{}}
+\DoxyCodeLine{72 \textcolor{comment}{    Function exit (simple return value):}}
+\DoxyCodeLine{73 \textcolor{comment}{}}
+\DoxyCodeLine{74 \textcolor{comment}{        "{}FunctionName returned:\(\backslash\)n"{}}}
+\DoxyCodeLine{75 \textcolor{comment}{        "{}\(\backslash\)tReturnType: returnValue\(\backslash\)n"{}}}
+\DoxyCodeLine{76 \textcolor{comment}{}}
+\DoxyCodeLine{77 \textcolor{comment}{    If the return type is an error code, the error text is displayed in ()}}
+\DoxyCodeLine{78 \textcolor{comment}{}}
+\DoxyCodeLine{79 \textcolor{comment}{    If the return type is not an error code, but has taken a special value}}
+\DoxyCodeLine{80 \textcolor{comment}{    because an error occurred, then the reason for the error is shown in []}}
+\DoxyCodeLine{81 \textcolor{comment}{}}
+\DoxyCodeLine{82 \textcolor{comment}{    If the return type is a struct ptr, the struct is dumped.}}
+\DoxyCodeLine{83 \textcolor{comment}{}}
+\DoxyCodeLine{84 \textcolor{comment}{    See the code below for examples}}
+\DoxyCodeLine{85 \textcolor{comment}{*/}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#ifdef PA\_ENABLE\_DEBUG\_OUTPUT}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define PA\_DEBUG(x) PaUtil\_DebugPrint x ;}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PA\_DEBUG(x)}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#ifdef PA\_LOG\_API\_CALLS}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define PA\_LOGAPI(x) PaUtil\_DebugPrint x}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define PA\_LOGAPI\_ENTER(functionName) PaUtil\_DebugPrint( functionName "{} called.\(\backslash\)n"{}} )}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define PA\_LOGAPI\_ENTER\_PARAMS(functionName) PaUtil\_DebugPrint( functionName "{} called:\(\backslash\)n"{}} )}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT(functionName) PaUtil\_DebugPrint( functionName "{} returned.\(\backslash\)n"{}} )}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_PAERROR( functionName, result ) \(\backslash\)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{    PaUtil\_DebugPrint( functionName "{} returned:\(\backslash\)n"{}} ); \(\backslash\)}
+\DoxyCodeLine{114     PaUtil\_DebugPrint("{}\(\backslash\)tPaError: \%d ( \%s )\(\backslash\)n"{}, result, Pa\_GetErrorText( result ) )}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_T( functionName, resultFormatString, result ) \(\backslash\)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{    PaUtil\_DebugPrint( functionName "{} returned:\(\backslash\)n"{}} ); \(\backslash\)}
+\DoxyCodeLine{118     PaUtil\_DebugPrint("{}\(\backslash\)t"{} resultFormatString "{}\(\backslash\)n"{}, result )}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT( functionName, positiveResultFormatString, result ) \(\backslash\)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{    PaUtil\_DebugPrint( functionName "{} returned:\(\backslash\)n"{}} ); \(\backslash\)}
+\DoxyCodeLine{122     if( result > 0 ) \(\backslash\)}
+\DoxyCodeLine{123         PaUtil\_DebugPrint("{}\(\backslash\)t"{} positiveResultFormatString "{}\(\backslash\)n"{}, result ); \(\backslash\)}
+\DoxyCodeLine{124     else \(\backslash\)}
+\DoxyCodeLine{125         PaUtil\_DebugPrint("{}\(\backslash\)tPaError: \%d ( \%s )\(\backslash\)n"{}, result, Pa\_GetErrorText( result ) )}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define PA\_LOGAPI(x)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define PA\_LOGAPI\_ENTER(functionName)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define PA\_LOGAPI\_ENTER\_PARAMS(functionName)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT(functionName)}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_PAERROR( functionName, result )}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_T( functionName, resultFormatString, result )}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT( functionName, positiveResultFormatString, result )}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (*\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{PaUtilLogCallback}} ) (\textcolor{keyword}{const} \textcolor{keywordtype}{char} *log);}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{142 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__debugprint_8h_a688050cd1d631b8eb566c15bec3094ff}{PaUtil\_SetDebugPrintFunction}}(\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{PaUtilLogCallback}}  cb);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{147 \}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_LOG\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

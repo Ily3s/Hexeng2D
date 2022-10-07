@@ -1,0 +1,92 @@
+\hypertarget{pa__fuzz_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/examples/pa\+\_\+fuzz.c File Reference}
+\label{pa__fuzz_8c}\index{Hexeng2D/dependencies/portaudio/examples/pa\_fuzz.c@{Hexeng2D/dependencies/portaudio/examples/pa\_fuzz.c}}
+
+
+Distort input like a fuzz box.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{pa__fuzz_8c_a06e14a08d61a627aefbfe1f3ecd5db95}{PA\+\_\+\+SAMPLE\+\_\+\+TYPE}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{pa__fuzz_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{pa__fuzz_8c_a3e5b6c27887f5f82989aff7b997703e9}{FUZZ}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}))))
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}} (float input)
+\item 
+int \mbox{\hyperlink{pa__fuzz_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Distort input like a fuzz box. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__fuzz_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{pa__fuzz_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{pa__fuzz_8c_a3e5b6c27887f5f82989aff7b997703e9}\label{pa__fuzz_8c_a3e5b6c27887f5f82989aff7b997703e9}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!FUZZ@{FUZZ}}
+\index{FUZZ@{FUZZ}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{FUZZ}{FUZZ}}
+{\footnotesize\ttfamily \#define FUZZ(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}{Cubic\+Amplifier}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}))))}
+
+\mbox{\Hypertarget{pa__fuzz_8c_a06e14a08d61a627aefbfe1f3ecd5db95}\label{pa__fuzz_8c_a06e14a08d61a627aefbfe1f3ecd5db95}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}}
+\index{PA\_SAMPLE\_TYPE@{PA\_SAMPLE\_TYPE}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SAMPLE\_TYPE}{PA\_SAMPLE\_TYPE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SAMPLE\+\_\+\+TYPE~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}\label{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!SAMPLE@{SAMPLE}}
+\index{SAMPLE@{SAMPLE}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE}{SAMPLE}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}\label{pa__fuzz_8c_a5c8ef4c361fa6f0243a2f4ab7fac3b48}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!CubicAmplifier@{CubicAmplifier}}
+\index{CubicAmplifier@{CubicAmplifier}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{CubicAmplifier()}{CubicAmplifier()}}
+{\footnotesize\ttfamily float Cubic\+Amplifier (\begin{DoxyParamCaption}\item[{float}]{input }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__fuzz_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{pa__fuzz_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{pa\_fuzz.c@{pa\_fuzz.c}!main@{main}}
+\index{main@{main}!pa\_fuzz.c@{pa\_fuzz.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

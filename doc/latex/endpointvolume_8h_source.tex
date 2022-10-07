@@ -1,0 +1,626 @@
+\hypertarget{endpointvolume_8h_source}{}\doxysection{endpointvolume.\+h}
+\label{endpointvolume_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/endpointvolume.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/endpointvolume.h}}
+\mbox{\hyperlink{endpointvolume_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* this ALWAYS GENERATED file contains the definitions for the interfaces */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6  \textcolor{comment}{/* File created by MIDL compiler version 7.00.0499 */}}
+\DoxyCodeLine{7 \textcolor{comment}{/* Compiler settings for endpointvolume.idl:}}
+\DoxyCodeLine{8 \textcolor{comment}{    Oicf, W1, Zp8, env=Win32 (32b run)}}
+\DoxyCodeLine{9 \textcolor{comment}{    protocol : dce , ms\_ext, c\_ext, robust}}
+\DoxyCodeLine{10 \textcolor{comment}{    error checks: allocation ref bounds\_check enum stub\_data }}
+\DoxyCodeLine{11 \textcolor{comment}{    VC \_\_declspec() decoration level: }}
+\DoxyCodeLine{12 \textcolor{comment}{         \_\_declspec(uuid()), \_\_declspec(selectany), \_\_declspec(novtable)}}
+\DoxyCodeLine{13 \textcolor{comment}{         DECLSPEC\_UUID(), MIDL\_INTERFACE()}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 \textcolor{comment}{//@@MIDL\_FILE\_HEADING(  )}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma warning( disable: 4049 )  }\textcolor{comment}{/* more than 64k source lines */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/* verify that the <rpcndr.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_ 500}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{/* verify that the <rpcsal.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_ 100}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}rpc.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}rpcndr.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#error this stub requires an updated version of <rpcndr.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef COM\_NO\_WINDOWS\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}windows.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}ole2.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*COM\_NO\_WINDOWS\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef \_\_endpointvolume\_h\_\_}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define \_\_endpointvolume\_h\_\_}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1020)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* Forward Declarations */} }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifndef \_\_IAudioEndpointVolumeCallback\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define \_\_IAudioEndpointVolumeCallback\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}};}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioEndpointVolumeCallback\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef \_\_IAudioEndpointVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_\_IAudioEndpointVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioEndpointVolume\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#ifndef \_\_IAudioMeterInformation\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define \_\_IAudioMeterInformation\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}};}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioMeterInformation\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* header files for imported files */}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include "{}unknwn.h"{}}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{devicetopology_8h}{devicetopology.h}}"{}}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{74 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}\{}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{comment}{/* interface \_\_MIDL\_itf\_endpointvolume\_0000\_0000 */}}
+\DoxyCodeLine{79 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a}{AUDIO\_VOLUME\_NOTIFICATION\_DATA}}}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83     GUID \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a_a6add2da9bc4c17887411d8b549b97eb4}{guidEventContext}};}
+\DoxyCodeLine{84     BOOL \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a_ae432d9e04d50f86f3d5a0e37d71b4e6a}{bMuted}};}
+\DoxyCodeLine{85     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a_ac5d2d81abd79dfcaa21b8695621c80d3}{fMasterVolume}};}
+\DoxyCodeLine{86     UINT \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a_a98284a9869793fb797df699d3f6d66ff}{nChannels}};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a_a2d1ddb99e19caa06f2057a462c6b75fc}{afChannelVolumes}}[ 1 ];}
+\DoxyCodeLine{88     \}   \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a}{AUDIO\_VOLUME\_NOTIFICATION\_DATA}};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a}{AUDIO\_VOLUME\_NOTIFICATION\_DATA}} *\mbox{\hyperlink{endpointvolume_8h_a9da0e89ae4c16f92d52ef8beec745ead}{PAUDIO\_VOLUME\_NOTIFICATION\_DATA}};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define   ENDPOINT\_HARDWARE\_SUPPORT\_VOLUME    0x00000001}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define   ENDPOINT\_HARDWARE\_SUPPORT\_MUTE      0x00000002}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define   ENDPOINT\_HARDWARE\_SUPPORT\_METER     0x00000004}}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{endpointvolume_8h_a611beaa1bfcdf28c94266126688119c6}{\_\_MIDL\_itf\_endpointvolume\_0000\_0000\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{98 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{endpointvolume_8h_ac455e8b6be37fb0b6abc8ea4d0525781}{\_\_MIDL\_itf\_endpointvolume\_0000\_0000\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#ifndef \_\_IAudioEndpointVolumeCallback\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define \_\_IAudioEndpointVolumeCallback\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/* interface IAudioEndpointVolumeCallback */}}
+\DoxyCodeLine{104 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{endpointvolume_8h_a0d8593bd22be1fe76c0ba0a8edf4a631}{IID\_IAudioEndpointVolumeCallback}};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{110     }
+\DoxyCodeLine{111     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}657804FA-\/D6AD-\/4496-\/8A60-\/352752AF4F89"{}})}
+\DoxyCodeLine{112     \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} : public IUnknown}
+\DoxyCodeLine{113     \{}
+\DoxyCodeLine{114     \textcolor{keyword}{public}:}
+\DoxyCodeLine{115         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE OnNotify( }
+\DoxyCodeLine{116             \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a}{PAUDIO\_VOLUME\_NOTIFICATION\_DATA}} pNotify) = 0;}
+\DoxyCodeLine{117         }
+\DoxyCodeLine{118     \};}
+\DoxyCodeLine{119     }
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl}{IAudioEndpointVolumeCallbackVtbl}}}
+\DoxyCodeLine{123     \{}
+\DoxyCodeLine{124         BEGIN\_INTERFACE}
+\DoxyCodeLine{125         }
+\DoxyCodeLine{126         \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{127             \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} * This,}
+\DoxyCodeLine{128             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a3f9b26092a79871d7ccc29aa73f0a663}{riid}},}
+\DoxyCodeLine{129             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{130             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a1a70677faf66fbdc03ba70bda97651fd}{ppvObject}});}
+\DoxyCodeLine{131         }
+\DoxyCodeLine{132         \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a84b9bec34d0333907c01a88399b31107}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{133             \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} * This);}
+\DoxyCodeLine{134         }
+\DoxyCodeLine{135         \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_ae0a1df2d81217cea8878a5ab19dc49c8}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{136             \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} * This);}
+\DoxyCodeLine{137         }
+\DoxyCodeLine{138         \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a5571f05cb440e6c57d264ca3b163be5a}{HRESULT}} ( STDMETHODCALLTYPE *OnNotify )( }
+\DoxyCodeLine{139             \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} * This,}
+\DoxyCodeLine{140             \mbox{\hyperlink{struct_a_u_d_i_o___v_o_l_u_m_e___n_o_t_i_f_i_c_a_t_i_o_n___d_a_t_a}{PAUDIO\_VOLUME\_NOTIFICATION\_DATA}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a567ebd605ea096c4fc772ba8149315d8}{pNotify}});}
+\DoxyCodeLine{141         }
+\DoxyCodeLine{142         END\_INTERFACE}
+\DoxyCodeLine{143     \} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl}{IAudioEndpointVolumeCallbackVtbl}};}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}}}
+\DoxyCodeLine{146     \{}
+\DoxyCodeLine{147         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl}{IAudioEndpointVolumeCallbackVtbl}} *lpVtbl;}
+\DoxyCodeLine{148     \};}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{150     }
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define IAudioEndpointVolumeCallback\_QueryInterface(This,riid,ppvObject)    \(\backslash\)}}
+\DoxyCodeLine{156 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define IAudioEndpointVolumeCallback\_AddRef(This)   \(\backslash\)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{preprocessor}{\#define IAudioEndpointVolumeCallback\_Release(This)  \(\backslash\)}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define IAudioEndpointVolumeCallback\_OnNotify(This,pNotify) \(\backslash\)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnNotify(This,pNotify) ) }}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioEndpointVolumeCallback\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#ifndef \_\_IAudioEndpointVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define \_\_IAudioEndpointVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{comment}{/* interface IAudioEndpointVolume */}}
+\DoxyCodeLine{183 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{endpointvolume_8h_a6aea47ce78f1a2dd69aa3c3da4bcbc6a}{IID\_IAudioEndpointVolume}};}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{189     }
+\DoxyCodeLine{190     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}5CDF2C82-\/841E-\/4546-\/9722-\/0CF74078229A"{}})}
+\DoxyCodeLine{191     \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} : public IUnknown}
+\DoxyCodeLine{192     \{}
+\DoxyCodeLine{193     \textcolor{keyword}{public}:}
+\DoxyCodeLine{194         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE RegisterControlChangeNotify( }
+\DoxyCodeLine{195             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{196             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a567ebd605ea096c4fc772ba8149315d8}{pNotify}}) = 0;}
+\DoxyCodeLine{197         }
+\DoxyCodeLine{198         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE UnregisterControlChangeNotify( }
+\DoxyCodeLine{199             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{200             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a567ebd605ea096c4fc772ba8149315d8}{pNotify}}) = 0;}
+\DoxyCodeLine{201         }
+\DoxyCodeLine{202         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetChannelCount( }
+\DoxyCodeLine{203             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{204             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *pnChannelCount) = 0;}
+\DoxyCodeLine{205         }
+\DoxyCodeLine{206         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE SetMasterVolumeLevel( }
+\DoxyCodeLine{207             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{208             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} fLevelDB,}
+\DoxyCodeLine{209             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{210         }
+\DoxyCodeLine{211         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE SetMasterVolumeLevelScalar( }
+\DoxyCodeLine{212             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{213             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} fLevel,}
+\DoxyCodeLine{214             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{215         }
+\DoxyCodeLine{216         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetMasterVolumeLevel( }
+\DoxyCodeLine{217             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{218             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pfLevelDB) = 0;}
+\DoxyCodeLine{219         }
+\DoxyCodeLine{220         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetMasterVolumeLevelScalar( }
+\DoxyCodeLine{221             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{222             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pfLevel) = 0;}
+\DoxyCodeLine{223         }
+\DoxyCodeLine{224         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE SetChannelVolumeLevel( }
+\DoxyCodeLine{225             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{226             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT nChannel,}
+\DoxyCodeLine{227             \textcolor{keywordtype}{float} fLevelDB,}
+\DoxyCodeLine{228             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{229         }
+\DoxyCodeLine{230         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE SetChannelVolumeLevelScalar( }
+\DoxyCodeLine{231             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{232             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT nChannel,}
+\DoxyCodeLine{233             \textcolor{keywordtype}{float} fLevel,}
+\DoxyCodeLine{234             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{235         }
+\DoxyCodeLine{236         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetChannelVolumeLevel( }
+\DoxyCodeLine{237             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{238             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT nChannel,}
+\DoxyCodeLine{239             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{240             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pfLevelDB) = 0;}
+\DoxyCodeLine{241         }
+\DoxyCodeLine{242         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetChannelVolumeLevelScalar( }
+\DoxyCodeLine{243             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{244             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT nChannel,}
+\DoxyCodeLine{245             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{246             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pfLevel) = 0;}
+\DoxyCodeLine{247         }
+\DoxyCodeLine{248         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE SetMute( }
+\DoxyCodeLine{249             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{250             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  BOOL bMute,}
+\DoxyCodeLine{251             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{252         }
+\DoxyCodeLine{253         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetMute( }
+\DoxyCodeLine{254             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{255             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BOOL *pbMute) = 0;}
+\DoxyCodeLine{256         }
+\DoxyCodeLine{257         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetVolumeStepInfo( }
+\DoxyCodeLine{258             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{259             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *pnStep,}
+\DoxyCodeLine{260             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{261             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *pnStepCount) = 0;}
+\DoxyCodeLine{262         }
+\DoxyCodeLine{263         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE VolumeStepUp( }
+\DoxyCodeLine{264             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{265         }
+\DoxyCodeLine{266         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE VolumeStepDown( }
+\DoxyCodeLine{267             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} pguidEventContext) = 0;}
+\DoxyCodeLine{268         }
+\DoxyCodeLine{269         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE QueryHardwareSupport( }
+\DoxyCodeLine{270             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{271             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *pdwHardwareSupportMask) = 0;}
+\DoxyCodeLine{272         }
+\DoxyCodeLine{273         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_callback_vtbl_a42cdc43896d6796cbd27b764fc476684}{HRESULT}} STDMETHODCALLTYPE GetVolumeRange( }
+\DoxyCodeLine{274             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{275             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pflVolumeMindB,}
+\DoxyCodeLine{276             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{277             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pflVolumeMaxdB,}
+\DoxyCodeLine{278             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{279             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pflVolumeIncrementdB) = 0;}
+\DoxyCodeLine{280         }
+\DoxyCodeLine{281     \};}
+\DoxyCodeLine{282     }
+\DoxyCodeLine{283 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{284 }
+\DoxyCodeLine{285     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl}{IAudioEndpointVolumeVtbl}}}
+\DoxyCodeLine{286     \{}
+\DoxyCodeLine{287         BEGIN\_INTERFACE}
+\DoxyCodeLine{288         }
+\DoxyCodeLine{289         \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a924492d64de503c8243cb4b81e011856}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{290             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{291             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_acaab0ad572e1c039ce9aef200369333d}{riid}},}
+\DoxyCodeLine{292             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{293             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ac75cbe970aaa66990a92408148b6f272}{ppvObject}});}
+\DoxyCodeLine{294         }
+\DoxyCodeLine{295         \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ae774e44037cf6964a6966d5c1fdabfe8}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{296             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This);}
+\DoxyCodeLine{297         }
+\DoxyCodeLine{298         \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a935cee52fcd46ebe75384cd31a155c15}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{299             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This);}
+\DoxyCodeLine{300         }
+\DoxyCodeLine{301         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aee5bab31048fd148826a9bb7400e2efe}{HRESULT}} ( STDMETHODCALLTYPE *RegisterControlChangeNotify )( }
+\DoxyCodeLine{302             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{303             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{304             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aa1de71932e61ca7c521fef7a8b0f4e27}{pNotify}});}
+\DoxyCodeLine{305         }
+\DoxyCodeLine{306         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a32c515aed8814b7f640c707e6891ca86}{HRESULT}} ( STDMETHODCALLTYPE *UnregisterControlChangeNotify )( }
+\DoxyCodeLine{307             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{308             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{309             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{endpointvolume_8h_abe829f734f26a7d1a40dab04b3ebbc92}{IAudioEndpointVolumeCallback}} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aa1de71932e61ca7c521fef7a8b0f4e27}{pNotify}});}
+\DoxyCodeLine{310         }
+\DoxyCodeLine{311         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a1df586474fd28ed17fed73a8ee789792}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelCount )( }
+\DoxyCodeLine{312             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{313             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{314             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4ab4670f69078f77e5f57ba689ed2620}{pnChannelCount}});}
+\DoxyCodeLine{315         }
+\DoxyCodeLine{316         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_adb3c080b7ac59dfee35d283dd07fbf3b}{HRESULT}} ( STDMETHODCALLTYPE *SetMasterVolumeLevel )( }
+\DoxyCodeLine{317             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{318             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{319             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aebb26eb723a88846e2002c3c2b3b65c7}{fLevelDB}},}
+\DoxyCodeLine{320             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4645719eaa744e0ac977f788626cc4cc}{pguidEventContext}});}
+\DoxyCodeLine{321         }
+\DoxyCodeLine{322         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a0b61f8a731d4563e320f54cf8596e5a3}{HRESULT}} ( STDMETHODCALLTYPE *SetMasterVolumeLevelScalar )( }
+\DoxyCodeLine{323             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{324             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{325             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a0c193f24aca204aced08f145e0b02ccf}{fLevel}},}
+\DoxyCodeLine{326             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4645719eaa744e0ac977f788626cc4cc}{pguidEventContext}});}
+\DoxyCodeLine{327         }
+\DoxyCodeLine{328         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ac1bfb5bac746c6b3a36ce727d52a53bd}{HRESULT}} ( STDMETHODCALLTYPE *GetMasterVolumeLevel )( }
+\DoxyCodeLine{329             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{330             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{331             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a29fc9372caaf42775864bdc473ccd128}{pfLevelDB}});}
+\DoxyCodeLine{332         }
+\DoxyCodeLine{333         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a05768aca51eda340511ed8f9487856e3}{HRESULT}} ( STDMETHODCALLTYPE *GetMasterVolumeLevelScalar )( }
+\DoxyCodeLine{334             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{335             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{336             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a43938306c0a06c225921a63ba4041f9e}{pfLevel}});}
+\DoxyCodeLine{337         }
+\DoxyCodeLine{338         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aa1fc083faaed0aa640cd59d22d4ea43c}{HRESULT}} ( STDMETHODCALLTYPE *SetChannelVolumeLevel )( }
+\DoxyCodeLine{339             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{340             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{341             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a2dce7641cd27f9eb30b52efe07de0cdf}{nChannel}},}
+\DoxyCodeLine{342             \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ac2ed69e5d8db0689ac4afbf314e0bb8d}{fLevelDB}},}
+\DoxyCodeLine{343             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a8f34bfd07e5312310b58234ebcab8a47}{pguidEventContext}});}
+\DoxyCodeLine{344         }
+\DoxyCodeLine{345         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a0a020de17bd18019385302cee72e4d21}{HRESULT}} ( STDMETHODCALLTYPE *SetChannelVolumeLevelScalar )( }
+\DoxyCodeLine{346             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{347             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{348             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a2dce7641cd27f9eb30b52efe07de0cdf}{nChannel}},}
+\DoxyCodeLine{349             \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a40bec81d14abf43de9e7584d7d944eb2}{fLevel}},}
+\DoxyCodeLine{350             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4645719eaa744e0ac977f788626cc4cc}{pguidEventContext}});}
+\DoxyCodeLine{351         }
+\DoxyCodeLine{352         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4ddab1a75e0740e05debc01edd667cc6}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelVolumeLevel )( }
+\DoxyCodeLine{353             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{354             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{355             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a2dce7641cd27f9eb30b52efe07de0cdf}{nChannel}},}
+\DoxyCodeLine{356             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{357             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4200f0c1c39b23ff2a2452414ba9a41e}{pfLevelDB}});}
+\DoxyCodeLine{358         }
+\DoxyCodeLine{359         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a32dd2c3385641ceeb8ff76e6c575de08}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelVolumeLevelScalar )( }
+\DoxyCodeLine{360             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{361             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{362             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a2dce7641cd27f9eb30b52efe07de0cdf}{nChannel}},}
+\DoxyCodeLine{363             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{364             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_aae251eaf9a15c9ca90c58fc2d8ad15bf}{pfLevel}});}
+\DoxyCodeLine{365         }
+\DoxyCodeLine{366         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a30f4e635cfc5cd63593a8984bd3b55c6}{HRESULT}} ( STDMETHODCALLTYPE *SetMute )( }
+\DoxyCodeLine{367             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{368             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{369             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  BOOL \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a9d7b607874bd259d26a2c5cd3da7978e}{bMute}},}
+\DoxyCodeLine{370             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a92b929ed192c1adfc85c603a5c25d14b}{pguidEventContext}});}
+\DoxyCodeLine{371         }
+\DoxyCodeLine{372         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a81cd47af352fc8205d482e6203034cff}{HRESULT}} ( STDMETHODCALLTYPE *GetMute )( }
+\DoxyCodeLine{373             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{374             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{375             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BOOL *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ad026f0f9821685c05b061387dde50c48}{pbMute}});}
+\DoxyCodeLine{376         }
+\DoxyCodeLine{377         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a5ba1f44537d060b855a11dbe1d32b723}{HRESULT}} ( STDMETHODCALLTYPE *GetVolumeStepInfo )( }
+\DoxyCodeLine{378             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{379             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{380             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a1fabbd09095379b4ad4e7e18e411f6bd}{pnStep}},}
+\DoxyCodeLine{381             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{382             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a296158208106e2522202d9e73390508f}{pnStepCount}});}
+\DoxyCodeLine{383         }
+\DoxyCodeLine{384         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ab3137f2ccb0db15cbc8b3fcbbc88d0e6}{HRESULT}} ( STDMETHODCALLTYPE *VolumeStepUp )( }
+\DoxyCodeLine{385             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{386             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4645719eaa744e0ac977f788626cc4cc}{pguidEventContext}});}
+\DoxyCodeLine{387         }
+\DoxyCodeLine{388         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ade30a0028e822837392cef098ba25061}{HRESULT}} ( STDMETHODCALLTYPE *VolumeStepDown )( }
+\DoxyCodeLine{389             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{390             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4645719eaa744e0ac977f788626cc4cc}{pguidEventContext}});}
+\DoxyCodeLine{391         }
+\DoxyCodeLine{392         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a9c9859f5aabe1d48048b653882f7d4bf}{HRESULT}} ( STDMETHODCALLTYPE *QueryHardwareSupport )( }
+\DoxyCodeLine{393             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{394             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{395             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ae89acb965aef08a9d5d357fde01b0d9e}{pdwHardwareSupportMask}});}
+\DoxyCodeLine{396         }
+\DoxyCodeLine{397         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a80db13a99f21ff56bd125900be9ca0d1}{HRESULT}} ( STDMETHODCALLTYPE *GetVolumeRange )( }
+\DoxyCodeLine{398             \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}} * This,}
+\DoxyCodeLine{399             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{400             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ae1251e4534363e9c3704763acb0adf44}{pflVolumeMindB}},}
+\DoxyCodeLine{401             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{402             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a8fc082e5e06a56bd6b5a957bbbf9ec38}{pflVolumeMaxdB}},}
+\DoxyCodeLine{403             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{404             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_add07a9ce433a209f058a60d9e2859ee7}{pflVolumeIncrementdB}});}
+\DoxyCodeLine{405         }
+\DoxyCodeLine{406         END\_INTERFACE}
+\DoxyCodeLine{407     \} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl}{IAudioEndpointVolumeVtbl}};}
+\DoxyCodeLine{408 }
+\DoxyCodeLine{409     \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudioEndpointVolume}}}
+\DoxyCodeLine{410     \{}
+\DoxyCodeLine{411         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl}{IAudioEndpointVolumeVtbl}} *lpVtbl;}
+\DoxyCodeLine{412     \};}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414     }
+\DoxyCodeLine{415 }
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 }
+\DoxyCodeLine{419 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_QueryInterface(This,riid,ppvObject)    \(\backslash\)}}
+\DoxyCodeLine{420 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{421 }
+\DoxyCodeLine{422 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_AddRef(This)   \(\backslash\)}}
+\DoxyCodeLine{423 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_Release(This)  \(\backslash\)}}
+\DoxyCodeLine{426 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_RegisterControlChangeNotify(This,pNotify)  \(\backslash\)}}
+\DoxyCodeLine{430 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> RegisterControlChangeNotify(This,pNotify) ) }}
+\DoxyCodeLine{431 }
+\DoxyCodeLine{432 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_UnregisterControlChangeNotify(This,pNotify)    \(\backslash\)}}
+\DoxyCodeLine{433 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> UnregisterControlChangeNotify(This,pNotify) ) }}
+\DoxyCodeLine{434 }
+\DoxyCodeLine{435 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetChannelCount(This,pnChannelCount)   \(\backslash\)}}
+\DoxyCodeLine{436 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelCount(This,pnChannelCount) ) }}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_SetMasterVolumeLevel(This,fLevelDB,pguidEventContext)  \(\backslash\)}}
+\DoxyCodeLine{439 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetMasterVolumeLevel(This,fLevelDB,pguidEventContext) ) }}
+\DoxyCodeLine{440 }
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_SetMasterVolumeLevelScalar(This,fLevel,pguidEventContext)  \(\backslash\)}}
+\DoxyCodeLine{442 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetMasterVolumeLevelScalar(This,fLevel,pguidEventContext) ) }}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetMasterVolumeLevel(This,pfLevelDB)   \(\backslash\)}}
+\DoxyCodeLine{445 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMasterVolumeLevel(This,pfLevelDB) ) }}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{447 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetMasterVolumeLevelScalar(This,pfLevel)   \(\backslash\)}}
+\DoxyCodeLine{448 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMasterVolumeLevelScalar(This,pfLevel) ) }}
+\DoxyCodeLine{449 }
+\DoxyCodeLine{450 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_SetChannelVolumeLevel(This,nChannel,fLevelDB,pguidEventContext)    \(\backslash\)}}
+\DoxyCodeLine{451 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetChannelVolumeLevel(This,nChannel,fLevelDB,pguidEventContext) ) }}
+\DoxyCodeLine{452 }
+\DoxyCodeLine{453 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_SetChannelVolumeLevelScalar(This,nChannel,fLevel,pguidEventContext)    \(\backslash\)}}
+\DoxyCodeLine{454 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetChannelVolumeLevelScalar(This,nChannel,fLevel,pguidEventContext) ) }}
+\DoxyCodeLine{455 }
+\DoxyCodeLine{456 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetChannelVolumeLevel(This,nChannel,pfLevelDB) \(\backslash\)}}
+\DoxyCodeLine{457 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelVolumeLevel(This,nChannel,pfLevelDB) ) }}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetChannelVolumeLevelScalar(This,nChannel,pfLevel) \(\backslash\)}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelVolumeLevelScalar(This,nChannel,pfLevel) ) }}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_SetMute(This,bMute,pguidEventContext)  \(\backslash\)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetMute(This,bMute,pguidEventContext) ) }}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetMute(This,pbMute)   \(\backslash\)}}
+\DoxyCodeLine{466 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMute(This,pbMute) ) }}
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetVolumeStepInfo(This,pnStep,pnStepCount) \(\backslash\)}}
+\DoxyCodeLine{469 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetVolumeStepInfo(This,pnStep,pnStepCount) ) }}
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_VolumeStepUp(This,pguidEventContext)   \(\backslash\)}}
+\DoxyCodeLine{472 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> VolumeStepUp(This,pguidEventContext) ) }}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_VolumeStepDown(This,pguidEventContext) \(\backslash\)}}
+\DoxyCodeLine{475 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> VolumeStepDown(This,pguidEventContext) ) }}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_QueryHardwareSupport(This,pdwHardwareSupportMask)  \(\backslash\)}}
+\DoxyCodeLine{478 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryHardwareSupport(This,pdwHardwareSupportMask) ) }}
+\DoxyCodeLine{479 }
+\DoxyCodeLine{480 \textcolor{preprocessor}{\#define IAudioEndpointVolume\_GetVolumeRange(This,pflVolumeMindB,pflVolumeMaxdB,pflVolumeIncrementdB)    \(\backslash\)}}
+\DoxyCodeLine{481 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetVolumeRange(This,pflVolumeMindB,pflVolumeMaxdB,pflVolumeIncrementdB) ) }}
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 }
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{487 }
+\DoxyCodeLine{488 }
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioEndpointVolume\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{492 }
+\DoxyCodeLine{493 }
+\DoxyCodeLine{494 \textcolor{preprocessor}{\#ifndef \_\_IAudioMeterInformation\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{495 \textcolor{preprocessor}{\#define \_\_IAudioMeterInformation\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{496 }
+\DoxyCodeLine{497 \textcolor{comment}{/* interface IAudioMeterInformation */}}
+\DoxyCodeLine{498 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{499 }
+\DoxyCodeLine{500 }
+\DoxyCodeLine{501 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{endpointvolume_8h_a9d66e9d9f197adb4d5a0d28a1a8e4717}{IID\_IAudioMeterInformation}};}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{504     }
+\DoxyCodeLine{505     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}C02216F6-\/8C67-\/4B5B-\/9D00-\/D008E73E0064"{}})}
+\DoxyCodeLine{506     \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} : public IUnknown}
+\DoxyCodeLine{507     \{}
+\DoxyCodeLine{508     \textcolor{keyword}{public}:}
+\DoxyCodeLine{509         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a924492d64de503c8243cb4b81e011856}{HRESULT}} STDMETHODCALLTYPE GetPeakValue( }
+\DoxyCodeLine{510             \textcolor{comment}{/* [out] */} \textcolor{keywordtype}{float} *pfPeak) = 0;}
+\DoxyCodeLine{511         }
+\DoxyCodeLine{512         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a924492d64de503c8243cb4b81e011856}{HRESULT}} STDMETHODCALLTYPE GetMeteringChannelCount( }
+\DoxyCodeLine{513             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{514             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a4ab4670f69078f77e5f57ba689ed2620}{pnChannelCount}}) = 0;}
+\DoxyCodeLine{515         }
+\DoxyCodeLine{516         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a924492d64de503c8243cb4b81e011856}{HRESULT}} STDMETHODCALLTYPE GetChannelsPeakValues( }
+\DoxyCodeLine{517             \textcolor{comment}{/* [in] */} UINT32 u32ChannelCount,}
+\DoxyCodeLine{518             \textcolor{comment}{/* [size\_is][out] */} \textcolor{keywordtype}{float} *afPeakValues) = 0;}
+\DoxyCodeLine{519         }
+\DoxyCodeLine{520         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_a924492d64de503c8243cb4b81e011856}{HRESULT}} STDMETHODCALLTYPE QueryHardwareSupport( }
+\DoxyCodeLine{521             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{522             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_audio_endpoint_volume_vtbl_ae89acb965aef08a9d5d357fde01b0d9e}{pdwHardwareSupportMask}}) = 0;}
+\DoxyCodeLine{523         }
+\DoxyCodeLine{524     \};}
+\DoxyCodeLine{525     }
+\DoxyCodeLine{526 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_meter_information_vtbl}{IAudioMeterInformationVtbl}}}
+\DoxyCodeLine{529     \{}
+\DoxyCodeLine{530         BEGIN\_INTERFACE}
+\DoxyCodeLine{531         }
+\DoxyCodeLine{532         \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_af6bd08daeea2822f9067333b475dad4d}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{533             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This,}
+\DoxyCodeLine{534             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a0a5da77096669d539d18a94855ff3bc1}{riid}},}
+\DoxyCodeLine{535             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{536             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a2c3648ad44fc0fd48fe088f68694b661}{ppvObject}});}
+\DoxyCodeLine{537         }
+\DoxyCodeLine{538         \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a3a40fb27152373b647aced0cf237918a}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{539             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This);}
+\DoxyCodeLine{540         }
+\DoxyCodeLine{541         \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a5be3823513392bc15657a498163a50a9}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{542             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This);}
+\DoxyCodeLine{543         }
+\DoxyCodeLine{544         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_aab1be13ee1c495e52b33fe90d7124409}{HRESULT}} ( STDMETHODCALLTYPE *GetPeakValue )( }
+\DoxyCodeLine{545             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This,}
+\DoxyCodeLine{546             \textcolor{comment}{/* [out] */} \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_aead09c02703ec1653d18cd6c749f57e2}{pfPeak}});}
+\DoxyCodeLine{547         }
+\DoxyCodeLine{548         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a4803cc0790473ce844e1d3767dc6967b}{HRESULT}} ( STDMETHODCALLTYPE *GetMeteringChannelCount )( }
+\DoxyCodeLine{549             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This,}
+\DoxyCodeLine{550             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{551             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a4d623a4a4046b0ed5d736fec9f5bdfdb}{pnChannelCount}});}
+\DoxyCodeLine{552         }
+\DoxyCodeLine{553         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a7bdf97c61eab3281bfcf0835da8bf663}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelsPeakValues )( }
+\DoxyCodeLine{554             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This,}
+\DoxyCodeLine{555             \textcolor{comment}{/* [in] */} UINT32 \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a56cb77e40e88809fb9d42c5879807354}{u32ChannelCount}},}
+\DoxyCodeLine{556             \textcolor{comment}{/* [size\_is][out] */} \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_abdc52aa7adfc696c46057e9a6d2223ed}{afPeakValues}});}
+\DoxyCodeLine{557         }
+\DoxyCodeLine{558         \textcolor{comment}{/* [helpstring] */} \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_ac51b74c5bf768ca42bd8cf2e2b33d8b4}{HRESULT}} ( STDMETHODCALLTYPE *QueryHardwareSupport )( }
+\DoxyCodeLine{559             \mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}} * This,}
+\DoxyCodeLine{560             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{561             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a872f52800e4baa961ccd83ec0c1c7688}{pdwHardwareSupportMask}});}
+\DoxyCodeLine{562         }
+\DoxyCodeLine{563         END\_INTERFACE}
+\DoxyCodeLine{564     \} \mbox{\hyperlink{struct_i_audio_meter_information_vtbl}{IAudioMeterInformationVtbl}};}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566     \textcolor{keyword}{interface }\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudioMeterInformation}}}
+\DoxyCodeLine{567     \{}
+\DoxyCodeLine{568         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_meter_information_vtbl}{IAudioMeterInformationVtbl}} *lpVtbl;}
+\DoxyCodeLine{569     \};}
+\DoxyCodeLine{570 }
+\DoxyCodeLine{571     }
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{574 }
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 \textcolor{preprocessor}{\#define IAudioMeterInformation\_QueryInterface(This,riid,ppvObject)  \(\backslash\)}}
+\DoxyCodeLine{577 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{578 }
+\DoxyCodeLine{579 \textcolor{preprocessor}{\#define IAudioMeterInformation\_AddRef(This) \(\backslash\)}}
+\DoxyCodeLine{580 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{581 }
+\DoxyCodeLine{582 \textcolor{preprocessor}{\#define IAudioMeterInformation\_Release(This)    \(\backslash\)}}
+\DoxyCodeLine{583 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{584 }
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#define IAudioMeterInformation\_GetPeakValue(This,pfPeak)    \(\backslash\)}}
+\DoxyCodeLine{587 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetPeakValue(This,pfPeak) ) }}
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#define IAudioMeterInformation\_GetMeteringChannelCount(This,pnChannelCount) \(\backslash\)}}
+\DoxyCodeLine{590 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMeteringChannelCount(This,pnChannelCount) ) }}
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 \textcolor{preprocessor}{\#define IAudioMeterInformation\_GetChannelsPeakValues(This,u32ChannelCount,afPeakValues) \(\backslash\)}}
+\DoxyCodeLine{593 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelsPeakValues(This,u32ChannelCount,afPeakValues) ) }}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{595 \textcolor{preprocessor}{\#define IAudioMeterInformation\_QueryHardwareSupport(This,pdwHardwareSupportMask)    \(\backslash\)}}
+\DoxyCodeLine{596 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryHardwareSupport(This,pdwHardwareSupportMask) ) }}
+\DoxyCodeLine{597 }
+\DoxyCodeLine{598 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600 }
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 }
+\DoxyCodeLine{604 }
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioMeterInformation\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{607 }
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 \textcolor{comment}{/* Additional Prototypes for ALL interfaces */}}
+\DoxyCodeLine{610 }
+\DoxyCodeLine{611 \textcolor{comment}{/* end of Additional Prototypes */}}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{614 \}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{618 }
+\DoxyCodeLine{619 }
+\DoxyCodeLine{620 }
+
+\end{DoxyCode}

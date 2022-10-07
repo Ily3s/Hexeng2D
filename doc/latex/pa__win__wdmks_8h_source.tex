@@ -1,0 +1,117 @@
+\hypertarget{pa__win__wdmks_8h_source}{}\doxysection{pa\+\_\+win\+\_\+wdmks.\+h}
+\label{pa__win__wdmks_8h_source}\index{Hexeng2D/dependencies/portaudio/include/pa\_win\_wdmks.h@{Hexeng2D/dependencies/portaudio/include/pa\_win\_wdmks.h}}
+\mbox{\hyperlink{pa__win__wdmks_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_WIN\_WDMKS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_WIN\_WDMKS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{6 \textcolor{comment}{ * WDM/KS specific extensions}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2007 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{52 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{60     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{PaWinWDMKSFlags}}}
+\DoxyCodeLine{61     \{}
+\DoxyCodeLine{65         \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a6d237f8c6e3b6eb5a5894f5b5a62e750}{paWinWDMKSOverrideFramesize}}   = (1 << 0),}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{70         \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a4879ce686baaf3d76df4d55a34e48e41}{paWinWDMKSUseGivenChannelMask}} = (1 << 1),}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72     \} \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{PaWinWDMKSFlags}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{PaWinWDMKSInfo}}\{}
+\DoxyCodeLine{75         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a550f4ab63732471599e64a2961a63125}{size}};             }
+\DoxyCodeLine{76         \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a28bff7039063cc48ebab4e13cd1bf3c7}{hostApiType}};    }
+\DoxyCodeLine{77         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a17221c5458a73c0295dff5cef739eb7d}{version}};          }
+\DoxyCodeLine{83         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a2c46387aee219e1499120b056d74e94d}{flags}};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_af1a2e073583ac238a60f1acbee470e28}{noOfPackets}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{92         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info_a07cee1fc3c28bbf431672040b4256f5c}{channelMask}};}
+\DoxyCodeLine{93     \} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{PaWinWDMKSInfo}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{PaWDMKSType}}}
+\DoxyCodeLine{96     \{}
+\DoxyCodeLine{97         \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ac2d5cb7ff54518b41af0cfca6da81be9}{Type\_kNotUsed}},}
+\DoxyCodeLine{98         \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ae39673a93d503c16300f190ed31bb349}{Type\_kWaveCyclic}},}
+\DoxyCodeLine{99         \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a2af26020e0cc2ba29abf9235c1de3893}{Type\_kWaveRT}},}
+\DoxyCodeLine{100         \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a99042eaa29bb660ef461682e1d96035e}{Type\_kCnt}},}
+\DoxyCodeLine{101     \} \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{PaWDMKSType}};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{PaWDMKSSubType}}}
+\DoxyCodeLine{104     \{}
+\DoxyCodeLine{105         \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a5d1cd6d4006c242991f1c2fdcc7b565b}{SubType\_kUnknown}},}
+\DoxyCodeLine{106         \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a49c6ee27f3848a25e01bb7e7e9dd4ef5}{SubType\_kNotification}},}
+\DoxyCodeLine{107         \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a3ef0fb75ff70c3292bd3d2174f5041a0}{SubType\_kPolled}},}
+\DoxyCodeLine{108         \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2aac0799e2435721f7ed6e6791375a0b0f}{SubType\_kCnt}},}
+\DoxyCodeLine{109     \} \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{PaWDMKSSubType}};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{PaWinWDMKSDeviceInfo}} \{}
+\DoxyCodeLine{112         \textcolor{keywordtype}{wchar\_t} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_aef789b50c6cf1e05c5c6e1e18e2a233c}{filterPath}}[MAX\_PATH];     }
+\DoxyCodeLine{113         \textcolor{keywordtype}{wchar\_t} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_a89df08f196f4bc367794e7d76e404a04}{topologyPath}}[MAX\_PATH];   }
+\DoxyCodeLine{114         \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{PaWDMKSType}} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_a65b71d52a0990fdb97201d0cea3f05f1}{streamingType}};}
+\DoxyCodeLine{115         GUID \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info_a183f5caf8ae9c7e62bcf6e19c8d2e4ad}{deviceProductGuid}};           }
+\DoxyCodeLine{116     \} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{PaWinWDMKSDeviceInfo}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}}}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{120         \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a37ff146054a9ae1c16b87f589874949a}{device}};}
+\DoxyCodeLine{121         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a5bea6996e1aa45e8525769b13eca32a0}{channels}};                  }
+\DoxyCodeLine{122         \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a5b5248935d8b586285805bb827e1592f}{framesPerHostBuffer}};       }
+\DoxyCodeLine{123         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a92bdda98baa8976a19d99da20eb6d21a}{endpointPinId}};                  }
+\DoxyCodeLine{124         \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_ae4a79825046710f1fee6309b451983de}{muxNodeId}};                      }
+\DoxyCodeLine{125         \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{PaWDMKSSubType}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info_a38c7069753a67167c66a926f7859d1f3}{streamingSubType}};       }
+\DoxyCodeLine{126     \} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}};}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{PaWDMKSSpecificStreamInfo}} \{}
+\DoxyCodeLine{129         \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info_addb405c49554ab4c9e11122f4b85d384}{input}};}
+\DoxyCodeLine{130         \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{PaWDMKSDirectionSpecificStreamInfo}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info_a99f218f86f2ee9c1f56ae657e1de62cb}{output}};}
+\DoxyCodeLine{131     \} \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{PaWDMKSSpecificStreamInfo}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{134 \}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_WIN\_DS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

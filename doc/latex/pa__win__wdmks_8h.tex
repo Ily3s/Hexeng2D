@@ -1,0 +1,188 @@
+\hypertarget{pa__win__wdmks_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+win\+\_\+wdmks.h File Reference}
+\label{pa__win__wdmks_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_win\_wdmks.h@{Hexeng2D/dependencies/portaudio/include/pa\_win\_wdmks.h}}
+
+
+WDM Kernel Streaming-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{Pa\+Win\+WDMKSDevice\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{Pa\+WDMKSSpecific\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{Pa\+Win\+WDMKSFlags}} \mbox{\hyperlink{pa__win__wdmks_8h_ae0ecb22af3cc3dbb798a5cf2427046f1}{Pa\+Win\+WDMKSFlags}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}} \mbox{\hyperlink{pa__win__wdmks_8h_a5c908c7323f6478676a8c2ce8acd71f2}{Pa\+Win\+WDMKSInfo}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{Pa\+WDMKSType}} \mbox{\hyperlink{pa__win__wdmks_8h_aed95d8decaad8511126206f575287df4}{Pa\+WDMKSType}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{Pa\+WDMKSSub\+Type}} \mbox{\hyperlink{pa__win__wdmks_8h_aea1e9e518e29ef55658d1d2ae8745991}{Pa\+WDMKSSub\+Type}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{Pa\+Win\+WDMKSDevice\+Info}} \mbox{\hyperlink{pa__win__wdmks_8h_ad0f32a25b7b56fce987a6adf9576a1ec}{Pa\+Win\+WDMKSDevice\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}} \mbox{\hyperlink{pa__win__wdmks_8h_a58357b969802c0f04f37f9237b5165f9}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{Pa\+WDMKSSpecific\+Stream\+Info}} \mbox{\hyperlink{pa__win__wdmks_8h_acce060d2c2c243c34649513537f13d95}{Pa\+WDMKSSpecific\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{Pa\+Win\+WDMKSFlags}} \{ \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a6d237f8c6e3b6eb5a5894f5b5a62e750}{pa\+Win\+WDMKSOverride\+Framesize}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a4879ce686baaf3d76df4d55a34e48e41}{pa\+Win\+WDMKSUse\+Given\+Channel\+Mask}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{Pa\+WDMKSType}} \{ \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ac2d5cb7ff54518b41af0cfca6da81be9}{Type\+\_\+k\+Not\+Used}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ae39673a93d503c16300f190ed31bb349}{Type\+\_\+k\+Wave\+Cyclic}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a2af26020e0cc2ba29abf9235c1de3893}{Type\+\_\+k\+Wave\+RT}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a99042eaa29bb660ef461682e1d96035e}{Type\+\_\+k\+Cnt}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{Pa\+WDMKSSub\+Type}} \{ \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a5d1cd6d4006c242991f1c2fdcc7b565b}{Sub\+Type\+\_\+k\+Unknown}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a49c6ee27f3848a25e01bb7e7e9dd4ef5}{Sub\+Type\+\_\+k\+Notification}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a3ef0fb75ff70c3292bd3d2174f5041a0}{Sub\+Type\+\_\+k\+Polled}}
+, \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2aac0799e2435721f7ed6e6791375a0b0f}{Sub\+Type\+\_\+k\+Cnt}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WDM Kernel Streaming-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8h_a58357b969802c0f04f37f9237b5165f9}\label{pa__win__wdmks_8h_a58357b969802c0f04f37f9237b5165f9}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSDirectionSpecificStreamInfo@{PaWDMKSDirectionSpecificStreamInfo}}
+\index{PaWDMKSDirectionSpecificStreamInfo@{PaWDMKSDirectionSpecificStreamInfo}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSDirectionSpecificStreamInfo}{PaWDMKSDirectionSpecificStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_direction_specific_stream_info}{Pa\+WDMKSDirection\+Specific\+Stream\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8h_acce060d2c2c243c34649513537f13d95}\label{pa__win__wdmks_8h_acce060d2c2c243c34649513537f13d95}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSSpecificStreamInfo@{PaWDMKSSpecificStreamInfo}}
+\index{PaWDMKSSpecificStreamInfo@{PaWDMKSSpecificStreamInfo}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSSpecificStreamInfo}{PaWDMKSSpecificStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{Pa\+WDMKSSpecific\+Stream\+Info}} \mbox{\hyperlink{struct_pa_w_d_m_k_s_specific_stream_info}{Pa\+WDMKSSpecific\+Stream\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8h_aea1e9e518e29ef55658d1d2ae8745991}\label{pa__win__wdmks_8h_aea1e9e518e29ef55658d1d2ae8745991}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSSubType@{PaWDMKSSubType}}
+\index{PaWDMKSSubType@{PaWDMKSSubType}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSSubType}{PaWDMKSSubType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{Pa\+WDMKSSub\+Type}} \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{Pa\+WDMKSSub\+Type}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8h_aed95d8decaad8511126206f575287df4}\label{pa__win__wdmks_8h_aed95d8decaad8511126206f575287df4}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSType@{PaWDMKSType}}
+\index{PaWDMKSType@{PaWDMKSType}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSType}{PaWDMKSType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{Pa\+WDMKSType}} \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{Pa\+WDMKSType}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8h_ad0f32a25b7b56fce987a6adf9576a1ec}\label{pa__win__wdmks_8h_ad0f32a25b7b56fce987a6adf9576a1ec}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWinWDMKSDeviceInfo@{PaWinWDMKSDeviceInfo}}
+\index{PaWinWDMKSDeviceInfo@{PaWinWDMKSDeviceInfo}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWinWDMKSDeviceInfo}{PaWinWDMKSDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{Pa\+Win\+WDMKSDevice\+Info}} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_device_info}{Pa\+Win\+WDMKSDevice\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wdmks_8h_ae0ecb22af3cc3dbb798a5cf2427046f1}\label{pa__win__wdmks_8h_ae0ecb22af3cc3dbb798a5cf2427046f1}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWinWDMKSFlags@{PaWinWDMKSFlags}}
+\index{PaWinWDMKSFlags@{PaWinWDMKSFlags}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWinWDMKSFlags}{PaWinWDMKSFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{Pa\+Win\+WDMKSFlags}} \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{Pa\+Win\+WDMKSFlags}}}
+
+Flags to indicate valid fields in \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+\mbox{\Hypertarget{pa__win__wdmks_8h_a5c908c7323f6478676a8c2ce8acd71f2}\label{pa__win__wdmks_8h_a5c908c7323f6478676a8c2ce8acd71f2}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWinWDMKSInfo@{PaWinWDMKSInfo}}
+\index{PaWinWDMKSInfo@{PaWinWDMKSInfo}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWinWDMKSInfo}{PaWinWDMKSInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}} \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSSubType@{PaWDMKSSubType}}
+\index{PaWDMKSSubType@{PaWDMKSSubType}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSSubType}{PaWDMKSSubType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2}{Pa\+WDMKSSub\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SubType\_kUnknown@{SubType\_kUnknown}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!SubType\_kUnknown@{SubType\_kUnknown}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a5d1cd6d4006c242991f1c2fdcc7b565b}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a5d1cd6d4006c242991f1c2fdcc7b565b}} 
+Sub\+Type\+\_\+k\+Unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SubType\_kNotification@{SubType\_kNotification}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!SubType\_kNotification@{SubType\_kNotification}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a49c6ee27f3848a25e01bb7e7e9dd4ef5}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a49c6ee27f3848a25e01bb7e7e9dd4ef5}} 
+Sub\+Type\+\_\+k\+Notification&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SubType\_kPolled@{SubType\_kPolled}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!SubType\_kPolled@{SubType\_kPolled}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a3ef0fb75ff70c3292bd3d2174f5041a0}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2a3ef0fb75ff70c3292bd3d2174f5041a0}} 
+Sub\+Type\+\_\+k\+Polled&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SubType\_kCnt@{SubType\_kCnt}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!SubType\_kCnt@{SubType\_kCnt}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2aac0799e2435721f7ed6e6791375a0b0f}\label{pa__win__wdmks_8h_ab1fecd3bd8c22ca5820fee46fc9d89c2aac0799e2435721f7ed6e6791375a0b0f}} 
+Sub\+Type\+\_\+k\+Cnt&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWDMKSType@{PaWDMKSType}}
+\index{PaWDMKSType@{PaWDMKSType}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWDMKSType}{PaWDMKSType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8}{Pa\+WDMKSType}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type\_kNotUsed@{Type\_kNotUsed}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!Type\_kNotUsed@{Type\_kNotUsed}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ac2d5cb7ff54518b41af0cfca6da81be9}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ac2d5cb7ff54518b41af0cfca6da81be9}} 
+Type\+\_\+k\+Not\+Used&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type\_kWaveCyclic@{Type\_kWaveCyclic}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!Type\_kWaveCyclic@{Type\_kWaveCyclic}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ae39673a93d503c16300f190ed31bb349}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8ae39673a93d503c16300f190ed31bb349}} 
+Type\+\_\+k\+Wave\+Cyclic&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type\_kWaveRT@{Type\_kWaveRT}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!Type\_kWaveRT@{Type\_kWaveRT}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a2af26020e0cc2ba29abf9235c1de3893}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a2af26020e0cc2ba29abf9235c1de3893}} 
+Type\+\_\+k\+Wave\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Type\_kCnt@{Type\_kCnt}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!Type\_kCnt@{Type\_kCnt}}}\mbox{\Hypertarget{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a99042eaa29bb660ef461682e1d96035e}\label{pa__win__wdmks_8h_ae95ef18411a817c541880a08fe5ca1f8a99042eaa29bb660ef461682e1d96035e}} 
+Type\+\_\+k\+Cnt&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}\label{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}} 
+\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!PaWinWDMKSFlags@{PaWinWDMKSFlags}}
+\index{PaWinWDMKSFlags@{PaWinWDMKSFlags}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}
+\doxysubsubsection{\texorpdfstring{PaWinWDMKSFlags}{PaWinWDMKSFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9}{Pa\+Win\+WDMKSFlags}}}
+
+Flags to indicate valid fields in \mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}}. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_win_w_d_m_k_s_info}{Pa\+Win\+WDMKSInfo}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWDMKSOverrideFramesize@{paWinWDMKSOverrideFramesize}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!paWinWDMKSOverrideFramesize@{paWinWDMKSOverrideFramesize}}}\mbox{\Hypertarget{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a6d237f8c6e3b6eb5a5894f5b5a62e750}\label{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a6d237f8c6e3b6eb5a5894f5b5a62e750}} 
+pa\+Win\+WDMKSOverride\+Framesize&Makes WDMKS use the supplied latency figures instead of relying on the frame size reported by the Wave\+Cyclic device. Use at own risk! \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWDMKSUseGivenChannelMask@{paWinWDMKSUseGivenChannelMask}!pa\_win\_wdmks.h@{pa\_win\_wdmks.h}}\index{pa\_win\_wdmks.h@{pa\_win\_wdmks.h}!paWinWDMKSUseGivenChannelMask@{paWinWDMKSUseGivenChannelMask}}}\mbox{\Hypertarget{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a4879ce686baaf3d76df4d55a34e48e41}\label{pa__win__wdmks_8h_a6ce14ca806f017e4cbf6b8439a8d1ac9a4879ce686baaf3d76df4d55a34e48e41}} 
+pa\+Win\+WDMKSUse\+Given\+Channel\+Mask&Makes WDMKS (output stream) use the given channel\+Mask instead of the default. \begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+\\
+\hline
+
+\end{DoxyEnumFields}

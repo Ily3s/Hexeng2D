@@ -1,0 +1,71 @@
+\hypertarget{winapifamily_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/winapifamily.h File Reference}
+\label{winapifamily_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/winapifamily.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/winapifamily.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_ac5e9b7a5a9d81eb594fdafae4dbdc591}{WINAPI\+\_\+\+PARTITION\+\_\+\+DESKTOP}}~0x1
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}{WINAPI\+\_\+\+PARTITION\+\_\+\+APP}}~0x2
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_ac0f76cfe3a34c17c9b7e41ca914107ec}{WINAPI\+\_\+\+FAMILY\+\_\+\+APP}}~\mbox{\hyperlink{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}{WINAPI\+\_\+\+PARTITION\+\_\+\+APP}}
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_a7c12fe96be14d8b42b76ac2f08dd70ca}{WINAPI\+\_\+\+FAMILY\+\_\+\+DESKTOP\+\_\+\+APP}}
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}{WINAPI\+\_\+\+FAMILY}}~\mbox{\hyperlink{winapifamily_8h_a7c12fe96be14d8b42b76ac2f08dd70ca}{WINAPI\+\_\+\+FAMILY\+\_\+\+DESKTOP\+\_\+\+APP}}
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_aa03bd2d0d60be6284dd465dee407d74e}{WINAPI\+\_\+\+FAMILY\+\_\+\+PARTITION}}(\mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})~((\mbox{\hyperlink{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}{WINAPI\+\_\+\+FAMILY}} \& \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}}) == \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})
+\item 
+\#define \mbox{\hyperlink{winapifamily_8h_a68f89a382a3e1e03642282943fe0c631}{WINAPI\+\_\+\+FAMILY\+\_\+\+ONE\+\_\+\+PARTITION}}(vset,  \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})~((\mbox{\hyperlink{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}{WINAPI\+\_\+\+FAMILY}} \& vset) == \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}\label{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_FAMILY@{WINAPI\_FAMILY}}
+\index{WINAPI\_FAMILY@{WINAPI\_FAMILY}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_FAMILY}{WINAPI\_FAMILY}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+FAMILY~\mbox{\hyperlink{winapifamily_8h_a7c12fe96be14d8b42b76ac2f08dd70ca}{WINAPI\+\_\+\+FAMILY\+\_\+\+DESKTOP\+\_\+\+APP}}}
+
+\mbox{\Hypertarget{winapifamily_8h_ac0f76cfe3a34c17c9b7e41ca914107ec}\label{winapifamily_8h_ac0f76cfe3a34c17c9b7e41ca914107ec}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_FAMILY\_APP@{WINAPI\_FAMILY\_APP}}
+\index{WINAPI\_FAMILY\_APP@{WINAPI\_FAMILY\_APP}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_FAMILY\_APP}{WINAPI\_FAMILY\_APP}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+FAMILY\+\_\+\+APP~\mbox{\hyperlink{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}{WINAPI\+\_\+\+PARTITION\+\_\+\+APP}}}
+
+\mbox{\Hypertarget{winapifamily_8h_a7c12fe96be14d8b42b76ac2f08dd70ca}\label{winapifamily_8h_a7c12fe96be14d8b42b76ac2f08dd70ca}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_FAMILY\_DESKTOP\_APP@{WINAPI\_FAMILY\_DESKTOP\_APP}}
+\index{WINAPI\_FAMILY\_DESKTOP\_APP@{WINAPI\_FAMILY\_DESKTOP\_APP}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_FAMILY\_DESKTOP\_APP}{WINAPI\_FAMILY\_DESKTOP\_APP}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+FAMILY\+\_\+\+DESKTOP\+\_\+\+APP}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                   (\mbox{\hyperlink{winapifamily_8h_ac5e9b7a5a9d81eb594fdafae4dbdc591}{WINAPI\_PARTITION\_DESKTOP}} \(\backslash\)}
+\DoxyCodeLine{                   | \mbox{\hyperlink{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}{WINAPI\_PARTITION\_APP}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{winapifamily_8h_a68f89a382a3e1e03642282943fe0c631}\label{winapifamily_8h_a68f89a382a3e1e03642282943fe0c631}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_FAMILY\_ONE\_PARTITION@{WINAPI\_FAMILY\_ONE\_PARTITION}}
+\index{WINAPI\_FAMILY\_ONE\_PARTITION@{WINAPI\_FAMILY\_ONE\_PARTITION}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_FAMILY\_ONE\_PARTITION}{WINAPI\_FAMILY\_ONE\_PARTITION}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+FAMILY\+\_\+\+ONE\+\_\+\+PARTITION(\begin{DoxyParamCaption}\item[{}]{vset,  }\item[{}]{\mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}{WINAPI\+\_\+\+FAMILY}} \& vset) == \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})}
+
+\mbox{\Hypertarget{winapifamily_8h_aa03bd2d0d60be6284dd465dee407d74e}\label{winapifamily_8h_aa03bd2d0d60be6284dd465dee407d74e}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_FAMILY\_PARTITION@{WINAPI\_FAMILY\_PARTITION}}
+\index{WINAPI\_FAMILY\_PARTITION@{WINAPI\_FAMILY\_PARTITION}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_FAMILY\_PARTITION}{WINAPI\_FAMILY\_PARTITION}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+FAMILY\+\_\+\+PARTITION(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}} }\end{DoxyParamCaption})~((\mbox{\hyperlink{winapifamily_8h_ad58d17c7511a30b914adc28faaeafa5d}{WINAPI\+\_\+\+FAMILY}} \& \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}}) == \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}})}
+
+\mbox{\Hypertarget{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}\label{winapifamily_8h_afb48d1ccff6b11cd213fb93b4af304f3}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_PARTITION\_APP@{WINAPI\_PARTITION\_APP}}
+\index{WINAPI\_PARTITION\_APP@{WINAPI\_PARTITION\_APP}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_PARTITION\_APP}{WINAPI\_PARTITION\_APP}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+PARTITION\+\_\+\+APP~0x2}
+
+\mbox{\Hypertarget{winapifamily_8h_ac5e9b7a5a9d81eb594fdafae4dbdc591}\label{winapifamily_8h_ac5e9b7a5a9d81eb594fdafae4dbdc591}} 
+\index{winapifamily.h@{winapifamily.h}!WINAPI\_PARTITION\_DESKTOP@{WINAPI\_PARTITION\_DESKTOP}}
+\index{WINAPI\_PARTITION\_DESKTOP@{WINAPI\_PARTITION\_DESKTOP}!winapifamily.h@{winapifamily.h}}
+\doxysubsubsection{\texorpdfstring{WINAPI\_PARTITION\_DESKTOP}{WINAPI\_PARTITION\_DESKTOP}}
+{\footnotesize\ttfamily \#define WINAPI\+\_\+\+PARTITION\+\_\+\+DESKTOP~0x1}
+
+This file is part of the mingw-\/w64 runtime package. No warranty is given; refer to the file DISCLAIMER within this package. 

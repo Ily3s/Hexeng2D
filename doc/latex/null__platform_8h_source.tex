@@ -1,0 +1,68 @@
+\hypertarget{null__platform_8h_source}{}\doxysection{null\+\_\+platform.\+h}
+\label{null__platform_8h_source}\index{Hexeng2D/dependencies/glfw/src/null\_platform.h@{Hexeng2D/dependencies/glfw/src/null\_platform.h}}
+\mbox{\hyperlink{null__platform_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2016 Google Inc.}}
+\DoxyCodeLine{5 \textcolor{comment}{// Copyright (c) 2016-\/2017 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{6 \textcolor{comment}{//}}
+\DoxyCodeLine{7 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{8 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{9 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{12 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{13 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{16 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{17 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{18 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{19 \textcolor{comment}{//}}
+\DoxyCodeLine{20 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{21 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{22 \textcolor{comment}{//}}
+\DoxyCodeLine{23 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{24 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{25 \textcolor{comment}{//}}
+\DoxyCodeLine{26 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include <dlfcn.h>}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_WINDOW\_STATE \_GLFWwindowNull null}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CONTEXT\_STATE         struct \{ int dummyContext; \}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_MONITOR\_STATE         struct \{ int dummyMonitor; \}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CURSOR\_STATE          struct \{ int dummyCursor; \}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_WINDOW\_STATE  struct \{ int dummyLibraryWindow; \}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE struct \{ int dummyLibraryContext; \}}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_CONTEXT\_STATE              struct \{ int dummyEGLContext; \}}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE      struct \{ int dummyEGLLibraryContext; \}}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{osmesa__context_8h}{osmesa\_context.h}}"{}}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{posix__time_8h}{posix\_time.h}}"{}}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{posix__thread_8h}{posix\_thread.h}}"{}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{null__joystick_8h}{null\_joystick.h}}"{}}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if defined(\_GLFW\_WIN32)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{ \#define \_glfw\_dlopen(name) LoadLibraryA(name)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{ \#define \_glfw\_dlclose(handle) FreeLibrary((HMODULE) handle)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{ \#define \_glfw\_dlsym(handle, name) GetProcAddress((HMODULE) handle, name)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{ \#define \_glfw\_dlopen(name) dlopen(name, RTLD\_LAZY | RTLD\_LOCAL)}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{ \#define \_glfw\_dlclose(handle) dlclose(handle)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{ \#define \_glfw\_dlsym(handle, name) dlsym(handle, name)}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{// Null-\/specific per-\/window data}}
+\DoxyCodeLine{56 \textcolor{comment}{//}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wwindow_null}{\_GLFWwindowNull}}}
+\DoxyCodeLine{58 \{}
+\DoxyCodeLine{59     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct___g_l_f_wwindow_null_a883ae6f10445df2a3158add20a8f463c}{width}};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct___g_l_f_wwindow_null_a13e453774eae13031015a4d509e4e87d}{height}};}
+\DoxyCodeLine{61 \} \mbox{\hyperlink{struct___g_l_f_wwindow_null}{\_GLFWwindowNull}};}
+\DoxyCodeLine{62 }
+
+\end{DoxyCode}

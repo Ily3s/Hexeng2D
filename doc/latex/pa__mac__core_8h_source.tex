@@ -1,0 +1,101 @@
+\hypertarget{pa__mac__core_8h_source}{}\doxysection{pa\+\_\+mac\+\_\+core.\+h}
+\label{pa__mac__core_8h_source}\index{Hexeng2D/dependencies/portaudio/include/pa\_mac\_core.h@{Hexeng2D/dependencies/portaudio/include/pa\_mac\_core.h}}
+\mbox{\hyperlink{pa__mac__core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_MAC\_CORE\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_MAC\_CORE\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Macintosh Core Audio specific extensions}}
+\DoxyCodeLine{6 \textcolor{comment}{ * portaudio.h should be included before this file.}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 2005-\/2006 Bjorn Roche}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#include <AudioUnit/AudioUnit.h>}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#include <AudioToolbox/AudioToolbox.h>}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{52 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_mac_core_stream_info_a6a208a662332f447094b382a00a2a635}{size}};           }
+\DoxyCodeLine{66     \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{struct_pa_mac_core_stream_info_a63f4110b767bfbf2fa09b88f3252d91e}{hostApiType}};  }
+\DoxyCodeLine{67     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_mac_core_stream_info_ad5ef9592026b8e98f2bf17a61677b064}{version}};        }
+\DoxyCodeLine{68     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_mac_core_stream_info_afe018712e7c57198176ed72cb18f9938}{flags}};          }
+\DoxyCodeLine{69     SInt32 \textcolor{keyword}{const} * \mbox{\hyperlink{struct_pa_mac_core_stream_info_a2339c27ad6b84924be79bf73e4402bd4}{channelMap}};    }
+\DoxyCodeLine{70     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_mac_core_stream_info_aab3ecc35ef267ecebc8874d399061b87}{channelMapSize}}; }
+\DoxyCodeLine{71 \} \mbox{\hyperlink{struct_pa_mac_core_stream_info}{PaMacCoreStreamInfo}};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__mac__core_8h_a7fa54d8ad032394157bdb67c9b13087d}{PaMacCore\_SetupStreamInfo}}( \mbox{\hyperlink{struct_pa_mac_core_stream_info}{PaMacCoreStreamInfo}} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} );}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__mac__core_8h_abc811b4cd7b56e5e5d4b4613a49d9356}{PaMacCore\_SetupChannelMap}}( \mbox{\hyperlink{struct_pa_mac_core_stream_info}{PaMacCoreStreamInfo}} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keyword}{const} SInt32 * \textcolor{keyword}{const} channelMap, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} channelMapSize );}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{100 AudioDeviceID \mbox{\hyperlink{pa__mac__core_8h_ad1631115a64682f8e14fadd0a75c027f}{PaMacCore\_GetStreamInputDevice}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* s );}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{109 AudioDeviceID \mbox{\hyperlink{pa__mac__core_8h_a25379f181725095041d159e3bdc8cd8c}{PaMacCore\_GetStreamOutputDevice}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* s );}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{125 \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{pa__mac__core_8h_ad96583c722e0fa8d6017b5878d90d8fd}{PaMacCore\_GetChannelName}}( \textcolor{keywordtype}{int} device, \textcolor{keywordtype}{int} channelIndex, \textcolor{keywordtype}{bool} input );}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 }
+\DoxyCodeLine{136 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core_8h_aa470cfe0a7a53a6bc7eab4b18f670d31}{PaMacCore\_GetBufferSizeRange}}( \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{PaDeviceIndex}} device,}
+\DoxyCodeLine{137                                        \textcolor{keywordtype}{long} *minBufferSizeFrames, \textcolor{keywordtype}{long} *maxBufferSizeFrames );}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#define paMacCoreChangeDeviceParameters (0x01)}}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define paMacCoreFailIfConversionRequired (0x02)}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define paMacCoreConversionQualityMin    (0x0100)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define paMacCoreConversionQualityMedium (0x0200)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define paMacCoreConversionQualityLow    (0x0300)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define paMacCoreConversionQualityHigh   (0x0400)}}
+\DoxyCodeLine{167 \textcolor{preprocessor}{\#define paMacCoreConversionQualityMax    (0x0000)}}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define paMacCorePlayNice                    (0x00)}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define paMacCorePro                         (0x01)}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define paMacCoreMinimizeCPUButPlayNice      (0x0100)}}
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#define paMacCoreMinimizeCPU                 (0x0101)}}
+\DoxyCodeLine{185 }
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{188 \}}
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

@@ -1,0 +1,166 @@
+\hypertarget{wgl__context_8h_source}{}\doxysection{wgl\+\_\+context.\+h}
+\label{wgl__context_8h_source}\index{Hexeng2D/dependencies/glfw/src/wgl\_context.h@{Hexeng2D/dependencies/glfw/src/wgl\_context.h}}
+\mbox{\hyperlink{wgl__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 WGL -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2002-\/2006 Marcus Geelnard}}
+\DoxyCodeLine{5 \textcolor{comment}{// Copyright (c) 2006-\/2018 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{6 \textcolor{comment}{//}}
+\DoxyCodeLine{7 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{8 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{9 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{12 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{13 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{16 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{17 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{18 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{19 \textcolor{comment}{//}}
+\DoxyCodeLine{20 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{21 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{22 \textcolor{comment}{//}}
+\DoxyCodeLine{23 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{24 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{25 \textcolor{comment}{//}}
+\DoxyCodeLine{26 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define WGL\_NUMBER\_PIXEL\_FORMATS\_ARB 0x2000}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define WGL\_SUPPORT\_OPENGL\_ARB 0x2010}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define WGL\_DRAW\_TO\_WINDOW\_ARB 0x2001}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define WGL\_PIXEL\_TYPE\_ARB 0x2013}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define WGL\_TYPE\_RGBA\_ARB 0x202b}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define WGL\_ACCELERATION\_ARB 0x2003}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define WGL\_NO\_ACCELERATION\_ARB 0x2025}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define WGL\_RED\_BITS\_ARB 0x2015}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define WGL\_RED\_SHIFT\_ARB 0x2016}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define WGL\_GREEN\_BITS\_ARB 0x2017}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define WGL\_GREEN\_SHIFT\_ARB 0x2018}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define WGL\_BLUE\_BITS\_ARB 0x2019}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define WGL\_BLUE\_SHIFT\_ARB 0x201a}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define WGL\_ALPHA\_BITS\_ARB 0x201b}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define WGL\_ALPHA\_SHIFT\_ARB 0x201c}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BITS\_ARB 0x201d}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define WGL\_ACCUM\_RED\_BITS\_ARB 0x201e}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define WGL\_ACCUM\_GREEN\_BITS\_ARB 0x201f}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define WGL\_ACCUM\_BLUE\_BITS\_ARB 0x2020}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define WGL\_ACCUM\_ALPHA\_BITS\_ARB 0x2021}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define WGL\_DEPTH\_BITS\_ARB 0x2022}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define WGL\_STENCIL\_BITS\_ARB 0x2023}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define WGL\_AUX\_BUFFERS\_ARB 0x2024}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define WGL\_STEREO\_ARB 0x2012}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define WGL\_DOUBLE\_BUFFER\_ARB 0x2011}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define WGL\_SAMPLES\_ARB 0x2042}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define WGL\_FRAMEBUFFER\_SRGB\_CAPABLE\_ARB 0x20a9}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_DEBUG\_BIT\_ARB 0x00000001}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_FORWARD\_COMPATIBLE\_BIT\_ARB 0x00000002}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_PROFILE\_MASK\_ARB 0x9126}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_CORE\_PROFILE\_BIT\_ARB 0x00000001}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_COMPATIBILITY\_PROFILE\_BIT\_ARB 0x00000002}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_MAJOR\_VERSION\_ARB 0x2091}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_MINOR\_VERSION\_ARB 0x2092}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_FLAGS\_ARB 0x2094}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_ES2\_PROFILE\_BIT\_EXT 0x00000004}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_ROBUST\_ACCESS\_BIT\_ARB 0x00000004}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define WGL\_LOSE\_CONTEXT\_ON\_RESET\_ARB 0x8252}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RESET\_NOTIFICATION\_STRATEGY\_ARB 0x8256}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define WGL\_NO\_RESET\_NOTIFICATION\_ARB 0x8261}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RELEASE\_BEHAVIOR\_ARB 0x2097}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RELEASE\_BEHAVIOR\_NONE\_ARB 0}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_RELEASE\_BEHAVIOR\_FLUSH\_ARB 0x2098}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define WGL\_CONTEXT\_OPENGL\_NO\_ERROR\_ARB 0x31b3}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define WGL\_COLORSPACE\_EXT 0x309d}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define WGL\_COLORSPACE\_SRGB\_EXT 0x3089}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define ERROR\_INVALID\_VERSION\_ARB 0x2095}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define ERROR\_INVALID\_PROFILE\_ARB 0x2096}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define ERROR\_INCOMPATIBLE\_DEVICE\_CONTEXTS\_ARB 0x2054}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{comment}{// WGL extension pointer typedefs}}
+\DoxyCodeLine{80 \textcolor{keyword}{typedef} BOOL (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a9157176fda95d4db49f3a552978c43e6}{PFNWGLSWAPINTERVALEXTPROC}})(int);}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} BOOL (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a39931f248131b270558f144f21b3c2af}{PFNWGLGETPIXELFORMATATTRIBIVARBPROC}})(HDC,int,int,UINT,\textcolor{keyword}{const} \textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{82 \textcolor{keyword}{typedef} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_ab1483dc3a77ef3bba5072e6fb1dcdf0d}{PFNWGLGETEXTENSIONSSTRINGEXTPROC}})(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a66af87ed4ea31cecba69b51fa9955bf7}{PFNWGLGETEXTENSIONSSTRINGARBPROC}})(HDC);}
+\DoxyCodeLine{84 \textcolor{keyword}{typedef} HGLRC (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_ada319dc3b2d571bc9f4d242e5cb9a543}{PFNWGLCREATECONTEXTATTRIBSARBPROC}})(HDC,HGLRC,\textcolor{keyword}{const} \textcolor{keywordtype}{int}*);}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define wglSwapIntervalEXT \_glfw.wgl.SwapIntervalEXT}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define wglGetPixelFormatAttribivARB \_glfw.wgl.GetPixelFormatAttribivARB}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define wglGetExtensionsStringEXT \_glfw.wgl.GetExtensionsStringEXT}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define wglGetExtensionsStringARB \_glfw.wgl.GetExtensionsStringARB}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define wglCreateContextAttribsARB \_glfw.wgl.CreateContextAttribsARB}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{comment}{// opengl32.dll function pointer typedefs}}
+\DoxyCodeLine{92 \textcolor{keyword}{typedef} HGLRC (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_acd4ffae7f53c6e3df2f1bd1feae206a1}{PFN\_wglCreateContext}})(HDC);}
+\DoxyCodeLine{93 \textcolor{keyword}{typedef} BOOL (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a680be7b362dea206756ecf78046ec568}{PFN\_wglDeleteContext}})(HGLRC);}
+\DoxyCodeLine{94 \textcolor{keyword}{typedef} PROC (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_afe938f6abc996c782668b4830fd49844}{PFN\_wglGetProcAddress}})(LPCSTR);}
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} HDC (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_ab7fdfe541f5de8218150ec71991b5e1a}{PFN\_wglGetCurrentDC}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{96 \textcolor{keyword}{typedef} HGLRC (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_ab67fa4ec6b012531a46090e0b6c73543}{PFN\_wglGetCurrentContext}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} BOOL (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a01b96444528ae07c30f644ad3b75dd79}{PFN\_wglMakeCurrent}})(HDC,HGLRC);}
+\DoxyCodeLine{98 \textcolor{keyword}{typedef} BOOL (\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} * \mbox{\hyperlink{wgl__context_8h_a4282d885859a70343d72b80af9380b27}{PFN\_wglShareLists}})(HGLRC,HGLRC);}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define wglCreateContext \_glfw.wgl.CreateContext}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define wglDeleteContext \_glfw.wgl.DeleteContext}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define wglGetProcAddress \_glfw.wgl.GetProcAddress}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define wglGetCurrentDC \_glfw.wgl.GetCurrentDC}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define wglGetCurrentContext \_glfw.wgl.GetCurrentContext}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define wglMakeCurrent \_glfw.wgl.MakeCurrent}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define wglShareLists \_glfw.wgl.ShareLists}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CONTEXT\_STATE            \_GLFWcontextWGL wgl}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE    \_GLFWlibraryWGL wgl}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{// WGL-\/specific per-\/context data}}
+\DoxyCodeLine{112 \textcolor{comment}{//}}
+\DoxyCodeLine{113 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcontext_w_g_l}{\_GLFWcontextWGL}}}
+\DoxyCodeLine{114 \{}
+\DoxyCodeLine{115     HDC       \mbox{\hyperlink{struct___g_l_f_wcontext_w_g_l_ad4527b026db03447500ac5000d552c2a}{dc}};}
+\DoxyCodeLine{116     HGLRC     \mbox{\hyperlink{struct___g_l_f_wcontext_w_g_l_a188ab453541a7c111246a594897c8e5c}{handle}};}
+\DoxyCodeLine{117     \textcolor{keywordtype}{int}       \mbox{\hyperlink{struct___g_l_f_wcontext_w_g_l_a54b4c34b50cf386de81edd9e086273ee}{interval}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \} \mbox{\hyperlink{struct___g_l_f_wcontext_w_g_l}{\_GLFWcontextWGL}};}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{comment}{// WGL-\/specific global data}}
+\DoxyCodeLine{122 \textcolor{comment}{//}}
+\DoxyCodeLine{123 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l}{\_GLFWlibraryWGL}}}
+\DoxyCodeLine{124 \{}
+\DoxyCodeLine{125     HINSTANCE                           \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a27aefbd886b0871e42e4704bc3532f7f}{instance}};}
+\DoxyCodeLine{126     \mbox{\hyperlink{wgl__context_8h_acd4ffae7f53c6e3df2f1bd1feae206a1}{PFN\_wglCreateContext}}                \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a3beb4ed4434fe80fb6ba6238fe553127}{CreateContext}};}
+\DoxyCodeLine{127     \mbox{\hyperlink{wgl__context_8h_a680be7b362dea206756ecf78046ec568}{PFN\_wglDeleteContext}}                \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a835991741ad7b21480e20e0cb8c6559b}{DeleteContext}};}
+\DoxyCodeLine{128     \mbox{\hyperlink{wgl__context_8h_afe938f6abc996c782668b4830fd49844}{PFN\_wglGetProcAddress}}               \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a4d96fe4402f133f48777236291590491}{GetProcAddress}};}
+\DoxyCodeLine{129     \mbox{\hyperlink{wgl__context_8h_ab7fdfe541f5de8218150ec71991b5e1a}{PFN\_wglGetCurrentDC}}                 \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_ae4e79a240e93a509b4989f85e0e37b36}{GetCurrentDC}};}
+\DoxyCodeLine{130     \mbox{\hyperlink{wgl__context_8h_ab67fa4ec6b012531a46090e0b6c73543}{PFN\_wglGetCurrentContext}}            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a3c4b1005f1e726e203816da3b2b92f11}{GetCurrentContext}};}
+\DoxyCodeLine{131     \mbox{\hyperlink{wgl__context_8h_a01b96444528ae07c30f644ad3b75dd79}{PFN\_wglMakeCurrent}}                  \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_aa0b7d0161d91120deba20bcd55d81c10}{MakeCurrent}};}
+\DoxyCodeLine{132     \mbox{\hyperlink{wgl__context_8h_a4282d885859a70343d72b80af9380b27}{PFN\_wglShareLists}}                   \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a8caddf0247f0b7f3c516e42608c1f525}{ShareLists}};}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134     \mbox{\hyperlink{wgl__context_8h_a9157176fda95d4db49f3a552978c43e6}{PFNWGLSWAPINTERVALEXTPROC}}           \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_aef7314e7d513532e28f01cd730820426}{SwapIntervalEXT}};}
+\DoxyCodeLine{135     \mbox{\hyperlink{wgl__context_8h_a39931f248131b270558f144f21b3c2af}{PFNWGLGETPIXELFORMATATTRIBIVARBPROC}} \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a3b5a62766d00a71dc17b53520287ef46}{GetPixelFormatAttribivARB}};}
+\DoxyCodeLine{136     \mbox{\hyperlink{wgl__context_8h_ab1483dc3a77ef3bba5072e6fb1dcdf0d}{PFNWGLGETEXTENSIONSSTRINGEXTPROC}}    \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a2a3c5462df803047a168c1df8001d5b2}{GetExtensionsStringEXT}};}
+\DoxyCodeLine{137     \mbox{\hyperlink{wgl__context_8h_a66af87ed4ea31cecba69b51fa9955bf7}{PFNWGLGETEXTENSIONSSTRINGARBPROC}}    \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a77fa5387ca3ac5e3a934af07316ec836}{GetExtensionsStringARB}};}
+\DoxyCodeLine{138     \mbox{\hyperlink{wgl__context_8h_ada319dc3b2d571bc9f4d242e5cb9a543}{PFNWGLCREATECONTEXTATTRIBSARBPROC}}   \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_ac8f415936a3c6bedf3ef6b87b286a88f}{CreateContextAttribsARB}};}
+\DoxyCodeLine{139     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a3ec461c42263c346818dec2757714005}{EXT\_swap\_control}};}
+\DoxyCodeLine{140     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a8c66dbb46bed59facbd2ae64209d36e9}{EXT\_colorspace}};}
+\DoxyCodeLine{141     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a84ac200d8d815d67922ee6a1c8e90159}{ARB\_multisample}};}
+\DoxyCodeLine{142     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_aa0325e0600490c760ee9fc0cfd38d967}{ARB\_framebuffer\_sRGB}};}
+\DoxyCodeLine{143     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_ae40b12f1716dfb2ee999bf270838f7c9}{EXT\_framebuffer\_sRGB}};}
+\DoxyCodeLine{144     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a9e94399925bbc6e3c33aee440f7f5e59}{ARB\_pixel\_format}};}
+\DoxyCodeLine{145     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_aae99e060fd452f5e25b73b0da38f21ee}{ARB\_create\_context}};}
+\DoxyCodeLine{146     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a86f1e383f316a787812e73510f1323ef}{ARB\_create\_context\_profile}};}
+\DoxyCodeLine{147     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_ad1724f29f86f40e06a0a83e43a3bbcf8}{EXT\_create\_context\_es2\_profile}};}
+\DoxyCodeLine{148     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a44ffdd687487d33500cd0aeb2fff7ba2}{ARB\_create\_context\_robustness}};}
+\DoxyCodeLine{149     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_acb2cb08d3e309376466bb4c512cbd939}{ARB\_create\_context\_no\_error}};}
+\DoxyCodeLine{150     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}                            \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l_a0dfb0fe8593c51a656900fe4e815f5c9}{ARB\_context\_flush\_control}};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_w_g_l}{\_GLFWlibraryWGL}};}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{wgl__context_8h_ac60452e7fb9f2b0fdc2050999a889fe1}{\_glfwInitWGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{156 \textcolor{keywordtype}{void} \mbox{\hyperlink{wgl__context_8h_a441ed61fa295e53fca605f2e00c51e83}{\_glfwTerminateWGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{157 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{wgl__context_8h_a3a91c3b275d47f0fbe923cca11194502}{\_glfwCreateContextWGL}}(\mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}* window,}
+\DoxyCodeLine{158                                \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}}* ctxconfig,}
+\DoxyCodeLine{159                                \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}}* fbconfig);}
+\DoxyCodeLine{160 }
+
+\end{DoxyCode}

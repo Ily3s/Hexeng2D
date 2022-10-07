@@ -1,0 +1,215 @@
+\hypertarget{struct_i_audio_midrange_vtbl}{}\doxysection{IAudio\+Midrange\+Vtbl Struct Reference}
+\label{struct_i_audio_midrange_vtbl}\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+
+
+{\ttfamily \#include $<$devicetopology.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a9f7d438a3656008e52dae10b44a68136}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_ad118787060ea6dc40329b80dc25a8ded}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_abe4a74bb3ea73ec744bc779582a3a952}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Channel\+Count)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_aa7c7d0d14601f17371eeaa5e302da517}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Level\+Range)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_a008b1e8a2afc46a8a9749351d2af029b}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Level)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_af69bf31996d8203249e3d29b93501392}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_af883c71489969baaff5006a41375d785}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level\+Uniform)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_ad0593f3ca08f7a0d98f3b93fc84c5067}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level\+All\+Channels)(\mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_midrange_vtbl_a9915442c9325e75441d3fceb4acba2c0}{\+\_\+\+\_\+in\+\_\+ecount}} (\mbox{\hyperlink{struct_i_audio_midrange_vtbl_a581ad81f4b0a1af5b95b02100a092690}{c\+Channels}}) float a\+Levels\+DB\mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a8bed12d78dba93d5870f9a53554488c2}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_acd73bdd66898a770860001a0dfa153de}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT $\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a8ae63f95c6a0e78d2dd6ff802d69f947}{pc\+Channels}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{struct_i_audio_midrange_vtbl_ac2ba7cd3ad889e27ed7d2014c00877ca}{n\+Channel}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a6318b039c0da4920bf16da37a1c80568}{pf\+Min\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_aa232429db6fad449ab80aa31598399c7}{pf\+Max\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a382fb50e024b6b37d02cbefa594e9f8c}{pf\+Stepping}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a84379d22ae1c1201da8a8ad7663b9793}{pf\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{struct_i_audio_midrange_vtbl_ad73d63c4ecaa6446a53feb1e6bcfb0cf}{f\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_ae4a9758067e08540743362b953da12bb}{pguid\+Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a575bd31ba20fb4926ac8e38428ae9659}{f\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a289baa5a5a7e94a1528939f1e838ef7c}{pguid\+Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}{ULONG}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a581ad81f4b0a1af5b95b02100a092690}{c\+Channels}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}{ULONG}} \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_ab0b10ee57bc0d511ac57684dc71a7061}{pguid\+Event\+Context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a9915442c9325e75441d3fceb4acba2c0}\label{struct_i_audio_midrange_vtbl_a9915442c9325e75441d3fceb4acba2c0}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!\_\_in\_ecount@{\_\_in\_ecount}}
+\index{\_\_in\_ecount@{\_\_in\_ecount}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{\_\_in\_ecount()}{\_\_in\_ecount()}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+\_\+\+\_\+in\+\_\+ecount (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_audio_midrange_vtbl_a581ad81f4b0a1af5b95b02100a092690}{c\+Channels}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_abe4a74bb3ea73ec744bc779582a3a952}\label{struct_i_audio_midrange_vtbl_abe4a74bb3ea73ec744bc779582a3a952}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Channel\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a008b1e8a2afc46a8a9749351d2af029b}\label{struct_i_audio_midrange_vtbl_a008b1e8a2afc46a8a9749351d2af029b}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_aa7c7d0d14601f17371eeaa5e302da517}\label{struct_i_audio_midrange_vtbl_aa7c7d0d14601f17371eeaa5e302da517}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Level\+Range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a9f7d438a3656008e52dae10b44a68136}\label{struct_i_audio_midrange_vtbl_a9f7d438a3656008e52dae10b44a68136}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_af69bf31996d8203249e3d29b93501392}\label{struct_i_audio_midrange_vtbl_af69bf31996d8203249e3d29b93501392}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ad0593f3ca08f7a0d98f3b93fc84c5067}\label{struct_i_audio_midrange_vtbl_ad0593f3ca08f7a0d98f3b93fc84c5067}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level\+All\+Channels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_af883c71489969baaff5006a41375d785}\label{struct_i_audio_midrange_vtbl_af883c71489969baaff5006a41375d785}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level\+Uniform }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}\label{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ad118787060ea6dc40329b80dc25a8ded}\label{struct_i_audio_midrange_vtbl_ad118787060ea6dc40329b80dc25a8ded}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IAudio\+Midrange\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a581ad81f4b0a1af5b95b02100a092690}\label{struct_i_audio_midrange_vtbl_a581ad81f4b0a1af5b95b02100a092690}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!cChannels@{cChannels}}
+\index{cChannels@{cChannels}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{cChannels}{cChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}{ULONG}} IAudio\+Midrange\+Vtbl\+::c\+Channels}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ad73d63c4ecaa6446a53feb1e6bcfb0cf}\label{struct_i_audio_midrange_vtbl_ad73d63c4ecaa6446a53feb1e6bcfb0cf}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!fLevelDB@{fLevelDB}}
+\index{fLevelDB@{fLevelDB}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevelDB}{fLevelDB}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float IAudio\+Midrange\+Vtbl\+::f\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a575bd31ba20fb4926ac8e38428ae9659}\label{struct_i_audio_midrange_vtbl_a575bd31ba20fb4926ac8e38428ae9659}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!fLevelDB@{fLevelDB}}
+\index{fLevelDB@{fLevelDB}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevelDB}{fLevelDB}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float IAudio\+Midrange\+Vtbl\+::f\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ac2ba7cd3ad889e27ed7d2014c00877ca}\label{struct_i_audio_midrange_vtbl_ac2ba7cd3ad889e27ed7d2014c00877ca}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!nChannel@{nChannel}}
+\index{nChannel@{nChannel}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{nChannel}{nChannel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT IAudio\+Midrange\+Vtbl\+::n\+Channel}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a8ae63f95c6a0e78d2dd6ff802d69f947}\label{struct_i_audio_midrange_vtbl_a8ae63f95c6a0e78d2dd6ff802d69f947}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pcChannels@{pcChannels}}
+\index{pcChannels@{pcChannels}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pcChannels}{pcChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT$\ast$ IAudio\+Midrange\+Vtbl\+::pc\+Channels}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a84379d22ae1c1201da8a8ad7663b9793}\label{struct_i_audio_midrange_vtbl_a84379d22ae1c1201da8a8ad7663b9793}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pfLevelDB@{pfLevelDB}}
+\index{pfLevelDB@{pfLevelDB}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfLevelDB}{pfLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Midrange\+Vtbl\+::pf\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_aa232429db6fad449ab80aa31598399c7}\label{struct_i_audio_midrange_vtbl_aa232429db6fad449ab80aa31598399c7}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pfMaxLevelDB@{pfMaxLevelDB}}
+\index{pfMaxLevelDB@{pfMaxLevelDB}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfMaxLevelDB}{pfMaxLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Midrange\+Vtbl\+::pf\+Max\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a6318b039c0da4920bf16da37a1c80568}\label{struct_i_audio_midrange_vtbl_a6318b039c0da4920bf16da37a1c80568}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pfMinLevelDB@{pfMinLevelDB}}
+\index{pfMinLevelDB@{pfMinLevelDB}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfMinLevelDB}{pfMinLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Midrange\+Vtbl\+::pf\+Min\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a382fb50e024b6b37d02cbefa594e9f8c}\label{struct_i_audio_midrange_vtbl_a382fb50e024b6b37d02cbefa594e9f8c}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pfStepping@{pfStepping}}
+\index{pfStepping@{pfStepping}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pfStepping}{pfStepping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Midrange\+Vtbl\+::pf\+Stepping}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ae4a9758067e08540743362b953da12bb}\label{struct_i_audio_midrange_vtbl_ae4a9758067e08540743362b953da12bb}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Midrange\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a289baa5a5a7e94a1528939f1e838ef7c}\label{struct_i_audio_midrange_vtbl_a289baa5a5a7e94a1528939f1e838ef7c}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Midrange\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_ab0b10ee57bc0d511ac57684dc71a7061}\label{struct_i_audio_midrange_vtbl_ab0b10ee57bc0d511ac57684dc71a7061}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl_a4ae51feb0628f9e09c999dc37503c5d5}{ULONG}} \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Midrange\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_acd73bdd66898a770860001a0dfa153de}\label{struct_i_audio_midrange_vtbl_acd73bdd66898a770860001a0dfa153de}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IAudio\+Midrange\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_audio_midrange_vtbl_a8bed12d78dba93d5870f9a53554488c2}\label{struct_i_audio_midrange_vtbl_a8bed12d78dba93d5870f9a53554488c2}} 
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!riid@{riid}}
+\index{riid@{riid}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IAudio\+Midrange\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{devicetopology_8h}{devicetopology.\+h}}\end{DoxyCompactItemize}

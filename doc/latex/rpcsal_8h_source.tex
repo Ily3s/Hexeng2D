@@ -1,0 +1,119 @@
+\hypertarget{rpcsal_8h_source}{}\doxysection{rpcsal.\+h}
+\label{rpcsal_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/rpcsal.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/rpcsal.h}}
+\mbox{\hyperlink{rpcsal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ >=3}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define RPC\_range(min,max)}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_RPC\_\_in           }}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_string}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_opt\_string}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_in\_opt}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define \_\_RPC\_\_opt\_in\_opt\_string}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount(size) }}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_full(size)}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_full\_string(size)}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_part(size, length)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_full\_opt(size)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_full\_opt\_string(size)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_full\_opt\_string(size)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_part\_opt(size, length)}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in }}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_string}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_in}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_opt}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount(size) }}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_part(size, length) }}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_full(size) }}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_full\_opt(size)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_full\_string(size)}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_full\_opt\_string(size)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_opt(size) }}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_opt\_string(size)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_in\_ecount\_part\_opt(size, length) }}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{// [out]}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_\_RPC\_\_out     }}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#define \_\_RPC\_\_out\_ecount(size) }}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#define \_\_RPC\_\_out\_ecount\_part(size, length) }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define \_\_RPC\_\_out\_ecount\_full(size)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define \_\_RPC\_\_out\_ecount\_full\_string(size)}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{// [in,out] }}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout                                   }}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_string}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define \_\_RPC\_\_opt\_inout}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount(size)                     }}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_part(size, length)    }}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_full(size)          }}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_full\_string(size)          }}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{// [in,unique] }}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_opt       }}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define \_\_RPC\_\_in\_ecount\_opt(size)   }}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{// [in,out,unique] }}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_opt    }}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_opt(size)  }}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_part\_opt(size, length) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_full\_opt(size)     }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define \_\_RPC\_\_inout\_ecount\_full\_string(size)}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{// [out] **}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out   }}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_string}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_opt }}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_opt\_string}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount(size) }}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_part(size, length) }}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_full(size)  }}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_full\_string(size)}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{// [in,out] **, second pointer decoration. }}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout    }}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_string}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_opt }}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_opt\_string}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_full(size)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_full\_string(size)}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_opt(size) }}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_part\_opt(size, length) }}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_full\_opt(size) }}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_inout\_ecount\_full\_opt\_string(size) }}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{// \#define \_\_RPC\_out\_opt    out\_opt is not allowed in rpc}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{// [in,out,unique] }}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout  }}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_string}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount(size)     }}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_part(size, length) }}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_full(size) }}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_full\_string(size)}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_opt(size) }}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_part\_opt(size, length) }}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_full\_opt(size) }}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_out\_ecount\_full\_opt\_string(size)}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_opt      }}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_opt\_string}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_opt(size)   }}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_part\_opt(size, length) }}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_full\_opt(size) }}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define \_\_RPC\_\_deref\_opt\_inout\_ecount\_full\_opt\_string(size) }}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define \_\_RPC\_full\_pointer  }}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define \_\_RPC\_unique\_pointer}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define \_\_RPC\_ref\_pointer}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define \_\_RPC\_string                               }}
+
+\end{DoxyCode}

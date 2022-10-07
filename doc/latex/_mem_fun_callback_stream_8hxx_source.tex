@@ -1,0 +1,102 @@
+\hypertarget{_mem_fun_callback_stream_8hxx_source}{}\doxysection{Mem\+Fun\+Callback\+Stream.\+hxx}
+\label{_mem_fun_callback_stream_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/MemFunCallbackStream.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/MemFunCallbackStream.hxx}}
+\mbox{\hyperlink{_mem_fun_callback_stream_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_MEMFUNCALLBACKSTREAM\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_MEMFUNCALLBACKSTREAM\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_callback_stream_8hxx}{portaudiocpp/CallbackStream.hxx}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_callback_interface_8hxx}{portaudiocpp/CallbackInterface.hxx}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_stream_parameters_8hxx}{portaudiocpp/StreamParameters.hxx}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_exception_8hxx}{portaudiocpp/Exception.hxx}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_interface_callback_stream_8hxx}{portaudiocpp/InterfaceCallbackStream.hxx}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{27     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{28     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{MemFunCallbackStream}} : \textcolor{keyword}{public} \mbox{\hyperlink{classportaudio_1_1_callback_stream}{CallbackStream}}}
+\DoxyCodeLine{29     \{}
+\DoxyCodeLine{30     \textcolor{keyword}{public}:}
+\DoxyCodeLine{31         \textcolor{keyword}{typedef} int (T::*\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}})(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{void} *, \textcolor{keywordtype}{unsigned} long, \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}} *, }
+\DoxyCodeLine{32             \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}});}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a41ac619da3a7fd9ba3fbae9df1499f91}{MemFunCallbackStream}}()}
+\DoxyCodeLine{37         \{}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a0467ef8d4596114c3f09fed95aff8894}{MemFunCallbackStream}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{StreamParameters}} \&parameters, T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}} memFun) : adapter\_(instance, memFun)}
+\DoxyCodeLine{41         \{}
+\DoxyCodeLine{42             \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}{open}}(parameters);}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_ae5407ed9c4e4774ab1e4ddaaadae346b}{\string~MemFunCallbackStream}}()}
+\DoxyCodeLine{46         \{}
+\DoxyCodeLine{47             \mbox{\hyperlink{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}{close}}();}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}{open}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{StreamParameters}} \&parameters, T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}} memFun)}
+\DoxyCodeLine{51         \{}
+\DoxyCodeLine{52             \textcolor{comment}{// XXX: need to check if already open?}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54             adapter\_.init(instance, memFun);}
+\DoxyCodeLine{55             \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}{open}}(parameters);}
+\DoxyCodeLine{56         \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{private}:}
+\DoxyCodeLine{59         \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a41ac619da3a7fd9ba3fbae9df1499f91}{MemFunCallbackStream}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{MemFunCallbackStream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{60         \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{MemFunCallbackStream}} \&operator=(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{MemFunCallbackStream}} \&); \textcolor{comment}{// non-\/copyable}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{66         \textcolor{keyword}{class }MemFunToCallbackInterfaceAdapter : \textcolor{keyword}{public} \mbox{\hyperlink{classportaudio_1_1_callback_interface}{CallbackInterface}}}
+\DoxyCodeLine{67         \{}
+\DoxyCodeLine{68         \textcolor{keyword}{public}:}
+\DoxyCodeLine{69             MemFunToCallbackInterfaceAdapter() \{\}}
+\DoxyCodeLine{70             MemFunToCallbackInterfaceAdapter(T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}} memFun) : instance\_(\&instance), memFun\_(memFun) \{\}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72             \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}{init}}(T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}} memFun)}
+\DoxyCodeLine{73             \{}
+\DoxyCodeLine{74                 instance\_ = \&instance;}
+\DoxyCodeLine{75                 memFun\_ = memFun;}
+\DoxyCodeLine{76             \}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78             \textcolor{keywordtype}{int} paCallbackFun(\textcolor{keyword}{const} \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{void} *outputBuffer, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} numFrames, }
+\DoxyCodeLine{79                 \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}} *timeInfo, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags)}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                 \textcolor{keywordflow}{return} (instance\_-\/>*memFun\_)(inputBuffer, outputBuffer, numFrames, timeInfo, statusFlags);}
+\DoxyCodeLine{82             \}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{private}:}
+\DoxyCodeLine{85             T *instance\_;}
+\DoxyCodeLine{86             \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{CallbackFunPtr}} memFun\_;}
+\DoxyCodeLine{87         \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         MemFunToCallbackInterfaceAdapter adapter\_;}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}{open}}(\textcolor{keyword}{const} StreamParameters \&parameters)}
+\DoxyCodeLine{92         \{}
+\DoxyCodeLine{93             \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} err = \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\_OpenStream}}(\&\mbox{\hyperlink{classportaudio_1_1_stream_a6bae9e3e4a73b78044d9b42115929bbb}{stream\_}}, parameters.inputParameters().paStreamParameters(), parameters.outputParameters().paStreamParameters(), }
+\DoxyCodeLine{94                 parameters.sampleRate(), parameters.framesPerBuffer(), parameters.flags(), \&\mbox{\hyperlink{namespaceportaudio_1_1impl_aed5b1714d87972dec1744b028e746038}{impl::callbackInterfaceToPaCallbackAdapter}}, }
+\DoxyCodeLine{95                 \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{void} *\textcolor{keyword}{>}(\&adapter\_));}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97             \textcolor{keywordflow}{if} (err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}})}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{throw} PaException(err);}
+\DoxyCodeLine{99         \}}
+\DoxyCodeLine{100     \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \} \textcolor{comment}{// portaudio}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_MEMFUNCALLBACKSTREAM\_HXX}}
+
+\end{DoxyCode}

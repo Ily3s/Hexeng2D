@@ -1,0 +1,129 @@
+\hypertarget{pa__memorybarrier_8h_source}{}\doxysection{pa\+\_\+memorybarrier.\+h}
+\label{pa__memorybarrier_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_memorybarrier.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_memorybarrier.h}}
+\mbox{\hyperlink{pa__memorybarrier_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * \$Id: pa\_memorybarrier.h 1240 2007-\/07-\/17 13:05:07Z bjornroche \$}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Portable Audio I/O Library}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Memory barrier utilities}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Author: Bjorn Roche, XO Audio, LLC}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * This program uses the PortAudio Portable Audio Library.}}
+\DoxyCodeLine{9 \textcolor{comment}{ * For more information see: http://www.portaudio.com}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Copyright (c) 1999-\/2000 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{13 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{14 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{17 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{18 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{19 \textcolor{comment}{ *}}
+\DoxyCodeLine{20 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{21 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{24 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{25 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{26 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{27 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{28 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{29 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{30 \textcolor{comment}{ */}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{/*}}
+\DoxyCodeLine{33 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{34 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{35 \textcolor{comment}{ *}}
+\DoxyCodeLine{36 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{38 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{39 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{40 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{48 \textcolor{comment}{/****************}}
+\DoxyCodeLine{49 \textcolor{comment}{ * Some memory barrier primitives based on the system.}}
+\DoxyCodeLine{50 \textcolor{comment}{ * right now only OS X, FreeBSD, and Linux are supported. In addition to providing}}
+\DoxyCodeLine{51 \textcolor{comment}{ * memory barriers, these functions should ensure that data cached in registers}}
+\DoxyCodeLine{52 \textcolor{comment}{ * is written out to cache where it can be snooped by other CPUs. (ie, the volatile}}
+\DoxyCodeLine{53 \textcolor{comment}{ * keyword should not be required)}}
+\DoxyCodeLine{54 \textcolor{comment}{ *}}
+\DoxyCodeLine{55 \textcolor{comment}{ * the primitives that must be defined are:}}
+\DoxyCodeLine{56 \textcolor{comment}{ *}}
+\DoxyCodeLine{57 \textcolor{comment}{ * PaUtil\_FullMemoryBarrier()}}
+\DoxyCodeLine{58 \textcolor{comment}{ * PaUtil\_ReadMemoryBarrier()}}
+\DoxyCodeLine{59 \textcolor{comment}{ * PaUtil\_WriteMemoryBarrier()}}
+\DoxyCodeLine{60 \textcolor{comment}{ *}}
+\DoxyCodeLine{61 \textcolor{comment}{ ****************/}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#   include <libkern/OSAtomic.h>}}
+\DoxyCodeLine{65     \textcolor{comment}{/* Here are the memory barrier functions. Mac OS X only provides}}
+\DoxyCodeLine{66 \textcolor{comment}{       full memory barriers, so the three types of barriers are the same,}}
+\DoxyCodeLine{67 \textcolor{comment}{       however, these barriers are superior to compiler-\/based ones. */}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#   define PaUtil\_FullMemoryBarrier()  OSMemoryBarrier()}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#   define PaUtil\_ReadMemoryBarrier()  OSMemoryBarrier()}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#   define PaUtil\_WriteMemoryBarrier() OSMemoryBarrier()}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#elif defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{72     \textcolor{comment}{/* GCC >= 4.1 has built-\/in intrinsics. We'll use those */}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#   if (\_\_GNUC\_\_ > 4) || (\_\_GNUC\_\_ == 4 \&\& \_\_GNUC\_MINOR\_\_ >= 1)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#       define PaUtil\_FullMemoryBarrier()  \_\_sync\_synchronize()}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#       define PaUtil\_ReadMemoryBarrier()  \_\_sync\_synchronize()}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#       define PaUtil\_WriteMemoryBarrier() \_\_sync\_synchronize()}}
+\DoxyCodeLine{77     \textcolor{comment}{/* as a fallback, GCC understands volatile asm and "{}memory"{} to mean it}}
+\DoxyCodeLine{78 \textcolor{comment}{     * should not reorder memory read/writes */}}
+\DoxyCodeLine{79     \textcolor{comment}{/* Note that it is not clear that any compiler actually defines \_\_PPC\_\_,}}
+\DoxyCodeLine{80 \textcolor{comment}{     * it can probably removed safely. */}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#   elif defined( \_\_ppc\_\_ ) || defined( \_\_powerpc\_\_) || defined( \_\_PPC\_\_ )}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#       define PaUtil\_FullMemoryBarrier()  asm volatile("{}sync"{}}:::"{}memory"{})}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#       define PaUtil\_ReadMemoryBarrier()  asm volatile("{}sync"{}}:::"{}memory"{})}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#       define PaUtil\_WriteMemoryBarrier() asm volatile("{}sync"{}}:::"{}memory"{})}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#   elif defined( \_\_i386\_\_ ) || defined( \_\_i486\_\_ ) || defined( \_\_i586\_\_ ) || \(\backslash\)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{            defined( \_\_i686\_\_ ) || defined( \_\_x86\_64\_\_ )}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#       define PaUtil\_FullMemoryBarrier()  asm volatile("{}mfence"{}}:::"{}memory"{})}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#       define PaUtil\_ReadMemoryBarrier()  asm volatile("{}lfence"{}}:::"{}memory"{})}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#       define PaUtil\_WriteMemoryBarrier() asm volatile("{}sfence"{}}:::"{}memory"{})}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#       ifdef ALLOW\_SMP\_DANGERS}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#           warning Memory barriers not defined on this system or system unknown}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#           warning For SMP safety, you should fix this.}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#           define PaUtil\_FullMemoryBarrier()}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#           define PaUtil\_ReadMemoryBarrier()}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#           define PaUtil\_WriteMemoryBarrier()}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#       else}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#           error Memory barriers are not defined on this system. You can still compile by defining ALLOW\_SMP\_DANGERS, but SMP safety will not be guaranteed.}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#       endif}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#elif (\_MSC\_VER >= 1400) \&\& !defined(\_WIN32\_WCE)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#   include <intrin.h>}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#   pragma intrinsic(\_ReadWriteBarrier)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#   pragma intrinsic(\_ReadBarrier)}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#   pragma intrinsic(\_WriteBarrier)}}
+\DoxyCodeLine{106 \textcolor{comment}{/* note that MSVC intrinsics \_ReadWriteBarrier(), \_ReadBarrier(), \_WriteBarrier() are just compiler barriers *not* memory barriers */}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#   define PaUtil\_FullMemoryBarrier()  \_ReadWriteBarrier()}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#   define PaUtil\_ReadMemoryBarrier()  \_ReadBarrier()}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#   define PaUtil\_WriteMemoryBarrier() \_WriteBarrier()}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#elif defined(\_WIN32\_WCE)}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#   define PaUtil\_FullMemoryBarrier()}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#   define PaUtil\_ReadMemoryBarrier()}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#   define PaUtil\_WriteMemoryBarrier()}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#elif defined(\_MSC\_VER) || defined(\_\_BORLANDC\_\_)}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#   define PaUtil\_FullMemoryBarrier()  \_asm \{ lock add    [esp], 0 \}}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#   define PaUtil\_ReadMemoryBarrier()  \_asm \{ lock add    [esp], 0 \}}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#   define PaUtil\_WriteMemoryBarrier() \_asm \{ lock add    [esp], 0 \}}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#   ifdef ALLOW\_SMP\_DANGERS}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#       warning Memory barriers not defined on this system or system unknown}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#       warning For SMP safety, you should fix this.}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#       define PaUtil\_FullMemoryBarrier()}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#       define PaUtil\_ReadMemoryBarrier()}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#       define PaUtil\_WriteMemoryBarrier()}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#   else}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#       error Memory barriers are not defined on this system. You can still compile by defining ALLOW\_SMP\_DANGERS, but SMP safety will not be guaranteed.}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#   endif}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

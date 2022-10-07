@@ -1,0 +1,117 @@
+\hypertarget{paqa__latency_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/paqa\+\_\+latency.c File Reference}
+\label{paqa__latency_8c}\index{Hexeng2D/dependencies/portaudio/qa/paqa\_latency.c@{Hexeng2D/dependencies/portaudio/qa/paqa\_latency.c}}
+
+
+Test latency estimates.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}loopback/src/qa\+\_\+tools.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paqa__latency_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(5)
+\item 
+\#define \mbox{\hyperlink{paqa__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{paqa__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{paqa__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{paqa__latency_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{paqa__latency_8c_ad442868a27e85067c2ebb1aa12167de7}{paqa\+Check\+Latency}} (\mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Params\+Ptr, \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$data\+Ptr, double sample\+Rate, unsigned long frames\+Per\+Buffer)
+\item 
+int \mbox{\hyperlink{paqa__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paqa__latency_8c_a76cd77e50cf6ecedced8c3c04acc8fed}{g\+\_\+tests\+Passed}} = 0
+\item 
+int \mbox{\hyperlink{paqa__latency_8c_abc551f796bcb00b87be6ed28f3cb0446}{g\+\_\+tests\+Failed}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test latency estimates. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paqa__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{paqa__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{paqa__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{paqa__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{paqa__latency_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{paqa__latency_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(5)}
+
+\mbox{\Hypertarget{paqa__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{paqa__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{paqa__latency_8c_a032503e76d6f69bc67e99e909c8125da}\label{paqa__latency_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paqa__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{paqa__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!main@{main}}
+\index{main@{main}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{paqa__latency_8c_ad442868a27e85067c2ebb1aa12167de7}\label{paqa__latency_8c_ad442868a27e85067c2ebb1aa12167de7}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!paqaCheckLatency@{paqaCheckLatency}}
+\index{paqaCheckLatency@{paqaCheckLatency}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{paqaCheckLatency()}{paqaCheckLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} paqa\+Check\+Latency (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{output\+Params\+Ptr,  }\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data\+Ptr,  }\item[{double}]{sample\+Rate,  }\item[{unsigned long}]{frames\+Per\+Buffer }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{paqa__latency_8c_abc551f796bcb00b87be6ed28f3cb0446}\label{paqa__latency_8c_abc551f796bcb00b87be6ed28f3cb0446}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!g\_testsFailed@{g\_testsFailed}}
+\index{g\_testsFailed@{g\_testsFailed}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{g\_testsFailed}{g\_testsFailed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Failed = 0}
+
+\mbox{\Hypertarget{paqa__latency_8c_a76cd77e50cf6ecedced8c3c04acc8fed}\label{paqa__latency_8c_a76cd77e50cf6ecedced8c3c04acc8fed}} 
+\index{paqa\_latency.c@{paqa\_latency.c}!g\_testsPassed@{g\_testsPassed}}
+\index{g\_testsPassed@{g\_testsPassed}!paqa\_latency.c@{paqa\_latency.c}}
+\doxysubsubsection{\texorpdfstring{g\_testsPassed}{g\_testsPassed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Passed = 0}
+
+Accumulate counts for how many tests pass or fail. 

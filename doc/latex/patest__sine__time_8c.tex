@@ -1,0 +1,94 @@
+\hypertarget{patest__sine__time_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+sine\+\_\+time.c File Reference}
+\label{patest__sine__time_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_sine\_time.c@{Hexeng2D/dependencies/portaudio/test/patest\_sine\_time.c}}
+
+
+Play a sine wave for several seconds, pausing in the middle. Uses the \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}} call.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(8)
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_a4912c64aec0c943b7985db6cb61ff83a}{TWOPI}}~(\mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 2.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__time_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__sine__time_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play a sine wave for several seconds, pausing in the middle. Uses the \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}} call. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__sine__time_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__sine__time_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{patest__sine__time_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__sine__time_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__sine__time_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__sine__time_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(8)}
+
+\mbox{\Hypertarget{patest__sine__time_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__sine__time_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__sine__time_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__sine__time_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+\mbox{\Hypertarget{patest__sine__time_8c_a4912c64aec0c943b7985db6cb61ff83a}\label{patest__sine__time_8c_a4912c64aec0c943b7985db6cb61ff83a}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!TWOPI@{TWOPI}}
+\index{TWOPI@{TWOPI}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{TWOPI}{TWOPI}}
+{\footnotesize\ttfamily \#define TWOPI~(\mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 2.\+0)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__sine__time_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__sine__time_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_sine\_time.c@{patest\_sine\_time.c}!main@{main}}
+\index{main@{main}!patest\_sine\_time.c@{patest\_sine\_time.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

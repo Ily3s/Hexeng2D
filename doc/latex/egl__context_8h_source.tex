@@ -1,0 +1,221 @@
+\hypertarget{egl__context_8h_source}{}\doxysection{egl\+\_\+context.\+h}
+\label{egl__context_8h_source}\index{Hexeng2D/dependencies/glfw/src/egl\_context.h@{Hexeng2D/dependencies/glfw/src/egl\_context.h}}
+\mbox{\hyperlink{egl__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 EGL -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2002-\/2006 Marcus Geelnard}}
+\DoxyCodeLine{5 \textcolor{comment}{// Copyright (c) 2006-\/2017 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{6 \textcolor{comment}{//}}
+\DoxyCodeLine{7 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{8 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{9 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{12 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{13 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{16 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{17 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{18 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{19 \textcolor{comment}{//}}
+\DoxyCodeLine{20 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{21 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{22 \textcolor{comment}{//}}
+\DoxyCodeLine{23 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{24 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{25 \textcolor{comment}{//}}
+\DoxyCodeLine{26 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#if defined(\_GLFW\_USE\_EGLPLATFORM\_H)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{ \#include <EGL/eglplatform.h>}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#elif defined(\_GLFW\_WIN32)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{ \#define EGLAPIENTRY \_\_stdcall}}
+\DoxyCodeLine{32 \textcolor{keyword}{typedef} HDC EGLNativeDisplayType;}
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} HWND EGLNativeWindowType;}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#elif defined(\_GLFW\_COCOA)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{ \#define EGLAPIENTRY}}
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* EGLNativeDisplayType;}
+\DoxyCodeLine{37 \textcolor{keyword}{typedef} \textcolor{keywordtype}{id} EGLNativeWindowType;}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#elif defined(\_GLFW\_X11)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{ \#define EGLAPIENTRY}}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} Display* EGLNativeDisplayType;}
+\DoxyCodeLine{41 \textcolor{keyword}{typedef} Window EGLNativeWindowType;}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#elif defined(\_GLFW\_WAYLAND)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{ \#define EGLAPIENTRY}}
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }wl\_display* EGLNativeDisplayType;}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }wl\_egl\_window* EGLNativeWindowType;}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{ \#error "{}No supported EGL platform selected"{}}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define EGL\_SUCCESS 0x3000}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define EGL\_NOT\_INITIALIZED 0x3001}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define EGL\_BAD\_ACCESS 0x3002}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define EGL\_BAD\_ALLOC 0x3003}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define EGL\_BAD\_ATTRIBUTE 0x3004}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define EGL\_BAD\_CONFIG 0x3005}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define EGL\_BAD\_CONTEXT 0x3006}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define EGL\_BAD\_CURRENT\_SURFACE 0x3007}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define EGL\_BAD\_DISPLAY 0x3008}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define EGL\_BAD\_MATCH 0x3009}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define EGL\_BAD\_NATIVE\_PIXMAP 0x300a}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define EGL\_BAD\_NATIVE\_WINDOW 0x300b}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define EGL\_BAD\_PARAMETER 0x300c}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define EGL\_BAD\_SURFACE 0x300d}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_LOST 0x300e}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define EGL\_COLOR\_BUFFER\_TYPE 0x303f}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define EGL\_RGB\_BUFFER 0x308e}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define EGL\_SURFACE\_TYPE 0x3033}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define EGL\_WINDOW\_BIT 0x0004}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define EGL\_RENDERABLE\_TYPE 0x3040}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define EGL\_OPENGL\_ES\_BIT 0x0001}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define EGL\_OPENGL\_ES2\_BIT 0x0004}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define EGL\_OPENGL\_BIT 0x0008}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define EGL\_ALPHA\_SIZE 0x3021}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define EGL\_BLUE\_SIZE 0x3022}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define EGL\_GREEN\_SIZE 0x3023}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define EGL\_RED\_SIZE 0x3024}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define EGL\_DEPTH\_SIZE 0x3025}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define EGL\_STENCIL\_SIZE 0x3026}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define EGL\_SAMPLES 0x3031}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define EGL\_OPENGL\_ES\_API 0x30a0}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define EGL\_OPENGL\_API 0x30a2}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define EGL\_NONE 0x3038}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#define EGL\_EXTENSIONS 0x3055}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_CLIENT\_VERSION 0x3098}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define EGL\_NATIVE\_VISUAL\_ID 0x302e}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define EGL\_NO\_SURFACE ((EGLSurface) 0)}}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define EGL\_NO\_DISPLAY ((EGLDisplay) 0)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define EGL\_NO\_CONTEXT ((EGLContext) 0)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define EGL\_DEFAULT\_DISPLAY ((EGLNativeDisplayType) 0)}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_FORWARD\_COMPATIBLE\_BIT\_KHR 0x00000002}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_CORE\_PROFILE\_BIT\_KHR 0x00000001}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_COMPATIBILITY\_PROFILE\_BIT\_KHR 0x00000002}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_DEBUG\_BIT\_KHR 0x00000001}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_RESET\_NOTIFICATION\_STRATEGY\_KHR 0x31bd}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define EGL\_NO\_RESET\_NOTIFICATION\_KHR 0x31be}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define EGL\_LOSE\_CONTEXT\_ON\_RESET\_KHR 0x31bf}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_ROBUST\_ACCESS\_BIT\_KHR 0x00000004}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_MAJOR\_VERSION\_KHR 0x3098}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_MINOR\_VERSION\_KHR 0x30fb}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_PROFILE\_MASK\_KHR 0x30fd}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_FLAGS\_KHR 0x30fc}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_OPENGL\_NO\_ERROR\_KHR 0x31b3}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define EGL\_GL\_COLORSPACE\_KHR 0x309d}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define EGL\_GL\_COLORSPACE\_SRGB\_KHR 0x3089}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_RELEASE\_BEHAVIOR\_KHR 0x2097}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_RELEASE\_BEHAVIOR\_NONE\_KHR 0}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define EGL\_CONTEXT\_RELEASE\_BEHAVIOR\_FLUSH\_KHR 0x2098}}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}};}
+\DoxyCodeLine{111 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}};}
+\DoxyCodeLine{112 \textcolor{keyword}{typedef} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{egl__context_8h_a3a1da159bbe7bd56490f67d96dce3bf9}{EGLenum}};}
+\DoxyCodeLine{113 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}};}
+\DoxyCodeLine{114 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}};}
+\DoxyCodeLine{115 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}};}
+\DoxyCodeLine{116 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}};}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{comment}{// EGL function pointer typedefs}}
+\DoxyCodeLine{119 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a97ab723faa33ac31b46ada81d8e2e497}{PFN\_eglGetConfigAttrib}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*);}
+\DoxyCodeLine{120 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a7d215df83d79b9c910f5968a56807408}{PFN\_eglGetConfigs}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}}*,\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*);}
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_ae9ff3749c76bb78820675ec819f8ef79}{PFN\_eglGetDisplay}})(EGLNativeDisplayType);}
+\DoxyCodeLine{122 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a0f6249bd982c3c111ca2179b6aa7320f}{PFN\_eglGetError}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{123 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a961064f167deb265185aa3f69617fe3a}{PFN\_eglInitialize}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*,\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*);}
+\DoxyCodeLine{124 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a9957b5b18f9aedc5c4975c6a094a14cf}{PFN\_eglTerminate}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}});}
+\DoxyCodeLine{125 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a6b8853332751f1b0fa25d65597acefa7}{PFN\_eglBindAPI}})(\mbox{\hyperlink{egl__context_8h_a3a1da159bbe7bd56490f67d96dce3bf9}{EGLenum}});}
+\DoxyCodeLine{126 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a70457dc77b6296c8fe5d1e5aa220190e}{PFN\_eglCreateContext}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}},\mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}},\textcolor{keyword}{const} \mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*);}
+\DoxyCodeLine{127 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a6c162304015a82ba97f05be85d3db0ea}{PFN\_eglDestroySurface}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}});}
+\DoxyCodeLine{128 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a9916f870896725c5e572a4c3376bc531}{PFN\_eglDestroyContext}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}});}
+\DoxyCodeLine{129 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a64f656c631460c74e59078ceb3d6fe5e}{PFN\_eglCreateWindowSurface}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}},EGLNativeWindowType,\textcolor{keyword}{const} \mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}*);}
+\DoxyCodeLine{130 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a9454961673514d14107f9308ed6814d5}{PFN\_eglMakeCurrent}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}},\mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}},\mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}});}
+\DoxyCodeLine{131 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_ad3c19bfc7be17a33113006b7ecf739e9}{PFN\_eglSwapBuffers}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}});}
+\DoxyCodeLine{132 \textcolor{keyword}{typedef} \mbox{\hyperlink{egl__context_8h_aa92c9669f82d92dba1177d1cc1c69ea4}{EGLBoolean}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_a0a660eb3ad8a62e3663f0caf9cb635ed}{PFN\_eglSwapInterval}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}});}
+\DoxyCodeLine{133 \textcolor{keyword}{typedef} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_af1c24d8b4fd683ed2bae6b973e67346e}{PFN\_eglQueryString}})(\mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}},\mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}});}
+\DoxyCodeLine{134 \textcolor{keyword}{typedef} \mbox{\hyperlink{group__context_ga3d47c2d2fbe0be9c505d0e04e91a133c}{GLFWglproc}} (EGLAPIENTRY * \mbox{\hyperlink{egl__context_8h_af0d9bf6c17563089707f361b68507ca2}{PFN\_eglGetProcAddress}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define eglGetConfigAttrib \_glfw.egl.GetConfigAttrib}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define eglGetConfigs \_glfw.egl.GetConfigs}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define eglGetDisplay \_glfw.egl.GetDisplay}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define eglGetError \_glfw.egl.GetError}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define eglInitialize \_glfw.egl.Initialize}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define eglTerminate \_glfw.egl.Terminate}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define eglBindAPI \_glfw.egl.BindAPI}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define eglCreateContext \_glfw.egl.CreateContext}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define eglDestroySurface \_glfw.egl.DestroySurface}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define eglDestroyContext \_glfw.egl.DestroyContext}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define eglCreateWindowSurface \_glfw.egl.CreateWindowSurface}}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define eglMakeCurrent \_glfw.egl.MakeCurrent}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define eglSwapBuffers \_glfw.egl.SwapBuffers}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define eglSwapInterval \_glfw.egl.SwapInterval}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define eglQueryString \_glfw.egl.QueryString}}
+\DoxyCodeLine{150 \textcolor{preprocessor}{\#define eglGetProcAddress \_glfw.egl.GetProcAddress}}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_CONTEXT\_STATE            \_GLFWcontextEGL egl}}
+\DoxyCodeLine{153 \textcolor{preprocessor}{\#define \_GLFW\_EGL\_LIBRARY\_CONTEXT\_STATE    \_GLFWlibraryEGL egl}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156 \textcolor{comment}{// EGL-\/specific per-\/context data}}
+\DoxyCodeLine{157 \textcolor{comment}{//}}
+\DoxyCodeLine{158 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l}{\_GLFWcontextEGL}}}
+\DoxyCodeLine{159 \{}
+\DoxyCodeLine{160    \mbox{\hyperlink{egl__context_8h_a691766e6d867e15207ec0a6d6e46253c}{EGLConfig}}        \mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l_ae29fb1e5ab2ab77ea982e54a75378da4}{config}};}
+\DoxyCodeLine{161    \mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}}       \mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l_a6492f75804422584065a9637e2b682f4}{handle}};}
+\DoxyCodeLine{162    \mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}}       \mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l_a35a0a681126254ba61a7754090619f98}{surface}};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164    \textcolor{keywordtype}{void}*            \mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l_ab03af415be57b433f3a1e2d2e532b068}{client}};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \} \mbox{\hyperlink{struct___g_l_f_wcontext_e_g_l}{\_GLFWcontextEGL}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{comment}{// EGL-\/specific global data}}
+\DoxyCodeLine{169 \textcolor{comment}{//}}
+\DoxyCodeLine{170 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l}{\_GLFWlibraryEGL}}}
+\DoxyCodeLine{171 \{}
+\DoxyCodeLine{172     \mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}}      \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a15523bfa0c42cff4b2df29634982768d}{display}};}
+\DoxyCodeLine{173     \mbox{\hyperlink{egl__context_8h_a97030274d045a36c550fc0d66d26f175}{EGLint}}          \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a0ac22db40188ca63d1cf5bf5a7ccc237}{major}}, \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a5cec944350277113e43807e6ff558d3a}{minor}};}
+\DoxyCodeLine{174     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a40597a37a27d93f0d4818aa896d76481}{prefix}};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ad8aecc00381a56329717b87385689ce8}{KHR\_create\_context}};}
+\DoxyCodeLine{177     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a8b219fc3419b6edab25359f5c8c6bc02}{KHR\_create\_context\_no\_error}};}
+\DoxyCodeLine{178     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a89101baf77ea37ddea7ad53187f701a2}{KHR\_gl\_colorspace}};}
+\DoxyCodeLine{179     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ae1fed7bb7e3dd5638d61cecaacde1c15}{KHR\_get\_all\_proc\_addresses}};}
+\DoxyCodeLine{180     \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ac0ca620867e3be4d23b13388e9ceb8ba}{KHR\_context\_flush\_control}};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182     \textcolor{keywordtype}{void}*           \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ab639d01213759295622d666468d2c11b}{handle}};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184     \mbox{\hyperlink{egl__context_8h_a97ab723faa33ac31b46ada81d8e2e497}{PFN\_eglGetConfigAttrib}}      \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ae6ee07162febf8385c90e3ecade051ec}{GetConfigAttrib}};}
+\DoxyCodeLine{185     \mbox{\hyperlink{egl__context_8h_a7d215df83d79b9c910f5968a56807408}{PFN\_eglGetConfigs}}           \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a892c552c9bf135bada95e8a142d6ef3a}{GetConfigs}};}
+\DoxyCodeLine{186     \mbox{\hyperlink{egl__context_8h_ae9ff3749c76bb78820675ec819f8ef79}{PFN\_eglGetDisplay}}           \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_abefad20e70fb152243913e18c7603e74}{GetDisplay}};}
+\DoxyCodeLine{187     \mbox{\hyperlink{egl__context_8h_a0f6249bd982c3c111ca2179b6aa7320f}{PFN\_eglGetError}}             \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a36ba534b466117e751d46151e4d2e239}{GetError}};}
+\DoxyCodeLine{188     \mbox{\hyperlink{egl__context_8h_a961064f167deb265185aa3f69617fe3a}{PFN\_eglInitialize}}           \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a8715caab2bf6a2a1a4329d086e5b74cb}{Initialize}};}
+\DoxyCodeLine{189     \mbox{\hyperlink{egl__context_8h_a9957b5b18f9aedc5c4975c6a094a14cf}{PFN\_eglTerminate}}            \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a625fcaf25bc0420963094ea696d8f37d}{Terminate}};}
+\DoxyCodeLine{190     \mbox{\hyperlink{egl__context_8h_a6b8853332751f1b0fa25d65597acefa7}{PFN\_eglBindAPI}}              \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a151bcae38de86668229849ad058ecf46}{BindAPI}};}
+\DoxyCodeLine{191     \mbox{\hyperlink{egl__context_8h_a70457dc77b6296c8fe5d1e5aa220190e}{PFN\_eglCreateContext}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ac259d9e9e3ab790a2f74cf9be8c93be9}{CreateContext}};}
+\DoxyCodeLine{192     \mbox{\hyperlink{egl__context_8h_a6c162304015a82ba97f05be85d3db0ea}{PFN\_eglDestroySurface}}       \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_add493781f6375f004d7579085634fd3a}{DestroySurface}};}
+\DoxyCodeLine{193     \mbox{\hyperlink{egl__context_8h_a9916f870896725c5e572a4c3376bc531}{PFN\_eglDestroyContext}}       \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ada6b9dde9eb150c42d875762813a24b2}{DestroyContext}};}
+\DoxyCodeLine{194     \mbox{\hyperlink{egl__context_8h_a64f656c631460c74e59078ceb3d6fe5e}{PFN\_eglCreateWindowSurface}}  \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a5f13d50d6f96dc7d8956ee1984dbead7}{CreateWindowSurface}};}
+\DoxyCodeLine{195     \mbox{\hyperlink{egl__context_8h_a9454961673514d14107f9308ed6814d5}{PFN\_eglMakeCurrent}}          \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a456b898a2adc3e6e32fc13cb97875a91}{MakeCurrent}};}
+\DoxyCodeLine{196     \mbox{\hyperlink{egl__context_8h_ad3c19bfc7be17a33113006b7ecf739e9}{PFN\_eglSwapBuffers}}          \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_aa0b5802c438b72d80045ee74c1fa808f}{SwapBuffers}};}
+\DoxyCodeLine{197     \mbox{\hyperlink{egl__context_8h_a0a660eb3ad8a62e3663f0caf9cb635ed}{PFN\_eglSwapInterval}}         \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_ab8185d800d95588ca31794d5e2924c48}{SwapInterval}};}
+\DoxyCodeLine{198     \mbox{\hyperlink{egl__context_8h_af1c24d8b4fd683ed2bae6b973e67346e}{PFN\_eglQueryString}}          \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a616184e542f1aa537e84d6ea4e792ff0}{QueryString}};}
+\DoxyCodeLine{199     \mbox{\hyperlink{egl__context_8h_af0d9bf6c17563089707f361b68507ca2}{PFN\_eglGetProcAddress}}       \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l_a0756d16c27b7cecd1353e00c8261ad3c}{GetProcAddress}};}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_e_g_l}{\_GLFWlibraryEGL}};}
+\DoxyCodeLine{202 }
+\DoxyCodeLine{203 }
+\DoxyCodeLine{204 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{egl__context_8h_ad83def5c7af30c3bfcc9371712ba96ac}{\_glfwInitEGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{205 \textcolor{keywordtype}{void} \mbox{\hyperlink{egl__context_8h_ab095be9ec2b3a40942da090ee7ab2960}{\_glfwTerminateEGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{206 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{egl__context_8h_adfb1d7aa925810c45a2ef4efc268c2fe}{\_glfwCreateContextEGL}}(\mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}* window,}
+\DoxyCodeLine{207                                \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}}* ctxconfig,}
+\DoxyCodeLine{208                                \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}}* fbconfig);}
+\DoxyCodeLine{209 \textcolor{preprocessor}{\#if defined(\_GLFW\_X11)}}
+\DoxyCodeLine{210 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \_glfwChooseVisualEGL(\textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wwndconfig}{\_GLFWwndconfig}}* wndconfig,}
+\DoxyCodeLine{211                               \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}}* ctxconfig,}
+\DoxyCodeLine{212                               \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}}* fbconfig,}
+\DoxyCodeLine{213                               Visual** visual, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_aa8bd8cf1eef34712fdb6ad58b540a2ee}{depth}});}
+\DoxyCodeLine{214 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*\_GLFW\_X11*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{215 }
+
+\end{DoxyCode}

@@ -1,0 +1,172 @@
+\hypertarget{_audio_8hpp_source}{}\doxysection{Audio.\+hpp}
+\label{_audio_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Audio/Audio.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Audio/Audio.hpp}}
+\mbox{\hyperlink{_audio_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef AUDIO\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define AUDIO\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}portaudio.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_audio}{Hexeng::Audio}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}{init}}();}
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{namespace_hexeng_1_1_audio_a9a6715ae7586295f097e9ab04812629a}{terminate}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21     \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_af33279a829a6ca566a5f54c0d5fd98e1}{SoundBase}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}(std::string filepath);}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a4503fa78d68fc92f96e6bb7b05649d06}{SoundBase}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{28         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_ae40ca45bd61b85426e6a66b95b94e243}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\&\&) noexcept;}
+\DoxyCodeLine{31         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}\&\&) noexcept;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         virtual \textcolor{keywordtype}{void} terminate() = 0;}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     protected:}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         std::\textcolor{keywordtype}{string} m\_file\_buffer;}
+\DoxyCodeLine{38         \textcolor{keywordtype}{size\_t} m\_byte\_per\_sample = 0;}
+\DoxyCodeLine{39         uint16\_t m\_channels\_nb = 0;}
+\DoxyCodeLine{40         uint32\_t m\_sample\_rate = 0;}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         friend \textcolor{keywordtype}{void} clean\_garbages();}
+\DoxyCodeLine{43         std::vector<std::thread> m\_garbage;}
+\DoxyCodeLine{44     \};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     extern \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}>* receiver;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     struct \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data}{SoundData}}}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \textcolor{keywordtype}{void}* \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_a813c0a74d0cd2234bb72d5e3062340e0}{sound}};}
+\DoxyCodeLine{51         PaStream* \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_ab084615b4642f663e0971650dffdc4b1}{stream}};}
+\DoxyCodeLine{52         \textcolor{keywordtype}{float}* \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_a90369ce0d7c00dff0a4f538c46089b86}{buffer}};}
+\DoxyCodeLine{53         \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}* \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_ae2fa549e9591f888c54bb63b2eeaddc0}{emitter}};}
+\DoxyCodeLine{54         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_aa83f18c1bb6bc1bc70b9f204d31048c0}{has\_to\_stop}};}
+\DoxyCodeLine{55         \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_ae9cddcf9cb7cdb11f61dca20b02ba028}{is\_playing}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data_a5325e618733912513d682beb5ae0bff2}{SoundData}}(\textcolor{keywordtype}{void}* sound\_p, PaStream* stream\_p, \textcolor{keywordtype}{float}* buffer\_p,\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}* emitter\_p = \textcolor{keyword}{nullptr},}
+\DoxyCodeLine{58             \textcolor{keywordtype}{bool} has\_to\_stop\_p = \textcolor{keyword}{false}, \textcolor{keywordtype}{bool} is\_playing\_p = \textcolor{keyword}{true}) :}
+\DoxyCodeLine{59             sound(sound\_p), stream(stream\_p), buffer(buffer\_p),}
+\DoxyCodeLine{60             has\_to\_stop(has\_to\_stop\_p), is\_playing(is\_playing\_p), emitter(emitter\_p)}
+\DoxyCodeLine{61         \{\}}
+\DoxyCodeLine{62     \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}}
+\DoxyCodeLine{65     \{}
+\DoxyCodeLine{66     public :}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_af82180a9cbee4f94917e03db89202ea2}{Sound}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}(std::string filepath);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_a50d21afa0d115bf954a000ba209c1991}{Sound}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{73         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_aafac1883690db5b07b0a7a753c319dfa}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\&\&) noexcept;}
+\DoxyCodeLine{76         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}\&\&) noexcept;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keywordtype}{void} play(const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}>* emmitter);}
+\DoxyCodeLine{79         \textcolor{keywordtype}{void} stop();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         static \textcolor{keywordtype}{int} audio\_callback(const \textcolor{keywordtype}{void}* input\_buffer, \textcolor{keywordtype}{void}* output\_buffer,}
+\DoxyCodeLine{82             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frames\_per\_buffer,}
+\DoxyCodeLine{83             const PaStreamCallbackTimeInfo* time\_info,}
+\DoxyCodeLine{84             PaStreamCallbackFlags status\_flags,}
+\DoxyCodeLine{85             \textcolor{keywordtype}{void}* user\_data);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87         \textcolor{keywordtype}{void} terminate() override;}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     private :}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         std::vector<std::unique\_ptr<\mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data}{SoundData}}>> m\_sounds\_data;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keywordtype}{void} m\_stop\_streams();}
+\DoxyCodeLine{94         std::thread m\_thread;}
+\DoxyCodeLine{95         \textcolor{keywordtype}{bool} m\_has\_to\_end = false;}
+\DoxyCodeLine{96     \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}} : public \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}}
+\DoxyCodeLine{99     \{}
+\DoxyCodeLine{100     \textcolor{keyword}{public}:}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a60e4415f5b10ef1839bee97956e2887c}{StaticSound}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}(std::string filepath);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a7af62a8fbc15bdec5cff824f87cca767}{StaticSound}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{107         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a2f30ec43a47c79dfa30a773b8f372ffb}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\&\&) noexcept;}
+\DoxyCodeLine{110         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{StaticSound}}\&\&) noexcept;}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112         \textcolor{keywordtype}{void} play();}
+\DoxyCodeLine{113         \textcolor{keywordtype}{void} stop();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         static \textcolor{keywordtype}{int} audio\_callback(const \textcolor{keywordtype}{void}* input\_buffer, \textcolor{keywordtype}{void}* output\_buffer,}
+\DoxyCodeLine{116             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frames\_per\_buffer,}
+\DoxyCodeLine{117             const PaStreamCallbackTimeInfo* time\_info,}
+\DoxyCodeLine{118             PaStreamCallbackFlags status\_flags,}
+\DoxyCodeLine{119             \textcolor{keywordtype}{void}* user\_data);}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121         \textcolor{keywordtype}{void} terminate() override;}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     private:}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125         std::vector<std::unique\_ptr<\mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data}{SoundData}}>> m\_sounds\_data;}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127         \textcolor{keywordtype}{void} m\_stop\_streams();}
+\DoxyCodeLine{128         std::thread m\_thread;}
+\DoxyCodeLine{129         \textcolor{keywordtype}{bool} m\_has\_to\_end = false;}
+\DoxyCodeLine{130     \};}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}} : public \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{SoundBase}}}
+\DoxyCodeLine{133     \{}
+\DoxyCodeLine{134     \textcolor{keyword}{public}:}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music_ae19265f7d069f6de23a94fdd9ce939c4}{Music}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}(std::string filepath);}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music_a3c85eb4d6523f4ce6b7c6bf3976447ca}{Music}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{141         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music_ad07feb9567b03c1223bffe9c68c507dc}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\&\&) noexcept;}
+\DoxyCodeLine{144         \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}\&\&) noexcept;}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146         \textcolor{keywordtype}{void} play();}
+\DoxyCodeLine{147         \textcolor{keywordtype}{void} stop();}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149         static \textcolor{keywordtype}{int} audio\_callback(const \textcolor{keywordtype}{void}* input\_buffer, \textcolor{keywordtype}{void}* output\_buffer,}
+\DoxyCodeLine{150             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frames\_per\_buffer,}
+\DoxyCodeLine{151             const PaStreamCallbackTimeInfo* time\_info,}
+\DoxyCodeLine{152             PaStreamCallbackFlags status\_flags,}
+\DoxyCodeLine{153             \textcolor{keywordtype}{void}* user\_data);}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \textcolor{keywordtype}{void} terminate() override;}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157     private:}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159         PaStream* m\_stream = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{160         \textcolor{keywordtype}{float}* m\_buffer = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{161         \textcolor{keywordtype}{bool} m\_is\_playing = false;}
+\DoxyCodeLine{162     \};}
+\DoxyCodeLine{163 }
+\DoxyCodeLine{164 \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

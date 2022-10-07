@@ -1,0 +1,215 @@
+\hypertarget{struct_i_audio_volume_level_vtbl}{}\doxysection{IAudio\+Volume\+Level\+Vtbl Struct Reference}
+\label{struct_i_audio_volume_level_vtbl}\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+
+
+{\ttfamily \#include $<$devicetopology.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_ae6547da4552c082bc8537b009bfe531d}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a07cc8ac4f981586fcd5488cb3a9ad748}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a2679abe567336168d7bf8b845e9d399f}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Channel\+Count)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a965e13670684c463af1397479a361445}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Level\+Range)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a7a51a1a1fa6c21d5b1b5cfc4042a0bd2}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Level)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a74bfd65bdc90fd4a0e593d731293aacb}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a0994fcafa5ef7df116321fad924d488b}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level\+Uniform)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a688d50bbb533d992e787b619c03197ef}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Level\+All\+Channels)(\mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a706a61eb672cf2132ca4627494d0d24a}{\+\_\+\+\_\+in\+\_\+ecount}} (\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_aa87037af17ec90fcd3ca9aa1839aa730}{c\+Channels}}) float a\+Levels\+DB\mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a68f93ea7f3ea3c62bb16ef243a32b923}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_ac6bb08ec0b59d9821cc8f531b07567c2}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT $\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a07a656fb8c883d369aacc84d467ab8a6}{pc\+Channels}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4d98c7d02e09eb211e09f13c4c4ebdd6}{n\+Channel}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a69efb742cd38b05ff9699274e0c1c921}{pf\+Min\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4930f9d6a1f0d362c1c859327b10e14f}{pf\+Max\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_ae9956e4b268953741743dc8f66142230}{pf\+Stepping}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float $\ast$ \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a610f938cada1030d65947ee6efef41bd}{pf\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a6b3a564be9b2de387732649f77ec5102}{f\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a256c228c3020ff80613efc9f2c664257}{pguid\+Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a0c7f3736276257ae987ed784531296f1}{f\+Level\+DB}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a56276e2c08bb03802c5f2ea4c528c032}{pguid\+Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}{ULONG}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_aa87037af17ec90fcd3ca9aa1839aa730}{c\+Channels}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}{ULONG}} \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_aa32ad71ca190b421bfba80dd3fd470e4}{pguid\+Event\+Context}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a706a61eb672cf2132ca4627494d0d24a}\label{struct_i_audio_volume_level_vtbl_a706a61eb672cf2132ca4627494d0d24a}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!\_\_in\_ecount@{\_\_in\_ecount}}
+\index{\_\_in\_ecount@{\_\_in\_ecount}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{\_\_in\_ecount()}{\_\_in\_ecount()}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+\_\+\+\_\+in\+\_\+ecount (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_i_audio_volume_level_vtbl_aa87037af17ec90fcd3ca9aa1839aa730}{c\+Channels}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a2679abe567336168d7bf8b845e9d399f}\label{struct_i_audio_volume_level_vtbl_a2679abe567336168d7bf8b845e9d399f}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Channel\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a7a51a1a1fa6c21d5b1b5cfc4042a0bd2}\label{struct_i_audio_volume_level_vtbl_a7a51a1a1fa6c21d5b1b5cfc4042a0bd2}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a965e13670684c463af1397479a361445}\label{struct_i_audio_volume_level_vtbl_a965e13670684c463af1397479a361445}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Level\+Range }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_ae6547da4552c082bc8537b009bfe531d}\label{struct_i_audio_volume_level_vtbl_ae6547da4552c082bc8537b009bfe531d}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/7]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a74bfd65bdc90fd4a0e593d731293aacb}\label{struct_i_audio_volume_level_vtbl_a74bfd65bdc90fd4a0e593d731293aacb}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a688d50bbb533d992e787b619c03197ef}\label{struct_i_audio_volume_level_vtbl_a688d50bbb533d992e787b619c03197ef}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level\+All\+Channels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a0994fcafa5ef7df116321fad924d488b}\label{struct_i_audio_volume_level_vtbl_a0994fcafa5ef7df116321fad924d488b}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/7]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Level\+Uniform }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}\label{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a07cc8ac4f981586fcd5488cb3a9ad748}\label{struct_i_audio_volume_level_vtbl_a07cc8ac4f981586fcd5488cb3a9ad748}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IAudio\+Volume\+Level\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_aa87037af17ec90fcd3ca9aa1839aa730}\label{struct_i_audio_volume_level_vtbl_aa87037af17ec90fcd3ca9aa1839aa730}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!cChannels@{cChannels}}
+\index{cChannels@{cChannels}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{cChannels}{cChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}{ULONG}} IAudio\+Volume\+Level\+Vtbl\+::c\+Channels}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a6b3a564be9b2de387732649f77ec5102}\label{struct_i_audio_volume_level_vtbl_a6b3a564be9b2de387732649f77ec5102}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!fLevelDB@{fLevelDB}}
+\index{fLevelDB@{fLevelDB}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevelDB}{fLevelDB}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float IAudio\+Volume\+Level\+Vtbl\+::f\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a0c7f3736276257ae987ed784531296f1}\label{struct_i_audio_volume_level_vtbl_a0c7f3736276257ae987ed784531296f1}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!fLevelDB@{fLevelDB}}
+\index{fLevelDB@{fLevelDB}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{fLevelDB}{fLevelDB}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float IAudio\+Volume\+Level\+Vtbl\+::f\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a4d98c7d02e09eb211e09f13c4c4ebdd6}\label{struct_i_audio_volume_level_vtbl_a4d98c7d02e09eb211e09f13c4c4ebdd6}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!nChannel@{nChannel}}
+\index{nChannel@{nChannel}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{nChannel}{nChannel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT IAudio\+Volume\+Level\+Vtbl\+::n\+Channel}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a07a656fb8c883d369aacc84d467ab8a6}\label{struct_i_audio_volume_level_vtbl_a07a656fb8c883d369aacc84d467ab8a6}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pcChannels@{pcChannels}}
+\index{pcChannels@{pcChannels}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pcChannels}{pcChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT$\ast$ IAudio\+Volume\+Level\+Vtbl\+::pc\+Channels}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a610f938cada1030d65947ee6efef41bd}\label{struct_i_audio_volume_level_vtbl_a610f938cada1030d65947ee6efef41bd}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pfLevelDB@{pfLevelDB}}
+\index{pfLevelDB@{pfLevelDB}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pfLevelDB}{pfLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Volume\+Level\+Vtbl\+::pf\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a4930f9d6a1f0d362c1c859327b10e14f}\label{struct_i_audio_volume_level_vtbl_a4930f9d6a1f0d362c1c859327b10e14f}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pfMaxLevelDB@{pfMaxLevelDB}}
+\index{pfMaxLevelDB@{pfMaxLevelDB}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pfMaxLevelDB}{pfMaxLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Volume\+Level\+Vtbl\+::pf\+Max\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a69efb742cd38b05ff9699274e0c1c921}\label{struct_i_audio_volume_level_vtbl_a69efb742cd38b05ff9699274e0c1c921}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pfMinLevelDB@{pfMinLevelDB}}
+\index{pfMinLevelDB@{pfMinLevelDB}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pfMinLevelDB}{pfMinLevelDB}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Volume\+Level\+Vtbl\+::pf\+Min\+Level\+DB}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_ae9956e4b268953741743dc8f66142230}\label{struct_i_audio_volume_level_vtbl_ae9956e4b268953741743dc8f66142230}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pfStepping@{pfStepping}}
+\index{pfStepping@{pfStepping}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pfStepping}{pfStepping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} float$\ast$ IAudio\+Volume\+Level\+Vtbl\+::pf\+Stepping}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a256c228c3020ff80613efc9f2c664257}\label{struct_i_audio_volume_level_vtbl_a256c228c3020ff80613efc9f2c664257}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Volume\+Level\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a56276e2c08bb03802c5f2ea4c528c032}\label{struct_i_audio_volume_level_vtbl_a56276e2c08bb03802c5f2ea4c528c032}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} float \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Volume\+Level\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_aa32ad71ca190b421bfba80dd3fd470e4}\label{struct_i_audio_volume_level_vtbl_aa32ad71ca190b421bfba80dd3fd470e4}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl_a4ae66b3cf1b5c0c148747b9a977670fe}{ULONG}} \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IAudio\+Volume\+Level\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_ac6bb08ec0b59d9821cc8f531b07567c2}\label{struct_i_audio_volume_level_vtbl_ac6bb08ec0b59d9821cc8f531b07567c2}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IAudio\+Volume\+Level\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_audio_volume_level_vtbl_a68f93ea7f3ea3c62bb16ef243a32b923}\label{struct_i_audio_volume_level_vtbl_a68f93ea7f3ea3c62bb16ef243a32b923}} 
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!riid@{riid}}
+\index{riid@{riid}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IAudio\+Volume\+Level\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{devicetopology_8h}{devicetopology.\+h}}\end{DoxyCompactItemize}

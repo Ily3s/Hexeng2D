@@ -1,0 +1,212 @@
+\hypertarget{patest__stop_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+stop.c File Reference}
+\label{patest__stop_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_stop.c@{Hexeng2D/dependencies/portaudio/test/patest\_stop.c}}
+
+
+Test different ways of stopping audio.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a6ee1df754f053739d33f2d477bdd3c10}{OUTPUT\+\_\+\+DEVICE}}~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a1209468322a28a86ddd8aa79a6fc9c46}{SLEEP\+\_\+\+DUR}}~(200)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(256)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a6bcf1783763b4f80706d3233605689c1}{LATENCY\+\_\+\+SECONDS}}~(3.\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}})
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a9131af33c3566c46ca0e543e96cd3f70}{FRAMES\+\_\+\+PER\+\_\+\+NOTE}}~(\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}/2)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_ac6378e0720273ae75dc2128b515070c6}{MAX\+\_\+\+REPEATS}}~(2)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}}~(400.\+0f / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a12e111a4449151edbb77ebace5f1d7a5}{NOTE\+\_\+0}}~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 1.\+0f / 1.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_abfcf833ab1560c284e33123b2fed08ea}{NOTE\+\_\+1}}~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 5.\+0f / 4.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a6b725bb0da609a027f0cdad68c103242}{NOTE\+\_\+2}}~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 4.\+0f / 3.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a60413e7436433c4e373a59d3c4ce00d3}{NOTE\+\_\+3}}~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 3.\+0f / 2.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a2edcc96e70acbdd095d3f8cb79a60837}{NOTE\+\_\+4}}~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 2.\+0f / 1.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a288adcce83d1f21a042bf61182449727}{MODE\+\_\+\+FINISH}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a29a7dfd4fec0d672f9690159d70abc0d}{MODE\+\_\+\+STOP}}~(1)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a7189d95852d77eef2cc8e182f9621be7}{MODE\+\_\+\+ABORT}}~(2)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__stop_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(400)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__stop_8c_ac42892ad25de89ea62d6439d81bbb63c}{Test\+Stop\+Mode}} (\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})
+\item 
+float \mbox{\hyperlink{patest__stop_8c_aa2607c551bcfeb19c44198a6644ecabd}{Lookup\+Waveform}} (\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, float phase)
+\item 
+int \mbox{\hyperlink{patest__stop_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test different ways of stopping audio. 
+
+Test the three ways of stopping audio\+:
+\begin{DoxyItemize}
+\item calling \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}},
+\item calling \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream()}},
+\item and returning a 1 from the callback function.
+\end{DoxyItemize}
+
+A long latency is set up so that you can hear the difference. Then a simple 8 note sequence is repeated twice. The program will print what you should hear.
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__stop_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__stop_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_stop.c@{patest\_stop.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(256)}
+
+\mbox{\Hypertarget{patest__stop_8c_a9131af33c3566c46ca0e543e96cd3f70}\label{patest__stop_8c_a9131af33c3566c46ca0e543e96cd3f70}} 
+\index{patest\_stop.c@{patest\_stop.c}!FRAMES\_PER\_NOTE@{FRAMES\_PER\_NOTE}}
+\index{FRAMES\_PER\_NOTE@{FRAMES\_PER\_NOTE}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_NOTE}{FRAMES\_PER\_NOTE}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+NOTE~(\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}/2)}
+
+\mbox{\Hypertarget{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}\label{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}} 
+\index{patest\_stop.c@{patest\_stop.c}!FUNDAMENTAL@{FUNDAMENTAL}}
+\index{FUNDAMENTAL@{FUNDAMENTAL}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{FUNDAMENTAL}{FUNDAMENTAL}}
+{\footnotesize\ttfamily \#define FUNDAMENTAL~(400.\+0f / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{patest__stop_8c_a6bcf1783763b4f80706d3233605689c1}\label{patest__stop_8c_a6bcf1783763b4f80706d3233605689c1}} 
+\index{patest\_stop.c@{patest\_stop.c}!LATENCY\_SECONDS@{LATENCY\_SECONDS}}
+\index{LATENCY\_SECONDS@{LATENCY\_SECONDS}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{LATENCY\_SECONDS}{LATENCY\_SECONDS}}
+{\footnotesize\ttfamily \#define LATENCY\+\_\+\+SECONDS~(3.\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}})}
+
+\mbox{\Hypertarget{patest__stop_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__stop_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_stop.c@{patest\_stop.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__stop_8c_ac6378e0720273ae75dc2128b515070c6}\label{patest__stop_8c_ac6378e0720273ae75dc2128b515070c6}} 
+\index{patest\_stop.c@{patest\_stop.c}!MAX\_REPEATS@{MAX\_REPEATS}}
+\index{MAX\_REPEATS@{MAX\_REPEATS}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_REPEATS}{MAX\_REPEATS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+REPEATS~(2)}
+
+\mbox{\Hypertarget{patest__stop_8c_a7189d95852d77eef2cc8e182f9621be7}\label{patest__stop_8c_a7189d95852d77eef2cc8e182f9621be7}} 
+\index{patest\_stop.c@{patest\_stop.c}!MODE\_ABORT@{MODE\_ABORT}}
+\index{MODE\_ABORT@{MODE\_ABORT}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_ABORT}{MODE\_ABORT}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+ABORT~(2)}
+
+\mbox{\Hypertarget{patest__stop_8c_a288adcce83d1f21a042bf61182449727}\label{patest__stop_8c_a288adcce83d1f21a042bf61182449727}} 
+\index{patest\_stop.c@{patest\_stop.c}!MODE\_FINISH@{MODE\_FINISH}}
+\index{MODE\_FINISH@{MODE\_FINISH}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_FINISH}{MODE\_FINISH}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+FINISH~(0)}
+
+\mbox{\Hypertarget{patest__stop_8c_a29a7dfd4fec0d672f9690159d70abc0d}\label{patest__stop_8c_a29a7dfd4fec0d672f9690159d70abc0d}} 
+\index{patest\_stop.c@{patest\_stop.c}!MODE\_STOP@{MODE\_STOP}}
+\index{MODE\_STOP@{MODE\_STOP}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_STOP}{MODE\_STOP}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+STOP~(1)}
+
+\mbox{\Hypertarget{patest__stop_8c_a12e111a4449151edbb77ebace5f1d7a5}\label{patest__stop_8c_a12e111a4449151edbb77ebace5f1d7a5}} 
+\index{patest\_stop.c@{patest\_stop.c}!NOTE\_0@{NOTE\_0}}
+\index{NOTE\_0@{NOTE\_0}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_0}{NOTE\_0}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+0~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 1.\+0f / 1.\+0f)}
+
+\mbox{\Hypertarget{patest__stop_8c_abfcf833ab1560c284e33123b2fed08ea}\label{patest__stop_8c_abfcf833ab1560c284e33123b2fed08ea}} 
+\index{patest\_stop.c@{patest\_stop.c}!NOTE\_1@{NOTE\_1}}
+\index{NOTE\_1@{NOTE\_1}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_1}{NOTE\_1}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+1~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 5.\+0f / 4.\+0f)}
+
+\mbox{\Hypertarget{patest__stop_8c_a6b725bb0da609a027f0cdad68c103242}\label{patest__stop_8c_a6b725bb0da609a027f0cdad68c103242}} 
+\index{patest\_stop.c@{patest\_stop.c}!NOTE\_2@{NOTE\_2}}
+\index{NOTE\_2@{NOTE\_2}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_2}{NOTE\_2}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+2~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 4.\+0f / 3.\+0f)}
+
+\mbox{\Hypertarget{patest__stop_8c_a60413e7436433c4e373a59d3c4ce00d3}\label{patest__stop_8c_a60413e7436433c4e373a59d3c4ce00d3}} 
+\index{patest\_stop.c@{patest\_stop.c}!NOTE\_3@{NOTE\_3}}
+\index{NOTE\_3@{NOTE\_3}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_3}{NOTE\_3}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+3~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 3.\+0f / 2.\+0f)}
+
+\mbox{\Hypertarget{patest__stop_8c_a2edcc96e70acbdd095d3f8cb79a60837}\label{patest__stop_8c_a2edcc96e70acbdd095d3f8cb79a60837}} 
+\index{patest\_stop.c@{patest\_stop.c}!NOTE\_4@{NOTE\_4}}
+\index{NOTE\_4@{NOTE\_4}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{NOTE\_4}{NOTE\_4}}
+{\footnotesize\ttfamily \#define NOTE\+\_\+4~(\mbox{\hyperlink{patest__stop_8c_a16d2a89c248f8d5a6f76316c0ad4b18d}{FUNDAMENTAL}} $\ast$ 2.\+0f / 1.\+0f)}
+
+\mbox{\Hypertarget{patest__stop_8c_a6ee1df754f053739d33f2d477bdd3c10}\label{patest__stop_8c_a6ee1df754f053739d33f2d477bdd3c10}} 
+\index{patest\_stop.c@{patest\_stop.c}!OUTPUT\_DEVICE@{OUTPUT\_DEVICE}}
+\index{OUTPUT\_DEVICE@{OUTPUT\_DEVICE}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_DEVICE}{OUTPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+DEVICE~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())}
+
+\mbox{\Hypertarget{patest__stop_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__stop_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_stop.c@{patest\_stop.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__stop_8c_a1209468322a28a86ddd8aa79a6fc9c46}\label{patest__stop_8c_a1209468322a28a86ddd8aa79a6fc9c46}} 
+\index{patest\_stop.c@{patest\_stop.c}!SLEEP\_DUR@{SLEEP\_DUR}}
+\index{SLEEP\_DUR@{SLEEP\_DUR}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{SLEEP\_DUR}{SLEEP\_DUR}}
+{\footnotesize\ttfamily \#define SLEEP\+\_\+\+DUR~(200)}
+
+\mbox{\Hypertarget{patest__stop_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__stop_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_stop.c@{patest\_stop.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(400)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__stop_8c_aa2607c551bcfeb19c44198a6644ecabd}\label{patest__stop_8c_aa2607c551bcfeb19c44198a6644ecabd}} 
+\index{patest\_stop.c@{patest\_stop.c}!LookupWaveform@{LookupWaveform}}
+\index{LookupWaveform@{LookupWaveform}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{LookupWaveform()}{LookupWaveform()}}
+{\footnotesize\ttfamily float Lookup\+Waveform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data,  }\item[{float}]{phase }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__stop_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__stop_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_stop.c@{patest\_stop.c}!main@{main}}
+\index{main@{main}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__stop_8c_ac42892ad25de89ea62d6439d81bbb63c}\label{patest__stop_8c_ac42892ad25de89ea62d6439d81bbb63c}} 
+\index{patest\_stop.c@{patest\_stop.c}!TestStopMode@{TestStopMode}}
+\index{TestStopMode@{TestStopMode}!patest\_stop.c@{patest\_stop.c}}
+\doxysubsubsection{\texorpdfstring{TestStopMode()}{TestStopMode()}}
+{\footnotesize\ttfamily int Test\+Stop\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data }\end{DoxyParamCaption})}
+

@@ -1,0 +1,21 @@
+When you are done with a stream, you should close it to free up resources\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}{Pa\_CloseStream}}( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+We\textquotesingle{}ve already mentioned this in \mbox{\hyperlink{initializing_portaudio}{Initializing Port\+Audio}}, but in case you forgot, be sure to terminate Port\+Audio when you are done\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\_Terminate}}( );}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+Previous\+: \mbox{\hyperlink{start_stop_abort}{Starting, Stopping and Aborting a Stream}} $\vert$ Next\+: \mbox{\hyperlink{utility_functions}{Utility Functions}} 

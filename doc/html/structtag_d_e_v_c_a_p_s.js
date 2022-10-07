@@ -1,0 +1,26 @@
+var structtag_d_e_v_c_a_p_s =
+[
+    [ "AudioIn", "structtag_d_e_v_c_a_p_s.html#a505560bd2bd2f7bd929c2014b332f23f", null ],
+    [ "Calibrate", "structtag_d_e_v_c_a_p_s.html#aace759d9cfdbc031e6220916ec82c640", null ],
+    [ "CanMonitorSrc", "structtag_d_e_v_c_a_p_s.html#a9d902bef91a8b6fd554ea42f522f00b4", null ],
+    [ "CanPreview", "structtag_d_e_v_c_a_p_s.html#a503404a3a421644fe506eccce475eaa9", null ],
+    [ "CanRecord", "structtag_d_e_v_c_a_p_s.html#a5b7a594bc9a2e8f19275b7c82e9f941c", null ],
+    [ "CanRecordStrobe", "structtag_d_e_v_c_a_p_s.html#ac972c6daa5ae199e11bcecca27f79ea2", null ],
+    [ "CanSave", "structtag_d_e_v_c_a_p_s.html#a22781df9f7b897007d3a7b596118fc7a", null ],
+    [ "CanTest", "structtag_d_e_v_c_a_p_s.html#aab9a87be6528e39e4c0e4cbafc9adaba", null ],
+    [ "CTLRead", "structtag_d_e_v_c_a_p_s.html#ae7c766b2341e4367cafe9a6a2a4a4d7e", null ],
+    [ "DeviceType", "structtag_d_e_v_c_a_p_s.html#a9c4e6122f960b8863ef63679af062dbf", null ],
+    [ "HasAudio", "structtag_d_e_v_c_a_p_s.html#ab30bc5bc2636659f82048cb169f365a7", null ],
+    [ "HasVideo", "structtag_d_e_v_c_a_p_s.html#ab8090f42c74b210fbf55f522dba7e48e", null ],
+    [ "IndexRead", "structtag_d_e_v_c_a_p_s.html#a9509fe673cf1f9919d9e302d44d48be0", null ],
+    [ "NormRate", "structtag_d_e_v_c_a_p_s.html#a2fa5bad968faff0b5ce48ec745ea1d63", null ],
+    [ "Postroll", "structtag_d_e_v_c_a_p_s.html#a30ef6aff2fb5b84a385114da9b687dbb", null ],
+    [ "Preroll", "structtag_d_e_v_c_a_p_s.html#a3eff546d90ac0607bf75daf2eade6ead", null ],
+    [ "SeekType", "structtag_d_e_v_c_a_p_s.html#a220899622129ffb612f9a769996bad77", null ],
+    [ "SimulatedHardware", "structtag_d_e_v_c_a_p_s.html#abe1bb39167453597db394369b95e6ec6", null ],
+    [ "SyncAcc", "structtag_d_e_v_c_a_p_s.html#ad7c11b3e75997845b0e2fec8e9f74871", null ],
+    [ "TCRead", "structtag_d_e_v_c_a_p_s.html#a274d46458425c5b2979e37149c81490f", null ],
+    [ "TCWrite", "structtag_d_e_v_c_a_p_s.html#a2a43c901ada8408965b3af9b4b1adf14", null ],
+    [ "UsesFiles", "structtag_d_e_v_c_a_p_s.html#a59837eb7413094bee4770e5edea8f529", null ],
+    [ "VideoIn", "structtag_d_e_v_c_a_p_s.html#ae3d204a2b0991cab4b3dc6aa579f6020", null ]
+];

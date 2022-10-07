@@ -1,0 +1,27 @@
+var struct_i_audio_bass_vtbl =
+[
+    [ "__in_ecount", "struct_i_audio_bass_vtbl.html#a967152b42cd57947fb8f63e26ec9b13c", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#ab130236ef7144b982240fd59835bcad0", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#add8ece11d521458a9522ac99e3b9cf6f", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#a1a5e2fbe098f554649db245981f400ba", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#a11329afb7927b63723739eb148cfd4f1", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#a30a03f0bb84bab0ea6e53a37e3fe8c39", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#a24eec3d28a9b80bd1b08fa2d0ce77d73", null ],
+    [ "HRESULT", "struct_i_audio_bass_vtbl.html#a72ed700e53d743e1690e9d3875e1779d", null ],
+    [ "ULONG", "struct_i_audio_bass_vtbl.html#ae430474626b68deee61e8ff959e782be", null ],
+    [ "ULONG", "struct_i_audio_bass_vtbl.html#a809ae45d3d60ba470ad3422855afaebf", null ],
+    [ "cChannels", "struct_i_audio_bass_vtbl.html#a941e5705f3980d5e5cd62ba18e5e8e9d", null ],
+    [ "fLevelDB", "struct_i_audio_bass_vtbl.html#afcba7f7353352beee21ed1b8c4b320eb", null ],
+    [ "fLevelDB", "struct_i_audio_bass_vtbl.html#a4759ce1b03a0d6babbdfe7d7a6eab833", null ],
+    [ "nChannel", "struct_i_audio_bass_vtbl.html#a16637a1830c04b2c29177f7e8f17cc65", null ],
+    [ "pcChannels", "struct_i_audio_bass_vtbl.html#a0a1570513759888e0089c78d2160f2e6", null ],
+    [ "pfLevelDB", "struct_i_audio_bass_vtbl.html#acef96922b5fdd62b50f98702bb89750c", null ],
+    [ "pfMaxLevelDB", "struct_i_audio_bass_vtbl.html#a7f4e1864694e8b7015931ab0fae0ab53", null ],
+    [ "pfMinLevelDB", "struct_i_audio_bass_vtbl.html#ae2f34dbf7ee024b9c4d813218bb61dc9", null ],
+    [ "pfStepping", "struct_i_audio_bass_vtbl.html#a122f03f151e2a9d903aa8bb1837a4047", null ],
+    [ "pguidEventContext", "struct_i_audio_bass_vtbl.html#a69821c6fd59f2a0443d2aa39f37b869b", null ],
+    [ "pguidEventContext", "struct_i_audio_bass_vtbl.html#a161742755021eec6f64c05431d2bc2ba", null ],
+    [ "pguidEventContext", "struct_i_audio_bass_vtbl.html#a8fba6e36b29050fa30a8da53b3efb341", null ],
+    [ "ppvObject", "struct_i_audio_bass_vtbl.html#a9b07696d422786ee9ba37bff63506e82", null ],
+    [ "riid", "struct_i_audio_bass_vtbl.html#a044e6cbb5974041701db0079ca74c6b1", null ]
+];

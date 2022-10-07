@@ -1,0 +1,143 @@
+\hypertarget{struct_i_named_property_store_vtbl}{}\doxysection{INamed\+Property\+Store\+Vtbl Struct Reference}
+\label{struct_i_named_property_store_vtbl}\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+
+
+{\ttfamily \#include $<$propsys.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_named_property_store_vtbl_a3d893bd046299cbeb10fe9d993e4c158}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_ac4749b44ee0c432f24b5dbc156dbab85}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_a13018a3a251c43f316da110ecd7a1840}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_a0ed76b62c817c827256563a329622e18}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Named\+Value)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_a46df81ad7c9805294d96c405a49fd5d7}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Named\+Value)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_a40fca28817472f3fdc753da73063eca6}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Name\+Count)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_named_property_store_vtbl_a1966f36ebf55ed8b06cf18cf75f54e53}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Name\+At)(\mbox{\hyperlink{propsys_8h_ad78560183aa79c1a851febcac7e9b180}{INamed\+Property\+Store}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{struct_i_named_property_store_vtbl_a2001956246d68e31b920e1d56a261675}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_named_property_store_vtbl_a1283b9a2967a9497fca4900e2fd0fdb6}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_named_property_store_vtbl_a05c9fff903881ff0f397f7589b957348}{psz\+Name}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} PROPVARIANT $\ast$ \mbox{\hyperlink{struct_i_named_property_store_vtbl_a21ce487a54968dbe2d1e42e914e64864}{ppropvar}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} \mbox{\hyperlink{_prop_idl_8h_af1b6b252736f741deaa57f6b74607c31}{REFPROPVARIANT}} \mbox{\hyperlink{struct_i_named_property_store_vtbl_aa6a84e0137e3c7ae18419b03686c681f}{propvar}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} DWORD $\ast$ \mbox{\hyperlink{struct_i_named_property_store_vtbl_a0c06c7a1c281c20ce41bb5aeb228c519}{pdw\+Count}}
+\item 
+DWORD \mbox{\hyperlink{struct_i_named_property_store_vtbl_aae5bfadfa4a6e91e6f244f7e425f21cb}{i\+Prop}}
+\item 
+DWORD \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} BSTR $\ast$ \mbox{\hyperlink{struct_i_named_property_store_vtbl_a3c6279281ed9b8b84364d74df21decac}{pbstr\+Name}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a1966f36ebf55ed8b06cf18cf75f54e53}\label{struct_i_named_property_store_vtbl_a1966f36ebf55ed8b06cf18cf75f54e53}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Name\+At }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a40fca28817472f3fdc753da73063eca6}\label{struct_i_named_property_store_vtbl_a40fca28817472f3fdc753da73063eca6}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Name\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a0ed76b62c817c827256563a329622e18}\label{struct_i_named_property_store_vtbl_a0ed76b62c817c827256563a329622e18}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Named\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a3d893bd046299cbeb10fe9d993e4c158}\label{struct_i_named_property_store_vtbl_a3d893bd046299cbeb10fe9d993e4c158}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE INamed\+Property\+Store\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a46df81ad7c9805294d96c405a49fd5d7}\label{struct_i_named_property_store_vtbl_a46df81ad7c9805294d96c405a49fd5d7}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Named\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_ac4749b44ee0c432f24b5dbc156dbab85}\label{struct_i_named_property_store_vtbl_ac4749b44ee0c432f24b5dbc156dbab85}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a13018a3a251c43f316da110ecd7a1840}\label{struct_i_named_property_store_vtbl_a13018a3a251c43f316da110ecd7a1840}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily INamed\+Property\+Store\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_aae5bfadfa4a6e91e6f244f7e425f21cb}\label{struct_i_named_property_store_vtbl_aae5bfadfa4a6e91e6f244f7e425f21cb}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!iProp@{iProp}}
+\index{iProp@{iProp}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{iProp}{iProp}}
+{\footnotesize\ttfamily DWORD INamed\+Property\+Store\+Vtbl\+::i\+Prop}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a3c6279281ed9b8b84364d74df21decac}\label{struct_i_named_property_store_vtbl_a3c6279281ed9b8b84364d74df21decac}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!pbstrName@{pbstrName}}
+\index{pbstrName@{pbstrName}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{pbstrName}{pbstrName}}
+{\footnotesize\ttfamily DWORD \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} BSTR$\ast$ INamed\+Property\+Store\+Vtbl\+::pbstr\+Name}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a0c06c7a1c281c20ce41bb5aeb228c519}\label{struct_i_named_property_store_vtbl_a0c06c7a1c281c20ce41bb5aeb228c519}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!pdwCount@{pdwCount}}
+\index{pdwCount@{pdwCount}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{pdwCount}{pdwCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} DWORD$\ast$ INamed\+Property\+Store\+Vtbl\+::pdw\+Count}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a21ce487a54968dbe2d1e42e914e64864}\label{struct_i_named_property_store_vtbl_a21ce487a54968dbe2d1e42e914e64864}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!ppropvar@{ppropvar}}
+\index{ppropvar@{ppropvar}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{ppropvar}{ppropvar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} PROPVARIANT$\ast$ INamed\+Property\+Store\+Vtbl\+::ppropvar}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a1283b9a2967a9497fca4900e2fd0fdb6}\label{struct_i_named_property_store_vtbl_a1283b9a2967a9497fca4900e2fd0fdb6}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ INamed\+Property\+Store\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_aa6a84e0137e3c7ae18419b03686c681f}\label{struct_i_named_property_store_vtbl_aa6a84e0137e3c7ae18419b03686c681f}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!propvar@{propvar}}
+\index{propvar@{propvar}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{propvar}{propvar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} \mbox{\hyperlink{_prop_idl_8h_af1b6b252736f741deaa57f6b74607c31}{REFPROPVARIANT}} INamed\+Property\+Store\+Vtbl\+::propvar}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a05c9fff903881ff0f397f7589b957348}\label{struct_i_named_property_store_vtbl_a05c9fff903881ff0f397f7589b957348}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!pszName@{pszName}}
+\index{pszName@{pszName}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{pszName}{pszName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR INamed\+Property\+Store\+Vtbl\+::psz\+Name}
+
+\mbox{\Hypertarget{struct_i_named_property_store_vtbl_a2001956246d68e31b920e1d56a261675}\label{struct_i_named_property_store_vtbl_a2001956246d68e31b920e1d56a261675}} 
+\index{INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}!riid@{riid}}
+\index{riid@{riid}!INamedPropertyStoreVtbl@{INamedPropertyStoreVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID INamed\+Property\+Store\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{propsys_8h}{propsys.\+h}}\end{DoxyCompactItemize}

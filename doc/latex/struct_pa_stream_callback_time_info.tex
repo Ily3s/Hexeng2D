@@ -1,0 +1,51 @@
+\hypertarget{struct_pa_stream_callback_time_info}{}\doxysection{Pa\+Stream\+Callback\+Time\+Info Struct Reference}
+\label{struct_pa_stream_callback_time_info}\index{PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}}
+
+
+{\ttfamily \#include $<$portaudio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_stream_callback_time_info_ad114a6d5e1cf2cdd75837c33c1c8bb4c}{input\+Buffer\+Adc\+Time}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_stream_callback_time_info_af21eb5482cadb212dae38fdbbd9bebfb}{current\+Time}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_stream_callback_time_info_aa2052c42394fca748e83517fc8942609}{output\+Buffer\+Dac\+Time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Timing information for the buffers passed to the stream callback.
+
+Time values are expressed in seconds and are synchronised with the time base used by \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}} for the associated stream.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}, \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_stream_callback_time_info_af21eb5482cadb212dae38fdbbd9bebfb}\label{struct_pa_stream_callback_time_info_af21eb5482cadb212dae38fdbbd9bebfb}} 
+\index{PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}!currentTime@{currentTime}}
+\index{currentTime@{currentTime}!PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}}
+\doxysubsubsection{\texorpdfstring{currentTime}{currentTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Stream\+Callback\+Time\+Info\+::current\+Time}
+
+The time when the stream callback was invoked \mbox{\Hypertarget{struct_pa_stream_callback_time_info_ad114a6d5e1cf2cdd75837c33c1c8bb4c}\label{struct_pa_stream_callback_time_info_ad114a6d5e1cf2cdd75837c33c1c8bb4c}} 
+\index{PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}!inputBufferAdcTime@{inputBufferAdcTime}}
+\index{inputBufferAdcTime@{inputBufferAdcTime}!PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}}
+\doxysubsubsection{\texorpdfstring{inputBufferAdcTime}{inputBufferAdcTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Stream\+Callback\+Time\+Info\+::input\+Buffer\+Adc\+Time}
+
+The time when the first sample of the input buffer was captured at the ADC input \mbox{\Hypertarget{struct_pa_stream_callback_time_info_aa2052c42394fca748e83517fc8942609}\label{struct_pa_stream_callback_time_info_aa2052c42394fca748e83517fc8942609}} 
+\index{PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}!outputBufferDacTime@{outputBufferDacTime}}
+\index{outputBufferDacTime@{outputBufferDacTime}!PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}}
+\doxysubsubsection{\texorpdfstring{outputBufferDacTime}{outputBufferDacTime}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Stream\+Callback\+Time\+Info\+::output\+Buffer\+Dac\+Time}
+
+The time when the first sample of the output buffer will output the DAC 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/include/\mbox{\hyperlink{portaudio_8h}{portaudio.\+h}}\end{DoxyCompactItemize}

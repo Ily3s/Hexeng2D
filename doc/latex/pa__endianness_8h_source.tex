@@ -1,0 +1,131 @@
+\hypertarget{pa__endianness_8h_source}{}\doxysection{pa\+\_\+endianness.\+h}
+\label{pa__endianness_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_endianness.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_endianness.h}}
+\mbox{\hyperlink{pa__endianness_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_ENDIANNESS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_ENDIANNESS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library current platform endianness macros}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Phil Burk, Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{62 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{63 \{}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/* If this is an apple, we need to do detect endianness this way */}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#if defined(\_\_APPLE\_\_)}}
+\DoxyCodeLine{68     \textcolor{comment}{/* we need to do some endian detection that is sensitive to hardware arch */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{    \#if defined(\_\_LITTLE\_ENDIAN\_\_)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{        \#if !defined( PA\_LITTLE\_ENDIAN )}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{            \#define PA\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{        \#if defined( PA\_BIG\_ENDIAN )}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{            \#undef PA\_BIG\_ENDIAN}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{        \#if !defined( PA\_BIG\_ENDIAN )}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{            \#define PA\_BIG\_ENDIAN}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{        \#if defined( PA\_LITTLE\_ENDIAN )}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{            \#undef PA\_LITTLE\_ENDIAN}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{83 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{85     \textcolor{comment}{/* this is not an apple, so first check the existing defines, and, failing that,}}
+\DoxyCodeLine{86 \textcolor{comment}{       detect well-\/known architectures. */}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{    \#if defined(PA\_LITTLE\_ENDIAN) || defined(PA\_BIG\_ENDIAN)}}
+\DoxyCodeLine{89         \textcolor{comment}{/* endianness define has been set externally, such as by autoconf */}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{        \#if defined(PA\_LITTLE\_ENDIAN) \&\& defined(PA\_BIG\_ENDIAN)}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{        \#error both PA\_LITTLE\_ENDIAN and PA\_BIG\_ENDIAN have been defined externally to pa\_endianness.h -\/ only one endianness at a time please}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \textcolor{preprocessor}{    \#else}}
+\DoxyCodeLine{96         \textcolor{comment}{/* endianness define has not been set externally */}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{comment}{/* set PA\_LITTLE\_ENDIAN or PA\_BIG\_ENDIAN by testing well known platform specific defines */}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{        \#if defined(WIN32) || defined(\_WIN32) || defined(\_\_WIN32\_\_) || defined(\_\_NT\_\_) || defined(LITTLE\_ENDIAN) || defined(\_\_i386) || defined(\_M\_IX86) || defined(\_\_x86\_64\_\_)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{            \#define PA\_LITTLE\_ENDIAN }\textcolor{comment}{/* win32, assume intel byte order */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{        \#else}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{            \#define PA\_BIG\_ENDIAN}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{        \#endif}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{    \#if !defined(PA\_LITTLE\_ENDIAN) \&\& !defined(PA\_BIG\_ENDIAN)}}
+\DoxyCodeLine{108         \textcolor{comment}{/*}}
+\DoxyCodeLine{109 \textcolor{comment}{         If the following error is raised, you either need to modify the code above}}
+\DoxyCodeLine{110 \textcolor{comment}{         to automatically determine the endianness from other symbols defined on your}}
+\DoxyCodeLine{111 \textcolor{comment}{         platform, or define either PA\_LITTLE\_ENDIAN or PA\_BIG\_ENDIAN externally.}}
+\DoxyCodeLine{112 \textcolor{comment}{        */}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{        \#error pa\_endianness.h was unable to automatically determine the endianness of the target platform}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{/* PA\_VALIDATE\_ENDIANNESS compares the compile time and runtime endianness,}}
+\DoxyCodeLine{120 \textcolor{comment}{ and raises an assertion if they don't match. <assert.h> must be included in}}
+\DoxyCodeLine{121 \textcolor{comment}{ the context in which this macro is used.}}
+\DoxyCodeLine{122 \textcolor{comment}{*/}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#if defined(NDEBUG)}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{    \#define PA\_VALIDATE\_ENDIANNESS}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{    \#if defined(PA\_LITTLE\_ENDIAN)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{        \#define PA\_VALIDATE\_ENDIANNESS \(\backslash\)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{        \{ \(\backslash\)}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{            const long nativeOne = 1; \(\backslash\)}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{            assert( "{}PortAudio: compile time and runtime endianness don't match"{}} \&\& (((char *)\&nativeOne)[0]) == 1 ); \(\backslash\)}
+\DoxyCodeLine{131         \}}
+\DoxyCodeLine{132 \textcolor{preprocessor}{    \#elif defined(PA\_BIG\_ENDIAN)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{        \#define PA\_VALIDATE\_ENDIANNESS \(\backslash\)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{        \{ \(\backslash\)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{            const long nativeOne = 1; \(\backslash\)}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{            assert( "{}PortAudio: compile time and runtime endianness don't match"{}} \&\& (((char *)\&nativeOne)[0]) == 0 ); \(\backslash\)}
+\DoxyCodeLine{137         \}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{143 \}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_ENDIANNESS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,100 @@
+\hypertarget{pa__types_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+types.h File Reference}
+\label{pa__types_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_types.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_types.h}}
+
+
+Definition of 16 and 32 bit integer types (Pa\+Int16, Pa\+Int32 etc)  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__types_8h_a391756f658c0bdad5fa65c4cd3410ad6}{SIZEOF\+\_\+\+SHORT}}~2
+\item 
+\#define \mbox{\hyperlink{pa__types_8h_a44184cf844a916eee78598ab35fc966b}{SIZEOF\+\_\+\+INT}}~4
+\item 
+\#define \mbox{\hyperlink{pa__types_8h_a22aece5d034fd9040a3d01c3797fdfe7}{SIZEOF\+\_\+\+LONG}}~4
+\item 
+\#define \mbox{\hyperlink{pa__types_8h_a8aa70afbf60fc24c31cb10cfe8fb1a0f}{PA\+\_\+\+VALIDATE\+\_\+\+TYPE\+\_\+\+SIZES}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef signed short \mbox{\hyperlink{pa__types_8h_ab13765ec6381196b9569590ef2d42a20}{Pa\+Int16}}
+\item 
+typedef unsigned short \mbox{\hyperlink{pa__types_8h_a1b6c9b860b20b449383a7d85d9098d9f}{Pa\+Uint16}}
+\item 
+typedef signed int \mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{Pa\+Int32}}
+\item 
+typedef unsigned int \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{Pa\+Uint32}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Definition of 16 and 32 bit integer types (Pa\+Int16, Pa\+Int32 etc) 
+
+SIZEOF\+\_\+\+SHORT, SIZEOF\+\_\+\+INT and SIZEOF\+\_\+\+LONG are set by the configure script when it is used. Otherwise we default to the common 32 bit values, if your platform doesn\textquotesingle{}t use configure, and doesn\textquotesingle{}t use the default values below you will need to explicitly define these symbols in your make file.
+
+A PA\+\_\+\+VALIDATE\+\_\+\+SIZES macro is provided to assert that the values set in this file are correct. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__types_8h_a8aa70afbf60fc24c31cb10cfe8fb1a0f}\label{pa__types_8h_a8aa70afbf60fc24c31cb10cfe8fb1a0f}} 
+\index{pa\_types.h@{pa\_types.h}!PA\_VALIDATE\_TYPE\_SIZES@{PA\_VALIDATE\_TYPE\_SIZES}}
+\index{PA\_VALIDATE\_TYPE\_SIZES@{PA\_VALIDATE\_TYPE\_SIZES}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{PA\_VALIDATE\_TYPE\_SIZES}{PA\_VALIDATE\_TYPE\_SIZES}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+VALIDATE\+\_\+\+TYPE\+\_\+\+SIZES}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        assert( \textcolor{stringliteral}{"{}PortAudio: type sizes are not correct in pa\_types.h"{}} \&\& \textcolor{keyword}{sizeof}( \mbox{\hyperlink{pa__types_8h_a1b6c9b860b20b449383a7d85d9098d9f}{PaUint16}} ) == 2 ); \(\backslash\)}
+\DoxyCodeLine{        assert( \textcolor{stringliteral}{"{}PortAudio: type sizes are not correct in pa\_types.h"{}} \&\& \textcolor{keyword}{sizeof}( \mbox{\hyperlink{pa__types_8h_ab13765ec6381196b9569590ef2d42a20}{PaInt16}} ) == 2 ); \(\backslash\)}
+\DoxyCodeLine{        assert( \textcolor{stringliteral}{"{}PortAudio: type sizes are not correct in pa\_types.h"{}} \&\& \textcolor{keyword}{sizeof}( \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{PaUint32}} ) == 4 ); \(\backslash\)}
+\DoxyCodeLine{        assert( \textcolor{stringliteral}{"{}PortAudio: type sizes are not correct in pa\_types.h"{}} \&\& \textcolor{keyword}{sizeof}( \mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{PaInt32}} ) == 4 ); \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__types_8h_a44184cf844a916eee78598ab35fc966b}\label{pa__types_8h_a44184cf844a916eee78598ab35fc966b}} 
+\index{pa\_types.h@{pa\_types.h}!SIZEOF\_INT@{SIZEOF\_INT}}
+\index{SIZEOF\_INT@{SIZEOF\_INT}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_INT}{SIZEOF\_INT}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+INT~4}
+
+\mbox{\Hypertarget{pa__types_8h_a22aece5d034fd9040a3d01c3797fdfe7}\label{pa__types_8h_a22aece5d034fd9040a3d01c3797fdfe7}} 
+\index{pa\_types.h@{pa\_types.h}!SIZEOF\_LONG@{SIZEOF\_LONG}}
+\index{SIZEOF\_LONG@{SIZEOF\_LONG}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_LONG}{SIZEOF\_LONG}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+LONG~4}
+
+\mbox{\Hypertarget{pa__types_8h_a391756f658c0bdad5fa65c4cd3410ad6}\label{pa__types_8h_a391756f658c0bdad5fa65c4cd3410ad6}} 
+\index{pa\_types.h@{pa\_types.h}!SIZEOF\_SHORT@{SIZEOF\_SHORT}}
+\index{SIZEOF\_SHORT@{SIZEOF\_SHORT}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{SIZEOF\_SHORT}{SIZEOF\_SHORT}}
+{\footnotesize\ttfamily \#define SIZEOF\+\_\+\+SHORT~2}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__types_8h_ab13765ec6381196b9569590ef2d42a20}\label{pa__types_8h_ab13765ec6381196b9569590ef2d42a20}} 
+\index{pa\_types.h@{pa\_types.h}!PaInt16@{PaInt16}}
+\index{PaInt16@{PaInt16}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{PaInt16}{PaInt16}}
+{\footnotesize\ttfamily typedef signed short \mbox{\hyperlink{pa__types_8h_ab13765ec6381196b9569590ef2d42a20}{Pa\+Int16}}}
+
+\mbox{\Hypertarget{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}\label{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}} 
+\index{pa\_types.h@{pa\_types.h}!PaInt32@{PaInt32}}
+\index{PaInt32@{PaInt32}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{PaInt32}{PaInt32}}
+{\footnotesize\ttfamily typedef signed int \mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{Pa\+Int32}}}
+
+\mbox{\Hypertarget{pa__types_8h_a1b6c9b860b20b449383a7d85d9098d9f}\label{pa__types_8h_a1b6c9b860b20b449383a7d85d9098d9f}} 
+\index{pa\_types.h@{pa\_types.h}!PaUint16@{PaUint16}}
+\index{PaUint16@{PaUint16}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{PaUint16}{PaUint16}}
+{\footnotesize\ttfamily typedef unsigned short \mbox{\hyperlink{pa__types_8h_a1b6c9b860b20b449383a7d85d9098d9f}{Pa\+Uint16}}}
+
+\mbox{\Hypertarget{pa__types_8h_a9cff423f720226e66a7826c30509c465}\label{pa__types_8h_a9cff423f720226e66a7826c30509c465}} 
+\index{pa\_types.h@{pa\_types.h}!PaUint32@{PaUint32}}
+\index{PaUint32@{PaUint32}!pa\_types.h@{pa\_types.h}}
+\doxysubsubsection{\texorpdfstring{PaUint32}{PaUint32}}
+{\footnotesize\ttfamily typedef unsigned int \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{Pa\+Uint32}}}
+

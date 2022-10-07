@@ -1,0 +1,212 @@
+\hypertarget{pa__mac__core_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/coreaudio/pa\+\_\+mac\+\_\+core.c File Reference}
+\label{pa__mac__core_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core.c@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core.c}}
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$libkern/\+OSAtomic.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+utilities.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+blocking.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a751fb1a6184782ae27cf5620f9007727}{MAC\+\_\+\+OS\+\_\+\+X\+\_\+\+VERSION\+\_\+10\+\_\+6}}~1060
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a7ab4a20ecccd368c383dcf5ed152141e}{PA\+\_\+\+MAC\+\_\+\+SMALL\+\_\+\+BUFFER\+\_\+\+SIZE}}~(64)
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a341f496004a3608bb6534632b2399cf8}{RING\+\_\+\+BUFFER\+\_\+\+ADVANCE\+\_\+\+DENOMINATOR}}~(4)
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a1afb825b4c44e8bdfbb68e2ec9938577}{PA\+\_\+\+AUHAL\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR}}(error\+Code,  error\+Text)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa7295ccb885c47b70c829f8236161d1a}{pa\+Core\+Audio}}, error\+Code, error\+Text )
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}{ERR\+\_\+\+WRAP}}(mac\+\_\+err)~do \{ result = mac\+\_\+err ; line = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+ ; if ( result != no\+Err ) goto error ; \} while(0)
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a29bfcd9536b7a2bdb81a88e904e06098}{HOST\+\_\+\+TIME\+\_\+\+TO\+\_\+\+PA\+\_\+\+TIME}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~( Audio\+Convert\+Host\+Time\+To\+Nanos( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) ) $\ast$ 1.\+0E-\/09) /$\ast$ convert to nanoseconds and then to seconds $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a9932947eac3bd1ebe09e88036d914852}{RING\+\_\+\+BUFFER\+\_\+\+EMPTY}}~(1000)
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}{ERR\+\_\+\+WRAP}}(mac\+\_\+err)~do \{ result = mac\+\_\+err ; if ( result != no\+Err ) return \mbox{\hyperlink{pa__mac__core__utilities_8h_a44da9ced8f2b0fb446b0706a8f8773f5}{ERR}}(result) ; \} while(0)
+\item 
+\#define \mbox{\hyperlink{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}{ERR\+\_\+\+WRAP}}(mac\+\_\+err)~do \{ result = mac\+\_\+err ; if ( result != no\+Err ) return \mbox{\hyperlink{pa__mac__core__utilities_8h_a44da9ced8f2b0fb446b0706a8f8773f5}{ERR}}(result) ; \} while(0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core_8c_a9d5b7af64c23abc3f0a9431bb12af330}{Pa\+Mac\+Core\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__mac__core_8c_a385859d73470082d74a998b45981910d}{Pa\+Mac\+Core\+\_\+\+Setup\+Stream\+Info}} (\mbox{\hyperlink{struct_pa_mac_core_stream_info}{Pa\+Mac\+Core\+Stream\+Info}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, const unsigned long \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__mac__core_8c_a38dcd57a6d716de1bf6b66ec42544c9d}{Pa\+Mac\+Core\+\_\+\+Setup\+Channel\+Map}} (\mbox{\hyperlink{struct_pa_mac_core_stream_info}{Pa\+Mac\+Core\+Stream\+Info}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, const SInt32 $\ast$const channel\+Map, const unsigned long channel\+Map\+Size)
+\item 
+const char $\ast$ \mbox{\hyperlink{pa__mac__core_8c_ad96583c722e0fa8d6017b5878d90d8fd}{Pa\+Mac\+Core\+\_\+\+Get\+Channel\+Name}} (int device, int channel\+Index, bool input)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core_8c_aa470cfe0a7a53a6bc7eab4b18f670d31}{Pa\+Mac\+Core\+\_\+\+Get\+Buffer\+Size\+Range}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, long $\ast$min\+Buffer\+Size\+Frames, long $\ast$max\+Buffer\+Size\+Frames)
+\item 
+Audio\+Device\+ID \mbox{\hyperlink{pa__mac__core_8c_ad1631115a64682f8e14fadd0a75c027f}{Pa\+Mac\+Core\+\_\+\+Get\+Stream\+Input\+Device}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s)
+\item 
+Audio\+Device\+ID \mbox{\hyperlink{pa__mac__core_8c_a25379f181725095041d159e3bdc8cd8c}{Pa\+Mac\+Core\+\_\+\+Get\+Stream\+Output\+Device}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}\label{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!ERR\_WRAP@{ERR\_WRAP}}
+\index{ERR\_WRAP@{ERR\_WRAP}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{ERR\_WRAP}{ERR\_WRAP}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+WRAP(\begin{DoxyParamCaption}\item[{}]{mac\+\_\+err }\end{DoxyParamCaption})~do \{ result = mac\+\_\+err ; line = \+\_\+\+\_\+\+LINE\+\_\+\+\_\+ ; if ( result != no\+Err ) goto error ; \} while(0)}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}\label{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!ERR\_WRAP@{ERR\_WRAP}}
+\index{ERR\_WRAP@{ERR\_WRAP}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{ERR\_WRAP}{ERR\_WRAP}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+WRAP(\begin{DoxyParamCaption}\item[{}]{mac\+\_\+err }\end{DoxyParamCaption})~do \{ result = mac\+\_\+err ; if ( result != no\+Err ) return \mbox{\hyperlink{pa__mac__core__utilities_8h_a44da9ced8f2b0fb446b0706a8f8773f5}{ERR}}(result) ; \} while(0)}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}\label{pa__mac__core_8c_a653f9f4031c43c6239fa2dd01b1e7c74}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!ERR\_WRAP@{ERR\_WRAP}}
+\index{ERR\_WRAP@{ERR\_WRAP}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{ERR\_WRAP}{ERR\_WRAP}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+WRAP(\begin{DoxyParamCaption}\item[{}]{mac\+\_\+err }\end{DoxyParamCaption})~do \{ result = mac\+\_\+err ; if ( result != no\+Err ) return \mbox{\hyperlink{pa__mac__core__utilities_8h_a44da9ced8f2b0fb446b0706a8f8773f5}{ERR}}(result) ; \} while(0)}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a29bfcd9536b7a2bdb81a88e904e06098}\label{pa__mac__core_8c_a29bfcd9536b7a2bdb81a88e904e06098}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!HOST\_TIME\_TO\_PA\_TIME@{HOST\_TIME\_TO\_PA\_TIME}}
+\index{HOST\_TIME\_TO\_PA\_TIME@{HOST\_TIME\_TO\_PA\_TIME}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{HOST\_TIME\_TO\_PA\_TIME}{HOST\_TIME\_TO\_PA\_TIME}}
+{\footnotesize\ttfamily \#define HOST\+\_\+\+TIME\+\_\+\+TO\+\_\+\+PA\+\_\+\+TIME(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~( Audio\+Convert\+Host\+Time\+To\+Nanos( (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) ) $\ast$ 1.\+0E-\/09) /$\ast$ convert to nanoseconds and then to seconds $\ast$/}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a751fb1a6184782ae27cf5620f9007727}\label{pa__mac__core_8c_a751fb1a6184782ae27cf5620f9007727}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!MAC\_OS\_X\_VERSION\_10\_6@{MAC\_OS\_X\_VERSION\_10\_6}}
+\index{MAC\_OS\_X\_VERSION\_10\_6@{MAC\_OS\_X\_VERSION\_10\_6}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{MAC\_OS\_X\_VERSION\_10\_6}{MAC\_OS\_X\_VERSION\_10\_6}}
+{\footnotesize\ttfamily \#define MAC\+\_\+\+OS\+\_\+\+X\+\_\+\+VERSION\+\_\+10\+\_\+6~1060}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a1afb825b4c44e8bdfbb68e2ec9938577}\label{pa__mac__core_8c_a1afb825b4c44e8bdfbb68e2ec9938577}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PA\_AUHAL\_SET\_LAST\_HOST\_ERROR@{PA\_AUHAL\_SET\_LAST\_HOST\_ERROR}}
+\index{PA\_AUHAL\_SET\_LAST\_HOST\_ERROR@{PA\_AUHAL\_SET\_LAST\_HOST\_ERROR}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PA\_AUHAL\_SET\_LAST\_HOST\_ERROR}{PA\_AUHAL\_SET\_LAST\_HOST\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+AUHAL\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code,  }\item[{}]{error\+Text }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa7295ccb885c47b70c829f8236161d1a}{pa\+Core\+Audio}}, error\+Code, error\+Text )}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a7ab4a20ecccd368c383dcf5ed152141e}\label{pa__mac__core_8c_a7ab4a20ecccd368c383dcf5ed152141e}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PA\_MAC\_SMALL\_BUFFER\_SIZE@{PA\_MAC\_SMALL\_BUFFER\_SIZE}}
+\index{PA\_MAC\_SMALL\_BUFFER\_SIZE@{PA\_MAC\_SMALL\_BUFFER\_SIZE}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MAC\_SMALL\_BUFFER\_SIZE}{PA\_MAC\_SMALL\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MAC\+\_\+\+SMALL\+\_\+\+BUFFER\+\_\+\+SIZE~(64)}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a341f496004a3608bb6534632b2399cf8}\label{pa__mac__core_8c_a341f496004a3608bb6534632b2399cf8}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!RING\_BUFFER\_ADVANCE\_DENOMINATOR@{RING\_BUFFER\_ADVANCE\_DENOMINATOR}}
+\index{RING\_BUFFER\_ADVANCE\_DENOMINATOR@{RING\_BUFFER\_ADVANCE\_DENOMINATOR}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{RING\_BUFFER\_ADVANCE\_DENOMINATOR}{RING\_BUFFER\_ADVANCE\_DENOMINATOR}}
+{\footnotesize\ttfamily \#define RING\+\_\+\+BUFFER\+\_\+\+ADVANCE\+\_\+\+DENOMINATOR~(4)}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a9932947eac3bd1ebe09e88036d914852}\label{pa__mac__core_8c_a9932947eac3bd1ebe09e88036d914852}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!RING\_BUFFER\_EMPTY@{RING\_BUFFER\_EMPTY}}
+\index{RING\_BUFFER\_EMPTY@{RING\_BUFFER\_EMPTY}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{RING\_BUFFER\_EMPTY}{RING\_BUFFER\_EMPTY}}
+{\footnotesize\ttfamily \#define RING\+\_\+\+BUFFER\+\_\+\+EMPTY~(1000)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__mac__core_8c_aa470cfe0a7a53a6bc7eab4b18f670d31}\label{pa__mac__core_8c_aa470cfe0a7a53a6bc7eab4b18f670d31}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_GetBufferSizeRange@{PaMacCore\_GetBufferSizeRange}}
+\index{PaMacCore\_GetBufferSizeRange@{PaMacCore\_GetBufferSizeRange}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_GetBufferSizeRange()}{PaMacCore\_GetBufferSizeRange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Mac\+Core\+\_\+\+Get\+Buffer\+Size\+Range (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{long $\ast$}]{min\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{max\+Buffer\+Size\+Frames }\end{DoxyParamCaption})}
+
+Retrieve the range of legal native buffer sizes for the specified device, in sample frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The global index of the Port\+Audio device about which the query is being made. \\
+\hline
+{\em min\+Buffer\+Size\+Frames} & A pointer to the location which will receive the minimum buffer size value. \\
+\hline
+{\em max\+Buffer\+Size\+Frames} & A pointer to the location which will receive the maximum buffer size value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+k\+Audio\+Device\+Property\+Buffer\+Frame\+Size\+Range in the Core\+Audio SDK. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__mac__core_8c_ad96583c722e0fa8d6017b5878d90d8fd}\label{pa__mac__core_8c_ad96583c722e0fa8d6017b5878d90d8fd}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_GetChannelName@{PaMacCore\_GetChannelName}}
+\index{PaMacCore\_GetChannelName@{PaMacCore\_GetChannelName}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_GetChannelName()}{PaMacCore\_GetChannelName()}}
+{\footnotesize\ttfamily const char $\ast$ Pa\+Mac\+Core\+\_\+\+Get\+Channel\+Name (\begin{DoxyParamCaption}\item[{int}]{device,  }\item[{int}]{channel\+Index,  }\item[{bool}]{input }\end{DoxyParamCaption})}
+
+Returns a statically allocated string with the device\textquotesingle{}s name for the given channel. NULL will be returned on failure.
+
+This function\textquotesingle{}s implementation is not complete!
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The Port\+Audio device index. \\
+\hline
+{\em channel} & The channel number who\textquotesingle{}s name is requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a statically allocated string with the name of the device. Because this string is statically allocated, it must be copied if it is to be saved and used by the user after another call to this function. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__mac__core_8c_ad1631115a64682f8e14fadd0a75c027f}\label{pa__mac__core_8c_ad1631115a64682f8e14fadd0a75c027f}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_GetStreamInputDevice@{PaMacCore\_GetStreamInputDevice}}
+\index{PaMacCore\_GetStreamInputDevice@{PaMacCore\_GetStreamInputDevice}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_GetStreamInputDevice()}{PaMacCore\_GetStreamInputDevice()}}
+{\footnotesize\ttfamily Audio\+Device\+ID Pa\+Mac\+Core\+\_\+\+Get\+Stream\+Input\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+Retrieve the Audio\+Device\+ID of the input device assigned to an open stream
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The stream to query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid Audio\+Device\+ID, or NULL if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__mac__core_8c_a25379f181725095041d159e3bdc8cd8c}\label{pa__mac__core_8c_a25379f181725095041d159e3bdc8cd8c}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_GetStreamOutputDevice@{PaMacCore\_GetStreamOutputDevice}}
+\index{PaMacCore\_GetStreamOutputDevice@{PaMacCore\_GetStreamOutputDevice}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_GetStreamOutputDevice()}{PaMacCore\_GetStreamOutputDevice()}}
+{\footnotesize\ttfamily Audio\+Device\+ID Pa\+Mac\+Core\+\_\+\+Get\+Stream\+Output\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s }\end{DoxyParamCaption})}
+
+Retrieve the Audio\+Device\+ID of the output device assigned to an open stream
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The stream to query.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid Audio\+Device\+ID, or NULL if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__mac__core_8c_a9d5b7af64c23abc3f0a9431bb12af330}\label{pa__mac__core_8c_a9d5b7af64c23abc3f0a9431bb12af330}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_Initialize@{PaMacCore\_Initialize}}
+\index{PaMacCore\_Initialize@{PaMacCore\_Initialize}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_Initialize()}{PaMacCore\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Mac\+Core\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core_8c_a38dcd57a6d716de1bf6b66ec42544c9d}\label{pa__mac__core_8c_a38dcd57a6d716de1bf6b66ec42544c9d}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_SetupChannelMap@{PaMacCore\_SetupChannelMap}}
+\index{PaMacCore\_SetupChannelMap@{PaMacCore\_SetupChannelMap}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_SetupChannelMap()}{PaMacCore\_SetupChannelMap()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Mac\+Core\+\_\+\+Setup\+Channel\+Map (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_core_stream_info}{Pa\+Mac\+Core\+Stream\+Info}} $\ast$}]{data,  }\item[{const SInt32 $\ast$const}]{channel\+Map,  }\item[{unsigned long}]{channel\+Map\+Size }\end{DoxyParamCaption})}
+
+call this after pa\+\_\+\+Setup\+Mac\+Core\+Stream\+Info to use channel mapping as described in notes.\+txt. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The stream info structure to assign a channel mapping to \\
+\hline
+{\em channel\+Map} & The channel map array, as described in notes.\+txt. This array pointer will be used directly (ie the underlying data will not be copied), so the caller should not free the array until after the stream has been opened. \\
+\hline
+{\em channel\+Map\+Size} & The size of the channel map array. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__mac__core_8c_a385859d73470082d74a998b45981910d}\label{pa__mac__core_8c_a385859d73470082d74a998b45981910d}} 
+\index{pa\_mac\_core.c@{pa\_mac\_core.c}!PaMacCore\_SetupStreamInfo@{PaMacCore\_SetupStreamInfo}}
+\index{PaMacCore\_SetupStreamInfo@{PaMacCore\_SetupStreamInfo}!pa\_mac\_core.c@{pa\_mac\_core.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_SetupStreamInfo()}{PaMacCore\_SetupStreamInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Mac\+Core\+\_\+\+Setup\+Stream\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_mac_core_stream_info}{Pa\+Mac\+Core\+Stream\+Info}} $\ast$}]{data,  }\item[{unsigned long}]{flags }\end{DoxyParamCaption})}
+
+Functions Use this function to initialize a pa\+Mac\+Core\+Stream\+Info struct using the requested flags. Note that channel mapping is turned off after a call to this function. 
+\begin{DoxyParams}{Parameters}
+{\em data} & The datastructure to initialize \\
+\hline
+{\em flags} & The flags to initialize the datastructure with. \\
+\hline
+\end{DoxyParams}

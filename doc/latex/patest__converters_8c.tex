@@ -1,0 +1,110 @@
+\hypertarget{patest__converters_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+converters.c File Reference}
+\label{patest__converters_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_converters.c@{Hexeng2D/dependencies/portaudio/test/patest\_converters.c}}
+
+
+Tests the converter functions in \mbox{\hyperlink{pa__converters_8c}{pa\+\_\+converters.\+c}}.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+converters.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+dither.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+endianness.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__converters_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__converters_8c_a4030dedd91592982c6bcd9ec2365e2e5}{MAX\+\_\+\+PER\+\_\+\+CHANNEL\+\_\+\+FRAME\+\_\+\+COUNT}}~(2048)
+\item 
+\#define \mbox{\hyperlink{patest__converters_8c_a18d2101833dd45244c5b64fb03b0dfae}{MAX\+\_\+\+CHANNEL\+\_\+\+COUNT}}~(8)
+\item 
+\#define \mbox{\hyperlink{patest__converters_8c_ac14015c324cf5506a01ab4a3bf637d67}{SAMPLE\+\_\+\+FORMAT\+\_\+\+COUNT}}~(6)
+\item 
+\#define \mbox{\hyperlink{patest__converters_8c_a354bf422c096ff20b6c9bef14f407bf7}{FLAG\+\_\+\+COMBINATION\+\_\+\+COUNT}}~(4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{patest__converters_8c_ae367c1cbe77cc9900214bc6ff6667716}{My\+\_\+\+Pa\+\_\+\+Get\+Sample\+Size}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}})
+\item 
+int \mbox{\hyperlink{patest__converters_8c_ab7d4d71e80d4844f727fdd9c64ddd5d0}{Test\+Non\+Zero\+Present}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}})
+\item 
+float \mbox{\hyperlink{patest__converters_8c_a6cec63d73ee762a0c6f77db4c021bb1d}{Maximum\+Abs\+Difference}} (float $\ast$source\+Buffer, float $\ast$reference\+Buffer, int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})
+\item 
+int \mbox{\hyperlink{patest__converters_8c_ab900747c567c905a5c63cda999b186e6}{main}} (const char $\ast$$\ast$argv, int argc)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Tests the converter functions in \mbox{\hyperlink{pa__converters_8c}{pa\+\_\+converters.\+c}}. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}}
+\end{DoxyAuthor}
+Link with \mbox{\hyperlink{pa__dither_8c}{pa\+\_\+dither.\+c}} and \mbox{\hyperlink{pa__converters_8c}{pa\+\_\+converters.\+c}}
+
+see \href{http://www.portaudio.com/trac/wiki/V19ConvertersStatus}{\texttt{ http\+://www.\+portaudio.\+com/trac/wiki/\+V19\+Converters\+Status}} for a discussion of this. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__converters_8c_a354bf422c096ff20b6c9bef14f407bf7}\label{patest__converters_8c_a354bf422c096ff20b6c9bef14f407bf7}} 
+\index{patest\_converters.c@{patest\_converters.c}!FLAG\_COMBINATION\_COUNT@{FLAG\_COMBINATION\_COUNT}}
+\index{FLAG\_COMBINATION\_COUNT@{FLAG\_COMBINATION\_COUNT}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{FLAG\_COMBINATION\_COUNT}{FLAG\_COMBINATION\_COUNT}}
+{\footnotesize\ttfamily \#define FLAG\+\_\+\+COMBINATION\+\_\+\+COUNT~(4)}
+
+\mbox{\Hypertarget{patest__converters_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__converters_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_converters.c@{patest\_converters.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__converters_8c_a18d2101833dd45244c5b64fb03b0dfae}\label{patest__converters_8c_a18d2101833dd45244c5b64fb03b0dfae}} 
+\index{patest\_converters.c@{patest\_converters.c}!MAX\_CHANNEL\_COUNT@{MAX\_CHANNEL\_COUNT}}
+\index{MAX\_CHANNEL\_COUNT@{MAX\_CHANNEL\_COUNT}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHANNEL\_COUNT}{MAX\_CHANNEL\_COUNT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHANNEL\+\_\+\+COUNT~(8)}
+
+\mbox{\Hypertarget{patest__converters_8c_a4030dedd91592982c6bcd9ec2365e2e5}\label{patest__converters_8c_a4030dedd91592982c6bcd9ec2365e2e5}} 
+\index{patest\_converters.c@{patest\_converters.c}!MAX\_PER\_CHANNEL\_FRAME\_COUNT@{MAX\_PER\_CHANNEL\_FRAME\_COUNT}}
+\index{MAX\_PER\_CHANNEL\_FRAME\_COUNT@{MAX\_PER\_CHANNEL\_FRAME\_COUNT}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_PER\_CHANNEL\_FRAME\_COUNT}{MAX\_PER\_CHANNEL\_FRAME\_COUNT}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PER\+\_\+\+CHANNEL\+\_\+\+FRAME\+\_\+\+COUNT~(2048)}
+
+\mbox{\Hypertarget{patest__converters_8c_ac14015c324cf5506a01ab4a3bf637d67}\label{patest__converters_8c_ac14015c324cf5506a01ab4a3bf637d67}} 
+\index{patest\_converters.c@{patest\_converters.c}!SAMPLE\_FORMAT\_COUNT@{SAMPLE\_FORMAT\_COUNT}}
+\index{SAMPLE\_FORMAT\_COUNT@{SAMPLE\_FORMAT\_COUNT}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_FORMAT\_COUNT}{SAMPLE\_FORMAT\_COUNT}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+FORMAT\+\_\+\+COUNT~(6)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__converters_8c_ab900747c567c905a5c63cda999b186e6}\label{patest__converters_8c_ab900747c567c905a5c63cda999b186e6}} 
+\index{patest\_converters.c@{patest\_converters.c}!main@{main}}
+\index{main@{main}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{argv,  }\item[{int}]{argc }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__converters_8c_a6cec63d73ee762a0c6f77db4c021bb1d}\label{patest__converters_8c_a6cec63d73ee762a0c6f77db4c021bb1d}} 
+\index{patest\_converters.c@{patest\_converters.c}!MaximumAbsDifference@{MaximumAbsDifference}}
+\index{MaximumAbsDifference@{MaximumAbsDifference}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{MaximumAbsDifference()}{MaximumAbsDifference()}}
+{\footnotesize\ttfamily float Maximum\+Abs\+Difference (\begin{DoxyParamCaption}\item[{float $\ast$}]{source\+Buffer,  }\item[{float $\ast$}]{reference\+Buffer,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__converters_8c_ae367c1cbe77cc9900214bc6ff6667716}\label{patest__converters_8c_ae367c1cbe77cc9900214bc6ff6667716}} 
+\index{patest\_converters.c@{patest\_converters.c}!My\_Pa\_GetSampleSize@{My\_Pa\_GetSampleSize}}
+\index{My\_Pa\_GetSampleSize@{My\_Pa\_GetSampleSize}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{My\_Pa\_GetSampleSize()}{My\_Pa\_GetSampleSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} My\+\_\+\+Pa\+\_\+\+Get\+Sample\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{format }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__converters_8c_ab7d4d71e80d4844f727fdd9c64ddd5d0}\label{patest__converters_8c_ab7d4d71e80d4844f727fdd9c64ddd5d0}} 
+\index{patest\_converters.c@{patest\_converters.c}!TestNonZeroPresent@{TestNonZeroPresent}}
+\index{TestNonZeroPresent@{TestNonZeroPresent}!patest\_converters.c@{patest\_converters.c}}
+\doxysubsubsection{\texorpdfstring{TestNonZeroPresent()}{TestNonZeroPresent()}}
+{\footnotesize\ttfamily int Test\+Non\+Zero\+Present (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{int}]{size }\end{DoxyParamCaption})}
+

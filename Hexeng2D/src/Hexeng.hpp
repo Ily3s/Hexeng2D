@@ -14,11 +14,16 @@ namespace Hexeng
 
 	HXG_DECLSPEC extern GLFWwindow* window;
 
+	/**
+	* @brief Starts the game loop.
+	* @param[in] pre A function to be executed before the render of each frame.
+	* @param[in] post A function to be executed after the render of each frame.
+	* @note The thread in wich this function has been called is blocked until the application is closed.
+	*/
 	HXG_DECLSPEC void game_loop(std::function<void()> pre = nullptr, std::function<void()> post = nullptr);
 
 	namespace Settings
 	{
-
 		HXG_DECLSPEC extern bool enable_vsync;
 		HXG_DECLSPEC extern std::string window_name;
 		HXG_DECLSPEC extern bool fullscreen;
@@ -30,9 +35,29 @@ namespace Hexeng
 		HXG_DECLSPEC extern float music_volume;
 	}
 
-	inline float toX(int pixels) { return static_cast<float>(pixels) / (static_cast<float>(1080) * Settings::get_ratio() / 2); }
-	inline float toY(int piyels) { return static_cast<float>(piyels) / (1080 / 2); }
-	inline Vec2<float> toCoord(Vec2<int> pixels) { return { toX(pixels.x), toY(pixels.y) }; }
+	/// <summary>
+	/// Converts x to the OpenGL default coordinate system
+	/// </summary>
+	/// <param name="x">An x coordinate in the Hexeng2D coordinate system</param>
+	/// <returns>An x coordinate in the OpenGL coordinate system</returns>
+	/// @note This function is meant to be use internally by the engine.
+	inline float toX(int x) { return static_cast<float>(x) / (static_cast<float>(1080) * Settings::get_ratio() / 2); }
+
+	/// <summary>
+	/// Converts y to the OpenGL default coordinate system
+	/// </summary>
+	/// <param name="y">A y coordinate in the Hexeng2D coordinate system</param>
+	/// <returns>A y coordinate in the OpenGL coordinate system</returns>
+	/// @note This function is meant to be used internally by the engine.
+	inline float toY(int y) { return static_cast<float>(y) / (1080 / 2); }
+
+	/// <summary>
+	/// Converts vec to the OpenGL coordinate system
+	/// </summary>
+	/// <param name="vec">A vector in the Hexeng2D coordinate system</param>
+	/// <returns>A vector in the OpenGL coordinate system</returns>
+	/// @note This function is meant to be used internally by the engine.
+	inline Vec2<float> toCoord(Vec2<int> vec) { return { toX(vec.x), toY(vec.y) }; }
 
 	enum class HXG_DECLSPEC Range
 	{

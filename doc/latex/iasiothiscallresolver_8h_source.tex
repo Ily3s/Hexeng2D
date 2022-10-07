@@ -1,0 +1,203 @@
+\hypertarget{iasiothiscallresolver_8h_source}{}\doxysection{iasiothiscallresolver.\+h}
+\label{iasiothiscallresolver_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/asio/iasiothiscallresolver.h@{Hexeng2D/dependencies/portaudio/src/hostapi/asio/iasiothiscallresolver.h}}
+\mbox{\hyperlink{iasiothiscallresolver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// ****************************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{// File:            IASIOThiscallResolver.h}}
+\DoxyCodeLine{3 \textcolor{comment}{// Description:     The IASIOThiscallResolver class implements the IASIO}}
+\DoxyCodeLine{4 \textcolor{comment}{//                  interface and acts as a proxy to the real IASIO interface by}}
+\DoxyCodeLine{5 \textcolor{comment}{//                  calling through its vptr table using the thiscall calling}}
+\DoxyCodeLine{6 \textcolor{comment}{//                  convention. To put it another way, we interpose}}
+\DoxyCodeLine{7 \textcolor{comment}{//                  IASIOThiscallResolver between ASIO SDK code and the driver.}}
+\DoxyCodeLine{8 \textcolor{comment}{//                  This is necessary because most non-\/Microsoft compilers don't}}
+\DoxyCodeLine{9 \textcolor{comment}{//                  implement the thiscall calling convention used by IASIO.}}
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{//                  iasiothiscallresolver.cpp contains the background of this}}
+\DoxyCodeLine{12 \textcolor{comment}{//                  problem plus a technical description of the vptr}}
+\DoxyCodeLine{13 \textcolor{comment}{//                  manipulations.}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 \textcolor{comment}{//                  In order to use this mechanism one simply has to add}}
+\DoxyCodeLine{16 \textcolor{comment}{//                  iasiothiscallresolver.cpp to the list of files to compile}}
+\DoxyCodeLine{17 \textcolor{comment}{//                  and \#include <iasiothiscallresolver.h>}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{//                  Note that this \#include must come after the other ASIO SDK}}
+\DoxyCodeLine{20 \textcolor{comment}{//                  \#includes, for example:}}
+\DoxyCodeLine{21 \textcolor{comment}{//}}
+\DoxyCodeLine{22 \textcolor{comment}{//                  \#include <windows.h>}}
+\DoxyCodeLine{23 \textcolor{comment}{//                  \#include <asiosys.h>}}
+\DoxyCodeLine{24 \textcolor{comment}{//                  \#include <asio.h>}}
+\DoxyCodeLine{25 \textcolor{comment}{//                  \#include <asiodrivers.h>}}
+\DoxyCodeLine{26 \textcolor{comment}{//                  \#include <iasiothiscallresolver.h>}}
+\DoxyCodeLine{27 \textcolor{comment}{//}}
+\DoxyCodeLine{28 \textcolor{comment}{//                  Actually the important thing is to \#include}}
+\DoxyCodeLine{29 \textcolor{comment}{//                  <iasiothiscallresolver.h> after <asio.h>. We have}}
+\DoxyCodeLine{30 \textcolor{comment}{//                  incorporated a test to enforce this ordering.}}
+\DoxyCodeLine{31 \textcolor{comment}{//}}
+\DoxyCodeLine{32 \textcolor{comment}{//                  The code transparently takes care of the interposition by}}
+\DoxyCodeLine{33 \textcolor{comment}{//                  using macro substitution to intercept calls to ASIOInit()}}
+\DoxyCodeLine{34 \textcolor{comment}{//                  and ASIOExit(). We save the original ASIO global}}
+\DoxyCodeLine{35 \textcolor{comment}{//                  "{}theAsioDriver"{} in our "{}that"{} variable, and then set}}
+\DoxyCodeLine{36 \textcolor{comment}{//                  "{}theAsioDriver"{} to equal our IASIOThiscallResolver instance.}}
+\DoxyCodeLine{37 \textcolor{comment}{//}}
+\DoxyCodeLine{38 \textcolor{comment}{//                  Whilst this method of resolving the thiscall problem requires}}
+\DoxyCodeLine{39 \textcolor{comment}{//                  the addition of \#include <iasiothiscallresolver.h> to client}}
+\DoxyCodeLine{40 \textcolor{comment}{//                  code it has the advantage that it does not break the terms}}
+\DoxyCodeLine{41 \textcolor{comment}{//                  of the ASIO licence by publishing it. We are NOT modifying}}
+\DoxyCodeLine{42 \textcolor{comment}{//                  any Steinberg code here, we are merely implementing the IASIO}}
+\DoxyCodeLine{43 \textcolor{comment}{//                  interface in the same way that we would need to do if we}}
+\DoxyCodeLine{44 \textcolor{comment}{//                  wished to provide an open source ASIO driver.}}
+\DoxyCodeLine{45 \textcolor{comment}{//}}
+\DoxyCodeLine{46 \textcolor{comment}{//                  For compilation with MinGW -\/lole32 needs to be added to the}}
+\DoxyCodeLine{47 \textcolor{comment}{//                  linker options. For BORLAND, linking with Import32.lib is}}
+\DoxyCodeLine{48 \textcolor{comment}{//                  sufficient.}}
+\DoxyCodeLine{49 \textcolor{comment}{//}}
+\DoxyCodeLine{50 \textcolor{comment}{//                  The dependencies are with: CoInitialize, CoUninitialize,}}
+\DoxyCodeLine{51 \textcolor{comment}{//                  CoCreateInstance, CLSIDFromString -\/ used by asiolist.cpp}}
+\DoxyCodeLine{52 \textcolor{comment}{//                  and are required on Windows whether ThiscallResolver is used}}
+\DoxyCodeLine{53 \textcolor{comment}{//                  or not.}}
+\DoxyCodeLine{54 \textcolor{comment}{//}}
+\DoxyCodeLine{55 \textcolor{comment}{//                  Searching for the above strings in the root library path}}
+\DoxyCodeLine{56 \textcolor{comment}{//                  of your compiler should enable the correct libraries to be}}
+\DoxyCodeLine{57 \textcolor{comment}{//                  identified if they aren't immediately obvious.}}
+\DoxyCodeLine{58 \textcolor{comment}{//}}
+\DoxyCodeLine{59 \textcolor{comment}{//                  Note that the current implementation of IASIOThiscallResolver}}
+\DoxyCodeLine{60 \textcolor{comment}{//                  is not COM compliant -\/ it does not correctly implement the}}
+\DoxyCodeLine{61 \textcolor{comment}{//                  IUnknown interface. Implementing it is not necessary because}}
+\DoxyCodeLine{62 \textcolor{comment}{//                  it is not called by parts of the ASIO SDK which call through}}
+\DoxyCodeLine{63 \textcolor{comment}{//                  theAsioDriver ptr. The IUnknown methods are implemented as}}
+\DoxyCodeLine{64 \textcolor{comment}{//                  assert(false) to ensure that the code fails if they are}}
+\DoxyCodeLine{65 \textcolor{comment}{//                  ever called.}}
+\DoxyCodeLine{66 \textcolor{comment}{// Restrictions:    None. Public Domain \& Open Source distribute freely}}
+\DoxyCodeLine{67 \textcolor{comment}{//                  You may use IASIOThiscallResolver commercially as well as}}
+\DoxyCodeLine{68 \textcolor{comment}{//                  privately.}}
+\DoxyCodeLine{69 \textcolor{comment}{//                  You the user assume the responsibility for the use of the}}
+\DoxyCodeLine{70 \textcolor{comment}{//                  files, binary or text, and there is no guarantee or warranty,}}
+\DoxyCodeLine{71 \textcolor{comment}{//                  expressed or implied, including but not limited to the}}
+\DoxyCodeLine{72 \textcolor{comment}{//                  implied warranties of merchantability and fitness for a}}
+\DoxyCodeLine{73 \textcolor{comment}{//                  particular purpose. You assume all responsibility and agree}}
+\DoxyCodeLine{74 \textcolor{comment}{//                  to hold no entity, copyright holder or distributors liable}}
+\DoxyCodeLine{75 \textcolor{comment}{//                  for any loss of data or inaccurate representations of data}}
+\DoxyCodeLine{76 \textcolor{comment}{//                  as a result of using IASIOThiscallResolver.}}
+\DoxyCodeLine{77 \textcolor{comment}{// Version:         1.4 Added separate macro CALL\_THISCALL\_1\_DOUBLE from}}
+\DoxyCodeLine{78 \textcolor{comment}{//                  Andrew Baldwin, and volatile for whole gcc asm blocks,}}
+\DoxyCodeLine{79 \textcolor{comment}{//                  both for compatibility with newer gcc versions. Cleaned up}}
+\DoxyCodeLine{80 \textcolor{comment}{//                  Borland asm to use one less register.}}
+\DoxyCodeLine{81 \textcolor{comment}{//                  1.3 Switched to including assert.h for better compatibility.}}
+\DoxyCodeLine{82 \textcolor{comment}{//                  Wrapped entire .h and .cpp contents with a check for}}
+\DoxyCodeLine{83 \textcolor{comment}{//                  \_MSC\_VER to provide better compatibility with MS compilers.}}
+\DoxyCodeLine{84 \textcolor{comment}{//                  Changed Singleton implementation to use static instance}}
+\DoxyCodeLine{85 \textcolor{comment}{//                  instead of freestore allocated instance. Removed ASIOExit}}
+\DoxyCodeLine{86 \textcolor{comment}{//                  macro as it is no longer needed.}}
+\DoxyCodeLine{87 \textcolor{comment}{//                  1.2 Removed semicolons from ASIOInit and ASIOExit macros to}}
+\DoxyCodeLine{88 \textcolor{comment}{//                  allow them to be embedded in expressions (if statements).}}
+\DoxyCodeLine{89 \textcolor{comment}{//                  Cleaned up some comments. Removed combase.c dependency (it}}
+\DoxyCodeLine{90 \textcolor{comment}{//                  doesn't compile with BCB anyway) by stubbing IUnknown.}}
+\DoxyCodeLine{91 \textcolor{comment}{//                  1.1 Incorporated comments from Ross Bencina including things}}
+\DoxyCodeLine{92 \textcolor{comment}{//                  such as changing name from ThiscallResolver to}}
+\DoxyCodeLine{93 \textcolor{comment}{//                  IASIOThiscallResolver, tidying up the constructor, fixing}}
+\DoxyCodeLine{94 \textcolor{comment}{//                  a bug in IASIOThiscallResolver::ASIOExit() and improving}}
+\DoxyCodeLine{95 \textcolor{comment}{//                  portability through the use of conditional compilation}}
+\DoxyCodeLine{96 \textcolor{comment}{//                  1.0 Initial working version.}}
+\DoxyCodeLine{97 \textcolor{comment}{// Created:         6/09/2003}}
+\DoxyCodeLine{98 \textcolor{comment}{// Authors:         Fraser Adams}}
+\DoxyCodeLine{99 \textcolor{comment}{//                  Ross Bencina}}
+\DoxyCodeLine{100 \textcolor{comment}{//                  Rene G. Ceballos}}
+\DoxyCodeLine{101 \textcolor{comment}{//                  Martin Fay}}
+\DoxyCodeLine{102 \textcolor{comment}{//                  Antti Silvast}}
+\DoxyCodeLine{103 \textcolor{comment}{//                  Andrew Baldwin}}
+\DoxyCodeLine{104 \textcolor{comment}{//}}
+\DoxyCodeLine{105 \textcolor{comment}{// ****************************************************************************}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#ifndef included\_iasiothiscallresolver\_h}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define included\_iasiothiscallresolver\_h}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \textcolor{comment}{// We only need IASIOThiscallResolver at all if we are on Win32. For other}}
+\DoxyCodeLine{112 \textcolor{comment}{// platforms we simply bypass the IASIOThiscallResolver definition to allow us}}
+\DoxyCodeLine{113 \textcolor{comment}{// to be safely \#include'd whatever the platform to keep client code portable}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#if (defined(WIN32) || defined(\_WIN32) || defined(\_\_WIN32\_\_)) \&\& !defined(\_WIN64)}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117 \textcolor{comment}{// If microsoft compiler we can call IASIO directly so IASIOThiscallResolver}}
+\DoxyCodeLine{118 \textcolor{comment}{// is not used.}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#if !defined(\_MSC\_VER)}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 \textcolor{comment}{// The following is in order to ensure that this header is only included after}}
+\DoxyCodeLine{123 \textcolor{comment}{// the other ASIO headers (except for the case of iasiothiscallresolver.cpp).}}
+\DoxyCodeLine{124 \textcolor{comment}{// We need to do this because IASIOThiscallResolver works by eclipsing the}}
+\DoxyCodeLine{125 \textcolor{comment}{// original definition of ASIOInit() with a macro (see below).}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#if !defined(iasiothiscallresolver\_sourcefile)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{    \#if !defined(\_\_ASIO\_H)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{    \#error iasiothiscallresolver.h must be included AFTER asio.h}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{    \#endif}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#include <asiodrvr.h>} \textcolor{comment}{/* From ASIO SDK */}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 \textcolor{keyword}{class }IASIOThiscallResolver : \textcolor{keyword}{public} IASIO \{}
+\DoxyCodeLine{137 \textcolor{keyword}{private}:}
+\DoxyCodeLine{138     IASIO* that\_; \textcolor{comment}{// Points to the real IASIO}}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{keyword}{static} IASIOThiscallResolver instance; \textcolor{comment}{// Singleton instance}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{comment}{// Constructors -\/ declared private so construction is limited to}}
+\DoxyCodeLine{143     \textcolor{comment}{// our Singleton instance}}
+\DoxyCodeLine{144     IASIOThiscallResolver();}
+\DoxyCodeLine{145     IASIOThiscallResolver(IASIO* that);}
+\DoxyCodeLine{146 \textcolor{keyword}{public}:}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148     \textcolor{comment}{// Methods from the IUnknown interface. We don't fully implement IUnknown}}
+\DoxyCodeLine{149     \textcolor{comment}{// because the ASIO SDK never calls these methods through theAsioDriver ptr.}}
+\DoxyCodeLine{150     \textcolor{comment}{// These methods are implemented as assert(false).}}
+\DoxyCodeLine{151     \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE QueryInterface(REFIID riid, \textcolor{keywordtype}{void} **ppv);}
+\DoxyCodeLine{152     \textcolor{keyword}{virtual} ULONG STDMETHODCALLTYPE AddRef();}
+\DoxyCodeLine{153     \textcolor{keyword}{virtual} ULONG STDMETHODCALLTYPE Release();}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155     \textcolor{comment}{// Methods from the IASIO interface, implemented as forwarning calls to that.}}
+\DoxyCodeLine{156     \textcolor{keyword}{virtual} ASIOBool \mbox{\hyperlink{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}{init}}(\textcolor{keywordtype}{void} *sysHandle);}
+\DoxyCodeLine{157     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} getDriverName(\textcolor{keywordtype}{char} *\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}});}
+\DoxyCodeLine{158     \textcolor{keyword}{virtual} \textcolor{keywordtype}{long} getDriverVersion();}
+\DoxyCodeLine{159     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} getErrorMessage(\textcolor{keywordtype}{char} *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{160     \textcolor{keyword}{virtual} ASIOError \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}}();}
+\DoxyCodeLine{161     \textcolor{keyword}{virtual} ASIOError \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}}();}
+\DoxyCodeLine{162     \textcolor{keyword}{virtual} ASIOError getChannels(\textcolor{keywordtype}{long} *numInputChannels, \textcolor{keywordtype}{long} *numOutputChannels);}
+\DoxyCodeLine{163     \textcolor{keyword}{virtual} ASIOError getLatencies(\textcolor{keywordtype}{long} *inputLatency, \textcolor{keywordtype}{long} *outputLatency);}
+\DoxyCodeLine{164     \textcolor{keyword}{virtual} ASIOError getBufferSize(\textcolor{keywordtype}{long} *minSize, \textcolor{keywordtype}{long} *maxSize, \textcolor{keywordtype}{long} *preferredSize, \textcolor{keywordtype}{long} *granularity);}
+\DoxyCodeLine{165     \textcolor{keyword}{virtual} ASIOError canSampleRate(ASIOSampleRate sampleRate);}
+\DoxyCodeLine{166     \textcolor{keyword}{virtual} ASIOError getSampleRate(ASIOSampleRate *sampleRate);}
+\DoxyCodeLine{167     \textcolor{keyword}{virtual} ASIOError setSampleRate(ASIOSampleRate sampleRate);}
+\DoxyCodeLine{168     \textcolor{keyword}{virtual} ASIOError getClockSources(ASIOClockSource *clocks, \textcolor{keywordtype}{long} *numSources);}
+\DoxyCodeLine{169     \textcolor{keyword}{virtual} ASIOError setClockSource(\textcolor{keywordtype}{long} reference);}
+\DoxyCodeLine{170     \textcolor{keyword}{virtual} ASIOError getSamplePosition(ASIOSamples *sPos, ASIOTimeStamp *tStamp);}
+\DoxyCodeLine{171     \textcolor{keyword}{virtual} ASIOError getChannelInfo(ASIOChannelInfo *info);}
+\DoxyCodeLine{172     \textcolor{keyword}{virtual} ASIOError createBuffers(ASIOBufferInfo *bufferInfos, \textcolor{keywordtype}{long} numChannels, \textcolor{keywordtype}{long} bufferSize, ASIOCallbacks *callbacks);}
+\DoxyCodeLine{173     \textcolor{keyword}{virtual} ASIOError disposeBuffers();}
+\DoxyCodeLine{174     \textcolor{keyword}{virtual} ASIOError controlPanel();}
+\DoxyCodeLine{175     \textcolor{keyword}{virtual} ASIOError future(\textcolor{keywordtype}{long} selector,\textcolor{keywordtype}{void} *opt);}
+\DoxyCodeLine{176     \textcolor{keyword}{virtual} ASIOError outputReady();}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178     \textcolor{comment}{// Class method, see ASIOInit() macro below.}}
+\DoxyCodeLine{179     \textcolor{keyword}{static} ASIOError ASIOInit(ASIODriverInfo *info); \textcolor{comment}{// Delegates to ::ASIOInit}}
+\DoxyCodeLine{180 \};}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{// Replace calls to ASIOInit with our interposing version.}}
+\DoxyCodeLine{184 \textcolor{comment}{// This macro enables us to perform thiscall resolution simply by \#including}}
+\DoxyCodeLine{185 \textcolor{comment}{// <iasiothiscallresolver.h> after the asio \#includes (this file \_must\_ be}}
+\DoxyCodeLine{186 \textcolor{comment}{// included \_after\_ the asio \#includes)}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#define ASIOInit(name) IASIOThiscallResolver::ASIOInit((name))}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* !defined(\_MSC\_VER) */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* Win32 */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* included\_iasiothiscallresolver\_h */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197 }
+
+\end{DoxyCode}

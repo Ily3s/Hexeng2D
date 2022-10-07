@@ -1,0 +1,25 @@
+var patest__stop_8c =
+[
+    [ "paTestData", "structpa_test_data.html", "structpa_test_data" ],
+    [ "FRAMES_PER_BUFFER", "patest__stop_8c.html#af4f62216aa14e0407faa6631e9ec4c62", null ],
+    [ "FRAMES_PER_NOTE", "patest__stop_8c.html#a9131af33c3566c46ca0e543e96cd3f70", null ],
+    [ "FUNDAMENTAL", "patest__stop_8c.html#a16d2a89c248f8d5a6f76316c0ad4b18d", null ],
+    [ "LATENCY_SECONDS", "patest__stop_8c.html#a6bcf1783763b4f80706d3233605689c1", null ],
+    [ "M_PI", "patest__stop_8c.html#ae71449b1cc6e6250b91f539153a7a0d3", null ],
+    [ "MAX_REPEATS", "patest__stop_8c.html#ac6378e0720273ae75dc2128b515070c6", null ],
+    [ "MODE_ABORT", "patest__stop_8c.html#a7189d95852d77eef2cc8e182f9621be7", null ],
+    [ "MODE_FINISH", "patest__stop_8c.html#a288adcce83d1f21a042bf61182449727", null ],
+    [ "MODE_STOP", "patest__stop_8c.html#a29a7dfd4fec0d672f9690159d70abc0d", null ],
+    [ "NOTE_0", "patest__stop_8c.html#a12e111a4449151edbb77ebace5f1d7a5", null ],
+    [ "NOTE_1", "patest__stop_8c.html#abfcf833ab1560c284e33123b2fed08ea", null ],
+    [ "NOTE_2", "patest__stop_8c.html#a6b725bb0da609a027f0cdad68c103242", null ],
+    [ "NOTE_3", "patest__stop_8c.html#a60413e7436433c4e373a59d3c4ce00d3", null ],
+    [ "NOTE_4", "patest__stop_8c.html#a2edcc96e70acbdd095d3f8cb79a60837", null ],
+    [ "OUTPUT_DEVICE", "patest__stop_8c.html#a6ee1df754f053739d33f2d477bdd3c10", null ],
+    [ "SAMPLE_RATE", "patest__stop_8c.html#a4b76a0c2859cfd819a343a780070ee2b", null ],
+    [ "SLEEP_DUR", "patest__stop_8c.html#a1209468322a28a86ddd8aa79a6fc9c46", null ],
+    [ "TABLE_SIZE", "patest__stop_8c.html#a032503e76d6f69bc67e99e909c8125da", null ],
+    [ "LookupWaveform", "patest__stop_8c.html#aa2607c551bcfeb19c44198a6644ecabd", null ],
+    [ "main", "patest__stop_8c.html#a840291bc02cba5474a4cb46a9b9566fe", null ],
+    [ "TestStopMode", "patest__stop_8c.html#ac42892ad25de89ea62d6439d81bbb63c", null ]
+];
