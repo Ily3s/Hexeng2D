@@ -44,7 +44,7 @@ Cmake will output a project with at least 3 sub projects :
 
 You can rename EmptyProject and build your game in it or you can compile the engine binaries, take all its headers and link Hexeng2D to your project as you want. Note that if you go for the second option, you will also have to take Hexeng2D dependencies headers.
 
-To get started, I recommand that you take a look at the Sandbox sub-broject in order for you to understand how the engine works. Also you can find the documentation in this repo at doc/html/index.html
+To get started, I recommand that you take a look at the Sandbox sub-project in order for you to understand how the engine works. Also you can find the documentation in this repo at doc/html/index.html
 
 <ins>**Note :**</ins> The recommanded configuration is Visual Studio 2022 on Windows
 

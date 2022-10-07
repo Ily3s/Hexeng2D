@@ -16,6 +16,9 @@ namespace Hexeng::Audio
 	void HXG_DECLSPEC init();
 	void HXG_DECLSPEC terminate();
 
+	/// <summary>
+	/// Abstract Base class of Sound and Music.
+	/// </summary>
 	class HXG_DECLSPEC SoundBase
 	{
 	public:
@@ -27,8 +30,11 @@ namespace Hexeng::Audio
 		SoundBase(const SoundBase&) = delete;
 		SoundBase& operator=(const SoundBase&) = delete;
 
-		SoundBase(SoundBase&&) noexcept;
-		SoundBase& operator=(SoundBase&&) noexcept;
+		/// @note Expected other to be unused
+		SoundBase(SoundBase&& other) noexcept;
+
+		/// @note Expected other to be unused and this to be initialized by the default constructor
+		SoundBase& operator=(SoundBase&& other) noexcept;
 
 		virtual void terminate() = 0;
 
@@ -61,32 +67,45 @@ namespace Hexeng::Audio
 		{}
 	};
 
+	/// <summary>
+	/// A Sound that can be played multiple times at once, from a location in space.
+	/// </summary>
 	class HXG_DECLSPEC Sound : public SoundBase
 	{
 	public :
 
 		Sound() = default;
 
+		/// <param name="filepath">The path to a mono-channel wave file encoded with Float32</param>
 		Sound(std::string filepath);
 
 		Sound(const Sound&) = delete;
 		Sound& operator=(const Sound&) = delete;
 
+		/// @note Expected other to be unused
 		Sound(Sound&&) noexcept;
+
+		/// @note Expected other to be unused and this to be initialized by the default constructor
 		Sound& operator=(Sound&&) noexcept;
 
+		/// <summary>
+		/// Play the sound from the position *emmitter
+		/// </summary>
+		/// <param name="emmitter">A pointer to the position that plays the sound</param>
 		void play(const Vec2<int>* emmitter);
-		void stop();
 
-		static int audio_callback(const void* input_buffer, void* output_buffer,
-			unsigned long frames_per_buffer,
-			const PaStreamCallbackTimeInfo* time_info,
-			PaStreamCallbackFlags status_flags,
-			void* user_data);
+		/// @brief Stop all playing instances of the sound
+		void stop();
 
 		void terminate() override;
 
 	private :
+
+		static int s_audio_callback(const void* input_buffer, void* output_buffer,
+			unsigned long frames_per_buffer,
+			const PaStreamCallbackTimeInfo* time_info,
+			PaStreamCallbackFlags status_flags,
+			void* user_data);
 
 		std::vector<std::unique_ptr<SoundData>> m_sounds_data;
 
@@ -95,32 +114,42 @@ namespace Hexeng::Audio
 		bool m_has_to_end = false;
 	};
 
+	/// <summary>
+	/// A sound that can be played multiple times at once, it isn't related to a position in space.
+	/// </summary>
 	class HXG_DECLSPEC StaticSound : public SoundBase
 	{
 	public:
 
 		StaticSound() = default;
 
+		/// <param name="filepath">The path to a wave file encoded with Float32</param>
 		StaticSound(std::string filepath);
 
 		StaticSound(const StaticSound&) = delete;
 		StaticSound& operator=(const StaticSound&) = delete;
 
+		/// @note Expected other to be unused
 		StaticSound(StaticSound&&) noexcept;
+
+		/// @note Expected other to be unused and this to be initialized by the default constructor
 		StaticSound& operator=(StaticSound&&) noexcept;
 
+		/// @brief plays the sound
 		void play();
-		void stop();
 
-		static int audio_callback(const void* input_buffer, void* output_buffer,
-			unsigned long frames_per_buffer,
-			const PaStreamCallbackTimeInfo* time_info,
-			PaStreamCallbackFlags status_flags,
-			void* user_data);
+		/// @brief stops all playing instances of the sound.
+		void stop();
 
 		void terminate() override;
 
 	private:
+
+		static int s_audio_callback(const void* input_buffer, void* output_buffer,
+			unsigned long frames_per_buffer,
+			const PaStreamCallbackTimeInfo* time_info,
+			PaStreamCallbackFlags status_flags,
+			void* user_data);
 
 		std::vector<std::unique_ptr<SoundData>> m_sounds_data;
 
@@ -129,32 +158,42 @@ namespace Hexeng::Audio
 		bool m_has_to_end = false;
 	};
 
+	/// <summary>
+	/// A Music that cannot be played multiple times at once, it isn't related to a position in space.
+	/// </summary>
 	class HXG_DECLSPEC Music : public SoundBase
 	{
 	public:
 
 		Music() = default;
 
+		/// <param name="filepath">The path to a wave file encoded with Float32</param>
 		Music(std::string filepath);
 
 		Music(const Music&) = delete;
 		Music& operator=(const Music&) = delete;
 
+		/// @note Expected other to be unused
 		Music(Music&&) noexcept;
+
+		/// @note Expected other to be unused and this to be initialized by the default constructor
 		Music& operator=(Music&&) noexcept;
 
+		/// @brief plays the music if it isn't already playing.
 		void play();
-		void stop();
 
-		static int audio_callback(const void* input_buffer, void* output_buffer,
-			unsigned long frames_per_buffer,
-			const PaStreamCallbackTimeInfo* time_info,
-			PaStreamCallbackFlags status_flags,
-			void* user_data);
+		/// @brief stops the music.
+		void stop();
 
 		void terminate() override;
 
 	private:
+
+		static int s_audio_callback(const void* input_buffer, void* output_buffer,
+			unsigned long frames_per_buffer,
+			const PaStreamCallbackTimeInfo* time_info,
+			PaStreamCallbackFlags status_flags,
+			void* user_data);
 
 		PaStream* m_stream = nullptr;
 		float* m_buffer = nullptr;

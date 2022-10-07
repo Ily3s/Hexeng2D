@@ -93,11 +93,13 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_audio_1_1_static_soun
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_hexeng_1_1_audio_1_1_static_sound-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Hexeng::Audio::StaticSound Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A sound that can be played multiple times at once, it isn't related to a position in space.   
+ <a href="class_hexeng_1_1_audio_1_1_static_sound.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_audio_8hpp_source.html">Audio.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -106,7 +108,7 @@ Inheritance diagram for Hexeng::Audio::StaticSound:</div>
  <div class="center">
   <img src="class_hexeng_1_1_audio_1_1_static_sound.png" usemap="#Hexeng::Audio::StaticSound_map" alt=""/>
   <map id="Hexeng::Audio::StaticSound_map" name="Hexeng::Audio::StaticSound_map">
-<area href="class_hexeng_1_1_audio_1_1_sound_base.html" alt="Hexeng::Audio::SoundBase" shape="rect" coords="0,0,167,24"/>
+<area href="class_hexeng_1_1_audio_1_1_sound_base.html" title="Abstract Base class of Sound and Music." alt="Hexeng::Audio::SoundBase" shape="rect" coords="0,0,167,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -115,6 +117,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a60e4415f5b10ef1839bee97956e2887c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a60e4415f5b10ef1839bee97956e2887c">StaticSound</a> ()=default</td></tr>
 <tr class="separator:a60e4415f5b10ef1839bee97956e2887c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1f7da3b1197e257e5be2c1448f83a56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#ac1f7da3b1197e257e5be2c1448f83a56">StaticSound</a> (std::string filepath)</td></tr>
+<tr class="memdesc:ac1f7da3b1197e257e5be2c1448f83a56"><td class="mdescLeft">&#160;</td><td class="mdescRight"><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>The path to a wave file encoded with Float32</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="class_hexeng_1_1_audio_1_1_static_sound.html#ac1f7da3b1197e257e5be2c1448f83a56">More...</a><br /></td></tr>
 <tr class="separator:ac1f7da3b1197e257e5be2c1448f83a56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7af62a8fbc15bdec5cff824f87cca767"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a7af62a8fbc15bdec5cff824f87cca767">StaticSound</a> (const <a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html">StaticSound</a> &amp;)=delete</td></tr>
 <tr class="separator:a7af62a8fbc15bdec5cff824f87cca767"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,8 +134,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada0c1105bff5495a8eede8c4eddb03cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html">StaticSound</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#ada0c1105bff5495a8eede8c4eddb03cf">operator=</a> (<a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html">StaticSound</a> &amp;&amp;) noexcept</td></tr>
 <tr class="separator:ada0c1105bff5495a8eede8c4eddb03cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06869bd9c6b5748201592fd5b32b5d0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a06869bd9c6b5748201592fd5b32b5d0d">play</a> ()</td></tr>
+<tr class="memdesc:a06869bd9c6b5748201592fd5b32b5d0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">plays the sound  <a href="class_hexeng_1_1_audio_1_1_static_sound.html#a06869bd9c6b5748201592fd5b32b5d0d">More...</a><br /></td></tr>
 <tr class="separator:a06869bd9c6b5748201592fd5b32b5d0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d5c4cfe5301a3984bb07f6523df67d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a1d5c4cfe5301a3984bb07f6523df67d1">stop</a> ()</td></tr>
+<tr class="memdesc:a1d5c4cfe5301a3984bb07f6523df67d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">stops all playing instances of the sound.  <a href="class_hexeng_1_1_audio_1_1_static_sound.html#a1d5c4cfe5301a3984bb07f6523df67d1">More...</a><br /></td></tr>
 <tr class="separator:a1d5c4cfe5301a3984bb07f6523df67d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ceb5ceeaff79aeb71f5b39096008148"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a7ceb5ceeaff79aeb71f5b39096008148">terminate</a> () override</td></tr>
 <tr class="separator:a7ceb5ceeaff79aeb71f5b39096008148"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,17 +150,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a4503fa78d68fc92f96e6bb7b05649d06 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40ca45bd61b85426e6a66b95b94e243 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#ae40ca45bd61b85426e6a66b95b94e243">operator=</a> (const <a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;)=delete</td></tr>
 <tr class="separator:ae40ca45bd61b85426e6a66b95b94e243 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5421744ff7f18de75307c45f118b191b inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a5421744ff7f18de75307c45f118b191b">SoundBase</a> (<a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&amp;) noexcept</td></tr>
-<tr class="separator:a5421744ff7f18de75307c45f118b191b inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af237e598e3eeec3787863fc9f06f987f inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#af237e598e3eeec3787863fc9f06f987f">operator=</a> (<a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&amp;) noexcept</td></tr>
-<tr class="separator:af237e598e3eeec3787863fc9f06f987f inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d6e3aeca78ee542f27069baf51619b inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a65d6e3aeca78ee542f27069baf51619b">SoundBase</a> (<a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:a65d6e3aeca78ee542f27069baf51619b inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe2bc6260bd062a00f55abb51a9b29c2 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#abe2bc6260bd062a00f55abb51a9b29c2">operator=</a> (<a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html">SoundBase</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="separator:abe2bc6260bd062a00f55abb51a9b29c2 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d0ddc790fda37cd614537cb8a3f7a19 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a0d0ddc790fda37cd614537cb8a3f7a19">terminate</a> ()=0</td></tr>
 <tr class="separator:a0d0ddc790fda37cd614537cb8a3f7a19 inherit pub_methods_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a33201bc772016edd04571d77536e05e3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a33201bc772016edd04571d77536e05e3">audio_callback</a> (const void *input_buffer, void *output_buffer, unsigned long frames_per_buffer, const PaStreamCallbackTimeInfo *time_info, PaStreamCallbackFlags status_flags, void *user_data)</td></tr>
-<tr class="separator:a33201bc772016edd04571d77536e05e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -165,7 +171,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a04b84828debb241e20c005b2e75ce8ba inherit pro_attribs_class_hexeng_1_1_audio_1_1_sound_base"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a04b84828debb241e20c005b2e75ce8ba">m_garbage</a></td></tr>
 <tr class="separator:a04b84828debb241e20c005b2e75ce8ba inherit pro_attribs_class_hexeng_1_1_audio_1_1_sound_base"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A sound that can be played multiple times at once, it isn't related to a position in space.  </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a60e4415f5b10ef1839bee97956e2887c" name="a60e4415f5b10ef1839bee97956e2887c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a60e4415f5b10ef1839bee97956e2887c">&#9670;&#160;</a></span>StaticSound() <span class="overload">[1/4]</span></h2>
 
@@ -206,6 +214,14 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filepath</td><td>The path to a wave file encoded with Float32</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
 
 </div>
 </div>
@@ -258,70 +274,11 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Expected other to be unused </dd></dl>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a33201bc772016edd04571d77536e05e3" name="a33201bc772016edd04571d77536e05e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33201bc772016edd04571d77536e05e3">&#9670;&#160;</a></span>audio_callback()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int Hexeng::Audio::StaticSound::audio_callback </td>
-          <td>(</td>
-          <td class="paramtype">const void *&#160;</td>
-          <td class="paramname"><em>input_buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>output_buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned long&#160;</td>
-          <td class="paramname"><em>frames_per_buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const PaStreamCallbackTimeInfo *&#160;</td>
-          <td class="paramname"><em>time_info</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">PaStreamCallbackFlags&#160;</td>
-          <td class="paramname"><em>status_flags</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>user_data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a2f30ec43a47c79dfa30a773b8f372ffb" name="a2f30ec43a47c79dfa30a773b8f372ffb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f30ec43a47c79dfa30a773b8f372ffb">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -371,6 +328,7 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Expected other to be unused and this to be initialized by the default constructor </dd></dl>
 
 </div>
 </div>
@@ -389,6 +347,8 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>plays the sound </p>
+
 </div>
 </div>
 <a id="a1d5c4cfe5301a3984bb07f6523df67d1" name="a1d5c4cfe5301a3984bb07f6523df67d1"></a>
@@ -405,6 +365,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>stops all playing instances of the sound. </p>
 
 </div>
 </div>

@@ -2,6 +2,11 @@
 \label{class_hexeng_1_1_audio_1_1_sound_base}\index{Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}}
 
 
+Abstract Base class of \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} and \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}.   
+
+
+
+
 {\ttfamily \#include $<$Audio.\+hpp$>$}
 
 Inheritance diagram for Hexeng\+::Audio\+::Sound\+Base\+:\begin{figure}[H]
@@ -21,9 +26,9 @@ Inheritance diagram for Hexeng\+::Audio\+::Sound\+Base\+:\begin{figure}[H]
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_ae40ca45bd61b85426e6a66b95b94e243}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&)=delete
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a5421744ff7f18de75307c45f118b191b}{Sound\+Base}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&) noexcept
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a65d6e3aeca78ee542f27069baf51619b}{Sound\+Base}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&other) noexcept
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_af237e598e3eeec3787863fc9f06f987f}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&) noexcept
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_abe2bc6260bd062a00f55abb51a9b29c2}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&other) noexcept
 \item 
 virtual void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a0d0ddc790fda37cd614537cb8a3f7a19}{terminate}} ()=0
 \end{DoxyCompactItemize}
@@ -47,6 +52,9 @@ void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a99fc959a91ab9610a24
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+Abstract Base class of \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} and \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}.  
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_af33279a829a6ca566a5f54c0d5fd98e1}\label{class_hexeng_1_1_audio_1_1_sound_base_af33279a829a6ca566a5f54c0d5fd98e1}} 
 \index{Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}!SoundBase@{SoundBase}}
@@ -66,12 +74,15 @@ void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a99fc959a91ab9610a24
 \doxysubsubsection{\texorpdfstring{SoundBase()}{SoundBase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+Base\+::\+Sound\+Base (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_a5421744ff7f18de75307c45f118b191b}\label{class_hexeng_1_1_audio_1_1_sound_base_a5421744ff7f18de75307c45f118b191b}} 
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_a65d6e3aeca78ee542f27069baf51619b}\label{class_hexeng_1_1_audio_1_1_sound_base_a65d6e3aeca78ee542f27069baf51619b}} 
 \index{Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}!SoundBase@{SoundBase}}
 \index{SoundBase@{SoundBase}!Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}}
 \doxysubsubsection{\texorpdfstring{SoundBase()}{SoundBase()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+Base\+::\+Sound\+Base (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+\begin{DoxyNote}{Note}
+Expected other to be unused 
+\end{DoxyNote}
 
 
 \doxysubsection{Member Function Documentation}
@@ -81,12 +92,15 @@ void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base_a99fc959a91ab9610a24
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \& Hexeng\+::\+Audio\+::\+Sound\+Base\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_af237e598e3eeec3787863fc9f06f987f}\label{class_hexeng_1_1_audio_1_1_sound_base_af237e598e3eeec3787863fc9f06f987f}} 
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_abe2bc6260bd062a00f55abb51a9b29c2}\label{class_hexeng_1_1_audio_1_1_sound_base_abe2bc6260bd062a00f55abb51a9b29c2}} 
 \index{Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \& Hexeng\+::\+Audio\+::\+Sound\+Base\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+\begin{DoxyNote}{Note}
+Expected other to be unused and this to be initialized by the default constructor 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_sound_base_a0d0ddc790fda37cd614537cb8a3f7a19}\label{class_hexeng_1_1_audio_1_1_sound_base_a0d0ddc790fda37cd614537cb8a3f7a19}} 
 \index{Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}!terminate@{terminate}}
 \index{terminate@{terminate}!Hexeng::Audio::SoundBase@{Hexeng::Audio::SoundBase}}

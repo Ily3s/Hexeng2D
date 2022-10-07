@@ -11,7 +11,7 @@ namespace Hexeng::Audio
 
     PaError e;
 
-#ifdef _DEBUG
+#if HXG_DEBUG_LEVEL >= 2
 
 #define HXG_PA(x) \
 e = x;\
@@ -36,11 +36,29 @@ if(e != paNoError)\
 
     SoundBase::SoundBase(std::string filepath)
     {
+        if (filepath.size() <= 4 || (std::string{ filepath.end() - 4, filepath.end() } != ".wav"))
+        {
+            HXG_LOG_ERROR("The File \"" + filepath + "\" is not a wave file. It is supposed to be one.");
+            return;
+        }
+
         std::ifstream file{ filepath, std::ios::binary };
+
+        if (!file)
+        {
+            HXG_LOG_ERROR("The file \"" + filepath + "\" may not exists");
+            return;
+        }
 
         file.seekg(0, std::ios::end);
         size_t file_lenght = file.tellg();
         file.seekg(0, std::ios::beg);
+        
+        if (file_lenght <= 44)
+        {
+            HXG_LOG_ERROR("Unvalid Audio file \"" + filepath + "\"");
+            return;
+        }
 
         m_file_buffer.insert(0, file_lenght, 0);
         file.read(&m_file_buffer[0], file_lenght);
@@ -51,14 +69,15 @@ if(e != paNoError)\
 
         m_byte_per_sample = static_cast<size_t>(bits_per_sample / 8) * m_channels_nb;
 
-        // Warning : Audio System only supports wave files with F32 encoding
-
-        assert(bits_per_sample == 32 && "Only supports F32 sample format");
+        if (bits_per_sample != 32)
+        {
+            HXG_LOG_ERROR("Audio Systsem only supports Float32 sample format");
+            return;
+        }
 
         sounds.push_back(this);
     }
 
-    // expected other to be unused
     SoundBase::SoundBase(SoundBase&& other) noexcept
         : m_file_buffer(std::move(other.m_file_buffer)),
         m_byte_per_sample(other.m_byte_per_sample),
@@ -71,7 +90,6 @@ if(e != paNoError)\
         *it = (SoundBase*)this;
     }
 
-    // expected other to be unuesed and this to be uninitialized
     SoundBase& SoundBase::operator=(SoundBase&& other) noexcept
     {
         m_file_buffer = std::move(other.m_file_buffer);
@@ -90,18 +108,17 @@ if(e != paNoError)\
     Sound::Sound(std::string filepath)
         : SoundBase(filepath)
     {
-        assert(m_channels_nb == 1 && "Input for Sound is expected to be mono");
+        if (m_channels_nb != 1)
+            HXG_LOG_ERROR("Input for Sound is expected to be mono");
         m_thread = std::thread([this]() {m_stop_streams(); });
     }
 
-    // expected other to be unused
     Sound::Sound(Sound&& other) noexcept
         : SoundBase(std::move(other))
     {
         m_thread = std::thread([this]() {m_stop_streams(); });
     }
 
-    // expected other to be unuesed and this to be uninitialized
     Sound& Sound::operator=(Sound&& other) noexcept
     {
         SoundBase::operator=(std::move(other));
@@ -122,7 +139,7 @@ if(e != paNoError)\
                 paFloat32,
                 m_sample_rate,
                 paFramesPerBufferUnspecified,
-                audio_callback,
+                s_audio_callback,
                 data));
 
             HXG_PA(Pa_StartStream(data->stream));
@@ -144,7 +161,7 @@ if(e != paNoError)\
         m_thread.join();
     }
 
-    int Sound::audio_callback
+    int Sound::s_audio_callback
     (const void* input_buffer, void* output_buffer,
         unsigned long frames_per_buffer,
         const PaStreamCallbackTimeInfo* time_info,
@@ -220,14 +237,12 @@ if(e != paNoError)\
         m_thread = std::thread([this]() {m_stop_streams(); });
     }
 
-    // expected other to be unused
     StaticSound::StaticSound(StaticSound&& other) noexcept
         : SoundBase(std::move(other))
     {
         m_thread = std::thread([this]() {m_stop_streams(); });
     }
 
-    // expected other to be unuesed and this to be uninitialized
     StaticSound& StaticSound::operator=(StaticSound&& other) noexcept
     {
         SoundBase::operator=(std::move(other));
@@ -248,7 +263,7 @@ if(e != paNoError)\
                 paFloat32,
                 m_sample_rate,
                 paFramesPerBufferUnspecified,
-                audio_callback,
+                s_audio_callback,
                 data));
 
             HXG_PA(Pa_StartStream(data->stream));
@@ -270,7 +285,7 @@ if(e != paNoError)\
         m_thread.join();
     }
 
-    int StaticSound::audio_callback(const void* input_buffer, void* output_buffer,
+    int StaticSound::s_audio_callback(const void* input_buffer, void* output_buffer,
         unsigned long frames_per_buffer,
         const PaStreamCallbackTimeInfo* time_info,
         PaStreamCallbackFlags status_flags,
@@ -316,12 +331,10 @@ if(e != paNoError)\
         : SoundBase(filepath)
     {}
 
-    // expected other to be unused
     Music::Music(Music&& other) noexcept
         : SoundBase(std::move(other))
     {}
 
-    // expected other to be unuesed and this to be uninitialized
     Music& Music::operator=(Music&& other) noexcept
     {
         SoundBase::operator=(std::move(other));
@@ -346,7 +359,7 @@ if(e != paNoError)\
                 paFloat32,
                 m_sample_rate,
                 paFramesPerBufferUnspecified,
-                audio_callback,
+                s_audio_callback,
                 this));
 
             HXG_PA(Pa_StartStream(m_stream));
@@ -371,7 +384,7 @@ if(e != paNoError)\
         stop();
     }
 
-    int Music::audio_callback(const void* input_buffer, void* output_buffer,
+    int Music::s_audio_callback(const void* input_buffer, void* output_buffer,
         unsigned long frames_per_buffer,
         const PaStreamCallbackTimeInfo* time_info,
         PaStreamCallbackFlags status_flags,

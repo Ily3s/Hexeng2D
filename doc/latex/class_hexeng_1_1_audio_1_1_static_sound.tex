@@ -2,6 +2,11 @@
 \label{class_hexeng_1_1_audio_1_1_static_sound}\index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
 
 
+A sound that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space.   
+
+
+
+
 {\ttfamily \#include $<$Audio.\+hpp$>$}
 
 Inheritance diagram for Hexeng\+::Audio\+::Static\+Sound\+:\begin{figure}[H]
@@ -16,7 +21,12 @@ Inheritance diagram for Hexeng\+::Audio\+::Static\+Sound\+:\begin{figure}[H]
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a60e4415f5b10ef1839bee97956e2887c}{Static\+Sound}} ()=default
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_ac1f7da3b1197e257e5be2c1448f83a56}{Static\+Sound}} (std\+::string filepath)
-\item 
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a7af62a8fbc15bdec5cff824f87cca767}{Static\+Sound}} (const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \&)=delete
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a2f30ec43a47c79dfa30a773b8f372ffb}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \&)=delete
@@ -26,18 +36,16 @@ Inheritance diagram for Hexeng\+::Audio\+::Static\+Sound\+:\begin{figure}[H]
 \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_ada0c1105bff5495a8eede8c4eddb03cf}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \&\&) noexcept
 \item 
 void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a06869bd9c6b5748201592fd5b32b5d0d}{play}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em plays the sound \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a1d5c4cfe5301a3984bb07f6523df67d1}{stop}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em stops all playing instances of the sound. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a7ceb5ceeaff79aeb71f5b39096008148}{terminate}} () override
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static int \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a33201bc772016edd04571d77536e05e3}{audio\+\_\+callback}} (const void $\ast$input\+\_\+buffer, void $\ast$output\+\_\+buffer, unsigned long frames\+\_\+per\+\_\+buffer, const Pa\+Stream\+Callback\+Time\+Info $\ast$time\+\_\+info, Pa\+Stream\+Callback\+Flags status\+\_\+flags, void $\ast$user\+\_\+data)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+A sound that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space.  
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a60e4415f5b10ef1839bee97956e2887c}\label{class_hexeng_1_1_audio_1_1_static_sound_a60e4415f5b10ef1839bee97956e2887c}} 
@@ -52,6 +60,15 @@ static int \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a33201bc7720
 \doxysubsubsection{\texorpdfstring{StaticSound()}{StaticSound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Static\+Sound\+::\+Static\+Sound (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
 
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+
+
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a7af62a8fbc15bdec5cff824f87cca767}\label{class_hexeng_1_1_audio_1_1_static_sound_a7af62a8fbc15bdec5cff824f87cca767}} 
 \index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!StaticSound@{StaticSound}}
 \index{StaticSound@{StaticSound}!Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
@@ -64,15 +81,12 @@ static int \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a33201bc7720
 \doxysubsubsection{\texorpdfstring{StaticSound()}{StaticSound()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Static\+Sound\+::\+Static\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+\begin{DoxyNote}{Note}
+Expected other to be unused 
+\end{DoxyNote}
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a33201bc772016edd04571d77536e05e3}\label{class_hexeng_1_1_audio_1_1_static_sound_a33201bc772016edd04571d77536e05e3}} 
-\index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!audio\_callback@{audio\_callback}}
-\index{audio\_callback@{audio\_callback}!Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
-\doxysubsubsection{\texorpdfstring{audio\_callback()}{audio\_callback()}}
-{\footnotesize\ttfamily int Hexeng\+::\+Audio\+::\+Static\+Sound\+::audio\+\_\+callback (\begin{DoxyParamCaption}\item[{const void $\ast$}]{input\+\_\+buffer,  }\item[{void $\ast$}]{output\+\_\+buffer,  }\item[{unsigned long}]{frames\+\_\+per\+\_\+buffer,  }\item[{const Pa\+Stream\+Callback\+Time\+Info $\ast$}]{time\+\_\+info,  }\item[{Pa\+Stream\+Callback\+Flags}]{status\+\_\+flags,  }\item[{void $\ast$}]{user\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a2f30ec43a47c79dfa30a773b8f372ffb}\label{class_hexeng_1_1_audio_1_1_static_sound_a2f30ec43a47c79dfa30a773b8f372ffb}} 
 \index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
@@ -85,17 +99,28 @@ static int \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound_a33201bc7720
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \& Hexeng\+::\+Audio\+::\+Static\+Sound\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_static_sound}{Static\+Sound}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+\begin{DoxyNote}{Note}
+Expected other to be unused and this to be initialized by the default constructor 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a06869bd9c6b5748201592fd5b32b5d0d}\label{class_hexeng_1_1_audio_1_1_static_sound_a06869bd9c6b5748201592fd5b32b5d0d}} 
 \index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!play@{play}}
 \index{play@{play}!Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
 \doxysubsubsection{\texorpdfstring{play()}{play()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Static\+Sound\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+plays the sound 
+
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a1d5c4cfe5301a3984bb07f6523df67d1}\label{class_hexeng_1_1_audio_1_1_static_sound_a1d5c4cfe5301a3984bb07f6523df67d1}} 
 \index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!stop@{stop}}
 \index{stop@{stop}!Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}}
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Static\+Sound\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stops all playing instances of the sound. 
 
 \mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_static_sound_a7ceb5ceeaff79aeb71f5b39096008148}\label{class_hexeng_1_1_audio_1_1_static_sound_a7ceb5ceeaff79aeb71f5b39096008148}} 
 \index{Hexeng::Audio::StaticSound@{Hexeng::Audio::StaticSound}!terminate@{terminate}}

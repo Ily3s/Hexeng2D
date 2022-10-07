@@ -21,6 +21,5 @@ var searchData=
   ['animationstep_18',['AnimationStep',['../struct_hexeng_1_1_renderer_1_1_animation_step.html#ac3680c8da679dbc55f3823e50cba4e2e',1,'Hexeng::Renderer::AnimationStep::AnimationStep()'],['../struct_hexeng_1_1_renderer_1_1_animation_step.html',1,'Hexeng::Renderer::AnimationStep']]],
   ['architecture_5fid_19',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['audio_2ecpp_20',['Audio.cpp',['../_audio_8cpp.html',1,'']]],
-  ['audio_2ehpp_21',['Audio.hpp',['../_audio_8hpp.html',1,'']]],
-  ['audio_5fcallback_22',['audio_callback',['../class_hexeng_1_1_audio_1_1_sound.html#a8a5b440dd00a2b47eb63edf951ea0cc5',1,'Hexeng::Audio::Sound::audio_callback()'],['../class_hexeng_1_1_audio_1_1_static_sound.html#a33201bc772016edd04571d77536e05e3',1,'Hexeng::Audio::StaticSound::audio_callback()'],['../class_hexeng_1_1_audio_1_1_music.html#af7da6be846b69046f73d81d5bdfcd0fd',1,'Hexeng::Audio::Music::audio_callback()']]]
+  ['audio_2ehpp_21',['Audio.hpp',['../_audio_8hpp.html',1,'']]]
 ];
