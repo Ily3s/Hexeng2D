@@ -15,13 +15,15 @@
 namespace Hexeng
 {
 
-	// optimizition todo : batch rendering
-
 	struct CharBox
 	{
 		Vec2<float> min, max;
 	};
 
+	/// <summary>
+	/// Loads a font from a ttf file that will be used when writing Text.
+	/// </summary>
+	/// @note Only the constructor should be used by the user.
 	class HXG_DECLSPEC Font
 	{
 	public :
@@ -35,7 +37,7 @@ namespace Hexeng
 		float get_advancement(int c);
 		CharBox get_box(int c);
 
-		// Warning : quality is recommanded to be within [0.01f, 1.0f]
+		/// @note Quality is recommanded to be within [0.01f, 1.0f]
 		Font(const std::string& path, float quality = 0.1f);
 
 		Font() = default;
@@ -47,16 +49,37 @@ namespace Hexeng
 		Font& operator=(Font&&) noexcept = default;
 
 		void add_char(char32_t c);
+
+	private :
+
+		std::string m_filepath;
 	};
 
+	/// <summary>
+	/// Loads a dictionary from a language file.
+	/// </summary>
+	/// @details The language file should be written in UTF-32 (any endian) with BOM.
+	/// You can write that type of file with EditPad Lite for example.
+	/// The translation of the line n in the language file A should be written in all langage files at line n.
 	class HXG_DECLSPEC Language
 	{
 	public :
 
 		Language(const std::string& filepath);
 
+		/// <summary>
+		/// Set a reference language that will be used when writing text.
+		/// </summary>
+		/// <param name="language">A pointer to the language that will be used as a reference.</param>
+		/// @note This function has to be called in order to use the Language System.
 		static void set_reference_language(const Language* language);
 
+		/// <summary>
+		/// Get the translation of input
+		/// </summary>
+		/// <param name="input">A sentence in the reference language</param>
+		/// <returns>The translation of input in this language</returns>
+		/// @note This function is meant to be used internally by the engine.
 		const std::u32string& get_translation(const std::u32string& input) const;
 
 	private :
@@ -86,10 +109,30 @@ namespace Hexeng
 
 		Color3 color;
 
-		Text(std::u32string text, Font&, Vec2<int> position, int font_size,
-			HorizontalAlign = HorizontalAlign::CENTER, VerticalAlign = VerticalAlign::CENTER, Color3 = Color3::white);
+		/// <param name="text">The text to be written. Format : UTF-32</param>
+		/// <param name="font">The Font that will be used to texture the Mesh</param>
+		/// <param name="position">The absolute position of a certain point of the Text.
+		/// The relative position of this point to the Text is defined by va and ha</param>
+		/// <param name="font_size">A size in the Hexeng2D coordinate system</param>
+		/// <param name="ha">Defines the x position of the text relative to position</param>
+		/// <param name="va">Defines the y position of the text relative to position</param>
+		/// <param name="c">The color of the text</param>
+		
+		Text(std::u32string text, Font& font, Vec2<int> position, int font_size,
+			HorizontalAlign ha= HorizontalAlign::CENTER, VerticalAlign va= VerticalAlign::CENTER, Color3 c= Color3::white);
 
-		Text(const Language** language, std::u32string text, Font&, Vec2<int> position, int font_size,
+		/// <param name="language">A pointer to the current language's pointer.
+		/// It is a pointer to a pointer so that it is easier to switch languages</param>
+		/// <param name="text">The text to be written. Format : UTF-32</param>
+		/// <param name="font">The Font that will be used to texture the Mesh</param>
+		/// <param name="position">The absolute position of a certain point of the Text.
+		/// The relative position of this point to the Text is defined by va and ha</param>
+		/// <param name="font_size">A size in the Hexeng2D coordinate system</param>
+		/// <param name="ha">Defines the x position of the text relative to position</param>
+		/// <param name="va">Defines the y position of the text relative to position</param>
+		/// <param name="c">The color of the text</param>
+		
+		Text(const Language** language, std::u32string text, Font& font, Vec2<int> position, int font_size,
 			HorizontalAlign = HorizontalAlign::CENTER, VerticalAlign = VerticalAlign::CENTER, Color3 = Color3::white);
 
 		Text(const Text&) = delete;
@@ -98,6 +141,10 @@ namespace Hexeng
 		Text(Text&&) noexcept;
 		Text& operator=(Text&&) noexcept;
 
+		/// <summary>
+		/// Refresh all the texts with the new language.
+		/// </summary>
+		/// @details After switching languages, this function has to be called to refresh the texts.
 		static void reload_language();
 
 	private :

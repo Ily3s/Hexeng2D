@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_language.html',''); i
 </div><!--header-->
 <div class="contents">
 
+<p>Loads a dictionary from a language file.   
+ <a href="class_hexeng_1_1_language.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_text_8hpp_source.html">Text.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -106,14 +109,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac52f0b7d6ac517a8a205144adc7d96f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_language.html#aac52f0b7d6ac517a8a205144adc7d96f">Language</a> (const std::string &amp;filepath)</td></tr>
 <tr class="separator:aac52f0b7d6ac517a8a205144adc7d96f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc6d14e5b0d3d549f5d9c31da8e28bb1"><td class="memItemLeft" align="right" valign="top">const std::u32string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_language.html#acc6d14e5b0d3d549f5d9c31da8e28bb1">get_translation</a> (const std::u32string &amp;input) const</td></tr>
+<tr class="memdesc:acc6d14e5b0d3d549f5d9c31da8e28bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the translation of input   <a href="class_hexeng_1_1_language.html#acc6d14e5b0d3d549f5d9c31da8e28bb1">More...</a><br /></td></tr>
 <tr class="separator:acc6d14e5b0d3d549f5d9c31da8e28bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a10928555e11949ab01479c6b2dcc8050"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_language.html#a10928555e11949ab01479c6b2dcc8050">set_reference_language</a> (const <a class="el" href="class_hexeng_1_1_language.html">Language</a> *language)</td></tr>
+<tr class="memdesc:a10928555e11949ab01479c6b2dcc8050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a reference language that will be used when writing text.   <a href="class_hexeng_1_1_language.html#a10928555e11949ab01479c6b2dcc8050">More...</a><br /></td></tr>
 <tr class="separator:a10928555e11949ab01479c6b2dcc8050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Loads a dictionary from a language file.  </p>
+<p >The language file should be written in UTF-32 (any endian) with BOM. You can write that type of file with EditPad Lite for example. The translation of the line n in the language file A should be written in all langage files at line n. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aac52f0b7d6ac517a8a205144adc7d96f" name="aac52f0b7d6ac517a8a205144adc7d96f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aac52f0b7d6ac517a8a205144adc7d96f">&#9670;&#160;</a></span>Language()</h2>
 
@@ -149,6 +157,16 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Get the translation of input  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>A sentence in the reference language</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The translation of input in this language</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This function is meant to be used internally by the engine. </dd></dl>
+
 </div>
 </div>
 <a id="a10928555e11949ab01479c6b2dcc8050" name="a10928555e11949ab01479c6b2dcc8050"></a>
@@ -174,6 +192,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set a reference language that will be used when writing text.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">language</td><td>A pointer to the language that will be used as a reference.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>This function has to be called in order to use the <a class="el" href="class_hexeng_1_1_language.html" title="Loads a dictionary from a language file.">Language</a> System. </dd></dl>
 
 </div>
 </div>
