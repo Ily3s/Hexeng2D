@@ -39,7 +39,7 @@ namespace Hexeng::Renderer
 
 	private :
 
-		friend void Renderer::draw_current_scene();
+		friend HXG_DECLSPEC void draw_current_scene();
 
 		static std::vector<Animation*> s_animations;
 

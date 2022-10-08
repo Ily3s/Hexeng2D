@@ -5,10 +5,14 @@ namespace Hexeng::Renderer
 {
 
 	AnimationStep::AnimationStep(std::function<void(float)> up_anim_p, std::function<void(void)> keypoint_p, float timestamp_p)
-		: up_anim(up_anim_p), keypoint(keypoint_p), timestamp(timestamp_p) {}
+		: up_anim(up_anim_p),
+		keypoint(keypoint_p),
+		timestamp(timestamp_p) {}
 
 	Animation::Animation(std::vector<AnimationStep> steps_p, std::function<void(void)> terminate_p, bool repeat_p)
-		: steps(steps_p), terminate(terminate_p), repeat(repeat_p) {}
+		: steps(steps_p),
+		terminate(terminate_p),
+		repeat(repeat_p) {}
 
 	std::vector<Animation*> Animation::s_animations;
 

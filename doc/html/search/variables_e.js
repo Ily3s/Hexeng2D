@@ -1,7 +1,7 @@
 var searchData=
 [
   ['r_0',['R',['../class_hexeng_1_1_color3.html#a2b56e39836ab08f958ed8d7a5158b4f6',1,'Hexeng::Color3::R()'],['../class_hexeng_1_1_color4.html#ac724c7892a0773d560b7b63c22e33201',1,'Hexeng::Color4::R()']]],
-  ['range_1',['range',['../class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1',1,'Hexeng::EventManager::Event::range()'],['../class_hexeng_1_1_renderer_1_1_layer.html#a3c108e1b1a62f8b654cd79596365905b',1,'Hexeng::Renderer::Layer::range()']]],
+  ['range_1',['range',['../class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1',1,'Hexeng::EventManager::Event']]],
   ['rec_2',['rec',['../class_player.html#acd860d2e1775e86bdda2fc9b05bc5736',1,'Player']]],
   ['receiver_3',['receiver',['../namespace_hexeng_1_1_audio.html#ade90f1b2e4cb6e40205b9b485b583e90',1,'Hexeng::Audio']]],
   ['red_4',['red',['../class_hexeng_1_1_color3.html#aa7f0d827f1c55d393387690b2dfdb62b',1,'Hexeng::Color3::red()'],['../class_hexeng_1_1_color4.html#a671d5160248675e1d62b6e8ae27aeb06',1,'Hexeng::Color4::red()']]],

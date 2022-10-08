@@ -7,6 +7,5 @@ var searchData=
   ['unload_4',['unload',['../class_hexeng_1_1_renderer_1_1_layer.html#a44dbc152f62f1c831398e0f41cf439be',1,'Hexeng::Renderer::Layer::unload()'],['../class_hexeng_1_1_renderer_1_1_texture.html#a7f209b6c02fee84f4e738280374b6c5e',1,'Hexeng::Renderer::Texture::unload()'],['../class_hexeng_1_1_scene.html#abcce907168e37dd2aff29ee6358b7983',1,'Hexeng::Scene::unload()']]],
   ['update_5',['update',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#a53cf7b69042707fb0202a4bee80147f0',1,'Hexeng::Physics::PhysicsVecs']]],
   ['update_5fposition_6',['update_position',['../class_hexeng_1_1_renderer_1_1_mesh.html#ad3b9c0b9b2a40f19cc39db098d16ec6e',1,'Hexeng::Renderer::Mesh']]],
-  ['update_5fvecs_7',['update_vecs',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#ab4be6f22f745c2d9179cdbcec380ab44',1,'Hexeng::Physics::PhysicsVecs']]],
-  ['update_5fzoom_8',['update_zoom',['../class_hexeng_1_1_renderer_1_1_camera.html#a4504a3ed49ffd549b347a2e1b003c775',1,'Hexeng::Renderer::Camera']]]
+  ['update_5fvecs_7',['update_vecs',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#ab4be6f22f745c2d9179cdbcec380ab44',1,'Hexeng::Physics::PhysicsVecs']]]
 ];

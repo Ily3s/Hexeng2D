@@ -2,6 +2,11 @@
 \label{class_hexeng_1_1_renderer_1_1_contextual_layer}\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
 
 
+A layer that shows up only if a bool is set to true   
+
+
+
+
 {\ttfamily \#include $<$Layer.\+hpp$>$}
 
 Inheritance diagram for Hexeng\+::Renderer\+::Contextual\+Layer\+:\begin{figure}[H]
@@ -15,7 +20,7 @@ Inheritance diagram for Hexeng\+::Renderer\+::Contextual\+Layer\+:\begin{figure}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}{Contextual\+Layer}} ()=default
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a2be4912635d0b94e486fcfba0697acf1}{Contextual\+Layer}} (const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&mesh\+\_\+vector, bool $\ast$condition, int z\+\_\+pos=1, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{Position\+::\+ABSOLUTE}}, Range \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a3c108e1b1a62f8b654cd79596365905b}{range}}=Range\+::\+GLOBAL)
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a2be4912635d0b94e486fcfba0697acf1}{Contextual\+Layer}} (const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&mesh\+\_\+vector, bool $\ast$condition, int z\+\_\+pos=1, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{Position\+::\+ABSOLUTE}}, Range range=Range\+::\+GLOBAL)
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_aa4c69fe3d18c3689a2f7b0f450b936eb}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \&\&) noexcept
 \item 
@@ -28,7 +33,11 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a0dee3f3dce
 \item 
 bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a71f626fd919417024110f2210904d95e}{context}} = nullptr
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
+
+\doxysubsection{Detailed Description}
+A layer that shows up only if a bool is set to true  
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}} 
@@ -43,6 +52,17 @@ bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a71f
 \doxysubsubsection{\texorpdfstring{ContextualLayer()}{ContextualLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::\+Contextual\+Layer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&}]{mesh\+\_\+vector,  }\item[{bool $\ast$}]{condition,  }\item[{int}]{z\+\_\+pos = {\ttfamily 1},  }\item[{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}]{pos = {\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{Position\+::\+ABSOLUTE}}},  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL} }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & A pointer to the \char`\"{}control variable\char`\"{} of the layer. If the bool it is pointing to is set to false, the layer will not show up, if it is set to true, the layer will show up. \\
+\hline
+{\em z\+\_\+pos} & The depth of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}. \\
+\hline
+{\em pos} & The position mode of the layer (take a look at Position). \\
+\hline
+{\em range} & If set to Range\+::\+LOCAL, the layer needs to be added to a scene. If set to Range\+::\+GLOBAL, the layer will apear on all scenes. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_ae87bd298109a38147811c2db0e309719}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_ae87bd298109a38147811c2db0e309719}} 
 \index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!ContextualLayer@{ContextualLayer}}
 \index{ContextualLayer@{ContextualLayer}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
@@ -77,6 +97,9 @@ Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a291d62b
 \doxysubsubsection{\texorpdfstring{context}{context}}
 {\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::context = nullptr}
 
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -45,7 +45,9 @@ namespace Hexeng::EventManager
 	std::vector<KeyPressEvent*> KeyPressEvent::events;
 
 	KeyPressEvent::KeyPressEvent(int key_code, std::function<void(void)> action, int mode)
-		: key_code(key_code), action(action), mode(mode)
+		: key_code(key_code),
+		action(action),
+		mode(mode)
 	{
 		events.push_back(this);
 

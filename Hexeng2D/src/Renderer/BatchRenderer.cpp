@@ -13,14 +13,16 @@ namespace Hexeng::Renderer
 	}} };
 
 	TextureAtlas::TextureAtlas(const std::string& filepath, const Vec2<int>& cell_size, const TexSettList& settings)
-		: Texture(filepath, settings), m_cell_size(cell_size)
+		: Texture(filepath, settings),
+		m_cell_size(cell_size)
 	{
 		HXG_ASSERT((m_size.x % cell_size.x == 0) && (m_size.y % cell_size.y == 0),
 			HXG_LOG_ERROR("Invalid TextureAtlas format"););
 	}
 
 	TextureAtlas::TextureAtlas(TextureAtlas&& other) noexcept
-		: Texture(std::move(other)), m_cell_size(other.m_cell_size) {}
+		: Texture(std::move(other)),
+		m_cell_size(other.m_cell_size) {}
 
 	TextureAtlas& TextureAtlas::operator=(TextureAtlas&& other) noexcept
 	{
@@ -47,8 +49,13 @@ namespace Hexeng::Renderer
 
 	BatchInstance::BatchInstance(BatchInstance&& other) noexcept
 		: Mesh(std::move(other)),
-		m_raw_ib(std::move(other.m_raw_ib)), m_raw_vb(std::move(other.m_raw_vb)), m_quads(std::move(other.m_quads)),
-		color(other.color), texture_atlas(other.texture_atlas), m_index_buffer(std::move(other.m_index_buffer)), m_uniforms_id(other.m_uniforms_id)
+		m_raw_ib(std::move(other.m_raw_ib)),
+		m_raw_vb(std::move(other.m_raw_vb)),
+		m_quads(std::move(other.m_quads)),
+		color(other.color),
+		texture_atlas(other.texture_atlas),
+		m_index_buffer(std::move(other.m_index_buffer)),
+		m_uniforms_id(other.m_uniforms_id)
 	{
 		for (auto quad : m_quads)
 			quad->m_batch_instance = this;
@@ -164,13 +171,19 @@ namespace Hexeng::Renderer
 	}
 
 	BatchQuad::BatchQuad(BatchInstance* bi, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size_p, float rotation_p)
-		: position(pos), scale(size_p), rotation(rotation_p), m_batch_instance(bi)
+		: position(pos),
+		scale(size_p),
+		rotation(rotation_p),
+		m_batch_instance(bi)
 	{
 		bi->m_add_quad(this, tex_coords);
 	}
 
 	BatchQuad::BatchQuad(BatchQuad&& other) noexcept
-		: position(other.position), scale(other.scale), rotation(other.rotation), m_batch_instance(other.m_batch_instance)
+		: position(other.position),
+		scale(other.scale),
+		rotation(other.rotation),
+		m_batch_instance(other.m_batch_instance)
 	{
 		auto& quads = m_batch_instance->m_quads;
 		auto it = std::find(quads.begin(), quads.end(), &other);
@@ -195,7 +208,7 @@ namespace Hexeng::Renderer
 		auto it = std::find(quads.begin(), quads.end(), &other);
 		HXG_ASSERT((it != quads.end()),
 			HXG_LOG_ERROR("Other have not been initialized");
-			return;);
+			return *this;);
 		*it = this;
 
 		return *this;

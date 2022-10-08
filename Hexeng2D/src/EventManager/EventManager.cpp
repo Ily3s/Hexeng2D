@@ -14,7 +14,11 @@ namespace Hexeng::EventManager
 	std::vector<Event*> global_events;
 
 	Event::Event(std::function<bool(void)> condition, std::function<void(void)> action, Range range, uint32_t pertick)
-		: condition(condition), action(action), pertick(pertick), range(range), clock(pertick - 1)
+		: condition(condition),
+		action(action),
+		pertick(pertick),
+		range(range),
+		clock(pertick - 1)
 	{
 		if (range == Range::GLOBAL)
 			global_events.push_back(this);
@@ -53,7 +57,11 @@ namespace Hexeng::EventManager
 	}
 
 	Event::Event(Event&& other) noexcept
-		: condition(other.condition), action(other.action), pertick(other.pertick), range(other.range), clock(other.clock)
+		: condition(other.condition),
+		action(other.action),
+		pertick(other.pertick),
+		range(other.range),
+		clock(other.clock)
 	{
 		if (range == Range::GLOBAL)
 		{

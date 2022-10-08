@@ -15,8 +15,7 @@ namespace Hexeng::Renderer
 
 		int compile_status;
 		HXG_GL(glGetShaderiv(id, GL_COMPILE_STATUS, &compile_status));
-		if (compile_status == GL_FALSE)
-		{
+		HXG_ASSERT(compile_status,
 			int lenght;
 			HXG_GL(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght));
 			char* message = new char[lenght];
@@ -24,9 +23,9 @@ namespace Hexeng::Renderer
 			std::cout << "Failed to compile " << (shader_type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
 			std::cout << message << std::endl;
 			HXG_GL(glDeleteShader(id));
-            delete[] message;
+			delete[] message;
 			return 0;
-		}
+		);
 		return id;
 	}
 

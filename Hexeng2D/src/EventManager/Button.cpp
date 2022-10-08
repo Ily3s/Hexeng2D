@@ -5,7 +5,10 @@ namespace Hexeng::EventManager
 {
 
 	Button::Button(Vec2<int> min_para, Vec2<int> max_para, std::function<bool(void)> condition_para, std::unordered_map<ButtonEvent, std::function<void(void)>> events_para, int mouse_btn, Range range)
-		: min(min_para), max(max_para), mouse_button(mouse_btn), condition(condition_para)
+		: min(min_para),
+		max(max_para),
+		mouse_button(mouse_btn),
+		condition(condition_para)
 	{
 		for (auto& [evt, action] : events_para)
 		{
@@ -91,8 +94,17 @@ namespace Hexeng::EventManager
 	}
 
 	Button::Button(Button&& other) noexcept
-		: Event(std::move(other)), mouse_button(other.mouse_button), min(other.min), max(other.max), m_owner(this),
-		condition(other.condition), hover(other.hover), unhover(other.unhover), click(other.click), unclick(other.unclick), keep_clicking(other.keep_clicking)
+		: Event(std::move(other)),
+		mouse_button(other.mouse_button),
+		min(other.min),
+		max(other.max),
+		m_owner(this),
+		condition(other.condition),
+		hover(other.hover),
+		unhover(other.unhover),
+		click(other.click),
+		unclick(other.unclick),
+		keep_clicking(other.keep_clicking)
 	{
 		other.m_owner = this;
 	}

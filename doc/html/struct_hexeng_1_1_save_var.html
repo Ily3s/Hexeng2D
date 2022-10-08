@@ -99,6 +99,9 @@ $(document).ready(function(){initNavTree('struct_hexeng_1_1_save_var.html',''); 
 </div><!--header-->
 <div class="contents">
 
+<p>Get be pushed in a <a class="el" href="class_hexeng_1_1_save_file.html" title="A save instance. It isn&#39;t closely related to a filepath but rather to a bunch of variables references...">SaveFile</a>   
+ <a href="struct_hexeng_1_1_save_var.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_save_system_8hpp_source.html">SaveSystem.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -106,8 +109,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd8aca089f7f2cc36b7c4450f306b85d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hexeng_1_1_save_var.html#afd8aca089f7f2cc36b7c4450f306b85d">SaveVar</a> ()=default</td></tr>
 <tr class="separator:afd8aca089f7f2cc36b7c4450f306b85d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeac59e2b6cd8ccb3b75a6faedd26836b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hexeng_1_1_save_var.html#aeac59e2b6cd8ccb3b75a6faedd26836b">SaveVar</a> (uint64_t id_p, void *val_p, uint64_t unit_size_p, std::function&lt; uint64_t(void **val_ptr)&gt; get_size_p, std::function&lt; void(uint64_t, void **val_ptr)&gt; reserve_p)</td></tr>
+<tr class="memdesc:aeac59e2b6cd8ccb3b75a6faedd26836b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor is designed for heap allocated (dynamic size and location, std::vector for example) variables. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_p</td><td>A unique id to identify this variable in a save.</td></tr>
+    <tr><td class="paramname">val_p</td><td>The pointer to the data itself.</td></tr>
+    <tr><td class="paramname">unit_size_p</td><td>The size (in bytes) of one element of the data. For example, if the data is an array of int32_t or just one single int32_t, unit_size_p has to be 4</td></tr>
+    <tr><td class="paramname">get_size_p</td><td>A function that get called during a save. The function takes in parameter a ptr to the ptr to the data (void**), and returns the size of the data. What you want to do in this function is modify the location of the data in case it has changed, and, return the size of the data. For example, with std::vector vec, you want to do {[](void** val_ptr) {*val_ptr = &amp;vec[0]; return vec.size();}}</td></tr>
+    <tr><td class="paramname">reserve_p</td><td>A function that get called during the load of a save. This function takes in parameter the size (in bytes) of the saved variable (uint64_t), and, a ptr to the ptr to the var (void** ptr). In this function, you may want to reserve enough space to load what's in the save using the uint64_t. And you also want to set the ptr to the data to the data's new location (*ptr = new_location). For example, with std::vector vec, you want to do {[](uint64_t size, void** val_ptr) {vec.reserve(size); *val_ptr = &amp;vec[0];}}</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="struct_hexeng_1_1_save_var.html#aeac59e2b6cd8ccb3b75a6faedd26836b">More...</a><br /></td></tr>
 <tr class="separator:aeac59e2b6cd8ccb3b75a6faedd26836b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a569793586bcb42afa692d28c9cbf4301"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hexeng_1_1_save_var.html#a569793586bcb42afa692d28c9cbf4301">SaveVar</a> (uint64_t id_p, void *val_p, uint64_t size_p, uint64_t unit_size_p)</td></tr>
+<tr class="memdesc:a569793586bcb42afa692d28c9cbf4301"><td class="mdescLeft">&#160;</td><td class="mdescRight">This constructor is for stack allocated variables (static size and location) only. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_p</td><td>A unique id to identify this variable in a save.</td></tr>
+    <tr><td class="paramname">val_p</td><td>The pointer to the data itself.</td></tr>
+    <tr><td class="paramname">size_p</td><td>The total size of the data.</td></tr>
+    <tr><td class="paramname">unit_size_p</td><td>The size (in bytes) of one element of the data. For example, if the data is an array of int32_t or just one single int32_t, unit_size_p has to be 4</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="struct_hexeng_1_1_save_var.html#a569793586bcb42afa692d28c9cbf4301">More...</a><br /></td></tr>
 <tr class="separator:a569793586bcb42afa692d28c9cbf4301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -123,7 +147,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a42172b2f7556d8a6e3e55a7fe242d6a4"><td class="memItemLeft" align="right" valign="top">std::function&lt; void(uint64_t, void **val_ptr)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_hexeng_1_1_save_var.html#a42172b2f7556d8a6e3e55a7fe242d6a4">reserve</a> = nullptr</td></tr>
 <tr class="separator:a42172b2f7556d8a6e3e55a7fe242d6a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Get be pushed in a <a class="el" href="class_hexeng_1_1_save_file.html" title="A save instance. It isn&#39;t closely related to a filepath but rather to a bunch of variables references...">SaveFile</a>  </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afd8aca089f7f2cc36b7c4450f306b85d" name="afd8aca089f7f2cc36b7c4450f306b85d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd8aca089f7f2cc36b7c4450f306b85d">&#9670;&#160;</a></span>SaveVar() <span class="overload">[1/3]</span></h2>
 
@@ -193,6 +219,18 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>This constructor is designed for heap allocated (dynamic size and location, std::vector for example) variables. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_p</td><td>A unique id to identify this variable in a save.</td></tr>
+    <tr><td class="paramname">val_p</td><td>The pointer to the data itself.</td></tr>
+    <tr><td class="paramname">unit_size_p</td><td>The size (in bytes) of one element of the data. For example, if the data is an array of int32_t or just one single int32_t, unit_size_p has to be 4</td></tr>
+    <tr><td class="paramname">get_size_p</td><td>A function that get called during a save. The function takes in parameter a ptr to the ptr to the data (void**), and returns the size of the data. What you want to do in this function is modify the location of the data in case it has changed, and, return the size of the data. For example, with std::vector vec, you want to do {[](void** val_ptr) {*val_ptr = &amp;vec[0]; return vec.size();}}</td></tr>
+    <tr><td class="paramname">reserve_p</td><td>A function that get called during the load of a save. This function takes in parameter the size (in bytes) of the saved variable (uint64_t), and, a ptr to the ptr to the var (void** ptr). In this function, you may want to reserve enough space to load what's in the save using the uint64_t. And you also want to set the ptr to the data to the data's new location (*ptr = new_location). For example, with std::vector vec, you want to do {[](uint64_t size, void** val_ptr) {vec.reserve(size); *val_ptr = &amp;vec[0];}}</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
+
 </div>
 </div>
 <a id="a569793586bcb42afa692d28c9cbf4301" name="a569793586bcb42afa692d28c9cbf4301"></a>
@@ -232,6 +270,17 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This constructor is for stack allocated variables (static size and location) only. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id_p</td><td>A unique id to identify this variable in a save.</td></tr>
+    <tr><td class="paramname">val_p</td><td>The pointer to the data itself.</td></tr>
+    <tr><td class="paramname">size_p</td><td>The total size of the data.</td></tr>
+    <tr><td class="paramname">unit_size_p</td><td>The size (in bytes) of one element of the data. For example, if the data is an array of int32_t or just one single int32_t, unit_size_p has to be 4</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
 
 </div>
 </div>

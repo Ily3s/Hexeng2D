@@ -94,10 +94,14 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_renderer_1_1_layer.ht
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_hexeng_1_1_renderer_1_1_layer-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Hexeng::Renderer::Layer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>A layer of meshes, at a certain depth z.   
+ <a href="class_hexeng_1_1_renderer_1_1_layer.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_layer_8hpp_source.html">Layer.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -106,13 +110,13 @@ Inheritance diagram for Hexeng::Renderer::Layer:</div>
  <div class="center">
   <img src="class_hexeng_1_1_renderer_1_1_layer.png" usemap="#Hexeng::Renderer::Layer_map" alt=""/>
   <map id="Hexeng::Renderer::Layer_map" name="Hexeng::Renderer::Layer_map">
-<area href="class_hexeng_1_1_renderer_1_1_contextual_layer.html" alt="Hexeng::Renderer::ContextualLayer" shape="rect" coords="0,56,212,80"/>
+<area href="class_hexeng_1_1_renderer_1_1_contextual_layer.html" title="A layer that shows up only if a bool is set to true" alt="Hexeng::Renderer::ContextualLayer" shape="rect" coords="0,56,212,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae529bfbbe6d3f697836467e3964105c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#ae529bfbbe6d3f697836467e3964105c6">Layer</a> (const std::vector&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html">Mesh</a> * &gt; &amp;mesh_vector, int z_pos, <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a> pos=<a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a>, Range <a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a3c108e1b1a62f8b654cd79596365905b">range</a>=Range::LOCAL)</td></tr>
+<tr class="memitem:ae529bfbbe6d3f697836467e3964105c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#ae529bfbbe6d3f697836467e3964105c6">Layer</a> (const std::vector&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html">Mesh</a> * &gt; &amp;mesh_vector, int z_pos, <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a> pos=<a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a>, Range range=Range::LOCAL)</td></tr>
 <tr class="separator:ae529bfbbe6d3f697836467e3964105c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9437ef9f48d96be4b4003f33b805598c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html">Layer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a9437ef9f48d96be4b4003f33b805598c">operator=</a> (const <a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html">Layer</a> &amp;)=delete</td></tr>
 <tr class="separator:a9437ef9f48d96be4b4003f33b805598c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,14 +141,19 @@ Public Attributes</h2></td></tr>
 <tr class="separator:adaa973b2e9083dbbf5494ebe5216e166"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f38fee64b97f88a7d703ac7289bfa5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a6f38fee64b97f88a7d703ac7289bfa5e">z_position</a> = 0</td></tr>
 <tr class="separator:a6f38fee64b97f88a7d703ac7289bfa5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c108e1b1a62f8b654cd79596365905b"><td class="memItemLeft" align="right" valign="top">Range&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a3c108e1b1a62f8b654cd79596365905b">range</a> = Range::LOCAL</td></tr>
-<tr class="separator:a3c108e1b1a62f8b654cd79596365905b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0458708a27a8b74d3e5bf0789aae6984"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a0458708a27a8b74d3e5bf0789aae6984">position_mode</a> = <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a></td></tr>
-<tr class="separator:a0458708a27a8b74d3e5bf0789aae6984"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a506c815a9e1d126a9d309955e41ad6e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a506c815a9e1d126a9d309955e41ad6e9">uniforms</a></td></tr>
-<tr class="separator:a506c815a9e1d126a9d309955e41ad6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a259788aac918019bb7788c34fa4cfce0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a259788aac918019bb7788c34fa4cfce0">m_uniforms</a></td></tr>
+<tr class="separator:a259788aac918019bb7788c34fa4cfce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98136e4c569595b17e905d5ef1a837d1"><td class="memItemLeft" align="right" valign="top">Range&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a98136e4c569595b17e905d5ef1a837d1">m_range</a> = Range::LOCAL</td></tr>
+<tr class="separator:a98136e4c569595b17e905d5ef1a837d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51e2d5079e18599f56c025c46d807272"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html#a51e2d5079e18599f56c025c46d807272">m_position_mode</a> = <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a></td></tr>
+<tr class="separator:a51e2d5079e18599f56c025c46d807272"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >A layer of meshes, at a certain depth z.  </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae529bfbbe6d3f697836467e3964105c6" name="ae529bfbbe6d3f697836467e3964105c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae529bfbbe6d3f697836467e3964105c6">&#9670;&#160;</a></span>Layer() <span class="overload">[1/4]</span></h2>
 
@@ -182,6 +191,14 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z_pos</td><td>The depth of the <a class="el" href="class_hexeng_1_1_renderer_1_1_layer.html" title="A layer of meshes, at a certain depth z.">Layer</a> </td></tr>
+    <tr><td class="paramname">pos</td><td>The position mode of the layer (take a look at Position). </td></tr>
+    <tr><td class="paramname">range</td><td>If set to Range::LOCAL, the layer needs to be added to a scene. If set to Range::GLOBAL, the layer will apear on all scenes. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -393,6 +410,72 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a51e2d5079e18599f56c025c46d807272" name="a51e2d5079e18599f56c025c46d807272"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51e2d5079e18599f56c025c46d807272">&#9670;&#160;</a></span>m_position_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a> Hexeng::Renderer::Layer::m_position_mode = <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98136e4c569595b17e905d5ef1a837d1" name="a98136e4c569595b17e905d5ef1a837d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98136e4c569595b17e905d5ef1a837d1">&#9670;&#160;</a></span>m_range</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Range Hexeng::Renderer::Layer::m_range = Range::LOCAL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a259788aac918019bb7788c34fa4cfce0" name="a259788aac918019bb7788c34fa4cfce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a259788aac918019bb7788c34fa4cfce0">&#9670;&#160;</a></span>m_uniforms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a>*, void*&gt; &gt; Hexeng::Renderer::Layer::m_uniforms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adaa973b2e9083dbbf5494ebe5216e166" name="adaa973b2e9083dbbf5494ebe5216e166"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adaa973b2e9083dbbf5494ebe5216e166">&#9670;&#160;</a></span>meshes</h2>
 
@@ -404,48 +487,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0458708a27a8b74d3e5bf0789aae6984" name="a0458708a27a8b74d3e5bf0789aae6984"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0458708a27a8b74d3e5bf0789aae6984">&#9670;&#160;</a></span>position_mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7">Position</a> Hexeng::Renderer::Layer::position_mode = <a class="el" href="namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2">Position::RELATIVE</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3c108e1b1a62f8b654cd79596365905b" name="a3c108e1b1a62f8b654cd79596365905b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c108e1b1a62f8b654cd79596365905b">&#9670;&#160;</a></span>range</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Range Hexeng::Renderer::Layer::range = Range::LOCAL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a506c815a9e1d126a9d309955e41ad6e9" name="a506c815a9e1d126a9d309955e41ad6e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a506c815a9e1d126a9d309955e41ad6e9">&#9670;&#160;</a></span>uniforms</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a>*, void*&gt; &gt; Hexeng::Renderer::Layer::uniforms</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Isn't recommanded to be modified. Still in public to allow some creativity. </dd></dl>
 
 </div>
 </div>
@@ -460,6 +502,7 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Can always be modified. </dd></dl>
 
 </div>
 </div>

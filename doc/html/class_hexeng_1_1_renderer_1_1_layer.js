@@ -9,9 +9,9 @@ var class_hexeng_1_1_renderer_1_1_layer =
     [ "operator=", "class_hexeng_1_1_renderer_1_1_layer.html#a9437ef9f48d96be4b4003f33b805598c", null ],
     [ "operator=", "class_hexeng_1_1_renderer_1_1_layer.html#a5cdd2f4a7371ac9246bb76e7d4123308", null ],
     [ "unload", "class_hexeng_1_1_renderer_1_1_layer.html#a44dbc152f62f1c831398e0f41cf439be", null ],
+    [ "m_position_mode", "class_hexeng_1_1_renderer_1_1_layer.html#a51e2d5079e18599f56c025c46d807272", null ],
+    [ "m_range", "class_hexeng_1_1_renderer_1_1_layer.html#a98136e4c569595b17e905d5ef1a837d1", null ],
+    [ "m_uniforms", "class_hexeng_1_1_renderer_1_1_layer.html#a259788aac918019bb7788c34fa4cfce0", null ],
     [ "meshes", "class_hexeng_1_1_renderer_1_1_layer.html#adaa973b2e9083dbbf5494ebe5216e166", null ],
-    [ "position_mode", "class_hexeng_1_1_renderer_1_1_layer.html#a0458708a27a8b74d3e5bf0789aae6984", null ],
-    [ "range", "class_hexeng_1_1_renderer_1_1_layer.html#a3c108e1b1a62f8b654cd79596365905b", null ],
-    [ "uniforms", "class_hexeng_1_1_renderer_1_1_layer.html#a506c815a9e1d126a9d309955e41ad6e9", null ],
     [ "z_position", "class_hexeng_1_1_renderer_1_1_layer.html#a6f38fee64b97f88a7d703ac7289bfa5e", null ]
 ];

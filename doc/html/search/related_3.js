@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_0',['init',['../class_hexeng_1_1_renderer_1_1_to_be_init.html#a02fd73d861ef2e4aabb38c0c9ff82947',1,'Hexeng::Renderer::ToBeInit']]]
+  ['scene_0',['Scene',['../class_hexeng_1_1_physics_1_1_hit_box.html#a45adfc63803f7e405c215b47781e924c',1,'Hexeng::Physics::HitBox']]]
 ];

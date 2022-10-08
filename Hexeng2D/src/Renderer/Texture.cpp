@@ -27,7 +27,8 @@ namespace Hexeng::Renderer
 	}
 
 	Texture::Texture(uint8_t*&& pixel_buffer, Vec2<int> size, const TexSettList& settings)
-		: m_size(size), m_texbuffer(pixel_buffer)
+		: m_size(size),
+		m_texbuffer(pixel_buffer)
 	{
 		pixel_buffer = nullptr;
 
@@ -121,9 +122,16 @@ namespace Hexeng::Renderer
 	}
 
 	Texture::Texture(Texture&& other) noexcept
-		: m_filepath(other.m_filepath), m_size(other.m_size), m_BPP(other.m_BPP), m_texbuffer(other.m_texbuffer),
-		m_mag_filter(other.m_mag_filter), m_min_filter(other.m_min_filter), m_id(other.m_id),
-		m_base_format(other.m_base_format), m_sized_format(other.m_sized_format), m_channels_nb(other.m_channels_nb)
+		: m_filepath(other.m_filepath),
+		m_size(other.m_size),
+		m_BPP(other.m_BPP),
+		m_texbuffer(other.m_texbuffer),
+		m_mag_filter(other.m_mag_filter),
+		m_min_filter(other.m_min_filter),
+		m_id(other.m_id),
+		m_base_format(other.m_base_format),
+		m_sized_format(other.m_sized_format),
+		m_channels_nb(other.m_channels_nb)
 	{
 		other.m_id = 0;
 		other.m_texbuffer = nullptr;

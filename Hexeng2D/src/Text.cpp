@@ -8,7 +8,9 @@
 namespace Hexeng
 {
 
-	Font::Font(const std::string& path, float quality) : quality(quality), m_filepath(path)
+	Font::Font(const std::string& path, float quality)
+		: quality(quality),
+		m_filepath(path)
 	{
 		std::basic_ifstream<unsigned char> font_file{ path, std::ios::in | std::ios::binary };
 
@@ -70,7 +72,13 @@ namespace Hexeng
 	}
 
 	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color3 c3)
-		: color(c3), m_text(text), m_font(&font), m_pos(pos), m_font_size(font_size), m_ha(h_align), m_va(v_align)
+		: color(c3),
+		m_text(text),
+		m_font(&font),
+		m_pos(pos),
+		m_font_size(font_size),
+		m_ha(h_align),
+		m_va(v_align)
 	{
 		for (char32_t c : text)
 		{
@@ -184,9 +192,16 @@ namespace Hexeng
 	}
 
 	Text::Text(Text&& other) noexcept
-		: Mesh(std::move(other)), m_text(std::move(other.m_text)), m_index_buffer(std::move(other.m_index_buffer)),
-		m_font(other.m_font), m_pos(other.m_pos), m_font_size(other.m_font_size),
-		m_ha(other.m_ha), m_va(other.m_va), m_language(other.m_language), color(other.color)
+		: Mesh(std::move(other)),
+		m_text(std::move(other.m_text)),
+		m_index_buffer(std::move(other.m_index_buffer)),
+		m_font(other.m_font),
+		m_pos(other.m_pos),
+		m_font_size(other.m_font_size),
+		m_ha(other.m_ha),
+		m_va(other.m_va),
+		m_language(other.m_language),
+		color(other.color)
 	{
 		m_ib = &m_index_buffer;
 

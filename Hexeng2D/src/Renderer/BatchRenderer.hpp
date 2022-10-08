@@ -91,6 +91,8 @@ namespace Hexeng::Renderer
 		void m_add_quad(BatchQuad*, const Vec2<int>& tex_coords);
 	};
 
+	class ToBeInit;
+
 	class HXG_DECLSPEC BatchQuad
 	{
 	public:
@@ -110,13 +112,13 @@ namespace Hexeng::Renderer
 		BatchQuad(BatchQuad&&) noexcept;
 		BatchQuad& operator=(BatchQuad&&) noexcept;
 
-		/// @brief Can always be modified.
+		/// @note Can always be modified.
 		Vec2<int> position = { 0, 0 };
 
-		/// @brief Can always be modified.
+		/// @note Can always be modified.
 		float scale = 1.0f;
 
-		/// @brief Can always be modified.
+		/// @note Can always be modified.
 		float rotation = 0.0f;
 
 	private:

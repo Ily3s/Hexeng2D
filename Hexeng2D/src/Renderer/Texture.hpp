@@ -18,12 +18,18 @@ namespace Hexeng::Renderer
 	/// </summary>
 	enum class TexSett
 	{
-		MAG_FILTER, /// Behaviour of a texture when it gets "zoomed in". By default, it's set to GL_LINEAR.
-		MIN_FILTER, /// Behaviour of a texture when it gets "zoomed out". By default, it's set to GL_LINEAR.
-		BASE_FORMAT, /// The color format of the texture. By default, it's set to GL_RGBA.
-		SIZED_FORMAT, /// The color format with the size of each channel of the texture. By default, it's set to GL_RGBA8.
-		BPP, /// The number of bytes per pixel. By default, it is set to 4.
-		CHANNELS_NB /// The number of channels. By default, it is set to 4.
+		/// Behaviour of a texture when it gets "zoomed in". By default, it's set to GL_LINEAR.
+		MAG_FILTER,
+		/// Behaviour of a texture when it gets "zoomed out". By default, it's set to GL_LINEAR.
+		MIN_FILTER,
+		/// The color format of the texture. By default, it's set to GL_RGBA.
+		BASE_FORMAT,
+		/// The color format with the size of each channel of the texture. By default, it's set to GL_RGBA8.
+		SIZED_FORMAT,
+		/// The number of bytes per pixel. By default, it is set to 4.
+		BPP,
+		/// The number of channels. By default, it is set to 4.
+		CHANNELS_NB
 	};
 
 	using TexSettList = std::unordered_map<TexSett, GLuint>;

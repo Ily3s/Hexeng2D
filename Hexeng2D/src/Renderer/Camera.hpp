@@ -8,27 +8,42 @@
 namespace Hexeng::Renderer
 {
 
+	class ToBeInit;
+
 	class HXG_DECLSPEC Camera
 	{
 	private :
 
 		Camera() = default;
 
-		static Vec2<int> m_xy_position;
+		static Vec2<int> s_xy_position;
+		static Vec2<float> s_shader_pos;
 
-	public :
+		static ToBeInit s_init_cam;
 
-		static Vec3<int> position;
-		static Vec2<float> shader_pos;
-		static int fov;
-		static float zoom;
+		static float s_zoom;
 
-		static const Vec2<int>* xy_position;
+		friend class Layer;
+		friend class ContextualLayer;
 
 		static Uniform<Vec2<float>> u_cam;
 		static Uniform<float> u_zoom;
 
-		static void update_zoom(int distance);
+		static void s_update_zoom(int distance);
+
+	public :
+
+		/// @brief Can be updated at any moment.
+		/// @note After updating this value, you may want to call refresh_pos().
+		static Vec3<int> position;
+
+		/// @brief Can be updated at any moment.
+		static int fov;
+
+		/// @brief Access to the x and y position of the cam.
+		static const Vec2<int>* xy_position;
+
+		/// @brief After updating the position, you may want to call this function. 
 		static void refresh_pos();
 	};
 

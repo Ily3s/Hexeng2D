@@ -1,5 +1,4 @@
 var _camera_8cpp =
 [
-    [ "PI", "_camera_8cpp.html#a598a3330b3c21701223ee0ca14316eca", null ],
-    [ "init_cam", "_camera_8cpp.html#a55403b255c2be67af5d7fe224076952d", null ]
+    [ "PI", "_camera_8cpp.html#a598a3330b3c21701223ee0ca14316eca", null ]
 ];

@@ -154,7 +154,10 @@ namespace Hexeng::Renderer
 		: Quad(std::move(other)) {}
 
 	Rectangle::Rectangle(Rectangle&& other) noexcept
-		: Quad(std::move(other)), m_min(other.m_min), m_max(other.m_max), m_size(other.m_size) {}
+		: Quad(std::move(other)),
+		m_min(other.m_min),
+		m_max(other.m_max),
+		m_size(other.m_size) {}
 
 	Quad::Quad(Quad&& moving) noexcept
 		: Mesh(std::move(moving)) {}

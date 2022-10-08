@@ -10,14 +10,17 @@ namespace Hexeng::Renderer
 	std::vector<Layer*> global_layers;
 
 	Layer::Layer(const std::vector<Mesh*>& mesh_vector, int z_pos, Position pos, Range range)
-		: meshes(mesh_vector), z_position(z_pos), range(range), position_mode(pos)
+		: meshes(mesh_vector),
+		z_position(z_pos),
+		m_range(range),
+		m_position_mode(pos)
 	{
-		if (position_mode == Position::ABSOLUTE)
+		if (m_position_mode == Position::ABSOLUTE)
 		{
 			static float one = 1.0f;
 			static Vec2<float> zero{ 0.0f, 0.0f };
-			uniforms.push_back({ &Camera::u_zoom, &one });
-			uniforms.push_back({ &Camera::u_cam, &zero });
+			m_uniforms.push_back({ &Camera::u_zoom, &one });
+			m_uniforms.push_back({ &Camera::u_cam, &zero });
 		}
 
 		if (range == Range::GLOBAL)
@@ -25,9 +28,13 @@ namespace Hexeng::Renderer
 	}
 
 	Layer::Layer(Layer&& other) noexcept
-		: meshes(other.meshes), z_position(other.z_position), uniforms(std::move(other.uniforms)), range(other.range), position_mode(other.position_mode)
+		: meshes(other.meshes),
+		z_position(other.z_position),
+		m_uniforms(std::move(other.m_uniforms)),
+		m_range(other.m_range),
+		m_position_mode(other.m_position_mode)
 	{
-		if (range == Range::GLOBAL)
+		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_layers.begin(), global_layers.end(), &other);
 			if (it != global_layers.end())
@@ -39,22 +46,22 @@ namespace Hexeng::Renderer
 	{
 		meshes = other.meshes;
 		z_position = other.z_position;
-		position_mode = other.position_mode;
-		uniforms = std::move(other.uniforms);
+		m_position_mode = other.m_position_mode;
+		m_uniforms = std::move(other.m_uniforms);
 
-		if (range == Range::GLOBAL)
+		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_layers.begin(), global_layers.end(), this);
 			if (it != global_layers.end())
 				global_layers.erase(it);
 		}
-		if (other.range == Range::GLOBAL)
+		if (other.m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_layers.begin(), global_layers.end(), &other);
 			if (it != global_layers.end())
 				*it = this;
 		}
-		range = other.range;
+		m_range = other.m_range;
 
 		return *this;
 	}
@@ -62,9 +69,10 @@ namespace Hexeng::Renderer
 	std::vector<ContextualLayer*> global_contextual_layers;
 
 	ContextualLayer::ContextualLayer(ContextualLayer&& other) noexcept
-		: Layer(std::move(other)), context(other.context)
+		: Layer(std::move(other)),
+		context(other.context)
 	{
-		if (range == Range::GLOBAL)
+		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), &other);
 			if (it != global_contextual_layers.end())
@@ -74,13 +82,13 @@ namespace Hexeng::Renderer
 
 	ContextualLayer& ContextualLayer::operator=(ContextualLayer&& other) noexcept
 	{
-		if (range == Range::GLOBAL)
+		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), this);
 			if (it != global_contextual_layers.end())
 				global_contextual_layers.erase(it);
 		}
-		if (other.range == Range::GLOBAL)
+		if (other.m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), &other);
 			if (it != global_contextual_layers.end())
@@ -94,7 +102,8 @@ namespace Hexeng::Renderer
 	}
 
 	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, int z_pos, Position pos, Range range)
-		: Layer(mesh_vector, z_pos, pos, range), context(condition)
+		: Layer(mesh_vector, z_pos, pos, range),
+		context(condition)
 	{
 		if (range == Range::GLOBAL)
 			global_contextual_layers.push_back(this);
@@ -131,18 +140,18 @@ namespace Hexeng::Renderer
 
 	void Layer::draw()
 	{
-		if (z_position < Camera::position.z && position_mode == Position::RELATIVE)
+		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
 			return;
 
-		Camera::update_zoom(z_position - Camera::position.z);
+		Camera::s_update_zoom(z_position - Camera::position.z);
 
-		for (auto& [uniform, value] : uniforms)
+		for (auto& [uniform, value] : m_uniforms)
 			uniform->refresh(value);
 
 		for (const auto& mesh : meshes)
 			mesh->draw();
 
-		for (auto& [uniform, value] : uniforms)
+		for (auto& [uniform, value] : m_uniforms)
 			uniform->refresh();
 	}
 
@@ -151,18 +160,18 @@ namespace Hexeng::Renderer
 		if (!*context)
 			return;
 
-		if (z_position < Camera::position.z && position_mode == Position::RELATIVE)
+		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
 			return;
 
-		Camera::update_zoom(z_position - Camera::position.z);
+		Camera::s_update_zoom(z_position - Camera::position.z);
 
-		for (auto& [uniform, value] : uniforms)
+		for (auto& [uniform, value] : m_uniforms)
 			uniform->refresh(value);
 
 		for (const auto& mesh : meshes)
 			mesh->draw();
 
-		for (auto& [uniform, value] : uniforms)
+		for (auto& [uniform, value] : m_uniforms)
 			uniform->refresh();
 	}
 

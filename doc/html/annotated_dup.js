@@ -30,7 +30,7 @@ var annotated_dup =
         [ "AnimationStep", "struct_hexeng_1_1_renderer_1_1_animation_step.html", "struct_hexeng_1_1_renderer_1_1_animation_step" ],
         [ "BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", "class_hexeng_1_1_renderer_1_1_batch_instance" ],
         [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html", "class_hexeng_1_1_renderer_1_1_batch_quad" ],
-        [ "Camera", "class_hexeng_1_1_renderer_1_1_camera.html", null ],
+        [ "Camera", "class_hexeng_1_1_renderer_1_1_camera.html", "class_hexeng_1_1_renderer_1_1_camera" ],
         [ "ContextualLayer", "class_hexeng_1_1_renderer_1_1_contextual_layer.html", "class_hexeng_1_1_renderer_1_1_contextual_layer" ],
         [ "DebugQuad", "class_hexeng_1_1_renderer_1_1_debug_quad.html", "class_hexeng_1_1_renderer_1_1_debug_quad" ],
         [ "DebugRectangle", "class_hexeng_1_1_renderer_1_1_debug_rectangle.html", "class_hexeng_1_1_renderer_1_1_debug_rectangle" ],

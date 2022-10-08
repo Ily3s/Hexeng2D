@@ -10,7 +10,9 @@ namespace Hexeng::Physics
 	bool HitBox::enable_visuallisers = false;
 
 	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision)
-		: m_rectangles(rectangles), m_solidity(solidity), enable_collision(enable_collision)
+		: m_rectangles(rectangles),
+		m_solidity(solidity),
+		enable_collision(enable_collision)
 	{
 		for (const auto& rec : rectangles)
 		{
@@ -23,7 +25,10 @@ namespace Hexeng::Physics
 	}
 
 	HitBox::HitBox(HitBox&& other) noexcept
-		: m_rectangles(std::move(other.m_rectangles)), m_solidity(other.m_solidity), visuallisers(std::move(other.visuallisers)), enable_collision(other.enable_collision)
+		: m_rectangles(std::move(other.m_rectangles)),
+		m_solidity(other.m_solidity),
+		visuallisers(std::move(other.visuallisers)),
+		enable_collision(other.enable_collision)
 	{
 		for (auto& [i, vec] : s_colliders)
 		{

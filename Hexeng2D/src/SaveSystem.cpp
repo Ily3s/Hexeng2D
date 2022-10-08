@@ -9,11 +9,18 @@ namespace Hexeng
 	SaveVar::SaveVar(uint64_t id_p, void* val_p, uint64_t unit_size_p,
 		std::function<uint64_t(void** val_ptr)> get_size_p,
 		std::function<void(uint64_t, void** val_ptr)> reserve_p)
-		: id(id_p), value(val_p), get_size(get_size_p), reserve(reserve_p), unit_size(unit_size_p) {}
+		: id(id_p),
+		value(val_p),
+		get_size(get_size_p),
+		reserve(reserve_p),
+		unit_size(unit_size_p) {}
 
 	SaveVar::SaveVar(uint64_t id_p, void* val_p, uint64_t size_p, uint64_t unit_size_p)
-		: id(id_p), value(val_p), get_size([size_p](void**) {return size_p; }),
-		reserve([](uint64_t, void**) {}), unit_size(unit_size_p) {}
+		: id(id_p),
+		value(val_p),
+		get_size([size_p](void**) {return size_p; }),
+		reserve([](uint64_t, void**) {}),
+		unit_size(unit_size_p) {}
 
 	void SaveFile::add_var(const SaveVar& var)
 	{

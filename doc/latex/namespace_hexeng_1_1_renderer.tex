@@ -14,7 +14,7 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}}
-\item 
+\begin{DoxyCompactList}\small\item\em A layer that shows up only if a bool is set to true  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Debug\+Quad}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_rectangle}{Debug\+Rectangle}}
@@ -24,7 +24,7 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_square}{Debug\+Square
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}
-\item 
+\begin{DoxyCompactList}\small\item\em A layer of meshes, at a certain depth z.  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}
@@ -76,7 +76,7 @@ using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c27513
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{ABSOLUTE}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{RELATIVE}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Is the layer\textquotesingle{}s position relative to the cam\textquotesingle{}s position or to the center of the screen ?  \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Tex\+Sett}} \{ \newline
 \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{MAG\+\_\+\+FILTER}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{MIN\+\_\+\+FILTER}}
@@ -120,8 +120,6 @@ void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a55403b255c2be67af5d7fe224076952d}{init\+\_\+cam}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}
 \item 
@@ -185,13 +183,17 @@ std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespace
 \doxysubsubsection{\texorpdfstring{Position}{Position}}
 {\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Hexeng\+::\+Renderer\+::\+Position}}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+Is the layer\textquotesingle{}s position relative to the cam\textquotesingle{}s position or to the center of the screen ?  
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{ABSOLUTE@{ABSOLUTE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!ABSOLUTE@{ABSOLUTE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}} 
-ABSOLUTE&\\
+ABSOLUTE&The position is relative to the center of the screen. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{RELATIVE@{RELATIVE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!RELATIVE@{RELATIVE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}} 
-RELATIVE&\\
+RELATIVE&The position is relative to the cam\textquotesingle{}s position. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -207,27 +209,27 @@ An enum of possible texture settings you can specify to a texture constructor.
 
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MAG\_FILTER@{MAG\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MAG\_FILTER@{MAG\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}} 
-MAG\+\_\+\+FILTER&\\
+MAG\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed in\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MIN\_FILTER@{MIN\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MIN\_FILTER@{MIN\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}} 
-MIN\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed in\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
+MIN\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed out\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BASE\_FORMAT@{BASE\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BASE\_FORMAT@{BASE\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}} 
-BASE\+\_\+\+FORMAT&Behaviour of a texture when it gets \char`\"{}zoomed out\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
+BASE\+\_\+\+FORMAT&The color format of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SIZED\_FORMAT@{SIZED\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SIZED\_FORMAT@{SIZED\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}} 
-SIZED\+\_\+\+FORMAT&The color format of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA. \\
+SIZED\+\_\+\+FORMAT&The color format with the size of each channel of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA8. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BPP@{BPP}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BPP@{BPP}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}} 
-BPP&The color format with the size of each channel of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA8. \\
+BPP&The number of bytes per pixel. By default, it is set to 4. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CHANNELS\_NB@{CHANNELS\_NB}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!CHANNELS\_NB@{CHANNELS\_NB}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}} 
-CHANNELS\+\_\+\+NB&The number of bytes per pixel. By default, it is set to 4. The number of channels. By default, it is set to 4. \\
+CHANNELS\+\_\+\+NB&The number of channels. By default, it is set to 4. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -363,24 +365,6 @@ DIVIDE&\\
 \doxysubsubsection{\texorpdfstring{global\_layers}{global\_layers}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} $\ast$ $>$ Hexeng\+::\+Renderer\+::global\+\_\+layers}
 
-\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a55403b255c2be67af5d7fe224076952d}\label{namespace_hexeng_1_1_renderer_a55403b255c2be67af5d7fe224076952d}} 
-\index{Hexeng::Renderer@{Hexeng::Renderer}!init\_cam@{init\_cam}}
-\index{init\_cam@{init\_cam}!Hexeng::Renderer@{Hexeng::Renderer}}
-\doxysubsubsection{\texorpdfstring{init\_cam}{init\_cam}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} Hexeng\+::\+Renderer\+::init\+\_\+cam}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\{ []() \{}
-\DoxyCodeLine{        Camera::u\_cam = \{ \{ \{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_cam"{}}\},}
-\DoxyCodeLine{                            \{UniformArgType::CONTROLLLER, \&Camera::shader\_pos\} \} \};}
-\DoxyCodeLine{        Camera::u\_zoom = \{\{ \{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_zoom"{}}\},}
-\DoxyCodeLine{                            \{UniformArgType::CONTROLLLER, \&Camera::zoom\} \} \};}
-\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&Camera::u\_cam);}
-\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&Camera::u\_zoom);}
-\DoxyCodeLine{    \} \}}
-
-\end{DoxyCode}
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}\label{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!init\_presets@{init\_presets}}
 \index{init\_presets@{init\_presets}!Hexeng::Renderer@{Hexeng::Renderer}}
