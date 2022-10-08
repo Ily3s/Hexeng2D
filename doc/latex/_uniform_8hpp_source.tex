@@ -18,273 +18,273 @@
 \DoxyCodeLine{14 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
 \DoxyCodeLine{15 \{}
 \DoxyCodeLine{16 }
-\DoxyCodeLine{17     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}}
-\DoxyCodeLine{18     \{}
-\DoxyCodeLine{19         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}},}
-\DoxyCodeLine{20         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{SUBSTRACT}},}
-\DoxyCodeLine{21         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}},}
-\DoxyCodeLine{22         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{DIVIDE}}}
-\DoxyCodeLine{23     \};}
-\DoxyCodeLine{24 }
-\DoxyCodeLine{25     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}}
-\DoxyCodeLine{26     \{}
-\DoxyCodeLine{27     public :}
-\DoxyCodeLine{28 }
-\DoxyCodeLine{29         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8dd5c236308a98ef356a871c9e6cb6c5}{UniformInterface}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{30 }
-\DoxyCodeLine{31         std::unordered\_map<Shader*, int> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}};}
-\DoxyCodeLine{32         std::string \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}};}
+\DoxyCodeLine{19     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}},}
+\DoxyCodeLine{22         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{SUBSTRACT}},}
+\DoxyCodeLine{23         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}},}
+\DoxyCodeLine{24         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{DIVIDE}}}
+\DoxyCodeLine{25     \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{30     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}}
+\DoxyCodeLine{31     \{}
+\DoxyCodeLine{32     public :}
 \DoxyCodeLine{33 }
-\DoxyCodeLine{34         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}};}
+\DoxyCodeLine{34         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8dd5c236308a98ef356a871c9e6cb6c5}{UniformInterface}}() = \textcolor{keywordflow}{default};}
 \DoxyCodeLine{35 }
-\DoxyCodeLine{36         \textcolor{keyword}{static} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} std::vector<UniformInterface*> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a7c99c300e09b7dfa305941dc246ee9c1}{necessary\_uniforms}};}
-\DoxyCodeLine{37 }
-\DoxyCodeLine{38         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_adf104f574a2ba75b8b3bcedc6a4a9b37}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value) = 0;}
-\DoxyCodeLine{39         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a13806143301731451ada3507a8c01ebf}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad) = 0;}
-\DoxyCodeLine{40         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_af7e78416c58b42225bcead63f1bd875f}{refresh}}() = 0;}
-\DoxyCodeLine{41         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8d8483a8da74f05615ce40607af1a58f}{refresh}}(\textcolor{keywordtype}{void}* value) = 0;}
+\DoxyCodeLine{36         std::unordered\_map<Shader*, int> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}};}
+\DoxyCodeLine{37         std::string \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keyword}{static} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} std::vector<UniformInterface*> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a7c99c300e09b7dfa305941dc246ee9c1}{necessary\_uniforms}};}
 \DoxyCodeLine{42 }
-\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_aa4d29fe8ae660a688bccd4bc7d9fbeca}{add\_shaders}}(\textcolor{keyword}{const} std::vector<Shader*>\& shad\_list)}
-\DoxyCodeLine{44         \{}
-\DoxyCodeLine{45             \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.reserve(shad\_list.size());}
-\DoxyCodeLine{46             \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad : shad\_list)}
-\DoxyCodeLine{47                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.insert(\{ shad, shad-\/>get\_uniform(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}}.c\_str()) \});}
-\DoxyCodeLine{48         \}}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a4fe9e340911d8a9e29cb64cb93ed83f2}{fusion\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
-\DoxyCodeLine{51         \{}
-\DoxyCodeLine{52             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}})}
-\DoxyCodeLine{53             \{}
-\DoxyCodeLine{54             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}} :}
-\DoxyCodeLine{55                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(val1, val2);}
-\DoxyCodeLine{56                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{UniformFusionMode::SUBSTRACT}} :}
-\DoxyCodeLine{59                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(val1, val2);}
-\DoxyCodeLine{60                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{UniformFusionMode::MULTIPLY}} :}
-\DoxyCodeLine{63                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(val1, val2);}
-\DoxyCodeLine{64                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{UniformFusionMode::DIVIDE}} :}
-\DoxyCodeLine{67                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(val1, val2);}
-\DoxyCodeLine{68                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{69 }
-\DoxyCodeLine{70             default :}
-\DoxyCodeLine{71                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{72             \}}
-\DoxyCodeLine{73         \}}
+\DoxyCodeLine{43         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_adf104f574a2ba75b8b3bcedc6a4a9b37}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value) = 0;}
+\DoxyCodeLine{44         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a13806143301731451ada3507a8c01ebf}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad) = 0;}
+\DoxyCodeLine{45         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_af7e78416c58b42225bcead63f1bd875f}{refresh}}() = 0;}
+\DoxyCodeLine{46         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8d8483a8da74f05615ce40607af1a58f}{refresh}}(\textcolor{keywordtype}{void}* value) = 0;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_aa4d29fe8ae660a688bccd4bc7d9fbeca}{add\_shaders}}(\textcolor{keyword}{const} std::vector<Shader*>\& shad\_list)}
+\DoxyCodeLine{49         \{}
+\DoxyCodeLine{50             \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.reserve(shad\_list.size());}
+\DoxyCodeLine{51             \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad : shad\_list)}
+\DoxyCodeLine{52                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.insert(\{ shad, shad-\/>get\_uniform(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}}.c\_str()) \});}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a4fe9e340911d8a9e29cb64cb93ed83f2}{fusion\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{56         \{}
+\DoxyCodeLine{57             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}})}
+\DoxyCodeLine{58             \{}
+\DoxyCodeLine{59             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}} :}
+\DoxyCodeLine{60                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(val1, val2);}
+\DoxyCodeLine{61                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{UniformFusionMode::SUBSTRACT}} :}
+\DoxyCodeLine{64                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(val1, val2);}
+\DoxyCodeLine{65                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{UniformFusionMode::MULTIPLY}} :}
+\DoxyCodeLine{68                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(val1, val2);}
+\DoxyCodeLine{69                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{UniformFusionMode::DIVIDE}} :}
+\DoxyCodeLine{72                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(val1, val2);}
+\DoxyCodeLine{73                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{74 }
-\DoxyCodeLine{75         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a083142a516bf8242c7a59c01c5d10dbb}{unfusion\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
-\DoxyCodeLine{76         \{}
-\DoxyCodeLine{77             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}})}
-\DoxyCodeLine{78             \{}
-\DoxyCodeLine{79             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}}:}
-\DoxyCodeLine{80                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(val1, val2);}
-\DoxyCodeLine{81                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{UniformFusionMode::SUBSTRACT}}:}
-\DoxyCodeLine{84                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(val1, val2);}
-\DoxyCodeLine{85                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{86 }
-\DoxyCodeLine{87             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{UniformFusionMode::MULTIPLY}}:}
-\DoxyCodeLine{88                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(val1, val2);}
-\DoxyCodeLine{89                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{UniformFusionMode::DIVIDE}}:}
-\DoxyCodeLine{92                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(val1, val2);}
-\DoxyCodeLine{93                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{94 }
-\DoxyCodeLine{95             \textcolor{keywordflow}{default}:}
-\DoxyCodeLine{96                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{97             \}}
-\DoxyCodeLine{98         \}}
+\DoxyCodeLine{75             default :}
+\DoxyCodeLine{76                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{77             \}}
+\DoxyCodeLine{78         \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a083142a516bf8242c7a59c01c5d10dbb}{unfusion\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{81         \{}
+\DoxyCodeLine{82             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}})}
+\DoxyCodeLine{83             \{}
+\DoxyCodeLine{84             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}}:}
+\DoxyCodeLine{85                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(val1, val2);}
+\DoxyCodeLine{86                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{UniformFusionMode::SUBSTRACT}}:}
+\DoxyCodeLine{89                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(val1, val2);}
+\DoxyCodeLine{90                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{UniformFusionMode::MULTIPLY}}:}
+\DoxyCodeLine{93                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(val1, val2);}
+\DoxyCodeLine{94                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{UniformFusionMode::DIVIDE}}:}
+\DoxyCodeLine{97                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(val1, val2);}
+\DoxyCodeLine{98                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{99 }
-\DoxyCodeLine{100         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
-\DoxyCodeLine{101         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
-\DoxyCodeLine{102         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
-\DoxyCodeLine{103         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
-\DoxyCodeLine{104         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_ac8e0ed7e22d8feffc063f6d9497634ac}{inverse\_val}}(\textcolor{keywordtype}{void}* val) = 0;}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106     \};}
-\DoxyCodeLine{107 }
-\DoxyCodeLine{108     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{UniformArgType}}}
-\DoxyCodeLine{109     \{}
-\DoxyCodeLine{110         \textcolor{comment}{// const char *}}
-\DoxyCodeLine{111         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}},}
-\DoxyCodeLine{112         \textcolor{comment}{// const VEC *}}
-\DoxyCodeLine{113         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{CONTROLLLER}},}
-\DoxyCodeLine{114         \textcolor{comment}{// const std::vector<Shader*>*}}
-\DoxyCodeLine{115         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{SHADERS}},}
-\DoxyCodeLine{116         \textcolor{comment}{// const UniformFusionMode *}}
-\DoxyCodeLine{117         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{FUSION\_MODE}}}
-\DoxyCodeLine{118     \};}
-\DoxyCodeLine{119 }
-\DoxyCodeLine{120     \textcolor{keyword}{using }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}{UniformArg}} = std::pair<UniformArgType, const void*>;}
-\DoxyCodeLine{121     \textcolor{keyword}{using }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}} = std::unordered\_map<UniformArgType, const void*>;}
-\DoxyCodeLine{122 }
-\DoxyCodeLine{123     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{124     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}}
-\DoxyCodeLine{125     \{}
-\DoxyCodeLine{126     public :}
-\DoxyCodeLine{127 }
-\DoxyCodeLine{128         \textcolor{keyword}{const} VEC* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{100             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{101                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{102             \}}
+\DoxyCodeLine{103         \}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a679abd9a34bdac5e99328dd922d308d6}{sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
+\DoxyCodeLine{106         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a0a7cf65a2dc0fc494557c29bca6bead5}{substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
+\DoxyCodeLine{107         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a72c03b38028248099d55505a7abcdd56}{mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
+\DoxyCodeLine{108         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) = 0;}
+\DoxyCodeLine{109         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_ac8e0ed7e22d8feffc063f6d9497634ac}{inverse\_val}}(\textcolor{keywordtype}{void}* val) = 0;}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{118     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{UniformArgType}}}
+\DoxyCodeLine{119     \{}
+\DoxyCodeLine{121         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}},}
+\DoxyCodeLine{123         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{CONTROLLLER}},}
+\DoxyCodeLine{125         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{SHADERS}},}
+\DoxyCodeLine{126         \textcolor{comment}{// @brief The fusion mode of the uniform, const UniformFusionMode *}}
+\DoxyCodeLine{127         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{FUSION\_MODE}}}
+\DoxyCodeLine{128     \};}
 \DoxyCodeLine{129 }
-\DoxyCodeLine{130         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a613973534f3d201c6a4fff5017750c72}{Uniform}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\& arguments = \{\});}
-\DoxyCodeLine{131 }
-\DoxyCodeLine{132         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a2b465478f0e80ff874b4c05290da13f9}{Uniform}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\&) noexcept;}
-\DoxyCodeLine{133         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\&) noexcept;}
-\DoxyCodeLine{134 }
-\DoxyCodeLine{135         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}();}
-\DoxyCodeLine{136         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad) override;}
-\DoxyCodeLine{137         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value) override;}
-\DoxyCodeLine{138         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\textcolor{keywordtype}{void}* value) override;}
+\DoxyCodeLine{130     \textcolor{keyword}{using }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}{UniformArg}} = std::pair<UniformArgType, const void*>;}
+\DoxyCodeLine{131     \textcolor{keyword}{using }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}} = std::unordered\_map<UniformArgType, const void*>;}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{135     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{136     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}}
+\DoxyCodeLine{137     \{}
+\DoxyCodeLine{138     public :}
 \DoxyCodeLine{139 }
-\DoxyCodeLine{140         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
-\DoxyCodeLine{141         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8625b8547126b076d53b1437}{substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
-\DoxyCodeLine{142         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ab82c015dd48b57b2cd83d4568511d21b}{mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
-\DoxyCodeLine{143         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acfd9d461e24f1a5aae2f08526948cdb8}{div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
-\DoxyCodeLine{144         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acd34f710395244e3ba94035980c6ddc2}{inverse\_val}}(\textcolor{keywordtype}{void}* val) override;}
-\DoxyCodeLine{145     \};}
+\DoxyCodeLine{140         \textcolor{keyword}{const} VEC* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a613973534f3d201c6a4fff5017750c72}{Uniform}}(\textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\& arguments = \{\});}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a2b465478f0e80ff874b4c05290da13f9}{Uniform}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\&) noexcept;}
+\DoxyCodeLine{145         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\&) noexcept;}
 \DoxyCodeLine{146 }
-\DoxyCodeLine{147     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} extern std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}};}
-\DoxyCodeLine{148 }
-\DoxyCodeLine{149     template <typename VEC>}
-\DoxyCodeLine{150     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}<VEC>::\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}(const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\& arguments)}
-\DoxyCodeLine{151     \{}
-\DoxyCodeLine{152         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [arg\_t, val] : arguments)}
-\DoxyCodeLine{153         \{}
-\DoxyCodeLine{154             \textcolor{keywordflow}{switch} (arg\_t)}
-\DoxyCodeLine{155             \{}
-\DoxyCodeLine{156             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{UniformArgType::NAME}} :}
-\DoxyCodeLine{157                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::string(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(val));}
-\DoxyCodeLine{158                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{159             }
-\DoxyCodeLine{160             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{UniformArgType::CONTROLLLER}} :}
-\DoxyCodeLine{161                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }VEC*\textcolor{keyword}{>}(val);}
-\DoxyCodeLine{162                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{163 }
-\DoxyCodeLine{164             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{UniformArgType::SHADERS}} :}
-\DoxyCodeLine{165                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shader : *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }std::vector<Shader*>*\textcolor{keyword}{>}(val))}
-\DoxyCodeLine{166                 \{}
-\DoxyCodeLine{167                     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = shader-\/>get\_uniform(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}}.c\_str());}
-\DoxyCodeLine{168                     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.insert(\{ shader, \textcolor{keywordtype}{id} \});}
-\DoxyCodeLine{169                 \}}
-\DoxyCodeLine{170                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{171 }
-\DoxyCodeLine{172             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{UniformArgType::FUSION\_MODE}} :}
-\DoxyCodeLine{173                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}*\textcolor{keyword}{>}(\&val);}
-\DoxyCodeLine{174                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{175 }
-\DoxyCodeLine{176             default :}
+\DoxyCodeLine{148         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}();}
+\DoxyCodeLine{149 }
+\DoxyCodeLine{151         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad) override;}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{154         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value) override;}
+\DoxyCodeLine{155 }
+\DoxyCodeLine{157         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}}(\textcolor{keywordtype}{void}* value) override;}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{159         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
+\DoxyCodeLine{160         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8625b8547126b076d53b1437}{substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
+\DoxyCodeLine{161         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ab82c015dd48b57b2cd83d4568511d21b}{mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
+\DoxyCodeLine{162         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acfd9d461e24f1a5aae2f08526948cdb8}{div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2) override;}
+\DoxyCodeLine{163         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acd34f710395244e3ba94035980c6ddc2}{inverse\_val}}(\textcolor{keywordtype}{void}* val) override;}
+\DoxyCodeLine{164     \};}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} extern std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}};}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168     template <typename VEC>}
+\DoxyCodeLine{169     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}<VEC>::\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}(const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\& arguments)}
+\DoxyCodeLine{170     \{}
+\DoxyCodeLine{171         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto}\& [arg\_t, val] : arguments)}
+\DoxyCodeLine{172         \{}
+\DoxyCodeLine{173             \textcolor{keywordflow}{switch} (arg\_t)}
+\DoxyCodeLine{174             \{}
+\DoxyCodeLine{175             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{UniformArgType::NAME}} :}
+\DoxyCodeLine{176                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::string(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(val));}
 \DoxyCodeLine{177                 \textcolor{keywordflow}{break};}
-\DoxyCodeLine{178             \}}
-\DoxyCodeLine{179         \}}
-\DoxyCodeLine{180         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.push\_back(\textcolor{keyword}{this});}
-\DoxyCodeLine{181     \}}
+\DoxyCodeLine{178             }
+\DoxyCodeLine{179             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{UniformArgType::CONTROLLLER}} :}
+\DoxyCodeLine{180                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }VEC*\textcolor{keyword}{>}(val);}
+\DoxyCodeLine{181                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{182 }
-\DoxyCodeLine{183     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{184     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a613973534f3d201c6a4fff5017750c72}{Uniform<VEC>::Uniform}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\& moving) noexcept}
-\DoxyCodeLine{185         :   \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}}(moving.value\_ptr)}
-\DoxyCodeLine{186     \{}
-\DoxyCodeLine{187         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}} = std::move(moving.shader\_list);}
-\DoxyCodeLine{188         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::move(moving.uniform\_name);}
-\DoxyCodeLine{189         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = moving.fusion\_mode;}
-\DoxyCodeLine{190         \textcolor{keyword}{auto} it = std::find(\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(), \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(), \&moving);}
-\DoxyCodeLine{191         \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
-\DoxyCodeLine{192             *it = \textcolor{keyword}{this};}
-\DoxyCodeLine{193     \}}
+\DoxyCodeLine{183             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{UniformArgType::SHADERS}} :}
+\DoxyCodeLine{184                 \textcolor{keywordflow}{for} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shader : *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }std::vector<Shader*>*\textcolor{keyword}{>}(val))}
+\DoxyCodeLine{185                 \{}
+\DoxyCodeLine{186                     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = shader-\/>get\_uniform(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}}.c\_str());}
+\DoxyCodeLine{187                     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.insert(\{ shader, \textcolor{keywordtype}{id} \});}
+\DoxyCodeLine{188                 \}}
+\DoxyCodeLine{189                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191             \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{UniformArgType::FUSION\_MODE}} :}
+\DoxyCodeLine{192                 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}*\textcolor{keyword}{>}(\&val);}
+\DoxyCodeLine{193                 \textcolor{keywordflow}{break};}
 \DoxyCodeLine{194 }
-\DoxyCodeLine{195     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{196     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform<VEC>}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a4385730d9ef846964ed04a413ac83147}{Uniform<VEC>::operator=}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\& moving) \textcolor{keyword}{noexcept}}
-\DoxyCodeLine{197     \{}
-\DoxyCodeLine{198         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = moving.value\_ptr;}
-\DoxyCodeLine{199         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}} = std::move(moving.shader\_list);}
-\DoxyCodeLine{200         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::move(moving.uniform\_name);}
-\DoxyCodeLine{201         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = moving.fusion\_mode;}
-\DoxyCodeLine{202         \textcolor{keyword}{auto} it = std::find(\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(), \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(), \&moving);}
-\DoxyCodeLine{203         \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
-\DoxyCodeLine{204             *it = \textcolor{keyword}{this};}
-\DoxyCodeLine{205         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
-\DoxyCodeLine{206     \}}
-\DoxyCodeLine{207 }
-\DoxyCodeLine{208     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{209     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}()}
-\DoxyCodeLine{210     \{}
-\DoxyCodeLine{211         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}})}
-\DoxyCodeLine{212             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{195             default :}
+\DoxyCodeLine{196                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{197             \}}
+\DoxyCodeLine{198         \}}
+\DoxyCodeLine{199         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.push\_back(\textcolor{keyword}{this});}
+\DoxyCodeLine{200     \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{203     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a613973534f3d201c6a4fff5017750c72}{Uniform<VEC>::Uniform}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\& moving) noexcept}
+\DoxyCodeLine{204         :   \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}}(moving.value\_ptr)}
+\DoxyCodeLine{205     \{}
+\DoxyCodeLine{206         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}} = std::move(moving.shader\_list);}
+\DoxyCodeLine{207         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::move(moving.uniform\_name);}
+\DoxyCodeLine{208         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = moving.fusion\_mode;}
+\DoxyCodeLine{209         \textcolor{keyword}{auto} it = std::find(\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(), \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(), \&moving);}
+\DoxyCodeLine{210         \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
+\DoxyCodeLine{211             *it = \textcolor{keyword}{this};}
+\DoxyCodeLine{212     \}}
 \DoxyCodeLine{213 }
-\DoxyCodeLine{214         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& [shader, \textcolor{keywordtype}{id}] : \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}})}
-\DoxyCodeLine{215         \{}
-\DoxyCodeLine{216             shader-\/>bind();}
-\DoxyCodeLine{217             shader-\/>set\_uniform(\textcolor{keywordtype}{id}, *\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}});}
-\DoxyCodeLine{218         \}}
-\DoxyCodeLine{219     \}}
-\DoxyCodeLine{220 }
-\DoxyCodeLine{221     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{222     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad)}
-\DoxyCodeLine{223     \{}
-\DoxyCodeLine{224         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}})}
-\DoxyCodeLine{225             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{214     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{215     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform<VEC>}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a4385730d9ef846964ed04a413ac83147}{Uniform<VEC>::operator=}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}\&\& moving) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{216     \{}
+\DoxyCodeLine{217         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}} = moving.value\_ptr;}
+\DoxyCodeLine{218         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}} = std::move(moving.shader\_list);}
+\DoxyCodeLine{219         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}} = std::move(moving.uniform\_name);}
+\DoxyCodeLine{220         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}} = moving.fusion\_mode;}
+\DoxyCodeLine{221         \textcolor{keyword}{auto} it = std::find(\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(), \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(), \&moving);}
+\DoxyCodeLine{222         \textcolor{keywordflow}{if} (it != \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
+\DoxyCodeLine{223             *it = \textcolor{keyword}{this};}
+\DoxyCodeLine{224         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{225     \}}
 \DoxyCodeLine{226 }
-\DoxyCodeLine{227         \textcolor{keyword}{auto} it = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.find(shad);}
-\DoxyCodeLine{228         assert(it != \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.end());}
-\DoxyCodeLine{229         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a4fd6e33a100fc0d749800c625ce10c43}{bind}}();}
-\DoxyCodeLine{230         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(it-\/>second, *\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}});}
-\DoxyCodeLine{231     \}}
+\DoxyCodeLine{227     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{228     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}()}
+\DoxyCodeLine{229     \{}
+\DoxyCodeLine{230         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}})}
+\DoxyCodeLine{231             \textcolor{keywordflow}{return};}
 \DoxyCodeLine{232 }
-\DoxyCodeLine{233     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{234     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value)}
-\DoxyCodeLine{235     \{}
-\DoxyCodeLine{236         \textcolor{keyword}{auto} it = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.find(shad);}
-\DoxyCodeLine{237         assert(it != \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.end());}
-\DoxyCodeLine{238         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a4fd6e33a100fc0d749800c625ce10c43}{bind}}();}
-\DoxyCodeLine{239         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(it-\/>second, *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
-\DoxyCodeLine{240     \}}
-\DoxyCodeLine{241 }
-\DoxyCodeLine{242     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{243     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\textcolor{keywordtype}{void}* value)}
-\DoxyCodeLine{244     \{}
-\DoxyCodeLine{245         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& [shader, \textcolor{keywordtype}{id}] : \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}})}
-\DoxyCodeLine{246         \{}
-\DoxyCodeLine{247             shader-\/>bind();}
-\DoxyCodeLine{248             shader-\/>set\_uniform(\textcolor{keywordtype}{id}, *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
-\DoxyCodeLine{249         \}}
+\DoxyCodeLine{233         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& [shader, \textcolor{keywordtype}{id}] : \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}})}
+\DoxyCodeLine{234         \{}
+\DoxyCodeLine{235             shader-\/>bind();}
+\DoxyCodeLine{236             shader-\/>set\_uniform(\textcolor{keywordtype}{id}, *\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}});}
+\DoxyCodeLine{237         \}}
+\DoxyCodeLine{238     \}}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{241     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad)}
+\DoxyCodeLine{242     \{}
+\DoxyCodeLine{243         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}})}
+\DoxyCodeLine{244             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246         \textcolor{keyword}{auto} it = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.find(shad);}
+\DoxyCodeLine{247         assert(it != \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.end());}
+\DoxyCodeLine{248         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a4fd6e33a100fc0d749800c625ce10c43}{bind}}();}
+\DoxyCodeLine{249         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(it-\/>second, *\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}});}
 \DoxyCodeLine{250     \}}
 \DoxyCodeLine{251 }
 \DoxyCodeLine{252     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{253     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{Uniform<VEC>::sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{253     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shad, \textcolor{keywordtype}{void}* value)}
 \DoxyCodeLine{254     \{}
-\DoxyCodeLine{255         *(VEC*)val1 += *(VEC*)val2;}
-\DoxyCodeLine{256     \}}
-\DoxyCodeLine{257 }
-\DoxyCodeLine{258     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{259     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8625b8547126b076d53b1437}{Uniform<VEC>::substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
-\DoxyCodeLine{260     \{}
-\DoxyCodeLine{261         *(VEC*)val1 -\/= *(VEC*)val2;}
-\DoxyCodeLine{262     \}}
-\DoxyCodeLine{263 }
-\DoxyCodeLine{264     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{265     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ab82c015dd48b57b2cd83d4568511d21b}{Uniform<VEC>::mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
-\DoxyCodeLine{266     \{}
-\DoxyCodeLine{267         *(VEC*)val1 *= *(VEC*)val2;}
-\DoxyCodeLine{268     \}}
-\DoxyCodeLine{269 }
-\DoxyCodeLine{270     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{271     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acfd9d461e24f1a5aae2f08526948cdb8}{Uniform<VEC>::div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
-\DoxyCodeLine{272     \{}
-\DoxyCodeLine{273         *(VEC*)val1 /= *(VEC*)val2;}
-\DoxyCodeLine{274     \}}
-\DoxyCodeLine{275 }
-\DoxyCodeLine{276     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
-\DoxyCodeLine{277     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acd34f710395244e3ba94035980c6ddc2}{Uniform<VEC>::inverse\_val}}(\textcolor{keywordtype}{void}* val)}
-\DoxyCodeLine{278     \{}
-\DoxyCodeLine{279         *(VEC*)val = -\/*(VEC*)val;}
-\DoxyCodeLine{280     \}}
-\DoxyCodeLine{281 }
-\DoxyCodeLine{282 \}}
-\DoxyCodeLine{283 }
-\DoxyCodeLine{284 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !UNIFORM\_HPP}}
+\DoxyCodeLine{255         \textcolor{keyword}{auto} it = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.find(shad);}
+\DoxyCodeLine{256         assert(it != \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.end());}
+\DoxyCodeLine{257         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a4fd6e33a100fc0d749800c625ce10c43}{bind}}();}
+\DoxyCodeLine{258         shad-\/>\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(it-\/>second, *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{262     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{Uniform<VEC>::refresh}}(\textcolor{keywordtype}{void}* value)}
+\DoxyCodeLine{263     \{}
+\DoxyCodeLine{264         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\& [shader, \textcolor{keywordtype}{id}] : \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}})}
+\DoxyCodeLine{265         \{}
+\DoxyCodeLine{266             shader-\/>bind();}
+\DoxyCodeLine{267             shader-\/>set\_uniform(\textcolor{keywordtype}{id}, *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269     \}}
+\DoxyCodeLine{270 }
+\DoxyCodeLine{271     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{272     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{Uniform<VEC>::sum\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{273     \{}
+\DoxyCodeLine{274         *(VEC*)val1 += *(VEC*)val2;}
+\DoxyCodeLine{275     \}}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{278     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8625b8547126b076d53b1437}{Uniform<VEC>::substract\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{279     \{}
+\DoxyCodeLine{280         *(VEC*)val1 -\/= *(VEC*)val2;}
+\DoxyCodeLine{281     \}}
+\DoxyCodeLine{282 }
+\DoxyCodeLine{283     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{284     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ab82c015dd48b57b2cd83d4568511d21b}{Uniform<VEC>::mult\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{285     \{}
+\DoxyCodeLine{286         *(VEC*)val1 *= *(VEC*)val2;}
+\DoxyCodeLine{287     \}}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{290     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acfd9d461e24f1a5aae2f08526948cdb8}{Uniform<VEC>::div\_val}}(\textcolor{keywordtype}{void}* val1, \textcolor{keywordtype}{void}* val2)}
+\DoxyCodeLine{291     \{}
+\DoxyCodeLine{292         *(VEC*)val1 /= *(VEC*)val2;}
+\DoxyCodeLine{293     \}}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295     \textcolor{keyword}{template} <\textcolor{keyword}{typename} VEC>}
+\DoxyCodeLine{296     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acd34f710395244e3ba94035980c6ddc2}{Uniform<VEC>::inverse\_val}}(\textcolor{keywordtype}{void}* val)}
+\DoxyCodeLine{297     \{}
+\DoxyCodeLine{298         *(VEC*)val = -\/*(VEC*)val;}
+\DoxyCodeLine{299     \}}
+\DoxyCodeLine{300 }
+\DoxyCodeLine{301 \}}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !UNIFORM\_HPP}}
 
 \end{DoxyCode}

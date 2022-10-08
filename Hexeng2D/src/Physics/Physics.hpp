@@ -6,6 +6,14 @@
 #include "Mouvement.hpp"
 #include "Renderer/Mesh.hpp"
 
+/**
+* @brief I'm sorry, this Physics Engine is so messy,
+* even I have trouble reading through this, and I am the one that wrote it.
+* No, really I can't possibly document that.
+* A rework is coming, but, in the meantime,
+* I recommand that you take a look at the Sandbox project in order for you to understand the basics of what I dared to call a Physics Engine.
+* */
+
 namespace Hexeng::Physics
 {
 

@@ -14,6 +14,8 @@
 namespace Hexeng::Renderer
 {
 
+	/// @brief Defines how should a uniform get "combined" with another uniform.
+	/// @details For example, a position should get summed (SUM), but a zoom, should get multiplied (MULTIPLY)
 	enum class UniformFusionMode
 	{
 		SUM,
@@ -22,6 +24,9 @@ namespace Hexeng::Renderer
 		DIVIDE
 	};
 
+	/// <summary>
+	/// The virtual base class of all templated instances of Uniform
+	/// </summary>
 	class UniformInterface
 	{
 	public :
@@ -105,21 +110,28 @@ namespace Hexeng::Renderer
 
 	};
 
+	/// <summary>
+	/// An enum of settings you can specify the Uniform constructor by using UniformArgs.
+	/// The documentation of the possible values of this enum concern what should be the value that goes with this enum in UniformArgs.
+	/// </summary>
+	/// @note The least important of these values are SHADERS, as you can just do uniform.add_shaders instead.
 	enum class UniformArgType
 	{
-		// const char *
+		/// @brief The name of the uniform, const char *
 		NAME,
-		// const VEC *
+		/// @brief The "controller" of the uniform, const VEC *
 		CONTROLLLER,
-		// const std::vector<Shader*>*
+		/// @brief A list of all shaders that implement the uniform, const std::vector<Shader*>*
 		SHADERS,
-		// const UniformFusionMode *
+		// @brief The fusion mode of the uniform, const UniformFusionMode *
 		FUSION_MODE
 	};
 
 	using UniformArg = std::pair<UniformArgType, const void*>;
 	using UniformArgs = std::unordered_map<UniformArgType, const void*>;
 
+	/// <typeparam name="VEC">The type of value that the uniform deals with.</typeparam>
+	/// @note VEC is not necessarily a Vec<T>, it can also be a native type like int or float.
 	template <typename VEC>
 	class Uniform : public UniformInterface
 	{
@@ -132,9 +144,16 @@ namespace Hexeng::Renderer
 		Uniform(Uniform&&) noexcept;
 		Uniform& operator=(Uniform&&) noexcept;
 
+		/// @brief Refreshes the uniform in all shaders that implement it, using the "controller" variable.
 		void refresh();
+
+		/// @brief Refreshes the uniform in the Shader shad, using the "controller" variable.
 		void refresh(Shader* shad) override;
+
+		/// @brief Refreshes the uniform in the Shader shad, using value.
 		void refresh(Shader* shad, void* value) override;
+
+		/// @brief Refreshes the uniform in all shaders that implement it, using value.
 		void refresh(void* value) override;
 
 		void sum_val(void* val1, void* val2) override;

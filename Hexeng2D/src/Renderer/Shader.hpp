@@ -14,19 +14,9 @@ namespace Hexeng::Renderer
 
 	class UniformInterface;
 
+	/// @note Most of things in this class are internal. You should just take a look at the constructor.
 	class HXG_DECLSPEC Shader
 	{
-
-	private:
-
-		unsigned int m_id;
-
-		static unsigned int create_shader(const char* vertex_shader, const char* fragment_shader);
-		static unsigned int create_shader(const std::string& vertex_shader, const std::string& fragment_shader);
-
-		static unsigned int compile_shader(GLenum shader_type, const char* src);
-		static unsigned int compile_shader(GLenum shader_type, const std::string& src);
-
 	public:
 
 		Shader() = default;
@@ -39,7 +29,12 @@ namespace Hexeng::Renderer
 		
 		~Shader();
 		
+		/// @param vertex_shader The source code (in glsl) of the vertex shader.
+		/// @param fragment_shader The source code (in glsl) of the fragment shader.
 		Shader(const char* vertex_shader, const char* fragment_shader);
+
+		/// @param vertex_shader The source code (in glsl) of the vertex shader.
+		/// @param fragment_shader The source code (in glsl) of the fragment shader.
 		Shader(const std::string& vertex_shader, const std::string& fragment_shader);
 		
 		void bind() const;
@@ -66,6 +61,16 @@ namespace Hexeng::Renderer
 		static void set_uniform(int uniform, const Vec4<int>& value)		{ HXG_GL(glUniform4i(uniform, value.x, value.y, value.z, value.w)); };
 
 		unsigned int missing_uniforms();
+
+	private:
+
+		unsigned int m_id;
+
+		static unsigned int m_create_shader(const char* vertex_shader, const char* fragment_shader);
+		static unsigned int m_create_shader(const std::string& vertex_shader, const std::string& fragment_shader);
+
+		static unsigned int m_compile_shader(GLenum shader_type, const char* src);
+		static unsigned int m_compile_shader(GLenum shader_type, const std::string& src);
 	};
 
 }

@@ -7,7 +7,7 @@
 namespace Hexeng::Renderer
 {
 
-	unsigned int Shader::compile_shader(GLenum shader_type, const char* src)
+	unsigned int Shader::m_compile_shader(GLenum shader_type, const char* src)
 	{
 		HXG_GL(unsigned int id = glCreateShader(shader_type));
 		HXG_GL(glShaderSource(id, 1, &src, nullptr));
@@ -29,17 +29,17 @@ namespace Hexeng::Renderer
 		return id;
 	}
 
-	unsigned int Shader::compile_shader(GLenum shader_type, const std::string& source)
+	unsigned int Shader::m_compile_shader(GLenum shader_type, const std::string& source)
 	{
 		const char* src = source.c_str();
-		return compile_shader(shader_type, src);
+		return m_compile_shader(shader_type, src);
 	}
 
-	unsigned int Shader::create_shader(const char* vertex_shader, const char* fragment_shader)
+	unsigned int Shader::m_create_shader(const char* vertex_shader, const char* fragment_shader)
 	{
 		HXG_GL(unsigned int prog = glCreateProgram());
-		unsigned int vs = compile_shader(GL_VERTEX_SHADER, vertex_shader);
-		unsigned int fs = compile_shader(GL_FRAGMENT_SHADER, fragment_shader);
+		unsigned int vs = m_compile_shader(GL_VERTEX_SHADER, vertex_shader);
+		unsigned int fs = m_compile_shader(GL_FRAGMENT_SHADER, fragment_shader);
 
 		HXG_GL(glAttachShader(prog, vs));
 		HXG_GL(glAttachShader(prog, fs));
@@ -52,27 +52,27 @@ namespace Hexeng::Renderer
 		return prog;
 	}
 
-	unsigned int Shader::create_shader(const std::string& vertex_shader, const std::string& fragment_shader)
+	unsigned int Shader::m_create_shader(const std::string& vertex_shader, const std::string& fragment_shader)
 	{
 		const char* vs = vertex_shader.c_str();
 		const char* fs = fragment_shader.c_str();
-		return create_shader(vs, fs);
+		return m_create_shader(vs, fs);
 	}
 
 	Shader::Shader(const char* vs, const char* fs)
-		: m_id(create_shader(vs, fs))
+		: m_id(m_create_shader(vs, fs))
 	{
-		if (unsigned int missing = missing_uniforms())
-			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+		HXG_ASSERT((!missing_uniforms()),
+			HXG_LOG_ERROR(std::to_string(missing_uniforms()) + " necessary uniforms are missing in a shader"););
 
 		ToBeDelete(this, [this]() { this->~Shader(); });
 	}
 
 	Shader::Shader(const std::string& vs, const std::string& fs)
-		: m_id(create_shader(vs, fs))
+		: m_id(m_create_shader(vs, fs))
 	{
-		if (unsigned int missing = missing_uniforms())
-			std::cout << "[Warning] " << missing << " necessary uniforms are missing in a shader" << std::endl;
+		HXG_ASSERT((!missing_uniforms()),
+			HXG_LOG_ERROR(std::to_string(missing_uniforms()) + " necessary uniforms are missing in a shader"););
 
 		ToBeDelete(this, [this]() { this->~Shader(); });
 	}

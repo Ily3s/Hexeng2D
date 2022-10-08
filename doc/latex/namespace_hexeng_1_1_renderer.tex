@@ -52,7 +52,7 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}}
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}
-\item 
+\begin{DoxyCompactList}\small\item\em The virtual base class of all templated instances of \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}}
@@ -92,24 +92,24 @@ enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{DIVIDE}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{CONTROLLLER}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{SHADERS}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{FUSION\+\_\+\+MODE}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em An enum of settings you can specify the Uniform constructor by using Uniform\+Args. The documentation of the possible values of this enum concern what should be the value that goes with this enum in Uniform\+Args.  \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a19e4b01b1f03f908d7fae1ef506e10de}{fusion}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ $>$ bidim\+\_\+v)
 \item 
 void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}{init}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}{refresh\+\_\+uniforms}} ()
 \item 
 void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Stops the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}{draw}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&va, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&ib, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \&shader)
 \item 
 void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}{clear}} ()
@@ -239,17 +239,24 @@ CHANNELS\+\_\+\+NB&The number of channels. By default, it is set to 4. \\
 \doxysubsubsection{\texorpdfstring{UniformArgType}{UniformArgType}}
 {\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Hexeng\+::\+Renderer\+::\+Uniform\+Arg\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+An enum of settings you can specify the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} constructor by using Uniform\+Args. The documentation of the possible values of this enum concern what should be the value that goes with this enum in Uniform\+Args.  
+
+\begin{DoxyNote}{Note}
+The least important of these values are SHADERS, as you can just do uniform.\+add\+\_\+shaders instead. 
+\end{DoxyNote}
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{NAME@{NAME}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!NAME@{NAME}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}} 
-NAME&\\
+NAME&The name of the uniform, const char $\ast$. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLLER@{CONTROLLLER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!CONTROLLLER@{CONTROLLLER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}} 
-CONTROLLLER&\\
+CONTROLLLER&The \char`\"{}controller\char`\"{} of the uniform, const VEC $\ast$. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SHADERS@{SHADERS}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SHADERS@{SHADERS}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}} 
-SHADERS&\\
+SHADERS&A list of all shaders that implement the uniform, const std\+::vector$<$\+Shader$\ast$$>$$\ast$. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{FUSION\_MODE@{FUSION\_MODE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!FUSION\_MODE@{FUSION\_MODE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}} 
@@ -263,7 +270,11 @@ FUSION\+\_\+\+MODE&\\
 \doxysubsubsection{\texorpdfstring{UniformFusionMode}{UniformFusionMode}}
 {\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Hexeng\+::\+Renderer\+::\+Uniform\+Fusion\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
 
-\begin{DoxyEnumFields}{Enumerator}
+
+
+Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. 
+
+For example, a position should get summed (SUM), but a zoom, should get multiplied (MULTIPLY) \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SUM@{SUM}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SUM@{SUM}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}} 
 SUM&\\
 \hline
@@ -320,6 +331,13 @@ DIVIDE&\\
 \doxysubsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Initialize the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. 
+
+\begin{DoxyNote}{Note}
+You should call this function before constructing any graphical objects such as a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} or a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}. 
+\end{DoxyNote}
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}\label{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!refresh\_uniforms@{refresh\_uniforms}}
 \index{refresh\_uniforms@{refresh\_uniforms}!Hexeng::Renderer@{Hexeng::Renderer}}
@@ -332,6 +350,13 @@ DIVIDE&\\
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Stops the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. 
+
+\begin{DoxyNote}{Note}
+You should call this function after the game loop exits. 
+\end{DoxyNote}
 
 
 \doxysubsection{Variable Documentation}

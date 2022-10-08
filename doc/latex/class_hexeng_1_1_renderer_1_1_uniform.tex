@@ -20,13 +20,13 @@ Inheritance diagram for Hexeng\+::Renderer\+::Uniform\texorpdfstring{$<$}{<} VEC
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a4385730d9ef846964ed04a413ac83147}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} \&\&) noexcept
 \item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in all shaders that implement it, using the \char`\"{}controller\char`\"{} variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a85161d31ad3c6cbf235c80e2ae80dd22}{refresh}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shad) override
-\item 
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} shad, using the \char`\"{}controller\char`\"{} variable. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a3b5c5fb9a97fe49c66531ba00a835a6e}{refresh}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shad, void $\ast$value) override
-\item 
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} shad, using value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ad5047cc80d6447ab5f6fa2e6ab983200}{refresh}} (void $\ast$value) override
-\item 
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in all shaders that implement it, using value. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{sum\+\_\+val}} (void $\ast$val1, void $\ast$val2) override
 \item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8625b8547126b076d53b1437}{substract\+\_\+val}} (void $\ast$val1, void $\ast$val2) override
@@ -43,6 +43,19 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_acd34f710395244e3ba9
 const VEC $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_adc515417a7f9b6024052b9064eb0fcab}{value\+\_\+ptr}} = nullptr
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename VEC$>$\newline
+class Hexeng\+::\+Renderer\+::\+Uniform$<$ VEC $>$}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em VEC} & The type of value that the uniform deals with.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+VEC is not necessarily a Vec$<$\+T$>$, it can also be a native type like int or float. 
+\end{DoxyNote}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -112,6 +125,10 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Hexeng\+::\+Rendere
 
 
 
+Refreshes the uniform in all shaders that implement it, using the \char`\"{}controller\char`\"{} variable. 
+
+
+
 Implements \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_af7e78416c58b42225bcead63f1bd875f}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_a85161d31ad3c6cbf235c80e2ae80dd22}\label{class_hexeng_1_1_renderer_1_1_uniform_a85161d31ad3c6cbf235c80e2ae80dd22}} 
@@ -120,6 +137,10 @@ Implements \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_af7e
 \doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily template$<$typename VEC $>$ \\
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} shad, using the \char`\"{}controller\char`\"{} variable. 
 
 
 
@@ -134,6 +155,10 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Hexeng\+::\+Rendere
 
 
 
+Refreshes the uniform in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} shad, using value. 
+
+
+
 Implements \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_adf104f574a2ba75b8b3bcedc6a4a9b37}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_ad5047cc80d6447ab5f6fa2e6ab983200}\label{class_hexeng_1_1_renderer_1_1_uniform_ad5047cc80d6447ab5f6fa2e6ab983200}} 
@@ -142,6 +167,10 @@ Implements \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_adf1
 \doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily template$<$typename VEC $>$ \\
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{void $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in all shaders that implement it, using value. 
 
 
 

@@ -12,11 +12,17 @@
 #include "Layer.hpp"
 #include "Uniform.hpp"
 
+/// @file Renderer.hpp Most of the stuff in this file are internal. You should just take a look at Renderer::init() and Renderer::stop().
+
 namespace Hexeng::Renderer
 {
 
+	/// @brief Initialize the Renderer and OpenGL.
+	/// @note You should call this function before constructing any graphical objects such as a Mesh or a Shader.
 	HXG_DECLSPEC void init();
 
+	/// @brief Stops the Renderer and OpenGL.
+	/// @note You should call this function after the game loop exits.
 	HXG_DECLSPEC void stop();
 
 	HXG_DECLSPEC void draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader);

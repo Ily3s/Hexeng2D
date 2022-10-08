@@ -102,39 +102,39 @@ $(document).ready(function(){initNavTree('_physics_8hpp_source.html',''); initRe
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="_mouvement_8hpp.html">Mouvement.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="_mesh_8hpp.html">Renderer/Mesh.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_hexeng_1_1_physics.html">Hexeng::Physics</a></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>{</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="class_hexeng_1_1_physics_1_1_physics_entity.html">   12</a></span>    <span class="keyword">class </span><a class="code hl_define" href="_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66">HXG_DECLSPEC</a> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_entity.html">PhysicsEntity</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_hit_box.html">HitBox</a>, <span class="keyword">public</span> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_vecs.html">PhysicsVecs</a></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    private :</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        <span class="keyword">static</span> std::vector&lt;PhysicsEntity*&gt; s_entities;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> update_positions_all();</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keywordtype">void</span> update_positions();</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordtype">void</span> update_rec_position(<a class="code hl_struct" href="struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html">RectangleHitBox</a>&amp; rec);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_hexeng_1_1_event_manager_1_1_event_gate.html">EventManager::EventGate</a> update_position_evt;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    public :</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_hexeng_1_1_physics.html">Hexeng::Physics</a></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>{</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_hexeng_1_1_physics_1_1_physics_entity.html">   20</a></span>    <span class="keyword">class </span><a class="code hl_define" href="_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66">HXG_DECLSPEC</a> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_entity.html">PhysicsEntity</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_hit_box.html">HitBox</a>, <span class="keyword">public</span> <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_vecs.html">PhysicsVecs</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    private :</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_entity.html">PhysicsEntity</a>(std::vector&lt;RectangleHitBox&gt; rectangles, <span class="keywordtype">int</span> solidity);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> on_collision(std::pair&lt;RectangleHitBox*, RectangleHitBox*&gt;) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    };</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">static</span> std::vector&lt;PhysicsEntity*&gt; s_entities;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">static</span> <span class="keywordtype">void</span> update_positions_all();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">void</span> update_positions();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> update_rec_position(<a class="code hl_struct" href="struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html">RectangleHitBox</a>&amp; rec);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keyword">static</span> <a class="code hl_class" href="class_hexeng_1_1_event_manager_1_1_event_gate.html">EventManager::EventGate</a> update_position_evt;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    public :</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="class_hexeng_1_1_physics_1_1_physics_entity.html">PhysicsEntity</a>(std::vector&lt;RectangleHitBox&gt; rectangles, <span class="keywordtype">int</span> solidity);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> on_collision(std::pair&lt;RectangleHitBox*, RectangleHitBox*&gt;) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    };</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_hibox_8hpp_html"><div class="ttname"><a href="_hibox_8hpp.html">Hibox.hpp</a></div></div>
 <div class="ttc" id="a_macros_8hpp_html_adf2c8db6ff0db146b7098ba9cb778a66"><div class="ttname"><a href="_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66">HXG_DECLSPEC</a></div><div class="ttdeci">#define HXG_DECLSPEC</div><div class="ttdef"><b>Definition:</b> Macros.hpp:91</div></div>
 <div class="ttc" id="a_mesh_8hpp_html"><div class="ttname"><a href="_mesh_8hpp.html">Mesh.hpp</a></div></div>
 <div class="ttc" id="a_mouvement_8hpp_html"><div class="ttname"><a href="_mouvement_8hpp.html">Mouvement.hpp</a></div></div>
 <div class="ttc" id="aclass_hexeng_1_1_event_manager_1_1_event_gate_html"><div class="ttname"><a href="class_hexeng_1_1_event_manager_1_1_event_gate.html">Hexeng::EventManager::EventGate</a></div><div class="ttdoc">A gate to the EventManager loop</div><div class="ttdef"><b>Definition:</b> EventManager.hpp:53</div></div>
 <div class="ttc" id="aclass_hexeng_1_1_physics_1_1_hit_box_html"><div class="ttname"><a href="class_hexeng_1_1_physics_1_1_hit_box.html">Hexeng::Physics::HitBox</a></div><div class="ttdef"><b>Definition:</b> Hibox.hpp:39</div></div>
-<div class="ttc" id="aclass_hexeng_1_1_physics_1_1_physics_entity_html"><div class="ttname"><a href="class_hexeng_1_1_physics_1_1_physics_entity.html">Hexeng::Physics::PhysicsEntity</a></div><div class="ttdef"><b>Definition:</b> Physics.hpp:13</div></div>
+<div class="ttc" id="aclass_hexeng_1_1_physics_1_1_physics_entity_html"><div class="ttname"><a href="class_hexeng_1_1_physics_1_1_physics_entity.html">Hexeng::Physics::PhysicsEntity</a></div><div class="ttdef"><b>Definition:</b> Physics.hpp:21</div></div>
 <div class="ttc" id="aclass_hexeng_1_1_physics_1_1_physics_vecs_html"><div class="ttname"><a href="class_hexeng_1_1_physics_1_1_physics_vecs.html">Hexeng::Physics::PhysicsVecs</a></div><div class="ttdef"><b>Definition:</b> Mouvement.hpp:15</div></div>
-<div class="ttc" id="anamespace_hexeng_1_1_physics_html"><div class="ttname"><a href="namespace_hexeng_1_1_physics.html">Hexeng::Physics</a></div><div class="ttdef"><b>Definition:</b> Hibox.hpp:19</div></div>
+<div class="ttc" id="anamespace_hexeng_1_1_physics_html"><div class="ttname"><a href="namespace_hexeng_1_1_physics.html">Hexeng::Physics</a></div><div class="ttdoc">I'm sorry, this Physics Engine is so messy, even I have trouble reading through this,...</div><div class="ttdef"><b>Definition:</b> Hibox.hpp:19</div></div>
 <div class="ttc" id="astruct_hexeng_1_1_physics_1_1_rectangle_hit_box_html"><div class="ttname"><a href="struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html">Hexeng::Physics::RectangleHitBox</a></div><div class="ttdef"><b>Definition:</b> Hibox.hpp:21</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
