@@ -36,29 +36,20 @@ if(e != paNoError)\
 
     SoundBase::SoundBase(std::string filepath)
     {
-        if (filepath.size() <= 4 || (std::string{ filepath.end() - 4, filepath.end() } != ".wav"))
-        {
-            HXG_LOG_ERROR("The File \"" + filepath + "\" is not a wave file. It is supposed to be one.");
-            return;
-        }
+        HXG_ASSERT(filepath.size() > 4 && (std::string{ filepath.end() - 4, filepath.end() } == ".wav"),
+            HXG_LOG_ERROR("The File \"" + filepath + "\" is not a wave file. It is supposed to be one."); return;);
 
         std::ifstream file{ filepath, std::ios::binary };
 
-        if (!file)
-        {
-            HXG_LOG_ERROR("The file \"" + filepath + "\" may not exists");
-            return;
-        }
+        HXG_ASSERT(file,
+            HXG_LOG_ERROR("The file \"" + filepath + "\" may not exists"); return;);
 
         file.seekg(0, std::ios::end);
         size_t file_lenght = file.tellg();
         file.seekg(0, std::ios::beg);
-        
-        if (file_lenght <= 44)
-        {
-            HXG_LOG_ERROR("Unvalid Audio file \"" + filepath + "\"");
-            return;
-        }
+
+        HXG_ASSERT(file_lenght > 44,
+            HXG_LOG_ERROR("Unvalid Audio file \"" + filepath + "\""); return;);
 
         m_file_buffer.insert(0, file_lenght, 0);
         file.read(&m_file_buffer[0], file_lenght);
@@ -69,11 +60,8 @@ if(e != paNoError)\
 
         m_byte_per_sample = static_cast<size_t>(bits_per_sample / 8) * m_channels_nb;
 
-        if (bits_per_sample != 32)
-        {
-            HXG_LOG_ERROR("Audio Systsem only supports Float32 sample format");
-            return;
-        }
+        HXG_ASSERT(bits_per_sample == 32,
+            HXG_LOG_ERROR("Audio Systsem only supports Float32 sample format"); return;);
 
         sounds.push_back(this);
     }
@@ -108,8 +96,8 @@ if(e != paNoError)\
     Sound::Sound(std::string filepath)
         : SoundBase(filepath)
     {
-        if (m_channels_nb != 1)
-            HXG_LOG_ERROR("Input for Sound is expected to be mono");
+        HXG_ASSERT(m_channels_nb == 1,
+            HXG_LOG_ERROR("Input for Sound is expected to be mono"); return;);
         m_thread = std::thread([this]() {m_stop_streams(); });
     }
 

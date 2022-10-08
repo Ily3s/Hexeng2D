@@ -8,16 +8,16 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a47562bf48cf255d9d288c8229efc1e0d}{Animation}} (std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}{Animation\+Step}} $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a79fd174f726539749c9bf4f797e3ece7}{steps}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a47083225ded54f4c8682390763babade}{terminate}}, bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_ad2e086e921dca6a76791617da6dcb111}{repeat}}=false)
-\item 
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{Parameters}
+{\em terminate} & Gets executed at the end of the animation.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a9835d6c223597ffb55575110d0f03f48}{play}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em starts the animation \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a353841b478b61f10db34a2046b513b81}{stop}} ()
-\end{DoxyCompactItemize}
-\doxysubsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a81cf02feaceb27af50e1197b05468253}{update\+\_\+animations}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em stops the animation \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -26,15 +26,11 @@ std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}
 std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a47083225ded54f4c8682390763babade}{terminate}}
 \item 
 bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_ad2e086e921dca6a76791617da6dcb111}{repeat}} = false
-\item 
-size\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_ae037b95462aabdb53abfbbab21fa7fff}{current\+\_\+step}} = 0
-\item 
-float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a1c042e40f15b6464c0d6b2f707e0606f}{time}} = 0.\+0f
 \end{DoxyCompactItemize}
-\doxysubsection*{Static Public Attributes}
+\doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}} $\ast$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a50771e3d27fa8c7cbb6c5e492cf23469}{animations}}
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a529dd9d3db24589baa1dc57d892a4ec7}{Renderer\+::draw\+\_\+current\+\_\+scene}} ()
 \end{DoxyCompactItemize}
 
 
@@ -47,6 +43,15 @@ static std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation
 
 
 
+
+\begin{DoxyParams}{Parameters}
+{\em terminate} & Gets executed at the end of the animation.\\
+\hline
+\end{DoxyParams}
+
+
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a9835d6c223597ffb55575110d0f03f48}\label{class_hexeng_1_1_renderer_1_1_animation_a9835d6c223597ffb55575110d0f03f48}} 
 \index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!play@{play}}
@@ -54,33 +59,32 @@ static std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation
 \doxysubsubsection{\texorpdfstring{play()}{play()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Animation\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+starts the animation 
+
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a353841b478b61f10db34a2046b513b81}\label{class_hexeng_1_1_renderer_1_1_animation_a353841b478b61f10db34a2046b513b81}} 
 \index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!stop@{stop}}
 \index{stop@{stop}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
 \doxysubsubsection{\texorpdfstring{stop()}{stop()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Animation\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a81cf02feaceb27af50e1197b05468253}\label{class_hexeng_1_1_renderer_1_1_animation_a81cf02feaceb27af50e1197b05468253}} 
-\index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!update\_animations@{update\_animations}}
-\index{update\_animations@{update\_animations}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
-\doxysubsubsection{\texorpdfstring{update\_animations()}{update\_animations()}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Animation\+::update\+\_\+animations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+stops the animation 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a529dd9d3db24589baa1dc57d892a4ec7}\label{class_hexeng_1_1_renderer_1_1_animation_a529dd9d3db24589baa1dc57d892a4ec7}} 
+\index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!Renderer::draw\_current\_scene@{Renderer::draw\_current\_scene}}
+\index{Renderer::draw\_current\_scene@{Renderer::draw\_current\_scene}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
+\doxysubsubsection{\texorpdfstring{Renderer::draw\_current\_scene}{Renderer::draw\_current\_scene}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}{Renderer\+::draw\+\_\+current\+\_\+scene}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a50771e3d27fa8c7cbb6c5e492cf23469}\label{class_hexeng_1_1_renderer_1_1_animation_a50771e3d27fa8c7cbb6c5e492cf23469}} 
-\index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!animations@{animations}}
-\index{animations@{animations}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
-\doxysubsubsection{\texorpdfstring{animations}{animations}}
-{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}} $\ast$ $>$ Hexeng\+::\+Renderer\+::\+Animation\+::animations\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_ae037b95462aabdb53abfbbab21fa7fff}\label{class_hexeng_1_1_renderer_1_1_animation_ae037b95462aabdb53abfbbab21fa7fff}} 
-\index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!current\_step@{current\_step}}
-\index{current\_step@{current\_step}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
-\doxysubsubsection{\texorpdfstring{current\_step}{current\_step}}
-{\footnotesize\ttfamily size\+\_\+t Hexeng\+::\+Renderer\+::\+Animation\+::current\+\_\+step = 0}
-
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_ad2e086e921dca6a76791617da6dcb111}\label{class_hexeng_1_1_renderer_1_1_animation_ad2e086e921dca6a76791617da6dcb111}} 
 \index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!repeat@{repeat}}
 \index{repeat@{repeat}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
@@ -98,12 +102,6 @@ static std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation
 \index{terminate@{terminate}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
 \doxysubsubsection{\texorpdfstring{terminate}{terminate}}
 {\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Renderer\+::\+Animation\+::terminate}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_animation_a1c042e40f15b6464c0d6b2f707e0606f}\label{class_hexeng_1_1_renderer_1_1_animation_a1c042e40f15b6464c0d6b2f707e0606f}} 
-\index{Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}!time@{time}}
-\index{time@{time}!Hexeng::Renderer::Animation@{Hexeng::Renderer::Animation}}
-\doxysubsubsection{\texorpdfstring{time}{time}}
-{\footnotesize\ttfamily float Hexeng\+::\+Renderer\+::\+Animation\+::time = 0.\+0f}
 
 
 

@@ -124,61 +124,68 @@ $(document).ready(function(){initNavTree('_macros_8hpp_source.html',''); initRes
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#define HXG_LOG_WARNING(str)</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if HXG_DEBUG_LEVEL &gt;= 2</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#define HXG_GL(x) \</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">\</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">while (glGetError() != GL_NO_ERROR);\</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">x;\</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">{\</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    int i = 0;\</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    for (; GLenum error = glGetError(); ++i)\</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    {\</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">        std::cout &lt;&lt; &quot;[OpenGL Error] (&quot;</span> &lt;&lt; error &lt;&lt; &quot;) in file \&quot;&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;\&quot; at line &quot; &lt;&lt; __LINE__\</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        &lt;&lt; &quot; at function \&quot;&quot; &lt;&lt; #x &lt;&lt; &#39;\&quot;&#39; &lt;&lt; std::endl;\</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }\</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    if (i)\</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        __debugbreak();\</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}&quot;&quot;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>#else</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#a4b5ef1cfc7d7edc315442fa4c4e44368">   49</a></span>#define HXG_GL(x) x</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>#endif</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>#if HXG_DEBUG_LEVEL &gt;= 2</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>#define HXG_GLFW(x) \</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>\</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>while (glfwGetError(NULL) != GLFW_NO_ERROR);\</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>x;\</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{\</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    int i = 0;\</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    for (; int error = glfwGetError(NULL); ++i)\</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {\</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        std::cout &lt;&lt; &quot;[GLFW Error] (&quot; &lt;&lt; error &lt;&lt; &quot;) in file \&quot;&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;\&quot; at line &quot; &lt;&lt; __LINE__\</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        &lt;&lt; &quot; at function \&quot;&quot; &lt;&lt; #x &lt;&lt; &#39;\&quot;&#39; &lt;&lt; std::endl;\</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }\</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    if (i)\</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        __debugbreak();\</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>}&quot;&quot;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>#else</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#a487117621855a14ef31f996d66868f3f">   68</a></span>#define HXG_GLFW(x) x</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>#endif</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>#ifdef _MSC_VER</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    #ifdef Hexeng2D_EXPORTS</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        #define HXG_DECLSPEC __declspec(dllexport)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    #else</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        #define HXG_DECLSPEC __declspec(dllimport)</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    #endif</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>#elif defined(__GNUC__)</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    #ifdef Hexeng2D_EXPORTS</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        #define HXG_DECLSPEC __attribute__((visibility(&quot;default&quot;)))</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    #else</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        #define HXG_DECLSPEC</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    #endif</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>#else</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66">   84</a></span>    #define  HXG_DECLSPEC</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>#endif</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>#endif // !MACROS_HPP</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if HXG_DEBUG_LEVEL != 0</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#a82e050215316c8002338b4129c26651c">   34</a></span><span class="preprocessor">#define HXG_ASSERT(cond, action) \</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">if (!cond) { action }&quot;&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#define HXG_ASSERT(cond, action)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#if HXG_DEBUG_LEVEL &gt;= 2</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#define HXG_GL(x) \</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">\</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">while (glGetError() != GL_NO_ERROR);\</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">x;\</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">{\</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">    int i = 0;\</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">    for (; GLenum error = glGetError(); ++i)\</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    {\</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">        std::cout &lt;&lt; &quot;[OpenGL Error] (&quot;</span> &lt;&lt; error &lt;&lt; &quot;) in file \&quot;&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;\&quot; at line &quot; &lt;&lt; __LINE__\</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        &lt;&lt; &quot; at function \&quot;&quot; &lt;&lt; #x &lt;&lt; &#39;\&quot;&#39; &lt;&lt; std::endl;\</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }\</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    if (i)\</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        __debugbreak();\</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}&quot;&quot;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>#else</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#a4b5ef1cfc7d7edc315442fa4c4e44368">   56</a></span>#define HXG_GL(x) x</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>#endif</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>#if HXG_DEBUG_LEVEL &gt;= 2</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>#define HXG_GLFW(x) \</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>\</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>while (glfwGetError(NULL) != GLFW_NO_ERROR);\</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>x;\</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{\</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    int i = 0;\</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    for (; int error = glfwGetError(NULL); ++i)\</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {\</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::cout &lt;&lt; &quot;[GLFW Error] (&quot; &lt;&lt; error &lt;&lt; &quot;) in file \&quot;&quot; &lt;&lt; __FILE__ &lt;&lt; &quot;\&quot; at line &quot; &lt;&lt; __LINE__\</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        &lt;&lt; &quot; at function \&quot;&quot; &lt;&lt; #x &lt;&lt; &#39;\&quot;&#39; &lt;&lt; std::endl;\</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }\</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    if (i)\</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        __debugbreak();\</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}&quot;&quot;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>#else</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#a487117621855a14ef31f996d66868f3f">   75</a></span>#define HXG_GLFW(x) x</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>#endif</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>#ifdef _MSC_VER</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    #ifdef Hexeng2D_EXPORTS</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        #define HXG_DECLSPEC __declspec(dllexport)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    #else</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        #define HXG_DECLSPEC __declspec(dllimport)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    #endif</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>#elif defined(__GNUC__)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    #ifdef Hexeng2D_EXPORTS</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        #define HXG_DECLSPEC __attribute__((visibility(&quot;default&quot;)))</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    #else</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        #define HXG_DECLSPEC</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    #endif</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>#else</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66">   91</a></span>    #define  HXG_DECLSPEC</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>#endif</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>#endif // !MACROS_HPP</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

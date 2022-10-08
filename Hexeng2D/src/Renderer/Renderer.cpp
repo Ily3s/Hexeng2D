@@ -147,7 +147,7 @@ namespace Hexeng::Renderer
 
 		pending_actions.clear();
 
-		Animation::update_animations();
+		Animation::s_update_animations();
 
 		if (scenes.find(scene_id) == scenes.end())
 			return;

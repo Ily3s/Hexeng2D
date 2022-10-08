@@ -12,11 +12,8 @@ namespace Hexeng
 	{
 		std::basic_ifstream<unsigned char> font_file{ path, std::ios::in | std::ios::binary };
 
-		if (!font_file)
-		{
-			HXG_LOG_ERROR("The file \"" + path + "\" may not exists");
-			return;
-		}
+		HXG_ASSERT(font_file,
+			HXG_LOG_ERROR("The file \"" + path + "\" may not exists"); return;);
 
 		font_file.seekg(0, std::ios::end);
 		size_t size = font_file.tellg();
@@ -25,11 +22,8 @@ namespace Hexeng
 		file_buffer = std::make_unique<uint8_t[]>(size);
 		font_file.read(file_buffer.get(), size);
 
-		if (!stbtt_InitFont(&font_info, file_buffer.get(), stbtt_GetFontOffsetForIndex(file_buffer.get(), 0)))
-		{
-			HXG_LOG_ERROR("Unable to load ttf file at location \"" + path + "\"");
-			return;
-		}
+		HXG_ASSERT(stbtt_InitFont(&font_info, file_buffer.get(), stbtt_GetFontOffsetForIndex(file_buffer.get(), 0)),
+			HXG_LOG_ERROR("Unable to load ttf file at location \"" + path + "\""); return;);
 
 		int ascent, descent, line_gap;
 		stbtt_GetFontVMetrics(&font_info, &ascent, &descent, &line_gap);
@@ -41,8 +35,8 @@ namespace Hexeng
 	{
 		int w, h;
 
-		if (!stbtt_FindGlyphIndex(&font_info, c))
-			HXG_LOG_WARNING("Can't find the character " + std::to_string(c) + " in the font \"" + m_filepath + "\"");
+		HXG_ASSERT(stbtt_FindGlyphIndex(&font_info, c),
+			HXG_LOG_WARNING("Can't find the character " + std::to_string(c) + " in the font \"" + m_filepath + "\""););
 
 		uint8_t* bitmap = stbtt_GetCodepointBitmap(&font_info, 0, quality, c, &w, &h, 0, 0);
 
@@ -268,18 +262,12 @@ namespace Hexeng
 	{
 		std::ifstream language_file(filepath, std::ios::binary);
 
-		if (!language_file)
-		{
-			HXG_LOG_ERROR("The file \"" + filepath + "\" may not exists");
-			return;
-		}
+		HXG_ASSERT(language_file,
+			HXG_LOG_ERROR("The file \"" + filepath + "\" may not exists"); return;);
 
 		language_file.seekg(0, std::ios::end);
-		if (language_file.tellg() < 4)
-		{
-			HXG_LOG_ERROR("Unvalid file format \"" + filepath + "\"");
-			return;
-		}
+		HXG_ASSERT(language_file.tellg() >= 4,
+			HXG_LOG_ERROR("Unvalid file format \"" + filepath + "\""); return;);
 		size_t size = (size_t)language_file.tellg() - 4;
 		language_file.seekg(0, std::ios::beg);
 
@@ -339,12 +327,10 @@ namespace Hexeng
 	const std::u32string& Language::get_translation(const std::u32string& input) const
 	{
 		auto it = s_reference.find(input);
-#if HXG_DEBUG_LEVEL > 0
-		if (!s_reference.size())
-			HXG_LOG_ERROR("Reference language not set");
-		if (it == s_reference.end())
-			HXG_LOG_ERROR("Unnable to find the specified sentence in the the reference language");
-#endif
+		HXG_ASSERT(s_reference.size(),
+			HXG_LOG_ERROR("Reference language not set"););
+		HXG_ASSERT((it != s_reference.end()),
+			HXG_LOG_ERROR("Unnable to find the specified sentence in the the reference language"););
 		return m_language_table.find(it->second)->second;
 	}
 

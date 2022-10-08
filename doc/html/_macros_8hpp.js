@@ -1,5 +1,6 @@
 var _macros_8hpp =
 [
+    [ "HXG_ASSERT", "_macros_8hpp.html#a82e050215316c8002338b4129c26651c", null ],
     [ "HXG_DEBUG_LEVEL", "_macros_8hpp.html#aa69c97dad52d425dc2d722071fe03af0", null ],
     [ "HXG_DECLSPEC", "_macros_8hpp.html#adf2c8db6ff0db146b7098ba9cb778a66", null ],
     [ "HXG_GL", "_macros_8hpp.html#a4b5ef1cfc7d7edc315442fa4c4e44368", null ],

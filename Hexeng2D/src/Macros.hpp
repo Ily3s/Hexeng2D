@@ -30,6 +30,13 @@
 #define HXG_LOG_WARNING(str)
 #endif
 
+#if HXG_DEBUG_LEVEL != 0
+#define HXG_ASSERT(cond, action) \
+if (!cond) { action }""
+#else
+#define HXG_ASSERT(cond, action)
+#endif
+
 #if HXG_DEBUG_LEVEL >= 2
 #define HXG_GL(x) \
 \

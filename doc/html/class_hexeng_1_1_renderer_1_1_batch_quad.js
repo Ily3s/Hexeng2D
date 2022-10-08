@@ -1,7 +1,7 @@
 var class_hexeng_1_1_renderer_1_1_batch_quad =
 [
     [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html#afd5d5e836d1619a98777d5329a346614", null ],
-    [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a7d40311d5c41023f1292f5318604aa58", null ],
+    [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html#ac8da2cdceb66a23be46ae01711da2a44", null ],
     [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a488221bc6a47a01142d06795d2c90443", null ],
     [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a602c7ef42d72bcf329d33954d6bc8322", null ],
     [ "operator=", "class_hexeng_1_1_renderer_1_1_batch_quad.html#aaccb2f107c46675a2ce5c7c61f8c572d", null ],

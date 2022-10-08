@@ -3,7 +3,7 @@ var searchData=
   ['m_5fbase_5fformat_0',['m_base_format',['../class_hexeng_1_1_renderer_1_1_texture.html#a1e8f96b35548fd2dbfaac4be5f3fc81f',1,'Hexeng::Renderer::Texture']]],
   ['m_5fbpp_1',['m_BPP',['../class_hexeng_1_1_renderer_1_1_texture.html#a04c1e63fb83f893db6c09544cb140280',1,'Hexeng::Renderer::Texture']]],
   ['m_5fbyte_5fper_5fsample_2',['m_byte_per_sample',['../class_hexeng_1_1_audio_1_1_sound_base.html#a243ce80a57e89fd3d563cb389192adc3',1,'Hexeng::Audio::SoundBase']]],
-  ['m_5fchannels_5fnb_3',['m_channels_nb',['../class_hexeng_1_1_audio_1_1_sound_base.html#a776c7ab7ba5093360d7ecb641105793f',1,'Hexeng::Audio::SoundBase']]],
+  ['m_5fchannels_5fnb_3',['m_channels_nb',['../class_hexeng_1_1_audio_1_1_sound_base.html#a776c7ab7ba5093360d7ecb641105793f',1,'Hexeng::Audio::SoundBase::m_channels_nb()'],['../class_hexeng_1_1_renderer_1_1_texture.html#ac5c912cc874e8191e0728bff07a88628',1,'Hexeng::Renderer::Texture::m_channels_nb()']]],
   ['m_5ffile_5fbuffer_4',['m_file_buffer',['../class_hexeng_1_1_audio_1_1_sound_base.html#aedac6c50b60648a88aa5c40135e96302',1,'Hexeng::Audio::SoundBase']]],
   ['m_5ffilepath_5',['m_filepath',['../class_hexeng_1_1_renderer_1_1_texture.html#a89bffd35707481e78eae3e1af9153839',1,'Hexeng::Renderer::Texture']]],
   ['m_5fgarbage_6',['m_garbage',['../class_hexeng_1_1_audio_1_1_sound_base.html#a04b84828debb241e20c005b2e75ce8ba',1,'Hexeng::Audio::SoundBase']]],

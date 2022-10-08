@@ -6,16 +6,17 @@
 namespace Hexeng::Renderer
 {
 
-	VertexLayout BatchQuad::vertex_layout;
+	VertexLayout BatchQuad::s_vertex_layout;
 
-	ToBeInit init_vl{ []() {
-		BatchQuad::vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT }, { 1, GL_FLOAT } });
-	} };
+	ToBeInit BatchQuad::s_init_vl{ std::function<void(void)>{[]() {
+		s_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT }, { 1, GL_FLOAT } });
+	}} };
 
 	TextureAtlas::TextureAtlas(const std::string& filepath, const Vec2<int>& cell_size, const TexSettList& settings)
 		: Texture(filepath, settings), m_cell_size(cell_size)
 	{
-		assert((m_size.x % cell_size.x == 0) && (m_size.y % cell_size.y == 0) && "Invalid TextureAtlas format");
+		HXG_ASSERT((m_size.x % cell_size.x == 0) && (m_size.y % cell_size.y == 0),
+			HXG_LOG_ERROR("Invalid TextureAtlas format"););
 	}
 
 	TextureAtlas::TextureAtlas(TextureAtlas&& other) noexcept
@@ -82,9 +83,11 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
-	void BatchInstance::add_quad(BatchQuad* quad, const Vec2<int>& tex_coords_p)
+	void BatchInstance::m_add_quad(BatchQuad* quad, const Vec2<int>& tex_coords_p)
 	{
-		assert(m_quads.size() < 250 && "1 BatchInstance is limited to 250 quads");
+		HXG_ASSERT(m_quads.size() >= 250,
+			HXG_LOG_ERROR("1 BatchInstance is limited to 250 quads");
+			return;);
 
 		float tex_coords[4]
 		{
@@ -137,7 +140,7 @@ namespace Hexeng::Renderer
 		m_index_buffer = { &m_raw_ib[0], GL_UNSIGNED_INT, static_cast<uint32_t>(m_raw_ib.size()) };
 		m_ib = &m_index_buffer;
 		m_texture = texture_atlas;
-		m_vao.tie(m_vb, BatchQuad::vertex_layout, m_index_buffer);
+		m_vao.tie(m_vb, BatchQuad::s_vertex_layout, m_index_buffer);
 
 		m_uniforms_id = m_shader->get_uniform("u_quads_uniforms");
 	}
@@ -163,7 +166,7 @@ namespace Hexeng::Renderer
 	BatchQuad::BatchQuad(BatchInstance* bi, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size_p, float rotation_p)
 		: position(pos), scale(size_p), rotation(rotation_p), m_batch_instance(bi)
 	{
-		bi->add_quad(this, tex_coords);
+		bi->m_add_quad(this, tex_coords);
 	}
 
 	BatchQuad::BatchQuad(BatchQuad&& other) noexcept
@@ -171,13 +174,17 @@ namespace Hexeng::Renderer
 	{
 		auto& quads = m_batch_instance->m_quads;
 		auto it = std::find(quads.begin(), quads.end(), &other);
-		assert(it != quads.end());
+		HXG_ASSERT((it != quads.end()),
+			HXG_LOG_ERROR("Other have not been initialized");
+			return;);
 		*it = this;
 	}
 
 	BatchQuad& BatchQuad::operator=(BatchQuad&& other) noexcept
 	{
-		assert(!m_batch_instance && "this has to be initialized by the default constructor");
+		HXG_ASSERT(!m_batch_instance,
+			HXG_LOG_ERROR("This has to be initialized by the default constructor");
+			return *this;);
 
 		position = other.position;
 		scale = other.scale;
@@ -186,7 +193,9 @@ namespace Hexeng::Renderer
 
 		auto& quads = m_batch_instance->m_quads;
 		auto it = std::find(quads.begin(), quads.end(), &other);
-		assert(it != quads.end());
+		HXG_ASSERT((it != quads.end()),
+			HXG_LOG_ERROR("Other have not been initialized");
+			return;);
 		*it = this;
 
 		return *this;

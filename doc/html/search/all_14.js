@@ -29,9 +29,8 @@ var searchData=
   ['unload_26',['unload',['../class_hexeng_1_1_renderer_1_1_layer.html#a44dbc152f62f1c831398e0f41cf439be',1,'Hexeng::Renderer::Layer::unload()'],['../class_hexeng_1_1_renderer_1_1_texture.html#a7f209b6c02fee84f4e738280374b6c5e',1,'Hexeng::Renderer::Texture::unload()'],['../class_hexeng_1_1_scene.html#abcce907168e37dd2aff29ee6358b7983',1,'Hexeng::Scene::unload()']]],
   ['up_5fanim_27',['up_anim',['../struct_hexeng_1_1_renderer_1_1_animation_step.html#a8103b7bd76620303ee6ad2c8d1785a8b',1,'Hexeng::Renderer::AnimationStep']]],
   ['update_28',['update',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#a53cf7b69042707fb0202a4bee80147f0',1,'Hexeng::Physics::PhysicsVecs']]],
-  ['update_5fanimations_29',['update_animations',['../class_hexeng_1_1_renderer_1_1_animation.html#a81cf02feaceb27af50e1197b05468253',1,'Hexeng::Renderer::Animation']]],
-  ['update_5fevt_30',['update_evt',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#acd3ee269808e0fd7ad4bb919598a6b6f',1,'Hexeng::Physics::PhysicsVecs']]],
-  ['update_5fposition_31',['update_position',['../class_hexeng_1_1_renderer_1_1_mesh.html#ad3b9c0b9b2a40f19cc39db098d16ec6e',1,'Hexeng::Renderer::Mesh']]],
-  ['update_5fvecs_32',['update_vecs',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#ab4be6f22f745c2d9179cdbcec380ab44',1,'Hexeng::Physics::PhysicsVecs']]],
-  ['update_5fzoom_33',['update_zoom',['../class_hexeng_1_1_renderer_1_1_camera.html#a4504a3ed49ffd549b347a2e1b003c775',1,'Hexeng::Renderer::Camera']]]
+  ['update_5fevt_29',['update_evt',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#acd3ee269808e0fd7ad4bb919598a6b6f',1,'Hexeng::Physics::PhysicsVecs']]],
+  ['update_5fposition_30',['update_position',['../class_hexeng_1_1_renderer_1_1_mesh.html#ad3b9c0b9b2a40f19cc39db098d16ec6e',1,'Hexeng::Renderer::Mesh']]],
+  ['update_5fvecs_31',['update_vecs',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#ab4be6f22f745c2d9179cdbcec380ab44',1,'Hexeng::Physics::PhysicsVecs']]],
+  ['update_5fzoom_32',['update_zoom',['../class_hexeng_1_1_renderer_1_1_camera.html#a4504a3ed49ffd549b347a2e1b003c775',1,'Hexeng::Renderer::Camera']]]
 ];

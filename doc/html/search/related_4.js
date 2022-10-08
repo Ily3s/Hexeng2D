@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['stop_0',['stop',['../class_hexeng_1_1_renderer_1_1_to_be_delete.html#a8c528baf37154d347366083f0f816846',1,'Hexeng::Renderer::ToBeDelete']]],
-  ['supermesh_1',['SuperMesh',['../class_hexeng_1_1_renderer_1_1_mesh.html#ab88992c2b05df2ab1d1bcfc0d627b907',1,'Hexeng::Renderer::Mesh']]]
+  ['draw_5fcurrent_5fscene_0',['draw_current_scene',['../class_hexeng_1_1_renderer_1_1_animation.html#a529dd9d3db24589baa1dc57d892a4ec7',1,'Hexeng::Renderer::Animation']]]
 ];

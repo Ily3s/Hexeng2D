@@ -41,7 +41,8 @@ var namespace_hexeng_1_1_renderer =
       [ "MIN_FILTER", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563", null ],
       [ "BASE_FORMAT", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb", null ],
       [ "SIZED_FORMAT", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460", null ],
-      [ "BPP", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96", null ]
+      [ "BPP", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96", null ],
+      [ "CHANNELS_NB", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94", null ]
     ] ],
     [ "UniformArgType", "namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443", [
       [ "NAME", "namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e", null ],
@@ -71,7 +72,6 @@ var namespace_hexeng_1_1_renderer =
     [ "init_cam", "namespace_hexeng_1_1_renderer.html#a55403b255c2be67af5d7fe224076952d", null ],
     [ "init_presets", "namespace_hexeng_1_1_renderer.html#ab4393b85fdba8ef268e75f555cba2c88", null ],
     [ "init_uniforms", "namespace_hexeng_1_1_renderer.html#a96bab53645f7f1b0e90ec3120724ce27", null ],
-    [ "init_vl", "namespace_hexeng_1_1_renderer.html#ac8e1629dec6b2ef336030b2b76257db7", null ],
     [ "line_shader", "namespace_hexeng_1_1_renderer.html#af51eb72d88ba8bfceda6a108eca36692", null ],
     [ "pending_actions", "namespace_hexeng_1_1_renderer.html#a925910558363c233fd21534728fb7275", null ],
     [ "tex_vector_shader", "namespace_hexeng_1_1_renderer.html#a4c606a36dd386b7ff3f2b0fd90b5aa0b", null ],

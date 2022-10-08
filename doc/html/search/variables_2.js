@@ -10,7 +10,6 @@ var searchData=
   ['condition_7',['condition',['../class_hexeng_1_1_event_manager_1_1_button.html#a31985b267c862503ec3bc820b17e0672',1,'Hexeng::EventManager::Button::condition()'],['../class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33',1,'Hexeng::EventManager::Event::condition()']]],
   ['context_8',['context',['../class_hexeng_1_1_renderer_1_1_contextual_layer.html#a71f626fd919417024110f2210904d95e',1,'Hexeng::Renderer::ContextualLayer']]],
   ['count_9',['count',['../struct_hexeng_1_1_renderer_1_1_vertex_element.html#aabd754af1dc4549afc656c44eb32e902',1,'Hexeng::Renderer::VertexElement']]],
-  ['current_5fstep_10',['current_step',['../class_hexeng_1_1_renderer_1_1_animation.html#ae037b95462aabdb53abfbbab21fa7fff',1,'Hexeng::Renderer::Animation']]],
-  ['current_5ftick_11',['current_tick',['../namespace_hexeng_1_1_event_manager.html#a218e93a7311da014ea3ad253936d1d7b',1,'Hexeng::EventManager']]],
-  ['cyan_12',['cyan',['../class_hexeng_1_1_color3.html#a4c6f0df0262064b493b18021917c4947',1,'Hexeng::Color3::cyan()'],['../class_hexeng_1_1_color4.html#a73cd01d8b318dbf2949b59dbfc765c49',1,'Hexeng::Color4::cyan()']]]
+  ['current_5ftick_10',['current_tick',['../namespace_hexeng_1_1_event_manager.html#a218e93a7311da014ea3ad253936d1d7b',1,'Hexeng::EventManager']]],
+  ['cyan_11',['cyan',['../class_hexeng_1_1_color3.html#a4c6f0df0262064b493b18021917c4947',1,'Hexeng::Color3::cyan()'],['../class_hexeng_1_1_color4.html#a73cd01d8b318dbf2949b59dbfc765c49',1,'Hexeng::Color4::cyan()']]]
 ];

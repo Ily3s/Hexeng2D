@@ -49,11 +49,8 @@ namespace Hexeng
 		/// <param name="hex_code">A hexadecimal encoded color in the format #rrggbb</param>
 		Color3(std::string hex_code)
 		{
-			if (hex_code.size() != 7)
-			{
-				HXG_LOG_ERROR("A color3 hexcode must be in the format \"#rrggbb\"");
-				return;
-			}
+			HXG_ASSERT(hex_code.size() == 7,
+				HXG_LOG_ERROR("A color3 hexcode must be in the format \"#rrggbb\""); return;);
 
 			std::string rgb_str[3] = { {hex_code[1], hex_code[2]}, {hex_code[3], hex_code[4]}, {hex_code[5], hex_code[6]} };
 
@@ -126,11 +123,8 @@ namespace Hexeng
 		/// <param name="hex_code">A hexadecimal encoded color in the format #rrggbbaa</param>
 		Color4(std::string hex_code)
 		{
-			if (hex_code.size() != 9)
-			{
-				HXG_LOG_ERROR("A color3 hexcode must be in the format \"#rrggbbaa\"");
-				return;
-			}
+			HXG_ASSERT(hex_code.size() == 9,
+				HXG_LOG_ERROR("A color3 hexcode must be in the format \"#rrggbbaa\""); return;);
 
 			std::string rgb_str[4] = { {hex_code[1], hex_code[2]}, {hex_code[3], hex_code[4]}, {hex_code[5], hex_code[6]}, {hex_code[7], hex_code[8]} };
 

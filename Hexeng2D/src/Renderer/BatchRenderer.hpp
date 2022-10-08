@@ -10,12 +10,17 @@ namespace Hexeng::Renderer
 
 	class HXG_DECLSPEC TextureAtlas : public Texture
 	{
-	private :
+	private:
 
-		Vec2<int> m_cell_size = {0, 0};
+		Vec2<int> m_cell_size = { 0, 0 };
 
-	public :
+	public:
 
+		/// <summary>
+		/// The same as Texture(const std::string& filepath, const TexSettList& settings = {}) except you specify cell_size.
+		/// </summary>
+		/// <param name="cell_size">The dimentions (lenght, width) of each cell of the atlas.</param>
+		/// @note the dimentions of the texture must be dividable by the cell_size.
 		TextureAtlas(const std::string& filepath, const Vec2<int>& cell_size, const TexSettList& settings = {});
 
 		TextureAtlas() = default;
@@ -29,15 +34,21 @@ namespace Hexeng::Renderer
 		const Vec2<int>& get_cell_size() const;
 	};
 
-    class BatchQuad;
+	class BatchQuad;
 
+	/// <summary>
+	/// An instance that can gather 250 quads on the same layer at max and render them together.
+	/// </summary>
+	/// @note A BatchInstance is a Mesh.
+	/// If you set the pos, rotation or scale of the BatchInstance,
+	/// it will add up with the pos, rotation or scale of each of the BatchQuads.
 	class HXG_DECLSPEC BatchInstance : public Mesh
 	{
-	public :
+	public:
 
 		BatchInstance() = default;
 
-		BatchInstance(TextureAtlas*, Shader* = &batching_shader);
+		BatchInstance(TextureAtlas* texture, Shader* shader = &batching_shader);
 
 		BatchInstance(const BatchInstance&) = delete;
 		BatchInstance& operator=(const BatchInstance&) = delete;
@@ -45,15 +56,25 @@ namespace Hexeng::Renderer
 		BatchInstance(BatchInstance&&) noexcept;
 		BatchInstance& operator=(BatchInstance&&) noexcept;
 
+		/// <summary>
+		/// When you're done constructing all the BatchQuads related to this BatchInstance,
+		/// call this function in order for all the data to be sent to the gpu.
+		/// </summary>
 		void construct_batch();
 
 		void draw() override;
 
+		/// <summary>
+		/// You can always change the texture atlas,
+		/// but it risks to mess up with the texture coordinates of each BatchQuad.
+		/// If you change this value, make sure at least that the texture atlas and its cell_size aspect ratio stays unchanged.
+		/// </summary>
 		TextureAtlas* texture_atlas = nullptr;
 
-		Color3 color = {0.0f, 0.0f, 0.0f};
+		/// @brief You can ignore this if you don't need it, it's just a bonus designed for particles.
+		Color3 color = { 0.0f, 0.0f, 0.0f };
 
-	private :
+	private:
 
 		IndexBuffer m_index_buffer;
 
@@ -67,16 +88,21 @@ namespace Hexeng::Renderer
 
 		std::vector<BatchQuad*> m_quads;
 
-		void add_quad(BatchQuad*, const Vec2<int>& tex_coords);
+		void m_add_quad(BatchQuad*, const Vec2<int>& tex_coords);
 	};
 
 	class HXG_DECLSPEC BatchQuad
 	{
-	public :
+	public:
 
 		BatchQuad() = default;
 
-		BatchQuad(BatchInstance*, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size, float rotation = 0.0f);
+		/// @brief Adds a quad to a BatchInstance.
+		/// <param name="bi">The BatchInstance you want to push this BatchQuad in.</param>
+		/// <param name="tex_coords">The coordinates of a cell in the TextureAtlas of BatchInstance bi</param>
+		/// <param name="pos">The position of the quad in the Hexeng2D coordinates system.</param>
+		/// <param name="size">Gets multiplied by the size of the texture(cell) to get the size of the quad</param>
+		BatchQuad(BatchInstance* bi, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size, float rotation = 0.0f);
 
 		BatchQuad(const BatchQuad&) = delete;
 		BatchQuad& operator=(const BatchQuad&) = delete;
@@ -84,17 +110,23 @@ namespace Hexeng::Renderer
 		BatchQuad(BatchQuad&&) noexcept;
 		BatchQuad& operator=(BatchQuad&&) noexcept;
 
-		Vec2<int> position = {0, 0};
+		/// @brief Can always be modified.
+		Vec2<int> position = { 0, 0 };
+
+		/// @brief Can always be modified.
 		float scale = 1.0f;
+
+		/// @brief Can always be modified.
 		float rotation = 0.0f;
 
-		static VertexLayout vertex_layout;
-
-	private :
+	private:
 
 		friend class BatchInstance;
 
 		BatchInstance* m_batch_instance = nullptr;
+
+		static ToBeInit s_init_vl;
+		static VertexLayout s_vertex_layout;
 	};
 
 }

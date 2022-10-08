@@ -94,7 +94,6 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_renderer_1_1_batch_qu
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="class_hexeng_1_1_renderer_1_1_batch_quad-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Hexeng::Renderer::BatchQuad Class Reference</div></div>
@@ -107,8 +106,18 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_renderer_1_1_batch_qu
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afd5d5e836d1619a98777d5329a346614"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#afd5d5e836d1619a98777d5329a346614">BatchQuad</a> ()=default</td></tr>
 <tr class="separator:afd5d5e836d1619a98777d5329a346614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d40311d5c41023f1292f5318604aa58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a7d40311d5c41023f1292f5318604aa58">BatchQuad</a> (<a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> *, const <a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt; &amp;tex_coords, const <a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt; &amp;pos, float size, float <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5">rotation</a>=0.0f)</td></tr>
-<tr class="separator:a7d40311d5c41023f1292f5318604aa58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8da2cdceb66a23be46ae01711da2a44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#ac8da2cdceb66a23be46ae01711da2a44">BatchQuad</a> (<a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> *bi, const <a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt; &amp;tex_coords, const <a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt; &amp;pos, float size, float <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5">rotation</a>=0.0f)</td></tr>
+<tr class="memdesc:ac8da2cdceb66a23be46ae01711da2a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a quad to a <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bi</td><td>The <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a> you want to push this <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a> in.</td></tr>
+    <tr><td class="paramname">tex_coords</td><td>The coordinates of a cell in the <a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> of <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a> bi</td></tr>
+    <tr><td class="paramname">pos</td><td>The position of the quad in the Hexeng2D coordinates system.</td></tr>
+    <tr><td class="paramname">size</td><td>Gets multiplied by the size of the texture(cell) to get the size of the quad</td></tr>
+  </table>
+  </dd>
+</dl>
+ <a href="class_hexeng_1_1_renderer_1_1_batch_quad.html#ac8da2cdceb66a23be46ae01711da2a44">More...</a><br /></td></tr>
+<tr class="separator:ac8da2cdceb66a23be46ae01711da2a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a488221bc6a47a01142d06795d2c90443"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a488221bc6a47a01142d06795d2c90443">BatchQuad</a> (const <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a> &amp;)=delete</td></tr>
 <tr class="separator:a488221bc6a47a01142d06795d2c90443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55814db8457c3955c3b9b77e5c846042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a55814db8457c3955c3b9b77e5c846042">operator=</a> (const <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a> &amp;)=delete</td></tr>
@@ -120,17 +129,15 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:abbb26cf4cd54c6b59bc2e54555d13fab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#abbb26cf4cd54c6b59bc2e54555d13fab">position</a> = {0, 0}</td></tr>
+<tr class="memitem:abbb26cf4cd54c6b59bc2e54555d13fab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#abbb26cf4cd54c6b59bc2e54555d13fab">position</a> = { 0, 0 }</td></tr>
+<tr class="memdesc:abbb26cf4cd54c6b59bc2e54555d13fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can always be modified.  <a href="class_hexeng_1_1_renderer_1_1_batch_quad.html#abbb26cf4cd54c6b59bc2e54555d13fab">More...</a><br /></td></tr>
 <tr class="separator:abbb26cf4cd54c6b59bc2e54555d13fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc5f104114e35dcd7baed0e39d9166d7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#acc5f104114e35dcd7baed0e39d9166d7">scale</a> = 1.0f</td></tr>
+<tr class="memdesc:acc5f104114e35dcd7baed0e39d9166d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can always be modified.  <a href="class_hexeng_1_1_renderer_1_1_batch_quad.html#acc5f104114e35dcd7baed0e39d9166d7">More...</a><br /></td></tr>
 <tr class="separator:acc5f104114e35dcd7baed0e39d9166d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b58c3b6b3f2526fc6341286a73291d5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5">rotation</a> = 0.0f</td></tr>
+<tr class="memdesc:a7b58c3b6b3f2526fc6341286a73291d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can always be modified.  <a href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5">More...</a><br /></td></tr>
 <tr class="separator:a7b58c3b6b3f2526fc6341286a73291d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a51dcd4a551f7db897662e86505012eac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_hexeng_1_1_renderer_1_1_vertex_layout.html">VertexLayout</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html#a51dcd4a551f7db897662e86505012eac">vertex_layout</a></td></tr>
-<tr class="separator:a51dcd4a551f7db897662e86505012eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -163,8 +170,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d40311d5c41023f1292f5318604aa58" name="a7d40311d5c41023f1292f5318604aa58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d40311d5c41023f1292f5318604aa58">&#9670;&#160;</a></span>BatchQuad() <span class="overload">[2/4]</span></h2>
+<a id="ac8da2cdceb66a23be46ae01711da2a44" name="ac8da2cdceb66a23be46ae01711da2a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8da2cdceb66a23be46ae01711da2a44">&#9670;&#160;</a></span>BatchQuad() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,6 +213,17 @@ Friends</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Adds a quad to a <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bi</td><td>The <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a> you want to push this <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a> in.</td></tr>
+    <tr><td class="paramname">tex_coords</td><td>The coordinates of a cell in the <a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> of <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a> bi</td></tr>
+    <tr><td class="paramname">pos</td><td>The position of the quad in the Hexeng2D coordinates system.</td></tr>
+    <tr><td class="paramname">size</td><td>Gets multiplied by the size of the texture(cell) to get the size of the quad</td></tr>
+  </table>
+  </dd>
+</dl>
+</p>
 
 </div>
 </div>
@@ -345,10 +363,12 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt;int&gt; Hexeng::Renderer::BatchQuad::position = {0, 0}</td>
+          <td class="memname"><a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt;int&gt; Hexeng::Renderer::BatchQuad::position = { 0, 0 }</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Can always be modified. </p>
 
 </div>
 </div>
@@ -364,6 +384,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Can always be modified. </p>
+
 </div>
 </div>
 <a id="acc5f104114e35dcd7baed0e39d9166d7" name="acc5f104114e35dcd7baed0e39d9166d7"></a>
@@ -378,27 +400,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a51dcd4a551f7db897662e86505012eac" name="a51dcd4a551f7db897662e86505012eac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51dcd4a551f7db897662e86505012eac">&#9670;&#160;</a></span>vertex_layout</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_hexeng_1_1_renderer_1_1_vertex_layout.html">VertexLayout</a> Hexeng::Renderer::BatchQuad::vertex_layout</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Can always be modified. </p>
 
 </div>
 </div>

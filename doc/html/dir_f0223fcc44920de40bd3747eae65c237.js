@@ -2,7 +2,7 @@ var dir_f0223fcc44920de40bd3747eae65c237 =
 [
     [ "Animation.cpp", "_animation_8cpp.html", null ],
     [ "Animation.hpp", "_animation_8hpp.html", "_animation_8hpp" ],
-    [ "BatchRenderer.cpp", "_batch_renderer_8cpp.html", "_batch_renderer_8cpp" ],
+    [ "BatchRenderer.cpp", "_batch_renderer_8cpp.html", null ],
     [ "BatchRenderer.hpp", "_batch_renderer_8hpp.html", "_batch_renderer_8hpp" ],
     [ "Camera.cpp", "_camera_8cpp.html", "_camera_8cpp" ],
     [ "Camera.hpp", "_camera_8hpp.html", "_camera_8hpp" ],

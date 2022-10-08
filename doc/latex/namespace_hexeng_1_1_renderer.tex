@@ -8,7 +8,7 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}}
 struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}{Animation\+Step}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}
-\item 
+\begin{DoxyCompactList}\small\item\em An instance that can gather 250 quads on the same layer at max and render them together.  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}
@@ -44,7 +44,7 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}}
-\item 
+\begin{DoxyCompactList}\small\item\em Allows to push multiple textures linearly to form a unique texture that is in fact a one dimentional array of textures.  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_delete}{To\+Be\+Delete}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}}
@@ -84,8 +84,9 @@ enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5d
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{SIZED\+\_\+\+FORMAT}}
 , \newline
 \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{BPP}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\+\_\+\+NB}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em An enum of possible texture settings you can specify to a texture constructor.  \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{SUBSTRACT}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}}
@@ -119,8 +120,6 @@ void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
-\item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac8e1629dec6b2ef336030b2b76257db7}{init\+\_\+vl}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a55403b255c2be67af5d7fe224076952d}{init\+\_\+cam}}
 \item 
@@ -202,25 +201,33 @@ RELATIVE&\\
 \doxysubsubsection{\texorpdfstring{TexSett}{TexSett}}
 {\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Hexeng\+::\+Renderer\+::\+Tex\+Sett}}\hspace{0.3cm}{\ttfamily [strong]}}
 
+
+
+An enum of possible texture settings you can specify to a texture constructor.  
+
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MAG\_FILTER@{MAG\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MAG\_FILTER@{MAG\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}} 
 MAG\+\_\+\+FILTER&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MIN\_FILTER@{MIN\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MIN\_FILTER@{MIN\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}} 
-MIN\+\_\+\+FILTER&\\
+MIN\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed in\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BASE\_FORMAT@{BASE\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BASE\_FORMAT@{BASE\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}} 
-BASE\+\_\+\+FORMAT&\\
+BASE\+\_\+\+FORMAT&Behaviour of a texture when it gets \char`\"{}zoomed out\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{SIZED\_FORMAT@{SIZED\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SIZED\_FORMAT@{SIZED\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}} 
-SIZED\+\_\+\+FORMAT&\\
+SIZED\+\_\+\+FORMAT&The color format of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA. \\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{BPP@{BPP}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BPP@{BPP}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}} 
-BPP&\\
+BPP&The color format with the size of each channel of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA8. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHANNELS\_NB@{CHANNELS\_NB}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!CHANNELS\_NB@{CHANNELS\_NB}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}} 
+CHANNELS\+\_\+\+NB&The number of bytes per pixel. By default, it is set to 4. The number of channels. By default, it is set to 4. \\
 \hline
 
 \end{DoxyEnumFields}
@@ -418,19 +425,6 @@ DIVIDE&\\
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_window\_size);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_rotation\_angle);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_scale);}
-\DoxyCodeLine{    \} \}}
-
-\end{DoxyCode}
-\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ac8e1629dec6b2ef336030b2b76257db7}\label{namespace_hexeng_1_1_renderer_ac8e1629dec6b2ef336030b2b76257db7}} 
-\index{Hexeng::Renderer@{Hexeng::Renderer}!init\_vl@{init\_vl}}
-\index{init\_vl@{init\_vl}!Hexeng::Renderer@{Hexeng::Renderer}}
-\doxysubsubsection{\texorpdfstring{init\_vl}{init\_vl}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} Hexeng\+::\+Renderer\+::init\+\_\+vl}
-
-{\bfseries Initial value\+:}
-\begin{DoxyCode}{0}
-\DoxyCodeLine{\{ []() \{}
-\DoxyCodeLine{        BatchQuad::vertex\_layout = VertexLayout(\{ \{ 2, GL\_FLOAT \}, \{ 2, GL\_FLOAT \}, \{ 1, GL\_FLOAT \} \});}
 \DoxyCodeLine{    \} \}}
 
 \end{DoxyCode}

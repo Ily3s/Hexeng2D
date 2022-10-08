@@ -9,12 +9,16 @@ namespace Hexeng::Renderer
 	Texture::Texture(const std::string& filepath, const TexSettList& settings)
 		: m_filepath(filepath)
 	{
-		build_settings(settings, {});
+		m_build_settings(settings, {});
 
 		stbi_set_flip_vertically_on_load(1);
-		m_texbuffer = stbi_load(filepath.c_str(), &m_size.x, &m_size.y, &m_BPP, 4);
+		m_texbuffer = stbi_load(filepath.c_str(), &m_size.x, &m_size.y, &m_BPP, m_channels_nb);
 
-		construct_texture();
+		HXG_ASSERT(m_texbuffer,
+			HXG_LOG_ERROR("Error when trying to load the texture \"" + filepath + "\" : " + stbi_failure_reason());
+			return;);
+
+		m_construct_texture();
 
 		stbi_image_free(m_texbuffer);
 		m_texbuffer = nullptr;
@@ -27,13 +31,13 @@ namespace Hexeng::Renderer
 	{
 		pixel_buffer = nullptr;
 
-		build_settings(settings, {});
-		construct_texture();
+		m_build_settings(settings, {});
+		m_construct_texture();
 
 		ToBeDelete(this, [this]() { this->~Texture(); });
 	}
 
-	void Texture::construct_texture()
+	void Texture::m_construct_texture()
 	{
 		glPixelStorei(GL_UNPACK_ALIGNMENT, m_BPP);
 
@@ -49,9 +53,9 @@ namespace Hexeng::Renderer
 		HXG_GL(glBindTexture(GL_TEXTURE_2D, 0));
 	}
 
-	void Texture::build_settings(const TexSettList& settings, std::vector<TexSett> necessary)
+	void Texture::m_build_settings(const TexSettList& settings, std::vector<TexSett> necessary)
 	{
-		bool is_bpp_specified = false;
+		bool is_bpp_specified = false, is_channels_nb_specified = false;
 		for (const auto& [setting, value] : settings)
 		{
 			auto it = std::find(necessary.begin(), necessary.end(), setting);
@@ -65,6 +69,7 @@ namespace Hexeng::Renderer
 			case TexSett::BASE_FORMAT: m_base_format = value; break;
 			case TexSett::SIZED_FORMAT: m_sized_format = value; break;
 			case TexSett::BPP: m_BPP = value; is_bpp_specified = true; break;
+			case TexSett::CHANNELS_NB: m_channels_nb = value; is_channels_nb_specified = true; break;
 			default: break;
 			}
 		}
@@ -74,12 +79,33 @@ namespace Hexeng::Renderer
 			switch (m_sized_format)
 			{
 			case GL_R8: m_BPP = 1; break;
+			case GL_RGB8: m_BPP = 3; break;
+			case GL_RGBA8: m_BPP = 4; break;
+			case GL_RGBA16: m_BPP = 8; break;
+			case GL_RGB16: m_BPP = 4; break;
+			case GL_R16: m_BPP = 2; break;
 				// maybe other internal formats todo
 			default: break;
 			}
 		}
 
-		assert(!necessary.size() && "Missing some necessary texture setting(s)");
+		if (!is_channels_nb_specified)
+		{
+			switch (m_sized_format)
+			{
+			case GL_R8: m_channels_nb = 1; break;
+			case GL_RGB8: m_channels_nb = 3; break;
+			case GL_RGBA8: m_channels_nb = 4; break;
+			case GL_RGBA16: m_channels_nb = 4; break;
+			case GL_RGB16: m_channels_nb = 3; break;
+			case GL_R16: m_channels_nb = 1; break;
+				// maybe other internal formats todo
+			default: break;
+			}
+		}
+
+		HXG_ASSERT(!necessary.size(),
+			HXG_LOG_ERROR("Missing some necessary texture settings"););
 	}
 
 	Texture::~Texture()
@@ -97,7 +123,7 @@ namespace Hexeng::Renderer
 	Texture::Texture(Texture&& other) noexcept
 		: m_filepath(other.m_filepath), m_size(other.m_size), m_BPP(other.m_BPP), m_texbuffer(other.m_texbuffer),
 		m_mag_filter(other.m_mag_filter), m_min_filter(other.m_min_filter), m_id(other.m_id),
-		m_base_format(other.m_base_format), m_sized_format(other.m_sized_format)
+		m_base_format(other.m_base_format), m_sized_format(other.m_sized_format), m_channels_nb(other.m_channels_nb)
 	{
 		other.m_id = 0;
 		other.m_texbuffer = nullptr;
@@ -116,6 +142,7 @@ namespace Hexeng::Renderer
 		m_min_filter = other.m_min_filter;
 		m_base_format = other.m_base_format;
 		m_sized_format = other.m_sized_format;
+		m_channels_nb = other.m_channels_nb;
 		other.m_id = 0;
 		other.m_texbuffer = nullptr;
 
@@ -170,7 +197,7 @@ namespace Hexeng::Renderer
 
 	TextureVector::TextureVector(const TexSettList& settings)
 	{
-		build_settings(settings, {});
+		m_build_settings(settings, {});
 	}
 
 	TextureVector::TextureVector(TextureVector&& other) noexcept
@@ -220,6 +247,22 @@ namespace Hexeng::Renderer
 							{prev_size.x / m_BPP, size.y},
 							{m_size.x, size.y},
 							{m_size.x, 0} });
+	}
+
+	void TextureVector::push(const std::string& filepath)
+	{
+		stbi_set_flip_vertically_on_load(1);
+		Vec2<int> new_texture_size;
+		int bytes_per_pixel = 0;
+		uint8_t* new_texture_buffer = stbi_load(filepath.c_str(), &new_texture_size.x, &new_texture_size.y, &bytes_per_pixel, 4);
+		HXG_ASSERT(new_texture_buffer,
+			HXG_LOG_ERROR("Error when trying to load the texture \"" + filepath + "\" : " + stbi_failure_reason());
+			return;);
+		HXG_ASSERT(bytes_per_pixel == m_BPP,
+			HXG_LOG_ERROR("BPP not respected");
+			stbi_image_free(new_texture_buffer); return;);
+		push(new_texture_buffer, new_texture_size);
+		stbi_image_free(new_texture_buffer);
 	}
 
 	const std::vector<TexCoord>& TextureVector::get_coordinates() const

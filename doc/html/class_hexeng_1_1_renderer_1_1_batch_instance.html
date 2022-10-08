@@ -100,6 +100,9 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_renderer_1_1_batch_in
 </div><!--header-->
 <div class="contents">
 
+<p>An instance that can gather 250 quads on the same layer at max and render them together.   
+ <a href="class_hexeng_1_1_renderer_1_1_batch_instance.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_batch_renderer_8hpp_source.html">BatchRenderer.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Hexeng::Renderer::BatchInstance:</div>
@@ -115,8 +118,8 @@ Inheritance diagram for Hexeng::Renderer::BatchInstance:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a26794b40fb66070c1d567dda54ea486f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a26794b40fb66070c1d567dda54ea486f">BatchInstance</a> ()=default</td></tr>
 <tr class="separator:a26794b40fb66070c1d567dda54ea486f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6fbab68af005c9a2f41f2f6bf7a907b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a6fbab68af005c9a2f41f2f6bf7a907b8">BatchInstance</a> (<a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> *, <a class="el" href="class_hexeng_1_1_renderer_1_1_shader.html">Shader</a> *=&amp;<a class="el" href="namespace_hexeng_1_1_renderer.html#ab226688adeb4084283280edb96e79608">batching_shader</a>)</td></tr>
-<tr class="separator:a6fbab68af005c9a2f41f2f6bf7a907b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d9578c46c1a10f29fa21f4373b51616"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a8d9578c46c1a10f29fa21f4373b51616">BatchInstance</a> (<a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> *texture, <a class="el" href="class_hexeng_1_1_renderer_1_1_shader.html">Shader</a> *shader=&amp;<a class="el" href="namespace_hexeng_1_1_renderer.html#ab226688adeb4084283280edb96e79608">batching_shader</a>)</td></tr>
+<tr class="separator:a8d9578c46c1a10f29fa21f4373b51616"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbdb7ecefa0a11398feba771309ff017"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#adbdb7ecefa0a11398feba771309ff017">BatchInstance</a> (const <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> &amp;)=delete</td></tr>
 <tr class="separator:adbdb7ecefa0a11398feba771309ff017"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae81b9cf2d66b87e9d2b994945b89fa3d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#ae81b9cf2d66b87e9d2b994945b89fa3d">operator=</a> (const <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> &amp;)=delete</td></tr>
@@ -126,6 +129,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c82f9a73faa2150baac04bbb3d166f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a6c82f9a73faa2150baac04bbb3d166f0">operator=</a> (<a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html">BatchInstance</a> &amp;&amp;) noexcept</td></tr>
 <tr class="separator:a6c82f9a73faa2150baac04bbb3d166f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa61e5cc2f142a552dd92a1bf9667129b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#aa61e5cc2f142a552dd92a1bf9667129b">construct_batch</a> ()</td></tr>
+<tr class="memdesc:aa61e5cc2f142a552dd92a1bf9667129b"><td class="mdescLeft">&#160;</td><td class="mdescRight">When you're done constructing all the BatchQuads related to this <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a>, call this function in order for all the data to be sent to the gpu.   <a href="class_hexeng_1_1_renderer_1_1_batch_instance.html#aa61e5cc2f142a552dd92a1bf9667129b">More...</a><br /></td></tr>
 <tr class="separator:aa61e5cc2f142a552dd92a1bf9667129b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4cbd6c07a4a571f0177bb0c65e398d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a5d4cbd6c07a4a571f0177bb0c65e398d">draw</a> () override</td></tr>
 <tr class="separator:a5d4cbd6c07a4a571f0177bb0c65e398d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,8 +162,10 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ad0c39a42d9e165ea926480c365ac2107"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#ad0c39a42d9e165ea926480c365ac2107">texture_atlas</a> = nullptr</td></tr>
+<tr class="memdesc:ad0c39a42d9e165ea926480c365ac2107"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can always change the texture atlas, but it risks to mess up with the texture coordinates of each <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a>. If you change this value, make sure at least that the texture atlas and its cell_size aspect ratio stays unchanged.   <a href="class_hexeng_1_1_renderer_1_1_batch_instance.html#ad0c39a42d9e165ea926480c365ac2107">More...</a><br /></td></tr>
 <tr class="separator:ad0c39a42d9e165ea926480c365ac2107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b801ea5e630b84e7cda3f44e973952d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color3.html">Color3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a2b801ea5e630b84e7cda3f44e973952d">color</a> = {0.0f, 0.0f, 0.0f}</td></tr>
+<tr class="memitem:a2b801ea5e630b84e7cda3f44e973952d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color3.html">Color3</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a2b801ea5e630b84e7cda3f44e973952d">color</a> = { 0.0f, 0.0f, 0.0f }</td></tr>
+<tr class="memdesc:a2b801ea5e630b84e7cda3f44e973952d"><td class="mdescLeft">&#160;</td><td class="mdescRight">You can ignore this if you don't need it, it's just a bonus designed for particles.  <a href="class_hexeng_1_1_renderer_1_1_batch_instance.html#a2b801ea5e630b84e7cda3f44e973952d">More...</a><br /></td></tr>
 <tr class="separator:a2b801ea5e630b84e7cda3f44e973952d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_hexeng_1_1_renderer_1_1_mesh"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_hexeng_1_1_renderer_1_1_mesh')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html">Hexeng::Renderer::Mesh</a></td></tr>
 <tr class="memitem:a4840714190a5e2d48136cef014de0b22 inherit pub_attribs_class_hexeng_1_1_renderer_1_1_mesh"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_vec2.html">Vec2</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a4840714190a5e2d48136cef014de0b22">position</a> { 0, 0 }</td></tr>
@@ -196,7 +202,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a06e3943947b53475298fad224055c2ef inherit pro_attribs_class_hexeng_1_1_renderer_1_1_mesh"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="class_hexeng_1_1_renderer_1_1_vertex_layout.html">VertexLayout</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a06e3943947b53475298fad224055c2ef">m_layout</a> = nullptr</td></tr>
 <tr class="separator:a06e3943947b53475298fad224055c2ef inherit pro_attribs_class_hexeng_1_1_renderer_1_1_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An instance that can gather 250 quads on the same layer at max and render them together.  </p>
+<dl class="section note"><dt>Note</dt><dd>A <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a> is a <a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html">Mesh</a>. If you set the pos, rotation or scale of the <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a>, it will add up with the pos, rotation or scale of each of the BatchQuads. </dd></dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a26794b40fb66070c1d567dda54ea486f" name="a26794b40fb66070c1d567dda54ea486f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a26794b40fb66070c1d567dda54ea486f">&#9670;&#160;</a></span>BatchInstance() <span class="overload">[1/4]</span></h2>
 
@@ -222,8 +231,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6fbab68af005c9a2f41f2f6bf7a907b8" name="a6fbab68af005c9a2f41f2f6bf7a907b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6fbab68af005c9a2f41f2f6bf7a907b8">&#9670;&#160;</a></span>BatchInstance() <span class="overload">[2/4]</span></h2>
+<a id="a8d9578c46c1a10f29fa21f4373b51616" name="a8d9578c46c1a10f29fa21f4373b51616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d9578c46c1a10f29fa21f4373b51616">&#9670;&#160;</a></span>BatchInstance() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -232,7 +241,7 @@ Additional Inherited Members</h2></td></tr>
           <td class="memname">Hexeng::Renderer::BatchInstance::BatchInstance </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_hexeng_1_1_renderer_1_1_texture_atlas.html">TextureAtlas</a> *&#160;</td>
-          <td class="paramname"><em>tex_atlas</em>, </td>
+          <td class="paramname"><em>texture</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -317,6 +326,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>When you're done constructing all the BatchQuads related to this <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together.">BatchInstance</a>, call this function in order for all the data to be sent to the gpu.  </p>
 
 </div>
 </div>
@@ -430,10 +441,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_hexeng_1_1_color3.html">Color3</a> Hexeng::Renderer::BatchInstance::color = {0.0f, 0.0f, 0.0f}</td>
+          <td class="memname"><a class="el" href="class_hexeng_1_1_color3.html">Color3</a> Hexeng::Renderer::BatchInstance::color = { 0.0f, 0.0f, 0.0f }</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>You can ignore this if you don't need it, it's just a bonus designed for particles. </p>
 
 </div>
 </div>
@@ -448,6 +461,8 @@ Additional Inherited Members</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>You can always change the texture atlas, but it risks to mess up with the texture coordinates of each <a class="el" href="class_hexeng_1_1_renderer_1_1_batch_quad.html">BatchQuad</a>. If you change this value, make sure at least that the texture atlas and its cell_size aspect ratio stays unchanged.  </p>
 
 </div>
 </div>

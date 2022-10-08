@@ -19,5 +19,5 @@ var searchData=
   ['position_5fmode_16',['position_mode',['../class_hexeng_1_1_renderer_1_1_layer.html#a0458708a27a8b74d3e5bf0789aae6984',1,'Hexeng::Renderer::Layer']]],
   ['prev_5fmax_17',['prev_max',['../struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html#ae85976066fdbc39a0432888c8b303fd4',1,'Hexeng::Physics::RectangleHitBox']]],
   ['prev_5fmin_18',['prev_min',['../struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html#a159ae09ce5667d5efd09d83a63176f2e',1,'Hexeng::Physics::RectangleHitBox']]],
-  ['push_19',['push',['../class_hexeng_1_1_renderer_1_1_texture_vector.html#ab0bde02828b1faa2be5e224b71f85ebc',1,'Hexeng::Renderer::TextureVector']]]
+  ['push_19',['push',['../class_hexeng_1_1_renderer_1_1_texture_vector.html#ab0bde02828b1faa2be5e224b71f85ebc',1,'Hexeng::Renderer::TextureVector::push(const uint8_t *tex_buffer, Vec2&lt; int &gt; size)'],['../class_hexeng_1_1_renderer_1_1_texture_vector.html#ac8767544b13679c7a64b15f130513450',1,'Hexeng::Renderer::TextureVector::push(const std::string &amp;filepath)']]]
 ];
