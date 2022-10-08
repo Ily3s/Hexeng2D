@@ -41,7 +41,7 @@ namespace Hexeng::Renderer
 	{
 		m_shader = shader;
 
-		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
 		uniforms.push_back({ &u_color, &color });

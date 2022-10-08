@@ -5,7 +5,16 @@
 namespace Hexeng::Renderer
 {
 
-	Mesh::Mesh(const float* vb, size_t vb_size, const Vec2<int>& pos, const VertexLayout& layout, const IndexBuffer* ib, Texture* tex, Shader* shader, GLenum type)
+	Mesh::Mesh
+	(
+		const void* vb,
+		size_t vb_size,
+		const Vec2<int>& pos,
+		const VertexLayout& layout,
+		const IndexBuffer* ib, Texture* tex,
+		Shader* shader,
+		GLenum type
+	)
 		:	m_vb(vb, vb_size),
 			m_ib(ib),
 			m_texture(tex),
@@ -15,7 +24,7 @@ namespace Hexeng::Renderer
 			m_layout(&layout)
 	{
 		m_vao.tie(m_vb, layout, *m_ib);
-		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
 	}
@@ -29,7 +38,7 @@ namespace Hexeng::Renderer
 			uniforms(std::move(moving.uniforms)),
 			m_type(moving.m_type),
 			position(moving.position),
-			transform(moving.transform),
+			m_transform(moving.m_transform),
 			rotation(moving.rotation),
 			scale(moving.scale),
 			m_layout(moving.m_layout)
@@ -39,7 +48,7 @@ namespace Hexeng::Renderer
 		for (auto& [ui, value_ptr] : uniforms)
 		{
 			if (ui == &u_transform)
-				value_ptr = &transform;
+				value_ptr = &m_transform;
 			if (ui == &u_rotation_angle)
 				value_ptr = &rotation;
 			if (ui == &u_scale)
@@ -57,7 +66,7 @@ namespace Hexeng::Renderer
 		uniforms = std::move(moving.uniforms);
 		m_type = moving.m_type;
 		position = moving.position;
-		transform = moving.transform;
+		m_transform = moving.m_transform;
 		rotation = moving.rotation;
 		scale = moving.scale;
 		m_layout = moving.m_layout;
@@ -67,7 +76,7 @@ namespace Hexeng::Renderer
 		for (auto& [ui, value_ptr] : uniforms)
 		{
 			if (ui == &u_transform)
-				value_ptr = &transform;
+				value_ptr = &m_transform;
 			else if (ui == &u_rotation_angle)
 				value_ptr = &rotation;
 			else if (ui == &u_scale)
@@ -101,13 +110,13 @@ namespace Hexeng::Renderer
 	
 	void Mesh::update_position()
 	{
-		transform = toCoord(position);
+		m_transform = toCoord(position);
 	}
 
 	SuperMesh::SuperMesh(std::vector<Mesh*>&& meshes)
 		: meshes(std::move(meshes))
 	{
-		uniforms.push_back({ &u_transform, &transform });
+		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
 	}

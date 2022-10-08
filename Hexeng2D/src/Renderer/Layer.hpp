@@ -56,9 +56,9 @@ namespace Hexeng::Renderer
 
 		virtual void draw();
 
-	protected:
+		std::vector<std::pair<UniformInterface*, void*>> uniforms;
 
-		std::vector<std::pair<UniformInterface*, void*>> m_uniforms;
+	protected:
 
 		Range m_range = Range::LOCAL;
 

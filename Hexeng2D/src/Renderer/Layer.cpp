@@ -19,8 +19,8 @@ namespace Hexeng::Renderer
 		{
 			static float one = 1.0f;
 			static Vec2<float> zero{ 0.0f, 0.0f };
-			m_uniforms.push_back({ &Camera::u_zoom, &one });
-			m_uniforms.push_back({ &Camera::u_cam, &zero });
+			uniforms.push_back({ &Camera::u_zoom, &one });
+			uniforms.push_back({ &Camera::u_cam, &zero });
 		}
 
 		if (range == Range::GLOBAL)
@@ -30,7 +30,7 @@ namespace Hexeng::Renderer
 	Layer::Layer(Layer&& other) noexcept
 		: meshes(other.meshes),
 		z_position(other.z_position),
-		m_uniforms(std::move(other.m_uniforms)),
+		uniforms(std::move(other.uniforms)),
 		m_range(other.m_range),
 		m_position_mode(other.m_position_mode)
 	{
@@ -47,7 +47,7 @@ namespace Hexeng::Renderer
 		meshes = other.meshes;
 		z_position = other.z_position;
 		m_position_mode = other.m_position_mode;
-		m_uniforms = std::move(other.m_uniforms);
+		uniforms = std::move(other.uniforms);
 
 		if (m_range == Range::GLOBAL)
 		{
@@ -145,13 +145,13 @@ namespace Hexeng::Renderer
 
 		Camera::s_update_zoom(z_position - Camera::position.z);
 
-		for (auto& [uniform, value] : m_uniforms)
+		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(value);
 
 		for (const auto& mesh : meshes)
 			mesh->draw();
 
-		for (auto& [uniform, value] : m_uniforms)
+		for (auto& [uniform, value] : uniforms)
 			uniform->refresh();
 	}
 
@@ -165,13 +165,13 @@ namespace Hexeng::Renderer
 
 		Camera::s_update_zoom(z_position - Camera::position.z);
 
-		for (auto& [uniform, value] : m_uniforms)
+		for (auto& [uniform, value] : uniforms)
 			uniform->refresh(value);
 
 		for (const auto& mesh : meshes)
 			mesh->draw();
 
-		for (auto& [uniform, value] : m_uniforms)
+		for (auto& [uniform, value] : uniforms)
 			uniform->refresh();
 	}
 

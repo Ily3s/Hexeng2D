@@ -13,7 +13,7 @@ Inheritance diagram for Hexeng\+::Renderer\+::Quad\+:\begin{figure}[H]
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_adad0b65d9dfed645a83d1fb889181862}{Quad}} (const int $\ast$vertecies, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&pos, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$texture, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}})
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a970bf016e9bcf4ba28d59ae6b53d7868}{Quad}} (const std\+::array$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$, 4 $>$ \&vertecies, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&pos, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$texture, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}})
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}{Quad}} ()=default
 \item 
@@ -41,12 +41,22 @@ static \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_adad0b65d9dfed645a83d1fb889181862}\label{class_hexeng_1_1_renderer_1_1_quad_adad0b65d9dfed645a83d1fb889181862}} 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a970bf016e9bcf4ba28d59ae6b53d7868}\label{class_hexeng_1_1_renderer_1_1_quad_a970bf016e9bcf4ba28d59ae6b53d7868}} 
 \index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
 \index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
 \doxysubsubsection{\texorpdfstring{Quad()}{Quad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}\item[{const int $\ast$}]{vertecies,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{pos,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}\item[{const std\+::array$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$, 4 $>$ \&}]{vertecies,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{pos,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}} }\end{DoxyParamCaption})}
 
+
+\begin{DoxyParams}{Parameters}
+{\em vertecies} & The four vertecies positions relative to pos. Make the vertecies clockwise. \\
+\hline
+{\em The} & position of the quad in the Hexeng2D coordinate system. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you want to make a custom shader for the quad, take a look at Default\+Shaders .glsl/.hpp/.cpp, copy paste basic\+\_\+shader and modify it as you want. 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}\label{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}} 
 \index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
 \index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}

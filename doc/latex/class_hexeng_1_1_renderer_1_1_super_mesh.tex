@@ -2,6 +2,11 @@
 \label{class_hexeng_1_1_renderer_1_1_super_mesh}\index{Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
 
 
+A bunch of meshes that shares some attributes. For example, a player got legs and arms that can move individually, but the position of the legs and arms are relative to the position of the body. In this example, legs and arms are Meshes, the body is a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}.   
+
+
+
+
 {\ttfamily \#include $<$Mesh.\+hpp$>$}
 
 Inheritance diagram for Hexeng\+::Renderer\+::Super\+Mesh\+:\begin{figure}[H]
@@ -33,6 +38,14 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_abf9bc7825e9fc12d
 std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_ad57da385f9ae81649e038727fa159fb1}{meshes}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A bunch of meshes that shares some attributes. For example, a player got legs and arms that can move individually, but the position of the legs and arms are relative to the position of the body. In this example, legs and arms are Meshes, the body is a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}.  
+
+\begin{DoxyNote}{Note}
+A \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} can be made up of other Super\+Meshes. Also a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} is NOT batch rendered. If you\textquotesingle{}re looking for batch rendering, take a look at \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} instead. 
+\end{DoxyNote}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}

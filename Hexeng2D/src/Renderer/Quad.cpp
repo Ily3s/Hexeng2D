@@ -1,5 +1,3 @@
-#include <exception>
-
 #include "Quad.hpp"
 #include "Camera.hpp"
 #include "Renderer.hpp"
@@ -12,14 +10,14 @@ namespace Hexeng::Renderer
 	IndexBuffer Quad::s_edge_index_buffer;
 	VertexLayout Quad::vertex_layout;
 
-	Quad::Quad(const int* vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader)
+	Quad::Quad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader)
 	{
 		float vertex_b[]
 		{
-			toX(vertecies[0]), toY(vertecies[1]), 0.0f, 0.0f,
-			toX(vertecies[2]), toY(vertecies[3]), 0.0f, 1.0f,
-			toX(vertecies[4]), toY(vertecies[5]), 1.0f, 1.0f,
-			toX(vertecies[6]), toY(vertecies[7]), 1.0f, 0.0f
+			toX(vertecies[0].x), toY(vertecies[0].y), 0.0f, 0.0f,
+			toX(vertecies[1].x), toY(vertecies[1].y), 0.0f, 1.0f,
+			toX(vertecies[2].x), toY(vertecies[2].y), 1.0f, 1.0f,
+			toX(vertecies[3].x), toY(vertecies[3].y), 1.0f, 0.0f
 		};
 
 		this->Mesh::operator=({vertex_b, 4*4*sizeof(float), pos, vertex_layout, &s_index_buffer, texture, shader});
@@ -57,12 +55,12 @@ namespace Hexeng::Renderer
 		m_min = relative_pos + pos;
 		m_max = m_min + size;
 
-		int vertecies[]
+		std::array<Vec2<int>, 4> vertecies
 		{
-			relative_pos.x,			 relative_pos.y,
-			relative_pos.x,			 relative_pos.y + size.y,
-			relative_pos.x + size.x, relative_pos.y + size.y,
-			relative_pos.x + size.x, relative_pos.y,
+			Vec2<int>{relative_pos.x,			relative_pos.y			},
+			Vec2<int>{relative_pos.x,			relative_pos.y + size.y	},
+			Vec2<int>{relative_pos.x + size.x,	relative_pos.y + size.y	},
+			Vec2<int>{relative_pos.x + size.x,	relative_pos.y			}
 		};
 
 		this->Quad::operator=({vertecies, pos, texture, shader});
@@ -87,8 +85,8 @@ namespace Hexeng::Renderer
 	Square::Square(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
 		: Rectangle(pos, size, texture, centered, shader)
 	{
-		if (texture && texture->get_height() != texture->get_width())
-			throw(std::runtime_error("excepted texure to be a square"));
+		HXG_ASSERT(texture || texture->get_height() == texture->get_width(),
+			HXG_LOG_WARNING("Excepted texture to be a square"););
 	}
 
 	DebugSquare::DebugSquare(const Vec2<int>& pos, int size, bool centered, Shader* shader)
@@ -99,7 +97,7 @@ namespace Hexeng::Renderer
 		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
 	}
 
-	DebugQuad::DebugQuad(const int* vertecies, const Vec2<int>& pos, Shader* shader)
+	DebugQuad::DebugQuad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Shader* shader)
 		: Quad(vertecies, pos, nullptr, shader)
 	{
 		m_type = GL_LINES;
