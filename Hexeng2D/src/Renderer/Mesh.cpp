@@ -2,6 +2,11 @@
 #include "Renderer.hpp"
 #include "../Hexeng.hpp"
 
+#include <array>
+
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 namespace Hexeng::Renderer
 {
 
@@ -179,5 +184,147 @@ namespace Hexeng::Renderer
 		for (auto& [ui, val] : uniforms)
 			ui->refresh();
 	}
+
+	Polygon::Polygon(const std::vector<Vec2<int>>& vertecies, Vec2<int> pos, Color4 color_p, Shader* shader)
+		: color(color_p)
+	{
+		HXG_ASSERT((vertecies.size() > 2),
+			HXG_LOG_ERROR("A polygon must be built out of at least three vertecies."););
+
+		float* vertex_buffer = new float[vertecies.size() * 2];
+
+		for (size_t i = 0; i < vertecies.size(); i++)
+		{
+			vertex_buffer[i * 2] = toX(vertecies[i].x);
+			vertex_buffer[i * 2 + 1] = toY(vertecies[i].y);
+		}
+
+		m_construct_ib(vertecies);
+
+		this->Mesh::operator=(Mesh{ vertex_buffer, vertecies.size() * 2 * sizeof(float), pos, s_vertex_layout, &m_index_buffer, nullptr, shader });
+
+		uniforms.push_back({ &u_color, &color });
+
+		delete[] vertex_buffer;
+	}
+
+	void Polygon::m_construct_ib(const std::vector<Vec2<int>>& vertecies)
+	{
+		std::vector<int> indexes;
+		std::vector<unsigned int> triangles_indexes;
+
+		indexes.reserve(vertecies.size());
+		for (int i = 0; i < vertecies.size(); i++)
+			indexes.push_back(i);
+
+		triangles_indexes.reserve((vertecies.size() - 2) * 3);
+
+		for (int i = 0; i < vertecies.size(); i++)
+		{
+			if (indexes.size() == 3)
+			{
+				triangles_indexes.push_back(indexes[0]);
+				triangles_indexes.push_back(indexes[1]);
+				triangles_indexes.push_back(indexes[2]);
+
+				break;
+			}
+
+			int pre_index = i ? i - 1 : indexes.size() - 1;
+			int post_index = i < indexes.size() - 1 ? i + 1 : 0;
+			std::array<Vec2<int>, 3> triangle_to_test{ vertecies[indexes[pre_index]], vertecies[indexes[i]], vertecies[indexes[post_index]] };
+			if (m_is_acute(triangle_to_test))
+			{
+				bool is_everything_fine = true;
+				for (int j = 0; j < vertecies.size(); j++)
+				{
+					if (j == indexes[i] || j == indexes[pre_index] || j == indexes[post_index])
+						break;
+
+					if (m_is_in_triangle(vertecies[j], triangle_to_test))
+					{
+						is_everything_fine = false;
+						break;
+					}
+				}
+				if (is_everything_fine)
+				{
+					triangles_indexes.push_back(indexes[pre_index]);
+					triangles_indexes.push_back(indexes[i]);
+					triangles_indexes.push_back(indexes[post_index]);
+
+					indexes.erase(indexes.begin() + i);
+
+					i = -1;
+				}
+			}
+		}
+
+		m_index_buffer = IndexBuffer(&triangles_indexes[0], GL_UNSIGNED_INT, triangles_indexes.size());
+	}
+
+	bool Polygon::m_is_acute(const std::array<Vec2<int>, 3>& triangle)
+	{
+		Vec2<double> a{ triangle[0] - triangle[1] };
+		Vec2<double> b{ triangle[2] - triangle[1] };
+
+		double angle = std::atan2(a.x * b.y - a.y * b.x, scalar(a, b));
+
+		return angle >= 0;
+	}
+
+	bool Polygon::m_is_in_triangle(Vec2<int> point, const std::array<Vec2<int>, 3>& triangle)
+	{
+		for (int i = 0; i < 3; i++)
+		{
+			int post_index = i < 2 ? i + 1 : 0;
+
+			Vec2<double> edge{ triangle[post_index] - triangle[i] };
+			Vec2<double> to_point{ point - triangle[i] };
+
+			double angle_to_point = std::atan2(to_point.x * edge.y - to_point.y * edge.x, scalar(to_point, edge));
+
+			if (angle_to_point < 0)
+				return false;
+		}
+
+		return true;
+	}
+
+	Polygon::Polygon(Polygon&& other) noexcept
+		: Mesh(std::move(other)), color(other.color)
+	{
+		m_index_buffer = std::move(other.m_index_buffer);
+		m_ib = &m_index_buffer;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_color)
+				value_ptr = &color;
+		}
+	}
+
+	Polygon& Polygon::operator=(Polygon&& other) noexcept
+	{
+		Mesh::operator=(std::move(other));
+
+		m_index_buffer = std::move(other.m_index_buffer);
+		m_ib = &m_index_buffer;
+		color = other.color;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_color)
+				value_ptr = &color;
+		}
+
+		return *this;
+	}
+
+	VertexLayout Polygon::s_vertex_layout;
+
+	ToBeInit Polygon::s_init_layout{ std::function<void(void)> { []() {
+		Polygon::s_vertex_layout = VertexLayout({ {2, GL_FLOAT} });
+	} } };
 
 }

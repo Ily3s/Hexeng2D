@@ -20,7 +20,7 @@ private:
 
 public:
 
-	Renderer::Rectangle rec;
+	Renderer::Quad quad;
 	Renderer::SuperMesh mesh;
 	Physics::PhysicsEntity physics;
 	int speed = 4;
@@ -31,8 +31,8 @@ public:
 Player* Player::instance = nullptr;
 
 Player::Player(Vec2<int> pos, float size, Renderer::Texture* tex)
-	: rec({ 0, 0 }, size, tex, true),
-	mesh({ &rec }),
+	: quad({ 0, 0 }, size, tex, true),
+	mesh({ &quad }),
 	physics({ { -tex->get_size()*size / 2, tex->get_size()*size / 2} }, 1)
 {
 	physics.position = pos;

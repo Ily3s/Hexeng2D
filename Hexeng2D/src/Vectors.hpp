@@ -142,6 +142,12 @@ namespace Hexeng
 		}
 	};
 
+	template<typename T>
+	T scalar(const Vec2<T>& a, const Vec2<T>& b)
+	{
+		return a.x * b.x + a.y * b.y;
+	}
+
 	template <typename T>
 	std::ostream& operator<<(std::ostream& os, const Vec2<T>& vec)
 	{
@@ -303,6 +309,12 @@ namespace Hexeng
 			return !(operator==(other));
 		}
 	};
+
+	template<typename T>
+	T scalar(const Vec3<T>& a, const Vec3<T>& b)
+	{
+		return a.x * b.x + a.y * b.y + a.z * b.z;
+	}
 
 	template <typename T>
 	std::ostream& operator<<(std::ostream& os, const Vec3<T>& vec)
@@ -468,6 +480,12 @@ namespace Hexeng
 			return !(operator==(other));
 		}
 	};
+
+	template<typename T>
+	T scalar(const Vec4<T>& a, const Vec4<T>& b)
+	{
+		return a.x * b.x + a.y * b.y + a.z * b.z + a.w * b.w;
+	}
 
 	template <typename T>
 	std::ostream& operator<<(std::ostream& os, const Vec4<T>& vec)

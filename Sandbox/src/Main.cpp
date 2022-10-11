@@ -73,7 +73,12 @@ int main()
 	Language::set_reference_language(&English);
 	const Language* language = &English;
 
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame,
+	Renderer::Polygon star{
+		{ {0, 80}, {20, 20}, {80, 0}, {20, -20}, {0, -80}, {-20, -20}, {-80, 0}, {-20, 20} },
+		{0, 1000}
+	};
+
+	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame, &star,
 										&save_var, &save_file,
 										&language, &French, &English]()
 	{
@@ -83,16 +88,19 @@ int main()
 			 {
 				 save_file.save("saves/test.save");
 				 frame_color = Color3::red;
+				 star.color = Color4::red;
 			 }
 			 else if (from == Physics::From::TOP)
 			 {
 				 save_file.load("saves/test.save");
 				 frame_color = Color3::green;
+				 star.color = Color4::green;
 			 }
 			 else if (from == Physics::From::LEFT)
 			 {
 				 std::cout << save_var << std::endl;
 				 frame_color = Color3::blue;
+				 star.color = Color4::blue;
 				 language = &French;
 				 Text::reload_language();
 			 }
@@ -100,6 +108,7 @@ int main()
 			 {
 				 save_var++;
 				 frame_color = Color3::yellow;
+				 star.color = Color4::yellow;
 				 language = &English;
 				 Text::reload_language();
 			 }
@@ -108,10 +117,10 @@ int main()
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&frame_color]() {frame_color = Color3::white; }, Range::LOCAL };
+		[&frame_color, &star]() {frame_color = Color3::white; star.color = Color4::white; }, Range::LOCAL };
 
 	Font kunstler{ "res/KUNSTLER.TTF" };
-	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color3::white };
+	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color4::white };
 
 	Renderer::Texture arrow_unhover{ "res/arrow_unhover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Texture arrow_hover{ "res/arrow_hover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
@@ -132,7 +141,7 @@ int main()
 	Renderer::BatchQuad batch_quad_2{ &batch_test, {1, 0}, {2000, 2000}, 30.0f };
 	batch_test.construct_batch();
 
-	Audio::Music music{ "res/LostSky.wav" };
+	Audio::Music music{ "res/Music.wav" };
 	music.play();
 	//Audio::Sound sound{ "res/SoundEffect.wav" };
 	//sound.play(&batch_quad_1.position);
@@ -166,7 +175,7 @@ int main()
 	} };
 
 	Renderer::Layer UI_layer{ { &txt, &arrow_up, &arrow_down, &arrow_left, &arrow_right}, 0, Renderer::Position::ABSOLUTE };
-	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame, &batch_test}, 750 };
+	Renderer::Layer fore_ground{ {&player.mesh, &square3, &frame, &batch_test, &star}, 750 };
 	Renderer::Layer back_ground1{ {&square}, 500 };
 	Renderer::Layer back_ground2{ {&square2}, 800 };
 

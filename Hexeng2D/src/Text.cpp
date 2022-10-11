@@ -71,8 +71,8 @@ namespace Hexeng
 		return { {(float)x0 * quality, (float)y0 * quality}, {(float)x1 * quality, (float)y1 * quality} };
 	}
 
-	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color3 c3)
-		: color(c3),
+	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color4 c4)
+		: color(c4),
 		m_text(text),
 		m_font(&font),
 		m_pos(pos),
@@ -173,7 +173,7 @@ namespace Hexeng
 
 		m_index_buffer = Renderer::IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
 
-		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::vertex_layout, &m_index_buffer, &font.texture, &Renderer::font_shader});
+		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::get_vertex_layout(), &m_index_buffer, &font.texture, &Renderer::font_shader});
 
 		uniforms.push_back({ &Renderer::u_color, &color });
 
@@ -183,8 +183,8 @@ namespace Hexeng
 
 	std::vector<Text*> Text::s_translated_texts;
 
-	Text::Text(const Language** language, std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color3 c3)
-		: Text((*language)->get_translation(text), font, pos, font_size, h_align, v_align)
+	Text::Text(const Language** language, std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color4 c4)
+		: Text((*language)->get_translation(text), font, pos, font_size, h_align, v_align, c4)
 	{
 		m_language = language;
 		m_text = text;

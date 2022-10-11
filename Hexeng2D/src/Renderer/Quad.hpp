@@ -11,57 +11,30 @@
 namespace Hexeng::Renderer
 {
 
-	// bug : obtuse angles
-
-	class HXG_DECLSPEC Quad : public Mesh
-	{
-	public:
-
-		static VertexLayout vertex_layout;
-
-		/** @param vertecies The four vertecies positions relative to pos. Make the vertecies clockwise.
-		* @param The position of the quad in the Hexeng2D coordinate system.
-		* @note If you want to make a custom shader for the quad,
-		* take a look at DefaultShaders .glsl/.hpp/.cpp, copy paste basic_shader and modify it as you want.
-		*/
-		Quad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader = &basic_shader);
-
-		Quad() = default;
-
-		Quad(Quad&&) noexcept;
-		Quad& operator=(Quad&&) noexcept;
-
-		~Quad() = default;
-
-	protected:
-
-		static IndexBuffer s_index_buffer;
-		static IndexBuffer s_edge_index_buffer;
-
-		static ToBeInit init_components;
-	};
-
-	class HXG_DECLSPEC Rectangle : public virtual Quad
+	/// @note Quad is in fact a rectangle, but it's shorter to say a quad.
+	class HXG_DECLSPEC Quad : public virtual Mesh
 	{
 	public:
 
 		/**
-		* @param pos The position of the Rectangle.
-		* @param size The dimentions (lenght, width) of the Rectangle.
-		* @param centered If set to true, pos is the center of the rectangle, if set to false, pos is the bottom left of the rectangle.
+		* @param pos The position of the Quad.
+		* @param size The dimentions (lenght, width) of the Quad.
+		* @param centered If set to true, pos is the center of the quad, if set to false, pos is the bottom left of the quad.
 		* @note If you want to make a custom shader for the quad,
 		* take a look at DefaultShaders .glsl/.hpp/.cpp, copy paste basic_shader and modify it as you want.
 		* */
-		Rectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
+		Quad(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
 
-		/// @brief The same as Rectangle(Vec2<int>, const Vec2<int>&, Texture*, bool, Shader*) except the size is a multiplier of the texture size.
-		Rectangle(const Vec2<int>& pos, float size, Texture* texture, bool centerd = true, Shader* shader = &basic_shader);
+		/// @brief The same as Quad(Vec2<int>, const Vec2<int>&, Texture*, bool, Shader*) except the size is a multiplier of the texture size.
+		Quad(const Vec2<int>& pos, float size, Texture* texture, bool centerd = true, Shader* shader = &basic_shader);
 
-		Rectangle() = default;
-		~Rectangle() = default;
+		Quad() = default;
+		~Quad() = default;
 
-		Rectangle(Rectangle&&) noexcept;
-		Rectangle& operator=(Rectangle&&) noexcept;
+		Quad(Quad&&) noexcept;
+		Quad& operator=(Quad&&) noexcept;
+
+		inline static const VertexLayout& get_vertex_layout() { return s_vertex_layout; }
 
 	private:
 
@@ -75,16 +48,25 @@ namespace Hexeng::Renderer
 		inline Vec2<int> get_max() { return m_max; }
 		/// @brief get_max() - get_min()
 		inline Vec2<int> get_size() { return m_size; }
+
+	protected :
+
+		static IndexBuffer s_index_buffer;
+		static IndexBuffer s_edge_index_buffer;
+
+		static ToBeInit s_init_components;
+
+		static VertexLayout s_vertex_layout;
 	};
 
-	class HXG_DECLSPEC Square : public Rectangle
+	class HXG_DECLSPEC Square : public Quad
 	{
 	public:
 
-		/// @brief The same as Rectangle(Vec2<int>, const Vec2<int>&, Texture*, bool, Shader*) except the size is the lenght of the square.
+		/// @brief The same as Quad(Vec2<int>, const Vec2<int>&, Texture*, bool, Shader*) except the size is the lenght of the square.
 		Square(const Vec2<int>& pos, int size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
 
-		/// @brief Exactly the same as Rectangle(const Vec2<int>&, float, Texture*, bool, Shader*)
+		/// @brief Exactly the same as Quad(const Vec2<int>&, float, Texture*, bool, Shader*)
 		Square(const Vec2<int>& pos, float size, Texture* texture, bool centered = true, Shader* shader = &basic_shader);
 
 		Square() = default;
@@ -99,7 +81,7 @@ namespace Hexeng::Renderer
 	{
 	public:
 
-		DebugQuad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Shader* shader = &line_shader);
+		DebugQuad(const Vec2<int>& pos, const Vec2<int>& size, bool centered = true, Shader* shader = &line_shader);
 
 		DebugQuad() = default;
 
@@ -108,20 +90,7 @@ namespace Hexeng::Renderer
 	};
 
 	/// @brief Meant to be used internally by the engine only.
-	class HXG_DECLSPEC DebugRectangle : public virtual DebugQuad, public virtual Rectangle
-	{
-	public:
-
-		DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered = true, Shader* shader = &line_shader);
-
-		DebugRectangle() = default;
-
-		DebugRectangle(DebugRectangle&&) noexcept;
-		DebugRectangle& operator=(DebugRectangle&&) noexcept;
-	};
-
-	/// @brief Meant to be used internally by the engine only.
-	class HXG_DECLSPEC DebugSquare : public virtual DebugRectangle, public virtual Square
+	class HXG_DECLSPEC DebugSquare : public virtual DebugQuad, public virtual Square
 	{
 	public:
 

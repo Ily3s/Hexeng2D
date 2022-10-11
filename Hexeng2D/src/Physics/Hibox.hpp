@@ -48,7 +48,7 @@ namespace Hexeng::Physics
 		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
 
 		static std::unordered_map <int, Renderer::ContextualLayer> visuallisers_layers;
-		std::vector<Renderer::DebugRectangle> visuallisers;
+		std::vector<Renderer::DebugQuad> visuallisers;
 
 	public:
 

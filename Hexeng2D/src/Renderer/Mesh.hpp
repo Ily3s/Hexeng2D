@@ -7,6 +7,8 @@
 #include "IndexBuffer.hpp"
 #include "Shader.hpp"
 #include "Uniform.hpp"
+#include "../Color.hpp"
+#include "DefaultShaders.hpp"
 
 #include <functional>
 
@@ -98,7 +100,41 @@ namespace Hexeng::Renderer
 
 	};
 
-	// todo : polygon
+	class ToBeInit;
+
+	class HXG_DECLSPEC Polygon : public Mesh
+	{
+	public :
+
+		Color4 color;
+
+		/// <param name="vertecies">All vertecies coordinates in the Hexeng2D coordinate system, in clockwise order.</param>
+		/// @note If you want to make a custom shader for the polygon,
+		/// take a look at DefaultShaders.glsl / .hpp / .cpp, copy paste poly_shader and modify it as you want.
+		Polygon(const std::vector<Vec2<int>>& vertecies, Vec2<int> pos = { 0, 0 }, Color4 color = Color4::white, Shader* = &poly_shader);
+
+		Polygon() = default;
+
+		Polygon(const Polygon&) = delete;
+		Polygon& operator=(const Polygon&) = delete;
+
+		Polygon(Polygon&&) noexcept;
+		Polygon& operator=(Polygon&&) noexcept;
+
+		inline static const VertexLayout& get_vertex_layout() { return s_vertex_layout; }
+
+	private :
+
+		IndexBuffer m_index_buffer;
+
+		void m_construct_ib(const std::vector<Vec2<int>>& vertecies);
+
+		static bool m_is_acute(const std::array<Vec2<int>, 3>& triangle);
+		static bool m_is_in_triangle(Vec2<int> point, const std::array<Vec2<int>, 3>& triangle);
+
+		static VertexLayout s_vertex_layout;
+		static ToBeInit s_init_layout;
+	};
 
 }
 

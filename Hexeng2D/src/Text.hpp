@@ -107,7 +107,8 @@ namespace Hexeng
 	{
 	public :
 
-		Color3 color;
+		/// @brief Can be modified at any moment.
+		Color4 color;
 
 		/// <param name="text">The text to be written. Format : UTF-32</param>
 		/// <param name="font">The Font that will be used to texture the Mesh</param>
@@ -119,7 +120,7 @@ namespace Hexeng
 		/// <param name="c">The color of the text</param>
 		
 		Text(std::u32string text, Font& font, Vec2<int> position, int font_size,
-			HorizontalAlign ha= HorizontalAlign::CENTER, VerticalAlign va= VerticalAlign::CENTER, Color3 c= Color3::white);
+			HorizontalAlign ha= HorizontalAlign::CENTER, VerticalAlign va= VerticalAlign::CENTER, Color4 c= Color4::white);
 
 		/// <param name="language">A pointer to the current language's pointer.
 		/// It is a pointer to a pointer so that it is easier to switch languages</param>
@@ -133,7 +134,7 @@ namespace Hexeng
 		/// <param name="c">The color of the text</param>
 		
 		Text(const Language** language, std::u32string text, Font& font, Vec2<int> position, int font_size,
-			HorizontalAlign = HorizontalAlign::CENTER, VerticalAlign = VerticalAlign::CENTER, Color3 = Color3::white);
+			HorizontalAlign ha = HorizontalAlign::CENTER, VerticalAlign va = VerticalAlign::CENTER, Color4 c= Color4::white);
 
 		Text(const Text&) = delete;
 		Text& operator=(const Text&) = delete;

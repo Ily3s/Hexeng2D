@@ -13,7 +13,8 @@ namespace Hexeng::Renderer
 	HXG_DECLSPEC extern Shader font_shader;
 	HXG_DECLSPEC extern Shader tex_vector_shader;
 	HXG_DECLSPEC extern Shader batching_shader;
-	HXG_DECLSPEC extern Uniform<Color3> u_color;
+	HXG_DECLSPEC extern Shader poly_shader;
+	HXG_DECLSPEC extern Uniform<Color4> u_color;
 }
 
 #endif

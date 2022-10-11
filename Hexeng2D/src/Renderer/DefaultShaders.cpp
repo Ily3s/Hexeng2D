@@ -9,7 +9,8 @@ namespace Hexeng::Renderer
 	Shader font_shader;
 	Shader tex_vector_shader;
 	Shader batching_shader;
-	Uniform<Color3> u_color;
+	Shader poly_shader;
+	Uniform<Color4> u_color;
 
 	ToBeInit init_presets
 	{ []() {
@@ -18,15 +19,17 @@ namespace Hexeng::Renderer
 		font_shader = Shader(tex_vector_vs, font_fs);
 		tex_vector_shader = Shader(tex_vector_vs, basic_fs);
 		batching_shader = Shader(batching_vs, basic_fs);
+		poly_shader = Shader(poly_vs, poly_fs);
 
 		basic_shader.add_necessary_uniforms();
 		line_shader.add_necessary_uniforms();
 		font_shader.add_necessary_uniforms();
 		tex_vector_shader.add_necessary_uniforms();
 		batching_shader.add_necessary_uniforms();
+		poly_shader.add_necessary_uniforms();
 
 		u_color = {{{UniformArgType::NAME, "u_color"}}};
-		u_color.add_shaders({ &line_shader, &font_shader, &batching_shader });
+		u_color.add_shaders({ &line_shader, &font_shader, &batching_shader, &poly_shader });
 	}, 1 };
 
 }

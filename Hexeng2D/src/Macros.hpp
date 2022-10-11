@@ -15,7 +15,7 @@
 #endif
 
 #if HXG_DEBUG_LEVEL >= 2
-#define HXG_LOG_ERROR(str) assert("[ERROR]" && str && false)
+#define HXG_LOG_ERROR(str) std::cout << "[ERROR] " << str << std::endl; exit(-1)
 #elif HXG_DEBUG_LEVEL == 1
 #define HXG_LOG_ERROR(str) std::cout << "[ERROR] " << str << std::endl
 #elif HXG_DEBUG_LEVEL == 0
@@ -23,7 +23,7 @@
 #endif
 
 #if HXG_DEBUG_LEVEL >= 3
-#define HXG_LOG_WARNING(str) assert("[WARNING]" && str && false)
+#define HXG_LOG_WARNING(str) std::cout << "[WARNING] " << str << std::endl; exit(-1)
 #elif HXG_DEBUG_LEVEL >= 1
 #define HXG_LOG_WARNING(str) std::cout << "[WARNING] " << str << std::endl;
 #elif HXG_DEBUG_LEVEL == 0

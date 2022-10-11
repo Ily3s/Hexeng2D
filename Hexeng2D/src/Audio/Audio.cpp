@@ -36,7 +36,7 @@ if(e != paNoError)\
 
     SoundBase::SoundBase(std::string filepath)
     {
-        HXG_ASSERT(filepath.size() > 4 && (std::string{ filepath.end() - 4, filepath.end() } == ".wav"),
+        HXG_ASSERT(((filepath.size() > 4) && (std::string{ filepath.end() - 4, filepath.end() } == ".wav")),
             HXG_LOG_ERROR("The File \"" + filepath + "\" is not a wave file. It is supposed to be one."); return;);
 
         std::ifstream file{ filepath, std::ios::binary };

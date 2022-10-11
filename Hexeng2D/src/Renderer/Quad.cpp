@@ -8,22 +8,9 @@ namespace Hexeng::Renderer
 
 	IndexBuffer Quad::s_index_buffer;
 	IndexBuffer Quad::s_edge_index_buffer;
-	VertexLayout Quad::vertex_layout;
+	VertexLayout Quad::s_vertex_layout;
 
-	Quad::Quad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Texture* texture, Shader* shader)
-	{
-		float vertex_b[]
-		{
-			toX(vertecies[0].x), toY(vertecies[0].y), 0.0f, 0.0f,
-			toX(vertecies[1].x), toY(vertecies[1].y), 0.0f, 1.0f,
-			toX(vertecies[2].x), toY(vertecies[2].y), 1.0f, 1.0f,
-			toX(vertecies[3].x), toY(vertecies[3].y), 1.0f, 0.0f
-		};
-
-		this->Mesh::operator=({vertex_b, 4*4*sizeof(float), pos, vertex_layout, &s_index_buffer, texture, shader});
-	}
-
-	ToBeInit Quad::init_components
+	ToBeInit Quad::s_init_components
 	{ []() {
 		unsigned char index_buffer[]
 		{
@@ -40,12 +27,12 @@ namespace Hexeng::Renderer
 			0, 2
 		};
 
-		vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
+		s_vertex_layout = VertexLayout({ { 2, GL_FLOAT }, { 2, GL_FLOAT } });
 		s_index_buffer = IndexBuffer(index_buffer, GL_UNSIGNED_BYTE, 6);
 		s_edge_index_buffer = IndexBuffer(edge_index_buffer, GL_UNSIGNED_BYTE, 10);
 	}, 1 };
 
-	Rectangle::Rectangle(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)
+	Quad::Quad(Vec2<int> pos, const Vec2<int>& size, Texture* texture, bool centered, Shader* shader)
 		: m_size(size)
 	{
 		Vec2<int> relative_pos = { 0, 0 };
@@ -55,38 +42,38 @@ namespace Hexeng::Renderer
 		m_min = relative_pos + pos;
 		m_max = m_min + size;
 
-		std::array<Vec2<int>, 4> vertecies
+		float vertecies[]
 		{
-			Vec2<int>{relative_pos.x,			relative_pos.y			},
-			Vec2<int>{relative_pos.x,			relative_pos.y + size.y	},
-			Vec2<int>{relative_pos.x + size.x,	relative_pos.y + size.y	},
-			Vec2<int>{relative_pos.x + size.x,	relative_pos.y			}
+			toX(relative_pos.x),			toY(relative_pos.y),			0.0f, 0.0f,
+			toX(relative_pos.x),			toY(relative_pos.y + size.y),	0.0f, 1.0f,
+			toX(relative_pos.x + size.x),	toY(relative_pos.y + size.y),	1.0f, 1.0f,
+			toX(relative_pos.x + size.x),	toY(relative_pos.y),			1.0f, 0.0f
 		};
 
-		this->Quad::operator=({vertecies, pos, texture, shader});
+		this->Mesh::operator=({ vertecies, 4 * 4 * sizeof(float), pos, s_vertex_layout, &s_index_buffer, texture, shader });
 	}
 
-	DebugRectangle::DebugRectangle(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)
-		: Rectangle(pos, size, nullptr, centered, shader)
+	DebugQuad::DebugQuad(const Vec2<int>& pos, const Vec2<int>& size, bool centered, Shader* shader)
+		: Quad(pos, size, nullptr, centered, shader)
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
+		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
 	}
 
-	Rectangle::Rectangle(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
+	Quad::Quad(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
 	{
-		this->Rectangle::operator=({pos, texture->get_size() * size, texture, centered, shader});
+		this->Quad::operator=({pos, texture->get_size() * size, texture, centered, shader});
 	}
 
 	Square::Square(const Vec2<int>& pos, int size, Texture* texture, bool centered, Shader* shader)
-		: Rectangle(pos, { size, size }, texture, centered, shader) {}
+		: Quad(pos, { size, size }, texture, centered, shader) {}
 
 	Square::Square(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
-		: Rectangle(pos, size, texture, centered, shader)
+		: Quad(pos, size, texture, centered, shader)
 	{
-		HXG_ASSERT(texture || texture->get_height() == texture->get_width(),
-			HXG_LOG_WARNING("Excepted texture to be a square"););
+		HXG_ASSERT((!texture || texture->get_height() == texture->get_width()),
+			HXG_LOG_WARNING("Expected texture to be a square"););
 	}
 
 	DebugSquare::DebugSquare(const Vec2<int>& pos, int size, bool centered, Shader* shader)
@@ -94,38 +81,24 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
-	}
-
-	DebugQuad::DebugQuad(const std::array<Vec2<int>, 4>& vertecies, const Vec2<int>& pos, Shader* shader)
-		: Quad(vertecies, pos, nullptr, shader)
-	{
-		m_type = GL_LINES;
-		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, vertex_layout, s_edge_index_buffer);
+		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
 	}
 
 	DebugQuad& DebugQuad::operator=(DebugQuad&& other) noexcept
 	{
-		Quad::operator=(std::move(other));
-		return *this;
-	}
-
-	DebugRectangle& DebugRectangle::operator=(DebugRectangle&& other) noexcept
-	{
-		Quad::operator=(std::move(other));
+		Mesh::operator=(std::move(other));
 		return *this;
 	}
 
 	DebugSquare& DebugSquare::operator=(DebugSquare&& other) noexcept
 	{
-		Quad::operator=(std::move(other));
+		Mesh::operator=(std::move(other));
 		return *this;
 	}
 
-	Rectangle& Rectangle::operator=(Rectangle&& other) noexcept
+	Quad& Quad::operator=(Quad&& other) noexcept
 	{
-		Quad::operator=(std::move(other));
+		Mesh::operator=(std::move(other));
 		m_min = other.m_min;
 		m_max = other.m_max;
 		m_size = other.m_size;
@@ -135,34 +108,22 @@ namespace Hexeng::Renderer
 
 	Square& Square::operator=(Square&& other) noexcept
 	{
-		Quad::operator=(std::move(other));
+		Mesh::operator=(std::move(other));
 		return *this;
 	}
 
 	DebugQuad::DebugQuad(DebugQuad&& other) noexcept
-		: Quad(std::move(other)) {}
-
-	DebugRectangle::DebugRectangle(DebugRectangle&& other) noexcept
-		: Quad(std::move(other)) {}
+		: Mesh(std::move(other)) {}
 
 	DebugSquare::DebugSquare(DebugSquare&& other) noexcept
-		: Quad(std::move(other)) {}
+		: Mesh(std::move(other)) {}
 
 	Square::Square(Square&& other) noexcept
-		: Quad(std::move(other)) {}
+		: Mesh(std::move(other)) {}
 
-	Rectangle::Rectangle(Rectangle&& other) noexcept
-		: Quad(std::move(other)),
+	Quad::Quad(Quad&& other) noexcept
+		: Mesh(std::move(other)),
 		m_min(other.m_min),
 		m_max(other.m_max),
 		m_size(other.m_size) {}
-
-	Quad::Quad(Quad&& moving) noexcept
-		: Mesh(std::move(moving)) {}
-
-	Quad& Quad::operator=(Quad&& moving) noexcept
-	{
-		Mesh::operator=(std::move(moving));
-		return *this;
-	}
 }
