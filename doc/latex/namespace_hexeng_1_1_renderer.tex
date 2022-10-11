@@ -17,8 +17,6 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextua
 \begin{DoxyCompactList}\small\item\em A layer that shows up only if a bool is set to true  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Debug\+Quad}}
 \begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_rectangle}{Debug\+Rectangle}}
-\begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_square}{Debug\+Square}}
 \begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}}
@@ -27,9 +25,9 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}
 \begin{DoxyCompactList}\small\item\em A layer of meshes, at a certain depth z.  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}
 \item 
-class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}
 \item 
-class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_rectangle}{Rectangle}}
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}
 \item 
@@ -131,7 +129,9 @@ void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\+\_\+shader}}
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color3}{Color3}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_acde409238ae1a87c305b1441519c76a4}{u\+\_\+color}}
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\+\_\+color}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}{init\+\_\+presets}}
 \item 
@@ -404,15 +404,17 @@ You should call this function after the game loop exits.
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}} = Shader(tex\_vector\_vs, font\_fs);}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}} = Shader(tex\_vector\_vs, basic\_fs);}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(batching\_vs, basic\_fs);}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}} = Shader(poly\_vs, poly\_fs);}
 \DoxyCodeLine{}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_acde409238ae1a87c305b1441519c76a4}{u\_color}} = \{\{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}\}\};}
-\DoxyCodeLine{        u\_color.add\_shaders(\{ \&line\_shader, \&font\_shader, \&batching\_shader \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{\{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}\}\};}
+\DoxyCodeLine{        u\_color.add\_shaders(\{ \&line\_shader, \&font\_shader, \&batching\_shader, \&poly\_shader \});}
 \DoxyCodeLine{    \}, 1 \}}
 
 \end{DoxyCode}
@@ -449,17 +451,23 @@ You should call this function after the game loop exits.
 \doxysubsubsection{\texorpdfstring{pending\_actions}{pending\_actions}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ Hexeng\+::\+Renderer\+::pending\+\_\+actions}
 
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}\label{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!poly\_shader@{poly\_shader}}
+\index{poly\_shader@{poly\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{poly\_shader}{poly\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::poly\+\_\+shader}
+
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}\label{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!tex\_vector\_shader@{tex\_vector\_shader}}
 \index{tex\_vector\_shader@{tex\_vector\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
 \doxysubsubsection{\texorpdfstring{tex\_vector\_shader}{tex\_vector\_shader}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::tex\+\_\+vector\+\_\+shader}
 
-\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_acde409238ae1a87c305b1441519c76a4}\label{namespace_hexeng_1_1_renderer_acde409238ae1a87c305b1441519c76a4}} 
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}\label{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!u\_color@{u\_color}}
 \index{u\_color@{u\_color}!Hexeng::Renderer@{Hexeng::Renderer}}
 \doxysubsubsection{\texorpdfstring{u\_color}{u\_color}}
-{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color3}{Color3}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color}
 
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}\label{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!u\_rotation\_angle@{u\_rotation\_angle}}

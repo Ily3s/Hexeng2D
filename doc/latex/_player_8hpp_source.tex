@@ -24,7 +24,7 @@
 \DoxyCodeLine{20 }
 \DoxyCodeLine{21 \textcolor{keyword}{public}:}
 \DoxyCodeLine{22 }
-\DoxyCodeLine{23     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_rectangle}{Renderer::Rectangle}} \mbox{\hyperlink{class_player_acd860d2e1775e86bdda2fc9b05bc5736}{rec}};}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Renderer::Quad}} \mbox{\hyperlink{class_player_a44e7791f25f73898551042f594cecae2}{quad}};}
 \DoxyCodeLine{24     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Renderer::SuperMesh}} \mbox{\hyperlink{class_player_aa67c3ab61d5f1225fe4418ba29dcbbb9}{mesh}};}
 \DoxyCodeLine{25     \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_entity}{Physics::PhysicsEntity}} \mbox{\hyperlink{class_player_a5904736271416a17311ee4a72ccf51c2}{physics}};}
 \DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a0349855298626faed9f05f86965ff689}{speed}} = 4;}
@@ -35,8 +35,8 @@
 \DoxyCodeLine{31 \mbox{\hyperlink{class_player}{Player}}* Player::instance = \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{32 }
 \DoxyCodeLine{33 \mbox{\hyperlink{class_player_af9efa77eb9d219f0013eaa980ef5c2e8}{Player::Player}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} pos, \textcolor{keywordtype}{float} size, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Renderer::Texture}}* tex)}
-\DoxyCodeLine{34     : rec(\{ 0, 0 \}, size, tex, \textcolor{keyword}{true}),}
-\DoxyCodeLine{35     mesh(\{ \&rec \}),}
+\DoxyCodeLine{34     : quad(\{ 0, 0 \}, size, tex, \textcolor{keyword}{true}),}
+\DoxyCodeLine{35     mesh(\{ \&quad \}),}
 \DoxyCodeLine{36     physics(\{ \{ -\/tex-\/>get\_size()*size / 2, tex-\/>get\_size()*size / 2\} \}, 1)}
 \DoxyCodeLine{37 \{}
 \DoxyCodeLine{38     physics.position = pos;}

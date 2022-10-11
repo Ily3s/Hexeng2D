@@ -26,17 +26,13 @@ var hierarchy =
     ] ],
     [ "Hexeng::Renderer::Mesh", "class_hexeng_1_1_renderer_1_1_mesh.html", [
       [ "Hexeng::Renderer::BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", null ],
+      [ "Hexeng::Renderer::Polygon", "class_hexeng_1_1_renderer_1_1_polygon.html", null ],
       [ "Hexeng::Renderer::Quad", "class_hexeng_1_1_renderer_1_1_quad.html", [
         [ "Hexeng::Renderer::DebugQuad", "class_hexeng_1_1_renderer_1_1_debug_quad.html", [
-          [ "Hexeng::Renderer::DebugRectangle", "class_hexeng_1_1_renderer_1_1_debug_rectangle.html", [
-            [ "Hexeng::Renderer::DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", null ]
-          ] ]
+          [ "Hexeng::Renderer::DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", null ]
         ] ],
-        [ "Hexeng::Renderer::Rectangle", "class_hexeng_1_1_renderer_1_1_rectangle.html", [
-          [ "Hexeng::Renderer::DebugRectangle", "class_hexeng_1_1_renderer_1_1_debug_rectangle.html", null ],
-          [ "Hexeng::Renderer::Square", "class_hexeng_1_1_renderer_1_1_square.html", [
-            [ "Hexeng::Renderer::DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", null ]
-          ] ]
+        [ "Hexeng::Renderer::Square", "class_hexeng_1_1_renderer_1_1_square.html", [
+          [ "Hexeng::Renderer::DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", null ]
         ] ]
       ] ],
       [ "Hexeng::Renderer::SuperMesh", "class_hexeng_1_1_renderer_1_1_super_mesh.html", null ],

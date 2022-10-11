@@ -66,15 +66,21 @@ float \mbox{\hyperlink{namespace_hexeng_ac4a97c8fcc3171f97d87bc9a18b6ee6b}{toY}}
 \begin{DoxyCompactList}\small\item\em Converts y to the Open\+GL default coordinate system  \end{DoxyCompactList}\item 
 \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}{to\+Coord}} (\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ vec)
 \begin{DoxyCompactList}\small\item\em Converts vec to the Open\+GL coordinate system  \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&b)
+\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&vec)
 \item 
 {\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{namespace_hexeng_a3b45417129dd468710e146746dee57fd}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&vec)
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{namespace_hexeng_a31bb17063dfd27bf5f27e6e4831185bf}{operator$\ast$}} (\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ vec, float factor)
 \item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&b)
+\item 
 {\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a9e1aa9655a2b308770c64b1c5ca43fc5}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&vec)
 \item 
 {\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{namespace_hexeng_a89d84e02d43d340ccbc56e3fce350a62}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&b)
 \item 
 {\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a21632ed7f38f9d068a3b3d3049e6b170}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&vec)
 \item 
@@ -210,6 +216,27 @@ std\+::istream \& Hexeng\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+
 \doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::istream \& Hexeng\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}\label{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}\label{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}\label{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}\label{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}} 
 \index{Hexeng@{Hexeng}!toCoord@{toCoord}}

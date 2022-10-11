@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 150.829559
+%%BoundingBox: 0 0 500 195.121948
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,13 +19,13 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 3.315000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 2.562500 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 5 def
-/cols 3 def
+/rows 4 def
+/cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
 
@@ -176,11 +176,7 @@ boxfont setfont
 (Hexeng::Renderer::Quad) cw
 (Hexeng::Renderer::Mesh) cw
 (Hexeng::Renderer::DebugQuad) cw
-(Hexeng::Renderer::Rectangle) cw
-(Hexeng::Renderer::DebugRectangle) cw
-(Hexeng::Renderer::DebugRectangle) cw
 (Hexeng::Renderer::Square) cw
-(Hexeng::Renderer::DebugSquare) cw
 (Hexeng::Renderer::DebugSquare) cw
 (Hexeng::Renderer::DebugSquare) cw
 /boxwidth boxwidth marginwidth 2 mul add def
@@ -194,37 +190,25 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (Hexeng::Renderer::Quad) 0.750000 3.000000 box
- (Hexeng::Renderer::Mesh) 0.750000 4.000000 box
- (Hexeng::Renderer::DebugQuad) 0.000000 2.000000 box
- (Hexeng::Renderer::Rectangle) 1.500000 2.000000 box
- (Hexeng::Renderer::DebugRectangle) 0.000000 1.000000 box
- (Hexeng::Renderer::DebugRectangle) 1.000000 1.000000 box
- (Hexeng::Renderer::Square) 2.000000 1.000000 box
+ (Hexeng::Renderer::Quad) 0.500000 2.000000 box
+dashed
+ (Hexeng::Renderer::Mesh) 0.500000 3.000000 box
+solid
+ (Hexeng::Renderer::DebugQuad) 0.000000 1.000000 box
+ (Hexeng::Renderer::Square) 1.000000 1.000000 box
  (Hexeng::Renderer::DebugSquare) 0.000000 0.000000 box
  (Hexeng::Renderer::DebugSquare) 1.000000 0.000000 box
- (Hexeng::Renderer::DebugSquare) 2.000000 0.000000 box
 
 % ----- relations -----
 
 solid
-0 0.750000 3.000000 out
+0 0.500000 2.000000 out
 solid
-1 0.750000 4.000000 in
+1 0.500000 3.000000 in
 solid
-1 0.750000 2.250000 out
+1 0.500000 1.250000 out
 solid
-0.000000 1.500000 3.000000 conn
-solid
-0 0.000000 2.750000 in
-solid
-1 0.000000 1.250000 out
-solid
-0 1.500000 2.750000 in
-solid
-1 1.500000 1.250000 out
-solid
-1.000000 2.000000 2.000000 conn
+0.000000 1.000000 2.000000 conn
 solid
 0 0.000000 1.750000 in
 solid
@@ -234,12 +218,6 @@ solid
 solid
 1 1.000000 0.250000 out
 solid
-0 2.000000 1.750000 in
-solid
-1 2.000000 0.250000 out
-solid
 0 0.000000 0.750000 in
 solid
 0 1.000000 0.750000 in
-solid
-0 2.000000 0.750000 in

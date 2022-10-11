@@ -17,7 +17,7 @@
 \DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{16 }
 \DoxyCodeLine{17 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL >= 2}}
-\DoxyCodeLine{18 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str) assert("{}[ERROR]"{}} \&\& str \&\& false)}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str) std::cout << "{}[ERROR] "{}} << str << std::endl; exit(-\/1)}
 \DoxyCodeLine{19 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 1}}
 \DoxyCodeLine{20 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str) std::cout << "{}[ERROR] "{}} << str << std::endl}
 \DoxyCodeLine{21 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 0}}
@@ -25,7 +25,7 @@
 \DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
 \DoxyCodeLine{24 }
 \DoxyCodeLine{25 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL >= 3}}
-\DoxyCodeLine{26 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str) assert("{}[WARNING]"{}} \&\& str \&\& false)}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str) std::cout << "{}[WARNING] "{}} << str << std::endl; exit(-\/1)}
 \DoxyCodeLine{27 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL >= 1}}
 \DoxyCodeLine{28 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str) std::cout << "{}[WARNING] "{}} << str << std::endl;}
 \DoxyCodeLine{29 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 0}}
