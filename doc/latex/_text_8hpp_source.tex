@@ -107,23 +107,29 @@
 \DoxyCodeLine{144 }
 \DoxyCodeLine{149         static \textcolor{keywordtype}{void} reload\_language();}
 \DoxyCodeLine{150 }
-\DoxyCodeLine{151     private :}
-\DoxyCodeLine{152 }
-\DoxyCodeLine{153         Renderer::IndexBuffer m\_index\_buffer;}
-\DoxyCodeLine{154 }
-\DoxyCodeLine{155         std::u32string m\_text;}
-\DoxyCodeLine{156         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}* m\_font;}
-\DoxyCodeLine{157         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}> m\_pos;}
-\DoxyCodeLine{158         \textcolor{keywordtype}{int} m\_font\_size;}
-\DoxyCodeLine{159         \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}} m\_ha;}
-\DoxyCodeLine{160         \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}} m\_va;}
-\DoxyCodeLine{161         const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}** m\_language = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{152         \textcolor{keywordtype}{size\_t} get\_char\_count();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{159         \textcolor{keywordtype}{void} set\_enabled\_chars(std::vector<\textcolor{keywordtype}{bool}> enabled\_chars);}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     private :}
 \DoxyCodeLine{162 }
-\DoxyCodeLine{163         static std::vector<\mbox{\hyperlink{class_hexeng_1_1_text}{Text}}*> s\_translated\_texts;}
-\DoxyCodeLine{164     \};}
-\DoxyCodeLine{165 }
-\DoxyCodeLine{166 \}}
-\DoxyCodeLine{167 }
-\DoxyCodeLine{168 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{163         Renderer::IndexBuffer m\_index\_buffer;}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         std::u32string m\_text;}
+\DoxyCodeLine{166         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}* m\_font;}
+\DoxyCodeLine{167         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}> m\_pos;}
+\DoxyCodeLine{168         \textcolor{keywordtype}{int} m\_font\_size;}
+\DoxyCodeLine{169         \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}} m\_ha;}
+\DoxyCodeLine{170         \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}} m\_va;}
+\DoxyCodeLine{171         const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}** m\_language = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{172 }
+\DoxyCodeLine{173         static std::vector<\mbox{\hyperlink{class_hexeng_1_1_text}{Text}}*> s\_translated\_texts;}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175         std::vector<uint32\_t> m\_raw\_ib;}
+\DoxyCodeLine{176     \};}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \}}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

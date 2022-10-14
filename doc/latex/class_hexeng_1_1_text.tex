@@ -24,7 +24,14 @@ Inheritance diagram for Hexeng\+::Text\+:\begin{figure}[H]
 \mbox{\hyperlink{class_hexeng_1_1_text_ab6851c37f1ca22a716b1d55b1a064085}{Text}} (\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&) noexcept
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \& \mbox{\hyperlink{class_hexeng_1_1_text_ad5d7201255faa8f2288f0fad58905a60}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&) noexcept
-\end{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}{set\+\_\+enabled\+\_\+chars}} (std\+::vector$<$ bool $>$ enabled\+\_\+chars)
+\begin{DoxyCompactList}\small\item\em Set a list of character that needs to be rendered  \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,6 +109,19 @@ static void \mbox{\hyperlink{class_hexeng_1_1_text_a2e2c2fbc062e45f23331d3bd0403
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}\label{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}} 
+\index{Hexeng::Text@{Hexeng::Text}!get\_char\_count@{get\_char\_count}}
+\index{get\_char\_count@{get\_char\_count}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{get\_char\_count()}{get\_char\_count()}}
+{\footnotesize\ttfamily size\+\_\+t Hexeng\+::\+Text\+::get\+\_\+char\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+
+
 \mbox{\Hypertarget{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}\label{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}} 
 \index{Hexeng::Text@{Hexeng::Text}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Text@{Hexeng::Text}}
@@ -124,7 +144,22 @@ static void \mbox{\hyperlink{class_hexeng_1_1_text_a2e2c2fbc062e45f23331d3bd0403
 
 Refresh all the texts with the new language.  
 
-After switching languages, this function has to be called to refresh the texts. 
+After switching languages, this function has to be called to refresh the texts. \mbox{\Hypertarget{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}\label{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}} 
+\index{Hexeng::Text@{Hexeng::Text}!set\_enabled\_chars@{set\_enabled\_chars}}
+\index{set\_enabled\_chars@{set\_enabled\_chars}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{set\_enabled\_chars()}{set\_enabled\_chars()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Text\+::set\+\_\+enabled\+\_\+chars (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$}]{enabled\+\_\+chars }\end{DoxyParamCaption})}
+
+
+
+Set a list of character that needs to be rendered  
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled\+\_\+chars} & A list of bools that indicates if a character have to be rendered. Its size has to be equal to \mbox{\hyperlink{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count()}} \\
+\hline
+\end{DoxyParams}
+
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_text_a153a727e7a1bcf611efebf18e351859d}\label{class_hexeng_1_1_text_a153a727e7a1bcf611efebf18e351859d}} 

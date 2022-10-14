@@ -148,6 +148,16 @@ namespace Hexeng
 		/// @details After switching languages, this function has to be called to refresh the texts.
 		static void reload_language();
 
+		/// <returns>The size of characters being rendered (spaces don't count)</returns>
+		size_t get_char_count();
+
+		/// <summary>
+		/// Set a list of character that needs to be rendered
+		/// </summary>
+		/// <param name="enabled_chars">A list of bools that indicates if a character have to be rendered.
+		/// Its size has to be equal to get_char_count() </param>
+		void set_enabled_chars(std::vector<bool> enabled_chars);
+
 	private :
 
 		Renderer::IndexBuffer m_index_buffer;
@@ -161,6 +171,8 @@ namespace Hexeng
 		const Language** m_language = nullptr;
 
 		static std::vector<Text*> s_translated_texts;
+
+		std::vector<uint32_t> m_raw_ib;
 	};
 
 }

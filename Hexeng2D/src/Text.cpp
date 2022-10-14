@@ -89,7 +89,9 @@ namespace Hexeng
 		size_t countless_chars_nb = std::count(text.begin(), text.end(), ' ') + std::count(text.begin(), text.end(), '\n');
 
 		float* raw_vb = new float[16 * (text.size() - countless_chars_nb)];
-		uint32_t* raw_ib = new uint32_t[6 * (text.size() - countless_chars_nb)];
+		m_raw_ib.reserve(6 * (text.size() - countless_chars_nb));
+		for (size_t i = 0; i < 6 * (text.size() - countless_chars_nb); i++)
+			m_raw_ib.push_back(0);
 
 		float size = (float)font_size / font.line_height;
 
@@ -151,13 +153,13 @@ namespace Hexeng
 					raw_vb[vb_index + 10] = static_cast<float>(coords.top_right.x); raw_vb[vb_index + 11] = static_cast<float>(coords.top_right.y);
 					raw_vb[vb_index + 14] = static_cast<float>(coords.bot_right.x); raw_vb[vb_index + 15] = static_cast<float>(coords.bot_right.y);
 
-					raw_ib[ib_index] = vertecies_nb;
-					raw_ib[ib_index + 1] = vertecies_nb + 1;
-					raw_ib[ib_index + 2] = vertecies_nb + 2;
+					m_raw_ib[ib_index] = vertecies_nb;
+					m_raw_ib[ib_index + 1] = vertecies_nb + 1;
+					m_raw_ib[ib_index + 2] = vertecies_nb + 2;
 
-					raw_ib[ib_index + 3] = vertecies_nb + 2;
-					raw_ib[ib_index + 4] = vertecies_nb + 3;
-					raw_ib[ib_index + 5] = vertecies_nb;
+					m_raw_ib[ib_index + 3] = vertecies_nb + 2;
+					m_raw_ib[ib_index + 4] = vertecies_nb + 3;
+					m_raw_ib[ib_index + 5] = vertecies_nb;
 
 					vb_index += 16;
 					ib_index += 6;
@@ -171,14 +173,44 @@ namespace Hexeng
 			relative_pos.y -= font.line_offset * size;
 		}
 
-		m_index_buffer = Renderer::IndexBuffer(raw_ib, GL_UNSIGNED_INT, ib_index);
+		m_index_buffer = Renderer::IndexBuffer(m_raw_ib.data(), GL_UNSIGNED_INT, ib_index);
 
 		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::get_vertex_layout(), &m_index_buffer, &font.texture, &Renderer::font_shader});
 
 		uniforms.push_back({ &Renderer::u_color, &color });
 
 		delete[] raw_vb;
-		delete[] raw_ib;
+	}
+
+	size_t Text::get_char_count()
+	{
+		return m_raw_ib.size() / 6;
+	}
+
+	void Text::set_enabled_chars(std::vector<bool> enabled_chars)
+	{
+		HXG_ASSERT((enabled_chars.size() == get_char_count()),
+			HXG_LOG_WARNING("enabled_chars size is not valid. (Spaces don't count as a character)."););
+
+		std::vector<uint32_t> new_raw_ib;
+		new_raw_ib.reserve(m_raw_ib.size());
+
+		for (size_t i = 0; i < m_raw_ib.size(); i+=6)
+		{
+			if (enabled_chars[i/6])
+			{
+				new_raw_ib.push_back(m_raw_ib[i + 0]);
+				new_raw_ib.push_back(m_raw_ib[i + 1]);
+				new_raw_ib.push_back(m_raw_ib[i + 2]);
+				new_raw_ib.push_back(m_raw_ib[i + 3]);
+				new_raw_ib.push_back(m_raw_ib[i + 4]);
+				new_raw_ib.push_back(m_raw_ib[i + 5]);
+			}
+		}
+
+		m_index_buffer = Renderer::IndexBuffer(new_raw_ib.data(), GL_UNSIGNED_INT, new_raw_ib.size());
+
+		m_vao.tie(m_vb, Renderer::Quad::get_vertex_layout(), *m_ib);
 	}
 
 	std::vector<Text*> Text::s_translated_texts;
@@ -201,7 +233,8 @@ namespace Hexeng
 		m_ha(other.m_ha),
 		m_va(other.m_va),
 		m_language(other.m_language),
-		color(other.color)
+		color(other.color),
+		m_raw_ib(std::move(other.m_raw_ib))
 	{
 		m_ib = &m_index_buffer;
 
@@ -232,6 +265,7 @@ namespace Hexeng
 		m_ha = other.m_ha;
 		m_va = other.m_va;
 		color = other.color;
+		m_raw_ib = std::move(other.m_raw_ib);
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{

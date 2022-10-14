@@ -125,6 +125,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab6851c37f1ca22a716b1d55b1a064085"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d7201255faa8f2288f0fad58905a60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_text.html">Text</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_text.html#ad5d7201255faa8f2288f0fad58905a60">operator=</a> (<a class="el" href="class_hexeng_1_1_text.html">Text</a> &amp;&amp;) noexcept</td></tr>
 <tr class="separator:ad5d7201255faa8f2288f0fad58905a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77a80f7227a96cf864a309c60e61ede6"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_text.html#a77a80f7227a96cf864a309c60e61ede6">get_char_count</a> ()</td></tr>
+<tr class="memdesc:a77a80f7227a96cf864a309c60e61ede6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><dl class="section return"><dt>Returns</dt><dd>The size of characters being rendered (spaces don't count)</dd></dl>
+ <a href="class_hexeng_1_1_text.html#a77a80f7227a96cf864a309c60e61ede6">More...</a><br /></td></tr>
+<tr class="separator:a77a80f7227a96cf864a309c60e61ede6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84d3a5bc70dde22ec6154c41520525ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_text.html#a84d3a5bc70dde22ec6154c41520525ed">set_enabled_chars</a> (std::vector&lt; bool &gt; enabled_chars)</td></tr>
+<tr class="memdesc:a84d3a5bc70dde22ec6154c41520525ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a list of character that needs to be rendered   <a href="class_hexeng_1_1_text.html#a84d3a5bc70dde22ec6154c41520525ed">More...</a><br /></td></tr>
+<tr class="separator:a84d3a5bc70dde22ec6154c41520525ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_hexeng_1_1_renderer_1_1_mesh"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_hexeng_1_1_renderer_1_1_mesh')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html">Hexeng::Renderer::Mesh</a></td></tr>
 <tr class="memitem:af8c650dae02f4c186d9da35007e8622d inherit pub_methods_class_hexeng_1_1_renderer_1_1_mesh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#af8c650dae02f4c186d9da35007e8622d">Mesh</a> ()=default</td></tr>
 <tr class="separator:af8c650dae02f4c186d9da35007e8622d inherit pub_methods_class_hexeng_1_1_renderer_1_1_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -393,6 +400,26 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a77a80f7227a96cf864a309c60e61ede6" name="a77a80f7227a96cf864a309c60e61ede6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77a80f7227a96cf864a309c60e61ede6">&#9670;&#160;</a></span>get_char_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t Hexeng::Text::get_char_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><dl class="section return"><dt>Returns</dt><dd>The size of characters being rendered (spaces don't count)</dd></dl>
+</p>
+
+</div>
+</div>
 <a id="a0f14a4f092792ef10479eea01becc149" name="a0f14a4f092792ef10479eea01becc149"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0f14a4f092792ef10479eea01becc149">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
 
@@ -470,6 +497,32 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Refresh all the texts with the new language.  </p>
 <p >After switching languages, this function has to be called to refresh the texts. </p>
+
+</div>
+</div>
+<a id="a84d3a5bc70dde22ec6154c41520525ed" name="a84d3a5bc70dde22ec6154c41520525ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84d3a5bc70dde22ec6154c41520525ed">&#9670;&#160;</a></span>set_enabled_chars()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hexeng::Text::set_enabled_chars </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; bool &gt;&#160;</td>
+          <td class="paramname"><em>enabled_chars</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a list of character that needs to be rendered  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled_chars</td><td>A list of bools that indicates if a character have to be rendered. Its size has to be equal to <a class="el" href="class_hexeng_1_1_text.html#a77a80f7227a96cf864a309c60e61ede6" title="The size of characters being rendered (spaces don&#39;t count)">get_char_count()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
