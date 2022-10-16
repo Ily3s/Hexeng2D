@@ -48,7 +48,8 @@ namespace Hexeng::Renderer
 			rotation(moving.rotation),
 			scale(moving.scale),
 			m_layout(moving.m_layout),
-			color(moving.color)
+			color(moving.color),
+			opacity(color.A)
 	{
 		m_vao.tie(m_vb, *m_layout, *m_ib);
 

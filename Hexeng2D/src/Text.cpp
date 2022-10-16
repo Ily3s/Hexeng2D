@@ -79,8 +79,6 @@ namespace Hexeng
 		m_ha(h_align),
 		m_va(v_align)
 	{
-		color = c4;
-
 		for (char32_t c : text)
 		{
 			if (c != ' ' && c != '\n' && font.char_map.find(c) == font.char_map.end())
@@ -177,6 +175,8 @@ namespace Hexeng
 		m_index_buffer = Renderer::IndexBuffer(m_raw_ib.data(), GL_UNSIGNED_INT, ib_index);
 
 		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::get_vertex_layout(), &m_index_buffer, &font.texture, &Renderer::font_shader});
+
+		color = c4;
 
 		delete[] raw_vb;
 	}

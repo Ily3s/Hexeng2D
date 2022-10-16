@@ -26,8 +26,18 @@ namespace Hexeng
 
 		Color3& operator=(const Color3& b)
 		{
-			Vec3<float>::operator=(b);
+			R = b.R;
+			G = b.G;
+			B = b.B;
 			return *this;
+		}
+
+		Color3(const Color3& b)
+			: R(x), G(y), B(z)
+		{
+			R = b.R;
+			G = b.G;
+			B = b.B;
 		}
 
 		using Vec3<float>::operator+;
@@ -100,8 +110,20 @@ namespace Hexeng
 
 		Color4& operator=(const Color4& b)
 		{
-			Vec4<float>::operator=(b);
+			R = b.R;
+			G = b.G;
+			B = b.B;
+			A = b.A;
 			return *this;
+		}
+
+		Color4(const Color4& b)
+			: R(x), G(y), B(z), A(w)
+		{
+			R = b.R;
+			G = b.G;
+			B = b.B;
+			A = b.A;
 		}
 
 		using Vec4<float>::operator+;
