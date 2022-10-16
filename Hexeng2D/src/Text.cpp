@@ -72,14 +72,15 @@ namespace Hexeng
 	}
 
 	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color4 c4)
-		: color(c4),
-		m_text(text),
+		: m_text(text),
 		m_font(&font),
 		m_pos(pos),
 		m_font_size(font_size),
 		m_ha(h_align),
 		m_va(v_align)
 	{
+		color = c4;
+
 		for (char32_t c : text)
 		{
 			if (c != ' ' && c != '\n' && font.char_map.find(c) == font.char_map.end())
@@ -177,8 +178,6 @@ namespace Hexeng
 
 		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::get_vertex_layout(), &m_index_buffer, &font.texture, &Renderer::font_shader});
 
-		uniforms.push_back({ &Renderer::u_color, &color });
-
 		delete[] raw_vb;
 	}
 
@@ -233,16 +232,9 @@ namespace Hexeng
 		m_ha(other.m_ha),
 		m_va(other.m_va),
 		m_language(other.m_language),
-		color(other.color),
 		m_raw_ib(std::move(other.m_raw_ib))
 	{
 		m_ib = &m_index_buffer;
-
-		for (auto& [ui, value_ptr] : uniforms)
-		{
-			if (ui == &Renderer::u_color)
-				value_ptr = &color;
-		}
 
 		if (m_language)
 		{
@@ -264,14 +256,7 @@ namespace Hexeng
 		m_font_size = other.m_font_size;
 		m_ha = other.m_ha;
 		m_va = other.m_va;
-		color = other.color;
 		m_raw_ib = std::move(other.m_raw_ib);
-
-		for (auto& [ui, value_ptr] : uniforms)
-		{
-			if (ui == &Renderer::u_color)
-				value_ptr = &color;
-		}
 
 		if (m_language)
 		{

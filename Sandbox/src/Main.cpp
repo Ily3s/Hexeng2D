@@ -36,14 +36,6 @@ int main()
 	Renderer::Shader custom_shader{ Hexeng::Renderer::basic_vs, custom_fs };
 	custom_shader.add_necessary_uniforms();
 
-	Color3 frame_color{ 1.0f, 1.0f, 1.0f };
-	std::vector<Renderer::Shader*> sh{ &custom_shader };
-	Renderer::Uniform<Color3> u_color{ {
-		{Renderer::UniformArgType::NAME, "u_color"},
-		{Renderer::UniformArgType::CONTROLLLER, &frame_color},
-		{Renderer::UniformArgType::SHADERS, &sh} } };
-	u_color.add_shaders({ &custom_shader });
-
 	Renderer::Texture frame_tex{ "res/frame.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Square frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
 	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
@@ -78,7 +70,7 @@ int main()
 		{0, 1000}
 	};
 
-	EventManager::EventGate in_frame{ [&frame_color, &frame_hb, &player, &frame, &star,
+	EventManager::EventGate in_frame{ [&frame_hb, &player, &frame, &star,
 										&save_var, &save_file,
 										&language, &French, &English]()
 	{
@@ -87,19 +79,19 @@ int main()
 			 if (from == Physics::From::BOT)
 			 {
 				 save_file.save("saves/test.save");
-				 frame_color = Color3::red;
+				 frame.color = Color4::red;
 				 star.color = Color4::red;
 			 }
 			 else if (from == Physics::From::TOP)
 			 {
 				 save_file.load("saves/test.save");
-				 frame_color = Color3::green;
+				 frame.color = Color4::green;
 				 star.color = Color4::green;
 			 }
 			 else if (from == Physics::From::LEFT)
 			 {
 				 std::cout << save_var << std::endl;
-				 frame_color = Color3::blue;
+				 frame.color = Color4::blue;
 				 star.color = Color4::blue;
 				 language = &French;
 				 Text::reload_language();
@@ -107,7 +99,7 @@ int main()
 			 else if (from == Physics::From::RIGHT)
 			 {
 				 save_var++;
-				 frame_color = Color3::yellow;
+				 frame.color = Color4::yellow;
 				 star.color = Color4::yellow;
 				 language = &English;
 				 Text::reload_language();
@@ -117,7 +109,7 @@ int main()
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&frame_color, &star]() {frame_color = Color3::white; star.color = Color4::white; }, Range::LOCAL };
+		[&star, &frame]() {frame.color = Color4::white; star.color = Color4::white; }, Range::LOCAL };
 
 	Font kunstler{ "res/KUNSTLER.TTF" };
 	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color4::white };

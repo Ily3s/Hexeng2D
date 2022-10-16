@@ -107,9 +107,6 @@ namespace Hexeng
 	{
 	public :
 
-		/// @brief Can be modified at any moment.
-		Color4 color;
-
 		/// <param name="text">The text to be written. Format : UTF-32</param>
 		/// <param name="font">The Font that will be used to texture the Mesh</param>
 		/// <param name="position">The absolute position of a certain point of the Text.

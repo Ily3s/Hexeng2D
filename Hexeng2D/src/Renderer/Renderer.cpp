@@ -142,15 +142,15 @@ namespace Hexeng::Renderer
 
 	void draw_current_scene()
 	{
+		HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
+			HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); return;);
+
 		for (auto& action : pending_actions)
 			action();
 
 		pending_actions.clear();
 
 		Animation::s_update_animations();
-
-		if (scenes.find(scene_id) == scenes.end())
-			return;
 
 		draw_scene(scene_id);
 	}
@@ -159,18 +159,20 @@ namespace Hexeng::Renderer
 	Uniform<float> u_rotation_angle;
 	Uniform<Vec2<int>> u_window_size;
 	Uniform<float> u_scale;
+	Uniform<Color4> u_color;
 
 	ToBeInit init_uniforms
 	{ []() {
 		u_transform = {{{UniformArgType::NAME, "u_transform"}}};
 		u_rotation_angle = { {{UniformArgType::NAME, "u_rotation_angle"}} };
-		u_window_size = { {{UniformArgType::NAME, "u_window_size"},
-							{UniformArgType::CONTROLLLER, &Settings::window_size } } };
+		u_window_size = { {{UniformArgType::NAME, "u_window_size"},{UniformArgType::CONTROLLLER, &Settings::window_size } } };
 		u_scale = { { {UniformArgType::NAME, "u_scale"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::MULTIPLY} } };
+		u_color = { {{UniformArgType::NAME, "u_color"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::AVERAGE}} };
 		UniformInterface::necessary_uniforms.push_back(&u_transform);
 		UniformInterface::necessary_uniforms.push_back(&u_window_size);
 		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);
 		UniformInterface::necessary_uniforms.push_back(&u_scale);
+		UniformInterface::necessary_uniforms.push_back(&u_color);
 	} };
 
 }

@@ -35,6 +35,9 @@ namespace Hexeng::Physics
 
 	void PhysicsVecs::update_vecs()
 	{
+		HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
+			HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); return;);
+
 		for (PhysicsVecs* vec : scenes[scene_id]->physics_vecs)
 			vec->update();
 	}

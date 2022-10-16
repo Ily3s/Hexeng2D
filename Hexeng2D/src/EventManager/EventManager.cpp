@@ -136,6 +136,9 @@ namespace Hexeng::EventManager
 				}
 			}
 
+			HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
+				HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); goto end_loop;);
+
 			for (auto evt : scenes[scene_id]->events)
 			{
 				if (evt->clock > 0)
@@ -146,6 +149,8 @@ namespace Hexeng::EventManager
 					evt->clock = evt->pertick - 1;
 				}
 			}
+			
+		end_loop :
 
 			current_tick++;
 

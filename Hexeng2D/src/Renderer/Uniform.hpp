@@ -21,7 +21,8 @@ namespace Hexeng::Renderer
 		SUM,
 		SUBSTRACT,
 		MULTIPLY,
-		DIVIDE
+		DIVIDE,
+		AVERAGE
 	};
 
 	/// <summary>
@@ -72,6 +73,10 @@ namespace Hexeng::Renderer
 				div_val(val1, val2);
 				break;
 
+			case UniformFusionMode::AVERAGE :
+				avg_val(val1, val2);
+				break;
+
 			default :
 				break;
 			}
@@ -97,6 +102,10 @@ namespace Hexeng::Renderer
 				mult_val(val1, val2);
 				break;
 
+			case UniformFusionMode::AVERAGE:
+				unavg_val(val1, val2);
+				break;
+
 			default:
 				break;
 			}
@@ -106,8 +115,9 @@ namespace Hexeng::Renderer
 		virtual void substract_val(void* val1, void* val2) = 0;
 		virtual void mult_val(void* val1, void* val2) = 0;
 		virtual void div_val(void* val1, void* val2) = 0;
+		virtual void avg_val(void* val1, void* val2) = 0;
+		virtual void unavg_val(void* val1, void* val2) = 0;
 		virtual void inverse_val(void* val) = 0;
-
 	};
 
 	/// <summary>
@@ -160,6 +170,8 @@ namespace Hexeng::Renderer
 		void substract_val(void* val1, void* val2) override;
 		void mult_val(void* val1, void* val2) override;
 		void div_val(void* val1, void* val2) override;
+		void avg_val(void* val1, void* val2) override;
+		void unavg_val(void* val1, void* val2) override;
 		void inverse_val(void* val) override;
 	};
 
@@ -290,6 +302,18 @@ namespace Hexeng::Renderer
 	void Uniform<VEC>::div_val(void* val1, void* val2)
 	{
 		*(VEC*)val1 /= *(VEC*)val2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::avg_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 = (*(VEC*)val1 + *(VEC*)val2) / 2;
+	}
+
+	template <typename VEC>
+	void Uniform<VEC>::unavg_val(void* val1, void* val2)
+	{
+		*(VEC*)val1 = *(VEC*)val1 * 2 - *(VEC*)val2;
 	}
 
 	template <typename VEC>

@@ -71,9 +71,6 @@ namespace Hexeng::Renderer
 		/// </summary>
 		TextureAtlas* texture_atlas = nullptr;
 
-		/// @brief You can ignore this if you don't need it, it's just a bonus designed for particles.
-		Color3 color = { 0.0f, 0.0f, 0.0f };
-
 	private:
 
 		IndexBuffer m_index_buffer;
@@ -120,6 +117,12 @@ namespace Hexeng::Renderer
 
 		/// @note Can always be modified.
 		float rotation = 0.0f;
+
+		/// @note Can always be modified.
+		Color4 color = Color4::white;
+
+		/// @note Alias to color.A
+		float& opacity = color.A;
 
 	private:
 

@@ -4,6 +4,7 @@
 #include <cassert>
 #include <vector>
 #include <memory>
+#include <thread>
 
 #include "portaudio.h"
 

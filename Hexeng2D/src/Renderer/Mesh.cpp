@@ -32,6 +32,7 @@ namespace Hexeng::Renderer
 		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_color, &color });
 	}
 
 	Mesh::Mesh(Mesh&& moving) noexcept
@@ -46,7 +47,8 @@ namespace Hexeng::Renderer
 			m_transform(moving.m_transform),
 			rotation(moving.rotation),
 			scale(moving.scale),
-			m_layout(moving.m_layout)
+			m_layout(moving.m_layout),
+			color(moving.color)
 	{
 		m_vao.tie(m_vb, *m_layout, *m_ib);
 
@@ -54,10 +56,12 @@ namespace Hexeng::Renderer
 		{
 			if (ui == &u_transform)
 				value_ptr = &m_transform;
-			if (ui == &u_rotation_angle)
+			else if (ui == &u_rotation_angle)
 				value_ptr = &rotation;
-			if (ui == &u_scale)
+			else if (ui == &u_scale)
 				value_ptr = &scale;
+			else if (ui == &u_color)
+				value_ptr = &color;
 		}
 	}
 
@@ -75,6 +79,7 @@ namespace Hexeng::Renderer
 		rotation = moving.rotation;
 		scale = moving.scale;
 		m_layout = moving.m_layout;
+		color = moving.color;
 
 		m_vao.tie(m_vb, *m_layout, *m_ib);
 
@@ -86,6 +91,8 @@ namespace Hexeng::Renderer
 				value_ptr = &rotation;
 			else if (ui == &u_scale)
 				value_ptr = &scale;
+			else if (ui == &u_color)
+				value_ptr = &color;
 		}
 
 		return *this;
@@ -124,6 +131,7 @@ namespace Hexeng::Renderer
 		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_color, &color });
 	}
 
 	SuperMesh::SuperMesh(SuperMesh&& other) noexcept
@@ -186,10 +194,11 @@ namespace Hexeng::Renderer
 	}
 
 	Polygon::Polygon(const std::vector<Vec2<int>>& vertecies, Vec2<int> pos, Color4 color_p, Shader* shader)
-		: color(color_p)
 	{
 		HXG_ASSERT((vertecies.size() > 2),
 			HXG_LOG_ERROR("A polygon must be built out of at least three vertecies."););
+
+		color = color_p;
 
 		float* vertex_buffer = new float[vertecies.size() * 2];
 
@@ -202,8 +211,6 @@ namespace Hexeng::Renderer
 		m_construct_ib(vertecies);
 
 		this->Mesh::operator=(Mesh{ vertex_buffer, vertecies.size() * 2 * sizeof(float), pos, s_vertex_layout, &m_index_buffer, nullptr, shader });
-
-		uniforms.push_back({ &u_color, &color });
 
 		delete[] vertex_buffer;
 	}
@@ -292,16 +299,10 @@ namespace Hexeng::Renderer
 	}
 
 	Polygon::Polygon(Polygon&& other) noexcept
-		: Mesh(std::move(other)), color(other.color)
+		: Mesh(std::move(other))
 	{
 		m_index_buffer = std::move(other.m_index_buffer);
 		m_ib = &m_index_buffer;
-
-		for (auto& [ui, value_ptr] : uniforms)
-		{
-			if (ui == &u_color)
-				value_ptr = &color;
-		}
 	}
 
 	Polygon& Polygon::operator=(Polygon&& other) noexcept
@@ -310,13 +311,6 @@ namespace Hexeng::Renderer
 
 		m_index_buffer = std::move(other.m_index_buffer);
 		m_ib = &m_index_buffer;
-		color = other.color;
-
-		for (auto& [ui, value_ptr] : uniforms)
-		{
-			if (ui == &u_color)
-				value_ptr = &color;
-		}
 
 		return *this;
 	}

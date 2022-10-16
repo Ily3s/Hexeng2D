@@ -51,6 +51,12 @@ namespace Hexeng::Renderer
 		/// @note Can be modified at any moment.
 		float rotation = 0;
 
+		/// @note Can be modified at any moment.
+		Color4 color = Color4::white;
+
+		/// @note Alias to color.A
+		float& opacity = color.A;
+
 		void update_position();
 
 		virtual void draw();
@@ -105,8 +111,6 @@ namespace Hexeng::Renderer
 	class HXG_DECLSPEC Polygon : public Mesh
 	{
 	public :
-
-		Color4 color;
 
 		/// <param name="vertecies">All vertecies coordinates in the Hexeng2D coordinate system, in clockwise order.</param>
 		/// @note If you want to make a custom shader for the polygon,

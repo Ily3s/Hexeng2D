@@ -11,11 +11,11 @@ const char custom_fs[] = SHADER(
 	out vec4 color;
 	
 	uniform sampler2D u_Texture;
-	uniform vec3 u_color;
+	uniform vec4 u_color;
 	
 	void main()
 	{
-		color = vec4(u_color, texture(u_Texture, v_text_coord).a);
+		color = vec4(u_color.xyz, texture(u_Texture, v_text_coord).a);
 	}
 	
 );
