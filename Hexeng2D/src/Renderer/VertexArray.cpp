@@ -5,12 +5,6 @@
 namespace Hexeng::Renderer
 {
 
-	VertexArray::VertexArray()
-	{
-		HXG_GL(glGenVertexArrays(1, &m_id));
-		ToBeDelete(this, [this]() { this->~VertexArray(); });
-	}
-
 	VertexArray::~VertexArray()
 	{
 		if (m_id)
@@ -30,8 +24,10 @@ namespace Hexeng::Renderer
 		HXG_GL(glBindVertexArray(0));
 	}
 
-	void VertexArray::tie(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib)
+	VertexArray::VertexArray(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib)
 	{
+		HXG_GL(glGenVertexArrays(1, &m_id));
+
 		bind();
 
 		vb.bind();
@@ -43,10 +39,14 @@ namespace Hexeng::Renderer
 		vb.unbind();
 		layout.unbind();
 		ib.unbind();
+
+		ToBeDelete(this, [this]() { this->~VertexArray(); });
 	}
 
-	void VertexArray::tie(const VertexBuffer& vb, const VertexLayout& layout)
+	VertexArray::VertexArray(const VertexBuffer& vb, const VertexLayout& layout)
 	{
+		HXG_GL(glGenVertexArrays(1, &m_id));
+
 		bind();
 
 		vb.bind();
@@ -56,19 +56,8 @@ namespace Hexeng::Renderer
 
 		vb.unbind();
 		layout.unbind();
-	}
 
-	void VertexArray::tie(unsigned int vb, const VertexLayout& layout)
-	{
-		bind();
-
-		HXG_GL(glBindBuffer(GL_ARRAY_BUFFER, vb));
-		layout.bind();
-
-		unbind();
-
-		HXG_GL(glBindBuffer(GL_ARRAY_BUFFER, 0));
-		layout.unbind();
+		ToBeDelete(this, [this]() { this->~VertexArray(); });
 	}
 
 	VertexArray::VertexArray(VertexArray&& va) noexcept

@@ -209,7 +209,7 @@ namespace Hexeng
 
 		m_index_buffer = Renderer::IndexBuffer(new_raw_ib.data(), GL_UNSIGNED_INT, new_raw_ib.size());
 
-		m_vao.tie(m_vb, Renderer::Quad::get_vertex_layout(), *m_ib);
+		m_vao = { m_vb, Renderer::Quad::get_vertex_layout(), *m_ib };
 	}
 
 	std::vector<Text*> Text::s_translated_texts;

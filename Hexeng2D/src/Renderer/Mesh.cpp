@@ -28,7 +28,7 @@ namespace Hexeng::Renderer
 			position(pos),
 			m_layout(&layout)
 	{
-		m_vao.tie(m_vb, layout, *m_ib);
+		m_vao = { m_vb, layout, *m_ib };
 		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
@@ -51,7 +51,7 @@ namespace Hexeng::Renderer
 			color(moving.color),
 			opacity(color.A)
 	{
-		m_vao.tie(m_vb, *m_layout, *m_ib);
+		m_vao = { m_vb, *m_layout, *m_ib };
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{
@@ -82,7 +82,7 @@ namespace Hexeng::Renderer
 		m_layout = moving.m_layout;
 		color = moving.color;
 
-		m_vao.tie(m_vb, *m_layout, *m_ib);
+		m_vao = { m_vb, *m_layout, *m_ib };
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{

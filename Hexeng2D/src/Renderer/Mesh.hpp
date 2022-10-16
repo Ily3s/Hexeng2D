@@ -61,7 +61,7 @@ namespace Hexeng::Renderer
 
 		virtual void draw();
 
-		std::vector<std::pair<UniformInterface*, void*>> uniforms;
+		std::vector<std::pair<UniformInterface*, void*>> uniforms = {};
 
 	protected:
 

@@ -58,7 +58,7 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
+		m_vao = { m_vb, s_vertex_layout, s_edge_index_buffer };
 	}
 
 	Quad::Quad(const Vec2<int>& pos, float size, Texture* texture, bool centered, Shader* shader)
@@ -81,7 +81,7 @@ namespace Hexeng::Renderer
 	{
 		m_type = GL_LINES;
 		m_ib = &s_edge_index_buffer;
-		m_vao.tie(m_vb, s_vertex_layout, s_edge_index_buffer);
+		m_vao = { m_vb, s_vertex_layout, s_edge_index_buffer };
 	}
 
 	DebugQuad& DebugQuad::operator=(DebugQuad&& other) noexcept

@@ -134,7 +134,7 @@ namespace Hexeng::Renderer
 		m_index_buffer = { &m_raw_ib[0], GL_UNSIGNED_INT, static_cast<uint32_t>(m_raw_ib.size()) };
 		m_ib = &m_index_buffer;
 		m_texture = texture_atlas;
-		m_vao.tie(m_vb, BatchQuad::s_vertex_layout, m_index_buffer);
+		m_vao = { m_vb, BatchQuad::s_vertex_layout, m_index_buffer };
 
 		m_uniforms_id = m_shader->get_uniform("u_quads_uniforms");
 	}

@@ -11,15 +11,13 @@ namespace Hexeng::Renderer
 
 	class HXG_DECLSPEC VertexArray
 	{
-
-	private:
-
-		unsigned int m_id;
-
 	public:
 
-		VertexArray();
+		VertexArray() = default;
 		~VertexArray();
+
+		VertexArray(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib);
+		VertexArray(const VertexBuffer& vb, const VertexLayout& layout);
 		
 		VertexArray(const VertexArray&) = delete;
 		VertexArray& operator=(const VertexArray&) = delete;
@@ -27,12 +25,12 @@ namespace Hexeng::Renderer
 		VertexArray(VertexArray&&) noexcept;
 		VertexArray& operator=(VertexArray&&) noexcept;
 		
-		void tie(const VertexBuffer& vb, const VertexLayout& layout, const IndexBuffer& ib);
-		void tie(const VertexBuffer& vb, const VertexLayout& layout);
-		void tie(unsigned int vb, const VertexLayout& layout);
-		
 		void bind() const;
 		void unbind() const;
+
+	private:
+
+		unsigned int m_id = 0;
 
 	};
 
