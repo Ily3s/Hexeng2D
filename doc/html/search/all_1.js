@@ -20,5 +20,7 @@ var searchData=
   ['animationstep_17',['AnimationStep',['../struct_hexeng_1_1_renderer_1_1_animation_step.html#ac3680c8da679dbc55f3823e50cba4e2e',1,'Hexeng::Renderer::AnimationStep::AnimationStep()'],['../struct_hexeng_1_1_renderer_1_1_animation_step.html',1,'Hexeng::Renderer::AnimationStep']]],
   ['architecture_5fid_18',['ARCHITECTURE_ID',['../_c_make_c_compiler_id_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../_c_make_c_x_x_compiler_id_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]],
   ['audio_2ecpp_19',['Audio.cpp',['../_audio_8cpp.html',1,'']]],
-  ['audio_2ehpp_20',['Audio.hpp',['../_audio_8hpp.html',1,'']]]
+  ['audio_2ehpp_20',['Audio.hpp',['../_audio_8hpp.html',1,'']]],
+  ['average_21',['AVERAGE',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290',1,'Hexeng::Renderer']]],
+  ['avg_5fval_22',['avg_val',['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#a8a0e426637051127972b4b63c552644e',1,'Hexeng::Renderer::UniformInterface::avg_val()'],['../class_hexeng_1_1_renderer_1_1_uniform.html#a32817a4ffa5c16aee65fd672f6026944',1,'Hexeng::Renderer::Uniform::avg_val()']]]
 ];

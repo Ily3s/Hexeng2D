@@ -155,7 +155,11 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4f5ccbfcc527b200926b3931913945ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36335cd573eb71e62b0af55630149907"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a36335cd573eb71e62b0af55630149907">rotation</a> = 0</td></tr>
 <tr class="separator:a36335cd573eb71e62b0af55630149907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88aa484fb2d1eda816819ad09ea293bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a88aa484fb2d1eda816819ad09ea293bc">uniforms</a></td></tr>
+<tr class="memitem:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3">color</a> = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td></tr>
+<tr class="separator:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553949dd59a43118fc12f17fb5cc6d2e"><td class="memItemLeft" align="right" valign="top">float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a553949dd59a43118fc12f17fb5cc6d2e">opacity</a> = color.A</td></tr>
+<tr class="separator:a553949dd59a43118fc12f17fb5cc6d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88aa484fb2d1eda816819ad09ea293bc"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a88aa484fb2d1eda816819ad09ea293bc">uniforms</a> = {}</td></tr>
 <tr class="separator:a88aa484fb2d1eda816819ad09ea293bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -558,6 +562,21 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa6f1d0462b748ebdd8c04cd395859ae3" name="aa6f1d0462b748ebdd8c04cd395859ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6f1d0462b748ebdd8c04cd395859ae3">&#9670;&#160;</a></span>color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a> Hexeng::Renderer::Mesh::color = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Can be modified at any moment. </dd></dl>
+
+</div>
+</div>
 <a id="a548e82e1c845cc8f597f629f3afc626f" name="a548e82e1c845cc8f597f629f3afc626f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a548e82e1c845cc8f597f629f3afc626f">&#9670;&#160;</a></span>m_ib</h2>
 
@@ -734,6 +753,21 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a553949dd59a43118fc12f17fb5cc6d2e" name="a553949dd59a43118fc12f17fb5cc6d2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553949dd59a43118fc12f17fb5cc6d2e">&#9670;&#160;</a></span>opacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float&amp; Hexeng::Renderer::Mesh::opacity = color.A</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>Note</dt><dd>Alias to color.A </dd></dl>
+
+</div>
+</div>
 <a id="a4840714190a5e2d48136cef014de0b22" name="a4840714190a5e2d48136cef014de0b22"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4840714190a5e2d48136cef014de0b22">&#9670;&#160;</a></span>position</h2>
 
@@ -786,7 +820,7 @@ Friends</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a>*, void*&gt; &gt; Hexeng::Renderer::Mesh::uniforms</td>
+          <td class="memname">std::vector&lt;std::pair&lt;<a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a>*, void*&gt; &gt; Hexeng::Renderer::Mesh::uniforms = {}</td>
         </tr>
       </table>
 </div><div class="memdoc">

@@ -42,6 +42,10 @@ virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a7
 \item 
 virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}{div\+\_\+val}} (void $\ast$val1, void $\ast$val2)=0
 \item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a8a0e426637051127972b4b63c552644e}{avg\+\_\+val}} (void $\ast$val1, void $\ast$val2)=0
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_a175dd6a1df58bd61223422c9533c7883}{unavg\+\_\+val}} (void $\ast$val1, void $\ast$val2)=0
+\item 
 virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface_ac8e0ed7e22d8feffc063f6d9497634ac}{inverse\+\_\+val}} (void $\ast$val)=0
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
@@ -78,6 +82,16 @@ The virtual base class of all templated instances of \mbox{\hyperlink{class_hexe
 \index{add\_shaders@{add\_shaders}!Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}}
 \doxysubsubsection{\texorpdfstring{add\_shaders()}{add\_shaders()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Uniform\+Interface\+::add\+\_\+shaders (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$ $>$ \&}]{shad\+\_\+list }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_interface_a8a0e426637051127972b4b63c552644e}\label{class_hexeng_1_1_renderer_1_1_uniform_interface_a8a0e426637051127972b4b63c552644e}} 
+\index{Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}!avg\_val@{avg\_val}}
+\index{avg\_val@{avg\_val}!Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}}
+\doxysubsubsection{\texorpdfstring{avg\_val()}{avg\_val()}}
+{\footnotesize\ttfamily virtual void Hexeng\+::\+Renderer\+::\+Uniform\+Interface\+::avg\+\_\+val (\begin{DoxyParamCaption}\item[{void $\ast$}]{val1,  }\item[{void $\ast$}]{val2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a32817a4ffa5c16aee65fd672f6026944}{Hexeng\+::\+Renderer\+::\+Uniform$<$ VEC $>$}}, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a32817a4ffa5c16aee65fd672f6026944}{Hexeng\+::\+Renderer\+::\+Uniform$<$ Hexeng\+::\+Vec2$<$ float $>$ $>$}}, and \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a32817a4ffa5c16aee65fd672f6026944}{Hexeng\+::\+Renderer\+::\+Uniform$<$ float $>$}}.
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}\label{class_hexeng_1_1_renderer_1_1_uniform_interface_a41a78ce7f257a4e8ac52c3063e880b87}} 
 \index{Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}!div\_val@{div\_val}}
@@ -174,6 +188,16 @@ Implemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_ac32916dd8
 
 
 Implemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{Hexeng\+::\+Renderer\+::\+Uniform$<$ VEC $>$}}, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{Hexeng\+::\+Renderer\+::\+Uniform$<$ Hexeng\+::\+Vec2$<$ float $>$ $>$}}, and \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a6211a01e4770b9b54863a60926c0cf7e}{Hexeng\+::\+Renderer\+::\+Uniform$<$ float $>$}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_interface_a175dd6a1df58bd61223422c9533c7883}\label{class_hexeng_1_1_renderer_1_1_uniform_interface_a175dd6a1df58bd61223422c9533c7883}} 
+\index{Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}!unavg\_val@{unavg\_val}}
+\index{unavg\_val@{unavg\_val}!Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}}
+\doxysubsubsection{\texorpdfstring{unavg\_val()}{unavg\_val()}}
+{\footnotesize\ttfamily virtual void Hexeng\+::\+Renderer\+::\+Uniform\+Interface\+::unavg\+\_\+val (\begin{DoxyParamCaption}\item[{void $\ast$}]{val1,  }\item[{void $\ast$}]{val2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a8bae5656658d630b2991c1b95df8ae04}{Hexeng\+::\+Renderer\+::\+Uniform$<$ VEC $>$}}, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a8bae5656658d630b2991c1b95df8ae04}{Hexeng\+::\+Renderer\+::\+Uniform$<$ Hexeng\+::\+Vec2$<$ float $>$ $>$}}, and \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_a8bae5656658d630b2991c1b95df8ae04}{Hexeng\+::\+Renderer\+::\+Uniform$<$ float $>$}}.
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_uniform_interface_a083142a516bf8242c7a59c01c5d10dbb}\label{class_hexeng_1_1_renderer_1_1_uniform_interface_a083142a516bf8242c7a59c01c5d10dbb}} 
 \index{Hexeng::Renderer::UniformInterface@{Hexeng::Renderer::UniformInterface}!unfusion\_val@{unfusion\_val}}

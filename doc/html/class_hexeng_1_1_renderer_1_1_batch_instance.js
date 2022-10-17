@@ -9,6 +9,5 @@ var class_hexeng_1_1_renderer_1_1_batch_instance =
     [ "operator=", "class_hexeng_1_1_renderer_1_1_batch_instance.html#a6c82f9a73faa2150baac04bbb3d166f0", null ],
     [ "operator=", "class_hexeng_1_1_renderer_1_1_batch_instance.html#ae81b9cf2d66b87e9d2b994945b89fa3d", null ],
     [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_instance.html#a6323651005d4d9dad92e4aeb6ef68b85", null ],
-    [ "color", "class_hexeng_1_1_renderer_1_1_batch_instance.html#a2b801ea5e630b84e7cda3f44e973952d", null ],
     [ "texture_atlas", "class_hexeng_1_1_renderer_1_1_batch_instance.html#ad0c39a42d9e165ea926480c365ac2107", null ]
 ];

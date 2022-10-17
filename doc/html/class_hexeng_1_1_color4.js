@@ -1,5 +1,6 @@
 var class_hexeng_1_1_color4 =
 [
+    [ "Color4", "class_hexeng_1_1_color4.html#aa4b996d1484ac6fa88927b707c3c56c2", null ],
     [ "Color4", "class_hexeng_1_1_color4.html#a5ad061e9d088671ca836f881047de749", null ],
     [ "is_close_to", "class_hexeng_1_1_color4.html#a7fa44c4f02c2922b2517058fbb5d6d50", null ],
     [ "operator=", "class_hexeng_1_1_color4.html#a1d8630a38121234882d0031233e296e7", null ],

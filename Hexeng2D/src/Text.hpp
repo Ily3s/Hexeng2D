@@ -117,9 +117,12 @@ namespace Hexeng
 		/// <param name="ha">Defines the x position of the text relative to position</param>
 		/// <param name="va">Defines the y position of the text relative to position</param>
 		/// <param name="c">The color of the text</param>
+		/// <param name="box">A box that must contain the text</param>
+		/// <param name="use_what_doesnt_fit">A function that uses what doesn't fit in the box</param>
 		
 		Text(std::u32string text, Font& font, Vec2<int> position, int font_size,
-			HorizontalAlign ha= HorizontalAlign::CENTER, VerticalAlign va= VerticalAlign::CENTER, Color4 c= Color4::white);
+			HorizontalAlign ha= HorizontalAlign::CENTER, VerticalAlign va= VerticalAlign::CENTER, Color4 c= Color4::white,
+			Vec2<int> box = {0, 0}, std::function<void(const std::u32string&)> use_what_doesnt_fit = nullptr);
 
 		/// <param name="language">A pointer to the current language's pointer.
 		/// It is a pointer to a pointer so that it is easier to switch languages</param>
@@ -131,9 +134,12 @@ namespace Hexeng
 		/// <param name="ha">Defines the x position of the text relative to position</param>
 		/// <param name="va">Defines the y position of the text relative to position</param>
 		/// <param name="c">The color of the text</param>
+		/// <param name="box">A box that must contain the text</param>
+		/// <param name="use_what_doesnt_fit">A function that uses what doesn't fit in the box</param>
 		
 		Text(const Language** language, std::u32string text, Font& font, Vec2<int> position, int font_size,
-			HorizontalAlign ha = HorizontalAlign::CENTER, VerticalAlign va = VerticalAlign::CENTER, Color4 c= Color4::white);
+			HorizontalAlign ha = HorizontalAlign::CENTER, VerticalAlign va = VerticalAlign::CENTER, Color4 c= Color4::white,
+			Vec2<int> box = {0, 0}, std::function<void(const std::u32string&)> use_what_doesnt_fit = nullptr);
 
 		Text(const Text&) = delete;
 		Text& operator=(const Text&) = delete;
@@ -172,6 +178,9 @@ namespace Hexeng
 		static std::vector<Text*> s_translated_texts;
 
 		std::vector<uint32_t> m_raw_ib;
+
+		Vec2<int> m_box = { 0, 0 };
+		std::function<void(const std::u32string&)> m_use_extra = nullptr;
 	};
 
 }

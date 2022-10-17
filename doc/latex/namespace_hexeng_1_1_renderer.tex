@@ -85,10 +85,13 @@ enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5d
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\+\_\+\+NB}}
  \}
 \begin{DoxyCompactList}\small\item\em An enum of possible texture settings you can specify to a texture constructor.  \end{DoxyCompactList}\item 
-enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{SUBSTRACT}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{DIVIDE}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}{AVERAGE}}
  \}
 \begin{DoxyCompactList}\small\item\em Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}}
@@ -131,8 +134,6 @@ void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\+\_\+shader}}
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\+\_\+color}}
-\item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}{init\+\_\+presets}}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}{global\+\_\+layers}}
@@ -150,6 +151,8 @@ std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespace
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\+\_\+window\+\_\+size}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\+\_\+scale}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\+\_\+color}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}{init\+\_\+uniforms}}
 \end{DoxyCompactItemize}
@@ -291,6 +294,10 @@ MULTIPLY&\\
 DIVIDE&\\
 \hline
 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVERAGE@{AVERAGE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!AVERAGE@{AVERAGE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}} 
+AVERAGE&\\
+\hline
+
 \end{DoxyEnumFields}
 
 
@@ -403,7 +410,7 @@ You should call this function after the game loop exits.
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}} = Shader(basic\_vs, line\_fs);}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}} = Shader(tex\_vector\_vs, font\_fs);}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}} = Shader(tex\_vector\_vs, basic\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(batching\_vs, basic\_fs);}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(batching\_vs, batching\_fs);}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}} = Shader(poly\_vs, poly\_fs);}
 \DoxyCodeLine{}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
@@ -412,9 +419,6 @@ You should call this function after the game loop exits.
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
-\DoxyCodeLine{}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{\{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}\}\};}
-\DoxyCodeLine{        u\_color.add\_shaders(\{ \&line\_shader, \&font\_shader, \&batching\_shader, \&poly\_shader \});}
 \DoxyCodeLine{    \}, 1 \}}
 
 \end{DoxyCode}
@@ -429,13 +433,14 @@ You should call this function after the game loop exits.
 \DoxyCodeLine{\{ []() \{}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}{u\_transform}} = \{\{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_transform"{}}\}\}\};}
 \DoxyCodeLine{        u\_rotation\_angle = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_rotation\_angle"{}}\}\} \};}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\_window\_size}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_window\_size"{}}\},}
-\DoxyCodeLine{                            \{UniformArgType::CONTROLLLER, \&Settings::window\_size \} \} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\_window\_size}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_window\_size"{}}\},\{UniformArgType::CONTROLLLER, \&Settings::window\_size \} \} \};}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\_scale}} = \{ \{ \{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_scale"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::MULTIPLY\} \} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::AVERAGE\}\} \};}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_transform);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_window\_size);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_rotation\_angle);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_scale);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_color);}
 \DoxyCodeLine{    \} \}}
 
 \end{DoxyCode}

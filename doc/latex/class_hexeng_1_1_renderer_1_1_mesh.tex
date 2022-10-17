@@ -46,7 +46,11 @@ float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4f5ccbfcc527b200926b3
 \item 
 float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a36335cd573eb71e62b0af55630149907}{rotation}} = 0
 \item 
-std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a88aa484fb2d1eda816819ad09ea293bc}{uniforms}}
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}} = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\item 
+float \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}{opacity}} = color.\+A
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a88aa484fb2d1eda816819ad09ea293bc}{uniforms}} = \{\}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -191,6 +195,15 @@ Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}\label{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!color@{color}}
+\index{color@{color}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a548e82e1c845cc8f597f629f3afc626f}\label{class_hexeng_1_1_renderer_1_1_mesh_a548e82e1c845cc8f597f629f3afc626f}} 
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_ib@{m\_ib}}
 \index{m\_ib@{m\_ib}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
@@ -239,6 +252,15 @@ Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a
 \doxysubsubsection{\texorpdfstring{m\_vb}{m\_vb}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+vb\hspace{0.3cm}{\ttfamily [protected]}}
 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}\label{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!opacity@{opacity}}
+\index{opacity@{opacity}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{opacity}{opacity}}
+{\footnotesize\ttfamily float\& Hexeng\+::\+Renderer\+::\+Mesh\+::opacity = color.\+A}
+
+\begin{DoxyNote}{Note}
+Alias to color.\+A 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}\label{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}} 
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!position@{position}}
 \index{position@{position}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
@@ -270,7 +292,7 @@ Can be modified at any moment.
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!uniforms@{uniforms}}
 \index{uniforms@{uniforms}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
 \doxysubsubsection{\texorpdfstring{uniforms}{uniforms}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}$\ast$, void$\ast$$>$ $>$ Hexeng\+::\+Renderer\+::\+Mesh\+::uniforms}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}$\ast$, void$\ast$$>$ $>$ Hexeng\+::\+Renderer\+::\+Mesh\+::uniforms = \{\}}
 
 
 

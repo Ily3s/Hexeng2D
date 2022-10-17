@@ -6,7 +6,7 @@ var searchData=
   ['click_3',['click',['../class_hexeng_1_1_event_manager_1_1_button.html#afce58409a65e488ea4774b424361ce53',1,'Hexeng::EventManager::Button']]],
   ['clock_4',['clock',['../class_hexeng_1_1_event_manager_1_1_event.html#aba9cf00b0808e9e28a184fcb42ed68e2',1,'Hexeng::EventManager::Event']]],
   ['collisions_5fevt_5',['collisions_evt',['../class_hexeng_1_1_physics_1_1_hit_box.html#a9bbd28be93bfe81882f33543d3f9b77c',1,'Hexeng::Physics::HitBox']]],
-  ['color_6',['color',['../class_hexeng_1_1_renderer_1_1_batch_instance.html#a2b801ea5e630b84e7cda3f44e973952d',1,'Hexeng::Renderer::BatchInstance::color()'],['../class_hexeng_1_1_renderer_1_1_polygon.html#a19780d5403eb18bc1fb1c7893c416332',1,'Hexeng::Renderer::Polygon::color()'],['../class_hexeng_1_1_text.html#a153a727e7a1bcf611efebf18e351859d',1,'Hexeng::Text::color()']]],
+  ['color_6',['color',['../class_hexeng_1_1_renderer_1_1_batch_quad.html#a381c3cfcdab3e4d6d5befb15a916bc31',1,'Hexeng::Renderer::BatchQuad::color()'],['../class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3',1,'Hexeng::Renderer::Mesh::color()']]],
   ['condition_7',['condition',['../class_hexeng_1_1_event_manager_1_1_button.html#a31985b267c862503ec3bc820b17e0672',1,'Hexeng::EventManager::Button::condition()'],['../class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33',1,'Hexeng::EventManager::Event::condition()']]],
   ['context_8',['context',['../class_hexeng_1_1_renderer_1_1_contextual_layer.html#a71f626fd919417024110f2210904d95e',1,'Hexeng::Renderer::ContextualLayer']]],
   ['count_9',['count',['../struct_hexeng_1_1_renderer_1_1_vertex_element.html#aabd754af1dc4549afc656c44eb32e902',1,'Hexeng::Renderer::VertexElement']]],

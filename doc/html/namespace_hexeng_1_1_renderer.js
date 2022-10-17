@@ -53,7 +53,8 @@ var namespace_hexeng_1_1_renderer =
       [ "SUM", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a", null ],
       [ "SUBSTRACT", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4", null ],
       [ "MULTIPLY", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30", null ],
-      [ "DIVIDE", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b", null ]
+      [ "DIVIDE", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b", null ],
+      [ "AVERAGE", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290", null ]
     ] ],
     [ "clear", "namespace_hexeng_1_1_renderer.html#aaa53593db153e61eda515ffd12eec6be", null ],
     [ "draw", "namespace_hexeng_1_1_renderer.html#ae165c99de5cf99ac80acdf09a7255357", null ],

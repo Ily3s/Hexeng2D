@@ -138,6 +138,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab82c015dd48b57b2cd83d4568511d21b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfd9d461e24f1a5aae2f08526948cdb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html#acfd9d461e24f1a5aae2f08526948cdb8">div_val</a> (void *val1, void *val2) override</td></tr>
 <tr class="separator:acfd9d461e24f1a5aae2f08526948cdb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32817a4ffa5c16aee65fd672f6026944"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html#a32817a4ffa5c16aee65fd672f6026944">avg_val</a> (void *val1, void *val2) override</td></tr>
+<tr class="separator:a32817a4ffa5c16aee65fd672f6026944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bae5656658d630b2991c1b95df8ae04"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html#a8bae5656658d630b2991c1b95df8ae04">unavg_val</a> (void *val1, void *val2) override</td></tr>
+<tr class="separator:a8bae5656658d630b2991c1b95df8ae04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd34f710395244e3ba94035980c6ddc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html#acd34f710395244e3ba94035980c6ddc2">inverse_val</a> (void *val) override</td></tr>
 <tr class="separator:acd34f710395244e3ba94035980c6ddc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">Hexeng::Renderer::UniformInterface</a></td></tr>
@@ -165,6 +169,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a72c03b38028248099d55505a7abcdd56 inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41a78ce7f257a4e8ac52c3063e880b87 inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a41a78ce7f257a4e8ac52c3063e880b87">div_val</a> (void *val1, void *val2)=0</td></tr>
 <tr class="separator:a41a78ce7f257a4e8ac52c3063e880b87 inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a0e426637051127972b4b63c552644e inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a8a0e426637051127972b4b63c552644e">avg_val</a> (void *val1, void *val2)=0</td></tr>
+<tr class="separator:a8a0e426637051127972b4b63c552644e inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a175dd6a1df58bd61223422c9533c7883 inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a175dd6a1df58bd61223422c9533c7883">unavg_val</a> (void *val1, void *val2)=0</td></tr>
+<tr class="separator:a175dd6a1df58bd61223422c9533c7883 inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8e0ed7e22d8feffc063f6d9497634ac inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#ac8e0ed7e22d8feffc063f6d9497634ac">inverse_val</a> (void *val)=0</td></tr>
 <tr class="separator:ac8e0ed7e22d8feffc063f6d9497634ac inherit pub_methods_class_hexeng_1_1_renderer_1_1_uniform_interface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -245,6 +253,46 @@ template&lt;typename VEC &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a32817a4ffa5c16aee65fd672f6026944" name="a32817a4ffa5c16aee65fd672f6026944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32817a4ffa5c16aee65fd672f6026944">&#9670;&#160;</a></span>avg_val()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VEC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html">Hexeng::Renderer::Uniform</a>&lt; VEC &gt;::avg_val </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>val2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a8a0e426637051127972b4b63c552644e">Hexeng::Renderer::UniformInterface</a>.</p>
+
+</div>
+</div>
 <a id="acfd9d461e24f1a5aae2f08526948cdb8" name="acfd9d461e24f1a5aae2f08526948cdb8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfd9d461e24f1a5aae2f08526948cdb8">&#9670;&#160;</a></span>div_val()</h2>
 
@@ -594,6 +642,46 @@ template&lt;typename VEC &gt; </div>
 </div><div class="memdoc">
 
 <p>Implements <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a679abd9a34bdac5e99328dd922d308d6">Hexeng::Renderer::UniformInterface</a>.</p>
+
+</div>
+</div>
+<a id="a8bae5656658d630b2991c1b95df8ae04" name="a8bae5656658d630b2991c1b95df8ae04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bae5656658d630b2991c1b95df8ae04">&#9670;&#160;</a></span>unavg_val()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename VEC &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform.html">Hexeng::Renderer::Uniform</a>&lt; VEC &gt;::unavg_val </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>val1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>val2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html#a175dd6a1df58bd61223422c9533c7883">Hexeng::Renderer::UniformInterface</a>.</p>
 
 </div>
 </div>

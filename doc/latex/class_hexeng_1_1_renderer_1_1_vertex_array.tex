@@ -7,9 +7,13 @@
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_adee48a87c092acded40254057ab363f4}{Vertex\+Array}} ()
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a3ba550e5d7e46576cc87cddfee5d601c}{Vertex\+Array}} ()=default
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a785f56c2a80028e3dda37241f816cb32}{$\sim$\+Vertex\+Array}} ()
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a29543f7f959af21a0b0ae38368604c76}{Vertex\+Array}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&ib)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_aee94267bea0692c546914baf2adddf95}{Vertex\+Array}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a209a1e9a73e3e1af12006cdd9e191b7a}{Vertex\+Array}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&)=delete
 \item 
@@ -19,12 +23,6 @@
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_afe645159b32c4080d3071a00f84d8636}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&\&) noexcept
 \item 
-void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_aa5187aa925454241e2e50ae8517119f9}{tie}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&ib)
-\item 
-void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_ad774c61ff27821ee577acf10a95c00e2}{tie}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&vb, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
-\item 
-void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a3c4e4a04c2b8183fe35cd78b250a5e38}{tie}} (unsigned int vb, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout)
-\item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_ab5568e957e475d0b0dda04d9b1644a65}{bind}} () const
 \item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a175b60f2830f1283df}{unbind}} () const
@@ -32,11 +30,11 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_adee48a87c092acded40254057ab363f4}\label{class_hexeng_1_1_renderer_1_1_vertex_array_adee48a87c092acded40254057ab363f4}} 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a3ba550e5d7e46576cc87cddfee5d601c}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a3ba550e5d7e46576cc87cddfee5d601c}} 
 \index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!VertexArray@{VertexArray}}
 \index{VertexArray@{VertexArray}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a785f56c2a80028e3dda37241f816cb32}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a785f56c2a80028e3dda37241f816cb32}} 
 \index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!````~VertexArray@{$\sim$VertexArray}}
@@ -44,16 +42,28 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a
 \doxysubsubsection{\texorpdfstring{$\sim$VertexArray()}{~VertexArray()}}
 {\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::$\sim$\+Vertex\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a29543f7f959af21a0b0ae38368604c76}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a29543f7f959af21a0b0ae38368604c76}} 
+\index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&}]{vb,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&}]{ib }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_aee94267bea0692c546914baf2adddf95}\label{class_hexeng_1_1_renderer_1_1_vertex_array_aee94267bea0692c546914baf2adddf95}} 
+\index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!VertexArray@{VertexArray}}
+\index{VertexArray@{VertexArray}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&}]{vb,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a209a1e9a73e3e1af12006cdd9e191b7a}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a209a1e9a73e3e1af12006cdd9e191b7a}} 
 \index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!VertexArray@{VertexArray}}
 \index{VertexArray@{VertexArray}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_aec1379b778da1b825a40385b17a01548}\label{class_hexeng_1_1_renderer_1_1_vertex_array_aec1379b778da1b825a40385b17a01548}} 
 \index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!VertexArray@{VertexArray}}
 \index{VertexArray@{VertexArray}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{VertexArray()}{VertexArray()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
 {\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::\+Vertex\+Array (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&\&}]{va }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
@@ -76,24 +86,6 @@ void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a
 \index{operator=@{operator=}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \& Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&\&}]{va }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_ad774c61ff27821ee577acf10a95c00e2}\label{class_hexeng_1_1_renderer_1_1_vertex_array_ad774c61ff27821ee577acf10a95c00e2}} 
-\index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!tie@{tie}}
-\index{tie@{tie}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{tie()}{tie()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::tie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&}]{vb,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_aa5187aa925454241e2e50ae8517119f9}\label{class_hexeng_1_1_renderer_1_1_vertex_array_aa5187aa925454241e2e50ae8517119f9}} 
-\index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!tie@{tie}}
-\index{tie@{tie}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{tie()}{tie()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::tie (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \&}]{vb,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&}]{ib }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a3c4e4a04c2b8183fe35cd78b250a5e38}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a3c4e4a04c2b8183fe35cd78b250a5e38}} 
-\index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!tie@{tie}}
-\index{tie@{tie}!Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}}
-\doxysubsubsection{\texorpdfstring{tie()}{tie()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Vertex\+Array\+::tie (\begin{DoxyParamCaption}\item[{unsigned int}]{vb,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a175b60f2830f1283df}\label{class_hexeng_1_1_renderer_1_1_vertex_array_a09c70fa38f671a175b60f2830f1283df}} 
 \index{Hexeng::Renderer::VertexArray@{Hexeng::Renderer::VertexArray}!unbind@{unbind}}

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['w_0',['w',['../class_hexeng_1_1_vec4.html#a1b9ce0c2f85987439539afc8b13ab461',1,'Hexeng::Vec4']]],
-  ['white_1',['white',['../class_hexeng_1_1_color3.html#ab4c645f6a6e785a5f50ae3147a7cbf96',1,'Hexeng::Color3::white()'],['../class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307',1,'Hexeng::Color4::white()']]],
-  ['window_2',['window',['../namespace_hexeng.html#a174cdd73131759dc661d7e97400ca23a',1,'Hexeng']]],
-  ['window_5fname_3',['window_name',['../namespace_hexeng_1_1_settings.html#a01f9883bbdfb72f79379f00c0a1c2224',1,'Hexeng::Settings']]],
-  ['window_5fsize_4',['window_size',['../namespace_hexeng_1_1_settings.html#ac812ba2898520fd0cd9be4139b7e7227',1,'Hexeng::Settings']]]
+  ['value_0',['value',['../struct_hexeng_1_1_save_var.html#a5a62ace221191173f037432de1484748',1,'Hexeng::SaveVar']]],
+  ['value_5fptr_1',['value_ptr',['../class_hexeng_1_1_renderer_1_1_uniform.html#adc515417a7f9b6024052b9064eb0fcab',1,'Hexeng::Renderer::Uniform']]],
+  ['velocity_2',['velocity',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#a22d6f959a2b14401e2e95ecdeb3b0fe1',1,'Hexeng::Physics::PhysicsVecs']]],
+  ['visuallisers_3',['visuallisers',['../class_hexeng_1_1_physics_1_1_hit_box.html#a9c877f6ffb9fb789fc87e270d3d7c1ba',1,'Hexeng::Physics::HitBox']]],
+  ['visuallisers_5flayers_4',['visuallisers_layers',['../class_hexeng_1_1_physics_1_1_hit_box.html#a639cf02c20dbd5291eb49ea248c02144',1,'Hexeng::Physics::HitBox']]]
 ];

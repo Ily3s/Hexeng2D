@@ -71,14 +71,62 @@ namespace Hexeng
 		return { {(float)x0 * quality, (float)y0 * quality}, {(float)x1 * quality, (float)y1 * quality} };
 	}
 
-	Text::Text(std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color4 c4)
+	Text::Text	(std::u32string text,
+				Font& font,
+				Vec2<int> pos,
+				int font_size,
+				HorizontalAlign h_align,
+				VerticalAlign v_align,
+				Color4 c4,
+				Vec2<int> box,
+				std::function<void(const std::u32string&)> use_what_doesnt_fit)
 		: m_text(text),
 		m_font(&font),
 		m_pos(pos),
 		m_font_size(font_size),
 		m_ha(h_align),
-		m_va(v_align)
+		m_va(v_align),
+		m_box(box),
+		m_use_extra(use_what_doesnt_fit)
 	{
+		float size = (float)font_size / font.line_height;
+
+		if (box.x)
+		{
+			int last_space_index = -1;
+			size_t total_width = 0;
+
+			for (int i = 0; i < text.size(); i++)
+			{
+				char32_t c = text[i];
+				if (c == ' ')
+					last_space_index = i;
+				if (c == '\n')
+				{
+					total_width = 0;
+					last_space_index = -1;
+					continue;
+				}
+				total_width += font.get_advancement(c) * size;
+				if (total_width > box.x)
+				{
+					if (last_space_index != -1)
+						text[last_space_index] = '\n';
+					else
+					{
+						if (total_width + size * (font.get_advancement(U'-') - font.get_advancement(c)) < box.x || !i)
+							text.insert(i, U"-\n");
+						else
+							text.insert(i-1, U"-\n");
+					}
+					total_width = 0;
+					for (int j = i; j != last_space_index && text[j] != '\n' && j != 0; j--)
+						total_width += font.get_advancement(text[j]) * size;
+					last_space_index = -1;
+				}
+			}
+		}
+
 		for (char32_t c : text)
 		{
 			if (c != ' ' && c != '\n' && font.char_map.find(c) == font.char_map.end())
@@ -92,8 +140,6 @@ namespace Hexeng
 		for (size_t i = 0; i < 6 * (text.size() - countless_chars_nb); i++)
 			m_raw_ib.push_back(0);
 
-		float size = (float)font_size / font.line_height;
-
 		std::vector<std::u32string> lines;
 
 		std::u32string::iterator first_it = text.begin(), second_it = first_it;
@@ -104,7 +150,33 @@ namespace Hexeng
 			first_it = second_it;
 		}
 
+		std::u32string extra{};
+
+		if (box.y)
+		{
+			for (size_t i = 0, total_height = 0; i < lines.size(); i++)
+			{
+				total_height += font_size;
+				if (total_height > box.y)
+				{
+					for (size_t j = i; j < lines.size(); j++)
+					{
+						if (i != j)
+							extra.push_back('\n');
+						extra.insert(extra.size(), lines[j]);
+					}
+					lines.erase(lines.begin() + i, lines.end());
+					break;
+				}
+			}
+		}
+
 		Vec2<int> relative_pos = { 0, 0 };
+
+		if (v_align == VerticalAlign::CENTER)
+			relative_pos.y += (font_size * lines.size()) / 2;
+		else if (v_align == VerticalAlign::BOT)
+			relative_pos.y += font_size * lines.size();
 
 		uint32_t vb_index = 0, ib_index = 0, vertecies_nb = 0;
 		for (const std::u32string& line : lines)
@@ -179,6 +251,9 @@ namespace Hexeng
 		color = c4;
 
 		delete[] raw_vb;
+
+		if (m_use_extra && extra.size())
+			m_use_extra(extra);
 	}
 
 	size_t Text::get_char_count()
@@ -214,8 +289,17 @@ namespace Hexeng
 
 	std::vector<Text*> Text::s_translated_texts;
 
-	Text::Text(const Language** language, std::u32string text, Font& font, Vec2<int> pos, int font_size, HorizontalAlign h_align, VerticalAlign v_align, Color4 c4)
-		: Text((*language)->get_translation(text), font, pos, font_size, h_align, v_align, c4)
+	Text::Text	(const Language** language,
+				std::u32string text,
+				Font& font,
+				Vec2<int> pos,
+				int font_size,
+				HorizontalAlign h_align,
+				VerticalAlign v_align,
+				Color4 c4,
+				Vec2<int> box,
+				std::function<void(const std::u32string&)> use_what_doesnt_fit)
+		: Text((*language)->get_translation(text), font, pos, font_size, h_align, v_align, c4, box, use_what_doesnt_fit)
 	{
 		m_language = language;
 		m_text = text;
@@ -232,7 +316,9 @@ namespace Hexeng
 		m_ha(other.m_ha),
 		m_va(other.m_va),
 		m_language(other.m_language),
-		m_raw_ib(std::move(other.m_raw_ib))
+		m_raw_ib(std::move(other.m_raw_ib)),
+		m_box(other.m_box),
+		m_use_extra(other.m_use_extra)
 	{
 		m_ib = &m_index_buffer;
 
@@ -257,6 +343,8 @@ namespace Hexeng
 		m_ha = other.m_ha;
 		m_va = other.m_va;
 		m_raw_ib = std::move(other.m_raw_ib);
+		m_box = other.m_box;
+		m_use_extra = other.m_use_extra;
 
 		if (m_language)
 		{
