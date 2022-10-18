@@ -20,6 +20,8 @@ namespace Hexeng
 		template <typename T2>
 		Vec2<T>(Vec2<T2> other) : x((T)other.x), y((T)other.y) {}
 
+		Vec2(T val) : x(val), y(val) {}
+
 		static Vec2 abs(const Vec2& other)
 		{
 			return { std::abs(other.x), std::abs(other.y) };
@@ -176,6 +178,8 @@ namespace Hexeng
 
 		Vec3() = default;
 		Vec3(T x, T y, T z) : x(x), y(y), z(z) {}
+
+		Vec3(T val) : x(val), y(val), z(val) {}
 
 		template <typename T2>
 		Vec3<T>(Vec3<T2> other) : x((T)other.x), y((T)other.y), z((T)other.z) {}
@@ -339,6 +343,8 @@ namespace Hexeng
 
 		Vec4() = default;
 		Vec4(T x, T y, T z, T w) : x(x), y(y), z(z), w(w) {}
+
+		Vec4(T val) : x(val), y(val), z(val), w(val) {}
 
 		template <typename T2>
 		Vec4<T>(Vec4<T2> other) : x((T)other.x), y((T)other.y), z((T)other.z), w((T)other.w) {}

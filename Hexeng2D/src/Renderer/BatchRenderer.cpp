@@ -139,7 +139,7 @@ namespace Hexeng::Renderer
 		m_uniforms_id = m_shader->get_uniform("u_quads_uniforms");
 	}
 
-	void BatchInstance::draw()
+	void BatchInstance::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
 		if (!enable)
 			return;
@@ -161,7 +161,7 @@ namespace Hexeng::Renderer
 
 		HXG_GL(glUniform1fv(m_uniforms_id, m_quads.size() * 8, &m_uniforms[0]));
 
-		Mesh::draw();
+		Mesh::draw(parents_uniforms);
 	}
 
 	BatchQuad::BatchQuad(BatchInstance* bi, const Vec2<int>& tex_coords, const Vec2<int>& pos, float size_p, float rotation_p)

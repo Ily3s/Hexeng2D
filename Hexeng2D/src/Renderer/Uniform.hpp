@@ -19,9 +19,7 @@ namespace Hexeng::Renderer
 	enum class UniformFusionMode
 	{
 		SUM,
-		SUBSTRACT,
 		MULTIPLY,
-		DIVIDE,
 		AVERAGE
 	};
 
@@ -46,78 +44,15 @@ namespace Hexeng::Renderer
 		virtual void refresh() = 0;
 		virtual void refresh(void* value) = 0;
 
+		virtual void refresh(Shader* shad, const std::vector<void*>& values) = 0;
+		virtual void refresh(const std::vector<void*>& values) = 0;
+
 		void add_shaders(const std::vector<Shader*>& shad_list)
 		{
 			shader_list.reserve(shad_list.size());
 			for (Shader* shad : shad_list)
 				shader_list.insert({ shad, shad->get_uniform(uniform_name.c_str()) });
 		}
-
-		void fusion_val(void* val1, void* val2)
-		{
-			switch (fusion_mode)
-			{
-			case UniformFusionMode::SUM :
-				sum_val(val1, val2);
-				break;
-
-			case UniformFusionMode::SUBSTRACT :
-				substract_val(val1, val2);
-				break;
-
-			case UniformFusionMode::MULTIPLY :
-				mult_val(val1, val2);
-				break;
-
-			case UniformFusionMode::DIVIDE :
-				div_val(val1, val2);
-				break;
-
-			case UniformFusionMode::AVERAGE :
-				avg_val(val1, val2);
-				break;
-
-			default :
-				break;
-			}
-		}
-
-		void unfusion_val(void* val1, void* val2)
-		{
-			switch (fusion_mode)
-			{
-			case UniformFusionMode::SUM:
-				substract_val(val1, val2);
-				break;
-
-			case UniformFusionMode::SUBSTRACT:
-				sum_val(val1, val2);
-				break;
-
-			case UniformFusionMode::MULTIPLY:
-				div_val(val1, val2);
-				break;
-
-			case UniformFusionMode::DIVIDE:
-				mult_val(val1, val2);
-				break;
-
-			case UniformFusionMode::AVERAGE:
-				unavg_val(val1, val2);
-				break;
-
-			default:
-				break;
-			}
-		}
-
-		virtual void sum_val(void* val1, void* val2) = 0;
-		virtual void substract_val(void* val1, void* val2) = 0;
-		virtual void mult_val(void* val1, void* val2) = 0;
-		virtual void div_val(void* val1, void* val2) = 0;
-		virtual void avg_val(void* val1, void* val2) = 0;
-		virtual void unavg_val(void* val1, void* val2) = 0;
-		virtual void inverse_val(void* val) = 0;
 	};
 
 	/// <summary>
@@ -158,21 +93,22 @@ namespace Hexeng::Renderer
 		void refresh();
 
 		/// @brief Refreshes the uniform in the Shader shad, using the "controller" variable.
+		/// @pre shad must be a shader that implements this uniform and must be already bound.
 		void refresh(Shader* shad) override;
 
 		/// @brief Refreshes the uniform in the Shader shad, using value.
+		/// @pre shad must be a shader that implements this uniform and must be already bound.
 		void refresh(Shader* shad, void* value) override;
 
 		/// @brief Refreshes the uniform in all shaders that implement it, using value.
 		void refresh(void* value) override;
 
-		void sum_val(void* val1, void* val2) override;
-		void substract_val(void* val1, void* val2) override;
-		void mult_val(void* val1, void* val2) override;
-		void div_val(void* val1, void* val2) override;
-		void avg_val(void* val1, void* val2) override;
-		void unavg_val(void* val1, void* val2) override;
-		void inverse_val(void* val) override;
+		/// @brief Refreshes the uniform (in the shader shad) using a multiples entries.
+		/// @pre shad must be a shader that implements this uniform and must be already bound.
+		void refresh(Shader* shad, const std::vector<void*>& values) override;
+
+		/// @brief Refreshes the uniform using a multiples entries.
+		void refresh(const std::vector<void*>& values) override;
 	};
 
 	HXG_DECLSPEC extern std::vector<UniformInterface*> uniform_list;
@@ -255,19 +191,17 @@ namespace Hexeng::Renderer
 		if (!value_ptr)
 			return;
 
-		auto it = shader_list.find(shad);
-		assert(it != shader_list.end());
-		shad->bind();
-		shad->set_uniform(it->second, *value_ptr);
+		HXG_ASSERT((shader_list.find(shad) != shader_list.end()),
+			HXG_LOG_ERROR("Shader not found"); return;);
+		shad->set_uniform(shader_list[shad], *value_ptr);
 	}
 
 	template <typename VEC>
 	void Uniform<VEC>::refresh(Shader* shad, void* value)
 	{
-		auto it = shader_list.find(shad);
-		assert(it != shader_list.end());
-		shad->bind();
-		shad->set_uniform(it->second, *(reinterpret_cast<VEC*>(value)));
+		HXG_ASSERT((shader_list.find(shad) != shader_list.end()),
+			HXG_LOG_ERROR("Shader not found"); return;);
+		shad->set_uniform(shader_list[shad], *(reinterpret_cast<VEC*>(value)));
 	}
 
 	template <typename VEC>
@@ -281,45 +215,48 @@ namespace Hexeng::Renderer
 	}
 
 	template <typename VEC>
-	void Uniform<VEC>::sum_val(void* val1, void* val2)
+	void Uniform<VEC>::refresh(Shader* shad, const std::vector<void*>& values)
 	{
-		*(VEC*)val1 += *(VEC*)val2;
+		HXG_ASSERT((shader_list.find(shad) != shader_list.end()),
+			HXG_LOG_ERROR("Shader not found"); return;);
+
+		VEC result = 0;
+
+		switch (fusion_mode)
+		{
+		case UniformFusionMode::SUM :
+			for (void* val : values)
+				result += *(reinterpret_cast<VEC*>(val));
+			break;
+
+		case UniformFusionMode::MULTIPLY :
+			result += 1;
+			for (void* val : values)
+				result *= *(reinterpret_cast<VEC*>(val));
+			break;
+
+		case UniformFusionMode::AVERAGE :
+			for (void* val : values)
+				result += *(reinterpret_cast<VEC*>(val));
+			result /= values.size();
+			break;
+
+		default :
+			result = *(reinterpret_cast<VEC*>(values[0]));
+			break;
+		}
+
+		shad->set_uniform(shader_list[shad], result);
 	}
 
 	template <typename VEC>
-	void Uniform<VEC>::substract_val(void* val1, void* val2)
+	void Uniform<VEC>::refresh(const std::vector<void*>& values)
 	{
-		*(VEC*)val1 -= *(VEC*)val2;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::mult_val(void* val1, void* val2)
-	{
-		*(VEC*)val1 *= *(VEC*)val2;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::div_val(void* val1, void* val2)
-	{
-		*(VEC*)val1 /= *(VEC*)val2;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::avg_val(void* val1, void* val2)
-	{
-		*(VEC*)val1 = (*(VEC*)val1 + *(VEC*)val2) / 2;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::unavg_val(void* val1, void* val2)
-	{
-		*(VEC*)val1 = *(VEC*)val1 * 2 - *(VEC*)val2;
-	}
-
-	template <typename VEC>
-	void Uniform<VEC>::inverse_val(void* val)
-	{
-		*(VEC*)val = -*(VEC*)val;
+		for (auto& [shader, id] : shader_list)
+		{
+			shader->bind();
+			refresh(shader, values);
+		}
 	}
 
 }

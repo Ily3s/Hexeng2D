@@ -1,6 +1,10 @@
 #ifndef MESH_HPP
 #define MESH_HPP
 
+#include <functional>
+#include <unordered_map>
+#include <vector>
+
 #include "../Macros.hpp"
 #include "VertexArray.hpp"
 #include "Texture.hpp"
@@ -9,8 +13,6 @@
 #include "Uniform.hpp"
 #include "../Color.hpp"
 #include "DefaultShaders.hpp"
-
-#include <functional>
 
 namespace Hexeng::Renderer
 {
@@ -62,13 +64,13 @@ namespace Hexeng::Renderer
 
 		void update_position();
 
-		virtual void draw();
+		virtual void draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms = s_empty_uniform_list);
 
 		std::vector<std::pair<UniformInterface*, void*>> uniforms = {};
 
 	protected:
 
-		friend class SuperMesh;
+		static std::unordered_map<UniformInterface*, std::vector<void*>> s_empty_uniform_list;
 
 		Vec2<float> m_transform{ 0.0f, 0.0f };
 
@@ -105,7 +107,7 @@ namespace Hexeng::Renderer
 		SuperMesh(SuperMesh&&) noexcept;
 		SuperMesh& operator=(SuperMesh&&) noexcept;
 
-		void draw() override;
+		void draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms = s_empty_uniform_list) override;
 
 	};
 

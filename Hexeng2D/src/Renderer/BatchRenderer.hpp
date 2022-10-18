@@ -5,6 +5,9 @@
 #include "Mesh.hpp"
 #include "DefaultShaders.hpp"
 
+#include <unordered_map>
+#include <vector>
+
 namespace Hexeng::Renderer
 {
 
@@ -62,7 +65,7 @@ namespace Hexeng::Renderer
 		/// </summary>
 		void construct_batch();
 
-		void draw() override;
+		void draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms = s_empty_uniform_list) override;
 
 		/// <summary>
 		/// You can always change the texture atlas,

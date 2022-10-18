@@ -99,22 +99,20 @@ namespace Hexeng::Renderer
 
 	void Layer::draw()
 	{
-		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
+		if (!enable)
 			return;
 
-		if (!enable)
+		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
 			return;
 
 		Camera::s_update_zoom(z_position - Camera::position.z);
 
+		std::unordered_map<UniformInterface*, std::vector<void*>> parents_uniforms;
 		for (auto& [uniform, value] : uniforms)
-			uniform->refresh(value);
+			parents_uniforms.insert({ uniform, {value} });
 
 		for (const auto& mesh : meshes)
-			mesh->draw();
-
-		for (auto& [uniform, value] : uniforms)
-			uniform->refresh();
+			mesh->draw(parents_uniforms);
 	}
 
 }

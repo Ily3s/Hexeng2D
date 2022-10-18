@@ -101,7 +101,9 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
-	void Mesh::draw()
+	std::unordered_map<UniformInterface*, std::vector<void*>> Mesh::s_empty_uniform_list{};
+
+	void Mesh::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
 		if (!enable)
 			return;
@@ -111,19 +113,20 @@ namespace Hexeng::Renderer
 		update_position();
 
 		for (auto& [uniform, value] : uniforms)
-			uniform->refresh(m_shader, value);
+			parents_uniforms[uniform].push_back(value);
+
+		for (auto& [uniform, values] : parents_uniforms)
+			uniform->refresh(m_shader, values);
+
+		for (auto& [uniform, value] : uniforms)
+			parents_uniforms[uniform].pop_back();
 
 		if (m_texture)
 			m_texture->bind();
-		else
-			Texture::unbind();
 
 		m_vao.bind();
 
 		HXG_GL(glDrawElements(m_type, m_ib->get_count(), m_ib->get_type(), nullptr));
-
-		for (auto& [uniform, value] : uniforms)
-			uniform->refresh(m_shader);
 	}
 	
 	void Mesh::update_position()
@@ -154,52 +157,21 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
-	void SuperMesh::draw()
+	void SuperMesh::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
 		if (!enable)
 			return;
 
+		update_position();
+
+		for (auto& [uniform, value] : uniforms)
+			parents_uniforms[uniform].push_back(value);
+
 		for (auto& mesh : meshes)
-		{
-			for (auto& [ui, val] : uniforms)
-			{
-				bool not_found = true;
+			mesh->draw(parents_uniforms);
 
-				for (auto& [mesh_ui, mesh_val] : mesh->uniforms)
-				{
-					if (mesh_ui == ui)
-					{
-						ui->fusion_val(mesh_val, val);
-						not_found = false;
-						continue;
-					}
-				}
-
-				if (not_found)
-					mesh->uniforms.emplace_back(ui, val);
-			}
-
-			mesh->position += position;
-
-			mesh->draw();
-
-			mesh->position -= position;
-
-			for (auto& [ui, val] : uniforms)
-			{
-				for (auto& [mesh_ui, mesh_val] : mesh->uniforms)
-				{
-					if (mesh_ui == ui)
-					{
-						ui->unfusion_val(mesh_val, val);
-						continue;
-					}
-				}
-			}
-		}
-
-		for (auto& [ui, val] : uniforms)
-			ui->refresh();
+		for (auto& [uniform, value] : uniforms)
+			parents_uniforms[uniform].pop_back();
 	}
 
 	Polygon::Polygon(const std::vector<Vec2<int>>& vertecies, Vec2<int> pos, Color4 color_p, Shader* shader)
