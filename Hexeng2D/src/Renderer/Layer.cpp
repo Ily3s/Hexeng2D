@@ -32,7 +32,8 @@ namespace Hexeng::Renderer
 		z_position(other.z_position),
 		uniforms(std::move(other.uniforms)),
 		m_range(other.m_range),
-		m_position_mode(other.m_position_mode)
+		m_position_mode(other.m_position_mode),
+		enable(other.enable)
 	{
 		if (m_range == Range::GLOBAL)
 		{
@@ -48,6 +49,7 @@ namespace Hexeng::Renderer
 		z_position = other.z_position;
 		m_position_mode = other.m_position_mode;
 		uniforms = std::move(other.uniforms);
+		enable = other.enable;
 
 		if (m_range == Range::GLOBAL)
 		{
@@ -64,49 +66,6 @@ namespace Hexeng::Renderer
 		m_range = other.m_range;
 
 		return *this;
-	}
-
-	std::vector<ContextualLayer*> global_contextual_layers;
-
-	ContextualLayer::ContextualLayer(ContextualLayer&& other) noexcept
-		: Layer(std::move(other)),
-		context(other.context)
-	{
-		if (m_range == Range::GLOBAL)
-		{
-			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), &other);
-			if (it != global_contextual_layers.end())
-				*it = this;
-		}
-	}
-
-	ContextualLayer& ContextualLayer::operator=(ContextualLayer&& other) noexcept
-	{
-		if (m_range == Range::GLOBAL)
-		{
-			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), this);
-			if (it != global_contextual_layers.end())
-				global_contextual_layers.erase(it);
-		}
-		if (other.m_range == Range::GLOBAL)
-		{
-			auto it = std::find(global_contextual_layers.begin(), global_contextual_layers.end(), &other);
-			if (it != global_contextual_layers.end())
-				*it = this;
-		}
-
-		Layer::operator=(std::move(other));
-		context = other.context;
-
-		return *this;
-	}
-
-	ContextualLayer::ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, int z_pos, Position pos, Range range)
-		: Layer(mesh_vector, z_pos, pos, range),
-		context(condition)
-	{
-		if (range == Range::GLOBAL)
-			global_contextual_layers.push_back(this);
 	}
 
 	HXG_DECLSPEC std::vector<Mesh*> fusion(std::vector<std::vector<Mesh*>> bidim_v)
@@ -143,24 +102,7 @@ namespace Hexeng::Renderer
 		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
 			return;
 
-		Camera::s_update_zoom(z_position - Camera::position.z);
-
-		for (auto& [uniform, value] : uniforms)
-			uniform->refresh(value);
-
-		for (const auto& mesh : meshes)
-			mesh->draw();
-
-		for (auto& [uniform, value] : uniforms)
-			uniform->refresh();
-	}
-
-	void ContextualLayer::draw()
-	{
-		if (!*context)
-			return;
-
-		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
+		if (!enable)
 			return;
 
 		Camera::s_update_zoom(z_position - Camera::position.z);

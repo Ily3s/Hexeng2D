@@ -35,6 +35,9 @@ namespace Hexeng::Renderer
 		/// @note Can always be modified.
 		int z_position = 0;
 
+		/// @note Can always be modified.
+		bool enable = true;
+
 		/**
 		* @param z_pos The depth of the Layer
 		* @param pos The position mode of the layer (take a look at Position).
@@ -63,35 +66,6 @@ namespace Hexeng::Renderer
 		Range m_range = Range::LOCAL;
 
 		Position m_position_mode = Position::RELATIVE;
-	};
-
-	/// <summary>
-	/// A layer that shows up only if a bool is set to true
-	/// </summary>
-	class HXG_DECLSPEC ContextualLayer : public Layer
-	{
-
-	public:
-
-		/// @note Can always be modified.
-		bool* context = nullptr;
-
-		ContextualLayer() = default;
-
-		/**
-		* @param condition A pointer to the "control variable" of the layer.
-		* If the bool it is pointing to is set to false, the layer will not show up, if it is set to true, the layer will show up.
-		* @param z_pos The depth of the Layer.
-		* @param pos The position mode of the layer (take a look at Position).
-		* @param range If set to Range::LOCAL, the layer needs to be added to a scene.
-		* If set to Range::GLOBAL, the layer will apear on all scenes.
-		*/
-		ContextualLayer(const std::vector<Mesh*>& mesh_vector, bool* condition, int z_pos = 1, Position pos = Position::ABSOLUTE, Range range = Range::GLOBAL);
-
-		ContextualLayer& operator=(ContextualLayer&&) noexcept;
-		ContextualLayer(ContextualLayer&&) noexcept;
-
-		void draw() override;
 	};
 
 	HXG_DECLSPEC std::vector<Mesh*> fusion(std::vector<std::vector<Mesh*>>);

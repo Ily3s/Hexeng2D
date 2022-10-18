@@ -34,7 +34,7 @@ namespace Hexeng
 					for (auto& visualliser : hb->visuallisers)
 						Physics::HitBox::visuallisers_layers[id].meshes.push_back(&visualliser);
 				}
-				Physics::HitBox::visuallisers_layers[id].context = &Physics::HitBox::enable_visuallisers;
+				Physics::HitBox::visuallisers_layers[id].enable = false;
 				auto it = std::find(layers.begin(), layers.end(), &Physics::HitBox::visuallisers_layers[id]);
 				if (it == layers.end())
 					layers.push_back(&Physics::HitBox::visuallisers_layers[id]);
@@ -56,7 +56,7 @@ namespace Hexeng
 						Physics::HitBox::visuallisers_layers[id].meshes.push_back(&visualliser);
 					physics_vecs.push_back(entity);
 				}
-				Physics::HitBox::visuallisers_layers[id].context = &Physics::HitBox::enable_visuallisers;
+				Physics::HitBox::visuallisers_layers[id].enable = false;
 				auto it = std::find(layers.begin(), layers.end(), &Physics::HitBox::visuallisers_layers[id]);
 				if (it == layers.end())
 					layers.push_back(&Physics::HitBox::visuallisers_layers[id]);

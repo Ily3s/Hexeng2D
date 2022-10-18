@@ -6,8 +6,7 @@ namespace Hexeng::Physics
 {
 	std::unordered_map<int, std::vector<HitBox*>> HitBox::s_colliders;
 
-	std::unordered_map <int, Renderer::ContextualLayer> HitBox::visuallisers_layers;
-	bool HitBox::enable_visuallisers = false;
+	std::unordered_map <int, Renderer::Layer> HitBox::visuallisers_layers;
 
 	HitBox::HitBox(const std::vector<RectangleHitBox>& rectangles, int solidity, bool enable_collision)
 		: m_rectangles(rectangles),
@@ -188,8 +187,31 @@ namespace Hexeng::Physics
 
 	void HitBox::set_visuallisers_z(int z_pos)
 	{
-		for (auto& [scene, cl] : visuallisers_layers)
-			cl.z_position = z_pos;
+		for (auto& [scene, layer] : visuallisers_layers)
+			layer.z_position = z_pos;
+	}
+
+	bool HitBox::s_are_visuallisers_enabled = false;
+
+	void HitBox::enable_visuallisers()
+	{
+		for (auto& [scene, layer] : visuallisers_layers)
+			layer.enable = true;
+		s_are_visuallisers_enabled = true;
+	}
+
+	void HitBox::disable_visuallisers()
+	{
+		for (auto& [scene, layer] : visuallisers_layers)
+			layer.enable = false;
+		s_are_visuallisers_enabled = false;
+	}
+
+	void HitBox::toggle_visuallisers()
+	{
+		for (auto& [scene, layer] : visuallisers_layers)
+			layer.enable = !s_are_visuallisers_enabled;
+		s_are_visuallisers_enabled = !s_are_visuallisers_enabled;
 	}
 
 }

@@ -47,7 +47,7 @@ namespace Hexeng::Physics
 
 		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
 
-		static std::unordered_map <int, Renderer::ContextualLayer> visuallisers_layers;
+		static std::unordered_map <int, Renderer::Layer> visuallisers_layers;
 		std::vector<Renderer::DebugQuad> visuallisers;
 
 	public:
@@ -74,7 +74,16 @@ namespace Hexeng::Physics
 		virtual void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) {};
 
 		static void set_visuallisers_z(int z_pos);
-		static bool enable_visuallisers;
+
+		static void enable_visuallisers();
+		static void disable_visuallisers();
+		static void toggle_visuallisers();
+
+		static inline bool are_visuallisers_enabled() { return s_are_visuallisers_enabled; }
+
+	private :
+
+		static bool s_are_visuallisers_enabled;
 	};
 }
 

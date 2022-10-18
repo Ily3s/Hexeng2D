@@ -49,7 +49,8 @@ namespace Hexeng::Renderer
 			scale(moving.scale),
 			m_layout(moving.m_layout),
 			color(moving.color),
-			opacity(color.A)
+			opacity(color.A),
+			enable(moving.enable)
 	{
 		m_vao = { m_vb, *m_layout, *m_ib };
 
@@ -81,6 +82,7 @@ namespace Hexeng::Renderer
 		scale = moving.scale;
 		m_layout = moving.m_layout;
 		color = moving.color;
+		enable = moving.enable;
 
 		m_vao = { m_vb, *m_layout, *m_ib };
 
@@ -101,6 +103,9 @@ namespace Hexeng::Renderer
 
 	void Mesh::draw()
 	{
+		if (!enable)
+			return;
+
 		m_shader->bind();
 
 		update_position();
@@ -151,6 +156,9 @@ namespace Hexeng::Renderer
 
 	void SuperMesh::draw()
 	{
+		if (!enable)
+			return;
+
 		for (auto& mesh : meshes)
 		{
 			for (auto& [ui, val] : uniforms)

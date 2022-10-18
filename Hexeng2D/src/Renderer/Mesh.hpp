@@ -57,6 +57,9 @@ namespace Hexeng::Renderer
 		/// @note Alias to color.A
 		float& opacity = color.A;
 
+		/// @note Can be modified at any moment.
+		bool enable = true;
+
 		void update_position();
 
 		virtual void draw();

@@ -141,6 +141,9 @@ namespace Hexeng::Renderer
 
 	void BatchInstance::draw()
 	{
+		if (!enable)
+			return;
+
 		m_shader->bind();
 
 		for (size_t i = 0; i < m_quads.size(); i++)

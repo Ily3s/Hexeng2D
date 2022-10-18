@@ -194,7 +194,7 @@ int main()
 
 	Physics::HitBox::set_visuallisers_z(750);
 
-	EventManager::KeyPressEvent debug_mode{ 256,[]() { Physics::HitBox::enable_visuallisers = !Physics::HitBox::enable_visuallisers; } }; // ESCAPE
+	EventManager::KeyPressEvent debug_mode{ 256,[]() { Physics::HitBox::toggle_visuallisers(); }}; // ESCAPE
 
 	EventManager::start_looping();
 
