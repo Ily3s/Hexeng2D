@@ -12,9 +12,7 @@ var _uniform_8hpp =
     ] ],
     [ "UniformFusionMode", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5", [
       [ "SUM", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a", null ],
-      [ "SUBSTRACT", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4", null ],
       [ "MULTIPLY", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30", null ],
-      [ "DIVIDE", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b", null ],
       [ "AVERAGE", "_uniform_8hpp.html#a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290", null ]
     ] ]
 ];

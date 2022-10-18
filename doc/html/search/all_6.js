@@ -10,6 +10,5 @@ var searchData=
   ['fullscreen_7',['fullscreen',['../namespace_hexeng_1_1_settings.html#aac17e662da68a88ca342aa4b90e34c65',1,'Hexeng::Settings']]],
   ['fusion_8',['fusion',['../namespace_hexeng_1_1_renderer.html#a19e4b01b1f03f908d7fae1ef506e10de',1,'Hexeng::Renderer']]],
   ['fusion_5fmode_9',['fusion_mode',['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#a8729e52e79f0b2c0bf32f730a17651c9',1,'Hexeng::Renderer::UniformInterface']]],
-  ['fusion_5fmode_10',['FUSION_MODE',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972',1,'Hexeng::Renderer']]],
-  ['fusion_5fval_11',['fusion_val',['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#a4fe9e340911d8a9e29cb64cb93ed83f2',1,'Hexeng::Renderer::UniformInterface']]]
+  ['fusion_5fmode_10',['FUSION_MODE',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972',1,'Hexeng::Renderer']]]
 ];

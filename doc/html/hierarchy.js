@@ -21,9 +21,7 @@ var hierarchy =
     [ "Hexeng::Renderer::IndexBuffer", "class_hexeng_1_1_renderer_1_1_index_buffer.html", null ],
     [ "Hexeng::EventManager::KeyPressEvent", "class_hexeng_1_1_event_manager_1_1_key_press_event.html", null ],
     [ "Hexeng::Language", "class_hexeng_1_1_language.html", null ],
-    [ "Hexeng::Renderer::Layer", "class_hexeng_1_1_renderer_1_1_layer.html", [
-      [ "Hexeng::Renderer::ContextualLayer", "class_hexeng_1_1_renderer_1_1_contextual_layer.html", null ]
-    ] ],
+    [ "Hexeng::Renderer::Layer", "class_hexeng_1_1_renderer_1_1_layer.html", null ],
     [ "Hexeng::Renderer::Mesh", "class_hexeng_1_1_renderer_1_1_mesh.html", [
       [ "Hexeng::Renderer::BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", null ],
       [ "Hexeng::Renderer::Polygon", "class_hexeng_1_1_renderer_1_1_polygon.html", null ],

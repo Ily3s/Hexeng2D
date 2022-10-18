@@ -31,7 +31,6 @@ var annotated_dup =
         [ "BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", "class_hexeng_1_1_renderer_1_1_batch_instance" ],
         [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html", "class_hexeng_1_1_renderer_1_1_batch_quad" ],
         [ "Camera", "class_hexeng_1_1_renderer_1_1_camera.html", "class_hexeng_1_1_renderer_1_1_camera" ],
-        [ "ContextualLayer", "class_hexeng_1_1_renderer_1_1_contextual_layer.html", "class_hexeng_1_1_renderer_1_1_contextual_layer" ],
         [ "DebugQuad", "class_hexeng_1_1_renderer_1_1_debug_quad.html", "class_hexeng_1_1_renderer_1_1_debug_quad" ],
         [ "DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", "class_hexeng_1_1_renderer_1_1_debug_square" ],
         [ "IndexBuffer", "class_hexeng_1_1_renderer_1_1_index_buffer.html", "class_hexeng_1_1_renderer_1_1_index_buffer" ],

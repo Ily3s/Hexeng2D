@@ -2,13 +2,13 @@ var searchData=
 [
   ['value_0',['value',['../struct_hexeng_1_1_save_var.html#a5a62ace221191173f037432de1484748',1,'Hexeng::SaveVar']]],
   ['value_5fptr_1',['value_ptr',['../class_hexeng_1_1_renderer_1_1_uniform.html#adc515417a7f9b6024052b9064eb0fcab',1,'Hexeng::Renderer::Uniform']]],
-  ['vec2_2',['Vec2',['../class_hexeng_1_1_vec2.html',1,'Hexeng::Vec2&lt; T &gt;'],['../class_hexeng_1_1_vec2.html#a508dd1f28a07c4988f2d5e5282305299',1,'Hexeng::Vec2::Vec2(T x, T y)'],['../class_hexeng_1_1_vec2.html#ab2c9dbd96db4128f92b78c6574296bed',1,'Hexeng::Vec2::Vec2(Vec2&lt; T2 &gt; other)'],['../class_hexeng_1_1_vec2.html#a8576dd072423e0a9b855e15afc0195c9',1,'Hexeng::Vec2::Vec2()=default']]],
+  ['vec2_2',['Vec2',['../class_hexeng_1_1_vec2.html',1,'Hexeng::Vec2&lt; T &gt;'],['../class_hexeng_1_1_vec2.html#a8576dd072423e0a9b855e15afc0195c9',1,'Hexeng::Vec2::Vec2()=default'],['../class_hexeng_1_1_vec2.html#a508dd1f28a07c4988f2d5e5282305299',1,'Hexeng::Vec2::Vec2(T x, T y)'],['../class_hexeng_1_1_vec2.html#ab2c9dbd96db4128f92b78c6574296bed',1,'Hexeng::Vec2::Vec2(Vec2&lt; T2 &gt; other)'],['../class_hexeng_1_1_vec2.html#afbf2b5da3480c83658c4b5a7e213228d',1,'Hexeng::Vec2::Vec2(T val)']]],
   ['vec2_3c_20float_20_3e_3',['Vec2&lt; float &gt;',['../class_hexeng_1_1_vec2.html',1,'Hexeng']]],
   ['vec2_3c_20int_20_3e_4',['Vec2&lt; int &gt;',['../class_hexeng_1_1_vec2.html',1,'Hexeng']]],
-  ['vec3_5',['Vec3',['../class_hexeng_1_1_vec3.html',1,'Hexeng::Vec3&lt; T &gt;'],['../class_hexeng_1_1_vec3.html#a67248fc20bb5ae6b615e88797e9bed4f',1,'Hexeng::Vec3::Vec3(T x, T y, T z)'],['../class_hexeng_1_1_vec3.html#a930ebedc82234b7e723e4dc6be516210',1,'Hexeng::Vec3::Vec3()=default'],['../class_hexeng_1_1_vec3.html#ad74f4f3ea98d22cdf9bbc7e9fed776d9',1,'Hexeng::Vec3::Vec3(Vec3&lt; T2 &gt; other)']]],
+  ['vec3_5',['Vec3',['../class_hexeng_1_1_vec3.html',1,'Hexeng::Vec3&lt; T &gt;'],['../class_hexeng_1_1_vec3.html#a67248fc20bb5ae6b615e88797e9bed4f',1,'Hexeng::Vec3::Vec3(T x, T y, T z)'],['../class_hexeng_1_1_vec3.html#ad74f4f3ea98d22cdf9bbc7e9fed776d9',1,'Hexeng::Vec3::Vec3(Vec3&lt; T2 &gt; other)'],['../class_hexeng_1_1_vec3.html#ac86299337867b29f6ac40ac0a09626b2',1,'Hexeng::Vec3::Vec3(T val)'],['../class_hexeng_1_1_vec3.html#a930ebedc82234b7e723e4dc6be516210',1,'Hexeng::Vec3::Vec3()=default']]],
   ['vec3_3c_20float_20_3e_6',['Vec3&lt; float &gt;',['../class_hexeng_1_1_vec3.html',1,'Hexeng']]],
   ['vec3_3c_20int_20_3e_7',['Vec3&lt; int &gt;',['../class_hexeng_1_1_vec3.html',1,'Hexeng']]],
-  ['vec4_8',['Vec4',['../class_hexeng_1_1_vec4.html',1,'Hexeng::Vec4&lt; T &gt;'],['../class_hexeng_1_1_vec4.html#a33dfcddba0dc96eff9e8487cee346c33',1,'Hexeng::Vec4::Vec4(T x, T y, T z, T w)'],['../class_hexeng_1_1_vec4.html#af5cd3d91415e6093a385c9e16951968c',1,'Hexeng::Vec4::Vec4(Vec4&lt; T2 &gt; other)'],['../class_hexeng_1_1_vec4.html#ae0186ceea5a39e20db19193834ba09a7',1,'Hexeng::Vec4::Vec4()=default']]],
+  ['vec4_8',['Vec4',['../class_hexeng_1_1_vec4.html',1,'Hexeng::Vec4&lt; T &gt;'],['../class_hexeng_1_1_vec4.html#af5cd3d91415e6093a385c9e16951968c',1,'Hexeng::Vec4::Vec4(Vec4&lt; T2 &gt; other)'],['../class_hexeng_1_1_vec4.html#ae0186ceea5a39e20db19193834ba09a7',1,'Hexeng::Vec4::Vec4()=default'],['../class_hexeng_1_1_vec4.html#a33dfcddba0dc96eff9e8487cee346c33',1,'Hexeng::Vec4::Vec4(T x, T y, T z, T w)'],['../class_hexeng_1_1_vec4.html#a08a238f4f16f03b7305e4115ce550535',1,'Hexeng::Vec4::Vec4(T val)']]],
   ['vec4_3c_20float_20_3e_9',['Vec4&lt; float &gt;',['../class_hexeng_1_1_vec4.html',1,'Hexeng']]],
   ['vectors_2ehpp_10',['Vectors.hpp',['../_vectors_8hpp.html',1,'']]],
   ['velocity_11',['velocity',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#a22d6f959a2b14401e2e95ecdeb3b0fe1',1,'Hexeng::Physics::PhysicsVecs']]],
@@ -26,5 +26,5 @@ var searchData=
   ['view_5fprev_5fstate_5fx_23',['view_prev_state_x',['../class_hexeng_1_1_physics_1_1_hit_box.html#a906a496966aab2e2325bbdda739c7292',1,'Hexeng::Physics::HitBox']]],
   ['view_5fprev_5fstate_5fy_24',['view_prev_state_y',['../class_hexeng_1_1_physics_1_1_hit_box.html#af97b36ec6c348cfa065db9cd2aadfe0e',1,'Hexeng::Physics::HitBox']]],
   ['visuallisers_25',['visuallisers',['../class_hexeng_1_1_physics_1_1_hit_box.html#a9c877f6ffb9fb789fc87e270d3d7c1ba',1,'Hexeng::Physics::HitBox']]],
-  ['visuallisers_5flayers_26',['visuallisers_layers',['../class_hexeng_1_1_physics_1_1_hit_box.html#a639cf02c20dbd5291eb49ea248c02144',1,'Hexeng::Physics::HitBox']]]
+  ['visuallisers_5flayers_26',['visuallisers_layers',['../class_hexeng_1_1_physics_1_1_hit_box.html#ab48b6a14fb319d93eea62e281ad8eb0a',1,'Hexeng::Physics::HitBox']]]
 ];

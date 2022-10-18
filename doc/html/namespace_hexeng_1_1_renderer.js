@@ -5,7 +5,6 @@ var namespace_hexeng_1_1_renderer =
     [ "BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", "class_hexeng_1_1_renderer_1_1_batch_instance" ],
     [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html", "class_hexeng_1_1_renderer_1_1_batch_quad" ],
     [ "Camera", "class_hexeng_1_1_renderer_1_1_camera.html", "class_hexeng_1_1_renderer_1_1_camera" ],
-    [ "ContextualLayer", "class_hexeng_1_1_renderer_1_1_contextual_layer.html", "class_hexeng_1_1_renderer_1_1_contextual_layer" ],
     [ "DebugQuad", "class_hexeng_1_1_renderer_1_1_debug_quad.html", "class_hexeng_1_1_renderer_1_1_debug_quad" ],
     [ "DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", "class_hexeng_1_1_renderer_1_1_debug_square" ],
     [ "IndexBuffer", "class_hexeng_1_1_renderer_1_1_index_buffer.html", "class_hexeng_1_1_renderer_1_1_index_buffer" ],
@@ -51,9 +50,7 @@ var namespace_hexeng_1_1_renderer =
     ] ],
     [ "UniformFusionMode", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5", [
       [ "SUM", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a", null ],
-      [ "SUBSTRACT", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4", null ],
       [ "MULTIPLY", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30", null ],
-      [ "DIVIDE", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b", null ],
       [ "AVERAGE", "namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290", null ]
     ] ],
     [ "clear", "namespace_hexeng_1_1_renderer.html#aaa53593db153e61eda515ffd12eec6be", null ],
@@ -67,7 +64,6 @@ var namespace_hexeng_1_1_renderer =
     [ "basic_shader", "namespace_hexeng_1_1_renderer.html#a11140de05cb174c6d6d7c0297ce18aca", null ],
     [ "batching_shader", "namespace_hexeng_1_1_renderer.html#ab226688adeb4084283280edb96e79608", null ],
     [ "font_shader", "namespace_hexeng_1_1_renderer.html#ab247f80958c1576dc92a1f38e589aba9", null ],
-    [ "global_contextual_layers", "namespace_hexeng_1_1_renderer.html#a8c9575b21985552518c0e52bc420a5be", null ],
     [ "global_layers", "namespace_hexeng_1_1_renderer.html#a01b5e4f62a914fb2e135afce59a154af", null ],
     [ "init_presets", "namespace_hexeng_1_1_renderer.html#ab4393b85fdba8ef268e75f555cba2c88", null ],
     [ "init_uniforms", "namespace_hexeng_1_1_renderer.html#a96bab53645f7f1b0e90ec3120724ce27", null ],

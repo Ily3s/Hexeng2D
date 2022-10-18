@@ -8,6 +8,7 @@ var searchData=
   ['tobedelete_5',['ToBeDelete',['../class_hexeng_1_1_renderer_1_1_to_be_delete.html#a2a742a27ae56fc38eead731daf9968f4',1,'Hexeng::Renderer::ToBeDelete']]],
   ['tobeinit_6',['ToBeInit',['../class_hexeng_1_1_renderer_1_1_to_be_init.html#a43b5b74469e0886c7e3d70eea8624622',1,'Hexeng::Renderer::ToBeInit']]],
   ['tocoord_7',['toCoord',['../namespace_hexeng.html#ad9476ddac0f172a13bf18ca3ac550776',1,'Hexeng']]],
-  ['tox_8',['toX',['../namespace_hexeng.html#ac480f42f0e628355c255f1988f472f87',1,'Hexeng']]],
-  ['toy_9',['toY',['../namespace_hexeng.html#ac4a97c8fcc3171f97d87bc9a18b6ee6b',1,'Hexeng']]]
+  ['toggle_5fvisuallisers_8',['toggle_visuallisers',['../class_hexeng_1_1_physics_1_1_hit_box.html#ade38194738f172c95c639029e061690c',1,'Hexeng::Physics::HitBox']]],
+  ['tox_9',['toX',['../namespace_hexeng.html#ac480f42f0e628355c255f1988f472f87',1,'Hexeng']]],
+  ['toy_10',['toY',['../namespace_hexeng.html#ac4a97c8fcc3171f97d87bc9a18b6ee6b',1,'Hexeng']]]
 ];

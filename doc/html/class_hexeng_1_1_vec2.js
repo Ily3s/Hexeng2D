@@ -3,6 +3,7 @@ var class_hexeng_1_1_vec2 =
     [ "Vec2", "class_hexeng_1_1_vec2.html#a8576dd072423e0a9b855e15afc0195c9", null ],
     [ "Vec2", "class_hexeng_1_1_vec2.html#a508dd1f28a07c4988f2d5e5282305299", null ],
     [ "Vec2", "class_hexeng_1_1_vec2.html#ab2c9dbd96db4128f92b78c6574296bed", null ],
+    [ "Vec2", "class_hexeng_1_1_vec2.html#afbf2b5da3480c83658c4b5a7e213228d", null ],
     [ "len", "class_hexeng_1_1_vec2.html#a8d2c30f89b5b117d18aadc3cc0c32d24", null ],
     [ "operator!=", "class_hexeng_1_1_vec2.html#afb9bbad4c61c6b67ea686711ba001f22", null ],
     [ "operator*", "class_hexeng_1_1_vec2.html#aa946ccb0f82ea0166d2d2f4901db0700", null ],

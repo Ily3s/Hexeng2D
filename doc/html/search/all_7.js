@@ -26,8 +26,7 @@ var searchData=
   ['get_5fvao_23',['get_vao',['../class_hexeng_1_1_renderer_1_1_mesh.html#a1fda39f7e229081e68c9d8e456760668',1,'Hexeng::Renderer::Mesh']]],
   ['get_5fvertex_5flayout_24',['get_vertex_layout',['../class_hexeng_1_1_renderer_1_1_polygon.html#a5d5595b3dff2ba86885266eedccfc5b5',1,'Hexeng::Renderer::Polygon::get_vertex_layout()'],['../class_hexeng_1_1_renderer_1_1_quad.html#a3eb5f5b066bba12bdf55dbc232c4ab42',1,'Hexeng::Renderer::Quad::get_vertex_layout()']]],
   ['get_5fwidth_25',['get_width',['../class_hexeng_1_1_renderer_1_1_texture.html#aacfe1f7c27f220fb5baa5826ffee0fc8',1,'Hexeng::Renderer::Texture']]],
-  ['global_5fcontextual_5flayers_26',['global_contextual_layers',['../namespace_hexeng_1_1_renderer.html#a8c9575b21985552518c0e52bc420a5be',1,'Hexeng::Renderer']]],
-  ['global_5fevents_27',['global_events',['../namespace_hexeng_1_1_event_manager.html#ad4f1c17c1f56d16f8ce54aef9da5a4a9',1,'Hexeng::EventManager']]],
-  ['global_5flayers_28',['global_layers',['../namespace_hexeng_1_1_renderer.html#a01b5e4f62a914fb2e135afce59a154af',1,'Hexeng::Renderer']]],
-  ['green_29',['green',['../class_hexeng_1_1_color3.html#a4c6046d4c8b8e73fb9c4d32a2dad050b',1,'Hexeng::Color3::green()'],['../class_hexeng_1_1_color4.html#a07a6afbf61a1e6f647c2783f1d2a679c',1,'Hexeng::Color4::green()']]]
+  ['global_5fevents_26',['global_events',['../namespace_hexeng_1_1_event_manager.html#ad4f1c17c1f56d16f8ce54aef9da5a4a9',1,'Hexeng::EventManager']]],
+  ['global_5flayers_27',['global_layers',['../namespace_hexeng_1_1_renderer.html#a01b5e4f62a914fb2e135afce59a154af',1,'Hexeng::Renderer']]],
+  ['green_28',['green',['../class_hexeng_1_1_color3.html#a4c6046d4c8b8e73fb9c4d32a2dad050b',1,'Hexeng::Color3::green()'],['../class_hexeng_1_1_color4.html#a07a6afbf61a1e6f647c2783f1d2a679c',1,'Hexeng::Color4::green()']]]
 ];

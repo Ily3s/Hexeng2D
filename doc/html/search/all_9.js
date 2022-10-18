@@ -17,8 +17,7 @@ var searchData=
   ['inputevent_2ehpp_14',['InputEvent.hpp',['../_input_event_8hpp.html',1,'']]],
   ['instant_5fspeed_15',['instant_speed',['../class_hexeng_1_1_physics_1_1_physics_vecs.html#ae33656271934e958f8197ad04a0daafe',1,'Hexeng::Physics::PhysicsVecs']]],
   ['internal_5faction_16',['internal_action',['../class_hexeng_1_1_event_manager_1_1_renderer_event.html#a9af6e85392d4728a1c6a735eef383414',1,'Hexeng::EventManager::RendererEvent']]],
-  ['inverse_5fval_17',['inverse_val',['../class_hexeng_1_1_renderer_1_1_uniform.html#acd34f710395244e3ba94035980c6ddc2',1,'Hexeng::Renderer::Uniform::inverse_val()'],['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#ac8e0ed7e22d8feffc063f6d9497634ac',1,'Hexeng::Renderer::UniformInterface::inverse_val()']]],
-  ['is_5fclose_5fto_18',['is_close_to',['../class_hexeng_1_1_color4.html#a7fa44c4f02c2922b2517058fbb5d6d50',1,'Hexeng::Color4::is_close_to()'],['../class_hexeng_1_1_color3.html#a73750d88d080a1238a3603318438a931',1,'Hexeng::Color3::is_close_to()']]],
-  ['is_5fcolliding_19',['is_colliding',['../class_hexeng_1_1_physics_1_1_hit_box.html#a431a575f1d9cb1a52ffb74ae2160a8a5',1,'Hexeng::Physics::HitBox::is_colliding(const RectangleHitBox &amp;hb1, const RectangleHitBox &amp;hb2)'],['../class_hexeng_1_1_physics_1_1_hit_box.html#a21ae1613b0273efd3951f5530c229324',1,'Hexeng::Physics::HitBox::is_colliding(HitBox &amp;hb1, HitBox &amp;hb2)']]],
-  ['is_5fplaying_20',['is_playing',['../struct_hexeng_1_1_audio_1_1_sound_data.html#ae9cddcf9cb7cdb11f61dca20b02ba028',1,'Hexeng::Audio::SoundData']]]
+  ['is_5fclose_5fto_17',['is_close_to',['../class_hexeng_1_1_color4.html#a7fa44c4f02c2922b2517058fbb5d6d50',1,'Hexeng::Color4::is_close_to()'],['../class_hexeng_1_1_color3.html#a73750d88d080a1238a3603318438a931',1,'Hexeng::Color3::is_close_to()']]],
+  ['is_5fcolliding_18',['is_colliding',['../class_hexeng_1_1_physics_1_1_hit_box.html#a21ae1613b0273efd3951f5530c229324',1,'Hexeng::Physics::HitBox::is_colliding(HitBox &amp;hb1, HitBox &amp;hb2)'],['../class_hexeng_1_1_physics_1_1_hit_box.html#a431a575f1d9cb1a52ffb74ae2160a8a5',1,'Hexeng::Physics::HitBox::is_colliding(const RectangleHitBox &amp;hb1, const RectangleHitBox &amp;hb2)']]],
+  ['is_5fplaying_19',['is_playing',['../struct_hexeng_1_1_audio_1_1_sound_data.html#ae9cddcf9cb7cdb11f61dca20b02ba028',1,'Hexeng::Audio::SoundData']]]
 ];

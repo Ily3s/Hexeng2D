@@ -2,6 +2,7 @@ var class_hexeng_1_1_vec4 =
 [
     [ "Vec4", "class_hexeng_1_1_vec4.html#ae0186ceea5a39e20db19193834ba09a7", null ],
     [ "Vec4", "class_hexeng_1_1_vec4.html#a33dfcddba0dc96eff9e8487cee346c33", null ],
+    [ "Vec4", "class_hexeng_1_1_vec4.html#a08a238f4f16f03b7305e4115ce550535", null ],
     [ "Vec4", "class_hexeng_1_1_vec4.html#af5cd3d91415e6093a385c9e16951968c", null ],
     [ "len", "class_hexeng_1_1_vec4.html#a58f503a05c17d9fceb58c8dd4e903408", null ],
     [ "operator!=", "class_hexeng_1_1_vec4.html#a090935827e40ad43ff12d43b06e74df4", null ],

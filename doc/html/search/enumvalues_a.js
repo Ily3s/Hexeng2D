@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['relative_0',['RELATIVE',['../namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2',1,'Hexeng::Renderer']]],
-  ['right_1',['RIGHT',['../namespace_hexeng_1_1_physics.html#a1e3c431ba3d97f9b5c7d2c2185d6c2aea21507b40c80068eda19865706fdc2403',1,'Hexeng::Physics::RIGHT()'],['../namespace_hexeng.html#a7bfb19a8e2302f5993179497569ff418a21507b40c80068eda19865706fdc2403',1,'Hexeng::RIGHT()']]]
+  ['shaders_0',['SHADERS',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336',1,'Hexeng::Renderer']]],
+  ['sized_5fformat_1',['SIZED_FORMAT',['../namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460',1,'Hexeng::Renderer']]],
+  ['sum_2',['SUM',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a',1,'Hexeng::Renderer']]]
 ];

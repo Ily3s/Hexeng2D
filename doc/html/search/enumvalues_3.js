@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['divide_0',['DIVIDE',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b',1,'Hexeng::Renderer']]]
+  ['fusion_5fmode_0',['FUSION_MODE',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972',1,'Hexeng::Renderer']]]
 ];

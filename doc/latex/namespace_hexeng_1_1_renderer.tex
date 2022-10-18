@@ -13,8 +13,6 @@ class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}
 \item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}
 \item 
-class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}}
-\begin{DoxyCompactList}\small\item\em A layer that shows up only if a bool is set to true  \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Debug\+Quad}}
 \begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_square}{Debug\+Square}}
@@ -85,13 +83,9 @@ enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5d
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\+\_\+\+NB}}
  \}
 \begin{DoxyCompactList}\small\item\em An enum of possible texture settings you can specify to a texture constructor.  \end{DoxyCompactList}\item 
-enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \newline
-\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
-, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}{SUBSTRACT}}
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}}
-, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}{DIVIDE}}
-, \newline
-\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}{AVERAGE}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}{AVERAGE}}
  \}
 \begin{DoxyCompactList}\small\item\em Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. \end{DoxyCompactList}\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}}
@@ -137,8 +131,6 @@ void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}{init\+\_\+presets}}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}{global\+\_\+layers}}
-\item 
-std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8c9575b21985552518c0e52bc420a5be}{global\+\_\+contextual\+\_\+layers}}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\+\_\+list}}
 \item 
@@ -282,16 +274,8 @@ For example, a position should get summed (SUM), but a zoom, should get multipli
 SUM&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SUBSTRACT@{SUBSTRACT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SUBSTRACT@{SUBSTRACT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a66257a02a19711ea5b79e5e94957b7f4}} 
-SUBSTRACT&\\
-\hline
-
 \raisebox{\heightof{T}}[0pt][0pt]{\index{MULTIPLY@{MULTIPLY}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MULTIPLY@{MULTIPLY}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}} 
 MULTIPLY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DIVIDE@{DIVIDE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!DIVIDE@{DIVIDE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a210c66d794cec40488f3f8f634d6c33b}} 
-DIVIDE&\\
 \hline
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{AVERAGE@{AVERAGE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!AVERAGE@{AVERAGE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}} 
@@ -384,12 +368,6 @@ You should call this function after the game loop exits.
 \index{font\_shader@{font\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
 \doxysubsubsection{\texorpdfstring{font\_shader}{font\_shader}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::font\+\_\+shader}
-
-\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a8c9575b21985552518c0e52bc420a5be}\label{namespace_hexeng_1_1_renderer_a8c9575b21985552518c0e52bc420a5be}} 
-\index{Hexeng::Renderer@{Hexeng::Renderer}!global\_contextual\_layers@{global\_contextual\_layers}}
-\index{global\_contextual\_layers@{global\_contextual\_layers}!Hexeng::Renderer@{Hexeng::Renderer}}
-\doxysubsubsection{\texorpdfstring{global\_contextual\_layers}{global\_contextual\_layers}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}}$\ast$$>$ Hexeng\+::\+Renderer\+::global\+\_\+contextual\+\_\+layers}
 
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}\label{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!global\_layers@{global\_layers}}
