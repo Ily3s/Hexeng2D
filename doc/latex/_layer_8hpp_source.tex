@@ -31,36 +31,38 @@
 \DoxyCodeLine{37 }
 \DoxyCodeLine{39         \textcolor{keywordtype}{bool} enable = \textcolor{keyword}{true};}
 \DoxyCodeLine{40 }
-\DoxyCodeLine{47         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\textcolor{keyword}{const} std::vector<Mesh*>\& mesh\_vector, \textcolor{keywordtype}{int} z\_pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos = Position::RELATIVE, Range range = Range::LOCAL);}
-\DoxyCodeLine{48          }
-\DoxyCodeLine{49         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}{Layer}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
-\DoxyCodeLine{51         }
-\DoxyCodeLine{52         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
-\DoxyCodeLine{53         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
+\DoxyCodeLine{42         \textcolor{keywordtype}{bool}* enable\_ptr = \&enable;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\textcolor{keyword}{const} std::vector<Mesh*>\& mesh\_vector, \textcolor{keywordtype}{int} z\_pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos = Position::RELATIVE, Range range = Range::LOCAL);}
+\DoxyCodeLine{51          }
+\DoxyCodeLine{52         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{53         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}{Layer}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&) = \textcolor{keyword}{delete};}
 \DoxyCodeLine{54         }
-\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}() = default;}
-\DoxyCodeLine{56         }
-\DoxyCodeLine{57         virtual \textcolor{keywordtype}{void} unload();}
-\DoxyCodeLine{58         virtual \textcolor{keywordtype}{void} load();}
-\DoxyCodeLine{59 }
-\DoxyCodeLine{60         virtual \textcolor{keywordtype}{void} draw();}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62         std::vector<std::pair<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, \textcolor{keywordtype}{void}*>> uniforms;}
-\DoxyCodeLine{63 }
-\DoxyCodeLine{64     protected:}
-\DoxyCodeLine{65 }
-\DoxyCodeLine{66         Range m\_range = Range::\mbox{\hyperlink{_hexeng_8hpp_ad9a9110964a4d3537dccd0031a2509a9}{LOCAL}};}
-\DoxyCodeLine{67 }
-\DoxyCodeLine{68         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} m\_position\_mode = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}::RELATIVE;}
-\DoxyCodeLine{69     \};}
+\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
+\DoxyCodeLine{56         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\&\&) noexcept;}
+\DoxyCodeLine{57         }
+\DoxyCodeLine{58         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}() = default;}
+\DoxyCodeLine{59         }
+\DoxyCodeLine{60         virtual \textcolor{keywordtype}{void} unload();}
+\DoxyCodeLine{61         virtual \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         virtual \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65         std::vector<std::pair<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, \textcolor{keywordtype}{void}*>> uniforms;}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     protected:}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         Range m\_range = Range::\mbox{\hyperlink{_hexeng_8hpp_ad9a9110964a4d3537dccd0031a2509a9}{LOCAL}};}
 \DoxyCodeLine{70 }
-\DoxyCodeLine{71     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*> fusion(std::vector<std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*>>);}
-\DoxyCodeLine{72 }
-\DoxyCodeLine{73     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} extern std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}*> global\_layers;}
-\DoxyCodeLine{74 }
-\DoxyCodeLine{75 \}}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !LAYER\_HPP}}
+\DoxyCodeLine{71         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} m\_position\_mode = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}::RELATIVE;}
+\DoxyCodeLine{72     \};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*> fusion(std::vector<std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}*>>);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} extern std::vector<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}*> global\_layers;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !LAYER\_HPP}}
 
 \end{DoxyCode}

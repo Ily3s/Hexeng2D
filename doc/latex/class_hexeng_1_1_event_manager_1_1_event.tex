@@ -37,6 +37,10 @@ uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a06
 uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_aba9cf00b0808e9e28a184fcb42ed68e2}{clock}} = 0
 \item 
 Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}} = Range\+::\+GLOBAL
+\item 
+bool \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}} = true
+\item 
+bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}
 \end{DoxyCompactItemize}
 
 
@@ -116,6 +120,24 @@ Every pertick ticks, action is executed (in the \mbox{\hyperlink{namespace_hexen
 \doxysubsubsection{\texorpdfstring{condition}{condition}}
 {\footnotesize\ttfamily std\+::function$<$bool(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Event\+::condition = nullptr}
 
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}\label{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!enable@{enable}}
+\index{enable@{enable}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Event\+Manager\+::\+Event\+::enable = true}
+
+\begin{DoxyNote}{Note}
+Can always be modified. Useless if enable\+\_\+ptr != \&enable. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}\label{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!enable\_ptr@{enable\_ptr}}
+\index{enable\_ptr@{enable\_ptr}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
+{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Event\+Manager\+::\+Event\+::enable\+\_\+ptr = \&\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}\label{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}} 
 \index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!pertick@{pertick}}
 \index{pertick@{pertick}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}

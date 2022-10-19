@@ -40,49 +40,52 @@
 \DoxyCodeLine{43         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&\&) noexcept;}
 \DoxyCodeLine{44         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&\&) noexcept;}
 \DoxyCodeLine{45 }
-\DoxyCodeLine{46     \};}
-\DoxyCodeLine{47 }
-\DoxyCodeLine{51     }
-\DoxyCodeLine{52     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}} : public \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
-\DoxyCodeLine{53     \{}
-\DoxyCodeLine{54     public :}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{61         }
-\DoxyCodeLine{62         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
-\DoxyCodeLine{63     \};}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{69     }
-\DoxyCodeLine{70     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
-\DoxyCodeLine{71     \{}
-\DoxyCodeLine{72     public :}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a9af6e85392d4728a1c6a735eef383414}{internal\_action}};}
-\DoxyCodeLine{75 }
-\DoxyCodeLine{76         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a107f2d492312a7e4d9efe27a06351944}{RendererEvent}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{77 }
-\DoxyCodeLine{84         }
-\DoxyCodeLine{85         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keywordtype}{void})> condition, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
-\DoxyCodeLine{86     \};}
-\DoxyCodeLine{87 }
-\DoxyCodeLine{91     }
-\DoxyCodeLine{92     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}}
-\DoxyCodeLine{93     \{}
-\DoxyCodeLine{94     public :}
-\DoxyCodeLine{95 }
-\DoxyCodeLine{102 }
-\DoxyCodeLine{103         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
-\DoxyCodeLine{104     \};}
-\DoxyCodeLine{105 }
-\DoxyCodeLine{106     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<double>}} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}{mouse\_position}};}
-\DoxyCodeLine{107     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::vector<Event*> \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}{global\_events}};}
-\DoxyCodeLine{108 }
-\DoxyCodeLine{109     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}{start\_looping}}();}
-\DoxyCodeLine{110     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}{stop\_looping}}();}
-\DoxyCodeLine{111 }
-\DoxyCodeLine{112     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} uint64\_t \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}{current\_tick}};}
+\DoxyCodeLine{47         \textcolor{keywordtype}{bool} enable = true;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{bool}* enable\_ptr = \&enable;}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}} : public \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59     public :}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66         }
+\DoxyCodeLine{67         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{68     \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77     public :}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a9af6e85392d4728a1c6a735eef383414}{internal\_action}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a107f2d492312a7e4d9efe27a06351944}{RendererEvent}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{89         }
+\DoxyCodeLine{90         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keywordtype}{void})> condition, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}}
+\DoxyCodeLine{98     \{}
+\DoxyCodeLine{99     public :}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{109     \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<double>}} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}{mouse\_position}};}
+\DoxyCodeLine{112     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::vector<Event*> \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}{global\_events}};}
 \DoxyCodeLine{113 }
-\DoxyCodeLine{114 \}}
-\DoxyCodeLine{115 }
-\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{114     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}{start\_looping}}();}
+\DoxyCodeLine{115     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}{stop\_looping}}();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} uint64\_t \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}{current\_tick}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

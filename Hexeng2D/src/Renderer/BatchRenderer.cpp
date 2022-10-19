@@ -141,7 +141,7 @@ namespace Hexeng::Renderer
 
 	void BatchInstance::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
-		if (!enable)
+		if (!*enable_ptr)
 			return;
 
 		m_shader->bind();

@@ -87,8 +87,14 @@ namespace Hexeng::EventManager
 
 		KeyPressEvent() = default;
 
-		KeyPressEvent(KeyPressEvent&&) noexcept = default;
-		KeyPressEvent& operator=(KeyPressEvent&&) noexcept = default;
+		KeyPressEvent(KeyPressEvent&&) noexcept;
+		KeyPressEvent& operator=(KeyPressEvent&&) noexcept;
+
+		/// @note Can always be modified. Useless if enable_ptr != &enable.
+		bool enable = true;
+
+		/// @note Can always be modified.
+		bool* enable_ptr = &enable;
 	};
 
 }

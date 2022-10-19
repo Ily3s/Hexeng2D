@@ -9,6 +9,8 @@ var class_hexeng_1_1_event_manager_1_1_event =
     [ "action", "class_hexeng_1_1_event_manager_1_1_event.html#a187f6edfdf2757eac90456c96360180d", null ],
     [ "clock", "class_hexeng_1_1_event_manager_1_1_event.html#aba9cf00b0808e9e28a184fcb42ed68e2", null ],
     [ "condition", "class_hexeng_1_1_event_manager_1_1_event.html#a07bc55b9feba499f7fdbf89df9ab0c33", null ],
+    [ "enable", "class_hexeng_1_1_event_manager_1_1_event.html#ae55059c3e71feb0cc9fa91914dea06db", null ],
+    [ "enable_ptr", "class_hexeng_1_1_event_manager_1_1_event.html#ab04af2cc9855c54bb664c597db1ba0c3", null ],
     [ "pertick", "class_hexeng_1_1_event_manager_1_1_event.html#a3452a062fff71cef6c5e3e4d28d06d07", null ],
     [ "range", "class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1", null ]
 ];

@@ -61,8 +61,11 @@ namespace Hexeng::EventManager
 		action(other.action),
 		pertick(other.pertick),
 		range(other.range),
-		clock(other.clock)
+		clock(other.clock),
+		enable(other.enable)
 	{
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
+
 		if (range == Range::GLOBAL)
 		{
 			auto it = std::find(global_events.begin(), global_events.end(), &other);
@@ -78,6 +81,8 @@ namespace Hexeng::EventManager
 		action = other.action;
 		pertick = other.pertick;
 		clock = other.clock;
+		enable = other.enable;
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
 
 		if (range == Range::GLOBAL)
 		{
@@ -127,6 +132,9 @@ namespace Hexeng::EventManager
 
 			for (auto evt : global_events)
 			{
+				if (!*(evt->enable_ptr))
+					continue;
+
 				if (evt->clock > 0)
 					evt->clock--;
 				else if (evt->condition())
@@ -141,6 +149,9 @@ namespace Hexeng::EventManager
 
 			for (auto evt : scenes[scene_id]->events)
 			{
+				if (!*(evt->enable_ptr))
+					continue;
+
 				if (evt->clock > 0)
 					evt->clock--;
 				else if (evt->condition())

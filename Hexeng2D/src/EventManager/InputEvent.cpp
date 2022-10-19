@@ -64,9 +64,37 @@ namespace Hexeng::EventManager
 	{
 		for (KeyPressEvent* evt : events)
 		{
-			if (key == evt->key_code && action == evt->mode)
+			if (key == evt->key_code && action == evt->mode && *(evt->enable_ptr))
 				evt->action();
 		}
+	}
+
+	KeyPressEvent::KeyPressEvent(KeyPressEvent&& other) noexcept
+		: action(other.action), key_code(other.key_code), mode(other.mode), enable(other.enable)
+	{
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
+		auto it = std::find(events.begin(), events.end(), &other);
+		if (it != events.end())
+			*it = this;
+	}
+
+	KeyPressEvent& KeyPressEvent::operator=(KeyPressEvent&& other) noexcept
+	{
+		action = other.action;
+		key_code = other.key_code;
+		mode = other.mode;
+		enable = other.enable;
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
+
+		auto it = std::find(events.begin(), events.end(), this);
+		if (it != events.end())
+			events.erase(it);
+
+		it = std::find(events.begin(), events.end(), &other);
+		if (it != events.end())
+			*it = this;
+
+		return *this;
 	}
 
 }

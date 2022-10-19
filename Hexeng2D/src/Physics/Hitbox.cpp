@@ -191,27 +191,6 @@ namespace Hexeng::Physics
 			layer.z_position = z_pos;
 	}
 
-	bool HitBox::s_are_visuallisers_enabled = false;
-
-	void HitBox::enable_visuallisers()
-	{
-		for (auto& [scene, layer] : visuallisers_layers)
-			layer.enable = true;
-		s_are_visuallisers_enabled = true;
-	}
-
-	void HitBox::disable_visuallisers()
-	{
-		for (auto& [scene, layer] : visuallisers_layers)
-			layer.enable = false;
-		s_are_visuallisers_enabled = false;
-	}
-
-	void HitBox::toggle_visuallisers()
-	{
-		for (auto& [scene, layer] : visuallisers_layers)
-			layer.enable = !s_are_visuallisers_enabled;
-		s_are_visuallisers_enabled = !s_are_visuallisers_enabled;
-	}
+	bool HitBox::enable_visuallisers = false;
 
 }

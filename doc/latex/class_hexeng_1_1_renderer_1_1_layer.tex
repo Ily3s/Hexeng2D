@@ -39,6 +39,8 @@ int \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703a
 \item 
 bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}} = true
 \item 
+bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}}
+\item 
 std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a506c815a9e1d126a9d309955e41ad6e9}{uniforms}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
@@ -128,6 +130,15 @@ A layer of meshes, at a certain depth z.
 \index{enable@{enable}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
 \doxysubsubsection{\texorpdfstring{enable}{enable}}
 {\footnotesize\ttfamily bool Hexeng\+::\+Renderer\+::\+Layer\+::enable = true}
+
+\begin{DoxyNote}{Note}
+Can always be modified. Useless if enable\+\_\+ptr is overwritten. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}\label{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!enable\_ptr@{enable\_ptr}}
+\index{enable\_ptr@{enable\_ptr}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
+{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Renderer\+::\+Layer\+::enable\+\_\+ptr = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}}}
 
 \begin{DoxyNote}{Note}
 Can always be modified. 

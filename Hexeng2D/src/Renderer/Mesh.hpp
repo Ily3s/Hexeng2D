@@ -59,8 +59,11 @@ namespace Hexeng::Renderer
 		/// @note Alias to color.A
 		float& opacity = color.A;
 
-		/// @note Can be modified at any moment.
+		/// @note Can be modified at any moment. Useless if enable_ptr is overwritten
 		bool enable = true;
+
+		/// @note Can be modified at any moment.
+		bool* enable_ptr = &enable;
 
 		void update_position();
 

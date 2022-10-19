@@ -14,6 +14,7 @@ var class_hexeng_1_1_renderer_1_1_mesh =
     [ "update_position", "class_hexeng_1_1_renderer_1_1_mesh.html#ad3b9c0b9b2a40f19cc39db098d16ec6e", null ],
     [ "color", "class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3", null ],
     [ "enable", "class_hexeng_1_1_renderer_1_1_mesh.html#ae40894f674b607fa8c8c5f77a92e13a4", null ],
+    [ "enable_ptr", "class_hexeng_1_1_renderer_1_1_mesh.html#ae4568b0e22f935bba0f7075eafc4ebb9", null ],
     [ "m_ib", "class_hexeng_1_1_renderer_1_1_mesh.html#a548e82e1c845cc8f597f629f3afc626f", null ],
     [ "m_layout", "class_hexeng_1_1_renderer_1_1_mesh.html#a06e3943947b53475298fad224055c2ef", null ],
     [ "m_shader", "class_hexeng_1_1_renderer_1_1_mesh.html#ac5748990ed845cf8d6bd55f9a9d9f334", null ],

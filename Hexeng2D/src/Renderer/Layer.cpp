@@ -35,6 +35,8 @@ namespace Hexeng::Renderer
 		m_position_mode(other.m_position_mode),
 		enable(other.enable)
 	{
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
+
 		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_layers.begin(), global_layers.end(), &other);
@@ -50,6 +52,7 @@ namespace Hexeng::Renderer
 		m_position_mode = other.m_position_mode;
 		uniforms = std::move(other.uniforms);
 		enable = other.enable;
+		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
 
 		if (m_range == Range::GLOBAL)
 		{
@@ -99,7 +102,7 @@ namespace Hexeng::Renderer
 
 	void Layer::draw()
 	{
-		if (!enable)
+		if (!*enable_ptr)
 			return;
 
 		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)

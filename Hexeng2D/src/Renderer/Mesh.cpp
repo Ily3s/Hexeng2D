@@ -52,6 +52,8 @@ namespace Hexeng::Renderer
 			opacity(color.A),
 			enable(moving.enable)
 	{
+		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
+
 		m_vao = { m_vb, *m_layout, *m_ib };
 
 		for (auto& [ui, value_ptr] : uniforms)
@@ -83,6 +85,7 @@ namespace Hexeng::Renderer
 		m_layout = moving.m_layout;
 		color = moving.color;
 		enable = moving.enable;
+		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
 		m_vao = { m_vb, *m_layout, *m_ib };
 
@@ -105,7 +108,7 @@ namespace Hexeng::Renderer
 
 	void Mesh::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
-		if (!enable)
+		if (!*enable_ptr)
 			return;
 
 		m_shader->bind();
@@ -159,7 +162,7 @@ namespace Hexeng::Renderer
 
 	void SuperMesh::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
-		if (!enable)
+		if (!*enable_ptr)
 			return;
 
 		update_position();

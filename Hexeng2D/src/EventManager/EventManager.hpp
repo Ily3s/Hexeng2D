@@ -43,6 +43,11 @@ namespace Hexeng::EventManager
 		Event(Event&&) noexcept;
 		Event& operator=(Event&&) noexcept;
 
+		/// @note Can always be modified. Useless if enable_ptr != &enable.
+		bool enable = true;
+
+		/// @note Can always be modified.
+		bool* enable_ptr = &enable;
 	};
 
 	/// <summary>

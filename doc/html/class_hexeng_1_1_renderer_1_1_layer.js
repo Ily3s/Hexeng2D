@@ -10,6 +10,7 @@ var class_hexeng_1_1_renderer_1_1_layer =
     [ "operator=", "class_hexeng_1_1_renderer_1_1_layer.html#a5cdd2f4a7371ac9246bb76e7d4123308", null ],
     [ "unload", "class_hexeng_1_1_renderer_1_1_layer.html#a44dbc152f62f1c831398e0f41cf439be", null ],
     [ "enable", "class_hexeng_1_1_renderer_1_1_layer.html#a2c5e9e2526535857d590f391b89353ed", null ],
+    [ "enable_ptr", "class_hexeng_1_1_renderer_1_1_layer.html#a2001a3c98fa1e68fd73e1a20603f28bf", null ],
     [ "m_position_mode", "class_hexeng_1_1_renderer_1_1_layer.html#a51e2d5079e18599f56c025c46d807272", null ],
     [ "m_range", "class_hexeng_1_1_renderer_1_1_layer.html#a98136e4c569595b17e905d5ef1a837d1", null ],
     [ "meshes", "class_hexeng_1_1_renderer_1_1_layer.html#adaa973b2e9083dbbf5494ebe5216e166", null ],

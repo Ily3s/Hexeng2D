@@ -75,15 +75,7 @@ namespace Hexeng::Physics
 
 		static void set_visuallisers_z(int z_pos);
 
-		static void enable_visuallisers();
-		static void disable_visuallisers();
-		static void toggle_visuallisers();
-
-		static inline bool are_visuallisers_enabled() { return s_are_visuallisers_enabled; }
-
-	private :
-
-		static bool s_are_visuallisers_enabled;
+		static bool enable_visuallisers;
 	};
 }
 

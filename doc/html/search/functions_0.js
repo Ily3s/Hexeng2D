@@ -10,6 +10,5 @@ var searchData=
   ['add_5funiforms_7',['add_uniforms',['../class_hexeng_1_1_renderer_1_1_shader.html#aca4ffbe3b2b15e3db548c8c0978decf2',1,'Hexeng::Renderer::Shader']]],
   ['add_5fvar_8',['add_var',['../class_hexeng_1_1_save_file.html#aa03a0eb48940bd35a94b3551ada8aa67',1,'Hexeng::SaveFile']]],
   ['animation_9',['Animation',['../class_hexeng_1_1_renderer_1_1_animation.html#a47562bf48cf255d9d288c8229efc1e0d',1,'Hexeng::Renderer::Animation']]],
-  ['animationstep_10',['AnimationStep',['../struct_hexeng_1_1_renderer_1_1_animation_step.html#ac3680c8da679dbc55f3823e50cba4e2e',1,'Hexeng::Renderer::AnimationStep']]],
-  ['are_5fvisuallisers_5fenabled_11',['are_visuallisers_enabled',['../class_hexeng_1_1_physics_1_1_hit_box.html#af50abb027600c9d6d7fa39fa6a9d23c9',1,'Hexeng::Physics::HitBox']]]
+  ['animationstep_10',['AnimationStep',['../struct_hexeng_1_1_renderer_1_1_animation_step.html#ac3680c8da679dbc55f3823e50cba4e2e',1,'Hexeng::Renderer::AnimationStep']]]
 ];

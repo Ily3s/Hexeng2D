@@ -35,8 +35,11 @@ namespace Hexeng::Renderer
 		/// @note Can always be modified.
 		int z_position = 0;
 
-		/// @note Can always be modified.
+		/// @note Can always be modified. Useless if enable_ptr is overwritten.
 		bool enable = true;
+
+		/// @note Can always be modified.
+		bool* enable_ptr = &enable;
 
 		/**
 		* @param z_pos The depth of the Layer
