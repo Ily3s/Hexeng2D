@@ -9,8 +9,8 @@ namespace Hexeng::Renderer
 
 	std::vector<Layer*> global_layers;
 
-	Layer::Layer(const std::vector<Mesh*>& mesh_vector, int z_pos, Position pos, Range range)
-		: meshes(mesh_vector),
+	Layer::Layer(std::vector<Mesh*>&& mesh_vector, int z_pos, Position pos, Range range)
+		: SuperMesh(std::move(mesh_vector)),
 		z_position(z_pos),
 		m_range(range),
 		m_position_mode(pos)
@@ -28,15 +28,11 @@ namespace Hexeng::Renderer
 	}
 
 	Layer::Layer(Layer&& other) noexcept
-		: meshes(other.meshes),
+		: SuperMesh(std::move(other)),
 		z_position(other.z_position),
-		uniforms(std::move(other.uniforms)),
 		m_range(other.m_range),
-		m_position_mode(other.m_position_mode),
-		enable(other.enable)
+		m_position_mode(other.m_position_mode)
 	{
-		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
-
 		if (m_range == Range::GLOBAL)
 		{
 			auto it = std::find(global_layers.begin(), global_layers.end(), &other);
@@ -47,12 +43,9 @@ namespace Hexeng::Renderer
 
 	Layer& Layer::operator=(Layer&& other) noexcept
 	{
-		meshes = other.meshes;
+		SuperMesh::operator=(std::move(other));
 		z_position = other.z_position;
 		m_position_mode = other.m_position_mode;
-		uniforms = std::move(other.uniforms);
-		enable = other.enable;
-		enable_ptr = other.enable_ptr == &other.enable ? &enable : other.enable_ptr;
 
 		if (m_range == Range::GLOBAL)
 		{
@@ -82,24 +75,6 @@ namespace Hexeng::Renderer
 		return output;
 	}
 
-	void Layer::load()
-	{
-		for (auto& mesh : meshes)
-		{
-			if (mesh->access_texture())
-				mesh->access_texture()->load();
-		}
-	}
-
-	void Layer::unload()
-	{
-		for (auto& mesh : meshes)
-		{
-			if (mesh->access_texture())
-				mesh->access_texture()->unload();
-		}
-	}
-
 	void Layer::draw()
 	{
 		if (!*enable_ptr)
@@ -108,11 +83,16 @@ namespace Hexeng::Renderer
 		if (z_position < Camera::position.z && m_position_mode == Position::RELATIVE)
 			return;
 
-		Camera::s_update_zoom(z_position - Camera::position.z);
+		update_position();
+
+		if (m_position_mode == Position::RELATIVE)
+			Camera::s_update_zoom(z_position - Camera::position.z);
 
 		std::unordered_map<UniformInterface*, std::vector<void*>> parents_uniforms;
 		for (auto& [uniform, value] : uniforms)
-			parents_uniforms.insert({ uniform, {value} });
+			parents_uniforms[uniform].push_back(value);
+
+		m_update_childs_positions(parents_uniforms);
 
 		for (const auto& mesh : meshes)
 			mesh->draw(parents_uniforms);

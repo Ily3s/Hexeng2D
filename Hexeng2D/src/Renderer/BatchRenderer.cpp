@@ -3,6 +3,9 @@
 #include "BatchRenderer.hpp"
 #include "Renderer.hpp"
 
+#define _USE_MATH_DEFINES
+#include <math.h>
+
 namespace Hexeng::Renderer
 {
 
@@ -44,6 +47,7 @@ namespace Hexeng::Renderer
 		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_color_filter, &color_filter });
 		uniforms.push_back({ &u_color, &color });
 	}
 
@@ -118,10 +122,11 @@ namespace Hexeng::Renderer
 
 		m_quads.push_back(quad);
 
-		float quad_uniforms[8]
+		float quad_uniforms[12]
 		{
 			toX(quad->position.x), toY(quad->position.y),
 			quad->scale, quad->rotation,
+			quad->color_filter.R, quad->color_filter.G, quad->color_filter.B, quad->color_filter.A,
 			quad->color.R, quad->color.G, quad->color.B, quad->color.A
 		};
 
@@ -146,20 +151,31 @@ namespace Hexeng::Renderer
 
 		m_shader->bind();
 
+		std::vector<float*>& angles = *reinterpret_cast<std::vector<float*>*>(&parents_uniforms[&u_rotation_angle]);
+		float total_angle_degree = 0.0f;
+		for (auto& angle_degree : angles)
+			total_angle_degree += *angle_degree;
+
+		double angle = (total_angle_degree + rotation) * (M_PI / 180.0);
+
 		for (size_t i = 0; i < m_quads.size(); i++)
 		{
 			auto& quad = *m_quads[i];
-			m_uniforms[i * 8 + 0] = toX(quad.position.x);
-			m_uniforms[i * 8 + 1] = toX(quad.position.y);
-			m_uniforms[i * 8 + 2] = quad.scale;
-			m_uniforms[i * 8 + 3] = quad.rotation;
-			m_uniforms[i * 8 + 4] = quad.color.R;
-			m_uniforms[i * 8 + 5] = quad.color.G;
-			m_uniforms[i * 8 + 6] = quad.color.B;
-			m_uniforms[i * 8 + 7] = quad.color.A;
+			m_uniforms[i * 12 + 0] = toX(quad.position.x * cos(angle) + quad.position.y * sin(angle));
+			m_uniforms[i * 12 + 1] = toY(quad.position.y * cos(angle) - quad.position.x * sin(angle));
+			m_uniforms[i * 12 + 2] = quad.scale;
+			m_uniforms[i * 12 + 3] = quad.rotation;
+			m_uniforms[i * 12 + 4] = quad.color_filter.R;
+			m_uniforms[i * 12 + 5] = quad.color_filter.G;
+			m_uniforms[i * 12 + 6] = quad.color_filter.B;
+			m_uniforms[i * 12 + 7] = quad.color_filter.A;
+			m_uniforms[i * 12 + 8] = quad.color.R;
+			m_uniforms[i * 12 + 9] = quad.color.G;
+			m_uniforms[i * 12 + 10] = quad.color.B;
+			m_uniforms[i * 12 + 11] = quad.color.A;
 		}
 
-		HXG_GL(glUniform1fv(m_uniforms_id, m_quads.size() * 8, &m_uniforms[0]));
+		HXG_GL(glUniform1fv(m_uniforms_id, m_quads.size() * 12, &m_uniforms[0]));
 
 		Mesh::draw(parents_uniforms);
 	}
@@ -178,7 +194,9 @@ namespace Hexeng::Renderer
 		scale(other.scale),
 		rotation(other.rotation),
 		color(other.color),
-		m_batch_instance(other.m_batch_instance)
+		m_batch_instance(other.m_batch_instance),
+		color_filter(other.color_filter),
+		opacity(color_filter.A)
 	{
 		auto& quads = m_batch_instance->m_quads;
 		auto it = std::find(quads.begin(), quads.end(), &other);
@@ -199,6 +217,7 @@ namespace Hexeng::Renderer
 		rotation = other.rotation;
 		m_batch_instance = other.m_batch_instance;
 		color = other.color;
+		color_filter = other.color_filter;
 
 		auto& quads = m_batch_instance->m_quads;
 		auto it = std::find(quads.begin(), quads.end(), &other);

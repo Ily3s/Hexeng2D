@@ -21,7 +21,6 @@ var hierarchy =
     [ "Hexeng::Renderer::IndexBuffer", "class_hexeng_1_1_renderer_1_1_index_buffer.html", null ],
     [ "Hexeng::EventManager::KeyPressEvent", "class_hexeng_1_1_event_manager_1_1_key_press_event.html", null ],
     [ "Hexeng::Language", "class_hexeng_1_1_language.html", null ],
-    [ "Hexeng::Renderer::Layer", "class_hexeng_1_1_renderer_1_1_layer.html", null ],
     [ "Hexeng::Renderer::Mesh", "class_hexeng_1_1_renderer_1_1_mesh.html", [
       [ "Hexeng::Renderer::BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", null ],
       [ "Hexeng::Renderer::Polygon", "class_hexeng_1_1_renderer_1_1_polygon.html", null ],
@@ -33,7 +32,9 @@ var hierarchy =
           [ "Hexeng::Renderer::DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", null ]
         ] ]
       ] ],
-      [ "Hexeng::Renderer::SuperMesh", "class_hexeng_1_1_renderer_1_1_super_mesh.html", null ],
+      [ "Hexeng::Renderer::SuperMesh", "class_hexeng_1_1_renderer_1_1_super_mesh.html", [
+        [ "Hexeng::Renderer::Layer", "class_hexeng_1_1_renderer_1_1_layer.html", null ]
+      ] ],
       [ "Hexeng::Text", "class_hexeng_1_1_text.html", null ]
     ] ],
     [ "Hexeng::Physics::PhysicsVecs", "class_hexeng_1_1_physics_1_1_physics_vecs.html", [

@@ -159,6 +159,7 @@ namespace Hexeng::Renderer
 	Uniform<float> u_rotation_angle;
 	Uniform<Vec2<int>> u_window_size;
 	Uniform<float> u_scale;
+	Uniform<Color4> u_color_filter;
 	Uniform<Color4> u_color;
 
 	ToBeInit init_uniforms
@@ -167,11 +168,13 @@ namespace Hexeng::Renderer
 		u_rotation_angle = { {{UniformArgType::NAME, "u_rotation_angle"}} };
 		u_window_size = { {{UniformArgType::NAME, "u_window_size"},{UniformArgType::CONTROLLLER, &Settings::window_size } } };
 		u_scale = { { {UniformArgType::NAME, "u_scale"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::MULTIPLY} } };
-		u_color = { {{UniformArgType::NAME, "u_color"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::AVERAGE}} };
+		u_color_filter = { {{UniformArgType::NAME, "u_color_filter"}, {UniformArgType::FUSION_MODE, (void*)UniformFusionMode::MULTIPLY}} };
+		u_color = { {{UniformArgType::NAME, "u_color"}} };
 		UniformInterface::necessary_uniforms.push_back(&u_transform);
 		UniformInterface::necessary_uniforms.push_back(&u_window_size);
 		UniformInterface::necessary_uniforms.push_back(&u_rotation_angle);
 		UniformInterface::necessary_uniforms.push_back(&u_scale);
+		UniformInterface::necessary_uniforms.push_back(&u_color_filter);
 		UniformInterface::necessary_uniforms.push_back(&u_color);
 	} };
 

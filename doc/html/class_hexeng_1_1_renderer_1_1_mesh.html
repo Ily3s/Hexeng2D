@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_renderer_1_1_mesh.htm
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_hexeng_1_1_renderer_1_1_mesh-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Hexeng::Renderer::Mesh Class Reference</div></div>
 </div><!--header-->
@@ -111,10 +112,11 @@ Inheritance diagram for Hexeng::Renderer::Mesh:</div>
 <area href="class_hexeng_1_1_renderer_1_1_batch_instance.html" title="An instance that can gather 250 quads on the same layer at max and render them together." alt="Hexeng::Renderer::BatchInstance" shape="rect" coords="0,56,199,80"/>
 <area href="class_hexeng_1_1_renderer_1_1_polygon.html" alt="Hexeng::Renderer::Polygon" shape="rect" coords="209,56,408,80"/>
 <area href="class_hexeng_1_1_renderer_1_1_quad.html" alt="Hexeng::Renderer::Quad" shape="rect" coords="418,56,617,80"/>
-<area href="class_hexeng_1_1_renderer_1_1_super_mesh.html" title="A bunch of meshes that shares some attributes. For example, a player got legs and arms that can move ..." alt="Hexeng::Renderer::SuperMesh" shape="rect" coords="627,56,826,80"/>
-<area href="class_hexeng_1_1_text.html" alt="Hexeng::Text" shape="rect" coords="836,56,1035,80"/>
+<area href="class_hexeng_1_1_renderer_1_1_super_mesh.html" title="A bunch of meshes that shares some attributes. For example, a player got legs and arms that can move ..." alt="Hexeng::Renderer::SuperMesh" shape="rect" coords="731,56,930,80"/>
+<area href="class_hexeng_1_1_text.html" alt="Hexeng::Text" shape="rect" coords="940,56,1139,80"/>
 <area href="class_hexeng_1_1_renderer_1_1_debug_quad.html" title="Meant to be used internally by the engine only." alt="Hexeng::Renderer::DebugQuad" shape="rect" coords="313,112,512,136"/>
 <area href="class_hexeng_1_1_renderer_1_1_square.html" alt="Hexeng::Renderer::Square" shape="rect" coords="522,112,721,136"/>
+<area href="class_hexeng_1_1_renderer_1_1_layer.html" title="A layer of meshes, at a certain depth z." alt="Hexeng::Renderer::Layer" shape="rect" coords="731,112,930,136"/>
 <area href="class_hexeng_1_1_renderer_1_1_debug_square.html" title="Meant to be used internally by the engine only." alt="Hexeng::Renderer::DebugSquare" shape="rect" coords="313,168,512,192"/>
 <area href="class_hexeng_1_1_renderer_1_1_debug_square.html" title="Meant to be used internally by the engine only." alt="Hexeng::Renderer::DebugSquare" shape="rect" coords="522,168,721,192"/>
   </map>
@@ -146,6 +148,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad3b9c0b9b2a40f19cc39db098d16ec6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acad9ad4ba10f600ea4c8e5bbaf682b76"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#acad9ad4ba10f600ea4c8e5bbaf682b76">draw</a> (std::unordered_map&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, std::vector&lt; void * &gt; &gt; &amp;parents_uniforms=<a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a6efbfca237c0914656d423a91016547c">s_empty_uniform_list</a>)</td></tr>
 <tr class="separator:acad9ad4ba10f600ea4c8e5bbaf682b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c0b4d15b9f91019e9fb2c928b6d4528"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a5c0b4d15b9f91019e9fb2c928b6d4528">load</a> ()</td></tr>
+<tr class="separator:a5c0b4d15b9f91019e9fb2c928b6d4528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5910b8c30a14a77098a51d4d4e925970"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a5910b8c30a14a77098a51d4d4e925970">unload</a> ()</td></tr>
+<tr class="separator:a5910b8c30a14a77098a51d4d4e925970"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -155,10 +161,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a4f5ccbfcc527b200926b3931913945ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36335cd573eb71e62b0af55630149907"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a36335cd573eb71e62b0af55630149907">rotation</a> = 0</td></tr>
 <tr class="separator:a36335cd573eb71e62b0af55630149907"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3">color</a> = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td></tr>
-<tr class="separator:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a553949dd59a43118fc12f17fb5cc6d2e"><td class="memItemLeft" align="right" valign="top">float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a553949dd59a43118fc12f17fb5cc6d2e">opacity</a> = color.A</td></tr>
+<tr class="memitem:a7e08e710764c74ab4c0fa7f07749a84c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a7e08e710764c74ab4c0fa7f07749a84c">color_filter</a> = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td></tr>
+<tr class="memdesc:a7e08e710764c74ab4c0fa7f07749a84c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Absorbtion color.  <a href="class_hexeng_1_1_renderer_1_1_mesh.html#a7e08e710764c74ab4c0fa7f07749a84c">More...</a><br /></td></tr>
+<tr class="separator:a7e08e710764c74ab4c0fa7f07749a84c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553949dd59a43118fc12f17fb5cc6d2e"><td class="memItemLeft" align="right" valign="top">float &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a553949dd59a43118fc12f17fb5cc6d2e">opacity</a> = color_filter.A</td></tr>
 <tr class="separator:a553949dd59a43118fc12f17fb5cc6d2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3">color</a> = {0.0f, 0.0f, 0.0f, 0.0f}</td></tr>
+<tr class="memdesc:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emission color.  <a href="class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3">More...</a><br /></td></tr>
+<tr class="separator:aa6f1d0462b748ebdd8c04cd395859ae3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae40894f674b607fa8c8c5f77a92e13a4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#ae40894f674b607fa8c8c5f77a92e13a4">enable</a> = true</td></tr>
 <tr class="separator:ae40894f674b607fa8c8c5f77a92e13a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4568b0e22f935bba0f7075eafc4ebb9"><td class="memItemLeft" align="right" valign="top">bool *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#ae4568b0e22f935bba0f7075eafc4ebb9">enable_ptr</a> = &amp;<a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#ae40894f674b607fa8c8c5f77a92e13a4">enable</a></td></tr>
@@ -189,6 +199,11 @@ Protected Attributes</h2></td></tr>
 Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a6efbfca237c0914656d423a91016547c"><td class="memItemLeft" align="right" valign="top">static std::unordered_map&lt; <a class="el" href="class_hexeng_1_1_renderer_1_1_uniform_interface.html">UniformInterface</a> *, std::vector&lt; void * &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#a6efbfca237c0914656d423a91016547c">s_empty_uniform_list</a> {}</td></tr>
 <tr class="separator:a6efbfca237c0914656d423a91016547c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ab88992c2b05df2ab1d1bcfc0d627b907"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_renderer_1_1_mesh.html#ab88992c2b05df2ab1d1bcfc0d627b907">SuperMesh</a></td></tr>
+<tr class="separator:ab88992c2b05df2ab1d1bcfc0d627b907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section note"><dt>Note</dt><dd>It isn't recommanded that you use this class directly. Instead you may want to use a derived class. </dd></dl>
@@ -500,6 +515,33 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5c0b4d15b9f91019e9fb2c928b6d4528" name="a5c0b4d15b9f91019e9fb2c928b6d4528"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c0b4d15b9f91019e9fb2c928b6d4528">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hexeng::Renderer::Mesh::load </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_hexeng_1_1_renderer_1_1_super_mesh.html#a3b2c355206bce2c825b7456e380521f7">Hexeng::Renderer::SuperMesh</a>.</p>
+
+</div>
+</div>
 <a id="a75f5fb56509551fe0cf65050afa24227" name="a75f5fb56509551fe0cf65050afa24227"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75f5fb56509551fe0cf65050afa24227">&#9670;&#160;</a></span>operator=()</h2>
 
@@ -526,6 +568,33 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5910b8c30a14a77098a51d4d4e925970" name="a5910b8c30a14a77098a51d4d4e925970"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5910b8c30a14a77098a51d4d4e925970">&#9670;&#160;</a></span>unload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Hexeng::Renderer::Mesh::unload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="class_hexeng_1_1_renderer_1_1_super_mesh.html#a8098d3014b59d7de8721fbb883df488d">Hexeng::Renderer::SuperMesh</a>.</p>
+
+</div>
+</div>
 <a id="ad3b9c0b9b2a40f19cc39db098d16ec6e" name="ad3b9c0b9b2a40f19cc39db098d16ec6e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3b9c0b9b2a40f19cc39db098d16ec6e">&#9670;&#160;</a></span>update_position()</h2>
 
@@ -543,6 +612,29 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="ab88992c2b05df2ab1d1bcfc0d627b907" name="ab88992c2b05df2ab1d1bcfc0d627b907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab88992c2b05df2ab1d1bcfc0d627b907">&#9670;&#160;</a></span>SuperMesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="class_hexeng_1_1_renderer_1_1_super_mesh.html">SuperMesh</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="aa6f1d0462b748ebdd8c04cd395859ae3" name="aa6f1d0462b748ebdd8c04cd395859ae3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa6f1d0462b748ebdd8c04cd395859ae3">&#9670;&#160;</a></span>color</h2>
@@ -551,10 +643,29 @@ Static Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a> Hexeng::Renderer::Mesh::color = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td>
+          <td class="memname"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a> Hexeng::Renderer::Mesh::color = {0.0f, 0.0f, 0.0f, 0.0f}</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Emission color. </p>
+<dl class="section note"><dt>Note</dt><dd>Can be modified at any moment </dd></dl>
+
+</div>
+</div>
+<a id="a7e08e710764c74ab4c0fa7f07749a84c" name="a7e08e710764c74ab4c0fa7f07749a84c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e08e710764c74ab4c0fa7f07749a84c">&#9670;&#160;</a></span>color_filter</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_hexeng_1_1_color4.html">Color4</a> Hexeng::Renderer::Mesh::color_filter = <a class="el" href="class_hexeng_1_1_color4.html#aca71b3af7c61faa4cd07b5a550b44307">Color4::white</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Absorbtion color. </p>
 <dl class="section note"><dt>Note</dt><dd>Can be modified at any moment. </dd></dl>
 
 </div>
@@ -772,7 +883,7 @@ Static Protected Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">float&amp; Hexeng::Renderer::Mesh::opacity = color.A</td>
+          <td class="memname">float&amp; Hexeng::Renderer::Mesh::opacity = color_filter.A</td>
         </tr>
       </table>
 </div><div class="memdoc">

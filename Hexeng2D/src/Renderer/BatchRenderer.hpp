@@ -122,10 +122,13 @@ namespace Hexeng::Renderer
 		float rotation = 0.0f;
 
 		/// @note Can always be modified.
-		Color4 color = Color4::white;
+		Color4 color_filter = Color4::white;
 
 		/// @note Alias to color.A
-		float& opacity = color.A;
+		float& opacity = color_filter.A;
+
+		/// @note Can always be modified
+		Color4 color = {0.0f, 0.0f, 0.0f, 0.0f};
 
 	private:
 

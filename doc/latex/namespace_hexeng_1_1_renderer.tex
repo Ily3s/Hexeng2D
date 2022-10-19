@@ -144,6 +144,8 @@ std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespace
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\+\_\+scale}}
 \item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{u\+\_\+color\+\_\+filter}}
+\item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\+\_\+color}}
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}{init\+\_\+uniforms}}
@@ -413,11 +415,13 @@ You should call this function after the game loop exits.
 \DoxyCodeLine{        u\_rotation\_angle = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_rotation\_angle"{}}\}\} \};}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\_window\_size}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_window\_size"{}}\},\{UniformArgType::CONTROLLLER, \&Settings::window\_size \} \} \};}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\_scale}} = \{ \{ \{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_scale"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::MULTIPLY\} \} \};}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::AVERAGE\}\} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{u\_color\_filter}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color\_filter"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::MULTIPLY\}\} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}\} \};}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_transform);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_window\_size);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_rotation\_angle);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_scale);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_color\_filter);}
 \DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_color);}
 \DoxyCodeLine{    \} \}}
 
@@ -451,6 +455,12 @@ You should call this function after the game loop exits.
 \index{u\_color@{u\_color}!Hexeng::Renderer@{Hexeng::Renderer}}
 \doxysubsubsection{\texorpdfstring{u\_color}{u\_color}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}\label{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_color\_filter@{u\_color\_filter}}
+\index{u\_color\_filter@{u\_color\_filter}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_color\_filter}{u\_color\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color\+\_\+filter}
 
 \mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}\label{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}} 
 \index{Hexeng::Renderer@{Hexeng::Renderer}!u\_rotation\_angle@{u\_rotation\_angle}}

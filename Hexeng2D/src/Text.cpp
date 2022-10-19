@@ -248,7 +248,10 @@ namespace Hexeng
 
 		this->Mesh::operator=({raw_vb, vb_index * 4, pos, Renderer::Quad::get_vertex_layout(), &m_index_buffer, &font.texture, &Renderer::font_shader});
 
-		color = c4;
+		color.R = c4.R;
+		color.G = c4.G;
+		color.B = c4.B;
+		opacity = c4.A;
 
 		delete[] raw_vb;
 
@@ -371,7 +374,7 @@ namespace Hexeng
 			for (Text* text : s_translated_texts)
 			{
 				*text = { text->m_language, text->m_text, *text->m_font, text->m_pos,
-					text->m_font_size, text->m_ha, text->m_va, text->color };
+					text->m_font_size, text->m_ha, text->m_va, {text->color.x, text->color.y, text->color.z, text->color_filter.w} };
 			}
 			});
 	}

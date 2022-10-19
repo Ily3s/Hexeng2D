@@ -67,13 +67,14 @@ namespace Hexeng::Renderer
 	(
 		\n#version 460 core\n
 
+		uniform vec4 u_color_filter;
 		uniform vec4 u_color;
 
 		out vec4 color;
 
 		void main()
 		{
-			color = u_color;
+			color = u_color * u_color_filter;
 		}
 	
 	);
@@ -94,7 +95,7 @@ namespace Hexeng::Renderer
 		uniform float u_rotation_angle;
 		uniform ivec2 u_window_size;
 		
-		uniform float u_quads_uniforms[2000];
+		uniform float u_quads_uniforms[3000];
 		
 		float to_radian(float degree)
 		{
@@ -103,10 +104,10 @@ namespace Hexeng::Renderer
 		
 		void main()
 		{
-		    vec2 quad_transform = vec2(u_quads_uniforms[int(index*8)], u_quads_uniforms[int(index*8+1)]);
-			float angle = to_radian(u_rotation_angle + u_quads_uniforms[int(index*8)+3]);
+		    vec2 quad_transform = vec2(u_quads_uniforms[int(index*12)], u_quads_uniforms[int(index*12+1)]);
+			float angle = to_radian(u_rotation_angle + u_quads_uniforms[int(index*12)+3]);
 			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
-			gl_Position = vec4((pos * sqrt(u_scale * u_quads_uniforms[int(index*8)+2]) - u_cam.xy + u_transform + quad_transform) * u_zoom, 0.0, 1.0);
+			gl_Position = vec4((pos * sqrt(u_scale * u_quads_uniforms[int(index*12)+2]) - u_cam.xy + u_transform + quad_transform) * u_zoom, 0.0, 1.0);
 			v_text_coord = text_coord;
 		}
 	);
@@ -116,20 +117,22 @@ namespace Hexeng::Renderer
 
 		\n#version 460 core\n
 
+		uniform vec4 u_color_filter;
 		uniform vec4 u_color;
 
 		in vec2 v_text_coord;
 		out vec4 color;
 
 		layout(location = 2) in float index;
-		uniform float u_quads_uniforms[2000];
+		uniform float u_quads_uniforms[3000];
 
 		uniform sampler2D u_Texture;
 
 		void main()
 		{
-			vec4 quad_color = vec4(u_quads_uniforms[int(index)+4], u_quads_uniforms[int(index)+5], u_quads_uniforms[int(index)+6], u_quads_uniforms[int(index)+7]);
-			color = texture(u_Texture, v_text_coord) * ((u_color + quad_color)/2);
+			vec4 quad_color_filter = vec4(u_quads_uniforms[int(index*12)+4], u_quads_uniforms[int(index*12)+5], u_quads_uniforms[int(index*12)+6], u_quads_uniforms[int(index*12)+7]);
+			vec4 quad_color = vec4(u_quads_uniforms[int(index*12)+8], u_quads_uniforms[int(index*12)+9], u_quads_uniforms[int(index*12)+10], u_quads_uniforms[int(index*12)+11]);
+			color = (texture(u_Texture, v_text_coord) + quad_color + u_color) * u_color_filter * quad_color_filter;
 		}
 
 	);
@@ -143,11 +146,12 @@ namespace Hexeng::Renderer
 		out vec4 color;
 
 		uniform sampler2D u_Texture;
+		uniform vec4 u_color_filter;
 		uniform vec4 u_color;
 
 		void main()
 		{
-			color = vec4(u_color.xyz, texture(u_Texture, v_text_coord).r * u_color.w);
+			color = vec4(u_color.xyz * u_color_filter.xyz, (texture(u_Texture, v_text_coord).r + u_color.w) * u_color_filter.w);
 		}
 
 	);
@@ -159,11 +163,12 @@ namespace Hexeng::Renderer
 
 		out vec4 color;
 
+		uniform vec4 u_color_filter;
 		uniform vec4 u_color;
 
 		void main()
 		{
-			color = u_color;
+			color = u_color * u_color_filter;
 		}
 
 	);
@@ -173,6 +178,7 @@ namespace Hexeng::Renderer
 
 		\n#version 460 core\n
 
+		uniform vec4 u_color_filter;
 		uniform vec4 u_color;
 
 		in vec2 v_text_coord;
@@ -182,7 +188,7 @@ namespace Hexeng::Renderer
 
 		void main()
 		{
-			color = texture(u_Texture, v_text_coord) * u_color;
+			color = (texture(u_Texture, v_text_coord) + u_color) * u_color_filter;
 		}
 
 	);

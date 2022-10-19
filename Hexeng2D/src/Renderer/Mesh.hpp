@@ -53,11 +53,16 @@ namespace Hexeng::Renderer
 		/// @note Can be modified at any moment.
 		float rotation = 0;
 
+		/// @brief Absorbtion color.
 		/// @note Can be modified at any moment.
-		Color4 color = Color4::white;
+		Color4 color_filter = Color4::white;
 
 		/// @note Alias to color.A
-		float& opacity = color.A;
+		float& opacity = color_filter.A;
+
+		/// @brief Emission color.
+		/// @note Can be modified at any moment
+		Color4 color = {0.0f, 0.0f, 0.0f, 0.0f};
 
 		/// @note Can be modified at any moment. Useless if enable_ptr is overwritten
 		bool enable = true;
@@ -71,9 +76,14 @@ namespace Hexeng::Renderer
 
 		std::vector<std::pair<UniformInterface*, void*>> uniforms = {};
 
+		virtual void load();
+		virtual void unload();
+
 	protected:
 
 		static std::unordered_map<UniformInterface*, std::vector<void*>> s_empty_uniform_list;
+
+		friend class SuperMesh;
 
 		Vec2<float> m_transform{ 0.0f, 0.0f };
 
@@ -112,6 +122,12 @@ namespace Hexeng::Renderer
 
 		void draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms = s_empty_uniform_list) override;
 
+		virtual void load() override;
+		virtual void unload() override;
+
+	protected :
+
+		void m_update_childs_positions(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms);
 	};
 
 	class ToBeInit;

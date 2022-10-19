@@ -25,21 +25,12 @@ namespace Hexeng::Renderer
 	/// <summary>
 	/// A layer of meshes, at a certain depth z.
 	/// </summary>
-	class HXG_DECLSPEC Layer
+	class HXG_DECLSPEC Layer : public SuperMesh
 	{
 	public:
 
-		/// @note Isn't recommanded to be modified. Still in public to allow some creativity.
-		std::vector<Mesh*> meshes;
-
 		/// @note Can always be modified.
 		int z_position = 0;
-
-		/// @note Can always be modified. Useless if enable_ptr is overwritten.
-		bool enable = true;
-
-		/// @note Can always be modified.
-		bool* enable_ptr = &enable;
 
 		/**
 		* @param z_pos The depth of the Layer
@@ -47,7 +38,7 @@ namespace Hexeng::Renderer
 		* @param range If set to Range::LOCAL, the layer needs to be added to a scene.
 		* If set to Range::GLOBAL, the layer will apear on all scenes.
 		*/
-		Layer(const std::vector<Mesh*>& mesh_vector, int z_pos, Position pos = Position::RELATIVE, Range range = Range::LOCAL);
+		Layer(std::vector<Mesh*>&& mesh_vector, int z_pos, Position pos = Position::RELATIVE, Range range = Range::LOCAL);
 		 
 		Layer& operator=(const Layer&) = delete;
 		Layer(const Layer&) = delete;
@@ -56,13 +47,8 @@ namespace Hexeng::Renderer
 		Layer(Layer&&) noexcept;
 		
 		Layer() = default;
-		
-		virtual void unload();
-		virtual void load();
 
 		virtual void draw();
-
-		std::vector<std::pair<UniformInterface*, void*>> uniforms;
 
 	protected:
 

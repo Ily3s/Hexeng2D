@@ -21,7 +21,6 @@
 #include "SaveSystem.hpp"
 
 #include "Player.hpp"
-#include "Shaders.glsl"
 
 int main()
 {
@@ -32,12 +31,9 @@ int main()
 
 	Renderer::init();
 	Audio::init();
-	
-	Renderer::Shader custom_shader{ Hexeng::Renderer::basic_vs, custom_fs };
-	custom_shader.add_necessary_uniforms();
 
 	Renderer::Texture frame_tex{ "res/frame.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
-	Renderer::Square frame{ {0, 1000}, 15.0f, &frame_tex, true, &custom_shader };
+	Renderer::Square frame{ {0, 1000}, 15.0f, &frame_tex };
 	Physics::HitBox frame_hb{ {{Vec2<int>{0, 1000} - Vec2<int>{frame_tex.get_size() * 15} / 2, Vec2<int>{0, 1000} + Vec2<int>{frame_tex.get_size() * 15} / 2}}, 0, false };
 
 	Renderer::Texture example{ "res/example.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
@@ -79,19 +75,19 @@ int main()
 			 if (from == Physics::From::BOT)
 			 {
 				 save_file.save("saves/test.save");
-				 frame.color = Color4::red;
+				 frame.color_filter = Color4::red;
 				 star.color = Color4::red;
 			 }
 			 else if (from == Physics::From::TOP)
 			 {
 				 save_file.load("saves/test.save");
-				 frame.color = Color4::green;
+				 frame.color_filter = Color4::green;
 				 star.color = Color4::green;
 			 }
 			 else if (from == Physics::From::LEFT)
 			 {
 				 std::cout << save_var << std::endl;
-				 frame.color = Color4::blue;
+				 frame.color_filter = Color4::blue;
 				 star.color = Color4::blue;
 				 language = &French;
 				 Text::reload_language();
@@ -99,7 +95,7 @@ int main()
 			 else if (from == Physics::From::RIGHT)
 			 {
 				 save_var++;
-				 frame.color = Color4::yellow;
+				 frame.color_filter = Color4::yellow;
 				 star.color = Color4::yellow;
 				 language = &English;
 				 Text::reload_language();
@@ -109,7 +105,7 @@ int main()
 
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
-		[&star, &frame]() {frame.color = Color4::white; star.color = Color4::white; }, Range::LOCAL };
+		[&star, &frame]() {frame.color_filter = Color4::white; star.color = Color4::white; }, Range::LOCAL };
 
 	Font kunstler{ "res/KUNSTLER.TTF" };
 	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color4::white };
@@ -129,9 +125,10 @@ int main()
 	Renderer::TextureAtlas grid_atlas{ "res/GridAtlas.png", Vec2<int>(16, 16), {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 
 	Renderer::BatchInstance batch_test{ &grid_atlas };
-	Renderer::BatchQuad batch_quad_1{ &batch_test, {0, 0}, {-2000, 2000}, 30.0f };
-	Renderer::BatchQuad batch_quad_2{ &batch_test, {1, 0}, {2000, 2000}, 30.0f };
+	Renderer::BatchQuad batch_quad_1{ &batch_test, {0, 0}, {-2000, 0}, 30.0f };
+	Renderer::BatchQuad batch_quad_2{ &batch_test, {1, 0}, {2000, 0}, 30.0f };
 	batch_test.construct_batch();
+	batch_test.position.y = 1000;
 
 	Audio::Music music{ "res/Music.wav" };
 	music.play();
@@ -187,8 +184,8 @@ int main()
 	EventManager::KeyEvent go_down{ 83, [&player]() {player.physics.move({0, -player.speed}); } };		// S
 	EventManager::KeyEvent go_right{ 68, [&player]() {player.physics.move({player.speed, 0}); } };		// D
 
-	EventManager::KeyEvent rotate_left{ 81, [&player]() {player.mesh.rotation -= 1.0f; } };				// Q
-	EventManager::KeyEvent rotate_right{ 69, [&player]() {player.mesh.rotation += 1.0f; } };			// E
+	EventManager::KeyEvent rotate_left{ 81, [&player]() {player.mesh.rotation -= 1.0f; } };			// Q
+	EventManager::KeyEvent rotate_right{ 69, [&player]() {player.mesh.rotation += 1.0f; } };		// E
 
 	EventManager::ScrollEvent::get()->callback = [](double amount) {Renderer::Camera::position.z += amount * 10; Renderer::Camera::refresh_pos(); };
 

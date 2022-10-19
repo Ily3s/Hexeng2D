@@ -72,6 +72,7 @@ var namespace_hexeng_1_1_renderer =
     [ "poly_shader", "namespace_hexeng_1_1_renderer.html#aef0c0e0a4d014075593f440242e729e5", null ],
     [ "tex_vector_shader", "namespace_hexeng_1_1_renderer.html#a4c606a36dd386b7ff3f2b0fd90b5aa0b", null ],
     [ "u_color", "namespace_hexeng_1_1_renderer.html#aac818b2a90ca043be07e7a65f8bd64f1", null ],
+    [ "u_color_filter", "namespace_hexeng_1_1_renderer.html#adf89b1776dd05fd7a25ca3a52258c86a", null ],
     [ "u_rotation_angle", "namespace_hexeng_1_1_renderer.html#a848bb6c521a31868ddd7e6debcf84f4c", null ],
     [ "u_scale", "namespace_hexeng_1_1_renderer.html#a97ec6598439eb16c681d93b2bcd47175", null ],
     [ "u_transform", "namespace_hexeng_1_1_renderer.html#af2b245beb8f834f084c196ae418ec8a1", null ],

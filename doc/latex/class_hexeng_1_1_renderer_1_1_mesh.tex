@@ -7,7 +7,7 @@
 Inheritance diagram for Hexeng\+::Renderer\+::Mesh\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.164251cm]{class_hexeng_1_1_renderer_1_1_mesh}
+\includegraphics[height=1.803543cm]{class_hexeng_1_1_renderer_1_1_mesh}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -36,6 +36,10 @@ const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}{update\+\_\+position}} ()
 \item 
 virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}{draw}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&parents\+\_\+uniforms=\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}})
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}{load}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}{unload}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -46,10 +50,12 @@ float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4f5ccbfcc527b200926b3
 \item 
 float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a36335cd573eb71e62b0af55630149907}{rotation}} = 0
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}} = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}{color\+\_\+filter}} = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\begin{DoxyCompactList}\small\item\em Absorbtion color. \end{DoxyCompactList}\item 
+float \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}{opacity}} = color\+\_\+filter.\+A
 \item 
-float \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}{opacity}} = color.\+A
-\item 
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}} = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Emission color. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}} = true
 \item 
 bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae4568b0e22f935bba0f7075eafc4ebb9}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}}
@@ -79,6 +85,11 @@ const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layo
 \begin{DoxyCompactItemize}
 \item 
 static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}{Super\+Mesh}}
 \end{DoxyCompactItemize}
 
 
@@ -175,11 +186,31 @@ Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a
 \doxysubsubsection{\texorpdfstring{get\_vao()}{get\_vao()}}
 {\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} $\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::get\+\_\+vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}\label{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!load@{load}}
+\index{load@{load}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a3b2c355206bce2c825b7456e380521f7}{Hexeng\+::\+Renderer\+::\+Super\+Mesh}}.
+
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a75f5fb56509551fe0cf65050afa24227}\label{class_hexeng_1_1_renderer_1_1_mesh_a75f5fb56509551fe0cf65050afa24227}} 
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \& Hexeng\+::\+Renderer\+::\+Mesh\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \&\&}]{moving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}\label{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!unload@{unload}}
+\index{unload@{unload}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a8098d3014b59d7de8721fbb883df488d}{Hexeng\+::\+Renderer\+::\+Super\+Mesh}}.
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}\label{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}} 
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!update\_position@{update\_position}}
@@ -189,12 +220,38 @@ Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a
 
 
 
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}\label{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!SuperMesh@{SuperMesh}}
+\index{SuperMesh@{SuperMesh}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{SuperMesh}{SuperMesh}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}\label{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}} 
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!color@{color}}
 \index{color@{color}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
 \doxysubsubsection{\texorpdfstring{color}{color}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+Emission color. 
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}\label{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!color\_filter@{color\_filter}}
+\index{color\_filter@{color\_filter}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{color\_filter}{color\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color\+\_\+filter = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}}
+
+
+
+Absorbtion color. 
 
 \begin{DoxyNote}{Note}
 Can be modified at any moment. 
@@ -269,7 +326,7 @@ Can be modified at any moment.
 \index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!opacity@{opacity}}
 \index{opacity@{opacity}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
 \doxysubsubsection{\texorpdfstring{opacity}{opacity}}
-{\footnotesize\ttfamily float\& Hexeng\+::\+Renderer\+::\+Mesh\+::opacity = color.\+A}
+{\footnotesize\ttfamily float\& Hexeng\+::\+Renderer\+::\+Mesh\+::opacity = color\+\_\+filter.\+A}
 
 \begin{DoxyNote}{Note}
 Alias to color.\+A 

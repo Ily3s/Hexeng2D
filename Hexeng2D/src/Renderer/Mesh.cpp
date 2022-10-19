@@ -32,6 +32,7 @@ namespace Hexeng::Renderer
 		uniforms.push_back({ &u_transform, &m_transform });
 		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_color_filter, &color_filter });
 		uniforms.push_back({ &u_color, &color });
 	}
 
@@ -48,9 +49,10 @@ namespace Hexeng::Renderer
 			rotation(moving.rotation),
 			scale(moving.scale),
 			m_layout(moving.m_layout),
-			color(moving.color),
-			opacity(color.A),
-			enable(moving.enable)
+			color_filter(moving.color_filter),
+			opacity(color_filter.A),
+			enable(moving.enable),
+			color(moving.color)
 	{
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
@@ -64,6 +66,8 @@ namespace Hexeng::Renderer
 				value_ptr = &rotation;
 			else if (ui == &u_scale)
 				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
 			else if (ui == &u_color)
 				value_ptr = &color;
 		}
@@ -83,8 +87,9 @@ namespace Hexeng::Renderer
 		rotation = moving.rotation;
 		scale = moving.scale;
 		m_layout = moving.m_layout;
-		color = moving.color;
+		color_filter = moving.color_filter;
 		enable = moving.enable;
+		color = moving.color;
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
 		m_vao = { m_vb, *m_layout, *m_ib };
@@ -97,6 +102,8 @@ namespace Hexeng::Renderer
 				value_ptr = &rotation;
 			else if (ui == &u_scale)
 				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
 			else if (ui == &u_color)
 				value_ptr = &color;
 		}
@@ -112,8 +119,6 @@ namespace Hexeng::Renderer
 			return;
 
 		m_shader->bind();
-
-		update_position();
 
 		for (auto& [uniform, value] : uniforms)
 			parents_uniforms[uniform].push_back(value);
@@ -137,12 +142,25 @@ namespace Hexeng::Renderer
 		m_transform = toCoord(position);
 	}
 
+	void Mesh::load()
+	{
+		if (m_texture)
+			m_texture->load();
+	}
+
+	void Mesh::unload()
+	{
+		if (m_texture)
+			m_texture->load();
+	}
+
 	SuperMesh::SuperMesh(std::vector<Mesh*>&& meshes)
 		: meshes(std::move(meshes))
 	{
 		uniforms.push_back({ &u_transform, &m_transform });
-		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_scale, &scale });
+		uniforms.push_back({ &u_rotation_angle, &rotation });
+		uniforms.push_back({ &u_color_filter, &color_filter });
 		uniforms.push_back({ &u_color, &color });
 	}
 
@@ -165,10 +183,10 @@ namespace Hexeng::Renderer
 		if (!*enable_ptr)
 			return;
 
-		update_position();
-
 		for (auto& [uniform, value] : uniforms)
 			parents_uniforms[uniform].push_back(value);
+
+		m_update_childs_positions(parents_uniforms);
 
 		for (auto& mesh : meshes)
 			mesh->draw(parents_uniforms);
@@ -177,12 +195,39 @@ namespace Hexeng::Renderer
 			parents_uniforms[uniform].pop_back();
 	}
 
+	void SuperMesh::m_update_childs_positions(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
+	{
+		std::vector<float*>& angles = *reinterpret_cast<std::vector<float*>*>(&parents_uniforms[&u_rotation_angle]);
+		float total_angle_degree = 0.0f;
+		for (auto& angle_degree : angles)
+			total_angle_degree += *angle_degree;
+
+		double angle = total_angle_degree * (M_PI / 180.0);
+		for (auto mesh : meshes)
+		{
+			mesh->m_transform = {toX(mesh->position.x * cos(angle) + mesh->position.y * sin(angle)),
+								toY(mesh->position.y * cos(angle) - mesh->position.x * sin(angle))};
+		}
+	}
+
+	void SuperMesh::unload()
+	{
+		for (auto mesh : meshes)
+			mesh->unload();
+	}
+
+	void SuperMesh::load()
+	{
+		for (auto mesh : meshes)
+			mesh->load();
+	}
+
 	Polygon::Polygon(const std::vector<Vec2<int>>& vertecies, Vec2<int> pos, Color4 color_p, Shader* shader)
 	{
 		HXG_ASSERT((vertecies.size() > 2),
 			HXG_LOG_ERROR("A polygon must be built out of at least three vertecies."););
 
-		color = color_p;
+		color_filter = color_p;
 
 		float* vertex_buffer = new float[vertecies.size() * 2];
 

@@ -9,10 +9,16 @@ A layer of meshes, at a certain depth z.
 
 {\ttfamily \#include $<$Layer.\+hpp$>$}
 
+Inheritance diagram for Hexeng\+::Renderer\+::Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hexeng_1_1_renderer_1_1_layer}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_ae529bfbbe6d3f697836467e3964105c6}{Layer}} (const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&mesh\+\_\+vector, int z\+\_\+pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}, Range range=Range\+::\+LOCAL)
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}{Layer}} (std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&\&mesh\+\_\+vector, int z\+\_\+pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}, Range range=Range\+::\+LOCAL)
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&)=delete
 \item 
@@ -24,24 +30,12 @@ A layer of meshes, at a certain depth z.
 \item 
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a05a95c27ba30c563b23dc053df5ab0ca}{Layer}} ()=default
 \item 
-virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a44dbc152f62f1c831398e0f41cf439be}{unload}} ()
-\item 
-virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a13816a394b14589c795ece928c203cbb}{load}} ()
-\item 
 virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a291d62b7a6aac44d4ce59ce713883178}{draw}} ()
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_adaa973b2e9083dbbf5494ebe5216e166}{meshes}}
-\item 
 int \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}{z\+\_\+position}} = 0
-\item 
-bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}} = true
-\item 
-bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}}
-\item 
-std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a506c815a9e1d126a9d309955e41ad6e9}{uniforms}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
@@ -50,17 +44,18 @@ Range \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a98136e4c569595b17e90
 \item 
 \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}{m\+\_\+position\+\_\+mode}} = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 A layer of meshes, at a certain depth z.  
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_ae529bfbbe6d3f697836467e3964105c6}\label{class_hexeng_1_1_renderer_1_1_layer_ae529bfbbe6d3f697836467e3964105c6}} 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}\label{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}} 
 \index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!Layer@{Layer}}
 \index{Layer@{Layer}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
 \doxysubsubsection{\texorpdfstring{Layer()}{Layer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&}]{mesh\+\_\+vector,  }\item[{int}]{z\+\_\+pos,  }\item[{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}]{pos = {\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}},  }\item[{Range}]{range = {\ttfamily Range\+:\+:LOCAL} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&\&}]{mesh\+\_\+vector,  }\item[{int}]{z\+\_\+pos,  }\item[{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}]{pos = {\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}},  }\item[{Range}]{range = {\ttfamily Range\+:\+:LOCAL} }\end{DoxyParamCaption})}
 
 
 \begin{DoxyParams}{Parameters}
@@ -98,12 +93,6 @@ A layer of meshes, at a certain depth z.
 \doxysubsubsection{\texorpdfstring{draw()}{draw()}}
 {\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Layer\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a13816a394b14589c795ece928c203cbb}\label{class_hexeng_1_1_renderer_1_1_layer_a13816a394b14589c795ece928c203cbb}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!load@{load}}
-\index{load@{load}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{load()}{load()}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Layer\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}\label{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}} 
 \index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
@@ -116,33 +105,9 @@ A layer of meshes, at a certain depth z.
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& Hexeng\+::\+Renderer\+::\+Layer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a44dbc152f62f1c831398e0f41cf439be}\label{class_hexeng_1_1_renderer_1_1_layer_a44dbc152f62f1c831398e0f41cf439be}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!unload@{unload}}
-\index{unload@{unload}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
-{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Layer\+::unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
-
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}\label{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!enable@{enable}}
-\index{enable@{enable}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{enable}{enable}}
-{\footnotesize\ttfamily bool Hexeng\+::\+Renderer\+::\+Layer\+::enable = true}
-
-\begin{DoxyNote}{Note}
-Can always be modified. Useless if enable\+\_\+ptr is overwritten. 
-\end{DoxyNote}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}\label{class_hexeng_1_1_renderer_1_1_layer_a2001a3c98fa1e68fd73e1a20603f28bf}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!enable\_ptr@{enable\_ptr}}
-\index{enable\_ptr@{enable\_ptr}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
-{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Renderer\+::\+Layer\+::enable\+\_\+ptr = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a2c5e9e2526535857d590f391b89353ed}{enable}}}
-
-\begin{DoxyNote}{Note}
-Can always be modified. 
-\end{DoxyNote}
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}\label{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}} 
 \index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!m\_position\_mode@{m\_position\_mode}}
 \index{m\_position\_mode@{m\_position\_mode}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
@@ -154,21 +119,6 @@ Can always be modified.
 \index{m\_range@{m\_range}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
 \doxysubsubsection{\texorpdfstring{m\_range}{m\_range}}
 {\footnotesize\ttfamily Range Hexeng\+::\+Renderer\+::\+Layer\+::m\+\_\+range = Range\+::\+LOCAL\hspace{0.3cm}{\ttfamily [protected]}}
-
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_adaa973b2e9083dbbf5494ebe5216e166}\label{class_hexeng_1_1_renderer_1_1_layer_adaa973b2e9083dbbf5494ebe5216e166}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!meshes@{meshes}}
-\index{meshes@{meshes}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{meshes}{meshes}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}$\ast$$>$ Hexeng\+::\+Renderer\+::\+Layer\+::meshes}
-
-\begin{DoxyNote}{Note}
-Isn\textquotesingle{}t recommanded to be modified. Still in public to allow some creativity. 
-\end{DoxyNote}
-\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a506c815a9e1d126a9d309955e41ad6e9}\label{class_hexeng_1_1_renderer_1_1_layer_a506c815a9e1d126a9d309955e41ad6e9}} 
-\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!uniforms@{uniforms}}
-\index{uniforms@{uniforms}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
-\doxysubsubsection{\texorpdfstring{uniforms}{uniforms}}
-{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}$\ast$, void$\ast$$>$ $>$ Hexeng\+::\+Renderer\+::\+Layer\+::uniforms}
 
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}\label{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}} 
 \index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!z\_position@{z\_position}}

@@ -8,6 +8,7 @@ var class_hexeng_1_1_renderer_1_1_batch_quad =
     [ "operator=", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a55814db8457c3955c3b9b77e5c846042", null ],
     [ "BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_quad.html#af68979b1f29996010d3ebdf84f50a01e", null ],
     [ "color", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a381c3cfcdab3e4d6d5befb15a916bc31", null ],
+    [ "color_filter", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a6f67451af8f9ab236195dd7dd9b83e4c", null ],
     [ "opacity", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a9c42a515b74897b406d4f099f94c4362", null ],
     [ "position", "class_hexeng_1_1_renderer_1_1_batch_quad.html#abbb26cf4cd54c6b59bc2e54555d13fab", null ],
     [ "rotation", "class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5", null ],

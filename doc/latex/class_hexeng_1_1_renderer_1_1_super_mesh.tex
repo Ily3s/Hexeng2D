@@ -12,7 +12,7 @@ A bunch of meshes that shares some attributes. For example, a player got legs an
 Inheritance diagram for Hexeng\+::Renderer\+::Super\+Mesh\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_super_mesh}
+\includegraphics[height=3.000000cm]{class_hexeng_1_1_renderer_1_1_super_mesh}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -31,11 +31,20 @@ Inheritance diagram for Hexeng\+::Renderer\+::Super\+Mesh\+:\begin{figure}[H]
 \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a854188897567528afe9f88d040830948}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} \&\&) noexcept
 \item 
 void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a80284bdfb284888e6e5c7baf1ca45116}{draw}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&parents\+\_\+uniforms=\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}}) override
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a3b2c355206bce2c825b7456e380521f7}{load}} () override
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a8098d3014b59d7de8721fbb883df488d}{unload}} () override
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_ad57da385f9ae81649e038727fa159fb1}{meshes}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_ab4946e05c7ec666e9741cfdec01cf60f}{m\+\_\+update\+\_\+childs\+\_\+positions}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&parents\+\_\+uniforms)
 \end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
@@ -86,6 +95,22 @@ A \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} can b
 
 Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}{Hexeng\+::\+Renderer\+::\+Mesh}}.
 
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_super_mesh_a3b2c355206bce2c825b7456e380521f7}\label{class_hexeng_1_1_renderer_1_1_super_mesh_a3b2c355206bce2c825b7456e380521f7}} 
+\index{Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}!load@{load}}
+\index{load@{load}!Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Super\+Mesh\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}{Hexeng\+::\+Renderer\+::\+Mesh}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_super_mesh_ab4946e05c7ec666e9741cfdec01cf60f}\label{class_hexeng_1_1_renderer_1_1_super_mesh_ab4946e05c7ec666e9741cfdec01cf60f}} 
+\index{Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}!m\_update\_childs\_positions@{m\_update\_childs\_positions}}
+\index{m\_update\_childs\_positions@{m\_update\_childs\_positions}!Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
+\doxysubsubsection{\texorpdfstring{m\_update\_childs\_positions()}{m\_update\_childs\_positions()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Super\+Mesh\+::m\+\_\+update\+\_\+childs\+\_\+positions (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&}]{parents\+\_\+uniforms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
 \mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_super_mesh_a889ad9a4dcc71811dca486377d84ef77}\label{class_hexeng_1_1_renderer_1_1_super_mesh_a889ad9a4dcc71811dca486377d84ef77}} 
 \index{Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}!operator=@{operator=}}
 \index{operator=@{operator=}!Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
@@ -97,6 +122,16 @@ Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4b
 \index{operator=@{operator=}!Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
 \doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} \& Hexeng\+::\+Renderer\+::\+Super\+Mesh\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_super_mesh_a8098d3014b59d7de8721fbb883df488d}\label{class_hexeng_1_1_renderer_1_1_super_mesh_a8098d3014b59d7de8721fbb883df488d}} 
+\index{Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}!unload@{unload}}
+\index{unload@{unload}!Hexeng::Renderer::SuperMesh@{Hexeng::Renderer::SuperMesh}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Super\+Mesh\+::unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}{Hexeng\+::\+Renderer\+::\+Mesh}}.
 
 
 
