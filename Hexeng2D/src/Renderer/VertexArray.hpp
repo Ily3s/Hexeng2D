@@ -28,6 +28,8 @@ namespace Hexeng::Renderer
 		void bind() const;
 		void unbind() const;
 
+		bool is_init() const;
+
 	private:
 
 		unsigned int m_id = 0;

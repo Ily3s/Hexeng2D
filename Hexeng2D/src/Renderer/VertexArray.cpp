@@ -81,4 +81,9 @@ namespace Hexeng::Renderer
  		return *this;
 	}
 
+	bool VertexArray::is_init() const
+	{
+		return m_id;
+	}
+
 }

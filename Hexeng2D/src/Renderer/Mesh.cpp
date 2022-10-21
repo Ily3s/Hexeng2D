@@ -56,7 +56,8 @@ namespace Hexeng::Renderer
 	{
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
-		m_vao = { m_vb, *m_layout, *m_ib };
+		if(moving.m_vao.is_init())
+			m_vao = { m_vb, *m_layout, *m_ib };
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{
@@ -92,7 +93,8 @@ namespace Hexeng::Renderer
 		color = moving.color;
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
-		m_vao = { m_vb, *m_layout, *m_ib };
+		if(moving.m_vao.is_init())
+			m_vao = { m_vb, *m_layout, *m_ib };
 
 		for (auto& [ui, value_ptr] : uniforms)
 		{
