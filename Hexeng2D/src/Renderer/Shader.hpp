@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include <unordered_map>
 
 #include "../Macros.hpp"
 #include "glad/glad.h"
@@ -13,6 +14,16 @@ namespace Hexeng::Renderer
 {
 
 	class UniformInterface;
+
+	enum class ShaderType
+	{
+		VERTEX_SHADER,
+		TESSELLATION_CONTROL,
+		TESSELLATION_EVALUATION,
+		GEOMETRY_SHADER,
+		FRAGMENT_SHADER,
+		COMPUTE_SHADER
+	};
 
 	/// @note Most of things in this class are internal. You should just take a look at the constructor.
 	class HXG_DECLSPEC Shader
@@ -28,14 +39,9 @@ namespace Hexeng::Renderer
 		Shader& operator=(Shader&&) noexcept;
 		
 		~Shader();
-		
-		/// @param vertex_shader The source code (in glsl) of the vertex shader.
-		/// @param fragment_shader The source code (in glsl) of the fragment shader.
-		Shader(const char* vertex_shader, const char* fragment_shader);
 
-		/// @param vertex_shader The source code (in glsl) of the vertex shader.
-		/// @param fragment_shader The source code (in glsl) of the fragment shader.
-		Shader(const std::string& vertex_shader, const std::string& fragment_shader);
+		/// @param source_code Map of {type of the shader, source code of the shader}.
+		Shader(const std::unordered_map<ShaderType, std::string>& source_code);
 		
 		void bind() const;
 		void unbind() const;
@@ -66,10 +72,8 @@ namespace Hexeng::Renderer
 
 		unsigned int m_id;
 
-		static unsigned int m_create_shader(const char* vertex_shader, const char* fragment_shader);
-		static unsigned int m_create_shader(const std::string& vertex_shader, const std::string& fragment_shader);
+		static unsigned int m_create_shader(const std::unordered_map<ShaderType, std::string>& source_code);
 
-		static unsigned int m_compile_shader(GLenum shader_type, const char* src);
 		static unsigned int m_compile_shader(GLenum shader_type, const std::string& src);
 	};
 

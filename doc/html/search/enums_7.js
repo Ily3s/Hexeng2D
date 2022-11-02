@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['monitor_5fdpi_5ftype_0',['MONITOR_DPI_TYPE',['../win32__platform_8h.html#a6d3b6e6160452fd0315bf529461dadcf',1,'win32_platform.h']]]
+  ['verticalalign_0',['VerticalAlign',['../namespace_hexeng.html#ac960e1eb4420a8e5e61f4314bb733b3e',1,'Hexeng']]]
 ];

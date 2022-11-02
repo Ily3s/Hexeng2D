@@ -4,11 +4,10 @@
 namespace Hexeng::EventManager
 {
 
-	Button::Button(Vec2<int> min_para, Vec2<int> max_para, std::function<bool(void)> condition_para, std::unordered_map<ButtonEvent, std::function<void(void)>> events_para, int mouse_btn, Range range)
+	Button::Button(Vec2<int> min_para, Vec2<int> max_para, std::unordered_map<ButtonEvent, std::function<void(void)>> events_para, int mouse_btn, Range range)
 		: min(min_para),
 		max(max_para),
-		mouse_button(mouse_btn),
-		condition(condition_para)
+		mouse_button(mouse_btn)
 	{
 		for (auto& [evt, action] : events_para)
 		{
@@ -39,7 +38,7 @@ namespace Hexeng::EventManager
 			}
 		}
 		
-		Event::operator=( Event( condition,
+		Event::operator=(Event([]() {return true; },
 			[this]() {
 				if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
 				{
@@ -95,7 +94,6 @@ namespace Hexeng::EventManager
 		mouse_button(other.mouse_button),
 		min(other.min),
 		max(other.max),
-		condition(other.condition),
 		hover(other.hover),
 		unhover(other.unhover),
 		click(other.click),

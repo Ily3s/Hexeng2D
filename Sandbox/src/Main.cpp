@@ -142,22 +142,22 @@ int main()
 		[]() {}, 100} }, []() {}, true };
 	animate_batch.play();
 
-	EventManager::Button up_btn{ arrow_up.get_min(), arrow_up.get_max(), []() { return true; }, {
+	EventManager::Button up_btn{ arrow_up.get_min(), arrow_up.get_max(), {
 		{ EventManager::ButtonEvent::HOVER, [&arrow_up, &arrow_hover]() { arrow_up.access_texture() = &arrow_hover; } },
 		{ EventManager::ButtonEvent::UNHOVER, [&arrow_up, &arrow_unhover]() { arrow_up.access_texture() = &arrow_unhover; } },
 		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({0, player.speed}); }}
 	} };
-	EventManager::Button down_btn{ arrow_down.get_min(), arrow_down.get_max(), []() { return true; }, {
+	EventManager::Button down_btn{ arrow_down.get_min(), arrow_down.get_max(), {
 		{ EventManager::ButtonEvent::HOVER, [&arrow_down, &arrow_hover]() { arrow_down.access_texture() = &arrow_hover; } },
 		{ EventManager::ButtonEvent::UNHOVER, [&arrow_down, &arrow_unhover]() { arrow_down.access_texture() = &arrow_unhover; } },
 		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({0, -player.speed}); }}
 	} };
-	EventManager::Button left_btn{ arrow_left.get_min(), arrow_left.get_max(), []() { return true; }, {
+	EventManager::Button left_btn{ arrow_left.get_min(), arrow_left.get_max(), {
 		{ EventManager::ButtonEvent::HOVER, [&arrow_left, &arrow_hover]() { arrow_left.access_texture() = &arrow_hover; } },
 		{ EventManager::ButtonEvent::UNHOVER, [&arrow_left, &arrow_unhover]() { arrow_left.access_texture() = &arrow_unhover; } },
 		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({-player.speed, 0}); }}
 	} };
-	EventManager::Button right_btn{ arrow_right.get_min(), arrow_right.get_max(), []() { return true; }, {
+	EventManager::Button right_btn{ arrow_right.get_min(), arrow_right.get_max(), {
 		{ EventManager::ButtonEvent::HOVER, [&arrow_right, &arrow_hover]() { arrow_right.access_texture() = &arrow_hover; } },
 		{ EventManager::ButtonEvent::UNHOVER, [&arrow_right, &arrow_unhover]() { arrow_right.access_texture() = &arrow_unhover; } },
 		{ EventManager::ButtonEvent::KEEP_CLICKING, [&player]() { player.physics.move({player.speed, 0}); }}

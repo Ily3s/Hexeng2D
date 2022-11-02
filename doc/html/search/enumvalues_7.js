@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['mag_5ffilter_0',['MAG_FILTER',['../namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b',1,'Hexeng::Renderer']]],
-  ['min_5ffilter_1',['MIN_FILTER',['../namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563',1,'Hexeng::Renderer']]],
-  ['multiply_2',['MULTIPLY',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30',1,'Hexeng::Renderer']]]
+  ['left_0',['LEFT',['../namespace_hexeng_1_1_physics.html#a1e3c431ba3d97f9b5c7d2c2185d6c2aea684d325a7303f52e64011467ff5c5758',1,'Hexeng::Physics::LEFT()'],['../namespace_hexeng.html#a7bfb19a8e2302f5993179497569ff418a684d325a7303f52e64011467ff5c5758',1,'Hexeng::LEFT()']]]
 ];

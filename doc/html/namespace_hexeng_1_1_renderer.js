@@ -34,6 +34,14 @@ var namespace_hexeng_1_1_renderer =
       [ "ABSOLUTE", "namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f", null ],
       [ "RELATIVE", "namespace_hexeng_1_1_renderer.html#a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2", null ]
     ] ],
+    [ "ShaderType", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811f", [
+      [ "VERTEX_SHADER", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090", null ],
+      [ "TESSELLATION_CONTROL", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72", null ],
+      [ "TESSELLATION_EVALUATION", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b", null ],
+      [ "GEOMETRY_SHADER", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa", null ],
+      [ "FRAGMENT_SHADER", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1", null ],
+      [ "COMPUTE_SHADER", "namespace_hexeng_1_1_renderer.html#a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56", null ]
+    ] ],
     [ "TexSett", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925", [
       [ "MAG_FILTER", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b", null ],
       [ "MIN_FILTER", "namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563", null ],

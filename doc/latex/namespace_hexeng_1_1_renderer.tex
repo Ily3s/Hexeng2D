@@ -73,6 +73,16 @@ enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{RELATIVE}}
  \}
 \begin{DoxyCompactList}\small\item\em Is the layer\textquotesingle{}s position relative to the cam\textquotesingle{}s position or to the center of the screen ?  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}{Shader\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}{VERTEX\+\_\+\+SHADER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}{TESSELLATION\+\_\+\+CONTROL}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}{TESSELLATION\+\_\+\+EVALUATION}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}{GEOMETRY\+\_\+\+SHADER}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}{FRAGMENT\+\_\+\+SHADER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}{COMPUTE\+\_\+\+SHADER}}
+ \}
+\item 
 enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Tex\+Sett}} \{ \newline
 \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{MAG\+\_\+\+FILTER}}
 , \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{MIN\+\_\+\+FILTER}}
@@ -191,6 +201,38 @@ ABSOLUTE&The position is relative to the center of the screen. \\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{RELATIVE@{RELATIVE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!RELATIVE@{RELATIVE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}} 
 RELATIVE&The position is relative to the cam\textquotesingle{}s position. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!ShaderType@{ShaderType}}
+\index{ShaderType@{ShaderType}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{ShaderType}{ShaderType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}{Hexeng\+::\+Renderer\+::\+Shader\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX\_SHADER@{VERTEX\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!VERTEX\_SHADER@{VERTEX\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}} 
+VERTEX\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TESSELLATION\_CONTROL@{TESSELLATION\_CONTROL}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!TESSELLATION\_CONTROL@{TESSELLATION\_CONTROL}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}} 
+TESSELLATION\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TESSELLATION\_EVALUATION@{TESSELLATION\_EVALUATION}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!TESSELLATION\_EVALUATION@{TESSELLATION\_EVALUATION}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}} 
+TESSELLATION\+\_\+\+EVALUATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEOMETRY\_SHADER@{GEOMETRY\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!GEOMETRY\_SHADER@{GEOMETRY\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}} 
+GEOMETRY\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRAGMENT\_SHADER@{FRAGMENT\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!FRAGMENT\_SHADER@{FRAGMENT\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}} 
+FRAGMENT\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SHADER@{COMPUTE\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!COMPUTE\_SHADER@{COMPUTE\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}} 
+COMPUTE\+\_\+\+SHADER&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -386,12 +428,12 @@ You should call this function after the game loop exits.
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\{ []() \{}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}} = Shader(basic\_vs, basic\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}} = Shader(basic\_vs, line\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}} = Shader(tex\_vector\_vs, font\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}} = Shader(tex\_vector\_vs, basic\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(batching\_vs, batching\_fs);}
-\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}} = Shader(poly\_vs, poly\_fs);}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, basic\_vs\}, \{ShaderType::FRAGMENT\_SHADER, basic\_fs\} \});}
+\DoxyCodeLine{        line\_shader = Shader(\{ \{ShaderType::VERTEX\_SHADER,basic\_vs\} , \{ShaderType::FRAGMENT\_SHADER, line\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, tex\_vector\_vs\}, \{ShaderType::FRAGMENT\_SHADER, font\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, tex\_vector\_vs\}, \{ShaderType::FRAGMENT\_SHADER, basic\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, batching\_vs\}, \{ShaderType::FRAGMENT\_SHADER, batching\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, poly\_vs\}, \{ShaderType::FRAGMENT\_SHADER, poly\_fs\} \});}
 \DoxyCodeLine{}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
 \DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}

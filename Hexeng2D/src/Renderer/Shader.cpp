@@ -7,69 +7,64 @@
 namespace Hexeng::Renderer
 {
 
-	unsigned int Shader::m_compile_shader(GLenum shader_type, const char* src)
+	unsigned int Shader::m_compile_shader(GLenum shader_type, const std::string& source)
 	{
+		const char* raw_src = source.c_str();
 		HXG_GL(unsigned int id = glCreateShader(shader_type));
-		HXG_GL(glShaderSource(id, 1, &src, nullptr));
+		HXG_GL(glShaderSource(id, 1, &raw_src, nullptr));
 		HXG_GL(glCompileShader(id));
 
 		int compile_status;
 		HXG_GL(glGetShaderiv(id, GL_COMPILE_STATUS, &compile_status));
 		HXG_ASSERT(compile_status,
 			int lenght;
-			HXG_GL(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght));
-			char* message = new char[lenght];
-			HXG_GL(glGetShaderInfoLog(id, lenght, &lenght, message));
-			std::cout << "Failed to compile " << (shader_type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
-			std::cout << message << std::endl;
-			HXG_GL(glDeleteShader(id));
-			delete[] message;
-			return 0;
+		HXG_GL(glGetShaderiv(id, GL_INFO_LOG_LENGTH, &lenght));
+		char* message = new char[lenght];
+		HXG_GL(glGetShaderInfoLog(id, lenght, &lenght, message));
+		std::cout << "Failed to compile " << (shader_type == GL_VERTEX_SHADER ? "vertex" : "fragment") << " shader!" << std::endl;
+		std::cout << message << std::endl;
+		HXG_GL(glDeleteShader(id));
+		delete[] message;
+		return 0;
 		);
 		return id;
 	}
 
-	unsigned int Shader::m_compile_shader(GLenum shader_type, const std::string& source)
+	static std::unordered_map<ShaderType, GLenum> shader_type_table
 	{
-		const char* src = source.c_str();
-		return m_compile_shader(shader_type, src);
-	}
+		{ShaderType::VERTEX_SHADER, GL_VERTEX_SHADER},
+		{ShaderType::TESSELLATION_CONTROL, GL_TESS_CONTROL_SHADER},
+		{ShaderType::TESSELLATION_EVALUATION, GL_TESS_EVALUATION_SHADER},
+		{ShaderType::GEOMETRY_SHADER, GL_GEOMETRY_SHADER},
+		{ShaderType::FRAGMENT_SHADER, GL_FRAGMENT_SHADER},
+		{ShaderType::COMPUTE_SHADER, GL_COMPUTE_SHADER}
+	};
 
-	unsigned int Shader::m_create_shader(const char* vertex_shader, const char* fragment_shader)
+	unsigned int Shader::m_create_shader(const std::unordered_map<ShaderType, std::string>& source_code)
 	{
 		HXG_GL(unsigned int prog = glCreateProgram());
-		unsigned int vs = m_compile_shader(GL_VERTEX_SHADER, vertex_shader);
-		unsigned int fs = m_compile_shader(GL_FRAGMENT_SHADER, fragment_shader);
+		
+		std::vector<unsigned int> shaders_id;
 
-		HXG_GL(glAttachShader(prog, vs));
-		HXG_GL(glAttachShader(prog, fs));
+		for (auto& [type, src] : source_code)
+		{
+			shaders_id.push_back(m_compile_shader(shader_type_table[type], src));
+			HXG_GL(glAttachShader(prog, shaders_id.back()));
+		}
+
 		HXG_GL(glLinkProgram(prog));
 		HXG_GL(glValidateProgram(prog));
 
-		HXG_GL(glDeleteShader(vs));
-		HXG_GL(glDeleteShader(fs));
+		for (unsigned int shader_id : shaders_id)
+		{
+			HXG_GL(glDeleteShader(shader_id));
+		}
 
 		return prog;
 	}
 
-	unsigned int Shader::m_create_shader(const std::string& vertex_shader, const std::string& fragment_shader)
-	{
-		const char* vs = vertex_shader.c_str();
-		const char* fs = fragment_shader.c_str();
-		return m_create_shader(vs, fs);
-	}
-
-	Shader::Shader(const char* vs, const char* fs)
-		: m_id(m_create_shader(vs, fs))
-	{
-		HXG_ASSERT((!missing_uniforms()),
-			HXG_LOG_ERROR(std::to_string(missing_uniforms()) + " necessary uniforms are missing in a shader"););
-
-		ToBeDelete(this, [this]() { this->~Shader(); });
-	}
-
-	Shader::Shader(const std::string& vs, const std::string& fs)
-		: m_id(m_create_shader(vs, fs))
+	Shader::Shader(const std::unordered_map<ShaderType, std::string>& source_code)
+		: m_id(m_create_shader(source_code))
 	{
 		HXG_ASSERT((!missing_uniforms()),
 			HXG_LOG_ERROR(std::to_string(missing_uniforms()) + " necessary uniforms are missing in a shader"););

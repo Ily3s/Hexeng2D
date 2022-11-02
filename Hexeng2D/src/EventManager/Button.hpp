@@ -31,7 +31,6 @@ namespace Hexeng::EventManager
 	public :
 
 		int mouse_button = GLFW_MOUSE_BUTTON_1;
-		std::function<bool(void)> condition;
 		std::function<void(void)> hover, unhover, click, unclick, keep_clicking;
 		Vec2<int> min{0, 0}, max{0, 0};
 
@@ -43,7 +42,7 @@ namespace Hexeng::EventManager
 		/// <param name="range">If range is set to local, the event is related to the scene.
 		/// If it is set to global, the event is global and executed independently</param>
 		
-		Button(Vec2<int> min, Vec2<int> max, std::function<bool(void)> condition, std::unordered_map<ButtonEvent, std::function<void(void)>> events, int mouse_button = GLFW_MOUSE_BUTTON_1, Range range = Range::GLOBAL);
+		Button(Vec2<int> min, Vec2<int> max, std::unordered_map<ButtonEvent, std::function<void(void)>> events, int mouse_button = GLFW_MOUSE_BUTTON_1, Range range = Range::GLOBAL);
 
 		Button() = default;
 

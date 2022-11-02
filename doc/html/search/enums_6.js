@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['verticalalign_0',['VerticalAlign',['../namespace_hexeng.html#ac960e1eb4420a8e5e61f4314bb733b3e',1,'Hexeng']]]
+  ['uniformargtype_0',['UniformArgType',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443',1,'Hexeng::Renderer']]],
+  ['uniformfusionmode_1',['UniformFusionMode',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5',1,'Hexeng::Renderer']]]
 ];

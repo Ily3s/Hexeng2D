@@ -29,26 +29,23 @@
 \DoxyCodeLine{28         \textcolor{keywordtype}{bool} m\_was\_clicking = \textcolor{keyword}{false};}
 \DoxyCodeLine{29         \textcolor{keywordtype}{bool} m\_click\_outside = \textcolor{keyword}{false};}
 \DoxyCodeLine{30 }
-\DoxyCodeLine{31         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}* m\_owner = \textcolor{keyword}{this};}
+\DoxyCodeLine{31     public :}
 \DoxyCodeLine{32 }
-\DoxyCodeLine{33     public :}
-\DoxyCodeLine{34 }
-\DoxyCodeLine{35         \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1;}
-\DoxyCodeLine{36         std::function<bool(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_a31985b267c862503ec3bc820b17e0672}{condition}};}
-\DoxyCodeLine{37         std::function<void(\textcolor{keywordtype}{void})> hover, unhover, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_afce58409a65e488ea4774b424361ce53}{click}}, unclick, keep\_clicking;}
-\DoxyCodeLine{38         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min\{0, 0\}, max\{0, 0\};}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{47         }
-\DoxyCodeLine{48         Button(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} max, std::function<\textcolor{keywordtype}{bool}(\textcolor{keywordtype}{void})> condition, std::unordered\_map<ButtonEvent, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>> events, \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1, Range range = Range::GLOBAL);}
-\DoxyCodeLine{49 }
-\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_a2e5563345d5ee8fa074bf60073f43b52}{Button}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
-\DoxyCodeLine{53         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
-\DoxyCodeLine{54     \};}
-\DoxyCodeLine{55 }
-\DoxyCodeLine{56 \}}
-\DoxyCodeLine{57 }
-\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{33         \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1;}
+\DoxyCodeLine{34         std::function<void(\textcolor{keywordtype}{void})> hover, unhover, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_afce58409a65e488ea4774b424361ce53}{click}}, unclick, keep\_clicking;}
+\DoxyCodeLine{35         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min\{0, 0\}, max\{0, 0\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{44         }
+\DoxyCodeLine{45         Button(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} max, std::unordered\_map<ButtonEvent, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>> events, \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1, Range range = Range::GLOBAL);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_a2e5563345d5ee8fa074bf60073f43b52}{Button}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
+\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

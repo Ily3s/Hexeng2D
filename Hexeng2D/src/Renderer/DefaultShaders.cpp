@@ -13,12 +13,12 @@ namespace Hexeng::Renderer
 
 	ToBeInit init_presets
 	{ []() {
-		basic_shader = Shader(basic_vs, basic_fs);
-		line_shader = Shader(basic_vs, line_fs);
-		font_shader = Shader(tex_vector_vs, font_fs);
-		tex_vector_shader = Shader(tex_vector_vs, basic_fs);
-		batching_shader = Shader(batching_vs, batching_fs);
-		poly_shader = Shader(poly_vs, poly_fs);
+		basic_shader = Shader({ {ShaderType::VERTEX_SHADER, basic_vs}, {ShaderType::FRAGMENT_SHADER, basic_fs} });
+		line_shader = Shader({ {ShaderType::VERTEX_SHADER,basic_vs} , {ShaderType::FRAGMENT_SHADER, line_fs} });
+		font_shader = Shader({ {ShaderType::VERTEX_SHADER, tex_vector_vs}, {ShaderType::FRAGMENT_SHADER, font_fs} });
+		tex_vector_shader = Shader({ {ShaderType::VERTEX_SHADER, tex_vector_vs}, {ShaderType::FRAGMENT_SHADER, basic_fs} });
+		batching_shader = Shader({ {ShaderType::VERTEX_SHADER, batching_vs}, {ShaderType::FRAGMENT_SHADER, batching_fs} });
+		poly_shader = Shader({ {ShaderType::VERTEX_SHADER, poly_vs}, {ShaderType::FRAGMENT_SHADER, poly_fs} });
 
 		basic_shader.add_necessary_uniforms();
 		line_shader.add_necessary_uniforms();

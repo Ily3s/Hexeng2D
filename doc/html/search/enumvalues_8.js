@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['name_0',['NAME',['../namespace_hexeng_1_1_renderer.html#ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e',1,'Hexeng::Renderer']]],
-  ['nowhere_1',['NOWHERE',['../namespace_hexeng_1_1_physics.html#a1e3c431ba3d97f9b5c7d2c2185d6c2aeab71eea4c12f4d54d96cfaf039b574689',1,'Hexeng::Physics']]]
+  ['mag_5ffilter_0',['MAG_FILTER',['../namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b',1,'Hexeng::Renderer']]],
+  ['min_5ffilter_1',['MIN_FILTER',['../namespace_hexeng_1_1_renderer.html#ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563',1,'Hexeng::Renderer']]],
+  ['multiply_2',['MULTIPLY',['../namespace_hexeng_1_1_renderer.html#a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30',1,'Hexeng::Renderer']]]
 ];

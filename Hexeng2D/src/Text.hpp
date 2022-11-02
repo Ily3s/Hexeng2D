@@ -60,6 +60,7 @@ namespace Hexeng
 	/// </summary>
 	/// @details The language file should be written in UTF-32 (any endian) with BOM.
 	/// You can write that type of file with EditPad Lite for example.
+	/// Also the line breaks should be LF and not CRLF (If you are on windows, you may need to set line break style to LF).
 	/// The translation of the line n in the language file A should be written in all langage files at line n.
 	class HXG_DECLSPEC Language
 	{
