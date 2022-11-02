@@ -28,8 +28,6 @@ namespace Hexeng::EventManager
 		bool m_was_clicking = false;
 		bool m_click_outside = false;
 
-		Button* m_owner = this;
-
 	public :
 
 		int mouse_button = GLFW_MOUSE_BUTTON_1;

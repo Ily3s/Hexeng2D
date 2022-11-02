@@ -122,6 +122,9 @@ namespace Hexeng::Renderer
 
 		m_shader->bind();
 
+		if (!m_texture)
+			Texture::unbind();
+
 		for (auto& [uniform, value] : uniforms)
 			parents_uniforms[uniform].push_back(value);
 

@@ -41,53 +41,50 @@ namespace Hexeng::EventManager
 		
 		Event::operator=( Event( condition,
 			[this]() {
-				static Button* owner = this;
-				owner = m_owner;
-
-				if (mouse_position.x >= owner->min.x && mouse_position.x <= owner->max.x && mouse_position.y >= owner->min.y && mouse_position.y <= owner->max.y)
+				if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
 				{
-					if (owner->hover)
-						owner->hover();
-					owner->m_was_hovered = true;
-					if (glfwGetMouseButton(window, owner->mouse_button))
+					if (hover)
+						hover();
+					m_was_hovered = true;
+					if (glfwGetMouseButton(window, mouse_button))
 					{
-						if (!owner->m_was_clicking && !owner->m_click_outside)
+						if (!m_was_clicking && !m_click_outside)
 						{
-							if (owner->click)
-								owner->click();
-							owner->m_was_clicking = true;
+							if (click)
+								click();
+							m_was_clicking = true;
 						}
-						else if (owner->keep_clicking)
-							owner->keep_clicking();
+						else if (keep_clicking)
+							keep_clicking();
 					}
-					else if (owner->m_was_clicking)
+					else if (m_was_clicking)
 					{
-						if (owner->unclick)
-							owner->unclick();
-						owner->m_was_clicking = false;
+						if (unclick)
+							unclick();
+						m_was_clicking = false;
 					}
 					else
-						owner->m_click_outside = false;
+						m_click_outside = false;
 				}
-				else if (owner->m_was_hovered)
+				else if (m_was_hovered)
 				{
-					if (owner->unhover)
-						owner->unhover();
-					owner->m_was_hovered = false;
+					if (unhover)
+						unhover();
+					m_was_hovered = false;
 					
-					if (owner->m_was_clicking)
+					if (m_was_clicking)
 					{
-						if (owner->unclick)
-							owner->unclick();
-						owner->m_was_clicking = false;
+						if (unclick)
+							unclick();
+						m_was_clicking = false;
 					}
 				}
 				else
 				{
-					if (glfwGetMouseButton(window, owner->mouse_button))
-						owner->m_click_outside = true;
+					if (glfwGetMouseButton(window, mouse_button))
+						m_click_outside = true;
 					else
-						owner->m_click_outside = false;
+						m_click_outside = false;
 				}
 			},
 			range, 1));
@@ -98,7 +95,6 @@ namespace Hexeng::EventManager
 		mouse_button(other.mouse_button),
 		min(other.min),
 		max(other.max),
-		m_owner(this),
 		condition(other.condition),
 		hover(other.hover),
 		unhover(other.unhover),
@@ -106,7 +102,53 @@ namespace Hexeng::EventManager
 		unclick(other.unclick),
 		keep_clicking(other.keep_clicking)
 	{
-		other.m_owner = this;
+		action = [this]() {
+			if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
+			{
+				if (hover)
+					hover();
+				m_was_hovered = true;
+				if (glfwGetMouseButton(window, mouse_button))
+				{
+					if (!m_was_clicking && !m_click_outside)
+					{
+						if (click)
+							click();
+						m_was_clicking = true;
+					}
+					else if (keep_clicking)
+						keep_clicking();
+				}
+				else if (m_was_clicking)
+				{
+					if (unclick)
+						unclick();
+					m_was_clicking = false;
+				}
+				else
+					m_click_outside = false;
+			}
+			else if (m_was_hovered)
+			{
+				if (unhover)
+					unhover();
+				m_was_hovered = false;
+
+				if (m_was_clicking)
+				{
+					if (unclick)
+						unclick();
+					m_was_clicking = false;
+				}
+			}
+			else
+			{
+				if (glfwGetMouseButton(window, mouse_button))
+					m_click_outside = true;
+				else
+					m_click_outside = false;
+			}
+		};
 	}
 
 	Button& Button::operator=(Button&& other) noexcept
@@ -121,7 +163,54 @@ namespace Hexeng::EventManager
 		keep_clicking = other.keep_clicking;
 		min = other.min;
 		max = other.max;
-		other.m_owner = this;
+
+		action = [this]() {
+			if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
+			{
+				if (hover)
+					hover();
+				m_was_hovered = true;
+				if (glfwGetMouseButton(window, mouse_button))
+				{
+					if (!m_was_clicking && !m_click_outside)
+					{
+						if (click)
+							click();
+						m_was_clicking = true;
+					}
+					else if (keep_clicking)
+						keep_clicking();
+				}
+				else if (m_was_clicking)
+				{
+					if (unclick)
+						unclick();
+					m_was_clicking = false;
+				}
+				else
+					m_click_outside = false;
+			}
+			else if (m_was_hovered)
+			{
+				if (unhover)
+					unhover();
+				m_was_hovered = false;
+
+				if (m_was_clicking)
+				{
+					if (unclick)
+						unclick();
+					m_was_clicking = false;
+				}
+			}
+			else
+			{
+				if (glfwGetMouseButton(window, mouse_button))
+					m_click_outside = true;
+				else
+					m_click_outside = false;
+			}
+		};
 
 		return *this;
 	}
