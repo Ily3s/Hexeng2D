@@ -17,6 +17,12 @@
 namespace Hexeng::Renderer
 {
 
+	struct BlendingMethod
+	{
+		GLenum src = GL_SRC_ALPHA;
+		GLenum dest = GL_ONE_MINUS_SRC_ALPHA;
+	};
+
 	/// @note It isn't recommanded that you use this class directly. Instead you may want to use a derived class.
 	class HXG_DECLSPEC Mesh
 	{
@@ -69,6 +75,9 @@ namespace Hexeng::Renderer
 
 		/// @note Can be modified at any moment.
 		bool* enable_ptr = &enable;
+
+		/// @note Can be modified at any moment.
+		BlendingMethod blending_method = { GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA };
 
 		void update_position();
 

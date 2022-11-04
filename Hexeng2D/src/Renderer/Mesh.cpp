@@ -52,7 +52,8 @@ namespace Hexeng::Renderer
 			color_filter(moving.color_filter),
 			opacity(color_filter.A),
 			enable(moving.enable),
-			color(moving.color)
+			color(moving.color),
+			blending_method(moving.blending_method)
 	{
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
@@ -91,6 +92,7 @@ namespace Hexeng::Renderer
 		color_filter = moving.color_filter;
 		enable = moving.enable;
 		color = moving.color;
+		blending_method = moving.blending_method;
 		enable_ptr = moving.enable_ptr == &moving.enable ? &enable : moving.enable_ptr;
 
 		if(moving.m_vao.is_init())
@@ -124,6 +126,8 @@ namespace Hexeng::Renderer
 
 		if (!m_texture)
 			Texture::unbind();
+
+		HXG_GL(glBlendFunc(blending_method.src, blending_method.dest));
 
 		for (auto& [uniform, value] : uniforms)
 			parents_uniforms[uniform].push_back(value);
