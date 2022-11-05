@@ -1,0 +1,140 @@
+\hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound}{}\doxysection{Hexeng\+::Audio\+::Spatial\+Sound Class Reference}
+\label{class_hexeng_1_1_audio_1_1_spatial_sound}\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+
+
+A \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} that can be played multiple times at once, from a location in space.   
+
+
+
+
+{\ttfamily \#include $<$Audio.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Audio\+::Spatial\+Sound\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hexeng_1_1_audio_1_1_spatial_sound}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_aeec190558d46854f71efe651f6f61b54}{Spatial\+Sound}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_a53700172596085b060b7be92def0cf4f}{Spatial\+Sound}} (std\+::string filepath)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a mono-\/channel wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_a8bc1f05ea73ae95a246006827ce2358c}{Spatial\+Sound}} (const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_aa0e67942f8976e9a7d31075105a92fbd}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_aacae1c0af3be60c9d3b24a633ff430da}{Spatial\+Sound}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \& \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_ac6953e95bc5c1c5a0a7d60d98c8c2d2a}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&\&) noexcept
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_ab4a8980329c09e65fb248e80ded17678}{play}} (const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$emmitter)
+\begin{DoxyCompactList}\small\item\em Play the sound from the position $\ast$emmitter  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound_a4d4ba32fc41c700259758e9d0ba42985}{reserve}} (size\+\_\+t count) override
+\begin{DoxyCompactList}\small\item\em Create streams to host this sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} that can be played multiple times at once, from a location in space.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_aeec190558d46854f71efe651f6f61b54}\label{class_hexeng_1_1_audio_1_1_spatial_sound_aeec190558d46854f71efe651f6f61b54}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!SpatialSound@{SpatialSound}}
+\index{SpatialSound@{SpatialSound}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{SpatialSound()}{SpatialSound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::\+Spatial\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_a53700172596085b060b7be92def0cf4f}\label{class_hexeng_1_1_audio_1_1_spatial_sound_a53700172596085b060b7be92def0cf4f}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!SpatialSound@{SpatialSound}}
+\index{SpatialSound@{SpatialSound}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{SpatialSound()}{SpatialSound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::\+Spatial\+Sound (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a mono-\/channel wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_a8bc1f05ea73ae95a246006827ce2358c}\label{class_hexeng_1_1_audio_1_1_spatial_sound_a8bc1f05ea73ae95a246006827ce2358c}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!SpatialSound@{SpatialSound}}
+\index{SpatialSound@{SpatialSound}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{SpatialSound()}{SpatialSound()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::\+Spatial\+Sound (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_aacae1c0af3be60c9d3b24a633ff430da}\label{class_hexeng_1_1_audio_1_1_spatial_sound_aacae1c0af3be60c9d3b24a633ff430da}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!SpatialSound@{SpatialSound}}
+\index{SpatialSound@{SpatialSound}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{SpatialSound()}{SpatialSound()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::\+Spatial\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\begin{DoxyNote}{Note}
+Expected other to be unused 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_aa0e67942f8976e9a7d31075105a92fbd}\label{class_hexeng_1_1_audio_1_1_spatial_sound_aa0e67942f8976e9a7d31075105a92fbd}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \& Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_ac6953e95bc5c1c5a0a7d60d98c8c2d2a}\label{class_hexeng_1_1_audio_1_1_spatial_sound_ac6953e95bc5c1c5a0a7d60d98c8c2d2a}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \& Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\begin{DoxyNote}{Note}
+Expected other to be unused and this to be initialized by the default constructor 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_ab4a8980329c09e65fb248e80ded17678}\label{class_hexeng_1_1_audio_1_1_spatial_sound_ab4a8980329c09e65fb248e80ded17678}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!play@{play}}
+\index{play@{play}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::play (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$}]{emmitter }\end{DoxyParamCaption})}
+
+
+
+Play the sound from the position $\ast$emmitter  
+
+
+\begin{DoxyParams}{Parameters}
+{\em emmitter} & A pointer to the position that plays the sound\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_audio_1_1_spatial_sound_a4d4ba32fc41c700259758e9d0ba42985}\label{class_hexeng_1_1_audio_1_1_spatial_sound_a4d4ba32fc41c700259758e9d0ba42985}} 
+\index{Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}!reserve@{reserve}}
+\index{reserve@{reserve}!Hexeng::Audio::SpatialSound@{Hexeng::Audio::SpatialSound}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Spatial\+Sound\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Create streams to host this sound. 
+
+To play a sound, there must be a stream ready to host it. If there isn\textquotesingle{}t, the sound is not played and 4 extra streams get created instead. \begin{DoxyNote}{Note}
+By default (without using this function), 4 streams per sound are created. 
+\end{DoxyNote}
+
+
+Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_a53b0265223bf6278c9c979be7c0d14de}{Hexeng\+::\+Audio\+::\+Sound}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Audio/\mbox{\hyperlink{_audio_8hpp}{Audio.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Audio/\mbox{\hyperlink{_audio_8cpp}{Audio.\+cpp}}\end{DoxyCompactItemize}

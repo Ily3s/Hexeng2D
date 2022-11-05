@@ -1,20 +1,10 @@
 var searchData=
 [
-  ['s_5fcolliders_0',['s_colliders',['../class_hexeng_1_1_physics_1_1_hit_box.html#a02fa543c9e31c08d7726ff374073a5f4',1,'Hexeng::Physics::HitBox']]],
-  ['s_5fedge_5findex_5fbuffer_1',['s_edge_index_buffer',['../class_hexeng_1_1_renderer_1_1_quad.html#ad70733da1295ad0642ea7ffcd2969b12',1,'Hexeng::Renderer::Quad']]],
-  ['s_5fempty_5funiform_5flist_2',['s_empty_uniform_list',['../class_hexeng_1_1_renderer_1_1_mesh.html#a6efbfca237c0914656d423a91016547c',1,'Hexeng::Renderer::Mesh']]],
-  ['s_5findex_5fbuffer_3',['s_index_buffer',['../class_hexeng_1_1_renderer_1_1_quad.html#a2811a6f1aaf033b0f9568baad81a0c7a',1,'Hexeng::Renderer::Quad']]],
-  ['s_5finit_5fcomponents_4',['s_init_components',['../class_hexeng_1_1_renderer_1_1_quad.html#ab864a2e4e369c7842dea280018bd6153',1,'Hexeng::Renderer::Quad']]],
-  ['s_5fvertex_5flayout_5',['s_vertex_layout',['../class_hexeng_1_1_renderer_1_1_quad.html#a27d72f5e67a099363777a1c23990e52c',1,'Hexeng::Renderer::Quad']]],
-  ['scale_6',['scale',['../class_hexeng_1_1_renderer_1_1_batch_quad.html#acc5f104114e35dcd7baed0e39d9166d7',1,'Hexeng::Renderer::BatchQuad::scale()'],['../class_hexeng_1_1_renderer_1_1_mesh.html#a4f5ccbfcc527b200926b3931913945ae',1,'Hexeng::Renderer::Mesh::scale()']]],
-  ['scene_5fid_7',['scene_id',['../namespace_hexeng.html#a4b11bd221d6782d039d79b7e4612b02f',1,'Hexeng']]],
-  ['scenes_8',['scenes',['../namespace_hexeng.html#a376fc6aef639f23d64d3f43458ad0e9c',1,'Hexeng']]],
-  ['shader_5flist_9',['shader_list',['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#a803b272e8f613f4d2eac6e9bee5f3e5a',1,'Hexeng::Renderer::UniformInterface']]],
-  ['size_10',['size',['../struct_hexeng_1_1_physics_1_1_rectangle_hit_box.html#a2554e05b2c302c4cb52d1e752c55d0d7',1,'Hexeng::Physics::RectangleHitBox']]],
-  ['sound_11',['sound',['../struct_hexeng_1_1_audio_1_1_sound_data.html#a813c0a74d0cd2234bb72d5e3062340e0',1,'Hexeng::Audio::SoundData']]],
-  ['sound_5fvolume_12',['sound_volume',['../namespace_hexeng_1_1_settings.html#ab5f36e22f2247e93a90f3453c978a302',1,'Hexeng::Settings']]],
-  ['sounds_13',['sounds',['../namespace_hexeng_1_1_audio.html#a119b01002d4413d01417c0a3794b1edf',1,'Hexeng::Audio']]],
-  ['speed_14',['speed',['../class_player.html#a0349855298626faed9f05f86965ff689',1,'Player']]],
-  ['steps_15',['steps',['../class_hexeng_1_1_renderer_1_1_animation.html#a79fd174f726539749c9bf4f797e3ece7',1,'Hexeng::Renderer::Animation']]],
-  ['stream_16',['stream',['../struct_hexeng_1_1_audio_1_1_sound_data.html#ab084615b4642f663e0971650dffdc4b1',1,'Hexeng::Audio::SoundData']]]
+  ['r_0',['R',['../class_hexeng_1_1_color3.html#a2b56e39836ab08f958ed8d7a5158b4f6',1,'Hexeng::Color3::R()'],['../class_hexeng_1_1_color4.html#ac724c7892a0773d560b7b63c22e33201',1,'Hexeng::Color4::R()']]],
+  ['range_1',['range',['../class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1',1,'Hexeng::EventManager::Event']]],
+  ['receiver_2',['receiver',['../namespace_hexeng_1_1_audio.html#ade90f1b2e4cb6e40205b9b485b583e90',1,'Hexeng::Audio']]],
+  ['red_3',['red',['../class_hexeng_1_1_color3.html#aa7f0d827f1c55d393387690b2dfdb62b',1,'Hexeng::Color3::red()'],['../class_hexeng_1_1_color4.html#a671d5160248675e1d62b6e8ae27aeb06',1,'Hexeng::Color4::red()']]],
+  ['repeat_4',['repeat',['../class_hexeng_1_1_renderer_1_1_animation.html#ad2e086e921dca6a76791617da6dcb111',1,'Hexeng::Renderer::Animation']]],
+  ['reserve_5',['reserve',['../struct_hexeng_1_1_save_var.html#a42172b2f7556d8a6e3e55a7fe242d6a4',1,'Hexeng::SaveVar']]],
+  ['rotation_6',['rotation',['../class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5',1,'Hexeng::Renderer::BatchQuad::rotation()'],['../class_hexeng_1_1_renderer_1_1_mesh.html#a36335cd573eb71e62b0af55630149907',1,'Hexeng::Renderer::Mesh::rotation()']]]
 ];

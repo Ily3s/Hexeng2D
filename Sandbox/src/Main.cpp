@@ -132,7 +132,7 @@ int main()
 
 	Audio::Music music{ "res/Music.wav" };
 	music.play();
-	//Audio::Sound sound{ "res/SoundEffect.wav" };
+	//Audio::SpatialSound sound{ "res/SoundEffect.wav" };
 	//sound.play(&batch_quad_1.position);
 	//sound.play(&batch_quad_2.position);
 

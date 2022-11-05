@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['g_0',['G',['../class_hexeng_1_1_color3.html#adc526f30578ad08953c2a24684d7d57f',1,'Hexeng::Color3::G()'],['../class_hexeng_1_1_color4.html#a54f2570e11435b69513dfe286c0f7c23',1,'Hexeng::Color4::G()']]],
-  ['get_5fsize_1',['get_size',['../struct_hexeng_1_1_save_var.html#a734f39720e116b654bc05f160d854f37',1,'Hexeng::SaveVar']]],
-  ['global_5fevents_2',['global_events',['../namespace_hexeng_1_1_event_manager.html#ad4f1c17c1f56d16f8ce54aef9da5a4a9',1,'Hexeng::EventManager']]],
-  ['global_5flayers_3',['global_layers',['../namespace_hexeng_1_1_renderer.html#a01b5e4f62a914fb2e135afce59a154af',1,'Hexeng::Renderer']]],
-  ['green_4',['green',['../class_hexeng_1_1_color3.html#a4c6046d4c8b8e73fb9c4d32a2dad050b',1,'Hexeng::Color3::green()'],['../class_hexeng_1_1_color4.html#a07a6afbf61a1e6f647c2783f1d2a679c',1,'Hexeng::Color4::green()']]]
+  ['file_5fbuffer_0',['file_buffer',['../class_hexeng_1_1_font.html#ad1194832a0d971961779409a4802cb23',1,'Hexeng::Font']]],
+  ['font_5finfo_1',['font_info',['../class_hexeng_1_1_font.html#a19b6f4d683f4bda22663d1d63e582538',1,'Hexeng::Font']]],
+  ['font_5fshader_2',['font_shader',['../namespace_hexeng_1_1_renderer.html#ab247f80958c1576dc92a1f38e589aba9',1,'Hexeng::Renderer']]],
+  ['fov_3',['fov',['../class_hexeng_1_1_renderer_1_1_camera.html#add8bb0a82f100d56f98ca6cb188e4856',1,'Hexeng::Renderer::Camera']]],
+  ['frame_5ftime_4',['frame_time',['../namespace_hexeng.html#a01de6715ebc2bebf6aeb61172101cb7e',1,'Hexeng']]],
+  ['fullscreen_5',['fullscreen',['../namespace_hexeng_1_1_settings.html#aac17e662da68a88ca342aa4b90e34c65',1,'Hexeng::Settings']]],
+  ['fusion_5fmode_6',['fusion_mode',['../class_hexeng_1_1_renderer_1_1_uniform_interface.html#a8729e52e79f0b2c0bf32f730a17651c9',1,'Hexeng::Renderer::UniformInterface']]]
 ];

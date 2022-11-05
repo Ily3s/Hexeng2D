@@ -7,5 +7,6 @@ var searchData=
   ['reload_5flanguage_4',['reload_language',['../class_hexeng_1_1_text.html#a2e2c2fbc062e45f23331d3bd0403e6af',1,'Hexeng::Text']]],
   ['remove_5',['remove',['../class_hexeng_1_1_renderer_1_1_to_be_delete.html#aecc97deae9a82daf44ae1cf096c06ece',1,'Hexeng::Renderer::ToBeDelete']]],
   ['rendererevent_6',['RendererEvent',['../class_hexeng_1_1_event_manager_1_1_renderer_event.html#a107f2d492312a7e4d9efe27a06351944',1,'Hexeng::EventManager::RendererEvent::RendererEvent()=default'],['../class_hexeng_1_1_event_manager_1_1_renderer_event.html#a163de93bb87fc069b7766f0f1c773201',1,'Hexeng::EventManager::RendererEvent::RendererEvent(std::function&lt; bool(void)&gt; condition, std::function&lt; void(void)&gt; action, Range range=Range::GLOBAL, unsigned int pertick=1)']]],
-  ['renderereventgate_7',['RendererEventGate',['../class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html#af549472ffe67b2b89ef20e416cda08ce',1,'Hexeng::EventManager::RendererEventGate']]]
+  ['renderereventgate_7',['RendererEventGate',['../class_hexeng_1_1_event_manager_1_1_renderer_event_gate.html#af549472ffe67b2b89ef20e416cda08ce',1,'Hexeng::EventManager::RendererEventGate']]],
+  ['reserve_8',['reserve',['../class_hexeng_1_1_audio_1_1_sound.html#a53b0265223bf6278c9c979be7c0d14de',1,'Hexeng::Audio::Sound::reserve()'],['../class_hexeng_1_1_audio_1_1_spatial_sound.html#a4d4ba32fc41c700259758e9d0ba42985',1,'Hexeng::Audio::SpatialSound::reserve()']]]
 ];

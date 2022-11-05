@@ -42,7 +42,7 @@ namespace Hexeng::EventManager
 			[this]() {
 				if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
 				{
-					if (hover)
+					if (hover && !m_was_hovered)
 						hover();
 					m_was_hovered = true;
 					if (glfwGetMouseButton(window, mouse_button))
@@ -103,7 +103,7 @@ namespace Hexeng::EventManager
 		action = [this]() {
 			if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
 			{
-				if (hover)
+				if (hover && !m_was_hovered)
 					hover();
 				m_was_hovered = true;
 				if (glfwGetMouseButton(window, mouse_button))
@@ -165,7 +165,7 @@ namespace Hexeng::EventManager
 		action = [this]() {
 			if (mouse_position.x >= min.x && mouse_position.x <= max.x && mouse_position.y >= min.y && mouse_position.y <= max.y)
 			{
-				if (hover)
+				if (hover && !m_was_hovered)
 					hover();
 				m_was_hovered = true;
 				if (glfwGetMouseButton(window, mouse_button))

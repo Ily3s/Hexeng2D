@@ -7,10 +7,8 @@ var class_hexeng_1_1_audio_1_1_sound_base =
     [ "operator=", "class_hexeng_1_1_audio_1_1_sound_base.html#ae40ca45bd61b85426e6a66b95b94e243", null ],
     [ "operator=", "class_hexeng_1_1_audio_1_1_sound_base.html#abe2bc6260bd062a00f55abb51a9b29c2", null ],
     [ "terminate", "class_hexeng_1_1_audio_1_1_sound_base.html#a0d0ddc790fda37cd614537cb8a3f7a19", null ],
-    [ "clean_garbages", "class_hexeng_1_1_audio_1_1_sound_base.html#a99fc959a91ab9610a24a5e336d8035a4", null ],
     [ "m_byte_per_sample", "class_hexeng_1_1_audio_1_1_sound_base.html#a243ce80a57e89fd3d563cb389192adc3", null ],
     [ "m_channels_nb", "class_hexeng_1_1_audio_1_1_sound_base.html#a776c7ab7ba5093360d7ecb641105793f", null ],
     [ "m_file_buffer", "class_hexeng_1_1_audio_1_1_sound_base.html#aedac6c50b60648a88aa5c40135e96302", null ],
-    [ "m_garbage", "class_hexeng_1_1_audio_1_1_sound_base.html#a04b84828debb241e20c005b2e75ce8ba", null ],
     [ "m_sample_rate", "class_hexeng_1_1_audio_1_1_sound_base.html#aca00e91d214a2a10cf9633894ba6620a", null ]
 ];

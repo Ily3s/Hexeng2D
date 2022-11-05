@@ -8,7 +8,7 @@ var searchData=
   ['sound_5',['Sound',['../class_hexeng_1_1_audio_1_1_sound.html',1,'Hexeng::Audio']]],
   ['soundbase_6',['SoundBase',['../class_hexeng_1_1_audio_1_1_sound_base.html',1,'Hexeng::Audio']]],
   ['sounddata_7',['SoundData',['../struct_hexeng_1_1_audio_1_1_sound_data.html',1,'Hexeng::Audio']]],
-  ['square_8',['Square',['../class_hexeng_1_1_renderer_1_1_square.html',1,'Hexeng::Renderer']]],
-  ['staticsound_9',['StaticSound',['../class_hexeng_1_1_audio_1_1_static_sound.html',1,'Hexeng::Audio']]],
+  ['spatialsound_8',['SpatialSound',['../class_hexeng_1_1_audio_1_1_spatial_sound.html',1,'Hexeng::Audio']]],
+  ['square_9',['Square',['../class_hexeng_1_1_renderer_1_1_square.html',1,'Hexeng::Renderer']]],
   ['supermesh_10',['SuperMesh',['../class_hexeng_1_1_renderer_1_1_super_mesh.html',1,'Hexeng::Renderer']]]
 ];

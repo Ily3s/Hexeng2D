@@ -1,10 +1,5 @@
 var searchData=
 [
-  ['r_0',['R',['../class_hexeng_1_1_color3.html#a2b56e39836ab08f958ed8d7a5158b4f6',1,'Hexeng::Color3::R()'],['../class_hexeng_1_1_color4.html#ac724c7892a0773d560b7b63c22e33201',1,'Hexeng::Color4::R()']]],
-  ['range_1',['range',['../class_hexeng_1_1_event_manager_1_1_event.html#a8c53eed00aff203970a95f6ad3e6ebd1',1,'Hexeng::EventManager::Event']]],
-  ['receiver_2',['receiver',['../namespace_hexeng_1_1_audio.html#ade90f1b2e4cb6e40205b9b485b583e90',1,'Hexeng::Audio']]],
-  ['red_3',['red',['../class_hexeng_1_1_color3.html#aa7f0d827f1c55d393387690b2dfdb62b',1,'Hexeng::Color3::red()'],['../class_hexeng_1_1_color4.html#a671d5160248675e1d62b6e8ae27aeb06',1,'Hexeng::Color4::red()']]],
-  ['repeat_4',['repeat',['../class_hexeng_1_1_renderer_1_1_animation.html#ad2e086e921dca6a76791617da6dcb111',1,'Hexeng::Renderer::Animation']]],
-  ['reserve_5',['reserve',['../struct_hexeng_1_1_save_var.html#a42172b2f7556d8a6e3e55a7fe242d6a4',1,'Hexeng::SaveVar']]],
-  ['rotation_6',['rotation',['../class_hexeng_1_1_renderer_1_1_batch_quad.html#a7b58c3b6b3f2526fc6341286a73291d5',1,'Hexeng::Renderer::BatchQuad::rotation()'],['../class_hexeng_1_1_renderer_1_1_mesh.html#a36335cd573eb71e62b0af55630149907',1,'Hexeng::Renderer::Mesh::rotation()']]]
+  ['quad_0',['quad',['../class_player.html#a44e7791f25f73898551042f594cecae2',1,'Player']]],
+  ['quality_1',['quality',['../class_hexeng_1_1_font.html#a00ca957886bb81e0801731a783d6aa80',1,'Hexeng::Font']]]
 ];

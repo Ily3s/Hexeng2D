@@ -374,8 +374,12 @@ namespace Hexeng
 			for (int i = 0; i < s_translated_texts.size(); i++)
 			{
 				Text* text = s_translated_texts[0];
+				Color4 color = text->color;
+				Color4 color_filter = text->color_filter;
 				*text = { text->m_language, text->m_text, *text->m_font, text->m_pos,
-					text->m_font_size, text->m_ha, text->m_va, {text->color.x, text->color.y, text->color.z, text->color_filter.w} };
+					text->m_font_size, text->m_ha, text->m_va };
+				text->color = color;
+				text->color_filter = color_filter;
 			}
 			});
 	}

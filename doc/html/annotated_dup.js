@@ -6,7 +6,7 @@ var annotated_dup =
         [ "Sound", "class_hexeng_1_1_audio_1_1_sound.html", "class_hexeng_1_1_audio_1_1_sound" ],
         [ "SoundBase", "class_hexeng_1_1_audio_1_1_sound_base.html", "class_hexeng_1_1_audio_1_1_sound_base" ],
         [ "SoundData", "struct_hexeng_1_1_audio_1_1_sound_data.html", "struct_hexeng_1_1_audio_1_1_sound_data" ],
-        [ "StaticSound", "class_hexeng_1_1_audio_1_1_static_sound.html", "class_hexeng_1_1_audio_1_1_static_sound" ]
+        [ "SpatialSound", "class_hexeng_1_1_audio_1_1_spatial_sound.html", "class_hexeng_1_1_audio_1_1_spatial_sound" ]
       ] ],
       [ "EventManager", "namespace_hexeng_1_1_event_manager.html", [
         [ "Button", "class_hexeng_1_1_event_manager_1_1_button.html", "class_hexeng_1_1_event_manager_1_1_button" ],
@@ -30,6 +30,7 @@ var annotated_dup =
         [ "AnimationStep", "struct_hexeng_1_1_renderer_1_1_animation_step.html", "struct_hexeng_1_1_renderer_1_1_animation_step" ],
         [ "BatchInstance", "class_hexeng_1_1_renderer_1_1_batch_instance.html", "class_hexeng_1_1_renderer_1_1_batch_instance" ],
         [ "BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html", "class_hexeng_1_1_renderer_1_1_batch_quad" ],
+        [ "BlendingMethod", "struct_hexeng_1_1_renderer_1_1_blending_method.html", "struct_hexeng_1_1_renderer_1_1_blending_method" ],
         [ "Camera", "class_hexeng_1_1_renderer_1_1_camera.html", "class_hexeng_1_1_renderer_1_1_camera" ],
         [ "DebugQuad", "class_hexeng_1_1_renderer_1_1_debug_quad.html", "class_hexeng_1_1_renderer_1_1_debug_quad" ],
         [ "DebugSquare", "class_hexeng_1_1_renderer_1_1_debug_square.html", "class_hexeng_1_1_renderer_1_1_debug_square" ],

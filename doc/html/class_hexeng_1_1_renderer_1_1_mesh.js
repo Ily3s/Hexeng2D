@@ -15,6 +15,7 @@ var class_hexeng_1_1_renderer_1_1_mesh =
     [ "unload", "class_hexeng_1_1_renderer_1_1_mesh.html#a5910b8c30a14a77098a51d4d4e925970", null ],
     [ "update_position", "class_hexeng_1_1_renderer_1_1_mesh.html#ad3b9c0b9b2a40f19cc39db098d16ec6e", null ],
     [ "SuperMesh", "class_hexeng_1_1_renderer_1_1_mesh.html#ab88992c2b05df2ab1d1bcfc0d627b907", null ],
+    [ "blending_method", "class_hexeng_1_1_renderer_1_1_mesh.html#a4ea3e4ff55e0feb6e5e5ebbd18f2af36", null ],
     [ "color", "class_hexeng_1_1_renderer_1_1_mesh.html#aa6f1d0462b748ebdd8c04cd395859ae3", null ],
     [ "color_filter", "class_hexeng_1_1_renderer_1_1_mesh.html#a7e08e710764c74ab4c0fa7f07749a84c", null ],
     [ "enable", "class_hexeng_1_1_renderer_1_1_mesh.html#ae40894f674b607fa8c8c5f77a92e13a4", null ],

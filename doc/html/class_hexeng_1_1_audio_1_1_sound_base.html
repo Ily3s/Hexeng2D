@@ -94,13 +94,12 @@ $(document).ready(function(){initNavTree('class_hexeng_1_1_audio_1_1_sound_base.
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
-<a href="#friends">Friends</a> &#124;
 <a href="class_hexeng_1_1_audio_1_1_sound_base-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Hexeng::Audio::SoundBase Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Abstract Base class of <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, from a location in space.">Sound</a> and <a class="el" href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space.">Music</a>.   
+<p>Abstract Base class of <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, it isn&#39;t related to a position in space.">Sound</a> and <a class="el" href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space.">Music</a>.   
  <a href="class_hexeng_1_1_audio_1_1_sound_base.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_audio_8hpp_source.html">Audio.hpp</a>&gt;</code></p>
@@ -110,9 +109,9 @@ Inheritance diagram for Hexeng::Audio::SoundBase:</div>
  <div class="center">
   <img src="class_hexeng_1_1_audio_1_1_sound_base.png" usemap="#Hexeng::Audio::SoundBase_map" alt=""/>
   <map id="Hexeng::Audio::SoundBase_map" name="Hexeng::Audio::SoundBase_map">
-<area href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space." alt="Hexeng::Audio::Music" shape="rect" coords="0,56,167,80"/>
-<area href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, from a location in space." alt="Hexeng::Audio::Sound" shape="rect" coords="177,56,344,80"/>
-<area href="class_hexeng_1_1_audio_1_1_static_sound.html" title="A sound that can be played multiple times at once, it isn&#39;t related to a position in space." alt="Hexeng::Audio::StaticSound" shape="rect" coords="354,56,521,80"/>
+<area href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space." alt="Hexeng::Audio::Music" shape="rect" coords="0,56,174,80"/>
+<area href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, it isn&#39;t related to a position in space." alt="Hexeng::Audio::Sound" shape="rect" coords="184,56,358,80"/>
+<area href="class_hexeng_1_1_audio_1_1_spatial_sound.html" title="A Sound that can be played multiple times at once, from a location in space." alt="Hexeng::Audio::SpatialSound" shape="rect" coords="184,112,358,136"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -143,16 +142,9 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a776c7ab7ba5093360d7ecb641105793f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca00e91d214a2a10cf9633894ba6620a"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#aca00e91d214a2a10cf9633894ba6620a">m_sample_rate</a> = 0</td></tr>
 <tr class="separator:aca00e91d214a2a10cf9633894ba6620a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04b84828debb241e20c005b2e75ce8ba"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::thread &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a04b84828debb241e20c005b2e75ce8ba">m_garbage</a></td></tr>
-<tr class="separator:a04b84828debb241e20c005b2e75ce8ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
-Friends</h2></td></tr>
-<tr class="memitem:a99fc959a91ab9610a24a5e336d8035a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_hexeng_1_1_audio_1_1_sound_base.html#a99fc959a91ab9610a24a5e336d8035a4">clean_garbages</a> ()</td></tr>
-<tr class="separator:a99fc959a91ab9610a24a5e336d8035a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Abstract Base class of <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, from a location in space.">Sound</a> and <a class="el" href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space.">Music</a>.  </p>
+<div class="textblock"><p >Abstract Base class of <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html" title="A Sound that can be played multiple times at once, it isn&#39;t related to a position in space.">Sound</a> and <a class="el" href="class_hexeng_1_1_audio_1_1_music.html" title="A Music that cannot be played multiple times at once, it isn&#39;t related to a position in space.">Music</a>.  </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af33279a829a6ca566a5f54c0d5fd98e1" name="af33279a829a6ca566a5f54c0d5fd98e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af33279a829a6ca566a5f54c0d5fd98e1">&#9670;&#160;</a></span>SoundBase() <span class="overload">[1/4]</span></h2>
@@ -327,33 +319,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html#a1961b62e8e5d29d91f8d97205b8193f8">Hexeng::Audio::Sound</a>, <a class="el" href="class_hexeng_1_1_audio_1_1_static_sound.html#a7ceb5ceeaff79aeb71f5b39096008148">Hexeng::Audio::StaticSound</a>, and <a class="el" href="class_hexeng_1_1_audio_1_1_music.html#a11b73a810bba019720e135d935bd4ad4">Hexeng::Audio::Music</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Friends And Related Function Documentation</h2>
-<a id="a99fc959a91ab9610a24a5e336d8035a4" name="a99fc959a91ab9610a24a5e336d8035a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99fc959a91ab9610a24a5e336d8035a4">&#9670;&#160;</a></span>clean_garbages</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void clean_garbages </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Implemented in <a class="el" href="class_hexeng_1_1_audio_1_1_music.html#a11b73a810bba019720e135d935bd4ad4">Hexeng::Audio::Music</a>, and <a class="el" href="class_hexeng_1_1_audio_1_1_sound.html#a1961b62e8e5d29d91f8d97205b8193f8">Hexeng::Audio::Sound</a>.</p>
 
 </div>
 </div>
@@ -413,28 +379,6 @@ Friends</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::string Hexeng::Audio::SoundBase::m_file_buffer</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a04b84828debb241e20c005b2e75ce8ba" name="a04b84828debb241e20c005b2e75ce8ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04b84828debb241e20c005b2e75ce8ba">&#9670;&#160;</a></span>m_garbage</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::thread&gt; Hexeng::Audio::SoundBase::m_garbage</td>
         </tr>
       </table>
   </td>

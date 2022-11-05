@@ -3,6 +3,7 @@ var hierarchy =
     [ "Hexeng::Renderer::Animation", "class_hexeng_1_1_renderer_1_1_animation.html", null ],
     [ "Hexeng::Renderer::AnimationStep", "struct_hexeng_1_1_renderer_1_1_animation_step.html", null ],
     [ "Hexeng::Renderer::BatchQuad", "class_hexeng_1_1_renderer_1_1_batch_quad.html", null ],
+    [ "Hexeng::Renderer::BlendingMethod", "struct_hexeng_1_1_renderer_1_1_blending_method.html", null ],
     [ "Hexeng::Renderer::Camera", "class_hexeng_1_1_renderer_1_1_camera.html", null ],
     [ "Hexeng::CharBox", "struct_hexeng_1_1_char_box.html", null ],
     [ "Hexeng::EventManager::Event", "class_hexeng_1_1_event_manager_1_1_event.html", [
@@ -49,8 +50,9 @@ var hierarchy =
     [ "Hexeng::Renderer::Shader", "class_hexeng_1_1_renderer_1_1_shader.html", null ],
     [ "Hexeng::Audio::SoundBase", "class_hexeng_1_1_audio_1_1_sound_base.html", [
       [ "Hexeng::Audio::Music", "class_hexeng_1_1_audio_1_1_music.html", null ],
-      [ "Hexeng::Audio::Sound", "class_hexeng_1_1_audio_1_1_sound.html", null ],
-      [ "Hexeng::Audio::StaticSound", "class_hexeng_1_1_audio_1_1_static_sound.html", null ]
+      [ "Hexeng::Audio::Sound", "class_hexeng_1_1_audio_1_1_sound.html", [
+        [ "Hexeng::Audio::SpatialSound", "class_hexeng_1_1_audio_1_1_spatial_sound.html", null ]
+      ] ]
     ] ],
     [ "Hexeng::Audio::SoundData", "struct_hexeng_1_1_audio_1_1_sound_data.html", null ],
     [ "Hexeng::Renderer::TexCoord", "struct_hexeng_1_1_renderer_1_1_tex_coord.html", null ],

@@ -25,13 +25,18 @@ if(e != paNoError)\
 
 #endif
 
-    const Vec2<int>* receiver = Renderer::Camera::xy_position;
-
     std::vector<SoundBase*> sounds;
 
     void init()
     {
         HXG_PA(Pa_Initialize());
+    }
+
+    void terminate()
+    {
+        for (SoundBase* sound : sounds)
+            sound->terminate();
+        HXG_PA(Pa_Terminate());
     }
 
     SoundBase::SoundBase(std::string filepath)
@@ -85,39 +90,263 @@ if(e != paNoError)\
         m_sample_rate = other.m_sample_rate;
         m_channels_nb = other.m_channels_nb;
 
-        other.terminate();
-
         auto it = std::find(sounds.begin(), sounds.end(), &other);
         *it = (SoundBase*)this;
 
         return *this;
     }
 
+    Music::Music(std::string filepath)
+        : SoundBase(filepath)
+    {
+        HXG_PA(Pa_OpenDefaultStream(
+            &m_stream,
+            0,
+            m_channels_nb,
+            paFloat32,
+            m_sample_rate,
+            paFramesPerBufferUnspecified,
+            s_audio_callback,
+            this));
+
+        HXG_PA(Pa_StartStream(m_stream));
+    }
+
+    Music::Music(Music&& other) noexcept
+        : SoundBase(std::move(other)), m_stream(other.m_stream)
+    {
+        HXG_PA(Pa_StopStream(m_stream));
+        HXG_PA(Pa_CloseStream(m_stream));
+
+        HXG_PA(Pa_OpenDefaultStream(
+            &m_stream,
+            0,
+            m_channels_nb,
+            paFloat32,
+            m_sample_rate,
+            paFramesPerBufferUnspecified,
+            s_audio_callback,
+            this));
+
+        HXG_PA(Pa_StartStream(m_stream));
+    }
+
+    Music& Music::operator=(Music&& other) noexcept
+    {
+        SoundBase::operator=(std::move(other));
+        m_stream = other.m_stream;
+
+        HXG_PA(Pa_StopStream(m_stream));
+        HXG_PA(Pa_CloseStream(m_stream));
+
+        HXG_PA(Pa_OpenDefaultStream(
+            &m_stream,
+            0,
+            m_channels_nb,
+            paFloat32,
+            m_sample_rate,
+            paFramesPerBufferUnspecified,
+            s_audio_callback,
+            this));
+
+        HXG_PA(Pa_StartStream(m_stream));
+
+        return *this;
+    }
+
+    void Music::play()
+    {
+        m_buffer = (float*)&(m_file_buffer[44 * 4]);
+    }
+
+    void Music::stop()
+    {
+        m_buffer = nullptr;
+    }
+
+    void Music::terminate()
+    {
+        HXG_PA(Pa_StopStream(m_stream));
+        HXG_PA(Pa_CloseStream(m_stream));
+    }
+
+    int Music::s_audio_callback(const void* input_buffer, void* output_buffer,
+        unsigned long frames_per_buffer,
+        const PaStreamCallbackTimeInfo* time_info,
+        PaStreamCallbackFlags status_flags,
+        void* user_data)
+    {
+        Music* music = (Music*)user_data;
+        float* out = (float*)output_buffer;
+
+        if (!(music->m_buffer))
+        {
+            for (uint32_t i = 0; i < frames_per_buffer * music->m_channels_nb; i++, out++)
+                *out = 0;
+
+            return 0;
+        }
+
+        for (uint32_t i = 0; i < frames_per_buffer * music->m_channels_nb; i++, music->m_buffer++, out++)
+        {
+            if ((char*)music->m_buffer > &music->m_file_buffer[music->m_file_buffer.size() - 1])
+            {
+                music->m_buffer = nullptr;
+                return 0;
+            }
+
+            *out = *music->m_buffer * Settings::master_volume * Settings::music_volume;
+        }
+
+        return 0;
+    }
+
+    const Vec2<int>* receiver = Renderer::Camera::xy_position;
+
+    void Sound::reserve(size_t count)
+    {
+        if (!m_has_done_reserving)
+            return;
+
+        m_has_done_reserving = false;
+        count = count < m_sounds_data.size() ? 0 : count - m_sounds_data.size();
+
+        if (m_reserve_thread.joinable())
+            m_reserve_thread.join();
+
+        m_reserve_thread = std::thread{ [this, count]()
+        {
+            for (size_t i = 0; i < count; i++)
+            {
+                m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, nullptr, nullptr));
+                SoundData* data = m_sounds_data.back().get();
+
+                HXG_PA(Pa_OpenDefaultStream(
+                    &data->stream,
+                    0,
+                    m_channels_nb,
+                    paFloat32,
+                    m_sample_rate,
+                    paFramesPerBufferUnspecified,
+                    s_audio_callback,
+                    data));
+
+                HXG_PA(Pa_StartStream(data->stream));
+            }
+            m_has_done_reserving = true;
+        } };
+    }
+
     Sound::Sound(std::string filepath)
         : SoundBase(filepath)
     {
-        HXG_ASSERT(m_channels_nb == 1,
-            HXG_LOG_ERROR("Input for Sound is expected to be mono"); return;);
-        m_thread = std::thread([this]() {m_stop_streams(); });
+        for (int i = 0; i < 4; i++)
+        {
+            m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, nullptr, nullptr));
+            SoundData* data = m_sounds_data.back().get();
+
+            HXG_PA(Pa_OpenDefaultStream(
+                &data->stream,
+                0,
+                m_channels_nb,
+                paFloat32,
+                m_sample_rate,
+                paFramesPerBufferUnspecified,
+                s_audio_callback,
+                data));
+
+            HXG_PA(Pa_StartStream(data->stream));
+        }
     }
 
     Sound::Sound(Sound&& other) noexcept
-        : SoundBase(std::move(other))
+        : SoundBase(std::move(other)), m_sounds_data(std::move(other.m_sounds_data))
     {
-        m_thread = std::thread([this]() {m_stop_streams(); });
+        for (auto& data : m_sounds_data)
+            data->sound = (void*)this;
     }
 
     Sound& Sound::operator=(Sound&& other) noexcept
     {
         SoundBase::operator=(std::move(other));
-        m_thread = std::thread([this]() {m_stop_streams(); });
+        m_sounds_data = std::move(other.m_sounds_data);
+
+        for (auto& data : m_sounds_data)
+            data->sound = (void*)this;
+
         return *this;
     }
 
-    void Sound::play(const Vec2<int>* emmitter)
+    void Sound::play()
     {
-        m_garbage.push_back(std::thread([this, emmitter]() {
-            m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, (float*)&m_file_buffer[44], emmitter));
+        auto it = std::find_if(m_sounds_data.begin(), m_sounds_data.end(),
+            [](const std::unique_ptr<SoundData>& data) {return !(data->buffer); });
+
+        if (it != m_sounds_data.end())
+            (*it)->buffer = (float*)&(m_file_buffer[44 * 4]);
+        else
+            reserve(m_sounds_data.size() + 4);
+    }
+
+    void Sound::stop()
+    {
+        for (auto& sound_data : m_sounds_data)
+            sound_data->has_to_stop = true;
+    }
+
+    void Sound::terminate()
+    {
+        for (auto& sound_data : m_sounds_data)
+        {
+            HXG_PA(Pa_AbortStream(sound_data->stream));
+            HXG_PA(Pa_CloseStream(sound_data->stream));
+        }
+    }
+
+    int Sound::s_audio_callback(const void* input_buffer, void* output_buffer,
+        unsigned long frames_per_buffer,
+        const PaStreamCallbackTimeInfo* time_info,
+        PaStreamCallbackFlags status_flags,
+        void* user_data)
+    {
+        SoundData* data = (SoundData*)user_data;
+        Sound* sound = (Sound*)data->sound;
+        float* out = (float*)output_buffer;
+
+        if (!data->buffer)
+        {
+            for (uint32_t i = 0; i < frames_per_buffer * sound->m_channels_nb; i++, out++)
+                *out = 0;
+
+            return 0;
+        }
+
+        for (uint32_t i = 0; i < frames_per_buffer * sound->m_channels_nb; i++, data->buffer++, out++)
+        {
+            if ((char*)data->buffer > &sound->m_file_buffer[sound->m_file_buffer.size() - 1] || data->has_to_stop)
+            {
+                data->buffer = nullptr;
+                return 0;
+            }
+
+            *out = *data->buffer * Settings::master_volume * Settings::sound_volume;
+        }
+
+        return 0;
+    }
+
+    SpatialSound::SpatialSound(std::string filepath)
+        : Sound(filepath)
+    {
+        HXG_ASSERT(m_channels_nb == 1,
+            HXG_LOG_ERROR("Input for Sound is expected to be mono"); return;);
+
+        terminate();
+        m_sounds_data.clear();
+
+        for (size_t i = 0; i < 4; i++)
+        {
+            m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, nullptr, nullptr));
             SoundData* data = m_sounds_data.back().get();
 
             HXG_PA(Pa_OpenDefaultStream(
@@ -131,25 +360,69 @@ if(e != paNoError)\
                 data));
 
             HXG_PA(Pa_StartStream(data->stream));
-            }));
+        }
     }
 
-    void Sound::stop()
+    SpatialSound::SpatialSound(SpatialSound&& other) noexcept
+        : Sound(std::move(other)) {}
+
+    SpatialSound& SpatialSound::operator=(SpatialSound&& other) noexcept
     {
-        for (auto& sound_data : m_sounds_data)
-            sound_data->has_to_stop = true;
+        Sound::operator=(std::move(other));
+        return *this;
     }
 
-    void Sound::terminate()
+    void SpatialSound::reserve(size_t count)
     {
-        stop();
-        m_has_to_end = true;
-        using namespace std::chrono_literals;
-        std::this_thread::sleep_for(1ms);
-        m_thread.join();
+        if (!m_has_done_reserving)
+            return;
+
+        m_has_done_reserving = false;
+        count = count < m_sounds_data.size() ? 0 : count - m_sounds_data.size();
+
+        if (m_reserve_thread.joinable())
+            m_reserve_thread.join();
+
+        m_reserve_thread = std::thread{ [this, count]()
+        {
+            for (size_t i = 0; i < count; i++)
+            {
+                m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, nullptr, nullptr));
+                SoundData* data = m_sounds_data.back().get();
+
+                HXG_PA(Pa_OpenDefaultStream(
+                    &data->stream,
+                    0,
+                    2,
+                    paFloat32,
+                    m_sample_rate,
+                    paFramesPerBufferUnspecified,
+                    s_audio_callback,
+                    data));
+
+                HXG_PA(Pa_StartStream(data->stream));
+            }
+            m_has_done_reserving = true;
+        } };
     }
 
-    int Sound::s_audio_callback
+    void SpatialSound::play(const Vec2<int>* emmitter)
+    {
+        auto it = std::find_if(m_sounds_data.begin(), m_sounds_data.end(),
+            [](const std::unique_ptr<SoundData>& data) {return !(data->buffer); });
+
+        if (it != m_sounds_data.end())
+        {
+            (*it)->buffer = (float*)&(m_file_buffer[44 * 4]);
+            (*it)->emitter = emmitter;
+        }
+        else
+        {
+            reserve(m_sounds_data.size() + 4);
+        }
+    }
+
+    int SpatialSound::s_audio_callback
     (const void* input_buffer, void* output_buffer,
         unsigned long frames_per_buffer,
         const PaStreamCallbackTimeInfo* time_info,
@@ -157,12 +430,20 @@ if(e != paNoError)\
         void* user_data)
     {
         SoundData* data = (SoundData*)user_data;
-        Sound* sound = (Sound*)data->sound;
+        SpatialSound* sound = (SpatialSound*)data->sound;
         float* out = (float*)output_buffer;
 
         float volume_multiplier = 1.0f;
         float right_multiplier = 1.0f;
         float left_multiplier = 1.0f;
+
+        if (!data->buffer)
+        {
+            for (uint32_t i = 0; i < frames_per_buffer * 2; i++, out++)
+                *out = 0;
+
+            return 0;
+        }
 
         if (data->emitter && receiver)
         {
@@ -181,8 +462,8 @@ if(e != paNoError)\
         {
             if (((char*)data->buffer >= &*(sound->m_file_buffer.end() - sound->m_byte_per_sample)) || data->has_to_stop)
             {
-                data->is_playing = false;
-                return paComplete;
+                data->buffer = nullptr;
+                return 0;
             }
 
             // Left
@@ -199,228 +480,6 @@ if(e != paNoError)\
         }
 
         return 0;
-    }
-
-    void Sound::m_stop_streams()
-    {
-        while (!m_has_to_end)
-        {
-            using namespace std::chrono_literals;
-            std::this_thread::sleep_for(1ms);
-            for (size_t i = 0; i < m_sounds_data.size(); i++)
-            {
-                if (!m_sounds_data[i]->is_playing)
-                {
-                    HXG_PA(Pa_StopStream(m_sounds_data[i]->stream));
-                    HXG_PA(Pa_CloseStream(m_sounds_data[i]->stream));
-                    m_sounds_data.erase(m_sounds_data.begin() + i);
-                }
-            }
-        }
-    }
-
-    StaticSound::StaticSound(std::string filepath)
-        : SoundBase(filepath)
-    {
-        m_thread = std::thread([this]() {m_stop_streams(); });
-    }
-
-    StaticSound::StaticSound(StaticSound&& other) noexcept
-        : SoundBase(std::move(other))
-    {
-        m_thread = std::thread([this]() {m_stop_streams(); });
-    }
-
-    StaticSound& StaticSound::operator=(StaticSound&& other) noexcept
-    {
-        SoundBase::operator=(std::move(other));
-        m_thread = std::thread([this]() {m_stop_streams(); });
-        return *this;
-    }
-
-    void StaticSound::play()
-    {
-        m_garbage.push_back(std::thread([this]() {
-            m_sounds_data.push_back(std::make_unique<SoundData>((void*)this, nullptr, (float*)&m_file_buffer[44], nullptr));
-            SoundData* data = m_sounds_data.back().get();
-
-            HXG_PA(Pa_OpenDefaultStream(
-                &data->stream,
-                0,
-                m_channels_nb,
-                paFloat32,
-                m_sample_rate,
-                paFramesPerBufferUnspecified,
-                s_audio_callback,
-                data));
-
-            HXG_PA(Pa_StartStream(data->stream));
-            }));
-    }
-
-    void StaticSound::stop()
-    {
-        for (auto& sound_data : m_sounds_data)
-            sound_data->has_to_stop = true;
-    }
-
-    void StaticSound::terminate()
-    {
-        stop();
-        m_has_to_end = true;
-        using namespace std::chrono_literals;
-        std::this_thread::sleep_for(1ms);
-        m_thread.join();
-    }
-
-    int StaticSound::s_audio_callback(const void* input_buffer, void* output_buffer,
-        unsigned long frames_per_buffer,
-        const PaStreamCallbackTimeInfo* time_info,
-        PaStreamCallbackFlags status_flags,
-        void* user_data)
-    {
-        SoundData* data = (SoundData*)user_data;
-        StaticSound* sound = (StaticSound*)data->sound;
-        float* out = (float*)output_buffer;
-
-        for (uint32_t i = 0; i < frames_per_buffer * sound->m_channels_nb; i++, data->buffer++, out++)
-        {
-            if ((char*)data->buffer > &sound->m_file_buffer[sound->m_file_buffer.size() - 1] || data->has_to_stop)
-            {
-                data->is_playing = false;
-                return paComplete;
-            }
-
-            *out = *data->buffer * Settings::master_volume * Settings::sound_volume;
-        }
-
-        return 0;
-    }
-
-    void StaticSound::m_stop_streams()
-    {
-        while (!m_has_to_end)
-        {
-            using namespace std::chrono_literals;
-            std::this_thread::sleep_for(1ms);
-            for (size_t i = 0; i < m_sounds_data.size(); i++)
-            {
-                if (!m_sounds_data[i]->is_playing)
-                {
-                    HXG_PA(Pa_StopStream(m_sounds_data[i]->stream));
-                    HXG_PA(Pa_CloseStream(m_sounds_data[i]->stream));
-                    m_sounds_data.erase(m_sounds_data.begin() + i);
-                }
-            }
-        }
-    }
-
-    Music::Music(std::string filepath)
-        : SoundBase(filepath)
-    {}
-
-    Music::Music(Music&& other) noexcept
-        : SoundBase(std::move(other))
-    {}
-
-    Music& Music::operator=(Music&& other) noexcept
-    {
-        SoundBase::operator=(std::move(other));
-        return *this;
-    }
-
-    void Music::play()
-    {
-        m_garbage.push_back(std::thread([this]() {
-            if (m_is_playing)
-                return;
-
-            if (m_stream)
-                stop();
-
-            m_buffer = (float*)&m_file_buffer[44];
-
-            HXG_PA(Pa_OpenDefaultStream(
-                &m_stream,
-                0,
-                m_channels_nb,
-                paFloat32,
-                m_sample_rate,
-                paFramesPerBufferUnspecified,
-                s_audio_callback,
-                this));
-
-            HXG_PA(Pa_StartStream(m_stream));
-            }));
-    }
-
-    void Music::stop()
-    {
-        m_garbage.push_back(std::thread([this]() {
-            if (m_stream)
-            {
-                HXG_PA(Pa_StopStream(m_stream));
-                HXG_PA(Pa_CloseStream(m_stream));
-                m_stream = nullptr;
-                m_is_playing = false;
-            }
-            }));
-    }
-
-    void Music::terminate()
-    {
-        stop();
-    }
-
-    int Music::s_audio_callback(const void* input_buffer, void* output_buffer,
-        unsigned long frames_per_buffer,
-        const PaStreamCallbackTimeInfo* time_info,
-        PaStreamCallbackFlags status_flags,
-        void* user_data)
-    {
-        Music* music = (Music*)user_data;
-        float* out = (float*)output_buffer;
-
-        for (uint32_t i = 0; i < frames_per_buffer * music->m_channels_nb; i++, music->m_buffer++, out++)
-        {
-            if ((char*)music->m_buffer > &music->m_file_buffer[music->m_file_buffer.size() - 1])
-            {
-                music->m_is_playing = false;
-                return paComplete;
-            }
-
-            *out = *music->m_buffer * Settings::master_volume * Settings::music_volume;
-        }
-
-        return 0;
-    }
-
-    bool has_to_end = false;
-
-    void clean_garbages()
-    {
-        while (!has_to_end)
-        {
-            using namespace std::chrono_literals;
-            std::this_thread::sleep_for(1ms);
-            for (auto sound : sounds)
-            {
-                for (auto& thread : sound->m_garbage)
-                    thread.join();
-                sound->m_garbage.clear();
-            }
-        }
-    }
-
-    std::thread clean_garbages_thread{ clean_garbages };
-
-    void terminate()
-    {
-        for (SoundBase* sound : sounds)
-            sound->terminate();
-        has_to_end = true;
-        clean_garbages_thread.join();
-        HXG_PA(Pa_Terminate());
     }
 
 }
