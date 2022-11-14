@@ -93,19 +93,12 @@ namespace Hexeng
 
 	void SaveFile::load(const std::string& filepath)
 	{
+		m_file.open(filepath, std::ios::binary | std::ios::in);
+		if (!m_file)
+			throw std::runtime_error("The file \"" + filepath + "\" may not exist.");
+
 		try
 		{
-
-			try
-			{
-				m_file.open(filepath, std::ios::binary | std::ios::in);
-			}
-			catch (const std::fstream::failure& e)
-			{
-				HXG_LOG_ERROR("Cannot open save at location \"" + filepath + "\" " + e.what());
-				return;
-			}
-
 			m_file.seekg(0, std::ios::end);
 			size_t total_size = m_file.tellg();
 			m_file.seekg(0, std::ios::beg);

@@ -16,7 +16,7 @@ namespace Hexeng::Renderer
 	void init()
 	{
 
-		HXG_GLFW(if (!glfwInit()) { exit(-1); });
+		HXG_GLFW(if (!glfwInit()) { ::exit(-1); });
 
 		HXG_GLFW(glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4));
 		HXG_GLFW(glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6));
@@ -27,6 +27,7 @@ namespace Hexeng::Renderer
 
 		if (Settings::fullscreen)
 		{
+			Settings::window_size = screen_size;
 			HXG_GLFW(window = glfwCreateWindow(screen_size.x, screen_size.y, Settings::window_name.c_str(), glfwGetPrimaryMonitor(), NULL));
 		}
 		else
@@ -39,7 +40,7 @@ namespace Hexeng::Renderer
 		if (!window)
 		{
 			glfwTerminate();
-			exit(-1);
+			::exit(-1);
 		}
 
 		HXG_GLFW(glfwMakeContextCurrent(window));
@@ -47,7 +48,7 @@ namespace Hexeng::Renderer
 		HXG_GLFW(glfwSwapInterval(Settings::enable_vsync));
 
 		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
-			exit(-1);
+			::exit(-1);
 
 		std::cout << glGetString(GL_VERSION) << '\n' << std::endl;
 

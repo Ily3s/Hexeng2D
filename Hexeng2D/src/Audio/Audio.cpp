@@ -296,6 +296,9 @@ if(e != paNoError)\
 
     void Sound::terminate()
     {
+        if (m_reserve_thread.joinable())
+            m_reserve_thread.join();
+
         for (auto& sound_data : m_sounds_data)
         {
             HXG_PA(Pa_AbortStream(sound_data->stream));

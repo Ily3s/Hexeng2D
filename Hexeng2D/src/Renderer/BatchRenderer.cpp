@@ -8,6 +8,26 @@
 
 namespace Hexeng::Renderer
 {
+	BatchingShader::BatchingShader(size_t size)
+	{
+		if (size > BatchInstance::get_max_quads())
+			throw std::runtime_error("The hardware this software is running on does not support than many quads in a BatchInstance.");
+
+		std::string vs = batching_vs;
+		vs.erase(std::find(vs.begin(), vs.end(), '[') + 1, std::find(vs.begin(), vs.end(), ']'));
+		vs.insert(vs.find('[') + 1, std::to_string(size * 12));
+
+		std::string fs = batching_fs;
+		fs.erase(std::find(fs.begin(), fs.end(), '[') + 1, std::find(fs.begin(), fs.end(), ']'));
+		fs.insert(fs.find('[') + 1, std::to_string(size * 12));
+
+		Shader::operator=(Shader{ {{ShaderType::VERTEX_SHADER, vs}, {ShaderType::FRAGMENT_SHADER, fs}} });
+
+		add_necessary_uniforms();
+	}
+
+	BatchingShader::BatchingShader(BatchingShader&& other) noexcept : Shader(std::move(other)) {}
+	BatchingShader& BatchingShader::operator=(BatchingShader&& other) noexcept { Shader::operator=(std::move(other)); return *this; }
 
 	VertexLayout BatchQuad::s_vertex_layout;
 
@@ -80,11 +100,24 @@ namespace Hexeng::Renderer
 		return *this;
 	}
 
+	int BatchInstance::get_max_quads()
+	{
+		int max_on_vs, max_on_fs;
+		glGetIntegerv(GL_MAX_VERTEX_UNIFORM_VECTORS, &max_on_vs);
+		glGetIntegerv(GL_MAX_VERTEX_UNIFORM_VECTORS, &max_on_fs);
+		
+		return std::min(max_on_vs, max_on_fs)/3 - 1;
+	}
+
 	void BatchInstance::m_add_quad(BatchQuad* quad, const Vec2<int>& tex_coords_p)
 	{
-		HXG_ASSERT(m_quads.size() >= 250,
-			HXG_LOG_ERROR("1 BatchInstance is limited to 250 quads");
+		HXG_ASSERT((m_quads.size() < 250 || m_shader != &batching_shader_250),
+			HXG_LOG_ERROR("By default, 1 BatchInstance is limited to 250 quads. You may want to use BatchingShader(size).");
 			return;);
+
+		HXG_ASSERT((m_quads.size() < get_max_quads()),
+			HXG_LOG_ERROR("The hardware this software is running on does not support that much quads in a BatchingInstance !");
+		return;);
 
 		float tex_coords[4]
 		{

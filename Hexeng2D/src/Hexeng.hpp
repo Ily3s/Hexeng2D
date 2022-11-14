@@ -67,6 +67,9 @@ namespace Hexeng
 
 	HXG_DECLSPEC extern float frame_time;
 
+	/// @brief Set to true to exit next frame.
+	HXG_DECLSPEC extern bool exit;
+
 }
 
 #endif

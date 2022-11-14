@@ -12,9 +12,11 @@ namespace Hexeng
 
 	float frame_time = 0.0f;
 
+	bool exit = false;
+
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
-		while (!glfwWindowShouldClose(window))
+		while (!glfwWindowShouldClose(window) && !exit)
 		{
 			if (pre)
 				pre();

@@ -75,6 +75,8 @@ namespace Hexeng::Renderer
 		static unsigned int m_create_shader(const std::unordered_map<ShaderType, std::string>& source_code);
 
 		static unsigned int m_compile_shader(GLenum shader_type, const std::string& src);
+
+		std::vector<UniformInterface*> m_uniforms;
 	};
 
 }

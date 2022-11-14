@@ -11,6 +11,24 @@
 namespace Hexeng::Renderer
 {
 
+	/// @brief A Shader made for BatchInstance, supporting n quads.
+	class HXG_DECLSPEC BatchingShader : public Shader
+	{
+	public :
+
+		/// @param size The maximum number of quads this shader will support on BatchInstance
+		/// @exception std::runtime_error if size > BatchInstance::get_max_quads()
+		BatchingShader(size_t size);
+
+		BatchingShader() = default;
+
+		BatchingShader(const BatchingShader&) = delete;
+		BatchingShader& operator=(const BatchingShader&) = delete;
+
+		BatchingShader(BatchingShader&&) noexcept;
+		BatchingShader& operator=(BatchingShader&&) noexcept;
+	};
+
 	class HXG_DECLSPEC TextureAtlas : public Texture
 	{
 	private:
@@ -51,7 +69,7 @@ namespace Hexeng::Renderer
 
 		BatchInstance() = default;
 
-		BatchInstance(TextureAtlas* texture, Shader* shader = &batching_shader);
+		BatchInstance(TextureAtlas* texture, Shader* shader = &batching_shader_250);
 
 		BatchInstance(const BatchInstance&) = delete;
 		BatchInstance& operator=(const BatchInstance&) = delete;
@@ -73,6 +91,9 @@ namespace Hexeng::Renderer
 		/// If you change this value, make sure at least that the texture atlas and its cell_size aspect ratio stays unchanged.
 		/// </summary>
 		TextureAtlas* texture_atlas = nullptr;
+
+		/// @brief Returns the maximum BatchQuad ammout a BatchInstance can handle on the hardware this software is running on.
+		static int get_max_quads();
 
 	private:
 

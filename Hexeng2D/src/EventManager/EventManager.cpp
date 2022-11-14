@@ -94,8 +94,7 @@ namespace Hexeng::EventManager
 		{
 			auto it = std::find(global_events.begin(), global_events.end(), &other);
 			if (it != global_events.end())
-				global_events.erase(it);
-			global_events.push_back(this);
+				*it = this;
 		}
 
 		range = other.range;

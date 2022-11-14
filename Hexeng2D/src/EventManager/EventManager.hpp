@@ -65,6 +65,8 @@ namespace Hexeng::EventManager
 		/// If it is set to global, the event is global and executed independently</param>
 		
 		EventGate(std::function<void(void)> evt, Range range = Range::GLOBAL, unsigned int pertick = 1);
+
+		EventGate() = default;
 	};
 
 	/// <summary>

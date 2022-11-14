@@ -20,6 +20,8 @@ namespace Hexeng::EventManager
 		/// @note key_code is a glfw key code
 		
 		KeyEvent(int key_code, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
+
+		KeyEvent() = default;
 	};
 
 	class HXG_DECLSPEC MouseButtonEvent : public Event
@@ -34,6 +36,8 @@ namespace Hexeng::EventManager
 		/// @note button_code is a glfw button code
 
 		MouseButtonEvent(int button_code, std::function<void(void)> action, Range range = Range::GLOBAL, unsigned int pertick = 1);
+
+		MouseButtonEvent() = default;
 	};
 
 	/// <summary>

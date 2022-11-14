@@ -98,20 +98,35 @@ namespace Hexeng::Renderer
 	}
 
 	Shader::Shader(Shader&& other) noexcept
-		: m_id(other.m_id)
+		: m_id(other.m_id), m_uniforms(std::move(other.m_uniforms))
 	{
 		other.m_id = 0;
 		ToBeDelete(this, [this]() { this->~Shader(); });
 		ToBeDelete::remove(&other);
+
+		for (UniformInterface* ui : m_uniforms)
+		{
+			auto val = ui->shader_list.at(&other);
+			ui->shader_list.erase(&other);
+			ui->shader_list.insert({ this, val });
+		}
 	}
 
 	Shader& Shader::operator=(Shader&& other) noexcept
 	{
 		m_id = other.m_id;
 		other.m_id = 0;
+		m_uniforms = std::move(other.m_uniforms);
 
 		ToBeDelete(this, [this]() { this->~Shader(); });
 		ToBeDelete::remove(&other);
+
+		for (UniformInterface* ui : m_uniforms)
+		{
+			auto val = ui->shader_list.at(&other);
+			ui->shader_list.erase(&other);
+			ui->shader_list.insert({ this, val });
+		}
 
 		return *this;
 	}
@@ -135,6 +150,8 @@ namespace Hexeng::Renderer
 	{
 		for (UniformInterface* ui : uniforms)
 			ui->add_shaders({ this });
+
+		m_uniforms.insert(m_uniforms.end(), uniforms.begin(), uniforms.end());
 	}
 
 	void Shader::add_necessary_uniforms()
