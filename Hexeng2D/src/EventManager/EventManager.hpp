@@ -48,6 +48,14 @@ namespace Hexeng::EventManager
 
 		/// @note Can always be modified.
 		bool* enable_ptr = &enable;
+
+	private :
+
+		virtual void m_polymorphic();
+
+		friend HXG_DECLSPEC void start_looping();
+
+		static void m_loop_impl();
 	};
 
 	/// <summary>

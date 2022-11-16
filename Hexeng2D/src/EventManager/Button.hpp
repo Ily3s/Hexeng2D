@@ -24,9 +24,11 @@ namespace Hexeng::EventManager
 	{
 	private :
 
+		friend class Event;
+
 		bool m_was_hovered = false;
 		bool m_was_clicking = false;
-		bool m_click_outside = false;
+		bool m_click_outside = true;
 
 	public :
 

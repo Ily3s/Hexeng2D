@@ -3,6 +3,7 @@
 #include "EventManager.hpp"
 #include "../Scene.hpp"
 #include "../Renderer/Renderer.hpp"
+#include "Button.hpp"
 
 #include "GLFW/glfw3.h"
 
@@ -102,12 +103,11 @@ namespace Hexeng::EventManager
 		return *this;
 	}
 
-	void loop_impl();
 	bool allowed_to_loop = true;
 
 	void start_looping()
 	{
-		event_thread = std::thread(loop_impl);
+		event_thread = std::thread(Event::m_loop_impl);
 	}
 
 	void stop_looping()
@@ -118,7 +118,9 @@ namespace Hexeng::EventManager
 
 	uint64_t current_tick = 0;
 
-	void loop_impl()
+	void Event::m_polymorphic() {}
+
+	void Event::m_loop_impl()
 	{
 		while (allowed_to_loop)
 		{
@@ -132,7 +134,12 @@ namespace Hexeng::EventManager
 			for (auto evt : global_events)
 			{
 				if (!*(evt->enable_ptr))
+				{
+					Button* btn = dynamic_cast<Button*>(evt);
+					if (btn)
+						btn->m_click_outside = true;
 					continue;
+				}
 
 				if (evt->clock > 0)
 					evt->clock--;
@@ -149,7 +156,12 @@ namespace Hexeng::EventManager
 			for (auto evt : scenes[scene_id]->events)
 			{
 				if (!*(evt->enable_ptr))
+				{
+					Button* btn = dynamic_cast<Button*>(evt);
+					if (btn)
+						btn->m_click_outside = true;
 					continue;
+				}
 
 				if (evt->clock > 0)
 					evt->clock--;
