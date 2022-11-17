@@ -53,7 +53,7 @@ namespace Hexeng::EventManager
 								click();
 							m_was_clicking = true;
 						}
-						else if (keep_clicking)
+						else if (keep_clicking && !m_click_outside)
 							keep_clicking();
 					}
 					else if (m_was_clicking)
@@ -71,19 +71,21 @@ namespace Hexeng::EventManager
 						unhover();
 					m_was_hovered = false;
 					
-					if (m_was_clicking)
-					{
-						if (unclick)
-							unclick();
-						m_was_clicking = false;
-					}
+					if (m_was_clicking && unclick)
+						unclick();
 				}
 				else
 				{
 					if (glfwGetMouseButton(window, mouse_button))
-						m_click_outside = true;
+					{
+						if (!m_was_clicking)
+							m_click_outside = true;
+					}
 					else
+					{
 						m_click_outside = false;
+						m_was_clicking = false;
+					}
 				}
 			},
 			range, 1));
@@ -114,7 +116,7 @@ namespace Hexeng::EventManager
 							click();
 						m_was_clicking = true;
 					}
-					else if (keep_clicking)
+					else if (keep_clicking && !m_click_outside)
 						keep_clicking();
 				}
 				else if (m_was_clicking)
@@ -132,19 +134,21 @@ namespace Hexeng::EventManager
 					unhover();
 				m_was_hovered = false;
 
-				if (m_was_clicking)
-				{
-					if (unclick)
-						unclick();
-					m_was_clicking = false;
-				}
+				if (m_was_clicking && unclick)
+					unclick();
 			}
 			else
 			{
 				if (glfwGetMouseButton(window, mouse_button))
-					m_click_outside = true;
+				{
+					if (!m_was_clicking)
+						m_click_outside = true;
+				}
 				else
+				{
 					m_click_outside = false;
+					m_was_clicking = false;
+				}
 			}
 		};
 	}
@@ -176,7 +180,7 @@ namespace Hexeng::EventManager
 							click();
 						m_was_clicking = true;
 					}
-					else if (keep_clicking)
+					else if (keep_clicking && !m_click_outside)
 						keep_clicking();
 				}
 				else if (m_was_clicking)
@@ -194,19 +198,21 @@ namespace Hexeng::EventManager
 					unhover();
 				m_was_hovered = false;
 
-				if (m_was_clicking)
-				{
-					if (unclick)
-						unclick();
-					m_was_clicking = false;
-				}
+				if (m_was_clicking && unclick)
+					unclick();
 			}
 			else
 			{
 				if (glfwGetMouseButton(window, mouse_button))
-					m_click_outside = true;
+				{
+					if (!m_was_clicking)
+						m_click_outside = true;
+				}
 				else
+				{
 					m_click_outside = false;
+					m_was_clicking = false;
+				}
 			}
 		};
 

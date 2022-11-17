@@ -7,6 +7,10 @@
 
 #include "GLFW/glfw3.h"
 
+#ifdef _WIN32
+#include <Windows.h>
+#endif
+
 namespace Hexeng::EventManager
 {
 	std::thread event_thread;
@@ -122,6 +126,11 @@ namespace Hexeng::EventManager
 
 	void Event::m_loop_impl()
 	{
+
+#ifdef _WIN32
+		timeBeginPeriod(1);
+#endif
+
 		while (allowed_to_loop)
 		{
 			auto start_point = std::chrono::high_resolution_clock::now();
@@ -178,11 +187,10 @@ namespace Hexeng::EventManager
 
 			auto end_point = std::chrono::high_resolution_clock::now();
 
-			std::chrono::duration<float> duration = end_point - start_point;
-			int duration_ms = static_cast<int>(duration.count() * 1000);
+			std::chrono::duration<float, std::milli> duration = end_point - start_point;
 
-			if (duration_ms < 10)
-				std::this_thread::sleep_for(std::chrono::milliseconds(10 - duration_ms));
+			if (duration.count() < 10.0f)
+				std::this_thread::sleep_for(std::chrono::duration<float, std::milli>(10.0f - duration.count()));
 		}
 	}
 }
