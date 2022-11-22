@@ -74,7 +74,7 @@ These were the big features of the engine, hope you had fun reading that.
 
 ***
 
-## Contact & Support
+## Contact
 
 If you have any questions that concerns Hexeng2D, or if you're getting a problem with it, you can contact me on my [Discord](discord.com/invite/GtPk7mr6Ps).
 Note that my dms are open, that's the fastest way you can get an answer from me.
