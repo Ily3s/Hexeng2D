@@ -359,4 +359,189 @@ namespace Hexeng::Renderer
 		Polygon::s_vertex_layout = VertexLayout({ {2, GL_FLOAT} });
 	} } };
 
+	MeshCopy::MeshCopy(const Mesh& other)
+		: m_vao_ptr(other.get_vao())
+	{
+		m_texture = const_cast<Texture*>(other.get_texture());
+		m_shader = const_cast<Shader*>(other.get_shader());
+		blending_method = other.blending_method;
+		m_ib = other.get_ib();
+		m_type = other.get_type();
+		uniforms = other.uniforms;
+
+		color = other.color;
+		color_filter = other.color_filter;
+		position = other.position;
+		rotation = other.rotation;
+		scale = other.scale;
+
+		enable = other.enable;
+		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_transform)
+				value_ptr = &m_transform;
+			else if (ui == &u_rotation_angle)
+				value_ptr = &rotation;
+			else if (ui == &u_scale)
+				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
+			else if (ui == &u_color)
+				value_ptr = &color;
+		}
+	}
+
+	MeshCopy& MeshCopy::operator=(const Mesh& other)
+	{
+		m_vao_ptr = other.get_vao();
+		uniforms = other.uniforms;
+
+		m_texture = const_cast<Texture*>(other.get_texture());
+		m_shader = const_cast<Shader*>(other.get_shader());
+		blending_method = other.blending_method;
+		m_ib = other.get_ib();
+		m_type = other.get_type();
+
+		color = other.color;
+		color_filter = other.color_filter;
+		position = other.position;
+		rotation = other.rotation;
+		scale = other.scale;
+
+		enable = other.enable;
+		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_transform)
+				value_ptr = &m_transform;
+			else if (ui == &u_rotation_angle)
+				value_ptr = &rotation;
+			else if (ui == &u_scale)
+				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
+			else if (ui == &u_color)
+				value_ptr = &color;
+		}
+
+		return *this;
+	}
+
+	MeshCopy::MeshCopy(const MeshCopy& other)
+		: m_vao_ptr(other.m_vao_ptr)
+	{
+		m_texture = other.m_texture;
+		m_shader = other.m_shader;
+		blending_method = other.blending_method;
+		m_ib = other.m_ib;
+		m_type = other.m_type;
+		uniforms = other.uniforms;
+
+		color = other.color;
+		color_filter = other.color_filter;
+		position = other.position;
+		rotation = other.rotation;
+		scale = other.scale;
+
+		enable = other.enable;
+		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_transform)
+				value_ptr = &m_transform;
+			else if (ui == &u_rotation_angle)
+				value_ptr = &rotation;
+			else if (ui == &u_scale)
+				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
+			else if (ui == &u_color)
+				value_ptr = &color;
+		}
+	}
+
+	MeshCopy& MeshCopy::operator= (const MeshCopy& other)
+	{
+		m_vao_ptr = other.m_vao_ptr;
+		uniforms = other.uniforms;
+
+		m_texture = other.m_texture;
+		m_shader = other.m_shader;
+		blending_method = other.blending_method;
+		m_ib = other.m_ib;
+		m_type = other.m_type;
+
+		color = other.color;
+		color_filter = other.color_filter;
+		position = other.position;
+		rotation = other.rotation;
+		scale = other.scale;
+
+		enable = other.enable;
+		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
+
+		for (auto& [ui, value_ptr] : uniforms)
+		{
+			if (ui == &u_transform)
+				value_ptr = &m_transform;
+			else if (ui == &u_rotation_angle)
+				value_ptr = &rotation;
+			else if (ui == &u_scale)
+				value_ptr = &scale;
+			else if (ui == &u_color_filter)
+				value_ptr = &color_filter;
+			else if (ui == &u_color)
+				value_ptr = &color;
+		}
+
+		return *this;
+	}
+
+	MeshCopy::MeshCopy(MeshCopy&& other) noexcept
+		: Mesh(std::move(other)), m_vao_ptr(other.m_vao_ptr) 
+	{
+		other.m_vao_ptr = nullptr;
+	}
+
+	MeshCopy& MeshCopy::operator=(MeshCopy&& other) noexcept
+	{
+		Mesh::operator=(std::move(other));
+		m_vao_ptr = other.m_vao_ptr;
+		other.m_vao_ptr = nullptr;
+		return *this;
+	}
+
+	void MeshCopy::draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
+	{
+		if (!*enable_ptr)
+			return;
+
+		m_shader->bind();
+
+		if (!m_texture)
+			Texture::unbind();
+
+		HXG_GL(glBlendFunc(blending_method.src, blending_method.dest));
+
+		for (auto& [uniform, value] : uniforms)
+			parents_uniforms[uniform].push_back(value);
+
+		for (auto& [uniform, values] : parents_uniforms)
+			uniform->refresh(m_shader, values);
+
+		for (auto& [uniform, value] : uniforms)
+			parents_uniforms[uniform].pop_back();
+
+		if (m_texture)
+			m_texture->bind();
+
+		m_vao_ptr->bind();
+
+		HXG_GL(glDrawElements(m_type, m_ib->get_count(), m_ib->get_type(), nullptr));
+	}
+
 }

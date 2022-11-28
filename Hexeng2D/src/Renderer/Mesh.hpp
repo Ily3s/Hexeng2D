@@ -88,6 +88,8 @@ namespace Hexeng::Renderer
 		virtual void load();
 		virtual void unload();
 
+		inline const GLenum& get_type() const { return m_type; }
+
 	protected:
 
 		static std::unordered_map<UniformInterface*, std::vector<void*>> s_empty_uniform_list;
@@ -171,6 +173,31 @@ namespace Hexeng::Renderer
 
 		static VertexLayout s_vertex_layout;
 		static ToBeInit s_init_layout;
+	};
+
+	/// @brief A "copy", "link" to a Mesh.
+	/// @details It can have different uniforms (position, color, texture ...) than the original mesh but the vertex array object stays the same.
+	/// If the original mesh gets destructed, then all copies of it become unvalid (as they are more like links than like copies).
+	class HXG_DECLSPEC MeshCopy : public Mesh
+	{
+	public :
+
+		MeshCopy(const Mesh&);
+		MeshCopy& operator=(const Mesh&);
+
+		MeshCopy(const MeshCopy&);
+		MeshCopy& operator=(const MeshCopy&);
+
+		MeshCopy() = default;
+
+		MeshCopy(MeshCopy&&) noexcept;
+		MeshCopy& operator=(MeshCopy&&) noexcept;
+
+		void draw(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms = s_empty_uniform_list) override;
+
+	private :
+
+		const VertexArray* m_vao_ptr = nullptr;
 	};
 
 }
