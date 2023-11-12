@@ -33,6 +33,8 @@ namespace Hexeng::Physics
 
 		void on_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) override;
 
+		PhysicsEntity(PhysicsEntity&& other) noexcept;
+		PhysicsEntity& operator=(PhysicsEntity&& other) noexcept;
 	};
 
 }

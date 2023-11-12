@@ -78,6 +78,30 @@ namespace Hexeng::Physics
 		rec.max = position + rec.size / 2;
 	}
 
+	PhysicsEntity::PhysicsEntity(PhysicsEntity&& other) noexcept
+		: HitBox(std::move(other)), PhysicsVecs(std::move(other))
+	{
+		auto it = std::find(s_entities.begin(), s_entities.end(), &other);
+		if (it != s_entities.end())
+			*it = this;
+	}
+
+	PhysicsEntity& PhysicsEntity::operator=(PhysicsEntity&& other) noexcept
+	{
+		HitBox::operator=(std::move(other));
+		PhysicsVecs::operator=(std::move(other));
+
+		auto it = std::find(s_entities.begin(), s_entities.end(), this);
+		if (it != s_entities.end())
+			s_entities.erase(it);
+
+		it = std::find(s_entities.begin(), s_entities.end(), &other);
+		if (it != s_entities.end())
+			*it = this;
+
+		return *this;
+	}
+
 	EventManager::EventGate PhysicsEntity::update_position_evt	{ update_positions_all };
 	EventManager::EventGate HitBox::collisions_evt				{ load_collisions };
 	EventManager::EventGate PhysicsVecs::update_evt				{ update_vecs };
