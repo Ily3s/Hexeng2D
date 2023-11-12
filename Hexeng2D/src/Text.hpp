@@ -32,7 +32,7 @@ namespace Hexeng
 		std::unordered_map<char32_t, Renderer::TexCoord> char_map;
 		float quality = 0.1f;
 		stbtt_fontinfo font_info{};
-		std::unique_ptr<uint8_t[]> file_buffer = nullptr;
+		std::vector<uint8_t> file_buffer;
 		int line_height = 0, line_offset = 0;
 		float get_advancement(int c);
 		CharBox get_box(int c);

@@ -24,7 +24,6 @@
 
 int main()
 {
-
 	using namespace Hexeng;
 
 	Settings::window_name = "Sandbox";
@@ -48,7 +47,7 @@ int main()
 	anim_sq.play();
 
 	Player player{ {0, 0}, 5.0f, &example };
-
+    
 	std::filesystem::create_directory("saves");
 
 	SaveFile save_file;
@@ -66,6 +65,7 @@ int main()
 		{0, 1000}
 	};
 
+    
 	EventManager::EventGate in_frame{ [&frame_hb, &player, &frame, &star,
 										&save_var, &save_file,
 										&language, &French, &English]()
@@ -103,13 +103,17 @@ int main()
 		 }
 	}, Range::LOCAL };
 
+
 	EventManager::Event not_in_frame{
 		[&frame_hb, &player]() {return !Physics::HitBox::is_colliding(player.physics, frame_hb).first; },
 		[&star, &frame]() {frame.color_filter = Color4::white; star.color = Color4::white; }, Range::LOCAL };
 
+    
 	Font kunstler{ "res/KUNSTLER.TTF" };
+
 	Text txt{ &language, U"Hello, World !", kunstler, {0, 580}, 200, HorizontalAlign::CENTER, VerticalAlign::TOP, Color4::white };
 
+    
 	Renderer::Texture arrow_unhover{ "res/arrow_unhover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 	Renderer::Texture arrow_hover{ "res/arrow_hover.png", {{Renderer::TexSett::MAG_FILTER, GL_NEAREST}} };
 
