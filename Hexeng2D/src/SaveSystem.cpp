@@ -1,5 +1,6 @@
 #include <string.h>
 #include <exception>
+#include <memory>
 
 #include "SaveSystem.hpp"
 
@@ -69,7 +70,7 @@ namespace Hexeng
 				*(header_buffer) = var.id;
 				header_buffer++;
 				*(header_buffer) = var.get_size(&var.value);
-				std::memcpy(save_buffer, var.value, *header_buffer);
+				memcpy(save_buffer, var.value, *header_buffer);
 				save_buffer += *header_buffer;
 				header_buffer++;
 				*(header_buffer) = var.unit_size;
@@ -162,7 +163,7 @@ namespace Hexeng
 				var.reserve(header[i + 1], &var.value);
 				try
 				{
-					std::memcpy(var.value, save_buffer_safe, header[i + 1]);
+					memcpy(var.value, save_buffer_safe, header[i + 1]);
 				}
 				catch (const std::bad_alloc& e)
 				{

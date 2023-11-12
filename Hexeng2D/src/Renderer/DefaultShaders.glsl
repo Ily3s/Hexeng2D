@@ -5,6 +5,9 @@
 
 #define HXG_SHADER(x) #x
 
+#ifndef Hexeng2D_EXPORTS
+#endif
+
 namespace Hexeng::Renderer
 {
 

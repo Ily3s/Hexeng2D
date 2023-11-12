@@ -2,6 +2,7 @@
 #include <sstream>
 #include <cassert>
 
+#include "Macros.hpp"
 #include "Text.hpp"
 #include "Renderer/Renderer.hpp"
 
@@ -12,19 +13,22 @@ namespace Hexeng
 		: quality(quality),
 		m_filepath(path)
 	{
-		std::basic_ifstream<unsigned char> font_file{ path, std::ios::in | std::ios::binary };
+		std::ifstream font_file{ path, std::ios::in | std::ios::binary };
 
 		HXG_ASSERT(font_file,
 			HXG_LOG_ERROR("The file \"" + path + "\" may not exists"); return;);
 
 		font_file.seekg(0, std::ios::end);
 		size_t size = font_file.tellg();
-		font_file.seekg(0);
+		font_file.seekg(0, std::ios::beg);
+      
+    file_buffer.reserve(size);
 
-		file_buffer = std::make_unique<uint8_t[]>(size);
-		font_file.read(file_buffer.get(), size);
+		font_file.read((char*)&file_buffer[0], size);
 
-		HXG_ASSERT(stbtt_InitFont(&font_info, file_buffer.get(), stbtt_GetFontOffsetForIndex(file_buffer.get(), 0)),
+        int offset = stbtt_GetFontOffsetForIndex(&file_buffer[0], 0);
+        HXG_ASSERT((offset != -1), HXG_LOG_ERROR("Unable to load ttf file at location \"" + path + "\""); return;);
+		HXG_ASSERT(stbtt_InitFont(&font_info, &file_buffer[0], offset),
 			HXG_LOG_ERROR("Unable to load ttf file at location \"" + path + "\""); return;);
 
 		int ascent, descent, line_gap;
