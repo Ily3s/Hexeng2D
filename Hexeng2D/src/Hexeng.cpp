@@ -16,6 +16,7 @@ namespace Hexeng
 
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
+
 		while (!glfwWindowShouldClose(window) && !exit)
 		{
 			if (pre)
@@ -23,6 +24,7 @@ namespace Hexeng
 
 			auto start = std::chrono::high_resolution_clock::now();
 
+            
 			Renderer::clear();
 
 			Renderer::refresh_uniforms();
@@ -39,6 +41,7 @@ namespace Hexeng
 
 			if (post)
 				post();
+
 		}
 	}
 

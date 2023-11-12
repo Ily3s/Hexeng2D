@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <unordered_map>
+#include <cstdint>
 
 #include "Hexeng.hpp"
 
