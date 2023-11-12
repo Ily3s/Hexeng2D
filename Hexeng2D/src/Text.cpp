@@ -22,7 +22,7 @@ namespace Hexeng
 		size_t size = font_file.tellg();
 		font_file.seekg(0, std::ios::beg);
       
-    file_buffer.reserve(size);
+		file_buffer.resize(size);
 
 		font_file.read((char*)&file_buffer[0], size);
 
