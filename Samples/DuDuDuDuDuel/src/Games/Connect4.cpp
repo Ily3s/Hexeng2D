@@ -46,7 +46,7 @@ namespace Connect4
 			for (int j = 0; j < 6; j++)
 			{
 				grid[i][j].opacity = 0.0f;
-				grid[i][j].color = { 1.0f, 1.0f, 1.0f, 0.0f };
+				grid[i][j].color = Hexeng::Color4{ 1.0f, 1.0f, 1.0f, 0.0f };
 			}
 			stacks[i] = 0;
 		}
@@ -154,14 +154,14 @@ namespace Connect4
 				{
 					grid[i][j] = Hexeng::Renderer::BatchQuad{ &batch, {0, 0}, bottom_left + Hexeng::Vec2<int>{i * 123, j * 135}, 1.1f };
 					grid[i][j].opacity = 0.0f;
-					grid[i][j].color = { 1.0f, 1.0f, 1.0f, 0.0f };
+					grid[i][j].color = Hexeng::Color4{ 1.0f, 1.0f, 1.0f, 0.0f };
 				}
 				stacks[i] = 0;
 			}
 
 			pointer_quad = Hexeng::Renderer::BatchQuad{ &batch, {0, 0}, {bottom_left.x + 3 * 123, bottom_left.y + 6 * 135}, 1.1f };
 			pointer_quad.color_filter = Hexeng::Color4::cyan;
-			pointer_quad.color = {1.0f, 1.0f, 1.0f, 0.0f};
+			pointer_quad.color = Hexeng::Color4{1.0f, 1.0f, 1.0f, 0.0f};
 
 			batch.construct_batch();
 

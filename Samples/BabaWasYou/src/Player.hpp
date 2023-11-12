@@ -5,6 +5,7 @@
 #include <thread>
 #include <mutex>
 #include <condition_variable>
+#include <vector>
 
 #include "Board.hpp"
 
@@ -51,9 +52,7 @@ public :
 
 	std::vector<Move> registered_moves;
 
-	std::chrono::steady_clock::time_point last_move;
-
-	static std::vector<Player> storage;
+	std::chrono::time_point<std::chrono::high_resolution_clock> last_move;
 
 	std::thread replay_thread;
 
@@ -63,15 +62,26 @@ public :
 
 	void press();
 
-private :
+    struct PlayerAllocator : std::allocator<Player>
+    {
+        template<class U, class... Args>
+        void construct(U* ptr, Args&&... args)
+        {
+            ::new((void*)ptr) U(std::forward<Args>(args)...);
+        }
+        template<class U> struct rebind { typedef PlayerAllocator other; };
+    };
+    friend struct PlayerAllocator;
 
-	friend struct std::_Default_allocator_traits<std::vector<Player>::allocator_type>;
+    static std::vector<Player, PlayerAllocator> storage;
+
+private :
 
 	Player(uint8_t pos);
 
 	static Hexeng::Renderer::Texture s_texture;
 
-	static Hexeng::Renderer::ToBeInit Player::s_init_res;
+	static Hexeng::Renderer::ToBeInit s_init_res;
 
 };
 

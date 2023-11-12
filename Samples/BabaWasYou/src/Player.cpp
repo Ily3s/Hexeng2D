@@ -4,7 +4,9 @@
 #include "Hexeng.hpp"
 #include "Scene.hpp"
 
-std::vector<Player> Player::storage;
+#include <cstring>
+
+std::vector<Player, Player::PlayerAllocator> Player::storage;
 Hexeng::Renderer::Texture Player::s_texture;
 
 Hexeng::Audio::Sound move_sound;

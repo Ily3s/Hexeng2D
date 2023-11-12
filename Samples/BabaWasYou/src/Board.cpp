@@ -8,6 +8,8 @@
 
 #include <string>
 #include <sstream>
+#include <chrono>
+#include <cstring>
 
 Hexeng::Scene board_scene{ 2, {{Hexeng::SceneComponent::LAYERS, {&board_layer, &player_layer, &UI_layer}}} };
 
@@ -162,7 +164,7 @@ uint64_t timer = 0;
 
 Hexeng::Text timer_text;
 
-std::chrono::steady_clock::time_point start;
+std::chrono::time_point<std::chrono::high_resolution_clock> start;
 
 std::u32string time_to_string(uint64_t time)
 {

@@ -7,8 +7,8 @@ Hexeng::Font roboto_font;
 
 Hexeng::Renderer::Texture full_logo;
 
-Hexeng::Language english{ "res/langs/english.txt" };
-Hexeng::Language french{ "res/langs/french.txt" };
+Hexeng::Language english{ "res/langs/English.txt" };
+Hexeng::Language french{ "res/langs/French.txt" };
 
 const Hexeng::Language* language_switch = &english;
 

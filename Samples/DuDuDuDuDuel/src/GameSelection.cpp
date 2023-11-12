@@ -18,7 +18,7 @@ Hexeng::Renderer::Layer game_selection_layer;
 Hexeng::Renderer::Quad escape_fog;
 Hexeng::Renderer::Quad escape_background;
 Hexeng::Renderer::Quad escape_frame;
-Hexeng::EventManager::KeyPressEvent press_escape;
+static Hexeng::EventManager::KeyPressEvent press_escape;
 
 static DefaultButton menu_btn;
 static DefaultButton save_btn;

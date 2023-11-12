@@ -8,6 +8,7 @@
 
 #include <filesystem>
 #include <fstream>
+#include <cstring>
 
 Hexeng::Renderer::Quad logo;
 Hexeng::EventManager::Button play_btn;

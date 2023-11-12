@@ -59,7 +59,7 @@ extern uint8_t* map;
 
 extern uint64_t timer;
 
-extern std::chrono::steady_clock::time_point start;
+extern std::chrono::time_point<std::chrono::high_resolution_clock> start;
 
 std::u32string time_to_string(uint64_t time);
 

@@ -11,5 +11,5 @@ project(Hexeng2D)
 
 add_subdirectory(Hexeng2D)
 add_subdirectory(Sandbox)
-add_subdirectory(EmptyProject)
 add_subdirectory(Samples)
+add_subdirectory(EmptyProject)

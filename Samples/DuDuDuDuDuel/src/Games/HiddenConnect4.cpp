@@ -61,7 +61,7 @@ namespace HiddenConnect4
 		{
 			for (int j = 0; j < 6; j++)
 			{
-				grid[i][j].color = {0.0f, 0.0f, 0.0f, 0.0f};
+				grid[i][j].color = Hexeng::Color4{0.0f, 0.0f, 0.0f, 0.0f};
 			}
 		}
 	}
