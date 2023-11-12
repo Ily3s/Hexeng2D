@@ -14,6 +14,8 @@ namespace Hexeng
 
 	bool exit = false;
 
+	std::mutex safe_render_mutex;
+
 	void game_loop(std::function<void()> pre, std::function<void()> post)
 	{
 		while (!glfwWindowShouldClose(window) && !exit)
@@ -25,9 +27,13 @@ namespace Hexeng
 
 			Renderer::clear();
 
-			Renderer::refresh_uniforms();
+			{
+				std::lock_guard<std::mutex> safe_render(safe_render_mutex);
 
-			Renderer::draw_current_scene();
+				Renderer::refresh_uniforms();
+
+				Renderer::draw_current_scene();
+			}
 
 			HXG_GLFW(glfwSwapBuffers(window));
 

@@ -60,17 +60,17 @@ namespace Hexeng::Renderer
 		if(moving.m_vao.is_init())
 			m_vao = { m_vb, *m_layout, *m_ib };
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &moving.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &moving.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &moving.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &moving.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &moving.color)
 				value_ptr = &color;
 		}
 	}
@@ -98,17 +98,17 @@ namespace Hexeng::Renderer
 		if(moving.m_vao.is_init())
 			m_vao = { m_vb, *m_layout, *m_ib };
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &moving.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &moving.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &moving.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &moving.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &moving.color)
 				value_ptr = &color;
 		}
 
@@ -167,22 +167,42 @@ namespace Hexeng::Renderer
 		: meshes(std::move(meshes))
 	{
 		uniforms.push_back({ &u_transform, &m_transform });
-		uniforms.push_back({ &u_scale, &scale });
-		uniforms.push_back({ &u_rotation_angle, &rotation });
 		uniforms.push_back({ &u_color_filter, &color_filter });
 		uniforms.push_back({ &u_color, &color });
+		uniforms.push_back({ &u_scale, &inner_scale });
+		uniforms.push_back({ &u_rotation_angle, &inner_rotation });
 	}
 
 	SuperMesh::SuperMesh(SuperMesh&& other) noexcept
 		: Mesh(std::move(other))
 	{
 		meshes = std::move(other.meshes);
+		inner_scale = other.inner_scale;
+		inner_rotation = other.inner_rotation;
+
+		for (auto& [_, value_ptr] : uniforms)
+		{
+			if (value_ptr == &other.inner_rotation)
+				value_ptr = &inner_rotation;
+			else if (value_ptr == &other.inner_scale)
+				value_ptr = &inner_scale;
+		}
 	}
 
 	SuperMesh& SuperMesh::operator=(SuperMesh&& other) noexcept
 	{
 		Mesh::operator=(std::move(other));
 		meshes = std::move(other.meshes);
+		inner_scale = other.inner_scale;
+		inner_rotation = other.inner_rotation;
+
+		for (auto& [_, value_ptr] : uniforms)
+		{
+			if (value_ptr == &other.inner_rotation)
+				value_ptr = &inner_rotation;
+			else if (value_ptr == &other.inner_scale)
+				value_ptr = &inner_scale;
+		}
 
 		return *this;
 	}
@@ -198,7 +218,15 @@ namespace Hexeng::Renderer
 		m_update_childs_positions(parents_uniforms);
 
 		for (auto& mesh : meshes)
+		{
+			float mesh_scale = mesh->scale;
+			float mesh_rota = mesh->rotation;
+			mesh->scale *= scale;
+			mesh->rotation += rotation;
 			mesh->draw(parents_uniforms);
+			mesh->rotation = mesh_rota;
+			mesh->scale = mesh_scale;
+		}
 
 		for (auto& [uniform, value] : uniforms)
 			parents_uniforms[uniform].pop_back();
@@ -206,16 +234,13 @@ namespace Hexeng::Renderer
 
 	void SuperMesh::m_update_childs_positions(std::unordered_map<UniformInterface*, std::vector<void*>>& parents_uniforms)
 	{
-		std::vector<float*>& angles = *reinterpret_cast<std::vector<float*>*>(&parents_uniforms[&u_rotation_angle]);
-		float total_angle_degree = 0.0f;
-		for (auto& angle_degree : angles)
-			total_angle_degree += *angle_degree;
-
-		double angle = total_angle_degree * (M_PI / 180.0);
+		double angle = rotation * (M_PI / 180.0);
 		for (auto mesh : meshes)
 		{
 			mesh->m_transform = {toX(mesh->position.x * cos(angle) + mesh->position.y * sin(angle)),
 								toY(mesh->position.y * cos(angle) - mesh->position.x * sin(angle))};
+
+			mesh->m_transform = m_transform + (mesh->m_transform - m_transform) * scale;
 		}
 	}
 
@@ -378,17 +403,17 @@ namespace Hexeng::Renderer
 		enable = other.enable;
 		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &other.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &other.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &other.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &other.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &other.color)
 				value_ptr = &color;
 		}
 	}
@@ -413,17 +438,17 @@ namespace Hexeng::Renderer
 		enable = other.enable;
 		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &other.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &other.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &other.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &other.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &other.color)
 				value_ptr = &color;
 		}
 
@@ -449,17 +474,17 @@ namespace Hexeng::Renderer
 		enable = other.enable;
 		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &other.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &other.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &other.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &other.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &other.color)
 				value_ptr = &color;
 		}
 	}
@@ -484,17 +509,17 @@ namespace Hexeng::Renderer
 		enable = other.enable;
 		enable_ptr = &other.enable == other.enable_ptr ? &enable : other.enable_ptr;
 
-		for (auto& [ui, value_ptr] : uniforms)
+		for (auto& [_, value_ptr] : uniforms)
 		{
-			if (ui == &u_transform)
+			if (value_ptr == &other.m_transform)
 				value_ptr = &m_transform;
-			else if (ui == &u_rotation_angle)
+			else if (value_ptr == &other.rotation)
 				value_ptr = &rotation;
-			else if (ui == &u_scale)
+			else if (value_ptr == &other.scale)
 				value_ptr = &scale;
-			else if (ui == &u_color_filter)
+			else if (value_ptr == &other.color_filter)
 				value_ptr = &color_filter;
-			else if (ui == &u_color)
+			else if (value_ptr == &other.color)
 				value_ptr = &color;
 		}
 

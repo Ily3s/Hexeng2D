@@ -1,6 +1,8 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 
+#include <thread>
+
 #include "glad/glad.h"
 #include "GLFW/glfw3.h"
 #include "Shader.hpp"
@@ -71,6 +73,8 @@ namespace Hexeng::Renderer
 	};
 
 	HXG_DECLSPEC extern std::vector<std::function<void(void)>> pending_actions;
+
+	HXG_DECLSPEC extern std::thread::id thread_id;
 
 }
 

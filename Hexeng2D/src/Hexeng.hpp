@@ -3,6 +3,7 @@
 
 #include <functional>
 #include <string>
+#include <mutex>
 
 #include "Macros.hpp"
 #include "Vectors.hpp"
@@ -69,6 +70,8 @@ namespace Hexeng
 
 	/// @brief Set to true to exit next frame.
 	HXG_DECLSPEC extern bool exit;
+
+	HXG_DECLSPEC extern std::mutex safe_render_mutex;
 
 }
 

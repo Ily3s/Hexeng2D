@@ -34,14 +34,23 @@ namespace Hexeng
 	{
 		try
 		{
+			uint64_t total_size = 0;
 
-			uint64_t header_size = 24 * m_vars.size() + 12;
-
-			uint64_t total_size = header_size;
-
+			int m_vars_size = 0;
 			void* garbage = nullptr;
 			for (auto& var : m_vars)
-				total_size += var.get_size(&garbage);
+			{
+				uint64_t var_size = var.get_size(&garbage);
+				m_vars_size += var_size ? 1 : 0;
+				total_size += var_size;
+			}
+
+			if (!m_vars_size)
+				return;
+
+			uint64_t header_size = 24 * m_vars_size + 12;
+
+			total_size += header_size;
 
 			uint8_t* save_buffer = new uint8_t[total_size];
 			uint64_t* header_buffer = (uint64_t*)(save_buffer + 4);
@@ -53,6 +62,9 @@ namespace Hexeng
 
 			for (auto& var : m_vars)
 			{
+				if (!var.get_size(&garbage))
+					continue;
+
 				header_buffer++;
 				*(header_buffer) = var.id;
 				header_buffer++;

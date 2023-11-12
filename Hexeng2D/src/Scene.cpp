@@ -88,14 +88,25 @@ namespace Hexeng
 		if (scenes.find(new_scene_id) == scenes.end())
 			return;
 
-		Renderer::pending_actions.push_back([new_scene_id]()
-			{
-				scenes[scene_id]->unload();
-				scenes[new_scene_id]->load();
-				for (auto& layer : Renderer::global_layers)
-					layer->load();
-				scene_id = new_scene_id;
-			});
+		if (std::this_thread::get_id() == Renderer::thread_id)
+		{
+			scenes[scene_id]->unload();
+			scenes[new_scene_id]->load();
+			for (auto& layer : Renderer::global_layers)
+				layer->load();
+			scene_id = new_scene_id;
+		}
+		else
+		{
+			Renderer::pending_actions.push_back([new_scene_id]()
+				{
+					scenes[scene_id]->unload();
+					scenes[new_scene_id]->load();
+					for (auto& layer : Renderer::global_layers)
+						layer->load();
+					scene_id = new_scene_id;
+				});
+		}
 	}
 
 }

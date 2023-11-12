@@ -34,7 +34,7 @@ namespace Hexeng::Renderer
 		{
 			float angle = to_radian(u_rotation_angle);
 			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
-			gl_Position = vec4((pos * sqrt(u_scale) - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
+			gl_Position = vec4((pos * u_scale - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
 			v_text_coord = text_coord;
 			vertex_position = gl_Position.xy;
 		}
@@ -65,7 +65,7 @@ namespace Hexeng::Renderer
 		{
 			float angle = to_radian(u_rotation_angle);
 			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
-			gl_Position = vec4((pos * sqrt(u_scale) - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
+			gl_Position = vec4((pos * u_scale - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
 			vertex_position = gl_Position.xy;
 		}
 	);
@@ -116,7 +116,7 @@ namespace Hexeng::Renderer
 		    vec2 quad_transform = vec2(u_quads_uniforms[int(index*12)], u_quads_uniforms[int(index*12+1)]);
 			float angle = to_radian(u_rotation_angle + u_quads_uniforms[int(index*12)+3]);
 			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
-			gl_Position = vec4((pos * sqrt(u_scale * u_quads_uniforms[int(index*12)+2]) - u_cam.xy + u_transform + quad_transform) * u_zoom, 0.0, 1.0);
+			gl_Position = vec4((pos * u_scale * u_quads_uniforms[int(index*12)+2] - u_cam.xy + u_transform + quad_transform) * u_zoom, 0.0, 1.0);
 			v_text_coord = text_coord;
 			vertex_position = gl_Position.xy;
 			fs_index = index;
@@ -233,7 +233,7 @@ namespace Hexeng::Renderer
 		{
 			float angle = to_radian(u_rotation_angle);
 			vec2 pos = vec2(position.x * cos(angle) + position.y * sin(angle) * u_window_size.y/u_window_size.x, position.y * cos(angle) - position.x * sin(angle) * u_window_size.x/u_window_size.y);
-			gl_Position = vec4((pos * sqrt(u_scale) - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
+			gl_Position = vec4((pos * u_scale - u_cam.xy + u_transform) * u_zoom, 0.0, 1.0);
 			vec2 text_size = textureSize(u_Texture, 0);
 			v_text_coord = vec2(text_coord.x / text_size.x, text_coord.y / text_size.y);
 			vertex_position = gl_Position.xy;

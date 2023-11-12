@@ -42,8 +42,8 @@ namespace Hexeng::Physics
 		friend class Hexeng::Scene;
 
 		std::vector<RectangleHitBox> m_rectangles;
-		int m_solidity;
-		bool enable_collision;
+		int m_solidity = 0;
+		bool enable_collision = false;
 
 		static std::unordered_map<int, std::vector<HitBox*>> s_colliders;
 
@@ -59,6 +59,8 @@ namespace Hexeng::Physics
 
 		HitBox(HitBox&&) noexcept;
 		HitBox& operator=(HitBox&&) noexcept;
+
+		HitBox() = default;
 
 		static EventManager::EventGate collisions_evt;
 		static void load_collisions();

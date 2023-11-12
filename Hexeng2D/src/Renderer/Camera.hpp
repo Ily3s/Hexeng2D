@@ -27,6 +27,7 @@ namespace Hexeng::Renderer
 		friend class ContextualLayer;
 
 		static Uniform<Vec2<float>> u_cam;
+
 		static Uniform<float> u_zoom;
 
 		static void s_update_zoom(int distance);

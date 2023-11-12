@@ -75,6 +75,9 @@ namespace Hexeng::Renderer
 		Texture(Texture&&) noexcept;
 		Texture& operator=(Texture&&) noexcept;
 
+		static uint8_t* to_pixel_buff(const std::string& filepath);
+		static void free_pixel_buff(uint8_t*);
+
 	protected:
 
 		GLuint m_id = 0;

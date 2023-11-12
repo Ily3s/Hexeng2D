@@ -23,8 +23,9 @@ namespace Hexeng::Renderer
 	{ std::function<void(void)>{ []() {
 		Camera::u_cam = { {	{UniformArgType::NAME, "u_cam"},
 							{UniformArgType::CONTROLLLER, &Camera::s_shader_pos} } };
-		Camera::u_zoom = {{ {UniformArgType::NAME, "u_zoom"},
-							{UniformArgType::CONTROLLLER, &Camera::s_zoom} } };
+		Camera::u_zoom = { { {UniformArgType::NAME, "u_zoom"},
+							{UniformArgType::CONTROLLLER, &Camera::s_zoom},
+							{UniformArgType::FUSION_MODE, (void*)UniformFusionMode::MULTIPLY} } };
 		UniformInterface::necessary_uniforms.push_back(&Camera::u_cam);
 		UniformInterface::necessary_uniforms.push_back(&Camera::u_zoom);
 	} } };
