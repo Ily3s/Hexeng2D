@@ -94,8 +94,16 @@ namespace Hexeng::Renderer
 
 		m_update_childs_positions(parents_uniforms);
 
-		for (const auto& mesh : meshes)
+		for (auto& mesh : meshes)
+		{
+			float mesh_scale = mesh->scale;
+			float mesh_rota = mesh->rotation;
+			mesh->scale *= scale;
+			mesh->rotation += rotation;
 			mesh->draw(parents_uniforms);
+			mesh->rotation = mesh_rota;
+			mesh->scale = mesh_scale;
+		}
 	}
 
 }

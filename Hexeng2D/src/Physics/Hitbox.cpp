@@ -48,6 +48,13 @@ namespace Hexeng::Physics
 		{
 			auto it = std::find(vec.begin(), vec.end(), &other);
 			if (it != vec.end())
+				vec.erase(it);
+		}
+
+		for (auto& [i, vec] : s_colliders)
+		{
+			auto it = std::find(vec.begin(), vec.end(), &other);
+			if (it != vec.end())
 				*it = this;
 		}
 

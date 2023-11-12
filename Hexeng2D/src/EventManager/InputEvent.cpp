@@ -39,6 +39,7 @@ namespace Hexeng::EventManager
 
 	void ScrollEvent::scroll_callback(GLFWwindow* win, double xoffset, double yoffset)
 	{
+		std::lock_guard<std::mutex> safe_render(safe_render_mutex);
 		get()->callback(yoffset);
 	}
 
@@ -65,7 +66,11 @@ namespace Hexeng::EventManager
 		for (KeyPressEvent* evt : events)
 		{
 			if (key == evt->key_code && action == evt->mode && *(evt->enable_ptr))
+			{
+				std::lock_guard<std::mutex> safe_render(safe_render_mutex);
+
 				evt->action();
+			}
 		}
 	}
 

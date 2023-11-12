@@ -140,44 +140,48 @@ namespace Hexeng::EventManager
 			mouse_position.x -= 0.5 * Settings::window_size.x;
 			mouse_position /= (double)Settings::window_size.y / 1080;
 
-			for (auto evt : global_events)
 			{
-				if (!*(evt->enable_ptr))
+				std::lock_guard<std::mutex> safe_render(safe_render_mutex);
+
+				for (auto evt : global_events)
 				{
-					Button* btn = dynamic_cast<Button*>(evt);
-					if (btn)
-						btn->m_click_outside = true;
-					continue;
+					if (!*(evt->enable_ptr))
+					{
+						Button* btn = dynamic_cast<Button*>(evt);
+						if (btn)
+							btn->m_click_outside = true;
+						continue;
+					}
+
+					if (evt->clock > 0)
+						evt->clock--;
+					else if (evt->condition())
+					{
+						evt->action();
+						evt->clock = evt->pertick - 1;
+					}
 				}
 
-				if (evt->clock > 0)
-					evt->clock--;
-				else if (evt->condition())
-				{
-					evt->action();
-					evt->clock = evt->pertick - 1;
-				}
-			}
+				HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
+					HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); goto end_loop;);
 
-			HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
-				HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); goto end_loop;);
-
-			for (auto evt : scenes[scene_id]->events)
-			{
-				if (!*(evt->enable_ptr))
+				for (auto evt : scenes[scene_id]->events)
 				{
-					Button* btn = dynamic_cast<Button*>(evt);
-					if (btn)
-						btn->m_click_outside = true;
-					continue;
-				}
+					if (!*(evt->enable_ptr))
+					{
+						Button* btn = dynamic_cast<Button*>(evt);
+						if (btn)
+							btn->m_click_outside = true;
+						continue;
+					}
 
-				if (evt->clock > 0)
-					evt->clock--;
-				else if (evt->condition())
-				{
-					evt->action();
-					evt->clock = evt->pertick - 1;
+					if (evt->clock > 0)
+						evt->clock--;
+					else if (evt->condition())
+					{
+						evt->action();
+						evt->clock = evt->pertick - 1;
+					}
 				}
 			}
 			

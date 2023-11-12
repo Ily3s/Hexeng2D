@@ -95,6 +95,7 @@ namespace Hexeng::Renderer
 		static std::unordered_map<UniformInterface*, std::vector<void*>> s_empty_uniform_list;
 
 		friend class SuperMesh;
+		friend class MeshCopy;
 
 		Vec2<float> m_transform{ 0.0f, 0.0f };
 
@@ -135,6 +136,12 @@ namespace Hexeng::Renderer
 
 		virtual void load() override;
 		virtual void unload() override;
+
+		/// @note scale all the submeshes individually
+		float inner_scale = 1.0f;
+
+		/// @note rotate all the submeshes individually
+		float inner_rotation = 0.0f;
 
 	protected :
 

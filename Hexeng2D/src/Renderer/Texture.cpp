@@ -6,6 +6,18 @@
 namespace Hexeng::Renderer
 {
 
+	 uint8_t* Texture::to_pixel_buff(const std::string& filepath)
+	{
+		stbi_set_flip_vertically_on_load(1);
+		int four = 4;
+		int sexteen = 16;
+		return stbi_load(filepath.c_str(), &sexteen, &sexteen, &four, 4);
+	}
+	 void Texture::free_pixel_buff(uint8_t* pb)
+	{
+		stbi_image_free(pb);
+	}
+
 	Texture::Texture(const std::string& filepath, const TexSettList& settings)
 		: m_filepath(filepath)
 	{

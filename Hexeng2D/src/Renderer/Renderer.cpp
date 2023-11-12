@@ -13,8 +13,11 @@
 namespace Hexeng::Renderer
 {
 
+	std::thread::id thread_id;
+
 	void init()
 	{
+		thread_id = std::this_thread::get_id();
 
 		HXG_GLFW(if (!glfwInit()) { ::exit(-1); });
 
@@ -146,8 +149,8 @@ namespace Hexeng::Renderer
 		HXG_ASSERT((scenes.find(scene_id) != scenes.end()),
 			HXG_LOG_ERROR("The scene " + std::to_string(scene_id) + " doesn't exist."); return;);
 
-		for (auto& action : pending_actions)
-			action();
+		for (int i = 0; i < pending_actions.size(); i++)
+			pending_actions[i]();
 
 		pending_actions.clear();
 
