@@ -1,0 +1,345 @@
+\hypertarget{paqa_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/paqa.c File Reference}
+\label{paqa_8c}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/paqa.c@{Hexeng2D/dependencies/portaudio/qa/loopback/src/paqa.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}qa\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}paqa\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}audio\+\_\+analyzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}test\+\_\+audio\+\_\+analyzer.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_test_parameters__s}{Test\+Parameters\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_loopback_context__s}{Loopback\+Context\+\_\+s}}
+\item 
+struct \mbox{\hyperlink{struct_user_options__s}{User\+Options\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a71b4055b49b141f60926e6ecd501a919}{MAX\+\_\+\+NUM\+\_\+\+GENERATORS}}~(8)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a0b2bc279100a83d537fea49d58f9f497}{MAX\+\_\+\+NUM\+\_\+\+RECORDINGS}}~(8)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_abc72a4bdd8a0e1f3bb5ce7048c46e880}{MAX\+\_\+\+BACKGROUND\+\_\+\+NOISE\+\_\+\+RMS}}~(0.\+0004)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a992d42383fbc2e68028d1f5f6075891b}{LOOPBACK\+\_\+\+DETECTION\+\_\+\+DURATION\+\_\+\+SECONDS}}~(0.\+8)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a12f412fe0d55b67969636eec54b6ee8b}{DEFAULT\+\_\+\+FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(0)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a7ee82d90590893bd0622de6edab8d8ad}{PAQA\+\_\+\+WAIT\+\_\+\+STREAM\+\_\+\+MSEC}}~(100)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a3bf72c92536ab4d9260fc0c5e087b0fc}{PAQA\+\_\+\+TEST\+\_\+\+DURATION}}~(1.\+2)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a8432b94a78497d70296403fdc78bda92}{PAQA\+\_\+\+FLAG\+\_\+\+TWO\+\_\+\+STREAMS}}~(1$<$$<$0)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a69b2587a73c1530c6cffca6e4903e176}{PAQA\+\_\+\+FLAG\+\_\+\+USE\+\_\+\+BLOCKING\+\_\+\+IO}}~(1$<$$<$1)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_ae209bb597330a7e62afff33f95a3c04b}{BIG\+\_\+\+BUFFER\+\_\+\+SIZE}}~(sizeof(float) $\ast$ 2 $\ast$ 2 $\ast$ 1024)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_a4da3e1f4b32abddd6ad71698813078e8}{MAX\+\_\+\+CONVERSION\+\_\+\+SAMPLES}}~(2 $\ast$ 32 $\ast$ 1024)
+\item 
+\#define \mbox{\hyperlink{paqa_8c_ac1c45e7b577d10bac6742126ca95612f}{CONVERSION\+\_\+\+BUFFER\+\_\+\+SIZE}}~(sizeof(float) $\ast$ 2 $\ast$ \mbox{\hyperlink{paqa_8c_a4da3e1f4b32abddd6ad71698813078e8}{MAX\+\_\+\+CONVERSION\+\_\+\+SAMPLES}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_test_parameters__s}{Test\+Parameters\+\_\+s}} \mbox{\hyperlink{paqa_8c_abdeab62930f443eec10d8264257d2c43}{Test\+Parameters}}
+\item 
+typedef struct \mbox{\hyperlink{struct_loopback_context__s}{Loopback\+Context\+\_\+s}} \mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}}
+\item 
+typedef struct \mbox{\hyperlink{struct_user_options__s}{User\+Options\+\_\+s}} \mbox{\hyperlink{paqa_8c_ae748567768a4f54781da7b363eab47cd}{User\+Options}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paqa_8c_a688fb112bef5286849d4f3a7cdfa3e9e}{Pa\+Qa\+\_\+\+Run\+Loopback\+Full\+Duplex}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_a613bdebf40bb9d01c2bc9bfb8672790c}{Pa\+Qa\+\_\+\+Wait\+For\+Stream}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_adb6950432ac0cbf2fd33431ba9bfab5d}{Pa\+Qa\+\_\+\+Run\+Loopback\+Half\+Duplex}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_a656b56c81f37c88412cbf3e7f1da5065}{Pa\+Qa\+\_\+\+Run\+Input\+Only}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_a19f46f0a27ef73c8798b75e693880a17}{Pa\+Qa\+\_\+\+Run\+Loopback\+Half\+Duplex\+Blocking\+IO}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_a3bbbe004ab712ea3266a763efd1abf08}{Pa\+Qa\+\_\+\+Run\+Loopback\+Full\+Duplex\+Blocking\+IO}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_a75fd5d5e6dd7badeb9ee16abd8195479}{Pa\+Qa\+\_\+\+Run\+Loopback}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context)
+\item 
+int \mbox{\hyperlink{paqa_8c_adc6b8461887ade13d724a79b6b65594d}{Pa\+Qa\+\_\+\+Check\+For\+Clipped\+Loopback}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context\+Ptr)
+\item 
+int \mbox{\hyperlink{paqa_8c_a86fdb1e76dea5b23c4852ae1ed67c59e}{Pa\+Qa\+\_\+\+Measure\+Background\+Noise}} (\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$loopback\+Context\+Ptr, double $\ast$rms\+Ptr)
+\item 
+int \mbox{\hyperlink{paqa_8c_af712bc730db1b4ddcf5894f9ee15877d}{Pa\+Qa\+\_\+\+Check\+For\+Loop\+Back}} (\mbox{\hyperlink{paqa_8c_ae748567768a4f54781da7b363eab47cd}{User\+Options}} $\ast$user\+Options, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} input\+Device, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} output\+Device)
+\item 
+int \mbox{\hyperlink{paqa_8c_aef60731a62cbba92a64310c8ffeb647e}{Test\+Sample\+Format\+Conversion}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{paqa_8c_a7cac13da282785878351e0a820104851}{usage}} (const char $\ast$\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})
+\item 
+int \mbox{\hyperlink{paqa_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paqa_8c_a76cd77e50cf6ecedced8c3c04acc8fed}{g\+\_\+tests\+Passed}} = 0
+\item 
+int \mbox{\hyperlink{paqa_8c_abc551f796bcb00b87be6ed28f3cb0446}{g\+\_\+tests\+Failed}} = 0
+\item 
+const char $\ast$ \mbox{\hyperlink{paqa_8c_a7f0762cd0354c33971e4f48686c06a98}{s\+\_\+\+Flag\+On\+Names}} \mbox{[}$\,$\mbox{]}
+\item 
+const char $\ast$ \mbox{\hyperlink{paqa_8c_a03ea443d36d08d91b581dd6af6b9a4ce}{s\+\_\+\+Flag\+Off\+Names}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paqa_8c_ae209bb597330a7e62afff33f95a3c04b}\label{paqa_8c_ae209bb597330a7e62afff33f95a3c04b}} 
+\index{paqa.c@{paqa.c}!BIG\_BUFFER\_SIZE@{BIG\_BUFFER\_SIZE}}
+\index{BIG\_BUFFER\_SIZE@{BIG\_BUFFER\_SIZE}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{BIG\_BUFFER\_SIZE}{BIG\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define BIG\+\_\+\+BUFFER\+\_\+\+SIZE~(sizeof(float) $\ast$ 2 $\ast$ 2 $\ast$ 1024)}
+
+\mbox{\Hypertarget{paqa_8c_ac1c45e7b577d10bac6742126ca95612f}\label{paqa_8c_ac1c45e7b577d10bac6742126ca95612f}} 
+\index{paqa.c@{paqa.c}!CONVERSION\_BUFFER\_SIZE@{CONVERSION\_BUFFER\_SIZE}}
+\index{CONVERSION\_BUFFER\_SIZE@{CONVERSION\_BUFFER\_SIZE}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{CONVERSION\_BUFFER\_SIZE}{CONVERSION\_BUFFER\_SIZE}}
+{\footnotesize\ttfamily \#define CONVERSION\+\_\+\+BUFFER\+\_\+\+SIZE~(sizeof(float) $\ast$ 2 $\ast$ \mbox{\hyperlink{paqa_8c_a4da3e1f4b32abddd6ad71698813078e8}{MAX\+\_\+\+CONVERSION\+\_\+\+SAMPLES}})}
+
+\mbox{\Hypertarget{paqa_8c_a12f412fe0d55b67969636eec54b6ee8b}\label{paqa_8c_a12f412fe0d55b67969636eec54b6ee8b}} 
+\index{paqa.c@{paqa.c}!DEFAULT\_FRAMES\_PER\_BUFFER@{DEFAULT\_FRAMES\_PER\_BUFFER}}
+\index{DEFAULT\_FRAMES\_PER\_BUFFER@{DEFAULT\_FRAMES\_PER\_BUFFER}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_FRAMES\_PER\_BUFFER}{DEFAULT\_FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(0)}
+
+\mbox{\Hypertarget{paqa_8c_a992d42383fbc2e68028d1f5f6075891b}\label{paqa_8c_a992d42383fbc2e68028d1f5f6075891b}} 
+\index{paqa.c@{paqa.c}!LOOPBACK\_DETECTION\_DURATION\_SECONDS@{LOOPBACK\_DETECTION\_DURATION\_SECONDS}}
+\index{LOOPBACK\_DETECTION\_DURATION\_SECONDS@{LOOPBACK\_DETECTION\_DURATION\_SECONDS}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{LOOPBACK\_DETECTION\_DURATION\_SECONDS}{LOOPBACK\_DETECTION\_DURATION\_SECONDS}}
+{\footnotesize\ttfamily \#define LOOPBACK\+\_\+\+DETECTION\+\_\+\+DURATION\+\_\+\+SECONDS~(0.\+8)}
+
+\mbox{\Hypertarget{paqa_8c_abc72a4bdd8a0e1f3bb5ce7048c46e880}\label{paqa_8c_abc72a4bdd8a0e1f3bb5ce7048c46e880}} 
+\index{paqa.c@{paqa.c}!MAX\_BACKGROUND\_NOISE\_RMS@{MAX\_BACKGROUND\_NOISE\_RMS}}
+\index{MAX\_BACKGROUND\_NOISE\_RMS@{MAX\_BACKGROUND\_NOISE\_RMS}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_BACKGROUND\_NOISE\_RMS}{MAX\_BACKGROUND\_NOISE\_RMS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+BACKGROUND\+\_\+\+NOISE\+\_\+\+RMS~(0.\+0004)}
+
+\mbox{\Hypertarget{paqa_8c_a4da3e1f4b32abddd6ad71698813078e8}\label{paqa_8c_a4da3e1f4b32abddd6ad71698813078e8}} 
+\index{paqa.c@{paqa.c}!MAX\_CONVERSION\_SAMPLES@{MAX\_CONVERSION\_SAMPLES}}
+\index{MAX\_CONVERSION\_SAMPLES@{MAX\_CONVERSION\_SAMPLES}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CONVERSION\_SAMPLES}{MAX\_CONVERSION\_SAMPLES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CONVERSION\+\_\+\+SAMPLES~(2 $\ast$ 32 $\ast$ 1024)}
+
+\mbox{\Hypertarget{paqa_8c_a71b4055b49b141f60926e6ecd501a919}\label{paqa_8c_a71b4055b49b141f60926e6ecd501a919}} 
+\index{paqa.c@{paqa.c}!MAX\_NUM\_GENERATORS@{MAX\_NUM\_GENERATORS}}
+\index{MAX\_NUM\_GENERATORS@{MAX\_NUM\_GENERATORS}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_NUM\_GENERATORS}{MAX\_NUM\_GENERATORS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+NUM\+\_\+\+GENERATORS~(8)}
+
+\mbox{\Hypertarget{paqa_8c_a0b2bc279100a83d537fea49d58f9f497}\label{paqa_8c_a0b2bc279100a83d537fea49d58f9f497}} 
+\index{paqa.c@{paqa.c}!MAX\_NUM\_RECORDINGS@{MAX\_NUM\_RECORDINGS}}
+\index{MAX\_NUM\_RECORDINGS@{MAX\_NUM\_RECORDINGS}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_NUM\_RECORDINGS}{MAX\_NUM\_RECORDINGS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+NUM\+\_\+\+RECORDINGS~(8)}
+
+\mbox{\Hypertarget{paqa_8c_a8432b94a78497d70296403fdc78bda92}\label{paqa_8c_a8432b94a78497d70296403fdc78bda92}} 
+\index{paqa.c@{paqa.c}!PAQA\_FLAG\_TWO\_STREAMS@{PAQA\_FLAG\_TWO\_STREAMS}}
+\index{PAQA\_FLAG\_TWO\_STREAMS@{PAQA\_FLAG\_TWO\_STREAMS}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PAQA\_FLAG\_TWO\_STREAMS}{PAQA\_FLAG\_TWO\_STREAMS}}
+{\footnotesize\ttfamily \#define PAQA\+\_\+\+FLAG\+\_\+\+TWO\+\_\+\+STREAMS~(1$<$$<$0)}
+
+\mbox{\Hypertarget{paqa_8c_a69b2587a73c1530c6cffca6e4903e176}\label{paqa_8c_a69b2587a73c1530c6cffca6e4903e176}} 
+\index{paqa.c@{paqa.c}!PAQA\_FLAG\_USE\_BLOCKING\_IO@{PAQA\_FLAG\_USE\_BLOCKING\_IO}}
+\index{PAQA\_FLAG\_USE\_BLOCKING\_IO@{PAQA\_FLAG\_USE\_BLOCKING\_IO}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PAQA\_FLAG\_USE\_BLOCKING\_IO}{PAQA\_FLAG\_USE\_BLOCKING\_IO}}
+{\footnotesize\ttfamily \#define PAQA\+\_\+\+FLAG\+\_\+\+USE\+\_\+\+BLOCKING\+\_\+\+IO~(1$<$$<$1)}
+
+\mbox{\Hypertarget{paqa_8c_a3bf72c92536ab4d9260fc0c5e087b0fc}\label{paqa_8c_a3bf72c92536ab4d9260fc0c5e087b0fc}} 
+\index{paqa.c@{paqa.c}!PAQA\_TEST\_DURATION@{PAQA\_TEST\_DURATION}}
+\index{PAQA\_TEST\_DURATION@{PAQA\_TEST\_DURATION}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PAQA\_TEST\_DURATION}{PAQA\_TEST\_DURATION}}
+{\footnotesize\ttfamily \#define PAQA\+\_\+\+TEST\+\_\+\+DURATION~(1.\+2)}
+
+\mbox{\Hypertarget{paqa_8c_a7ee82d90590893bd0622de6edab8d8ad}\label{paqa_8c_a7ee82d90590893bd0622de6edab8d8ad}} 
+\index{paqa.c@{paqa.c}!PAQA\_WAIT\_STREAM\_MSEC@{PAQA\_WAIT\_STREAM\_MSEC}}
+\index{PAQA\_WAIT\_STREAM\_MSEC@{PAQA\_WAIT\_STREAM\_MSEC}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PAQA\_WAIT\_STREAM\_MSEC}{PAQA\_WAIT\_STREAM\_MSEC}}
+{\footnotesize\ttfamily \#define PAQA\+\_\+\+WAIT\+\_\+\+STREAM\+\_\+\+MSEC~(100)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{paqa_8c_a745d9d427357353292683d1f265b8440}\label{paqa_8c_a745d9d427357353292683d1f265b8440}} 
+\index{paqa.c@{paqa.c}!LoopbackContext@{LoopbackContext}}
+\index{LoopbackContext@{LoopbackContext}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{LoopbackContext}{LoopbackContext}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_loopback_context__s}{Loopback\+Context\+\_\+s}} \mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}}}
+
+\mbox{\Hypertarget{paqa_8c_abdeab62930f443eec10d8264257d2c43}\label{paqa_8c_abdeab62930f443eec10d8264257d2c43}} 
+\index{paqa.c@{paqa.c}!TestParameters@{TestParameters}}
+\index{TestParameters@{TestParameters}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{TestParameters}{TestParameters}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_test_parameters__s}{Test\+Parameters\+\_\+s}} \mbox{\hyperlink{paqa_8c_abdeab62930f443eec10d8264257d2c43}{Test\+Parameters}}}
+
+Parameters that describe a single test run. \mbox{\Hypertarget{paqa_8c_ae748567768a4f54781da7b363eab47cd}\label{paqa_8c_ae748567768a4f54781da7b363eab47cd}} 
+\index{paqa.c@{paqa.c}!UserOptions@{UserOptions}}
+\index{UserOptions@{UserOptions}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{UserOptions}{UserOptions}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_user_options__s}{User\+Options\+\_\+s}} \mbox{\hyperlink{paqa_8c_ae748567768a4f54781da7b363eab47cd}{User\+Options}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paqa_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{paqa_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{paqa.c@{paqa.c}!main@{main}}
+\index{main@{main}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{paqa_8c_adc6b8461887ade13d724a79b6b65594d}\label{paqa_8c_adc6b8461887ade13d724a79b6b65594d}} 
+\index{paqa.c@{paqa.c}!PaQa\_CheckForClippedLoopback@{PaQa\_CheckForClippedLoopback}}
+\index{PaQa\_CheckForClippedLoopback@{PaQa\_CheckForClippedLoopback}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_CheckForClippedLoopback()}{PaQa\_CheckForClippedLoopback()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Check\+For\+Clipped\+Loopback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context\+Ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{paqa_8c_af712bc730db1b4ddcf5894f9ee15877d}\label{paqa_8c_af712bc730db1b4ddcf5894f9ee15877d}} 
+\index{paqa.c@{paqa.c}!PaQa\_CheckForLoopBack@{PaQa\_CheckForLoopBack}}
+\index{PaQa\_CheckForLoopBack@{PaQa\_CheckForLoopBack}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_CheckForLoopBack()}{PaQa\_CheckForLoopBack()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Check\+For\+Loop\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_ae748567768a4f54781da7b363eab47cd}{User\+Options}} $\ast$}]{user\+Options,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{input\+Device,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{output\+Device }\end{DoxyParamCaption})}
+
+Output a sine wave then try to detect it on input.
+
+\begin{DoxyReturn}{Returns}
+1 if loopback connected, 0 if not, or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a86fdb1e76dea5b23c4852ae1ed67c59e}\label{paqa_8c_a86fdb1e76dea5b23c4852ae1ed67c59e}} 
+\index{paqa.c@{paqa.c}!PaQa\_MeasureBackgroundNoise@{PaQa\_MeasureBackgroundNoise}}
+\index{PaQa\_MeasureBackgroundNoise@{PaQa\_MeasureBackgroundNoise}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_MeasureBackgroundNoise()}{PaQa\_MeasureBackgroundNoise()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Measure\+Background\+Noise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context\+Ptr,  }\item[{double $\ast$}]{rms\+Ptr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{paqa_8c_a656b56c81f37c88412cbf3e7f1da5065}\label{paqa_8c_a656b56c81f37c88412cbf3e7f1da5065}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunInputOnly@{PaQa\_RunInputOnly}}
+\index{PaQa\_RunInputOnly@{PaQa\_RunInputOnly}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunInputOnly()}{PaQa\_RunInputOnly()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Input\+Only (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open one audio streams, just for input. Record background level. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a75fd5d5e6dd7badeb9ee16abd8195479}\label{paqa_8c_a75fd5d5e6dd7badeb9ee16abd8195479}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunLoopback@{PaQa\_RunLoopback}}
+\index{PaQa\_RunLoopback@{PaQa\_RunLoopback}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunLoopback()}{PaQa\_RunLoopback()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Loopback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Run some kind of loopback test. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a688fb112bef5286849d4f3a7cdfa3e9e}\label{paqa_8c_a688fb112bef5286849d4f3a7cdfa3e9e}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunLoopbackFullDuplex@{PaQa\_RunLoopbackFullDuplex}}
+\index{PaQa\_RunLoopbackFullDuplex@{PaQa\_RunLoopbackFullDuplex}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunLoopbackFullDuplex()}{PaQa\_RunLoopbackFullDuplex()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Loopback\+Full\+Duplex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open a full duplex audio stream. Generate sine waves on the output channels and record the input channels. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a3bbbe004ab712ea3266a763efd1abf08}\label{paqa_8c_a3bbbe004ab712ea3266a763efd1abf08}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunLoopbackFullDuplexBlockingIO@{PaQa\_RunLoopbackFullDuplexBlockingIO}}
+\index{PaQa\_RunLoopbackFullDuplexBlockingIO@{PaQa\_RunLoopbackFullDuplexBlockingIO}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunLoopbackFullDuplexBlockingIO()}{PaQa\_RunLoopbackFullDuplexBlockingIO()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Loopback\+Full\+Duplex\+Blocking\+IO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open one audio stream with non-\/blocking IO. Generate sine waves on the output channels and record the input channels. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_adb6950432ac0cbf2fd33431ba9bfab5d}\label{paqa_8c_adb6950432ac0cbf2fd33431ba9bfab5d}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunLoopbackHalfDuplex@{PaQa\_RunLoopbackHalfDuplex}}
+\index{PaQa\_RunLoopbackHalfDuplex@{PaQa\_RunLoopbackHalfDuplex}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunLoopbackHalfDuplex()}{PaQa\_RunLoopbackHalfDuplex()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Loopback\+Half\+Duplex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open two audio streams, one for input and one for output. Generate sine waves on the output channels and record the input channels. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a19f46f0a27ef73c8798b75e693880a17}\label{paqa_8c_a19f46f0a27ef73c8798b75e693880a17}} 
+\index{paqa.c@{paqa.c}!PaQa\_RunLoopbackHalfDuplexBlockingIO@{PaQa\_RunLoopbackHalfDuplexBlockingIO}}
+\index{PaQa\_RunLoopbackHalfDuplexBlockingIO@{PaQa\_RunLoopbackHalfDuplexBlockingIO}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_RunLoopbackHalfDuplexBlockingIO()}{PaQa\_RunLoopbackHalfDuplexBlockingIO()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Run\+Loopback\+Half\+Duplex\+Blocking\+IO (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open two audio streams with non-\/blocking IO. Generate sine waves on the output channels and record the input channels. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or negative error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_a613bdebf40bb9d01c2bc9bfb8672790c}\label{paqa_8c_a613bdebf40bb9d01c2bc9bfb8672790c}} 
+\index{paqa.c@{paqa.c}!PaQa\_WaitForStream@{PaQa\_WaitForStream}}
+\index{PaQa\_WaitForStream@{PaQa\_WaitForStream}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_WaitForStream()}{PaQa\_WaitForStream()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Wait\+For\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{paqa_8c_a745d9d427357353292683d1f265b8440}{Loopback\+Context}} $\ast$}]{loopback\+Context }\end{DoxyParamCaption})}
+
+Open two audio streams, one for input and one for output. Generate sine waves on the output channels and record the input channels. Then close the stream. \begin{DoxyReturn}{Returns}
+0 if OK or pa\+Timed\+Out. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{paqa_8c_aef60731a62cbba92a64310c8ffeb647e}\label{paqa_8c_aef60731a62cbba92a64310c8ffeb647e}} 
+\index{paqa.c@{paqa.c}!TestSampleFormatConversion@{TestSampleFormatConversion}}
+\index{TestSampleFormatConversion@{TestSampleFormatConversion}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{TestSampleFormatConversion()}{TestSampleFormatConversion()}}
+{\footnotesize\ttfamily int Test\+Sample\+Format\+Conversion (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{paqa_8c_a7cac13da282785878351e0a820104851}\label{paqa_8c_a7cac13da282785878351e0a820104851}} 
+\index{paqa.c@{paqa.c}!usage@{usage}}
+\index{usage@{usage}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{usage()}{usage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{glad_8h_afb85c5d9b1bce96aa3b530d581194d1a}{usage}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{paqa_8c_abc551f796bcb00b87be6ed28f3cb0446}\label{paqa_8c_abc551f796bcb00b87be6ed28f3cb0446}} 
+\index{paqa.c@{paqa.c}!g\_testsFailed@{g\_testsFailed}}
+\index{g\_testsFailed@{g\_testsFailed}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{g\_testsFailed}{g\_testsFailed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Failed = 0}
+
+\mbox{\Hypertarget{paqa_8c_a76cd77e50cf6ecedced8c3c04acc8fed}\label{paqa_8c_a76cd77e50cf6ecedced8c3c04acc8fed}} 
+\index{paqa.c@{paqa.c}!g\_testsPassed@{g\_testsPassed}}
+\index{g\_testsPassed@{g\_testsPassed}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{g\_testsPassed}{g\_testsPassed}}
+{\footnotesize\ttfamily int g\+\_\+tests\+Passed = 0}
+
+Accumulate counts for how many tests pass or fail. \mbox{\Hypertarget{paqa_8c_a03ea443d36d08d91b581dd6af6b9a4ce}\label{paqa_8c_a03ea443d36d08d91b581dd6af6b9a4ce}} 
+\index{paqa.c@{paqa.c}!s\_FlagOffNames@{s\_FlagOffNames}}
+\index{s\_FlagOffNames@{s\_FlagOffNames}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{s\_FlagOffNames}{s\_FlagOffNames}}
+{\footnotesize\ttfamily const char$\ast$ s\+\_\+\+Flag\+Off\+Names\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}One Stream (Full Duplex)"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Callback"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{paqa_8c_a7f0762cd0354c33971e4f48686c06a98}\label{paqa_8c_a7f0762cd0354c33971e4f48686c06a98}} 
+\index{paqa.c@{paqa.c}!s\_FlagOnNames@{s\_FlagOnNames}}
+\index{s\_FlagOnNames@{s\_FlagOnNames}!paqa.c@{paqa.c}}
+\doxysubsubsection{\texorpdfstring{s\_FlagOnNames}{s\_FlagOnNames}}
+{\footnotesize\ttfamily const char$\ast$ s\+\_\+\+Flag\+On\+Names\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Two Streams (Half Duplex)"{}},}
+\DoxyCodeLine{    \textcolor{stringliteral}{"{}Blocking Read/Write"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

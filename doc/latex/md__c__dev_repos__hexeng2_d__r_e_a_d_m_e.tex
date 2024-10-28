@@ -1,0 +1,72 @@
+
+
+Hexeng2D is the project of an open source cross-\/plateform 2D Game Engine framework, written in c++.
+
+For the moment however, Hexeng2D is in an early stage of developpement in wich cross-\/plateform is not guarented and some bugs might be there. Also the code is pretty messy and unsafe.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md1}{}\doxysection{Installation and Setup}\label{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md1}
+\uline{{\bfseries{0. Prerequisites on linux \+:}}}
+
+
+\begin{DoxyItemize}
+\item Make sure you have X11 installed on your machine. If you don\textquotesingle{}t, run the command specified \href{https://www.glfw.org/docs/3.3/compile.html\#compile_deps_x11}{\texttt{ here}}
+\item Make sure you have alsa-\/dev installed on your machine. If you don\textquotesingle{}t, run \+:
+\begin{DoxyItemize}
+\item {\ttfamily sudo apt-\/get install libasound2-\/dev} on debian based distributions
+\item {\ttfamily sudo dnf install alsa-\/lib-\/devel}on fedora and similar. If you\textquotesingle{}re neither on debian based nor on fedora and similar, try to search for how to install alsa-\/dev on your distribution.
+\end{DoxyItemize}
+\item Make sure Open\+GL dev package is installed, if it\textquotesingle{}s not, install it (in most distributions it\textquotesingle{}s called libgl-\/dev).
+\end{DoxyItemize}
+
+\uline{{\bfseries{1. Clone the repository \+:}}}
+
+In a terminal (git bash if you\textquotesingle{}re on windows, the classic terminal on linux), run the following commands \+: {\ttfamily cd \texorpdfstring{$<$}{<}destination\texorpdfstring{$>$}{>}} {\ttfamily git clone \href{https://github.com/Ily3s/Hexeng2D}{\texttt{ https\+://github.\+com/\+Ily3s/\+Hexeng2D}}}
+
+\uline{{\bfseries{2. Precompile using CMake\+:}}}
+
+In a terminal that includes cmake (for example, the vs terminal on windows), run the following commands \+: {\ttfamily cd \texorpdfstring{$<$}{<}destination\texorpdfstring{$>$}{>}} {\ttfamily cmake . -\/G \texorpdfstring{$<$}{<}IDE\texorpdfstring{$>$}{>} -\/A \texorpdfstring{$<$}{<}platform\texorpdfstring{$>$}{>}} Note that the plateform can be left unspecified
+
+\uline{{\bfseries{3. How to use \+:}}}
+
+Cmake will output a project with at least 3 sub projects \+:
+
+
+\begin{DoxyItemize}
+\item Hexeng2D is the engine, which will compile into a dynamic link library.
+\item Sandbox is a demo of the engine that I use to test and debug the engine.
+\item Empty\+Project is an empty project that you can use to build your game
+\end{DoxyItemize}
+
+You can rename Empty\+Project and build your game in it or you can compile the engine binaries, take all its headers and link Hexeng2D to your project as you want. Note that if you go for the second option, you will also have to take Hexeng2D dependencies headers.
+
+To get started, I recommand that you take a look at the Sandbox sub-\/project in order for you to understand how the engine works. Also you can find the documentation in this repo at doc/html/index.\+html
+
+\uline{{\bfseries{Note \+:}}} The recommanded configuration is Visual Studio 2022 on Windows
+
+\DoxyHorRuler{0}
+\hypertarget{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md2}{}\doxysection{Features}\label{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md2}
+I could do a nice and little presentation of all the great features of my software at the top of the README file, but screw that, I\textquotesingle{}m a software engineer not a salesman, so here is a quick enumeration instead \+:
+
+
+\begin{DoxyItemize}
+\item Classic Rendering
+\item Batch Rendering
+\item Text Rendering
+\item Audio \mbox{\hyperlink{class_player}{Player}}
+\item Language System (notice how I make each first letter in upper case so it seems to be a big thing, I\textquotesingle{}m so good at selling my things, ain\textquotesingle{}t I)
+\item Physics Engine and Hit\+Boxes
+\item Saves System
+\item Quads Rendering
+\item Animations System
+\item Event Manager System
+\item Layers System
+\item Camera System (the last two basically just means there is depth and a z coordinate going on)
+\item Scenes System
+\end{DoxyItemize}
+
+These were the big features of the engine, hope you had fun reading that.
+
+\DoxyHorRuler{0}
+\hypertarget{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md3}{}\doxysection{Contact \& Support}\label{md__c__dev_repos__hexeng2_d__r_e_a_d_m_e_autotoc_md3}
+If you have any questions that concerns Hexeng2D, or if you\textquotesingle{}re getting a problem with it, you can contact me on my \href{discord.com/invite/GtPk7mr6Ps}{\texttt{ Discord}}. Note that my dms are open, that\textquotesingle{}s the fastest way you can get an answer from me. 

@@ -1,0 +1,269 @@
+\hypertarget{pa__ringbuffer_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+ringbuffer.h File Reference}
+\label{pa__ringbuffer_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_ringbuffer.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_ringbuffer.h}}
+
+
+Single-\/reader single-\/writer lock-\/free ring buffer.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef long \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{pa__ringbuffer_8h_aacfcaa2a3a15cbd194cddafd61d15d63}{Pa\+Util\+Ring\+Buffer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_ac59abf83ad9ad72e1971ac406b0e67a8}{Pa\+Util\+\_\+\+Initialize\+Ring\+Buffer}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Size\+Bytes, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$data\+Ptr)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__ringbuffer_8h_a5d0da19fd934ad23afe8bafebfdc81e7}{Pa\+Util\+\_\+\+Flush\+Ring\+Buffer}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_af53b4365e12a70524fd4ca0d59476097}{Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Write\+Available}} (const \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_a40786e9932b9f988be2accfce19d5ea4}{Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Read\+Available}} (const \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_a2767b217dc115e4f20db8ea206ca9520}{Pa\+Util\+\_\+\+Write\+Ring\+Buffer}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_af6d879da3efb3894ef3956310bb3918e}{Pa\+Util\+\_\+\+Read\+Ring\+Buffer}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_a5c0ed00cc826518012a780544c31b31e}{Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Write\+Regions}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$data\+Ptr1, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$size\+Ptr1, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$data\+Ptr2, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$size\+Ptr2)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_ad38033c3d1cef68a44b7ccb0cf318236}{Pa\+Util\+\_\+\+Advance\+Ring\+Buffer\+Write\+Index}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_a0e1ef06e0ee328c9da54755cf889913d}{Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Read\+Regions}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$data\+Ptr1, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$size\+Ptr1, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$data\+Ptr2, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$size\+Ptr2)
+\item 
+\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} \mbox{\hyperlink{pa__ringbuffer_8h_a7acc44292930d2911445b41f982a6a73}{Pa\+Util\+\_\+\+Advance\+Ring\+Buffer\+Read\+Index}} (\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$rbuf, \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} element\+Count)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Single-\/reader single-\/writer lock-\/free ring buffer. 
+
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} is a ring buffer used to transport samples between different execution contexts (threads, OS callbacks, interrupt handlers) without requiring the use of any locks. This only works when there is a single reader and a single writer (ie. one thread or callback writes to the ring buffer, another thread or callback reads from it).
+
+The \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} structure manages a ring buffer containing N elements, where N must be a power of two. An element may be any size (specified in bytes).
+
+The memory area used to store the buffer elements must be allocated by the client prior to calling \mbox{\hyperlink{pa__ringbuffer_8h_ac59abf83ad9ad72e1971ac406b0e67a8}{Pa\+Util\+\_\+\+Initialize\+Ring\+Buffer()}} and must outlive the use of the ring buffer.
+
+\begin{DoxyNote}{Note}
+The ring buffer functions are not normally exposed in the Port\+Audio libraries. If you want to call them then you will need to add \mbox{\hyperlink{pa__ringbuffer_8c}{pa\+\_\+ringbuffer.\+c}} to your application source code. 
+\end{DoxyNote}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__ringbuffer_8h_aacfcaa2a3a15cbd194cddafd61d15d63}\label{pa__ringbuffer_8h_aacfcaa2a3a15cbd194cddafd61d15d63}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtilRingBuffer@{PaUtilRingBuffer}}
+\index{PaUtilRingBuffer@{PaUtilRingBuffer}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtilRingBuffer}{PaUtilRingBuffer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}}}
+
+\mbox{\Hypertarget{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}\label{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!ring\_buffer\_size\_t@{ring\_buffer\_size\_t}}
+\index{ring\_buffer\_size\_t@{ring\_buffer\_size\_t}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{ring\_buffer\_size\_t}{ring\_buffer\_size\_t}}
+{\footnotesize\ttfamily typedef long \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a7acc44292930d2911445b41f982a6a73}\label{pa__ringbuffer_8h_a7acc44292930d2911445b41f982a6a73}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_AdvanceRingBufferReadIndex@{PaUtil\_AdvanceRingBufferReadIndex}}
+\index{PaUtil\_AdvanceRingBufferReadIndex@{PaUtil\_AdvanceRingBufferReadIndex}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_AdvanceRingBufferReadIndex()}{PaUtil\_AdvanceRingBufferReadIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Advance\+Ring\+Buffer\+Read\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count }\end{DoxyParamCaption})}
+
+Advance the read index to the next location to be read.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em element\+Count} & The number of elements to advance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_ad38033c3d1cef68a44b7ccb0cf318236}\label{pa__ringbuffer_8h_ad38033c3d1cef68a44b7ccb0cf318236}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_AdvanceRingBufferWriteIndex@{PaUtil\_AdvanceRingBufferWriteIndex}}
+\index{PaUtil\_AdvanceRingBufferWriteIndex@{PaUtil\_AdvanceRingBufferWriteIndex}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_AdvanceRingBufferWriteIndex()}{PaUtil\_AdvanceRingBufferWriteIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Advance\+Ring\+Buffer\+Write\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count }\end{DoxyParamCaption})}
+
+Advance the write index to the next location to be written.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em element\+Count} & The number of elements to advance.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new position. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a5d0da19fd934ad23afe8bafebfdc81e7}\label{pa__ringbuffer_8h_a5d0da19fd934ad23afe8bafebfdc81e7}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_FlushRingBuffer@{PaUtil\_FlushRingBuffer}}
+\index{PaUtil\_FlushRingBuffer@{PaUtil\_FlushRingBuffer}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_FlushRingBuffer()}{PaUtil\_FlushRingBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Flush\+Ring\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf }\end{DoxyParamCaption})}
+
+Reset buffer to empty. Should only be called when buffer is NOT being read or written.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a40786e9932b9f988be2accfce19d5ea4}\label{pa__ringbuffer_8h_a40786e9932b9f988be2accfce19d5ea4}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_GetRingBufferReadAvailable@{PaUtil\_GetRingBufferReadAvailable}}
+\index{PaUtil\_GetRingBufferReadAvailable@{PaUtil\_GetRingBufferReadAvailable}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetRingBufferReadAvailable()}{PaUtil\_GetRingBufferReadAvailable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Read\+Available (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf }\end{DoxyParamCaption})}
+
+Retrieve the number of elements available in the ring buffer for reading.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements available for reading. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a0e1ef06e0ee328c9da54755cf889913d}\label{pa__ringbuffer_8h_a0e1ef06e0ee328c9da54755cf889913d}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_GetRingBufferReadRegions@{PaUtil\_GetRingBufferReadRegions}}
+\index{PaUtil\_GetRingBufferReadRegions@{PaUtil\_GetRingBufferReadRegions}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetRingBufferReadRegions()}{PaUtil\_GetRingBufferReadRegions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Read\+Regions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{data\+Ptr1,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$}]{size\+Ptr1,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{data\+Ptr2,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$}]{size\+Ptr2 }\end{DoxyParamCaption})}
+
+Get address of region(s) from which we can read data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em element\+Count} & The number of elements desired.\\
+\hline
+{\em data\+Ptr1} & The address where the first (or only) region pointer will be stored.\\
+\hline
+{\em size\+Ptr1} & The address where the first (or only) region length will be stored.\\
+\hline
+{\em data\+Ptr2} & The address where the second region pointer will be stored if the first region is too small to satisfy element\+Count.\\
+\hline
+{\em size\+Ptr2} & The address where the second region length will be stored if the first region is too small to satisfy element\+Count.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements available for reading. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_af53b4365e12a70524fd4ca0d59476097}\label{pa__ringbuffer_8h_af53b4365e12a70524fd4ca0d59476097}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_GetRingBufferWriteAvailable@{PaUtil\_GetRingBufferWriteAvailable}}
+\index{PaUtil\_GetRingBufferWriteAvailable@{PaUtil\_GetRingBufferWriteAvailable}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetRingBufferWriteAvailable()}{PaUtil\_GetRingBufferWriteAvailable()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Write\+Available (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf }\end{DoxyParamCaption})}
+
+Retrieve the number of elements available in the ring buffer for writing.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements available for writing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a5c0ed00cc826518012a780544c31b31e}\label{pa__ringbuffer_8h_a5c0ed00cc826518012a780544c31b31e}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_GetRingBufferWriteRegions@{PaUtil\_GetRingBufferWriteRegions}}
+\index{PaUtil\_GetRingBufferWriteRegions@{PaUtil\_GetRingBufferWriteRegions}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetRingBufferWriteRegions()}{PaUtil\_GetRingBufferWriteRegions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Get\+Ring\+Buffer\+Write\+Regions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{data\+Ptr1,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$}]{size\+Ptr1,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{data\+Ptr2,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} $\ast$}]{size\+Ptr2 }\end{DoxyParamCaption})}
+
+Get address of region(s) to which we can write data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em element\+Count} & The number of elements desired.\\
+\hline
+{\em data\+Ptr1} & The address where the first (or only) region pointer will be stored.\\
+\hline
+{\em size\+Ptr1} & The address where the first (or only) region length will be stored.\\
+\hline
+{\em data\+Ptr2} & The address where the second region pointer will be stored if the first region is too small to satisfy element\+Count.\\
+\hline
+{\em size\+Ptr2} & The address where the second region length will be stored if the first region is too small to satisfy element\+Count.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The room available to be written or element\+Count, whichever is smaller. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_ac59abf83ad9ad72e1971ac406b0e67a8}\label{pa__ringbuffer_8h_ac59abf83ad9ad72e1971ac406b0e67a8}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_InitializeRingBuffer@{PaUtil\_InitializeRingBuffer}}
+\index{PaUtil\_InitializeRingBuffer@{PaUtil\_InitializeRingBuffer}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeRingBuffer()}{PaUtil\_InitializeRingBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Initialize\+Ring\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Size\+Bytes,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data\+Ptr }\end{DoxyParamCaption})}
+
+Initialize Ring Buffer to empty state ready to have elements written to it.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em element\+Size\+Bytes} & The size of a single data element in bytes.\\
+\hline
+{\em element\+Count} & The number of elements in the buffer (must be a power of 2).\\
+\hline
+{\em data\+Ptr} & A pointer to a previously allocated area where the data will be maintained. It must be element\+Count$\ast$element\+Size\+Bytes long.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/1 if element\+Count is not a power of 2, otherwise 0. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_af6d879da3efb3894ef3956310bb3918e}\label{pa__ringbuffer_8h_af6d879da3efb3894ef3956310bb3918e}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_ReadRingBuffer@{PaUtil\_ReadRingBuffer}}
+\index{PaUtil\_ReadRingBuffer@{PaUtil\_ReadRingBuffer}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ReadRingBuffer()}{PaUtil\_ReadRingBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Read\+Ring\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count }\end{DoxyParamCaption})}
+
+Read data from the ring buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em data} & The address where the data should be stored.\\
+\hline
+{\em element\+Count} & The number of elements to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements read. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__ringbuffer_8h_a2767b217dc115e4f20db8ea206ca9520}\label{pa__ringbuffer_8h_a2767b217dc115e4f20db8ea206ca9520}} 
+\index{pa\_ringbuffer.h@{pa\_ringbuffer.h}!PaUtil\_WriteRingBuffer@{PaUtil\_WriteRingBuffer}}
+\index{PaUtil\_WriteRingBuffer@{PaUtil\_WriteRingBuffer}!pa\_ringbuffer.h@{pa\_ringbuffer.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_WriteRingBuffer()}{PaUtil\_WriteRingBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}} Pa\+Util\+\_\+\+Write\+Ring\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} $\ast$}]{rbuf,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\+\_\+buffer\+\_\+size\+\_\+t}}}]{element\+Count }\end{DoxyParamCaption})}
+
+Write data to the ring buffer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbuf} & The ring buffer.\\
+\hline
+{\em data} & The address of new data to write to the buffer.\\
+\hline
+{\em element\+Count} & The number of elements to be written.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of elements written. 
+\end{DoxyReturn}

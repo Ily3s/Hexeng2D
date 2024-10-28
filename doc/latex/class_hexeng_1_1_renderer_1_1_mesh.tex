@@ -1,0 +1,389 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_mesh}{}\doxysection{Hexeng\+::Renderer\+::Mesh Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_mesh}\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.803543cm]{class_hexeng_1_1_renderer_1_1_mesh}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af8c650dae02f4c186d9da35007e8622d}{Mesh}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af12ab29ee2336c6ef55ef3a61c257a54}{Mesh}} (const void $\ast$vb, size\+\_\+t vb\+\_\+size, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&pos, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&layout, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} $\ast$ib, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$tex, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader, GLenum type=GL\+\_\+\+TRIANGLES)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a184b8bae5a7dbca0dbfafd5701f50286}{Mesh}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \&\&moving) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a75f5fb56509551fe0cf65050afa24227}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \&\&moving) noexcept
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af2e904f71059db6e7fdd0e79e8d824bf}{get\+\_\+texture}} () const
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a1fda39f7e229081e68c9d8e456760668}{get\+\_\+vao}} () const
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af0f23574a4525588ad3442c53bfb5cf0}{get\+\_\+shader}} () const
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a0868a156e0d4807cf1dd109cd561390a}{get\+\_\+ib}} () const
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a2708560fa3f6f89a911bc5df4ae21feb}{access\+\_\+texture}} ()
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a7e303aa5edd2e987a0372bfad10c08e6}{access\+\_\+shader}} ()
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}{update\+\_\+position}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}{draw}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&parents\+\_\+uniforms=\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}})
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}{load}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}{unload}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}{position}} \{ 0, 0 \}
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4f5ccbfcc527b200926b3931913945ae}{scale}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a36335cd573eb71e62b0af55630149907}{rotation}} = 0
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}{color\+\_\+filter}} = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\begin{DoxyCompactList}\small\item\em Absorbtion color. \end{DoxyCompactList}\item 
+float \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}{opacity}} = color\+\_\+filter.\+A
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}} = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Emission color. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}} = true
+\item 
+bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae4568b0e22f935bba0f7075eafc4ebb9}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}}
+\item 
+\mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method}{Blending\+Method}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4ea3e4ff55e0feb6e5e5ebbd18f2af36}{blending\+\_\+method}} = \{ GL\+\_\+\+SRC\+\_\+\+ALPHA, GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA \}
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a88aa484fb2d1eda816819ad09ea293bc}{uniforms}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a999d743797e6bd12b194a115634db1fd}{m\+\_\+transform}} \{ 0.\+0f, 0.\+0f \}
+\item 
+GLenum \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6e21ebe3772ff914bb71211d105c1684}{m\+\_\+type}} = GL\+\_\+\+TRIANGLES
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a78835fbfa3b119234142ef1673c08454}{m\+\_\+vao}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a383bcd0699f85db2f667ca575c728fe2}{m\+\_\+vb}}
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a548e82e1c845cc8f597f629f3afc626f}{m\+\_\+ib}} = nullptr
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a3ae36b6eea59eefc0f6311603b7172dc}{m\+\_\+texture}} = nullptr
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ac5748990ed845cf8d6bd55f9a9d9f334}{m\+\_\+shader}} = nullptr
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a06e3943947b53475298fad224055c2ef}{m\+\_\+layout}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}} \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}{Super\+Mesh}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+It isn\textquotesingle{}t recommanded that you use this class directly. Instead you may want to use a derived class. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_af8c650dae02f4c186d9da35007e8622d}\label{class_hexeng_1_1_renderer_1_1_mesh_af8c650dae02f4c186d9da35007e8622d}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_af12ab29ee2336c6ef55ef3a61c257a54}\label{class_hexeng_1_1_renderer_1_1_mesh_af12ab29ee2336c6ef55ef3a61c257a54}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{const void $\ast$}]{vb,  }\item[{size\+\_\+t}]{vb\+\_\+size,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{pos,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \&}]{layout,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} $\ast$}]{ib,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$}]{tex,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader,  }\item[{GLenum}]{type = {\ttfamily GL\+\_\+TRIANGLES} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vb} & The vertex buffer data.\\
+\hline
+{\em vb\+\_\+size} & the size (in bytes) of the vertex buffer.\\
+\hline
+{\em pos} & the position of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} (in the Hexeng2D coordinate system)\\
+\hline
+{\em layout} & See \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}}\\
+\hline
+{\em ib} & Take a look at \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}}\\
+\hline
+{\em tex} & Take a look at \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\\
+\hline
+{\em shader} & Take a look at \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}\\
+\hline
+{\em type} & The type of geometry you want to draw. By default, it\textquotesingle{}s set to GL\+\_\+\+TRIANGLES\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a184b8bae5a7dbca0dbfafd5701f50286}\label{class_hexeng_1_1_renderer_1_1_mesh_a184b8bae5a7dbca0dbfafd5701f50286}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{Mesh()}{Mesh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \&\&}]{moving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a7e303aa5edd2e987a0372bfad10c08e6}\label{class_hexeng_1_1_renderer_1_1_mesh_a7e303aa5edd2e987a0372bfad10c08e6}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!access\_shader@{access\_shader}}
+\index{access\_shader@{access\_shader}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{access\_shader()}{access\_shader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$\& Hexeng\+::\+Renderer\+::\+Mesh\+::access\+\_\+shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a2708560fa3f6f89a911bc5df4ae21feb}\label{class_hexeng_1_1_renderer_1_1_mesh_a2708560fa3f6f89a911bc5df4ae21feb}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!access\_texture@{access\_texture}}
+\index{access\_texture@{access\_texture}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{access\_texture()}{access\_texture()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$\& Hexeng\+::\+Renderer\+::\+Mesh\+::access\+\_\+texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}\label{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!draw@{draw}}
+\index{draw@{draw}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::draw (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&}]{parents\+\_\+uniforms = {\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_ad249e406fa5666e47a046d07d1852b51}{Hexeng\+::\+Renderer\+::\+Batch\+Instance}}, and \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a80284bdfb284888e6e5c7baf1ca45116}{Hexeng\+::\+Renderer\+::\+Super\+Mesh}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a0868a156e0d4807cf1dd109cd561390a}\label{class_hexeng_1_1_renderer_1_1_mesh_a0868a156e0d4807cf1dd109cd561390a}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!get\_ib@{get\_ib}}
+\index{get\_ib@{get\_ib}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{get\_ib()}{get\_ib()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} $\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::get\+\_\+ib (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_af0f23574a4525588ad3442c53bfb5cf0}\label{class_hexeng_1_1_renderer_1_1_mesh_af0f23574a4525588ad3442c53bfb5cf0}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!get\_shader@{get\_shader}}
+\index{get\_shader@{get\_shader}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{get\_shader()}{get\_shader()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::get\+\_\+shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_af2e904f71059db6e7fdd0e79e8d824bf}\label{class_hexeng_1_1_renderer_1_1_mesh_af2e904f71059db6e7fdd0e79e8d824bf}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!get\_texture@{get\_texture}}
+\index{get\_texture@{get\_texture}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{get\_texture()}{get\_texture()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::get\+\_\+texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a1fda39f7e229081e68c9d8e456760668}\label{class_hexeng_1_1_renderer_1_1_mesh_a1fda39f7e229081e68c9d8e456760668}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!get\_vao@{get\_vao}}
+\index{get\_vao@{get\_vao}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{get\_vao()}{get\_vao()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} $\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::get\+\_\+vao (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}\label{class_hexeng_1_1_renderer_1_1_mesh_a5c0b4d15b9f91019e9fb2c928b6d4528}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!load@{load}}
+\index{load@{load}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a3b2c355206bce2c825b7456e380521f7}{Hexeng\+::\+Renderer\+::\+Super\+Mesh}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a75f5fb56509551fe0cf65050afa24227}\label{class_hexeng_1_1_renderer_1_1_mesh_a75f5fb56509551fe0cf65050afa24227}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \& Hexeng\+::\+Renderer\+::\+Mesh\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} \&\&}]{moving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}\label{class_hexeng_1_1_renderer_1_1_mesh_a5910b8c30a14a77098a51d4d4e925970}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!unload@{unload}}
+\index{unload@{unload}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{unload()}{unload()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::unload (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a8098d3014b59d7de8721fbb883df488d}{Hexeng\+::\+Renderer\+::\+Super\+Mesh}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}\label{class_hexeng_1_1_renderer_1_1_mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!update\_position@{update\_position}}
+\index{update\_position@{update\_position}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{update\_position()}{update\_position()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Mesh\+::update\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}\label{class_hexeng_1_1_renderer_1_1_mesh_ab88992c2b05df2ab1d1bcfc0d627b907}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!SuperMesh@{SuperMesh}}
+\index{SuperMesh@{SuperMesh}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{SuperMesh}{SuperMesh}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a4ea3e4ff55e0feb6e5e5ebbd18f2af36}\label{class_hexeng_1_1_renderer_1_1_mesh_a4ea3e4ff55e0feb6e5e5ebbd18f2af36}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!blending\_method@{blending\_method}}
+\index{blending\_method@{blending\_method}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{blending\_method}{blending\_method}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method}{Blending\+Method}} Hexeng\+::\+Renderer\+::\+Mesh\+::blending\+\_\+method = \{ GL\+\_\+\+SRC\+\_\+\+ALPHA, GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA \}}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}\label{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!color@{color}}
+\index{color@{color}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}}
+
+
+
+Emission color. 
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}\label{class_hexeng_1_1_renderer_1_1_mesh_a7e08e710764c74ab4c0fa7f07749a84c}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!color\_filter@{color\_filter}}
+\index{color\_filter@{color\_filter}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{color\_filter}{color\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Mesh\+::color\+\_\+filter = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}}
+
+
+
+Absorbtion color. 
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}\label{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!enable@{enable}}
+\index{enable@{enable}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Renderer\+::\+Mesh\+::enable = true}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. Useless if enable\+\_\+ptr is overwritten 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ae4568b0e22f935bba0f7075eafc4ebb9}\label{class_hexeng_1_1_renderer_1_1_mesh_ae4568b0e22f935bba0f7075eafc4ebb9}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!enable\_ptr@{enable\_ptr}}
+\index{enable\_ptr@{enable\_ptr}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
+{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::enable\+\_\+ptr = \&\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}}}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a548e82e1c845cc8f597f629f3afc626f}\label{class_hexeng_1_1_renderer_1_1_mesh_a548e82e1c845cc8f597f629f3afc626f}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_ib@{m\_ib}}
+\index{m\_ib@{m\_ib}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_ib}{m\_ib}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}}$\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+ib = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a06e3943947b53475298fad224055c2ef}\label{class_hexeng_1_1_renderer_1_1_mesh_a06e3943947b53475298fad224055c2ef}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_layout@{m\_layout}}
+\index{m\_layout@{m\_layout}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_layout}{m\_layout}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}}$\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+layout = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_ac5748990ed845cf8d6bd55f9a9d9f334}\label{class_hexeng_1_1_renderer_1_1_mesh_ac5748990ed845cf8d6bd55f9a9d9f334}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_shader@{m\_shader}}
+\index{m\_shader@{m\_shader}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_shader}{m\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}$\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+shader = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a3ae36b6eea59eefc0f6311603b7172dc}\label{class_hexeng_1_1_renderer_1_1_mesh_a3ae36b6eea59eefc0f6311603b7172dc}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_texture@{m\_texture}}
+\index{m\_texture@{m\_texture}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_texture}{m\_texture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}$\ast$ Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+texture = nullptr\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a999d743797e6bd12b194a115634db1fd}\label{class_hexeng_1_1_renderer_1_1_mesh_a999d743797e6bd12b194a115634db1fd}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_transform@{m\_transform}}
+\index{m\_transform@{m\_transform}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_transform}{m\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$float$>$ Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+transform \{ 0.\+0f, 0.\+0f \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a6e21ebe3772ff914bb71211d105c1684}\label{class_hexeng_1_1_renderer_1_1_mesh_a6e21ebe3772ff914bb71211d105c1684}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_type@{m\_type}}
+\index{m\_type@{m\_type}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_type}{m\_type}}
+{\footnotesize\ttfamily GLenum Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+type = GL\+\_\+\+TRIANGLES\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a78835fbfa3b119234142ef1673c08454}\label{class_hexeng_1_1_renderer_1_1_mesh_a78835fbfa3b119234142ef1673c08454}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_vao@{m\_vao}}
+\index{m\_vao@{m\_vao}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_vao}{m\_vao}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+vao\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a383bcd0699f85db2f667ca575c728fe2}\label{class_hexeng_1_1_renderer_1_1_mesh_a383bcd0699f85db2f667ca575c728fe2}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!m\_vb@{m\_vb}}
+\index{m\_vb@{m\_vb}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{m\_vb}{m\_vb}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}} Hexeng\+::\+Renderer\+::\+Mesh\+::m\+\_\+vb\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}\label{class_hexeng_1_1_renderer_1_1_mesh_a553949dd59a43118fc12f17fb5cc6d2e}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!opacity@{opacity}}
+\index{opacity@{opacity}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{opacity}{opacity}}
+{\footnotesize\ttfamily float\& Hexeng\+::\+Renderer\+::\+Mesh\+::opacity = color\+\_\+filter.\+A}
+
+\begin{DoxyNote}{Note}
+Alias to color.\+A 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}\label{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!position@{position}}
+\index{position@{position}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$int$>$ Hexeng\+::\+Renderer\+::\+Mesh\+::position \{ 0, 0 \}}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a36335cd573eb71e62b0af55630149907}\label{class_hexeng_1_1_renderer_1_1_mesh_a36335cd573eb71e62b0af55630149907}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!rotation@{rotation}}
+\index{rotation@{rotation}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily float Hexeng\+::\+Renderer\+::\+Mesh\+::rotation = 0}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}\label{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!s\_empty\_uniform\_list@{s\_empty\_uniform\_list}}
+\index{s\_empty\_uniform\_list@{s\_empty\_uniform\_list}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{s\_empty\_uniform\_list}{s\_empty\_uniform\_list}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ Hexeng\+::\+Renderer\+::\+Mesh\+::s\+\_\+empty\+\_\+uniform\+\_\+list \{\}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a4f5ccbfcc527b200926b3931913945ae}\label{class_hexeng_1_1_renderer_1_1_mesh_a4f5ccbfcc527b200926b3931913945ae}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!scale@{scale}}
+\index{scale@{scale}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily float Hexeng\+::\+Renderer\+::\+Mesh\+::scale = 1.\+0f}
+
+\begin{DoxyNote}{Note}
+Can be modified at any moment. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_mesh_a88aa484fb2d1eda816819ad09ea293bc}\label{class_hexeng_1_1_renderer_1_1_mesh_a88aa484fb2d1eda816819ad09ea293bc}} 
+\index{Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}!uniforms@{uniforms}}
+\index{uniforms@{uniforms}!Hexeng::Renderer::Mesh@{Hexeng::Renderer::Mesh}}
+\doxysubsubsection{\texorpdfstring{uniforms}{uniforms}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::pair$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}$\ast$, void$\ast$$>$ $>$ Hexeng\+::\+Renderer\+::\+Mesh\+::uniforms = \{\}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

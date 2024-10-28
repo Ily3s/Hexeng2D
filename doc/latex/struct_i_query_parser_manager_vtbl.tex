@@ -1,0 +1,159 @@
+\hypertarget{struct_i_query_parser_manager_vtbl}{}\doxysection{IQuery\+Parser\+Manager\+Vtbl Struct Reference}
+\label{struct_i_query_parser_manager_vtbl}\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+
+
+{\ttfamily \#include $<$structuredquery.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_ad20ec70450ba93212d7c00f0b374852a}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a24c9f8b83576d3dd0857e431c40595cb}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a751dc511b64e94d47743efdbda3f4bf8}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a0576c989a241d4a94bba78b6c9db62c3}{HRESULT}} (STDMETHODCALLTYPE $\ast$Create\+Loaded\+Parser)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a636479e5d83c4524c727aff9d4d27dae}{HRESULT}} (STDMETHODCALLTYPE $\ast$Initialize\+Options)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_query_parser_manager_vtbl_ae406203554fa986fb0a033bff9e06576}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Option)(\mbox{\hyperlink{structuredquery_8h_a94163bf1bdf13a879dad7ad713eece37}{IQuery\+Parser\+Manager}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a6a9583156244a6c5ef4afdb4addb9041}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a0bc963e49a85e0ed532badc6649022f5}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_aca550c2fcdcaec315b5907cf0942fe94}{psz\+Catalog}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_af0a82570e6701f5ff971f47515bd3ece}{langid\+For\+Keywords}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a8fe409ae27aa94e54baada5c5f6c4130}{riid}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a097ee7bd0a045ae057c52de25e7fa918}{pp\+Query\+Parser}}
+\item 
+BOOL \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_aec68576d16c3ea429d92c5c8f7fdde9c}{f\+Understand\+NQS}}
+\item 
+BOOL BOOL \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_aeab8eb0ab7da200f375cef534b9ef3c0}{f\+Auto\+Wild\+Card}}
+\item 
+BOOL BOOL \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}} $\ast$ \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a0114f3abfec80ef1bf6909c5accc90f2}{p\+Query\+Parser}}
+\item 
+\mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a8e352c2edd5aa5f48f2acc5149aa537a}{option}}
+\item 
+\mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} const PROPVARIANT $\ast$ \mbox{\hyperlink{struct_i_query_parser_manager_vtbl_a70d85e8ea018d49aad51d1ebd77cb8fb}{p\+Option\+Value}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a0576c989a241d4a94bba78b6c9db62c3}\label{struct_i_query_parser_manager_vtbl_a0576c989a241d4a94bba78b6c9db62c3}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily IQuery\+Parser\+Manager\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Create\+Loaded\+Parser }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a636479e5d83c4524c727aff9d4d27dae}\label{struct_i_query_parser_manager_vtbl_a636479e5d83c4524c727aff9d4d27dae}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily IQuery\+Parser\+Manager\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Initialize\+Options }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_ad20ec70450ba93212d7c00f0b374852a}\label{struct_i_query_parser_manager_vtbl_ad20ec70450ba93212d7c00f0b374852a}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IQuery\+Parser\+Manager\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_ae406203554fa986fb0a033bff9e06576}\label{struct_i_query_parser_manager_vtbl_ae406203554fa986fb0a033bff9e06576}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily IQuery\+Parser\+Manager\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Option }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a24c9f8b83576d3dd0857e431c40595cb}\label{struct_i_query_parser_manager_vtbl_a24c9f8b83576d3dd0857e431c40595cb}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IQuery\+Parser\+Manager\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a751dc511b64e94d47743efdbda3f4bf8}\label{struct_i_query_parser_manager_vtbl_a751dc511b64e94d47743efdbda3f4bf8}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IQuery\+Parser\+Manager\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_aeab8eb0ab7da200f375cef534b9ef3c0}\label{struct_i_query_parser_manager_vtbl_aeab8eb0ab7da200f375cef534b9ef3c0}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!fAutoWildCard@{fAutoWildCard}}
+\index{fAutoWildCard@{fAutoWildCard}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{fAutoWildCard}{fAutoWildCard}}
+{\footnotesize\ttfamily BOOL BOOL IQuery\+Parser\+Manager\+Vtbl\+::f\+Auto\+Wild\+Card}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_aec68576d16c3ea429d92c5c8f7fdde9c}\label{struct_i_query_parser_manager_vtbl_aec68576d16c3ea429d92c5c8f7fdde9c}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!fUnderstandNQS@{fUnderstandNQS}}
+\index{fUnderstandNQS@{fUnderstandNQS}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{fUnderstandNQS}{fUnderstandNQS}}
+{\footnotesize\ttfamily BOOL IQuery\+Parser\+Manager\+Vtbl\+::f\+Understand\+NQS}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_af0a82570e6701f5ff971f47515bd3ece}\label{struct_i_query_parser_manager_vtbl_af0a82570e6701f5ff971f47515bd3ece}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!langidForKeywords@{langidForKeywords}}
+\index{langidForKeywords@{langidForKeywords}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{langidForKeywords}{langidForKeywords}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID IQuery\+Parser\+Manager\+Vtbl\+::langid\+For\+Keywords}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a8e352c2edd5aa5f48f2acc5149aa537a}\label{struct_i_query_parser_manager_vtbl_a8e352c2edd5aa5f48f2acc5149aa537a}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!option@{option}}
+\index{option@{option}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{option}{option}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} IQuery\+Parser\+Manager\+Vtbl\+::option}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a70d85e8ea018d49aad51d1ebd77cb8fb}\label{struct_i_query_parser_manager_vtbl_a70d85e8ea018d49aad51d1ebd77cb8fb}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!pOptionValue@{pOptionValue}}
+\index{pOptionValue@{pOptionValue}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{pOptionValue}{pOptionValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuredquery_8h_ab05a74734f911cc91dc1c85d4f4f2222}{QUERY\+\_\+\+PARSER\+\_\+\+MANAGER\+\_\+\+OPTION}} \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} const PROPVARIANT$\ast$ IQuery\+Parser\+Manager\+Vtbl\+::p\+Option\+Value}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a097ee7bd0a045ae057c52de25e7fa918}\label{struct_i_query_parser_manager_vtbl_a097ee7bd0a045ae057c52de25e7fa918}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!ppQueryParser@{ppQueryParser}}
+\index{ppQueryParser@{ppQueryParser}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{ppQueryParser}{ppQueryParser}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IQuery\+Parser\+Manager\+Vtbl\+::pp\+Query\+Parser}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a0bc963e49a85e0ed532badc6649022f5}\label{struct_i_query_parser_manager_vtbl_a0bc963e49a85e0ed532badc6649022f5}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IQuery\+Parser\+Manager\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a0114f3abfec80ef1bf6909c5accc90f2}\label{struct_i_query_parser_manager_vtbl_a0114f3abfec80ef1bf6909c5accc90f2}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!pQueryParser@{pQueryParser}}
+\index{pQueryParser@{pQueryParser}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{pQueryParser}{pQueryParser}}
+{\footnotesize\ttfamily BOOL BOOL \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_ac6bf6a3bb0538d5785821c0c7e2081e5}{IQuery\+Parser}}$\ast$ IQuery\+Parser\+Manager\+Vtbl\+::p\+Query\+Parser}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_aca550c2fcdcaec315b5907cf0942fe94}\label{struct_i_query_parser_manager_vtbl_aca550c2fcdcaec315b5907cf0942fe94}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!pszCatalog@{pszCatalog}}
+\index{pszCatalog@{pszCatalog}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{pszCatalog}{pszCatalog}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR IQuery\+Parser\+Manager\+Vtbl\+::psz\+Catalog}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a6a9583156244a6c5ef4afdb4addb9041}\label{struct_i_query_parser_manager_vtbl_a6a9583156244a6c5ef4afdb4addb9041}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!riid@{riid}}
+\index{riid@{riid}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID IQuery\+Parser\+Manager\+Vtbl\+::riid}
+
+\mbox{\Hypertarget{struct_i_query_parser_manager_vtbl_a8fe409ae27aa94e54baada5c5f6c4130}\label{struct_i_query_parser_manager_vtbl_a8fe409ae27aa94e54baada5c5f6c4130}} 
+\index{IQueryParserManagerVtbl@{IQueryParserManagerVtbl}!riid@{riid}}
+\index{riid@{riid}!IQueryParserManagerVtbl@{IQueryParserManagerVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LANGID \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID IQuery\+Parser\+Manager\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{structuredquery_8h}{structuredquery.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,309 @@
+\hypertarget{struct_pa_win_ds_stream}{}\doxysection{Pa\+Win\+Ds\+Stream Struct Reference}
+\label{struct_pa_win_ds_stream}\index{PaWinDsStream@{PaWinDsStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_win_ds_stream_a83364a8bef2314f9122dc397155d614a}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_win_ds_stream_a607c1644f8f390244723e854e30cf167}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_win_ds_stream_a9c2310a757d9246b054f6bb66e408806}{buffer\+Processor}}
+\item 
+LPDIRECTSOUND \mbox{\hyperlink{struct_pa_win_ds_stream_a463a306d8ee5fafbb86d0ffe16574b8c}{p\+Direct\+Sound}}
+\item 
+LPDIRECTSOUNDBUFFER \mbox{\hyperlink{struct_pa_win_ds_stream_a722c711a49c112dd449a310021f6a434}{p\+Direct\+Sound\+Primary\+Buffer}}
+\item 
+LPDIRECTSOUNDBUFFER \mbox{\hyperlink{struct_pa_win_ds_stream_a78946544af5046dd6ba8c723e849d1bb}{p\+Direct\+Sound\+Output\+Buffer}}
+\item 
+DWORD \mbox{\hyperlink{struct_pa_win_ds_stream_aba0e8e56c34492d73283950d0dac83e9}{output\+Buffer\+Write\+Offset\+Bytes}}
+\item 
+INT \mbox{\hyperlink{struct_pa_win_ds_stream_ae737c04ba94374539a74220fe52931f7}{output\+Buffer\+Size\+Bytes}}
+\item 
+INT \mbox{\hyperlink{struct_pa_win_ds_stream_a6259cccdde91a75238760247fde2406b}{output\+Frame\+Size\+Bytes}}
+\item 
+LARGE\+\_\+\+INTEGER \mbox{\hyperlink{struct_pa_win_ds_stream_a039793c3d1d95db8711f1ae64a73ed9b}{perf\+Counter\+Ticks\+Per\+Buffer}}
+\item 
+LARGE\+\_\+\+INTEGER \mbox{\hyperlink{struct_pa_win_ds_stream_acb8b10d5f65fe09ff39316b62c9da6aa}{previous\+Play\+Time}}
+\item 
+DWORD \mbox{\hyperlink{struct_pa_win_ds_stream_a89734a0c1089e6451603807450366035}{previous\+Play\+Cursor}}
+\item 
+UINT \mbox{\hyperlink{struct_pa_win_ds_stream_a6caeecd8ba926e6afa3b66575dab748a}{output\+Underflow\+Count}}
+\item 
+BOOL \mbox{\hyperlink{struct_pa_win_ds_stream_a23d5ebcba24ed4cc170f141d8f03ff48}{output\+Is\+Running}}
+\item 
+INT \mbox{\hyperlink{struct_pa_win_ds_stream_acd51ef94d9e64347740607961f5a81a3}{final\+Zero\+Bytes\+Written}}
+\item 
+LPDIRECTSOUNDCAPTURE \mbox{\hyperlink{struct_pa_win_ds_stream_a41406bbfae2cf1c5a4673ecbded9c0ff}{p\+Direct\+Sound\+Capture}}
+\item 
+LPDIRECTSOUNDCAPTUREBUFFER \mbox{\hyperlink{struct_pa_win_ds_stream_ae18cfa662e81841c320c0ce4a4c3bbca}{p\+Direct\+Sound\+Input\+Buffer}}
+\item 
+INT \mbox{\hyperlink{struct_pa_win_ds_stream_ac661215f5343548244a321f52cd44daf}{input\+Frame\+Size\+Bytes}}
+\item 
+UINT \mbox{\hyperlink{struct_pa_win_ds_stream_a0079b8e85936fe109614a93943944cf0}{read\+Offset}}
+\item 
+UINT \mbox{\hyperlink{struct_pa_win_ds_stream_a3fbd62cc367d1f364da681b4614ee2e2}{input\+Buffer\+Size\+Bytes}}
+\item 
+int \mbox{\hyperlink{struct_pa_win_ds_stream_aac98f9ae09a1f1b4038e4e127b4f638f}{host\+Buffer\+Size\+Frames}}
+\item 
+double \mbox{\hyperlink{struct_pa_win_ds_stream_afd9c498510e8998c1123f1f4d3c00d41}{frames\+Written}}
+\item 
+double \mbox{\hyperlink{struct_pa_win_ds_stream_ac20b4f0eb3b030a77bc69efabb4606f9}{seconds\+Per\+Host\+Byte}}
+\item 
+double \mbox{\hyperlink{struct_pa_win_ds_stream_afd0a02b06ef6d65c85ecefbff68976ea}{polling\+Period\+Seconds}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} \mbox{\hyperlink{struct_pa_win_ds_stream_a6393a1062d8467feeb9145e88a3b576f}{callback\+Flags}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{struct_pa_win_ds_stream_a902670e483a6f6989e1ac84c11b2bd5d}{stream\+Flags}}
+\item 
+int \mbox{\hyperlink{struct_pa_win_ds_stream_af4cfae9d5f9e287396b6868125decb33}{callback\+Result}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_win_ds_stream_a1350d5353edd1819d5ae4fec49480161}{processing\+Completed}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_win_ds_stream_a5a472759667878d811378f2be06a781d}{is\+Started}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_win_ds_stream_ab04552e705c27b479607fa0466245659}{is\+Active}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_win_ds_stream_a2db908a00a53e01a061721751954f4eb}{stop\+Processing}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_win_ds_stream_a1e257d85cd266dcd5ea68b9b6490ec43}{abort\+Processing}}
+\item 
+UINT \mbox{\hyperlink{struct_pa_win_ds_stream_a9f8a44a7ad81453d30b6de38ea282b13}{system\+Timer\+Resolution\+Period\+Ms}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_win_ds_stream_a211f515019c8fc899f1cee1bb3514db4}{waitable\+Timer}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_win_ds_stream_ae08a211344c6db03acbf07cbd001f2b5}{processing\+Thread}}
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}} \mbox{\hyperlink{struct_pa_win_ds_stream_ae723b0812bffda1934c9334e0b81c2a2}{processing\+Thread\+Id}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_win_ds_stream_a87d6c1cfc09893482fa97c532754c3d6}{processing\+Thread\+Completed}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a1e257d85cd266dcd5ea68b9b6490ec43}\label{struct_pa_win_ds_stream_a1e257d85cd266dcd5ea68b9b6490ec43}} 
+\index{PaWinDsStream@{PaWinDsStream}!abortProcessing@{abortProcessing}}
+\index{abortProcessing@{abortProcessing}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{abortProcessing}{abortProcessing}}
+{\footnotesize\ttfamily volatile int Pa\+Win\+Ds\+Stream\+::abort\+Processing}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a9c2310a757d9246b054f6bb66e408806}\label{struct_pa_win_ds_stream_a9c2310a757d9246b054f6bb66e408806}} 
+\index{PaWinDsStream@{PaWinDsStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Win\+Ds\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a6393a1062d8467feeb9145e88a3b576f}\label{struct_pa_win_ds_stream_a6393a1062d8467feeb9145e88a3b576f}} 
+\index{PaWinDsStream@{PaWinDsStream}!callbackFlags@{callbackFlags}}
+\index{callbackFlags@{callbackFlags}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{callbackFlags}{callbackFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} Pa\+Win\+Ds\+Stream\+::callback\+Flags}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_af4cfae9d5f9e287396b6868125decb33}\label{struct_pa_win_ds_stream_af4cfae9d5f9e287396b6868125decb33}} 
+\index{PaWinDsStream@{PaWinDsStream}!callbackResult@{callbackResult}}
+\index{callbackResult@{callbackResult}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{callbackResult}{callbackResult}}
+{\footnotesize\ttfamily int Pa\+Win\+Ds\+Stream\+::callback\+Result}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a607c1644f8f390244723e854e30cf167}\label{struct_pa_win_ds_stream_a607c1644f8f390244723e854e30cf167}} 
+\index{PaWinDsStream@{PaWinDsStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Win\+Ds\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_acd51ef94d9e64347740607961f5a81a3}\label{struct_pa_win_ds_stream_acd51ef94d9e64347740607961f5a81a3}} 
+\index{PaWinDsStream@{PaWinDsStream}!finalZeroBytesWritten@{finalZeroBytesWritten}}
+\index{finalZeroBytesWritten@{finalZeroBytesWritten}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{finalZeroBytesWritten}{finalZeroBytesWritten}}
+{\footnotesize\ttfamily INT Pa\+Win\+Ds\+Stream\+::final\+Zero\+Bytes\+Written}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_afd9c498510e8998c1123f1f4d3c00d41}\label{struct_pa_win_ds_stream_afd9c498510e8998c1123f1f4d3c00d41}} 
+\index{PaWinDsStream@{PaWinDsStream}!framesWritten@{framesWritten}}
+\index{framesWritten@{framesWritten}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{framesWritten}{framesWritten}}
+{\footnotesize\ttfamily double Pa\+Win\+Ds\+Stream\+::frames\+Written}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_aac98f9ae09a1f1b4038e4e127b4f638f}\label{struct_pa_win_ds_stream_aac98f9ae09a1f1b4038e4e127b4f638f}} 
+\index{PaWinDsStream@{PaWinDsStream}!hostBufferSizeFrames@{hostBufferSizeFrames}}
+\index{hostBufferSizeFrames@{hostBufferSizeFrames}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{hostBufferSizeFrames}{hostBufferSizeFrames}}
+{\footnotesize\ttfamily int Pa\+Win\+Ds\+Stream\+::host\+Buffer\+Size\+Frames}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a3fbd62cc367d1f364da681b4614ee2e2}\label{struct_pa_win_ds_stream_a3fbd62cc367d1f364da681b4614ee2e2}} 
+\index{PaWinDsStream@{PaWinDsStream}!inputBufferSizeBytes@{inputBufferSizeBytes}}
+\index{inputBufferSizeBytes@{inputBufferSizeBytes}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{inputBufferSizeBytes}{inputBufferSizeBytes}}
+{\footnotesize\ttfamily UINT Pa\+Win\+Ds\+Stream\+::input\+Buffer\+Size\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ac661215f5343548244a321f52cd44daf}\label{struct_pa_win_ds_stream_ac661215f5343548244a321f52cd44daf}} 
+\index{PaWinDsStream@{PaWinDsStream}!inputFrameSizeBytes@{inputFrameSizeBytes}}
+\index{inputFrameSizeBytes@{inputFrameSizeBytes}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{inputFrameSizeBytes}{inputFrameSizeBytes}}
+{\footnotesize\ttfamily INT Pa\+Win\+Ds\+Stream\+::input\+Frame\+Size\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ab04552e705c27b479607fa0466245659}\label{struct_pa_win_ds_stream_ab04552e705c27b479607fa0466245659}} 
+\index{PaWinDsStream@{PaWinDsStream}!isActive@{isActive}}
+\index{isActive@{isActive}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{isActive}{isActive}}
+{\footnotesize\ttfamily volatile int Pa\+Win\+Ds\+Stream\+::is\+Active}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a5a472759667878d811378f2be06a781d}\label{struct_pa_win_ds_stream_a5a472759667878d811378f2be06a781d}} 
+\index{PaWinDsStream@{PaWinDsStream}!isStarted@{isStarted}}
+\index{isStarted@{isStarted}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{isStarted}{isStarted}}
+{\footnotesize\ttfamily volatile int Pa\+Win\+Ds\+Stream\+::is\+Started}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ae737c04ba94374539a74220fe52931f7}\label{struct_pa_win_ds_stream_ae737c04ba94374539a74220fe52931f7}} 
+\index{PaWinDsStream@{PaWinDsStream}!outputBufferSizeBytes@{outputBufferSizeBytes}}
+\index{outputBufferSizeBytes@{outputBufferSizeBytes}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{outputBufferSizeBytes}{outputBufferSizeBytes}}
+{\footnotesize\ttfamily INT Pa\+Win\+Ds\+Stream\+::output\+Buffer\+Size\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_aba0e8e56c34492d73283950d0dac83e9}\label{struct_pa_win_ds_stream_aba0e8e56c34492d73283950d0dac83e9}} 
+\index{PaWinDsStream@{PaWinDsStream}!outputBufferWriteOffsetBytes@{outputBufferWriteOffsetBytes}}
+\index{outputBufferWriteOffsetBytes@{outputBufferWriteOffsetBytes}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{outputBufferWriteOffsetBytes}{outputBufferWriteOffsetBytes}}
+{\footnotesize\ttfamily DWORD Pa\+Win\+Ds\+Stream\+::output\+Buffer\+Write\+Offset\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a6259cccdde91a75238760247fde2406b}\label{struct_pa_win_ds_stream_a6259cccdde91a75238760247fde2406b}} 
+\index{PaWinDsStream@{PaWinDsStream}!outputFrameSizeBytes@{outputFrameSizeBytes}}
+\index{outputFrameSizeBytes@{outputFrameSizeBytes}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{outputFrameSizeBytes}{outputFrameSizeBytes}}
+{\footnotesize\ttfamily INT Pa\+Win\+Ds\+Stream\+::output\+Frame\+Size\+Bytes}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a23d5ebcba24ed4cc170f141d8f03ff48}\label{struct_pa_win_ds_stream_a23d5ebcba24ed4cc170f141d8f03ff48}} 
+\index{PaWinDsStream@{PaWinDsStream}!outputIsRunning@{outputIsRunning}}
+\index{outputIsRunning@{outputIsRunning}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{outputIsRunning}{outputIsRunning}}
+{\footnotesize\ttfamily BOOL Pa\+Win\+Ds\+Stream\+::output\+Is\+Running}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a6caeecd8ba926e6afa3b66575dab748a}\label{struct_pa_win_ds_stream_a6caeecd8ba926e6afa3b66575dab748a}} 
+\index{PaWinDsStream@{PaWinDsStream}!outputUnderflowCount@{outputUnderflowCount}}
+\index{outputUnderflowCount@{outputUnderflowCount}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{outputUnderflowCount}{outputUnderflowCount}}
+{\footnotesize\ttfamily UINT Pa\+Win\+Ds\+Stream\+::output\+Underflow\+Count}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a463a306d8ee5fafbb86d0ffe16574b8c}\label{struct_pa_win_ds_stream_a463a306d8ee5fafbb86d0ffe16574b8c}} 
+\index{PaWinDsStream@{PaWinDsStream}!pDirectSound@{pDirectSound}}
+\index{pDirectSound@{pDirectSound}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pDirectSound}{pDirectSound}}
+{\footnotesize\ttfamily LPDIRECTSOUND Pa\+Win\+Ds\+Stream\+::p\+Direct\+Sound}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a41406bbfae2cf1c5a4673ecbded9c0ff}\label{struct_pa_win_ds_stream_a41406bbfae2cf1c5a4673ecbded9c0ff}} 
+\index{PaWinDsStream@{PaWinDsStream}!pDirectSoundCapture@{pDirectSoundCapture}}
+\index{pDirectSoundCapture@{pDirectSoundCapture}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pDirectSoundCapture}{pDirectSoundCapture}}
+{\footnotesize\ttfamily LPDIRECTSOUNDCAPTURE Pa\+Win\+Ds\+Stream\+::p\+Direct\+Sound\+Capture}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ae18cfa662e81841c320c0ce4a4c3bbca}\label{struct_pa_win_ds_stream_ae18cfa662e81841c320c0ce4a4c3bbca}} 
+\index{PaWinDsStream@{PaWinDsStream}!pDirectSoundInputBuffer@{pDirectSoundInputBuffer}}
+\index{pDirectSoundInputBuffer@{pDirectSoundInputBuffer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pDirectSoundInputBuffer}{pDirectSoundInputBuffer}}
+{\footnotesize\ttfamily LPDIRECTSOUNDCAPTUREBUFFER Pa\+Win\+Ds\+Stream\+::p\+Direct\+Sound\+Input\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a78946544af5046dd6ba8c723e849d1bb}\label{struct_pa_win_ds_stream_a78946544af5046dd6ba8c723e849d1bb}} 
+\index{PaWinDsStream@{PaWinDsStream}!pDirectSoundOutputBuffer@{pDirectSoundOutputBuffer}}
+\index{pDirectSoundOutputBuffer@{pDirectSoundOutputBuffer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pDirectSoundOutputBuffer}{pDirectSoundOutputBuffer}}
+{\footnotesize\ttfamily LPDIRECTSOUNDBUFFER Pa\+Win\+Ds\+Stream\+::p\+Direct\+Sound\+Output\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a722c711a49c112dd449a310021f6a434}\label{struct_pa_win_ds_stream_a722c711a49c112dd449a310021f6a434}} 
+\index{PaWinDsStream@{PaWinDsStream}!pDirectSoundPrimaryBuffer@{pDirectSoundPrimaryBuffer}}
+\index{pDirectSoundPrimaryBuffer@{pDirectSoundPrimaryBuffer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pDirectSoundPrimaryBuffer}{pDirectSoundPrimaryBuffer}}
+{\footnotesize\ttfamily LPDIRECTSOUNDBUFFER Pa\+Win\+Ds\+Stream\+::p\+Direct\+Sound\+Primary\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a039793c3d1d95db8711f1ae64a73ed9b}\label{struct_pa_win_ds_stream_a039793c3d1d95db8711f1ae64a73ed9b}} 
+\index{PaWinDsStream@{PaWinDsStream}!perfCounterTicksPerBuffer@{perfCounterTicksPerBuffer}}
+\index{perfCounterTicksPerBuffer@{perfCounterTicksPerBuffer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{perfCounterTicksPerBuffer}{perfCounterTicksPerBuffer}}
+{\footnotesize\ttfamily LARGE\+\_\+\+INTEGER Pa\+Win\+Ds\+Stream\+::perf\+Counter\+Ticks\+Per\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_afd0a02b06ef6d65c85ecefbff68976ea}\label{struct_pa_win_ds_stream_afd0a02b06ef6d65c85ecefbff68976ea}} 
+\index{PaWinDsStream@{PaWinDsStream}!pollingPeriodSeconds@{pollingPeriodSeconds}}
+\index{pollingPeriodSeconds@{pollingPeriodSeconds}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{pollingPeriodSeconds}{pollingPeriodSeconds}}
+{\footnotesize\ttfamily double Pa\+Win\+Ds\+Stream\+::polling\+Period\+Seconds}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a89734a0c1089e6451603807450366035}\label{struct_pa_win_ds_stream_a89734a0c1089e6451603807450366035}} 
+\index{PaWinDsStream@{PaWinDsStream}!previousPlayCursor@{previousPlayCursor}}
+\index{previousPlayCursor@{previousPlayCursor}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{previousPlayCursor}{previousPlayCursor}}
+{\footnotesize\ttfamily DWORD Pa\+Win\+Ds\+Stream\+::previous\+Play\+Cursor}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_acb8b10d5f65fe09ff39316b62c9da6aa}\label{struct_pa_win_ds_stream_acb8b10d5f65fe09ff39316b62c9da6aa}} 
+\index{PaWinDsStream@{PaWinDsStream}!previousPlayTime@{previousPlayTime}}
+\index{previousPlayTime@{previousPlayTime}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{previousPlayTime}{previousPlayTime}}
+{\footnotesize\ttfamily LARGE\+\_\+\+INTEGER Pa\+Win\+Ds\+Stream\+::previous\+Play\+Time}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a1350d5353edd1819d5ae4fec49480161}\label{struct_pa_win_ds_stream_a1350d5353edd1819d5ae4fec49480161}} 
+\index{PaWinDsStream@{PaWinDsStream}!processingCompleted@{processingCompleted}}
+\index{processingCompleted@{processingCompleted}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{processingCompleted}{processingCompleted}}
+{\footnotesize\ttfamily HANDLE Pa\+Win\+Ds\+Stream\+::processing\+Completed}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ae08a211344c6db03acbf07cbd001f2b5}\label{struct_pa_win_ds_stream_ae08a211344c6db03acbf07cbd001f2b5}} 
+\index{PaWinDsStream@{PaWinDsStream}!processingThread@{processingThread}}
+\index{processingThread@{processingThread}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{processingThread}{processingThread}}
+{\footnotesize\ttfamily HANDLE Pa\+Win\+Ds\+Stream\+::processing\+Thread}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a87d6c1cfc09893482fa97c532754c3d6}\label{struct_pa_win_ds_stream_a87d6c1cfc09893482fa97c532754c3d6}} 
+\index{PaWinDsStream@{PaWinDsStream}!processingThreadCompleted@{processingThreadCompleted}}
+\index{processingThreadCompleted@{processingThreadCompleted}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{processingThreadCompleted}{processingThreadCompleted}}
+{\footnotesize\ttfamily HANDLE Pa\+Win\+Ds\+Stream\+::processing\+Thread\+Completed}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ae723b0812bffda1934c9334e0b81c2a2}\label{struct_pa_win_ds_stream_ae723b0812bffda1934c9334e0b81c2a2}} 
+\index{PaWinDsStream@{PaWinDsStream}!processingThreadId@{processingThreadId}}
+\index{processingThreadId@{processingThreadId}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{processingThreadId}{processingThreadId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}} Pa\+Win\+Ds\+Stream\+::processing\+Thread\+Id}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a0079b8e85936fe109614a93943944cf0}\label{struct_pa_win_ds_stream_a0079b8e85936fe109614a93943944cf0}} 
+\index{PaWinDsStream@{PaWinDsStream}!readOffset@{readOffset}}
+\index{readOffset@{readOffset}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{readOffset}{readOffset}}
+{\footnotesize\ttfamily UINT Pa\+Win\+Ds\+Stream\+::read\+Offset}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_ac20b4f0eb3b030a77bc69efabb4606f9}\label{struct_pa_win_ds_stream_ac20b4f0eb3b030a77bc69efabb4606f9}} 
+\index{PaWinDsStream@{PaWinDsStream}!secondsPerHostByte@{secondsPerHostByte}}
+\index{secondsPerHostByte@{secondsPerHostByte}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{secondsPerHostByte}{secondsPerHostByte}}
+{\footnotesize\ttfamily double Pa\+Win\+Ds\+Stream\+::seconds\+Per\+Host\+Byte}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a2db908a00a53e01a061721751954f4eb}\label{struct_pa_win_ds_stream_a2db908a00a53e01a061721751954f4eb}} 
+\index{PaWinDsStream@{PaWinDsStream}!stopProcessing@{stopProcessing}}
+\index{stopProcessing@{stopProcessing}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{stopProcessing}{stopProcessing}}
+{\footnotesize\ttfamily volatile int Pa\+Win\+Ds\+Stream\+::stop\+Processing}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a902670e483a6f6989e1ac84c11b2bd5d}\label{struct_pa_win_ds_stream_a902670e483a6f6989e1ac84c11b2bd5d}} 
+\index{PaWinDsStream@{PaWinDsStream}!streamFlags@{streamFlags}}
+\index{streamFlags@{streamFlags}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{streamFlags}{streamFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} Pa\+Win\+Ds\+Stream\+::stream\+Flags}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a83364a8bef2314f9122dc397155d614a}\label{struct_pa_win_ds_stream_a83364a8bef2314f9122dc397155d614a}} 
+\index{PaWinDsStream@{PaWinDsStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Win\+Ds\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a9f8a44a7ad81453d30b6de38ea282b13}\label{struct_pa_win_ds_stream_a9f8a44a7ad81453d30b6de38ea282b13}} 
+\index{PaWinDsStream@{PaWinDsStream}!systemTimerResolutionPeriodMs@{systemTimerResolutionPeriodMs}}
+\index{systemTimerResolutionPeriodMs@{systemTimerResolutionPeriodMs}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{systemTimerResolutionPeriodMs}{systemTimerResolutionPeriodMs}}
+{\footnotesize\ttfamily UINT Pa\+Win\+Ds\+Stream\+::system\+Timer\+Resolution\+Period\+Ms}
+
+\mbox{\Hypertarget{struct_pa_win_ds_stream_a211f515019c8fc899f1cee1bb3514db4}\label{struct_pa_win_ds_stream_a211f515019c8fc899f1cee1bb3514db4}} 
+\index{PaWinDsStream@{PaWinDsStream}!waitableTimer@{waitableTimer}}
+\index{waitableTimer@{waitableTimer}!PaWinDsStream@{PaWinDsStream}}
+\doxysubsubsection{\texorpdfstring{waitableTimer}{waitableTimer}}
+{\footnotesize\ttfamily HANDLE Pa\+Win\+Ds\+Stream\+::waitable\+Timer}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/dsound/\mbox{\hyperlink{pa__win__ds_8c}{pa\+\_\+win\+\_\+ds.\+c}}\end{DoxyCompactItemize}

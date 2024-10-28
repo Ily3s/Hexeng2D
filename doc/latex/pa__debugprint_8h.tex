@@ -1,0 +1,109 @@
+\hypertarget{pa__debugprint_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+debugprint.h File Reference}
+\label{pa__debugprint_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_a2ebbb3692a88d76c2a2c980129048244}{PA\+\_\+\+LOGAPI}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_aa49afe589fa79da888b6a42c913d2807}{PA\+\_\+\+LOGAPI\+\_\+\+ENTER}}(function\+Name)
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_ac136a9c2abf52f0fc26e1dd872b4cdcc}{PA\+\_\+\+LOGAPI\+\_\+\+ENTER\+\_\+\+PARAMS}}(function\+Name)
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_a5c8bb7f8effd25a68eeae1ea4ae4a1cd}{PA\+\_\+\+LOGAPI\+\_\+\+EXIT}}(function\+Name)
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_a151c2199b28b0230d80c582a3a39d6e9}{PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+\+PAERROR}}(function\+Name,  result)
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_aa99af48e9699fbf3689230d181b54677}{PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+T}}(function\+Name,  result\+Format\+String,  result)
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8h_afadab421dd6471613ffbfce11e10e988}{PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+\+PAERROR\+\_\+\+OR\+\_\+\+T\+\_\+\+RESULT}}(function\+Name,  positive\+Result\+Format\+String,  result)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{Pa\+Util\+Log\+Callback}}) (const char $\ast$log)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__debugprint_8h_a775ad90aa83e8a15e724f1b0fc55a0d3}{Pa\+Util\+\_\+\+Debug\+Print}} (const char $\ast$\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}},...)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__debugprint_8h_a688050cd1d631b8eb566c15bec3094ff}{Pa\+Util\+\_\+\+Set\+Debug\+Print\+Function}} (\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{Pa\+Util\+Log\+Callback}} cb)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}\label{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_DEBUG@{PA\_DEBUG}}
+\index{PA\_DEBUG@{PA\_DEBUG}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_DEBUG}{PA\_DEBUG}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEBUG(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG()}} provides a simple debug message printing facility. The macro passes it\textquotesingle{}s argument to a printf-\/like function called \mbox{\hyperlink{pa__debugprint_8h_a775ad90aa83e8a15e724f1b0fc55a0d3}{Pa\+Util\+\_\+\+Debug\+Print()}} which prints to stderr and always flushes the stream after printing. Because preprocessor macros cannot directly accept variable length argument lists, calls to the macro must include an additional set of parenthesis, eg\+: PA\+\_\+\+DEBUG((\char`\"{}errorno\+: \%d\char`\"{}, 1001 )); \mbox{\Hypertarget{pa__debugprint_8h_a2ebbb3692a88d76c2a2c980129048244}\label{pa__debugprint_8h_a2ebbb3692a88d76c2a2c980129048244}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI@{PA\_LOGAPI}}
+\index{PA\_LOGAPI@{PA\_LOGAPI}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI}{PA\_LOGAPI}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_aa49afe589fa79da888b6a42c913d2807}\label{pa__debugprint_8h_aa49afe589fa79da888b6a42c913d2807}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_ENTER@{PA\_LOGAPI\_ENTER}}
+\index{PA\_LOGAPI\_ENTER@{PA\_LOGAPI\_ENTER}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_ENTER}{PA\_LOGAPI\_ENTER}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+ENTER(\begin{DoxyParamCaption}\item[{}]{function\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_ac136a9c2abf52f0fc26e1dd872b4cdcc}\label{pa__debugprint_8h_ac136a9c2abf52f0fc26e1dd872b4cdcc}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_ENTER\_PARAMS@{PA\_LOGAPI\_ENTER\_PARAMS}}
+\index{PA\_LOGAPI\_ENTER\_PARAMS@{PA\_LOGAPI\_ENTER\_PARAMS}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_ENTER\_PARAMS}{PA\_LOGAPI\_ENTER\_PARAMS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+ENTER\+\_\+\+PARAMS(\begin{DoxyParamCaption}\item[{}]{function\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_a5c8bb7f8effd25a68eeae1ea4ae4a1cd}\label{pa__debugprint_8h_a5c8bb7f8effd25a68eeae1ea4ae4a1cd}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_EXIT@{PA\_LOGAPI\_EXIT}}
+\index{PA\_LOGAPI\_EXIT@{PA\_LOGAPI\_EXIT}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_EXIT}{PA\_LOGAPI\_EXIT}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+EXIT(\begin{DoxyParamCaption}\item[{}]{function\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_a151c2199b28b0230d80c582a3a39d6e9}\label{pa__debugprint_8h_a151c2199b28b0230d80c582a3a39d6e9}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_EXIT\_PAERROR@{PA\_LOGAPI\_EXIT\_PAERROR}}
+\index{PA\_LOGAPI\_EXIT\_PAERROR@{PA\_LOGAPI\_EXIT\_PAERROR}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_EXIT\_PAERROR}{PA\_LOGAPI\_EXIT\_PAERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+\+PAERROR(\begin{DoxyParamCaption}\item[{}]{function\+Name,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_afadab421dd6471613ffbfce11e10e988}\label{pa__debugprint_8h_afadab421dd6471613ffbfce11e10e988}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT@{PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT}}
+\index{PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT@{PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT}{PA\_LOGAPI\_EXIT\_PAERROR\_OR\_T\_RESULT}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+\+PAERROR\+\_\+\+OR\+\_\+\+T\+\_\+\+RESULT(\begin{DoxyParamCaption}\item[{}]{function\+Name,  }\item[{}]{positive\+Result\+Format\+String,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_aa99af48e9699fbf3689230d181b54677}\label{pa__debugprint_8h_aa99af48e9699fbf3689230d181b54677}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PA\_LOGAPI\_EXIT\_T@{PA\_LOGAPI\_EXIT\_T}}
+\index{PA\_LOGAPI\_EXIT\_T@{PA\_LOGAPI\_EXIT\_T}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PA\_LOGAPI\_EXIT\_T}{PA\_LOGAPI\_EXIT\_T}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOGAPI\+\_\+\+EXIT\+\_\+T(\begin{DoxyParamCaption}\item[{}]{function\+Name,  }\item[{}]{result\+Format\+String,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}\label{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PaUtilLogCallback@{PaUtilLogCallback}}
+\index{PaUtilLogCallback@{PaUtilLogCallback}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PaUtilLogCallback}{PaUtilLogCallback}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Pa\+Util\+Log\+Callback) (const char $\ast$log)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__debugprint_8h_a775ad90aa83e8a15e724f1b0fc55a0d3}\label{pa__debugprint_8h_a775ad90aa83e8a15e724f1b0fc55a0d3}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PaUtil\_DebugPrint@{PaUtil\_DebugPrint}}
+\index{PaUtil\_DebugPrint@{PaUtil\_DebugPrint}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DebugPrint()}{PaUtil\_DebugPrint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Debug\+Print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8h_a688050cd1d631b8eb566c15bec3094ff}\label{pa__debugprint_8h_a688050cd1d631b8eb566c15bec3094ff}} 
+\index{pa\_debugprint.h@{pa\_debugprint.h}!PaUtil\_SetDebugPrintFunction@{PaUtil\_SetDebugPrintFunction}}
+\index{PaUtil\_SetDebugPrintFunction@{PaUtil\_SetDebugPrintFunction}!pa\_debugprint.h@{pa\_debugprint.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetDebugPrintFunction()}{PaUtil\_SetDebugPrintFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Debug\+Print\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{Pa\+Util\+Log\+Callback}}}]{cb }\end{DoxyParamCaption})}
+
+Install user provided log function 

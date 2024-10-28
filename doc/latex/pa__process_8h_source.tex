@@ -1,0 +1,274 @@
+\hypertarget{pa__process_8h_source}{}\doxysection{pa\+\_\+process.\+h}
+\label{pa__process_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_process.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_process.h}}
+\mbox{\hyperlink{pa__process_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_PROCESS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_PROCESS\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library callback buffer processing adapters}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Phil Burk, Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{203 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{204 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__converters_8h}{pa\_converters.h}}"{}}}
+\DoxyCodeLine{205 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__dither_8h}{pa\_dither.h}}"{}}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{208 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{209 \{}
+\DoxyCodeLine{210 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212 }
+\DoxyCodeLine{219 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{221     \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484fa5e79e1ea4d8f114cfe83caa9b08610d8}{paUtilFixedHostBufferSize}},}
+\DoxyCodeLine{222 }
+\DoxyCodeLine{224     \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484fa2e97156fbdf5444b7bcc53b60f368d8b}{paUtilBoundedHostBufferSize}},}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{227     \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484fa4273c3f42fdaa887af00afa2bdb03cc0}{paUtilUnknownHostBufferSize}},}
+\DoxyCodeLine{228 }
+\DoxyCodeLine{236     \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484fa90f2d4ab46cdebfe7efaadc602bf3c78}{paUtilVariableHostBufferSizePartialUsageAllowed}}}
+\DoxyCodeLine{237 \}\mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{PaUtilHostBufferSizeMode}};}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239 }
+\DoxyCodeLine{242 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_channel_descriptor}{PaUtilChannelDescriptor}}\{}
+\DoxyCodeLine{243     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_pa_util_channel_descriptor_a4304aa36eb3b1655d4eb14a6bd5f4872}{data}};}
+\DoxyCodeLine{244     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_channel_descriptor_a9c9ef6ca4556396d20eac3eebb81e27b}{stride}};  }
+\DoxyCodeLine{245 \}\mbox{\hyperlink{struct_pa_util_channel_descriptor}{PaUtilChannelDescriptor}};}
+\DoxyCodeLine{246 }
+\DoxyCodeLine{247 }
+\DoxyCodeLine{253 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{254     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_a2a61168f6d216e6aaade39b77452bcb9}{framesPerUserBuffer}};}
+\DoxyCodeLine{255     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_aeec9ebf0c415b1e8aa4b1667ebbc839a}{framesPerHostBuffer}};}
+\DoxyCodeLine{256 }
+\DoxyCodeLine{257     \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{PaUtilHostBufferSizeMode}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a71c934464b2671889ec3e20192e6e8d9}{hostBufferSizeMode}};}
+\DoxyCodeLine{258     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a58c81d2f3c782274e0ab7ad6ab006034}{useNonAdaptingProcess}};}
+\DoxyCodeLine{259     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_ad791f8650ed327dc106a6f97c3ec5799}{userOutputSampleFormatIsEqualToHost}};}
+\DoxyCodeLine{260     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a8667d06325ee28d95c48159ff49e044e}{userInputSampleFormatIsEqualToHost}};}
+\DoxyCodeLine{261     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_a583f3db6161dbf7a79fb9b56f7c578a0}{framesPerTempBuffer}};}
+\DoxyCodeLine{262 }
+\DoxyCodeLine{263     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a878ec922a2464a3d57119d175f362366}{inputChannelCount}};}
+\DoxyCodeLine{264     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_ad7d3d4973cfe90f69dbb2fcf16a59d92}{bytesPerHostInputSample}};}
+\DoxyCodeLine{265     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_aaa4aba8c617b56f63f165e35b28fe393}{bytesPerUserInputSample}};}
+\DoxyCodeLine{266     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a08fb4a5b71ccc3aa1893d8e6c035d192}{userInputIsInterleaved}};}
+\DoxyCodeLine{267     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_a8bad04b047411362da5a81c38dde04af}{inputConverter}};}
+\DoxyCodeLine{268     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_a032b5f8772cc7fe2ec6a43219afdf367}{inputZeroer}};}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_af2c3ba9b0cc5bd8eb2fad8b73b40ad18}{outputChannelCount}};}
+\DoxyCodeLine{271     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a8a796dfdfac7c79bfffe8a44e690b358}{bytesPerHostOutputSample}};}
+\DoxyCodeLine{272     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_aa390974cb52943cf40efed34c1daf52b}{bytesPerUserOutputSample}};}
+\DoxyCodeLine{273     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a3be95f50566a88ebdc2697cde95d042e}{userOutputIsInterleaved}};}
+\DoxyCodeLine{274     \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{PaUtilConverter}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_ac6a539ab66c9a4a71d8603e7ed7394ad}{outputConverter}};}
+\DoxyCodeLine{275     \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{PaUtilZeroer}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_a25fadc2a2170fbd7c8ca85b06860ca3c}{outputZeroer}};}
+\DoxyCodeLine{276 }
+\DoxyCodeLine{277     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_a4deddc94ba71c17171e8ae823b89e832}{initialFramesInTempInputBuffer}};}
+\DoxyCodeLine{278     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_aec8e9dfce47109ff1f1d8cfa3c411c74}{initialFramesInTempOutputBuffer}};}
+\DoxyCodeLine{279 }
+\DoxyCodeLine{280     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_pa_util_buffer_processor_a327f8e240df961caa6c47bb9a35a9b76}{tempInputBuffer}};          }
+\DoxyCodeLine{281     \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_pa_util_buffer_processor_ad4fa78d30f36f82c45278b9fda2322f9}{tempInputBufferPtrs}};     }
+\DoxyCodeLine{282     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_a8b1a7ccf36beec18977244c4dd9c6af2}{framesInTempInputBuffer}}; }
+\DoxyCodeLine{284     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_pa_util_buffer_processor_a6aaded76991a6014bc78290fca38124e}{tempOutputBuffer}};         }
+\DoxyCodeLine{285     \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_pa_util_buffer_processor_a893544dc94d125b204167cf61f87ff9a}{tempOutputBufferPtrs}};    }
+\DoxyCodeLine{286     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_util_buffer_processor_a7cb25636fa0e415bdbd87469b5fa4a03}{framesInTempOutputBuffer}}; }
+\DoxyCodeLine{288     \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_addae164599da4e3cad4498350cc9e39e}{timeInfo}};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290     \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a269d950005d05b2c15d13d0e643c936e}{callbackStatusFlags}};}
+\DoxyCodeLine{291 }
+\DoxyCodeLine{292     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a5bcaa1f67c5f868a2947c1026880f6d6}{hostInputIsInterleaved}};}
+\DoxyCodeLine{293     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} hostInputFrameCount[2];}
+\DoxyCodeLine{294     \mbox{\hyperlink{struct_pa_util_channel_descriptor}{PaUtilChannelDescriptor}} *hostInputChannels[2]; }
+\DoxyCodeLine{299     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_util_buffer_processor_a3be5c10e3f9e36326103443929547e25}{hostOutputIsInterleaved}};}
+\DoxyCodeLine{300     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} hostOutputFrameCount[2];}
+\DoxyCodeLine{301     \mbox{\hyperlink{struct_pa_util_channel_descriptor}{PaUtilChannelDescriptor}} *hostOutputChannels[2]; }
+\DoxyCodeLine{307     \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a113fbcc8dab47dc9eb29b9541520084b}{ditherGenerator}};}
+\DoxyCodeLine{308 }
+\DoxyCodeLine{309     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_pa_util_buffer_processor_aea54ceb550e1d66824d6f8cf55af8489}{samplePeriod}};}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311     \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}} *\mbox{\hyperlink{struct_pa_util_buffer_processor_af6577f767ed4c58d5e511d125e6b1c4a}{streamCallback}};}
+\DoxyCodeLine{312     \textcolor{keywordtype}{void} *\mbox{\hyperlink{struct_pa_util_buffer_processor_aa0c7b972bd1494d40373e9e13475af4b}{userData}};}
+\DoxyCodeLine{313 \} \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}};}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 }
+\DoxyCodeLine{318 }
+\DoxyCodeLine{377 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__process_8h_adbf068f554a245c493eb0817ad8bc67e}{PaUtil\_InitializeBufferProcessor}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{378             \textcolor{keywordtype}{int} inputChannelCount, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} userInputSampleFormat,}
+\DoxyCodeLine{379             \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} hostInputSampleFormat,}
+\DoxyCodeLine{380             \textcolor{keywordtype}{int} outputChannelCount, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} userOutputSampleFormat,}
+\DoxyCodeLine{381             \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} hostOutputSampleFormat,}
+\DoxyCodeLine{382             \textcolor{keywordtype}{double} sampleRate,}
+\DoxyCodeLine{383             \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{PaStreamFlags}} streamFlags,}
+\DoxyCodeLine{384             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesPerUserBuffer, \textcolor{comment}{/* 0 indicates don't care */}}
+\DoxyCodeLine{385             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesPerHostBuffer,}
+\DoxyCodeLine{386             \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{PaUtilHostBufferSizeMode}} hostBufferSizeMode,}
+\DoxyCodeLine{387             \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}} *streamCallback, \textcolor{keywordtype}{void} *userData );}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{389 }
+\DoxyCodeLine{397 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_af872943fc77bbc32f0196e86f16a7c24}{PaUtil\_TerminateBufferProcessor}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{398 }
+\DoxyCodeLine{399 }
+\DoxyCodeLine{406 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a6f82fd15e56b10ed8e858be9ad8765e3}{PaUtil\_ResetBufferProcessor}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{407 }
+\DoxyCodeLine{408 }
+\DoxyCodeLine{417 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_a4871dfd93b00739e0dafdd4ea7671c9a}{PaUtil\_GetBufferProcessorInputLatencyFrames}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{418 }
+\DoxyCodeLine{427 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_a92a70efcd9dd7c8e1ea735580dee7e4a}{PaUtil\_GetBufferProcessorOutputLatencyFrames}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{451 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a5201db0d922fac6e3b513bf8c4d59149}{PaUtil\_SetInputFrameCount}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{452         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454 }
+\DoxyCodeLine{462 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a46c4eca9005b038a32877bdcebc1dbc9}{PaUtil\_SetNoInput}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{463 }
+\DoxyCodeLine{464 }
+\DoxyCodeLine{474 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a98b89245c209d2a0b367ed8d82bde5ca}{PaUtil\_SetInputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{475         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{476 }
+\DoxyCodeLine{477 }
+\DoxyCodeLine{488 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_ab62cb33b10a25676a03a0bc0c0134eaa}{PaUtil\_SetInterleavedInputChannels}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{489         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} firstChannel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount );}
+\DoxyCodeLine{490 }
+\DoxyCodeLine{491 }
+\DoxyCodeLine{499 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a309097fe924b746ac3e05260993abb42}{PaUtil\_SetNonInterleavedInputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{500         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} );}
+\DoxyCodeLine{501 }
+\DoxyCodeLine{502 }
+\DoxyCodeLine{506 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a469724724e74e5e1a8ea97f98f2d76bd}{PaUtil\_Set2ndInputFrameCount}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{507         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{508 }
+\DoxyCodeLine{512 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a89d233c8e934e1495f4b40d6baf2c8c9}{PaUtil\_Set2ndInputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{513         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{518 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_ad483fb76f7a894c0c085b7b054fcc993}{PaUtil\_Set2ndInterleavedInputChannels}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{519         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} firstChannel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount );}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{524 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a7a0f949512c7b443c72dbc8fdee2cb5b}{PaUtil\_Set2ndNonInterleavedInputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{525         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} );}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 }
+\DoxyCodeLine{539 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_aafe79d7110067c783ec401e8961bebe8}{PaUtil\_SetOutputFrameCount}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{540         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542 }
+\DoxyCodeLine{548 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_acf981028bf1d439959fe2287f51306fa}{PaUtil\_SetNoOutput}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{549 }
+\DoxyCodeLine{550 }
+\DoxyCodeLine{560 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a7d622722b03549d8f274aae5b8e5a93c}{PaUtil\_SetOutputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{561         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{562 }
+\DoxyCodeLine{563 }
+\DoxyCodeLine{574 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a3e31c5710305b2beb153f8f39b922623}{PaUtil\_SetInterleavedOutputChannels}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{575         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} firstChannel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount );}
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577 }
+\DoxyCodeLine{585 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a8108f7e3e890843830654e7cc4d176f1}{PaUtil\_SetNonInterleavedOutputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{586         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} );}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{588 }
+\DoxyCodeLine{592 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a24af08a401dcc32a29a155f196ac3839}{PaUtil\_Set2ndOutputFrameCount}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{593         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{594 }
+\DoxyCodeLine{598 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_ad67081555880d451b1c5c6c5ab2189b0}{PaUtil\_Set2ndOutputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{599         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{glad_8h_ad32aa7fdf452f2411e75b93c1ce4e250}{stride}} );}
+\DoxyCodeLine{600 }
+\DoxyCodeLine{604 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_a9077bfaf0ac1f9f06f3afd9359a842d6}{PaUtil\_Set2ndInterleavedOutputChannels}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{605         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} firstChannel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channelCount );}
+\DoxyCodeLine{606 }
+\DoxyCodeLine{610 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_abf2be8935e0862a1fbe157260ed1f8b8}{PaUtil\_Set2ndNonInterleavedOutputChannel}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{611         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} channel, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} );}
+\DoxyCodeLine{612 }
+\DoxyCodeLine{619 }
+\DoxyCodeLine{632 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__process_8h_ae791a33948eed0a902d618bfd0e0a825}{PaUtil\_BeginBufferProcessing}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{633         \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}* timeInfo, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} callbackStatusFlags );}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 }
+\DoxyCodeLine{659 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_afbbc470b417a31de0b9944d476adaaa0}{PaUtil\_EndBufferProcessing}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{660         \textcolor{keywordtype}{int} *callbackResult );}
+\DoxyCodeLine{661 }
+\DoxyCodeLine{662 }
+\DoxyCodeLine{674 \textcolor{keywordtype}{int} \mbox{\hyperlink{pa__process_8h_aa330f62537935124788387624d6a5362}{PaUtil\_IsBufferProcessorOutputEmpty}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor );}
+\DoxyCodeLine{675 }
+\DoxyCodeLine{682 }
+\DoxyCodeLine{704 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_a9a8ada1e97f38a135c1cd229affc538c}{PaUtil\_CopyInput}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{705         \textcolor{keywordtype}{void} **\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{706 }
+\DoxyCodeLine{707 }
+\DoxyCodeLine{708 \textcolor{comment}{/* Copy samples from a user supplied buffer to host output channels set up by}}
+\DoxyCodeLine{709 \textcolor{comment}{ the PaUtil\_Set*OutputChannels functions. This function is intended for use with}}
+\DoxyCodeLine{710 \textcolor{comment}{ blocking read/write streams. Copies the minimum of the number of}}
+\DoxyCodeLine{711 \textcolor{comment}{ user frames (specified by the frameCount parameter) and the number of}}
+\DoxyCodeLine{712 \textcolor{comment}{ host frames (specified in a previous call to SetOutputFrameCount()).}}
+\DoxyCodeLine{713 \textcolor{comment}{}}
+\DoxyCodeLine{714 \textcolor{comment}{ @param bufferProcessor The buffer processor.}}
+\DoxyCodeLine{715 \textcolor{comment}{}}
+\DoxyCodeLine{716 \textcolor{comment}{ @param buffer A pointer to the user buffer pointer, or a pointer to a pointer}}
+\DoxyCodeLine{717 \textcolor{comment}{ to an array of user buffer pointers for a non-\/interleaved stream. It is}}
+\DoxyCodeLine{718 \textcolor{comment}{ important that this parameter points to a copy of the user buffer pointers,}}
+\DoxyCodeLine{719 \textcolor{comment}{ not to the actual user buffer pointers, because this function updates the}}
+\DoxyCodeLine{720 \textcolor{comment}{ pointers before returning.}}
+\DoxyCodeLine{721 \textcolor{comment}{}}
+\DoxyCodeLine{722 \textcolor{comment}{ @param frameCount The number of frames of data in the buffer(s) pointed to by}}
+\DoxyCodeLine{723 \textcolor{comment}{ the buffer parameter.}}
+\DoxyCodeLine{724 \textcolor{comment}{}}
+\DoxyCodeLine{725 \textcolor{comment}{ @return The number of frames copied. The buffer pointer(s) pointed to by the}}
+\DoxyCodeLine{726 \textcolor{comment}{ buffer parameter are advanced to point to the frame(s) following the last one}}
+\DoxyCodeLine{727 \textcolor{comment}{ copied.}}
+\DoxyCodeLine{728 \textcolor{comment}{*/}}
+\DoxyCodeLine{729 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_af32b13037c9e4fcda0e1af1041102d9c}{PaUtil\_CopyOutput}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{730         \textcolor{keyword}{const} \textcolor{keywordtype}{void} ** \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{731 }
+\DoxyCodeLine{732 }
+\DoxyCodeLine{733 \textcolor{comment}{/* Zero samples in host output channels set up by the PaUtil\_Set*OutputChannels}}
+\DoxyCodeLine{734 \textcolor{comment}{ functions. This function is useful for flushing streams.}}
+\DoxyCodeLine{735 \textcolor{comment}{ Zeros the minimum of frameCount and the number of host frames specified in a}}
+\DoxyCodeLine{736 \textcolor{comment}{ previous call to SetOutputFrameCount().}}
+\DoxyCodeLine{737 \textcolor{comment}{}}
+\DoxyCodeLine{738 \textcolor{comment}{ @param bufferProcessor The buffer processor.}}
+\DoxyCodeLine{739 \textcolor{comment}{}}
+\DoxyCodeLine{740 \textcolor{comment}{ @param frameCount The maximum number of frames to zero.}}
+\DoxyCodeLine{741 \textcolor{comment}{}}
+\DoxyCodeLine{742 \textcolor{comment}{ @return The number of frames zeroed.}}
+\DoxyCodeLine{743 \textcolor{comment}{*/}}
+\DoxyCodeLine{744 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__process_8h_a59efdbd92383b5388e484188827c2eb1}{PaUtil\_ZeroOutput}}( \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}}* bufferProcessor,}
+\DoxyCodeLine{745         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount );}
+\DoxyCodeLine{746 }
+\DoxyCodeLine{747 }
+\DoxyCodeLine{751 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{752 \}}
+\DoxyCodeLine{753 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{754 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_PROCESS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

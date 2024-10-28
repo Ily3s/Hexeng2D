@@ -1,0 +1,47 @@
+The next step is to open a stream, which is similar to opening a file. You can specify whether you want audio input and/or output, how many channels, the data format, sample rate, etc. Opening a \textquotesingle{}\textquotesingle{}default\textquotesingle{}\textquotesingle{} stream means opening the default input and output devices, which saves you the trouble of getting a list of devices and choosing one from the list. (We\textquotesingle{}ll see how to do that later.) 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define SAMPLE\_RATE (44100)}}
+\DoxyCodeLine{\textcolor{keyword}{static} \mbox{\hyperlink{structpa_test_data}{paTestData}} \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{.....}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}};}
+\DoxyCodeLine{    \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} err;}
+\DoxyCodeLine{}
+\DoxyCodeLine{    \textcolor{comment}{/* Open an audio I/O stream. */}}
+\DoxyCodeLine{    err = \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\_OpenDefaultStream}}( \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}},}
+\DoxyCodeLine{                                0,          \textcolor{comment}{/* no input channels */}}
+\DoxyCodeLine{                                2,          \textcolor{comment}{/* stereo output */}}
+\DoxyCodeLine{                                \mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{paFloat32}},  \textcolor{comment}{/* 32 bit floating point output */}}
+\DoxyCodeLine{                                \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\_RATE}},}
+\DoxyCodeLine{                                256,        \textcolor{comment}{/* frames per buffer, i.e. the number}}
+\DoxyCodeLine{\textcolor{comment}{                                                   of sample frames that PortAudio will}}
+\DoxyCodeLine{\textcolor{comment}{                                                   request from the callback. Many apps}}
+\DoxyCodeLine{\textcolor{comment}{                                                   may want to use}}
+\DoxyCodeLine{\textcolor{comment}{                                                   paFramesPerBufferUnspecified, which}}
+\DoxyCodeLine{\textcolor{comment}{                                                   tells PortAudio to pick the best,}}
+\DoxyCodeLine{\textcolor{comment}{                                                   possibly changing, buffer size.*/}}
+\DoxyCodeLine{                                patestCallback, \textcolor{comment}{/* this is your callback function */}}
+\DoxyCodeLine{                                \&\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} ); \textcolor{comment}{/*This is a pointer that will be passed to}}
+\DoxyCodeLine{\textcolor{comment}{                                                   your callback*/}}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+The data structure and callback are described in \mbox{\hyperlink{writing_a_callback}{Writing a Callback Function}}.
+
+The above example opens the stream for writing, which is sufficient for playback. It is also possible to open a stream for reading, to do recording, or both reading and writing, for simultaneous recording and playback or even real-\/time audio processing. If you plan to do playback and recording at the same time, open only one stream with valid input and output parameters.
+
+There are some caveats to note about simultaneous read/write\+:
+
+
+\begin{DoxyItemize}
+\item Some platforms can only open a read/write stream using the same device.
+\item Although multiple streams can be opened, it is difficult to synchronize them.
+\item Some platforms don\textquotesingle{}t support opening multiple streams on the same device.
+\item Using multiple streams may not be as well tested as other features.
+\item The Port\+Audio library calls must be made from the same thread or synchronized by the user.
+\end{DoxyItemize}
+
+Previous\+: \mbox{\hyperlink{initializing_portaudio}{Initializing Port\+Audio}} $\vert$ Next\+: \mbox{\hyperlink{start_stop_abort}{Starting, Stopping and Aborting a Stream}} 

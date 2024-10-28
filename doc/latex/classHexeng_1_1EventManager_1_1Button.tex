@@ -1,0 +1,189 @@
+\doxysection{Hexeng\+::Event\+Manager\+::Button Class Reference}
+\hypertarget{classHexeng_1_1EventManager_1_1Button}{}\label{classHexeng_1_1EventManager_1_1Button}\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+
+
+{\ttfamily \#include $<$Button.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Event\+Manager\+::Button\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1EventManager_1_1Button}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_afe6db3914ff8f0268a98aa0e4ec875f2}{Button}} (\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a6421e58e07bbeee7864fb9f043f4717f}{min}}, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a4e7d8f90df27aae45e6d02862420876f}{max}}, std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffac}{Button\+Event}}, std\+::function$<$ void(void)$>$ $>$ events, int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_abb5b9bef4ebe95e12a1a9e2efba8940e}{mouse\+\_\+button}}=GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+1, Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL)
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a2e5563345d5ee8fa074bf60073f43b52}{Button}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a28dbcc4ff9352ccfe30254a8c8505788}{Button}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_aad50e952f9c9b72ac4dec4a159c49b79}{operator=}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Hexeng\+::\+Event\+Manager\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a5711271a518fa6c88c1f2bdd11cd5ef0}{Event}} (std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, action is executed (in the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop) if condition is true. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a2691ff0955f087b58a7712a7dd9a3650}{Event}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ab38283183a3091dcaafbd42572cd75e4}{Event}} (const \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a4042c75fe0cc52d6139711924050a108}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a576ee3c3b859103de952518bdffe9c5f}{Event}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a604c8431e48974681d6674afc3093300}{operator=}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_abb5b9bef4ebe95e12a1a9e2efba8940e}{mouse\+\_\+button}} = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+1
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a11107eb5353c3ac2fb0f227320283e65}{hover}}
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a2bf8aeb424f98f8e042af34c3bb9df1e}{unhover}}
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_afce58409a65e488ea4774b424361ce53}{click}}
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a9e2d3e882b0bc485bdc8ddcff5c75589}{unclick}}
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a06718e856ff81b63f64f24cb42ab828f}{keep\+\_\+clicking}}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a6421e58e07bbeee7864fb9f043f4717f}{min}} \{0, 0\}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a4e7d8f90df27aae45e6d02862420876f}{max}} \{0, 0\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Hexeng\+::\+Event\+Manager\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}} = nullptr
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a187f6edfdf2757eac90456c96360180d}{action}} = nullptr
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}} = 1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_aba9cf00b0808e9e28a184fcb42ed68e2}{clock}} = 0
+\item 
+Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}} = Range\+::\+GLOBAL
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ae55059c3e71feb0cc9fa91914dea06db}{enable}} = true
+\item 
+bool \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ab04af2cc9855c54bb664c597db1ba0c3}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a3c7b3c89bf96f51e80a919b3a82a3915}{Event}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_afe6db3914ff8f0268a98aa0e4ec875f2}\label{classHexeng_1_1EventManager_1_1Button_afe6db3914ff8f0268a98aa0e4ec875f2} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!Button@{Button}}
+\index{Button@{Button}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Button\+::\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$}]{min,  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$}]{max,  }\item[{std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffac}{Button\+Event}}, std\+::function$<$ void(void)$>$ $>$}]{events,  }\item[{int}]{mouse\+\_\+button = {\ttfamily GLFW\+\_\+MOUSE\+\_\+BUTTON\+\_\+1},  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & Bottom left position of the button\\
+\hline
+{\em max} & Top right position of the button\\
+\hline
+{\em condition} & A condition that activates or deactivates the button\\
+\hline
+{\em events} & A map of Button\+Event and the action it triggers\\
+\hline
+{\em mouse\+\_\+button} & The mouse button that can trigger the button\\
+\hline
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a2e5563345d5ee8fa074bf60073f43b52}\label{classHexeng_1_1EventManager_1_1Button_a2e5563345d5ee8fa074bf60073f43b52} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!Button@{Button}}
+\index{Button@{Button}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Button\+::\+Button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a28dbcc4ff9352ccfe30254a8c8505788}\label{classHexeng_1_1EventManager_1_1Button_a28dbcc4ff9352ccfe30254a8c8505788} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!Button@{Button}}
+\index{Button@{Button}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{Button()}{Button()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Button\+::\+Button (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_aad50e952f9c9b72ac4dec4a159c49b79}\label{classHexeng_1_1EventManager_1_1Button_aad50e952f9c9b72ac4dec4a159c49b79} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \& Hexeng\+::\+Event\+Manager\+::\+Button\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a3c7b3c89bf96f51e80a919b3a82a3915}\label{classHexeng_1_1EventManager_1_1Button_a3c7b3c89bf96f51e80a919b3a82a3915} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!Event@{Event}}
+\index{Event@{Event}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{Event}{Event}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_afce58409a65e488ea4774b424361ce53}\label{classHexeng_1_1EventManager_1_1Button_afce58409a65e488ea4774b424361ce53} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!click@{click}}
+\index{click@{click}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{click}{click}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::click}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a11107eb5353c3ac2fb0f227320283e65}\label{classHexeng_1_1EventManager_1_1Button_a11107eb5353c3ac2fb0f227320283e65} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!hover@{hover}}
+\index{hover@{hover}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{hover}{hover}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::hover}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a06718e856ff81b63f64f24cb42ab828f}\label{classHexeng_1_1EventManager_1_1Button_a06718e856ff81b63f64f24cb42ab828f} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!keep\_clicking@{keep\_clicking}}
+\index{keep\_clicking@{keep\_clicking}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{keep\_clicking}{keep\_clicking}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::keep\+\_\+clicking}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a4e7d8f90df27aae45e6d02862420876f}\label{classHexeng_1_1EventManager_1_1Button_a4e7d8f90df27aae45e6d02862420876f} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!max@{max}}
+\index{max@{max}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{max}{max}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$int$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::max \{0, 0\}}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a6421e58e07bbeee7864fb9f043f4717f}\label{classHexeng_1_1EventManager_1_1Button_a6421e58e07bbeee7864fb9f043f4717f} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!min@{min}}
+\index{min@{min}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{min}{min}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$int$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::min \{0, 0\}}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_abb5b9bef4ebe95e12a1a9e2efba8940e}\label{classHexeng_1_1EventManager_1_1Button_abb5b9bef4ebe95e12a1a9e2efba8940e} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!mouse\_button@{mouse\_button}}
+\index{mouse\_button@{mouse\_button}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{mouse\_button}{mouse\_button}}
+{\footnotesize\ttfamily int Hexeng\+::\+Event\+Manager\+::\+Button\+::mouse\+\_\+button = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+1}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a9e2d3e882b0bc485bdc8ddcff5c75589}\label{classHexeng_1_1EventManager_1_1Button_a9e2d3e882b0bc485bdc8ddcff5c75589} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!unclick@{unclick}}
+\index{unclick@{unclick}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{unclick}{unclick}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::unclick}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1Button_a2bf8aeb424f98f8e042af34c3bb9df1e}\label{classHexeng_1_1EventManager_1_1Button_a2bf8aeb424f98f8e042af34c3bb9df1e} 
+\index{Hexeng::EventManager::Button@{Hexeng::EventManager::Button}!unhover@{unhover}}
+\index{unhover@{unhover}!Hexeng::EventManager::Button@{Hexeng::EventManager::Button}}
+\doxysubsubsection{\texorpdfstring{unhover}{unhover}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Button\+::unhover}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{Button_8hpp}{Button.\+hpp}}\end{DoxyCompactItemize}

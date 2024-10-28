@@ -1,0 +1,100 @@
+\hypertarget{osmesa__context_8h_source}{}\doxysection{osmesa\+\_\+context.\+h}
+\label{osmesa__context_8h_source}\index{Hexeng2D/dependencies/glfw/src/osmesa\_context.h@{Hexeng2D/dependencies/glfw/src/osmesa\_context.h}}
+\mbox{\hyperlink{osmesa__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 OSMesa -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2016 Google Inc.}}
+\DoxyCodeLine{5 \textcolor{comment}{// Copyright (c) 2016-\/2017 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{6 \textcolor{comment}{//}}
+\DoxyCodeLine{7 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{8 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{9 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{10 \textcolor{comment}{//}}
+\DoxyCodeLine{11 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{12 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{13 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{14 \textcolor{comment}{//}}
+\DoxyCodeLine{15 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{16 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{17 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{18 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{19 \textcolor{comment}{//}}
+\DoxyCodeLine{20 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{21 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{22 \textcolor{comment}{//}}
+\DoxyCodeLine{23 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{24 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{25 \textcolor{comment}{//}}
+\DoxyCodeLine{26 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define OSMESA\_RGBA 0x1908}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define OSMESA\_FORMAT 0x22}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define OSMESA\_DEPTH\_BITS 0x30}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define OSMESA\_STENCIL\_BITS 0x31}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define OSMESA\_ACCUM\_BITS 0x32}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define OSMESA\_PROFILE 0x33}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define OSMESA\_CORE\_PROFILE 0x34}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define OSMESA\_COMPAT\_PROFILE 0x35}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define OSMESA\_CONTEXT\_MAJOR\_VERSION 0x36}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define OSMESA\_CONTEXT\_MINOR\_VERSION 0x37}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}};}
+\DoxyCodeLine{40 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (*\mbox{\hyperlink{osmesa__context_8h_ae5d5ae23c17636c0ab5bbd2763280f2b}{OSMESAproc}})(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}});}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}} (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_a20addab5c3bc7c86453a04ee13e5fe11}{PFN\_OSMesaCreateContextExt}})(\mbox{\hyperlink{glad_8h_a5d5233918a454ad3975c620a69ac5f0b}{GLenum}},\mbox{\hyperlink{glad_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}},\mbox{\hyperlink{glad_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}},\mbox{\hyperlink{glad_8h_acebcc1c5663f14ebde1d16831e5fed94}{GLint}},\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}});}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}} (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_a1fc3972544c1b2fbb8b15bf16fe0b267}{PFN\_OSMesaCreateContextAttribs}})(\textcolor{keyword}{const} \textcolor{keywordtype}{int}*,\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}});}
+\DoxyCodeLine{44 \textcolor{keyword}{typedef} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_ade149497e7a03dffbec2ddbc4306f39d}{PFN\_OSMesaDestroyContext}})(\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}});}
+\DoxyCodeLine{45 \textcolor{keyword}{typedef} int (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_af8bee274f6f7a71076a06c88c86b7cf7}{PFN\_OSMesaMakeCurrent}})(\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}},\textcolor{keywordtype}{void}*,int,int,int);}
+\DoxyCodeLine{46 \textcolor{keyword}{typedef} int (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_a82cf4ab7cb154aaeb44b641325d56375}{PFN\_OSMesaGetColorBuffer}})(\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}},\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{void}**);}
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} int (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_a135e3480f6c4723e633aa6f3fab9a3b9}{PFN\_OSMesaGetDepthBuffer}})(\mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}},\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{int}*,\textcolor{keywordtype}{void}**);}
+\DoxyCodeLine{48 \textcolor{keyword}{typedef} \mbox{\hyperlink{group__context_ga3d47c2d2fbe0be9c505d0e04e91a133c}{GLFWglproc}} (\mbox{\hyperlink{glad_8h_aa97755eb47e4bf2727ad45d610e18206}{GLAPIENTRY}} * \mbox{\hyperlink{osmesa__context_8h_a00cba053ab1107ee5a3c054f14069d57}{PFN\_OSMesaGetProcAddress}})(\textcolor{keyword}{const} \textcolor{keywordtype}{char}*);}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define OSMesaCreateContextExt \_glfw.osmesa.CreateContextExt}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define OSMesaCreateContextAttribs \_glfw.osmesa.CreateContextAttribs}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define OSMesaDestroyContext \_glfw.osmesa.DestroyContext}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define OSMesaMakeCurrent \_glfw.osmesa.MakeCurrent}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define OSMesaGetColorBuffer \_glfw.osmesa.GetColorBuffer}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define OSMesaGetDepthBuffer \_glfw.osmesa.GetDepthBuffer}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define OSMesaGetProcAddress \_glfw.osmesa.GetProcAddress}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define \_GLFW\_OSMESA\_CONTEXT\_STATE              \_GLFWcontextOSMesa osmesa}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_GLFW\_OSMESA\_LIBRARY\_CONTEXT\_STATE      \_GLFWlibraryOSMesa osmesa}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{comment}{// OSMesa-\/specific per-\/context data}}
+\DoxyCodeLine{62 \textcolor{comment}{//}}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa}{\_GLFWcontextOSMesa}}}
+\DoxyCodeLine{64 \{}
+\DoxyCodeLine{65     \mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}}       \mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa_a83068bb59ebdff095cbe915ac6bcb54d}{handle}};}
+\DoxyCodeLine{66     \textcolor{keywordtype}{int}                 \mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa_ac1cc862dabd6f047abd958eefd43a39e}{width}};}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int}                 \mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa_a655c424f088f849dda17ffc2df5dc0d8}{height}};}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void}*               \mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa_a1093f7acd4ae1e1198dc0b67d2fd849b}{buffer}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \} \mbox{\hyperlink{struct___g_l_f_wcontext_o_s_mesa}{\_GLFWcontextOSMesa}};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{// OSMesa-\/specific global data}}
+\DoxyCodeLine{73 \textcolor{comment}{//}}
+\DoxyCodeLine{74 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa}{\_GLFWlibraryOSMesa}}}
+\DoxyCodeLine{75 \{}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void}*           \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_aa6b2a9a7fb50445889f2f2daa6dca472}{handle}};}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     \mbox{\hyperlink{osmesa__context_8h_a20addab5c3bc7c86453a04ee13e5fe11}{PFN\_OSMesaCreateContextExt}}      \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_ae43e2b3eb603fad8f3e4aa97c2b90761}{CreateContextExt}};}
+\DoxyCodeLine{79     \mbox{\hyperlink{osmesa__context_8h_a1fc3972544c1b2fbb8b15bf16fe0b267}{PFN\_OSMesaCreateContextAttribs}}  \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_ad3c24f85deb9b3a6ec17a4aa95bd5d04}{CreateContextAttribs}};}
+\DoxyCodeLine{80     \mbox{\hyperlink{osmesa__context_8h_ade149497e7a03dffbec2ddbc4306f39d}{PFN\_OSMesaDestroyContext}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_a979a9921ffc11a42f729f2fd7e61d4ec}{DestroyContext}};}
+\DoxyCodeLine{81     \mbox{\hyperlink{osmesa__context_8h_af8bee274f6f7a71076a06c88c86b7cf7}{PFN\_OSMesaMakeCurrent}}           \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_a988e1e7b20f20e117d2dd1ec7c077833}{MakeCurrent}};}
+\DoxyCodeLine{82     \mbox{\hyperlink{osmesa__context_8h_a82cf4ab7cb154aaeb44b641325d56375}{PFN\_OSMesaGetColorBuffer}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_abed9e7849527cf4c1c0d432f4485126e}{GetColorBuffer}};}
+\DoxyCodeLine{83     \mbox{\hyperlink{osmesa__context_8h_a135e3480f6c4723e633aa6f3fab9a3b9}{PFN\_OSMesaGetDepthBuffer}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_a571ea7f2b506214174f2c4eee2b4f32e}{GetDepthBuffer}};}
+\DoxyCodeLine{84     \mbox{\hyperlink{osmesa__context_8h_a00cba053ab1107ee5a3c054f14069d57}{PFN\_OSMesaGetProcAddress}}        \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa_a054ec7a995020b1564956e9771a3cbe0}{GetProcAddress}};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_o_s_mesa}{\_GLFWlibraryOSMesa}};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{osmesa__context_8h_a9dd1594b1f8991f90844fbeb4a664163}{\_glfwInitOSMesa}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{90 \textcolor{keywordtype}{void} \mbox{\hyperlink{osmesa__context_8h_a6619171db5a26424469be37a7f36847a}{\_glfwTerminateOSMesa}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{91 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{osmesa__context_8h_a59950232b3b545e1fa750f6bd7d46201}{\_glfwCreateContextOSMesa}}(\mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}* window,}
+\DoxyCodeLine{92                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}}* ctxconfig,}
+\DoxyCodeLine{93                                   \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}}* fbconfig);}
+\DoxyCodeLine{94 }
+
+\end{DoxyCode}

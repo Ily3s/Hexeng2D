@@ -1,0 +1,91 @@
+\hypertarget{_event_manager_8hpp_source}{}\doxysection{Event\+Manager.\+hpp}
+\label{_event_manager_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/EventManager.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/EventManager.hpp}}
+\mbox{\hyperlink{_event_manager_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef EVENT\_MANAGER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define EVENT\_MANAGER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Hexeng.hpp"{}}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Hexeng::EventManager}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::thread \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad75b424c1ba3b22178bd0a69f9472253}{event\_thread}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{19     }
+\DoxyCodeLine{20     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         std::function<bool(\textcolor{keywordtype}{void})> condition = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{25         std::function<void(\textcolor{keywordtype}{void})> action = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{26         uint32\_t pertick = 1;}
+\DoxyCodeLine{27         uint32\_t clock = 0;}
+\DoxyCodeLine{28         Range range = Range::GLOBAL;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{35         }
+\DoxyCodeLine{36         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keywordtype}{void})> condition, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, uint32\_t pertick = 1);}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}{Event}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ab38283183a3091dcaafbd42572cd75e4}{Event}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{41         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\& \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a4042c75fe0cc52d6139711924050a108}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&\&) noexcept;}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}\&\&) noexcept;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47         \textcolor{keywordtype}{bool} enable = true;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{bool}* enable\_ptr = \&enable;}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{56     }
+\DoxyCodeLine{57     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}} : public \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{58     \{}
+\DoxyCodeLine{59     public :}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{66         }
+\DoxyCodeLine{67         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{68     \};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77     public :}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a9af6e85392d4728a1c6a735eef383414}{internal\_action}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_a107f2d492312a7e4d9efe27a06351944}{RendererEvent}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{89         }
+\DoxyCodeLine{90         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}(std::function<\textcolor{keywordtype}{bool}(\textcolor{keywordtype}{void})> condition, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{96     }
+\DoxyCodeLine{97     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{RendererEvent}}}
+\DoxyCodeLine{98     \{}
+\DoxyCodeLine{99     public :}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{RendererEventGate}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> evt, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{109     \};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<double>}} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}{mouse\_position}};}
+\DoxyCodeLine{112     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::vector<Event*> \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}{global\_events}};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}{start\_looping}}();}
+\DoxyCodeLine{115     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}{stop\_looping}}();}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} uint64\_t \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}{current\_tick}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \}}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

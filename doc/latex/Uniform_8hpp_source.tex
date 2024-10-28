@@ -1,0 +1,246 @@
+\doxysection{Uniform.\+hpp}
+\hypertarget{Uniform_8hpp_source}{}\label{Uniform_8hpp_source}\index{Hexeng2D/src/Renderer/Uniform.hpp@{Hexeng2D/src/Renderer/Uniform.hpp}}
+\mbox{\hyperlink{Uniform_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ UNIFORM\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ UNIFORM\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Shader_8hpp}{Shader.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Macros_8hpp}{Macros.hpp}}"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}},}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}{AVERAGE}}}
+\DoxyCodeLine{00024\ \ \ \ \ \};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{UniformInterface}}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ public\ :}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8dd5c236308a98ef356a871c9e6cb6c5}{UniformInterface}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ std::unordered\_map<Shader*,\ int>\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\_mode}}\ =\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{UniformFusionMode::SUM}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ std::vector<UniformInterface*>\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a21e595a97faad352b7d11c486feac8c7}{necessary\_uniforms}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_adf104f574a2ba75b8b3bcedc6a4a9b37}{refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ \textcolor{keywordtype}{void}*\ value)\ =\ 0;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a13806143301731451ada3507a8c01ebf}{refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad)\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_af7e78416c58b42225bcead63f1bd875f}{refresh}}()\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8d8483a8da74f05615ce40607af1a58f}{refresh}}(\textcolor{keywordtype}{void}*\ value)\ =\ 0;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a05ef143b40554cfb0b3e9ba51125c718}{refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ \textcolor{keyword}{const}\ std::vector<void*>\&\ values)\ =\ 0;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_ac3aa0a9a1bc622a1430f5c9044f3e32f}{refresh}}(\textcolor{keyword}{const}\ std::vector<void*>\&\ values)\ =\ 0;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_aa4d29fe8ae660a688bccd4bc7d9fbeca}{add\_shaders}}(\textcolor{keyword}{const}\ std::vector<Shader*>\&\ shad\_list)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.reserve(shad\_list.size());}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad\ :\ shad\_list)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\_list}}.insert(\{\ shad,\ shad-\/>get\_uniform(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\_name}}.c\_str())\ \});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{UniformArgType}}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}},}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{CONTROLLLER}},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{SHADERS}},}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ @brief\ The\ fusion\ mode\ of\ the\ uniform,\ const\ UniformFusionMode\ *}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{FUSION\_MODE}}}
+\DoxyCodeLine{00073\ \ \ \ \ \};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a286629b6769dcfa33acc21376696ad2b}{UniformArg}}\ =\ std::pair<UniformArgType,\ const\ void*>;}
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\ =\ std::unordered\_map<UniformArgType,\ const\ void*>;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{UniformInterface}}}
+\DoxyCodeLine{00082\ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ public\ :}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ VEC*\ value\_ptr\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a613973534f3d201c6a4fff5017750c72}{Uniform}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\&\ arguments\ =\ \{\});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a2b465478f0e80ff874b4c05290da13f9}{Uniform}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\&\&)\ noexcept;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\&\&)\ noexcept;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh();}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad)\ override;}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ \textcolor{keywordtype}{void}*\ value)\ override;}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh(\textcolor{keywordtype}{void}*\ value)\ override;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ const\ std::vector<\textcolor{keywordtype}{void}*>\&\ values)\ override;}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ refresh(const\ std::vector<\textcolor{keywordtype}{void}*>\&\ values)\ override;}
+\DoxyCodeLine{00112\ \ \ \ \ \};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ extern\ std::vector<\mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{UniformInterface}}*>\ uniform\_list;}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ template\ <typename\ VEC>}
+\DoxyCodeLine{00117\ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}<VEC>::\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}(const\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a607da14eb07319980e17c275131c0046}{UniformArgs}}\&\ arguments)}
+\DoxyCodeLine{00118\ \ \ \ \ \{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ [arg\_t,\ val]\ :\ arguments)}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (arg\_t)}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformArgType::NAME\ :}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uniform\_name\ =\ std::string(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(val));}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformArgType::CONTROLLLER\ :}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ value\_ptr\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }VEC*\textcolor{keyword}{>}(val);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformArgType::SHADERS\ :}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ :\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }std::vector<Shader*>*\textcolor{keyword}{>}(val))}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ shader-\/>get\_uniform(uniform\_name.c\_str());}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ shader\_list.insert(\{\ shader,\ \textcolor{keywordtype}{id}\ \});}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformArgType::FUSION\_MODE\ :}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fusion\_mode\ =\ *\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5}{UniformFusionMode}}*\textcolor{keyword}{>}(\&val);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ default\ :}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.push\_back(\textcolor{keyword}{this});}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00151\ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::Uniform}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\&\&\ moving)\ noexcept}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ :\ \ \ value\_ptr(moving.value\_ptr)}
+\DoxyCodeLine{00153\ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ shader\_list\ =\ std::move(moving.shader\_list);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ uniform\_name\ =\ std::move(moving.uniform\_name);}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ fusion\_mode\ =\ moving.fusion\_mode;}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(),\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(),\ \&moving);}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ *it\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00163\ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::operator=}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}\&\&\ moving)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00164\ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ value\_ptr\ =\ moving.\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_adc515417a7f9b6024052b9064eb0fcab}{value\_ptr}};}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ shader\_list\ =\ std::move(moving.shader\_list);}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ uniform\_name\ =\ std::move(moving.uniform\_name);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ fusion\_mode\ =\ moving.fusion\_mode;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find(\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.begin(),\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end(),\ \&moving);}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}}.end())}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \ \ \ \ *it\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00173\ \ \ \ \ \}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00176\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}()}
+\DoxyCodeLine{00177\ \ \ \ \ \{}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!value\_ptr)}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [shader,\ \textcolor{keywordtype}{id}]\ :\ shader\_list)}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>bind();}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>set\_uniform(\textcolor{keywordtype}{id},\ *value\_ptr);}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00186\ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad)}
+\DoxyCodeLine{00190\ \ \ \ \ \{}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!value\_ptr)}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a82e050215316c8002338b4129c26651c}{HXG\_ASSERT}}((shader\_list.find(shad)\ !=\ shader\_list.end()),}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}{HXG\_LOG\_ERROR}}(\textcolor{stringliteral}{"{}Shader\ not\ found"{}});\ \textcolor{keywordflow}{return};);}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ shad-\/>\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(shader\_list[shad],\ *value\_ptr);}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00200\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ \textcolor{keywordtype}{void}*\ value)}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a82e050215316c8002338b4129c26651c}{HXG\_ASSERT}}((shader\_list.find(shad)\ !=\ shader\_list.end()),}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}{HXG\_LOG\_ERROR}}(\textcolor{stringliteral}{"{}Shader\ not\ found"{}});\ \textcolor{keywordflow}{return};);}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ shad-\/>\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(shader\_list[shad],\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
+\DoxyCodeLine{00205\ \ \ \ \ \}}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00208\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}(\textcolor{keywordtype}{void}*\ value)}
+\DoxyCodeLine{00209\ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [shader,\ \textcolor{keywordtype}{id}]\ :\ shader\_list)}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>bind();}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>set\_uniform(\textcolor{keywordtype}{id},\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(value)));}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00217\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shad,\ \textcolor{keyword}{const}\ std::vector<void*>\&\ values)}
+\DoxyCodeLine{00219\ \ \ \ \ \{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a82e050215316c8002338b4129c26651c}{HXG\_ASSERT}}((shader\_list.find(shad)\ !=\ shader\_list.end()),}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}{HXG\_LOG\_ERROR}}(\textcolor{stringliteral}{"{}Shader\ not\ found"{}});\ \textcolor{keywordflow}{return};);}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ VEC\ result\ =\ 0;}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (fusion\_mode)}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformFusionMode::SUM\ :}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{void}*\ val\ :\ values)}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(val));}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformFusionMode::MULTIPLY\ :}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ 1;}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{void}*\ val\ :\ values)}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ *=\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(val));}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ UniformFusionMode::AVERAGE\ :}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{void}*\ val\ :\ values)}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ result\ +=\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(val));}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ result\ /=\ values.size();}
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00243\ }
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ default\ :}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ \ \ \ \ result\ =\ *(\textcolor{keyword}{reinterpret\_cast<}VEC*\textcolor{keyword}{>}(values[0]));}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ shad-\/>\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\_uniform}}(shader\_list[shad],\ result);}
+\DoxyCodeLine{00250\ \ \ \ \ \}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ VEC>}
+\DoxyCodeLine{00253\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform<VEC>::refresh}}(\textcolor{keyword}{const}\ std::vector<void*>\&\ values)}
+\DoxyCodeLine{00254\ \ \ \ \ \{}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ [shader,\ \textcolor{keywordtype}{id}]\ :\ shader\_list)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ shader-\/>bind();}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ refresh(shader,\ values);}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ \ \ \ \ \}}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00262\ \}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !UNIFORM\_HPP}}
+
+\end{DoxyCode}

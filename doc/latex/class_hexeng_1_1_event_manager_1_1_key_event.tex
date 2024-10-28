@@ -1,0 +1,45 @@
+\hypertarget{class_hexeng_1_1_event_manager_1_1_key_event}{}\doxysection{Hexeng\+::Event\+Manager\+::Key\+Event Class Reference}
+\label{class_hexeng_1_1_event_manager_1_1_key_event}\index{Hexeng::EventManager::KeyEvent@{Hexeng::EventManager::KeyEvent}}
+
+
+{\ttfamily \#include $<$Input\+Event.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Event\+Manager\+::Key\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_event_manager_1_1_key_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_event_afbb68a339265a990df3cc1b34d162675}{Key\+Event}} (int key\+\_\+code, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, unsigned int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, execute action (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if the key key\+\_\+code is pressed  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_key_event_afbb68a339265a990df3cc1b34d162675}\label{class_hexeng_1_1_event_manager_1_1_key_event_afbb68a339265a990df3cc1b34d162675}} 
+\index{Hexeng::EventManager::KeyEvent@{Hexeng::EventManager::KeyEvent}!KeyEvent@{KeyEvent}}
+\index{KeyEvent@{KeyEvent}!Hexeng::EventManager::KeyEvent@{Hexeng::EventManager::KeyEvent}}
+\doxysubsubsection{\texorpdfstring{KeyEvent()}{KeyEvent()}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Key\+Event\+::\+Key\+Event (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+code,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL},  }\item[{unsigned int}]{pertick = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Every pertick ticks, execute action (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if the key key\+\_\+code is pressed  
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+key\+\_\+code is a glfw key code 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_input_event_8hpp}{Input\+Event.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_input_event_8cpp}{Input\+Event.\+cpp}}\end{DoxyCompactItemize}

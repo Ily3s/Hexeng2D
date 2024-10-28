@@ -1,0 +1,106 @@
+\hypertarget{patest__buffer_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+buffer.c File Reference}
+\label{patest__buffer_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_buffer.c@{Hexeng2D/dependencies/portaudio/test/patest\_buffer.c}}
+
+
+Test opening streams with different buffer sizes.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__buffer_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(3)
+\item 
+\#define \mbox{\hyperlink{patest__buffer_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__buffer_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__buffer_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\item 
+\#define \mbox{\hyperlink{patest__buffer_8c_af00d5e1ba60acdba2d664d5da17b1017}{BUFFER\+\_\+\+TABLE}}~14
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{patest__buffer_8c_a44eca38400d6e886bd8dbd982663b818}{Test\+Once}} (int buffersize, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}})
+\item 
+int \mbox{\hyperlink{patest__buffer_8c_a7a29781a20c5dd4153c3c1cecf0ff328}{main}} (int argc, char $\ast$$\ast$args)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{patest__buffer_8c_a2529d7eb2601b205623ff3e39ec66670}{buffer\+\_\+table}} \mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}{pa\+Frames\+Per\+Buffer\+Unspecified}},16,32,64,128,200,256,500,512,600,723,1000,1024,2345\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test opening streams with different buffer sizes. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__buffer_8c_af00d5e1ba60acdba2d664d5da17b1017}\label{patest__buffer_8c_af00d5e1ba60acdba2d664d5da17b1017}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!BUFFER\_TABLE@{BUFFER\_TABLE}}
+\index{BUFFER\_TABLE@{BUFFER\_TABLE}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_TABLE}{BUFFER\_TABLE}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+TABLE~14}
+
+\mbox{\Hypertarget{patest__buffer_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__buffer_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__buffer_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__buffer_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(3)}
+
+\mbox{\Hypertarget{patest__buffer_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__buffer_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__buffer_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__buffer_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__buffer_8c_a7a29781a20c5dd4153c3c1cecf0ff328}\label{patest__buffer_8c_a7a29781a20c5dd4153c3c1cecf0ff328}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!main@{main}}
+\index{main@{main}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__buffer_8c_a44eca38400d6e886bd8dbd982663b818}\label{patest__buffer_8c_a44eca38400d6e886bd8dbd982663b818}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!TestOnce@{TestOnce}}
+\index{TestOnce@{TestOnce}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{TestOnce()}{TestOnce()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Test\+Once (\begin{DoxyParamCaption}\item[{int}]{buffersize,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{patest__buffer_8c_a2529d7eb2601b205623ff3e39ec66670}\label{patest__buffer_8c_a2529d7eb2601b205623ff3e39ec66670}} 
+\index{patest\_buffer.c@{patest\_buffer.c}!buffer\_table@{buffer\_table}}
+\index{buffer\_table@{buffer\_table}!patest\_buffer.c@{patest\_buffer.c}}
+\doxysubsubsection{\texorpdfstring{buffer\_table}{buffer\_table}}
+{\footnotesize\ttfamily long buffer\+\_\+table\mbox{[}$\,$\mbox{]} = \{\mbox{\hyperlink{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}{pa\+Frames\+Per\+Buffer\+Unspecified}},16,32,64,128,200,256,500,512,600,723,1000,1024,2345\}}
+

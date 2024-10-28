@@ -1,0 +1,640 @@
+\hypertarget{ksproxy_8h_source}{}\doxysection{ksproxy.\+h}
+\label{ksproxy_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/ksproxy.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/ksproxy.h}}
+\mbox{\hyperlink{ksproxy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_\_KSPROXY\_\_}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_\_KSPROXY\_\_}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{10 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#undef KSDDKAPI}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#ifdef \_KSDDK\_}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define KSDDKAPI}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define KSDDKAPI DECLSPEC\_IMPORT}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsObject                        \(\backslash\)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{    0x423c13a2L,0x2070,0x11d0,0x9e,0xf7,0x00,0xaa,0x00,0xa2,0x16,0xa1}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsPinEx                     \(\backslash\)}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{    0x7bb38260L,0xd19c,0x11d2,0xb3,0x8a,0x00,0xa0,0xc9,0x5e,0xc2,0x2e}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsPin                       \(\backslash\)}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{    0xb61178d1L,0xa2d9,0x11cf,0x9e,0x53,0x00,0xaa,0x00,0xa2,0x16,0xa1}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsPinPipe                       \(\backslash\)}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{    0xe539cd90L,0xa8b4,0x11d1,0x81,0x89,0x00,0xa0,0xc9,0x06,0x28,0x02}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsDataTypeHandler                   \(\backslash\)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{    0x5ffbaa02L,0x49a3,0x11d0,0x9f,0x36,0x00,0xaa,0x00,0xa2,0x16,0xa1}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsDataTypeCompletion                \(\backslash\)}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{    0x827D1A0EL,0x0F73,0x11D2,0xB2,0x7A,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsInterfaceHandler                  \(\backslash\)}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{    0xD3ABC7E0L,0x9A61,0x11D0,0xA4,0x0D,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsClockPropertySet                  \(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{    0x5C5CBD84L,0xE755,0x11D0,0xAC,0x18,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsAllocator                     \(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{    0x8da64899L,0xc0d9,0x11d0,0x84,0x13,0x00,0x00,0xf8,0x22,0xfe,0x8a}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsAllocatorEx                   \(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    0x091bb63aL,0x603f,0x11d1,0xb0,0x67,0x00,0xa0,0xc9,0x06,0x28,0x02}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifndef STATIC\_IID\_IKsPropertySet}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsPropertySet                   \(\backslash\)}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{    0x31EFAC30L,0x515C,0x11d0,0xA9,0xAA,0x00,0xAA,0x00,0x61,0xBE,0x93}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsTopology                      \(\backslash\)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{    0x28F54683L,0x06FD,0x11D2,0xB2,0x7A,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#ifndef STATIC\_IID\_IKsControl}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsControl                       \(\backslash\)}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{    0x28F54685L,0x06FD,0x11D2,0xB2,0x7A,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsAggregateControl                  \(\backslash\)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{    0x7F40EAC0L,0x3947,0x11D2,0x87,0x4E,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define STATIC\_CLSID\_Proxy                      \(\backslash\)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{    0x17CCA71BL,0xECD7,0x11D0,0xB9,0x08,0x00,0xA0,0xC9,0x22,0x31,0x96}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifdef \_KS\_}}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsObject);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsPin);}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsPinEx);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsPinPipe);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsDataTypeHandler);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsDataTypeCompletion);}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsInterfaceHandler);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsClockPropertySet);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsAllocator);}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsAllocatorEx);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#define IID\_IKsQualityForwarder KSCATEGORY\_QUALITY}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define STATIC\_IID\_IKsQualityForwarder STATIC\_KSCATEGORY\_QUALITY}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{95   KsAllocatorMode\_User,}
+\DoxyCodeLine{96   KsAllocatorMode\_Kernel}
+\DoxyCodeLine{97 \} KSALLOCATORMODE;}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{100   FramingProp\_Uninitialized,}
+\DoxyCodeLine{101   FramingProp\_None,}
+\DoxyCodeLine{102   FramingProp\_Old,}
+\DoxyCodeLine{103   FramingProp\_Ex}
+\DoxyCodeLine{104 \} FRAMING\_PROP;}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{keyword}{typedef} FRAMING\_PROP *PFRAMING\_PROP;}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{109   Framing\_Cache\_Update,}
+\DoxyCodeLine{110   Framing\_Cache\_ReadLast,}
+\DoxyCodeLine{111   Framing\_Cache\_ReadOrig,}
+\DoxyCodeLine{112   Framing\_Cache\_Write}
+\DoxyCodeLine{113 \} FRAMING\_CACHE\_OPS;}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{116   LONGLONG MinTotalNominator;}
+\DoxyCodeLine{117   LONGLONG MaxTotalNominator;}
+\DoxyCodeLine{118   LONGLONG TotalDenominator;}
+\DoxyCodeLine{119 \} OPTIMAL\_WEIGHT\_TOTALS;}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }IPin IPin;}
+\DoxyCodeLine{122 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }IKsPin IKsPin;}
+\DoxyCodeLine{123 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }IKsAllocator IKsAllocator;}
+\DoxyCodeLine{124 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }IKsAllocatorEx IKsAllocatorEx;}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define AllocatorStrategy\_DontCare          0}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define AllocatorStrategy\_MinimizeNumberOfFrames    0x00000001}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define AllocatorStrategy\_MinimizeFrameSize     0x00000002}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#define AllocatorStrategy\_MinimizeNumberOfAllocators    0x00000004}}
+\DoxyCodeLine{130 \textcolor{preprocessor}{\#define AllocatorStrategy\_MaximizeSpeed         0x00000008}}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define PipeFactor\_None                 0}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define PipeFactor\_UserModeUpstream         0x00000001}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define PipeFactor\_UserModeDownstream           0x00000002}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define PipeFactor\_MemoryTypes              0x00000004}}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define PipeFactor\_Flags                0x00000008}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define PipeFactor\_PhysicalRanges           0x00000010}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define PipeFactor\_OptimalRanges            0x00000020}}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define PipeFactor\_FixedCompression         0x00000040}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define PipeFactor\_UnknownCompression           0x00000080}}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define PipeFactor\_Buffers              0x00000100}}
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#define PipeFactor\_Align                0x00000200}}
+\DoxyCodeLine{144 \textcolor{preprocessor}{\#define PipeFactor\_PhysicalEnd              0x00000400}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define PipeFactor\_LogicalEnd               0x00000800}}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{148   PipeState\_DontCare,}
+\DoxyCodeLine{149   PipeState\_RangeNotFixed,}
+\DoxyCodeLine{150   PipeState\_RangeFixed,}
+\DoxyCodeLine{151   PipeState\_CompressionUnknown,}
+\DoxyCodeLine{152   PipeState\_Finalized}
+\DoxyCodeLine{153 \} PIPE\_STATE;}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_PIPE\_DIMENSIONS \{}
+\DoxyCodeLine{156   \mbox{\hyperlink{struct_k_s___c_o_m_p_r_e_s_s_i_o_n}{KS\_COMPRESSION}} AllocatorPin;}
+\DoxyCodeLine{157   \mbox{\hyperlink{struct_k_s___c_o_m_p_r_e_s_s_i_o_n}{KS\_COMPRESSION}} MaxExpansionPin;}
+\DoxyCodeLine{158   \mbox{\hyperlink{struct_k_s___c_o_m_p_r_e_s_s_i_o_n}{KS\_COMPRESSION}} EndPin;}
+\DoxyCodeLine{159 \} PIPE\_DIMENSIONS,*PPIPE\_DIMENSIONS;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{162   Pipe\_Allocator\_None,}
+\DoxyCodeLine{163   Pipe\_Allocator\_FirstPin,}
+\DoxyCodeLine{164   Pipe\_Allocator\_LastPin,}
+\DoxyCodeLine{165   Pipe\_Allocator\_MiddlePin}
+\DoxyCodeLine{166 \} PIPE\_ALLOCATOR\_PLACE;}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 \textcolor{keyword}{typedef} PIPE\_ALLOCATOR\_PLACE *PPIPE\_ALLOCATOR\_PLACE;}
+\DoxyCodeLine{169 }
+\DoxyCodeLine{170 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{171   KS\_MemoryTypeDontCare = 0,}
+\DoxyCodeLine{172   KS\_MemoryTypeKernelPaged,}
+\DoxyCodeLine{173   KS\_MemoryTypeKernelNonPaged,}
+\DoxyCodeLine{174   KS\_MemoryTypeDeviceHostMapped,}
+\DoxyCodeLine{175   KS\_MemoryTypeDeviceSpecific,}
+\DoxyCodeLine{176   KS\_MemoryTypeUser,}
+\DoxyCodeLine{177   KS\_MemoryTypeAnyHost}
+\DoxyCodeLine{178 \} KS\_LogicalMemoryType;}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 \textcolor{keyword}{typedef} KS\_LogicalMemoryType *PKS\_LogicalMemoryType;}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_PIPE\_TERMINATION \{}
+\DoxyCodeLine{183   ULONG Flags;}
+\DoxyCodeLine{184   ULONG OutsideFactors;}
+\DoxyCodeLine{185   ULONG Weigth;}
+\DoxyCodeLine{186   \mbox{\hyperlink{struct_k_s___f_r_a_m_i_n_g___r_a_n_g_e}{KS\_FRAMING\_RANGE}} PhysicalRange;}
+\DoxyCodeLine{187   \mbox{\hyperlink{struct_k_s___f_r_a_m_i_n_g___r_a_n_g_e___w_e_i_g_h_t_e_d}{KS\_FRAMING\_RANGE\_WEIGHTED}} OptimalRange;}
+\DoxyCodeLine{188   \mbox{\hyperlink{struct_k_s___c_o_m_p_r_e_s_s_i_o_n}{KS\_COMPRESSION}} Compression;}
+\DoxyCodeLine{189 \} PIPE\_TERMINATION;}
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_ALLOCATOR\_PROPERTIES\_EX}
+\DoxyCodeLine{192 \{}
+\DoxyCodeLine{193   \textcolor{keywordtype}{long} cBuffers;}
+\DoxyCodeLine{194   \textcolor{keywordtype}{long} cbBuffer;}
+\DoxyCodeLine{195   \textcolor{keywordtype}{long} cbAlign;}
+\DoxyCodeLine{196   \textcolor{keywordtype}{long} cbPrefix;}
+\DoxyCodeLine{197 }
+\DoxyCodeLine{198   GUID MemoryType;}
+\DoxyCodeLine{199   GUID BusType;}
+\DoxyCodeLine{200   PIPE\_STATE State;}
+\DoxyCodeLine{201   PIPE\_TERMINATION Input;}
+\DoxyCodeLine{202   PIPE\_TERMINATION Output;}
+\DoxyCodeLine{203   ULONG Strategy;}
+\DoxyCodeLine{204   ULONG Flags;}
+\DoxyCodeLine{205   ULONG Weight;}
+\DoxyCodeLine{206   KS\_LogicalMemoryType LogicalMemoryType;}
+\DoxyCodeLine{207   PIPE\_ALLOCATOR\_PLACE AllocatorPlace;}
+\DoxyCodeLine{208   PIPE\_DIMENSIONS Dimensions;}
+\DoxyCodeLine{209   \mbox{\hyperlink{struct_k_s___f_r_a_m_i_n_g___r_a_n_g_e}{KS\_FRAMING\_RANGE}} PhysicalRange;}
+\DoxyCodeLine{210   IKsAllocatorEx *PrevSegment;}
+\DoxyCodeLine{211   ULONG CountNextSegments;}
+\DoxyCodeLine{212   IKsAllocatorEx **NextSegments;}
+\DoxyCodeLine{213   ULONG InsideFactors;}
+\DoxyCodeLine{214   ULONG NumberPins;}
+\DoxyCodeLine{215 \} ALLOCATOR\_PROPERTIES\_EX;}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217 \textcolor{keyword}{typedef} ALLOCATOR\_PROPERTIES\_EX *PALLOCATOR\_PROPERTIES\_EX;}
+\DoxyCodeLine{218 }
+\DoxyCodeLine{219 \textcolor{preprocessor}{\#ifdef \_\_STREAMS\_\_}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keyword}{struct }IKsClockPropertySet;}
+\DoxyCodeLine{222 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{223 \textcolor{preprocessor}{\#define INTERFACE IKsClockPropertySet}}
+\DoxyCodeLine{224 DECLARE\_INTERFACE\_(IKsClockPropertySet,IUnknown)}
+\DoxyCodeLine{225 \{}
+\DoxyCodeLine{226   STDMETHOD(KsGetTime)          (THIS\_}
+\DoxyCodeLine{227                         LONGLONG *Time}
+\DoxyCodeLine{228                     ) PURE;}
+\DoxyCodeLine{229   STDMETHOD(KsSetTime)          (THIS\_}
+\DoxyCodeLine{230                         LONGLONG Time}
+\DoxyCodeLine{231                     ) PURE;}
+\DoxyCodeLine{232   STDMETHOD(KsGetPhysicalTime)      (THIS\_}
+\DoxyCodeLine{233                         LONGLONG *Time}
+\DoxyCodeLine{234                     ) PURE;}
+\DoxyCodeLine{235   STDMETHOD(KsSetPhysicalTime)      (THIS\_}
+\DoxyCodeLine{236                         LONGLONG Time}
+\DoxyCodeLine{237                     ) PURE;}
+\DoxyCodeLine{238   STDMETHOD(KsGetCorrelatedTime)    (THIS\_}
+\DoxyCodeLine{239                         \mbox{\hyperlink{struct_k_s_c_o_r_r_e_l_a_t_e_d___t_i_m_e}{KSCORRELATED\_TIME}} *CorrelatedTime}
+\DoxyCodeLine{240                     ) PURE;}
+\DoxyCodeLine{241   STDMETHOD(KsSetCorrelatedTime)    (THIS\_}
+\DoxyCodeLine{242                         \mbox{\hyperlink{struct_k_s_c_o_r_r_e_l_a_t_e_d___t_i_m_e}{KSCORRELATED\_TIME}} *CorrelatedTime}
+\DoxyCodeLine{243                     ) PURE;}
+\DoxyCodeLine{244   STDMETHOD(KsGetCorrelatedPhysicalTime)(THIS\_}
+\DoxyCodeLine{245                         \mbox{\hyperlink{struct_k_s_c_o_r_r_e_l_a_t_e_d___t_i_m_e}{KSCORRELATED\_TIME}} *CorrelatedTime}
+\DoxyCodeLine{246                     ) PURE;}
+\DoxyCodeLine{247   STDMETHOD(KsSetCorrelatedPhysicalTime)(THIS\_}
+\DoxyCodeLine{248                         \mbox{\hyperlink{struct_k_s_c_o_r_r_e_l_a_t_e_d___t_i_m_e}{KSCORRELATED\_TIME}} *CorrelatedTime}
+\DoxyCodeLine{249                     ) PURE;}
+\DoxyCodeLine{250   STDMETHOD(KsGetResolution)        (THIS\_}
+\DoxyCodeLine{251                         \mbox{\hyperlink{struct_k_s_r_e_s_o_l_u_t_i_o_n}{KSRESOLUTION}} *Resolution}
+\DoxyCodeLine{252                     ) PURE;}
+\DoxyCodeLine{253   STDMETHOD(KsGetState)         (THIS\_}
+\DoxyCodeLine{254                         \mbox{\hyperlink{ks_8h_a4f0d9baddd3d96a7541645f20c7e28d7}{KSSTATE}} *State}
+\DoxyCodeLine{255                     ) PURE;}
+\DoxyCodeLine{256 \};}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258 \textcolor{keyword}{struct }IKsAllocator;}
+\DoxyCodeLine{259 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{260 \textcolor{preprocessor}{\#define INTERFACE IKsAllocator}}
+\DoxyCodeLine{261 DECLARE\_INTERFACE\_(IKsAllocator,IUnknown)}
+\DoxyCodeLine{262 \{}
+\DoxyCodeLine{263   STDMETHOD\_(HANDLE,KsGetAllocatorHandle)(THIS) PURE;}
+\DoxyCodeLine{264   STDMETHOD\_(KSALLOCATORMODE,KsGetAllocatorMode)(THIS) PURE;}
+\DoxyCodeLine{265   STDMETHOD(KsGetAllocatorStatus)   (THIS\_}
+\DoxyCodeLine{266                         \mbox{\hyperlink{struct_k_s_s_t_r_e_a_m_a_l_l_o_c_a_t_o_r___s_t_a_t_u_s}{PKSSTREAMALLOCATOR\_STATUS}} AllocatorStatus}
+\DoxyCodeLine{267                     ) PURE;}
+\DoxyCodeLine{268   STDMETHOD\_(VOID,KsSetAllocatorMode)   (THIS\_}
+\DoxyCodeLine{269                         KSALLOCATORMODE Mode}
+\DoxyCodeLine{270                     ) PURE;}
+\DoxyCodeLine{271 \};}
+\DoxyCodeLine{272 }
+\DoxyCodeLine{273 \textcolor{keyword}{struct }IKsAllocatorEx;}
+\DoxyCodeLine{274 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{275 \textcolor{preprocessor}{\#define INTERFACE IKsAllocatorEx}}
+\DoxyCodeLine{276 DECLARE\_INTERFACE\_(IKsAllocatorEx,IKsAllocator)}
+\DoxyCodeLine{277 \{}
+\DoxyCodeLine{278   STDMETHOD\_(PALLOCATOR\_PROPERTIES\_EX,KsGetProperties)(THIS) PURE;}
+\DoxyCodeLine{279   STDMETHOD\_(VOID,KsSetProperties)  (THIS\_}
+\DoxyCodeLine{280                         PALLOCATOR\_PROPERTIES\_EX}
+\DoxyCodeLine{281                     ) PURE;}
+\DoxyCodeLine{282   STDMETHOD\_(VOID,KsSetAllocatorHandle) (THIS\_}
+\DoxyCodeLine{283                         HANDLE AllocatorHandle}
+\DoxyCodeLine{284                     ) PURE;}
+\DoxyCodeLine{285   STDMETHOD\_(HANDLE,KsCreateAllocatorAndGetHandle)(THIS\_}
+\DoxyCodeLine{286                         IKsPin *KsPin}
+\DoxyCodeLine{287                     ) PURE;}
+\DoxyCodeLine{288 \};}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{291   KsPeekOperation\_PeekOnly,}
+\DoxyCodeLine{292   KsPeekOperation\_AddRef}
+\DoxyCodeLine{293 \} KSPEEKOPERATION;}
+\DoxyCodeLine{294 }
+\DoxyCodeLine{295 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_KSSTREAM\_SEGMENT *PKSSTREAM\_SEGMENT;}
+\DoxyCodeLine{296 \textcolor{keyword}{struct }IKsPin;}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{299 \textcolor{preprocessor}{\#define INTERFACE IKsPin}}
+\DoxyCodeLine{300 DECLARE\_INTERFACE\_(IKsPin,IUnknown)}
+\DoxyCodeLine{301 \{}
+\DoxyCodeLine{302   STDMETHOD(KsQueryMediums)     (THIS\_}
+\DoxyCodeLine{303                         \mbox{\hyperlink{struct_k_s_m_u_l_t_i_p_l_e___i_t_e_m}{PKSMULTIPLE\_ITEM}} *MediumList}
+\DoxyCodeLine{304                     ) PURE;}
+\DoxyCodeLine{305   STDMETHOD(KsQueryInterfaces)      (THIS\_}
+\DoxyCodeLine{306                         \mbox{\hyperlink{struct_k_s_m_u_l_t_i_p_l_e___i_t_e_m}{PKSMULTIPLE\_ITEM}} *InterfaceList}
+\DoxyCodeLine{307                     ) PURE;}
+\DoxyCodeLine{308   STDMETHOD(KsCreateSinkPinHandle)  (THIS\_}
+\DoxyCodeLine{309                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{KSPIN\_INTERFACE}}\& Interface,}
+\DoxyCodeLine{310                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{KSPIN\_MEDIUM}}\& Medium}
+\DoxyCodeLine{311                     ) PURE;}
+\DoxyCodeLine{312   STDMETHOD(KsGetCurrentCommunication)  (THIS\_}
+\DoxyCodeLine{313                         \mbox{\hyperlink{ks_8h_a6e14df6c0ef3b91a7aa83cac527c71ff}{KSPIN\_COMMUNICATION}} *Communication,}
+\DoxyCodeLine{314                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{KSPIN\_INTERFACE}} *Interface,}
+\DoxyCodeLine{315                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{KSPIN\_MEDIUM}} *Medium}
+\DoxyCodeLine{316                     ) PURE;}
+\DoxyCodeLine{317   STDMETHOD(KsPropagateAcquire)     (THIS) PURE;}
+\DoxyCodeLine{318   STDMETHOD(KsDeliver)          (THIS\_}
+\DoxyCodeLine{319                         IMediaSample *Sample,}
+\DoxyCodeLine{320                         ULONG Flags}
+\DoxyCodeLine{321                     ) PURE;}
+\DoxyCodeLine{322   STDMETHOD(KsMediaSamplesCompleted)    (THIS\_}
+\DoxyCodeLine{323                         PKSSTREAM\_SEGMENT StreamSegment}
+\DoxyCodeLine{324                     ) PURE;}
+\DoxyCodeLine{325   STDMETHOD\_(IMemAllocator *,KsPeekAllocator)(THIS\_}
+\DoxyCodeLine{326                         KSPEEKOPERATION Operation}
+\DoxyCodeLine{327                     ) PURE;}
+\DoxyCodeLine{328   STDMETHOD(KsReceiveAllocator)     (THIS\_}
+\DoxyCodeLine{329                         IMemAllocator *MemAllocator}
+\DoxyCodeLine{330                     ) PURE;}
+\DoxyCodeLine{331   STDMETHOD(KsRenegotiateAllocator) (THIS) PURE;}
+\DoxyCodeLine{332   STDMETHOD\_(LONG,KsIncrementPendingIoCount)(THIS) PURE;}
+\DoxyCodeLine{333   STDMETHOD\_(LONG,KsDecrementPendingIoCount)(THIS) PURE;}
+\DoxyCodeLine{334   STDMETHOD(KsQualityNotify)        (THIS\_}
+\DoxyCodeLine{335                         ULONG Proportion,}
+\DoxyCodeLine{336                         \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} TimeDelta}
+\DoxyCodeLine{337                     ) PURE;}
+\DoxyCodeLine{338 \};}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{keyword}{struct }IKsPinEx;}
+\DoxyCodeLine{341 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#define INTERFACE IKsPinEx}}
+\DoxyCodeLine{343 DECLARE\_INTERFACE\_(IKsPinEx,IKsPin)}
+\DoxyCodeLine{344 \{}
+\DoxyCodeLine{345   STDMETHOD\_(VOID,KsNotifyError)    (THIS\_}
+\DoxyCodeLine{346                         IMediaSample *Sample,}
+\DoxyCodeLine{347                         HRESULT hr}
+\DoxyCodeLine{348                     ) PURE;}
+\DoxyCodeLine{349 \};}
+\DoxyCodeLine{350 }
+\DoxyCodeLine{351 \textcolor{keyword}{struct }IKsPinPipe;}
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{\#define INTERFACE IKsPinPipe}}
+\DoxyCodeLine{354 DECLARE\_INTERFACE\_(IKsPinPipe,IUnknown)}
+\DoxyCodeLine{355 \{}
+\DoxyCodeLine{356   STDMETHOD(KsGetPinFramingCache)   (THIS\_}
+\DoxyCodeLine{357                         \mbox{\hyperlink{struct_k_s_a_l_l_o_c_a_t_o_r___f_r_a_m_i_n_g___e_x}{PKSALLOCATOR\_FRAMING\_EX}} *FramingEx,}
+\DoxyCodeLine{358                         PFRAMING\_PROP FramingProp,}
+\DoxyCodeLine{359                         FRAMING\_CACHE\_OPS Option}
+\DoxyCodeLine{360                     ) PURE;}
+\DoxyCodeLine{361   STDMETHOD(KsSetPinFramingCache)   (THIS\_}
+\DoxyCodeLine{362                         \mbox{\hyperlink{struct_k_s_a_l_l_o_c_a_t_o_r___f_r_a_m_i_n_g___e_x}{PKSALLOCATOR\_FRAMING\_EX}} FramingEx,}
+\DoxyCodeLine{363                         PFRAMING\_PROP FramingProp,}
+\DoxyCodeLine{364                         FRAMING\_CACHE\_OPS Option}
+\DoxyCodeLine{365                     ) PURE;}
+\DoxyCodeLine{366   STDMETHOD\_(IPin*,KsGetConnectedPin)   (THIS) PURE;}
+\DoxyCodeLine{367   STDMETHOD\_(IKsAllocatorEx*,KsGetPipe) (THIS\_}
+\DoxyCodeLine{368                         KSPEEKOPERATION Operation}
+\DoxyCodeLine{369                     ) PURE;}
+\DoxyCodeLine{370   STDMETHOD(KsSetPipe)          (THIS\_}
+\DoxyCodeLine{371                         IKsAllocatorEx *KsAllocator}
+\DoxyCodeLine{372                     ) PURE;}
+\DoxyCodeLine{373   STDMETHOD\_(ULONG,KsGetPipeAllocatorFlag)(THIS) PURE;}
+\DoxyCodeLine{374   STDMETHOD(KsSetPipeAllocatorFlag) (THIS\_}
+\DoxyCodeLine{375                         ULONG Flag}
+\DoxyCodeLine{376                     ) PURE;}
+\DoxyCodeLine{377   STDMETHOD\_(GUID,KsGetPinBusCache) (THIS) PURE;}
+\DoxyCodeLine{378   STDMETHOD(KsSetPinBusCache)       (THIS\_}
+\DoxyCodeLine{379                         GUID Bus}
+\DoxyCodeLine{380                     ) PURE;}
+\DoxyCodeLine{381   STDMETHOD\_(PWCHAR,KsGetPinName)   (THIS) PURE;}
+\DoxyCodeLine{382   STDMETHOD\_(PWCHAR,KsGetFilterName)    (THIS) PURE;}
+\DoxyCodeLine{383 \};}
+\DoxyCodeLine{384 }
+\DoxyCodeLine{385 \textcolor{keyword}{struct }IKsPinFactory;}
+\DoxyCodeLine{386 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{387 \textcolor{preprocessor}{\#define INTERFACE IKsPinFactory}}
+\DoxyCodeLine{388 DECLARE\_INTERFACE\_(IKsPinFactory,IUnknown)}
+\DoxyCodeLine{389 \{}
+\DoxyCodeLine{390   STDMETHOD(KsPinFactory)       (THIS\_}
+\DoxyCodeLine{391                         ULONG *PinFactory}
+\DoxyCodeLine{392                     ) PURE;}
+\DoxyCodeLine{393 \};}
+\DoxyCodeLine{394 }
+\DoxyCodeLine{395 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{396   KsIoOperation\_Write,}
+\DoxyCodeLine{397   KsIoOperation\_Read}
+\DoxyCodeLine{398 \} KSIOOPERATION;}
+\DoxyCodeLine{399 }
+\DoxyCodeLine{400 \textcolor{keyword}{struct }IKsDataTypeHandler;}
+\DoxyCodeLine{401 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{402 \textcolor{preprocessor}{\#define INTERFACE IKsDataTypeHandler}}
+\DoxyCodeLine{403 DECLARE\_INTERFACE\_(IKsDataTypeHandler,IUnknown)}
+\DoxyCodeLine{404 \{}
+\DoxyCodeLine{405   STDMETHOD(KsCompleteIoOperation)  (THIS\_}
+\DoxyCodeLine{406                         IMediaSample *Sample,}
+\DoxyCodeLine{407                         PVOID StreamHeader,}
+\DoxyCodeLine{408                         KSIOOPERATION IoOperation,}
+\DoxyCodeLine{409                         WINBOOL Cancelled}
+\DoxyCodeLine{410                     ) PURE;}
+\DoxyCodeLine{411   STDMETHOD(KsIsMediaTypeInRanges)  (THIS\_}
+\DoxyCodeLine{412                         PVOID DataRanges}
+\DoxyCodeLine{413                     ) PURE;}
+\DoxyCodeLine{414   STDMETHOD(KsPrepareIoOperation)   (THIS\_}
+\DoxyCodeLine{415                         IMediaSample *Sample,}
+\DoxyCodeLine{416                         PVOID StreamHeader,}
+\DoxyCodeLine{417                         KSIOOPERATION IoOperation}
+\DoxyCodeLine{418                     ) PURE;}
+\DoxyCodeLine{419   STDMETHOD(KsQueryExtendedSize)    (THIS\_}
+\DoxyCodeLine{420                         ULONG *ExtendedSize}
+\DoxyCodeLine{421                     ) PURE;}
+\DoxyCodeLine{422   STDMETHOD(KsSetMediaType)     (THIS\_}
+\DoxyCodeLine{423                         \textcolor{keyword}{const} AM\_MEDIA\_TYPE *AmMediaType}
+\DoxyCodeLine{424                     ) PURE;}
+\DoxyCodeLine{425 \};}
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{keyword}{struct }IKsDataTypeCompletion;}
+\DoxyCodeLine{428 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{429 \textcolor{preprocessor}{\#define INTERFACE IKsDataTypeCompletion}}
+\DoxyCodeLine{430 DECLARE\_INTERFACE\_(IKsDataTypeCompletion,IUnknown)}
+\DoxyCodeLine{431 \{}
+\DoxyCodeLine{432   STDMETHOD(KsCompleteMediaType)    (THIS\_}
+\DoxyCodeLine{433                         HANDLE FilterHandle,}
+\DoxyCodeLine{434                         ULONG PinFactoryId,}
+\DoxyCodeLine{435                         AM\_MEDIA\_TYPE *AmMediaType}
+\DoxyCodeLine{436                     ) PURE;}
+\DoxyCodeLine{437 \};}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 \textcolor{keyword}{struct }IKsInterfaceHandler;}
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{\#define INTERFACE IKsInterfaceHandler}}
+\DoxyCodeLine{442 DECLARE\_INTERFACE\_(IKsInterfaceHandler,IUnknown)}
+\DoxyCodeLine{443 \{}
+\DoxyCodeLine{444   STDMETHOD(KsSetPin)           (THIS\_}
+\DoxyCodeLine{445                         IKsPin *KsPin}
+\DoxyCodeLine{446                     ) PURE;}
+\DoxyCodeLine{447   STDMETHOD(KsProcessMediaSamples)  (THIS\_}
+\DoxyCodeLine{448                         IKsDataTypeHandler *KsDataTypeHandler,}
+\DoxyCodeLine{449                         IMediaSample **SampleList,}
+\DoxyCodeLine{450                         PLONG SampleCount,}
+\DoxyCodeLine{451                         KSIOOPERATION IoOperation,}
+\DoxyCodeLine{452                         PKSSTREAM\_SEGMENT *StreamSegment}
+\DoxyCodeLine{453                     ) PURE;}
+\DoxyCodeLine{454   STDMETHOD(KsCompleteIo)       (THIS\_}
+\DoxyCodeLine{455                         PKSSTREAM\_SEGMENT StreamSegment}
+\DoxyCodeLine{456                     ) PURE;}
+\DoxyCodeLine{457 \};}
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\_KSSTREAM\_SEGMENT \{}
+\DoxyCodeLine{460   IKsInterfaceHandler *KsInterfaceHandler;}
+\DoxyCodeLine{461   IKsDataTypeHandler *KsDataTypeHandler;}
+\DoxyCodeLine{462   KSIOOPERATION IoOperation;}
+\DoxyCodeLine{463   HANDLE CompletionEvent;}
+\DoxyCodeLine{464 \} KSSTREAM\_SEGMENT;}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{keyword}{struct }IKsObject;}
+\DoxyCodeLine{467 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#define INTERFACE IKsObject}}
+\DoxyCodeLine{469 DECLARE\_INTERFACE\_(IKsObject,IUnknown)}
+\DoxyCodeLine{470 \{}
+\DoxyCodeLine{471   STDMETHOD\_(HANDLE,KsGetObjectHandle)  (THIS) PURE;}
+\DoxyCodeLine{472 \};}
+\DoxyCodeLine{473 }
+\DoxyCodeLine{474 \textcolor{keyword}{struct }IKsQualityForwarder;}
+\DoxyCodeLine{475 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#define INTERFACE IKsQualityForwarder}}
+\DoxyCodeLine{477 DECLARE\_INTERFACE\_(IKsQualityForwarder,IKsObject)}
+\DoxyCodeLine{478 \{}
+\DoxyCodeLine{479   STDMETHOD\_(VOID,KsFlushClient)    (THIS\_}
+\DoxyCodeLine{480                         IKsPin *Pin}
+\DoxyCodeLine{481                     ) PURE;}
+\DoxyCodeLine{482 \};}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484 \textcolor{keyword}{struct }IKsNotifyEvent;}
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{486 \textcolor{preprocessor}{\#define INTERFACE IKsNotifyEvent}}
+\DoxyCodeLine{487 DECLARE\_INTERFACE\_(IKsNotifyEvent,IUnknown)}
+\DoxyCodeLine{488 \{}
+\DoxyCodeLine{489   STDMETHOD(KsNotifyEvent)      (THIS\_}
+\DoxyCodeLine{490                         ULONG Event,}
+\DoxyCodeLine{491                         ULONG\_PTR lParam1,}
+\DoxyCodeLine{492                         ULONG\_PTR lParam2}
+\DoxyCodeLine{493                     ) PURE;}
+\DoxyCodeLine{494 \};}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsResolveRequiredAttributes(\mbox{\hyperlink{union_k_s_d_a_t_a_f_o_r_m_a_t}{PKSDATARANGE}} DataRange,\mbox{\hyperlink{struct_k_s_m_u_l_t_i_p_l_e___i_t_e_m}{PKSMULTIPLE\_ITEM}} Attributes);}
+\DoxyCodeLine{497 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsOpenDefaultDevice(REFGUID Category,ACCESS\_MASK Access,PHANDLE DeviceHandle);}
+\DoxyCodeLine{498 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsSynchronousDeviceControl(HANDLE Handle,ULONG IoControl,PVOID InBuffer,ULONG InLength,PVOID OutBuffer,ULONG OutLength,PULONG BytesReturned);}
+\DoxyCodeLine{499 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsGetMultiplePinFactoryItems(HANDLE FilterHandle,ULONG PinFactoryId,ULONG PropertyId,PVOID *Items);}
+\DoxyCodeLine{500 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsGetMediaTypeCount(HANDLE FilterHandle,ULONG PinFactoryId,ULONG *MediaTypeCount);}
+\DoxyCodeLine{501 \mbox{\hyperlink{ksproxy_8h_ad491967c67f365e4b4eb630f7d2d9f87}{KSDDKAPI}} HRESULT \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} KsGetMediaType(\textcolor{keywordtype}{int} Position,AM\_MEDIA\_TYPE *AmMediaType,HANDLE FilterHandle,ULONG PinFactoryId);}
+\DoxyCodeLine{502 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_STREAMS\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{503 }
+\DoxyCodeLine{504 \textcolor{preprocessor}{\#ifndef \_IKsPropertySet\_}}
+\DoxyCodeLine{505 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsPropertySet);}
+\DoxyCodeLine{506 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{507 }
+\DoxyCodeLine{508 \textcolor{preprocessor}{\#ifndef \_IKsControl\_}}
+\DoxyCodeLine{509 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(\mbox{\hyperlink{devicetopology_8h_a2b5d5649651b98cf65f80a6990566ca1}{IID\_IKsControl}});}
+\DoxyCodeLine{510 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsAggregateControl);}
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#ifndef \_IKsTopology\_}}
+\DoxyCodeLine{514 \mbox{\hyperlink{ks_8h_a0cbb290cb2f8391c4b5cdbf29134d2a3}{DEFINE\_GUIDEX}}(IID\_IKsTopology);}
+\DoxyCodeLine{515 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{516 \mbox{\hyperlink{ks_8h_abe8888edd9f03a8a2d139c40889a5650}{DEFINE\_GUIDSTRUCT}}(\textcolor{stringliteral}{"{}17CCA71B-\/ECD7-\/11D0-\/B908-\/00A0C9223196"{}},CLSID\_Proxy);}
+\DoxyCodeLine{517 \textcolor{preprocessor}{\#define CLSID\_Proxy DEFINE\_GUIDNAMED(CLSID\_Proxy)}}
+\DoxyCodeLine{518 }
+\DoxyCodeLine{519 \textcolor{preprocessor}{\#else }\textcolor{comment}{/* \_KS\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{520 }
+\DoxyCodeLine{521 \textcolor{preprocessor}{\#ifndef \_IKsPropertySet\_}}
+\DoxyCodeLine{522 \mbox{\hyperlink{ksproxy_8h_acb4ff30511a15594f7e6e19fb88f9d4a}{DEFINE\_GUID}}(IID\_IKsPropertySet,\mbox{\hyperlink{ksproxy_8h_af3fbe28a171aba36e7888428f5d95a36}{STATIC\_IID\_IKsPropertySet}});}
+\DoxyCodeLine{523 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{524 }
+\DoxyCodeLine{525 \mbox{\hyperlink{ksproxy_8h_acb4ff30511a15594f7e6e19fb88f9d4a}{DEFINE\_GUID}}(CLSID\_Proxy,\mbox{\hyperlink{ksproxy_8h_a128138cd75d9b292996971dea01ef345}{STATIC\_CLSID\_Proxy}});}
+\DoxyCodeLine{526 }
+\DoxyCodeLine{527 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_KS\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{528 }
+\DoxyCodeLine{529 \textcolor{preprocessor}{\#ifndef \_IKsPropertySet\_}}
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#define \_IKsPropertySet\_}}
+\DoxyCodeLine{531 \textcolor{preprocessor}{\#define KSPROPERTY\_SUPPORT\_GET 1}}
+\DoxyCodeLine{532 \textcolor{preprocessor}{\#define KSPROPERTY\_SUPPORT\_SET 2}}
+\DoxyCodeLine{533 }
+\DoxyCodeLine{534 \textcolor{preprocessor}{\#ifdef DECLARE\_INTERFACE\_}}
+\DoxyCodeLine{535 \textcolor{keyword}{struct }IKsPropertySet;}
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{\#define INTERFACE IKsPropertySet}}
+\DoxyCodeLine{538 DECLARE\_INTERFACE\_(IKsPropertySet,IUnknown)}
+\DoxyCodeLine{539 \{}
+\DoxyCodeLine{540   STDMETHOD(Set)            (THIS\_}
+\DoxyCodeLine{541                         REFGUID PropSet,}
+\DoxyCodeLine{542                         ULONG Id,}
+\DoxyCodeLine{543                         LPVOID InstanceData,}
+\DoxyCodeLine{544                         ULONG InstanceLength,}
+\DoxyCodeLine{545                         LPVOID PropertyData,}
+\DoxyCodeLine{546                         ULONG DataLength}
+\DoxyCodeLine{547                     ) PURE;}
+\DoxyCodeLine{548   STDMETHOD(Get)            (THIS\_}
+\DoxyCodeLine{549                         REFGUID PropSet,}
+\DoxyCodeLine{550                         ULONG Id,}
+\DoxyCodeLine{551                         LPVOID InstanceData,}
+\DoxyCodeLine{552                         ULONG InstanceLength,}
+\DoxyCodeLine{553                         LPVOID PropertyData,}
+\DoxyCodeLine{554                         ULONG DataLength,}
+\DoxyCodeLine{555                         ULONG *BytesReturned}
+\DoxyCodeLine{556                     ) PURE;}
+\DoxyCodeLine{557   STDMETHOD(QuerySupported)     (THIS\_}
+\DoxyCodeLine{558                         REFGUID PropSet,}
+\DoxyCodeLine{559                         ULONG Id,}
+\DoxyCodeLine{560                         ULONG *TypeSupport}
+\DoxyCodeLine{561                     ) PURE;}
+\DoxyCodeLine{562 \};}
+\DoxyCodeLine{563 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DECLARE\_INTERFACE\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_IKsPropertySet\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 \textcolor{preprocessor}{\#ifndef \_IKsControl\_}}
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#define \_IKsControl\_}}
+\DoxyCodeLine{568 \textcolor{preprocessor}{\#ifdef DECLARE\_INTERFACE\_}}
+\DoxyCodeLine{569 \textcolor{keyword}{struct }\mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKsControl}};}
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{\#define INTERFACE IKsControl}}
+\DoxyCodeLine{572 DECLARE\_INTERFACE\_(\mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKsControl}},IUnknown)}
+\DoxyCodeLine{573 \{}
+\DoxyCodeLine{574   STDMETHOD(KsProperty)         (THIS\_}
+\DoxyCodeLine{575                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{PKSPROPERTY}} Property,}
+\DoxyCodeLine{576                         ULONG PropertyLength,}
+\DoxyCodeLine{577                         LPVOID PropertyData,}
+\DoxyCodeLine{578                         ULONG DataLength,}
+\DoxyCodeLine{579                         ULONG *BytesReturned}
+\DoxyCodeLine{580                     ) PURE;}
+\DoxyCodeLine{581   STDMETHOD(KsMethod)           (THIS\_}
+\DoxyCodeLine{582                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{PKSMETHOD}} Method,}
+\DoxyCodeLine{583                         ULONG MethodLength,}
+\DoxyCodeLine{584                         LPVOID MethodData,}
+\DoxyCodeLine{585                         ULONG DataLength,}
+\DoxyCodeLine{586                         ULONG *BytesReturned}
+\DoxyCodeLine{587                     ) PURE;}
+\DoxyCodeLine{588   STDMETHOD(KsEvent)            (THIS\_}
+\DoxyCodeLine{589                         \mbox{\hyperlink{struct_k_s_i_d_e_n_t_i_f_i_e_r}{PKSEVENT}} Event,}
+\DoxyCodeLine{590                         ULONG EventLength,}
+\DoxyCodeLine{591                         LPVOID EventData,}
+\DoxyCodeLine{592                         ULONG DataLength,}
+\DoxyCodeLine{593                         ULONG *BytesReturned}
+\DoxyCodeLine{594                     ) PURE;}
+\DoxyCodeLine{595 \};}
+\DoxyCodeLine{596 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DECLARE\_INTERFACE\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{597 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_IKsControl\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{598 }
+\DoxyCodeLine{599 \textcolor{preprocessor}{\#ifdef DECLARE\_INTERFACE\_}}
+\DoxyCodeLine{600 \textcolor{keyword}{struct }IKsAggregateControl;}
+\DoxyCodeLine{601 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{602 \textcolor{preprocessor}{\#define INTERFACE IKsAggregateControl}}
+\DoxyCodeLine{603 DECLARE\_INTERFACE\_(IKsAggregateControl,IUnknown)}
+\DoxyCodeLine{604 \{}
+\DoxyCodeLine{605   STDMETHOD(KsAddAggregate)     (THIS\_}
+\DoxyCodeLine{606                         REFGUID AggregateClass}
+\DoxyCodeLine{607                     ) PURE;}
+\DoxyCodeLine{608   STDMETHOD(KsRemoveAggregate)      (THIS\_}
+\DoxyCodeLine{609                         REFGUID AggregateClass}
+\DoxyCodeLine{610                     ) PURE;}
+\DoxyCodeLine{611 \};}
+\DoxyCodeLine{612 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DECLARE\_INTERFACE\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#ifndef \_IKsTopology\_}}
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#define \_IKsTopology\_}}
+\DoxyCodeLine{616 \textcolor{preprocessor}{\#ifdef DECLARE\_INTERFACE\_}}
+\DoxyCodeLine{617 \textcolor{keyword}{struct }IKsTopology;}
+\DoxyCodeLine{618 \textcolor{preprocessor}{\#undef INTERFACE}}
+\DoxyCodeLine{619 \textcolor{preprocessor}{\#define INTERFACE IKsTopology}}
+\DoxyCodeLine{620 DECLARE\_INTERFACE\_(IKsTopology,IUnknown)}
+\DoxyCodeLine{621 \{}
+\DoxyCodeLine{622   STDMETHOD(CreateNodeInstance)     (THIS\_}
+\DoxyCodeLine{623                         ULONG NodeId,}
+\DoxyCodeLine{624                         ULONG Flags,}
+\DoxyCodeLine{625                         ACCESS\_MASK DesiredAccess,}
+\DoxyCodeLine{626                         IUnknown *UnkOuter,}
+\DoxyCodeLine{627                         REFGUID InterfaceId,}
+\DoxyCodeLine{628                         LPVOID *Interface}
+\DoxyCodeLine{629                     ) PURE;}
+\DoxyCodeLine{630 \};}
+\DoxyCodeLine{631 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* DECLARE\_INTERFACE\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{632 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_IKsTopology\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{633 }
+\DoxyCodeLine{634 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{635 \}}
+\DoxyCodeLine{636 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_KSPROXY\_\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

@@ -1,0 +1,137 @@
+\hypertarget{patest__stop__playout_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+stop\+\_\+playout.c File Reference}
+\label{patest__stop__playout_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_stop\_playout.c@{Hexeng2D/dependencies/portaudio/test/patest\_stop\_playout.c}}
+
+
+Test whether all queued samples are played when \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} is used with a callback or read/write stream, or when the callback returns pa\+Complete.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_test_data}{Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(1024)
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_ade3215818d3c3958ce507808ab582783}{TONE\+\_\+\+SECONDS}}~(1)      /$\ast$ long tone $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_adf810cb84dc70ad828c3a4781c68f96d}{TONE\+\_\+\+FADE\+\_\+\+SECONDS}}~(.\+04)    /$\ast$ fades at \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}} and \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} of long tone $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_ad199eb2411355e597b59390537170d21}{GAP\+\_\+\+SECONDS}}~(.\+25)     /$\ast$ gap between long tone and blip $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_a262cb6903a84eefc34a727c6078060ca}{BLIP\+\_\+\+SECONDS}}~(.\+035)   /$\ast$ short blip $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_a2ab5aa7bd39ce78ebe5576343388ab97}{NUM\+\_\+\+REPEATS}}~(3)
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(2048)
+\item 
+\#define \mbox{\hyperlink{patest__stop__playout_8c_a3acffbd305ee72dcd4593c0d8af64a4f}{MIN}}(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})~(((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})$<$(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))?(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})\+:(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__stop__playout_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile int \mbox{\hyperlink{patest__stop__playout_8c_ab45e806412df30e321115f81dc9ee013}{test\+Callback2\+Finished}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test whether all queued samples are played when \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} is used with a callback or read/write stream, or when the callback returns pa\+Complete. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__stop__playout_8c_a262cb6903a84eefc34a727c6078060ca}\label{patest__stop__playout_8c_a262cb6903a84eefc34a727c6078060ca}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!BLIP\_SECONDS@{BLIP\_SECONDS}}
+\index{BLIP\_SECONDS@{BLIP\_SECONDS}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{BLIP\_SECONDS}{BLIP\_SECONDS}}
+{\footnotesize\ttfamily \#define BLIP\+\_\+\+SECONDS~(.\+035)   /$\ast$ short blip $\ast$/}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__stop__playout_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(1024)}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_ad199eb2411355e597b59390537170d21}\label{patest__stop__playout_8c_ad199eb2411355e597b59390537170d21}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!GAP\_SECONDS@{GAP\_SECONDS}}
+\index{GAP\_SECONDS@{GAP\_SECONDS}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{GAP\_SECONDS}{GAP\_SECONDS}}
+{\footnotesize\ttfamily \#define GAP\+\_\+\+SECONDS~(.\+25)     /$\ast$ gap between long tone and blip $\ast$/}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__stop__playout_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_a3acffbd305ee72dcd4593c0d8af64a4f}\label{patest__stop__playout_8c_a3acffbd305ee72dcd4593c0d8af64a4f}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!MIN@{MIN}}
+\index{MIN@{MIN}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{MIN}{MIN}}
+{\footnotesize\ttfamily \#define MIN(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}} }\end{DoxyParamCaption})~(((\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})$<$(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))?(\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}})\+:(\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}))}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_a2ab5aa7bd39ce78ebe5576343388ab97}\label{patest__stop__playout_8c_a2ab5aa7bd39ce78ebe5576343388ab97}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!NUM\_REPEATS@{NUM\_REPEATS}}
+\index{NUM\_REPEATS@{NUM\_REPEATS}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_REPEATS}{NUM\_REPEATS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+REPEATS~(3)}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__stop__playout_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__stop__playout_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(2048)}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_adf810cb84dc70ad828c3a4781c68f96d}\label{patest__stop__playout_8c_adf810cb84dc70ad828c3a4781c68f96d}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!TONE\_FADE\_SECONDS@{TONE\_FADE\_SECONDS}}
+\index{TONE\_FADE\_SECONDS@{TONE\_FADE\_SECONDS}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{TONE\_FADE\_SECONDS}{TONE\_FADE\_SECONDS}}
+{\footnotesize\ttfamily \#define TONE\+\_\+\+FADE\+\_\+\+SECONDS~(.\+04)    /$\ast$ fades at \mbox{\hyperlink{glad_8h_ac55adc720a3098c1b454d2a4647f4361}{start}} and \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} of long tone $\ast$/}
+
+\mbox{\Hypertarget{patest__stop__playout_8c_ade3215818d3c3958ce507808ab582783}\label{patest__stop__playout_8c_ade3215818d3c3958ce507808ab582783}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!TONE\_SECONDS@{TONE\_SECONDS}}
+\index{TONE\_SECONDS@{TONE\_SECONDS}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{TONE\_SECONDS}{TONE\_SECONDS}}
+{\footnotesize\ttfamily \#define TONE\+\_\+\+SECONDS~(1)      /$\ast$ long tone $\ast$/}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__stop__playout_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__stop__playout_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!main@{main}}
+\index{main@{main}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{patest__stop__playout_8c_ab45e806412df30e321115f81dc9ee013}\label{patest__stop__playout_8c_ab45e806412df30e321115f81dc9ee013}} 
+\index{patest\_stop\_playout.c@{patest\_stop\_playout.c}!testCallback2Finished@{testCallback2Finished}}
+\index{testCallback2Finished@{testCallback2Finished}!patest\_stop\_playout.c@{patest\_stop\_playout.c}}
+\doxysubsubsection{\texorpdfstring{testCallback2Finished}{testCallback2Finished}}
+{\footnotesize\ttfamily volatile int test\+Callback2\+Finished = 0}
+

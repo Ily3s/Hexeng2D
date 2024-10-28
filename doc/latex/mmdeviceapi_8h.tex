@@ -1,0 +1,705 @@
+\hypertarget{mmdeviceapi_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/mmdeviceapi.h File Reference}
+\label{mmdeviceapi_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/mmdeviceapi.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/mmdeviceapi.h}}
+{\ttfamily \#include \char`\"{}rpc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rpcndr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}windows.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ole2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unknwn.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}propsys.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tag\+DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotification\+Client\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDevice\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDevice\+Collection\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpoint\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDevice\+Enumerator\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDevice\+Activator\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+0001}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ad76a32846c87da46b8d59d882ad6b4c0}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~500
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a3aa613463387b2f7fb1c62b198c906e6}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~100
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_af7fa4541f5c14d5f68edd341df9d2252}{\+\_\+\+\_\+\+IMMNotification\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ad66e13bf2bb3c32afeef3b48dd27f3a6}{\+\_\+\+\_\+\+IMMDevice\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ac5b9ecaf6ae6c57ce9116605894dd2aa}{\+\_\+\+\_\+\+IMMDevice\+Collection\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ac7d7db70867fd6b88ef6971b6c081a86}{\+\_\+\+\_\+\+IMMEndpoint\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_aa92a96eac7658249b41489fc598c0db6}{\+\_\+\+\_\+\+IMMDevice\+Enumerator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a9c8b25da7e5ba9241d4f21b00d526542}{\+\_\+\+\_\+\+IMMDevice\+Activator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ad6797f0837d07a843c5a0744aaae89d1}{\+\_\+\+\_\+\+MMDevice\+Enumerator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_aaa1771c30a9d47c05446a786ae261814}{E\+\_\+\+NOTFOUND}}~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+NOT\+\_\+\+FOUND)
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a09daa93cd54e9ad71e2e16e92366cced}{E\+\_\+\+UNSUPPORTED\+\_\+\+TYPE}}~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+UNSUPPORTED\+\_\+\+TYPE)
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a087bbfbddb74bc5803caa28bb9c17fde}{DEVICE\+\_\+\+STATE\+\_\+\+ACTIVE}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ac61a49cc633878c898736dcfd4db7745}{DEVICE\+\_\+\+STATE\+\_\+\+DISABLED}}~0x00000002
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ac1e8a387743164ac6d58c05c8e205c68}{DEVICE\+\_\+\+STATE\+\_\+\+NOTPRESENT}}~0x00000004
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a9243a8960bbfdcee5301de3fc19307bc}{DEVICE\+\_\+\+STATE\+\_\+\+UNPLUGGED}}~0x00000008
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_ab9da5b22c35900f7bf68d39c7e77d1e3}{DEVICE\+\_\+\+STATEMASK\+\_\+\+ALL}}~0x0000000f
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\+\_\+\+PROPERTYKEY}}(\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}},  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8,  pid)~\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}} \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a7efeefbb5741bc48c53206097f9dac05}{ENDPOINT\+\_\+\+SYSFX\+\_\+\+ENABLED}}~0x00000000
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_aa99b01ea9322017743c119584ac861f4}{ENDPOINT\+\_\+\+SYSFX\+\_\+\+DISABLED}}~0x00000001
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a0726a5051fd8caa6f5ab3e34806616f4}{\+\_\+\+\_\+\+IMMNotification\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_aace1b5aa948af6293b9f1a56428a78bd}{\+\_\+\+\_\+\+IMMDevice\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_add7f240bb8d34f1ac63d4d7d01c3d1d8}{\+\_\+\+\_\+\+IMMDevice\+Collection\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a5b936c1acc3ed87e9231780c90138c7d}{\+\_\+\+\_\+\+IMMEndpoint\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_afaee6d7d6368466031b4167873f46093}{\+\_\+\+\_\+\+IMMDevice\+Enumerator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a10dd8e7209006650302b5ec9c03b429a}{\+\_\+\+\_\+\+IMMDevice\+Activator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{mmdeviceapi_8h_a16c3eaebf6e80983bc6b1d3e19c5fd8e}{\+\_\+\+\_\+\+MMDevice\+APILib\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDevice\+Collection}} \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDevice\+Collection}}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}} \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}
+\item 
+typedef interface \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDevice\+Activator}} \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDevice\+Activator}}
+\item 
+typedef struct \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDevice\+Enumerator}} \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDevice\+Enumerator}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tag\+DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}} \mbox{\hyperlink{mmdeviceapi_8h_a8963726f4f727096f5f82735f33a2298}{DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}
+\item 
+typedef struct \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tag\+DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}} $\ast$ \mbox{\hyperlink{mmdeviceapi_8h_ad7ff276f96b82f15a3341bcacae2522e}{PDIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}
+\item 
+typedef enum \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0001}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}}
+\item 
+typedef enum \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0002}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}}
+\item 
+typedef enum \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0003}} \mbox{\hyperlink{mmdeviceapi_8h_afeecc2a0d0ff9bfa887b7ca2720ef664}{Endpoint\+Form\+Factor}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotification\+Client\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_a17257acddc7f0bdd5ba0f19bcfbc4f31}{IMMNotification\+Client\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDevice\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_af67a8aeedf1bf1ff64a31cde35cad0dc}{IMMDevice\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDevice\+Collection\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_a1774902ed733907d10e5b7c77bc8a397}{IMMDevice\+Collection\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpoint\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_a633dae4dfcae022ad198b8a4cc6a1328}{IMMEndpoint\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDevice\+Enumerator\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_a93e8460cbc73183521812f969b2c06e2}{IMMDevice\+Enumerator\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDevice\+Activator\+Vtbl}} \mbox{\hyperlink{mmdeviceapi_8h_adba11cc911aafbf08ae97831a798741f}{IMMDevice\+Activator\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+0001}} \mbox{\hyperlink{mmdeviceapi_8h_ab1b4be7b68280bb0999583b07c7448b7}{Audio\+Extension\+Params}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0001}} \{ \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab5120fdebc73fe7c6de01e7db1e0526c}{e\+Render}} = 0
+, \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a421738c9647cd595b89d3793a3fb861c}{e\+Capture}} = ( e\+Render + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a0b21a6c698674dfdd9034d68751a4126}{e\+All}} = ( e\+Capture + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab01efc992c94aea9fea3ad0066a2fd10}{EData\+Flow\+\_\+enum\+\_\+count}} = ( e\+All + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0002}} \{ \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a9516e8c0a8aed146b9fd5a3bb67965f9}{e\+Console}} = 0
+, \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a29161d51f23790c49d20f27b72368d89}{e\+Multimedia}} = ( e\+Console + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8ae83da5e81fe577f8d88fc5a4ea25d8bc}{e\+Communications}} = ( e\+Multimedia + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a82d0d9eef6f2f2ad92142bd86eb6f7c8}{ERole\+\_\+enum\+\_\+count}} = ( e\+Communications + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0003}} \{ \newline
+\mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ac01beca5badb20b638133a0a8598f540}{Remote\+Network\+Device}} = 0
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a876194f2108c5147979a0fe446eb3e95}{Speakers}} = ( Remote\+Network\+Device + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a25fcf1a81e543e1b7a78cae7214b62cc}{Line\+Level}} = ( Speakers + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a7a8f0d18983d684120bcb702b97e09bc}{Headphones}} = ( Line\+Level + 1 )
+, \newline
+\mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a4f0837150c3ff8bb61ad715990a2918d}{Microphone}} = ( Headphones + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ab63cc2f653ecf702d7fe0190f18c885e}{Headset}} = ( Microphone + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a05c872c5ebdeb3016c2de2d0cab2f487}{Handset}} = ( Headset + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ae0babd21bcad4661fc989b0c597a70b8}{Unknown\+Digital\+Passthrough}} = ( Handset + 1 )
+, \newline
+\mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2aec152e77b32a50ee7f72f247f9b77e35}{SPDIF}} = ( Unknown\+Digital\+Passthrough + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a616812bef5f865b88fa175a87bd88a32}{HDMI}} = ( SPDIF + 1 )
+, \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2acf854e8e414f2a5aa94837d273c5ba62}{Unknown\+Form\+Factor}} = ( HDMI + 1 )
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_ad4d019f424984b4ade26e3de3bec2bb5}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Form\+Factor, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 0)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_a3036ad590cb40157275d42f72935fbe9}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Control\+Panel\+Page\+Provider, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 1)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_a49da5bafb1613bdcbf71d160dc86f190}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Association, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 2)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_ac0f625b5c35bc11ae9199bdeb7e59eb1}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Physical\+Speakers, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 3)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_a8e9aec83d57baf39715eecf3c52e6300}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+GUID, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 4)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_a3d8ef071a902cadd6a7054ed2ac71f9e}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Disable\+\_\+\+Sys\+Fx, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 5)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_a06bd0ac2dff675561cfe26bb87315e0d}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Full\+Range\+Speakers, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 6)
+\item 
+\mbox{\hyperlink{mmdeviceapi_8h_ab14807c70ee9dfbcf6234d3ca48520e9}{DEFINE\+\_\+\+PROPERTYKEY}} (PKEY\+\_\+\+Audio\+Engine\+\_\+\+Device\+Format, 0xf19f064d, 0x82c, 0x4e27, 0xbc, 0x73, 0x68, 0x82, 0xa1, 0xbb, 0x8e, 0x4c, 0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{mmdeviceapi_8h_ad5cbe5361fd5f2aef9776d261f6f314c}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a639fe48082bac2fa1843ab29a1d67b25}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a40d3b34070429ab9d5017ae07d87412e}{IID\+\_\+\+IMMNotification\+Client}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a082826b2079513bc05d96026c34ce166}{IID\+\_\+\+IMMDevice}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_af914012246da3d4a424d63c8f671c95a}{IID\+\_\+\+IMMDevice\+Collection}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_adf2d2029f9cb9b1dd7819203d6a78547}{IID\+\_\+\+IMMEndpoint}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a1de7299763bd7bdba0bd159b8ca7a2d8}{IID\+\_\+\+IMMDevice\+Enumerator}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a31a3373962d321de20be2ad5741ff202}{IID\+\_\+\+IMMDevice\+Activator}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a888cac9d992a7e0ba91456861e772ac4}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a2fa91c1c276bff5537abfe471e3b263f}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_ac7230758955239edf87f4dd8dba70fa5}{LIBID\+\_\+\+MMDevice\+APILib}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{mmdeviceapi_8h_ad1c31dbc68c4010c08d035d474869b7c}{CLSID\+\_\+\+MMDevice\+Enumerator}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{mmdeviceapi_8h_ad66e13bf2bb3c32afeef3b48dd27f3a6}\label{mmdeviceapi_8h_ad66e13bf2bb3c32afeef3b48dd27f3a6}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDevice\_FWD\_DEFINED\_\_@{\_\_IMMDevice\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMDevice\_FWD\_DEFINED\_\_@{\_\_IMMDevice\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDevice\_FWD\_DEFINED\_\_}{\_\_IMMDevice\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_aace1b5aa948af6293b9f1a56428a78bd}\label{mmdeviceapi_8h_aace1b5aa948af6293b9f1a56428a78bd}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDevice\_INTERFACE\_DEFINED\_\_@{\_\_IMMDevice\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMDevice\_INTERFACE\_DEFINED\_\_@{\_\_IMMDevice\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDevice\_INTERFACE\_DEFINED\_\_}{\_\_IMMDevice\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a9c8b25da7e5ba9241d4f21b00d526542}\label{mmdeviceapi_8h_a9c8b25da7e5ba9241d4f21b00d526542}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_@{\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_@{\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}{\_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Activator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a10dd8e7209006650302b5ec9c03b429a}\label{mmdeviceapi_8h_a10dd8e7209006650302b5ec9c03b429a}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}{\_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Activator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac5b9ecaf6ae6c57ce9116605894dd2aa}\label{mmdeviceapi_8h_ac5b9ecaf6ae6c57ce9116605894dd2aa}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_@{\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_@{\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}{\_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Collection\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_add7f240bb8d34f1ac63d4d7d01c3d1d8}\label{mmdeviceapi_8h_add7f240bb8d34f1ac63d4d7d01c3d1d8}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}{\_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Collection\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_aa92a96eac7658249b41489fc598c0db6}\label{mmdeviceapi_8h_aa92a96eac7658249b41489fc598c0db6}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_@{\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_@{\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}{\_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Enumerator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_afaee6d7d6368466031b4167873f46093}\label{mmdeviceapi_8h_afaee6d7d6368466031b4167873f46093}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_@{\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}{\_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMDevice\+Enumerator\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac7d7db70867fd6b88ef6971b6c081a86}\label{mmdeviceapi_8h_ac7d7db70867fd6b88ef6971b6c081a86}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMEndpoint\_FWD\_DEFINED\_\_@{\_\_IMMEndpoint\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMEndpoint\_FWD\_DEFINED\_\_@{\_\_IMMEndpoint\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMEndpoint\_FWD\_DEFINED\_\_}{\_\_IMMEndpoint\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMEndpoint\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a5b936c1acc3ed87e9231780c90138c7d}\label{mmdeviceapi_8h_a5b936c1acc3ed87e9231780c90138c7d}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_@{\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_@{\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}{\_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMEndpoint\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_af7fa4541f5c14d5f68edd341df9d2252}\label{mmdeviceapi_8h_af7fa4541f5c14d5f68edd341df9d2252}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMNotificationClient\_FWD\_DEFINED\_\_@{\_\_IMMNotificationClient\_FWD\_DEFINED\_\_}}
+\index{\_\_IMMNotificationClient\_FWD\_DEFINED\_\_@{\_\_IMMNotificationClient\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMNotificationClient\_FWD\_DEFINED\_\_}{\_\_IMMNotificationClient\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMNotification\+Client\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a0726a5051fd8caa6f5ab3e34806616f4}\label{mmdeviceapi_8h_a0726a5051fd8caa6f5ab3e34806616f4}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_@{\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_@{\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}{\_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IMMNotification\+Client\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a16c3eaebf6e80983bc6b1d3e19c5fd8e}\label{mmdeviceapi_8h_a16c3eaebf6e80983bc6b1d3e19c5fd8e}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_@{\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}}
+\index{\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_@{\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}{\_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+MMDevice\+APILib\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad6797f0837d07a843c5a0744aaae89d1}\label{mmdeviceapi_8h_ad6797f0837d07a843c5a0744aaae89d1}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_@{\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\index{\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_@{\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}{\_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+MMDevice\+Enumerator\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad76a32846c87da46b8d59d882ad6b4c0}\label{mmdeviceapi_8h_ad76a32846c87da46b8d59d882ad6b4c0}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~500}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a3aa613463387b2f7fb1c62b198c906e6}\label{mmdeviceapi_8h_a3aa613463387b2f7fb1c62b198c906e6}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~100}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}\label{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY}{DEFINE\_PROPERTYKEY}}
+{\footnotesize\ttfamily \#define DEFINE\+\_\+\+PROPERTYKEY(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}},  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8,  }\item[{}]{pid }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}} \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a087bbfbddb74bc5803caa28bb9c17fde}\label{mmdeviceapi_8h_a087bbfbddb74bc5803caa28bb9c17fde}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEVICE\_STATE\_ACTIVE@{DEVICE\_STATE\_ACTIVE}}
+\index{DEVICE\_STATE\_ACTIVE@{DEVICE\_STATE\_ACTIVE}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_STATE\_ACTIVE}{DEVICE\_STATE\_ACTIVE}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+STATE\+\_\+\+ACTIVE~0x00000001}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac61a49cc633878c898736dcfd4db7745}\label{mmdeviceapi_8h_ac61a49cc633878c898736dcfd4db7745}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEVICE\_STATE\_DISABLED@{DEVICE\_STATE\_DISABLED}}
+\index{DEVICE\_STATE\_DISABLED@{DEVICE\_STATE\_DISABLED}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_STATE\_DISABLED}{DEVICE\_STATE\_DISABLED}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+STATE\+\_\+\+DISABLED~0x00000002}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac1e8a387743164ac6d58c05c8e205c68}\label{mmdeviceapi_8h_ac1e8a387743164ac6d58c05c8e205c68}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEVICE\_STATE\_NOTPRESENT@{DEVICE\_STATE\_NOTPRESENT}}
+\index{DEVICE\_STATE\_NOTPRESENT@{DEVICE\_STATE\_NOTPRESENT}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_STATE\_NOTPRESENT}{DEVICE\_STATE\_NOTPRESENT}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+STATE\+\_\+\+NOTPRESENT~0x00000004}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a9243a8960bbfdcee5301de3fc19307bc}\label{mmdeviceapi_8h_a9243a8960bbfdcee5301de3fc19307bc}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEVICE\_STATE\_UNPLUGGED@{DEVICE\_STATE\_UNPLUGGED}}
+\index{DEVICE\_STATE\_UNPLUGGED@{DEVICE\_STATE\_UNPLUGGED}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_STATE\_UNPLUGGED}{DEVICE\_STATE\_UNPLUGGED}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+STATE\+\_\+\+UNPLUGGED~0x00000008}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ab9da5b22c35900f7bf68d39c7e77d1e3}\label{mmdeviceapi_8h_ab9da5b22c35900f7bf68d39c7e77d1e3}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEVICE\_STATEMASK\_ALL@{DEVICE\_STATEMASK\_ALL}}
+\index{DEVICE\_STATEMASK\_ALL@{DEVICE\_STATEMASK\_ALL}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEVICE\_STATEMASK\_ALL}{DEVICE\_STATEMASK\_ALL}}
+{\footnotesize\ttfamily \#define DEVICE\+\_\+\+STATEMASK\+\_\+\+ALL~0x0000000f}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_aaa1771c30a9d47c05446a786ae261814}\label{mmdeviceapi_8h_aaa1771c30a9d47c05446a786ae261814}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!E\_NOTFOUND@{E\_NOTFOUND}}
+\index{E\_NOTFOUND@{E\_NOTFOUND}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{E\_NOTFOUND}{E\_NOTFOUND}}
+{\footnotesize\ttfamily \#define E\+\_\+\+NOTFOUND~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+NOT\+\_\+\+FOUND)}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a09daa93cd54e9ad71e2e16e92366cced}\label{mmdeviceapi_8h_a09daa93cd54e9ad71e2e16e92366cced}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!E\_UNSUPPORTED\_TYPE@{E\_UNSUPPORTED\_TYPE}}
+\index{E\_UNSUPPORTED\_TYPE@{E\_UNSUPPORTED\_TYPE}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{E\_UNSUPPORTED\_TYPE}{E\_UNSUPPORTED\_TYPE}}
+{\footnotesize\ttfamily \#define E\+\_\+\+UNSUPPORTED\+\_\+\+TYPE~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+UNSUPPORTED\+\_\+\+TYPE)}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_aa99b01ea9322017743c119584ac861f4}\label{mmdeviceapi_8h_aa99b01ea9322017743c119584ac861f4}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!ENDPOINT\_SYSFX\_DISABLED@{ENDPOINT\_SYSFX\_DISABLED}}
+\index{ENDPOINT\_SYSFX\_DISABLED@{ENDPOINT\_SYSFX\_DISABLED}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{ENDPOINT\_SYSFX\_DISABLED}{ENDPOINT\_SYSFX\_DISABLED}}
+{\footnotesize\ttfamily \#define ENDPOINT\+\_\+\+SYSFX\+\_\+\+DISABLED~0x00000001}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a7efeefbb5741bc48c53206097f9dac05}\label{mmdeviceapi_8h_a7efeefbb5741bc48c53206097f9dac05}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!ENDPOINT\_SYSFX\_ENABLED@{ENDPOINT\_SYSFX\_ENABLED}}
+\index{ENDPOINT\_SYSFX\_ENABLED@{ENDPOINT\_SYSFX\_ENABLED}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{ENDPOINT\_SYSFX\_ENABLED}{ENDPOINT\_SYSFX\_ENABLED}}
+{\footnotesize\ttfamily \#define ENDPOINT\+\_\+\+SYSFX\+\_\+\+ENABLED~0x00000000}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{mmdeviceapi_8h_ab1b4be7b68280bb0999583b07c7448b7}\label{mmdeviceapi_8h_ab1b4be7b68280bb0999583b07c7448b7}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!AudioExtensionParams@{AudioExtensionParams}}
+\index{AudioExtensionParams@{AudioExtensionParams}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{AudioExtensionParams}{AudioExtensionParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+0001}} \mbox{\hyperlink{mmdeviceapi_8h_ab1b4be7b68280bb0999583b07c7448b7}{Audio\+Extension\+Params}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a8963726f4f727096f5f82735f33a2298}\label{mmdeviceapi_8h_a8963726f4f727096f5f82735f33a2298}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DIRECTX\_AUDIO\_ACTIVATION\_PARAMS@{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS}}
+\index{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS@{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS}{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tag\+DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}} \mbox{\hyperlink{mmdeviceapi_8h_a8963726f4f727096f5f82735f33a2298}{DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}\label{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!EDataFlow@{EDataFlow}}
+\index{EDataFlow@{EDataFlow}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{EDataFlow}{EDataFlow}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0001}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_afeecc2a0d0ff9bfa887b7ca2720ef664}\label{mmdeviceapi_8h_afeecc2a0d0ff9bfa887b7ca2720ef664}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!EndpointFormFactor@{EndpointFormFactor}}
+\index{EndpointFormFactor@{EndpointFormFactor}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{EndpointFormFactor}{EndpointFormFactor}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0003}} \mbox{\hyperlink{mmdeviceapi_8h_afeecc2a0d0ff9bfa887b7ca2720ef664}{Endpoint\+Form\+Factor}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}\label{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!ERole@{ERole}}
+\index{ERole@{ERole}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{ERole}{ERole}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0002}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}\label{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDevice@{IMMDevice}}
+\index{IMMDevice@{IMMDevice}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDevice}{IMMDevice}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}\label{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceActivator@{IMMDeviceActivator}}
+\index{IMMDeviceActivator@{IMMDeviceActivator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceActivator}{IMMDeviceActivator}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDevice\+Activator}} \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDevice\+Activator}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_adba11cc911aafbf08ae97831a798741f}\label{mmdeviceapi_8h_adba11cc911aafbf08ae97831a798741f}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceActivatorVtbl@{IMMDeviceActivatorVtbl}}
+\index{IMMDeviceActivatorVtbl@{IMMDeviceActivatorVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceActivatorVtbl}{IMMDeviceActivatorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDevice\+Activator\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDevice\+Activator\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}\label{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceCollection@{IMMDeviceCollection}}
+\index{IMMDeviceCollection@{IMMDeviceCollection}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceCollection}{IMMDeviceCollection}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDevice\+Collection}} \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDevice\+Collection}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a1774902ed733907d10e5b7c77bc8a397}\label{mmdeviceapi_8h_a1774902ed733907d10e5b7c77bc8a397}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceCollectionVtbl@{IMMDeviceCollectionVtbl}}
+\index{IMMDeviceCollectionVtbl@{IMMDeviceCollectionVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceCollectionVtbl}{IMMDeviceCollectionVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDevice\+Collection\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDevice\+Collection\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}\label{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceEnumerator@{IMMDeviceEnumerator}}
+\index{IMMDeviceEnumerator@{IMMDeviceEnumerator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceEnumerator}{IMMDeviceEnumerator}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}} \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a93e8460cbc73183521812f969b2c06e2}\label{mmdeviceapi_8h_a93e8460cbc73183521812f969b2c06e2}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceEnumeratorVtbl@{IMMDeviceEnumeratorVtbl}}
+\index{IMMDeviceEnumeratorVtbl@{IMMDeviceEnumeratorVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceEnumeratorVtbl}{IMMDeviceEnumeratorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDevice\+Enumerator\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDevice\+Enumerator\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_af67a8aeedf1bf1ff64a31cde35cad0dc}\label{mmdeviceapi_8h_af67a8aeedf1bf1ff64a31cde35cad0dc}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMDeviceVtbl@{IMMDeviceVtbl}}
+\index{IMMDeviceVtbl@{IMMDeviceVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMDeviceVtbl}{IMMDeviceVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDevice\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDevice\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}\label{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMEndpoint@{IMMEndpoint}}
+\index{IMMEndpoint@{IMMEndpoint}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMEndpoint}{IMMEndpoint}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a633dae4dfcae022ad198b8a4cc6a1328}\label{mmdeviceapi_8h_a633dae4dfcae022ad198b8a4cc6a1328}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMEndpointVtbl@{IMMEndpointVtbl}}
+\index{IMMEndpointVtbl@{IMMEndpointVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMEndpointVtbl}{IMMEndpointVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpoint\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpoint\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}\label{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMNotificationClient@{IMMNotificationClient}}
+\index{IMMNotificationClient@{IMMNotificationClient}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMNotificationClient}{IMMNotificationClient}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a17257acddc7f0bdd5ba0f19bcfbc4f31}\label{mmdeviceapi_8h_a17257acddc7f0bdd5ba0f19bcfbc4f31}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IMMNotificationClientVtbl}{IMMNotificationClientVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotification\+Client\+Vtbl}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotification\+Client\+Vtbl}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}\label{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!MMDeviceEnumerator@{MMDeviceEnumerator}}
+\index{MMDeviceEnumerator@{MMDeviceEnumerator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{MMDeviceEnumerator}{MMDeviceEnumerator}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDevice\+Enumerator}} \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDevice\+Enumerator}}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad7ff276f96b82f15a3341bcacae2522e}\label{mmdeviceapi_8h_ad7ff276f96b82f15a3341bcacae2522e}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS@{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}}
+\index{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS@{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tag\+DIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}$\ast$ \mbox{\hyperlink{mmdeviceapi_8h_ad7ff276f96b82f15a3341bcacae2522e}{PDIRECTX\+\_\+\+AUDIO\+\_\+\+ACTIVATION\+\_\+\+PARAMS}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}\label{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0001}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRender@{eRender}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eRender@{eRender}}}\mbox{\Hypertarget{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab5120fdebc73fe7c6de01e7db1e0526c}\label{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab5120fdebc73fe7c6de01e7db1e0526c}} 
+e\+Render&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eCapture@{eCapture}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eCapture@{eCapture}}}\mbox{\Hypertarget{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a421738c9647cd595b89d3793a3fb861c}\label{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a421738c9647cd595b89d3793a3fb861c}} 
+e\+Capture&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAll@{eAll}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eAll@{eAll}}}\mbox{\Hypertarget{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a0b21a6c698674dfdd9034d68751a4126}\label{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a0b21a6c698674dfdd9034d68751a4126}} 
+e\+All&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EDataFlow\_enum\_count@{EDataFlow\_enum\_count}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!EDataFlow\_enum\_count@{EDataFlow\_enum\_count}}}\mbox{\Hypertarget{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab01efc992c94aea9fea3ad0066a2fd10}\label{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab01efc992c94aea9fea3ad0066a2fd10}} 
+EData\+Flow\+\_\+enum\+\_\+count&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}\label{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0002}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eConsole@{eConsole}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eConsole@{eConsole}}}\mbox{\Hypertarget{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a9516e8c0a8aed146b9fd5a3bb67965f9}\label{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a9516e8c0a8aed146b9fd5a3bb67965f9}} 
+e\+Console&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eMultimedia@{eMultimedia}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eMultimedia@{eMultimedia}}}\mbox{\Hypertarget{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a29161d51f23790c49d20f27b72368d89}\label{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a29161d51f23790c49d20f27b72368d89}} 
+e\+Multimedia&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eCommunications@{eCommunications}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!eCommunications@{eCommunications}}}\mbox{\Hypertarget{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8ae83da5e81fe577f8d88fc5a4ea25d8bc}\label{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8ae83da5e81fe577f8d88fc5a4ea25d8bc}} 
+e\+Communications&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERole\_enum\_count@{ERole\_enum\_count}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!ERole\_enum\_count@{ERole\_enum\_count}}}\mbox{\Hypertarget{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a82d0d9eef6f2f2ad92142bd86eb6f7c8}\label{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a82d0d9eef6f2f2ad92142bd86eb6f7c8}} 
+ERole\+\_\+enum\+\_\+count&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003@{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+0003}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RemoteNetworkDevice@{RemoteNetworkDevice}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!RemoteNetworkDevice@{RemoteNetworkDevice}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ac01beca5badb20b638133a0a8598f540}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ac01beca5badb20b638133a0a8598f540}} 
+Remote\+Network\+Device&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Speakers@{Speakers}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!Speakers@{Speakers}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a876194f2108c5147979a0fe446eb3e95}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a876194f2108c5147979a0fe446eb3e95}} 
+Speakers&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LineLevel@{LineLevel}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!LineLevel@{LineLevel}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a25fcf1a81e543e1b7a78cae7214b62cc}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a25fcf1a81e543e1b7a78cae7214b62cc}} 
+Line\+Level&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Headphones@{Headphones}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!Headphones@{Headphones}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a7a8f0d18983d684120bcb702b97e09bc}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a7a8f0d18983d684120bcb702b97e09bc}} 
+Headphones&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Microphone@{Microphone}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!Microphone@{Microphone}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a4f0837150c3ff8bb61ad715990a2918d}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a4f0837150c3ff8bb61ad715990a2918d}} 
+Microphone&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Headset@{Headset}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!Headset@{Headset}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ab63cc2f653ecf702d7fe0190f18c885e}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ab63cc2f653ecf702d7fe0190f18c885e}} 
+Headset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Handset@{Handset}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!Handset@{Handset}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a05c872c5ebdeb3016c2de2d0cab2f487}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a05c872c5ebdeb3016c2de2d0cab2f487}} 
+Handset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnknownDigitalPassthrough@{UnknownDigitalPassthrough}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!UnknownDigitalPassthrough@{UnknownDigitalPassthrough}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ae0babd21bcad4661fc989b0c597a70b8}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ae0babd21bcad4661fc989b0c597a70b8}} 
+Unknown\+Digital\+Passthrough&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SPDIF@{SPDIF}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!SPDIF@{SPDIF}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2aec152e77b32a50ee7f72f247f9b77e35}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2aec152e77b32a50ee7f72f247f9b77e35}} 
+SPDIF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HDMI@{HDMI}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!HDMI@{HDMI}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a616812bef5f865b88fa175a87bd88a32}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a616812bef5f865b88fa175a87bd88a32}} 
+HDMI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UnknownFormFactor@{UnknownFormFactor}!mmdeviceapi.h@{mmdeviceapi.h}}\index{mmdeviceapi.h@{mmdeviceapi.h}!UnknownFormFactor@{UnknownFormFactor}}}\mbox{\Hypertarget{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2acf854e8e414f2a5aa94837d273c5ba62}\label{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2acf854e8e414f2a5aa94837d273c5ba62}} 
+Unknown\+Form\+Factor&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mmdeviceapi_8h_a49da5bafb1613bdcbf71d160dc86f190}\label{mmdeviceapi_8h_a49da5bafb1613bdcbf71d160dc86f190}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Association}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a3036ad590cb40157275d42f72935fbe9}\label{mmdeviceapi_8h_a3036ad590cb40157275d42f72935fbe9}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Control\+Panel\+Page\+Provider}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{1}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a3d8ef071a902cadd6a7054ed2ac71f9e}\label{mmdeviceapi_8h_a3d8ef071a902cadd6a7054ed2ac71f9e}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Disable\+\_\+\+Sys\+Fx}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{5}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad4d019f424984b4ade26e3de3bec2bb5}\label{mmdeviceapi_8h_ad4d019f424984b4ade26e3de3bec2bb5}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Form\+Factor}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a06bd0ac2dff675561cfe26bb87315e0d}\label{mmdeviceapi_8h_a06bd0ac2dff675561cfe26bb87315e0d}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Full\+Range\+Speakers}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{6}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a8e9aec83d57baf39715eecf3c52e6300}\label{mmdeviceapi_8h_a8e9aec83d57baf39715eecf3c52e6300}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+GUID}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{4}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac0f625b5c35bc11ae9199bdeb7e59eb1}\label{mmdeviceapi_8h_ac0f625b5c35bc11ae9199bdeb7e59eb1}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Endpoint\+\_\+\+Physical\+Speakers}]{,  }\item[{0x1da5d803}]{,  }\item[{0xd492}]{,  }\item[{0x4edd}]{,  }\item[{0x8c}]{,  }\item[{0x23}]{,  }\item[{0xe0}]{,  }\item[{0xc0}]{,  }\item[{0xff}]{,  }\item[{0xee}]{,  }\item[{0x7f}]{,  }\item[{0x0e}]{,  }\item[{3}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ab14807c70ee9dfbcf6234d3ca48520e9}\label{mmdeviceapi_8h_ab14807c70ee9dfbcf6234d3ca48520e9}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}}
+\index{DEFINE\_PROPERTYKEY@{DEFINE\_PROPERTYKEY}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_PROPERTYKEY()}{DEFINE\_PROPERTYKEY()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+PROPERTYKEY (\begin{DoxyParamCaption}\item[{PKEY\+\_\+\+Audio\+Engine\+\_\+\+Device\+Format}]{,  }\item[{0xf19f064d}]{,  }\item[{0x82c}]{,  }\item[{0x4e27}]{,  }\item[{0xbc}]{,  }\item[{0x73}]{,  }\item[{0x68}]{,  }\item[{0x82}]{,  }\item[{0xa1}]{,  }\item[{0xbb}]{,  }\item[{0x8e}]{,  }\item[{0x4c}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{mmdeviceapi_8h_ad5cbe5361fd5f2aef9776d261f6f314c}\label{mmdeviceapi_8h_ad5cbe5361fd5f2aef9776d261f6f314c}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a639fe48082bac2fa1843ab29a1d67b25}\label{mmdeviceapi_8h_a639fe48082bac2fa1843ab29a1d67b25}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a888cac9d992a7e0ba91456861e772ac4}\label{mmdeviceapi_8h_a888cac9d992a7e0ba91456861e772ac4}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a2fa91c1c276bff5537abfe471e3b263f}\label{mmdeviceapi_8h_a2fa91c1c276bff5537abfe471e3b263f}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+mmdeviceapi\+\_\+0000\+\_\+0006\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ad1c31dbc68c4010c08d035d474869b7c}\label{mmdeviceapi_8h_ad1c31dbc68c4010c08d035d474869b7c}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!CLSID\_MMDeviceEnumerator@{CLSID\_MMDeviceEnumerator}}
+\index{CLSID\_MMDeviceEnumerator@{CLSID\_MMDeviceEnumerator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_MMDeviceEnumerator}{CLSID\_MMDeviceEnumerator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+MMDevice\+Enumerator}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a082826b2079513bc05d96026c34ce166}\label{mmdeviceapi_8h_a082826b2079513bc05d96026c34ce166}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMDevice@{IID\_IMMDevice}}
+\index{IID\_IMMDevice@{IID\_IMMDevice}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMDevice}{IID\_IMMDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMDevice}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a31a3373962d321de20be2ad5741ff202}\label{mmdeviceapi_8h_a31a3373962d321de20be2ad5741ff202}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMDeviceActivator@{IID\_IMMDeviceActivator}}
+\index{IID\_IMMDeviceActivator@{IID\_IMMDeviceActivator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMDeviceActivator}{IID\_IMMDeviceActivator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMDevice\+Activator}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_af914012246da3d4a424d63c8f671c95a}\label{mmdeviceapi_8h_af914012246da3d4a424d63c8f671c95a}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMDeviceCollection@{IID\_IMMDeviceCollection}}
+\index{IID\_IMMDeviceCollection@{IID\_IMMDeviceCollection}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMDeviceCollection}{IID\_IMMDeviceCollection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMDevice\+Collection}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a1de7299763bd7bdba0bd159b8ca7a2d8}\label{mmdeviceapi_8h_a1de7299763bd7bdba0bd159b8ca7a2d8}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMDeviceEnumerator@{IID\_IMMDeviceEnumerator}}
+\index{IID\_IMMDeviceEnumerator@{IID\_IMMDeviceEnumerator}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMDeviceEnumerator}{IID\_IMMDeviceEnumerator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMDevice\+Enumerator}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_adf2d2029f9cb9b1dd7819203d6a78547}\label{mmdeviceapi_8h_adf2d2029f9cb9b1dd7819203d6a78547}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMEndpoint@{IID\_IMMEndpoint}}
+\index{IID\_IMMEndpoint@{IID\_IMMEndpoint}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMEndpoint}{IID\_IMMEndpoint}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMEndpoint}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_a40d3b34070429ab9d5017ae07d87412e}\label{mmdeviceapi_8h_a40d3b34070429ab9d5017ae07d87412e}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!IID\_IMMNotificationClient@{IID\_IMMNotificationClient}}
+\index{IID\_IMMNotificationClient@{IID\_IMMNotificationClient}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IMMNotificationClient}{IID\_IMMNotificationClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IMMNotification\+Client}
+
+\mbox{\Hypertarget{mmdeviceapi_8h_ac7230758955239edf87f4dd8dba70fa5}\label{mmdeviceapi_8h_ac7230758955239edf87f4dd8dba70fa5}} 
+\index{mmdeviceapi.h@{mmdeviceapi.h}!LIBID\_MMDeviceAPILib@{LIBID\_MMDeviceAPILib}}
+\index{LIBID\_MMDeviceAPILib@{LIBID\_MMDeviceAPILib}!mmdeviceapi.h@{mmdeviceapi.h}}
+\doxysubsubsection{\texorpdfstring{LIBID\_MMDeviceAPILib}{LIBID\_MMDeviceAPILib}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} LIBID\+\_\+\+MMDevice\+APILib}
+

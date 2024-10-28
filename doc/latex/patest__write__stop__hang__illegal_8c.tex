@@ -1,0 +1,57 @@
+\hypertarget{patest__write__stop__hang__illegal_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+write\+\_\+stop\+\_\+hang\+\_\+illegal.c File Reference}
+\label{patest__write__stop__hang__illegal_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_write\_stop\_hang\_illegal.c@{Hexeng2D/dependencies/portaudio/test/patest\_write\_stop\_hang\_illegal.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__write__stop__hang__illegal_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__write__stop__hang__illegal_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(2048)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{patest__write__stop__hang__illegal_8c_a63bb37d1dbb92a91d6d6de336be55ec7}{stop\+\_\+thread\+\_\+proc}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$arg)
+\item 
+int \mbox{\hyperlink{patest__write__stop__hang__illegal_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__write__stop__hang__illegal_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__write__stop__hang__illegal_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(2048)}
+
+\mbox{\Hypertarget{patest__write__stop__hang__illegal_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__write__stop__hang__illegal_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__write__stop__hang__illegal_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__write__stop__hang__illegal_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}!main@{main}}
+\index{main@{main}!patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__write__stop__hang__illegal_8c_a63bb37d1dbb92a91d6d6de336be55ec7}\label{patest__write__stop__hang__illegal_8c_a63bb37d1dbb92a91d6d6de336be55ec7}} 
+\index{patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}!stop\_thread\_proc@{stop\_thread\_proc}}
+\index{stop\_thread\_proc@{stop\_thread\_proc}!patest\_write\_stop\_hang\_illegal.c@{patest\_write\_stop\_hang\_illegal.c}}
+\doxysubsubsection{\texorpdfstring{stop\_thread\_proc()}{stop\_thread\_proc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ stop\+\_\+thread\+\_\+proc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{arg }\end{DoxyParamCaption})}
+
+WARNING\+: Port\+Audio is NOT thread safe. DO NOT call Port\+Audio from multiple threads without synchronization. This test uses PA in an ILLEGAL WAY in order to try to flush out potential hang bugs. The test calls \mbox{\hyperlink{portaudio_8h_a075a6efb503a728213bdae24347ed27d}{Pa\+\_\+\+Write\+Stream()}} and \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} simultaneously from separate threads in order to try to cause \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} to hang. In the main thread we write to the stream in a loop. Then try stopping PA from another thread to see if it hangs.
+
+\begin{DoxyNote}{Note}
+\+: Do not expect this test to pass. The test is only here as a debugging aid for hang bugs. Since this test uses PA in an illegal way, it may fail for reasons that are not PA bugs. 
+\end{DoxyNote}

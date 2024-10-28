@@ -1,0 +1,193 @@
+\hypertarget{pa__mac__core__utilities_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/coreaudio/pa\+\_\+mac\+\_\+core\+\_\+utilities.c File Reference}
+\label{pa__mac__core__utilities_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_utilities.c@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_utilities.c}}
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+utilities.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$libkern/\+OSAtomic.\+h$>$}\newline
+{\ttfamily \#include $<$strings.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_mac_x_run_list_node__s}{Pa\+Mac\+XRun\+List\+Node\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_mac_x_run_list_node__s}{Pa\+Mac\+XRun\+List\+Node\+\_\+s}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a7422eb79482bd9b8a3724250f63c41b7}{Pa\+Mac\+XRun\+List\+Node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_af3f1f3948bd981838a315de8f1b21ad5}{Pa\+Mac\+Core\+\_\+\+Audio\+Hardware\+Get\+Property}} (Audio\+Hardware\+Property\+ID in\+Property\+ID, UInt32 $\ast$io\+Property\+Data\+Size, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$out\+Property\+Data)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a4c9f32160c41f990d71f94686510dbd4}{Pa\+Mac\+Core\+\_\+\+Audio\+Hardware\+Get\+Property\+Size}} (Audio\+Hardware\+Property\+ID in\+Property\+ID, UInt32 $\ast$out\+Size)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_acbb9c0b68c6861b681b3a8567bb2e736}{Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Get\+Property}} (Audio\+Device\+ID in\+Device, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, UInt32 $\ast$io\+Property\+Data\+Size, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$out\+Property\+Data)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a3ef56b98b3bad55a459bdc4969a61687}{Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Set\+Property}} (Audio\+Device\+ID in\+Device, const Audio\+Time\+Stamp $\ast$in\+When, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, UInt32 in\+Property\+Data\+Size, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Property\+Data)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a58b3a1fcd21ac9b6adc588fea8630e50}{Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Get\+Property\+Size}} (Audio\+Device\+ID in\+Device, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, UInt32 $\ast$out\+Size)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a8b0bf53495688d364ca0372c5ea38bd1}{Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Add\+Property\+Listener}} (Audio\+Device\+ID in\+Device, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, Audio\+Object\+Property\+Listener\+Proc in\+Proc, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Client\+Data)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_af89bdb9fd0e1b7c1b0a9773086672e72}{Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Remove\+Property\+Listener}} (Audio\+Device\+ID in\+Device, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, Audio\+Object\+Property\+Listener\+Proc in\+Proc, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Client\+Data)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a9b807293afa08c645efe9176a09b1836}{Pa\+Mac\+Core\+\_\+\+Audio\+Stream\+Get\+Property}} (Audio\+Stream\+ID in\+Stream, UInt32 in\+Channel, Audio\+Device\+Property\+ID in\+Property\+ID, UInt32 $\ast$io\+Property\+Data\+Size, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$out\+Property\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a76322f701d584e5fc668348c209a73c9}{Pa\+Mac\+Core\+\_\+\+Set\+Unix\+Error}} (int err, int line)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a13501102f029a53953c3f59ddc934c80}{Pa\+Mac\+Core\+\_\+\+Set\+Error}} (OSStatus error, int line, int is\+Error)
+\item 
+long \mbox{\hyperlink{pa__mac__core__utilities_8c_a61fdbb7fe209deca10dc73721c91fee4}{compute\+Ring\+Buffer\+Size}} (const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, long input\+Frames\+Per\+Buffer, long output\+Frames\+Per\+Buffer, double sample\+Rate)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_acb84077561ddd46fde457bf906c9e29d}{property\+Proc}} (Audio\+Object\+ID in\+Object\+ID, UInt32 in\+Number\+Addresses, const Audio\+Object\+Property\+Address $\ast$in\+Addresses, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Client\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a1c6368ba4f896a08088d392adfae2224}{Audio\+Device\+Set\+Property\+Now\+And\+Wait\+For\+Change}} (Audio\+Device\+ID in\+Device, UInt32 in\+Channel, Boolean is\+Input, Audio\+Device\+Property\+ID in\+Property\+ID, UInt32 in\+Property\+Data\+Size, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Property\+Data, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$out\+Property\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a0f6bb3a8d2c8f1664a69e14240c1294a}{set\+Best\+Sample\+Rate\+For\+Device}} (const Audio\+Device\+ID device, const bool is\+Output, const bool require\+Exact, const Float64 desired\+Srate)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a525354d1368777e71d58a88be42277b1}{set\+Best\+Frames\+Per\+Buffer}} (const Audio\+Device\+ID device, const bool is\+Output, UInt32 requested\+Frames\+Per\+Buffer, UInt32 $\ast$actual\+Frames\+Per\+Buffer)
+\item 
+OSStatus \mbox{\hyperlink{pa__mac__core__utilities_8c_a72d634db35745bd80f4b717be5a5dc35}{xrun\+Callback}} (Audio\+Object\+ID in\+Device, UInt32 in\+Number\+Addresses, const Audio\+Object\+Property\+Address $\ast$in\+Addresses, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$in\+Client\+Data)
+\item 
+int \mbox{\hyperlink{pa__mac__core__utilities_8c_a46514b837249b8e7919af45550505d2a}{initialize\+XRun\+Listener\+List}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+int \mbox{\hyperlink{pa__mac__core__utilities_8c_a0ba69142cb9781407dfd477616040692}{destroy\+XRun\+Listener\+List}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{pa__mac__core__utilities_8c_a4a6c93eb4c745bc1c212355e9cf17972}{add\+To\+XRun\+Listener\+List}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+int \mbox{\hyperlink{pa__mac__core__utilities_8c_a632eeced2955b271af52e8731e3a49ee}{remove\+From\+XRun\+Listener\+List}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a7422eb79482bd9b8a3724250f63c41b7}\label{pa__mac__core__utilities_8c_a7422eb79482bd9b8a3724250f63c41b7}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacXRunListNode@{PaMacXRunListNode}}
+\index{PaMacXRunListNode@{PaMacXRunListNode}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacXRunListNode}{PaMacXRunListNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_mac_x_run_list_node__s}{Pa\+Mac\+XRun\+List\+Node\+\_\+s}} \mbox{\hyperlink{pa__mac__core__utilities_8c_a7422eb79482bd9b8a3724250f63c41b7}{Pa\+Mac\+XRun\+List\+Node}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a4a6c93eb4c745bc1c212355e9cf17972}\label{pa__mac__core__utilities_8c_a4a6c93eb4c745bc1c212355e9cf17972}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!addToXRunListenerList@{addToXRunListenerList}}
+\index{addToXRunListenerList@{addToXRunListenerList}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{addToXRunListenerList()}{addToXRunListenerList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ add\+To\+XRun\+Listener\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Returns the list, so that it can be passed to Cor\+Audio. \mbox{\Hypertarget{pa__mac__core__utilities_8c_a1c6368ba4f896a08088d392adfae2224}\label{pa__mac__core__utilities_8c_a1c6368ba4f896a08088d392adfae2224}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!AudioDeviceSetPropertyNowAndWaitForChange@{AudioDeviceSetPropertyNowAndWaitForChange}}
+\index{AudioDeviceSetPropertyNowAndWaitForChange@{AudioDeviceSetPropertyNowAndWaitForChange}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{AudioDeviceSetPropertyNowAndWaitForChange()}{AudioDeviceSetPropertyNowAndWaitForChange()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Audio\+Device\+Set\+Property\+Now\+And\+Wait\+For\+Change (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32}]{in\+Property\+Data\+Size,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Property\+Data,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{out\+Property\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a61fdbb7fe209deca10dc73721c91fee4}\label{pa__mac__core__utilities_8c_a61fdbb7fe209deca10dc73721c91fee4}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!computeRingBufferSize@{computeRingBufferSize}}
+\index{computeRingBufferSize@{computeRingBufferSize}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{computeRingBufferSize()}{computeRingBufferSize()}}
+{\footnotesize\ttfamily long compute\+Ring\+Buffer\+Size (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{input\+Parameters,  }\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{output\+Parameters,  }\item[{long}]{input\+Frames\+Per\+Buffer,  }\item[{long}]{output\+Frames\+Per\+Buffer,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a0ba69142cb9781407dfd477616040692}\label{pa__mac__core__utilities_8c_a0ba69142cb9781407dfd477616040692}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!destroyXRunListenerList@{destroyXRunListenerList}}
+\index{destroyXRunListenerList@{destroyXRunListenerList}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{destroyXRunListenerList()}{destroyXRunListenerList()}}
+{\footnotesize\ttfamily int destroy\+XRun\+Listener\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+returns zero on success or a unix style error code. \mbox{\Hypertarget{pa__mac__core__utilities_8c_a46514b837249b8e7919af45550505d2a}\label{pa__mac__core__utilities_8c_a46514b837249b8e7919af45550505d2a}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!initializeXRunListenerList@{initializeXRunListenerList}}
+\index{initializeXRunListenerList@{initializeXRunListenerList}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{initializeXRunListenerList()}{initializeXRunListenerList()}}
+{\footnotesize\ttfamily int initialize\+XRun\+Listener\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+returns zero on success or a unix style error code. \mbox{\Hypertarget{pa__mac__core__utilities_8c_a8b0bf53495688d364ca0372c5ea38bd1}\label{pa__mac__core__utilities_8c_a8b0bf53495688d364ca0372c5ea38bd1}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioDeviceAddPropertyListener@{PaMacCore\_AudioDeviceAddPropertyListener}}
+\index{PaMacCore\_AudioDeviceAddPropertyListener@{PaMacCore\_AudioDeviceAddPropertyListener}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioDeviceAddPropertyListener()}{PaMacCore\_AudioDeviceAddPropertyListener()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Add\+Property\+Listener (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{Audio\+Object\+Property\+Listener\+Proc}]{in\+Proc,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Client\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_acbb9c0b68c6861b681b3a8567bb2e736}\label{pa__mac__core__utilities_8c_acbb9c0b68c6861b681b3a8567bb2e736}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioDeviceGetProperty@{PaMacCore\_AudioDeviceGetProperty}}
+\index{PaMacCore\_AudioDeviceGetProperty@{PaMacCore\_AudioDeviceGetProperty}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioDeviceGetProperty()}{PaMacCore\_AudioDeviceGetProperty()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Get\+Property (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32 $\ast$}]{io\+Property\+Data\+Size,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{out\+Property\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a58b3a1fcd21ac9b6adc588fea8630e50}\label{pa__mac__core__utilities_8c_a58b3a1fcd21ac9b6adc588fea8630e50}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioDeviceGetPropertySize@{PaMacCore\_AudioDeviceGetPropertySize}}
+\index{PaMacCore\_AudioDeviceGetPropertySize@{PaMacCore\_AudioDeviceGetPropertySize}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioDeviceGetPropertySize()}{PaMacCore\_AudioDeviceGetPropertySize()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Get\+Property\+Size (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32 $\ast$}]{out\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_af89bdb9fd0e1b7c1b0a9773086672e72}\label{pa__mac__core__utilities_8c_af89bdb9fd0e1b7c1b0a9773086672e72}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioDeviceRemovePropertyListener@{PaMacCore\_AudioDeviceRemovePropertyListener}}
+\index{PaMacCore\_AudioDeviceRemovePropertyListener@{PaMacCore\_AudioDeviceRemovePropertyListener}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioDeviceRemovePropertyListener()}{PaMacCore\_AudioDeviceRemovePropertyListener()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Remove\+Property\+Listener (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{Audio\+Object\+Property\+Listener\+Proc}]{in\+Proc,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Client\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a3ef56b98b3bad55a459bdc4969a61687}\label{pa__mac__core__utilities_8c_a3ef56b98b3bad55a459bdc4969a61687}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioDeviceSetProperty@{PaMacCore\_AudioDeviceSetProperty}}
+\index{PaMacCore\_AudioDeviceSetProperty@{PaMacCore\_AudioDeviceSetProperty}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioDeviceSetProperty()}{PaMacCore\_AudioDeviceSetProperty()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Device\+Set\+Property (\begin{DoxyParamCaption}\item[{Audio\+Device\+ID}]{in\+Device,  }\item[{const Audio\+Time\+Stamp $\ast$}]{in\+When,  }\item[{UInt32}]{in\+Channel,  }\item[{Boolean}]{is\+Input,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32}]{in\+Property\+Data\+Size,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Property\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_af3f1f3948bd981838a315de8f1b21ad5}\label{pa__mac__core__utilities_8c_af3f1f3948bd981838a315de8f1b21ad5}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioHardwareGetProperty@{PaMacCore\_AudioHardwareGetProperty}}
+\index{PaMacCore\_AudioHardwareGetProperty@{PaMacCore\_AudioHardwareGetProperty}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioHardwareGetProperty()}{PaMacCore\_AudioHardwareGetProperty()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Hardware\+Get\+Property (\begin{DoxyParamCaption}\item[{Audio\+Hardware\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32 $\ast$}]{io\+Property\+Data\+Size,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{out\+Property\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a4c9f32160c41f990d71f94686510dbd4}\label{pa__mac__core__utilities_8c_a4c9f32160c41f990d71f94686510dbd4}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioHardwareGetPropertySize@{PaMacCore\_AudioHardwareGetPropertySize}}
+\index{PaMacCore\_AudioHardwareGetPropertySize@{PaMacCore\_AudioHardwareGetPropertySize}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioHardwareGetPropertySize()}{PaMacCore\_AudioHardwareGetPropertySize()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Hardware\+Get\+Property\+Size (\begin{DoxyParamCaption}\item[{Audio\+Hardware\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32 $\ast$}]{out\+Size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a9b807293afa08c645efe9176a09b1836}\label{pa__mac__core__utilities_8c_a9b807293afa08c645efe9176a09b1836}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_AudioStreamGetProperty@{PaMacCore\_AudioStreamGetProperty}}
+\index{PaMacCore\_AudioStreamGetProperty@{PaMacCore\_AudioStreamGetProperty}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_AudioStreamGetProperty()}{PaMacCore\_AudioStreamGetProperty()}}
+{\footnotesize\ttfamily OSStatus Pa\+Mac\+Core\+\_\+\+Audio\+Stream\+Get\+Property (\begin{DoxyParamCaption}\item[{Audio\+Stream\+ID}]{in\+Stream,  }\item[{UInt32}]{in\+Channel,  }\item[{Audio\+Device\+Property\+ID}]{in\+Property\+ID,  }\item[{UInt32 $\ast$}]{io\+Property\+Data\+Size,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{out\+Property\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a13501102f029a53953c3f59ddc934c80}\label{pa__mac__core__utilities_8c_a13501102f029a53953c3f59ddc934c80}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_SetError@{PaMacCore\_SetError}}
+\index{PaMacCore\_SetError@{PaMacCore\_SetError}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_SetError()}{PaMacCore\_SetError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Mac\+Core\+\_\+\+Set\+Error (\begin{DoxyParamCaption}\item[{OSStatus}]{error,  }\item[{int}]{line,  }\item[{int}]{is\+Error }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a76322f701d584e5fc668348c209a73c9}\label{pa__mac__core__utilities_8c_a76322f701d584e5fc668348c209a73c9}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!PaMacCore\_SetUnixError@{PaMacCore\_SetUnixError}}
+\index{PaMacCore\_SetUnixError@{PaMacCore\_SetUnixError}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_SetUnixError()}{PaMacCore\_SetUnixError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Mac\+Core\+\_\+\+Set\+Unix\+Error (\begin{DoxyParamCaption}\item[{int}]{err,  }\item[{int}]{line }\end{DoxyParamCaption})}
+
+Map Unix error to Pa\+Error. Pretty much the only one that maps is ENOMEM.\mbox{\Hypertarget{pa__mac__core__utilities_8c_acb84077561ddd46fde457bf906c9e29d}\label{pa__mac__core__utilities_8c_acb84077561ddd46fde457bf906c9e29d}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!propertyProc@{propertyProc}}
+\index{propertyProc@{propertyProc}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{propertyProc()}{propertyProc()}}
+{\footnotesize\ttfamily OSStatus property\+Proc (\begin{DoxyParamCaption}\item[{Audio\+Object\+ID}]{in\+Object\+ID,  }\item[{UInt32}]{in\+Number\+Addresses,  }\item[{const Audio\+Object\+Property\+Address $\ast$}]{in\+Addresses,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Client\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a632eeced2955b271af52e8731e3a49ee}\label{pa__mac__core__utilities_8c_a632eeced2955b271af52e8731e3a49ee}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!removeFromXRunListenerList@{removeFromXRunListenerList}}
+\index{removeFromXRunListenerList@{removeFromXRunListenerList}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{removeFromXRunListenerList()}{removeFromXRunListenerList()}}
+{\footnotesize\ttfamily int remove\+From\+XRun\+Listener\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Returns the number of Listeners in the list remaining. \mbox{\Hypertarget{pa__mac__core__utilities_8c_a525354d1368777e71d58a88be42277b1}\label{pa__mac__core__utilities_8c_a525354d1368777e71d58a88be42277b1}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!setBestFramesPerBuffer@{setBestFramesPerBuffer}}
+\index{setBestFramesPerBuffer@{setBestFramesPerBuffer}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{setBestFramesPerBuffer()}{setBestFramesPerBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} set\+Best\+Frames\+Per\+Buffer (\begin{DoxyParamCaption}\item[{const Audio\+Device\+ID}]{device,  }\item[{const bool}]{is\+Output,  }\item[{UInt32}]{requested\+Frames\+Per\+Buffer,  }\item[{UInt32 $\ast$}]{actual\+Frames\+Per\+Buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a0f6bb3a8d2c8f1664a69e14240c1294a}\label{pa__mac__core__utilities_8c_a0f6bb3a8d2c8f1664a69e14240c1294a}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!setBestSampleRateForDevice@{setBestSampleRateForDevice}}
+\index{setBestSampleRateForDevice@{setBestSampleRateForDevice}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{setBestSampleRateForDevice()}{setBestSampleRateForDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} set\+Best\+Sample\+Rate\+For\+Device (\begin{DoxyParamCaption}\item[{const Audio\+Device\+ID}]{device,  }\item[{const bool}]{is\+Output,  }\item[{const bool}]{require\+Exact,  }\item[{const Float64}]{desired\+Srate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__utilities_8c_a72d634db35745bd80f4b717be5a5dc35}\label{pa__mac__core__utilities_8c_a72d634db35745bd80f4b717be5a5dc35}} 
+\index{pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}!xrunCallback@{xrunCallback}}
+\index{xrunCallback@{xrunCallback}!pa\_mac\_core\_utilities.c@{pa\_mac\_core\_utilities.c}}
+\doxysubsubsection{\texorpdfstring{xrunCallback()}{xrunCallback()}}
+{\footnotesize\ttfamily OSStatus xrun\+Callback (\begin{DoxyParamCaption}\item[{Audio\+Object\+ID}]{in\+Device,  }\item[{UInt32}]{in\+Number\+Addresses,  }\item[{const Audio\+Object\+Property\+Address $\ast$}]{in\+Addresses,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{in\+Client\+Data }\end{DoxyParamCaption})}
+

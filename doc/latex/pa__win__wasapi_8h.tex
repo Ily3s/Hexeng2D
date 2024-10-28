@@ -1,0 +1,1171 @@
+\hypertarget{pa__win__wasapi_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+win\+\_\+wasapi.h File Reference}
+\label{pa__win__wasapi_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_win\_wasapi.h@{Hexeng2D/dependencies/portaudio/include/pa\_win\_wasapi.h}}
+
+
+WASAPI-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+waveformat.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_stream_info}{Pa\+Wasapi\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_a52079738ea6bdb82c7672850d72643d0}{pa\+Win\+Wasapi\+Exclusive}}~(pa\+Win\+Wasapi\+Exclusive)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_a04b5df0ea5e1b6e9299b07963e96f1ff}{pa\+Win\+Wasapi\+Redirect\+Host\+Processor}}~(pa\+Win\+Wasapi\+Redirect\+Host\+Processor)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_af47a337bb1cf6a3036978844001da434}{pa\+Win\+Wasapi\+Use\+Channel\+Mask}}~(pa\+Win\+Wasapi\+Use\+Channel\+Mask)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_ab7cfc855244ee76f5fddb20584218270}{pa\+Win\+Wasapi\+Polling}}~(pa\+Win\+Wasapi\+Polling)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_adb59e164778bb67e97fc7ac1dacb6af9}{pa\+Win\+Wasapi\+Thread\+Priority}}~(pa\+Win\+Wasapi\+Thread\+Priority)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_aaca865d2d198d03e867bf63a5fbc020f}{pa\+Win\+Wasapi\+Explicit\+Sample\+Format}}~(pa\+Win\+Wasapi\+Explicit\+Sample\+Format)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_a726470bc6353b4d4804020fab0ed9dde}{pa\+Win\+Wasapi\+Auto\+Convert}}~(pa\+Win\+Wasapi\+Auto\+Convert)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_a18bc10772014f20624f1a175d76a335d}{pa\+Wasapi\+Stream\+State\+Error}}~(pa\+Wasapi\+Stream\+State\+Error)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_ad2ca5f3c2333ef347e4be179804d579b}{pa\+Wasapi\+Stream\+State\+Thread\+Prepare}}~(pa\+Wasapi\+Stream\+State\+Thread\+Prepare)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_aae711b0cdbe5d1d05bec22e293153791}{pa\+Wasapi\+Stream\+State\+Thread\+Start}}~(pa\+Wasapi\+Stream\+State\+Thread\+Start)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8h_a4c323beb058f6fb4bbcd6d15f6644518}{pa\+Wasapi\+Stream\+State\+Thread\+Stop}}~(pa\+Wasapi\+Stream\+State\+Thread\+Stop)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}{Pa\+Wasapi\+Flags}} \mbox{\hyperlink{pa__win__wasapi_8h_aca93d4fb6ff41577bf28a1709ce92315}{Pa\+Wasapi\+Flags}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}{Pa\+Wasapi\+Stream\+State}} \mbox{\hyperlink{pa__win__wasapi_8h_ae314d22868b0273d2712c7c920b063e4}{Pa\+Wasapi\+Stream\+State}}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}}) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, long input\+Frames, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, long output\+Frames, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}}) (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, unsigned int state\+Flags, unsigned int error\+Id, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+User\+Data)
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} \mbox{\hyperlink{pa__win__wasapi_8h_ad7a1d18abc52a140d31c2626b178c60f}{Pa\+Wasapi\+Device\+Role}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}{Pa\+Wasapi\+Jack\+Connection\+Type}} \mbox{\hyperlink{pa__win__wasapi_8h_aeb2cb341fe64427ae7c9f3d15eb630f7}{Pa\+Wasapi\+Jack\+Connection\+Type}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}{Pa\+Wasapi\+Jack\+Geo\+Location}} \mbox{\hyperlink{pa__win__wasapi_8h_a77d9dd45efc5838ad3ebc1921472ff3c}{Pa\+Wasapi\+Jack\+Geo\+Location}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}{Pa\+Wasapi\+Jack\+Gen\+Location}} \mbox{\hyperlink{pa__win__wasapi_8h_a37e4450ba37d9a290b476f7a76073434}{Pa\+Wasapi\+Jack\+Gen\+Location}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}{Pa\+Wasapi\+Jack\+Port\+Connection}} \mbox{\hyperlink{pa__win__wasapi_8h_a9840a1ca66f5ad6a2a51268e1efdb9e1}{Pa\+Wasapi\+Jack\+Port\+Connection}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \mbox{\hyperlink{pa__win__wasapi_8h_a988e1a219d7df7ad42d5874fd86b2415}{Pa\+Wasapi\+Thread\+Priority}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} \mbox{\hyperlink{pa__win__wasapi_8h_aa0a6e4c17a3e55f1f8e52fa3e68b7376}{Pa\+Wasapi\+Jack\+Description}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} \mbox{\hyperlink{pa__win__wasapi_8h_a164131f4991ee53286b50437eadf28d7}{Pa\+Wasapi\+Stream\+Category}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} \mbox{\hyperlink{pa__win__wasapi_8h_a0e53d1d828f954742dee59a81017643f}{Pa\+Wasapi\+Stream\+Option}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_stream_info}{Pa\+Wasapi\+Stream\+Info}} \mbox{\hyperlink{pa__win__wasapi_8h_a9c03609bc5516f40cc62744e03a75811}{Pa\+Wasapi\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}{Pa\+Wasapi\+Flags}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea03a519ca5e890b232994c25bc2a15b1e}{pa\+Win\+Wasapi\+Exclusive}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beab48119221a4cd9aa0428882dfb729c0b}{pa\+Win\+Wasapi\+Redirect\+Host\+Processor}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaf3f72a69e5c4f62c22496328805be67e}{pa\+Win\+Wasapi\+Use\+Channel\+Mask}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaa3171090ee90b00f3f68c906b8dd7e5d}{pa\+Win\+Wasapi\+Polling}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea1fcbc0f3ce367c5ffa8bd49985f7d65a}{pa\+Win\+Wasapi\+Thread\+Priority}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 4)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaabfd5e95011c99f4bf29b717bfcf7922}{pa\+Win\+Wasapi\+Explicit\+Sample\+Format}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 5)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea97e62e56b3b5bec12ec54db89f20e504}{pa\+Win\+Wasapi\+Auto\+Convert}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 6)
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}{Pa\+Wasapi\+Stream\+State}} \{ \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a9f3bd29288bcc1d77e309153c76f2adb}{pa\+Wasapi\+Stream\+State\+Error}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 0)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1adc643dc12887baa00e199fd258c0c1db}{pa\+Wasapi\+Stream\+State\+Thread\+Prepare}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 1)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1abc5f8c139b5803ac58447d967a8d5bb0}{pa\+Wasapi\+Stream\+State\+Thread\+Start}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 2)
+, \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a8b71aa0cf5b2054e1dd031c4a63d02f8}{pa\+Wasapi\+Stream\+State\+Thread\+Stop}} = (1 \texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<} 3)
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea6b32bd971aa8f9a7c38cbed4b8739a17}{e\+Role\+Remote\+Network\+Device}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea40233f5a9fe355a6f97186e1729fe3b7}{e\+Role\+Speakers}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaa267bead26afd03aa0e6b0a287d8c5e6}{e\+Role\+Line\+Level}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deac5f5cf1c91a50192fdfe4ba8943b6b4f}{e\+Role\+Headphones}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea4c7439c3ae131c1c6e774b3fb5eb8076}{e\+Role\+Microphone}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead7c81e929f37a918c42ca5df1d8ca4e2}{e\+Role\+Headset}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea9f8a2e0431deefececdd70f6a7293da7}{e\+Role\+Handset}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea1b20a66561768fc1850e2c434e064c66}{e\+Role\+Unknown\+Digital\+Passthrough}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deae2e8ddb67754490ecc910dd1ee7e67c1}{e\+Role\+SPDIF}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaeace84587f0fbeb0c1b50dc3e3573dce}{e\+Role\+HDMI}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead69779ccf0a1bb0089a6fb5d6e127279}{e\+Role\+Unknown\+Form\+Factor}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}{Pa\+Wasapi\+Jack\+Connection\+Type}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1aeef277daed454afbe5db9cc53b73822d}{e\+Jack\+Conn\+Type\+Unknown}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1ab232edb9641629d2896357858df51c70}{e\+Jack\+Conn\+Type3\+Point5mm}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a76052cc9e64d066e286cc6bac00ed62b}{e\+Jack\+Conn\+Type\+Quarter}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a60e43ef61f0becd5b174e4e77f6ebed4}{e\+Jack\+Conn\+Type\+Atapi\+Internal}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a9d9d8d9349b9215e3e5656459a080eb0}{e\+Jack\+Conn\+Type\+RCA}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a738576cd148978b962fdb7e201055ee1}{e\+Jack\+Conn\+Type\+Optical}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3ba01b521ebfd66e06eb5d692ceaec00}{e\+Jack\+Conn\+Type\+Other\+Digital}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3a72f82f2ae0524a7554e75883a409cb}{e\+Jack\+Conn\+Type\+Other\+Analog}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a7dfd87d41f3899e05ba4774429a2cf8c}{e\+Jack\+Conn\+Type\+Multichannel\+Analog\+DIN}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a8d87cf2183ba9a4d4bba0381956261e6}{e\+Jack\+Conn\+Type\+Xlr\+Professional}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a25006a561a7f2ae7e56be76e69419a27}{e\+Jack\+Conn\+Type\+RJ11\+Modem}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a1540849ce578ea9b5bae30674e41ec61}{e\+Jack\+Conn\+Type\+Combination}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}{Pa\+Wasapi\+Jack\+Geo\+Location}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a82e965eb8f615dedafda89babed72551}{e\+Jack\+Geo\+Loc\+Unk}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ab2aa90a453490f614b2cac1078bba16f}{e\+Jack\+Geo\+Loc\+Rear}} = 0x1
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ae813c94e9f55bd40a4ffead5584b4d0c}{e\+Jack\+Geo\+Loc\+Front}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188afaa13db87519bd23faed247faa92f224}{e\+Jack\+Geo\+Loc\+Left}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a43fa6750867dc867b58b163f3166e211}{e\+Jack\+Geo\+Loc\+Right}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a15ebc49750feddc0d15580bb1459f2f4}{e\+Jack\+Geo\+Loc\+Top}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ad4f5d5252864353b5e34e4cb4df18847}{e\+Jack\+Geo\+Loc\+Bottom}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a723c05df6b615324e42074c073776770}{e\+Jack\+Geo\+Loc\+Rear\+Panel}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8309ad278ca624ff91f595962665c217}{e\+Jack\+Geo\+Loc\+Riser}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a665cc34b96ee78cc19a8fb8992b6f9a8}{e\+Jack\+Geo\+Loc\+Inside\+Mobile\+Lid}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188af2052f01078dd7b5d8f47bd58a298810}{e\+Jack\+Geo\+Loc\+Drivebay}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a4d6b118ab64ac8f84afce0fc3a69b64a}{e\+Jack\+Geo\+Loc\+HDMI}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8106e080eab9408b808fe6387b30d9cc}{e\+Jack\+Geo\+Loc\+Outside\+Mobile\+Lid}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a52adf880d4923db0fdc393655ad4f613}{e\+Jack\+Geo\+Loc\+ATAPI}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a529959d16951897af9f22fe152d739f8}{e\+Jack\+Geo\+Loc\+Reserved5}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a3e9728e25791765d6e8bbc33197c7e4a}{e\+Jack\+Geo\+Loc\+Reserved6}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}{Pa\+Wasapi\+Jack\+Gen\+Location}} \{ \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfafc1af7a35520874185bdcd3f918256ef}{e\+Jack\+Gen\+Loc\+Primary\+Box}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfa65126aa4a47441566c85b3626b86e7f0}{e\+Jack\+Gen\+Loc\+Internal}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfacd687d08859bcb461bab8085f1b43c77}{e\+Jack\+Gen\+Loc\+Separate}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfadafdc4431fb41cab7d2f7e9079c11d8b}{e\+Jack\+Gen\+Loc\+Other}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}{Pa\+Wasapi\+Jack\+Port\+Connection}} \{ \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da551246109a231fa4461f49a19b18648a}{e\+Jack\+Port\+Conn\+Jack}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893daef9f29f757f6c624178c248407be39e7}{e\+Jack\+Port\+Conn\+Integrated\+Device}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893dabafdd05b8e51314766c0fcd3d754cd36}{e\+Jack\+Port\+Conn\+Both\+Integrated\+And\+Jack}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da6952e4865d35e1144884c803239b82f0}{e\+Jack\+Port\+Conn\+Unknown}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a20a9497196a4fe472458ebba0ab678f4}{e\+Thread\+Priority\+None}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}{e\+Thread\+Priority\+Audio}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac87aeb9efa4bec8bea12e903f299807f}{e\+Thread\+Priority\+Capture}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a5bb6827712269579be747212f0ab5666}{e\+Thread\+Priority\+Distribution}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac4b78888f31554eed7c49c2bb6ebe654}{e\+Thread\+Priority\+Games}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661af6deb64da6b3b8c286843c3111d630ee}{e\+Thread\+Priority\+Playback}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}{e\+Thread\+Priority\+Pro\+Audio}}
+, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661aff35fbdda7cff800902be260ad350540}{e\+Thread\+Priority\+Window\+Manager}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a222935e6f73435297e4eb407222b57ec}{e\+Audio\+Category\+Other}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab4c24cf6d6eff485b55604b3bdb85075}{e\+Audio\+Category\+Communications}} = 3
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a28717a17195c7abe106f4cf3ec69569d}{e\+Audio\+Category\+Alerts}} = 4
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a1becf45d56e30f180d1cf7bb950eb371}{e\+Audio\+Category\+Sound\+Effects}} = 5
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab53f225213d075f480002dfed4cd4b36}{e\+Audio\+Category\+Game\+Effects}} = 6
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a0e7ceaf44fb57e2e06649087e7292b81}{e\+Audio\+Category\+Game\+Media}} = 7
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af790ec96b320ba11619982d5f0dd5537}{e\+Audio\+Category\+Game\+Chat}} = 8
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab54a3eeb0b7445a6435f173a7763d092}{e\+Audio\+Category\+Speech}} = 9
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a475cb43bdc473c174bfacf7778656261}{e\+Audio\+Category\+Movie}} = 10
+, \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af9650e7709a97b1a690e3f985a1050d9}{e\+Audio\+Category\+Media}} = 11
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} \{ \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa0cacf626538e85a6400c3f84a85e7314}{e\+Stream\+Option\+None}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa02bcdd8d429cdcd27f16b05c63d78c9d}{e\+Stream\+Option\+Raw}} = 1
+, \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857faa9671dd31883a02493ef2ab69db3126c}{e\+Stream\+Option\+Match\+Format}} = 2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a25c33a7937780119df74e951d9bfaf00}{Pa\+Wasapi\+\_\+\+Get\+Audio\+Client}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+Audio\+Client, int b\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List}} ()
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_adb5f9ba32018e00630e9181cc86d97bb}{Pa\+Wasapi\+\_\+\+Get\+Device\+Current\+Format}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, int b\+Output)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_a5076434a69a9ef02e1966f3ea65da937}{Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_a80dfb8c49a4a12ca177afbaac9db3d06}{Pa\+Wasapi\+\_\+\+Get\+Device\+Mix\+Format}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8h_ac914f9b877451fc998298e4beec10208}{Pa\+Wasapi\+\_\+\+Get\+Device\+Role}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a739878064482dc638ed89b68a7dff00f}{Pa\+Wasapi\+\_\+\+Get\+IMMDevice}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+IMMDevice)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_ad18e3aede8d98f7144f6279c22b88c87}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+Task, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} priority\+Class)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_ac1a76bc94a9144ed456575fec190323d}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Task)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_ab9ac66d7e4bedab8b7ec38146526eb24}{Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, unsigned int $\ast$p\+Input, unsigned int $\ast$p\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_aee7cb6ee52ae7c55f12db908be2feecb}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int $\ast$p\+Jack\+Count)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_ae61299a2f58f2bf55f9849b64914ae66}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int jack\+Index, \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} $\ast$p\+Jack\+Description)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a730e026069b18726e0fea2308868f820}{Pa\+Wasapi\+\_\+\+Set\+Stream\+State\+Handler}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}} fn\+State\+Handler, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+User\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a7f85ba84da29809aa47438c8708465a4}{Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id}} (const unsigned short $\ast$p\+Id, int b\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8h_a7ac47bc66f443d6713f011a7937b0b69}{Pa\+Wasapi\+Winrt\+\_\+\+Populate\+Device\+List}} (const unsigned short $\ast$$\ast$p\+Id, const unsigned short $\ast$$\ast$p\+Name, const \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} $\ast$p\+Role, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}}, int b\+Output)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WASAPI-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a18bc10772014f20624f1a175d76a335d}\label{pa__win__wasapi_8h_a18bc10772014f20624f1a175d76a335d}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateError@{paWasapiStreamStateError}}
+\index{paWasapiStreamStateError@{paWasapiStreamStateError}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWasapiStreamStateError}{paWasapiStreamStateError}}
+{\footnotesize\ttfamily \#define pa\+Wasapi\+Stream\+State\+Error~(pa\+Wasapi\+Stream\+State\+Error)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_ad2ca5f3c2333ef347e4be179804d579b}\label{pa__win__wasapi_8h_ad2ca5f3c2333ef347e4be179804d579b}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadPrepare@{paWasapiStreamStateThreadPrepare}}
+\index{paWasapiStreamStateThreadPrepare@{paWasapiStreamStateThreadPrepare}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWasapiStreamStateThreadPrepare}{paWasapiStreamStateThreadPrepare}}
+{\footnotesize\ttfamily \#define pa\+Wasapi\+Stream\+State\+Thread\+Prepare~(pa\+Wasapi\+Stream\+State\+Thread\+Prepare)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_aae711b0cdbe5d1d05bec22e293153791}\label{pa__win__wasapi_8h_aae711b0cdbe5d1d05bec22e293153791}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadStart@{paWasapiStreamStateThreadStart}}
+\index{paWasapiStreamStateThreadStart@{paWasapiStreamStateThreadStart}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWasapiStreamStateThreadStart}{paWasapiStreamStateThreadStart}}
+{\footnotesize\ttfamily \#define pa\+Wasapi\+Stream\+State\+Thread\+Start~(pa\+Wasapi\+Stream\+State\+Thread\+Start)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a4c323beb058f6fb4bbcd6d15f6644518}\label{pa__win__wasapi_8h_a4c323beb058f6fb4bbcd6d15f6644518}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadStop@{paWasapiStreamStateThreadStop}}
+\index{paWasapiStreamStateThreadStop@{paWasapiStreamStateThreadStop}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWasapiStreamStateThreadStop}{paWasapiStreamStateThreadStop}}
+{\footnotesize\ttfamily \#define pa\+Wasapi\+Stream\+State\+Thread\+Stop~(pa\+Wasapi\+Stream\+State\+Thread\+Stop)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a726470bc6353b4d4804020fab0ed9dde}\label{pa__win__wasapi_8h_a726470bc6353b4d4804020fab0ed9dde}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiAutoConvert@{paWinWasapiAutoConvert}}
+\index{paWinWasapiAutoConvert@{paWinWasapiAutoConvert}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiAutoConvert}{paWinWasapiAutoConvert}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Auto\+Convert~(pa\+Win\+Wasapi\+Auto\+Convert)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a52079738ea6bdb82c7672850d72643d0}\label{pa__win__wasapi_8h_a52079738ea6bdb82c7672850d72643d0}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiExclusive@{paWinWasapiExclusive}}
+\index{paWinWasapiExclusive@{paWinWasapiExclusive}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiExclusive}{paWinWasapiExclusive}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Exclusive~(pa\+Win\+Wasapi\+Exclusive)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_aaca865d2d198d03e867bf63a5fbc020f}\label{pa__win__wasapi_8h_aaca865d2d198d03e867bf63a5fbc020f}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiExplicitSampleFormat@{paWinWasapiExplicitSampleFormat}}
+\index{paWinWasapiExplicitSampleFormat@{paWinWasapiExplicitSampleFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiExplicitSampleFormat}{paWinWasapiExplicitSampleFormat}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Explicit\+Sample\+Format~(pa\+Win\+Wasapi\+Explicit\+Sample\+Format)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_ab7cfc855244ee76f5fddb20584218270}\label{pa__win__wasapi_8h_ab7cfc855244ee76f5fddb20584218270}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiPolling@{paWinWasapiPolling}}
+\index{paWinWasapiPolling@{paWinWasapiPolling}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiPolling}{paWinWasapiPolling}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Polling~(pa\+Win\+Wasapi\+Polling)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a04b5df0ea5e1b6e9299b07963e96f1ff}\label{pa__win__wasapi_8h_a04b5df0ea5e1b6e9299b07963e96f1ff}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiRedirectHostProcessor@{paWinWasapiRedirectHostProcessor}}
+\index{paWinWasapiRedirectHostProcessor@{paWinWasapiRedirectHostProcessor}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiRedirectHostProcessor}{paWinWasapiRedirectHostProcessor}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Redirect\+Host\+Processor~(pa\+Win\+Wasapi\+Redirect\+Host\+Processor)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_adb59e164778bb67e97fc7ac1dacb6af9}\label{pa__win__wasapi_8h_adb59e164778bb67e97fc7ac1dacb6af9}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiThreadPriority@{paWinWasapiThreadPriority}}
+\index{paWinWasapiThreadPriority@{paWinWasapiThreadPriority}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiThreadPriority}{paWinWasapiThreadPriority}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Thread\+Priority~(pa\+Win\+Wasapi\+Thread\+Priority)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_af47a337bb1cf6a3036978844001da434}\label{pa__win__wasapi_8h_af47a337bb1cf6a3036978844001da434}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiUseChannelMask@{paWinWasapiUseChannelMask}}
+\index{paWinWasapiUseChannelMask@{paWinWasapiUseChannelMask}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{paWinWasapiUseChannelMask}{paWinWasapiUseChannelMask}}
+{\footnotesize\ttfamily \#define pa\+Win\+Wasapi\+Use\+Channel\+Mask~(pa\+Win\+Wasapi\+Use\+Channel\+Mask)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ad7a1d18abc52a140d31c2626b178c60f}\label{pa__win__wasapi_8h_ad7a1d18abc52a140d31c2626b178c60f}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiDeviceRole@{PaWasapiDeviceRole}}
+\index{PaWasapiDeviceRole@{PaWasapiDeviceRole}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiDeviceRole}{PaWasapiDeviceRole}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_aca93d4fb6ff41577bf28a1709ce92315}\label{pa__win__wasapi_8h_aca93d4fb6ff41577bf28a1709ce92315}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiFlags@{PaWasapiFlags}}
+\index{PaWasapiFlags@{PaWasapiFlags}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiFlags}{PaWasapiFlags}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}{Pa\+Wasapi\+Flags}} \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}{Pa\+Wasapi\+Flags}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}\label{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiHostProcessorCallback@{PaWasapiHostProcessorCallback}}
+\index{PaWasapiHostProcessorCallback@{PaWasapiHostProcessorCallback}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiHostProcessorCallback}{PaWasapiHostProcessorCallback}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Pa\+Wasapi\+Host\+Processor\+Callback) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, long input\+Frames, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, long output\+Frames, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_aeb2cb341fe64427ae7c9f3d15eb630f7}\label{pa__win__wasapi_8h_aeb2cb341fe64427ae7c9f3d15eb630f7}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackConnectionType@{PaWasapiJackConnectionType}}
+\index{PaWasapiJackConnectionType@{PaWasapiJackConnectionType}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackConnectionType}{PaWasapiJackConnectionType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}{Pa\+Wasapi\+Jack\+Connection\+Type}} \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}{Pa\+Wasapi\+Jack\+Connection\+Type}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_aa0a6e4c17a3e55f1f8e52fa3e68b7376}\label{pa__win__wasapi_8h_aa0a6e4c17a3e55f1f8e52fa3e68b7376}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackDescription@{PaWasapiJackDescription}}
+\index{PaWasapiJackDescription@{PaWasapiJackDescription}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackDescription}{PaWasapiJackDescription}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a37e4450ba37d9a290b476f7a76073434}\label{pa__win__wasapi_8h_a37e4450ba37d9a290b476f7a76073434}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackGenLocation@{PaWasapiJackGenLocation}}
+\index{PaWasapiJackGenLocation@{PaWasapiJackGenLocation}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackGenLocation}{PaWasapiJackGenLocation}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}{Pa\+Wasapi\+Jack\+Gen\+Location}} \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}{Pa\+Wasapi\+Jack\+Gen\+Location}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a77d9dd45efc5838ad3ebc1921472ff3c}\label{pa__win__wasapi_8h_a77d9dd45efc5838ad3ebc1921472ff3c}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackGeoLocation@{PaWasapiJackGeoLocation}}
+\index{PaWasapiJackGeoLocation@{PaWasapiJackGeoLocation}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackGeoLocation}{PaWasapiJackGeoLocation}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}{Pa\+Wasapi\+Jack\+Geo\+Location}} \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}{Pa\+Wasapi\+Jack\+Geo\+Location}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a9840a1ca66f5ad6a2a51268e1efdb9e1}\label{pa__win__wasapi_8h_a9840a1ca66f5ad6a2a51268e1efdb9e1}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackPortConnection@{PaWasapiJackPortConnection}}
+\index{PaWasapiJackPortConnection@{PaWasapiJackPortConnection}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackPortConnection}{PaWasapiJackPortConnection}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}{Pa\+Wasapi\+Jack\+Port\+Connection}} \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}{Pa\+Wasapi\+Jack\+Port\+Connection}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a164131f4991ee53286b50437eadf28d7}\label{pa__win__wasapi_8h_a164131f4991ee53286b50437eadf28d7}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamCategory@{PaWasapiStreamCategory}}
+\index{PaWasapiStreamCategory@{PaWasapiStreamCategory}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamCategory}{PaWasapiStreamCategory}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}}}
+
+Stream category. Note\+:
+\begin{DoxyItemize}
+\item values are equal to WASAPI AUDIO\+\_\+\+STREAM\+\_\+\+CATEGORY enum
+\item supported since Windows 8.\+0, noop on earlier versions
+\item values 1,2 are deprecated on Windows 10 and not included into enumeration
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a9c03609bc5516f40cc62744e03a75811}\label{pa__win__wasapi_8h_a9c03609bc5516f40cc62744e03a75811}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamInfo}{PaWasapiStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_stream_info}{Pa\+Wasapi\+Stream\+Info}} \mbox{\hyperlink{struct_pa_wasapi_stream_info}{Pa\+Wasapi\+Stream\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a0e53d1d828f954742dee59a81017643f}\label{pa__win__wasapi_8h_a0e53d1d828f954742dee59a81017643f}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamOption@{PaWasapiStreamOption}}
+\index{PaWasapiStreamOption@{PaWasapiStreamOption}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamOption}{PaWasapiStreamOption}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}}}
+
+Stream option. Note\+:
+\begin{DoxyItemize}
+\item values are equal to WASAPI AUDCLNT\+\_\+\+STREAMOPTIONS enum
+\item supported since Windows 8.\+1, noop on earlier versions
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ae314d22868b0273d2712c7c920b063e4}\label{pa__win__wasapi_8h_ae314d22868b0273d2712c7c920b063e4}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamState@{PaWasapiStreamState}}
+\index{PaWasapiStreamState@{PaWasapiStreamState}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamState}{PaWasapiStreamState}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}{Pa\+Wasapi\+Stream\+State}} \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}{Pa\+Wasapi\+Stream\+State}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}\label{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamStateCallback@{PaWasapiStreamStateCallback}}
+\index{PaWasapiStreamStateCallback@{PaWasapiStreamStateCallback}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamStateCallback}{PaWasapiStreamStateCallback}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Pa\+Wasapi\+Stream\+State\+Callback) (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, unsigned int state\+Flags, unsigned int error\+Id, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+User\+Data)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8h_a988e1a219d7df7ad42d5874fd86b2415}\label{pa__win__wasapi_8h_a988e1a219d7df7ad42d5874fd86b2415}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiThreadPriority@{PaWasapiThreadPriority}}
+\index{PaWasapiThreadPriority@{PaWasapiThreadPriority}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiThreadPriority}{PaWasapiThreadPriority}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiDeviceRole@{PaWasapiDeviceRole}}
+\index{PaWasapiDeviceRole@{PaWasapiDeviceRole}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiDeviceRole}{PaWasapiDeviceRole}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleRemoteNetworkDevice@{eRoleRemoteNetworkDevice}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleRemoteNetworkDevice@{eRoleRemoteNetworkDevice}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea6b32bd971aa8f9a7c38cbed4b8739a17}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea6b32bd971aa8f9a7c38cbed4b8739a17}} 
+e\+Role\+Remote\+Network\+Device&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleSpeakers@{eRoleSpeakers}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleSpeakers@{eRoleSpeakers}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea40233f5a9fe355a6f97186e1729fe3b7}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea40233f5a9fe355a6f97186e1729fe3b7}} 
+e\+Role\+Speakers&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleLineLevel@{eRoleLineLevel}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleLineLevel@{eRoleLineLevel}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaa267bead26afd03aa0e6b0a287d8c5e6}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaa267bead26afd03aa0e6b0a287d8c5e6}} 
+e\+Role\+Line\+Level&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleHeadphones@{eRoleHeadphones}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleHeadphones@{eRoleHeadphones}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deac5f5cf1c91a50192fdfe4ba8943b6b4f}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deac5f5cf1c91a50192fdfe4ba8943b6b4f}} 
+e\+Role\+Headphones&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleMicrophone@{eRoleMicrophone}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleMicrophone@{eRoleMicrophone}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea4c7439c3ae131c1c6e774b3fb5eb8076}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea4c7439c3ae131c1c6e774b3fb5eb8076}} 
+e\+Role\+Microphone&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleHeadset@{eRoleHeadset}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleHeadset@{eRoleHeadset}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead7c81e929f37a918c42ca5df1d8ca4e2}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead7c81e929f37a918c42ca5df1d8ca4e2}} 
+e\+Role\+Headset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleHandset@{eRoleHandset}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleHandset@{eRoleHandset}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea9f8a2e0431deefececdd70f6a7293da7}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea9f8a2e0431deefececdd70f6a7293da7}} 
+e\+Role\+Handset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleUnknownDigitalPassthrough@{eRoleUnknownDigitalPassthrough}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleUnknownDigitalPassthrough@{eRoleUnknownDigitalPassthrough}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea1b20a66561768fc1850e2c434e064c66}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dea1b20a66561768fc1850e2c434e064c66}} 
+e\+Role\+Unknown\+Digital\+Passthrough&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleSPDIF@{eRoleSPDIF}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleSPDIF@{eRoleSPDIF}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deae2e8ddb67754490ecc910dd1ee7e67c1}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deae2e8ddb67754490ecc910dd1ee7e67c1}} 
+e\+Role\+SPDIF&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleHDMI@{eRoleHDMI}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleHDMI@{eRoleHDMI}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaeace84587f0fbeb0c1b50dc3e3573dce}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40deaeace84587f0fbeb0c1b50dc3e3573dce}} 
+e\+Role\+HDMI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eRoleUnknownFormFactor@{eRoleUnknownFormFactor}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eRoleUnknownFormFactor@{eRoleUnknownFormFactor}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead69779ccf0a1bb0089a6fb5d6e127279}\label{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40dead69779ccf0a1bb0089a6fb5d6e127279}} 
+e\+Role\+Unknown\+Form\+Factor&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiFlags@{PaWasapiFlags}}
+\index{PaWasapiFlags@{PaWasapiFlags}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiFlags}{PaWasapiFlags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725be}{Pa\+Wasapi\+Flags}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiExclusive@{paWinWasapiExclusive}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiExclusive@{paWinWasapiExclusive}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea03a519ca5e890b232994c25bc2a15b1e}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea03a519ca5e890b232994c25bc2a15b1e}} 
+pa\+Win\+Wasapi\+Exclusive&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiRedirectHostProcessor@{paWinWasapiRedirectHostProcessor}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiRedirectHostProcessor@{paWinWasapiRedirectHostProcessor}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beab48119221a4cd9aa0428882dfb729c0b}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beab48119221a4cd9aa0428882dfb729c0b}} 
+pa\+Win\+Wasapi\+Redirect\+Host\+Processor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiUseChannelMask@{paWinWasapiUseChannelMask}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiUseChannelMask@{paWinWasapiUseChannelMask}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaf3f72a69e5c4f62c22496328805be67e}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaf3f72a69e5c4f62c22496328805be67e}} 
+pa\+Win\+Wasapi\+Use\+Channel\+Mask&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiPolling@{paWinWasapiPolling}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiPolling@{paWinWasapiPolling}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaa3171090ee90b00f3f68c906b8dd7e5d}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaa3171090ee90b00f3f68c906b8dd7e5d}} 
+pa\+Win\+Wasapi\+Polling&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiThreadPriority@{paWinWasapiThreadPriority}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiThreadPriority@{paWinWasapiThreadPriority}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea1fcbc0f3ce367c5ffa8bd49985f7d65a}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea1fcbc0f3ce367c5ffa8bd49985f7d65a}} 
+pa\+Win\+Wasapi\+Thread\+Priority&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiExplicitSampleFormat@{paWinWasapiExplicitSampleFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiExplicitSampleFormat@{paWinWasapiExplicitSampleFormat}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaabfd5e95011c99f4bf29b717bfcf7922}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725beaabfd5e95011c99f4bf29b717bfcf7922}} 
+pa\+Win\+Wasapi\+Explicit\+Sample\+Format&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWinWasapiAutoConvert@{paWinWasapiAutoConvert}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWinWasapiAutoConvert@{paWinWasapiAutoConvert}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea97e62e56b3b5bec12ec54db89f20e504}\label{pa__win__wasapi_8h_a5d5e585f667bc748c7cab4c9c4a725bea97e62e56b3b5bec12ec54db89f20e504}} 
+pa\+Win\+Wasapi\+Auto\+Convert&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackConnectionType@{PaWasapiJackConnectionType}}
+\index{PaWasapiJackConnectionType@{PaWasapiJackConnectionType}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackConnectionType}{PaWasapiJackConnectionType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1}{Pa\+Wasapi\+Jack\+Connection\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeUnknown@{eJackConnTypeUnknown}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeUnknown@{eJackConnTypeUnknown}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1aeef277daed454afbe5db9cc53b73822d}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1aeef277daed454afbe5db9cc53b73822d}} 
+e\+Jack\+Conn\+Type\+Unknown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnType3Point5mm@{eJackConnType3Point5mm}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnType3Point5mm@{eJackConnType3Point5mm}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1ab232edb9641629d2896357858df51c70}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1ab232edb9641629d2896357858df51c70}} 
+e\+Jack\+Conn\+Type3\+Point5mm&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeQuarter@{eJackConnTypeQuarter}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeQuarter@{eJackConnTypeQuarter}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a76052cc9e64d066e286cc6bac00ed62b}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a76052cc9e64d066e286cc6bac00ed62b}} 
+e\+Jack\+Conn\+Type\+Quarter&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeAtapiInternal@{eJackConnTypeAtapiInternal}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeAtapiInternal@{eJackConnTypeAtapiInternal}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a60e43ef61f0becd5b174e4e77f6ebed4}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a60e43ef61f0becd5b174e4e77f6ebed4}} 
+e\+Jack\+Conn\+Type\+Atapi\+Internal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeRCA@{eJackConnTypeRCA}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeRCA@{eJackConnTypeRCA}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a9d9d8d9349b9215e3e5656459a080eb0}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a9d9d8d9349b9215e3e5656459a080eb0}} 
+e\+Jack\+Conn\+Type\+RCA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeOptical@{eJackConnTypeOptical}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeOptical@{eJackConnTypeOptical}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a738576cd148978b962fdb7e201055ee1}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a738576cd148978b962fdb7e201055ee1}} 
+e\+Jack\+Conn\+Type\+Optical&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeOtherDigital@{eJackConnTypeOtherDigital}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeOtherDigital@{eJackConnTypeOtherDigital}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3ba01b521ebfd66e06eb5d692ceaec00}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3ba01b521ebfd66e06eb5d692ceaec00}} 
+e\+Jack\+Conn\+Type\+Other\+Digital&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeOtherAnalog@{eJackConnTypeOtherAnalog}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeOtherAnalog@{eJackConnTypeOtherAnalog}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3a72f82f2ae0524a7554e75883a409cb}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a3a72f82f2ae0524a7554e75883a409cb}} 
+e\+Jack\+Conn\+Type\+Other\+Analog&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeMultichannelAnalogDIN@{eJackConnTypeMultichannelAnalogDIN}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeMultichannelAnalogDIN@{eJackConnTypeMultichannelAnalogDIN}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a7dfd87d41f3899e05ba4774429a2cf8c}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a7dfd87d41f3899e05ba4774429a2cf8c}} 
+e\+Jack\+Conn\+Type\+Multichannel\+Analog\+DIN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeXlrProfessional@{eJackConnTypeXlrProfessional}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeXlrProfessional@{eJackConnTypeXlrProfessional}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a8d87cf2183ba9a4d4bba0381956261e6}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a8d87cf2183ba9a4d4bba0381956261e6}} 
+e\+Jack\+Conn\+Type\+Xlr\+Professional&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeRJ11Modem@{eJackConnTypeRJ11Modem}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeRJ11Modem@{eJackConnTypeRJ11Modem}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a25006a561a7f2ae7e56be76e69419a27}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a25006a561a7f2ae7e56be76e69419a27}} 
+e\+Jack\+Conn\+Type\+RJ11\+Modem&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackConnTypeCombination@{eJackConnTypeCombination}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackConnTypeCombination@{eJackConnTypeCombination}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a1540849ce578ea9b5bae30674e41ec61}\label{pa__win__wasapi_8h_a40b6ae7a53886196c59afe8b704695e1a1540849ce578ea9b5bae30674e41ec61}} 
+e\+Jack\+Conn\+Type\+Combination&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackGenLocation@{PaWasapiJackGenLocation}}
+\index{PaWasapiJackGenLocation@{PaWasapiJackGenLocation}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackGenLocation}{PaWasapiJackGenLocation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cf}{Pa\+Wasapi\+Jack\+Gen\+Location}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGenLocPrimaryBox@{eJackGenLocPrimaryBox}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGenLocPrimaryBox@{eJackGenLocPrimaryBox}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfafc1af7a35520874185bdcd3f918256ef}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfafc1af7a35520874185bdcd3f918256ef}} 
+e\+Jack\+Gen\+Loc\+Primary\+Box&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGenLocInternal@{eJackGenLocInternal}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGenLocInternal@{eJackGenLocInternal}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfa65126aa4a47441566c85b3626b86e7f0}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfa65126aa4a47441566c85b3626b86e7f0}} 
+e\+Jack\+Gen\+Loc\+Internal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGenLocSeparate@{eJackGenLocSeparate}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGenLocSeparate@{eJackGenLocSeparate}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfacd687d08859bcb461bab8085f1b43c77}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfacd687d08859bcb461bab8085f1b43c77}} 
+e\+Jack\+Gen\+Loc\+Separate&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGenLocOther@{eJackGenLocOther}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGenLocOther@{eJackGenLocOther}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfadafdc4431fb41cab7d2f7e9079c11d8b}\label{pa__win__wasapi_8h_ac205e0ea20ca795edcfd9f19135cf4cfadafdc4431fb41cab7d2f7e9079c11d8b}} 
+e\+Jack\+Gen\+Loc\+Other&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackGeoLocation@{PaWasapiJackGeoLocation}}
+\index{PaWasapiJackGeoLocation@{PaWasapiJackGeoLocation}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackGeoLocation}{PaWasapiJackGeoLocation}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188}{Pa\+Wasapi\+Jack\+Geo\+Location}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocUnk@{eJackGeoLocUnk}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocUnk@{eJackGeoLocUnk}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a82e965eb8f615dedafda89babed72551}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a82e965eb8f615dedafda89babed72551}} 
+e\+Jack\+Geo\+Loc\+Unk&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocRear@{eJackGeoLocRear}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocRear@{eJackGeoLocRear}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ab2aa90a453490f614b2cac1078bba16f}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ab2aa90a453490f614b2cac1078bba16f}} 
+e\+Jack\+Geo\+Loc\+Rear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocFront@{eJackGeoLocFront}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocFront@{eJackGeoLocFront}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ae813c94e9f55bd40a4ffead5584b4d0c}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ae813c94e9f55bd40a4ffead5584b4d0c}} 
+e\+Jack\+Geo\+Loc\+Front&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocLeft@{eJackGeoLocLeft}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocLeft@{eJackGeoLocLeft}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188afaa13db87519bd23faed247faa92f224}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188afaa13db87519bd23faed247faa92f224}} 
+e\+Jack\+Geo\+Loc\+Left&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocRight@{eJackGeoLocRight}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocRight@{eJackGeoLocRight}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a43fa6750867dc867b58b163f3166e211}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a43fa6750867dc867b58b163f3166e211}} 
+e\+Jack\+Geo\+Loc\+Right&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocTop@{eJackGeoLocTop}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocTop@{eJackGeoLocTop}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a15ebc49750feddc0d15580bb1459f2f4}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a15ebc49750feddc0d15580bb1459f2f4}} 
+e\+Jack\+Geo\+Loc\+Top&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocBottom@{eJackGeoLocBottom}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocBottom@{eJackGeoLocBottom}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ad4f5d5252864353b5e34e4cb4df18847}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188ad4f5d5252864353b5e34e4cb4df18847}} 
+e\+Jack\+Geo\+Loc\+Bottom&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocRearPanel@{eJackGeoLocRearPanel}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocRearPanel@{eJackGeoLocRearPanel}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a723c05df6b615324e42074c073776770}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a723c05df6b615324e42074c073776770}} 
+e\+Jack\+Geo\+Loc\+Rear\+Panel&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocRiser@{eJackGeoLocRiser}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocRiser@{eJackGeoLocRiser}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8309ad278ca624ff91f595962665c217}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8309ad278ca624ff91f595962665c217}} 
+e\+Jack\+Geo\+Loc\+Riser&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocInsideMobileLid@{eJackGeoLocInsideMobileLid}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocInsideMobileLid@{eJackGeoLocInsideMobileLid}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a665cc34b96ee78cc19a8fb8992b6f9a8}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a665cc34b96ee78cc19a8fb8992b6f9a8}} 
+e\+Jack\+Geo\+Loc\+Inside\+Mobile\+Lid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocDrivebay@{eJackGeoLocDrivebay}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocDrivebay@{eJackGeoLocDrivebay}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188af2052f01078dd7b5d8f47bd58a298810}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188af2052f01078dd7b5d8f47bd58a298810}} 
+e\+Jack\+Geo\+Loc\+Drivebay&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocHDMI@{eJackGeoLocHDMI}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocHDMI@{eJackGeoLocHDMI}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a4d6b118ab64ac8f84afce0fc3a69b64a}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a4d6b118ab64ac8f84afce0fc3a69b64a}} 
+e\+Jack\+Geo\+Loc\+HDMI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocOutsideMobileLid@{eJackGeoLocOutsideMobileLid}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocOutsideMobileLid@{eJackGeoLocOutsideMobileLid}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8106e080eab9408b808fe6387b30d9cc}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a8106e080eab9408b808fe6387b30d9cc}} 
+e\+Jack\+Geo\+Loc\+Outside\+Mobile\+Lid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocATAPI@{eJackGeoLocATAPI}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocATAPI@{eJackGeoLocATAPI}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a52adf880d4923db0fdc393655ad4f613}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a52adf880d4923db0fdc393655ad4f613}} 
+e\+Jack\+Geo\+Loc\+ATAPI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocReserved5@{eJackGeoLocReserved5}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocReserved5@{eJackGeoLocReserved5}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a529959d16951897af9f22fe152d739f8}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a529959d16951897af9f22fe152d739f8}} 
+e\+Jack\+Geo\+Loc\+Reserved5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackGeoLocReserved6@{eJackGeoLocReserved6}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackGeoLocReserved6@{eJackGeoLocReserved6}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a3e9728e25791765d6e8bbc33197c7e4a}\label{pa__win__wasapi_8h_ae869986af2827bbd6257bca43d9a8188a3e9728e25791765d6e8bbc33197c7e4a}} 
+e\+Jack\+Geo\+Loc\+Reserved6&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiJackPortConnection@{PaWasapiJackPortConnection}}
+\index{PaWasapiJackPortConnection@{PaWasapiJackPortConnection}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiJackPortConnection}{PaWasapiJackPortConnection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893d}{Pa\+Wasapi\+Jack\+Port\+Connection}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackPortConnJack@{eJackPortConnJack}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackPortConnJack@{eJackPortConnJack}}}\mbox{\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da551246109a231fa4461f49a19b18648a}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da551246109a231fa4461f49a19b18648a}} 
+e\+Jack\+Port\+Conn\+Jack&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackPortConnIntegratedDevice@{eJackPortConnIntegratedDevice}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackPortConnIntegratedDevice@{eJackPortConnIntegratedDevice}}}\mbox{\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893daef9f29f757f6c624178c248407be39e7}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893daef9f29f757f6c624178c248407be39e7}} 
+e\+Jack\+Port\+Conn\+Integrated\+Device&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackPortConnBothIntegratedAndJack@{eJackPortConnBothIntegratedAndJack}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackPortConnBothIntegratedAndJack@{eJackPortConnBothIntegratedAndJack}}}\mbox{\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893dabafdd05b8e51314766c0fcd3d754cd36}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893dabafdd05b8e51314766c0fcd3d754cd36}} 
+e\+Jack\+Port\+Conn\+Both\+Integrated\+And\+Jack&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eJackPortConnUnknown@{eJackPortConnUnknown}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eJackPortConnUnknown@{eJackPortConnUnknown}}}\mbox{\Hypertarget{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da6952e4865d35e1144884c803239b82f0}\label{pa__win__wasapi_8h_aa4c63b1465e5de66f108facd3ddf893da6952e4865d35e1144884c803239b82f0}} 
+e\+Jack\+Port\+Conn\+Unknown&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamCategory@{PaWasapiStreamCategory}}
+\index{PaWasapiStreamCategory@{PaWasapiStreamCategory}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamCategory}{PaWasapiStreamCategory}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}}}
+
+Stream category. Note\+:
+\begin{DoxyItemize}
+\item values are equal to WASAPI AUDIO\+\_\+\+STREAM\+\_\+\+CATEGORY enum
+\item supported since Windows 8.\+0, noop on earlier versions
+\item values 1,2 are deprecated on Windows 10 and not included into enumeration
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryOther@{eAudioCategoryOther}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryOther@{eAudioCategoryOther}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a222935e6f73435297e4eb407222b57ec}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a222935e6f73435297e4eb407222b57ec}} 
+e\+Audio\+Category\+Other&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryCommunications@{eAudioCategoryCommunications}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryCommunications@{eAudioCategoryCommunications}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab4c24cf6d6eff485b55604b3bdb85075}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab4c24cf6d6eff485b55604b3bdb85075}} 
+e\+Audio\+Category\+Communications&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryAlerts@{eAudioCategoryAlerts}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryAlerts@{eAudioCategoryAlerts}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a28717a17195c7abe106f4cf3ec69569d}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a28717a17195c7abe106f4cf3ec69569d}} 
+e\+Audio\+Category\+Alerts&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategorySoundEffects@{eAudioCategorySoundEffects}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategorySoundEffects@{eAudioCategorySoundEffects}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a1becf45d56e30f180d1cf7bb950eb371}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a1becf45d56e30f180d1cf7bb950eb371}} 
+e\+Audio\+Category\+Sound\+Effects&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryGameEffects@{eAudioCategoryGameEffects}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryGameEffects@{eAudioCategoryGameEffects}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab53f225213d075f480002dfed4cd4b36}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab53f225213d075f480002dfed4cd4b36}} 
+e\+Audio\+Category\+Game\+Effects&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryGameMedia@{eAudioCategoryGameMedia}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryGameMedia@{eAudioCategoryGameMedia}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a0e7ceaf44fb57e2e06649087e7292b81}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a0e7ceaf44fb57e2e06649087e7292b81}} 
+e\+Audio\+Category\+Game\+Media&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryGameChat@{eAudioCategoryGameChat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryGameChat@{eAudioCategoryGameChat}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af790ec96b320ba11619982d5f0dd5537}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af790ec96b320ba11619982d5f0dd5537}} 
+e\+Audio\+Category\+Game\+Chat&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategorySpeech@{eAudioCategorySpeech}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategorySpeech@{eAudioCategorySpeech}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab54a3eeb0b7445a6435f173a7763d092}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20ab54a3eeb0b7445a6435f173a7763d092}} 
+e\+Audio\+Category\+Speech&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryMovie@{eAudioCategoryMovie}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryMovie@{eAudioCategoryMovie}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a475cb43bdc473c174bfacf7778656261}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20a475cb43bdc473c174bfacf7778656261}} 
+e\+Audio\+Category\+Movie&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eAudioCategoryMedia@{eAudioCategoryMedia}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eAudioCategoryMedia@{eAudioCategoryMedia}}}\mbox{\Hypertarget{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af9650e7709a97b1a690e3f985a1050d9}\label{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20af9650e7709a97b1a690e3f985a1050d9}} 
+e\+Audio\+Category\+Media&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}\label{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamOption@{PaWasapiStreamOption}}
+\index{PaWasapiStreamOption@{PaWasapiStreamOption}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamOption}{PaWasapiStreamOption}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}}}
+
+Stream option. Note\+:
+\begin{DoxyItemize}
+\item values are equal to WASAPI AUDCLNT\+\_\+\+STREAMOPTIONS enum
+\item supported since Windows 8.\+1, noop on earlier versions
+\end{DoxyItemize}
+
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eStreamOptionNone@{eStreamOptionNone}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eStreamOptionNone@{eStreamOptionNone}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa0cacf626538e85a6400c3f84a85e7314}\label{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa0cacf626538e85a6400c3f84a85e7314}} 
+e\+Stream\+Option\+None&default \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eStreamOptionRaw@{eStreamOptionRaw}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eStreamOptionRaw@{eStreamOptionRaw}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa02bcdd8d429cdcd27f16b05c63d78c9d}\label{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857fa02bcdd8d429cdcd27f16b05c63d78c9d}} 
+e\+Stream\+Option\+Raw&bypass WASAPI Audio Engine DSP effects, supported since Windows 8.\+1 \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eStreamOptionMatchFormat@{eStreamOptionMatchFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eStreamOptionMatchFormat@{eStreamOptionMatchFormat}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857faa9671dd31883a02493ef2ab69db3126c}\label{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857faa9671dd31883a02493ef2ab69db3126c}} 
+e\+Stream\+Option\+Match\+Format&force WASAPI Audio Engine into a stream format, supported since Windows 10 \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}\label{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiStreamState@{PaWasapiStreamState}}
+\index{PaWasapiStreamState@{PaWasapiStreamState}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStreamState}{PaWasapiStreamState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1}{Pa\+Wasapi\+Stream\+State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWasapiStreamStateError@{paWasapiStreamStateError}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateError@{paWasapiStreamStateError}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a9f3bd29288bcc1d77e309153c76f2adb}\label{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a9f3bd29288bcc1d77e309153c76f2adb}} 
+pa\+Wasapi\+Stream\+State\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWasapiStreamStateThreadPrepare@{paWasapiStreamStateThreadPrepare}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadPrepare@{paWasapiStreamStateThreadPrepare}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1adc643dc12887baa00e199fd258c0c1db}\label{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1adc643dc12887baa00e199fd258c0c1db}} 
+pa\+Wasapi\+Stream\+State\+Thread\+Prepare&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWasapiStreamStateThreadStart@{paWasapiStreamStateThreadStart}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadStart@{paWasapiStreamStateThreadStart}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1abc5f8c139b5803ac58447d967a8d5bb0}\label{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1abc5f8c139b5803ac58447d967a8d5bb0}} 
+pa\+Wasapi\+Stream\+State\+Thread\+Start&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWasapiStreamStateThreadStop@{paWasapiStreamStateThreadStop}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!paWasapiStreamStateThreadStop@{paWasapiStreamStateThreadStop}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a8b71aa0cf5b2054e1dd031c4a63d02f8}\label{pa__win__wasapi_8h_a8ec143d5db33899c5ee3de26026aecc1a8b71aa0cf5b2054e1dd031c4a63d02f8}} 
+pa\+Wasapi\+Stream\+State\+Thread\+Stop&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiThreadPriority@{PaWasapiThreadPriority}}
+\index{PaWasapiThreadPriority@{PaWasapiThreadPriority}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiThreadPriority}{PaWasapiThreadPriority}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityNone@{eThreadPriorityNone}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityNone@{eThreadPriorityNone}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a20a9497196a4fe472458ebba0ab678f4}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a20a9497196a4fe472458ebba0ab678f4}} 
+e\+Thread\+Priority\+None&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityAudio@{eThreadPriorityAudio}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityAudio@{eThreadPriorityAudio}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a06c9f997fd5d9e11d4ef8bf67342f031}} 
+e\+Thread\+Priority\+Audio&Default for Shared mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityCapture@{eThreadPriorityCapture}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityCapture@{eThreadPriorityCapture}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac87aeb9efa4bec8bea12e903f299807f}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac87aeb9efa4bec8bea12e903f299807f}} 
+e\+Thread\+Priority\+Capture&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityDistribution@{eThreadPriorityDistribution}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityDistribution@{eThreadPriorityDistribution}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a5bb6827712269579be747212f0ab5666}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a5bb6827712269579be747212f0ab5666}} 
+e\+Thread\+Priority\+Distribution&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityGames@{eThreadPriorityGames}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityGames@{eThreadPriorityGames}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac4b78888f31554eed7c49c2bb6ebe654}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661ac4b78888f31554eed7c49c2bb6ebe654}} 
+e\+Thread\+Priority\+Games&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityPlayback@{eThreadPriorityPlayback}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityPlayback@{eThreadPriorityPlayback}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661af6deb64da6b3b8c286843c3111d630ee}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661af6deb64da6b3b8c286843c3111d630ee}} 
+e\+Thread\+Priority\+Playback&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityProAudio@{eThreadPriorityProAudio}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityProAudio@{eThreadPriorityProAudio}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661a9a34413b0a045f4c44d10a49d3357187}} 
+e\+Thread\+Priority\+Pro\+Audio&Default for Exclusive mode. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eThreadPriorityWindowManager@{eThreadPriorityWindowManager}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!eThreadPriorityWindowManager@{eThreadPriorityWindowManager}}}\mbox{\Hypertarget{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661aff35fbdda7cff800902be260ad350540}\label{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661aff35fbdda7cff800902be260ad350540}} 
+e\+Thread\+Priority\+Window\+Manager&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a25c33a7937780119df74e951d9bfaf00}\label{pa__win__wasapi_8h_a25c33a7937780119df74e951d9bfaf00}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetAudioClient@{PaWasapi\_GetAudioClient}}
+\index{PaWasapi\_GetAudioClient@{PaWasapi\_GetAudioClient}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetAudioClient()}{PaWasapi\_GetAudioClient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Audio\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+Audio\+Client,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Returns pointer to WASAPI\textquotesingle{}s IAudio\+Client object of the stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Audio\+Client} & Pointer to pointer of IAudio\+Client. \\
+\hline
+{\em b\+Output} & TRUE (1) for output stream, FALSE (0) for input stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_adb5f9ba32018e00630e9181cc86d97bb}\label{pa__win__wasapi_8h_adb5f9ba32018e00630e9181cc86d97bb}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceCurrentFormat@{PaWasapi\_GetDeviceCurrentFormat}}
+\index{PaWasapi\_GetDeviceCurrentFormat@{PaWasapi\_GetDeviceCurrentFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceCurrentFormat()}{PaWasapi\_GetDeviceCurrentFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Current\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Get current audio format of the device assigned to the opened stream.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. Use this function to reconfirm format if PA\textquotesingle{}s processor is overridden and pa\+Win\+Wasapi\+Redirect\+Host\+Processor flag is specified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em b\+Output} & TRUE (1) for output stream, FALSE (0) for input stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a5076434a69a9ef02e1966f3ea65da937}\label{pa__win__wasapi_8h_a5076434a69a9ef02e1966f3ea65da937}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}}
+\index{PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceDefaultFormat()}{PaWasapi\_GetDeviceDefaultFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get default audio format for the device in Shared Mode.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure and obtained by getting the device property with a PKEY\+\_\+\+Audio\+Engine\+\_\+\+Device\+Format key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a80dfb8c49a4a12ca177afbaac9db3d06}\label{pa__win__wasapi_8h_a80dfb8c49a4a12ca177afbaac9db3d06}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceMixFormat@{PaWasapi\_GetDeviceMixFormat}}
+\index{PaWasapi\_GetDeviceMixFormat@{PaWasapi\_GetDeviceMixFormat}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceMixFormat()}{PaWasapi\_GetDeviceMixFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Mix\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get mix audio format for the device in Shared Mode.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structureand obtained by IAudio\+Client\+::\+Get\+Mix\+Format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ac914f9b877451fc998298e4beec10208}\label{pa__win__wasapi_8h_ac914f9b877451fc998298e4beec10208}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}}
+\index{PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceRole()}{PaWasapi\_GetDeviceRole()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Role (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get device role (Pa\+Wasapi\+Device\+Role enum).
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating device role or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ab9ac66d7e4bedab8b7ec38146526eb24}\label{pa__win__wasapi_8h_ab9ac66d7e4bedab8b7ec38146526eb24}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}}
+\index{PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetFramesPerHostBuffer()}{PaWasapi\_GetFramesPerHostBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{unsigned int $\ast$}]{p\+Input,  }\item[{unsigned int $\ast$}]{p\+Output }\end{DoxyParamCaption})}
+
+Get number of frames per host buffer.
+
+It is max value of frames of WASAPI buffer which can be locked for operations. Use this method as helper to find out max values of input\+Frames/output\+Frames of Pa\+Wasapi\+Host\+Processor\+Callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Input} & Pointer to variable to receive number of input frames. Can be NULL. \\
+\hline
+{\em p\+Output} & Pointer to variable to receive number of output frames. Can be NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a739878064482dc638ed89b68a7dff00f}\label{pa__win__wasapi_8h_a739878064482dc638ed89b68a7dff00f}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetIMMDevice@{PaWasapi\_GetIMMDevice}}
+\index{PaWasapi\_GetIMMDevice@{PaWasapi\_GetIMMDevice}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetIMMDevice()}{PaWasapi\_GetIMMDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+IMMDevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+IMMDevice }\end{DoxyParamCaption})}
+
+Get device IMMDevice pointer
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em p\+Audio\+Client} & Pointer to pointer of IMMDevice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_aee7cb6ee52ae7c55f12db908be2feecb}\label{pa__win__wasapi_8h_aee7cb6ee52ae7c55f12db908be2feecb}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}}
+\index{PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackCount()}{PaWasapi\_GetJackCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int $\ast$}]{p\+Jack\+Count }\end{DoxyParamCaption})}
+
+Get number of jacks associated with a WASAPI device.
+
+Use this method to determine if there are any jacks associated with the provided WASAPI device. Not all audio devices will support this capability. This is valid for both input and output devices.
+
+\begin{DoxyNote}{Note}
+Not available on UWP platform.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em p\+Jack\+Count} & Pointer to variable to receive number of jacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_ae61299a2f58f2bf55f9849b64914ae66}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ae61299a2f58f2bf55f9849b64914ae66}\label{pa__win__wasapi_8h_ae61299a2f58f2bf55f9849b64914ae66}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}}
+\index{PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackDescription()}{PaWasapi\_GetJackDescription()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{jack\+Index,  }\item[{\mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} $\ast$}]{p\+Jack\+Description }\end{DoxyParamCaption})}
+
+Get the jack description associated with a WASAPI device and jack number.
+
+Before this function is called, use Pa\+Wasapi\+\_\+\+Get\+Jack\+Count to determine the number of jacks associated with device. If jcount is greater than zero, then each jack from 0 to jcount can be queried with this function to get the jack description.
+
+\begin{DoxyNote}{Note}
+Not available on UWP platform.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em jack\+Index} & Jack index. \\
+\hline
+{\em p\+Jack\+Description} & Pointer to \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_aee7cb6ee52ae7c55f12db908be2feecb}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a730e026069b18726e0fea2308868f820}\label{pa__win__wasapi_8h_a730e026069b18726e0fea2308868f820}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_SetStreamStateHandler@{PaWasapi\_SetStreamStateHandler}}
+\index{PaWasapi\_SetStreamStateHandler@{PaWasapi\_SetStreamStateHandler}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_SetStreamStateHandler()}{PaWasapi\_SetStreamStateHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Set\+Stream\+State\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}}}]{fn\+State\+Handler,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+User\+Data }\end{DoxyParamCaption})}
+
+Set stream state handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em fn\+State\+Handler} & Pointer to state handling function. \\
+\hline
+{\em p\+User\+Data} & Pointer to user data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ad18e3aede8d98f7144f6279c22b88c87}\label{pa__win__wasapi_8h_ad18e3aede8d98f7144f6279c22b88c87}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}}
+\index{PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityBoost()}{PaWasapi\_ThreadPriorityBoost()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+Task,  }\item[{\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}]{priority\+Class }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS).
+
+Use it for Blocking Interface only inside the thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Task} & Handle to pointer to priority task. Must be used with Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority method to revert thread priority to initial state.\\
+\hline
+{\em priority\+Class} & Id of thread priority of Pa\+Wasapi\+Thread\+Priority type. Specifying e\+Thread\+Priority\+None does nothing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8h_ac1a76bc94a9144ed456575fec190323d}\label{pa__win__wasapi_8h_ac1a76bc94a9144ed456575fec190323d}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}}
+\index{PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityRevert()}{PaWasapi\_ThreadPriorityRevert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Task }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS).
+
+Use it for Blocking Interface only inside the thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Task} & Task handle obtained by Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}\label{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapi\_UpdateDeviceList@{PaWasapi\_UpdateDeviceList}}
+\index{PaWasapi\_UpdateDeviceList@{PaWasapi\_UpdateDeviceList}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_UpdateDeviceList()}{PaWasapi\_UpdateDeviceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Update\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update device list.
+
+This function is available if PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT is defined during compile time with maximum constant WASAPI device count (recommended value -\/ 32). If PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT is set to 0 (or not defined) during compile time the implementation will not define \mbox{\hyperlink{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List()}} and thus updating device list can only be possible by calling \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}} and then \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}.
+
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a7ac47bc66f443d6713f011a7937b0b69}\label{pa__win__wasapi_8h_a7ac47bc66f443d6713f011a7937b0b69}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiWinrt\_PopulateDeviceList@{PaWasapiWinrt\_PopulateDeviceList}}
+\index{PaWasapiWinrt\_PopulateDeviceList@{PaWasapiWinrt\_PopulateDeviceList}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiWinrt\_PopulateDeviceList()}{PaWasapiWinrt\_PopulateDeviceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+Winrt\+\_\+\+Populate\+Device\+List (\begin{DoxyParamCaption}\item[{const unsigned short $\ast$$\ast$}]{p\+Id,  }\item[{const unsigned short $\ast$$\ast$}]{p\+Name,  }\item[{const \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} $\ast$}]{p\+Role,  }\item[{unsigned int}]{count,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Populate the device list.
+
+By default the implementation will rely on DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER and DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE as default devices. If device Id is provided by \mbox{\hyperlink{pa__win__wasapi_8h_a7f85ba84da29809aa47438c8708465a4}{Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id()}} then those device Ids will be used as default and only devices for the device list.
+
+By populating the device list you can provide an additional available audio devices of the system to PA which are obtainable by\+: Windows\+::\+Devices\+::\+Enumeration\+::\+Device\+Information\+::\+Find\+All\+Async(selector) where selector is obtainable by Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Audio\+Render\+Selector() or Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Audio\+Capture\+Selector() API.
+
+After the call completes, memory referenced by pointers can be freed, as implementation keeps its own copy.
+
+You must call \mbox{\hyperlink{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List()}} to update the internal device list of the implementation after calling this function.
+
+See an example in the IMPORTANT notes.
+
+\begin{DoxyNote}{Note}
+UWP/\+Win\+RT platform only.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Id} & Array of device Ids, pointer to the array of pointers of 16-\/bit Unicode string (WCHAR). If NULL and count is also 0 then device Ids will be reset to the default. Required. \\
+\hline
+{\em p\+Name} & Array of device Names, pointer to the array of pointers of 16-\/bit Unicode string (WCHAR). Optional. \\
+\hline
+{\em p\+Role} & Array of device Roles, see Pa\+Wasapi\+Device\+Role and \mbox{\hyperlink{pa__win__wasapi_8h_ac914f9b877451fc998298e4beec10208}{Pa\+Wasapi\+\_\+\+Get\+Device\+Role()}} for more details. Optional. \\
+\hline
+{\em count} & Number of devices, the number of array elements (p\+Id, p\+Name, p\+Role). Maximum count of devices is limited by PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COUNT. \\
+\hline
+{\em b\+Output} & TRUE (1) for output (render), FALSE (0) for input (capture).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. Will return pa\+Incompatible\+Stream\+Host\+Api if library is not compiled for UWP/\+Win\+RT platform. If Id is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. If Name is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8h_a7f85ba84da29809aa47438c8708465a4}\label{pa__win__wasapi_8h_a7f85ba84da29809aa47438c8708465a4}} 
+\index{pa\_win\_wasapi.h@{pa\_win\_wasapi.h}!PaWasapiWinrt\_SetDefaultDeviceId@{PaWasapiWinrt\_SetDefaultDeviceId}}
+\index{PaWasapiWinrt\_SetDefaultDeviceId@{PaWasapiWinrt\_SetDefaultDeviceId}!pa\_win\_wasapi.h@{pa\_win\_wasapi.h}}
+\doxysubsubsection{\texorpdfstring{PaWasapiWinrt\_SetDefaultDeviceId()}{PaWasapiWinrt\_SetDefaultDeviceId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id (\begin{DoxyParamCaption}\item[{const unsigned short $\ast$}]{p\+Id,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Set default device Id.
+
+By default implementation will use the DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER and DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE Ids if device Id is not provided explicitly. These default Ids will not allow to use Exclusive mode on UWP/\+Win\+RT platform and thus you must provide device Id explicitly via this API before calling the \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}.
+
+Device Ids on UWP platform are obtainable via\+: Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Default\+Audio\+Render\+Id() or Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Default\+Audio\+Capture\+Id() API.
+
+After the call completes, memory referenced by pointers can be freed, as implementation keeps its own copy.
+
+Call this function before calling \mbox{\hyperlink{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}{Pa\+\_\+\+Is\+Format\+Supported()}} when Exclusive mode is requested.
+
+See an example in the IMPORTANT notes.
+
+\begin{DoxyNote}{Note}
+UWP/\+Win\+RT platform only.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Id} & Device Id, pointer to the 16-\/bit Unicode string (WCHAR). If NULL then device Id will be reset to the default, e.\+g. DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER or DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE. \\
+\hline
+{\em b\+Output} & TRUE (1) for output (render), FALSE (0) for input (capture).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. Will return pa\+Incompatible\+Stream\+Host\+Api if library is not compiled for UWP/\+Win\+RT platform. If Id is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. 
+\end{DoxyReturn}

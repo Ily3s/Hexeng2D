@@ -1,0 +1,111 @@
+\hypertarget{struct_pa_wasapi_stream_info}{}\doxysection{Pa\+Wasapi\+Stream\+Info Struct Reference}
+\label{struct_pa_wasapi_stream_info}\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+
+
+{\ttfamily \#include $<$pa\+\_\+win\+\_\+wasapi.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_wasapi_stream_info_ae491f41ce5954cddd438624dc69eba1b}{size}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a931bf93691d5b36b621d49402d1d2255}{host\+Api\+Type}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_wasapi_stream_info_a3045f4432a92d761e4a1b95eba97ae49}{version}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_wasapi_stream_info_a85bfbe1a00e6b48df75528eb6f967a2c}{flags}}
+\item 
+\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a3e893ff6c6f81fb7171ac325136a7dd1}{channel\+Mask}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a300576059815d6ab77af37f708f818ac}{host\+Processor\+Output}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a0cb8bd209c8b453e9d1d08909e63ac38}{host\+Processor\+Input}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a81ed024aceceb79e593aa4f1ec28594a}{thread\+Priority}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a4a85848eaa76d85d0d305060b094d76a}{stream\+Category}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} \mbox{\hyperlink{struct_pa_wasapi_stream_info_a9ecd3ca932f2de23d1e1991f6ab3b580}{stream\+Option}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_wasapi_stream_info_a3e893ff6c6f81fb7171ac325136a7dd1}\label{struct_pa_wasapi_stream_info_a3e893ff6c6f81fb7171ac325136a7dd1}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!channelMask@{channelMask}}
+\index{channelMask@{channelMask}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{channelMask}{channelMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} Pa\+Wasapi\+Stream\+Info\+::channel\+Mask}
+
+Support for WAVEFORMATEXTENSIBLE channel masks. If flags contains pa\+Win\+Wasapi\+Use\+Channel\+Mask this allows you to specify which speakers to address in a multichannel stream. Constants for channel\+Mask are specified in \mbox{\hyperlink{pa__win__waveformat_8h}{pa\+\_\+win\+\_\+waveformat.\+h}}. Will be used only if pa\+Win\+Wasapi\+Use\+Channel\+Mask flag is specified. \mbox{\Hypertarget{struct_pa_wasapi_stream_info_a85bfbe1a00e6b48df75528eb6f967a2c}\label{struct_pa_wasapi_stream_info_a85bfbe1a00e6b48df75528eb6f967a2c}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!flags@{flags}}
+\index{flags@{flags}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily unsigned long Pa\+Wasapi\+Stream\+Info\+::flags}
+
+collection of Pa\+Wasapi\+Flags \mbox{\Hypertarget{struct_pa_wasapi_stream_info_a931bf93691d5b36b621d49402d1d2255}\label{struct_pa_wasapi_stream_info_a931bf93691d5b36b621d49402d1d2255}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!hostApiType@{hostApiType}}
+\index{hostApiType@{hostApiType}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{hostApiType}{hostApiType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} Pa\+Wasapi\+Stream\+Info\+::host\+Api\+Type}
+
+pa\+WASAPI \mbox{\Hypertarget{struct_pa_wasapi_stream_info_a0cb8bd209c8b453e9d1d08909e63ac38}\label{struct_pa_wasapi_stream_info_a0cb8bd209c8b453e9d1d08909e63ac38}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!hostProcessorInput@{hostProcessorInput}}
+\index{hostProcessorInput@{hostProcessorInput}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{hostProcessorInput}{hostProcessorInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} Pa\+Wasapi\+Stream\+Info\+::host\+Processor\+Input}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_info_a300576059815d6ab77af37f708f818ac}\label{struct_pa_wasapi_stream_info_a300576059815d6ab77af37f708f818ac}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!hostProcessorOutput@{hostProcessorOutput}}
+\index{hostProcessorOutput@{hostProcessorOutput}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{hostProcessorOutput}{hostProcessorOutput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} Pa\+Wasapi\+Stream\+Info\+::host\+Processor\+Output}
+
+Delivers raw data to callback obtained from Get\+Buffer() methods skipping internal Port\+Audio processing inventory completely. user\+Data parameter will be the same that was passed to Pa\+\_\+\+Open\+Stream method. Will be used only if pa\+Win\+Wasapi\+Redirect\+Host\+Processor flag is specified. \mbox{\Hypertarget{struct_pa_wasapi_stream_info_ae491f41ce5954cddd438624dc69eba1b}\label{struct_pa_wasapi_stream_info_ae491f41ce5954cddd438624dc69eba1b}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!size@{size}}
+\index{size@{size}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily unsigned long Pa\+Wasapi\+Stream\+Info\+::size}
+
+sizeof(\+Pa\+Wasapi\+Stream\+Info) \mbox{\Hypertarget{struct_pa_wasapi_stream_info_a4a85848eaa76d85d0d305060b094d76a}\label{struct_pa_wasapi_stream_info_a4a85848eaa76d85d0d305060b094d76a}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!streamCategory@{streamCategory}}
+\index{streamCategory@{streamCategory}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{streamCategory}{streamCategory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} Pa\+Wasapi\+Stream\+Info\+::stream\+Category}
+
+Stream category. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_ad97a45cc69a868e307e1111e715e6d20}{Pa\+Wasapi\+Stream\+Category}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\mbox{\Hypertarget{struct_pa_wasapi_stream_info_a9ecd3ca932f2de23d1e1991f6ab3b580}\label{struct_pa_wasapi_stream_info_a9ecd3ca932f2de23d1e1991f6ab3b580}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!streamOption@{streamOption}}
+\index{streamOption@{streamOption}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{streamOption}{streamOption}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} Pa\+Wasapi\+Stream\+Info\+::stream\+Option}
+
+Stream option. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_a5ae8d22b8699b82f6ee63d195f8c857f}{Pa\+Wasapi\+Stream\+Option}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+6.\+0 
+\end{DoxyVersion}
+\mbox{\Hypertarget{struct_pa_wasapi_stream_info_a81ed024aceceb79e593aa4f1ec28594a}\label{struct_pa_wasapi_stream_info_a81ed024aceceb79e593aa4f1ec28594a}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!threadPriority@{threadPriority}}
+\index{threadPriority@{threadPriority}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{threadPriority}{threadPriority}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} Pa\+Wasapi\+Stream\+Info\+::thread\+Priority}
+
+Specifies thread priority explicitly. Will be used only if pa\+Win\+Wasapi\+Thread\+Priority flag is specified.
+
+Please note, if Input/\+Output streams are opened simultaneously (Full-\/\+Duplex mode) you shall specify same value for thread\+Priority or othervise one of the values will be used to setup thread priority. \mbox{\Hypertarget{struct_pa_wasapi_stream_info_a3045f4432a92d761e4a1b95eba97ae49}\label{struct_pa_wasapi_stream_info_a3045f4432a92d761e4a1b95eba97ae49}} 
+\index{PaWasapiStreamInfo@{PaWasapiStreamInfo}!version@{version}}
+\index{version@{version}!PaWasapiStreamInfo@{PaWasapiStreamInfo}}
+\doxysubsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily unsigned long Pa\+Wasapi\+Stream\+Info\+::version}
+
+1 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/include/\mbox{\hyperlink{pa__win__wasapi_8h}{pa\+\_\+win\+\_\+wasapi.\+h}}\end{DoxyCompactItemize}

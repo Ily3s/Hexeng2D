@@ -1,0 +1,88 @@
+\hypertarget{_hibox_8hpp_source}{}\doxysection{Hibox.\+hpp}
+\label{_hibox_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Hibox.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Hibox.hpp}}
+\mbox{\hyperlink{_hibox_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef HITBOX\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define HITBOX\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../EventManager/EventManager.hpp"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Renderer/Layer.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../Renderer/Quad.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15     \textcolor{keyword}{class }Scene;}
+\DoxyCodeLine{16 \}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_physics}{Hexeng::Physics}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box_a4bee3d6491510b1270dd11f729345db9}{max}};}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} prev\_min, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box_ae85976066fdbc39a0432888c8b303fd4}{prev\_max}};}
+\DoxyCodeLine{24         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box_a2554e05b2c302c4cb52d1e752c55d0d7}{size}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box_a0a78e2d9f4128c267216ad2056bc4477}{RectangleHitBox}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} max) : min(min), max(max), size(max -\/ min), prev\_min(min), prev\_max(max) \{\}}
+\DoxyCodeLine{27     \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2ae}{From}}}
+\DoxyCodeLine{30     \{}
+\DoxyCodeLine{31         \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2aeab71eea4c12f4d54d96cfaf039b574689}{NOWHERE}} = 0,}
+\DoxyCodeLine{32         \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2aeab24436a7bab0fa6dc89ad0684c6fc675}{BOT}},}
+\DoxyCodeLine{33         \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2aea6705777b712ee811e76fb07162081d63}{TOP}},}
+\DoxyCodeLine{34         \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2aea684d325a7303f52e64011467ff5c5758}{LEFT}},}
+\DoxyCodeLine{35         \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2aea21507b40c80068eda19865706fdc2403}{RIGHT}}}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}}
+\DoxyCodeLine{39     \{}
+\DoxyCodeLine{40     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_scene}{Hexeng::Scene}};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         std::vector<RectangleHitBox> \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ab0a2375fb2dc263e32a1ebbceb95b0dd}{m\_rectangles}};}
+\DoxyCodeLine{45         \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a5bd5507e8abad0c5ec64ddaa027231c0}{m\_solidity}};}
+\DoxyCodeLine{46         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a442e07ece0709714633744cac168e285}{enable\_collision}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keyword}{static} std::unordered\_map<int, std::vector<HitBox*>> \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a02fa543c9e31c08d7726ff374073a5f4}{s\_colliders}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keyword}{static} std::unordered\_map <int, Renderer::Layer> \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ab48b6a14fb319d93eea62e281ad8eb0a}{visuallisers\_layers}};}
+\DoxyCodeLine{51         std::vector<Renderer::DebugQuad> \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a9c877f6ffb9fb789fc87e270d3d7c1ba}{visuallisers}};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{public}:}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}(\textcolor{keyword}{const} std::vector<RectangleHitBox>\& rectangles, \textcolor{keywordtype}{int} solidity, \textcolor{keywordtype}{bool} enable\_collision = \textcolor{keyword}{true});}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a7eb5295f544addae4da58f4e5eeed84c}{HitBox}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{58         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a5a5feb2fca702e3b053ffb4bb519f36c}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}(\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\&\&) noexcept;}
+\DoxyCodeLine{61         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\&\&) noexcept;}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         static EventManager::EventGate collisions\_evt;}
+\DoxyCodeLine{64         static \textcolor{keywordtype}{void} load\_collisions();}
+\DoxyCodeLine{65         static std::pair<\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}*, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}*> is\_colliding(\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& hb1, \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& hb2);}
+\DoxyCodeLine{66         static \textcolor{keywordtype}{bool} is\_colliding(const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}\& hb1, const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}\& hb2);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         std::vector<\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}> view\_prev\_state();}
+\DoxyCodeLine{69         std::vector<\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}> view\_prev\_state\_x();}
+\DoxyCodeLine{70         std::vector<\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}> view\_prev\_state\_y();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         static \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2ae}{From}} where\_colliding(\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& hb1, \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}\& hb2);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74         virtual \textcolor{keywordtype}{void} on\_collision(std::pair<\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}*, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}*>) \{\};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \textcolor{keyword}{static} \textcolor{keywordtype}{void} set\_visuallisers\_z(\textcolor{keywordtype}{int} z\_pos);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_acbd3aa7f85ecdcc73352ad0ecd0e22c0}{enable\_visuallisers}};}
+\DoxyCodeLine{79     \};}
+\DoxyCodeLine{80 \}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

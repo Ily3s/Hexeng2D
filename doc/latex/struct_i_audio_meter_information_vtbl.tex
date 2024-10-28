@@ -1,0 +1,135 @@
+\hypertarget{struct_i_audio_meter_information_vtbl}{}\doxysection{IAudio\+Meter\+Information\+Vtbl Struct Reference}
+\label{struct_i_audio_meter_information_vtbl}\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+
+
+{\ttfamily \#include $<$endpointvolume.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_af6bd08daeea2822f9067333b475dad4d}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a3a40fb27152373b647aced0cf237918a}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a5be3823513392bc15657a498163a50a9}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_aab1be13ee1c495e52b33fe90d7124409}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Peak\+Value)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a4803cc0790473ce844e1d3767dc6967b}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Metering\+Channel\+Count)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a7bdf97c61eab3281bfcf0835da8bf663}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Channels\+Peak\+Values)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_audio_meter_information_vtbl_ac51b74c5bf768ca42bd8cf2e2b33d8b4}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Hardware\+Support)(\mbox{\hyperlink{endpointvolume_8h_a48abfa438ed63b7947db8cb1be5cc177}{IAudio\+Meter\+Information}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a0a5da77096669d539d18a94855ff3bc1}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a2c3648ad44fc0fd48fe088f68694b661}{ppv\+Object}}
+\item 
+float $\ast$ \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_aead09c02703ec1653d18cd6c749f57e2}{pf\+Peak}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT $\ast$ \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a4d623a4a4046b0ed5d736fec9f5bdfdb}{pn\+Channel\+Count}}
+\item 
+UINT32 \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a56cb77e40e88809fb9d42c5879807354}{u32\+Channel\+Count}}
+\item 
+UINT32 float $\ast$ \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_abdc52aa7adfc696c46057e9a6d2223ed}{af\+Peak\+Values}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} DWORD $\ast$ \mbox{\hyperlink{struct_i_audio_meter_information_vtbl_a872f52800e4baa961ccd83ec0c1c7688}{pdw\+Hardware\+Support\+Mask}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a7bdf97c61eab3281bfcf0835da8bf663}\label{struct_i_audio_meter_information_vtbl_a7bdf97c61eab3281bfcf0835da8bf663}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Channels\+Peak\+Values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a4803cc0790473ce844e1d3767dc6967b}\label{struct_i_audio_meter_information_vtbl_a4803cc0790473ce844e1d3767dc6967b}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Metering\+Channel\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_aab1be13ee1c495e52b33fe90d7124409}\label{struct_i_audio_meter_information_vtbl_aab1be13ee1c495e52b33fe90d7124409}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Peak\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_ac51b74c5bf768ca42bd8cf2e2b33d8b4}\label{struct_i_audio_meter_information_vtbl_ac51b74c5bf768ca42bd8cf2e2b33d8b4}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Hardware\+Support }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_af6bd08daeea2822f9067333b475dad4d}\label{struct_i_audio_meter_information_vtbl_af6bd08daeea2822f9067333b475dad4d}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IAudio\+Meter\+Information\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a3a40fb27152373b647aced0cf237918a}\label{struct_i_audio_meter_information_vtbl_a3a40fb27152373b647aced0cf237918a}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a5be3823513392bc15657a498163a50a9}\label{struct_i_audio_meter_information_vtbl_a5be3823513392bc15657a498163a50a9}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IAudio\+Meter\+Information\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_abdc52aa7adfc696c46057e9a6d2223ed}\label{struct_i_audio_meter_information_vtbl_abdc52aa7adfc696c46057e9a6d2223ed}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!afPeakValues@{afPeakValues}}
+\index{afPeakValues@{afPeakValues}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{afPeakValues}{afPeakValues}}
+{\footnotesize\ttfamily UINT32 float$\ast$ IAudio\+Meter\+Information\+Vtbl\+::af\+Peak\+Values}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a872f52800e4baa961ccd83ec0c1c7688}\label{struct_i_audio_meter_information_vtbl_a872f52800e4baa961ccd83ec0c1c7688}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!pdwHardwareSupportMask@{pdwHardwareSupportMask}}
+\index{pdwHardwareSupportMask@{pdwHardwareSupportMask}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{pdwHardwareSupportMask}{pdwHardwareSupportMask}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} DWORD$\ast$ IAudio\+Meter\+Information\+Vtbl\+::pdw\+Hardware\+Support\+Mask}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_aead09c02703ec1653d18cd6c749f57e2}\label{struct_i_audio_meter_information_vtbl_aead09c02703ec1653d18cd6c749f57e2}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!pfPeak@{pfPeak}}
+\index{pfPeak@{pfPeak}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{pfPeak}{pfPeak}}
+{\footnotesize\ttfamily float$\ast$ IAudio\+Meter\+Information\+Vtbl\+::pf\+Peak}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a4d623a4a4046b0ed5d736fec9f5bdfdb}\label{struct_i_audio_meter_information_vtbl_a4d623a4a4046b0ed5d736fec9f5bdfdb}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!pnChannelCount@{pnChannelCount}}
+\index{pnChannelCount@{pnChannelCount}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{pnChannelCount}{pnChannelCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT$\ast$ IAudio\+Meter\+Information\+Vtbl\+::pn\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a2c3648ad44fc0fd48fe088f68694b661}\label{struct_i_audio_meter_information_vtbl_a2c3648ad44fc0fd48fe088f68694b661}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IAudio\+Meter\+Information\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a0a5da77096669d539d18a94855ff3bc1}\label{struct_i_audio_meter_information_vtbl_a0a5da77096669d539d18a94855ff3bc1}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!riid@{riid}}
+\index{riid@{riid}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IAudio\+Meter\+Information\+Vtbl\+::riid}
+
+\mbox{\Hypertarget{struct_i_audio_meter_information_vtbl_a56cb77e40e88809fb9d42c5879807354}\label{struct_i_audio_meter_information_vtbl_a56cb77e40e88809fb9d42c5879807354}} 
+\index{IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}!u32ChannelCount@{u32ChannelCount}}
+\index{u32ChannelCount@{u32ChannelCount}!IAudioMeterInformationVtbl@{IAudioMeterInformationVtbl}}
+\doxysubsubsection{\texorpdfstring{u32ChannelCount}{u32ChannelCount}}
+{\footnotesize\ttfamily UINT32 IAudio\+Meter\+Information\+Vtbl\+::u32\+Channel\+Count}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{endpointvolume_8h}{endpointvolume.\+h}}\end{DoxyCompactItemize}

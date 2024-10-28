@@ -1,0 +1,108 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer}{}\doxysection{Hexeng\+::Renderer\+::Contextual\+Layer Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_contextual_layer}\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+
+
+A layer that shows up only if a bool is set to true   
+
+
+
+
+{\ttfamily \#include $<$Layer.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Contextual\+Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_contextual_layer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}{Contextual\+Layer}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a2be4912635d0b94e486fcfba0697acf1}{Contextual\+Layer}} (const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&mesh\+\_\+vector, bool $\ast$condition, int z\+\_\+pos=1, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{Position\+::\+ABSOLUTE}}, Range range=Range\+::\+GLOBAL)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_aa4c69fe3d18c3689a2f7b0f450b936eb}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_ae87bd298109a38147811c2db0e309719}{Contextual\+Layer}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \&\&) noexcept
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a0dee3f3dce38250094e31e969944b700}{draw}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer_a71f626fd919417024110f2210904d95e}{context}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A layer that shows up only if a bool is set to true  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_a73c403707910042e5ecba3f35843f6cf}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!ContextualLayer@{ContextualLayer}}
+\index{ContextualLayer@{ContextualLayer}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{ContextualLayer()}{ContextualLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::\+Contextual\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_a2be4912635d0b94e486fcfba0697acf1}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_a2be4912635d0b94e486fcfba0697acf1}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!ContextualLayer@{ContextualLayer}}
+\index{ContextualLayer@{ContextualLayer}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{ContextualLayer()}{ContextualLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::\+Contextual\+Layer (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&}]{mesh\+\_\+vector,  }\item[{bool $\ast$}]{condition,  }\item[{int}]{z\+\_\+pos = {\ttfamily 1},  }\item[{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}]{pos = {\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{Position\+::\+ABSOLUTE}}},  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em condition} & A pointer to the \char`\"{}control variable\char`\"{} of the layer. If the bool it is pointing to is set to false, the layer will not show up, if it is set to true, the layer will show up. \\
+\hline
+{\em z\+\_\+pos} & The depth of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}. \\
+\hline
+{\em pos} & The position mode of the layer (take a look at Position). \\
+\hline
+{\em range} & If set to Range\+::\+LOCAL, the layer needs to be added to a scene. If set to Range\+::\+GLOBAL, the layer will apear on all scenes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_ae87bd298109a38147811c2db0e309719}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_ae87bd298109a38147811c2db0e309719}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!ContextualLayer@{ContextualLayer}}
+\index{ContextualLayer@{ContextualLayer}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{ContextualLayer()}{ContextualLayer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::\+Contextual\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_a0dee3f3dce38250094e31e969944b700}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_a0dee3f3dce38250094e31e969944b700}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!draw@{draw}}
+\index{draw@{draw}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a291d62b7a6aac44d4ce59ce713883178}{Hexeng\+::\+Renderer\+::\+Layer}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_aa4c69fe3d18c3689a2f7b0f450b936eb}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_aa4c69fe3d18c3689a2f7b0f450b936eb}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \& Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_contextual_layer}{Contextual\+Layer}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_contextual_layer_a71f626fd919417024110f2210904d95e}\label{class_hexeng_1_1_renderer_1_1_contextual_layer_a71f626fd919417024110f2210904d95e}} 
+\index{Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}!context@{context}}
+\index{context@{context}!Hexeng::Renderer::ContextualLayer@{Hexeng::Renderer::ContextualLayer}}
+\doxysubsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Renderer\+::\+Contextual\+Layer\+::context = nullptr}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_layer_8hpp}{Layer.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_layer_8cpp}{Layer.\+cpp}}\end{DoxyCompactItemize}

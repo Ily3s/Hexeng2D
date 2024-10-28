@@ -1,0 +1,89 @@
+\hypertarget{classportaudio_1_1_fun_callback_stream}{}\doxysection{portaudio\+::Fun\+Callback\+Stream Class Reference}
+\label{classportaudio_1_1_fun_callback_stream}\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+
+
+Callback stream using a C++ function (either a free function or a static function) callback.  
+
+
+
+
+{\ttfamily \#include $<$Cpp\+Fun\+Callback\+Stream.\+hxx$>$}
+
+Inheritance diagram for portaudio\+::Fun\+Callback\+Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classportaudio_1_1_fun_callback_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structportaudio_1_1_fun_callback_stream_1_1_cpp_to_c_callback_data}{Cpp\+To\+CCallback\+Data}}
+\begin{DoxyCompactList}\small\item\em Simple structure containing a function pointer to the C++ callback function and a (void) pointer to the user supplied data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef int($\ast$ \mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}{Callback\+Fun\+Ptr}}) (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, unsigned long num\+Frames, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_adf0494487368766b3d804e99d385d0b7}{Fun\+Callback\+Stream}} ()
+\item 
+\mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_ab33ceb9f2d1653242b99eebb2e0b5946}{Fun\+Callback\+Stream}} (const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&parameters, \mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}{Callback\+Fun\+Ptr}} fun\+Ptr, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_ac980ec68b89f1b1d78e8d03db4e82a53}{$\sim$\+Fun\+Callback\+Stream}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_a765d0c213f318c76b69fb72a1b10e3d2}{open}} (const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&parameters, \mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}{Callback\+Fun\+Ptr}} fun\+Ptr, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Callback stream using a C++ function (either a free function or a static function) callback. 
+
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}\label{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}} 
+\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}!CallbackFunPtr@{CallbackFunPtr}}
+\index{CallbackFunPtr@{CallbackFunPtr}!portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+\doxysubsubsection{\texorpdfstring{CallbackFunPtr}{CallbackFunPtr}}
+{\footnotesize\ttfamily typedef int($\ast$ portaudio\+::\+Fun\+Callback\+Stream\+::\+Callback\+Fun\+Ptr) (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, unsigned long num\+Frames, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_fun_callback_stream_adf0494487368766b3d804e99d385d0b7}\label{classportaudio_1_1_fun_callback_stream_adf0494487368766b3d804e99d385d0b7}} 
+\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}!FunCallbackStream@{FunCallbackStream}}
+\index{FunCallbackStream@{FunCallbackStream}!portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+\doxysubsubsection{\texorpdfstring{FunCallbackStream()}{FunCallbackStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily portaudio\+::\+Fun\+Callback\+Stream\+::\+Fun\+Callback\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_fun_callback_stream_ab33ceb9f2d1653242b99eebb2e0b5946}\label{classportaudio_1_1_fun_callback_stream_ab33ceb9f2d1653242b99eebb2e0b5946}} 
+\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}!FunCallbackStream@{FunCallbackStream}}
+\index{FunCallbackStream@{FunCallbackStream}!portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+\doxysubsubsection{\texorpdfstring{FunCallbackStream()}{FunCallbackStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily portaudio\+::\+Fun\+Callback\+Stream\+::\+Fun\+Callback\+Stream (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&}]{parameters,  }\item[{\mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}{Callback\+Fun\+Ptr}}}]{fun\+Ptr,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_fun_callback_stream_ac980ec68b89f1b1d78e8d03db4e82a53}\label{classportaudio_1_1_fun_callback_stream_ac980ec68b89f1b1d78e8d03db4e82a53}} 
+\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}!````~FunCallbackStream@{$\sim$FunCallbackStream}}
+\index{````~FunCallbackStream@{$\sim$FunCallbackStream}!portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+\doxysubsubsection{\texorpdfstring{$\sim$FunCallbackStream()}{~FunCallbackStream()}}
+{\footnotesize\ttfamily portaudio\+::\+Fun\+Callback\+Stream\+::$\sim$\+Fun\+Callback\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_fun_callback_stream_a765d0c213f318c76b69fb72a1b10e3d2}\label{classportaudio_1_1_fun_callback_stream_a765d0c213f318c76b69fb72a1b10e3d2}} 
+\index{portaudio::FunCallbackStream@{portaudio::FunCallbackStream}!open@{open}}
+\index{open@{open}!portaudio::FunCallbackStream@{portaudio::FunCallbackStream}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Fun\+Callback\+Stream\+::open (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&}]{parameters,  }\item[{\mbox{\hyperlink{classportaudio_1_1_fun_callback_stream_abad4a65493bda517c7df8d7cee847784}{Callback\+Fun\+Ptr}}}]{fun\+Ptr,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_cpp_fun_callback_stream_8hxx}{Cpp\+Fun\+Callback\+Stream.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_cpp_fun_callback_stream_8cxx}{Cpp\+Fun\+Callback\+Stream.\+cxx}}\end{DoxyCompactItemize}

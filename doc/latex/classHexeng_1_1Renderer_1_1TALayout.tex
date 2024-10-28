@@ -1,0 +1,124 @@
+\doxysection{Hexeng\+::Renderer\+::TALayout Class Reference}
+\hypertarget{classHexeng_1_1Renderer_1_1TALayout}{}\label{classHexeng_1_1Renderer_1_1TALayout}\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+
+
+{\ttfamily \#include $<$Batch\+Renderer.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a1b7fbe377ade0830abc243ab56246805}{TALayout}} (const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em builds a custom layout from an RGBA png where the colors identify the cells. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_afd104ea2a8261207af05e9c1f86d615e}{TALayout}} (float aspect\+\_\+ratio, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ size)
+\begin{DoxyCompactList}\small\item\em builds a grid-\/like layout where all cells are the same size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_aec40317dd9bf7576a3527630d1431e42}{TALayout}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a247e3c8448bba9d177794da69f1f7620}{TALayout}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a66a3cee36c67daf5813804bc2aa9d0e1}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_ae2287fc98d3138f1b1708bf04833b657}{TALayout}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_aad5d37613f66888c13b374b27f30c33f}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_af68979b1f29996010d3ebdf84f50a01e}{Batch\+Instance}}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a6323651005d4d9dad92e4aeb6ef68b85}{Batch\+Quad}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+stands for Texture\+Atlas\+Layout 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_a1b7fbe377ade0830abc243ab56246805}\label{classHexeng_1_1Renderer_1_1TALayout_a1b7fbe377ade0830abc243ab56246805} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!TALayout@{TALayout}}
+\index{TALayout@{TALayout}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{TALayout()}{TALayout()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+TALayout\+::\+TALayout (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+builds a custom layout from an RGBA png where the colors identify the cells. 
+
+\begin{DoxyNote}{Note}
+Cells must be rectangles. 
+
+There should be no linear filtering on the provided png (ie sharp cell borders) 
+\end{DoxyNote}
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_afd104ea2a8261207af05e9c1f86d615e}\label{classHexeng_1_1Renderer_1_1TALayout_afd104ea2a8261207af05e9c1f86d615e} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!TALayout@{TALayout}}
+\index{TALayout@{TALayout}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{TALayout()}{TALayout()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+TALayout\+::\+TALayout (\begin{DoxyParamCaption}\item[{float}]{aspect\+\_\+ratio,  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$}]{size }\end{DoxyParamCaption})}
+
+
+
+builds a grid-\/like layout where all cells are the same size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em aspect\+\_\+ratio} & The aspect ratio of each cell \\
+\hline
+{\em size} & The size of the grid in terms of cells \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_aec40317dd9bf7576a3527630d1431e42}\label{classHexeng_1_1Renderer_1_1TALayout_aec40317dd9bf7576a3527630d1431e42} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!TALayout@{TALayout}}
+\index{TALayout@{TALayout}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{TALayout()}{TALayout()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+TALayout\+::\+TALayout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_a247e3c8448bba9d177794da69f1f7620}\label{classHexeng_1_1Renderer_1_1TALayout_a247e3c8448bba9d177794da69f1f7620} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!TALayout@{TALayout}}
+\index{TALayout@{TALayout}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{TALayout()}{TALayout()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+TALayout\+::\+TALayout (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_ae2287fc98d3138f1b1708bf04833b657}\label{classHexeng_1_1Renderer_1_1TALayout_ae2287fc98d3138f1b1708bf04833b657} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!TALayout@{TALayout}}
+\index{TALayout@{TALayout}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{TALayout()}{TALayout()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+TALayout\+::\+TALayout (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_a66a3cee36c67daf5813804bc2aa9d0e1}\label{classHexeng_1_1Renderer_1_1TALayout_a66a3cee36c67daf5813804bc2aa9d0e1} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \& Hexeng\+::\+Renderer\+::\+TALayout\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_aad5d37613f66888c13b374b27f30c33f}\label{classHexeng_1_1Renderer_1_1TALayout_aad5d37613f66888c13b374b27f30c33f} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \& Hexeng\+::\+Renderer\+::\+TALayout\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_af68979b1f29996010d3ebdf84f50a01e}\label{classHexeng_1_1Renderer_1_1TALayout_af68979b1f29996010d3ebdf84f50a01e} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{BatchInstance}{BatchInstance}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{Batch\+Instance}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1TALayout_a6323651005d4d9dad92e4aeb6ef68b85}\label{classHexeng_1_1Renderer_1_1TALayout_a6323651005d4d9dad92e4aeb6ef68b85} 
+\index{Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::TALayout@{Hexeng::Renderer::TALayout}}
+\doxysubsubsection{\texorpdfstring{BatchQuad}{BatchQuad}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{Batch\+Quad}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{BatchRenderer_8hpp}{Batch\+Renderer.\+hpp}}\end{DoxyCompactItemize}

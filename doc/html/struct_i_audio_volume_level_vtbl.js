@@ -1,0 +1,27 @@
+var struct_i_audio_volume_level_vtbl =
+[
+    [ "__in_ecount", "struct_i_audio_volume_level_vtbl.html#a706a61eb672cf2132ca4627494d0d24a", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a2679abe567336168d7bf8b845e9d399f", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a7a51a1a1fa6c21d5b1b5cfc4042a0bd2", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a965e13670684c463af1397479a361445", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#ae6547da4552c082bc8537b009bfe531d", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a74bfd65bdc90fd4a0e593d731293aacb", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a688d50bbb533d992e787b619c03197ef", null ],
+    [ "HRESULT", "struct_i_audio_volume_level_vtbl.html#a0994fcafa5ef7df116321fad924d488b", null ],
+    [ "ULONG", "struct_i_audio_volume_level_vtbl.html#a4ae66b3cf1b5c0c148747b9a977670fe", null ],
+    [ "ULONG", "struct_i_audio_volume_level_vtbl.html#a07cc8ac4f981586fcd5488cb3a9ad748", null ],
+    [ "cChannels", "struct_i_audio_volume_level_vtbl.html#aa87037af17ec90fcd3ca9aa1839aa730", null ],
+    [ "fLevelDB", "struct_i_audio_volume_level_vtbl.html#a6b3a564be9b2de387732649f77ec5102", null ],
+    [ "fLevelDB", "struct_i_audio_volume_level_vtbl.html#a0c7f3736276257ae987ed784531296f1", null ],
+    [ "nChannel", "struct_i_audio_volume_level_vtbl.html#a4d98c7d02e09eb211e09f13c4c4ebdd6", null ],
+    [ "pcChannels", "struct_i_audio_volume_level_vtbl.html#a07a656fb8c883d369aacc84d467ab8a6", null ],
+    [ "pfLevelDB", "struct_i_audio_volume_level_vtbl.html#a610f938cada1030d65947ee6efef41bd", null ],
+    [ "pfMaxLevelDB", "struct_i_audio_volume_level_vtbl.html#a4930f9d6a1f0d362c1c859327b10e14f", null ],
+    [ "pfMinLevelDB", "struct_i_audio_volume_level_vtbl.html#a69efb742cd38b05ff9699274e0c1c921", null ],
+    [ "pfStepping", "struct_i_audio_volume_level_vtbl.html#ae9956e4b268953741743dc8f66142230", null ],
+    [ "pguidEventContext", "struct_i_audio_volume_level_vtbl.html#a256c228c3020ff80613efc9f2c664257", null ],
+    [ "pguidEventContext", "struct_i_audio_volume_level_vtbl.html#a56276e2c08bb03802c5f2ea4c528c032", null ],
+    [ "pguidEventContext", "struct_i_audio_volume_level_vtbl.html#aa32ad71ca190b421bfba80dd3fd470e4", null ],
+    [ "ppvObject", "struct_i_audio_volume_level_vtbl.html#ac6bb08ec0b59d9821cc8f531b07567c2", null ],
+    [ "riid", "struct_i_audio_volume_level_vtbl.html#a68f93ea7f3ea3c62bb16ef243a32b923", null ]
+];

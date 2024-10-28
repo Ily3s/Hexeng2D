@@ -1,0 +1,146 @@
+\hypertarget{namespace_hexeng_1_1_event_manager}{}\doxysection{Hexeng\+::Event\+Manager Namespace Reference}
+\label{namespace_hexeng_1_1_event_manager}\index{Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Gate}}
+\begin{DoxyCompactList}\small\item\em A gate to the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_event}{Key\+Event}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{Key\+Press\+Event}}
+\begin{DoxyCompactList}\small\item\em Unlike other events, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{Key\+Press\+Event}} isn\textquotesingle{}t related to the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_mouse_button_event}{Mouse\+Button\+Event}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{Renderer\+Event}}
+\begin{DoxyCompactList}\small\item\em An event but has access to the renderer and opengl  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{Renderer\+Event\+Gate}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{Renderer\+Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{Renderer\+Event}} what \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_scroll_event}{Scroll\+Event}}
+\begin{DoxyCompactList}\small\item\em Unlike other events, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_scroll_event}{Scroll\+Event}} is a singleton and isn\textquotesingle{}t related to the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffac}{Button\+Event}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacada95feece334f0612031adf21d057ab9}{HOVER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacab36087a3f7e8653a2cfe1ca46df7b74b}{UNHOVER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca40600390b96d1c218ae0d475f977e25b}{CLICK}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca4dd2695912aafd9450d36abaa0cda733}{UNCLICK}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca45debd3c164d923204d4a211f549a097}{KEEP\+\_\+\+CLICKING}}
+ \}
+\begin{DoxyCompactList}\small\item\em Different types of event that can trigger a Button  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a86b2264348f13aaa4ddfb9779ec0b04d}{loop\+\_\+impl}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}{start\+\_\+looping}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}{stop\+\_\+looping}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::thread \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad75b424c1ba3b22178bd0a69f9472253}{event\+\_\+thread}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ double $>$ \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}{mouse\+\_\+position}} \{ 0, 0 \}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}{global\+\_\+events}}
+\item 
+bool \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a9ccb8306bcbcdbb8473b98f9a3ddc54d}{allowed\+\_\+to\+\_\+loop}} = true
+\item 
+uint64\+\_\+t \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}{current\+\_\+tick}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffac}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffac}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!ButtonEvent@{ButtonEvent}}
+\index{ButtonEvent@{ButtonEvent}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{ButtonEvent}{ButtonEvent}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffac}{Hexeng\+::\+Event\+Manager\+::\+Button\+Event}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Different types of event that can trigger a \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HOVER@{HOVER}!Hexeng::EventManager@{Hexeng::EventManager}}\index{Hexeng::EventManager@{Hexeng::EventManager}!HOVER@{HOVER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacada95feece334f0612031adf21d057ab9}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacada95feece334f0612031adf21d057ab9}} 
+HOVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNHOVER@{UNHOVER}!Hexeng::EventManager@{Hexeng::EventManager}}\index{Hexeng::EventManager@{Hexeng::EventManager}!UNHOVER@{UNHOVER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacab36087a3f7e8653a2cfe1ca46df7b74b}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacab36087a3f7e8653a2cfe1ca46df7b74b}} 
+UNHOVER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLICK@{CLICK}!Hexeng::EventManager@{Hexeng::EventManager}}\index{Hexeng::EventManager@{Hexeng::EventManager}!CLICK@{CLICK}}}\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca40600390b96d1c218ae0d475f977e25b}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca40600390b96d1c218ae0d475f977e25b}} 
+CLICK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UNCLICK@{UNCLICK}!Hexeng::EventManager@{Hexeng::EventManager}}\index{Hexeng::EventManager@{Hexeng::EventManager}!UNCLICK@{UNCLICK}}}\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca4dd2695912aafd9450d36abaa0cda733}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca4dd2695912aafd9450d36abaa0cda733}} 
+UNCLICK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{KEEP\_CLICKING@{KEEP\_CLICKING}!Hexeng::EventManager@{Hexeng::EventManager}}\index{Hexeng::EventManager@{Hexeng::EventManager}!KEEP\_CLICKING@{KEEP\_CLICKING}}}\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca45debd3c164d923204d4a211f549a097}\label{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca45debd3c164d923204d4a211f549a097}} 
+KEEP\+\_\+\+CLICKING&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a86b2264348f13aaa4ddfb9779ec0b04d}\label{namespace_hexeng_1_1_event_manager_a86b2264348f13aaa4ddfb9779ec0b04d}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!loop\_impl@{loop\_impl}}
+\index{loop\_impl@{loop\_impl}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{loop\_impl()}{loop\_impl()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Event\+Manager\+::loop\+\_\+impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}\label{namespace_hexeng_1_1_event_manager_a43fb817717c27462fd2ad4dbda4a094f}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!start\_looping@{start\_looping}}
+\index{start\_looping@{start\_looping}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{start\_looping()}{start\_looping()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Event\+Manager\+::start\+\_\+looping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}\label{namespace_hexeng_1_1_event_manager_a8765da88f1a571e0e7df006a227eb3e0}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!stop\_looping@{stop\_looping}}
+\index{stop\_looping@{stop\_looping}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{stop\_looping()}{stop\_looping()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Event\+Manager\+::stop\+\_\+looping (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a9ccb8306bcbcdbb8473b98f9a3ddc54d}\label{namespace_hexeng_1_1_event_manager_a9ccb8306bcbcdbb8473b98f9a3ddc54d}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!allowed\_to\_loop@{allowed\_to\_loop}}
+\index{allowed\_to\_loop@{allowed\_to\_loop}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{allowed\_to\_loop}{allowed\_to\_loop}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Event\+Manager\+::allowed\+\_\+to\+\_\+loop = true}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}\label{namespace_hexeng_1_1_event_manager_a218e93a7311da014ea3ad253936d1d7b}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!current\_tick@{current\_tick}}
+\index{current\_tick@{current\_tick}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{current\_tick}{current\_tick}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} uint64\+\_\+t Hexeng\+::\+Event\+Manager\+::current\+\_\+tick = 0}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_ad75b424c1ba3b22178bd0a69f9472253}\label{namespace_hexeng_1_1_event_manager_ad75b424c1ba3b22178bd0a69f9472253}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!event\_thread@{event\_thread}}
+\index{event\_thread@{event\_thread}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{event\_thread}{event\_thread}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::thread Hexeng\+::\+Event\+Manager\+::event\+\_\+thread}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}\label{namespace_hexeng_1_1_event_manager_ad4f1c17c1f56d16f8ce54aef9da5a4a9}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!global\_events@{global\_events}}
+\index{global\_events@{global\_events}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{global\_events}{global\_events}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} $\ast$ $>$ Hexeng\+::\+Event\+Manager\+::global\+\_\+events}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}\label{namespace_hexeng_1_1_event_manager_a12c6f056b55bc7f4765ab626592ff302}} 
+\index{Hexeng::EventManager@{Hexeng::EventManager}!mouse\_position@{mouse\_position}}
+\index{mouse\_position@{mouse\_position}!Hexeng::EventManager@{Hexeng::EventManager}}
+\doxysubsubsection{\texorpdfstring{mouse\_position}{mouse\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ double $>$ Hexeng\+::\+Event\+Manager\+::mouse\+\_\+position \{ 0, 0 \}}
+

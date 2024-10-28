@@ -1,0 +1,78 @@
+\hypertarget{_direction_specific_stream_parameters_8hxx_source}{}\doxysection{Direction\+Specific\+Stream\+Parameters.\+hxx}
+\label{_direction_specific_stream_parameters_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/DirectionSpecificStreamParameters.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/DirectionSpecificStreamParameters.hxx}}
+\mbox{\hyperlink{_direction_specific_stream_parameters_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_SINGLEDIRECTIONSTREAMPARAMETERS\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_SINGLEDIRECTIONSTREAMPARAMETERS\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <cstddef>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_system_8hxx}{portaudiocpp/System.hxx}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_sample_data_format_8hxx}{portaudiocpp/SampleDataFormat.hxx}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{// Forward declaration(s):}}
+\DoxyCodeLine{16 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keyword}{class }Device;}
+\DoxyCodeLine{19 \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{// Declaration(s):}}
+\DoxyCodeLine{24 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{25 \{}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{32     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{DirectionSpecificStreamParameters}}}
+\DoxyCodeLine{33     \{}
+\DoxyCodeLine{34     \textcolor{keyword}{public}:}
+\DoxyCodeLine{35         \textcolor{keyword}{static} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{DirectionSpecificStreamParameters}} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_ab6a4f9365a6971fff3067dbb5f124364}{null}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37         \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a08e8437d39003fbeb2d7006bfd96ff8f}{DirectionSpecificStreamParameters}}();}
+\DoxyCodeLine{38         \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a08e8437d39003fbeb2d7006bfd96ff8f}{DirectionSpecificStreamParameters}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a1dd51ac2793d6531036b046065937133}{device}}, \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_aa23994d6f11b77f18c5a28e6108605c1}{numChannels}}, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}{SampleDataFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, }
+\DoxyCodeLine{39             \textcolor{keywordtype}{bool} interleaved, \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_af57b4db1e9c9276f72dfad67a2f4a81f}{suggestedLatency}}, \textcolor{keywordtype}{void} *\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_af54f0e6a62e1e74b3dde46b6e5414d18}{hostApiSpecificStreamInfo}});}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{comment}{// Set up methods:}}
+\DoxyCodeLine{42         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a3f3e4b6d31b67ac0b70b868b21c87d11}{setDevice}}(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a1dd51ac2793d6531036b046065937133}{device}});}
+\DoxyCodeLine{43         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a5f097da92033c0ef6e851faa3c4a43b9}{setNumChannels}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_aa23994d6f11b77f18c5a28e6108605c1}{numChannels}});}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_ab77afe05768e7b36f759ac36e77635a0}{setSampleFormat}}(\mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}{SampleDataFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, \textcolor{keywordtype}{bool} interleaved = \textcolor{keyword}{true});}
+\DoxyCodeLine{46         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_ac422f5159b61bcb90229679da0062950}{setHostApiSpecificSampleFormat}}(\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, \textcolor{keywordtype}{bool} interleaved = \textcolor{keyword}{true});}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a0d50eda0c258507f14dc4e9b16f0a196}{setSuggestedLatency}}(\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} latency);}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keywordtype}{void} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_afcf90cee4350d6c306b6e3e6483fdf8a}{setHostApiSpecificStreamInfo}}(\textcolor{keywordtype}{void} *streamInfo);}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52         \textcolor{comment}{// Accessor methods:}}
+\DoxyCodeLine{53         \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a772d3d4718792fd6889cf30c4c10d3d3}{paStreamParameters}}();}
+\DoxyCodeLine{54         \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a772d3d4718792fd6889cf30c4c10d3d3}{paStreamParameters}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a1dd51ac2793d6531036b046065937133}{device}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{57         \textcolor{keywordtype}{int} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_aa23994d6f11b77f18c5a28e6108605c1}{numChannels}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}{SampleDataFormat}} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a6874ef6c0c98b1be9a0724bf06fc7825}{sampleFormat}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{60         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_aae792e333b7b2b613a7452da3855a149}{isSampleFormatInterleaved}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{61         \textcolor{keywordtype}{bool} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_a448e775fce4f5d42da35c3f3c64799be}{isSampleFormatHostApiSpecific}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{62         \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_afbbc178da3a9e2c5bcc2f2dbc1620481}{hostApiSpecificSampleFormat}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}} \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_af57b4db1e9c9276f72dfad67a2f4a81f}{suggestedLatency}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66         \textcolor{keywordtype}{void} *\mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters_af54f0e6a62e1e74b3dde46b6e5414d18}{hostApiSpecificStreamInfo}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{67     }
+\DoxyCodeLine{68     \textcolor{keyword}{private}:}
+\DoxyCodeLine{69         \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} paStreamParameters\_;}
+\DoxyCodeLine{70     \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_SINGLEDIRECTIONSTREAMPARAMETERS\_HXX}}
+
+\end{DoxyCode}

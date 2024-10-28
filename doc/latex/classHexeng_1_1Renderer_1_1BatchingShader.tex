@@ -1,0 +1,149 @@
+\doxysection{Hexeng\+::Renderer\+::Batching\+Shader Class Reference}
+\hypertarget{classHexeng_1_1Renderer_1_1BatchingShader}{}\label{classHexeng_1_1Renderer_1_1BatchingShader}\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+
+
+A \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} made for \doxylink{classHexeng_1_1Renderer_1_1BatchInstance}{Batch\+Instance}, supporting n quads.  
+
+
+
+
+{\ttfamily \#include $<$Batch\+Renderer.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Batching\+Shader\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1Renderer_1_1BatchingShader}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a29f84222613a25127e16ce48ce5a0cff}{Batching\+Shader}} (size\+\_\+t size)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a4d43ca81f4d4f097f2b975800a048bfb}{Batching\+Shader}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a6cefeadbea8f8927e524caf536951a8e}{Batching\+Shader}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a09d391a779b17936098fb389561e4994}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a73c4e18a2c755bc6fef75fd6f22b021b}{Batching\+Shader}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a91522fd56b2ab73f1a91479ead78762a}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Hexeng\+::\+Renderer\+::\+Shader}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a6ce681c991af4a1e9d67f2549a80e6bb}{Shader}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a4c311ef0f2df8dbcd13a85cd03a3357c}{Shader}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aef0aff7ba3436482fa6c27cf35cb18a4}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aee859820117a0734eb73db326f625c85}{Shader}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a1b23cc9047b3e4f3a465c20c91266830}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a09566d197e8ce9fbf2e163da0690de5e}{\texorpdfstring{$\sim$}{\string~}\+Shader}} ()
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aabd9403b23c38f6c243c750744ce4827}{Shader}} (const std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3607bedb924b0e6c7032dcd7f3f4811f}{Shader\+Type}}, std\+::string $>$ \&source\+\_\+code)
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a4fd6e33a100fc0d749800c625ce10c43}{bind}} () const
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a87e749717fd548242b61663dd1616d91}{unbind}} () const
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aca4ffbe3b2b15e3db548c8c0978decf2}{add\+\_\+uniforms}} (const std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*} $>$ \&uniforms)
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\+\_\+necessary\+\_\+uniforms}} ()
+\item 
+int \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a9b070b3109268115060c6eb1b4b5e311}{get\+\_\+uniform}} (const char \texorpdfstring{$\ast$}{*}uniform) const
+\item 
+unsigned int \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_adecdbec04995e00f5feec20d8fbc9a09}{missing\+\_\+uniforms}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Hexeng\+::\+Renderer\+::\+Shader}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a6d1e864a586ac6519bd5c7b9a44d60e8}{set\+\_\+uniform}} (int uniform, const float value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a739c057530115a1688c6645287cdbeea}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aff03335044b98edc15468e64ba525f0a}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec3}{Vec3}}$<$ float $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a62d4468d3eed49bb3266a36ff1987ff9}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec4}{Vec4}}$<$ float $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_ae36902b5fd0043dcdb77a333f2dcea7b}{set\+\_\+uniform}} (int uniform, const double value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_adee67df30db20a98d55bb582017e3f97}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ double $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a3f785f0ac643a77f77ba00f0731ac7a1}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec3}{Vec3}}$<$ double $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a82173182ca3f362b52a5d20b868898c0}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec4}{Vec4}}$<$ double $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a64072deba7b9778fa67b126b2288c27a}{set\+\_\+uniform}} (int uniform, const int value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_a197626e876e00c3bb75d638f911d70d9}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_ac6328f7c125f4335b53aabb2cd1b3706}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec3}{Vec3}}$<$ int $>$ \&value)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader_aa498d579b6bbf8c966fb637282c54723}{set\+\_\+uniform}} (int uniform, const \mbox{\hyperlink{classHexeng_1_1Vec4}{Vec4}}$<$ int $>$ \&value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} made for \doxylink{classHexeng_1_1Renderer_1_1BatchInstance}{Batch\+Instance}, supporting n quads. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a29f84222613a25127e16ce48ce5a0cff}\label{classHexeng_1_1Renderer_1_1BatchingShader_a29f84222613a25127e16ce48ce5a0cff} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!BatchingShader@{BatchingShader}}
+\index{BatchingShader@{BatchingShader}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{BatchingShader()}{BatchingShader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::\+Batching\+Shader (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & The maximum number of quads this shader will support on \doxylink{classHexeng_1_1Renderer_1_1BatchInstance}{Batch\+Instance} \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if size \texorpdfstring{$>$}{>} \doxylink{classHexeng_1_1Renderer_1_1BatchInstance_acccb972971e16e46fc8177962fdb8f1f}{Batch\+Instance\+::get\+\_\+max\+\_\+quads()} \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a4d43ca81f4d4f097f2b975800a048bfb}\label{classHexeng_1_1Renderer_1_1BatchingShader_a4d43ca81f4d4f097f2b975800a048bfb} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!BatchingShader@{BatchingShader}}
+\index{BatchingShader@{BatchingShader}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{BatchingShader()}{BatchingShader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::\+Batching\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a6cefeadbea8f8927e524caf536951a8e}\label{classHexeng_1_1Renderer_1_1BatchingShader_a6cefeadbea8f8927e524caf536951a8e} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!BatchingShader@{BatchingShader}}
+\index{BatchingShader@{BatchingShader}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{BatchingShader()}{BatchingShader()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::\+Batching\+Shader (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a73c4e18a2c755bc6fef75fd6f22b021b}\label{classHexeng_1_1Renderer_1_1BatchingShader_a73c4e18a2c755bc6fef75fd6f22b021b} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!BatchingShader@{BatchingShader}}
+\index{BatchingShader@{BatchingShader}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{BatchingShader()}{BatchingShader()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::\+Batching\+Shader (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a91522fd56b2ab73f1a91479ead78762a}\label{classHexeng_1_1Renderer_1_1BatchingShader_a91522fd56b2ab73f1a91479ead78762a} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \& Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1BatchingShader_a09d391a779b17936098fb389561e4994}\label{classHexeng_1_1Renderer_1_1BatchingShader_a09d391a779b17936098fb389561e4994} 
+\index{Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchingShader@{Hexeng::Renderer::BatchingShader}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \& Hexeng\+::\+Renderer\+::\+Batching\+Shader\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{Batching\+Shader}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{BatchRenderer_8hpp}{Batch\+Renderer.\+hpp}}\end{DoxyCompactItemize}

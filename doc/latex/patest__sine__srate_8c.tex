@@ -1,0 +1,79 @@
+\hypertarget{patest__sine__srate_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+sine\+\_\+srate.c File Reference}
+\label{patest__sine__srate_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_sine\_srate.c@{Hexeng2D/dependencies/portaudio/test/patest\_sine\_srate.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(5)
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_a404d125669e15aa45bd6c783a14214de}{SAMPLE\+\_\+\+RATE1}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_af81a9a2d93ab3e4dee8dda705f2cee33}{SAMPLE\+\_\+\+RATE2}}~(48000)
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__sine__srate_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__sine__srate_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__sine__srate_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__sine__srate_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{patest__sine__srate_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__sine__srate_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__sine__srate_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__sine__srate_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(5)}
+
+\mbox{\Hypertarget{patest__sine__srate_8c_a404d125669e15aa45bd6c783a14214de}\label{patest__sine__srate_8c_a404d125669e15aa45bd6c783a14214de}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!SAMPLE\_RATE1@{SAMPLE\_RATE1}}
+\index{SAMPLE\_RATE1@{SAMPLE\_RATE1}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE1}{SAMPLE\_RATE1}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE1~(44100)}
+
+\mbox{\Hypertarget{patest__sine__srate_8c_af81a9a2d93ab3e4dee8dda705f2cee33}\label{patest__sine__srate_8c_af81a9a2d93ab3e4dee8dda705f2cee33}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!SAMPLE\_RATE2@{SAMPLE\_RATE2}}
+\index{SAMPLE\_RATE2@{SAMPLE\_RATE2}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE2}{SAMPLE\_RATE2}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE2~(48000)}
+
+\mbox{\Hypertarget{patest__sine__srate_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__sine__srate_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__sine__srate_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__sine__srate_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_sine\_srate.c@{patest\_sine\_srate.c}!main@{main}}
+\index{main@{main}!patest\_sine\_srate.c@{patest\_sine\_srate.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+setup host specific info

@@ -1,0 +1,110 @@
+\hypertarget{pa__mac__core__internal_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/coreaudio/pa\+\_\+mac\+\_\+core\+\_\+internal.h File Reference}
+\label{pa__mac__core__internal_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_internal.h@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_internal.h}}
+{\ttfamily \#include $<$Core\+Audio/\+Core\+Audio.\+h$>$}\newline
+{\ttfamily \#include $<$Core\+Services/\+Core\+Services.\+h$>$}\newline
+{\ttfamily \#include $<$Audio\+Unit/\+Audio\+Unit.\+h$>$}\newline
+{\ttfamily \#include $<$Audio\+Toolbox/\+Audio\+Toolbox.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+mac\+\_\+core\+\_\+blocking.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l}{Pa\+Mac\+AUHAL}}
+\item 
+struct \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}}
+\item 
+struct \mbox{\hyperlink{struct_pa_mac_core_stream}{Pa\+Mac\+Core\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__mac__core__internal_8h_a341f496004a3608bb6534632b2399cf8}{RING\+\_\+\+BUFFER\+\_\+\+ADVANCE\+\_\+\+DENOMINATOR}}~(4)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} \mbox{\hyperlink{pa__mac__core__internal_8h_a4a9d5b230e59f5823259af17760c3abe}{Pa\+Mac\+Core\+Device\+Properties}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_mac_core_stream}{Pa\+Mac\+Core\+Stream}} \mbox{\hyperlink{pa__mac__core__internal_8h_a9965585c7c173bf6acc495edf7b3a5fd}{Pa\+Mac\+Core\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__internal_8h_a9d5b7af64c23abc3f0a9431bb12af330}{Pa\+Mac\+Core\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__internal_8h_a3aa8874a48f232c61d4101706df2b269}{Read\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__mac__core__internal_8h_a3520d8a8ca48a25c9b99708f6033811d}{Write\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+signed long \mbox{\hyperlink{pa__mac__core__internal_8h_a7a2a2c66aac73b2dc2f17aed8fe2e27a}{Get\+Stream\+Read\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+signed long \mbox{\hyperlink{pa__mac__core__internal_8h_af78e7f508bccfd03826f1e894e58d0fc}{Get\+Stream\+Write\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a341f496004a3608bb6534632b2399cf8}\label{pa__mac__core__internal_8h_a341f496004a3608bb6534632b2399cf8}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!RING\_BUFFER\_ADVANCE\_DENOMINATOR@{RING\_BUFFER\_ADVANCE\_DENOMINATOR}}
+\index{RING\_BUFFER\_ADVANCE\_DENOMINATOR@{RING\_BUFFER\_ADVANCE\_DENOMINATOR}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{RING\_BUFFER\_ADVANCE\_DENOMINATOR}{RING\_BUFFER\_ADVANCE\_DENOMINATOR}}
+{\footnotesize\ttfamily \#define RING\+\_\+\+BUFFER\+\_\+\+ADVANCE\+\_\+\+DENOMINATOR~(4)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a4a9d5b230e59f5823259af17760c3abe}\label{pa__mac__core__internal_8h_a4a9d5b230e59f5823259af17760c3abe}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!PaMacCoreDeviceProperties@{PaMacCoreDeviceProperties}}
+\index{PaMacCoreDeviceProperties@{PaMacCoreDeviceProperties}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{PaMacCoreDeviceProperties}{PaMacCoreDeviceProperties}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}} \mbox{\hyperlink{struct_pa_mac_core_device_properties}{Pa\+Mac\+Core\+Device\+Properties}}}
+
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a9965585c7c173bf6acc495edf7b3a5fd}\label{pa__mac__core__internal_8h_a9965585c7c173bf6acc495edf7b3a5fd}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!PaMacCoreStream@{PaMacCoreStream}}
+\index{PaMacCoreStream@{PaMacCoreStream}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{PaMacCoreStream}{PaMacCoreStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_mac_core_stream}{Pa\+Mac\+Core\+Stream}} \mbox{\hyperlink{struct_pa_mac_core_stream}{Pa\+Mac\+Core\+Stream}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a7a2a2c66aac73b2dc2f17aed8fe2e27a}\label{pa__mac__core__internal_8h_a7a2a2c66aac73b2dc2f17aed8fe2e27a}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!GetStreamReadAvailable@{GetStreamReadAvailable}}
+\index{GetStreamReadAvailable@{GetStreamReadAvailable}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{GetStreamReadAvailable()}{GetStreamReadAvailable()}}
+{\footnotesize\ttfamily signed long Get\+Stream\+Read\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__internal_8h_af78e7f508bccfd03826f1e894e58d0fc}\label{pa__mac__core__internal_8h_af78e7f508bccfd03826f1e894e58d0fc}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!GetStreamWriteAvailable@{GetStreamWriteAvailable}}
+\index{GetStreamWriteAvailable@{GetStreamWriteAvailable}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{GetStreamWriteAvailable()}{GetStreamWriteAvailable()}}
+{\footnotesize\ttfamily signed long Get\+Stream\+Write\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a9d5b7af64c23abc3f0a9431bb12af330}\label{pa__mac__core__internal_8h_a9d5b7af64c23abc3f0a9431bb12af330}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!PaMacCore\_Initialize@{PaMacCore\_Initialize}}
+\index{PaMacCore\_Initialize@{PaMacCore\_Initialize}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{PaMacCore\_Initialize()}{PaMacCore\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Mac\+Core\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a3aa8874a48f232c61d4101706df2b269}\label{pa__mac__core__internal_8h_a3aa8874a48f232c61d4101706df2b269}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!ReadStream@{ReadStream}}
+\index{ReadStream@{ReadStream}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{ReadStream()}{ReadStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Read\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000035}{Todo}}]REVIEW\+: consider what to do if the input overflows. do we requeue all of the buffers? should we be running a thread to make sure they are always queued? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}} \end{DoxyRefDesc}
+\mbox{\Hypertarget{pa__mac__core__internal_8h_a3520d8a8ca48a25c9b99708f6033811d}\label{pa__mac__core__internal_8h_a3520d8a8ca48a25c9b99708f6033811d}} 
+\index{pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}!WriteStream@{WriteStream}}
+\index{WriteStream@{WriteStream}!pa\_mac\_core\_internal.h@{pa\_mac\_core\_internal.h}}
+\doxysubsubsection{\texorpdfstring{WriteStream()}{WriteStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Write\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000036}{Todo}}]REVIEW\+: consider what to do if the output underflows. do we requeue all the existing buffers with zeros? should we run a separate thread to keep the buffers enqueued at all times? see\+: \href{http://www.portaudio.com/trac/ticket/117}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/117}} \end{DoxyRefDesc}

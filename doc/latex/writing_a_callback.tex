@@ -1,0 +1,67 @@
+To write a program using Port\+Audio, you must include the \char`\"{}portaudio.\+h\char`\"{} include file. You may wish to read \char`\"{}portaudio.\+h\char`\"{} because it contains a complete description of the Port\+Audio functions and constants. Alternatively, you could browse the \mbox{[}\href{http://www.portaudio.com/docs/v19-doxydocs/portaudio_8h.html}{\texttt{ http\+://www.\+portaudio.\+com/docs/v19-\/doxydocs/portaudio\+\_\+8h.\+html}} \char`\"{}portaudio.\+h\char`\"{} Doxygen page\mbox{]} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+
+\end{DoxyCode}
+ The next task is to write your own \char`\"{}callback\char`\"{} function. The \char`\"{}callback\char`\"{} is a function that is called by the Port\+Audio engine whenever it has captured audio data, or when it needs more audio data for output.
+
+Before we begin, it\textquotesingle{}s important to realize that the callback is a delicate place. This is because some systems perform the callback in a special thread, or interrupt handler, and it is rarely treated the same as the rest of your code. For most modern systems, you won\textquotesingle{}t be able to cause crashes by making disallowed calls in the callback, but if you want your code to produce glitch-\/free audio, you will have to make sure you avoid function calls that may take an unbounded amount of time to execute. Exactly what these are depend on your platform but almost certainly include the following\+: memory allocation/deallocation, I/O (including file I/O as well as console I/O, such as printf()), context switching (such as exec() or yield()), mutex operations, or anything else that might rely on the OS. If you think short critical sections are safe please go read about priority inversion. Windows and Mac OS schedulers have no real-\/time safe priority inversion prevention. Other platforms require special mutex flags. In addition, it is not safe to call any Port\+Audio API functions in the callback except as explicitly permitted in the documentation.
+
+Your callback function must return an int and accept the exact parameters specified in this typedef\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keywordtype}{int} \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{PaStreamCallback}}( \textcolor{keyword}{const} \textcolor{keywordtype}{void} *input,}
+\DoxyCodeLine{                                      \textcolor{keywordtype}{void} *output,}
+\DoxyCodeLine{                                      \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount,}
+\DoxyCodeLine{                                      \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}* timeInfo,}
+\DoxyCodeLine{                                      \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags,}
+\DoxyCodeLine{                                      \textcolor{keywordtype}{void} *userData ) ;}
+
+\end{DoxyCode}
+ Here is an example callback function from the test file \char`\"{}patests/patest\+\_\+saw.\+c\char`\"{}. It calculates a simple left and right sawtooth signal and writes it to the output buffer. Notice that in this example, the signals are of float data type. The signals must be between -\/1.\+0 and +1.\+0. You can also use 16 bit integers or other formats which are specified during setup, but floats are easiest to work with. You can pass a pointer to your data structure through Port\+Audio which will appear as user\+Data.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} left\_phase;}
+\DoxyCodeLine{    \textcolor{keywordtype}{float} right\_phase;}
+\DoxyCodeLine{\}   }
+\DoxyCodeLine{\mbox{\hyperlink{structpa_test_data}{paTestData}};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{/* This routine will be called by the PortAudio engine when audio is needed.}}
+\DoxyCodeLine{\textcolor{comment}{ * It may called at interrupt level on some machines so don't do anything}}
+\DoxyCodeLine{\textcolor{comment}{ * that could mess up the system like calling malloc() or free().}}
+\DoxyCodeLine{\textcolor{comment}{*/} }
+\DoxyCodeLine{\textcolor{keyword}{static} \textcolor{keywordtype}{int} patestCallback( \textcolor{keyword}{const} \textcolor{keywordtype}{void} *inputBuffer, \textcolor{keywordtype}{void} *outputBuffer,}
+\DoxyCodeLine{                           \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesPerBuffer,}
+\DoxyCodeLine{                           \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}* timeInfo,}
+\DoxyCodeLine{                           \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags,}
+\DoxyCodeLine{                           \textcolor{keywordtype}{void} *userData )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    \textcolor{comment}{/* Cast data passed through stream to our structure. */}}
+\DoxyCodeLine{    \mbox{\hyperlink{structpa_test_data}{paTestData}} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} = (\mbox{\hyperlink{structpa_test_data}{paTestData}}*)userData; }
+\DoxyCodeLine{    \textcolor{keywordtype}{float} *out = (\textcolor{keywordtype}{float}*)outputBuffer;}
+\DoxyCodeLine{    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i;}
+\DoxyCodeLine{    (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}) inputBuffer; \textcolor{comment}{/* Prevent unused variable warning. */}}
+\DoxyCodeLine{    }
+\DoxyCodeLine{    \textcolor{keywordflow}{for}( i=0; i<framesPerBuffer; i++ )}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{        *out++ = \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>\mbox{\hyperlink{structpa_test_data_a7395cffc18c4a1734f7e857f21ca1a9b}{left\_phase}};  \textcolor{comment}{/* left */}}
+\DoxyCodeLine{        *out++ = \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>right\_phase;  \textcolor{comment}{/* right */}}
+\DoxyCodeLine{        \textcolor{comment}{/* Generate simple sawtooth phaser that ranges between -\/1.0 and 1.0. */}}
+\DoxyCodeLine{        \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>left\_phase += 0.01f;}
+\DoxyCodeLine{        \textcolor{comment}{/* When signal reaches top, drop back down. */}}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}( \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>left\_phase >= 1.0f ) \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>left\_phase -\/= 2.0f;}
+\DoxyCodeLine{        \textcolor{comment}{/* higher pitch so we can distinguish left and right. */}}
+\DoxyCodeLine{        \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>right\_phase += 0.03f;}
+\DoxyCodeLine{        \textcolor{keywordflow}{if}( \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>right\_phase >= 1.0f ) \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}-\/>right\_phase -\/= 2.0f;}
+\DoxyCodeLine{    \}}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Previous\+: \mbox{\hyperlink{tutorial_start}{Port\+Audio Tutorials}} $\vert$ Next\+: \mbox{\hyperlink{initializing_portaudio}{Initializing Port\+Audio}} 

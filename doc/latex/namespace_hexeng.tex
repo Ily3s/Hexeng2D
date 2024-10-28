@@ -1,0 +1,333 @@
+\hypertarget{namespace_hexeng}{}\doxysection{Hexeng Namespace Reference}
+\label{namespace_hexeng}\index{Hexeng@{Hexeng}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_audio}{Audio}}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_physics}{Physics}}
+\begin{DoxyCompactList}\small\item\em I\textquotesingle{}m sorry, this \mbox{\hyperlink{namespace_hexeng_1_1_physics}{Physics}} Engine is so messy, even I have trouble reading through this, and I am the one that wrote it. No, really I can\textquotesingle{}t possibly document that. A rework is coming, but, in the meantime, I recommand that you take a look at the Sandbox project in order for you to understand the basics of what I dared to call a \mbox{\hyperlink{namespace_hexeng_1_1_physics}{Physics}} Engine. \end{DoxyCompactList}\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_settings}{Settings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_char_box}{Char\+Box}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_color3}{Color3}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}
+\begin{DoxyCompactList}\small\item\em Loads a font from a ttf file that will be used when writing \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}
+\begin{DoxyCompactList}\small\item\em Loads a dictionary from a language file.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_save_file}{Save\+File}}
+\begin{DoxyCompactList}\small\item\em A save instance. It isn\textquotesingle{}t closely related to a filepath but rather to a bunch of variables references.  \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_save_var}{Save\+Var}}
+\begin{DoxyCompactList}\small\item\em Get be pushed in a \mbox{\hyperlink{class_hexeng_1_1_save_file}{Save\+File}}  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_scene}{Scene}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}} \{ \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a684d325a7303f52e64011467ff5c5758}{LEFT}}
+, \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{CENTER}}
+, \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a21507b40c80068eda19865706fdc2403}{RIGHT}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}} \{ \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3ea6705777b712ee811e76fb07162081d63}{TOP}}
+, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{CENTER}}
+, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eab24436a7bab0fa6dc89ad0684c6fc675}{BOT}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespace_hexeng_aa08a3ea7976c839a0ef1e03b51e574ad}{close}} (float first, float second, float sensi)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_a31584ddd77dfb31ea89a5e0acf7dc72d}{game\+\_\+loop}} (std\+::function$<$ void()$>$ pre=nullptr, std\+::function$<$ void()$>$ post=nullptr)
+\begin{DoxyCompactList}\small\item\em Starts the game loop. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespace_hexeng_ac480f42f0e628355c255f1988f472f87}{toX}} (int x)
+\begin{DoxyCompactList}\small\item\em Converts x to the Open\+GL default coordinate system  \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespace_hexeng_ac4a97c8fcc3171f97d87bc9a18b6ee6b}{toY}} (int y)
+\begin{DoxyCompactList}\small\item\em Converts y to the Open\+GL default coordinate system  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}{to\+Coord}} (\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ vec)
+\begin{DoxyCompactList}\small\item\em Converts vec to the Open\+GL coordinate system  \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{namespace_hexeng_a3b45417129dd468710e146746dee57fd}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&vec)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{namespace_hexeng_a31bb17063dfd27bf5f27e6e4831185bf}{operator$\ast$}} (\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ vec, float factor)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a9e1aa9655a2b308770c64b1c5ca43fc5}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{namespace_hexeng_a89d84e02d43d340ccbc56e3fce350a62}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}{scalar}} (const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&a, const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&b)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::ostream \& \mbox{\hyperlink{namespace_hexeng_a21632ed7f38f9d068a3b3d3049e6b170}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&vec)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::istream \& \mbox{\hyperlink{namespace_hexeng_a081dda55f6eb59cbd0164aacc9990c1d}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&vec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GLFWwindow $\ast$ \mbox{\hyperlink{namespace_hexeng_a174cdd73131759dc661d7e97400ca23a}{window}} = nullptr
+\item 
+float \mbox{\hyperlink{namespace_hexeng_a01de6715ebc2bebf6aeb61172101cb7e}{frame\+\_\+time}} = 0.\+0f
+\item 
+std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{class_hexeng_1_1_scene}{Scene}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_a376fc6aef639f23d64d3f43458ad0e9c}{scenes}}
+\item 
+int \mbox{\hyperlink{namespace_hexeng_a4b11bd221d6782d039d79b7e4612b02f}{scene\+\_\+id}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}\label{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}} 
+\index{Hexeng@{Hexeng}!HorizontalAlign@{HorizontalAlign}}
+\index{HorizontalAlign@{HorizontalAlign}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{HorizontalAlign}{HorizontalAlign}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Hexeng\+::\+Horizontal\+Align}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEFT@{LEFT}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!LEFT@{LEFT}}}\mbox{\Hypertarget{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a684d325a7303f52e64011467ff5c5758}\label{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a684d325a7303f52e64011467ff5c5758}} 
+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CENTER@{CENTER}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!CENTER@{CENTER}}}\mbox{\Hypertarget{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}\label{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}} 
+CENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RIGHT@{RIGHT}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!RIGHT@{RIGHT}}}\mbox{\Hypertarget{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a21507b40c80068eda19865706fdc2403}\label{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418a21507b40c80068eda19865706fdc2403}} 
+RIGHT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}\label{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}} 
+\index{Hexeng@{Hexeng}!VerticalAlign@{VerticalAlign}}
+\index{VerticalAlign@{VerticalAlign}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{VerticalAlign}{VerticalAlign}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Hexeng\+::\+Vertical\+Align}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TOP@{TOP}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!TOP@{TOP}}}\mbox{\Hypertarget{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3ea6705777b712ee811e76fb07162081d63}\label{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3ea6705777b712ee811e76fb07162081d63}} 
+TOP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CENTER@{CENTER}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!CENTER@{CENTER}}}\mbox{\Hypertarget{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}\label{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}} 
+CENTER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOT@{BOT}!Hexeng@{Hexeng}}\index{Hexeng@{Hexeng}!BOT@{BOT}}}\mbox{\Hypertarget{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eab24436a7bab0fa6dc89ad0684c6fc675}\label{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eab24436a7bab0fa6dc89ad0684c6fc675}} 
+BOT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_hexeng_aa08a3ea7976c839a0ef1e03b51e574ad}\label{namespace_hexeng_aa08a3ea7976c839a0ef1e03b51e574ad}} 
+\index{Hexeng@{Hexeng}!close@{close}}
+\index{close@{close}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily bool Hexeng\+::close (\begin{DoxyParamCaption}\item[{float}]{first,  }\item[{float}]{second,  }\item[{float}]{sensi }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespace_hexeng_a31584ddd77dfb31ea89a5e0acf7dc72d}\label{namespace_hexeng_a31584ddd77dfb31ea89a5e0acf7dc72d}} 
+\index{Hexeng@{Hexeng}!game\_loop@{game\_loop}}
+\index{game\_loop@{game\_loop}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{game\_loop()}{game\_loop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::game\+\_\+loop (\begin{DoxyParamCaption}\item[{std\+::function$<$ void()$>$}]{pre = {\ttfamily nullptr},  }\item[{std\+::function$<$ void()$>$}]{post = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Starts the game loop. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pre} & A function to be executed before the render of each frame. \\
+\hline
+\mbox{\texttt{ in}}  & {\em post} & A function to be executed after the render of each frame. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The thread in wich this function has been called is blocked until the application is closed. 
+\end{DoxyNote}
+\mbox{\Hypertarget{namespace_hexeng_a31bb17063dfd27bf5f27e6e4831185bf}\label{namespace_hexeng_a31bb17063dfd27bf5f27e6e4831185bf}} 
+\index{Hexeng@{Hexeng}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ Hexeng\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{vec,  }\item[{float}]{factor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}\label{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}} 
+\index{Hexeng@{Hexeng}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& Hexeng\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a9e1aa9655a2b308770c64b1c5ca43fc5}\label{namespace_hexeng_a9e1aa9655a2b308770c64b1c5ca43fc5}} 
+\index{Hexeng@{Hexeng}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& Hexeng\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a21632ed7f38f9d068a3b3d3049e6b170}\label{namespace_hexeng_a21632ed7f38f9d068a3b3d3049e6b170}} 
+\index{Hexeng@{Hexeng}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::ostream \& Hexeng\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a3b45417129dd468710e146746dee57fd}\label{namespace_hexeng_a3b45417129dd468710e146746dee57fd}} 
+\index{Hexeng@{Hexeng}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& Hexeng\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a89d84e02d43d340ccbc56e3fce350a62}\label{namespace_hexeng_a89d84e02d43d340ccbc56e3fce350a62}} 
+\index{Hexeng@{Hexeng}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& Hexeng\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a081dda55f6eb59cbd0164aacc9990c1d}\label{namespace_hexeng_a081dda55f6eb59cbd0164aacc9990c1d}} 
+\index{Hexeng@{Hexeng}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::istream \& Hexeng\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}\label{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}\label{namespace_hexeng_a2e1ea6d3f043e20275133a18703884a7}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}\label{namespace_hexeng_a88a5677e031a0a4e4e5e7a0c5dad61c0}} 
+\index{Hexeng@{Hexeng}!scalar@{scalar}}
+\index{scalar@{scalar}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scalar()}{scalar()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Hexeng\+::scalar (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{a,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}$<$ T $>$ \&}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}\label{namespace_hexeng_ad9476ddac0f172a13bf18ca3ac550776}} 
+\index{Hexeng@{Hexeng}!toCoord@{toCoord}}
+\index{toCoord@{toCoord}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{toCoord()}{toCoord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ Hexeng\+::to\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts vec to the Open\+GL coordinate system  
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & A vector in the Hexeng2D coordinate system\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector in the Open\+GL coordinate system
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is meant to be used internally by the engine. 
+\end{DoxyNote}
+\mbox{\Hypertarget{namespace_hexeng_ac480f42f0e628355c255f1988f472f87}\label{namespace_hexeng_ac480f42f0e628355c255f1988f472f87}} 
+\index{Hexeng@{Hexeng}!toX@{toX}}
+\index{toX@{toX}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{toX()}{toX()}}
+{\footnotesize\ttfamily float Hexeng\+::toX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts x to the Open\+GL default coordinate system  
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & An x coordinate in the Hexeng2D coordinate system\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An x coordinate in the Open\+GL coordinate system
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is meant to be use internally by the engine. 
+\end{DoxyNote}
+\mbox{\Hypertarget{namespace_hexeng_ac4a97c8fcc3171f97d87bc9a18b6ee6b}\label{namespace_hexeng_ac4a97c8fcc3171f97d87bc9a18b6ee6b}} 
+\index{Hexeng@{Hexeng}!toY@{toY}}
+\index{toY@{toY}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{toY()}{toY()}}
+{\footnotesize\ttfamily float Hexeng\+::toY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Converts y to the Open\+GL default coordinate system  
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & A y coordinate in the Hexeng2D coordinate system\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A y coordinate in the Open\+GL coordinate system
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is meant to be used internally by the engine. 
+\end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_hexeng_a01de6715ebc2bebf6aeb61172101cb7e}\label{namespace_hexeng_a01de6715ebc2bebf6aeb61172101cb7e}} 
+\index{Hexeng@{Hexeng}!frame\_time@{frame\_time}}
+\index{frame\_time@{frame\_time}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{frame\_time}{frame\_time}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} float Hexeng\+::frame\+\_\+time = 0.\+0f}
+
+\mbox{\Hypertarget{namespace_hexeng_a4b11bd221d6782d039d79b7e4612b02f}\label{namespace_hexeng_a4b11bd221d6782d039d79b7e4612b02f}} 
+\index{Hexeng@{Hexeng}!scene\_id@{scene\_id}}
+\index{scene\_id@{scene\_id}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scene\_id}{scene\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} int Hexeng\+::scene\+\_\+id = 0}
+
+\begin{DoxyNote}{Note}
+You shouldn\textquotesingle{}t modify that var during the game loop, instead, call switch\+\_\+scene 
+\end{DoxyNote}
+\mbox{\Hypertarget{namespace_hexeng_a376fc6aef639f23d64d3f43458ad0e9c}\label{namespace_hexeng_a376fc6aef639f23d64d3f43458ad0e9c}} 
+\index{Hexeng@{Hexeng}!scenes@{scenes}}
+\index{scenes@{scenes}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{scenes}{scenes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{class_hexeng_1_1_scene}{Scene}} $\ast$ $>$ Hexeng\+::scenes}
+
+\mbox{\Hypertarget{namespace_hexeng_a174cdd73131759dc661d7e97400ca23a}\label{namespace_hexeng_a174cdd73131759dc661d7e97400ca23a}} 
+\index{Hexeng@{Hexeng}!window@{window}}
+\index{window@{window}!Hexeng@{Hexeng}}
+\doxysubsubsection{\texorpdfstring{window}{window}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} GLFWwindow $\ast$ Hexeng\+::window = nullptr}
+

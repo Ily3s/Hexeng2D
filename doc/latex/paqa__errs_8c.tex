@@ -1,0 +1,134 @@
+\hypertarget{paqa__errs_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/paqa\+\_\+errs.c File Reference}
+\label{paqa__errs_8c}\index{Hexeng2D/dependencies/portaudio/qa/paqa\_errs.c@{Hexeng2D/dependencies/portaudio/qa/paqa\_errs.c}}
+
+
+Self Testing Quality Assurance app for Port\+Audio Do lots of bad things to test error reporting.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_qa_data}{Pa\+Qa\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_a89aaf2dc63dbfb7a60898372d496a56c}{MODE\+\_\+\+INPUT}}~(0)
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_a3b23ec3cf56d4fc73dd1185b7f2792d6}{MODE\+\_\+\+OUTPUT}}~(1)
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100.\+0)
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_af94d1e5e2fce3f29a3f9fc9c1bef5ddf}{EXPECT}}(\+\_\+exp)
+\item 
+\#define \mbox{\hyperlink{paqa__errs_8c_a5afe82839229bf2130860d14adb5a7b0}{HOPEFOR}}(\+\_\+exp)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_qa_data}{Pa\+Qa\+Data}} \mbox{\hyperlink{paqa__errs_8c_a9bb75f3dc5d6ea6f70da9e7c0b1d3b96}{Pa\+Qa\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{paqa__errs_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Self Testing Quality Assurance app for Port\+Audio Do lots of bad things to test error reporting. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} Pieter Suurmond adapted to V19 API. 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{paqa__errs_8c_af94d1e5e2fce3f29a3f9fc9c1bef5ddf}\label{paqa__errs_8c_af94d1e5e2fce3f29a3f9fc9c1bef5ddf}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!EXPECT@{EXPECT}}
+\index{EXPECT@{EXPECT}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{EXPECT}{EXPECT}}
+{\footnotesize\ttfamily \#define EXPECT(\begin{DoxyParamCaption}\item[{}]{\+\_\+exp }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        if ((\_exp)) \{\(\backslash\)}
+\DoxyCodeLine{            gNumPassed++; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\(\backslash\)nERROR -\/ 0x\%x -\/ \%s for \%s\(\backslash\)n"{}}, result, \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}}(result), \#\_exp ); \(\backslash\)}
+\DoxyCodeLine{            gNumFailed++; \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{paqa__errs_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{paqa__errs_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{paqa__errs_8c_a5afe82839229bf2130860d14adb5a7b0}\label{paqa__errs_8c_a5afe82839229bf2130860d14adb5a7b0}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!HOPEFOR@{HOPEFOR}}
+\index{HOPEFOR@{HOPEFOR}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{HOPEFOR}{HOPEFOR}}
+{\footnotesize\ttfamily \#define HOPEFOR(\begin{DoxyParamCaption}\item[{}]{\+\_\+exp }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \(\backslash\)}
+\DoxyCodeLine{    \{ \(\backslash\)}
+\DoxyCodeLine{        if ((\_exp)) \{\(\backslash\)}
+\DoxyCodeLine{            gNumPassed++; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{else} \{ \(\backslash\)}
+\DoxyCodeLine{            printf(\textcolor{stringliteral}{"{}\(\backslash\)nERROR -\/ 0x\%x -\/ \%s for \%s\(\backslash\)n"{}}, result, \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}}(result), \#\_exp ); \(\backslash\)}
+\DoxyCodeLine{            gNumFailed++; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{paqa__errs_8c_a89aaf2dc63dbfb7a60898372d496a56c}\label{paqa__errs_8c_a89aaf2dc63dbfb7a60898372d496a56c}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!MODE\_INPUT@{MODE\_INPUT}}
+\index{MODE\_INPUT@{MODE\_INPUT}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_INPUT}{MODE\_INPUT}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+INPUT~(0)}
+
+\mbox{\Hypertarget{paqa__errs_8c_a3b23ec3cf56d4fc73dd1185b7f2792d6}\label{paqa__errs_8c_a3b23ec3cf56d4fc73dd1185b7f2792d6}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!MODE\_OUTPUT@{MODE\_OUTPUT}}
+\index{MODE\_OUTPUT@{MODE\_OUTPUT}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{MODE\_OUTPUT}{MODE\_OUTPUT}}
+{\footnotesize\ttfamily \#define MODE\+\_\+\+OUTPUT~(1)}
+
+\mbox{\Hypertarget{paqa__errs_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{paqa__errs_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100.\+0)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{paqa__errs_8c_a9bb75f3dc5d6ea6f70da9e7c0b1d3b96}\label{paqa__errs_8c_a9bb75f3dc5d6ea6f70da9e7c0b1d3b96}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!PaQaData@{PaQaData}}
+\index{PaQaData@{PaQaData}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{PaQaData}{PaQaData}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_qa_data}{Pa\+Qa\+Data}} \mbox{\hyperlink{struct_pa_qa_data}{Pa\+Qa\+Data}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{paqa__errs_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{paqa__errs_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{paqa\_errs.c@{paqa\_errs.c}!main@{main}}
+\index{main@{main}!paqa\_errs.c@{paqa\_errs.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

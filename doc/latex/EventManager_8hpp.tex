@@ -1,0 +1,44 @@
+\doxysection{Hexeng2\+D/src/\+Event\+Manager/\+Event\+Manager.hpp File Reference}
+\hypertarget{EventManager_8hpp}{}\label{EventManager_8hpp}\index{Hexeng2D/src/EventManager/EventManager.hpp@{Hexeng2D/src/EventManager/EventManager.hpp}}
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$functional$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \"{}../\+Macros.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Vectors.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Hexeng.\+hpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Hexeng\+::\+Event\+Manager\+::\+Event}}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1EventGate}{Hexeng\+::\+Event\+Manager\+::\+Event\+Gate}}
+\begin{DoxyCompactList}\small\item\em A gate to the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1RendererEvent}{Hexeng\+::\+Event\+Manager\+::\+Renderer\+Event}}
+\begin{DoxyCompactList}\small\item\em An event but has access to the renderer and opengl. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHexeng_1_1EventManager_1_1RendererEventGate}{Hexeng\+::\+Event\+Manager\+::\+Renderer\+Event\+Gate}}
+\begin{DoxyCompactList}\small\item\em \doxylink{classHexeng_1_1EventManager_1_1RendererEventGate}{Renderer\+Event\+Gate} is to \doxylink{classHexeng_1_1EventManager_1_1RendererEvent}{Renderer\+Event} what \doxylink{classHexeng_1_1EventManager_1_1EventGate}{Event\+Gate} is to \doxylink{classHexeng_1_1EventManager_1_1Event}{Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng_1_1EventManager}{Hexeng\+::\+Event\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a43fb817717c27462fd2ad4dbda4a094f}{Hexeng\+::\+Event\+Manager\+::start\+\_\+looping}} ()
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a8765da88f1a571e0e7df006a227eb3e0}{Hexeng\+::\+Event\+Manager\+::stop\+\_\+looping}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::thread \mbox{\hyperlink{namespaceHexeng_1_1EventManager_ad75b424c1ba3b22178bd0a69f9472253}{Hexeng\+::\+Event\+Manager\+::event\+\_\+thread}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ double $>$ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_adfc8388dc0789fe74889f2ee2e53c826}{Hexeng\+::\+Event\+Manager\+::mouse\+\_\+position}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a4fdf962889e1adc280e7931c19b3694c}{Hexeng\+::\+Event\+Manager\+::global\+\_\+events}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} uint64\+\_\+t \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a218e93a7311da014ea3ad253936d1d7b}{Hexeng\+::\+Event\+Manager\+::current\+\_\+tick}}
+\end{DoxyCompactItemize}

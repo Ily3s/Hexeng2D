@@ -1,0 +1,518 @@
+\hypertarget{_vectors_8hpp_source}{}\doxysection{Vectors.\+hpp}
+\label{_vectors_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Vectors.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Vectors.hpp}}
+\mbox{\hyperlink{_vectors_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VECTORS\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define VECTORS\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}}}
+\DoxyCodeLine{8 \{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13     public :}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15         T \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \mbox{\hyperlink{class_hexeng_1_1_vec2_a8576dd072423e0a9b855e15afc0195c9}{Vec2}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{18         \mbox{\hyperlink{class_hexeng_1_1_vec2_a508dd1f28a07c4988f2d5e5282305299}{Vec2}}(T \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, T \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}) : \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}(\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}(\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}) \{\}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T2>}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T>}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T2>}} other) : \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}) \{\}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{class_hexeng_1_1_vec2_afbf2b5da3480c83658c4b5a7e213228d}{Vec2}}(T val) : \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}(val) \{\}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a3aa265ea3bb77af0154d303f5f456a14}{abs}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)}
+\DoxyCodeLine{26         \{}
+\DoxyCodeLine{27             \textcolor{keywordflow}{return} \{ std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}) \};}
+\DoxyCodeLine{28         \}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         T \mbox{\hyperlink{class_hexeng_1_1_vec2_a8d2c30f89b5b117d18aadc3cc0c32d24}{len}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{31 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{32             \textcolor{keywordflow}{return} std::sqrt(std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}}, 2));}
+\DoxyCodeLine{33         \}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a869dae554f5c789f307c1db42df8f3d9}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{36 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{37             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} \};}
+\DoxyCodeLine{38         \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a8b3a94fdabd572bfe9bc05a5f8f45013}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{41 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{42             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} \};}
+\DoxyCodeLine{43         \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a6762ed38fbae27a36b0b9a713640c630}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{46 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{47             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} \};}
+\DoxyCodeLine{48         \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a5d1464dc20414712d356fcc59194407c}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{51 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{52             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} \};}
+\DoxyCodeLine{53         \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_aeaaa90afe56c3012a1f383bc9aa80639}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)}
+\DoxyCodeLine{56         \{}
+\DoxyCodeLine{57             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}};}
+\DoxyCodeLine{58             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{59             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_a489e96025a1a5390d1330211715fa04c}{operator-\/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)}
+\DoxyCodeLine{63         \{}
+\DoxyCodeLine{64             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}};}
+\DoxyCodeLine{65             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{66             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{67         \}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_abdb35593cad5ed7bb561a4419e0467af}{operator*=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)}
+\DoxyCodeLine{70         \{}
+\DoxyCodeLine{71             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}};}
+\DoxyCodeLine{72             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{73             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{74         \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_aef7ef8442774890efaeed8b60453f240}{operator/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)}
+\DoxyCodeLine{77         \{}
+\DoxyCodeLine{78             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}};}
+\DoxyCodeLine{79             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{80             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{81         \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a6f0f66cfc14c30f063e2ab1380fbab91}{operator+}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{84 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{85             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} + other \};}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_acfd4d7a02b8b942beb19b174446dd32b}{operator-\/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{89 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{90             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} -\/ other \};}
+\DoxyCodeLine{91         \}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_aa946ccb0f82ea0166d2d2f4901db0700}{operator*}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{94 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{95             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} * other \};}
+\DoxyCodeLine{96         \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_a64903d78d96e520a39233422edebda81}{operator/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{99 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{100             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} / other \};}
+\DoxyCodeLine{101         \}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}} \mbox{\hyperlink{class_hexeng_1_1_vec2_aa90f823de73079029f9b64c2a78e3b55}{operator-\/}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{104 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{105             \textcolor{keywordflow}{return} \{ -\/\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} \};}
+\DoxyCodeLine{106         \}}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_a1aa8884f33ad880cd66c3e147f7d1061}{operator+=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} += other;}
+\DoxyCodeLine{111             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} += other;}
+\DoxyCodeLine{112             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{113         \}}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_aac87d96e5623ccc3a080a28e9fcc7c20}{operator-\/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{116         \{}
+\DoxyCodeLine{117             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} -\/= other;}
+\DoxyCodeLine{118             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} -\/= other;}
+\DoxyCodeLine{119             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_a444291472484d2017c788f52c3b1b29c}{operator*=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{123         \{}
+\DoxyCodeLine{124             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} *= other;}
+\DoxyCodeLine{125             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} *= other;}
+\DoxyCodeLine{126             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{127         \}}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& \mbox{\hyperlink{class_hexeng_1_1_vec2_acd46a1340909663e3ccabfe23bc91356}{operator/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{130         \{}
+\DoxyCodeLine{131             \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} /= other;}
+\DoxyCodeLine{132             \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} /= other;}
+\DoxyCodeLine{133             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{134         \}}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec2_a5e1696b3944b53ce8729ddd3e3b3f6e2}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{137 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{138             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{139         \}}
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec2_afb9bbad4c61c6b67ea686711ba001f22}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{142 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{143             \textcolor{keywordflow}{return} !(\mbox{\hyperlink{class_hexeng_1_1_vec2_a5e1696b3944b53ce8729ddd3e3b3f6e2}{operator==}}(other));}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145     \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{148     T \mbox{\hyperlink{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}{scalar}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T>}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T>}}\& b)}
+\DoxyCodeLine{149     \{}
+\DoxyCodeLine{150         \textcolor{keywordflow}{return} a.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{151     \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{154     std::ostream\& \mbox{\hyperlink{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T>}}\& vec)}
+\DoxyCodeLine{155     \{}
+\DoxyCodeLine{156         os << vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{157         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{158     \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{161     std::istream\& \mbox{\hyperlink{namespace_hexeng_a3b45417129dd468710e146746dee57fd}{operator>>}}(std::istream\& is, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<T>}}\& vec)}
+\DoxyCodeLine{162     \{}
+\DoxyCodeLine{163         is >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}};}
+\DoxyCodeLine{164         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{165     \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     \textcolor{keyword}{inline} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} \mbox{\hyperlink{namespace_hexeng_a31bb17063dfd27bf5f27e6e4831185bf}{operator*}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} vec, \textcolor{keywordtype}{float} factor)}
+\DoxyCodeLine{168     \{}
+\DoxyCodeLine{169         \textcolor{keywordflow}{return} \{ (int)((\textcolor{keywordtype}{float})vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}} * factor), (\textcolor{keywordtype}{int})((float)vec.\mbox{\hyperlink{class_hexeng_1_1_vec2_a8af081a52b757717e2ddb2859881f279}{y}} * factor) \};}
+\DoxyCodeLine{170     \}}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{173     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}}
+\DoxyCodeLine{174     \{}
+\DoxyCodeLine{175     public :}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177         T \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179         \mbox{\hyperlink{class_hexeng_1_1_vec3_a930ebedc82234b7e723e4dc6be516210}{Vec3}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{180         \mbox{\hyperlink{class_hexeng_1_1_vec3_a67248fc20bb5ae6b615e88797e9bed4f}{Vec3}}(T \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, T \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, T \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}) : \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}(\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}(\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}), \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}(\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}) \{\}}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182         \mbox{\hyperlink{class_hexeng_1_1_vec3_ac86299337867b29f6ac40ac0a09626b2}{Vec3}}(T val) : \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}(val) \{\}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T2>}
+\DoxyCodeLine{185         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T>}}(\mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T2>}} other) : \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}), \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}) \{\}}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a767749d3d946395fe5eea9a436a5aaed}{abs}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)}
+\DoxyCodeLine{188         \{}
+\DoxyCodeLine{189             \textcolor{keywordflow}{return} \{ std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}) \};}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192         T \mbox{\hyperlink{class_hexeng_1_1_vec3_a38ad7776ed90900203bea88f309992a5}{len}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{193 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{194             \textcolor{keywordflow}{return} std::sqrt(std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}}, 2));}
+\DoxyCodeLine{195         \}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_ab107f20ee30bcfb0c4b54787581cb940}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{198 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{199             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} \};}
+\DoxyCodeLine{200         \}}
+\DoxyCodeLine{201 }
+\DoxyCodeLine{202         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a7bbd8b65627007190cfc1de8c4d60cf3}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{203 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{204             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} \};}
+\DoxyCodeLine{205         \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a08644980a06ab2aa4d4bb5bcf6316b06}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{208 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{209             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} \};}
+\DoxyCodeLine{210         \}}
+\DoxyCodeLine{211 }
+\DoxyCodeLine{212         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_aa41026d98bad65d6e69487270446af23}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{213 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{214             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} \};}
+\DoxyCodeLine{215         \}}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_ac8479a8788d7d6c78b9d7735aa04e1e9}{operator-\/}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{218 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{219             \textcolor{keywordflow}{return} \{ -\/\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} \};}
+\DoxyCodeLine{220         \}}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{222         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a29731777d90c77b4a5770a7663844dcf}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)}
+\DoxyCodeLine{223         \{}
+\DoxyCodeLine{224             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}};}
+\DoxyCodeLine{225             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}};}
+\DoxyCodeLine{226             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{227             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{228         \}}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a0a4c7b92db29ef614b5c9e7dbf6d9e83}{operator-\/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)}
+\DoxyCodeLine{231         \{}
+\DoxyCodeLine{232             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}};}
+\DoxyCodeLine{233             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}};}
+\DoxyCodeLine{234             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{235             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{236         \}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a83da260d4a67abdcbc2ac8d33d24e863}{operator*=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)}
+\DoxyCodeLine{239         \{}
+\DoxyCodeLine{240             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}};}
+\DoxyCodeLine{241             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}};}
+\DoxyCodeLine{242             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{243             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{244         \}}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a3295da73e151e73bf82ab0a55df5e45d}{operator/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)}
+\DoxyCodeLine{247         \{}
+\DoxyCodeLine{248             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}};}
+\DoxyCodeLine{249             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}};}
+\DoxyCodeLine{250             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{251             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{252         \}}
+\DoxyCodeLine{253 }
+\DoxyCodeLine{254         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a2f65c2760ecdc431aba81883c11d6687}{operator+}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{255 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{256             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} + other \};}
+\DoxyCodeLine{257         \}}
+\DoxyCodeLine{258 }
+\DoxyCodeLine{259         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a4eb5d6669ca668c916eda392f938bf09}{operator-\/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{260 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{261             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} -\/ other \};}
+\DoxyCodeLine{262         \}}
+\DoxyCodeLine{263 }
+\DoxyCodeLine{264         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_ae8571381b16be9123703fc1a212c230b}{operator*}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{265 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{266             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} * other \};}
+\DoxyCodeLine{267         \}}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}} \mbox{\hyperlink{class_hexeng_1_1_vec3_a6030b4db875aab37010ed3305303c826}{operator/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{270 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{271             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} / other \};}
+\DoxyCodeLine{272         \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a5e39a53b5531e19ed87516d2f6cbed55}{operator+=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{275         \{}
+\DoxyCodeLine{276             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} += other;}
+\DoxyCodeLine{277             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} += other;}
+\DoxyCodeLine{278             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} += other;}
+\DoxyCodeLine{279             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{280         \}}
+\DoxyCodeLine{281 }
+\DoxyCodeLine{282         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_abc6582b165f3db57961d9373cdb0088a}{operator-\/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{283         \{}
+\DoxyCodeLine{284             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} -\/= other;}
+\DoxyCodeLine{285             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} -\/= other;}
+\DoxyCodeLine{286             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} -\/= other;}
+\DoxyCodeLine{287             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{288         \}}
+\DoxyCodeLine{289 }
+\DoxyCodeLine{290         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_a53f3adabad8e319d3c0c4a9fe0535cf4}{operator*=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{291         \{}
+\DoxyCodeLine{292             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} *= other;}
+\DoxyCodeLine{293             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} *= other;}
+\DoxyCodeLine{294             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} *= other;}
+\DoxyCodeLine{295             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{296         \}}
+\DoxyCodeLine{297 }
+\DoxyCodeLine{298         \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& \mbox{\hyperlink{class_hexeng_1_1_vec3_ac68ee7eab36bab927688a3c1b3f5fa28}{operator/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{299         \{}
+\DoxyCodeLine{300             \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} /= other;}
+\DoxyCodeLine{301             \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} /= other;}
+\DoxyCodeLine{302             \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} /= other;}
+\DoxyCodeLine{303             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{304         \}}
+\DoxyCodeLine{305 }
+\DoxyCodeLine{306         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec3_ad8cafbe2e677bd3fb60617c1879f7d5e}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{307 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{308             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{309         \}}
+\DoxyCodeLine{310 }
+\DoxyCodeLine{311         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec3_a91269446f305c18c07d5d93e803b1b11}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{312 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{313             \textcolor{keywordflow}{return} !(\mbox{\hyperlink{class_hexeng_1_1_vec3_ad8cafbe2e677bd3fb60617c1879f7d5e}{operator==}}(other));}
+\DoxyCodeLine{314         \}}
+\DoxyCodeLine{315     \};}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{318     T \mbox{\hyperlink{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}{scalar}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T>}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T>}}\& b)}
+\DoxyCodeLine{319     \{}
+\DoxyCodeLine{320         \textcolor{keywordflow}{return} a.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{321     \}}
+\DoxyCodeLine{322 }
+\DoxyCodeLine{323     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{324     std::ostream\& \mbox{\hyperlink{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T>}}\& vec)}
+\DoxyCodeLine{325     \{}
+\DoxyCodeLine{326         os << vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{327         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{328     \}}
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{331     std::istream\& \mbox{\hyperlink{namespace_hexeng_a3b45417129dd468710e146746dee57fd}{operator>>}}(std::istream\& is, \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<T>}}\& vec)}
+\DoxyCodeLine{332     \{}
+\DoxyCodeLine{333         is >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec3_aa2899e2d2c9c3d6d01c626fe2981e8e9}{z}};}
+\DoxyCodeLine{334         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{335     \}}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{338     \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}}
+\DoxyCodeLine{339     \{}
+\DoxyCodeLine{340     public :}
+\DoxyCodeLine{341 }
+\DoxyCodeLine{342         T \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344         \mbox{\hyperlink{class_hexeng_1_1_vec4_ae0186ceea5a39e20db19193834ba09a7}{Vec4}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{345         \mbox{\hyperlink{class_hexeng_1_1_vec4_a33dfcddba0dc96eff9e8487cee346c33}{Vec4}}(T \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, T \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, T \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, T \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}) : \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}(\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}(\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}(\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}(\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}) \{\}}
+\DoxyCodeLine{346 }
+\DoxyCodeLine{347         \mbox{\hyperlink{class_hexeng_1_1_vec4_a08a238f4f16f03b7305e4115ce550535}{Vec4}}(T val) : \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}(val), \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}(val) \{\}}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349         \textcolor{keyword}{template} <\textcolor{keyword}{typename} T2>}
+\DoxyCodeLine{350         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T>}}(\mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T2>}} other) : \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}), \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}((T)other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}) \{\}}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_ab6b6b6823cfcceeaa50e86994b2f4770}{abs}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)}
+\DoxyCodeLine{353         \{}
+\DoxyCodeLine{354             \textcolor{keywordflow}{return} \{ std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}), std::abs(other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}) \};}
+\DoxyCodeLine{355         \}}
+\DoxyCodeLine{356 }
+\DoxyCodeLine{357         T \mbox{\hyperlink{class_hexeng_1_1_vec4_a58f503a05c17d9fceb58c8dd4e903408}{len}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{358 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{359             \textcolor{keywordflow}{return} std::sqrt(std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, 2) + std::pow(\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}}, 2));}
+\DoxyCodeLine{360         \}}
+\DoxyCodeLine{361 }
+\DoxyCodeLine{362         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a2e012d303e40e938653427e43128cff4}{operator+}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{363 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{364             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} + other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} \};}
+\DoxyCodeLine{365         \}}
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_acc6afee98b59103baa8e0e91b3807df2}{operator-\/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{368 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{369             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} -\/ other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} \};}
+\DoxyCodeLine{370         \}}
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a8969ef170d71e5d502a342c2047fa60f}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{373 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{374             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} * other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} \};}
+\DoxyCodeLine{375         \}}
+\DoxyCodeLine{376 }
+\DoxyCodeLine{377         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a658e0b8170ade350b000aa0c80ddc2d6}{operator/}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{378 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{379             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} / other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} \};}
+\DoxyCodeLine{380         \}}
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a9cacef5648154832e2914845c8845d44}{operator-\/}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{383 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{384             \textcolor{keywordflow}{return} \{ -\/\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}}, -\/\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} \};}
+\DoxyCodeLine{385         \}}
+\DoxyCodeLine{386 }
+\DoxyCodeLine{387         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a411200909d650e21c203079ccf0dc67d}{operator+=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)}
+\DoxyCodeLine{388         \{}
+\DoxyCodeLine{389             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}};}
+\DoxyCodeLine{390             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}};}
+\DoxyCodeLine{391             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}};}
+\DoxyCodeLine{392             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} += other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{393             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{394         \}}
+\DoxyCodeLine{395 }
+\DoxyCodeLine{396         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a34ba1e29a65252450009d06b8053efdf}{operator-\/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)}
+\DoxyCodeLine{397         \{}
+\DoxyCodeLine{398             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}};}
+\DoxyCodeLine{399             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}};}
+\DoxyCodeLine{400             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}};}
+\DoxyCodeLine{401             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} -\/= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{402             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{403         \}}
+\DoxyCodeLine{404 }
+\DoxyCodeLine{405         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a2cb30c34332cb46bdf2695d0da510328}{operator*=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)}
+\DoxyCodeLine{406         \{}
+\DoxyCodeLine{407             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}};}
+\DoxyCodeLine{408             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}};}
+\DoxyCodeLine{409             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}};}
+\DoxyCodeLine{410             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} *= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{411             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{412         \}}
+\DoxyCodeLine{413 }
+\DoxyCodeLine{414         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_af259ef5dddebd2b423230d8d2977799f}{operator/=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)}
+\DoxyCodeLine{415         \{}
+\DoxyCodeLine{416             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}};}
+\DoxyCodeLine{417             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}};}
+\DoxyCodeLine{418             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}};}
+\DoxyCodeLine{419             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} /= other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{420             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{421         \}}
+\DoxyCodeLine{422 }
+\DoxyCodeLine{423         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a2aba73fe9061981fc174036e66dd01e9}{operator+}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{424 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{425             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} + other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} + other \};}
+\DoxyCodeLine{426         \}}
+\DoxyCodeLine{427 }
+\DoxyCodeLine{428         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a97f3c2466cb4ea6196b2372d4ff6900f}{operator-\/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{429 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{430             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} -\/ other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} -\/ other \};}
+\DoxyCodeLine{431         \}}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_a019a3c0fde7b727b7566744e64f57962}{operator*}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{434 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{435             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} * other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} * other \};}
+\DoxyCodeLine{436         \}}
+\DoxyCodeLine{437 }
+\DoxyCodeLine{438         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}} \mbox{\hyperlink{class_hexeng_1_1_vec4_ab9f875531c65ab4234f7b7f4eabb2e14}{operator/}}(\textcolor{keyword}{const} T\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{439 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{440             \textcolor{keywordflow}{return} \{ \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} / other, \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} / other \};}
+\DoxyCodeLine{441         \}}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_ae228cc6246c4af44e12f88211e579210}{operator+=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{444         \{}
+\DoxyCodeLine{445             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} += other;}
+\DoxyCodeLine{446             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} += other;}
+\DoxyCodeLine{447             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} += other;}
+\DoxyCodeLine{448             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} += other;}
+\DoxyCodeLine{449             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{450         \}}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a2114404c63f596a70adca4d19e299f71}{operator-\/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{453         \{}
+\DoxyCodeLine{454             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} -\/= other;}
+\DoxyCodeLine{455             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} -\/= other;}
+\DoxyCodeLine{456             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} -\/= other;}
+\DoxyCodeLine{457             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} -\/= other;}
+\DoxyCodeLine{458             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{459         \}}
+\DoxyCodeLine{460 }
+\DoxyCodeLine{461         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a7cce6755c8c7ec56c4c94a92622b4c74}{operator*=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{462         \{}
+\DoxyCodeLine{463             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} *= other;}
+\DoxyCodeLine{464             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} *= other;}
+\DoxyCodeLine{465             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} *= other;}
+\DoxyCodeLine{466             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} *= other;}
+\DoxyCodeLine{467             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{468         \}}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470         \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a6fc80e84735ea52a55996eb62523e5c6}{operator/=}}(\textcolor{keyword}{const} T\& other)}
+\DoxyCodeLine{471         \{}
+\DoxyCodeLine{472             \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} /= other;}
+\DoxyCodeLine{473             \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} /= other;}
+\DoxyCodeLine{474             \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} /= other;}
+\DoxyCodeLine{475             \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} /= other;}
+\DoxyCodeLine{476             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{477         \}}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec4_a87cf75762602e220f82bb8602ccc5433}{operator==}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{480 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{481             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} \&\& \mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} == other.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{482         \}}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{484         \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_hexeng_1_1_vec4_a090935827e40ad43ff12d43b06e74df4}{operator!=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4}}\& other)\textcolor{keyword}{ const}}
+\DoxyCodeLine{485 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{486             \textcolor{keywordflow}{return} !(\mbox{\hyperlink{class_hexeng_1_1_vec4_a87cf75762602e220f82bb8602ccc5433}{operator==}}(other));}
+\DoxyCodeLine{487         \}}
+\DoxyCodeLine{488     \};}
+\DoxyCodeLine{489 }
+\DoxyCodeLine{490     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{491     T \mbox{\hyperlink{namespace_hexeng_acc5683b5976da0041e87da79f0e7c57b}{scalar}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T>}}\& a, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T>}}\& b)}
+\DoxyCodeLine{492     \{}
+\DoxyCodeLine{493         \textcolor{keywordflow}{return} a.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} + a.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}} * b.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{494     \}}
+\DoxyCodeLine{495 }
+\DoxyCodeLine{496     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{497     std::ostream\& \mbox{\hyperlink{namespace_hexeng_a545fe26398e93173769e00af9e71ed0f}{operator<<}}(std::ostream\& os, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T>}}\& vec)}
+\DoxyCodeLine{498     \{}
+\DoxyCodeLine{499         os << vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} << \textcolor{stringliteral}{"{} ; "{}} << vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{500         \textcolor{keywordflow}{return} os;}
+\DoxyCodeLine{501     \}}
+\DoxyCodeLine{502 }
+\DoxyCodeLine{503     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{504     std::istream\& \mbox{\hyperlink{namespace_hexeng_a3b45417129dd468710e146746dee57fd}{operator>>}}(std::istream\& is, \mbox{\hyperlink{class_hexeng_1_1_vec4}{Vec4<T>}}\& vec)}
+\DoxyCodeLine{505     \{}
+\DoxyCodeLine{506         is >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a39f8faa59f1cca6a7a561c108e146f4e}{x}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a901a23d57995406b581cfddb32f8cb91}{y}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a9bebf99807006ceef94b05d6eac295a9}{z}} >> vec.\mbox{\hyperlink{class_hexeng_1_1_vec4_a1b9ce0c2f85987439539afc8b13ab461}{w}};}
+\DoxyCodeLine{507         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{508     \}}
+\DoxyCodeLine{509 }
+\DoxyCodeLine{510 \}}
+\DoxyCodeLine{511 }
+\DoxyCodeLine{512 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !VECTORS\_HPP}}
+
+\end{DoxyCode}

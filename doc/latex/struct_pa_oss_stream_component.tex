@@ -1,0 +1,114 @@
+\hypertarget{struct_pa_oss_stream_component}{}\doxysection{Pa\+Oss\+Stream\+Component Struct Reference}
+\label{struct_pa_oss_stream_component}\index{PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_component_a8d09b328d855276bb629abc1d072f9ae}{fd}}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_pa_oss_stream_component_a4fdcd3579fbc2db73c4db6e0f5b2a5ad}{dev\+Name}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_component_a12a88cd8c43b4d70b78b8c3da9403943}{user\+Channel\+Count}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_component_afb06f5b856942cabc3732432503d3cb1}{host\+Channel\+Count}}
+\item 
+int \mbox{\hyperlink{struct_pa_oss_stream_component_ae7c7baf67ac9b4459a63a192ee4c156a}{user\+Interleaved}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_oss_stream_component_a5fc847bff7f7e76d02c5427f2d1cace9}{buffer}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{struct_pa_oss_stream_component_a6a23ff2b04e56455303915b50d22bdf6}{user\+Format}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{struct_pa_oss_stream_component_aa41af4e1aeb5a24218a5fb6b629ade02}{host\+Format}}
+\item 
+double \mbox{\hyperlink{struct_pa_oss_stream_component_a1d75c6753337e2e1b41b7208dce08cf5}{latency}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_oss_stream_component_af1038464cf9b2905e8024479ae79958e}{host\+Frames}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_oss_stream_component_ad912ac4010429731817692641b7181ec}{num\+Bufs}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_oss_stream_component_a416e24ef585da06a25b1a651c6da9154}{user\+Buffers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Per-\/direction structure for \mbox{\hyperlink{struct_pa_oss_stream}{Pa\+Oss\+Stream}}.
+
+Aspect Stream\+Channels\+: In case the user requests to open the same device for both capture and playback, but with different number of channels we will have to adapt between the number of user and host channels for at least one direction, since the configuration space is the same for both directions of an OSS device. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a5fc847bff7f7e76d02c5427f2d1cace9}\label{struct_pa_oss_stream_component_a5fc847bff7f7e76d02c5427f2d1cace9}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!buffer@{buffer}}
+\index{buffer@{buffer}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{buffer}{buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Oss\+Stream\+Component\+::buffer}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a4fdcd3579fbc2db73c4db6e0f5b2a5ad}\label{struct_pa_oss_stream_component_a4fdcd3579fbc2db73c4db6e0f5b2a5ad}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!devName@{devName}}
+\index{devName@{devName}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{devName}{devName}}
+{\footnotesize\ttfamily const char$\ast$ Pa\+Oss\+Stream\+Component\+::dev\+Name}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a8d09b328d855276bb629abc1d072f9ae}\label{struct_pa_oss_stream_component_a8d09b328d855276bb629abc1d072f9ae}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!fd@{fd}}
+\index{fd@{fd}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+Component\+::fd}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_afb06f5b856942cabc3732432503d3cb1}\label{struct_pa_oss_stream_component_afb06f5b856942cabc3732432503d3cb1}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!hostChannelCount@{hostChannelCount}}
+\index{hostChannelCount@{hostChannelCount}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hostChannelCount}{hostChannelCount}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+Component\+::host\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_aa41af4e1aeb5a24218a5fb6b629ade02}\label{struct_pa_oss_stream_component_aa41af4e1aeb5a24218a5fb6b629ade02}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!hostFormat@{hostFormat}}
+\index{hostFormat@{hostFormat}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hostFormat}{hostFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} Pa\+Oss\+Stream\+Component\+::host\+Format}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_af1038464cf9b2905e8024479ae79958e}\label{struct_pa_oss_stream_component_af1038464cf9b2905e8024479ae79958e}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!hostFrames@{hostFrames}}
+\index{hostFrames@{hostFrames}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hostFrames}{hostFrames}}
+{\footnotesize\ttfamily unsigned long Pa\+Oss\+Stream\+Component\+::host\+Frames}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a1d75c6753337e2e1b41b7208dce08cf5}\label{struct_pa_oss_stream_component_a1d75c6753337e2e1b41b7208dce08cf5}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!latency@{latency}}
+\index{latency@{latency}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{latency}{latency}}
+{\footnotesize\ttfamily double Pa\+Oss\+Stream\+Component\+::latency}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_ad912ac4010429731817692641b7181ec}\label{struct_pa_oss_stream_component_ad912ac4010429731817692641b7181ec}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!numBufs@{numBufs}}
+\index{numBufs@{numBufs}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{numBufs}{numBufs}}
+{\footnotesize\ttfamily unsigned long Pa\+Oss\+Stream\+Component\+::num\+Bufs}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a416e24ef585da06a25b1a651c6da9154}\label{struct_pa_oss_stream_component_a416e24ef585da06a25b1a651c6da9154}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!userBuffers@{userBuffers}}
+\index{userBuffers@{userBuffers}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{userBuffers}{userBuffers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Oss\+Stream\+Component\+::user\+Buffers}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a12a88cd8c43b4d70b78b8c3da9403943}\label{struct_pa_oss_stream_component_a12a88cd8c43b4d70b78b8c3da9403943}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!userChannelCount@{userChannelCount}}
+\index{userChannelCount@{userChannelCount}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{userChannelCount}{userChannelCount}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+Component\+::user\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_a6a23ff2b04e56455303915b50d22bdf6}\label{struct_pa_oss_stream_component_a6a23ff2b04e56455303915b50d22bdf6}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!userFormat@{userFormat}}
+\index{userFormat@{userFormat}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{userFormat}{userFormat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} Pa\+Oss\+Stream\+Component\+::user\+Format}
+
+\mbox{\Hypertarget{struct_pa_oss_stream_component_ae7c7baf67ac9b4459a63a192ee4c156a}\label{struct_pa_oss_stream_component_ae7c7baf67ac9b4459a63a192ee4c156a}} 
+\index{PaOssStreamComponent@{PaOssStreamComponent}!userInterleaved@{userInterleaved}}
+\index{userInterleaved@{userInterleaved}!PaOssStreamComponent@{PaOssStreamComponent}}
+\doxysubsubsection{\texorpdfstring{userInterleaved}{userInterleaved}}
+{\footnotesize\ttfamily int Pa\+Oss\+Stream\+Component\+::user\+Interleaved}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/oss/\mbox{\hyperlink{pa__unix__oss_8c}{pa\+\_\+unix\+\_\+oss.\+c}}\end{DoxyCompactItemize}

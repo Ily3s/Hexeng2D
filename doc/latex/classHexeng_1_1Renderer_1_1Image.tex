@@ -1,0 +1,114 @@
+\doxysection{Hexeng\+::Renderer\+::Image Class Reference}
+\hypertarget{classHexeng_1_1Renderer_1_1Image}{}\label{classHexeng_1_1Renderer_1_1Image}\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a25eee88dff9b64667524e7fa36c1d12e}{Image}} (const std\+::string \&\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a9dab7702481522e4e0b6db751b6d4af8}{filepath}}, int channels\+\_\+nb=0)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_aad8bfe5ea2beabf9f8ade687770acb29}{\texorpdfstring{$\sim$}{\string~}\+Image}} ()
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a68e161d63dd9606c5a21e05a2f4435f5}{Image}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a9e9ce20996be2b79afd44b7d5894266c}{Image}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_ae0c99bef816684ecebb52e50987fc00d}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_ad1f4e2d55e741efba7c1d620702f63f9}{Image}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a3401594d30df9e06a1c33393599f9d1b}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a9dab7702481522e4e0b6db751b6d4af8}{filepath}}
+\item 
+uint8\+\_\+t \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a31bf54fc52c5f9250b26cb4aaf891af5}{pixel\+\_\+buffer}} = nullptr
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a9c8812aee7df4b6846350c30467b9005}{size}} \{ 0, 0 \}
+\item 
+int \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a5a98ec77d6c9f63ea4a6ca0c67268c9c}{BPP}} = 4
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a25eee88dff9b64667524e7fa36c1d12e}\label{classHexeng_1_1Renderer_1_1Image_a25eee88dff9b64667524e7fa36c1d12e} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!Image@{Image}}
+\index{Image@{Image}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{int}]{channels\+\_\+nb = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_aad8bfe5ea2beabf9f8ade687770acb29}\label{classHexeng_1_1Renderer_1_1Image_aad8bfe5ea2beabf9f8ade687770acb29} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!````~Image@{\texorpdfstring{$\sim$}{\string~}Image}}
+\index{````~Image@{\texorpdfstring{$\sim$}{\string~}Image}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Image()}{\string~Image()}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Image\+::\texorpdfstring{$\sim$}{\string~}\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a68e161d63dd9606c5a21e05a2f4435f5}\label{classHexeng_1_1Renderer_1_1Image_a68e161d63dd9606c5a21e05a2f4435f5} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!Image@{Image}}
+\index{Image@{Image}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Image\+::\+Image (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a9e9ce20996be2b79afd44b7d5894266c}\label{classHexeng_1_1Renderer_1_1Image_a9e9ce20996be2b79afd44b7d5894266c} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!Image@{Image}}
+\index{Image@{Image}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_ad1f4e2d55e741efba7c1d620702f63f9}\label{classHexeng_1_1Renderer_1_1Image_ad1f4e2d55e741efba7c1d620702f63f9} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!Image@{Image}}
+\index{Image@{Image}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Image\+::\+Image (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_ae0c99bef816684ecebb52e50987fc00d}\label{classHexeng_1_1Renderer_1_1Image_ae0c99bef816684ecebb52e50987fc00d} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \& Hexeng\+::\+Renderer\+::\+Image\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a3401594d30df9e06a1c33393599f9d1b}\label{classHexeng_1_1Renderer_1_1Image_a3401594d30df9e06a1c33393599f9d1b} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \& Hexeng\+::\+Renderer\+::\+Image\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a5a98ec77d6c9f63ea4a6ca0c67268c9c}\label{classHexeng_1_1Renderer_1_1Image_a5a98ec77d6c9f63ea4a6ca0c67268c9c} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!BPP@{BPP}}
+\index{BPP@{BPP}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{BPP}{BPP}}
+{\footnotesize\ttfamily int Hexeng\+::\+Renderer\+::\+Image\+::\+BPP = 4}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a9dab7702481522e4e0b6db751b6d4af8}\label{classHexeng_1_1Renderer_1_1Image_a9dab7702481522e4e0b6db751b6d4af8} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!filepath@{filepath}}
+\index{filepath@{filepath}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{filepath}{filepath}}
+{\footnotesize\ttfamily std\+::string Hexeng\+::\+Renderer\+::\+Image\+::filepath}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a31bf54fc52c5f9250b26cb4aaf891af5}\label{classHexeng_1_1Renderer_1_1Image_a31bf54fc52c5f9250b26cb4aaf891af5} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!pixel\_buffer@{pixel\_buffer}}
+\index{pixel\_buffer@{pixel\_buffer}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{pixel\_buffer}{pixel\_buffer}}
+{\footnotesize\ttfamily uint8\+\_\+t\texorpdfstring{$\ast$}{*} Hexeng\+::\+Renderer\+::\+Image\+::pixel\+\_\+buffer = nullptr}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Image_a9c8812aee7df4b6846350c30467b9005}\label{classHexeng_1_1Renderer_1_1Image_a9c8812aee7df4b6846350c30467b9005} 
+\index{Hexeng::Renderer::Image@{Hexeng::Renderer::Image}!size@{size}}
+\index{size@{size}!Hexeng::Renderer::Image@{Hexeng::Renderer::Image}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$int$>$ Hexeng\+::\+Renderer\+::\+Image\+::size \{ 0, 0 \}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{Texture_8hpp}{Texture.\+hpp}}\end{DoxyCompactItemize}

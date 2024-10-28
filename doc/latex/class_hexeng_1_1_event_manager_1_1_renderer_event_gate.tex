@@ -1,0 +1,50 @@
+\hypertarget{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{}\doxysection{Hexeng\+::Event\+Manager\+::Renderer\+Event\+Gate Class Reference}
+\label{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}\index{Hexeng::EventManager::RendererEventGate@{Hexeng::EventManager::RendererEventGate}}
+
+
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{Renderer\+Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{Renderer\+Event}} what \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}   
+
+
+
+
+{\ttfamily \#include $<$Event\+Manager.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Event\+Manager\+::Renderer\+Event\+Gate\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate_af549472ffe67b2b89ef20e416cda08ce}{Renderer\+Event\+Gate}} (std\+::function$<$ void(void)$>$ evt, Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, unsigned int \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, evt is pushed back in the pending renderer actions list.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event_gate}{Renderer\+Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_renderer_event}{Renderer\+Event}} what \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Gate}} is to \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_renderer_event_gate_af549472ffe67b2b89ef20e416cda08ce}\label{class_hexeng_1_1_event_manager_1_1_renderer_event_gate_af549472ffe67b2b89ef20e416cda08ce}} 
+\index{Hexeng::EventManager::RendererEventGate@{Hexeng::EventManager::RendererEventGate}!RendererEventGate@{RendererEventGate}}
+\index{RendererEventGate@{RendererEventGate}!Hexeng::EventManager::RendererEventGate@{Hexeng::EventManager::RendererEventGate}}
+\doxysubsubsection{\texorpdfstring{RendererEventGate()}{RendererEventGate()}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Renderer\+Event\+Gate\+::\+Renderer\+Event\+Gate (\begin{DoxyParamCaption}\item[{std\+::function$<$ void(void)$>$}]{evt,  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL},  }\item[{unsigned int}]{pertick = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Every pertick ticks, evt is pushed back in the pending renderer actions list.  
+
+All the actions in the pending renderer actions list are executed the next frame. 
+\begin{DoxyParams}{Parameters}
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_event_manager_8hpp}{Event\+Manager.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_event_manager_8cpp}{Event\+Manager.\+cpp}}\end{DoxyCompactItemize}

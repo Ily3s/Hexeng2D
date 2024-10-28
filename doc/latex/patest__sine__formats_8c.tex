@@ -1,0 +1,177 @@
+\hypertarget{patest__sine__formats_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+sine\+\_\+formats.c File Reference}
+\label{patest__sine__formats_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_sine\_formats.c@{Hexeng2D/dependencies/portaudio/test/patest\_sine\_formats.c}}
+
+
+Play a sine wave for several seconds. Test various data formats.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(10)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(512)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a1c1b7b93aece33fae64d6d137ada2c8b}{LEFT\+\_\+\+FREQ}}~(\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}/256.\+0)  /$\ast$ So we hit 1.\+0 $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a7c7a780f010c6c0d9e469f2eb6085330}{RIGHT\+\_\+\+FREQ}}~(500.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_ae2d3a48fb01bbc0fe795724379434d05}{AMPLITUDE}}~(1.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a9a493e3e4fe69d0b8c338869ebcadbc4}{TEST\+\_\+\+UINT8}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a4161136bcd02fde2a869054e34800b33}{TEST\+\_\+\+INT8}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a26d26aad831b9eb073965098be82d535}{TEST\+\_\+\+INT16}}~(1)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_af4100c01bb95fd8e789df89e2f34b859}{TEST\+\_\+\+FLOAT32}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a0cad294d05664a3f9e84977f9d12f24c}{TEST\+\_\+\+FORMAT}}~\mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}}
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a749d3b92f2211de8c5b2013ede553b2e}{SAMPLE\+\_\+\+ZERO}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a0595eb116c1ff490e554c67699e1516b}{DOUBLE\+\_\+\+TO\+\_\+\+SAMPLE}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~(\mbox{\hyperlink{patest__sine__formats_8c_a749d3b92f2211de8c5b2013ede553b2e}{SAMPLE\+\_\+\+ZERO}} + (\mbox{\hyperlink{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}{SAMPLE\+\_\+t}})(32767 $\ast$ (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})))
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_a1aeebfa6b95a887d604477df2fb48b33}{FORMAT\+\_\+\+NAME}}~\char`\"{}Signed 16 Bit\char`\"{}
+\item 
+\#define \mbox{\hyperlink{patest__sine__formats_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef short \mbox{\hyperlink{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}{SAMPLE\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__sine__formats_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play a sine wave for several seconds. Test various data formats. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__sine__formats_8c_ae2d3a48fb01bbc0fe795724379434d05}\label{patest__sine__formats_8c_ae2d3a48fb01bbc0fe795724379434d05}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!AMPLITUDE@{AMPLITUDE}}
+\index{AMPLITUDE@{AMPLITUDE}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{AMPLITUDE}{AMPLITUDE}}
+{\footnotesize\ttfamily \#define AMPLITUDE~(1.\+0)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a0595eb116c1ff490e554c67699e1516b}\label{patest__sine__formats_8c_a0595eb116c1ff490e554c67699e1516b}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!DOUBLE\_TO\_SAMPLE@{DOUBLE\_TO\_SAMPLE}}
+\index{DOUBLE\_TO\_SAMPLE@{DOUBLE\_TO\_SAMPLE}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{DOUBLE\_TO\_SAMPLE}{DOUBLE\_TO\_SAMPLE}}
+{\footnotesize\ttfamily \#define DOUBLE\+\_\+\+TO\+\_\+\+SAMPLE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~(\mbox{\hyperlink{patest__sine__formats_8c_a749d3b92f2211de8c5b2013ede553b2e}{SAMPLE\+\_\+\+ZERO}} + (\mbox{\hyperlink{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}{SAMPLE\+\_\+t}})(32767 $\ast$ (\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})))}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a1aeebfa6b95a887d604477df2fb48b33}\label{patest__sine__formats_8c_a1aeebfa6b95a887d604477df2fb48b33}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!FORMAT\_NAME@{FORMAT\_NAME}}
+\index{FORMAT\_NAME@{FORMAT\_NAME}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{FORMAT\_NAME}{FORMAT\_NAME}}
+{\footnotesize\ttfamily \#define FORMAT\+\_\+\+NAME~\char`\"{}Signed 16 Bit\char`\"{}}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__sine__formats_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(512)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a1c1b7b93aece33fae64d6d137ada2c8b}\label{patest__sine__formats_8c_a1c1b7b93aece33fae64d6d137ada2c8b}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!LEFT\_FREQ@{LEFT\_FREQ}}
+\index{LEFT\_FREQ@{LEFT\_FREQ}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{LEFT\_FREQ}{LEFT\_FREQ}}
+{\footnotesize\ttfamily \#define LEFT\+\_\+\+FREQ~(\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}/256.\+0)  /$\ast$ So we hit 1.\+0 $\ast$/}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__sine__formats_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__sine__formats_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(10)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a7c7a780f010c6c0d9e469f2eb6085330}\label{patest__sine__formats_8c_a7c7a780f010c6c0d9e469f2eb6085330}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!RIGHT\_FREQ@{RIGHT\_FREQ}}
+\index{RIGHT\_FREQ@{RIGHT\_FREQ}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{RIGHT\_FREQ}{RIGHT\_FREQ}}
+{\footnotesize\ttfamily \#define RIGHT\+\_\+\+FREQ~(500.\+0)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__sine__formats_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a749d3b92f2211de8c5b2013ede553b2e}\label{patest__sine__formats_8c_a749d3b92f2211de8c5b2013ede553b2e}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!SAMPLE\_ZERO@{SAMPLE\_ZERO}}
+\index{SAMPLE\_ZERO@{SAMPLE\_ZERO}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_ZERO}{SAMPLE\_ZERO}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+ZERO~(0)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_af4100c01bb95fd8e789df89e2f34b859}\label{patest__sine__formats_8c_af4100c01bb95fd8e789df89e2f34b859}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!TEST\_FLOAT32@{TEST\_FLOAT32}}
+\index{TEST\_FLOAT32@{TEST\_FLOAT32}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_FLOAT32}{TEST\_FLOAT32}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FLOAT32~(0)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a0cad294d05664a3f9e84977f9d12f24c}\label{patest__sine__formats_8c_a0cad294d05664a3f9e84977f9d12f24c}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!TEST\_FORMAT@{TEST\_FORMAT}}
+\index{TEST\_FORMAT@{TEST\_FORMAT}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_FORMAT}{TEST\_FORMAT}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+FORMAT~\mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}}}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a26d26aad831b9eb073965098be82d535}\label{patest__sine__formats_8c_a26d26aad831b9eb073965098be82d535}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!TEST\_INT16@{TEST\_INT16}}
+\index{TEST\_INT16@{TEST\_INT16}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INT16}{TEST\_INT16}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+INT16~(1)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a4161136bcd02fde2a869054e34800b33}\label{patest__sine__formats_8c_a4161136bcd02fde2a869054e34800b33}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!TEST\_INT8@{TEST\_INT8}}
+\index{TEST\_INT8@{TEST\_INT8}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_INT8}{TEST\_INT8}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+INT8~(0)}
+
+\mbox{\Hypertarget{patest__sine__formats_8c_a9a493e3e4fe69d0b8c338869ebcadbc4}\label{patest__sine__formats_8c_a9a493e3e4fe69d0b8c338869ebcadbc4}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!TEST\_UINT8@{TEST\_UINT8}}
+\index{TEST\_UINT8@{TEST\_UINT8}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_UINT8}{TEST\_UINT8}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+UINT8~(0)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}\label{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!SAMPLE\_t@{SAMPLE\_t}}
+\index{SAMPLE\_t@{SAMPLE\_t}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_t}{SAMPLE\_t}}
+{\footnotesize\ttfamily typedef short \mbox{\hyperlink{patest__sine__formats_8c_af0f98025533174ebf245cbdd41e3c3aa}{SAMPLE\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__sine__formats_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__sine__formats_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_sine\_formats.c@{patest\_sine\_formats.c}!main@{main}}
+\index{main@{main}!patest\_sine\_formats.c@{patest\_sine\_formats.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

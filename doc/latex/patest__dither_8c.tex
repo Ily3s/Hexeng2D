@@ -1,0 +1,99 @@
+\hypertarget{patest__dither_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+dither.c File Reference}
+\label{patest__dither_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_dither.c@{Hexeng2D/dependencies/portaudio/test/patest\_dither.c}}
+
+
+Attempt to hear difference between dithered and non-\/dithered signal.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__dither_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(5)
+\item 
+\#define \mbox{\hyperlink{patest__dither_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__dither_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__dither_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} \mbox{\hyperlink{patest__dither_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{patest__dither_8c_a1dd2f373f9e8a48f871e15d8eb221321}{Play\+Sine}} (\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}}, float amplitude)
+\item 
+int \mbox{\hyperlink{patest__dither_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Attempt to hear difference between dithered and non-\/dithered signal. 
+
+This only has an effect if the native format is 16 bit.
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__dither_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__dither_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_dither.c@{patest\_dither.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__dither_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{patest__dither_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{patest\_dither.c@{patest\_dither.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(5)}
+
+\mbox{\Hypertarget{patest__dither_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__dither_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_dither.c@{patest\_dither.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__dither_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__dither_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_dither.c@{patest\_dither.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(200)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__dither_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}\label{patest__dither_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}} 
+\index{patest\_dither.c@{patest\_dither.c}!paTestData@{paTestData}}
+\index{paTestData@{paTestData}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{paTestData}{paTestData}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__dither_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__dither_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_dither.c@{patest\_dither.c}!main@{main}}
+\index{main@{main}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__dither_8c_a1dd2f373f9e8a48f871e15d8eb221321}\label{patest__dither_8c_a1dd2f373f9e8a48f871e15d8eb221321}} 
+\index{patest\_dither.c@{patest\_dither.c}!PlaySine@{PlaySine}}
+\index{PlaySine@{PlaySine}!patest\_dither.c@{patest\_dither.c}}
+\doxysubsubsection{\texorpdfstring{PlaySine()}{PlaySine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Play\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flags,  }\item[{float}]{amplitude }\end{DoxyParamCaption})}
+

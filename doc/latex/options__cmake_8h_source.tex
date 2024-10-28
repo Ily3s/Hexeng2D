@@ -1,0 +1,37 @@
+\hypertarget{options__cmake_8h_source}{}\doxysection{options\+\_\+cmake.\+h}
+\label{options__cmake_8h_source}\index{Hexeng2D/dependencies/portaudio/options\_cmake.h@{Hexeng2D/dependencies/portaudio/options\_cmake.h}}
+\mbox{\hyperlink{options__cmake_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/* \$Id: \$}}
+\DoxyCodeLine{2 \textcolor{comment}{}}
+\DoxyCodeLine{3 \textcolor{comment}{   !!! CMake generated file, do NOT edit! Use CMake-\/GUI to change configuration instead. !!!}}
+\DoxyCodeLine{4 \textcolor{comment}{}}
+\DoxyCodeLine{5 \textcolor{comment}{   Header file configured by CMake to convert CMake options/vars to macros. It is done this way because if set via}}
+\DoxyCodeLine{6 \textcolor{comment}{   preprocessor options, MSVC f.i. has no way of knowing when an option (or var) changes as there is no dependency chain.}}
+\DoxyCodeLine{7 \textcolor{comment}{   }}
+\DoxyCodeLine{8 \textcolor{comment}{   The generated "{}options\_cmake.h"{} should be included like so:}}
+\DoxyCodeLine{9 \textcolor{comment}{   }}
+\DoxyCodeLine{10 \textcolor{comment}{   \#ifdef PORTAUDIO\_CMAKE\_GENERATED}}
+\DoxyCodeLine{11 \textcolor{comment}{   \#include "{}options\_cmake.h"{}}}
+\DoxyCodeLine{12 \textcolor{comment}{   \#endif}}
+\DoxyCodeLine{13 \textcolor{comment}{   }}
+\DoxyCodeLine{14 \textcolor{comment}{   so that non-\/CMake build environments are left intact.}}
+\DoxyCodeLine{15 \textcolor{comment}{   }}
+\DoxyCodeLine{16 \textcolor{comment}{   Source template: cmake\_support/options\_cmake.h.in}}
+\DoxyCodeLine{17 \textcolor{comment}{*/}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifdef \_WIN32}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#if defined(PA\_USE\_ASIO) || defined(PA\_USE\_DS) || defined(PA\_USE\_WMME) || defined(PA\_USE\_WASAPI) || defined(PA\_USE\_WDMKS)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#error "{}This header needs to be included before pa\_hostapi.h!!"{}}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define PA\_USE\_ASIO 0}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define PA\_USE\_DS 1}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define PA\_USE\_WMME 1}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define PA\_USE\_WASAPI 1}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define PA\_USE\_WDMKS 1}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#error "{}Platform currently not supported by CMake script"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

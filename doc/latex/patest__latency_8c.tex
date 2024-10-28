@@ -1,0 +1,107 @@
+\hypertarget{patest__latency_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+latency.c File Reference}
+\label{patest__latency_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_latency.c@{Hexeng2D/dependencies/portaudio/test/patest\_latency.c}}
+
+
+Hear the latency caused by big buffers. Play a sine wave and change frequency based on letter input.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_a6ee1df754f053739d33f2d477bdd3c10}{OUTPUT\+\_\+\+DEVICE}}~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(64)
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_a3ff435ff8937e2045dcd00a26064594c}{MIN\+\_\+\+FREQ}}~(100.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_a1f39364e936299a67161ce6976ca4456}{Calc\+Phase\+Increment}}(freq)~((freq)/\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__latency_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(400)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{patest__latency_8c_aacd8c9f6a4739f4b76071a5d530216d3}{Lookup\+Sine}} (\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, float phase)
+\item 
+int \mbox{\hyperlink{patest__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Hear the latency caused by big buffers. Play a sine wave and change frequency based on letter input. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}}, and Darren Gibbs 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__latency_8c_a1f39364e936299a67161ce6976ca4456}\label{patest__latency_8c_a1f39364e936299a67161ce6976ca4456}} 
+\index{patest\_latency.c@{patest\_latency.c}!CalcPhaseIncrement@{CalcPhaseIncrement}}
+\index{CalcPhaseIncrement@{CalcPhaseIncrement}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{CalcPhaseIncrement}{CalcPhaseIncrement}}
+{\footnotesize\ttfamily \#define Calc\+Phase\+Increment(\begin{DoxyParamCaption}\item[{}]{freq }\end{DoxyParamCaption})~((freq)/\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{patest__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_latency.c@{patest\_latency.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(64)}
+
+\mbox{\Hypertarget{patest__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__latency_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_latency.c@{patest\_latency.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__latency_8c_a3ff435ff8937e2045dcd00a26064594c}\label{patest__latency_8c_a3ff435ff8937e2045dcd00a26064594c}} 
+\index{patest\_latency.c@{patest\_latency.c}!MIN\_FREQ@{MIN\_FREQ}}
+\index{MIN\_FREQ@{MIN\_FREQ}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_FREQ}{MIN\_FREQ}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+FREQ~(100.\+0f)}
+
+\mbox{\Hypertarget{patest__latency_8c_a6ee1df754f053739d33f2d477bdd3c10}\label{patest__latency_8c_a6ee1df754f053739d33f2d477bdd3c10}} 
+\index{patest\_latency.c@{patest\_latency.c}!OUTPUT\_DEVICE@{OUTPUT\_DEVICE}}
+\index{OUTPUT\_DEVICE@{OUTPUT\_DEVICE}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{OUTPUT\_DEVICE}{OUTPUT\_DEVICE}}
+{\footnotesize\ttfamily \#define OUTPUT\+\_\+\+DEVICE~(\mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}}())}
+
+\mbox{\Hypertarget{patest__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_latency.c@{patest\_latency.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__latency_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__latency_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_latency.c@{patest\_latency.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(400)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__latency_8c_aacd8c9f6a4739f4b76071a5d530216d3}\label{patest__latency_8c_aacd8c9f6a4739f4b76071a5d530216d3}} 
+\index{patest\_latency.c@{patest\_latency.c}!LookupSine@{LookupSine}}
+\index{LookupSine@{LookupSine}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{LookupSine()}{LookupSine()}}
+{\footnotesize\ttfamily float Lookup\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data,  }\item[{float}]{phase }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__latency_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_latency.c@{patest\_latency.c}!main@{main}}
+\index{main@{main}!patest\_latency.c@{patest\_latency.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

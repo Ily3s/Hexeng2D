@@ -1,0 +1,72 @@
+{\itshape Note\+: this page has not been reviewed, and may contain errors.}\hypertarget{compile_linux_comp_linux1}{}\doxysection{Installing ALSA Development Kit}\label{compile_linux_comp_linux1}
+The OSS sound API is very old and not well supported. It is recommended that you use the ALSA sound API. The Port\+Audio configure script will look for the ALSA SDK. You can install the ALSA SDK on Ubuntu using\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install libasound-\/dev}
+
+\end{DoxyCode}
+
+
+You might need to use yum, or some other package manager, instead of apt-\/get on your machine. If you do not install ALSA then you might get a message when testing that says you have no audio devices.
+
+You can find out more about ALSA here\+: \href{http://www.alsa-project.org/}{\texttt{ http\+://www.\+alsa-\/project.\+org/}}\hypertarget{compile_linux_comp_linux2}{}\doxysection{Configuring and Compiling Port\+Audio}\label{compile_linux_comp_linux2}
+You can build Port\+Audio in Linux Environments using the standard configure/make tools\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./configure \&\& make}
+
+\end{DoxyCode}
+
+
+That will build Port\+Audio using Jack, ALSA and OSS in whatever combination they are found on your system. For example, if you have Jack and OSS but not ALSA, it will build using Jack and OSS but not ALSA. This step also builds a number of tests, which can be found in the bin directory of Port\+Audio. It\textquotesingle{}s a good idea to run some of these tests to make sure Port\+Audio is working correctly.\hypertarget{compile_linux_comp_linux3}{}\doxysection{Using Port\+Audio in your Projects}\label{compile_linux_comp_linux3}
+To use Port\+Audio in your apps, you can simply install the .so files\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+
+Projects built this way will expect Port\+Audio to be installed on target systems in order to run. If you want to build a more self-\/contained binary, you may use the libportaudio.\+a file\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp lib/.libs/libportaudio.a /YOUR/PROJECT/DIR}
+
+\end{DoxyCode}
+
+
+On some systems you may need to use\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp /usr/local/lib/libportaudio.a /YOUR/PROJECT/DIR}
+
+\end{DoxyCode}
+
+
+You may also need to copy \mbox{\hyperlink{portaudio_8h}{portaudio.\+h}}, located in the include/ directory of Port\+Audio into your project. Note that you will usually need to link with the appropriate libraries that you used, such as ALSA and JACK, as well as with librt and libpthread. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gcc \mbox{\hyperlink{pa__devs_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}.c libportaudio.a -\/lrt -\/lm -\/lasound -\/ljack -\/pthread -\/o YOUR\_BINARY}
+
+\end{DoxyCode}
+\hypertarget{compile_linux_comp_linux4}{}\doxysection{Linux Extensions}\label{compile_linux_comp_linux4}
+Note that the ALSA Port\+Audio back-\/end adds a few extensions to the standard API that you may take advantage of. To use these functions be sure to include the \mbox{\hyperlink{pa__linux__alsa_8h}{pa\+\_\+linux\+\_\+alsa.\+h}} file found in the include file in the Port\+Audio folder. This file contains further documentation on the following functions\+:
+
+Pa\+Alsa\+Stream\+Info/\+Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info\+:: Objects of the !\+Pa\+Alsa\+Stream\+Info type may be used for the !host\+Api\+Specific\+Stream\+Info attribute of a !\+Pa\+Stream\+Parameters object, in order to specify the name of an ALSA device to open directly. Specify the device via !\+Pa\+Alsa\+Stream\+Info.device\+String, after initializing the object with Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info.
+
+Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling\+:\+: PA ALSA supports real-\/time scheduling of the audio callback thread (using the FIFO pthread scheduling policy), via the extension Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling. Call this on the stream before starting it with the {\itshape enable\+Scheduling} parameter set to true or false, to enable or disable this behaviour respectively.
+
+Pa\+Alsa\+\_\+\+Get\+Stream\+Input\+Card\+:\+: Use this function to get the ALSA-\/lib card index of the stream\textquotesingle{}s input device.
+
+Pa\+Alsa\+\_\+\+Get\+Stream\+Output\+Card\+:\+: Use this function to get the ALSA-\/lib card index of the stream\textquotesingle{}s output device.
+
+Of particular importance is Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling, which allows ALSA to run at a high priority to prevent ordinary processes on the system from preempting audio playback. Without this, low latency audio playback will be irregular and will contain frequent drop-\/outs.\hypertarget{compile_linux_comp_linux5}{}\doxysection{Linux Debugging}\label{compile_linux_comp_linux5}
+Eliot Blennerhassett writes\+:
+
+On linux build, use e.\+g. \char`\"{}libtool gdb bin/patest\+\_\+sine8\char`\"{} to debug that program. This is because on linux bin/patest\+\_\+sine8 is a libtool shell script that wraps bin/.libs/patest\+\_\+sine8 and allows it to find the appropriate libraries within the build tree. 

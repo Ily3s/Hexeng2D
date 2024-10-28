@@ -1,0 +1,181 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad}{}\doxysection{Hexeng\+::Renderer\+::Batch\+Quad Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_batch_quad}\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+
+
+{\ttfamily \#include $<$Batch\+Renderer.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_afd5d5e836d1619a98777d5329a346614}{Batch\+Quad}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_ac8da2cdceb66a23be46ae01711da2a44}{Batch\+Quad}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} $\ast$bi, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&tex\+\_\+coords, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&pos, float size, float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a7b58c3b6b3f2526fc6341286a73291d5}{rotation}}=0.\+0f)
+\begin{DoxyCompactList}\small\item\em Adds a quad to a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} you want to push this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} in.\\
+\hline
+{\em tex\+\_\+coords} & The coordinates of a cell in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} of \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} bi\\
+\hline
+{\em pos} & The position of the quad in the Hexeng2D coordinates system.\\
+\hline
+{\em size} & Gets multiplied by the size of the texture(cell) to get the size of the quad\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a488221bc6a47a01142d06795d2c90443}{Batch\+Quad}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a55814db8457c3955c3b9b77e5c846042}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a602c7ef42d72bcf329d33954d6bc8322}{Batch\+Quad}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_aaccb2f107c46675a2ce5c7c61f8c572d}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_abbb26cf4cd54c6b59bc2e54555d13fab}{position}} = \{ 0, 0 \}
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_acc5f104114e35dcd7baed0e39d9166d7}{scale}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a7b58c3b6b3f2526fc6341286a73291d5}{rotation}} = 0.\+0f
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a6f67451af8f9ab236195dd7dd9b83e4c}{color\+\_\+filter}} = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\item 
+float \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a9c42a515b74897b406d4f099f94c4362}{opacity}} = color\+\_\+filter.\+A
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_a381c3cfcdab3e4d6d5befb15a916bc31}{color}} = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad_af68979b1f29996010d3ebdf84f50a01e}{Batch\+Instance}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_afd5d5e836d1619a98777d5329a346614}\label{class_hexeng_1_1_renderer_1_1_batch_quad_afd5d5e836d1619a98777d5329a346614}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{BatchQuad()}{BatchQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::\+Batch\+Quad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_ac8da2cdceb66a23be46ae01711da2a44}\label{class_hexeng_1_1_renderer_1_1_batch_quad_ac8da2cdceb66a23be46ae01711da2a44}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{BatchQuad()}{BatchQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::\+Batch\+Quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} $\ast$}]{bi,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{tex\+\_\+coords,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{pos,  }\item[{float}]{size,  }\item[{float}]{rotation = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+Adds a quad to a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}. 
+\begin{DoxyParams}{Parameters}
+{\em bi} & The \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} you want to push this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} in.\\
+\hline
+{\em tex\+\_\+coords} & The coordinates of a cell in the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} of \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} bi\\
+\hline
+{\em pos} & The position of the quad in the Hexeng2D coordinates system.\\
+\hline
+{\em size} & Gets multiplied by the size of the texture(cell) to get the size of the quad\\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a488221bc6a47a01142d06795d2c90443}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a488221bc6a47a01142d06795d2c90443}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{BatchQuad()}{BatchQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::\+Batch\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a602c7ef42d72bcf329d33954d6bc8322}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a602c7ef42d72bcf329d33954d6bc8322}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{BatchQuad()}{BatchQuad()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::\+Batch\+Quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_aaccb2f107c46675a2ce5c7c61f8c572d}\label{class_hexeng_1_1_renderer_1_1_batch_quad_aaccb2f107c46675a2ce5c7c61f8c572d}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \& Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a55814db8457c3955c3b9b77e5c846042}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a55814db8457c3955c3b9b77e5c846042}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \& Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_af68979b1f29996010d3ebdf84f50a01e}\label{class_hexeng_1_1_renderer_1_1_batch_quad_af68979b1f29996010d3ebdf84f50a01e}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{BatchInstance}{BatchInstance}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a381c3cfcdab3e4d6d5befb15a916bc31}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a381c3cfcdab3e4d6d5befb15a916bc31}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!color@{color}}
+\index{color@{color}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::color = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}}
+
+\begin{DoxyNote}{Note}
+Can always be modified 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a6f67451af8f9ab236195dd7dd9b83e4c}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a6f67451af8f9ab236195dd7dd9b83e4c}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!color\_filter@{color\_filter}}
+\index{color\_filter@{color\_filter}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{color\_filter}{color\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::color\+\_\+filter = \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a9c42a515b74897b406d4f099f94c4362}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a9c42a515b74897b406d4f099f94c4362}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!opacity@{opacity}}
+\index{opacity@{opacity}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{opacity}{opacity}}
+{\footnotesize\ttfamily float\& Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::opacity = color\+\_\+filter.\+A}
+
+\begin{DoxyNote}{Note}
+Alias to color.\+A 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_abbb26cf4cd54c6b59bc2e54555d13fab}\label{class_hexeng_1_1_renderer_1_1_batch_quad_abbb26cf4cd54c6b59bc2e54555d13fab}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!position@{position}}
+\index{position@{position}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$int$>$ Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::position = \{ 0, 0 \}}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_a7b58c3b6b3f2526fc6341286a73291d5}\label{class_hexeng_1_1_renderer_1_1_batch_quad_a7b58c3b6b3f2526fc6341286a73291d5}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!rotation@{rotation}}
+\index{rotation@{rotation}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily float Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::rotation = 0.\+0f}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_quad_acc5f104114e35dcd7baed0e39d9166d7}\label{class_hexeng_1_1_renderer_1_1_batch_quad_acc5f104114e35dcd7baed0e39d9166d7}} 
+\index{Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}!scale@{scale}}
+\index{scale@{scale}!Hexeng::Renderer::BatchQuad@{Hexeng::Renderer::BatchQuad}}
+\doxysubsubsection{\texorpdfstring{scale}{scale}}
+{\footnotesize\ttfamily float Hexeng\+::\+Renderer\+::\+Batch\+Quad\+::scale = 1.\+0f}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8hpp}{Batch\+Renderer.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8cpp}{Batch\+Renderer.\+cpp}}\end{DoxyCompactItemize}

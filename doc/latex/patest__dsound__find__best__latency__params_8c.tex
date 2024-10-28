@@ -1,0 +1,118 @@
+\hypertarget{patest__dsound__find__best__latency__params_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+dsound\+\_\+find\+\_\+best\+\_\+latency\+\_\+params.c File Reference}
+\label{patest__dsound__find__best__latency__params_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_dsound\_find\_best\_latency\_params.c@{Hexeng2D/dependencies/portaudio/test/patest\_dsound\_find\_best\_latency\_params.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+ds.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_ac50762666aa00bd3a4308158510f1748}{\+\_\+\+WIN32\+\_\+\+WINNT}}~0x0501 /$\ast$ for Get\+Native\+System\+Info $\ast$/
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_abe9b1c28165a7071e354bd9d7823ca1a}{DEFAULT\+\_\+\+SAMPLE\+\_\+\+RATE}}~(44100.)
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(2048)
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a29e42927003b0aa647ee45965f4ccb07}{CHANNEL\+\_\+\+COUNT}}~(2)
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a7ebc9a785e5ab85457c98595aac81589}{YES}}~1
+\item 
+\#define \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a996bde01ecac342918f0a2c4e7ce7bd5}{NO}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a7ccfc6f67ae73d777621ac2c5bfbb40e}{LPFN\+\_\+\+ISWOW64\+PROCESS}}) (HANDLE, PBOOL)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a7ccfc6f67ae73d777621ac2c5bfbb40e}{LPFN\+\_\+\+ISWOW64\+PROCESS}} \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a26fcce622038d84b249f44acf58bef21}{fn\+Is\+Wow64\+Process}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_ac50762666aa00bd3a4308158510f1748}\label{patest__dsound__find__best__latency__params_8c_ac50762666aa00bd3a4308158510f1748}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!\_WIN32\_WINNT@{\_WIN32\_WINNT}}
+\index{\_WIN32\_WINNT@{\_WIN32\_WINNT}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{\_WIN32\_WINNT}{\_WIN32\_WINNT}}
+{\footnotesize\ttfamily \#define \+\_\+\+WIN32\+\_\+\+WINNT~0x0501 /$\ast$ for Get\+Native\+System\+Info $\ast$/}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a29e42927003b0aa647ee45965f4ccb07}\label{patest__dsound__find__best__latency__params_8c_a29e42927003b0aa647ee45965f4ccb07}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!CHANNEL\_COUNT@{CHANNEL\_COUNT}}
+\index{CHANNEL\_COUNT@{CHANNEL\_COUNT}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{CHANNEL\_COUNT}{CHANNEL\_COUNT}}
+{\footnotesize\ttfamily \#define CHANNEL\+\_\+\+COUNT~(2)}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_abe9b1c28165a7071e354bd9d7823ca1a}\label{patest__dsound__find__best__latency__params_8c_abe9b1c28165a7071e354bd9d7823ca1a}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!DEFAULT\_SAMPLE\_RATE@{DEFAULT\_SAMPLE\_RATE}}
+\index{DEFAULT\_SAMPLE\_RATE@{DEFAULT\_SAMPLE\_RATE}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_SAMPLE\_RATE}{DEFAULT\_SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define DEFAULT\+\_\+\+SAMPLE\+\_\+\+RATE~(44100.)}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__dsound__find__best__latency__params_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a996bde01ecac342918f0a2c4e7ce7bd5}\label{patest__dsound__find__best__latency__params_8c_a996bde01ecac342918f0a2c4e7ce7bd5}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!NO@{NO}}
+\index{NO@{NO}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{NO}{NO}}
+{\footnotesize\ttfamily \#define NO~0}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__dsound__find__best__latency__params_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(2048)}
+
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a7ebc9a785e5ab85457c98595aac81589}\label{patest__dsound__find__best__latency__params_8c_a7ebc9a785e5ab85457c98595aac81589}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!YES@{YES}}
+\index{YES@{YES}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{YES}{YES}}
+{\footnotesize\ttfamily \#define YES~1}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a7ccfc6f67ae73d777621ac2c5bfbb40e}\label{patest__dsound__find__best__latency__params_8c_a7ccfc6f67ae73d777621ac2c5bfbb40e}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!LPFN\_ISWOW64PROCESS@{LPFN\_ISWOW64PROCESS}}
+\index{LPFN\_ISWOW64PROCESS@{LPFN\_ISWOW64PROCESS}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{LPFN\_ISWOW64PROCESS}{LPFN\_ISWOW64PROCESS}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ LPFN\+\_\+\+ISWOW64\+PROCESS) (HANDLE, PBOOL)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{patest__dsound__find__best__latency__params_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!main@{main}}
+\index{main@{main}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{patest__dsound__find__best__latency__params_8c_a26fcce622038d84b249f44acf58bef21}\label{patest__dsound__find__best__latency__params_8c_a26fcce622038d84b249f44acf58bef21}} 
+\index{patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}!fnIsWow64Process@{fnIsWow64Process}}
+\index{fnIsWow64Process@{fnIsWow64Process}!patest\_dsound\_find\_best\_latency\_params.c@{patest\_dsound\_find\_best\_latency\_params.c}}
+\doxysubsubsection{\texorpdfstring{fnIsWow64Process}{fnIsWow64Process}}
+{\footnotesize\ttfamily \mbox{\hyperlink{patest__dsound__find__best__latency__params_8c_a7ccfc6f67ae73d777621ac2c5bfbb40e}{LPFN\+\_\+\+ISWOW64\+PROCESS}} fn\+Is\+Wow64\+Process}
+

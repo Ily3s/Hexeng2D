@@ -1,0 +1,79 @@
+\hypertarget{_input_event_8hpp_source}{}\doxysection{Input\+Event.\+hpp}
+\label{_input_event_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/InputEvent.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/InputEvent.hpp}}
+\mbox{\hyperlink{_input_event_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INPUT\_EVENT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INPUT\_EVENT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}GLFW/glfw3.h"{}}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_event_manager_8hpp}{EventManager.hpp}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Hexeng::EventManager}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_event}{KeyEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13     \textcolor{keyword}{public}:}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{21         }
+\DoxyCodeLine{22         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_event}{KeyEvent}}(\textcolor{keywordtype}{int} key\_code, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{23     \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_mouse_button_event}{MouseButtonEvent}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{26     \{}
+\DoxyCodeLine{27     \textcolor{keyword}{public}:}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_mouse_button_event}{MouseButtonEvent}}(\textcolor{keywordtype}{int} button\_code, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, Range range = Range::GLOBAL, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pertick = 1);}
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{42     }
+\DoxyCodeLine{43     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_scroll_event}{ScrollEvent}}}
+\DoxyCodeLine{44     \{}
+\DoxyCodeLine{45     private :}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \textcolor{keyword}{static} \textcolor{keywordtype}{void} scroll\_callback(GLFWwindow* win, \textcolor{keywordtype}{double} xoffset, \textcolor{keywordtype}{double} yoffset);}
+\DoxyCodeLine{48         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_scroll_event}{ScrollEvent}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     public :}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{56         }
+\DoxyCodeLine{57         std::function<void(\textcolor{keywordtype}{double})> callback = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_scroll_event}{ScrollEvent}}* get();}
+\DoxyCodeLine{60     \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}}
+\DoxyCodeLine{67     \{}
+\DoxyCodeLine{68     private :}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{keyword}{static} std::vector<KeyPressEvent*> events;}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \textcolor{keyword}{static} \textcolor{keywordtype}{void} key\_callback(GLFWwindow* win, \textcolor{keywordtype}{int} key, \textcolor{keywordtype}{int}, \textcolor{keywordtype}{int} action, \textcolor{keywordtype}{int});}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     public :}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a909320563ae20ba7953849984f220b07}{action}};}
+\DoxyCodeLine{77         \textcolor{keywordtype}{int} key\_code = GLFW\_MOUSE\_BUTTON\_1;}
+\DoxyCodeLine{78         \textcolor{keywordtype}{int} mode = GLFW\_PRESS;}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{85         }
+\DoxyCodeLine{86         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}(\textcolor{keywordtype}{int} key\_code, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> action, \textcolor{keywordtype}{int} mode = GLFW\_PRESS);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event_a2a2514d6c784ab1f0ca43186da6826ac}{KeyPressEvent}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}\&\&) noexcept;}
+\DoxyCodeLine{91         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_key_press_event}{KeyPressEvent}}\&\&) noexcept;}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{94         \textcolor{keywordtype}{bool} enable = true;}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{97         \textcolor{keywordtype}{bool}* enable\_ptr = \&enable;}
+\DoxyCodeLine{98     \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

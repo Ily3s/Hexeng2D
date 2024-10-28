@@ -1,0 +1,41 @@
+\doxysection{Hexeng2\+D/src/\+Audio/\+Audio.hpp File Reference}
+\hypertarget{Audio_8hpp}{}\label{Audio_8hpp}\index{Hexeng2D/src/Audio/Audio.hpp@{Hexeng2D/src/Audio/Audio.hpp}}
+{\ttfamily \#include $<$cassert$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \"{}portaudio.\+h\"{}}\newline
+{\ttfamily \#include \"{}../\+Macros.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Vectors.\+hpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Hexeng\+::\+Audio\+::\+Sound\+Base}}
+\begin{DoxyCompactList}\small\item\em Abstract Base class of \doxylink{classHexeng_1_1Audio_1_1Sound}{Sound} and \doxylink{classHexeng_1_1Audio_1_1Music}{Music}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHexeng_1_1Audio_1_1Music}{Hexeng\+::\+Audio\+::\+Music}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classHexeng_1_1Audio_1_1Music}{Music} that cannot be played multiple times at once, it isn\textquotesingle{}t related to a position in space. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structHexeng_1_1Audio_1_1SoundData}{Hexeng\+::\+Audio\+::\+Sound\+Data}}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Hexeng\+::\+Audio\+::\+Sound}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classHexeng_1_1Audio_1_1Sound}{Sound} that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classHexeng_1_1Audio_1_1SpatialSound}{Hexeng\+::\+Audio\+::\+Spatial\+Sound}}
+\begin{DoxyCompactList}\small\item\em A \doxylink{classHexeng_1_1Audio_1_1Sound}{Sound} that can be played multiple times at once, from a location in space. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng_1_1Audio}{Hexeng\+::\+Audio}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{namespaceHexeng_1_1Audio_a5e90001d8341df3b91d84182715726bc}{Hexeng\+::\+Audio\+::init}} ()
+\item 
+void \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{namespaceHexeng_1_1Audio_a9a6715ae7586295f097e9ab04812629a}{Hexeng\+::\+Audio\+::terminate}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceHexeng_1_1Audio_a69a1290f53aff433d5dbf428e87cbe88}{Hexeng\+::\+Audio\+::receiver}}
+\begin{DoxyCompactList}\small\item\em The position of the microphone in the \doxylink{namespaceHexeng}{Hexeng} coordinates system. It is set by default to the camera\textquotesingle{}s position. \end{DoxyCompactList}\end{DoxyCompactItemize}

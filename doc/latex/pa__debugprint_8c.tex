@@ -1,0 +1,60 @@
+\hypertarget{pa__debugprint_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+debugprint.c File Reference}
+\label{pa__debugprint_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_debugprint.c}}
+
+
+Implements log function.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8c_ac2e4f48c3da557e8b268aee96009e135}{VSNPRINTF}}~vsnprintf
+\item 
+\#define \mbox{\hyperlink{pa__debugprint_8c_ae22618e4c324e329e69c12f7ba767b7c}{PA\+\_\+\+LOG\+\_\+\+BUF\+\_\+\+SIZE}}~2048
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__debugprint_8c_a688050cd1d631b8eb566c15bec3094ff}{Pa\+Util\+\_\+\+Set\+Debug\+Print\+Function}} (\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{Pa\+Util\+Log\+Callback}} cb)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__debugprint_8c_a775ad90aa83e8a15e724f1b0fc55a0d3}{Pa\+Util\+\_\+\+Debug\+Print}} (const char $\ast$\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}},...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implements log function. 
+
+Pa\+Util\+\_\+\+Set\+Log\+Print\+Function can be user called to replace the provided Default\+Log\+Print function, which writes to stderr. One can NOT pass var\+\_\+args across compiler/dll boundaries as it is not \char`\"{}byte code/abi portable\char`\"{}. So the technique used here is to allocate a local a static array, write in it, then callback the user with a pointer to its start. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__debugprint_8c_ae22618e4c324e329e69c12f7ba767b7c}\label{pa__debugprint_8c_ae22618e4c324e329e69c12f7ba767b7c}} 
+\index{pa\_debugprint.c@{pa\_debugprint.c}!PA\_LOG\_BUF\_SIZE@{PA\_LOG\_BUF\_SIZE}}
+\index{PA\_LOG\_BUF\_SIZE@{PA\_LOG\_BUF\_SIZE}!pa\_debugprint.c@{pa\_debugprint.c}}
+\doxysubsubsection{\texorpdfstring{PA\_LOG\_BUF\_SIZE}{PA\_LOG\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LOG\+\_\+\+BUF\+\_\+\+SIZE~2048}
+
+\mbox{\Hypertarget{pa__debugprint_8c_ac2e4f48c3da557e8b268aee96009e135}\label{pa__debugprint_8c_ac2e4f48c3da557e8b268aee96009e135}} 
+\index{pa\_debugprint.c@{pa\_debugprint.c}!VSNPRINTF@{VSNPRINTF}}
+\index{VSNPRINTF@{VSNPRINTF}!pa\_debugprint.c@{pa\_debugprint.c}}
+\doxysubsubsection{\texorpdfstring{VSNPRINTF}{VSNPRINTF}}
+{\footnotesize\ttfamily \#define VSNPRINTF~vsnprintf}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__debugprint_8c_a775ad90aa83e8a15e724f1b0fc55a0d3}\label{pa__debugprint_8c_a775ad90aa83e8a15e724f1b0fc55a0d3}} 
+\index{pa\_debugprint.c@{pa\_debugprint.c}!PaUtil\_DebugPrint@{PaUtil\_DebugPrint}}
+\index{PaUtil\_DebugPrint@{PaUtil\_DebugPrint}!pa\_debugprint.c@{pa\_debugprint.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DebugPrint()}{PaUtil\_DebugPrint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Debug\+Print (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__debugprint_8c_a688050cd1d631b8eb566c15bec3094ff}\label{pa__debugprint_8c_a688050cd1d631b8eb566c15bec3094ff}} 
+\index{pa\_debugprint.c@{pa\_debugprint.c}!PaUtil\_SetDebugPrintFunction@{PaUtil\_SetDebugPrintFunction}}
+\index{PaUtil\_SetDebugPrintFunction@{PaUtil\_SetDebugPrintFunction}!pa\_debugprint.c@{pa\_debugprint.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetDebugPrintFunction()}{PaUtil\_SetDebugPrintFunction()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Debug\+Print\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{pa__debugprint_8h_a24f8fcbd9f0823da91637c20a358f2d9}{Pa\+Util\+Log\+Callback}}}]{cb }\end{DoxyParamCaption})}
+
+Install user provided log function 

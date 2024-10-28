@@ -1,0 +1,150 @@
+\hypertarget{pa__asio_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+asio.h File Reference}
+\label{pa__asio_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_asio.h@{Hexeng2D/dependencies/portaudio/include/pa\_asio.h}}
+
+
+ASIO-\/specific Port\+Audio API extension header file.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_asio_stream_info}{Pa\+Asio\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__asio_8h_a73860435fa4ce6edbb85d360bc825e05}{Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values}}~\mbox{\hyperlink{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}{Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes}}
+\item 
+\#define \mbox{\hyperlink{pa__asio_8h_a79421fc86f6f900602f6c735aaead654}{pa\+Asio\+Use\+Channel\+Selectors}}~(0x01)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_asio_stream_info}{Pa\+Asio\+Stream\+Info}} \mbox{\hyperlink{pa__asio_8h_a943a839eab0c7c9d71f1afa875d1fb2d}{Pa\+Asio\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}{Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, long $\ast$min\+Buffer\+Size\+Frames, long $\ast$max\+Buffer\+Size\+Frames, long $\ast$preferred\+Buffer\+Size\+Frames, long $\ast$granularity)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8h_ac9449ca8f0aedaa7b93027cdca3d6ba3}{Pa\+Asio\+\_\+\+Show\+Control\+Panel}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$system\+Specific)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8h_abaafacb711225e7c6158fff3b3e8b87a}{Pa\+Asio\+\_\+\+Get\+Input\+Channel\+Name}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int channel\+Index, const char $\ast$$\ast$channel\+Name)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8h_a97bd5b2192c1321a492ba24d7ef843fa}{Pa\+Asio\+\_\+\+Get\+Output\+Channel\+Name}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int channel\+Index, const char $\ast$$\ast$channel\+Name)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__asio_8h_a838e2a8ed83db7cf5f2864492f3c78fc}{Pa\+Asio\+\_\+\+Set\+Stream\+Sample\+Rate}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, double sample\+Rate)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+ASIO-\/specific Port\+Audio API extension header file. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__asio_8h_a73860435fa4ce6edbb85d360bc825e05}\label{pa__asio_8h_a73860435fa4ce6edbb85d360bc825e05}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_GetAvailableLatencyValues@{PaAsio\_GetAvailableLatencyValues}}
+\index{PaAsio\_GetAvailableLatencyValues@{PaAsio\_GetAvailableLatencyValues}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetAvailableLatencyValues}{PaAsio\_GetAvailableLatencyValues}}
+{\footnotesize\ttfamily \#define Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values~\mbox{\hyperlink{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}{Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes}}}
+
+Backwards compatibility alias for Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}{Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__asio_8h_a79421fc86f6f900602f6c735aaead654}\label{pa__asio_8h_a79421fc86f6f900602f6c735aaead654}} 
+\index{pa\_asio.h@{pa\_asio.h}!paAsioUseChannelSelectors@{paAsioUseChannelSelectors}}
+\index{paAsioUseChannelSelectors@{paAsioUseChannelSelectors}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{paAsioUseChannelSelectors}{paAsioUseChannelSelectors}}
+{\footnotesize\ttfamily \#define pa\+Asio\+Use\+Channel\+Selectors~(0x01)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__asio_8h_a943a839eab0c7c9d71f1afa875d1fb2d}\label{pa__asio_8h_a943a839eab0c7c9d71f1afa875d1fb2d}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsioStreamInfo@{PaAsioStreamInfo}}
+\index{PaAsioStreamInfo@{PaAsioStreamInfo}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsioStreamInfo}{PaAsioStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_asio_stream_info}{Pa\+Asio\+Stream\+Info}} \mbox{\hyperlink{struct_pa_asio_stream_info}{Pa\+Asio\+Stream\+Info}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}\label{pa__asio_8h_a95dbac9747083dcee51b1e0e4695a912}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_GetAvailableBufferSizes@{PaAsio\_GetAvailableBufferSizes}}
+\index{PaAsio\_GetAvailableBufferSizes@{PaAsio\_GetAvailableBufferSizes}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetAvailableBufferSizes()}{PaAsio\_GetAvailableBufferSizes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Available\+Buffer\+Sizes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{long $\ast$}]{min\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{max\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{preferred\+Buffer\+Size\+Frames,  }\item[{long $\ast$}]{granularity }\end{DoxyParamCaption})}
+
+Retrieve legal native buffer sizes for the specified device, in sample frames.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The global index of the device about which the query is being made. \\
+\hline
+{\em min\+Buffer\+Size\+Frames} & A pointer to the location which will receive the minimum buffer size value. \\
+\hline
+{\em max\+Buffer\+Size\+Frames} & A pointer to the location which will receive the maximum buffer size value. \\
+\hline
+{\em preferred\+Buffer\+Size\+Frames} & A pointer to the location which will receive the preferred buffer size value. \\
+\hline
+{\em granularity} & A pointer to the location which will receive the \char`\"{}granularity\char`\"{}. This value determines the step size used to compute the legal values between min\+Buffer\+Size\+Frames and max\+Buffer\+Size\+Frames. If granularity is -\/1 then available buffer size values are powers of two.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+ASIOGet\+Buffer\+Size in the ASIO SDK.
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+\+: this function used to be called Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values. There is a \#define that maps Pa\+Asio\+\_\+\+Get\+Available\+Latency\+Values to this function for backwards compatibility. 
+\end{DoxyNote}
+\mbox{\Hypertarget{pa__asio_8h_abaafacb711225e7c6158fff3b3e8b87a}\label{pa__asio_8h_abaafacb711225e7c6158fff3b3e8b87a}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_GetInputChannelName@{PaAsio\_GetInputChannelName}}
+\index{PaAsio\_GetInputChannelName@{PaAsio\_GetInputChannelName}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetInputChannelName()}{PaAsio\_GetInputChannelName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Input\+Channel\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{channel\+Index,  }\item[{const char $\ast$$\ast$}]{channel\+Name }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa\+\_\+\+Terminate is called.
+
+The string will be no longer than 32 characters including the null terminator. \mbox{\Hypertarget{pa__asio_8h_a97bd5b2192c1321a492ba24d7ef843fa}\label{pa__asio_8h_a97bd5b2192c1321a492ba24d7ef843fa}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_GetOutputChannelName@{PaAsio\_GetOutputChannelName}}
+\index{PaAsio\_GetOutputChannelName@{PaAsio\_GetOutputChannelName}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_GetOutputChannelName()}{PaAsio\_GetOutputChannelName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Get\+Output\+Channel\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{channel\+Index,  }\item[{const char $\ast$$\ast$}]{channel\+Name }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a string containing the name of the specified input channel. The string is valid until Pa\+\_\+\+Terminate is called.
+
+The string will be no longer than 32 characters including the null terminator. \mbox{\Hypertarget{pa__asio_8h_a838e2a8ed83db7cf5f2864492f3c78fc}\label{pa__asio_8h_a838e2a8ed83db7cf5f2864492f3c78fc}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_SetStreamSampleRate@{PaAsio\_SetStreamSampleRate}}
+\index{PaAsio\_SetStreamSampleRate@{PaAsio\_SetStreamSampleRate}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_SetStreamSampleRate()}{PaAsio\_SetStreamSampleRate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Set\+Stream\+Sample\+Rate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+Set the sample rate of an open pa\+ASIO stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to operate on. \\
+\hline
+{\em sample\+Rate} & The new sample rate.\\
+\hline
+\end{DoxyParams}
+Note that this function may fail if the stream is already running and the ASIO driver does not support switching the sample rate of a running stream.
+
+Returns pa\+Incompatible\+Stream\+Host\+Api if stream is not a pa\+ASIO stream. \mbox{\Hypertarget{pa__asio_8h_ac9449ca8f0aedaa7b93027cdca3d6ba3}\label{pa__asio_8h_ac9449ca8f0aedaa7b93027cdca3d6ba3}} 
+\index{pa\_asio.h@{pa\_asio.h}!PaAsio\_ShowControlPanel@{PaAsio\_ShowControlPanel}}
+\index{PaAsio\_ShowControlPanel@{PaAsio\_ShowControlPanel}!pa\_asio.h@{pa\_asio.h}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_ShowControlPanel()}{PaAsio\_ShowControlPanel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Show\+Control\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{system\+Specific }\end{DoxyParamCaption})}
+
+Display the ASIO control panel for the specified device.
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & The global index of the device whose control panel is to be displayed. \\
+\hline
+{\em system\+Specific} & On Windows, the calling application\textquotesingle{}s main window handle, on Macintosh this value should be zero. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,91 @@
+\hypertarget{classportaudio_1_1_mem_fun_callback_stream}{}\doxysection{portaudio\+::Mem\+Fun\+Callback\+Stream\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classportaudio_1_1_mem_fun_callback_stream}\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+
+
+Callback stream using a class\textquotesingle{}s member function as a callback. Template argument T is the type of the class of which a member function is going to be used.  
+
+
+
+
+{\ttfamily \#include $<$Mem\+Fun\+Callback\+Stream.\+hxx$>$}
+
+Inheritance diagram for portaudio\+::Mem\+Fun\+Callback\+Stream\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classportaudio_1_1_mem_fun_callback_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef int(T\+::$\ast$ \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{Callback\+Fun\+Ptr}}) (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a41ac619da3a7fd9ba3fbae9df1499f91}{Mem\+Fun\+Callback\+Stream}} ()
+\item 
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a0467ef8d4596114c3f09fed95aff8894}{Mem\+Fun\+Callback\+Stream}} (const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&parameters, T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{Callback\+Fun\+Ptr}} mem\+Fun)
+\item 
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_ae5407ed9c4e4774ab1e4ddaaadae346b}{$\sim$\+Mem\+Fun\+Callback\+Stream}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}{open}} (const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&parameters, T \&instance, \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{Callback\+Fun\+Ptr}} mem\+Fun)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class portaudio\+::\+Mem\+Fun\+Callback\+Stream$<$ T $>$}
+Callback stream using a class\textquotesingle{}s member function as a callback. Template argument T is the type of the class of which a member function is going to be used. 
+
+Example usage\+: \begin{DoxyVerb}MemFunCallback<MyClass> stream = MemFunCallbackStream(parameters, *this, &MyClass::myCallbackFunction); \end{DoxyVerb}
+ 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}\label{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}} 
+\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}!CallbackFunPtr@{CallbackFunPtr}}
+\index{CallbackFunPtr@{CallbackFunPtr}!portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{CallbackFunPtr}{CallbackFunPtr}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef int(T\+::$\ast$ \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{portaudio\+::\+Mem\+Fun\+Callback\+Stream}}$<$ T $>$\+::\+Callback\+Fun\+Ptr) (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$, unsigned long, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}})}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_mem_fun_callback_stream_a41ac619da3a7fd9ba3fbae9df1499f91}\label{classportaudio_1_1_mem_fun_callback_stream_a41ac619da3a7fd9ba3fbae9df1499f91}} 
+\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}!MemFunCallbackStream@{MemFunCallbackStream}}
+\index{MemFunCallbackStream@{MemFunCallbackStream}!portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MemFunCallbackStream()}{MemFunCallbackStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{portaudio\+::\+Mem\+Fun\+Callback\+Stream}}$<$ T $>$\+::\+Mem\+Fun\+Callback\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_mem_fun_callback_stream_a0467ef8d4596114c3f09fed95aff8894}\label{classportaudio_1_1_mem_fun_callback_stream_a0467ef8d4596114c3f09fed95aff8894}} 
+\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}!MemFunCallbackStream@{MemFunCallbackStream}}
+\index{MemFunCallbackStream@{MemFunCallbackStream}!portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{MemFunCallbackStream()}{MemFunCallbackStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{portaudio\+::\+Mem\+Fun\+Callback\+Stream}}$<$ T $>$\+::\+Mem\+Fun\+Callback\+Stream (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&}]{parameters,  }\item[{T \&}]{instance,  }\item[{\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{Callback\+Fun\+Ptr}}}]{mem\+Fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_mem_fun_callback_stream_ae5407ed9c4e4774ab1e4ddaaadae346b}\label{classportaudio_1_1_mem_fun_callback_stream_ae5407ed9c4e4774ab1e4ddaaadae346b}} 
+\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}!````~MemFunCallbackStream@{$\sim$MemFunCallbackStream}}
+\index{````~MemFunCallbackStream@{$\sim$MemFunCallbackStream}!portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$MemFunCallbackStream()}{~MemFunCallbackStream()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{portaudio\+::\+Mem\+Fun\+Callback\+Stream}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{Mem\+Fun\+Callback\+Stream}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}\label{classportaudio_1_1_mem_fun_callback_stream_a60560038df847067e522d76f683d724d}} 
+\index{portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}!open@{open}}
+\index{open@{open}!portaudio::MemFunCallbackStream$<$ T $>$@{portaudio::MemFunCallbackStream$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{portaudio\+::\+Mem\+Fun\+Callback\+Stream}}$<$ T $>$\+::open (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} \&}]{parameters,  }\item[{T \&}]{instance,  }\item[{\mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream_a429144c3e6505f0aebb61df638048027}{Callback\+Fun\+Ptr}}}]{mem\+Fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_mem_fun_callback_stream_8hxx}{Mem\+Fun\+Callback\+Stream.\+hxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,145 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance}{}\doxysection{Hexeng\+::Renderer\+::Batch\+Instance Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_batch_instance}\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+
+
+An instance that can gather 250 quads on the same layer at max and render them together.   
+
+
+
+
+{\ttfamily \#include $<$Batch\+Renderer.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Batch\+Instance\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_batch_instance}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a26794b40fb66070c1d567dda54ea486f}{Batch\+Instance}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a8d9578c46c1a10f29fa21f4373b51616}{Batch\+Instance}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} $\ast$texture, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\+\_\+shader}})
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_adbdb7ecefa0a11398feba771309ff017}{Batch\+Instance}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_ae81b9cf2d66b87e9d2b994945b89fa3d}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a97af5b9be7e8d61307513138014c2b85}{Batch\+Instance}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a6c82f9a73faa2150baac04bbb3d166f0}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&\&) noexcept
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_aa61e5cc2f142a552dd92a1bf9667129b}{construct\+\_\+batch}} ()
+\begin{DoxyCompactList}\small\item\em When you\textquotesingle{}re done constructing all the Batch\+Quads related to this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}, call this function in order for all the data to be sent to the gpu.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_ad249e406fa5666e47a046d07d1852b51}{draw}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&parents\+\_\+uniforms=\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}}) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_ad0c39a42d9e165ea926480c365ac2107}{texture\+\_\+atlas}} = nullptr
+\begin{DoxyCompactList}\small\item\em You can always change the texture atlas, but it risks to mess up with the texture coordinates of each \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}. If you change this value, make sure at least that the texture atlas and its cell\+\_\+size aspect ratio stays unchanged.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance_a6323651005d4d9dad92e4aeb6ef68b85}{Batch\+Quad}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An instance that can gather 250 quads on the same layer at max and render them together.  
+
+\begin{DoxyNote}{Note}
+A \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} is a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}. If you set the pos, rotation or scale of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}, it will add up with the pos, rotation or scale of each of the Batch\+Quads. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_a26794b40fb66070c1d567dda54ea486f}\label{class_hexeng_1_1_renderer_1_1_batch_instance_a26794b40fb66070c1d567dda54ea486f}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{BatchInstance()}{BatchInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::\+Batch\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_a8d9578c46c1a10f29fa21f4373b51616}\label{class_hexeng_1_1_renderer_1_1_batch_instance_a8d9578c46c1a10f29fa21f4373b51616}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{BatchInstance()}{BatchInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::\+Batch\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} $\ast$}]{texture,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\+\_\+shader}}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_adbdb7ecefa0a11398feba771309ff017}\label{class_hexeng_1_1_renderer_1_1_batch_instance_adbdb7ecefa0a11398feba771309ff017}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{BatchInstance()}{BatchInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::\+Batch\+Instance (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_a97af5b9be7e8d61307513138014c2b85}\label{class_hexeng_1_1_renderer_1_1_batch_instance_a97af5b9be7e8d61307513138014c2b85}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!BatchInstance@{BatchInstance}}
+\index{BatchInstance@{BatchInstance}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{BatchInstance()}{BatchInstance()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::\+Batch\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_aa61e5cc2f142a552dd92a1bf9667129b}\label{class_hexeng_1_1_renderer_1_1_batch_instance_aa61e5cc2f142a552dd92a1bf9667129b}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!construct\_batch@{construct\_batch}}
+\index{construct\_batch@{construct\_batch}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{construct\_batch()}{construct\_batch()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::construct\+\_\+batch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+When you\textquotesingle{}re done constructing all the Batch\+Quads related to this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}, call this function in order for all the data to be sent to the gpu.  
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_ad249e406fa5666e47a046d07d1852b51}\label{class_hexeng_1_1_renderer_1_1_batch_instance_ad249e406fa5666e47a046d07d1852b51}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!draw@{draw}}
+\index{draw@{draw}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::draw (\begin{DoxyParamCaption}\item[{std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$, std\+::vector$<$ void $\ast$ $>$ $>$ \&}]{parents\+\_\+uniforms = {\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\+\_\+empty\+\_\+uniform\+\_\+list}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_acad9ad4ba10f600ea4c8e5bbaf682b76}{Hexeng\+::\+Renderer\+::\+Mesh}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_a6c82f9a73faa2150baac04bbb3d166f0}\label{class_hexeng_1_1_renderer_1_1_batch_instance_a6c82f9a73faa2150baac04bbb3d166f0}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \& Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_ae81b9cf2d66b87e9d2b994945b89fa3d}\label{class_hexeng_1_1_renderer_1_1_batch_instance_ae81b9cf2d66b87e9d2b994945b89fa3d}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \& Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_a6323651005d4d9dad92e4aeb6ef68b85}\label{class_hexeng_1_1_renderer_1_1_batch_instance_a6323651005d4d9dad92e4aeb6ef68b85}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!BatchQuad@{BatchQuad}}
+\index{BatchQuad@{BatchQuad}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{BatchQuad}{BatchQuad}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_batch_instance_ad0c39a42d9e165ea926480c365ac2107}\label{class_hexeng_1_1_renderer_1_1_batch_instance_ad0c39a42d9e165ea926480c365ac2107}} 
+\index{Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}!texture\_atlas@{texture\_atlas}}
+\index{texture\_atlas@{texture\_atlas}!Hexeng::Renderer::BatchInstance@{Hexeng::Renderer::BatchInstance}}
+\doxysubsubsection{\texorpdfstring{texture\_atlas}{texture\_atlas}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}}$\ast$ Hexeng\+::\+Renderer\+::\+Batch\+Instance\+::texture\+\_\+atlas = nullptr}
+
+
+
+You can always change the texture atlas, but it risks to mess up with the texture coordinates of each \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}. If you change this value, make sure at least that the texture atlas and its cell\+\_\+size aspect ratio stays unchanged.  
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8hpp}{Batch\+Renderer.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8cpp}{Batch\+Renderer.\+cpp}}\end{DoxyCompactItemize}

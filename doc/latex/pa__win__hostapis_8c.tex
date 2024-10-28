@@ -1,0 +1,123 @@
+\hypertarget{pa__win__hostapis_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/win/pa\+\_\+win\+\_\+hostapis.c File Reference}
+\label{pa__win__hostapis_8c}\index{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_hostapis.c@{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_hostapis.c}}
+
+
+Win32 host API initialization function table.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_ab19eac71cf1b8f40082355b83f0afe93}{Pa\+Skeleton\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_a1b280d36ca47c18eb544dd289916827d}{Pa\+Win\+Mme\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_a29c9db337ce20b8667e979badf261cfd}{Pa\+Win\+Ds\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_a5b7c787833afaa500335f43526f55a7e}{Pa\+Asio\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_a69eb4c041d72171b7053264130e50a46}{Pa\+Win\+Wdm\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__hostapis_8c_a56a0d6a3498d2ca95227d2e5c9975c40}{Pa\+Wasapi\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__hostapi_8h_ab0c89969a0c6107e7bf8e8f96adaa72d}{Pa\+Util\+Host\+Api\+Initializer}} $\ast$ \mbox{\hyperlink{pa__win__hostapis_8c_a383c15c810f1403d26bb07524bd0935f}{pa\+Host\+Api\+Initializers}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Win32 host API initialization function table. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__hostapis_8c_a5b7c787833afaa500335f43526f55a7e}\label{pa__win__hostapis_8c_a5b7c787833afaa500335f43526f55a7e}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaAsio\_Initialize@{PaAsio\_Initialize}}
+\index{PaAsio\_Initialize@{PaAsio\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaAsio\_Initialize()}{PaAsio\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Asio\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__hostapis_8c_ab19eac71cf1b8f40082355b83f0afe93}\label{pa__win__hostapis_8c_ab19eac71cf1b8f40082355b83f0afe93}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaSkeleton\_Initialize@{PaSkeleton\_Initialize}}
+\index{PaSkeleton\_Initialize@{PaSkeleton\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaSkeleton\_Initialize()}{PaSkeleton\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Skeleton\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__hostapis_8c_a56a0d6a3498d2ca95227d2e5c9975c40}\label{pa__win__hostapis_8c_a56a0d6a3498d2ca95227d2e5c9975c40}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaWasapi\_Initialize@{PaWasapi\_Initialize}}
+\index{PaWasapi\_Initialize@{PaWasapi\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_Initialize()}{PaWasapi\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__hostapis_8c_a29c9db337ce20b8667e979badf261cfd}\label{pa__win__hostapis_8c_a29c9db337ce20b8667e979badf261cfd}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaWinDs\_Initialize@{PaWinDs\_Initialize}}
+\index{PaWinDs\_Initialize@{PaWinDs\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaWinDs\_Initialize()}{PaWinDs\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Ds\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__hostapis_8c_a1b280d36ca47c18eb544dd289916827d}\label{pa__win__hostapis_8c_a1b280d36ca47c18eb544dd289916827d}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaWinMme\_Initialize@{PaWinMme\_Initialize}}
+\index{PaWinMme\_Initialize@{PaWinMme\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMme\_Initialize()}{PaWinMme\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Mme\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__hostapis_8c_a69eb4c041d72171b7053264130e50a46}\label{pa__win__hostapis_8c_a69eb4c041d72171b7053264130e50a46}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!PaWinWdm\_Initialize@{PaWinWdm\_Initialize}}
+\index{PaWinWdm\_Initialize@{PaWinWdm\_Initialize}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{PaWinWdm\_Initialize()}{PaWinWdm\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Wdm\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__win__hostapis_8c_a383c15c810f1403d26bb07524bd0935f}\label{pa__win__hostapis_8c_a383c15c810f1403d26bb07524bd0935f}} 
+\index{pa\_win\_hostapis.c@{pa\_win\_hostapis.c}!paHostApiInitializers@{paHostApiInitializers}}
+\index{paHostApiInitializers@{paHostApiInitializers}!pa\_win\_hostapis.c@{pa\_win\_hostapis.c}}
+\doxysubsubsection{\texorpdfstring{paHostApiInitializers}{paHostApiInitializers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__hostapi_8h_ab0c89969a0c6107e7bf8e8f96adaa72d}{Pa\+Util\+Host\+Api\+Initializer}}$\ast$ pa\+Host\+Api\+Initializers\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{        0   }
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+pa\+Host\+Api\+Initializers is a NULL-\/terminated array of host API initialization functions. These functions are called by \mbox{\hyperlink{pa__front_8c}{pa\+\_\+front.\+c}} to initialize the host APIs when the client calls \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}.
+
+The initialization functions are invoked in order.
+
+The first successfully initialized host API that has a default input {\itshape or} output device is used as the default Port\+Audio host API. This is based on the logic that there is only one default host API, and it must contain the default input and output devices (if defined).
+
+There is a platform specific file that defines pa\+Host\+Api\+Initializers for that platform, pa\+\_\+win/pa\+\_\+win\+\_\+hostapis.\+c contains the Win32 definitions for example.
+
+Note that on Linux, ALSA is placed before OSS so that the former is preferred over the latter. 

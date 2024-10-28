@@ -1,0 +1,85 @@
+\hypertarget{class_hexeng_1_1_language}{}\doxysection{Hexeng\+::Language Class Reference}
+\label{class_hexeng_1_1_language}\index{Hexeng::Language@{Hexeng::Language}}
+
+
+Loads a dictionary from a language file.   
+
+
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_language_aac52f0b7d6ac517a8a205144adc7d96f}{Language}} (const std\+::string \&filepath)
+\item 
+const std\+::u32string \& \mbox{\hyperlink{class_hexeng_1_1_language_acc6d14e5b0d3d549f5d9c31da8e28bb1}{get\+\_\+translation}} (const std\+::u32string \&input) const
+\begin{DoxyCompactList}\small\item\em Get the translation of input  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_hexeng_1_1_language_a10928555e11949ab01479c6b2dcc8050}{set\+\_\+reference\+\_\+language}} (const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}} $\ast$language)
+\begin{DoxyCompactList}\small\item\em Set a reference language that will be used when writing text.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads a dictionary from a language file.  
+
+The language file should be written in UTF-\/32 (any endian) with BOM. You can write that type of file with Edit\+Pad Lite for example. Also the line breaks should be LF and not CRLF (If you are on windows, you may need to set line break style to LF). The translation of the line n in the language file A should be written in all langage files at line n. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_language_aac52f0b7d6ac517a8a205144adc7d96f}\label{class_hexeng_1_1_language_aac52f0b7d6ac517a8a205144adc7d96f}} 
+\index{Hexeng::Language@{Hexeng::Language}!Language@{Language}}
+\index{Language@{Language}!Hexeng::Language@{Hexeng::Language}}
+\doxysubsubsection{\texorpdfstring{Language()}{Language()}}
+{\footnotesize\ttfamily Hexeng\+::\+Language\+::\+Language (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_language_acc6d14e5b0d3d549f5d9c31da8e28bb1}\label{class_hexeng_1_1_language_acc6d14e5b0d3d549f5d9c31da8e28bb1}} 
+\index{Hexeng::Language@{Hexeng::Language}!get\_translation@{get\_translation}}
+\index{get\_translation@{get\_translation}!Hexeng::Language@{Hexeng::Language}}
+\doxysubsubsection{\texorpdfstring{get\_translation()}{get\_translation()}}
+{\footnotesize\ttfamily const std\+::u32string \& Hexeng\+::\+Language\+::get\+\_\+translation (\begin{DoxyParamCaption}\item[{const std\+::u32string \&}]{input }\end{DoxyParamCaption}) const}
+
+
+
+Get the translation of input  
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & A sentence in the reference language\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The translation of input in this language
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function is meant to be used internally by the engine. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_language_a10928555e11949ab01479c6b2dcc8050}\label{class_hexeng_1_1_language_a10928555e11949ab01479c6b2dcc8050}} 
+\index{Hexeng::Language@{Hexeng::Language}!set\_reference\_language@{set\_reference\_language}}
+\index{set\_reference\_language@{set\_reference\_language}!Hexeng::Language@{Hexeng::Language}}
+\doxysubsubsection{\texorpdfstring{set\_reference\_language()}{set\_reference\_language()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Language\+::set\+\_\+reference\+\_\+language (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}} $\ast$}]{language }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Set a reference language that will be used when writing text.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em language} & A pointer to the language that will be used as a reference.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function has to be called in order to use the \mbox{\hyperlink{class_hexeng_1_1_language}{Language}} System. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8hpp}{Text.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8cpp}{Text.\+cpp}}\end{DoxyCompactItemize}

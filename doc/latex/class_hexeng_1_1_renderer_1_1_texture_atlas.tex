@@ -1,0 +1,96 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas}{}\doxysection{Hexeng\+::Renderer\+::Texture\+Atlas Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_texture_atlas}\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+
+
+{\ttfamily \#include $<$Batch\+Renderer.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Texture\+Atlas\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_texture_atlas}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_a74608a81511a6dc9199c8da87017ac8b}{Texture\+Atlas}} (const std\+::string \&filepath, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&cell\+\_\+size, const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&settings=\{\})
+\begin{DoxyCompactList}\small\item\em The same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}(const std\+::string\& filepath, const Tex\+Sett\+List\& settings = \{\}) except you specify cell\+\_\+size.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_a125f2d94e683ce887d5baeae07d8868c}{Texture\+Atlas}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_ade1d1ba077e6df78b6f6585d35a3a88e}{Texture\+Atlas}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_ae58b06ea05f2fff92fd3dd4038036de2}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_af0d2538a2b6080c66f15c7ba2b3af739}{Texture\+Atlas}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_a93f8b749f1786b31a5aa05287510e8cc}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&\&) noexcept
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas_a07f234deef8986c525c028af8a1da513}{get\+\_\+cell\+\_\+size}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_a74608a81511a6dc9199c8da87017ac8b}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_a74608a81511a6dc9199c8da87017ac8b}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!TextureAtlas@{TextureAtlas}}
+\index{TextureAtlas@{TextureAtlas}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{TextureAtlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{cell\+\_\+size,  }\item[{const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&}]{settings = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+The same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}(const std\+::string\& filepath, const Tex\+Sett\+List\& settings = \{\}) except you specify cell\+\_\+size.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell\+\_\+size} & The dimentions (lenght, width) of each cell of the atlas.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+the dimentions of the texture must be dividable by the cell\+\_\+size. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_a125f2d94e683ce887d5baeae07d8868c}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_a125f2d94e683ce887d5baeae07d8868c}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!TextureAtlas@{TextureAtlas}}
+\index{TextureAtlas@{TextureAtlas}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{TextureAtlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_ade1d1ba077e6df78b6f6585d35a3a88e}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_ade1d1ba077e6df78b6f6585d35a3a88e}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!TextureAtlas@{TextureAtlas}}
+\index{TextureAtlas@{TextureAtlas}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{TextureAtlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_af0d2538a2b6080c66f15c7ba2b3af739}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_af0d2538a2b6080c66f15c7ba2b3af739}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!TextureAtlas@{TextureAtlas}}
+\index{TextureAtlas@{TextureAtlas}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{TextureAtlas()}{TextureAtlas()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::\+Texture\+Atlas (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_a07f234deef8986c525c028af8a1da513}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_a07f234deef8986c525c028af8a1da513}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!get\_cell\_size@{get\_cell\_size}}
+\index{get\_cell\_size@{get\_cell\_size}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{get\_cell\_size()}{get\_cell\_size()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \& Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::get\+\_\+cell\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_ae58b06ea05f2fff92fd3dd4038036de2}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_ae58b06ea05f2fff92fd3dd4038036de2}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \& Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_atlas_a93f8b749f1786b31a5aa05287510e8cc}\label{class_hexeng_1_1_renderer_1_1_texture_atlas_a93f8b749f1786b31a5aa05287510e8cc}} 
+\index{Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::TextureAtlas@{Hexeng::Renderer::TextureAtlas}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \& Hexeng\+::\+Renderer\+::\+Texture\+Atlas\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8hpp}{Batch\+Renderer.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_batch_renderer_8cpp}{Batch\+Renderer.\+cpp}}\end{DoxyCompactItemize}

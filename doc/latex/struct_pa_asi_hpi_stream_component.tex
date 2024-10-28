@@ -1,0 +1,88 @@
+\hypertarget{struct_pa_asi_hpi_stream_component}{}\doxysection{Pa\+Asi\+Hpi\+Stream\+Component Struct Reference}
+\label{struct_pa_asi_hpi_stream_component}\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}} $\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_a1c84299c224c375c465b4e75bfce17f4}{hpi\+Device}}
+\item 
+hpi\+\_\+handle\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_adb013f749ef39f2757a89ac73ec4d1fd}{hpi\+Stream}}
+\item 
+struct hpi\+\_\+format \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_a7728064372425eaee08c70bbe936b891}{hpi\+Format}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_afa3f30d67315cd9fd127f4141d087dc0}{bytes\+Per\+Frame}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_aaee8d45f2dd21ee33afeb9a8efda119e}{hardware\+Buffer\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_a2e74e02676b12b73cec01f0d4b3a9d32}{host\+Buffer\+Size}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_aee16a4bcc8580a966c64bbac57c0611c}{output\+Buffer\+Cap}}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_a2a6fb26a57106d7c62f63578d38437b9}{temp\+Buffer}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_pa_asi_hpi_stream_component_a7b8eeeb20693a1f1deb0b41c2800c6a7}{temp\+Buffer\+Size}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Stream component data (associated with one direction, i.\+e. either input or output) 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_afa3f30d67315cd9fd127f4141d087dc0}\label{struct_pa_asi_hpi_stream_component_afa3f30d67315cd9fd127f4141d087dc0}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!bytesPerFrame@{bytesPerFrame}}
+\index{bytesPerFrame@{bytesPerFrame}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{bytesPerFrame}{bytesPerFrame}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::bytes\+Per\+Frame}
+
+Number of bytes per frame, derived from hpi\+Format and saved for convenience \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_aaee8d45f2dd21ee33afeb9a8efda119e}\label{struct_pa_asi_hpi_stream_component_aaee8d45f2dd21ee33afeb9a8efda119e}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!hardwareBufferSize@{hardwareBufferSize}}
+\index{hardwareBufferSize@{hardwareBufferSize}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hardwareBufferSize}{hardwareBufferSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::hardware\+Buffer\+Size}
+
+Size of hardware (on-\/card) buffer of stream in bytes \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_a2e74e02676b12b73cec01f0d4b3a9d32}\label{struct_pa_asi_hpi_stream_component_a2e74e02676b12b73cec01f0d4b3a9d32}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!hostBufferSize@{hostBufferSize}}
+\index{hostBufferSize@{hostBufferSize}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hostBufferSize}{hostBufferSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::host\+Buffer\+Size}
+
+Size of host (BBM) buffer of stream in bytes (if used) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_a1c84299c224c375c465b4e75bfce17f4}\label{struct_pa_asi_hpi_stream_component_a1c84299c224c375c465b4e75bfce17f4}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!hpiDevice@{hpiDevice}}
+\index{hpiDevice@{hpiDevice}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hpiDevice}{hpiDevice}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_asi_hpi_device_info}{Pa\+Asi\+Hpi\+Device\+Info}}$\ast$ Pa\+Asi\+Hpi\+Stream\+Component\+::hpi\+Device}
+
+Device information (HPI handles, etc) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_a7728064372425eaee08c70bbe936b891}\label{struct_pa_asi_hpi_stream_component_a7728064372425eaee08c70bbe936b891}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!hpiFormat@{hpiFormat}}
+\index{hpiFormat@{hpiFormat}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hpiFormat}{hpiFormat}}
+{\footnotesize\ttfamily struct hpi\+\_\+format Pa\+Asi\+Hpi\+Stream\+Component\+::hpi\+Format}
+
+Stream format, as passed to HPI interface \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_adb013f749ef39f2757a89ac73ec4d1fd}\label{struct_pa_asi_hpi_stream_component_adb013f749ef39f2757a89ac73ec4d1fd}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!hpiStream@{hpiStream}}
+\index{hpiStream@{hpiStream}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{hpiStream}{hpiStream}}
+{\footnotesize\ttfamily hpi\+\_\+handle\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::hpi\+Stream}
+
+Stream handle, as passed to HPI interface. \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_aee16a4bcc8580a966c64bbac57c0611c}\label{struct_pa_asi_hpi_stream_component_aee16a4bcc8580a966c64bbac57c0611c}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!outputBufferCap@{outputBufferCap}}
+\index{outputBufferCap@{outputBufferCap}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{outputBufferCap}{outputBufferCap}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::output\+Buffer\+Cap}
+
+Upper limit on the utilization of output stream buffer (both hardware and host). This prevents large latencies in an output-\/only stream with a potentially huge buffer and a fast data generator, which would otherwise keep the hardware buffer filled to capacity. See also the \char`\"{}\+Hardware Buffering=off\char`\"{} option in the Audio\+Science WAV driver. \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_a2a6fb26a57106d7c62f63578d38437b9}\label{struct_pa_asi_hpi_stream_component_a2a6fb26a57106d7c62f63578d38437b9}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!tempBuffer@{tempBuffer}}
+\index{tempBuffer@{tempBuffer}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{tempBuffer}{tempBuffer}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ Pa\+Asi\+Hpi\+Stream\+Component\+::temp\+Buffer}
+
+Sample buffer (halfway station between HPI and buffer processor) \mbox{\Hypertarget{struct_pa_asi_hpi_stream_component_a7b8eeeb20693a1f1deb0b41c2800c6a7}\label{struct_pa_asi_hpi_stream_component_a7b8eeeb20693a1f1deb0b41c2800c6a7}} 
+\index{PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}!tempBufferSize@{tempBufferSize}}
+\index{tempBufferSize@{tempBufferSize}!PaAsiHpiStreamComponent@{PaAsiHpiStreamComponent}}
+\doxysubsubsection{\texorpdfstring{tempBufferSize}{tempBufferSize}}
+{\footnotesize\ttfamily uint32\+\_\+t Pa\+Asi\+Hpi\+Stream\+Component\+::temp\+Buffer\+Size}
+
+Sample buffer size, in bytes 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/asihpi/\mbox{\hyperlink{pa__linux__asihpi_8c}{pa\+\_\+linux\+\_\+asihpi.\+c}}\end{DoxyCompactItemize}

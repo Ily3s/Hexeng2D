@@ -1,0 +1,98 @@
+\hypertarget{_macros_8hpp_source}{}\doxysection{Macros.\+hpp}
+\label{_macros_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Macros.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Macros.hpp}}
+\mbox{\hyperlink{_macros_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MACROS\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MACROS\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <cassert>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef HXG\_DEBUG\_LEVEL}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef \_DEBUG}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define HXG\_DEBUG\_LEVEL 2}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define HXG\_DEBUG\_LEVEL 1}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL >= 2}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str) std::cout << "{}[ERROR] "{}} << str << std::endl; exit(-\/1)}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 1}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str) std::cout << "{}[ERROR] "{}} << str << std::endl}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 0}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define HXG\_LOG\_ERROR(str)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL >= 3}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str) std::cout << "{}[WARNING] "{}} << str << std::endl; exit(-\/1)}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL >= 1}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str) std::cout << "{}[WARNING] "{}} << str << std::endl;}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#elif HXG\_DEBUG\_LEVEL == 0}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define HXG\_LOG\_WARNING(str)}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL != 0}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define HXG\_ASSERT(cond, action) \(\backslash\)}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{if (!cond) \{ action \}"{}"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define HXG\_ASSERT(cond, action)}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#if HXG\_DEBUG\_LEVEL >= 2}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define HXG\_GL(x) \(\backslash\)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{while (glGetError() != GL\_NO\_ERROR);\(\backslash\)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{x;\(\backslash\)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\{\(\backslash\)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{    int i = 0;\(\backslash\)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{    for (; GLenum error = glGetError(); ++i)\(\backslash\)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{    \{\(\backslash\)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{        std::cout << "{}[OpenGL Error] ("{}} << error << "{}) in file \(\backslash\)"{}"{} << \_\_FILE\_\_ << "{}\(\backslash\)"{} at line "{} << \_\_LINE\_\_\(\backslash\)}
+\DoxyCodeLine{50         << "{} at function \(\backslash\)"{}"{} << \#x << '\(\backslash\)"{}' << std::endl;\(\backslash\)}
+\DoxyCodeLine{51     \}\(\backslash\)}
+\DoxyCodeLine{52     if (i)\(\backslash\)}
+\DoxyCodeLine{53         \_\_debugbreak();\(\backslash\)}
+\DoxyCodeLine{54 \}"{}"{}}
+\DoxyCodeLine{55 \#else}
+\DoxyCodeLine{56 \#define HXG\_GL(x) x}
+\DoxyCodeLine{57 \#endif}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \#if HXG\_DEBUG\_LEVEL >= 2}
+\DoxyCodeLine{60 \#define HXG\_GLFW(x) \(\backslash\)}
+\DoxyCodeLine{61 \(\backslash\)}
+\DoxyCodeLine{62 while (glfwGetError(NULL) != GLFW\_NO\_ERROR);\(\backslash\)}
+\DoxyCodeLine{63 x;\(\backslash\)}
+\DoxyCodeLine{64 \{\(\backslash\)}
+\DoxyCodeLine{65     int i = 0;\(\backslash\)}
+\DoxyCodeLine{66     for (; int error = glfwGetError(NULL); ++i)\(\backslash\)}
+\DoxyCodeLine{67     \{\(\backslash\)}
+\DoxyCodeLine{68         std::cout << "{}[GLFW Error] ("{} << error << "{}) in file \(\backslash\)"{}"{} << \_\_FILE\_\_ << "{}\(\backslash\)"{} at line "{} << \_\_LINE\_\_\(\backslash\)}
+\DoxyCodeLine{69         << "{} at function \(\backslash\)"{}"{} << \#x << '\(\backslash\)"{}' << std::endl;\(\backslash\)}
+\DoxyCodeLine{70     \}\(\backslash\)}
+\DoxyCodeLine{71     if (i)\(\backslash\)}
+\DoxyCodeLine{72         \_\_debugbreak();\(\backslash\)}
+\DoxyCodeLine{73 \}"{}"{}}
+\DoxyCodeLine{74 \#else}
+\DoxyCodeLine{75 \#define HXG\_GLFW(x) x}
+\DoxyCodeLine{76 \#endif}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \#ifdef \_MSC\_VER}
+\DoxyCodeLine{79     \#ifdef Hexeng2D\_EXPORTS}
+\DoxyCodeLine{80         \#define HXG\_DECLSPEC \_\_declspec(dllexport)}
+\DoxyCodeLine{81     \#else}
+\DoxyCodeLine{82         \#define HXG\_DECLSPEC \_\_declspec(dllimport)}
+\DoxyCodeLine{83     \#endif}
+\DoxyCodeLine{84 \#elif defined(\_\_GNUC\_\_)}
+\DoxyCodeLine{85     \#ifdef Hexeng2D\_EXPORTS}
+\DoxyCodeLine{86         \#define HXG\_DECLSPEC \_\_attribute\_\_((visibility("{}default"{})))}
+\DoxyCodeLine{87     \#else}
+\DoxyCodeLine{88         \#define HXG\_DECLSPEC}
+\DoxyCodeLine{89     \#endif}
+\DoxyCodeLine{90 \#else}
+\DoxyCodeLine{91     \#define  HXG\_DECLSPEC}
+\DoxyCodeLine{92 \#endif}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \#endif // !MACROS\_HPP}
+
+\end{DoxyCode}

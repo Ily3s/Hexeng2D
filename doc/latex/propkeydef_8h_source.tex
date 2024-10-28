@@ -1,0 +1,32 @@
+\hypertarget{propkeydef_8h_source}{}\doxysection{propkeydef.\+h}
+\label{propkeydef_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/propkeydef.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/propkeydef.h}}
+\mbox{\hyperlink{propkeydef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PID\_FIRST\_USABLE}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PID\_FIRST\_USABLE 2}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#ifndef REFPROPERTYKEY}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define REFPROPERTYKEY const PROPERTYKEY \&}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#else }\textcolor{comment}{// !\_\_cplusplus}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define REFPROPERTYKEY const PROPERTYKEY * \_\_MIDL\_CONST}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_cplusplus}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#endif }\textcolor{comment}{//REFPROPERTYKEY}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#ifdef DEFINE\_PROPERTYKEY}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#undef DEFINE\_PROPERTYKEY}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifdef INITGUID}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define DEFINE\_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN\_C const PROPERTYKEY DECLSPEC\_SELECTANY name = \{ \{ l, w1, w2, \{ b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 \} \}, pid \}}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define DEFINE\_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN\_C const PROPERTYKEY name}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INITGUID}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#ifndef IsEqualPropertyKey}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define IsEqualPropertyKey(a, b)   (((a).pid == (b).pid) \&\& IsEqualIID((a).fmtid, (b).fmtid) )}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// IsEqualPropertyKey}}
+\DoxyCodeLine{26 }
+
+\end{DoxyCode}

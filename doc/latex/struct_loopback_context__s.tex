@@ -1,0 +1,157 @@
+\hypertarget{struct_loopback_context__s}{}\doxysection{Loopback\+Context\+\_\+s Struct Reference}
+\label{struct_loopback_context__s}\index{LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} \mbox{\hyperlink{struct_loopback_context__s_af5271da39a934e3478a74f6b4b7ec144}{generators}} \mbox{[}\mbox{\hyperlink{paqa_8c_a71b4055b49b141f60926e6ecd501a919}{MAX\+\_\+\+NUM\+\_\+\+GENERATORS}}\mbox{]}
+\item 
+\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} \mbox{\hyperlink{struct_loopback_context__s_ad1c82c2c4394aed28cbc6b2c4a5b66dc}{recordings}} \mbox{[}\mbox{\hyperlink{paqa_8c_a0b2bc279100a83d537fea49d58f9f497}{MAX\+\_\+\+NUM\+\_\+\+RECORDINGS}}\mbox{]}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_loopback_context__s_ac455ac012535f985c53365feb0f91859}{stream\+Info\+Input\+Latency}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_loopback_context__s_a043f29ff78c8aad99aaf609a45ebe1aa}{stream\+Info\+Output\+Latency}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_a692f77b0071a2c85de22b37da5d58c68}{callback\+Count}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_ab3ea16136ef5a74d38292545cba5f011}{input\+Buffer\+Count}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_ac05faa6902eadbdff7964878907727a3}{input\+Underflow\+Count}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_ae577ec80331ca93c1a4b9bd47dedd503}{input\+Overflow\+Count}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_a74498622d40b9836000d25d9ea1526e4}{output\+Buffer\+Count}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_af4dcbf79647e5e12b2ea190604e2446f}{output\+Overflow\+Count}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_ab7442ac9e2fb4fc8470a99b044ca9c48}{output\+Underflow\+Count}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_a64264d4030bebe2fa1fcec8b6150a3ec}{min\+Input\+Output\+Delta}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_a1d85ea7f97a8ab0b024451c8e90018bd}{max\+Input\+Output\+Delta}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_ae1f03610d07860b490e0fc84d4e220a2}{min\+Frames\+Per\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_a9b53739778a392b17c069ebd07833384}{max\+Frames\+Per\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_loopback_context__s_abbc3201a17c8ae320d92963061d0325a}{priming\+Count}}
+\item 
+\mbox{\hyperlink{paqa_8c_abdeab62930f443eec10d8264257d2c43}{Test\+Parameters}} $\ast$ \mbox{\hyperlink{struct_loopback_context__s_af4a5c6b30136380162dfafcb9287020b}{test}}
+\item 
+volatile int \mbox{\hyperlink{struct_loopback_context__s_a46672c5851dcece86dd45040fc271e99}{done}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_loopback_context__s_a692f77b0071a2c85de22b37da5d58c68}\label{struct_loopback_context__s_a692f77b0071a2c85de22b37da5d58c68}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!callbackCount@{callbackCount}}
+\index{callbackCount@{callbackCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{callbackCount}{callbackCount}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::callback\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a46672c5851dcece86dd45040fc271e99}\label{struct_loopback_context__s_a46672c5851dcece86dd45040fc271e99}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!done@{done}}
+\index{done@{done}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{done}{done}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::done}
+
+\mbox{\Hypertarget{struct_loopback_context__s_af5271da39a934e3478a74f6b4b7ec144}\label{struct_loopback_context__s_af5271da39a934e3478a74f6b4b7ec144}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!generators@{generators}}
+\index{generators@{generators}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{generators}{generators}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audio__analyzer_8h_a0c087329a07015d1f901a47f62396d41}{Pa\+Qa\+Sine\+Generator}} Loopback\+Context\+\_\+s\+::generators\mbox{[}\mbox{\hyperlink{paqa_8c_a71b4055b49b141f60926e6ecd501a919}{MAX\+\_\+\+NUM\+\_\+\+GENERATORS}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ab3ea16136ef5a74d38292545cba5f011}\label{struct_loopback_context__s_ab3ea16136ef5a74d38292545cba5f011}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!inputBufferCount@{inputBufferCount}}
+\index{inputBufferCount@{inputBufferCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{inputBufferCount}{inputBufferCount}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::input\+Buffer\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ae577ec80331ca93c1a4b9bd47dedd503}\label{struct_loopback_context__s_ae577ec80331ca93c1a4b9bd47dedd503}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!inputOverflowCount@{inputOverflowCount}}
+\index{inputOverflowCount@{inputOverflowCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{inputOverflowCount}{inputOverflowCount}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::input\+Overflow\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ac05faa6902eadbdff7964878907727a3}\label{struct_loopback_context__s_ac05faa6902eadbdff7964878907727a3}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!inputUnderflowCount@{inputUnderflowCount}}
+\index{inputUnderflowCount@{inputUnderflowCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{inputUnderflowCount}{inputUnderflowCount}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::input\+Underflow\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a9b53739778a392b17c069ebd07833384}\label{struct_loopback_context__s_a9b53739778a392b17c069ebd07833384}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!maxFramesPerBuffer@{maxFramesPerBuffer}}
+\index{maxFramesPerBuffer@{maxFramesPerBuffer}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{maxFramesPerBuffer}{maxFramesPerBuffer}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::max\+Frames\+Per\+Buffer}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a1d85ea7f97a8ab0b024451c8e90018bd}\label{struct_loopback_context__s_a1d85ea7f97a8ab0b024451c8e90018bd}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!maxInputOutputDelta@{maxInputOutputDelta}}
+\index{maxInputOutputDelta@{maxInputOutputDelta}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{maxInputOutputDelta}{maxInputOutputDelta}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::max\+Input\+Output\+Delta}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ae1f03610d07860b490e0fc84d4e220a2}\label{struct_loopback_context__s_ae1f03610d07860b490e0fc84d4e220a2}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!minFramesPerBuffer@{minFramesPerBuffer}}
+\index{minFramesPerBuffer@{minFramesPerBuffer}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{minFramesPerBuffer}{minFramesPerBuffer}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::min\+Frames\+Per\+Buffer}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a64264d4030bebe2fa1fcec8b6150a3ec}\label{struct_loopback_context__s_a64264d4030bebe2fa1fcec8b6150a3ec}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!minInputOutputDelta@{minInputOutputDelta}}
+\index{minInputOutputDelta@{minInputOutputDelta}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{minInputOutputDelta}{minInputOutputDelta}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::min\+Input\+Output\+Delta}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a74498622d40b9836000d25d9ea1526e4}\label{struct_loopback_context__s_a74498622d40b9836000d25d9ea1526e4}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!outputBufferCount@{outputBufferCount}}
+\index{outputBufferCount@{outputBufferCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{outputBufferCount}{outputBufferCount}}
+{\footnotesize\ttfamily volatile int Loopback\+Context\+\_\+s\+::output\+Buffer\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_af4dcbf79647e5e12b2ea190604e2446f}\label{struct_loopback_context__s_af4dcbf79647e5e12b2ea190604e2446f}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!outputOverflowCount@{outputOverflowCount}}
+\index{outputOverflowCount@{outputOverflowCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{outputOverflowCount}{outputOverflowCount}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::output\+Overflow\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ab7442ac9e2fb4fc8470a99b044ca9c48}\label{struct_loopback_context__s_ab7442ac9e2fb4fc8470a99b044ca9c48}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!outputUnderflowCount@{outputUnderflowCount}}
+\index{outputUnderflowCount@{outputUnderflowCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{outputUnderflowCount}{outputUnderflowCount}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::output\+Underflow\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_abbc3201a17c8ae320d92963061d0325a}\label{struct_loopback_context__s_abbc3201a17c8ae320d92963061d0325a}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!primingCount@{primingCount}}
+\index{primingCount@{primingCount}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{primingCount}{primingCount}}
+{\footnotesize\ttfamily int Loopback\+Context\+\_\+s\+::priming\+Count}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ad1c82c2c4394aed28cbc6b2c4a5b66dc}\label{struct_loopback_context__s_ad1c82c2c4394aed28cbc6b2c4a5b66dc}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!recordings@{recordings}}
+\index{recordings@{recordings}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{recordings}{recordings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} Loopback\+Context\+\_\+s\+::recordings\mbox{[}\mbox{\hyperlink{paqa_8c_a0b2bc279100a83d537fea49d58f9f497}{MAX\+\_\+\+NUM\+\_\+\+RECORDINGS}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_loopback_context__s_ac455ac012535f985c53365feb0f91859}\label{struct_loopback_context__s_ac455ac012535f985c53365feb0f91859}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!streamInfoInputLatency@{streamInfoInputLatency}}
+\index{streamInfoInputLatency@{streamInfoInputLatency}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{streamInfoInputLatency}{streamInfoInputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Loopback\+Context\+\_\+s\+::stream\+Info\+Input\+Latency}
+
+\mbox{\Hypertarget{struct_loopback_context__s_a043f29ff78c8aad99aaf609a45ebe1aa}\label{struct_loopback_context__s_a043f29ff78c8aad99aaf609a45ebe1aa}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!streamInfoOutputLatency@{streamInfoOutputLatency}}
+\index{streamInfoOutputLatency@{streamInfoOutputLatency}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{streamInfoOutputLatency}{streamInfoOutputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Loopback\+Context\+\_\+s\+::stream\+Info\+Output\+Latency}
+
+\mbox{\Hypertarget{struct_loopback_context__s_af4a5c6b30136380162dfafcb9287020b}\label{struct_loopback_context__s_af4a5c6b30136380162dfafcb9287020b}} 
+\index{LoopbackContext\_s@{LoopbackContext\_s}!test@{test}}
+\index{test@{test}!LoopbackContext\_s@{LoopbackContext\_s}}
+\doxysubsubsection{\texorpdfstring{test}{test}}
+{\footnotesize\ttfamily \mbox{\hyperlink{paqa_8c_abdeab62930f443eec10d8264257d2c43}{Test\+Parameters}}$\ast$ Loopback\+Context\+\_\+s\+::test}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/qa/loopback/src/\mbox{\hyperlink{paqa_8c}{paqa.\+c}}\end{DoxyCompactItemize}

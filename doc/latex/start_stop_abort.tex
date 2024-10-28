@@ -1,0 +1,38 @@
+\hypertarget{start_stop_abort_tut_startstop1}{}\doxysection{Starting, Stopping and Aborting a Stream}\label{start_stop_abort_tut_startstop1}
+Port\+Audio will not start playing back audio until you start the stream. After calling \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\+\_\+\+Start\+Stream()}}, Port\+Audio will start calling your callback function to perform the audio processing.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\_StartStream}}( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+You can communicate with your callback routine through the data structure you passed in on the open call, or through global variables, or using other interprocess communication techniques, but please be aware that your callback function may be called at interrupt time when your foreground process is least expecting it. So avoid sharing complex data structures that are easily corrupted like double linked lists, and avoid using locks such as mutexes as this may cause your callback function to block and therefore drop audio. Such techniques may even cause deadlock on some platforms.
+
+Port\+Audio will continue to call your callback and process audio until you stop the stream. This can be done in one of several ways, but, before we do so, we\textquotesingle{}ll want to see that some of our audio gets processed by sleeping for a few seconds. This is easy to do with \mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\+\_\+\+Sleep()}}, which is used by many of the examples in the patests/ directory for exactly this purpose. Note that, for a variety of reasons, you can not rely on this function for accurate scheduling, so your stream may not run for exactly the same amount of time as you expect, but it\textquotesingle{}s good enough for our example.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{/* Sleep for several seconds. */}}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\_Sleep}}(\mbox{\hyperlink{paex__mono__asio__channel__select_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\_SECONDS}}*1000);}
+
+\end{DoxyCode}
+
+
+Now we need to stop playback. There are several ways to do this, the simplest of which is to call \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}}\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\_StopStream}}( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+\mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} is designed to make sure that the buffers you\textquotesingle{}ve processed in your callback are all played, which may cause some delay. Alternatively, you could call \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream()}}. On some platforms, aborting the stream is much faster and may cause some data processed by your callback not to be played.
+
+Another way to stop the stream is to return either pa\+Complete, or pa\+Abort from your callback. pa\+Complete ensures that the last buffer is played whereas pa\+Abort stops the stream as soon as possible. If you stop the stream using this technique, you will need to call \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} before starting the stream again.
+
+Previous\+: \mbox{\hyperlink{open_default_stream}{Opening a Stream Using Defaults}} $\vert$ Next\+: \mbox{\hyperlink{terminating_portaudio}{Closing a Stream and Terminating Port\+Audio}} 

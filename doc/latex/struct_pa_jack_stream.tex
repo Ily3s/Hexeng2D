@@ -1,0 +1,245 @@
+\hypertarget{struct_pa_jack_stream}{}\doxysection{Pa\+Jack\+Stream Struct Reference}
+\label{struct_pa_jack_stream}\index{PaJackStream@{PaJackStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_jack_stream_ae04c2e7f23e9858dbcc3ec7c8f44a810}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_jack_stream_a20b9a40e42f26c09691da1209f9fb7cb}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_jack_stream_af3286d0df7ea86579aeaeb0f81d559e8}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_jack_host_api_representation}{Pa\+Jack\+Host\+Api\+Representation}} $\ast$ \mbox{\hyperlink{struct_pa_jack_stream_a23621ea90d67d042879358448ad6aca2}{host\+Api}}
+\item 
+jack\+\_\+port\+\_\+t $\ast$$\ast$ \mbox{\hyperlink{struct_pa_jack_stream_ab3d29e0bdd8072b82e516d3251e36545}{local\+\_\+input\+\_\+ports}}
+\item 
+jack\+\_\+port\+\_\+t $\ast$$\ast$ \mbox{\hyperlink{struct_pa_jack_stream_aa50ae53f3cad8933accd2754780a812c}{local\+\_\+output\+\_\+ports}}
+\item 
+jack\+\_\+port\+\_\+t $\ast$$\ast$ \mbox{\hyperlink{struct_pa_jack_stream_a53279160d9418868badbc177dccba78e}{remote\+\_\+input\+\_\+ports}}
+\item 
+jack\+\_\+port\+\_\+t $\ast$$\ast$ \mbox{\hyperlink{struct_pa_jack_stream_a4793965dd3b0f3b82b95532886587812}{remote\+\_\+output\+\_\+ports}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_aafb405d93ffbd1c1c6c351c66ceef7ad}{num\+\_\+incoming\+\_\+connections}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_a6fc39840c852acfbc486cfee93b96446}{num\+\_\+outgoing\+\_\+connections}}
+\item 
+jack\+\_\+client\+\_\+t $\ast$ \mbox{\hyperlink{struct_pa_jack_stream_ac86d61cec117a6ae3daf0005327120b8}{jack\+\_\+client}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_a06646e9c971d3bb6df4b388069f7b028}{is\+\_\+running}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_aa76032f188b70106c516f6e899f093c2}{is\+\_\+active}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_aa9795c7296b5f4980026cc2878d64790}{do\+Start}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_a2c8bcb554717b9274982084fb5ed0664}{do\+Stop}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_aead1d117bea0ff3b76f87f3a6ebd60fd}{do\+Abort}}
+\item 
+jack\+\_\+nframes\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_ab3acbd1df33dfc6265fa9719c81b549c}{t0}}
+\item 
+\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$ \mbox{\hyperlink{struct_pa_jack_stream_a06ac71c5889609c10f209e21a85fba0d}{stream\+\_\+memory}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_ab747beccc47f95be5295d848f138bd73}{callback\+Result}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_acc19c258acb8ac0f67451b3ac17482a9}{is\+Silenced}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_ac47c25349767b6d5eaee70792f9dca5f}{xrun}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_a82443cba3e6baf5cfe78b117bd0824d1}{is\+Blocking\+Stream}}
+\item 
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_jack_stream_a7eabd09f0955039b4c6e898b67485115}{in\+FIFO}}
+\item 
+\mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} \mbox{\hyperlink{struct_pa_jack_stream_a8a863fb0eabe0f2d2e12ead03ae1857a}{out\+FIFO}}
+\item 
+volatile sig\+\_\+atomic\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_a821d97c864a8ef77b6ceb221e747019b}{data\+\_\+available}}
+\item 
+sem\+\_\+t \mbox{\hyperlink{struct_pa_jack_stream_a128e233cdb75f07e72937e7ae577d0f1}{data\+\_\+semaphore}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_a4dc3d7e512df3c97bff7c1f6b1b40a9d}{bytes\+Per\+Frame}}
+\item 
+int \mbox{\hyperlink{struct_pa_jack_stream_a4dd12058c95f9547625686ef80b296a2}{samples\+Per\+Frame}}
+\item 
+struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}} $\ast$ \mbox{\hyperlink{struct_pa_jack_stream_a3a2e2f3009c7c00d29b245b93e426cb0}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_jack_stream_a20b9a40e42f26c09691da1209f9fb7cb}\label{struct_pa_jack_stream_a20b9a40e42f26c09691da1209f9fb7cb}} 
+\index{PaJackStream@{PaJackStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Jack\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a4dc3d7e512df3c97bff7c1f6b1b40a9d}\label{struct_pa_jack_stream_a4dc3d7e512df3c97bff7c1f6b1b40a9d}} 
+\index{PaJackStream@{PaJackStream}!bytesPerFrame@{bytesPerFrame}}
+\index{bytesPerFrame@{bytesPerFrame}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{bytesPerFrame}{bytesPerFrame}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::bytes\+Per\+Frame}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ab747beccc47f95be5295d848f138bd73}\label{struct_pa_jack_stream_ab747beccc47f95be5295d848f138bd73}} 
+\index{PaJackStream@{PaJackStream}!callbackResult@{callbackResult}}
+\index{callbackResult@{callbackResult}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{callbackResult}{callbackResult}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::callback\+Result}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_af3286d0df7ea86579aeaeb0f81d559e8}\label{struct_pa_jack_stream_af3286d0df7ea86579aeaeb0f81d559e8}} 
+\index{PaJackStream@{PaJackStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Jack\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a821d97c864a8ef77b6ceb221e747019b}\label{struct_pa_jack_stream_a821d97c864a8ef77b6ceb221e747019b}} 
+\index{PaJackStream@{PaJackStream}!data\_available@{data\_available}}
+\index{data\_available@{data\_available}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{data\_available}{data\_available}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::data\+\_\+available}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a128e233cdb75f07e72937e7ae577d0f1}\label{struct_pa_jack_stream_a128e233cdb75f07e72937e7ae577d0f1}} 
+\index{PaJackStream@{PaJackStream}!data\_semaphore@{data\_semaphore}}
+\index{data\_semaphore@{data\_semaphore}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{data\_semaphore}{data\_semaphore}}
+{\footnotesize\ttfamily sem\+\_\+t Pa\+Jack\+Stream\+::data\+\_\+semaphore}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_aead1d117bea0ff3b76f87f3a6ebd60fd}\label{struct_pa_jack_stream_aead1d117bea0ff3b76f87f3a6ebd60fd}} 
+\index{PaJackStream@{PaJackStream}!doAbort@{doAbort}}
+\index{doAbort@{doAbort}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{doAbort}{doAbort}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::do\+Abort}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_aa9795c7296b5f4980026cc2878d64790}\label{struct_pa_jack_stream_aa9795c7296b5f4980026cc2878d64790}} 
+\index{PaJackStream@{PaJackStream}!doStart@{doStart}}
+\index{doStart@{doStart}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{doStart}{doStart}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::do\+Start}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a2c8bcb554717b9274982084fb5ed0664}\label{struct_pa_jack_stream_a2c8bcb554717b9274982084fb5ed0664}} 
+\index{PaJackStream@{PaJackStream}!doStop@{doStop}}
+\index{doStop@{doStop}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{doStop}{doStop}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::do\+Stop}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a23621ea90d67d042879358448ad6aca2}\label{struct_pa_jack_stream_a23621ea90d67d042879358448ad6aca2}} 
+\index{PaJackStream@{PaJackStream}!hostApi@{hostApi}}
+\index{hostApi@{hostApi}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{hostApi}{hostApi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_jack_host_api_representation}{Pa\+Jack\+Host\+Api\+Representation}}$\ast$ Pa\+Jack\+Stream\+::host\+Api}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a7eabd09f0955039b4c6e898b67485115}\label{struct_pa_jack_stream_a7eabd09f0955039b4c6e898b67485115}} 
+\index{PaJackStream@{PaJackStream}!inFIFO@{inFIFO}}
+\index{inFIFO@{inFIFO}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{inFIFO}{inFIFO}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} Pa\+Jack\+Stream\+::in\+FIFO}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_aa76032f188b70106c516f6e899f093c2}\label{struct_pa_jack_stream_aa76032f188b70106c516f6e899f093c2}} 
+\index{PaJackStream@{PaJackStream}!is\_active@{is\_active}}
+\index{is\_active@{is\_active}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{is\_active}{is\_active}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::is\+\_\+active}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a06646e9c971d3bb6df4b388069f7b028}\label{struct_pa_jack_stream_a06646e9c971d3bb6df4b388069f7b028}} 
+\index{PaJackStream@{PaJackStream}!is\_running@{is\_running}}
+\index{is\_running@{is\_running}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{is\_running}{is\_running}}
+{\footnotesize\ttfamily volatile sig\+\_\+atomic\+\_\+t Pa\+Jack\+Stream\+::is\+\_\+running}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a82443cba3e6baf5cfe78b117bd0824d1}\label{struct_pa_jack_stream_a82443cba3e6baf5cfe78b117bd0824d1}} 
+\index{PaJackStream@{PaJackStream}!isBlockingStream@{isBlockingStream}}
+\index{isBlockingStream@{isBlockingStream}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{isBlockingStream}{isBlockingStream}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::is\+Blocking\+Stream}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_acc19c258acb8ac0f67451b3ac17482a9}\label{struct_pa_jack_stream_acc19c258acb8ac0f67451b3ac17482a9}} 
+\index{PaJackStream@{PaJackStream}!isSilenced@{isSilenced}}
+\index{isSilenced@{isSilenced}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{isSilenced}{isSilenced}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::is\+Silenced}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ac86d61cec117a6ae3daf0005327120b8}\label{struct_pa_jack_stream_ac86d61cec117a6ae3daf0005327120b8}} 
+\index{PaJackStream@{PaJackStream}!jack\_client@{jack\_client}}
+\index{jack\_client@{jack\_client}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{jack\_client}{jack\_client}}
+{\footnotesize\ttfamily jack\+\_\+client\+\_\+t$\ast$ Pa\+Jack\+Stream\+::jack\+\_\+client}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ab3d29e0bdd8072b82e516d3251e36545}\label{struct_pa_jack_stream_ab3d29e0bdd8072b82e516d3251e36545}} 
+\index{PaJackStream@{PaJackStream}!local\_input\_ports@{local\_input\_ports}}
+\index{local\_input\_ports@{local\_input\_ports}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{local\_input\_ports}{local\_input\_ports}}
+{\footnotesize\ttfamily jack\+\_\+port\+\_\+t$\ast$$\ast$ Pa\+Jack\+Stream\+::local\+\_\+input\+\_\+ports}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_aa50ae53f3cad8933accd2754780a812c}\label{struct_pa_jack_stream_aa50ae53f3cad8933accd2754780a812c}} 
+\index{PaJackStream@{PaJackStream}!local\_output\_ports@{local\_output\_ports}}
+\index{local\_output\_ports@{local\_output\_ports}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{local\_output\_ports}{local\_output\_ports}}
+{\footnotesize\ttfamily jack\+\_\+port\+\_\+t$\ast$$\ast$ Pa\+Jack\+Stream\+::local\+\_\+output\+\_\+ports}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a3a2e2f3009c7c00d29b245b93e426cb0}\label{struct_pa_jack_stream_a3a2e2f3009c7c00d29b245b93e426cb0}} 
+\index{PaJackStream@{PaJackStream}!next@{next}}
+\index{next@{next}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_pa_jack_stream}{Pa\+Jack\+Stream}}$\ast$ Pa\+Jack\+Stream\+::next}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_aafb405d93ffbd1c1c6c351c66ceef7ad}\label{struct_pa_jack_stream_aafb405d93ffbd1c1c6c351c66ceef7ad}} 
+\index{PaJackStream@{PaJackStream}!num\_incoming\_connections@{num\_incoming\_connections}}
+\index{num\_incoming\_connections@{num\_incoming\_connections}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{num\_incoming\_connections}{num\_incoming\_connections}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::num\+\_\+incoming\+\_\+connections}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a6fc39840c852acfbc486cfee93b96446}\label{struct_pa_jack_stream_a6fc39840c852acfbc486cfee93b96446}} 
+\index{PaJackStream@{PaJackStream}!num\_outgoing\_connections@{num\_outgoing\_connections}}
+\index{num\_outgoing\_connections@{num\_outgoing\_connections}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{num\_outgoing\_connections}{num\_outgoing\_connections}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::num\+\_\+outgoing\+\_\+connections}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a8a863fb0eabe0f2d2e12ead03ae1857a}\label{struct_pa_jack_stream_a8a863fb0eabe0f2d2e12ead03ae1857a}} 
+\index{PaJackStream@{PaJackStream}!outFIFO@{outFIFO}}
+\index{outFIFO@{outFIFO}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{outFIFO}{outFIFO}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_ring_buffer}{Pa\+Util\+Ring\+Buffer}} Pa\+Jack\+Stream\+::out\+FIFO}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a53279160d9418868badbc177dccba78e}\label{struct_pa_jack_stream_a53279160d9418868badbc177dccba78e}} 
+\index{PaJackStream@{PaJackStream}!remote\_input\_ports@{remote\_input\_ports}}
+\index{remote\_input\_ports@{remote\_input\_ports}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{remote\_input\_ports}{remote\_input\_ports}}
+{\footnotesize\ttfamily jack\+\_\+port\+\_\+t$\ast$$\ast$ Pa\+Jack\+Stream\+::remote\+\_\+input\+\_\+ports}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a4793965dd3b0f3b82b95532886587812}\label{struct_pa_jack_stream_a4793965dd3b0f3b82b95532886587812}} 
+\index{PaJackStream@{PaJackStream}!remote\_output\_ports@{remote\_output\_ports}}
+\index{remote\_output\_ports@{remote\_output\_ports}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{remote\_output\_ports}{remote\_output\_ports}}
+{\footnotesize\ttfamily jack\+\_\+port\+\_\+t$\ast$$\ast$ Pa\+Jack\+Stream\+::remote\+\_\+output\+\_\+ports}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a4dd12058c95f9547625686ef80b296a2}\label{struct_pa_jack_stream_a4dd12058c95f9547625686ef80b296a2}} 
+\index{PaJackStream@{PaJackStream}!samplesPerFrame@{samplesPerFrame}}
+\index{samplesPerFrame@{samplesPerFrame}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{samplesPerFrame}{samplesPerFrame}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::samples\+Per\+Frame}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_a06ac71c5889609c10f209e21a85fba0d}\label{struct_pa_jack_stream_a06ac71c5889609c10f209e21a85fba0d}} 
+\index{PaJackStream@{PaJackStream}!stream\_memory@{stream\_memory}}
+\index{stream\_memory@{stream\_memory}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{stream\_memory}{stream\_memory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}}$\ast$ Pa\+Jack\+Stream\+::stream\+\_\+memory}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ae04c2e7f23e9858dbcc3ec7c8f44a810}\label{struct_pa_jack_stream_ae04c2e7f23e9858dbcc3ec7c8f44a810}} 
+\index{PaJackStream@{PaJackStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Jack\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ab3acbd1df33dfc6265fa9719c81b549c}\label{struct_pa_jack_stream_ab3acbd1df33dfc6265fa9719c81b549c}} 
+\index{PaJackStream@{PaJackStream}!t0@{t0}}
+\index{t0@{t0}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{t0}{t0}}
+{\footnotesize\ttfamily jack\+\_\+nframes\+\_\+t Pa\+Jack\+Stream\+::t0}
+
+\mbox{\Hypertarget{struct_pa_jack_stream_ac47c25349767b6d5eaee70792f9dca5f}\label{struct_pa_jack_stream_ac47c25349767b6d5eaee70792f9dca5f}} 
+\index{PaJackStream@{PaJackStream}!xrun@{xrun}}
+\index{xrun@{xrun}!PaJackStream@{PaJackStream}}
+\doxysubsubsection{\texorpdfstring{xrun}{xrun}}
+{\footnotesize\ttfamily int Pa\+Jack\+Stream\+::xrun}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/jack/\mbox{\hyperlink{pa__jack_8c}{pa\+\_\+jack.\+c}}\end{DoxyCompactItemize}

@@ -1,0 +1,192 @@
+\hypertarget{pa__mac__core__internal_8h_source}{}\doxysection{pa\+\_\+mac\+\_\+core\+\_\+internal.\+h}
+\label{pa__mac__core__internal_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_internal.h@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_internal.h}}
+\mbox{\hyperlink{pa__mac__core__internal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Internal interfaces for PortAudio Apple AUHAL implementation}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Latest Version at: http://www.portaudio.com}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Written by Bjorn Roche of XO Audio LLC, from PA skeleton code.}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Portions copied from code by Dominic Mazzoni (who wrote a HAL implementation)}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Dominic's code was based on code by Phil Burk, Darren Gibbs,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Gord Peters, Stephane Letz, and Greg Pfiel.}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * The following people also deserve acknowledgements:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * Olivier Tristan for feedback and testing}}
+\DoxyCodeLine{16 \textcolor{comment}{ * Glenn Zelniker and Z-\/Systems engineering for sponsoring the Blocking I/O}}
+\DoxyCodeLine{17 \textcolor{comment}{ * interface.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ *}}
+\DoxyCodeLine{20 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{21 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Ross Bencina, Phil Burk}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{24 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{25 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{26 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{28 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{29 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{32 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{35 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{36 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{37 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{38 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{39 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{40 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{45 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{46 \textcolor{comment}{ *}}
+\DoxyCodeLine{47 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{48 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{49 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{50 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{51 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{52 \textcolor{comment}{ */}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifndef PA\_MAC\_CORE\_INTERNAL\_H\_\_}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define PA\_MAC\_CORE\_INTERNAL\_H\_\_}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include <CoreAudio/CoreAudio.h>}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#include <CoreServices/CoreServices.h>}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#include <AudioUnit/AudioUnit.h>}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#include <AudioToolbox/AudioToolbox.h>}}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__util_8h}{pa\_util.h}}"{}}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__hostapi_8h}{pa\_hostapi.h}}"{}}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__stream_8h}{pa\_stream.h}}"{}}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__allocation_8h}{pa\_allocation.h}}"{}}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__cpuload_8h}{pa\_cpuload.h}}"{}}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__process_8h}{pa\_process.h}}"{}}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__ringbuffer_8h}{pa\_ringbuffer.h}}"{}}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__mac__core__blocking_8h}{pa\_mac\_core\_blocking.h}}"{}}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{/* function prototypes */}}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{83 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{84 \{}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__internal_8h_a9d5b7af64c23abc3f0a9431bb12af330}{PaMacCore\_Initialize}}( \mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} **hostApi, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}} );}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{90 \}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define RING\_BUFFER\_ADVANCE\_DENOMINATOR (4)}}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__internal_8h_a3aa8874a48f232c61d4101706df2b269}{ReadStream}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frames );}
+\DoxyCodeLine{96 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__internal_8h_a3520d8a8ca48a25c9b99708f6033811d}{WriteStream}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \textcolor{keyword}{const} \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frames );}
+\DoxyCodeLine{97 \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__mac__core__internal_8h_a7a2a2c66aac73b2dc2f17aed8fe2e27a}{GetStreamReadAvailable}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{98 \textcolor{keywordtype}{signed} \textcolor{keywordtype}{long} \mbox{\hyperlink{pa__mac__core__internal_8h_af78e7f508bccfd03826f1e894e58d0fc}{GetStreamWriteAvailable}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}}* \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} );}
+\DoxyCodeLine{99 \textcolor{comment}{/* PaMacAUHAL -\/ host api datastructure specific to this implementation */}}
+\DoxyCodeLine{100 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{101 \{}
+\DoxyCodeLine{102     \mbox{\hyperlink{struct_pa_util_host_api_representation}{PaUtilHostApiRepresentation}} \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_abe5cf67f9992b647d350cd9fb890a081}{inheritedHostApiRep}};}
+\DoxyCodeLine{103     \mbox{\hyperlink{struct_pa_util_stream_interface}{PaUtilStreamInterface}} \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_a747f231b18878ff0cc7918bbd4df5e21}{callbackStreamInterface}};}
+\DoxyCodeLine{104     \mbox{\hyperlink{struct_pa_util_stream_interface}{PaUtilStreamInterface}} \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_aa7c1cb635e954f37e178e7f037f6cbfb}{blockingStreamInterface}};}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \mbox{\hyperlink{struct_pa_util_allocation_group}{PaUtilAllocationGroup}} *\mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_a7fdcaf9a58f5f439ac970ca19012b41c}{allocations}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{comment}{/* implementation specific data goes here */}}
+\DoxyCodeLine{109     \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_a192eec8334acc33171a90d4c6dce4c90}{devCount}};}
+\DoxyCodeLine{110     AudioDeviceID *\mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_a2b9cc8201b12b88cea1acb9e2cc30c21}{devIds}}; \textcolor{comment}{/*array of all audio devices*/}}
+\DoxyCodeLine{111     AudioDeviceID \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_adcadc778ee059bbbd6cbcb76ac93931b}{defaultIn}};}
+\DoxyCodeLine{112     AudioDeviceID \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l_ae4876213ad54aeebea056e458dff4bfd}{defaultOut}};}
+\DoxyCodeLine{113 \}}
+\DoxyCodeLine{114 \mbox{\hyperlink{struct_pa_mac_a_u_h_a_l}{PaMacAUHAL}};}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_mac_core_device_properties}{PaMacCoreDeviceProperties}}}
+\DoxyCodeLine{117 \{}
+\DoxyCodeLine{118     \textcolor{comment}{/* Values in Frames from property queries. */}}
+\DoxyCodeLine{119     UInt32 \mbox{\hyperlink{struct_pa_mac_core_device_properties_ab303037c6a88e4b54f706f2d5d0be00c}{safetyOffset}};}
+\DoxyCodeLine{120     UInt32 \mbox{\hyperlink{struct_pa_mac_core_device_properties_a7a0781d3b3414f23abc663b17cb06c7d}{bufferFrameSize}};}
+\DoxyCodeLine{121     \textcolor{comment}{// UInt32 streamLatency; // Seems to be the same as deviceLatency!?}}
+\DoxyCodeLine{122     UInt32 \mbox{\hyperlink{struct_pa_mac_core_device_properties_aaa0297847bc0987b066f0ece4ef0c532}{deviceLatency}};}
+\DoxyCodeLine{123     \textcolor{comment}{/* Current device sample rate. May change!}}
+\DoxyCodeLine{124 \textcolor{comment}{       These are initialized to the nominal device sample rate,}}
+\DoxyCodeLine{125 \textcolor{comment}{       and updated with the actual sample rate, when/where available.}}
+\DoxyCodeLine{126 \textcolor{comment}{       Note that these are the *device* sample rates, prior to any required}}
+\DoxyCodeLine{127 \textcolor{comment}{       SR conversion. */}}
+\DoxyCodeLine{128     Float64 \mbox{\hyperlink{struct_pa_mac_core_device_properties_a0da4b19e2993717c1e09ab86a6930ee4}{sampleRate}};}
+\DoxyCodeLine{129     Float64 \mbox{\hyperlink{struct_pa_mac_core_device_properties_a4124e492be364add3280ef5574a26fde}{samplePeriod}}; \textcolor{comment}{// reciprocal}}
+\DoxyCodeLine{130 \}}
+\DoxyCodeLine{131 \mbox{\hyperlink{struct_pa_mac_core_device_properties}{PaMacCoreDeviceProperties}};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{comment}{/* stream data structure specifically for this implementation */}}
+\DoxyCodeLine{134 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_mac_core_stream}{PaMacCoreStream}}}
+\DoxyCodeLine{135 \{}
+\DoxyCodeLine{136     \mbox{\hyperlink{struct_pa_util_stream_representation}{PaUtilStreamRepresentation}} \mbox{\hyperlink{struct_pa_mac_core_stream_a37e7f3609f183162f0938ae24dd838f7}{streamRepresentation}};}
+\DoxyCodeLine{137     \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{PaUtilCpuLoadMeasurer}} \mbox{\hyperlink{struct_pa_mac_core_stream_a589be1f91f8332bba6cc1b0b006f9b80}{cpuLoadMeasurer}};}
+\DoxyCodeLine{138     \mbox{\hyperlink{struct_pa_util_buffer_processor}{PaUtilBufferProcessor}} \mbox{\hyperlink{struct_pa_mac_core_stream_aa4c9fb315b5a2a91164f62d40e1f35a7}{bufferProcessor}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140     \textcolor{comment}{/* implementation specific data goes here */}}
+\DoxyCodeLine{141     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_pa_mac_core_stream_ac6468bfef6a09086a8ba75bd1825b3f4}{bufferProcessorIsInitialized}};}
+\DoxyCodeLine{142     AudioUnit \mbox{\hyperlink{struct_pa_mac_core_stream_a18489f920abd98c28ec23a08129a2a94}{inputUnit}};}
+\DoxyCodeLine{143     AudioUnit \mbox{\hyperlink{struct_pa_mac_core_stream_a834e659582a0b68100a0095ac6d45c7e}{outputUnit}};}
+\DoxyCodeLine{144     AudioDeviceID \mbox{\hyperlink{struct_pa_mac_core_stream_a84ab00c3940677753cbcfaa0b4497817}{inputDevice}};}
+\DoxyCodeLine{145     AudioDeviceID \mbox{\hyperlink{struct_pa_mac_core_stream_ae982506be4fb075f57798b322893c477}{outputDevice}};}
+\DoxyCodeLine{146     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_core_stream_a8117390b82eb0f6aa238c1c0272f96b2}{userInChan}};}
+\DoxyCodeLine{147     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_core_stream_aa672c86d838eb7f11ee03e939b7a58e5}{userOutChan}};}
+\DoxyCodeLine{148     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_core_stream_a33e3792b0bebe4a05a5e794ec087e4c3}{inputFramesPerBuffer}};}
+\DoxyCodeLine{149     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_core_stream_a6ba0534d56d18552f4dd23b5922b6caa}{outputFramesPerBuffer}};}
+\DoxyCodeLine{150     \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}} \mbox{\hyperlink{struct_pa_mac_core_stream_aeb24427958d583443b64443a9e25cdec}{blio}};}
+\DoxyCodeLine{151     \textcolor{comment}{/* We use this ring buffer when input and out devs are different. */}}
+\DoxyCodeLine{152     \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} \mbox{\hyperlink{struct_pa_mac_core_stream_a1c12d9d7f7f8174127c8ae35b96991dd}{inputRingBuffer}};}
+\DoxyCodeLine{153     \textcolor{comment}{/* We may need to do SR conversion on input. */}}
+\DoxyCodeLine{154     AudioConverterRef \mbox{\hyperlink{struct_pa_mac_core_stream_ab3d6f024b40670367b5bbbe1444cba92}{inputSRConverter}};}
+\DoxyCodeLine{155     \textcolor{comment}{/* We need to preallocate an inputBuffer for reading data. */}}
+\DoxyCodeLine{156     AudioBufferList \mbox{\hyperlink{struct_pa_mac_core_stream_aa214b3f78a40dd23797a512b0892a098}{inputAudioBufferList}};}
+\DoxyCodeLine{157     AudioTimeStamp \mbox{\hyperlink{struct_pa_mac_core_stream_aa9eec45ab4d032a62a5edf9815aa95c5}{startTime}};}
+\DoxyCodeLine{158     \textcolor{comment}{/* FIXME: instead of volatile, these should be properly memory barriered */}}
+\DoxyCodeLine{159     \textcolor{keyword}{volatile} uint32\_t \mbox{\hyperlink{struct_pa_mac_core_stream_af65db3bdd18d4356f16fe5c2b23f7d5d}{xrunFlags}}; \textcolor{comment}{/*PaStreamCallbackFlags*/}}
+\DoxyCodeLine{160     \textcolor{keyword}{volatile} \textcolor{keyword}{enum} \{}
+\DoxyCodeLine{161         \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a2db0c1fbc59ffd1ce39420043567034f}{STOPPED}}          = 0, \textcolor{comment}{/* playback is completely stopped,}}
+\DoxyCodeLine{162 \textcolor{comment}{                                and the user has called StopStream(). */}}
+\DoxyCodeLine{163         \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612a9ccbe914a7f2cda7757a109e259d707c}{CALLBACK\_STOPPED}} = 1, \textcolor{comment}{/* callback has requested stop,}}
+\DoxyCodeLine{164 \textcolor{comment}{                                but user has not yet called StopStream(). */}}
+\DoxyCodeLine{165         \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ad7a565d0dc9a0f8056f8c308daf07234}{STOPPING}}         = 2, \textcolor{comment}{/* The stream is in the process of closing}}
+\DoxyCodeLine{166 \textcolor{comment}{                                because the user has called StopStream.}}
+\DoxyCodeLine{167 \textcolor{comment}{                                This state is just used internally;}}
+\DoxyCodeLine{168 \textcolor{comment}{                                externally it is indistinguishable from}}
+\DoxyCodeLine{169 \textcolor{comment}{                                ACTIVE.*/}}
+\DoxyCodeLine{170         \mbox{\hyperlink{struct_pa_mac_core_stream_a58e6db01db34fecaf86d4e4a7c848612ae9d399d5b7b458c6509601a9e4770c30}{ACTIVE}}           = 3  \textcolor{comment}{/* The stream is active and running. */}}
+\DoxyCodeLine{171     \} \mbox{\hyperlink{struct_pa_mac_core_stream_aefae48cab23ed2d64c196c420d7f2387}{state}};}
+\DoxyCodeLine{172     \textcolor{keywordtype}{double} \mbox{\hyperlink{struct_pa_mac_core_stream_a3e945d299bff5c01d6e8a4f6bd8dfffb}{sampleRate}};}
+\DoxyCodeLine{173     \mbox{\hyperlink{struct_pa_mac_core_device_properties}{PaMacCoreDeviceProperties}}  \mbox{\hyperlink{struct_pa_mac_core_stream_a784e07f3c2e4f2e03989aab2614687b1}{inputProperties}};}
+\DoxyCodeLine{174     \mbox{\hyperlink{struct_pa_mac_core_device_properties}{PaMacCoreDeviceProperties}}  \mbox{\hyperlink{struct_pa_mac_core_stream_a7d1be4951510dd36b84abd1cc7daf49a}{outputProperties}};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176     \textcolor{comment}{/* data updated by main thread and notifications, protected by timingInformationMutex */}}
+\DoxyCodeLine{177     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_mac_core_stream_a94404e181cea0bc1d2c82b2e6f541366}{timingInformationMutexIsInitialized}};}
+\DoxyCodeLine{178     pthread\_mutex\_t \mbox{\hyperlink{struct_pa_mac_core_stream_ab03af1e2679f505b0ab8ad629a0b4a34}{timingInformationMutex}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180     \textcolor{comment}{/* These are written by the PA thread or from CoreAudio callbacks. Protected by the mutex. */}}
+\DoxyCodeLine{181     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a169f40774042f35654987a0d5daa369d}{timestampOffsetCombined}};}
+\DoxyCodeLine{182     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a478d46d9d93bdc6d3cdb2009236c1d9e}{timestampOffsetInputDevice}};}
+\DoxyCodeLine{183     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a81525a1ff3c1cb96a57d44c5ca70f7c4}{timestampOffsetOutputDevice}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185     \textcolor{comment}{/* Offsets in seconds to be applied to Apple timestamps to convert them to PA timestamps.}}
+\DoxyCodeLine{186 \textcolor{comment}{     * While the io proc is active, the following values are only accessed and manipulated by the ioproc */}}
+\DoxyCodeLine{187     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a8835149b249b0d65891cb7b7104bbd53}{timestampOffsetCombined\_ioProcCopy}};}
+\DoxyCodeLine{188     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a5214bc58179dd3ab933567bff3eb0c71}{timestampOffsetInputDevice\_ioProcCopy}};}
+\DoxyCodeLine{189     Float64 \mbox{\hyperlink{struct_pa_mac_core_stream_a4eb660a54787d8965d59a774b21ab454}{timestampOffsetOutputDevice\_ioProcCopy}};}
+\DoxyCodeLine{190 \}}
+\DoxyCodeLine{191 \mbox{\hyperlink{struct_pa_mac_core_stream}{PaMacCoreStream}};}
+\DoxyCodeLine{192 }
+\DoxyCodeLine{193 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_MAC\_CORE\_INTERNAL\_H\_\_ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

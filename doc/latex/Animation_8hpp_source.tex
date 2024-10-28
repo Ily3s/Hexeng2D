@@ -1,0 +1,55 @@
+\doxysection{Animation.\+hpp}
+\hypertarget{Animation_8hpp_source}{}\label{Animation_8hpp_source}\index{Hexeng2D/src/Renderer/Animation.hpp@{Hexeng2D/src/Renderer/Animation.hpp}}
+\mbox{\hyperlink{Animation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ ANIMATION\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ ANIMATION\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Macros.hpp"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1AnimationStep}{AnimationStep}}}
+\DoxyCodeLine{00012\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1AnimationStep_ac3680c8da679dbc55f3823e50cba4e2e}{AnimationStep}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{float})>\ up\_anim,\ std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>\ keypoint,\ \textcolor{keywordtype}{float}\ timestamp);}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keywordtype}{float})>\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1AnimationStep_a8103b7bd76620303ee6ad2c8d1785a8b}{up\_anim}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keywordtype}{void})>\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1AnimationStep_a5bd722169e394f5db76cf0966a63dca8}{keypoint}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1AnimationStep_a94057094b2cc41ab3c2bae75488518ca}{timestamp}};}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation}{Animation}}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ public\ :}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_a47562bf48cf255d9d288c8229efc1e0d}{Animation}}(std::vector<AnimationStep>\ steps,\ std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>\ terminate,\ \textcolor{keywordtype}{bool}\ repeat\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ std::vector<AnimationStep>\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_a79fd174f726539749c9bf4f797e3ece7}{steps}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keywordtype}{void})>\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_a47083225ded54f4c8682390763babade}{terminate}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ repeat\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_a9835d6c223597ffb55575110d0f03f48}{play}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_a353841b478b61f10db34a2046b513b81}{stop}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ private\ :}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Animation_af03764b7e1263a64c0438cbd84582eb0}{draw\_current\_scene}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ std::vector<Animation*>\ s\_animations;}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_current\_step\ =\ 0;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_time\ =\ 0.0f;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ s\_update\_animations();}
+\DoxyCodeLine{00051\ \ \ \ \ \};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

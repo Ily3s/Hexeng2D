@@ -1,0 +1,263 @@
+\hypertarget{struct_i_condition_generator_vtbl}{}\doxysection{ICondition\+Generator\+Vtbl Struct Reference}
+\label{struct_i_condition_generator_vtbl}\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+
+
+{\ttfamily \#include $<$structuredquery.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_condition_generator_vtbl_ae25fb4012981c9776b23dc952a3642b5}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_aceb6458e61ff1bb1b40142adea4cc4e8}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_afca681c4ee121bcbec7624b72e4c4a89}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_a8b406ee45ac1f2c6d738083ed54405b8}{HRESULT}} (STDMETHODCALLTYPE $\ast$Initialize)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_a8f422d63a39a560951558717f41f3f65}{HRESULT}} (STDMETHODCALLTYPE $\ast$Recognize\+Named\+Entities)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_a82677c459c68a5f1fcfb2abfc495a621}{HRESULT}} (STDMETHODCALLTYPE $\ast$Generate\+For\+Leaf)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_condition_generator_vtbl_a1d2909ce411a22237a31dda0c595524f}{HRESULT}} (STDMETHODCALLTYPE $\ast$Default\+Phrase)(\mbox{\hyperlink{structuredquery_8h_a347ef7c256ea80cd4ac781286d28bb2c}{ICondition\+Generator}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{struct_i_condition_generator_vtbl_a375f47e2b87cc7a1c052c9f495f33fb0}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a2966f7d014ecacc1a3ba0925075cfcac}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a56ac16fcad4f676b514fa7c3b581764c}{p\+Schema\+Provider}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_a44dfba63ee2165e107db360a7b5e7272}{psz\+Input\+String}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID \mbox{\hyperlink{struct_i_condition_generator_vtbl_af56fb8d8aa34641e6e49499c8f636e8f}{lcid}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a7d60355ecfbbc069adb46708e36deb71}{p\+Token\+Collection}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}} \mbox{\hyperlink{rpcsal_8h_a18e0d12a159873e4519d285d6612aad6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+inout\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a43ea0bdd7e281524e9f68555625184e7}{p\+Named\+Entities}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a60c88634d30319aa310538fdb6baee4c}{p\+Condition\+Factory}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_a4f731cf27f46fee73d21de9ecaaa95b1}{psz\+Property\+Name}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{struct_i_condition_generator_vtbl_a7eb3bf94d87ba663e90b261a32cebbb8}{op}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_a29506597320052d30bf9d055f81867a5}{psz\+Value\+Type}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_ae7a462c9235ac4c4bc600f806c54ca90}{psz\+Value}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_a28131340eeac859515d0393281301a5a}{psz\+Value2}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a2ea88dff27cbc3ee82df18c2133efad3}{p\+Property\+Name\+Term}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a1019d02d3bef325d87251dba7be666b8}{p\+Operation\+Term}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_ad33414fd7397d7176aa7d05d324b0958}{p\+Value\+Term}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL \mbox{\hyperlink{struct_i_condition_generator_vtbl_a90b8b9d27fd61111d12aef0d68a0b454}{automatic\+Wildcard}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} BOOL $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a5ea98d67cb369a46d33d10e8294198b5}{p\+No\+String\+Query}}
+\item 
+\mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} BOOL \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_af5c9733b2324702636c31a6d5915410a}{pp\+Query\+Expression}}
+\item 
+LPCWSTR \mbox{\hyperlink{struct_i_condition_generator_vtbl_a4b4ea78570ce5ec535d6743fb3774d01}{psz\+Value\+Type}}
+\item 
+LPCWSTR const PROPVARIANT $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_aee771d54ddbe28436128e81011093c48}{ppropvar}}
+\item 
+LPCWSTR const PROPVARIANT BOOL \mbox{\hyperlink{struct_i_condition_generator_vtbl_a03e376af9a791f1def99db7181928acd}{f\+Use\+English}}
+\item 
+LPCWSTR const PROPVARIANT BOOL \mbox{\hyperlink{sal_8h_aca83a5a174d598aaeea78f024e4af103}{\+\_\+\+\_\+deref\+\_\+opt\+\_\+out}} LPWSTR $\ast$ \mbox{\hyperlink{struct_i_condition_generator_vtbl_a9b399b450dfa3562e901183b1fd4338e}{ppsz\+Phrase}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a1d2909ce411a22237a31dda0c595524f}\label{struct_i_condition_generator_vtbl_a1d2909ce411a22237a31dda0c595524f}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Default\+Phrase }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a82677c459c68a5f1fcfb2abfc495a621}\label{struct_i_condition_generator_vtbl_a82677c459c68a5f1fcfb2abfc495a621}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Generate\+For\+Leaf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a8b406ee45ac1f2c6d738083ed54405b8}\label{struct_i_condition_generator_vtbl_a8b406ee45ac1f2c6d738083ed54405b8}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Initialize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_ae25fb4012981c9776b23dc952a3642b5}\label{struct_i_condition_generator_vtbl_ae25fb4012981c9776b23dc952a3642b5}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE ICondition\+Generator\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a8f422d63a39a560951558717f41f3f65}\label{struct_i_condition_generator_vtbl_a8f422d63a39a560951558717f41f3f65}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Recognize\+Named\+Entities }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_aceb6458e61ff1bb1b40142adea4cc4e8}\label{struct_i_condition_generator_vtbl_aceb6458e61ff1bb1b40142adea4cc4e8}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_afca681c4ee121bcbec7624b72e4c4a89}\label{struct_i_condition_generator_vtbl_afca681c4ee121bcbec7624b72e4c4a89}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ICondition\+Generator\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a90b8b9d27fd61111d12aef0d68a0b454}\label{struct_i_condition_generator_vtbl_a90b8b9d27fd61111d12aef0d68a0b454}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!automaticWildcard@{automaticWildcard}}
+\index{automaticWildcard@{automaticWildcard}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{automaticWildcard}{automaticWildcard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL ICondition\+Generator\+Vtbl\+::automatic\+Wildcard}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a03e376af9a791f1def99db7181928acd}\label{struct_i_condition_generator_vtbl_a03e376af9a791f1def99db7181928acd}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!fUseEnglish@{fUseEnglish}}
+\index{fUseEnglish@{fUseEnglish}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{fUseEnglish}{fUseEnglish}}
+{\footnotesize\ttfamily LPCWSTR const PROPVARIANT BOOL ICondition\+Generator\+Vtbl\+::f\+Use\+English}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_af56fb8d8aa34641e6e49499c8f636e8f}\label{struct_i_condition_generator_vtbl_af56fb8d8aa34641e6e49499c8f636e8f}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!lcid@{lcid}}
+\index{lcid@{lcid}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{lcid}{lcid}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID ICondition\+Generator\+Vtbl\+::lcid}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a7eb3bf94d87ba663e90b261a32cebbb8}\label{struct_i_condition_generator_vtbl_a7eb3bf94d87ba663e90b261a32cebbb8}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!op@{op}}
+\index{op@{op}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{op}{op}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} ICondition\+Generator\+Vtbl\+::op}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a60c88634d30319aa310538fdb6baee4c}\label{struct_i_condition_generator_vtbl_a60c88634d30319aa310538fdb6baee4c}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pConditionFactory@{pConditionFactory}}
+\index{pConditionFactory@{pConditionFactory}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pConditionFactory}{pConditionFactory}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Condition\+Factory}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a43ea0bdd7e281524e9f68555625184e7}\label{struct_i_condition_generator_vtbl_a43ea0bdd7e281524e9f68555625184e7}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pNamedEntities@{pNamedEntities}}
+\index{pNamedEntities@{pNamedEntities}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pNamedEntities}{pNamedEntities}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}} \mbox{\hyperlink{rpcsal_8h_a18e0d12a159873e4519d285d6612aad6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+inout\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_ac97315faed5d1bf8f6925adc37037418}{INamed\+Entity\+Collector}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Named\+Entities}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a5ea98d67cb369a46d33d10e8294198b5}\label{struct_i_condition_generator_vtbl_a5ea98d67cb369a46d33d10e8294198b5}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pNoStringQuery@{pNoStringQuery}}
+\index{pNoStringQuery@{pNoStringQuery}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pNoStringQuery}{pNoStringQuery}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} BOOL$\ast$ ICondition\+Generator\+Vtbl\+::p\+No\+String\+Query}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a1019d02d3bef325d87251dba7be666b8}\label{struct_i_condition_generator_vtbl_a1019d02d3bef325d87251dba7be666b8}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pOperationTerm@{pOperationTerm}}
+\index{pOperationTerm@{pOperationTerm}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pOperationTerm}{pOperationTerm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Operation\+Term}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_af5c9733b2324702636c31a6d5915410a}\label{struct_i_condition_generator_vtbl_af5c9733b2324702636c31a6d5915410a}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ppQueryExpression@{ppQueryExpression}}
+\index{ppQueryExpression@{ppQueryExpression}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppQueryExpression}{ppQueryExpression}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} BOOL \mbox{\hyperlink{rpcsal_8h_aa518a2c78d44d75f3685c32c455c5ed8}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+out}} BOOL \mbox{\hyperlink{rpcsal_8h_ab29e89ceb0eb0b075c6f6299b0de6a21}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a44e1be344248ef67d647837c4aae42fa}{ICondition}}$\ast$$\ast$ ICondition\+Generator\+Vtbl\+::pp\+Query\+Expression}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a2ea88dff27cbc3ee82df18c2133efad3}\label{struct_i_condition_generator_vtbl_a2ea88dff27cbc3ee82df18c2133efad3}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pPropertyNameTerm@{pPropertyNameTerm}}
+\index{pPropertyNameTerm@{pPropertyNameTerm}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pPropertyNameTerm}{pPropertyNameTerm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Property\+Name\+Term}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_aee771d54ddbe28436128e81011093c48}\label{struct_i_condition_generator_vtbl_aee771d54ddbe28436128e81011093c48}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ppropvar@{ppropvar}}
+\index{ppropvar@{ppropvar}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppropvar}{ppropvar}}
+{\footnotesize\ttfamily LPCWSTR const PROPVARIANT$\ast$ ICondition\+Generator\+Vtbl\+::ppropvar}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a9b399b450dfa3562e901183b1fd4338e}\label{struct_i_condition_generator_vtbl_a9b399b450dfa3562e901183b1fd4338e}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ppszPhrase@{ppszPhrase}}
+\index{ppszPhrase@{ppszPhrase}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppszPhrase}{ppszPhrase}}
+{\footnotesize\ttfamily LPCWSTR const PROPVARIANT BOOL \mbox{\hyperlink{sal_8h_aca83a5a174d598aaeea78f024e4af103}{\+\_\+\+\_\+deref\+\_\+opt\+\_\+out}} LPWSTR$\ast$ ICondition\+Generator\+Vtbl\+::ppsz\+Phrase}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a2966f7d014ecacc1a3ba0925075cfcac}\label{struct_i_condition_generator_vtbl_a2966f7d014ecacc1a3ba0925075cfcac}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ ICondition\+Generator\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a56ac16fcad4f676b514fa7c3b581764c}\label{struct_i_condition_generator_vtbl_a56ac16fcad4f676b514fa7c3b581764c}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pSchemaProvider@{pSchemaProvider}}
+\index{pSchemaProvider@{pSchemaProvider}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pSchemaProvider}{pSchemaProvider}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_afffb1fb827b569b0b58a1ba88756a965}{ISchema\+Provider}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Schema\+Provider}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a44dfba63ee2165e107db360a7b5e7272}\label{struct_i_condition_generator_vtbl_a44dfba63ee2165e107db360a7b5e7272}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszInputString@{pszInputString}}
+\index{pszInputString@{pszInputString}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszInputString}{pszInputString}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Input\+String}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a4f731cf27f46fee73d21de9ecaaa95b1}\label{struct_i_condition_generator_vtbl_a4f731cf27f46fee73d21de9ecaaa95b1}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszPropertyName@{pszPropertyName}}
+\index{pszPropertyName@{pszPropertyName}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszPropertyName}{pszPropertyName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Property\+Name}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_ae7a462c9235ac4c4bc600f806c54ca90}\label{struct_i_condition_generator_vtbl_ae7a462c9235ac4c4bc600f806c54ca90}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszValue@{pszValue}}
+\index{pszValue@{pszValue}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszValue}{pszValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Value}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a28131340eeac859515d0393281301a5a}\label{struct_i_condition_generator_vtbl_a28131340eeac859515d0393281301a5a}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszValue2@{pszValue2}}
+\index{pszValue2@{pszValue2}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszValue2}{pszValue2}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Value2}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a29506597320052d30bf9d055f81867a5}\label{struct_i_condition_generator_vtbl_a29506597320052d30bf9d055f81867a5}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszValueType@{pszValueType}}
+\index{pszValueType@{pszValueType}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszValueType}{pszValueType}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Value\+Type}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a4b4ea78570ce5ec535d6743fb3774d01}\label{struct_i_condition_generator_vtbl_a4b4ea78570ce5ec535d6743fb3774d01}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pszValueType@{pszValueType}}
+\index{pszValueType@{pszValueType}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pszValueType}{pszValueType}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily LPCWSTR ICondition\+Generator\+Vtbl\+::psz\+Value\+Type}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a7d60355ecfbbc069adb46708e36deb71}\label{struct_i_condition_generator_vtbl_a7d60355ecfbbc069adb46708e36deb71}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pTokenCollection@{pTokenCollection}}
+\index{pTokenCollection@{pTokenCollection}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pTokenCollection}{pTokenCollection}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR LCID \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_af02e566d558cb1e53b43313cb871ce87}{IToken\+Collection}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Token\+Collection}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_ad33414fd7397d7176aa7d05d324b0958}\label{struct_i_condition_generator_vtbl_ad33414fd7397d7176aa7d05d324b0958}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!pValueTerm@{pValueTerm}}
+\index{pValueTerm@{pValueTerm}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{pValueTerm}{pValueTerm}}
+{\footnotesize\ttfamily \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a85b31f8353e7d5dec8c14da70d6861d9}{ICondition\+Factory}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{structuredquery_8h_a67b00fbb2f037007d08d1331c2810e9b}{CONDITION\+\_\+\+OPERATION}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} LPCWSTR \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}} \mbox{\hyperlink{rpcsal_8h_a6e152ac84637d70f0453366759b3b9fb}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{structuredquery_8h_a155fe105ebaf3c6b04f856696b0e2596}{IRich\+Chunk}}$\ast$ ICondition\+Generator\+Vtbl\+::p\+Value\+Term}
+
+\mbox{\Hypertarget{struct_i_condition_generator_vtbl_a375f47e2b87cc7a1c052c9f495f33fb0}\label{struct_i_condition_generator_vtbl_a375f47e2b87cc7a1c052c9f495f33fb0}} 
+\index{IConditionGeneratorVtbl@{IConditionGeneratorVtbl}!riid@{riid}}
+\index{riid@{riid}!IConditionGeneratorVtbl@{IConditionGeneratorVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{rpcsal_8h_a20b7f6da600a05c8b541659f14f7f0e6}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+in}} REFIID ICondition\+Generator\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{structuredquery_8h}{structuredquery.\+h}}\end{DoxyCompactItemize}

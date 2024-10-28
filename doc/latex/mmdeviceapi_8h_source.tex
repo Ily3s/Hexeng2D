@@ -1,0 +1,935 @@
+\hypertarget{mmdeviceapi_8h_source}{}\doxysection{mmdeviceapi.\+h}
+\label{mmdeviceapi_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/mmdeviceapi.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/mmdeviceapi.h}}
+\mbox{\hyperlink{mmdeviceapi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* this ALWAYS GENERATED file contains the definitions for the interfaces */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6  \textcolor{comment}{/* File created by MIDL compiler version 7.00.0499 */}}
+\DoxyCodeLine{7 \textcolor{comment}{/* Compiler settings for mmdeviceapi.idl:}}
+\DoxyCodeLine{8 \textcolor{comment}{    Oicf, W1, Zp8, env=Win32 (32b run)}}
+\DoxyCodeLine{9 \textcolor{comment}{    protocol : dce , ms\_ext, c\_ext, robust}}
+\DoxyCodeLine{10 \textcolor{comment}{    error checks: allocation ref bounds\_check enum stub\_data }}
+\DoxyCodeLine{11 \textcolor{comment}{    VC \_\_declspec() decoration level: }}
+\DoxyCodeLine{12 \textcolor{comment}{         \_\_declspec(uuid()), \_\_declspec(selectany), \_\_declspec(novtable)}}
+\DoxyCodeLine{13 \textcolor{comment}{         DECLSPEC\_UUID(), MIDL\_INTERFACE()}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 \textcolor{comment}{//@@MIDL\_FILE\_HEADING(  )}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma warning( disable: 4049 )  }\textcolor{comment}{/* more than 64k source lines */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/* verify that the <rpcndr.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_ 500}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{/* verify that the <rpcsal.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_ 100}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}rpc.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}rpcndr.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#error this stub requires an updated version of <rpcndr.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef COM\_NO\_WINDOWS\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}windows.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}ole2.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*COM\_NO\_WINDOWS\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef \_\_mmdeviceapi\_h\_\_}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define \_\_mmdeviceapi\_h\_\_}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ >=3}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1020)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{/* Forward Declarations */} }
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#ifndef \_\_IMMNotificationClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define \_\_IMMNotificationClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{57 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}};}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMNotificationClient\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#ifndef \_\_IMMDevice\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define \_\_IMMDevice\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{63 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}};}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDevice\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define \_\_IMMDeviceCollection\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}};}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceCollection\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#ifndef \_\_IMMEndpoint\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define \_\_IMMEndpoint\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}};}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMEndpoint\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{80 \textcolor{preprocessor}{\#define \_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{81 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}};}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceEnumerator\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define \_\_IMMDeviceActivator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{87 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}};}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceActivator\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 \textcolor{preprocessor}{\#ifndef \_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#define \_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{95 \textcolor{keyword}{typedef} \textcolor{keyword}{class }\mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDeviceEnumerator}} \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDeviceEnumerator}};}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{97 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDeviceEnumerator}} \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDeviceEnumerator}};}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_MMDeviceEnumerator\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/* header files for imported files */}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#include "{}unknwn.h"{}}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{propsys_8h}{propsys.h}}"{}}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{108 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}\{}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{/* interface \_\_MIDL\_itf\_mmdeviceapi\_0000\_0000 */}}
+\DoxyCodeLine{113 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#define E\_NOTFOUND HRESULT\_FROM\_WIN32(ERROR\_NOT\_FOUND)}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#define E\_UNSUPPORTED\_TYPE HRESULT\_FROM\_WIN32(ERROR\_UNSUPPORTED\_TYPE)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define DEVICE\_STATE\_ACTIVE      0x00000001}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define DEVICE\_STATE\_DISABLED    0x00000002}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define DEVICE\_STATE\_NOTPRESENT  0x00000004}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define DEVICE\_STATE\_UNPLUGGED   0x00000008}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define DEVICE\_STATEMASK\_ALL     0x0000000f}}
+\DoxyCodeLine{122 \textcolor{preprocessor}{\#ifdef DEFINE\_PROPERTYKEY}}
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#undef DEFINE\_PROPERTYKEY}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#ifdef INITGUID}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define DEFINE\_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN\_C const PROPERTYKEY name = \{ \{ l, w1, w2, \{ b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 \} \}, pid \}}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define DEFINE\_PROPERTYKEY(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8, pid) EXTERN\_C const PROPERTYKEY name}}
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INITGUID}}
+\DoxyCodeLine{130 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_FormFactor, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 0); }
+\DoxyCodeLine{131 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_ControlPanelPageProvider, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 1); }
+\DoxyCodeLine{132 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_Association, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 2);}
+\DoxyCodeLine{133 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_PhysicalSpeakers, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 3);}
+\DoxyCodeLine{134 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_GUID, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 4);}
+\DoxyCodeLine{135 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_Disable\_SysFx, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 5);}
+\DoxyCodeLine{136 \textcolor{preprocessor}{\#define ENDPOINT\_SYSFX\_ENABLED          0x00000000  }\textcolor{comment}{// System Effects are enabled.}}
+\DoxyCodeLine{137 \textcolor{preprocessor}{\#define ENDPOINT\_SYSFX\_DISABLED         0x00000001  }\textcolor{comment}{// System Effects are disabled.}}
+\DoxyCodeLine{138 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEndpoint\_FullRangeSpeakers, 0x1da5d803, 0xd492, 0x4edd, 0x8c, 0x23, 0xe0, 0xc0, 0xff, 0xee, 0x7f, 0x0e, 6);}
+\DoxyCodeLine{139 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_AudioEngine\_DeviceFormat, 0xf19f064d, 0x82c, 0x4e27, 0xbc, 0x73, 0x68, 0x82, 0xa1, 0xbb, 0x8e, 0x4c, 0); }
+\DoxyCodeLine{140 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tagDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}}}
+\DoxyCodeLine{141     \{}
+\DoxyCodeLine{142     DWORD \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s_acf9cdda0bbe80ffde3203f997f1446bc}{cbDirectXAudioActivationParams}};}
+\DoxyCodeLine{143     GUID \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s_a12516894fa6abccfb8f46b857868e5cf}{guidAudioSession}};}
+\DoxyCodeLine{144     DWORD \mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s_a9b2fd0a5a43f9e1010da1c1e3640acdc}{dwAudioStreamFlags}};}
+\DoxyCodeLine{145     \}   \mbox{\hyperlink{mmdeviceapi_8h_a8963726f4f727096f5f82735f33a2298}{DIRECTX\_AUDIO\_ACTIVATION\_PARAMS}};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structtag_d_i_r_e_c_t_x___a_u_d_i_o___a_c_t_i_v_a_t_i_o_n___p_a_r_a_m_s}{tagDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}} *\mbox{\hyperlink{mmdeviceapi_8h_ad7ff276f96b82f15a3341bcacae2522e}{PDIRECTX\_AUDIO\_ACTIVATION\_PARAMS}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{keyword}{typedef} \textcolor{comment}{/* [public][public][public][public][public] */} }
+\DoxyCodeLine{150 \textcolor{keyword}{enum} \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0001}}}
+\DoxyCodeLine{151     \{   \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab5120fdebc73fe7c6de01e7db1e0526c}{eRender}}  = 0,}
+\DoxyCodeLine{152     \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a421738c9647cd595b89d3793a3fb861c}{eCapture}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab5120fdebc73fe7c6de01e7db1e0526c}{eRender}} + 1 ) ,}
+\DoxyCodeLine{153     \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a0b21a6c698674dfdd9034d68751a4126}{eAll}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a421738c9647cd595b89d3793a3fb861c}{eCapture}} + 1 ) ,}
+\DoxyCodeLine{154     \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1ab01efc992c94aea9fea3ad0066a2fd10}{EDataFlow\_enum\_count}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a03f30e2e3a8ec4b8cc901c1ff40daac1a0b21a6c698674dfdd9034d68751a4126}{eAll}} + 1 ) }
+\DoxyCodeLine{155     \}   \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}};}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{157 \textcolor{keyword}{typedef} \textcolor{comment}{/* [public][public][public] */} }
+\DoxyCodeLine{158 \textcolor{keyword}{enum} \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0002}}}
+\DoxyCodeLine{159     \{   \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a9516e8c0a8aed146b9fd5a3bb67965f9}{eConsole}}    = 0,}
+\DoxyCodeLine{160     \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a29161d51f23790c49d20f27b72368d89}{eMultimedia}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a9516e8c0a8aed146b9fd5a3bb67965f9}{eConsole}} + 1 ) ,}
+\DoxyCodeLine{161     \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8ae83da5e81fe577f8d88fc5a4ea25d8bc}{eCommunications}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a29161d51f23790c49d20f27b72368d89}{eMultimedia}} + 1 ) ,}
+\DoxyCodeLine{162     \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8a82d0d9eef6f2f2ad92142bd86eb6f7c8}{ERole\_enum\_count}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_ac407eff72c266e22ef2baef359f92aa8ae83da5e81fe577f8d88fc5a4ea25d8bc}{eCommunications}} + 1 ) }
+\DoxyCodeLine{163     \}   \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}};}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165 \textcolor{keyword}{typedef} \textcolor{comment}{/* [public] */} }
+\DoxyCodeLine{166 \textcolor{keyword}{enum} \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_0003}}}
+\DoxyCodeLine{167     \{   \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ac01beca5badb20b638133a0a8598f540}{RemoteNetworkDevice}}  = 0,}
+\DoxyCodeLine{168     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a876194f2108c5147979a0fe446eb3e95}{Speakers}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ac01beca5badb20b638133a0a8598f540}{RemoteNetworkDevice}} + 1 ) ,}
+\DoxyCodeLine{169     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a25fcf1a81e543e1b7a78cae7214b62cc}{LineLevel}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a876194f2108c5147979a0fe446eb3e95}{Speakers}} + 1 ) ,}
+\DoxyCodeLine{170     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a7a8f0d18983d684120bcb702b97e09bc}{Headphones}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a25fcf1a81e543e1b7a78cae7214b62cc}{LineLevel}} + 1 ) ,}
+\DoxyCodeLine{171     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a4f0837150c3ff8bb61ad715990a2918d}{Microphone}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a7a8f0d18983d684120bcb702b97e09bc}{Headphones}} + 1 ) ,}
+\DoxyCodeLine{172     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ab63cc2f653ecf702d7fe0190f18c885e}{Headset}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a4f0837150c3ff8bb61ad715990a2918d}{Microphone}} + 1 ) ,}
+\DoxyCodeLine{173     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a05c872c5ebdeb3016c2de2d0cab2f487}{Handset}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ab63cc2f653ecf702d7fe0190f18c885e}{Headset}} + 1 ) ,}
+\DoxyCodeLine{174     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ae0babd21bcad4661fc989b0c597a70b8}{UnknownDigitalPassthrough}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a05c872c5ebdeb3016c2de2d0cab2f487}{Handset}} + 1 ) ,}
+\DoxyCodeLine{175     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2aec152e77b32a50ee7f72f247f9b77e35}{SPDIF}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2ae0babd21bcad4661fc989b0c597a70b8}{UnknownDigitalPassthrough}} + 1 ) ,}
+\DoxyCodeLine{176     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a616812bef5f865b88fa175a87bd88a32}{HDMI}}    = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2aec152e77b32a50ee7f72f247f9b77e35}{SPDIF}} + 1 ) ,}
+\DoxyCodeLine{177     \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2acf854e8e414f2a5aa94837d273c5ba62}{UnknownFormFactor}}  = ( \mbox{\hyperlink{mmdeviceapi_8h_a43c78fbcca3f256fde62648acc1eeec2a616812bef5f865b88fa175a87bd88a32}{HDMI}} + 1 ) }
+\DoxyCodeLine{178     \}   \mbox{\hyperlink{mmdeviceapi_8h_afeecc2a0d0ff9bfa887b7ca2720ef664}{EndpointFormFactor}};}
+\DoxyCodeLine{179 }
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{mmdeviceapi_8h_ad5cbe5361fd5f2aef9776d261f6f314c}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{183 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a639fe48082bac2fa1843ab29a1d67b25}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0000\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{preprocessor}{\#ifndef \_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define \_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{comment}{/* interface IMMNotificationClient */}}
+\DoxyCodeLine{189 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{190 }
+\DoxyCodeLine{191 }
+\DoxyCodeLine{192 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a40d3b34070429ab9d5017ae07d87412e}{IID\_IMMNotificationClient}};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{195     }
+\DoxyCodeLine{196     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}7991EEC9-\/7E89-\/4D85-\/8390-\/6C703CEC60C0"{}})}
+\DoxyCodeLine{197     \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} : public IUnknown}
+\DoxyCodeLine{198     \{}
+\DoxyCodeLine{199     \textcolor{keyword}{public}:}
+\DoxyCodeLine{200         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} HRESULT STDMETHODCALLTYPE OnDeviceStateChanged( }
+\DoxyCodeLine{201             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{202             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrDeviceId,}
+\DoxyCodeLine{203             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{204             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD dwNewState) = 0;}
+\DoxyCodeLine{205         }
+\DoxyCodeLine{206         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} HRESULT STDMETHODCALLTYPE OnDeviceAdded( }
+\DoxyCodeLine{207             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{208             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrDeviceId) = 0;}
+\DoxyCodeLine{209         }
+\DoxyCodeLine{210         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} HRESULT STDMETHODCALLTYPE OnDeviceRemoved( }
+\DoxyCodeLine{211             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{212             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrDeviceId) = 0;}
+\DoxyCodeLine{213         }
+\DoxyCodeLine{214         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} HRESULT STDMETHODCALLTYPE OnDefaultDeviceChanged( }
+\DoxyCodeLine{215             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{216             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} flow,}
+\DoxyCodeLine{217             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{218             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} role,}
+\DoxyCodeLine{219             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{220             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrDefaultDeviceId) = 0;}
+\DoxyCodeLine{221         }
+\DoxyCodeLine{222         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} HRESULT STDMETHODCALLTYPE OnPropertyValueChanged( }
+\DoxyCodeLine{223             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{224             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrDeviceId,}
+\DoxyCodeLine{225             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{226             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \mbox{\hyperlink{struct__tagpropertykey}{PROPERTYKEY}} key) = 0;}
+\DoxyCodeLine{227         }
+\DoxyCodeLine{228     \};}
+\DoxyCodeLine{229     }
+\DoxyCodeLine{230 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{231 }
+\DoxyCodeLine{232     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotificationClientVtbl}}}
+\DoxyCodeLine{233     \{}
+\DoxyCodeLine{234         BEGIN\_INTERFACE}
+\DoxyCodeLine{235         }
+\DoxyCodeLine{236         \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{237             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{238             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_af2b3dcf1fb84fcc0873123eff8b87e36}{riid}},}
+\DoxyCodeLine{239             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{240             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a1b4e43842113132d3a016dd920709fe9}{ppvObject}});}
+\DoxyCodeLine{241         }
+\DoxyCodeLine{242         \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aba00c1aa02052e75ff41626f204003b2}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{243             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This);}
+\DoxyCodeLine{244         }
+\DoxyCodeLine{245         \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a566c67d4870a9308a688f5c67149d7fd}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{246             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This);}
+\DoxyCodeLine{247         }
+\DoxyCodeLine{248         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a1a7c91fa9aaa8094da215368a284f9b1}{HRESULT}} ( STDMETHODCALLTYPE *OnDeviceStateChanged )( }
+\DoxyCodeLine{249             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{250             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{251             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}{pwstrDeviceId}},}
+\DoxyCodeLine{252             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{253             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a0f7cc5a4eeb4e9dbd332be1657dd191f}{dwNewState}});}
+\DoxyCodeLine{254         }
+\DoxyCodeLine{255         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a22a3e974f6ffa35c3159bec8d0a79c0b}{HRESULT}} ( STDMETHODCALLTYPE *OnDeviceAdded )( }
+\DoxyCodeLine{256             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{257             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{258             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}{pwstrDeviceId}});}
+\DoxyCodeLine{259         }
+\DoxyCodeLine{260         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3311d8cf335d09a237301e93f2365cc5}{HRESULT}} ( STDMETHODCALLTYPE *OnDeviceRemoved )( }
+\DoxyCodeLine{261             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{262             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{263             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}{pwstrDeviceId}});}
+\DoxyCodeLine{264         }
+\DoxyCodeLine{265         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a7bea99e906a7334cf705832fa4d1fc13}{HRESULT}} ( STDMETHODCALLTYPE *OnDefaultDeviceChanged )( }
+\DoxyCodeLine{266             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{267             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{268             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_ab72bdeb569a768b52b8bd58a5e8adad4}{flow}},}
+\DoxyCodeLine{269             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{270             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_ac5e66caa511911fb3f6591755ef61975}{role}},}
+\DoxyCodeLine{271             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{272             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3103aa4d2922dc61fccc683297519049}{pwstrDefaultDeviceId}});}
+\DoxyCodeLine{273         }
+\DoxyCodeLine{274         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a5e3496d3e920e6a89ed5d71416f04f6d}{HRESULT}} ( STDMETHODCALLTYPE *OnPropertyValueChanged )( }
+\DoxyCodeLine{275             \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} * This,}
+\DoxyCodeLine{276             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{277             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}{pwstrDeviceId}},}
+\DoxyCodeLine{278             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{279             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \mbox{\hyperlink{struct__tagpropertykey}{PROPERTYKEY}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a4877840e1abb51a8243a665e59c17a05}{key}});}
+\DoxyCodeLine{280         }
+\DoxyCodeLine{281         END\_INTERFACE}
+\DoxyCodeLine{282     \} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotificationClientVtbl}};}
+\DoxyCodeLine{283 }
+\DoxyCodeLine{284     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}}}
+\DoxyCodeLine{285     \{}
+\DoxyCodeLine{286         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl}{IMMNotificationClientVtbl}} *lpVtbl;}
+\DoxyCodeLine{287     \};}
+\DoxyCodeLine{288 }
+\DoxyCodeLine{289     }
+\DoxyCodeLine{290 }
+\DoxyCodeLine{291 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293 }
+\DoxyCodeLine{294 \textcolor{preprocessor}{\#define IMMNotificationClient\_QueryInterface(This,riid,ppvObject)   \(\backslash\)}}
+\DoxyCodeLine{295 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{296 }
+\DoxyCodeLine{297 \textcolor{preprocessor}{\#define IMMNotificationClient\_AddRef(This)  \(\backslash\)}}
+\DoxyCodeLine{298 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{299 }
+\DoxyCodeLine{300 \textcolor{preprocessor}{\#define IMMNotificationClient\_Release(This) \(\backslash\)}}
+\DoxyCodeLine{301 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{302 }
+\DoxyCodeLine{303 }
+\DoxyCodeLine{304 \textcolor{preprocessor}{\#define IMMNotificationClient\_OnDeviceStateChanged(This,pwstrDeviceId,dwNewState)   \(\backslash\)}}
+\DoxyCodeLine{305 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnDeviceStateChanged(This,pwstrDeviceId,dwNewState) ) }}
+\DoxyCodeLine{306 }
+\DoxyCodeLine{307 \textcolor{preprocessor}{\#define IMMNotificationClient\_OnDeviceAdded(This,pwstrDeviceId) \(\backslash\)}}
+\DoxyCodeLine{308 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnDeviceAdded(This,pwstrDeviceId) ) }}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310 \textcolor{preprocessor}{\#define IMMNotificationClient\_OnDeviceRemoved(This,pwstrDeviceId)   \(\backslash\)}}
+\DoxyCodeLine{311 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnDeviceRemoved(This,pwstrDeviceId) ) }}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313 \textcolor{preprocessor}{\#define IMMNotificationClient\_OnDefaultDeviceChanged(This,flow,role,pwstrDefaultDeviceId)   \(\backslash\)}}
+\DoxyCodeLine{314 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnDefaultDeviceChanged(This,flow,role,pwstrDefaultDeviceId) ) }}
+\DoxyCodeLine{315 }
+\DoxyCodeLine{316 \textcolor{preprocessor}{\#define IMMNotificationClient\_OnPropertyValueChanged(This,pwstrDeviceId,key)    \(\backslash\)}}
+\DoxyCodeLine{317 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OnPropertyValueChanged(This,pwstrDeviceId,key) ) }}
+\DoxyCodeLine{318 }
+\DoxyCodeLine{319 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 }
+\DoxyCodeLine{322 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 }
+\DoxyCodeLine{325 }
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMNotificationClient\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{328 }
+\DoxyCodeLine{329 }
+\DoxyCodeLine{330 \textcolor{preprocessor}{\#ifndef \_\_IMMDevice\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define \_\_IMMDevice\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{332 }
+\DoxyCodeLine{333 \textcolor{comment}{/* interface IMMDevice */}}
+\DoxyCodeLine{334 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{335 }
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a082826b2079513bc05d96026c34ce166}{IID\_IMMDevice}};}
+\DoxyCodeLine{338 }
+\DoxyCodeLine{339 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{340     }
+\DoxyCodeLine{341     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}D666063F-\/1587-\/4E43-\/81F1-\/B948E807363F"{}})}
+\DoxyCodeLine{342     \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} : public IUnknown}
+\DoxyCodeLine{343     \{}
+\DoxyCodeLine{344     \textcolor{keyword}{public}:}
+\DoxyCodeLine{345         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} STDMETHODCALLTYPE Activate( }
+\DoxyCodeLine{346             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{347             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID iid,}
+\DoxyCodeLine{348             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{349             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD dwClsCtx,}
+\DoxyCodeLine{350             \textcolor{comment}{/* [unique][in] */} }
+\DoxyCodeLine{351             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  PROPVARIANT *pActivationParams,}
+\DoxyCodeLine{352             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{353             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **ppInterface) = 0;}
+\DoxyCodeLine{354         }
+\DoxyCodeLine{355         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} STDMETHODCALLTYPE OpenPropertyStore( }
+\DoxyCodeLine{356             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{357             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD stgmAccess,}
+\DoxyCodeLine{358             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{359             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{propsys_8h_a65170341ea0bb1aca88c9925254a819f}{IPropertyStore}} **ppProperties) = 0;}
+\DoxyCodeLine{360         }
+\DoxyCodeLine{361         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} STDMETHODCALLTYPE GetId( }
+\DoxyCodeLine{362             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{363             \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\_\_deref\_out}}  LPWSTR *ppstrId) = 0;}
+\DoxyCodeLine{364         }
+\DoxyCodeLine{365         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} STDMETHODCALLTYPE GetState( }
+\DoxyCodeLine{366             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{367             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *pdwState) = 0;}
+\DoxyCodeLine{368         }
+\DoxyCodeLine{369     \};}
+\DoxyCodeLine{370     }
+\DoxyCodeLine{371 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{372 }
+\DoxyCodeLine{373     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDeviceVtbl}}}
+\DoxyCodeLine{374     \{}
+\DoxyCodeLine{375         BEGIN\_INTERFACE}
+\DoxyCodeLine{376         }
+\DoxyCodeLine{377         \mbox{\hyperlink{struct_i_m_m_device_vtbl_a002549cedb45d5489cbddf7ca3bebfa2}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{378             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This,}
+\DoxyCodeLine{379             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_device_vtbl_ab2f2cec2a203b8979bbbc974e94e95d3}{riid}},}
+\DoxyCodeLine{380             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{381             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_vtbl_a857e5b97ff19642e248b3135fdfa26be}{ppvObject}});}
+\DoxyCodeLine{382         }
+\DoxyCodeLine{383         \mbox{\hyperlink{struct_i_m_m_device_vtbl_aa322c211bea787e1796fa3e49a5df977}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{384             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This);}
+\DoxyCodeLine{385         }
+\DoxyCodeLine{386         \mbox{\hyperlink{struct_i_m_m_device_vtbl_a4e52994f23e4f2ea410383d89cb059df}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{387             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This);}
+\DoxyCodeLine{388         }
+\DoxyCodeLine{389         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_a43ac73c929f188368c4b1ac2cdfcdfa7}{HRESULT}} ( STDMETHODCALLTYPE *Activate )( }
+\DoxyCodeLine{390             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This,}
+\DoxyCodeLine{391             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{392             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID \mbox{\hyperlink{struct_i_m_m_device_vtbl_a42c7e7f04789467eff9b233961aff297}{iid}},}
+\DoxyCodeLine{393             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{394             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_m_m_device_vtbl_aab61606af876c92134df0c5bf744cf6c}{dwClsCtx}},}
+\DoxyCodeLine{395             \textcolor{comment}{/* [unique][in] */} }
+\DoxyCodeLine{396             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  PROPVARIANT *\mbox{\hyperlink{struct_i_m_m_device_vtbl_a3619d9ea44a532a61cbef9cfd2dacd6a}{pActivationParams}},}
+\DoxyCodeLine{397             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{398             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_vtbl_ac016cb0f93ad54c50ddc2d8e81469a15}{ppInterface}});}
+\DoxyCodeLine{399         }
+\DoxyCodeLine{400         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_a500aeacb5ee32aa072a02a2286d2a891}{HRESULT}} ( STDMETHODCALLTYPE *OpenPropertyStore )( }
+\DoxyCodeLine{401             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This,}
+\DoxyCodeLine{402             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{403             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_m_m_device_vtbl_a33db0acdefd757e708c9089db7cd8004}{stgmAccess}},}
+\DoxyCodeLine{404             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{405             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{propsys_8h_a65170341ea0bb1aca88c9925254a819f}{IPropertyStore}} **\mbox{\hyperlink{struct_i_m_m_device_vtbl_adc3b2fd7126714cbcd83208fe0643b16}{ppProperties}});}
+\DoxyCodeLine{406         }
+\DoxyCodeLine{407         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_ad2c487377c58940e0fa466ef3074bba0}{HRESULT}} ( STDMETHODCALLTYPE *GetId )( }
+\DoxyCodeLine{408             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This,}
+\DoxyCodeLine{409             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{410             \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\_\_deref\_out}}  LPWSTR *\mbox{\hyperlink{struct_i_m_m_device_vtbl_ab91717dfe263341efb394f659beba849}{ppstrId}});}
+\DoxyCodeLine{411         }
+\DoxyCodeLine{412         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_aa0d0325c32a702c01f01cac3fb68b636}{HRESULT}} ( STDMETHODCALLTYPE *GetState )( }
+\DoxyCodeLine{413             \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} * This,}
+\DoxyCodeLine{414             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{415             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_m_m_device_vtbl_a22a92221eac7cdd449eedea4d47bf2f0}{pdwState}});}
+\DoxyCodeLine{416         }
+\DoxyCodeLine{417         END\_INTERFACE}
+\DoxyCodeLine{418     \} \mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDeviceVtbl}};}
+\DoxyCodeLine{419 }
+\DoxyCodeLine{420     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}}}
+\DoxyCodeLine{421     \{}
+\DoxyCodeLine{422         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_vtbl}{IMMDeviceVtbl}} *lpVtbl;}
+\DoxyCodeLine{423     \};}
+\DoxyCodeLine{424 }
+\DoxyCodeLine{425     }
+\DoxyCodeLine{426 }
+\DoxyCodeLine{427 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{428 }
+\DoxyCodeLine{429 }
+\DoxyCodeLine{430 \textcolor{preprocessor}{\#define IMMDevice\_QueryInterface(This,riid,ppvObject)   \(\backslash\)}}
+\DoxyCodeLine{431 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{433 \textcolor{preprocessor}{\#define IMMDevice\_AddRef(This)  \(\backslash\)}}
+\DoxyCodeLine{434 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{435 }
+\DoxyCodeLine{436 \textcolor{preprocessor}{\#define IMMDevice\_Release(This) \(\backslash\)}}
+\DoxyCodeLine{437 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439 }
+\DoxyCodeLine{440 \textcolor{preprocessor}{\#define IMMDevice\_Activate(This,iid,dwClsCtx,pActivationParams,ppInterface) \(\backslash\)}}
+\DoxyCodeLine{441 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Activate(This,iid,dwClsCtx,pActivationParams,ppInterface) ) }}
+\DoxyCodeLine{442 }
+\DoxyCodeLine{443 \textcolor{preprocessor}{\#define IMMDevice\_OpenPropertyStore(This,stgmAccess,ppProperties)   \(\backslash\)}}
+\DoxyCodeLine{444 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> OpenPropertyStore(This,stgmAccess,ppProperties) ) }}
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#define IMMDevice\_GetId(This,ppstrId)   \(\backslash\)}}
+\DoxyCodeLine{447 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetId(This,ppstrId) ) }}
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define IMMDevice\_GetState(This,pdwState)   \(\backslash\)}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetState(This,pdwState) ) }}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{453 }
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{456 }
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 }
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDevice\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 }
+\DoxyCodeLine{463 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{464 \textcolor{preprocessor}{\#define \_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{465 }
+\DoxyCodeLine{466 \textcolor{comment}{/* interface IMMDeviceCollection */}}
+\DoxyCodeLine{467 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{468 }
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_af914012246da3d4a424d63c8f671c95a}{IID\_IMMDeviceCollection}};}
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{473     }
+\DoxyCodeLine{474     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}0BD7A1BE-\/7A1A-\/44DB-\/8397-\/CC5392387B5E"{}})}
+\DoxyCodeLine{475     \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} : public IUnknown}
+\DoxyCodeLine{476     \{}
+\DoxyCodeLine{477     \textcolor{keyword}{public}:}
+\DoxyCodeLine{478         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_a002549cedb45d5489cbddf7ca3bebfa2}{HRESULT}} STDMETHODCALLTYPE GetCount( }
+\DoxyCodeLine{479             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{480             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *pcDevices) = 0;}
+\DoxyCodeLine{481         }
+\DoxyCodeLine{482         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_vtbl_a002549cedb45d5489cbddf7ca3bebfa2}{HRESULT}} STDMETHODCALLTYPE Item( }
+\DoxyCodeLine{483             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{484             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT nDevice,}
+\DoxyCodeLine{485             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{486             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **ppDevice) = 0;}
+\DoxyCodeLine{487         }
+\DoxyCodeLine{488     \};}
+\DoxyCodeLine{489     }
+\DoxyCodeLine{490 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{491 }
+\DoxyCodeLine{492     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDeviceCollectionVtbl}}}
+\DoxyCodeLine{493     \{}
+\DoxyCodeLine{494         BEGIN\_INTERFACE}
+\DoxyCodeLine{495         }
+\DoxyCodeLine{496         \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a9c62a498b6eb8d32ab5b1735cb992121}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{497             \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} * This,}
+\DoxyCodeLine{498             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a424e4f5299e4e25e5ded2132fc0451fe}{riid}},}
+\DoxyCodeLine{499             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{500             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_af22a0c04f1ca95c91ae72b01aba017fa}{ppvObject}});}
+\DoxyCodeLine{501         }
+\DoxyCodeLine{502         \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_af806e5c194c2c41c4d43354eaf914eab}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{503             \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} * This);}
+\DoxyCodeLine{504         }
+\DoxyCodeLine{505         \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_ae24e4d091500d21e5705f6395008d610}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{506             \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} * This);}
+\DoxyCodeLine{507         }
+\DoxyCodeLine{508         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_aad5ddb381f71cb24052814d08185d3a8}{HRESULT}} ( STDMETHODCALLTYPE *GetCount )( }
+\DoxyCodeLine{509             \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} * This,}
+\DoxyCodeLine{510             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{511             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT *\mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a72c968f5f5026e5d3056d3578a903ef1}{pcDevices}});}
+\DoxyCodeLine{512         }
+\DoxyCodeLine{513         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_af10453eab247bb98adb357c44fe42b55}{HRESULT}} ( STDMETHODCALLTYPE *Item )( }
+\DoxyCodeLine{514             \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} * This,}
+\DoxyCodeLine{515             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{516             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a47ebd4d63fad05206eb59e961d5b79f2}{nDevice}},}
+\DoxyCodeLine{517             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{518             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **\mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a3543ad84c99d3a118199115cd2d6e77b}{ppDevice}});}
+\DoxyCodeLine{519         }
+\DoxyCodeLine{520         END\_INTERFACE}
+\DoxyCodeLine{521     \} \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDeviceCollectionVtbl}};}
+\DoxyCodeLine{522 }
+\DoxyCodeLine{523     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}}}
+\DoxyCodeLine{524     \{}
+\DoxyCodeLine{525         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_collection_vtbl}{IMMDeviceCollectionVtbl}} *lpVtbl;}
+\DoxyCodeLine{526     \};}
+\DoxyCodeLine{527 }
+\DoxyCodeLine{528     }
+\DoxyCodeLine{529 }
+\DoxyCodeLine{530 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{531 }
+\DoxyCodeLine{532 }
+\DoxyCodeLine{533 \textcolor{preprocessor}{\#define IMMDeviceCollection\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{534 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{535 }
+\DoxyCodeLine{536 \textcolor{preprocessor}{\#define IMMDeviceCollection\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{537 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{538 }
+\DoxyCodeLine{539 \textcolor{preprocessor}{\#define IMMDeviceCollection\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{540 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{541 }
+\DoxyCodeLine{542 }
+\DoxyCodeLine{543 \textcolor{preprocessor}{\#define IMMDeviceCollection\_GetCount(This,pcDevices)    \(\backslash\)}}
+\DoxyCodeLine{544 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetCount(This,pcDevices) ) }}
+\DoxyCodeLine{545 }
+\DoxyCodeLine{546 \textcolor{preprocessor}{\#define IMMDeviceCollection\_Item(This,nDevice,ppDevice) \(\backslash\)}}
+\DoxyCodeLine{547 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Item(This,nDevice,ppDevice) ) }}
+\DoxyCodeLine{548 }
+\DoxyCodeLine{549 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{550 }
+\DoxyCodeLine{551 }
+\DoxyCodeLine{552 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{553 }
+\DoxyCodeLine{554 }
+\DoxyCodeLine{555 }
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceCollection\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{558 }
+\DoxyCodeLine{559 }
+\DoxyCodeLine{560 \textcolor{preprocessor}{\#ifndef \_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{561 \textcolor{preprocessor}{\#define \_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{562 }
+\DoxyCodeLine{563 \textcolor{comment}{/* interface IMMEndpoint */}}
+\DoxyCodeLine{564 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_adf2d2029f9cb9b1dd7819203d6a78547}{IID\_IMMEndpoint}};}
+\DoxyCodeLine{568 }
+\DoxyCodeLine{569 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{570     }
+\DoxyCodeLine{571     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}1BE09788-\/6894-\/4089-\/8586-\/9A2A6C265AC5"{}})}
+\DoxyCodeLine{572     \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} : public IUnknown}
+\DoxyCodeLine{573     \{}
+\DoxyCodeLine{574     \textcolor{keyword}{public}:}
+\DoxyCodeLine{575         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_collection_vtbl_a9c62a498b6eb8d32ab5b1735cb992121}{HRESULT}} STDMETHODCALLTYPE GetDataFlow( }
+\DoxyCodeLine{576             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{577             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} *pDataFlow) = 0;}
+\DoxyCodeLine{578         }
+\DoxyCodeLine{579     \};}
+\DoxyCodeLine{580     }
+\DoxyCodeLine{581 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{583     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpointVtbl}}}
+\DoxyCodeLine{584     \{}
+\DoxyCodeLine{585         BEGIN\_INTERFACE}
+\DoxyCodeLine{586         }
+\DoxyCodeLine{587         \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{588             \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} * This,}
+\DoxyCodeLine{589             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a3eea108bf7193a030103beee6b01aaa7}{riid}},}
+\DoxyCodeLine{590             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{591             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a6bada0d8ac9a49cfef25c84e92df4b57}{ppvObject}});}
+\DoxyCodeLine{592         }
+\DoxyCodeLine{593         \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a71eca19ff1aacfa66c60d34bc6bacd23}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{594             \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} * This);}
+\DoxyCodeLine{595         }
+\DoxyCodeLine{596         \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_aa711597b5ec0620e1a29fe0be01bb1d8}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{597             \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} * This);}
+\DoxyCodeLine{598         }
+\DoxyCodeLine{599         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_ad14e826d7e3e21ee4abeb23c394b2fce}{HRESULT}} ( STDMETHODCALLTYPE *GetDataFlow )( }
+\DoxyCodeLine{600             \mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}} * This,}
+\DoxyCodeLine{601             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{602             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} *\mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a8795b52aa75ffa107730d78ec59c7d70}{pDataFlow}});}
+\DoxyCodeLine{603         }
+\DoxyCodeLine{604         END\_INTERFACE}
+\DoxyCodeLine{605     \} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpointVtbl}};}
+\DoxyCodeLine{606 }
+\DoxyCodeLine{607     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}}}
+\DoxyCodeLine{608     \{}
+\DoxyCodeLine{609         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_endpoint_vtbl}{IMMEndpointVtbl}} *lpVtbl;}
+\DoxyCodeLine{610     \};}
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612     }
+\DoxyCodeLine{613 }
+\DoxyCodeLine{614 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{615 }
+\DoxyCodeLine{616 }
+\DoxyCodeLine{617 \textcolor{preprocessor}{\#define IMMEndpoint\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{618 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{619 }
+\DoxyCodeLine{620 \textcolor{preprocessor}{\#define IMMEndpoint\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{621 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{622 }
+\DoxyCodeLine{623 \textcolor{preprocessor}{\#define IMMEndpoint\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{624 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{625 }
+\DoxyCodeLine{626 }
+\DoxyCodeLine{627 \textcolor{preprocessor}{\#define IMMEndpoint\_GetDataFlow(This,pDataFlow) \(\backslash\)}}
+\DoxyCodeLine{628 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetDataFlow(This,pDataFlow) ) }}
+\DoxyCodeLine{629 }
+\DoxyCodeLine{630 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{631 }
+\DoxyCodeLine{632 }
+\DoxyCodeLine{633 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{634 }
+\DoxyCodeLine{635 }
+\DoxyCodeLine{636 }
+\DoxyCodeLine{637 }
+\DoxyCodeLine{638 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMEndpoint\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{639 }
+\DoxyCodeLine{640 }
+\DoxyCodeLine{641 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{642 \textcolor{preprocessor}{\#define \_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{643 }
+\DoxyCodeLine{644 \textcolor{comment}{/* interface IMMDeviceEnumerator */}}
+\DoxyCodeLine{645 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{646 }
+\DoxyCodeLine{647 }
+\DoxyCodeLine{648 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a1de7299763bd7bdba0bd159b8ca7a2d8}{IID\_IMMDeviceEnumerator}};}
+\DoxyCodeLine{649 }
+\DoxyCodeLine{650 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{651     }
+\DoxyCodeLine{652     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}A95664D2-\/9614-\/4F35-\/A746-\/DE8DB63617E6"{}})}
+\DoxyCodeLine{653     \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} : public IUnknown}
+\DoxyCodeLine{654     \{}
+\DoxyCodeLine{655     \textcolor{keyword}{public}:}
+\DoxyCodeLine{656         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} STDMETHODCALLTYPE EnumAudioEndpoints( }
+\DoxyCodeLine{657             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{658             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} dataFlow,}
+\DoxyCodeLine{659             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{660             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD dwStateMask,}
+\DoxyCodeLine{661             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{662             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} **ppDevices) = 0;}
+\DoxyCodeLine{663         }
+\DoxyCodeLine{664         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} STDMETHODCALLTYPE GetDefaultAudioEndpoint( }
+\DoxyCodeLine{665             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{666             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} dataFlow,}
+\DoxyCodeLine{667             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{668             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} role,}
+\DoxyCodeLine{669             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{670             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **ppEndpoint) = 0;}
+\DoxyCodeLine{671         }
+\DoxyCodeLine{672         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} STDMETHODCALLTYPE GetDevice( }
+\DoxyCodeLine{673             \textcolor{comment}{/*  */} }
+\DoxyCodeLine{674             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR pwstrId,}
+\DoxyCodeLine{675             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{676             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **ppDevice) = 0;}
+\DoxyCodeLine{677         }
+\DoxyCodeLine{678         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} STDMETHODCALLTYPE RegisterEndpointNotificationCallback( }
+\DoxyCodeLine{679             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{680             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} *pClient) = 0;}
+\DoxyCodeLine{681         }
+\DoxyCodeLine{682         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_endpoint_vtbl_a5cfeed999302c85a261f7eb6015671e0}{HRESULT}} STDMETHODCALLTYPE UnregisterEndpointNotificationCallback( }
+\DoxyCodeLine{683             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{684             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} *pClient) = 0;}
+\DoxyCodeLine{685         }
+\DoxyCodeLine{686     \};}
+\DoxyCodeLine{687     }
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{689 }
+\DoxyCodeLine{690     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDeviceEnumeratorVtbl}}}
+\DoxyCodeLine{691     \{}
+\DoxyCodeLine{692         BEGIN\_INTERFACE}
+\DoxyCodeLine{693         }
+\DoxyCodeLine{694         \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_afc5323b1ee6304dc92f7361fb14a2b1a}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{695             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{696             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_aba931ea01d817d3ad62e002e6095b026}{riid}},}
+\DoxyCodeLine{697             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{698             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a9be5f48179fc9ca89ab03a9449f9e1a8}{ppvObject}});}
+\DoxyCodeLine{699         }
+\DoxyCodeLine{700         \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a95adde35383129537babfd9be4a93937}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{701             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This);}
+\DoxyCodeLine{702         }
+\DoxyCodeLine{703         \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a61e421a51d4bb9c2b21f5c3b721af904}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{704             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This);}
+\DoxyCodeLine{705         }
+\DoxyCodeLine{706         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a370c49779c9bdbe9a86213f78e1185ed}{HRESULT}} ( STDMETHODCALLTYPE *EnumAudioEndpoints )( }
+\DoxyCodeLine{707             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{708             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{709             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_ae3b70ced63e9c157c5e286176ceb4b19}{dataFlow}},}
+\DoxyCodeLine{710             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{711             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a75a2b8ad637ac7cf44f2d73b89f800e0}{dwStateMask}},}
+\DoxyCodeLine{712             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{713             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a176c91c7707fe6b1747f16e43440be16}{IMMDeviceCollection}} **\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_abb736c7a6499fb1b3b1789236939617e}{ppDevices}});}
+\DoxyCodeLine{714         }
+\DoxyCodeLine{715         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a2adfeee5452ce5d126d6b6470e84fcf2}{HRESULT}} ( STDMETHODCALLTYPE *GetDefaultAudioEndpoint )( }
+\DoxyCodeLine{716             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{717             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{718             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EDataFlow}} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_ae3b70ced63e9c157c5e286176ceb4b19}{dataFlow}},}
+\DoxyCodeLine{719             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{720             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a5c33dfef61ec24c862ae4d26c8667c58}{role}},}
+\DoxyCodeLine{721             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{722             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_acb453bc75d9d62e267fd6bceaf89da43}{ppEndpoint}});}
+\DoxyCodeLine{723         }
+\DoxyCodeLine{724         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a82148e63eb8628f770bb08c7169a3d7d}{HRESULT}} ( STDMETHODCALLTYPE *GetDevice )( }
+\DoxyCodeLine{725             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{726             \textcolor{comment}{/*  */} }
+\DoxyCodeLine{727             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  LPCWSTR \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a78f8bce94e89353b61d73c7f4174ea8f}{pwstrId}},}
+\DoxyCodeLine{728             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{729             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} **\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a1a3c2414790298a4af9aa9f946c9e1e0}{ppDevice}});}
+\DoxyCodeLine{730         }
+\DoxyCodeLine{731         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_a3ef2a07dbb0028f5ae4616f1a5f8eac4}{HRESULT}} ( STDMETHODCALLTYPE *RegisterEndpointNotificationCallback )( }
+\DoxyCodeLine{732             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{733             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{734             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} *\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_affdeb6da598e87d467cb1beca9c92f09}{pClient}});}
+\DoxyCodeLine{735         }
+\DoxyCodeLine{736         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_af7b2e939112fa71d61c781d990804081}{HRESULT}} ( STDMETHODCALLTYPE *UnregisterEndpointNotificationCallback )( }
+\DoxyCodeLine{737             \mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}} * This,}
+\DoxyCodeLine{738             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{739             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotificationClient}} *\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_affdeb6da598e87d467cb1beca9c92f09}{pClient}});}
+\DoxyCodeLine{740         }
+\DoxyCodeLine{741         END\_INTERFACE}
+\DoxyCodeLine{742     \} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDeviceEnumeratorVtbl}};}
+\DoxyCodeLine{743 }
+\DoxyCodeLine{744     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDeviceEnumerator}}}
+\DoxyCodeLine{745     \{}
+\DoxyCodeLine{746         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl}{IMMDeviceEnumeratorVtbl}} *lpVtbl;}
+\DoxyCodeLine{747     \};}
+\DoxyCodeLine{748 }
+\DoxyCodeLine{749     }
+\DoxyCodeLine{750 }
+\DoxyCodeLine{751 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{752 }
+\DoxyCodeLine{753 }
+\DoxyCodeLine{754 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{755 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{756 }
+\DoxyCodeLine{757 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{758 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{759 }
+\DoxyCodeLine{760 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{761 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{762 }
+\DoxyCodeLine{763 }
+\DoxyCodeLine{764 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_EnumAudioEndpoints(This,dataFlow,dwStateMask,ppDevices) \(\backslash\)}}
+\DoxyCodeLine{765 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> EnumAudioEndpoints(This,dataFlow,dwStateMask,ppDevices) ) }}
+\DoxyCodeLine{766 }
+\DoxyCodeLine{767 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_GetDefaultAudioEndpoint(This,dataFlow,role,ppEndpoint)  \(\backslash\)}}
+\DoxyCodeLine{768 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetDefaultAudioEndpoint(This,dataFlow,role,ppEndpoint) ) }}
+\DoxyCodeLine{769 }
+\DoxyCodeLine{770 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_GetDevice(This,pwstrId,ppDevice)    \(\backslash\)}}
+\DoxyCodeLine{771 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetDevice(This,pwstrId,ppDevice) ) }}
+\DoxyCodeLine{772 }
+\DoxyCodeLine{773 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_RegisterEndpointNotificationCallback(This,pClient)  \(\backslash\)}}
+\DoxyCodeLine{774 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> RegisterEndpointNotificationCallback(This,pClient) ) }}
+\DoxyCodeLine{775 }
+\DoxyCodeLine{776 \textcolor{preprocessor}{\#define IMMDeviceEnumerator\_UnregisterEndpointNotificationCallback(This,pClient)    \(\backslash\)}}
+\DoxyCodeLine{777 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> UnregisterEndpointNotificationCallback(This,pClient) ) }}
+\DoxyCodeLine{778 }
+\DoxyCodeLine{779 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{780 }
+\DoxyCodeLine{781 }
+\DoxyCodeLine{782 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{783 }
+\DoxyCodeLine{784 }
+\DoxyCodeLine{785 }
+\DoxyCodeLine{786 }
+\DoxyCodeLine{787 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceEnumerator\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{788 }
+\DoxyCodeLine{789 }
+\DoxyCodeLine{790 \textcolor{preprocessor}{\#ifndef \_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{791 \textcolor{preprocessor}{\#define \_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{792 }
+\DoxyCodeLine{793 \textcolor{comment}{/* interface IMMDeviceActivator */}}
+\DoxyCodeLine{794 \textcolor{comment}{/* [unique][helpstring][nonextensible][uuid][local][object] */} }
+\DoxyCodeLine{795 }
+\DoxyCodeLine{796 }
+\DoxyCodeLine{797 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_a31a3373962d321de20be2ad5741ff202}{IID\_IMMDeviceActivator}};}
+\DoxyCodeLine{798 }
+\DoxyCodeLine{799 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{800     }
+\DoxyCodeLine{801     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}3B0D0EA4-\/D0A9-\/4B0E-\/935B-\/09516746FAC0"{}})}
+\DoxyCodeLine{802     \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} : public IUnknown}
+\DoxyCodeLine{803     \{}
+\DoxyCodeLine{804     \textcolor{keyword}{public}:}
+\DoxyCodeLine{805         \textcolor{keyword}{virtual} \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_enumerator_vtbl_afc5323b1ee6304dc92f7361fb14a2b1a}{HRESULT}} STDMETHODCALLTYPE Activate( }
+\DoxyCodeLine{806             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{807             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID iid,}
+\DoxyCodeLine{808             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{809             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} *pDevice,}
+\DoxyCodeLine{810             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{811             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  PROPVARIANT *pActivationParams,}
+\DoxyCodeLine{812             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{813             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **ppInterface) = 0;}
+\DoxyCodeLine{814         }
+\DoxyCodeLine{815     \};}
+\DoxyCodeLine{816     }
+\DoxyCodeLine{817 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDeviceActivatorVtbl}}}
+\DoxyCodeLine{820     \{}
+\DoxyCodeLine{821         BEGIN\_INTERFACE}
+\DoxyCodeLine{822         }
+\DoxyCodeLine{823         \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_ab304b464d4b08177c16ec560f3d9fc3c}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{824             \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} * This,}
+\DoxyCodeLine{825             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_ae20670664252ee3a0bf2ba7c93cd5da4}{riid}},}
+\DoxyCodeLine{826             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{827             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a031cd3b4b0c0bfe1ea0f7eaee3d18835}{ppvObject}});}
+\DoxyCodeLine{828         }
+\DoxyCodeLine{829         \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a272a0eca8480353a569dcbd9c97c8076}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{830             \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} * This);}
+\DoxyCodeLine{831         }
+\DoxyCodeLine{832         \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a2b763cf53baa7ad791eb4d060b57d2bf}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{833             \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} * This);}
+\DoxyCodeLine{834         }
+\DoxyCodeLine{835         \textcolor{comment}{/* [helpstring][id] */} \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a5af4203d7708afcbd0cbcdddcf7d1b8d}{HRESULT}} ( STDMETHODCALLTYPE *Activate )( }
+\DoxyCodeLine{836             \mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}} * This,}
+\DoxyCodeLine{837             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{838             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a34c7d096fb7af49780ec1a26a4aec0c8}{iid}},}
+\DoxyCodeLine{839             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{840             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} *\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a3a38d77578fef9f47945ef9f19bb95ec}{pDevice}},}
+\DoxyCodeLine{841             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{842             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  PROPVARIANT *\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a1b445fc6c6ef36aa6d00715032049680}{pActivationParams}},}
+\DoxyCodeLine{843             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{844             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl_a6777edf1a6a671834b69f21b47978aaf}{ppInterface}});}
+\DoxyCodeLine{845         }
+\DoxyCodeLine{846         END\_INTERFACE}
+\DoxyCodeLine{847     \} \mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDeviceActivatorVtbl}};}
+\DoxyCodeLine{848 }
+\DoxyCodeLine{849     \textcolor{keyword}{interface }\mbox{\hyperlink{mmdeviceapi_8h_abb612921f576217a2b218463ce56e00a}{IMMDeviceActivator}}}
+\DoxyCodeLine{850     \{}
+\DoxyCodeLine{851         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_m_m_device_activator_vtbl}{IMMDeviceActivatorVtbl}} *lpVtbl;}
+\DoxyCodeLine{852     \};}
+\DoxyCodeLine{853 }
+\DoxyCodeLine{854     }
+\DoxyCodeLine{855 }
+\DoxyCodeLine{856 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{857 }
+\DoxyCodeLine{858 }
+\DoxyCodeLine{859 \textcolor{preprocessor}{\#define IMMDeviceActivator\_QueryInterface(This,riid,ppvObject)  \(\backslash\)}}
+\DoxyCodeLine{860 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{861 }
+\DoxyCodeLine{862 \textcolor{preprocessor}{\#define IMMDeviceActivator\_AddRef(This) \(\backslash\)}}
+\DoxyCodeLine{863 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{864 }
+\DoxyCodeLine{865 \textcolor{preprocessor}{\#define IMMDeviceActivator\_Release(This)    \(\backslash\)}}
+\DoxyCodeLine{866 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{867 }
+\DoxyCodeLine{868 }
+\DoxyCodeLine{869 \textcolor{preprocessor}{\#define IMMDeviceActivator\_Activate(This,iid,pDevice,pActivationParams,ppInterface) \(\backslash\)}}
+\DoxyCodeLine{870 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Activate(This,iid,pDevice,pActivationParams,ppInterface) ) }}
+\DoxyCodeLine{871 }
+\DoxyCodeLine{872 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{873 }
+\DoxyCodeLine{874 }
+\DoxyCodeLine{875 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{876 }
+\DoxyCodeLine{877 }
+\DoxyCodeLine{878 }
+\DoxyCodeLine{879 }
+\DoxyCodeLine{880 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IMMDeviceActivator\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{881 }
+\DoxyCodeLine{882 }
+\DoxyCodeLine{883 \textcolor{comment}{/* interface \_\_MIDL\_itf\_mmdeviceapi\_0000\_0006 */}}
+\DoxyCodeLine{884 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{885 }
+\DoxyCodeLine{886 \textcolor{keyword}{typedef} \textcolor{comment}{/* [public] */} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001}{\_\_MIDL\_\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_0001}}}
+\DoxyCodeLine{887     \{}
+\DoxyCodeLine{888     LPARAM \mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001_ac865f5d01499f62768d6e72c838c511b}{AddPageParam}};}
+\DoxyCodeLine{889     \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} *\mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001_a4089b2075102ec7e40c490d9e032dfaf}{pEndpoint}};}
+\DoxyCodeLine{890     \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} *\mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001_a109d271e4b6c50f7e7cde94575bebfa4}{pPnpInterface}};}
+\DoxyCodeLine{891     \mbox{\hyperlink{mmdeviceapi_8h_a8d4cacf41e022eb8b6aed6231bcf54be}{IMMDevice}} *\mbox{\hyperlink{struct_____m_i_d_l_______m_i_d_l__itf__mmdeviceapi__0000__0006__0001_a3b08c793f399e0cd2fea9321adf500c6}{pPnpDevnode}};}
+\DoxyCodeLine{892     \}   \mbox{\hyperlink{mmdeviceapi_8h_ab1b4be7b68280bb0999583b07c7448b7}{AudioExtensionParams}};}
+\DoxyCodeLine{893 }
+\DoxyCodeLine{894 }
+\DoxyCodeLine{895 }
+\DoxyCodeLine{896 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a888cac9d992a7e0ba91456861e772ac4}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{897 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{mmdeviceapi_8h_a2fa91c1c276bff5537abfe471e3b263f}{\_\_MIDL\_itf\_mmdeviceapi\_0000\_0006\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{898 }
+\DoxyCodeLine{899 }
+\DoxyCodeLine{900 \textcolor{preprocessor}{\#ifndef \_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}}
+\DoxyCodeLine{901 \textcolor{preprocessor}{\#define \_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_}}
+\DoxyCodeLine{902 }
+\DoxyCodeLine{903 \textcolor{comment}{/* library MMDeviceAPILib */}}
+\DoxyCodeLine{904 \textcolor{comment}{/* [helpstring][version][uuid] */} }
+\DoxyCodeLine{905 }
+\DoxyCodeLine{906 }
+\DoxyCodeLine{907 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{mmdeviceapi_8h_ac7230758955239edf87f4dd8dba70fa5}{LIBID\_MMDeviceAPILib}};}
+\DoxyCodeLine{908 }
+\DoxyCodeLine{909 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{mmdeviceapi_8h_ad1c31dbc68c4010c08d035d474869b7c}{CLSID\_MMDeviceEnumerator}};}
+\DoxyCodeLine{910 }
+\DoxyCodeLine{911 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{912 }
+\DoxyCodeLine{913 \textcolor{keyword}{class }DECLSPEC\_UUID(\textcolor{stringliteral}{"{}BCDE0395-\/E52F-\/467C-\/8E3D-\/C4579291692E"{}})}
+\DoxyCodeLine{914 \mbox{\hyperlink{mmdeviceapi_8h_ad05ef92fe03e850a666e056275f1998b}{MMDeviceEnumerator}};}
+\DoxyCodeLine{915 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{916 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_MMDeviceAPILib\_LIBRARY\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{917 }
+\DoxyCodeLine{918 \textcolor{comment}{/* Additional Prototypes for ALL interfaces */}}
+\DoxyCodeLine{919 }
+\DoxyCodeLine{920 \textcolor{comment}{/* end of Additional Prototypes */}}
+\DoxyCodeLine{921 }
+\DoxyCodeLine{922 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{923 \}}
+\DoxyCodeLine{924 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{925 }
+\DoxyCodeLine{926 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{927 }
+\DoxyCodeLine{928 }
+\DoxyCodeLine{929 }
+
+\end{DoxyCode}

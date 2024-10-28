@@ -1,0 +1,261 @@
+\hypertarget{functiondiscoverykeys_8h_source}{}\doxysection{functiondiscoverykeys.\+h}
+\label{functiondiscoverykeys_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/functiondiscoverykeys.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/functiondiscoverykeys.h}}
+\mbox{\hyperlink{functiondiscoverykeys_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#if \_\_GNUC\_\_ >=3}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#pragma GCC system\_header}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef DEFINE\_API\_PKEY}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{propkey_8h}{propkey.h}}>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{functiondiscoverykeys__devpkey_8h}{FunctionDiscoveryKeys\_devpkey.h}}>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{// FMTID\_FD = \{904b03a2-\/471d-\/423c-\/a584-\/f3483238a146\}}}
+\DoxyCodeLine{14 \mbox{\hyperlink{functiondiscoverykeys_8h_a7a6bb99f1507141ad10ff6756519f3a3}{DEFINE\_GUID}}(FMTID\_FD, 0x904b03a2, 0x471d, 0x423c, 0xa5, 0x84, 0xf3, 0x48, 0x32, 0x38, 0xa1, 0x46);}
+\DoxyCodeLine{15 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_FD\_Visibility, VisibilityFlags, 0x904b03a2, 0x471d, 0x423c, 0xa5, 0x84, 0xf3, 0x48, 0x32, 0x38, 0xa1, 0x46, 0x00000001); \textcolor{comment}{//    VT\_UINT}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#define FD\_Visibility\_Default   0}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define FD\_Visibility\_Hidden    1}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{// FMTID\_Device = \{78C34FC8-\/104A-\/4aca-\/9EA4-\/524D52996E57\}}}
+\DoxyCodeLine{20 \mbox{\hyperlink{functiondiscoverykeys_8h_a7a6bb99f1507141ad10ff6756519f3a3}{DEFINE\_GUID}}(FMTID\_Device, 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57);}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_NotPresent,     DeviceNotPresent   , 0x904b03a2, 0x471d, 0x423c, 0xa5, 0x84, 0xf3, 0x48, 0x32, 0x38, 0xa1, 0x46, 0x00000002); \textcolor{comment}{//    VT\_UINT}}
+\DoxyCodeLine{23 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_QueueSize,      DeviceQueueSize    , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000024); \textcolor{comment}{//    VT\_UI4}}
+\DoxyCodeLine{24 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_Status,         DeviceStatus       , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000025); \textcolor{comment}{//    VT\_LPWSTR}}
+\DoxyCodeLine{25 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_Comment,        DeviceComment      , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000026); \textcolor{comment}{//    VT\_LPWSTR}}
+\DoxyCodeLine{26 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_Model,          DeviceModel        , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000027); \textcolor{comment}{//    VT\_LPWSTR}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//  Name:     System.Device.BIOSVersion -\/-\/ PKEY\_Device\_BIOSVersion}}
+\DoxyCodeLine{29 \textcolor{comment}{//  Type:     String -\/-\/ VT\_LPWSTR  (For variants: VT\_BSTR)  Legacy code may treat this as VT\_BSTR.}}
+\DoxyCodeLine{30 \textcolor{comment}{//  FormatID: EAEE7F1D-\/6A33-\/44D1-\/9441-\/5F46DEF23198, 9}}
+\DoxyCodeLine{31 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Device\_BIOSVersion, 0xEAEE7F1D, 0x6A33, 0x44D1, 0x94, 0x41, 0x5F, 0x46, 0xDE, 0xF2, 0x31, 0x98, 9);}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Write\_Time,            WriteTime          , 0xf53b7e1c, 0x77e0, 0x4450, 0x8c, 0x5f, 0xa7, 0x6c, 0xc7, 0xfd, 0xe0, 0x58, 0x00000100); \textcolor{comment}{//    VT\_FILETIME}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#ifdef FD\_XP}}
+\DoxyCodeLine{36 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_InstanceId, DeviceInstanceId   , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000100); \textcolor{comment}{//    VT\_LPWSTR}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{38 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_Device\_Interface,  DeviceInterface    , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00000101); \textcolor{comment}{//    VT\_CLSID}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_ExposedIIDs,           ExposedIIDs       , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00003002); \textcolor{comment}{//  VT\_VECTOR | VT\_CLSID}}
+\DoxyCodeLine{41 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_ExposedCLSIDs,         ExposedCLSIDs     , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00003003); \textcolor{comment}{//  VT\_VECTOR | VT\_CLSID}}
+\DoxyCodeLine{42 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_InstanceValidatorClsid,InstanceValidator , 0x78c34fc8, 0x104a, 0x4aca, 0x9e, 0xa4, 0x52, 0x4d, 0x52, 0x99, 0x6e, 0x57, 0x00003004); \textcolor{comment}{// VT\_CLSID}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{// FMTID\_WSD = \{92506491-\/FF95-\/4724-\/A05A-\/5B81885A7C92\}}}
+\DoxyCodeLine{45 \mbox{\hyperlink{functiondiscoverykeys_8h_a7a6bb99f1507141ad10ff6756519f3a3}{DEFINE\_GUID}}(FMTID\_WSD, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_AddressURI, WSD\_AddressURI, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001000);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{48 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_Types, WSD\_Types, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001001); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{49 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_Scopes, WSD\_Scopes, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001002);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{50 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_MetadataVersion, WSD\_MetadataVersion, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001003); \textcolor{comment}{//VT\_UI8}}
+\DoxyCodeLine{51 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_AppSeqInstanceID, WSD\_AppSeqInstanceID, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001004);   \textcolor{comment}{// VT\_UI8}}
+\DoxyCodeLine{52 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_AppSeqSessionID, WSD\_AppSeqSessionID, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001005); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{53 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_AppSeqMessageNumber, WSD\_AppSeqMessageNumber, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00001006); \textcolor{comment}{// VT\_UI8}}
+\DoxyCodeLine{54 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_XAddrs, WSD\_XAddrs, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00002000); \textcolor{comment}{// VT\_LPWSTR or VT\_VECTOR | VT\_LPWSTR}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_MetadataClean, WSD\_MetadataClean, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00000001);   \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{57 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_WSD\_ServiceInfo, WSD\_ServiceInfo, 0x92506491, 0xFF95, 0x4724, 0xA0, 0x5A, 0x5B, 0x81, 0x88, 0x5A, 0x7C, 0x92, 0x00000002);   \textcolor{comment}{// VT\_VECTOR|VT\_VARIANT (variants are VT\_UNKNOWN)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_TYPE, PUBSVCS\_TYPE, 0xF1B88AD3, 0x109C, 0x4FD2, 0xBA, 0x3F, 0x53, 0x5A, 0x76, 0x5F, 0x82, 0xF4, 0x00005001); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{60 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_SCOPE, PUBSVCS\_SCOPE, 0x2AE2B567, 0xEECB, 0x4A3E, 0xB7, 0x53, 0x54, 0xC7, 0x25, 0x49, 0x43, 0x66, 0x00005002);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{61 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_METADATA, PUBSVCS\_METADATA, 0x63C6D5B8, 0xF73A, 0x4ACA, 0x96, 0x7E, 0x0C, 0xC7, 0x87, 0xE0, 0xB5, 0x59, 0x00005003); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{62 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_METADATA\_VERSION, PUBSVCS\_METADATA\_VERSION, 0xC0C96C15, 0x1823, 0x4E5B, 0x93, 0x48, 0xE8, 0x25, 0x19, 0x92, 0x3F, 0x04, 0x00005004); \textcolor{comment}{// VT\_UI8}}
+\DoxyCodeLine{63 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_NETWORK\_PROFILES\_ALLOWED, PUBSVCS\_NETWORK\_PROFILES\_ALLOWED, 0x63C6D5B8, 0xF73A, 0x4ACA, 0x96, 0x7E, 0x0C, 0xC7, 0x87, 0xE0, 0xB5, 0x59, 0x00005005); \textcolor{comment}{// VT\_VECTOR | VT\_LPWSTR}}
+\DoxyCodeLine{64 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_NETWORK\_PROFILES\_DENIED, PUBSVCS\_NETWORK\_PROFILES\_DENIED, 0x63C6D5B8, 0xF73A, 0x4ACA, 0x96, 0x7E, 0x0C, 0xC7, 0x87, 0xE0, 0xB5, 0x59, 0x00005006); \textcolor{comment}{// VT\_VECTOR | VT\_LPWSTR}}
+\DoxyCodeLine{65 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PUBSVCS\_NETWORK\_PROFILES\_DEFAULT, PUBSVCS\_NETWORK\_PROFILES\_DEFAULT, 0x63C6D5B8, 0xF73A, 0x4ACA, 0x96, 0x7E, 0x0C, 0xC7, 0x87, 0xE0, 0xB5, 0x59, 0x00005007); \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{comment}{// FMTID\_PNPX = \{656A3BB3-\/ECC0-\/43FD-\/8477-\/4AE0404A96CD\}}}
+\DoxyCodeLine{68 \mbox{\hyperlink{functiondiscoverykeys_8h_a7a6bb99f1507141ad10ff6756519f3a3}{DEFINE\_GUID}}(FMTID\_PNPX, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD);}
+\DoxyCodeLine{69         \textcolor{comment}{// from Discovery messages}}
+\DoxyCodeLine{70 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_GlobalIdentity, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001000);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{71 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Types, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001001);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{72 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Scopes, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001002);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{73 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_XAddrs, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001003);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{74 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_MetadataVersion, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001004);   \textcolor{comment}{// VT\_UI8}}
+\DoxyCodeLine{75 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ID, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001005);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{76 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_RootProxy, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001006);   \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78         \textcolor{comment}{// for Directed Discovery}}
+\DoxyCodeLine{79 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_RemoteAddress, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00001006);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81         \textcolor{comment}{// from ThisModel metadata}}
+\DoxyCodeLine{82 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Manufacturer, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002000);   \textcolor{comment}{// VT\_LPWSTR (localizable)}}
+\DoxyCodeLine{83 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ManufacturerUrl, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002001);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{84 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ModelName, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002002);   \textcolor{comment}{// VT\_LPWSTR (localizable)}}
+\DoxyCodeLine{85 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ModelNumber, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002003);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{86 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ModelUrl, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002004);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{87 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Upc, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002005);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{88 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_PresentationUrl, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00002006);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{89         \textcolor{comment}{// from ThisDevice metadata}}
+\DoxyCodeLine{90 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_FriendlyName, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003000);   \textcolor{comment}{// VT\_LPWSTR (localizable)}}
+\DoxyCodeLine{91 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_FirmwareVersion, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003001);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{92 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_SerialNumber, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003002);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{93 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_DeviceCategory, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003004);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{94         \textcolor{comment}{// DeviceCategory values}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_COMPUTER                            L"{}Computers"{}}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_INPUTDEVICE                         L"{}Input"{}}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_PRINTER                             L"{}Printers"{}}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_SCANNER                             L"{}Scanners"{}}}
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_FAX                                 L"{}FAX"{}}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_MFP                                 L"{}MFP"{}}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_CAMERA                              L"{}Cameras"{}}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_STORAGE                             L"{}Storage"{}}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_NETWORK\_INFRASTRUCTURE              L"{}NetworkInfrastructure"{}}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_DISPLAYS                            L"{}Displays"{}}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_MULTIMEDIA\_DEVICE                   L"{}MediaDevices"{}}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_GAMING\_DEVICE                       L"{}Gaming"{}}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_TELEPHONE                           L"{}Phones"{}}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_HOME\_AUTOMATION\_SYSTEM              L"{}HomeAutomation"{}}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_HOME\_SECURITY\_SYSTEM                L"{}HomeSecurity"{}}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#define PNPX\_DEVICECATEGORY\_OTHER                               L"{}Other"{}}}
+\DoxyCodeLine{111 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_DeviceCategory\_Desc, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003005);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_PhysicalAddress, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003006);   \textcolor{comment}{// VT\_UI1 | VT\_VECTOR}}
+\DoxyCodeLine{114 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_NetworkInterfaceLuid, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003007);   \textcolor{comment}{// VT\_UI8}}
+\DoxyCodeLine{115 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_NetworkInterfaceGuid, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003008);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{116 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_IpAddress, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00003009);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{117         \textcolor{comment}{// from Relationship metadata}}
+\DoxyCodeLine{118 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ServiceAddress, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00004000);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{119 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ServiceId, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00004001);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{120 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ServiceTypes, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00004002);   \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{121         \textcolor{comment}{// Association DB PKEYs}}
+\DoxyCodeLine{122 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PNPX\_Devnode, PnPXDevNode, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00000001); \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{123 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PNPX\_AssociationState, AssociationState, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00000002); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{124 \mbox{\hyperlink{propkey_8h_a2de46a98ae5a987bddae7bff47217fc5}{DEFINE\_API\_PKEY}}(PKEY\_PNPX\_AssociatedInstanceId, AssociatedInstanceId, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00000003); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{125         \textcolor{comment}{// for Computer Discovery}}
+\DoxyCodeLine{126 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_DomainName, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00005000);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{127 \textcolor{comment}{// Use PKEY\_ComputerName (propkey.h) DEFINE\_PROPERTYKEY(PKEY\_PNPX\_MachineName, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00005001);   // VT\_LPWSTR}}
+\DoxyCodeLine{128 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_ShareName, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00005002);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{// SSDP Provider custom properties}}
+\DoxyCodeLine{131 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_SSDP\_AltLocationInfo, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00006000);   \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{132 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_SSDP\_DevLifeTime, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00006001);   \textcolor{comment}{// VT\_UI4}}
+\DoxyCodeLine{133 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_SSDP\_NetworkInterface, 0x656A3BB3, 0xECC0, 0x43FD, 0x84, 0x77, 0x4A, 0xE0, 0x40, 0x4A, 0x96, 0xCD, 0x00006002);   \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{135 \textcolor{comment}{// FMTID\_PNPXDynamicProperty = \{4FC5077E-\/B686-\/44BE-\/93E3-\/86CAFE368CCD\}}}
+\DoxyCodeLine{136 \mbox{\hyperlink{functiondiscoverykeys_8h_a7a6bb99f1507141ad10ff6756519f3a3}{DEFINE\_GUID}}(FMTID\_PNPXDynamicProperty, 0x4FC5077E, 0xB686, 0x44BE, 0x93, 0xE3, 0x86, 0xCA, 0xFE, 0x36, 0x8C, 0xCD);}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Installable, 0x4FC5077E, 0xB686, 0x44BE, 0x93, 0xE3, 0x86, 0xCA, 0xFE, 0x36, 0x8C, 0xCD, 0x00000001); \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{139 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_Associated, 0x4FC5077E, 0xB686, 0x44BE, 0x93, 0xE3, 0x86, 0xCA, 0xFE, 0x36, 0x8C, 0xCD, 0x00000002); \textcolor{comment}{// VT\_BOOL}}
+\DoxyCodeLine{140 \textcolor{comment}{// PKEY\_PNPX\_Installed to be deprecated in Longhorn Server timeframe}}
+\DoxyCodeLine{141 \textcolor{comment}{// this PKEY really represents Associated state}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define PKEY\_PNPX\_Installed PKEY\_PNPX\_Associated    }\textcolor{comment}{// Deprecated! Please use PKEY\_PNPX\_Associated}}
+\DoxyCodeLine{143 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_PNPX\_CompatibleTypes, 0x4FC5077E, 0xB686, 0x44BE, 0x93, 0xE3, 0x86, 0xCA, 0xFE, 0x36, 0x8C, 0xCD, 0x00000003); \textcolor{comment}{// VT\_LPWSTR | VT\_VECTOR}}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145     \textcolor{comment}{// WNET Provider properties}}
+\DoxyCodeLine{146 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_Scope, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000001); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{147 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_Type, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000002); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{148 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_DisplayType, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000003); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{149 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_Usage, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000004); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{150 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_LocalName, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000005); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{151 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_RemoteName, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000006); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{152 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_Comment, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000007); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{153 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WNET\_Provider, 0xdebda43a, 0x37b3, 0x4383, 0x91, 0xE7, 0x44, 0x98, 0xda, 0x29, 0x95, 0xab, 0x00000008); \textcolor{comment}{// VT\_LPWSTR}}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155 }
+\DoxyCodeLine{156     \textcolor{comment}{// WCN Provider properties}}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_Version, 0x88190b80, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000001); \textcolor{comment}{// VT\_UI1}}
+\DoxyCodeLine{159 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_RequestType, 0x88190b81, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000002); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{160 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_AuthType, 0x88190b82, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000003); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{161 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_EncryptType, 0x88190b83, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000004); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{162 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_ConnType, 0x88190b84, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000005); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{163 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_ConfigMethods, 0x88190b85, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000006); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{164 \textcolor{comment}{// map WCN DeviceType to PKEY\_PNPX\_DeviceCategory}}
+\DoxyCodeLine{165 \textcolor{comment}{//DEFINE\_PROPERTYKEY(PKEY\_WCN\_DeviceType, 0x88190b86, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000007); // VT\_INT}}
+\DoxyCodeLine{166 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_RfBand, 0x88190b87, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000008); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{167 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_AssocState, 0x88190b88, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x00000009); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{168 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_ConfigError, 0x88190b89, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000a); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{169 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_ConfigState, 0x88190b89, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000b); \textcolor{comment}{// VT\_UI1}}
+\DoxyCodeLine{170 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_DevicePasswordId, 0x88190b89, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000c); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{171 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_OSVersion, 0x88190b89, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000d); \textcolor{comment}{// VT\_UINT}}
+\DoxyCodeLine{172 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_VendorExtension, 0x88190b8a, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000e); \textcolor{comment}{// VT\_UI1 | VT\_VECTOR}}
+\DoxyCodeLine{173 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_WCN\_RegistrarType, 0x88190b8b, 0x4684, 0x11da, 0xa2, 0x6a, 0x00, 0x02, 0xb3, 0x98, 0x8e, 0x81, 0x0000000f); \textcolor{comment}{// VT\_INT}}
+\DoxyCodeLine{174 }
+\DoxyCodeLine{175 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{176 \textcolor{comment}{// DriverPackage properties}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_Model                PKEY\_DrvPkg\_Model}}
+\DoxyCodeLine{179 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_VendorWebSite        PKEY\_DrvPkg\_VendorWebSite}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_DetailedDescription  PKEY\_DrvPkg\_DetailedDescription}}
+\DoxyCodeLine{181 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_DocumentationLink    PKEY\_DrvPkg\_DocumentationLink}}
+\DoxyCodeLine{182 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_Icon                 PKEY\_DrvPkg\_Icon}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define PKEY\_DriverPackage\_BrandingIcon         PKEY\_DrvPkg\_BrandingIcon}}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{186 \textcolor{comment}{// Hardware properties}}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Devinst, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 4097);}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{comment}{//  Name:     System.Hardware.DisplayAttribute -\/-\/ PKEY\_Hardware\_DisplayAttribute}}
+\DoxyCodeLine{191 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{192 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 5}}
+\DoxyCodeLine{193 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_DisplayAttribute, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 5);}
+\DoxyCodeLine{194 }
+\DoxyCodeLine{195 \textcolor{comment}{//  Name:     System.Hardware.DriverDate -\/-\/ PKEY\_Hardware\_DriverDate}}
+\DoxyCodeLine{196 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{197 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 11}}
+\DoxyCodeLine{198 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_DriverDate, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 11);}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{comment}{//  Name:     System.Hardware.DriverProvider -\/-\/ PKEY\_Hardware\_DriverProvider}}
+\DoxyCodeLine{201 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{202 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 10}}
+\DoxyCodeLine{203 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_DriverProvider, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 10);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{205 \textcolor{comment}{//  Name:     System.Hardware.DriverVersion -\/-\/ PKEY\_Hardware\_DriverVersion}}
+\DoxyCodeLine{206 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{207 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 9}}
+\DoxyCodeLine{208 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_DriverVersion, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 9);}
+\DoxyCodeLine{209 }
+\DoxyCodeLine{210 \textcolor{comment}{//  Name:     System.Hardware.Function -\/-\/ PKEY\_Hardware\_Function}}
+\DoxyCodeLine{211 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{212 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 4099}}
+\DoxyCodeLine{213 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Function, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 4099);}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215 \textcolor{comment}{//  Name:     System.Hardware.Icon -\/-\/ PKEY\_Hardware\_Icon}}
+\DoxyCodeLine{216 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{217 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 3}}
+\DoxyCodeLine{218 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Icon, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 3);}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{comment}{//  Name:     System.Hardware.Image -\/-\/ PKEY\_Hardware\_Image}}
+\DoxyCodeLine{221 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{222 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 4098}}
+\DoxyCodeLine{223 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Image, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 4098);}
+\DoxyCodeLine{224 }
+\DoxyCodeLine{225 \textcolor{comment}{//  Name:     System.Hardware.Manufacturer -\/-\/ PKEY\_Hardware\_Manufacturer}}
+\DoxyCodeLine{226 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{227 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 6}}
+\DoxyCodeLine{228 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Manufacturer, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 6);}
+\DoxyCodeLine{229 }
+\DoxyCodeLine{230 \textcolor{comment}{//  Name:     System.Hardware.Model -\/-\/ PKEY\_Hardware\_Model}}
+\DoxyCodeLine{231 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{232 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 7}}
+\DoxyCodeLine{233 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Model, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 7);}
+\DoxyCodeLine{234 }
+\DoxyCodeLine{235 \textcolor{comment}{//  Name:     System.Hardware.Name -\/-\/ PKEY\_Hardware\_Name}}
+\DoxyCodeLine{236 \textcolor{comment}{//  Type:     String -\/-\/ VT\_LPWSTR  (For variants: VT\_BSTR)}}
+\DoxyCodeLine{237 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 2}}
+\DoxyCodeLine{238 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Name, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 2);}
+\DoxyCodeLine{239 }
+\DoxyCodeLine{240 \textcolor{comment}{//  Name:     System.Hardware.SerialNumber -\/-\/ PKEY\_Hardware\_SerialNumber}}
+\DoxyCodeLine{241 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{242 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 8}}
+\DoxyCodeLine{243 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_SerialNumber, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 8);}
+\DoxyCodeLine{244 }
+\DoxyCodeLine{245 \textcolor{comment}{//  Name:     System.Hardware.ShellAttributes -\/-\/ PKEY\_Hardware\_ShellAttributes}}
+\DoxyCodeLine{246 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{247 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 4100}}
+\DoxyCodeLine{248 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_ShellAttributes, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 4100);}
+\DoxyCodeLine{249 }
+\DoxyCodeLine{250 \textcolor{comment}{//  Name:     System.Hardware.Status -\/-\/ PKEY\_Hardware\_Status}}
+\DoxyCodeLine{251 \textcolor{comment}{//  Type:     Unspecified -\/-\/ VT\_NULL}}
+\DoxyCodeLine{252 \textcolor{comment}{//  FormatID: 5EAF3EF2-\/E0CA-\/4598-\/BF06-\/71ED1D9DD953, 4096}}
+\DoxyCodeLine{253 \mbox{\hyperlink{mmdeviceapi_8h_a99251444a7b67b582e3e2e2684e2c569}{DEFINE\_PROPERTYKEY}}(PKEY\_Hardware\_Status, 0x5EAF3EF2, 0xE0CA, 0x4598, 0xBF, 0x06, 0x71, 0xED, 0x1D, 0x9D, 0xD9, 0x53, 4096);}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255 }
+
+\end{DoxyCode}

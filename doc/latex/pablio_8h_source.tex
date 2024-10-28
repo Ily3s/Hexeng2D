@@ -1,0 +1,122 @@
+\hypertarget{pablio_8h_source}{}\doxysection{pablio.\+h}
+\label{pablio_8h_source}\index{Hexeng2D/dependencies/portaudio/pablio/pablio.h@{Hexeng2D/dependencies/portaudio/pablio/pablio.h}}
+\mbox{\hyperlink{pablio_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_PABLIO\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_PABLIO\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{5 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{comment}{/*}}
+\DoxyCodeLine{10 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{11 \textcolor{comment}{ * PABLIO.h}}
+\DoxyCodeLine{12 \textcolor{comment}{ * Portable Audio Blocking read/write utility.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *}}
+\DoxyCodeLine{14 \textcolor{comment}{ * Author: Phil Burk, http://www.softsynth.com/portaudio/}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * Include file for PABLIO, the Portable Audio Blocking I/O Library.}}
+\DoxyCodeLine{17 \textcolor{comment}{ * PABLIO is built on top of PortAudio, the Portable Audio Library.}}
+\DoxyCodeLine{18 \textcolor{comment}{ * For more information see: http://www.portaudio.com}}
+\DoxyCodeLine{19 \textcolor{comment}{ * Copyright (c) 1999-\/2000 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{22 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{23 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{24 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{25 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{26 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{28 \textcolor{comment}{ *}}
+\DoxyCodeLine{29 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{30 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{33 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{34 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{35 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{36 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{37 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{38 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{/*}}
+\DoxyCodeLine{42 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however, }}
+\DoxyCodeLine{43 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{44 \textcolor{comment}{ *}}
+\DoxyCodeLine{45 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{46 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{47 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also }}
+\DoxyCodeLine{48 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the }}
+\DoxyCodeLine{49 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{50 \textcolor{comment}{ */}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#include <math.h>}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__ringbuffer_8h}{pa\_ringbuffer.h}}"{}}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{struct}}
+\DoxyCodeLine{60 \{}
+\DoxyCodeLine{61     RingBuffer   \mbox{\hyperlink{struct_p_a_b_l_i_o___stream_a9e71b0fedc0c6eb9617f7fbcd533e900}{inFIFO}};}
+\DoxyCodeLine{62     RingBuffer   \mbox{\hyperlink{struct_p_a_b_l_i_o___stream_a6bb74b5a753c8bd75f8e352edac68fcc}{outFIFO}};}
+\DoxyCodeLine{63     PortAudioStream *\mbox{\hyperlink{struct_p_a_b_l_i_o___stream_a39b571d723a0ca5f7b8350e81bb0e2e3}{stream}};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{int}          \mbox{\hyperlink{struct_p_a_b_l_i_o___stream_aa6d4effd361a458fd577c3c909c8cf5a}{bytesPerFrame}};}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int}          \mbox{\hyperlink{struct_p_a_b_l_i_o___stream_aa60b21938c04f7836a235a33ad27e0d3}{samplesPerFrame}};}
+\DoxyCodeLine{66 \}}
+\DoxyCodeLine{67 \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{comment}{/* Values for flags for OpenAudioStream(). */}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define PABLIO\_READ     (1<<0)}}
+\DoxyCodeLine{71 \textcolor{preprocessor}{\#define PABLIO\_WRITE    (1<<1)}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define PABLIO\_READ\_WRITE    (PABLIO\_READ|PABLIO\_WRITE)}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define PABLIO\_MONO     (1<<2)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define PABLIO\_STEREO   (1<<3)}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{/************************************************************}}
+\DoxyCodeLine{77 \textcolor{comment}{ * Write data to ring buffer.}}
+\DoxyCodeLine{78 \textcolor{comment}{ * Will not return until all the data has been written.}}
+\DoxyCodeLine{79 \textcolor{comment}{ */}}
+\DoxyCodeLine{80 \textcolor{keywordtype}{long} \mbox{\hyperlink{pablio_8h_a0bed383fd3e6bdde37078b2e138d2911}{WriteAudioStream}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} *aStream, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{long} numFrames );}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82 \textcolor{comment}{/************************************************************}}
+\DoxyCodeLine{83 \textcolor{comment}{ * Read data from ring buffer.}}
+\DoxyCodeLine{84 \textcolor{comment}{ * Will not return until all the data has been read.}}
+\DoxyCodeLine{85 \textcolor{comment}{ */}}
+\DoxyCodeLine{86 \textcolor{keywordtype}{long} \mbox{\hyperlink{pablio_8h_aea5e44f7cb20ac3cebea094303b8ee5c}{ReadAudioStream}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} *aStream, \textcolor{keywordtype}{void} *\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, \textcolor{keywordtype}{long} numFrames );}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{/************************************************************}}
+\DoxyCodeLine{89 \textcolor{comment}{ * Return the number of frames that could be written to the stream without}}
+\DoxyCodeLine{90 \textcolor{comment}{ * having to wait.}}
+\DoxyCodeLine{91 \textcolor{comment}{ */}}
+\DoxyCodeLine{92 \textcolor{keywordtype}{long} \mbox{\hyperlink{pablio_8h_a5f0ac667f4a430ca62a53aeebc60db76}{GetAudioStreamWriteable}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} *aStream );}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{comment}{/************************************************************}}
+\DoxyCodeLine{95 \textcolor{comment}{ * Return the number of frames that are available to be read from the}}
+\DoxyCodeLine{96 \textcolor{comment}{ * stream without having to wait.}}
+\DoxyCodeLine{97 \textcolor{comment}{ */}}
+\DoxyCodeLine{98 \textcolor{keywordtype}{long} \mbox{\hyperlink{pablio_8h_a16b2ab20d33b183bfe4dcb55c8152445}{GetAudioStreamReadable}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} *aStream );}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{/************************************************************}}
+\DoxyCodeLine{101 \textcolor{comment}{ * Opens a PortAudio stream with default characteristics.}}
+\DoxyCodeLine{102 \textcolor{comment}{ * Allocates PABLIO\_Stream structure.}}
+\DoxyCodeLine{103 \textcolor{comment}{ *}}
+\DoxyCodeLine{104 \textcolor{comment}{ * flags parameter can be an ORed combination of:}}
+\DoxyCodeLine{105 \textcolor{comment}{ *    PABLIO\_READ, PABLIO\_WRITE, or PABLIO\_READ\_WRITE,}}
+\DoxyCodeLine{106 \textcolor{comment}{ *    and either PABLIO\_MONO or PABLIO\_STEREO}}
+\DoxyCodeLine{107 \textcolor{comment}{ */}}
+\DoxyCodeLine{108 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pablio_8h_a213d2ab12d014753fd4c63c9d10ceb3d}{OpenAudioStream}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} **aStreamPtr, \textcolor{keywordtype}{double} sampleRate,}
+\DoxyCodeLine{109                          \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, \textcolor{keywordtype}{long} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} );}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pablio_8h_a76d7a0bac49985d736d89095b7052549}{CloseAudioStream}}( \mbox{\hyperlink{struct_p_a_b_l_i_o___stream}{PABLIO\_Stream}} *aStream );}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{114 \}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_PABLIO\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

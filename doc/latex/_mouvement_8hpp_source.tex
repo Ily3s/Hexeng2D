@@ -1,0 +1,48 @@
+\hypertarget{_mouvement_8hpp_source}{}\doxysection{Mouvement.\+hpp}
+\label{_mouvement_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Mouvement.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Mouvement.hpp}}
+\mbox{\hyperlink{_mouvement_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MOUVEMENT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MOUVEMENT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../EventManager/EventManager.hpp"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}../Renderer/Mesh.hpp"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_physics}{Hexeng::Physics}}}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_vecs}{PhysicsVecs}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16     private :}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         uint64\_t m\_last\_tick = 0;}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Renderer::Mesh}}* m\_mesh = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} transform\{ 0.0f, 0.0f \};}
+\DoxyCodeLine{25         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} position\{ 0, 0 \};}
+\DoxyCodeLine{26         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} instant\_speed\{ 0, 0 \};}
+\DoxyCodeLine{27         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} velocity\{ 0, 0 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} move(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} offset);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_vecs_a4227ca3e20304ed6df74eaa5aab145dc}{acceleration}};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} link(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Renderer::Mesh}}\& mesh);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{36         \textcolor{keyword}{static} \textcolor{keywordtype}{void} update\_vecs();}
+\DoxyCodeLine{37         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventManager::EventGate}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_vecs_acd3ee269808e0fd7ad4bb919598a6b6f}{update\_evt}};}
+\DoxyCodeLine{38     \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,166 @@
+\hypertarget{glfw3native_8h_source}{}\doxysection{glfw3native.\+h}
+\label{glfw3native_8h_source}\index{Hexeng2D/dependencies/glfw/include/GLFW/glfw3native.h@{Hexeng2D/dependencies/glfw/include/GLFW/glfw3native.h}}
+\mbox{\hyperlink{glfw3native_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{2 \textcolor{comment}{ * GLFW 3.3 -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{ * A library for OpenGL, window and input}}
+\DoxyCodeLine{4 \textcolor{comment}{ *-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright (c) 2002-\/2006 Marcus Geelnard}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Copyright (c) 2006-\/2018 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{9 \textcolor{comment}{ * warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{10 \textcolor{comment}{ * arising from the use of this software.}}
+\DoxyCodeLine{11 \textcolor{comment}{ *}}
+\DoxyCodeLine{12 \textcolor{comment}{ * Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{14 \textcolor{comment}{ * freely, subject to the following restrictions:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{17 \textcolor{comment}{ *    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{18 \textcolor{comment}{ *    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{19 \textcolor{comment}{ *    be appreciated but is not required.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{22 \textcolor{comment}{ *    be misrepresented as being the original software.}}
+\DoxyCodeLine{23 \textcolor{comment}{ *}}
+\DoxyCodeLine{24 \textcolor{comment}{ * 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{25 \textcolor{comment}{ *    distribution.}}
+\DoxyCodeLine{26 \textcolor{comment}{ *}}
+\DoxyCodeLine{27 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#ifndef \_glfw3\_native\_h\_}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define \_glfw3\_native\_h\_}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{33 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{38 \textcolor{comment}{ * Doxygen documentation}}
+\DoxyCodeLine{39 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{80 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{81 \textcolor{comment}{ * System headers and types}}
+\DoxyCodeLine{82 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_WIN32) || defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{85  \textcolor{comment}{// This is a workaround for the fact that glfw3.h needs to export APIENTRY (for}}
+\DoxyCodeLine{86  \textcolor{comment}{// example to allow applications to correctly declare a GL\_ARB\_debug\_output}}
+\DoxyCodeLine{87  \textcolor{comment}{// callback) but windows.h assumes no one will define APIENTRY before it does}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{ \#if defined(GLFW\_APIENTRY\_DEFINED)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{  \#undef APIENTRY}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{  \#undef GLFW\_APIENTRY\_DEFINED}}
+\DoxyCodeLine{91 \textcolor{preprocessor}{ \#endif}}
+\DoxyCodeLine{92 \textcolor{preprocessor}{ \#include <windows.h>}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#elif defined(GLFW\_EXPOSE\_NATIVE\_COCOA) || defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{ \#if defined(\_\_OBJC\_\_)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{  \#import <Cocoa/Cocoa.h>}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{ \#else}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{  \#include <ApplicationServices/ApplicationServices.h>}}
+\DoxyCodeLine{98   \textcolor{keyword}{typedef} \textcolor{keywordtype}{void}* \mbox{\hyperlink{glad_8h_a58c2a664503e14ffb8f21012aabff3e9}{id}};}
+\DoxyCodeLine{99 \textcolor{preprocessor}{ \#endif}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#elif defined(GLFW\_EXPOSE\_NATIVE\_X11) || defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{ \#include <X11/Xlib.h>}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{ \#include <X11/extensions/Xrandr.h>}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#elif defined(GLFW\_EXPOSE\_NATIVE\_WAYLAND)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{ \#include <wayland-\/client.h>}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{108  \textcolor{comment}{/* WGL is declared by windows.h */}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{111  \textcolor{comment}{/* NSGL is declared by Cocoa.h */}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{ \#include <GL/glx.h>}}
+\DoxyCodeLine{115 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{116 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_EGL)}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{ \#include <EGL/egl.h>}}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_OSMESA)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{ \#include <GL/osmesa.h>}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{comment}{/*************************************************************************}}
+\DoxyCodeLine{125 \textcolor{comment}{ * Functions}}
+\DoxyCodeLine{126 \textcolor{comment}{ *************************************************************************/}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_WIN32)}}
+\DoxyCodeLine{142 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{win32__monitor_8c_a811fca2e6d7621e64defdce843da0bec}{glfwGetWin32Adapter}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{157 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{win32__monitor_8c_ac6be5ad74417778649b67502ebb31f10}{glfwGetWin32Monitor}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{158 }
+\DoxyCodeLine{171 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} HWND \mbox{\hyperlink{win32__window_8c_a76a9a33652472f1952aeeac740b90113}{glfwGetWin32Window}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{172 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{173 }
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_WGL)}}
+\DoxyCodeLine{187 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} HGLRC \mbox{\hyperlink{wgl__context_8c_aea24bcc9541e5d67c3e9f414b4688221}{glfwGetWGLContext}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{189 }
+\DoxyCodeLine{190 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_COCOA)}}
+\DoxyCodeLine{203 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} CGDirectDisplayID \mbox{\hyperlink{cocoa__monitor_8m_a9d3a74d6ba74ed963c70a4e1bab25b57}{glfwGetCocoaMonitor}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{204 }
+\DoxyCodeLine{217 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keywordtype}{id} \mbox{\hyperlink{cocoa__window_8m_abc60523370de1728f54e48d7e1d6625a}{glfwGetCocoaWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{218 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_NSGL)}}
+\DoxyCodeLine{233 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keywordtype}{id} \mbox{\hyperlink{nsgl__context_8m_a7d06532c9eacc1beb3722ee02ec1b528}{glfwGetNSGLContext}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{234 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_X11)}}
+\DoxyCodeLine{249 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} Display* \mbox{\hyperlink{x11__window_8c_a0f245c8591cd0788940a3f0e12d28fab}{glfwGetX11Display}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{250 }
+\DoxyCodeLine{263 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} RRCrtc \mbox{\hyperlink{x11__monitor_8c_a4cbf83a07f280efda4d13dd309d87b60}{glfwGetX11Adapter}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{277 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} RROutput \mbox{\hyperlink{x11__monitor_8c_aec04c3a957e504379dfc25dd8aaad24a}{glfwGetX11Monitor}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{278 }
+\DoxyCodeLine{291 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} Window \mbox{\hyperlink{x11__window_8c_a9473ab58f12e7b0a27ba405b7802adb9}{glfwGetX11Window}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{313 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keywordtype}{void} \mbox{\hyperlink{x11__window_8c_a4f4eb55968415e78955d5a6104b6596c}{glfwSetX11SelectionString}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* \textcolor{keywordtype}{string});}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{341 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \mbox{\hyperlink{x11__window_8c_ad1c264de68b758260715efae2a5309bc}{glfwGetX11SelectionString}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{342 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{343 }
+\DoxyCodeLine{344 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_GLX)}}
+\DoxyCodeLine{357 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{glx__context_8h_a33920e8aea4915f48efbf8a313947f76}{GLXContext}} \mbox{\hyperlink{glx__context_8c_a6279f2014b0b4f9762172886248701a9}{glfwGetGLXContext}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{358 }
+\DoxyCodeLine{371 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{glx__context_8h_a7b7fbb726212feadef35c6c7c09b9541}{GLXWindow}} \mbox{\hyperlink{glx__context_8c_a6b59f7cb48e0766836157505a8ce9796}{glfwGetGLXWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_WAYLAND)}}
+\DoxyCodeLine{387 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{struct }wl\_display* \mbox{\hyperlink{wl__window_8c_af5bb288a027387c0cd4b5ac2389c8bb1}{glfwGetWaylandDisplay}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{388 }
+\DoxyCodeLine{401 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{struct }wl\_output* \mbox{\hyperlink{wl__monitor_8c_a5de8580bdf5ffe5c70c329eefb54198a}{glfwGetWaylandMonitor}}(\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}}* monitor);}
+\DoxyCodeLine{402 }
+\DoxyCodeLine{415 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keyword}{struct }wl\_surface* \mbox{\hyperlink{wl__window_8c_a57833b3181b2ac6a66384b7f673585a8}{glfwGetWaylandWindow}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{416 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{417 }
+\DoxyCodeLine{418 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_EGL)}}
+\DoxyCodeLine{431 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{egl__context_8h_a87d55554aa13accdcb0e10eab910c72e}{EGLDisplay}} \mbox{\hyperlink{egl__context_8c_ad0775fdd159691393957594814a09237}{glfwGetEGLDisplay}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{432 }
+\DoxyCodeLine{445 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{egl__context_8h_a5105beca2335557d2a9507727cdc78d5}{EGLContext}} \mbox{\hyperlink{egl__context_8c_af08f50db04d440d536931df8f5270f1d}{glfwGetEGLContext}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{446 }
+\DoxyCodeLine{459 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{egl__context_8h_a1bd45435703af31ea10bc2f2229f337b}{EGLSurface}} \mbox{\hyperlink{egl__context_8c_ae6624d31855848bb3da2aaf6d0e3292e}{glfwGetEGLSurface}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{460 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#if defined(GLFW\_EXPOSE\_NATIVE\_OSMESA)}}
+\DoxyCodeLine{482 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keywordtype}{int} \mbox{\hyperlink{osmesa__context_8c_abdce3d5716b1a4b53266c171c5de4c8c}{glfwGetOSMesaColorBuffer}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, \textcolor{keywordtype}{void}** \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{483 }
+\DoxyCodeLine{503 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \textcolor{keywordtype}{int} \mbox{\hyperlink{osmesa__context_8c_a70e7b999151097a79a82572d7a70cb02}{glfwGetOSMesaDepthBuffer}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, \textcolor{keywordtype}{int}* \mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}}, \textcolor{keywordtype}{int}* bytesPerValue, \textcolor{keywordtype}{void}** \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}});}
+\DoxyCodeLine{504 }
+\DoxyCodeLine{517 \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{osmesa__context_8h_abd541e80f4fa51283209b65b41f1a754}{OSMesaContext}} \mbox{\hyperlink{osmesa__context_8c_ae3d84212544579165c6ca6f3beed413d}{glfwGetOSMesaContext}}(\mbox{\hyperlink{group__window_ga3c96d80d363e67d13a41b5d1821f3242}{GLFWwindow}}* window);}
+\DoxyCodeLine{518 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{519 }
+\DoxyCodeLine{520 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{521 \}}
+\DoxyCodeLine{522 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{523 }
+\DoxyCodeLine{524 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_glfw3\_native\_h\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{525 }
+
+\end{DoxyCode}

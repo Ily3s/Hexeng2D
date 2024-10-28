@@ -1,0 +1,106 @@
+\hypertarget{_vertex_layout_8hpp_source}{}\doxysection{Vertex\+Layout.\+hpp}
+\label{_vertex_layout_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/VertexLayout.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/VertexLayout.hpp}}
+\mbox{\hyperlink{_vertex_layout_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VERTEX\_LAYOUT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define VERTEX\_LAYOUT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_vertex_element}{VertexElement}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_vertex_element_aabd754af1dc4549afc656c44eb32e902}{count}};}
+\DoxyCodeLine{15         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_vertex_element_ae08a73db8c46d0d9a8a3f149d35cc914}{type}};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sizeof\_type(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type)}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{21         \textcolor{keywordflow}{switch} (type)}
+\DoxyCodeLine{22         \{}
+\DoxyCodeLine{23         \textcolor{keywordflow}{case} GL\_UNSIGNED\_INT:   \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLuint);}
+\DoxyCodeLine{24         \textcolor{keywordflow}{case} GL\_UNSIGNED\_BYTE:  \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLubyte);}
+\DoxyCodeLine{25         \textcolor{keywordflow}{case} GL\_FLOAT:          \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLfloat);}
+\DoxyCodeLine{26         \textcolor{keywordflow}{case} GL\_INT:            \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLint);}
+\DoxyCodeLine{27         \textcolor{keywordflow}{case} GL\_SHORT:          \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLshort);}
+\DoxyCodeLine{28         \textcolor{keywordflow}{case} GL\_UNSIGNED\_SHORT: \textcolor{keywordflow}{return} \textcolor{keyword}{sizeof}(GLushort);}
+\DoxyCodeLine{29         \textcolor{keywordflow}{default}: \textcolor{keywordflow}{throw} std::exception();}
+\DoxyCodeLine{30         \}}
+\DoxyCodeLine{31     \}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}}
+\DoxyCodeLine{36     \{}
+\DoxyCodeLine{37     \textcolor{keyword}{private}:}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39         std::vector<VertexElement> m\_elements;}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_stride = 0;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{keyword}{public}:}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_ae0fa3f41ffe0caca458a82f634092969}{VertexLayout}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_aa9c17b11aba2b473ddd87c5258599324}{VertexLayout}}(\textcolor{keyword}{const} std::vector<VertexElement>\& vertex\_elements)}
+\DoxyCodeLine{48         \{}
+\DoxyCodeLine{49             m\_elements = vertex\_elements;}
+\DoxyCodeLine{50             \textcolor{keywordflow}{for} (\mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_vertex_element}{VertexElement}} ve : m\_elements)}
+\DoxyCodeLine{51             \{}
+\DoxyCodeLine{52                 m\_stride += sizeof\_type(ve.type) * ve.count;}
+\DoxyCodeLine{53             \}}
+\DoxyCodeLine{54         \}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_a4685369d03944c2b3428190c33964e61}{VertexLayout}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\&\& moving) noexcept}
+\DoxyCodeLine{57             :   m\_elements (std::move(moving.m\_elements)),}
+\DoxyCodeLine{58                 m\_stride(moving.m\_stride) \{\}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_a810a21989930df6f858d16a29422126c}{operator=}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\&\& moving) \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{61         \{}
+\DoxyCodeLine{62             m\_elements = std::move(moving.m\_elements);}
+\DoxyCodeLine{63             m\_stride = moving.m\_stride;}
+\DoxyCodeLine{64             \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{65         \}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_ab08f706354a854d0172c0ed96d87dffb}{add}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} count, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} type)}
+\DoxyCodeLine{68         \{}
+\DoxyCodeLine{69             m\_elements.push\_back(\{ count, type \});}
+\DoxyCodeLine{70             m\_stride += sizeof\_type(type) * count;}
+\DoxyCodeLine{71         \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73         \textcolor{keyword}{inline} \textcolor{keyword}{const} std::vector<VertexElement>\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_a661f6a79dc4705b37b6493de376c5169}{get\_elements}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_elements; \}}
+\DoxyCodeLine{74         \textcolor{keyword}{inline} \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_abb1aaec3443ca9d17eb9607a43106334}{get\_stride}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_stride; \}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_ae0c8f14524648c4dc41895f2f5791cb6}{bind}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{77 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{78             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} offset = 0;}
+\DoxyCodeLine{79             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < m\_elements.size(); ++i)}
+\DoxyCodeLine{80             \{}
+\DoxyCodeLine{81                 \textcolor{keyword}{const} \textcolor{keyword}{auto}\& element = m\_elements[i];}
+\DoxyCodeLine{82                 \mbox{\hyperlink{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}{HXG\_GL}}(glEnableVertexAttribArray(i));}
+\DoxyCodeLine{83                 \mbox{\hyperlink{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}{HXG\_GL}}(glVertexAttribPointer(i, element.count, element.type, GL\_FALSE, m\_stride, (\textcolor{keyword}{const} \textcolor{keywordtype}{void}*)offset));}
+\DoxyCodeLine{84                 offset += element.count * sizeof\_type(element.type);}
+\DoxyCodeLine{85             \}}
+\DoxyCodeLine{86         \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout_a319219e89baabc3ba71a849e8197ac93}{unbind}}()\textcolor{keyword}{ const}}
+\DoxyCodeLine{89 \textcolor{keyword}{        }\{}
+\DoxyCodeLine{90             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} i = 0; i < m\_elements.size(); ++i)}
+\DoxyCodeLine{91             \{}
+\DoxyCodeLine{92                 \mbox{\hyperlink{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}{HXG\_GL}}(glDisableVertexAttribArray(i));}
+\DoxyCodeLine{93             \}}
+\DoxyCodeLine{94         \}}
+\DoxyCodeLine{95     \};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !VERTEX\_LAYOUT\_HPP}}
+
+\end{DoxyCode}

@@ -1,0 +1,81 @@
+\hypertarget{_exception_8hxx_source}{}\doxysection{Exception.\+hxx}
+\label{_exception_8hxx_source}\index{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/Exception.hxx@{Hexeng2D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/Exception.hxx}}
+\mbox{\hyperlink{_exception_8hxx}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef INCLUDED\_PORTAUDIO\_EXCEPTION\_HXX}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define INCLUDED\_PORTAUDIO\_EXCEPTION\_HXX}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceportaudio}{portaudio}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_exception}{Exception}} : \textcolor{keyword}{public} std::exception}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22     \textcolor{keyword}{public}:}
+\DoxyCodeLine{23         \textcolor{keyword}{virtual} \mbox{\hyperlink{classportaudio_1_1_exception_adf147e2b88f398a7203605a8f90c3d60}{\string~Exception}}() throw() \{\}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25         \textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{classportaudio_1_1_exception_a06896bb22e4d0ffe64b3437cac48f342}{what}}() \textcolor{keyword}{const} throw() = 0;}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27     }
+\DoxyCodeLine{28     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{54     class \mbox{\hyperlink{classportaudio_1_1_pa_exception}{PaException}} : public \mbox{\hyperlink{classportaudio_1_1_exception}{Exception}}}
+\DoxyCodeLine{55     \{}
+\DoxyCodeLine{56     \textcolor{keyword}{public}:}
+\DoxyCodeLine{57         \textcolor{keyword}{explicit} \mbox{\hyperlink{classportaudio_1_1_pa_exception}{PaException}}(\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} error);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{classportaudio_1_1_exception_a06896bb22e4d0ffe64b3437cac48f342}{what}}() \textcolor{keyword}{const} \textcolor{keywordflow}{throw}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61         \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} paError() \textcolor{keyword}{const};}
+\DoxyCodeLine{62         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *paErrorText() \textcolor{keyword}{const};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{bool} isHostApiError() \textcolor{keyword}{const}; \textcolor{comment}{// extended}}
+\DoxyCodeLine{65         \textcolor{keywordtype}{long} lastHostApiError() \textcolor{keyword}{const};}
+\DoxyCodeLine{66         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *lastHostApiErrorText() \textcolor{keyword}{const};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \textcolor{keywordtype}{bool} operator==(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_pa_exception}{PaException}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{69         \textcolor{keywordtype}{bool} operator!=(\textcolor{keyword}{const} \mbox{\hyperlink{classportaudio_1_1_pa_exception}{PaException}} \&rhs) \textcolor{keyword}{const};}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{keyword}{private}:}
+\DoxyCodeLine{72         \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} error\_;}
+\DoxyCodeLine{73     \};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{81     \textcolor{keyword}{class }\mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception}{PaCppException}} : \textcolor{keyword}{public} \mbox{\hyperlink{classportaudio_1_1_exception}{Exception}}}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83     \textcolor{keyword}{public}:}
+\DoxyCodeLine{84         \textcolor{keyword}{enum} \mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception_aa6c1263b3c7addf88222904aff9bdbfa}{ExceptionSpecifier}}}
+\DoxyCodeLine{85         \{}
+\DoxyCodeLine{86             UNABLE\_TO\_ADAPT\_DEVICE}
+\DoxyCodeLine{87         \};}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89         \mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception}{PaCppException}}(ExceptionSpecifier specifier);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91         \textcolor{keyword}{const} \textcolor{keywordtype}{char} *what() \textcolor{keyword}{const} throw();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         ExceptionSpecifier specifier() const;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keywordtype}{bool} operator==(const \mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception}{PaCppException}} \&rhs) const;}
+\DoxyCodeLine{96         \textcolor{keywordtype}{bool} operator!=(const \mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception}{PaCppException}} \&rhs) const;}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98     private:}
+\DoxyCodeLine{99         ExceptionSpecifier specifier\_;}
+\DoxyCodeLine{100     \};}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \} \textcolor{comment}{// namespace portaudio}}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// INCLUDED\_PORTAUDIO\_EXCEPTION\_HXX}}
+\DoxyCodeLine{108 }
+
+\end{DoxyCode}

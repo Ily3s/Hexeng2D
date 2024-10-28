@@ -1,0 +1,135 @@
+\hypertarget{pa__mac__core__blocking_8h_source}{}\doxysection{pa\+\_\+mac\+\_\+core\+\_\+blocking.\+h}
+\label{pa__mac__core__blocking_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_blocking.h@{Hexeng2D/dependencies/portaudio/src/hostapi/coreaudio/pa\_mac\_core\_blocking.h}}
+\mbox{\hyperlink{pa__mac__core__blocking_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Internal blocking interfaces for PortAudio Apple AUHAL implementation}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Latest Version at: http://www.portaudio.com}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Written by Bjorn Roche of XO Audio LLC, from PA skeleton code.}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Portions copied from code by Dominic Mazzoni (who wrote a HAL implementation)}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Dominic's code was based on code by Phil Burk, Darren Gibbs,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Gord Peters, Stephane Letz, and Greg Pfiel.}}
+\DoxyCodeLine{12 \textcolor{comment}{ *}}
+\DoxyCodeLine{13 \textcolor{comment}{ * The following people also deserve acknowledgements:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * Olivier Tristan for feedback and testing}}
+\DoxyCodeLine{16 \textcolor{comment}{ * Glenn Zelniker and Z-\/Systems engineering for sponsoring the Blocking I/O}}
+\DoxyCodeLine{17 \textcolor{comment}{ * interface.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ *}}
+\DoxyCodeLine{20 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{21 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Ross Bencina, Phil Burk}}
+\DoxyCodeLine{22 \textcolor{comment}{ *}}
+\DoxyCodeLine{23 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{24 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{25 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{26 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{27 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{28 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{29 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{32 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{35 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{36 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{37 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{38 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{39 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{40 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{41 \textcolor{comment}{ */}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{/*}}
+\DoxyCodeLine{44 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{45 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{46 \textcolor{comment}{ *}}
+\DoxyCodeLine{47 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{48 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{49 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{50 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{51 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{52 \textcolor{comment}{ */}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#ifndef PA\_MAC\_CORE\_BLOCKING\_H\_}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define PA\_MAC\_CORE\_BLOCKING\_H\_}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__ringbuffer_8h}{pa\_ringbuffer.h}}"{}}}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__mac__core__utilities_8h}{pa\_mac\_core\_utilities.h}}"{}}}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{comment}{/*}}
+\DoxyCodeLine{67 \textcolor{comment}{ * Number of milliseconds to busy wait while waiting for data in blocking calls.}}
+\DoxyCodeLine{68 \textcolor{comment}{ */}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define PA\_MAC\_BLIO\_BUSY\_WAIT\_SLEEP\_INTERVAL (5)}}
+\DoxyCodeLine{70 \textcolor{comment}{/*}}
+\DoxyCodeLine{71 \textcolor{comment}{ * Define exactly one of these blocking methods}}
+\DoxyCodeLine{72 \textcolor{comment}{ * PA\_MAC\_BLIO\_MUTEX is not actively maintained.}}
+\DoxyCodeLine{73 \textcolor{comment}{ */}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define PA\_MAC\_BLIO\_BUSY\_WAIT}}
+\DoxyCodeLine{75 \textcolor{comment}{/*}}
+\DoxyCodeLine{76 \textcolor{comment}{\#define PA\_MAC\_BLIO\_MUTEX}}
+\DoxyCodeLine{77 \textcolor{comment}{*/}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{80     \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} \mbox{\hyperlink{struct_pa_mac_blio_ac5d481b523679d409641bb47a9aaf428}{inputRingBuffer}};}
+\DoxyCodeLine{81     \mbox{\hyperlink{struct_pa_util_ring_buffer}{PaUtilRingBuffer}} \mbox{\hyperlink{struct_pa_mac_blio_af6e4305d4f3283d44a6d0a1817f06334}{outputRingBuffer}};}
+\DoxyCodeLine{82     \mbox{\hyperlink{pa__ringbuffer_8h_a56482b88e581ba588fe43b1568978b94}{ring\_buffer\_size\_t}} \mbox{\hyperlink{struct_pa_mac_blio_a61760d810ce3d70f00242699917bc999}{ringBufferFrames}};}
+\DoxyCodeLine{83     \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{struct_pa_mac_blio_a07556d84ca8990b8929dbf4f65168270}{inputSampleFormat}};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_blio_ac86932d0b166bb08c487a8e65fb74236}{inputSampleSizeActual}};}
+\DoxyCodeLine{85     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_blio_a707dff02b4c42f8088af8b63ec27f702}{inputSampleSizePow2}};}
+\DoxyCodeLine{86     \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} \mbox{\hyperlink{struct_pa_mac_blio_a712ef9ce43a8508c690ccca94a59ae32}{outputSampleFormat}};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_blio_a825d5ebea6f15c42f389f51ed5b10723}{outputSampleSizeActual}};}
+\DoxyCodeLine{88     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{struct_pa_mac_blio_ac4d6907ab5fbc49cc472849b5be0f1c7}{outputSampleSizePow2}};}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_mac_blio_a71952c2be07f5b97adc8ec1d2402ab45}{inChan}};}
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_pa_mac_blio_a67e340aa158be01fa97ba700699e627a}{outChan}};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{comment}{//PaStreamCallbackFlags statusFlags;}}
+\DoxyCodeLine{94     uint32\_t \mbox{\hyperlink{struct_pa_mac_blio_a0535aaa4f74b2ae10ac0c7fd561bd4ee}{statusFlags}};}
+\DoxyCodeLine{95     \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{struct_pa_mac_blio_a6daa032e896cb3e63523ee30fa5beca5}{errors}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{/* Here we handle blocking, using condition variables. */}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#ifdef  PA\_MAC\_BLIO\_MUTEX}}
+\DoxyCodeLine{99     \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} isInputEmpty;}
+\DoxyCodeLine{100     pthread\_mutex\_t inputMutex;}
+\DoxyCodeLine{101     pthread\_cond\_t inputCond;}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103     \textcolor{keyword}{volatile} \textcolor{keywordtype}{bool} isOutputFull;}
+\DoxyCodeLine{104     pthread\_mutex\_t outputMutex;}
+\DoxyCodeLine{105     pthread\_cond\_t outputCond;}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{107 \}}
+\DoxyCodeLine{108 \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{comment}{/*}}
+\DoxyCodeLine{111 \textcolor{comment}{ * These functions operate on condition and related variables.}}
+\DoxyCodeLine{112 \textcolor{comment}{ */}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__blocking_8h_a2c9ba3f25ece458a7a5856c4ee4f6432}{initializeBlioRingBuffers}}(}
+\DoxyCodeLine{115         \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}} *blio,}
+\DoxyCodeLine{116         \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} inputSampleFormat,}
+\DoxyCodeLine{117         \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{PaSampleFormat}} outputSampleFormat,}
+\DoxyCodeLine{118         \textcolor{keywordtype}{long} ringBufferSizeInFrames,}
+\DoxyCodeLine{119         \textcolor{keywordtype}{int} inChan,}
+\DoxyCodeLine{120         \textcolor{keywordtype}{int} outChan );}
+\DoxyCodeLine{121 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__blocking_8h_a96df2ab1655f2c2d1d524c7c960f8319}{destroyBlioRingBuffers}}( \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}} *blio );}
+\DoxyCodeLine{122 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__blocking_8h_aedd64041043bb6cba5713d9a12c26ebf}{resetBlioRingBuffers}}( \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}} *blio );}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{keywordtype}{int} \mbox{\hyperlink{pa__mac__core__blocking_8h_af2c9d8aead26742638f8cfb73f07ca8f}{BlioCallback}}(}
+\DoxyCodeLine{125         \textcolor{keyword}{const} \textcolor{keywordtype}{void} *input, \textcolor{keywordtype}{void} *output,}
+\DoxyCodeLine{126         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} frameCount,}
+\DoxyCodeLine{127         \textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{PaStreamCallbackTimeInfo}}* timeInfo,}
+\DoxyCodeLine{128         \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{PaStreamCallbackFlags}} statusFlags,}
+\DoxyCodeLine{129         \textcolor{keywordtype}{void} *userData );}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__mac__core__blocking_8h_a71c28efe7cf5d4765d1e7efa9c1cd8ad}{waitUntilBlioWriteBufferIsEmpty}}( \mbox{\hyperlink{struct_pa_mac_blio}{PaMacBlio}} *blio, \textcolor{keywordtype}{double} sampleRate,}
+\DoxyCodeLine{132         \textcolor{keywordtype}{size\_t} framesPerBuffer );}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*PA\_MAC\_CORE\_BLOCKING\_H\_*/}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

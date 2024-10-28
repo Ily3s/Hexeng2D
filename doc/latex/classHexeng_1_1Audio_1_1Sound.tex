@@ -1,0 +1,215 @@
+\doxysection{Hexeng\+::Audio\+::Sound Class Reference}
+\hypertarget{classHexeng_1_1Audio_1_1Sound}{}\label{classHexeng_1_1Audio_1_1Sound}\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+
+
+A \doxylink{classHexeng_1_1Audio_1_1Sound}{Sound} that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space.  
+
+
+
+
+{\ttfamily \#include $<$Audio.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Audio\+::Sound\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classHexeng_1_1Audio_1_1Sound}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_af82180a9cbee4f94917e03db89202ea2}{Sound}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_aa887fe300a511ea43c82e654969ec074}{Sound}} (std\+::string filepath)
+\begin{DoxyCompactList}\small\item\em 
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a50d21afa0d115bf954a000ba209c1991}{Sound}} (const \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \& \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_aafac1883690db5b07b0a7a753c319dfa}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_aefc6f8d05a3a5f44878df025177157f6}{Sound}} (\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \& \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a6603caef33375e6f493b42e919ccbd1e}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&\&) noexcept
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a53ae4f1b065d140a1b72d2d76b1e97d5}{play}} ()
+\begin{DoxyCompactList}\small\item\em plays the sound \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a4d681056823eb35e417d6bc8a7887eb4}{stop}} ()
+\begin{DoxyCompactList}\small\item\em stops all playing instances of the sound. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a1961b62e8e5d29d91f8d97205b8193f8}{terminate}} () override
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a9f84d37be4ab9ac2f5c0f4358e4d3055}{reserve}} (size\+\_\+t count)
+\begin{DoxyCompactList}\small\item\em Create streams to host this sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Hexeng\+::\+Audio\+::\+Sound\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_af33279a829a6ca566a5f54c0d5fd98e1}{Sound\+Base}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_ad2526e52e8cc3318b234f3bf9d94b5e5}{Sound\+Base}} (std\+::string filepath)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a4503fa78d68fc92f96e6bb7b05649d06}{Sound\+Base}} (const \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \& \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_ae40ca45bd61b85426e6a66b95b94e243}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a65d6e3aeca78ee542f27069baf51619b}{Sound\+Base}} (\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \& \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_abe2bc6260bd062a00f55abb51a9b29c2}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \&\&other) noexcept
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a0d0ddc790fda37cd614537cb8a3f7a19}{terminate}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{structHexeng_1_1Audio_1_1SoundData}{Sound\+Data}} $>$ $>$ \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a075f6334002f131f1c3e66a47ab1db4b}{m\+\_\+sounds\+\_\+data}}
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a7dca88dfc37a5ecd20b447f6772d1113}{m\+\_\+has\+\_\+done\+\_\+reserving}} = true
+\item 
+std\+::thread \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound_a01e5f77742701d942380bcf30f040f10}{m\+\_\+reserve\+\_\+thread}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Hexeng\+::\+Audio\+::\+Sound\+Base}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_aedac6c50b60648a88aa5c40135e96302}{m\+\_\+file\+\_\+buffer}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a243ce80a57e89fd3d563cb389192adc3}{m\+\_\+byte\+\_\+per\+\_\+sample}} = 0
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a776c7ab7ba5093360d7ecb641105793f}{m\+\_\+channels\+\_\+nb}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_aca00e91d214a2a10cf9633894ba6620a}{m\+\_\+sample\+\_\+rate}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \doxylink{classHexeng_1_1Audio_1_1Sound}{Sound} that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_af82180a9cbee4f94917e03db89202ea2}\label{classHexeng_1_1Audio_1_1Sound_af82180a9cbee4f94917e03db89202ea2} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{Sound()}{Sound()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+::\+Sound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_aa887fe300a511ea43c82e654969ec074}\label{classHexeng_1_1Audio_1_1Sound_aa887fe300a511ea43c82e654969ec074} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{Sound()}{Sound()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+::\+Sound (\begin{DoxyParamCaption}\item[{std\+::string}]{filepath }\end{DoxyParamCaption})}
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The path to a wave file encoded with Float32\\
+\hline
+\end{DoxyParams}
+
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a50d21afa0d115bf954a000ba209c1991}\label{classHexeng_1_1Audio_1_1Sound_a50d21afa0d115bf954a000ba209c1991} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{Sound()}{Sound()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+::\+Sound (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_aefc6f8d05a3a5f44878df025177157f6}\label{classHexeng_1_1Audio_1_1Sound_aefc6f8d05a3a5f44878df025177157f6} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!Sound@{Sound}}
+\index{Sound@{Sound}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{Sound()}{Sound()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Audio\+::\+Sound\+::\+Sound (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\begin{DoxyNote}{Note}
+Expected other to be unused 
+\end{DoxyNote}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_aafac1883690db5b07b0a7a753c319dfa}\label{classHexeng_1_1Audio_1_1Sound_aafac1883690db5b07b0a7a753c319dfa} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \& Hexeng\+::\+Audio\+::\+Sound\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a6603caef33375e6f493b42e919ccbd1e}\label{classHexeng_1_1Audio_1_1Sound_a6603caef33375e6f493b42e919ccbd1e} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \& Hexeng\+::\+Audio\+::\+Sound\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Audio_1_1Sound}{Sound}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\begin{DoxyNote}{Note}
+Expected other to be unused and this to be initialized by the default constructor 
+\end{DoxyNote}
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a53ae4f1b065d140a1b72d2d76b1e97d5}\label{classHexeng_1_1Audio_1_1Sound_a53ae4f1b065d140a1b72d2d76b1e97d5} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!play@{play}}
+\index{play@{play}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{play()}{play()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Sound\+::play (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+plays the sound 
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a9f84d37be4ab9ac2f5c0f4358e4d3055}\label{classHexeng_1_1Audio_1_1Sound_a9f84d37be4ab9ac2f5c0f4358e4d3055} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!reserve@{reserve}}
+\index{reserve@{reserve}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily virtual void Hexeng\+::\+Audio\+::\+Sound\+::reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{count }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Create streams to host this sound. 
+
+To play a sound, there must be a stream ready to host it. If there isn\textquotesingle{}t, the sound is not played and 4 extra streams get created instead. \begin{DoxyNote}{Note}
+By default (without using this function), 4 streams per sound are created. 
+\end{DoxyNote}
+
+
+Reimplemented in \mbox{\hyperlink{classHexeng_1_1Audio_1_1SpatialSound_a4d4ba32fc41c700259758e9d0ba42985}{Hexeng\+::\+Audio\+::\+Spatial\+Sound}}.
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a4d681056823eb35e417d6bc8a7887eb4}\label{classHexeng_1_1Audio_1_1Sound_a4d681056823eb35e417d6bc8a7887eb4} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!stop@{stop}}
+\index{stop@{stop}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Sound\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stops all playing instances of the sound. 
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a1961b62e8e5d29d91f8d97205b8193f8}\label{classHexeng_1_1Audio_1_1Sound_a1961b62e8e5d29d91f8d97205b8193f8} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!terminate@{terminate}}
+\index{terminate@{terminate}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Audio\+::\+Sound\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase_a0d0ddc790fda37cd614537cb8a3f7a19}{Hexeng\+::\+Audio\+::\+Sound\+Base}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a7dca88dfc37a5ecd20b447f6772d1113}\label{classHexeng_1_1Audio_1_1Sound_a7dca88dfc37a5ecd20b447f6772d1113} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!m\_has\_done\_reserving@{m\_has\_done\_reserving}}
+\index{m\_has\_done\_reserving@{m\_has\_done\_reserving}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{m\_has\_done\_reserving}{m\_has\_done\_reserving}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Audio\+::\+Sound\+::m\+\_\+has\+\_\+done\+\_\+reserving = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a01e5f77742701d942380bcf30f040f10}\label{classHexeng_1_1Audio_1_1Sound_a01e5f77742701d942380bcf30f040f10} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!m\_reserve\_thread@{m\_reserve\_thread}}
+\index{m\_reserve\_thread@{m\_reserve\_thread}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{m\_reserve\_thread}{m\_reserve\_thread}}
+{\footnotesize\ttfamily std\+::thread Hexeng\+::\+Audio\+::\+Sound\+::m\+\_\+reserve\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{classHexeng_1_1Audio_1_1Sound_a075f6334002f131f1c3e66a47ab1db4b}\label{classHexeng_1_1Audio_1_1Sound_a075f6334002f131f1c3e66a47ab1db4b} 
+\index{Hexeng::Audio::Sound@{Hexeng::Audio::Sound}!m\_sounds\_data@{m\_sounds\_data}}
+\index{m\_sounds\_data@{m\_sounds\_data}!Hexeng::Audio::Sound@{Hexeng::Audio::Sound}}
+\doxysubsubsection{\texorpdfstring{m\_sounds\_data}{m\_sounds\_data}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{structHexeng_1_1Audio_1_1SoundData}{Sound\+Data}}$>$ $>$ Hexeng\+::\+Audio\+::\+Sound\+::m\+\_\+sounds\+\_\+data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Audio/\mbox{\hyperlink{Audio_8hpp}{Audio.\+hpp}}\end{DoxyCompactItemize}

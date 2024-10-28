@@ -1,0 +1,237 @@
+\hypertarget{class_hexeng_1_1_physics_1_1_hit_box}{}\doxysection{Hexeng\+::Physics\+::Hit\+Box Class Reference}
+\label{class_hexeng_1_1_physics_1_1_hit_box}\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+
+
+{\ttfamily \#include $<$Hibox.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Physics\+::Hit\+Box\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_physics_1_1_hit_box}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ad3057bb5e1a3dd9fbd393edd17aeab0d}{Hit\+Box}} (const std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \&rectangles, int solidity, bool \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a442e07ece0709714633744cac168e285}{enable\+\_\+collision}}=true)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a7eb5295f544addae4da58f4e5eeed84c}{Hit\+Box}} (const \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \& \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a5a5feb2fca702e3b053ffb4bb519f36c}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a816cc379b1652d2be3f149488f26510c}{Hit\+Box}} (\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \& \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ad229bf98f3b182374cef8a00e4d425c3}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&\&) noexcept
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a465eda86f7b99c281dc0fdd99c93c3c9}{view\+\_\+prev\+\_\+state}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a906a496966aab2e2325bbdda739c7292}{view\+\_\+prev\+\_\+state\+\_\+x}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_af97b36ec6c348cfa065db9cd2aadfe0e}{view\+\_\+prev\+\_\+state\+\_\+y}} ()
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a2e034ad6b1f665ec24fc13b706c77b3e}{on\+\_\+collision}} (std\+::pair$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$ $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_aae299c29fdde3afa663d03945e935415}{load\+\_\+collisions}} ()
+\item 
+static std\+::pair$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$ $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a21ae1613b0273efd3951f5530c229324}{is\+\_\+colliding}} (\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&hb1, \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&hb2)
+\item 
+static bool \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a431a575f1d9cb1a52ffb74ae2160a8a5}{is\+\_\+colliding}} (const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} \&hb1, const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} \&hb2)
+\item 
+static \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2ae}{From}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_aaa0a123b9c709578577498438bf93eb9}{where\+\_\+colliding}} (\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&hb1, \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&hb2)
+\item 
+static void \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a56a8674e36bc3af5809322845e307104}{set\+\_\+visuallisers\+\_\+z}} (int z\+\_\+pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Manager\+::\+Event\+Gate}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a9bbd28be93bfe81882f33543d3f9b77c}{collisions\+\_\+evt}} \{ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_aae299c29fdde3afa663d03945e935415}{load\+\_\+collisions}} \}
+\item 
+static bool \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_acbd3aa7f85ecdcc73352ad0ecd0e22c0}{enable\+\_\+visuallisers}} = false
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ab0a2375fb2dc263e32a1ebbceb95b0dd}{m\+\_\+rectangles}}
+\item 
+int \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a5bd5507e8abad0c5ec64ddaa027231c0}{m\+\_\+solidity}}
+\item 
+bool \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a442e07ece0709714633744cac168e285}{enable\+\_\+collision}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Renderer\+::\+Debug\+Quad}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a9c877f6ffb9fb789fc87e270d3d7c1ba}{visuallisers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} $\ast$ $>$ $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a02fa543c9e31c08d7726ff374073a5f4}{s\+\_\+colliders}}
+\item 
+static std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Renderer\+::\+Layer}} $>$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_ab48b6a14fb319d93eea62e281ad8eb0a}{visuallisers\+\_\+layers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_a45adfc63803f7e405c215b47781e924c}{Hexeng\+::\+Scene}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_ad3057bb5e1a3dd9fbd393edd17aeab0d}\label{class_hexeng_1_1_physics_1_1_hit_box_ad3057bb5e1a3dd9fbd393edd17aeab0d}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!HitBox@{HitBox}}
+\index{HitBox@{HitBox}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{HitBox()}{HitBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Physics\+::\+Hit\+Box\+::\+Hit\+Box (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ \&}]{rectangles,  }\item[{int}]{solidity,  }\item[{bool}]{enable\+\_\+collision = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a7eb5295f544addae4da58f4e5eeed84c}\label{class_hexeng_1_1_physics_1_1_hit_box_a7eb5295f544addae4da58f4e5eeed84c}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!HitBox@{HitBox}}
+\index{HitBox@{HitBox}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{HitBox()}{HitBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Physics\+::\+Hit\+Box\+::\+Hit\+Box (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a816cc379b1652d2be3f149488f26510c}\label{class_hexeng_1_1_physics_1_1_hit_box_a816cc379b1652d2be3f149488f26510c}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!HitBox@{HitBox}}
+\index{HitBox@{HitBox}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{HitBox()}{HitBox()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Physics\+::\+Hit\+Box\+::\+Hit\+Box (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a431a575f1d9cb1a52ffb74ae2160a8a5}\label{class_hexeng_1_1_physics_1_1_hit_box_a431a575f1d9cb1a52ffb74ae2160a8a5}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!is\_colliding@{is\_colliding}}
+\index{is\_colliding@{is\_colliding}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{is\_colliding()}{is\_colliding()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Physics\+::\+Hit\+Box\+::is\+\_\+colliding (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} \&}]{hb1,  }\item[{const \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} \&}]{hb2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a21ae1613b0273efd3951f5530c229324}\label{class_hexeng_1_1_physics_1_1_hit_box_a21ae1613b0273efd3951f5530c229324}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!is\_colliding@{is\_colliding}}
+\index{is\_colliding@{is\_colliding}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{is\_colliding()}{is\_colliding()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$ $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::is\+\_\+colliding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{hb1,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{hb2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_aae299c29fdde3afa663d03945e935415}\label{class_hexeng_1_1_physics_1_1_hit_box_aae299c29fdde3afa663d03945e935415}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!load\_collisions@{load\_collisions}}
+\index{load\_collisions@{load\_collisions}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{load\_collisions()}{load\_collisions()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Physics\+::\+Hit\+Box\+::load\+\_\+collisions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a2e034ad6b1f665ec24fc13b706c77b3e}\label{class_hexeng_1_1_physics_1_1_hit_box_a2e034ad6b1f665ec24fc13b706c77b3e}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!on\_collision@{on\_collision}}
+\index{on\_collision@{on\_collision}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{on\_collision()}{on\_collision()}}
+{\footnotesize\ttfamily virtual void Hexeng\+::\+Physics\+::\+Hit\+Box\+::on\+\_\+collision (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$, \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $\ast$ $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_entity_aa6009b0883ea4a6c82261642a977cd1e}{Hexeng\+::\+Physics\+::\+Physics\+Entity}}.
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a5a5feb2fca702e3b053ffb4bb519f36c}\label{class_hexeng_1_1_physics_1_1_hit_box_a5a5feb2fca702e3b053ffb4bb519f36c}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \& Hexeng\+::\+Physics\+::\+Hit\+Box\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_ad229bf98f3b182374cef8a00e4d425c3}\label{class_hexeng_1_1_physics_1_1_hit_box_ad229bf98f3b182374cef8a00e4d425c3}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \& Hexeng\+::\+Physics\+::\+Hit\+Box\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a56a8674e36bc3af5809322845e307104}\label{class_hexeng_1_1_physics_1_1_hit_box_a56a8674e36bc3af5809322845e307104}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!set\_visuallisers\_z@{set\_visuallisers\_z}}
+\index{set\_visuallisers\_z@{set\_visuallisers\_z}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{set\_visuallisers\_z()}{set\_visuallisers\_z()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Physics\+::\+Hit\+Box\+::set\+\_\+visuallisers\+\_\+z (\begin{DoxyParamCaption}\item[{int}]{z\+\_\+pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a465eda86f7b99c281dc0fdd99c93c3c9}\label{class_hexeng_1_1_physics_1_1_hit_box_a465eda86f7b99c281dc0fdd99c93c3c9}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!view\_prev\_state@{view\_prev\_state}}
+\index{view\_prev\_state@{view\_prev\_state}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{view\_prev\_state()}{view\_prev\_state()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::view\+\_\+prev\+\_\+state (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a906a496966aab2e2325bbdda739c7292}\label{class_hexeng_1_1_physics_1_1_hit_box_a906a496966aab2e2325bbdda739c7292}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!view\_prev\_state\_x@{view\_prev\_state\_x}}
+\index{view\_prev\_state\_x@{view\_prev\_state\_x}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{view\_prev\_state\_x()}{view\_prev\_state\_x()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::view\+\_\+prev\+\_\+state\+\_\+x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_af97b36ec6c348cfa065db9cd2aadfe0e}\label{class_hexeng_1_1_physics_1_1_hit_box_af97b36ec6c348cfa065db9cd2aadfe0e}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!view\_prev\_state\_y@{view\_prev\_state\_y}}
+\index{view\_prev\_state\_y@{view\_prev\_state\_y}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{view\_prev\_state\_y()}{view\_prev\_state\_y()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}} $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::view\+\_\+prev\+\_\+state\+\_\+y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_aaa0a123b9c709578577498438bf93eb9}\label{class_hexeng_1_1_physics_1_1_hit_box_aaa0a123b9c709578577498438bf93eb9}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!where\_colliding@{where\_colliding}}
+\index{where\_colliding@{where\_colliding}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{where\_colliding()}{where\_colliding()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_physics_a1e3c431ba3d97f9b5c7d2c2185d6c2ae}{From}} Hexeng\+::\+Physics\+::\+Hit\+Box\+::where\+\_\+colliding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{hb1,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} \&}]{hb2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a45adfc63803f7e405c215b47781e924c}\label{class_hexeng_1_1_physics_1_1_hit_box_a45adfc63803f7e405c215b47781e924c}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!Hexeng::Scene@{Hexeng::Scene}}
+\index{Hexeng::Scene@{Hexeng::Scene}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{Hexeng::Scene}{Hexeng::Scene}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_scene}{Hexeng\+::\+Scene}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a9bbd28be93bfe81882f33543d3f9b77c}\label{class_hexeng_1_1_physics_1_1_hit_box_a9bbd28be93bfe81882f33543d3f9b77c}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!collisions\_evt@{collisions\_evt}}
+\index{collisions\_evt@{collisions\_evt}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{collisions\_evt}{collisions\_evt}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{Event\+Manager\+::\+Event\+Gate}} Hexeng\+::\+Physics\+::\+Hit\+Box\+::collisions\+\_\+evt \{ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box_aae299c29fdde3afa663d03945e935415}{load\+\_\+collisions}} \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a442e07ece0709714633744cac168e285}\label{class_hexeng_1_1_physics_1_1_hit_box_a442e07ece0709714633744cac168e285}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!enable\_collision@{enable\_collision}}
+\index{enable\_collision@{enable\_collision}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{enable\_collision}{enable\_collision}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Physics\+::\+Hit\+Box\+::enable\+\_\+collision\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_acbd3aa7f85ecdcc73352ad0ecd0e22c0}\label{class_hexeng_1_1_physics_1_1_hit_box_acbd3aa7f85ecdcc73352ad0ecd0e22c0}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!enable\_visuallisers@{enable\_visuallisers}}
+\index{enable\_visuallisers@{enable\_visuallisers}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{enable\_visuallisers}{enable\_visuallisers}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Physics\+::\+Hit\+Box\+::enable\+\_\+visuallisers = false\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_ab0a2375fb2dc263e32a1ebbceb95b0dd}\label{class_hexeng_1_1_physics_1_1_hit_box_ab0a2375fb2dc263e32a1ebbceb95b0dd}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!m\_rectangles@{m\_rectangles}}
+\index{m\_rectangles@{m\_rectangles}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{m\_rectangles}{m\_rectangles}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{Rectangle\+Hit\+Box}}$>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::m\+\_\+rectangles\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a5bd5507e8abad0c5ec64ddaa027231c0}\label{class_hexeng_1_1_physics_1_1_hit_box_a5bd5507e8abad0c5ec64ddaa027231c0}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!m\_solidity@{m\_solidity}}
+\index{m\_solidity@{m\_solidity}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{m\_solidity}{m\_solidity}}
+{\footnotesize\ttfamily int Hexeng\+::\+Physics\+::\+Hit\+Box\+::m\+\_\+solidity\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a02fa543c9e31c08d7726ff374073a5f4}\label{class_hexeng_1_1_physics_1_1_hit_box_a02fa543c9e31c08d7726ff374073a5f4}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!s\_colliders@{s\_colliders}}
+\index{s\_colliders@{s\_colliders}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{s\_colliders}{s\_colliders}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{Hit\+Box}} $\ast$ $>$ $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::s\+\_\+colliders\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_a9c877f6ffb9fb789fc87e270d3d7c1ba}\label{class_hexeng_1_1_physics_1_1_hit_box_a9c877f6ffb9fb789fc87e270d3d7c1ba}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!visuallisers@{visuallisers}}
+\index{visuallisers@{visuallisers}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{visuallisers}{visuallisers}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Renderer\+::\+Debug\+Quad}}$>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::visuallisers\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_physics_1_1_hit_box_ab48b6a14fb319d93eea62e281ad8eb0a}\label{class_hexeng_1_1_physics_1_1_hit_box_ab48b6a14fb319d93eea62e281ad8eb0a}} 
+\index{Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}!visuallisers\_layers@{visuallisers\_layers}}
+\index{visuallisers\_layers@{visuallisers\_layers}!Hexeng::Physics::HitBox@{Hexeng::Physics::HitBox}}
+\doxysubsubsection{\texorpdfstring{visuallisers\_layers}{visuallisers\_layers}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Renderer\+::\+Layer}} $>$ Hexeng\+::\+Physics\+::\+Hit\+Box\+::visuallisers\+\_\+layers\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Physics/\mbox{\hyperlink{_hibox_8hpp}{Hibox.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Physics/\mbox{\hyperlink{_hitbox_8cpp}{Hitbox.\+cpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Physics/\mbox{\hyperlink{_physics_8cpp}{Physics.\+cpp}}\end{DoxyCompactItemize}

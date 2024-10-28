@@ -1,0 +1,45 @@
+\doxysection{Hexeng2\+D/src/\+Audio/\+Audio.cpp File Reference}
+\hypertarget{Audio_8cpp}{}\label{Audio_8cpp}\index{Hexeng2D/src/Audio/Audio.cpp@{Hexeng2D/src/Audio/Audio.cpp}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$chrono$>$}\newline
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \"{}Audio.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Renderer/\+Camera.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Hexeng.\+hpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng_1_1Audio}{Hexeng\+::\+Audio}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{Audio_8cpp_a64a73c1cdb98424f2356d26aa1fc25fc}{HXG\+\_\+\+PA}}(x)~x
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceHexeng_1_1Audio_a5e90001d8341df3b91d84182715726bc}{Hexeng\+::\+Audio\+::init}} ()
+\item 
+void \mbox{\hyperlink{namespaceHexeng_1_1Audio_a9a6715ae7586295f097e9ab04812629a}{Hexeng\+::\+Audio\+::terminate}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Pa\+Error \mbox{\hyperlink{namespaceHexeng_1_1Audio_a2c1dd4b9716abcc057019cbf403dca47}{Hexeng\+::\+Audio\+::e}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Audio_1_1SoundBase}{Sound\+Base}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceHexeng_1_1Audio_a119b01002d4413d01417c0a3794b1edf}{Hexeng\+::\+Audio\+::sounds}}
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceHexeng_1_1Audio_ade90f1b2e4cb6e40205b9b485b583e90}{Hexeng\+::\+Audio\+::receiver}} = \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Camera_a13f12fe4c1f0b22f66421f79dfe69b7e}{Renderer\+::\+Camera\+::xy\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The position of the microphone in the \doxylink{namespaceHexeng}{Hexeng} coordinates system. It is set by default to the camera\textquotesingle{}s position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{Audio_8cpp_a64a73c1cdb98424f2356d26aa1fc25fc}\label{Audio_8cpp_a64a73c1cdb98424f2356d26aa1fc25fc} 
+\index{Audio.cpp@{Audio.cpp}!HXG\_PA@{HXG\_PA}}
+\index{HXG\_PA@{HXG\_PA}!Audio.cpp@{Audio.cpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_PA}{HXG\_PA}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+PA(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+

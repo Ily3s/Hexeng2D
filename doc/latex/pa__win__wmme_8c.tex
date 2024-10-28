@@ -1,0 +1,452 @@
+\hypertarget{pa__win__wmme_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wmme/pa\+\_\+win\+\_\+wmme.c File Reference}
+\label{pa__win__wmme_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wmme/pa\_win\_wmme.c@{Hexeng2D/dependencies/portaudio/src/hostapi/wmme/pa\_win\_wmme.c}}
+
+
+Win32 host API implementation for the Windows Multi\+Media Extensions (WMME) audio API.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+trace.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+wmme.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+waveformat.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_host_api_representation}{Pa\+Win\+Mme\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_device_info}{Pa\+Win\+Mme\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_single_direction_handles_and_buffers}{Pa\+Win\+Mme\+Single\+Direction\+Handles\+And\+Buffers}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_mme_stream}{Pa\+Win\+Mme\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a2cc0fd3db30536013559ac413c67bc56}{CREATE\+\_\+\+THREAD}}~(HANDLE)\+\_\+beginthreadex( 0, 0, \mbox{\hyperlink{pa__win__ds_8c_af8f8a8ef4c1f1a39686109801807a4ee}{Processing\+Thread\+Proc}}, \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, 0, \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}-\/$>$processing\+Thread\+Id )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}}~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}}~unsigned
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_ac42e964219ea4889a963d264ccb84ac6}{DWORD\+\_\+\+PTR}}~unsigned long
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_aca539033820bc57544d4c5a4fe8f47f9}{PA\+\_\+\+MME\+\_\+\+USE\+\_\+\+HIGH\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(0)  /$\ast$ For debugging glitches. $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a03a347262a7d9f74cf2072b0d590e343}{PA\+\_\+\+MME\+\_\+\+WIN\+\_\+9\+X\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(0.\+2)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a07982cdc37389cc39bec38476d6d8ede}{PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+OUTPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+}}~(2)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a0971215ba5fcc3fab272fe9061557d4c}{PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+INPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+\+FULL\+\_\+\+DUPLEX\+\_\+}}~(3)         /$\ast$ always use at least 3 input \mbox{\hyperlink{glad_8h_af545b4458d07f53f6ffebc73b38814cb}{buffers}} for full duplex $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a4184dd01cf4bc7d185ea045d17482fa9}{PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+INPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+\+HALF\+\_\+\+DUPLEX\+\_\+}}~(2)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_aeb42cce9413973d1fbb662ce96f5a1c9}{PA\+\_\+\+MME\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+GRANULARITY\+\_\+\+FRAMES\+\_\+\+WHEN\+\_\+\+UNSPECIFIED\+\_\+}}~(16)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a4936312c4d4cc7c7801eab2ddbe7fab0}{PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SECS\+\_\+}}~(0.\+1)       /$\ast$ Do not exceed unless user \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}} exceeds $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_ad5162cc4c1d0aecbf84a24df135771b4}{PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+BYTES\+\_\+}}~(32 $\ast$ 1024) /$\ast$ Has precedence over \mbox{\hyperlink{pa__win__wmme_8c_a4936312c4d4cc7c7801eab2ddbe7fab0}{PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SECS\+\_\+}}, some drivers are known to crash with \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}} \mbox{\hyperlink{glad_8h_a9ded28672f8b805d6b467777d0ac7b6f}{sizes}} $>$ 32k $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a5c2709b36c2ada2c3b222640a004ec44}{PA\+\_\+\+MME\+\_\+\+WIN\+\_\+\+NT\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(0.\+4)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a3c5b52325143d292a7028db5f9d8c000}{PA\+\_\+\+MME\+\_\+\+WIN\+\_\+\+WDM\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(0.\+090)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a79ba575f2bad4bd28f1614d9dae9d21e}{PA\+\_\+\+MME\+\_\+\+TARGET\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+}}~8
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_adb2260a00ec7e1b50c3b9cb0254a150f}{PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+TIMEOUT\+\_\+\+MSEC\+\_\+}}~(1000)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a85115dfbdd9e401597b8f018884a838b}{PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+WAVEIN\+\_\+\+ERROR}}(mmresult)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a095c3513283876bdd2ea774b2ab0df93}{PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+WAVEOUT\+\_\+\+ERROR}}(mmresult)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_adfd0597150e64a239d29de6822bb6306}{PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+SYSTEM\+\_\+\+ERROR}}(error\+Code)~    Pa\+Mme\+\_\+\+Set\+Last\+System\+Error( error\+Code )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a2e5cff3ba4f9dd11d3aa000f7257264e}{PA\+\_\+\+ENV\+\_\+\+BUF\+\_\+\+SIZE\+\_\+}}~(32)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a55bfe94c4919047eced99546d3df9fbc}{PA\+\_\+\+REC\+\_\+\+IN\+\_\+\+DEV\+\_\+\+ENV\+\_\+\+NAME\+\_\+}}~(\char`\"{}PA\+\_\+\+RECOMMENDED\+\_\+\+INPUT\+\_\+\+DEVICE\char`\"{})
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a8d3e9daebeb437e1bc086877f96a1b12}{PA\+\_\+\+REC\+\_\+\+OUT\+\_\+\+DEV\+\_\+\+ENV\+\_\+\+NAME\+\_\+}}~(\char`\"{}PA\+\_\+\+RECOMMENDED\+\_\+\+OUTPUT\+\_\+\+DEVICE\char`\"{})
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a77d8595aeb17c41aa2c3dd98050148c6}{PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+}}~(13) /$\ast$ must match array \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{length}} below $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a7f03d3aa47914a8c56eb3684e5330c4d}{DRVM\+\_\+\+MAPPER\+\_\+\+PREFERRED\+\_\+\+GET}}~(0x2000+21)
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_aed282089a2949b07791592cd78ec33d2}{PA\+\_\+\+IS\+\_\+\+INPUT\+\_\+\+STREAM\+\_\+}}(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a742353e53f4038bbab877064fa6dfed6}{PA\+\_\+\+IS\+\_\+\+OUTPUT\+\_\+\+STREAM\+\_\+}}(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_aae9f600e70d5dd09e8776a60239547c0}{PA\+\_\+\+IS\+\_\+\+FULL\+\_\+\+DUPLEX\+\_\+\+STREAM\+\_\+}}(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles \&\& \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a2be1adf750660fc96fdfa4c8d1f4ce02}{PA\+\_\+\+IS\+\_\+\+HALF\+\_\+\+DUPLEX\+\_\+\+STREAM\+\_\+}}(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})~( !(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles \&\& \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles) )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_a51cd4640110216e453dd6d3af482ce2b}{PA\+\_\+\+CIRCULAR\+\_\+\+INCREMENT\+\_\+}}(current,  max)~    ( (((current) + 1) $>$= (max)) ? (0) \+: (current+1) )
+\item 
+\#define \mbox{\hyperlink{pa__win__wmme_8c_aee72fff0777afcd6f10005bc75cba41a}{PA\+\_\+\+CIRCULAR\+\_\+\+DECREMENT\+\_\+}}(current,  max)~    ( ((current) == 0) ? ((max)-\/1) \+: (current-\/1) )
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_mme_stream}{Pa\+Win\+Mme\+Stream}} \mbox{\hyperlink{pa__win__wmme_8c_ab3f59da6fb996d2514e026082d300984}{Pa\+Win\+Mme\+Stream}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wmme_8c_a1b280d36ca47c18eb544dd289916827d}{Pa\+Win\+Mme\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} \mbox{\hyperlink{pa__win__wmme_8c_af8f8a8ef4c1f1a39686109801807a4ee}{Processing\+Thread\+Proc}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Arg)
+\item 
+int \mbox{\hyperlink{pa__win__wmme_8c_abab45340b60b97556c914f05ca0e646c}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s)
+\item 
+HWAVEIN \mbox{\hyperlink{pa__win__wmme_8c_ad812145dce6d784581df9ddcecc07dbb}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int handle\+Index)
+\item 
+int \mbox{\hyperlink{pa__win__wmme_8c_a1c911c0155fa776a4fe4dcfda1ba18ef}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s)
+\item 
+HWAVEOUT \mbox{\hyperlink{pa__win__wmme_8c_abe6adba09f46c80ffa066632027aa32f}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int handle\+Index)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Win32 host API implementation for the Windows Multi\+Media Extensions (WMME) audio API. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__wmme_8c_a2cc0fd3db30536013559ac413c67bc56}\label{pa__win__wmme_8c_a2cc0fd3db30536013559ac413c67bc56}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!CREATE\_THREAD@{CREATE\_THREAD}}
+\index{CREATE\_THREAD@{CREATE\_THREAD}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{CREATE\_THREAD}{CREATE\_THREAD}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+THREAD~(HANDLE)\+\_\+beginthreadex( 0, 0, \mbox{\hyperlink{pa__win__ds_8c_af8f8a8ef4c1f1a39686109801807a4ee}{Processing\+Thread\+Proc}}, \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, 0, \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}-\/$>$processing\+Thread\+Id )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a7f03d3aa47914a8c56eb3684e5330c4d}\label{pa__win__wmme_8c_a7f03d3aa47914a8c56eb3684e5330c4d}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!DRVM\_MAPPER\_PREFERRED\_GET@{DRVM\_MAPPER\_PREFERRED\_GET}}
+\index{DRVM\_MAPPER\_PREFERRED\_GET@{DRVM\_MAPPER\_PREFERRED\_GET}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{DRVM\_MAPPER\_PREFERRED\_GET}{DRVM\_MAPPER\_PREFERRED\_GET}}
+{\footnotesize\ttfamily \#define DRVM\+\_\+\+MAPPER\+\_\+\+PREFERRED\+\_\+\+GET~(0x2000+21)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_ac42e964219ea4889a963d264ccb84ac6}\label{pa__win__wmme_8c_ac42e964219ea4889a963d264ccb84ac6}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!DWORD\_PTR@{DWORD\_PTR}}
+\index{DWORD\_PTR@{DWORD\_PTR}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{DWORD\_PTR}{DWORD\_PTR}}
+{\footnotesize\ttfamily \#define DWORD\+\_\+\+PTR~unsigned long}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_aee72fff0777afcd6f10005bc75cba41a}\label{pa__win__wmme_8c_aee72fff0777afcd6f10005bc75cba41a}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_CIRCULAR\_DECREMENT\_@{PA\_CIRCULAR\_DECREMENT\_}}
+\index{PA\_CIRCULAR\_DECREMENT\_@{PA\_CIRCULAR\_DECREMENT\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_CIRCULAR\_DECREMENT\_}{PA\_CIRCULAR\_DECREMENT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+CIRCULAR\+\_\+\+DECREMENT\+\_\+(\begin{DoxyParamCaption}\item[{}]{current,  }\item[{}]{max }\end{DoxyParamCaption})~    ( ((current) == 0) ? ((max)-\/1) \+: (current-\/1) )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a51cd4640110216e453dd6d3af482ce2b}\label{pa__win__wmme_8c_a51cd4640110216e453dd6d3af482ce2b}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_CIRCULAR\_INCREMENT\_@{PA\_CIRCULAR\_INCREMENT\_}}
+\index{PA\_CIRCULAR\_INCREMENT\_@{PA\_CIRCULAR\_INCREMENT\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_CIRCULAR\_INCREMENT\_}{PA\_CIRCULAR\_INCREMENT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+CIRCULAR\+\_\+\+INCREMENT\+\_\+(\begin{DoxyParamCaption}\item[{}]{current,  }\item[{}]{max }\end{DoxyParamCaption})~    ( (((current) + 1) $>$= (max)) ? (0) \+: (current+1) )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a77d8595aeb17c41aa2c3dd98050148c6}\label{pa__win__wmme_8c_a77d8595aeb17c41aa2c3dd98050148c6}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+\index{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+~(13) /$\ast$ must match array \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{length}} below $\ast$/}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a2e5cff3ba4f9dd11d3aa000f7257264e}\label{pa__win__wmme_8c_a2e5cff3ba4f9dd11d3aa000f7257264e}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_ENV\_BUF\_SIZE\_@{PA\_ENV\_BUF\_SIZE\_}}
+\index{PA\_ENV\_BUF\_SIZE\_@{PA\_ENV\_BUF\_SIZE\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ENV\_BUF\_SIZE\_}{PA\_ENV\_BUF\_SIZE\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ENV\+\_\+\+BUF\+\_\+\+SIZE\+\_\+~(32)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_aae9f600e70d5dd09e8776a60239547c0}\label{pa__win__wmme_8c_aae9f600e70d5dd09e8776a60239547c0}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_IS\_FULL\_DUPLEX\_STREAM\_@{PA\_IS\_FULL\_DUPLEX\_STREAM\_}}
+\index{PA\_IS\_FULL\_DUPLEX\_STREAM\_@{PA\_IS\_FULL\_DUPLEX\_STREAM\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_IS\_FULL\_DUPLEX\_STREAM\_}{PA\_IS\_FULL\_DUPLEX\_STREAM\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+IS\+\_\+\+FULL\+\_\+\+DUPLEX\+\_\+\+STREAM\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} }\end{DoxyParamCaption})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles \&\& \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a2be1adf750660fc96fdfa4c8d1f4ce02}\label{pa__win__wmme_8c_a2be1adf750660fc96fdfa4c8d1f4ce02}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_IS\_HALF\_DUPLEX\_STREAM\_@{PA\_IS\_HALF\_DUPLEX\_STREAM\_}}
+\index{PA\_IS\_HALF\_DUPLEX\_STREAM\_@{PA\_IS\_HALF\_DUPLEX\_STREAM\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_IS\_HALF\_DUPLEX\_STREAM\_}{PA\_IS\_HALF\_DUPLEX\_STREAM\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+IS\+\_\+\+HALF\+\_\+\+DUPLEX\+\_\+\+STREAM\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} }\end{DoxyParamCaption})~( !(\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles \&\& \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles) )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_aed282089a2949b07791592cd78ec33d2}\label{pa__win__wmme_8c_aed282089a2949b07791592cd78ec33d2}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_IS\_INPUT\_STREAM\_@{PA\_IS\_INPUT\_STREAM\_}}
+\index{PA\_IS\_INPUT\_STREAM\_@{PA\_IS\_INPUT\_STREAM\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_IS\_INPUT\_STREAM\_}{PA\_IS\_INPUT\_STREAM\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+IS\+\_\+\+INPUT\+\_\+\+STREAM\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} }\end{DoxyParamCaption})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$input.\+wave\+Handles )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a742353e53f4038bbab877064fa6dfed6}\label{pa__win__wmme_8c_a742353e53f4038bbab877064fa6dfed6}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_IS\_OUTPUT\_STREAM\_@{PA\_IS\_OUTPUT\_STREAM\_}}
+\index{PA\_IS\_OUTPUT\_STREAM\_@{PA\_IS\_OUTPUT\_STREAM\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_IS\_OUTPUT\_STREAM\_}{PA\_IS\_OUTPUT\_STREAM\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+IS\+\_\+\+OUTPUT\+\_\+\+STREAM\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} }\end{DoxyParamCaption})~( \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}} -\/$>$output.\+wave\+Handles )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_aeb42cce9413973d1fbb662ce96f5a1c9}\label{pa__win__wmme_8c_aeb42cce9413973d1fbb662ce96f5a1c9}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_@{PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_}}
+\index{PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_@{PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_}{PA\_MME\_HOST\_BUFFER\_GRANULARITY\_FRAMES\_WHEN\_UNSPECIFIED\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+GRANULARITY\+\_\+\+FRAMES\+\_\+\+WHEN\+\_\+\+UNSPECIFIED\+\_\+~(16)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_ad5162cc4c1d0aecbf84a24df135771b4}\label{pa__win__wmme_8c_ad5162cc4c1d0aecbf84a24df135771b4}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_@{PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_}}
+\index{PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_@{PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_}{PA\_MME\_MAX\_HOST\_BUFFER\_BYTES\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+BYTES\+\_\+~(32 $\ast$ 1024) /$\ast$ Has precedence over \mbox{\hyperlink{pa__win__wmme_8c_a4936312c4d4cc7c7801eab2ddbe7fab0}{PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SECS\+\_\+}}, some drivers are known to crash with \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}} \mbox{\hyperlink{glad_8h_a9ded28672f8b805d6b467777d0ac7b6f}{sizes}} $>$ 32k $\ast$/}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a4936312c4d4cc7c7801eab2ddbe7fab0}\label{pa__win__wmme_8c_a4936312c4d4cc7c7801eab2ddbe7fab0}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_@{PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_}}
+\index{PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_@{PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_}{PA\_MME\_MAX\_HOST\_BUFFER\_SECS\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MAX\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+SECS\+\_\+~(0.\+1)       /$\ast$ Do not exceed unless user \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}} exceeds $\ast$/}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a0971215ba5fcc3fab272fe9061557d4c}\label{pa__win__wmme_8c_a0971215ba5fcc3fab272fe9061557d4c}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_@{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_}}
+\index{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_@{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_}{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_FULL\_DUPLEX\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+INPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+\+FULL\+\_\+\+DUPLEX\+\_\+~(3)         /$\ast$ always use at least 3 input \mbox{\hyperlink{glad_8h_af545b4458d07f53f6ffebc73b38814cb}{buffers}} for full duplex $\ast$/}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a4184dd01cf4bc7d185ea045d17482fa9}\label{pa__win__wmme_8c_a4184dd01cf4bc7d185ea045d17482fa9}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_@{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_}}
+\index{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_@{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_}{PA\_MME\_MIN\_HOST\_INPUT\_BUFFER\_COUNT\_HALF\_DUPLEX\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+INPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+\+HALF\+\_\+\+DUPLEX\+\_\+~(2)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a07982cdc37389cc39bec38476d6d8ede}\label{pa__win__wmme_8c_a07982cdc37389cc39bec38476d6d8ede}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_@{PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_}}
+\index{PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_@{PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_}{PA\_MME\_MIN\_HOST\_OUTPUT\_BUFFER\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+HOST\+\_\+\+OUTPUT\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+~(2)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_adb2260a00ec7e1b50c3b9cb0254a150f}\label{pa__win__wmme_8c_adb2260a00ec7e1b50c3b9cb0254a150f}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_MIN\_TIMEOUT\_MSEC\_@{PA\_MME\_MIN\_TIMEOUT\_MSEC\_}}
+\index{PA\_MME\_MIN\_TIMEOUT\_MSEC\_@{PA\_MME\_MIN\_TIMEOUT\_MSEC\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_MIN\_TIMEOUT\_MSEC\_}{PA\_MME\_MIN\_TIMEOUT\_MSEC\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+MIN\+\_\+\+TIMEOUT\+\_\+\+MSEC\+\_\+~(1000)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_adfd0597150e64a239d29de6822bb6306}\label{pa__win__wmme_8c_adfd0597150e64a239d29de6822bb6306}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_SET\_LAST\_SYSTEM\_ERROR@{PA\_MME\_SET\_LAST\_SYSTEM\_ERROR}}
+\index{PA\_MME\_SET\_LAST\_SYSTEM\_ERROR@{PA\_MME\_SET\_LAST\_SYSTEM\_ERROR}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_SET\_LAST\_SYSTEM\_ERROR}{PA\_MME\_SET\_LAST\_SYSTEM\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+SYSTEM\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code }\end{DoxyParamCaption})~    Pa\+Mme\+\_\+\+Set\+Last\+System\+Error( error\+Code )}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a85115dfbdd9e401597b8f018884a838b}\label{pa__win__wmme_8c_a85115dfbdd9e401597b8f018884a838b}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_SET\_LAST\_WAVEIN\_ERROR@{PA\_MME\_SET\_LAST\_WAVEIN\_ERROR}}
+\index{PA\_MME\_SET\_LAST\_WAVEIN\_ERROR@{PA\_MME\_SET\_LAST\_WAVEIN\_ERROR}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_SET\_LAST\_WAVEIN\_ERROR}{PA\_MME\_SET\_LAST\_WAVEIN\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+WAVEIN\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{mmresult }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                         \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{wchar\_t} mmeErrorTextWide[ MAXERRORLENGTH ];                           \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{char} mmeErrorText[ MAXERRORLENGTH ];                                  \(\backslash\)}
+\DoxyCodeLine{        waveInGetErrorTextW( mmresult, mmeErrorTextWide, MAXERRORLENGTH );    \(\backslash\)}
+\DoxyCodeLine{        WideCharToMultiByte( CP\_UTF8, 0, mmeErrorTextWide, -\/1,                \(\backslash\)}
+\DoxyCodeLine{            mmeErrorText, MAXERRORLENGTH, NULL, NULL );                       \(\backslash\)}
+\DoxyCodeLine{        PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea92db20780c2d5a900ea6a9e988b4da0c}{paMME}}, mmresult, mmeErrorText );         \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wmme_8c_a095c3513283876bdd2ea774b2ab0df93}\label{pa__win__wmme_8c_a095c3513283876bdd2ea774b2ab0df93}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR@{PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR}}
+\index{PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR@{PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR}{PA\_MME\_SET\_LAST\_WAVEOUT\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+SET\+\_\+\+LAST\+\_\+\+WAVEOUT\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{mmresult }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \{                                                                         \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{wchar\_t} mmeErrorTextWide[ MAXERRORLENGTH ];                           \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{char} mmeErrorText[ MAXERRORLENGTH ];                                  \(\backslash\)}
+\DoxyCodeLine{        waveOutGetErrorTextW( mmresult, mmeErrorTextWide, MAXERRORLENGTH );   \(\backslash\)}
+\DoxyCodeLine{        WideCharToMultiByte( CP\_UTF8, 0, mmeErrorTextWide, -\/1,                \(\backslash\)}
+\DoxyCodeLine{            mmeErrorText, MAXERRORLENGTH, NULL, NULL );                       \(\backslash\)}
+\DoxyCodeLine{        PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea92db20780c2d5a900ea6a9e988b4da0c}{paMME}}, mmresult, mmeErrorText );         \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wmme_8c_a79ba575f2bad4bd28f1614d9dae9d21e}\label{pa__win__wmme_8c_a79ba575f2bad4bd28f1614d9dae9d21e}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_@{PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_}}
+\index{PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_@{PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_}{PA\_MME\_TARGET\_HOST\_BUFFER\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+TARGET\+\_\+\+HOST\+\_\+\+BUFFER\+\_\+\+COUNT\+\_\+~8}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_aca539033820bc57544d4c5a4fe8f47f9}\label{pa__win__wmme_8c_aca539033820bc57544d4c5a4fe8f47f9}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_@{PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_}}
+\index{PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_@{PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_}{PA\_MME\_USE\_HIGH\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+USE\+\_\+\+HIGH\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(0)  /$\ast$ For debugging glitches. $\ast$/}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a03a347262a7d9f74cf2072b0d590e343}\label{pa__win__wmme_8c_a03a347262a7d9f74cf2072b0d590e343}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_}}
+\index{PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_}{PA\_MME\_WIN\_9X\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+WIN\+\_\+9\+X\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(0.\+2)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a5c2709b36c2ada2c3b222640a004ec44}\label{pa__win__wmme_8c_a5c2709b36c2ada2c3b222640a004ec44}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_}}
+\index{PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_}{PA\_MME\_WIN\_NT\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+WIN\+\_\+\+NT\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(0.\+4)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a3c5b52325143d292a7028db5f9d8c000}\label{pa__win__wmme_8c_a3c5b52325143d292a7028db5f9d8c000}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_}}
+\index{PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_@{PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_}{PA\_MME\_WIN\_WDM\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MME\+\_\+\+WIN\+\_\+\+WDM\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(0.\+090)}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a55bfe94c4919047eced99546d3df9fbc}\label{pa__win__wmme_8c_a55bfe94c4919047eced99546d3df9fbc}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_REC\_IN\_DEV\_ENV\_NAME\_@{PA\_REC\_IN\_DEV\_ENV\_NAME\_}}
+\index{PA\_REC\_IN\_DEV\_ENV\_NAME\_@{PA\_REC\_IN\_DEV\_ENV\_NAME\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_REC\_IN\_DEV\_ENV\_NAME\_}{PA\_REC\_IN\_DEV\_ENV\_NAME\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+REC\+\_\+\+IN\+\_\+\+DEV\+\_\+\+ENV\+\_\+\+NAME\+\_\+~(\char`\"{}PA\+\_\+\+RECOMMENDED\+\_\+\+INPUT\+\_\+\+DEVICE\char`\"{})}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_a8d3e9daebeb437e1bc086877f96a1b12}\label{pa__win__wmme_8c_a8d3e9daebeb437e1bc086877f96a1b12}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_REC\_OUT\_DEV\_ENV\_NAME\_@{PA\_REC\_OUT\_DEV\_ENV\_NAME\_}}
+\index{PA\_REC\_OUT\_DEV\_ENV\_NAME\_@{PA\_REC\_OUT\_DEV\_ENV\_NAME\_}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_REC\_OUT\_DEV\_ENV\_NAME\_}{PA\_REC\_OUT\_DEV\_ENV\_NAME\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+REC\+\_\+\+OUT\+\_\+\+DEV\+\_\+\+ENV\+\_\+\+NAME\+\_\+~(\char`\"{}PA\+\_\+\+RECOMMENDED\+\_\+\+OUTPUT\+\_\+\+DEVICE\char`\"{})}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_ad744bd36cb3631b1dc11beb41dcc238c}\label{pa__win__wmme_8c_ad744bd36cb3631b1dc11beb41dcc238c}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}}
+\index{PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_FUNC}{PA\_THREAD\_FUNC}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+FUNC~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_af90ebf49f32d984f4cea06ca90506e40}\label{pa__win__wmme_8c_af90ebf49f32d984f4cea06ca90506e40}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PA\_THREAD\_ID@{PA\_THREAD\_ID}}
+\index{PA\_THREAD\_ID@{PA\_THREAD\_ID}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_ID}{PA\_THREAD\_ID}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+ID~unsigned}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__wmme_8c_ab3f59da6fb996d2514e026082d300984}\label{pa__win__wmme_8c_ab3f59da6fb996d2514e026082d300984}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMmeStream@{PaWinMmeStream}}
+\index{PaWinMmeStream@{PaWinMmeStream}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMmeStream}{PaWinMmeStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_mme_stream}{Pa\+Win\+Mme\+Stream}} \mbox{\hyperlink{struct_pa_win_mme_stream}{Pa\+Win\+Mme\+Stream}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wmme_8c_ad812145dce6d784581df9ddcecc07dbb}\label{pa__win__wmme_8c_ad812145dce6d784581df9ddcecc07dbb}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMME\_GetStreamInputHandle@{PaWinMME\_GetStreamInputHandle}}
+\index{PaWinMME\_GetStreamInputHandle@{PaWinMME\_GetStreamInputHandle}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamInputHandle()}{PaWinMME\_GetStreamInputHandle()}}
+{\footnotesize\ttfamily HWAVEIN Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{int}]{handle\+Index }\end{DoxyParamCaption})}
+
+Retrieve a wave in handle used by a Port\+Audio Win\+MME stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to query. \\
+\hline
+{\em handle\+Index} & The zero based index of the wave in handle to retrieve. This should be in the range \mbox{[}0, Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count(stream)-\/1\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid wave in handle, or NULL if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wmme_8c_abab45340b60b97556c914f05ca0e646c}\label{pa__win__wmme_8c_abab45340b60b97556c914f05ca0e646c}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMME\_GetStreamInputHandleCount@{PaWinMME\_GetStreamInputHandleCount}}
+\index{PaWinMME\_GetStreamInputHandleCount@{PaWinMME\_GetStreamInputHandleCount}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamInputHandleCount()}{PaWinMME\_GetStreamInputHandleCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of wave in handles used by a Port\+Audio Win\+MME stream. Returns zero if the stream is output only.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of wave in handles or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wmme_8h_a67a4c1e3b4d2a5830c11bc1c4e7d2caa}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Input\+Handle}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wmme_8c_abe6adba09f46c80ffa066632027aa32f}\label{pa__win__wmme_8c_abe6adba09f46c80ffa066632027aa32f}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMME\_GetStreamOutputHandle@{PaWinMME\_GetStreamOutputHandle}}
+\index{PaWinMME\_GetStreamOutputHandle@{PaWinMME\_GetStreamOutputHandle}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamOutputHandle()}{PaWinMME\_GetStreamOutputHandle()}}
+{\footnotesize\ttfamily HWAVEOUT Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{int}]{handle\+Index }\end{DoxyParamCaption})}
+
+Retrieve a wave out handle used by a Port\+Audio Win\+MME stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The stream to query. \\
+\hline
+{\em handle\+Index} & The zero based index of the wave out handle to retrieve. This should be in the range \mbox{[}0, Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count(stream)-\/1\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid wave out handle, or NULL if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wmme_8h_a8eae212f83c77fc92eb3e8e95216ede7}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wmme_8c_a1c911c0155fa776a4fe4dcfda1ba18ef}\label{pa__win__wmme_8c_a1c911c0155fa776a4fe4dcfda1ba18ef}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMME\_GetStreamOutputHandleCount@{PaWinMME\_GetStreamOutputHandleCount}}
+\index{PaWinMME\_GetStreamOutputHandleCount@{PaWinMME\_GetStreamOutputHandleCount}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMME\_GetStreamOutputHandleCount()}{PaWinMME\_GetStreamOutputHandleCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of wave out handles used by a Port\+Audio Win\+MME stream. Returns zero if the stream is input only.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of wave out handles or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wmme_8h_ac7311604a84f712ef70fe90510f96be6}{Pa\+Win\+MME\+\_\+\+Get\+Stream\+Output\+Handle}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wmme_8c_a1b280d36ca47c18eb544dd289916827d}\label{pa__win__wmme_8c_a1b280d36ca47c18eb544dd289916827d}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!PaWinMme\_Initialize@{PaWinMme\_Initialize}}
+\index{PaWinMme\_Initialize@{PaWinMme\_Initialize}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{PaWinMme\_Initialize()}{PaWinMme\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Mme\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wmme_8c_af8f8a8ef4c1f1a39686109801807a4ee}\label{pa__win__wmme_8c_af8f8a8ef4c1f1a39686109801807a4ee}} 
+\index{pa\_win\_wmme.c@{pa\_win\_wmme.c}!ProcessingThreadProc@{ProcessingThreadProc}}
+\index{ProcessingThreadProc@{ProcessingThreadProc}!pa\_win\_wmme.c@{pa\_win\_wmme.c}}
+\doxysubsubsection{\texorpdfstring{ProcessingThreadProc()}{ProcessingThreadProc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} Processing\+Thread\+Proc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Arg }\end{DoxyParamCaption})}
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000022}{Todo}}]support pa\+Input\+Underflow, pa\+Output\+Overflow and pa\+Never\+Drop\+Input \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000023}{Todo}}]FIXME/\+REVIEW\+: can\textquotesingle{}t return host error info from an asynchronous thread. see \href{http://www.portaudio.com/trac/ticket/143}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/143}} \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000024}{Todo}}]if all of the other buffers are also ready then we discard all but the most recent. This is an input buffer overflow. FIXME\+: these buffers should be passed to the callback in a pa\+Never\+Drop\+Input stream. \href{http://www.portaudio.com/trac/ticket/142}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/142}}\end{DoxyRefDesc}
+
+
+note that it is also possible for an input overflow to happen while the callback is processing a buffer. that is handled further down.
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000025}{Todo}}]implement input\+Buffer\+Adc\+Time \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000026}{Todo}}]FIXME\+: should probably reset the output device immediately once the callback returns pa\+Abort see\+: \href{http://www.portaudio.com/trac/ticket/141}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/141}} \end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000027}{Todo}}]need to handle Pa\+Never\+Drop\+Input here where necessary \end{DoxyRefDesc}

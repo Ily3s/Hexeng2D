@@ -1,0 +1,53 @@
+\hypertarget{_camera_8hpp_source}{}\doxysection{Camera.\+hpp}
+\label{_camera_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Camera.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Camera.hpp}}
+\mbox{\hyperlink{_camera_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CAMERA\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CAMERA\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uniform_8hpp}{Uniform.hpp}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{class }ToBeInit;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}}
+\DoxyCodeLine{14     \{}
+\DoxyCodeLine{15     private :}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} s\_xy\_position;}
+\DoxyCodeLine{20         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} s\_shader\_pos;}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{ToBeInit}} s\_init\_cam;}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keyword}{static} \textcolor{keywordtype}{float} s\_zoom;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}};}
+\DoxyCodeLine{27         \textcolor{keyword}{friend} \textcolor{keyword}{class }ContextualLayer;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform<Vec2<float>}}> u\_cam;}
+\DoxyCodeLine{30         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform<float>}} u\_zoom;}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keyword}{static} \textcolor{keywordtype}{void} s\_update\_zoom(\textcolor{keywordtype}{int} distance);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     public :}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{38         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3<int>}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}{position}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41         \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_add8bb0a82f100d56f98ca6cb188e4856}{fov}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{44         \textcolor{keyword}{static} \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}{xy\_position}};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47         \textcolor{keyword}{static} \textcolor{keywordtype}{void} refresh\_pos();}
+\DoxyCodeLine{48     \};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

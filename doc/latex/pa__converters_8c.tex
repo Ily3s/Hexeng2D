@@ -1,0 +1,222 @@
+\hypertarget{pa__converters_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+converters.c File Reference}
+\label{pa__converters_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.c}}
+
+
+Conversion function implementations.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+converters.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+dither.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+endianness.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+types.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_a4eebb41c1de747d1f1beb57791109688}{PA\+\_\+\+SELECT\+\_\+\+FORMAT\+\_\+}}(\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}},  float32,  int32,  int24,  int16,  int8,  uint8)
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_aa9624b718f88be8591fd8bec705ef3dd}{PA\+\_\+\+SELECT\+\_\+\+CONVERTER\+\_\+\+DITHER\+\_\+\+CLIP\+\_\+}}(\mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}},  \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  destination)
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_a39efd4028bd39d814ed8356d78dc5d4b}{PA\+\_\+\+SELECT\+\_\+\+CONVERTER\+\_\+\+DITHER\+\_\+}}(\mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}},  \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  destination)
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_a02d50169d122b81456e516c028c4325d}{PA\+\_\+\+USE\+\_\+\+CONVERTER\+\_\+}}(\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  destination)~    return pa\+Converters. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \+\_\+\+To\+\_\+ \#\# destination;
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_a1c9f1fcfb9c025018eaf4f5fb26184b6}{PA\+\_\+\+UNITY\+\_\+\+CONVERSION\+\_\+}}(wordlength)~    return pa\+Converters. Copy\+\_\+ \#\# wordlength \#\# \+\_\+\+To\+\_\+ \#\# wordlength;
+\item 
+\#define \mbox{\hyperlink{pa__converters_8c_a856f4b74999d982529ff914dbb7526b9}{PA\+\_\+\+CLIP\+\_\+}}(\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}},  min,  max)~    \{ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}} = ((\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}) $<$ (min)) ? (min) \+: (((\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}) $>$ (max)) ? (max) \+: (\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})); \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{pa__converters_8c_a74195475fe92d6b7b71de247f2b08184}{Pa\+Util\+\_\+\+Select\+Closest\+Available\+Format}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} available\+Formats, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}})
+\item 
+\mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ \mbox{\hyperlink{pa__converters_8c_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} source\+Format, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} destination\+Format, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\item 
+\mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ \mbox{\hyperlink{pa__converters_8c_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} destination\+Format)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{pa\+Converters}}
+\item 
+\mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}} \mbox{\hyperlink{pa__converters_8c_a5c96b77dd6fb2969291dbbb09c5fec94}{pa\+Zeroers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conversion function implementations. 
+
+If the C9x function lrintf() is available, define PA\+\_\+\+USE\+\_\+\+C99\+\_\+\+LRINTF to use it
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000002}{Todo}}]Consider whether functions which dither but don\textquotesingle{}t clip should exist, V18 automatically enabled clipping whenever dithering was selected. Perhaps we should do the same. see\+: \char`\"{}require clipping for dithering sample conversion functions?\char`\"{} \href{http://www.portaudio.com/trac/ticket/112}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/112}}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000003}{Todo}}]implement the converters marked IMPLEMENT ME\+: Int32\+\_\+\+To\+\_\+\+Int24\+\_\+\+Dither, Int32\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+Int16\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int24\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+UInt8\+\_\+\+Dither see\+: \char`\"{}some conversion functions are not implemented in pa\+\_\+converters.\+c\char`\"{} \href{http://www.portaudio.com/trac/ticket/35}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/35}}\end{DoxyRefDesc}
+
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000004}{Todo}}]review the converters marked REVIEW\+: Float32\+\_\+\+To\+\_\+\+Int32, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Dither, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Clip, Float32\+\_\+\+To\+\_\+\+Int32\+\_\+\+Dither\+Clip, Int32\+\_\+\+To\+\_\+\+Int16\+\_\+\+Dither, Int32\+\_\+\+To\+\_\+\+Int8\+\_\+\+Dither, Int16\+\_\+\+To\+\_\+\+Int32 \end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__converters_8c_a856f4b74999d982529ff914dbb7526b9}\label{pa__converters_8c_a856f4b74999d982529ff914dbb7526b9}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_CLIP\_@{PA\_CLIP\_}}
+\index{PA\_CLIP\_@{PA\_CLIP\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_CLIP\_}{PA\_CLIP\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+CLIP\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}},  }\item[{}]{min,  }\item[{}]{max }\end{DoxyParamCaption})~    \{ \mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}} = ((\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}) $<$ (min)) ? (min) \+: (((\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}}) $>$ (max)) ? (max) \+: (\mbox{\hyperlink{glad_8h_aa857b95cc76669c2a9109239ef40a47c}{val}})); \}}
+
+\mbox{\Hypertarget{pa__converters_8c_a39efd4028bd39d814ed8356d78dc5d4b}\label{pa__converters_8c_a39efd4028bd39d814ed8356d78dc5d4b}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_SELECT\_CONVERTER\_DITHER\_@{PA\_SELECT\_CONVERTER\_DITHER\_}}
+\index{PA\_SELECT\_CONVERTER\_DITHER\_@{PA\_SELECT\_CONVERTER\_DITHER\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SELECT\_CONVERTER\_DITHER\_}{PA\_SELECT\_CONVERTER\_DITHER\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SELECT\+\_\+\+CONVERTER\+\_\+\+DITHER\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  }\item[{}]{destination }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} \& \mbox{\hyperlink{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}{paDitherOff}} )\{ \textcolor{comment}{/* no dither */}                                 \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination;                    \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{else}\{ \textcolor{comment}{/* dither */}                                                        \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination \#\# \_Dither;         \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__converters_8c_aa9624b718f88be8591fd8bec705ef3dd}\label{pa__converters_8c_aa9624b718f88be8591fd8bec705ef3dd}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_@{PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_}}
+\index{PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_@{PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_}{PA\_SELECT\_CONVERTER\_DITHER\_CLIP\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SELECT\+\_\+\+CONVERTER\+\_\+\+DITHER\+\_\+\+CLIP\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}},  }\item[{}]{\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  }\item[{}]{destination }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{if}( \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} \& \mbox{\hyperlink{portaudio_8h_a837b8a81be3f7e36c96003e0d8dcec12}{paClipOff}} )\{ \textcolor{comment}{/* no clip */}                                     \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} \& \mbox{\hyperlink{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}{paDitherOff}} )\{ \textcolor{comment}{/* no dither */}                             \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination;                \(\backslash\)}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{ \textcolor{comment}{/* dither */}                                                    \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination \#\# \_Dither;     \(\backslash\)}
+\DoxyCodeLine{        \}                                                                      \(\backslash\)}
+\DoxyCodeLine{    \}\textcolor{keywordflow}{else}\{ \textcolor{comment}{/* clip */}                                                          \(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}} \& \mbox{\hyperlink{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}{paDitherOff}} )\{ \textcolor{comment}{/* no dither */}                             \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination \#\# \_Clip;       \(\backslash\)}
+\DoxyCodeLine{        \}\textcolor{keywordflow}{else}\{ \textcolor{comment}{/* dither */}                                                    \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{return} \mbox{\hyperlink{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}{paConverters}}. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \_To\_ \#\# destination \#\# \_DitherClip; \(\backslash\)}
+\DoxyCodeLine{        \}                                                                      \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__converters_8c_a4eebb41c1de747d1f1beb57791109688}\label{pa__converters_8c_a4eebb41c1de747d1f1beb57791109688}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_SELECT\_FORMAT\_@{PA\_SELECT\_FORMAT\_}}
+\index{PA\_SELECT\_FORMAT\_@{PA\_SELECT\_FORMAT\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SELECT\_FORMAT\_}{PA\_SELECT\_FORMAT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SELECT\+\_\+\+FORMAT\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}},  }\item[{}]{float32,  }\item[{}]{int32,  }\item[{}]{int24,  }\item[{}]{int16,  }\item[{}]{int8,  }\item[{}]{uint8 }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{switch}( \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}} \& \string~\mbox{\hyperlink{portaudio_8h_a1d79f0b88812cef5364b276dbbc898b5}{paNonInterleaved}} )\{                                      \(\backslash\)}
+\DoxyCodeLine{    \textcolor{keywordflow}{case} \mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{paFloat32}}:                                                            \(\backslash\)}
+\DoxyCodeLine{        float32                                                                \(\backslash\)}
+\DoxyCodeLine{    case \mbox{\hyperlink{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}{paInt32}}:                                                              \(\backslash\)}
+\DoxyCodeLine{        int32                                                                  \(\backslash\)}
+\DoxyCodeLine{    case \mbox{\hyperlink{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}{paInt24}}:                                                              \(\backslash\)}
+\DoxyCodeLine{        int24                                                                  \(\backslash\)}
+\DoxyCodeLine{    case \mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{paInt16}}:                                                              \(\backslash\)}
+\DoxyCodeLine{        int16                                                                  \(\backslash\)}
+\DoxyCodeLine{    case \mbox{\hyperlink{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}{paInt8}}:                                                               \(\backslash\)}
+\DoxyCodeLine{        int8                                                                   \(\backslash\)}
+\DoxyCodeLine{    case \mbox{\hyperlink{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}{paUInt8}}:                                                              \(\backslash\)}
+\DoxyCodeLine{        uint8                                                                  \(\backslash\)}
+\DoxyCodeLine{    default: \textcolor{keywordflow}{return} 0;                                                         \(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__converters_8c_a1c9f1fcfb9c025018eaf4f5fb26184b6}\label{pa__converters_8c_a1c9f1fcfb9c025018eaf4f5fb26184b6}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_UNITY\_CONVERSION\_@{PA\_UNITY\_CONVERSION\_}}
+\index{PA\_UNITY\_CONVERSION\_@{PA\_UNITY\_CONVERSION\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_UNITY\_CONVERSION\_}{PA\_UNITY\_CONVERSION\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+UNITY\+\_\+\+CONVERSION\+\_\+(\begin{DoxyParamCaption}\item[{}]{wordlength }\end{DoxyParamCaption})~    return pa\+Converters. Copy\+\_\+ \#\# wordlength \#\# \+\_\+\+To\+\_\+ \#\# wordlength;}
+
+\mbox{\Hypertarget{pa__converters_8c_a02d50169d122b81456e516c028c4325d}\label{pa__converters_8c_a02d50169d122b81456e516c028c4325d}} 
+\index{pa\_converters.c@{pa\_converters.c}!PA\_USE\_CONVERTER\_@{PA\_USE\_CONVERTER\_}}
+\index{PA\_USE\_CONVERTER\_@{PA\_USE\_CONVERTER\_}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PA\_USE\_CONVERTER\_}{PA\_USE\_CONVERTER\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+USE\+\_\+\+CONVERTER\+\_\+(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}},  }\item[{}]{destination }\end{DoxyParamCaption})~    return pa\+Converters. \mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}} \#\# \+\_\+\+To\+\_\+ \#\# destination;}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__converters_8c_a74195475fe92d6b7b71de247f2b08184}\label{pa__converters_8c_a74195475fe92d6b7b71de247f2b08184}} 
+\index{pa\_converters.c@{pa\_converters.c}!PaUtil\_SelectClosestAvailableFormat@{PaUtil\_SelectClosestAvailableFormat}}
+\index{PaUtil\_SelectClosestAvailableFormat@{PaUtil\_SelectClosestAvailableFormat}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectClosestAvailableFormat()}{PaUtil\_SelectClosestAvailableFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} Pa\+Util\+\_\+\+Select\+Closest\+Available\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{available\+Formats,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{format }\end{DoxyParamCaption})}
+
+Choose an available sample format which is most appropriate for representing the requested format. If the requested format is not available higher quality formats are considered before lower quality formats. 
+\begin{DoxyParams}{Parameters}
+{\em available\+Formats} & A variable containing the logical OR of all available formats. \\
+\hline
+{\em format} & The desired format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The most appropriate available format for representing the requested format. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__converters_8c_a869673efe8cc48b9cfaf7285a6a1e4b7}\label{pa__converters_8c_a869673efe8cc48b9cfaf7285a6a1e4b7}} 
+\index{pa\_converters.c@{pa\_converters.c}!PaUtil\_SelectConverter@{PaUtil\_SelectConverter}}
+\index{PaUtil\_SelectConverter@{PaUtil\_SelectConverter}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectConverter()}{PaUtil\_SelectConverter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ Pa\+Util\+\_\+\+Select\+Converter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{source\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{destination\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flags }\end{DoxyParamCaption})}
+
+Find a sample converter function for the given source and destinations formats and flags (clip and dither.) \begin{DoxyReturn}{Returns}
+A pointer to a Pa\+Util\+Converter which will perform the requested conversion, or NULL if the given format conversion is not supported. For conversions where clipping or dithering is not necessary, the clip and dither flags are ignored and a non-\/clipping or dithering version is returned. If the source and destination formats are the same, a function which copies data of the appropriate size will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__converters_8c_a3e239a0c1d09956a782c3176e8dd2359}\label{pa__converters_8c_a3e239a0c1d09956a782c3176e8dd2359}} 
+\index{pa\_converters.c@{pa\_converters.c}!PaUtil\_SelectZeroer@{PaUtil\_SelectZeroer}}
+\index{PaUtil\_SelectZeroer@{PaUtil\_SelectZeroer}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectZeroer()}{PaUtil\_SelectZeroer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ Pa\+Util\+\_\+\+Select\+Zeroer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{destination\+Format }\end{DoxyParamCaption})}
+
+Find a buffer zeroer function for the given destination format. \begin{DoxyReturn}{Returns}
+A pointer to a Pa\+Util\+Zeroer which will perform the requested zeroing. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}\label{pa__converters_8c_ad600a701983981d00371cb22ed6fb648}} 
+\index{pa\_converters.c@{pa\_converters.c}!paConverters@{paConverters}}
+\index{paConverters@{paConverters}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{paConverters}{paConverters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}} pa\+Converters}
+
+A table of pointers to all required converter functions. \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter()}} uses this table to lookup the appropriate conversion functions. The fields of this structure are initialized with default conversion functions. Fields may be NULL, indicating that no conversion function is available. User code may substitute optimised conversion functions by assigning different function pointers to these fields.
+
+\begin{DoxyNote}{Note}
+If the PA\+\_\+\+NO\+\_\+\+STANDARD\+\_\+\+CONVERTERS preprocessor variable is defined, Port\+Audio\textquotesingle{}s standard converters will not be compiled, and all fields of this structure will be initialized to NULL. In such cases, users should supply their own conversion functions if the require Port\+Audio to open a stream that requires sample conversion.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}}, \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}}, \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__converters_8c_a5c96b77dd6fb2969291dbbb09c5fec94}\label{pa__converters_8c_a5c96b77dd6fb2969291dbbb09c5fec94}} 
+\index{pa\_converters.c@{pa\_converters.c}!paZeroers@{paZeroers}}
+\index{paZeroers@{paZeroers}!pa\_converters.c@{pa\_converters.c}}
+\doxysubsubsection{\texorpdfstring{paZeroers}{paZeroers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}} pa\+Zeroers}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    ZeroU8,  }
+\DoxyCodeLine{    Zero8,  }
+\DoxyCodeLine{    Zero16,  }
+\DoxyCodeLine{    Zero24,  }
+\DoxyCodeLine{    Zero32,  }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+A table of pointers to all required zeroer functions. \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer()}} uses this table to lookup the appropriate conversion functions. The fields of this structure are initialized with default conversion functions. User code may substitute optimised conversion functions by assigning different function pointers to these fields.
+
+\begin{DoxyNote}{Note}
+If the PA\+\_\+\+NO\+\_\+\+STANDARD\+\_\+\+ZEROERS preprocessor variable is defined, Port\+Audio\textquotesingle{}s standard zeroers will not be compiled, and all fields of this structure will be initialized to NULL. In such cases, users should supply their own zeroing functions for the sample sizes which they intend to use.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}}, \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}}, \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer}} 
+\end{DoxySeeAlso}

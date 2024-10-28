@@ -1,0 +1,106 @@
+\hypertarget{namespaceportaudio}{}\doxysection{portaudio Namespace Reference}
+\label{namespaceportaudio}\index{portaudio@{portaudio}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceportaudio_1_1impl}{impl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter}{Asio\+Device\+Adapter}}
+\begin{DoxyCompactList}\small\item\em Adapts the given \mbox{\hyperlink{classportaudio_1_1_device}{Device}} to an ASIO specific extension. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_auto_system}{Auto\+System}}
+\item 
+class \mbox{\hyperlink{classportaudio_1_1_blocking_stream}{Blocking\+Stream}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} class for blocking read/write-\/style input and output. ///. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_callback_interface}{Callback\+Interface}}
+\begin{DoxyCompactList}\small\item\em Interface for an object that\textquotesingle{}s callable as a Port\+Audio\+Cpp callback object (ie that implements the pa\+Callback\+Fun method). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_callback_stream}{Callback\+Stream}}
+\begin{DoxyCompactList}\small\item\em Base class for all Streams which use a callback-\/based mechanism. ///. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_c_fun_callback_stream}{CFun\+Callback\+Stream}}
+\begin{DoxyCompactList}\small\item\em Callback stream using a free function with C linkage. It\textquotesingle{}s important that the function the passed function pointer points to is declared \`{}`extern \char`\"{}\+C\char`\"{}'\textquotesingle{}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_device}{Device}}
+\begin{DoxyCompactList}\small\item\em Class which represents a Port\+Audio device in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}}
+\begin{DoxyCompactList}\small\item\em All parameters for one direction (either in or out) of a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. Together with parameters common to both directions, two \mbox{\hyperlink{classportaudio_1_1_direction_specific_stream_parameters}{Direction\+Specific\+Stream\+Parameters}} can make up a \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}} object which contains all parameters for a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_exception}{Exception}}
+\begin{DoxyCompactList}\small\item\em Base class for all exceptions Port\+Audio\+Cpp can throw. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_fun_callback_stream}{Fun\+Callback\+Stream}}
+\begin{DoxyCompactList}\small\item\em Callback stream using a C++ function (either a free function or a static function) callback. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} represents a host API (usually type of driver) in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_interface_callback_stream}{Interface\+Callback\+Stream}}
+\begin{DoxyCompactList}\small\item\em Callback stream using an instance of an object that\textquotesingle{}s derived from the \mbox{\hyperlink{classportaudio_1_1_callback_interface}{Callback\+Interface}} interface. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_mem_fun_callback_stream}{Mem\+Fun\+Callback\+Stream}}
+\begin{DoxyCompactList}\small\item\em Callback stream using a class\textquotesingle{}s member function as a callback. Template argument T is the type of the class of which a member function is going to be used. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_pa_cpp_exception}{Pa\+Cpp\+Exception}}
+\begin{DoxyCompactList}\small\item\em Exceptions specific to Port\+Audio\+Cpp (ie. exceptions which do not have an equivalent Port\+Audio error code). \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_pa_exception}{Pa\+Exception}}
+\begin{DoxyCompactList}\small\item\em Wrapper for Port\+Audio error codes to C++ exceptions. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} represents an active or inactive input and/or output data stream in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}}
+\begin{DoxyCompactList}\small\item\em The entire set of parameters needed to configure and open a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classportaudio_1_1_system}{System}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classportaudio_1_1_system}{System}} singleton which represents the Port\+Audio system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}{Sample\+Data\+Format}} \{ \newline
+\mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a57d1e6b20da033bdce2715fc64b43951}{INVALID\+\_\+\+FORMAT}} = 0
+, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6af45836039af9ec732cd18c40d0df8fb3}{FLOAT32}} = pa\+Float32
+, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6dd61123fe207d74b9af1bc56ade8108}{INT32}} = pa\+Int32
+, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6bfffdaf68a303c98d95f201dbbdfecf}{INT24}} = pa\+Int24
+, \newline
+\mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a310dc523199cfdf17a31b6e5fc412586}{INT16}} = pa\+Int16
+, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6ae713fcdbc839b7d2929c89291a97d359}{INT8}} = pa\+Int8
+, \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a19aab90c0fe25078edabfa2530fcac16}{UINT8}} = pa\+UInt8
+ \}
+\begin{DoxyCompactList}\small\item\em Port\+Audio sample data formats. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+To avoid name collision, everything in Port\+Audio\+Cpp is in the portaudio namespace. If this name is too long it\textquotesingle{}s usually pretty safe to use an alias like \`{}`namespace pa = portaudio;'\textquotesingle{}. 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}} 
+\index{portaudio@{portaudio}!SampleDataFormat@{SampleDataFormat}}
+\index{SampleDataFormat@{SampleDataFormat}!portaudio@{portaudio}}
+\doxysubsubsection{\texorpdfstring{SampleDataFormat}{SampleDataFormat}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6}{portaudio\+::\+Sample\+Data\+Format}}}
+
+
+
+Port\+Audio sample data formats. 
+
+Small helper enum to wrap the Port\+Audio defines. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID\_FORMAT@{INVALID\_FORMAT}!portaudio@{portaudio}}\index{portaudio@{portaudio}!INVALID\_FORMAT@{INVALID\_FORMAT}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a57d1e6b20da033bdce2715fc64b43951}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a57d1e6b20da033bdce2715fc64b43951}} 
+INVALID\+\_\+\+FORMAT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT32@{FLOAT32}!portaudio@{portaudio}}\index{portaudio@{portaudio}!FLOAT32@{FLOAT32}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6af45836039af9ec732cd18c40d0df8fb3}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6af45836039af9ec732cd18c40d0df8fb3}} 
+FLOAT32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT32@{INT32}!portaudio@{portaudio}}\index{portaudio@{portaudio}!INT32@{INT32}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6dd61123fe207d74b9af1bc56ade8108}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6dd61123fe207d74b9af1bc56ade8108}} 
+INT32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT24@{INT24}!portaudio@{portaudio}}\index{portaudio@{portaudio}!INT24@{INT24}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6bfffdaf68a303c98d95f201dbbdfecf}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a6bfffdaf68a303c98d95f201dbbdfecf}} 
+INT24&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT16@{INT16}!portaudio@{portaudio}}\index{portaudio@{portaudio}!INT16@{INT16}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a310dc523199cfdf17a31b6e5fc412586}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a310dc523199cfdf17a31b6e5fc412586}} 
+INT16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT8@{INT8}!portaudio@{portaudio}}\index{portaudio@{portaudio}!INT8@{INT8}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6ae713fcdbc839b7d2929c89291a97d359}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6ae713fcdbc839b7d2929c89291a97d359}} 
+INT8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT8@{UINT8}!portaudio@{portaudio}}\index{portaudio@{portaudio}!UINT8@{UINT8}}}\mbox{\Hypertarget{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a19aab90c0fe25078edabfa2530fcac16}\label{namespaceportaudio_a30bc71f065706d41a5d9208ea861e4a6a19aab90c0fe25078edabfa2530fcac16}} 
+UINT8&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,57 @@
+\hypertarget{_renderer_8cpp}{}\doxysection{C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\+Renderer.cpp File Reference}
+\label{_renderer_8cpp}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Renderer.cpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Renderer.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \char`\"{}Renderer.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Macros.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}GLFW/glfw3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glad/glad.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Uniform.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scene.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Hexeng.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Animation.\+hpp\char`\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng\+::\+Renderer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}{Hexeng\+::\+Renderer\+::init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}{Hexeng\+::\+Renderer\+::refresh\+\_\+uniforms}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{Hexeng\+::\+Renderer\+::stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}{Hexeng\+::\+Renderer\+::draw}} (const Vertex\+Array \&va, const Index\+Buffer \&ib, const Shader \&shader)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}{Hexeng\+::\+Renderer\+::clear}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac19da9701ce667192b9c1238673575e}{Hexeng\+::\+Renderer\+::draw\+\_\+scene}} (int scene\+\_\+parameter)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}{Hexeng\+::\+Renderer\+::draw\+\_\+current\+\_\+scene}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Uniform\+Interface $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{Hexeng\+::\+Renderer\+::uniform\+\_\+list}}
+\item 
+std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a925910558363c233fd21534728fb7275}{Hexeng\+::\+Renderer\+::pending\+\_\+actions}}
+\item 
+Uniform$<$ Vec2$<$ float $>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}{Hexeng\+::\+Renderer\+::u\+\_\+transform}}
+\item 
+Uniform$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}{Hexeng\+::\+Renderer\+::u\+\_\+rotation\+\_\+angle}}
+\item 
+Uniform$<$ Vec2$<$ int $>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{Hexeng\+::\+Renderer\+::u\+\_\+window\+\_\+size}}
+\item 
+Uniform$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{Hexeng\+::\+Renderer\+::u\+\_\+scale}}
+\item 
+Uniform$<$ Color4 $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{Hexeng\+::\+Renderer\+::u\+\_\+color\+\_\+filter}}
+\item 
+Uniform$<$ Color4 $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{Hexeng\+::\+Renderer\+::u\+\_\+color}}
+\item 
+To\+Be\+Init \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}{Hexeng\+::\+Renderer\+::init\+\_\+uniforms}}
+\end{DoxyCompactItemize}

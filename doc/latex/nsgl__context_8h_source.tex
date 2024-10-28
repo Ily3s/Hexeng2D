@@ -1,0 +1,72 @@
+\hypertarget{nsgl__context_8h_source}{}\doxysection{nsgl\+\_\+context.\+h}
+\label{nsgl__context_8h_source}\index{Hexeng2D/dependencies/glfw/src/nsgl\_context.h@{Hexeng2D/dependencies/glfw/src/nsgl\_context.h}}
+\mbox{\hyperlink{nsgl__context_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{// GLFW 3.3 macOS -\/ www.glfw.org}}
+\DoxyCodeLine{3 \textcolor{comment}{//-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{4 \textcolor{comment}{// Copyright (c) 2009-\/2019 Camilla Löwy <elmindreda@glfw.org>}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{// This software is provided 'as-\/is', without any express or implied}}
+\DoxyCodeLine{7 \textcolor{comment}{// warranty. In no event will the authors be held liable for any damages}}
+\DoxyCodeLine{8 \textcolor{comment}{// arising from the use of this software.}}
+\DoxyCodeLine{9 \textcolor{comment}{//}}
+\DoxyCodeLine{10 \textcolor{comment}{// Permission is granted to anyone to use this software for any purpose,}}
+\DoxyCodeLine{11 \textcolor{comment}{// including commercial applications, and to alter it and redistribute it}}
+\DoxyCodeLine{12 \textcolor{comment}{// freely, subject to the following restrictions:}}
+\DoxyCodeLine{13 \textcolor{comment}{//}}
+\DoxyCodeLine{14 \textcolor{comment}{// 1. The origin of this software must not be misrepresented; you must not}}
+\DoxyCodeLine{15 \textcolor{comment}{//    claim that you wrote the original software. If you use this software}}
+\DoxyCodeLine{16 \textcolor{comment}{//    in a product, an acknowledgment in the product documentation would}}
+\DoxyCodeLine{17 \textcolor{comment}{//    be appreciated but is not required.}}
+\DoxyCodeLine{18 \textcolor{comment}{//}}
+\DoxyCodeLine{19 \textcolor{comment}{// 2. Altered source versions must be plainly marked as such, and must not}}
+\DoxyCodeLine{20 \textcolor{comment}{//    be misrepresented as being the original software.}}
+\DoxyCodeLine{21 \textcolor{comment}{//}}
+\DoxyCodeLine{22 \textcolor{comment}{// 3. This notice may not be removed or altered from any source}}
+\DoxyCodeLine{23 \textcolor{comment}{//    distribution.}}
+\DoxyCodeLine{24 \textcolor{comment}{//}}
+\DoxyCodeLine{25 \textcolor{comment}{//========================================================================}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{// NOTE: Many Cocoa enum values have been renamed and we need to build across}}
+\DoxyCodeLine{28 \textcolor{comment}{//       SDK versions where one is unavailable or the other deprecated}}
+\DoxyCodeLine{29 \textcolor{comment}{//       We use the newer names in code and these macros to handle compatibility}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#if MAC\_OS\_X\_VERSION\_MAX\_ALLOWED < 101400}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{ \#define NSOpenGLContextParameterSwapInterval NSOpenGLCPSwapInterval}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{ \#define NSOpenGLContextParameterSurfaceOpacity NSOpenGLCPSurfaceOpacity}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_CONTEXT\_STATE            \_GLFWcontextNSGL nsgl}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define \_GLFW\_PLATFORM\_LIBRARY\_CONTEXT\_STATE    \_GLFWlibraryNSGL nsgl}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include <stdatomic.h>}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{comment}{// NSGL-\/specific per-\/context data}}
+\DoxyCodeLine{42 \textcolor{comment}{//}}
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wcontext_n_s_g_l}{\_GLFWcontextNSGL}}}
+\DoxyCodeLine{44 \{}
+\DoxyCodeLine{45     \textcolor{keywordtype}{id}                \mbox{\hyperlink{struct___g_l_f_wcontext_n_s_g_l_a1acd6f1833071d5e003d343de53e6154}{pixelFormat}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{id}                \mbox{\hyperlink{struct___g_l_f_wcontext_n_s_g_l_a5fbc3a52c058b90c0d455cfbcef3d94c}{object}};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \} \mbox{\hyperlink{struct___g_l_f_wcontext_n_s_g_l}{\_GLFWcontextNSGL}};}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{// NSGL-\/specific global data}}
+\DoxyCodeLine{51 \textcolor{comment}{//}}
+\DoxyCodeLine{52 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_g_l}{\_GLFWlibraryNSGL}}}
+\DoxyCodeLine{53 \{}
+\DoxyCodeLine{54     \textcolor{comment}{// dlopen handle for OpenGL.framework (for glfwGetProcAddress)}}
+\DoxyCodeLine{55     CFBundleRef     \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_g_l_a5b2eb67f116899be505f913167348778}{framework}};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \} \mbox{\hyperlink{struct___g_l_f_wlibrary_n_s_g_l}{\_GLFWlibraryNSGL}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{nsgl__context_8h_ac0510729f33f4aa006a3bc03dc98b37a}{\_glfwInitNSGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{61 \textcolor{keywordtype}{void} \mbox{\hyperlink{nsgl__context_8h_ad104998536aae3e02fa89f78925a9a52}{\_glfwTerminateNSGL}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{62 \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{nsgl__context_8h_a4d57514fb92fa2439dfe429183aee6c6}{\_glfwCreateContextNSGL}}(\mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}* window,}
+\DoxyCodeLine{63                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wctxconfig}{\_GLFWctxconfig}}* ctxconfig,}
+\DoxyCodeLine{64                                 \textcolor{keyword}{const} \mbox{\hyperlink{struct___g_l_f_wfbconfig}{\_GLFWfbconfig}}* fbconfig);}
+\DoxyCodeLine{65 \textcolor{keywordtype}{void} \mbox{\hyperlink{nsgl__context_8h_acabec01ed69977f4bd2280ffb009a823}{\_glfwDestroyContextNSGL}}(\mbox{\hyperlink{struct___g_l_f_wwindow}{\_GLFWwindow}}* window);}
+\DoxyCodeLine{66 }
+
+\end{DoxyCode}

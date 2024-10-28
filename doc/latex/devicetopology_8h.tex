@@ -1,0 +1,1252 @@
+\hypertarget{devicetopology_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/devicetopology.h File Reference}
+\label{devicetopology_8h}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/devicetopology.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/devicetopology.h}}
+{\ttfamily \#include \char`\"{}rpc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rpcndr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}windows.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ole2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}oaidl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ocidl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}propidl.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ks.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ksmedia.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_i_ks_control_vtbl}{IKs\+Control\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_per_channel_db_level_vtbl}{IPer\+Channel\+Db\+Level\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_volume_level_vtbl}{IAudio\+Volume\+Level\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_channel_config_vtbl}{IAudio\+Channel\+Config\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_loudness_vtbl}{IAudio\+Loudness\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_input_selector_vtbl}{IAudio\+Input\+Selector\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_output_selector_vtbl}{IAudio\+Output\+Selector\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_mute_vtbl}{IAudio\+Mute\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_bass_vtbl}{IAudio\+Bass\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_midrange_vtbl}{IAudio\+Midrange\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_treble_vtbl}{IAudio\+Treble\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_auto_gain_control_vtbl}{IAudio\+Auto\+Gain\+Control\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_audio_peak_meter_vtbl}{IAudio\+Peak\+Meter\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_device_specific_property_vtbl}{IDevice\+Specific\+Property\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_ks_format_support_vtbl}{IKs\+Format\+Support\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_ks_jack_description_vtbl}{IKs\+Jack\+Description\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_parts_list_vtbl}{IParts\+List\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_part_vtbl}{IPart\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_connector_vtbl}{IConnector\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_subunit_vtbl}{ISubunit\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_control_interface_vtbl}{IControl\+Interface\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_control_change_notify_vtbl}{IControl\+Change\+Notify\+Vtbl}}
+\item 
+struct \mbox{\hyperlink{struct_i_device_topology_vtbl}{IDevice\+Topology\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ad76a32846c87da46b8d59d882ad6b4c0}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~500
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a3aa613463387b2f7fb1c62b198c906e6}{\+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+}}~100
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a647d1f621c060c49ae07f8a0d7857d75}{\+\_\+\+\_\+\+IKs\+Control\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a290283f753d0b63ee059d0d87d492618}{\+\_\+\+\_\+\+IPer\+Channel\+Db\+Level\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a2f1b0df4534cb7fdfd7853493e3945ef}{\+\_\+\+\_\+\+IAudio\+Volume\+Level\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ae5daef3191bf4adad8cf0770d5686906}{\+\_\+\+\_\+\+IAudio\+Channel\+Config\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ac89b288095b397e6eb4963dbff0b495f}{\+\_\+\+\_\+\+IAudio\+Loudness\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a0d0c0741b4307adc4745e5bdf077fc98}{\+\_\+\+\_\+\+IAudio\+Input\+Selector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a2c81ed93375946d7e683a767d75717bd}{\+\_\+\+\_\+\+IAudio\+Output\+Selector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a36d0a95521820ea0ec3ac583d9cf6a0f}{\+\_\+\+\_\+\+IAudio\+Mute\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_afede0867945b6e3d144c814a10ab0ae3}{\+\_\+\+\_\+\+IAudio\+Bass\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a225eb9eed7c13bd42cc2ed284fcd8e74}{\+\_\+\+\_\+\+IAudio\+Midrange\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_af281b6babc8a27357ede88a0f3ff5a2f}{\+\_\+\+\_\+\+IAudio\+Treble\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a1094a8ee63410971f5257d6bac6c536e}{\+\_\+\+\_\+\+IAudio\+Auto\+Gain\+Control\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ae570a681b906b42c5abfc7d9f86ea3e3}{\+\_\+\+\_\+\+IAudio\+Peak\+Meter\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a8af662f14898d70ddf7872a50cdb639f}{\+\_\+\+\_\+\+IDevice\+Specific\+Property\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a7ce9d2bc10260aa933e4fafae86e786f}{\+\_\+\+\_\+\+IKs\+Format\+Support\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a91801d25b0062ec1c318d29374230110}{\+\_\+\+\_\+\+IKs\+Jack\+Description\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ae7bc7c353fb902e9d4a0dec1d386954b}{\+\_\+\+\_\+\+IParts\+List\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a3167ccd1bde4279d0f35cf8787409407}{\+\_\+\+\_\+\+IPart\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a1e9a08d241a0dee2b22acc79b09a637a}{\+\_\+\+\_\+\+IConnector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aee7d006fe5177886777f8c16412ed0b9}{\+\_\+\+\_\+\+ISubunit\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aefc205501a12508466dc8ee4a241ab9d}{\+\_\+\+\_\+\+IControl\+Interface\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a6514d238ef8fac8d886936bb5c52e283}{\+\_\+\+\_\+\+IControl\+Change\+Notify\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a2ffe657eb4426577da5baf736ab1d807}{\+\_\+\+\_\+\+IDevice\+Topology\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aa32862469742e1cdd3005ddbee009e49}{\+\_\+\+\_\+\+Device\+Topology\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aaa1771c30a9d47c05446a786ae261814}{E\+\_\+\+NOTFOUND}}~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+NOT\+\_\+\+FOUND)
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a3e0ee351b678c20fe108e37bd004d7a7}{DEVTOPO\+\_\+\+HARDWARE\+\_\+\+INITIATED\+\_\+\+EVENTCONTEXT}}~\textquotesingle{}draH\textquotesingle{}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a5cee4c580f5497f2a1a40c05869d04d7}{\+\_\+\+IKs\+Control\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ae3ee57d354eff543ab9ce6c8c6dcb829}{PARTTYPE\+\_\+\+FLAG\+\_\+\+CONNECTOR}}~0x00010000
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a1657669fa51323c9ea4d6ac7e322f88e}{PARTTYPE\+\_\+\+FLAG\+\_\+\+SUBUNIT}}~0x00020000
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_af518716edc54871fe5f0539232e1501b}{PARTTYPE\+\_\+\+MASK}}~0x00030000
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a3d0b62eaf0a11bf0cb75d4eaccf4ae6b}{PARTID\+\_\+\+MASK}}~0x0000ffff
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a7fbf66fd1df2d0815c66c6b2a4930236}{\+\_\+\+\_\+\+IKs\+Control\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ab28f9e18e36d2fe75e817d6e0ffebdff}{\+\_\+\+\_\+\+IPer\+Channel\+Db\+Level\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_af4715b337269efb3eae9457726a0bc4a}{\+\_\+\+\_\+\+IAudio\+Volume\+Level\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_ad0925c17b62bbe87fa7218f75c2f5534}{\+\_\+\+\_\+\+IAudio\+Channel\+Config\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a754929a5f872abccb36c18ed8f4ce894}{\+\_\+\+\_\+\+IAudio\+Loudness\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a823de329fc52e0b30b98f2f3fd0f0cbd}{\+\_\+\+\_\+\+IAudio\+Input\+Selector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_af3bb0cc263ea1e5fcc1b2fb518557070}{\+\_\+\+\_\+\+IAudio\+Output\+Selector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_abd499fb6f0ad170ed333ca1440cac461}{\+\_\+\+\_\+\+IAudio\+Mute\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a42d377c5332adbf16eb5b5f0c196c0e6}{\+\_\+\+\_\+\+IAudio\+Bass\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aacfe945f81d0a741f3d6fa530e5bb4e6}{\+\_\+\+\_\+\+IAudio\+Midrange\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a471edbc8f42d1700f1ac3273f43b6233}{\+\_\+\+\_\+\+IAudio\+Treble\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a9ec34cd9dadc2e08367b4fbcc45a20eb}{\+\_\+\+\_\+\+IAudio\+Auto\+Gain\+Control\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a8847df30f79706f6a5a984e90fc51e64}{\+\_\+\+\_\+\+IAudio\+Peak\+Meter\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a42d10da23a195e0260a39b7cd35622cd}{\+\_\+\+\_\+\+IDevice\+Specific\+Property\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a6e1c93fb4b7d0e9c3d221ca8ac34ac5e}{\+\_\+\+\_\+\+IKs\+Format\+Support\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a46259a2d047af42b3ec5f897f42ad72a}{\+\_\+\+\_\+\+IKs\+Jack\+Description\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a0a631fb0339f062c1a22c5c4944bf892}{\+\_\+\+\_\+\+IParts\+List\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_afd6f4dee0daf4537ea06d3ac9f7d0fb3}{\+\_\+\+\_\+\+IPart\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a0eb742d49fd4fd1f69a7f0f6322d391d}{\+\_\+\+\_\+\+IConnector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_acb80f36dc13c167d322b841de70846b3}{\+\_\+\+\_\+\+ISubunit\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_aa972e44ced24cf1a546fcc6280a66037}{\+\_\+\+\_\+\+IControl\+Interface\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a6b38106f3f2d01f408d96e287772ba9f}{\+\_\+\+\_\+\+IControl\+Change\+Notify\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_af150d296ea3cb78f627ae1fd998178f5}{\+\_\+\+\_\+\+IDevice\+Topology\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{devicetopology_8h_a03218541266a7357623fe67d93dc12bf}{\+\_\+\+\_\+\+Dev\+Topology\+Lib\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKs\+Control}} \mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKs\+Control}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}{IPer\+Channel\+Db\+Level}} \mbox{\hyperlink{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}{IPer\+Channel\+Db\+Level}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} \mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}{IAudio\+Channel\+Config}} \mbox{\hyperlink{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}{IAudio\+Channel\+Config}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}{IAudio\+Loudness}} \mbox{\hyperlink{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}{IAudio\+Loudness}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}{IAudio\+Input\+Selector}} \mbox{\hyperlink{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}{IAudio\+Input\+Selector}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}{IAudio\+Output\+Selector}} \mbox{\hyperlink{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}{IAudio\+Output\+Selector}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}{IAudio\+Mute}} \mbox{\hyperlink{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}{IAudio\+Mute}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}{IAudio\+Bass}} \mbox{\hyperlink{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}{IAudio\+Bass}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} \mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}{IAudio\+Treble}} \mbox{\hyperlink{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}{IAudio\+Treble}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}{IAudio\+Auto\+Gain\+Control}} \mbox{\hyperlink{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}{IAudio\+Auto\+Gain\+Control}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}{IAudio\+Peak\+Meter}} \mbox{\hyperlink{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}{IAudio\+Peak\+Meter}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} \mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a585c794f267602027373173fc1775081}{IKs\+Format\+Support}} \mbox{\hyperlink{devicetopology_8h_a585c794f267602027373173fc1775081}{IKs\+Format\+Support}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}} \mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}} \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}} \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}{IControl\+Interface}} \mbox{\hyperlink{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}{IControl\+Interface}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}{IControl\+Change\+Notify}} \mbox{\hyperlink{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}{IControl\+Change\+Notify}}
+\item 
+typedef interface \mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} \mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}}
+\item 
+typedef struct \mbox{\hyperlink{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}{Device\+Topology}} \mbox{\hyperlink{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}{Device\+Topology}}
+\item 
+typedef enum \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0011}} \mbox{\hyperlink{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}{Data\+Flow}}
+\item 
+typedef enum \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0012}} \mbox{\hyperlink{devicetopology_8h_a41e18e129b705db5d504ebf0b333678c}{Part\+Type}}
+\item 
+typedef enum \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0013}} \mbox{\hyperlink{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}{Connector\+Type}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_ks_control_vtbl}{IKs\+Control\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a1212fc3820340cc5ae3a282d5c32fad7}{IKs\+Control\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_per_channel_db_level_vtbl}{IPer\+Channel\+Db\+Level\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a3194449ef9bd8c22702ed5e736839421}{IPer\+Channel\+Db\+Level\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_volume_level_vtbl}{IAudio\+Volume\+Level\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a3fdad45788128ac34a839eff6afc3df7}{IAudio\+Volume\+Level\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_channel_config_vtbl}{IAudio\+Channel\+Config\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a565ac8f12940bf8df9948891a02dbda0}{IAudio\+Channel\+Config\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_loudness_vtbl}{IAudio\+Loudness\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a9b4eaefbcf47ebe71255b7bf16f4a26a}{IAudio\+Loudness\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_input_selector_vtbl}{IAudio\+Input\+Selector\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_ac35a2736083112872ee7e6adeefdae12}{IAudio\+Input\+Selector\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_output_selector_vtbl}{IAudio\+Output\+Selector\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_ad54af078a80931234696e28332c551de}{IAudio\+Output\+Selector\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_mute_vtbl}{IAudio\+Mute\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_aa338dc2df4f36fcea964bd4c85ff9e9d}{IAudio\+Mute\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_bass_vtbl}{IAudio\+Bass\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_aceaa4e4543ddbac068f1dbd4d982b47e}{IAudio\+Bass\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_midrange_vtbl}{IAudio\+Midrange\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a8bcbf0ef29794f32d24b2ff6acfda974}{IAudio\+Midrange\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_treble_vtbl}{IAudio\+Treble\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a07bee2d1955d46da3174ad5a8d813842}{IAudio\+Treble\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_auto_gain_control_vtbl}{IAudio\+Auto\+Gain\+Control\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a82f3286d810e98945c7eeca36b08c8a5}{IAudio\+Auto\+Gain\+Control\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_audio_peak_meter_vtbl}{IAudio\+Peak\+Meter\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a986806434fd0370384d58d1793addf2f}{IAudio\+Peak\+Meter\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_device_specific_property_vtbl}{IDevice\+Specific\+Property\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a55ae106476b327ea7f2f13d747281b26}{IDevice\+Specific\+Property\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_ks_format_support_vtbl}{IKs\+Format\+Support\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_afc009288444940b659adfbb2aff717a4}{IKs\+Format\+Support\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_ks_jack_description_vtbl}{IKs\+Jack\+Description\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_ad5273fc68ec296239768b4718a201d0c}{IKs\+Jack\+Description\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_parts_list_vtbl}{IParts\+List\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a1c74fb82c8033f85751bd151dc54b8bb}{IParts\+List\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_part_vtbl}{IPart\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_aaafff51ea68df0304ffee91da2de7b42}{IPart\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_connector_vtbl}{IConnector\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a92c69f471d25f9eae06298e6595bb70c}{IConnector\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_subunit_vtbl}{ISubunit\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a073e54727fe95049e9646c1c14be0a8c}{ISubunit\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_control_interface_vtbl}{IControl\+Interface\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a857a12719cd3e493ecbb3fb84e591543}{IControl\+Interface\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_control_change_notify_vtbl}{IControl\+Change\+Notify\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_acccb862786644ade72f5c4045a95475b}{IControl\+Change\+Notify\+Vtbl}}
+\item 
+typedef struct \mbox{\hyperlink{struct_i_device_topology_vtbl}{IDevice\+Topology\+Vtbl}} \mbox{\hyperlink{devicetopology_8h_a6f65ebb8d5a70a1e808f0da18a2bedc4}{IDevice\+Topology\+Vtbl}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0011}} \{ \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fad8ff8dfc9381018e97fce86d909f8975}{In}} = 0
+, \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fabba45258e8122cd853f27f4c8b5d3871}{Out}} = ( In + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0012}} \{ \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625a1e25becda2d56f14b0cbb1a2c2a78dc4}{Connector}} = 0
+, \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625aeef87e4e89a7d56e68e973ecac87d04c}{Subunit}} = ( Connector + 1 )
+ \}
+\item 
+enum \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0013}} \{ \newline
+\mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a2f00bf101168380764404de13c93fd43}{Unknown\+\_\+\+Connector}} = 0
+, \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7afc8450237ef6399fbd37b9ad3586755f}{Physical\+\_\+\+Internal}} = ( Unknown\+\_\+\+Connector + 1 )
+, \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ad81723825bbadb6ccefd0f545209b490}{Physical\+\_\+\+External}} = ( Physical\+\_\+\+Internal + 1 )
+, \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a5ffedc12283a136af0b67b2cba913a09}{Software\+\_\+\+IO}} = ( Physical\+\_\+\+External + 1 )
+, \newline
+\mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ab38b1f5517bd1fff96936dc159c5af3d}{Software\+\_\+\+Fixed}} = ( Software\+\_\+\+IO + 1 )
+, \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a80537b922c8f6fc87c728e968f548334}{Network}} = ( Software\+\_\+\+Fixed + 1 )
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{devicetopology_8h_a5dd4c301756ef44933014b9714b45c1b}{DEFINE\+\_\+\+GUID}} (EVENTCONTEXT\+\_\+\+VOLUMESLIDER, 0x\+E2\+C2\+E9\+DE, 0x09\+B1, 0x4\+B04, 0x84, 0x\+E5, 0x07, 0x93, 0x12, 0x25, 0x\+EE, 0x04)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{devicetopology_8h_a4e1013bc7cb2d87ec31b705e73a927ad}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec}}
+\item 
+RPC\+\_\+\+IF\+\_\+\+HANDLE \mbox{\hyperlink{devicetopology_8h_aa5d14eccb2017e44386ef0bc7f9a3d4b}{\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a2b5d5649651b98cf65f80a6990566ca1}{IID\+\_\+\+IKs\+Control}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a29b56d25f689b35d3515e8ff2b34cfda}{IID\+\_\+\+IPer\+Channel\+Db\+Level}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a5513e2e287be5d7b66f9b794142b0a92}{IID\+\_\+\+IAudio\+Volume\+Level}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_ae3d1dc7ebb6e2681d9d927fdabaa1b44}{IID\+\_\+\+IAudio\+Channel\+Config}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_ab135457a65e7f6980c0ad4e35218aefa}{IID\+\_\+\+IAudio\+Loudness}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a0cb5b27cc1e23ba867e664dfdf532f94}{IID\+\_\+\+IAudio\+Input\+Selector}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a9a922eff6d2b9cdbb618edd229f0c0e8}{IID\+\_\+\+IAudio\+Output\+Selector}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a6712b5916871cd92ab1705d38638ddbc}{IID\+\_\+\+IAudio\+Mute}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a5437c2bef053e3f44b05ba087d181727}{IID\+\_\+\+IAudio\+Bass}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_acc360c6fdea77f258c1fc6b71af4e1d5}{IID\+\_\+\+IAudio\+Midrange}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_ac845c6927ee1178da984aecc7a5f8e2a}{IID\+\_\+\+IAudio\+Treble}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a983478816ac190025f7177285592b35e}{IID\+\_\+\+IAudio\+Auto\+Gain\+Control}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_aa4cf443a8a36aa0a2bba137def735e4e}{IID\+\_\+\+IAudio\+Peak\+Meter}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a2ef286802cee817227ffd28d41fd14e7}{IID\+\_\+\+IDevice\+Specific\+Property}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_adb05f0e5bbacd3514d9a2a750476a729}{IID\+\_\+\+IKs\+Format\+Support}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a593b209e0630b6ca692700735c9c57ed}{IID\+\_\+\+IKs\+Jack\+Description}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_ac6ddb6cf9930600b50d4d7f2e1291a09}{IID\+\_\+\+IParts\+List}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a4c0d83b085d214a5f92c943ed849f43b}{IID\+\_\+\+IPart}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_aa7300adb9faaa2395e04d58d291a3548}{IID\+\_\+\+IConnector}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a2ef6725c04d983f7a9bab5b2c3dbf9fe}{IID\+\_\+\+ISubunit}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a10d177455cb63b79622ad3d216140235}{IID\+\_\+\+IControl\+Interface}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a0cb2e56ea862b86ebfe53fc12019f330}{IID\+\_\+\+IControl\+Change\+Notify}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a03a260138455f159c30b404a3fb44f6f}{IID\+\_\+\+IDevice\+Topology}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{devicetopology_8h_a77dc7cc3db6136fa01f7bf501e24ec45}{LIBID\+\_\+\+Dev\+Topology\+Lib}}
+\item 
+\mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{devicetopology_8h_a42cc8067f15f5c66b05c0bd21a563223}{CLSID\+\_\+\+Device\+Topology}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{devicetopology_8h_aa32862469742e1cdd3005ddbee009e49}\label{devicetopology_8h_aa32862469742e1cdd3005ddbee009e49}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_DeviceTopology\_FWD\_DEFINED\_\_@{\_\_DeviceTopology\_FWD\_DEFINED\_\_}}
+\index{\_\_DeviceTopology\_FWD\_DEFINED\_\_@{\_\_DeviceTopology\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_DeviceTopology\_FWD\_DEFINED\_\_}{\_\_DeviceTopology\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Device\+Topology\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a03218541266a7357623fe67d93dc12bf}\label{devicetopology_8h_a03218541266a7357623fe67d93dc12bf}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_@{\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_}}
+\index{\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_@{\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_}{\_\_DevTopologyLib\_LIBRARY\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+Dev\+Topology\+Lib\+\_\+\+LIBRARY\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a1094a8ee63410971f5257d6bac6c536e}\label{devicetopology_8h_a1094a8ee63410971f5257d6bac6c536e}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_@{\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_@{\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_}{\_\_IAudioAutoGainControl\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Auto\+Gain\+Control\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a9ec34cd9dadc2e08367b4fbcc45a20eb}\label{devicetopology_8h_a9ec34cd9dadc2e08367b4fbcc45a20eb}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_@{\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_@{\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_}{\_\_IAudioAutoGainControl\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Auto\+Gain\+Control\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_afede0867945b6e3d144c814a10ab0ae3}\label{devicetopology_8h_afede0867945b6e3d144c814a10ab0ae3}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioBass\_FWD\_DEFINED\_\_@{\_\_IAudioBass\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioBass\_FWD\_DEFINED\_\_@{\_\_IAudioBass\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioBass\_FWD\_DEFINED\_\_}{\_\_IAudioBass\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Bass\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a42d377c5332adbf16eb5b5f0c196c0e6}\label{devicetopology_8h_a42d377c5332adbf16eb5b5f0c196c0e6}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioBass\_INTERFACE\_DEFINED\_\_@{\_\_IAudioBass\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioBass\_INTERFACE\_DEFINED\_\_@{\_\_IAudioBass\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioBass\_INTERFACE\_DEFINED\_\_}{\_\_IAudioBass\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Bass\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ae5daef3191bf4adad8cf0770d5686906}\label{devicetopology_8h_ae5daef3191bf4adad8cf0770d5686906}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_@{\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_@{\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_}{\_\_IAudioChannelConfig\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Channel\+Config\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ad0925c17b62bbe87fa7218f75c2f5534}\label{devicetopology_8h_ad0925c17b62bbe87fa7218f75c2f5534}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_@{\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_@{\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_}{\_\_IAudioChannelConfig\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Channel\+Config\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a0d0c0741b4307adc4745e5bdf077fc98}\label{devicetopology_8h_a0d0c0741b4307adc4745e5bdf077fc98}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioInputSelector\_FWD\_DEFINED\_\_@{\_\_IAudioInputSelector\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioInputSelector\_FWD\_DEFINED\_\_@{\_\_IAudioInputSelector\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioInputSelector\_FWD\_DEFINED\_\_}{\_\_IAudioInputSelector\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Input\+Selector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a823de329fc52e0b30b98f2f3fd0f0cbd}\label{devicetopology_8h_a823de329fc52e0b30b98f2f3fd0f0cbd}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_@{\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_@{\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_}{\_\_IAudioInputSelector\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Input\+Selector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ac89b288095b397e6eb4963dbff0b495f}\label{devicetopology_8h_ac89b288095b397e6eb4963dbff0b495f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioLoudness\_FWD\_DEFINED\_\_@{\_\_IAudioLoudness\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioLoudness\_FWD\_DEFINED\_\_@{\_\_IAudioLoudness\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioLoudness\_FWD\_DEFINED\_\_}{\_\_IAudioLoudness\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Loudness\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a754929a5f872abccb36c18ed8f4ce894}\label{devicetopology_8h_a754929a5f872abccb36c18ed8f4ce894}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_@{\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_@{\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_}{\_\_IAudioLoudness\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Loudness\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a225eb9eed7c13bd42cc2ed284fcd8e74}\label{devicetopology_8h_a225eb9eed7c13bd42cc2ed284fcd8e74}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioMidrange\_FWD\_DEFINED\_\_@{\_\_IAudioMidrange\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioMidrange\_FWD\_DEFINED\_\_@{\_\_IAudioMidrange\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioMidrange\_FWD\_DEFINED\_\_}{\_\_IAudioMidrange\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Midrange\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_aacfe945f81d0a741f3d6fa530e5bb4e6}\label{devicetopology_8h_aacfe945f81d0a741f3d6fa530e5bb4e6}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_@{\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_@{\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_}{\_\_IAudioMidrange\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Midrange\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a36d0a95521820ea0ec3ac583d9cf6a0f}\label{devicetopology_8h_a36d0a95521820ea0ec3ac583d9cf6a0f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioMute\_FWD\_DEFINED\_\_@{\_\_IAudioMute\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioMute\_FWD\_DEFINED\_\_@{\_\_IAudioMute\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioMute\_FWD\_DEFINED\_\_}{\_\_IAudioMute\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Mute\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_abd499fb6f0ad170ed333ca1440cac461}\label{devicetopology_8h_abd499fb6f0ad170ed333ca1440cac461}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioMute\_INTERFACE\_DEFINED\_\_@{\_\_IAudioMute\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioMute\_INTERFACE\_DEFINED\_\_@{\_\_IAudioMute\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioMute\_INTERFACE\_DEFINED\_\_}{\_\_IAudioMute\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Mute\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a2c81ed93375946d7e683a767d75717bd}\label{devicetopology_8h_a2c81ed93375946d7e683a767d75717bd}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_@{\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_@{\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_}{\_\_IAudioOutputSelector\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Output\+Selector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_af3bb0cc263ea1e5fcc1b2fb518557070}\label{devicetopology_8h_af3bb0cc263ea1e5fcc1b2fb518557070}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_@{\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_@{\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_}{\_\_IAudioOutputSelector\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Output\+Selector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ae570a681b906b42c5abfc7d9f86ea3e3}\label{devicetopology_8h_ae570a681b906b42c5abfc7d9f86ea3e3}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_@{\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_@{\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_}{\_\_IAudioPeakMeter\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Peak\+Meter\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a8847df30f79706f6a5a984e90fc51e64}\label{devicetopology_8h_a8847df30f79706f6a5a984e90fc51e64}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_@{\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_@{\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_}{\_\_IAudioPeakMeter\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Peak\+Meter\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_af281b6babc8a27357ede88a0f3ff5a2f}\label{devicetopology_8h_af281b6babc8a27357ede88a0f3ff5a2f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioTreble\_FWD\_DEFINED\_\_@{\_\_IAudioTreble\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioTreble\_FWD\_DEFINED\_\_@{\_\_IAudioTreble\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioTreble\_FWD\_DEFINED\_\_}{\_\_IAudioTreble\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Treble\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a471edbc8f42d1700f1ac3273f43b6233}\label{devicetopology_8h_a471edbc8f42d1700f1ac3273f43b6233}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_@{\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_@{\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_}{\_\_IAudioTreble\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Treble\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a2f1b0df4534cb7fdfd7853493e3945ef}\label{devicetopology_8h_a2f1b0df4534cb7fdfd7853493e3945ef}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_@{\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_}}
+\index{\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_@{\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_}{\_\_IAudioVolumeLevel\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Volume\+Level\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_af4715b337269efb3eae9457726a0bc4a}\label{devicetopology_8h_af4715b337269efb3eae9457726a0bc4a}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_@{\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_@{\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_}{\_\_IAudioVolumeLevel\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IAudio\+Volume\+Level\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a1e9a08d241a0dee2b22acc79b09a637a}\label{devicetopology_8h_a1e9a08d241a0dee2b22acc79b09a637a}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IConnector\_FWD\_DEFINED\_\_@{\_\_IConnector\_FWD\_DEFINED\_\_}}
+\index{\_\_IConnector\_FWD\_DEFINED\_\_@{\_\_IConnector\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConnector\_FWD\_DEFINED\_\_}{\_\_IConnector\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IConnector\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a0eb742d49fd4fd1f69a7f0f6322d391d}\label{devicetopology_8h_a0eb742d49fd4fd1f69a7f0f6322d391d}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IConnector\_INTERFACE\_DEFINED\_\_@{\_\_IConnector\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IConnector\_INTERFACE\_DEFINED\_\_@{\_\_IConnector\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IConnector\_INTERFACE\_DEFINED\_\_}{\_\_IConnector\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IConnector\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a6514d238ef8fac8d886936bb5c52e283}\label{devicetopology_8h_a6514d238ef8fac8d886936bb5c52e283}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IControlChangeNotify\_FWD\_DEFINED\_\_@{\_\_IControlChangeNotify\_FWD\_DEFINED\_\_}}
+\index{\_\_IControlChangeNotify\_FWD\_DEFINED\_\_@{\_\_IControlChangeNotify\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IControlChangeNotify\_FWD\_DEFINED\_\_}{\_\_IControlChangeNotify\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IControl\+Change\+Notify\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a6b38106f3f2d01f408d96e287772ba9f}\label{devicetopology_8h_a6b38106f3f2d01f408d96e287772ba9f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_@{\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_@{\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_}{\_\_IControlChangeNotify\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IControl\+Change\+Notify\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_aefc205501a12508466dc8ee4a241ab9d}\label{devicetopology_8h_aefc205501a12508466dc8ee4a241ab9d}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IControlInterface\_FWD\_DEFINED\_\_@{\_\_IControlInterface\_FWD\_DEFINED\_\_}}
+\index{\_\_IControlInterface\_FWD\_DEFINED\_\_@{\_\_IControlInterface\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IControlInterface\_FWD\_DEFINED\_\_}{\_\_IControlInterface\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IControl\+Interface\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_aa972e44ced24cf1a546fcc6280a66037}\label{devicetopology_8h_aa972e44ced24cf1a546fcc6280a66037}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IControlInterface\_INTERFACE\_DEFINED\_\_@{\_\_IControlInterface\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IControlInterface\_INTERFACE\_DEFINED\_\_@{\_\_IControlInterface\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IControlInterface\_INTERFACE\_DEFINED\_\_}{\_\_IControlInterface\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IControl\+Interface\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a8af662f14898d70ddf7872a50cdb639f}\label{devicetopology_8h_a8af662f14898d70ddf7872a50cdb639f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_@{\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_}}
+\index{\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_@{\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_}{\_\_IDeviceSpecificProperty\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IDevice\+Specific\+Property\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a42d10da23a195e0260a39b7cd35622cd}\label{devicetopology_8h_a42d10da23a195e0260a39b7cd35622cd}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_@{\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_@{\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_}{\_\_IDeviceSpecificProperty\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IDevice\+Specific\+Property\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a2ffe657eb4426577da5baf736ab1d807}\label{devicetopology_8h_a2ffe657eb4426577da5baf736ab1d807}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IDeviceTopology\_FWD\_DEFINED\_\_@{\_\_IDeviceTopology\_FWD\_DEFINED\_\_}}
+\index{\_\_IDeviceTopology\_FWD\_DEFINED\_\_@{\_\_IDeviceTopology\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IDeviceTopology\_FWD\_DEFINED\_\_}{\_\_IDeviceTopology\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IDevice\+Topology\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_af150d296ea3cb78f627ae1fd998178f5}\label{devicetopology_8h_af150d296ea3cb78f627ae1fd998178f5}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_@{\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_@{\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_}{\_\_IDeviceTopology\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IDevice\+Topology\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a647d1f621c060c49ae07f8a0d7857d75}\label{devicetopology_8h_a647d1f621c060c49ae07f8a0d7857d75}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsControl\_FWD\_DEFINED\_\_@{\_\_IKsControl\_FWD\_DEFINED\_\_}}
+\index{\_\_IKsControl\_FWD\_DEFINED\_\_@{\_\_IKsControl\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsControl\_FWD\_DEFINED\_\_}{\_\_IKsControl\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Control\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a7fbf66fd1df2d0815c66c6b2a4930236}\label{devicetopology_8h_a7fbf66fd1df2d0815c66c6b2a4930236}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsControl\_INTERFACE\_DEFINED\_\_@{\_\_IKsControl\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IKsControl\_INTERFACE\_DEFINED\_\_@{\_\_IKsControl\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsControl\_INTERFACE\_DEFINED\_\_}{\_\_IKsControl\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Control\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a7ce9d2bc10260aa933e4fafae86e786f}\label{devicetopology_8h_a7ce9d2bc10260aa933e4fafae86e786f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsFormatSupport\_FWD\_DEFINED\_\_@{\_\_IKsFormatSupport\_FWD\_DEFINED\_\_}}
+\index{\_\_IKsFormatSupport\_FWD\_DEFINED\_\_@{\_\_IKsFormatSupport\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsFormatSupport\_FWD\_DEFINED\_\_}{\_\_IKsFormatSupport\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Format\+Support\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a6e1c93fb4b7d0e9c3d221ca8ac34ac5e}\label{devicetopology_8h_a6e1c93fb4b7d0e9c3d221ca8ac34ac5e}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_@{\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_@{\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_}{\_\_IKsFormatSupport\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Format\+Support\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a91801d25b0062ec1c318d29374230110}\label{devicetopology_8h_a91801d25b0062ec1c318d29374230110}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsJackDescription\_FWD\_DEFINED\_\_@{\_\_IKsJackDescription\_FWD\_DEFINED\_\_}}
+\index{\_\_IKsJackDescription\_FWD\_DEFINED\_\_@{\_\_IKsJackDescription\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsJackDescription\_FWD\_DEFINED\_\_}{\_\_IKsJackDescription\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Jack\+Description\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a46259a2d047af42b3ec5f897f42ad72a}\label{devicetopology_8h_a46259a2d047af42b3ec5f897f42ad72a}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_@{\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_@{\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_}{\_\_IKsJackDescription\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IKs\+Jack\+Description\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a3167ccd1bde4279d0f35cf8787409407}\label{devicetopology_8h_a3167ccd1bde4279d0f35cf8787409407}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPart\_FWD\_DEFINED\_\_@{\_\_IPart\_FWD\_DEFINED\_\_}}
+\index{\_\_IPart\_FWD\_DEFINED\_\_@{\_\_IPart\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPart\_FWD\_DEFINED\_\_}{\_\_IPart\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IPart\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_afd6f4dee0daf4537ea06d3ac9f7d0fb3}\label{devicetopology_8h_afd6f4dee0daf4537ea06d3ac9f7d0fb3}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPart\_INTERFACE\_DEFINED\_\_@{\_\_IPart\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IPart\_INTERFACE\_DEFINED\_\_@{\_\_IPart\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPart\_INTERFACE\_DEFINED\_\_}{\_\_IPart\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IPart\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ae7bc7c353fb902e9d4a0dec1d386954b}\label{devicetopology_8h_ae7bc7c353fb902e9d4a0dec1d386954b}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPartsList\_FWD\_DEFINED\_\_@{\_\_IPartsList\_FWD\_DEFINED\_\_}}
+\index{\_\_IPartsList\_FWD\_DEFINED\_\_@{\_\_IPartsList\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPartsList\_FWD\_DEFINED\_\_}{\_\_IPartsList\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IParts\+List\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a0a631fb0339f062c1a22c5c4944bf892}\label{devicetopology_8h_a0a631fb0339f062c1a22c5c4944bf892}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPartsList\_INTERFACE\_DEFINED\_\_@{\_\_IPartsList\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IPartsList\_INTERFACE\_DEFINED\_\_@{\_\_IPartsList\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPartsList\_INTERFACE\_DEFINED\_\_}{\_\_IPartsList\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IParts\+List\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a290283f753d0b63ee059d0d87d492618}\label{devicetopology_8h_a290283f753d0b63ee059d0d87d492618}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_@{\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_}}
+\index{\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_@{\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_}{\_\_IPerChannelDbLevel\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IPer\+Channel\+Db\+Level\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ab28f9e18e36d2fe75e817d6e0ffebdff}\label{devicetopology_8h_ab28f9e18e36d2fe75e817d6e0ffebdff}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_@{\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_@{\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_}{\_\_IPerChannelDbLevel\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+IPer\+Channel\+Db\+Level\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_aee7d006fe5177886777f8c16412ed0b9}\label{devicetopology_8h_aee7d006fe5177886777f8c16412ed0b9}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_ISubunit\_FWD\_DEFINED\_\_@{\_\_ISubunit\_FWD\_DEFINED\_\_}}
+\index{\_\_ISubunit\_FWD\_DEFINED\_\_@{\_\_ISubunit\_FWD\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISubunit\_FWD\_DEFINED\_\_}{\_\_ISubunit\_FWD\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISubunit\+\_\+\+FWD\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_acb80f36dc13c167d322b841de70846b3}\label{devicetopology_8h_acb80f36dc13c167d322b841de70846b3}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_ISubunit\_INTERFACE\_DEFINED\_\_@{\_\_ISubunit\_INTERFACE\_DEFINED\_\_}}
+\index{\_\_ISubunit\_INTERFACE\_DEFINED\_\_@{\_\_ISubunit\_INTERFACE\_DEFINED\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_ISubunit\_INTERFACE\_DEFINED\_\_}{\_\_ISubunit\_INTERFACE\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+ISubunit\+\_\+\+INTERFACE\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_ad76a32846c87da46b8d59d882ad6b4c0}\label{devicetopology_8h_ad76a32846c87da46b8d59d882ad6b4c0}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCNDR\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~500}
+
+\mbox{\Hypertarget{devicetopology_8h_a3aa613463387b2f7fb1c62b198c906e6}\label{devicetopology_8h_a3aa613463387b2f7fb1c62b198c906e6}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\index{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_@{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}{\_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+REQUIRED\+\_\+\+RPCSAL\+\_\+\+H\+\_\+\+VERSION\+\_\+\+\_\+~100}
+
+\mbox{\Hypertarget{devicetopology_8h_a5cee4c580f5497f2a1a40c05869d04d7}\label{devicetopology_8h_a5cee4c580f5497f2a1a40c05869d04d7}} 
+\index{devicetopology.h@{devicetopology.h}!\_IKsControl\_@{\_IKsControl\_}}
+\index{\_IKsControl\_@{\_IKsControl\_}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_IKsControl\_}{\_IKsControl\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+IKs\+Control\+\_\+}
+
+\mbox{\Hypertarget{devicetopology_8h_a3e0ee351b678c20fe108e37bd004d7a7}\label{devicetopology_8h_a3e0ee351b678c20fe108e37bd004d7a7}} 
+\index{devicetopology.h@{devicetopology.h}!DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT@{DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT}}
+\index{DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT@{DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT}{DEVTOPO\_HARDWARE\_INITIATED\_EVENTCONTEXT}}
+{\footnotesize\ttfamily \#define DEVTOPO\+\_\+\+HARDWARE\+\_\+\+INITIATED\+\_\+\+EVENTCONTEXT~\textquotesingle{}draH\textquotesingle{}}
+
+\mbox{\Hypertarget{devicetopology_8h_aaa1771c30a9d47c05446a786ae261814}\label{devicetopology_8h_aaa1771c30a9d47c05446a786ae261814}} 
+\index{devicetopology.h@{devicetopology.h}!E\_NOTFOUND@{E\_NOTFOUND}}
+\index{E\_NOTFOUND@{E\_NOTFOUND}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{E\_NOTFOUND}{E\_NOTFOUND}}
+{\footnotesize\ttfamily \#define E\+\_\+\+NOTFOUND~HRESULT\+\_\+\+FROM\+\_\+\+WIN32(ERROR\+\_\+\+NOT\+\_\+\+FOUND)}
+
+\mbox{\Hypertarget{devicetopology_8h_a3d0b62eaf0a11bf0cb75d4eaccf4ae6b}\label{devicetopology_8h_a3d0b62eaf0a11bf0cb75d4eaccf4ae6b}} 
+\index{devicetopology.h@{devicetopology.h}!PARTID\_MASK@{PARTID\_MASK}}
+\index{PARTID\_MASK@{PARTID\_MASK}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{PARTID\_MASK}{PARTID\_MASK}}
+{\footnotesize\ttfamily \#define PARTID\+\_\+\+MASK~0x0000ffff}
+
+\mbox{\Hypertarget{devicetopology_8h_ae3ee57d354eff543ab9ce6c8c6dcb829}\label{devicetopology_8h_ae3ee57d354eff543ab9ce6c8c6dcb829}} 
+\index{devicetopology.h@{devicetopology.h}!PARTTYPE\_FLAG\_CONNECTOR@{PARTTYPE\_FLAG\_CONNECTOR}}
+\index{PARTTYPE\_FLAG\_CONNECTOR@{PARTTYPE\_FLAG\_CONNECTOR}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{PARTTYPE\_FLAG\_CONNECTOR}{PARTTYPE\_FLAG\_CONNECTOR}}
+{\footnotesize\ttfamily \#define PARTTYPE\+\_\+\+FLAG\+\_\+\+CONNECTOR~0x00010000}
+
+\mbox{\Hypertarget{devicetopology_8h_a1657669fa51323c9ea4d6ac7e322f88e}\label{devicetopology_8h_a1657669fa51323c9ea4d6ac7e322f88e}} 
+\index{devicetopology.h@{devicetopology.h}!PARTTYPE\_FLAG\_SUBUNIT@{PARTTYPE\_FLAG\_SUBUNIT}}
+\index{PARTTYPE\_FLAG\_SUBUNIT@{PARTTYPE\_FLAG\_SUBUNIT}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{PARTTYPE\_FLAG\_SUBUNIT}{PARTTYPE\_FLAG\_SUBUNIT}}
+{\footnotesize\ttfamily \#define PARTTYPE\+\_\+\+FLAG\+\_\+\+SUBUNIT~0x00020000}
+
+\mbox{\Hypertarget{devicetopology_8h_af518716edc54871fe5f0539232e1501b}\label{devicetopology_8h_af518716edc54871fe5f0539232e1501b}} 
+\index{devicetopology.h@{devicetopology.h}!PARTTYPE\_MASK@{PARTTYPE\_MASK}}
+\index{PARTTYPE\_MASK@{PARTTYPE\_MASK}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{PARTTYPE\_MASK}{PARTTYPE\_MASK}}
+{\footnotesize\ttfamily \#define PARTTYPE\+\_\+\+MASK~0x00030000}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}\label{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}} 
+\index{devicetopology.h@{devicetopology.h}!ConnectorType@{ConnectorType}}
+\index{ConnectorType@{ConnectorType}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{ConnectorType}{ConnectorType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0013}} \mbox{\hyperlink{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}{Connector\+Type}}}
+
+\mbox{\Hypertarget{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}\label{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}} 
+\index{devicetopology.h@{devicetopology.h}!DataFlow@{DataFlow}}
+\index{DataFlow@{DataFlow}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{DataFlow}{DataFlow}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0011}} \mbox{\hyperlink{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}{Data\+Flow}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}\label{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}} 
+\index{devicetopology.h@{devicetopology.h}!DeviceTopology@{DeviceTopology}}
+\index{DeviceTopology@{DeviceTopology}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{DeviceTopology}{DeviceTopology}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}{Device\+Topology}} \mbox{\hyperlink{devicetopology_8h_a21b1d007c72adea6bc63ef5b047fbfcc}{Device\+Topology}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}\label{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioAutoGainControl@{IAudioAutoGainControl}}
+\index{IAudioAutoGainControl@{IAudioAutoGainControl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioAutoGainControl}{IAudioAutoGainControl}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}{IAudio\+Auto\+Gain\+Control}} \mbox{\hyperlink{devicetopology_8h_ae5cebecc60b40ff75cabb4905dc6c71d}{IAudio\+Auto\+Gain\+Control}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a82f3286d810e98945c7eeca36b08c8a5}\label{devicetopology_8h_a82f3286d810e98945c7eeca36b08c8a5}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioAutoGainControlVtbl@{IAudioAutoGainControlVtbl}}
+\index{IAudioAutoGainControlVtbl@{IAudioAutoGainControlVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioAutoGainControlVtbl}{IAudioAutoGainControlVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_auto_gain_control_vtbl}{IAudio\+Auto\+Gain\+Control\+Vtbl}} \mbox{\hyperlink{struct_i_audio_auto_gain_control_vtbl}{IAudio\+Auto\+Gain\+Control\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}\label{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioBass@{IAudioBass}}
+\index{IAudioBass@{IAudioBass}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioBass}{IAudioBass}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}{IAudio\+Bass}} \mbox{\hyperlink{devicetopology_8h_a5f8da29f8b1203453acf3cff3f6b7603}{IAudio\+Bass}}}
+
+\mbox{\Hypertarget{devicetopology_8h_aceaa4e4543ddbac068f1dbd4d982b47e}\label{devicetopology_8h_aceaa4e4543ddbac068f1dbd4d982b47e}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioBassVtbl@{IAudioBassVtbl}}
+\index{IAudioBassVtbl@{IAudioBassVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioBassVtbl}{IAudioBassVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_bass_vtbl}{IAudio\+Bass\+Vtbl}} \mbox{\hyperlink{struct_i_audio_bass_vtbl}{IAudio\+Bass\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}\label{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioChannelConfig@{IAudioChannelConfig}}
+\index{IAudioChannelConfig@{IAudioChannelConfig}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioChannelConfig}{IAudioChannelConfig}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}{IAudio\+Channel\+Config}} \mbox{\hyperlink{devicetopology_8h_ab703cd8ba99c9cdcee33b19dfdc917dc}{IAudio\+Channel\+Config}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a565ac8f12940bf8df9948891a02dbda0}\label{devicetopology_8h_a565ac8f12940bf8df9948891a02dbda0}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioChannelConfigVtbl@{IAudioChannelConfigVtbl}}
+\index{IAudioChannelConfigVtbl@{IAudioChannelConfigVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioChannelConfigVtbl}{IAudioChannelConfigVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_channel_config_vtbl}{IAudio\+Channel\+Config\+Vtbl}} \mbox{\hyperlink{struct_i_audio_channel_config_vtbl}{IAudio\+Channel\+Config\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}\label{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioInputSelector@{IAudioInputSelector}}
+\index{IAudioInputSelector@{IAudioInputSelector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioInputSelector}{IAudioInputSelector}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}{IAudio\+Input\+Selector}} \mbox{\hyperlink{devicetopology_8h_a03acf1b6f62999a3eb43b007e2cb2b7c}{IAudio\+Input\+Selector}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ac35a2736083112872ee7e6adeefdae12}\label{devicetopology_8h_ac35a2736083112872ee7e6adeefdae12}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioInputSelectorVtbl@{IAudioInputSelectorVtbl}}
+\index{IAudioInputSelectorVtbl@{IAudioInputSelectorVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioInputSelectorVtbl}{IAudioInputSelectorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_input_selector_vtbl}{IAudio\+Input\+Selector\+Vtbl}} \mbox{\hyperlink{struct_i_audio_input_selector_vtbl}{IAudio\+Input\+Selector\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}\label{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioLoudness@{IAudioLoudness}}
+\index{IAudioLoudness@{IAudioLoudness}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioLoudness}{IAudioLoudness}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}{IAudio\+Loudness}} \mbox{\hyperlink{devicetopology_8h_a1dfe19b110985d1eb212e3106d6744fa}{IAudio\+Loudness}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a9b4eaefbcf47ebe71255b7bf16f4a26a}\label{devicetopology_8h_a9b4eaefbcf47ebe71255b7bf16f4a26a}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioLoudnessVtbl@{IAudioLoudnessVtbl}}
+\index{IAudioLoudnessVtbl@{IAudioLoudnessVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioLoudnessVtbl}{IAudioLoudnessVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_loudness_vtbl}{IAudio\+Loudness\+Vtbl}} \mbox{\hyperlink{struct_i_audio_loudness_vtbl}{IAudio\+Loudness\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}\label{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioMidrange@{IAudioMidrange}}
+\index{IAudioMidrange@{IAudioMidrange}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioMidrange}{IAudioMidrange}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}} \mbox{\hyperlink{devicetopology_8h_a4da06c3982b0dfbafb61813769a9ccc7}{IAudio\+Midrange}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a8bcbf0ef29794f32d24b2ff6acfda974}\label{devicetopology_8h_a8bcbf0ef29794f32d24b2ff6acfda974}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioMidrangeVtbl@{IAudioMidrangeVtbl}}
+\index{IAudioMidrangeVtbl@{IAudioMidrangeVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioMidrangeVtbl}{IAudioMidrangeVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_midrange_vtbl}{IAudio\+Midrange\+Vtbl}} \mbox{\hyperlink{struct_i_audio_midrange_vtbl}{IAudio\+Midrange\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}\label{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioMute@{IAudioMute}}
+\index{IAudioMute@{IAudioMute}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioMute}{IAudioMute}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}{IAudio\+Mute}} \mbox{\hyperlink{devicetopology_8h_a445bb90c3d0c281b1295440bbb25e959}{IAudio\+Mute}}}
+
+\mbox{\Hypertarget{devicetopology_8h_aa338dc2df4f36fcea964bd4c85ff9e9d}\label{devicetopology_8h_aa338dc2df4f36fcea964bd4c85ff9e9d}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioMuteVtbl@{IAudioMuteVtbl}}
+\index{IAudioMuteVtbl@{IAudioMuteVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioMuteVtbl}{IAudioMuteVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_mute_vtbl}{IAudio\+Mute\+Vtbl}} \mbox{\hyperlink{struct_i_audio_mute_vtbl}{IAudio\+Mute\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}\label{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioOutputSelector@{IAudioOutputSelector}}
+\index{IAudioOutputSelector@{IAudioOutputSelector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioOutputSelector}{IAudioOutputSelector}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}{IAudio\+Output\+Selector}} \mbox{\hyperlink{devicetopology_8h_a68641fd18c565860af1edfe4937f20f1}{IAudio\+Output\+Selector}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ad54af078a80931234696e28332c551de}\label{devicetopology_8h_ad54af078a80931234696e28332c551de}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioOutputSelectorVtbl@{IAudioOutputSelectorVtbl}}
+\index{IAudioOutputSelectorVtbl@{IAudioOutputSelectorVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioOutputSelectorVtbl}{IAudioOutputSelectorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_output_selector_vtbl}{IAudio\+Output\+Selector\+Vtbl}} \mbox{\hyperlink{struct_i_audio_output_selector_vtbl}{IAudio\+Output\+Selector\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}\label{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioPeakMeter@{IAudioPeakMeter}}
+\index{IAudioPeakMeter@{IAudioPeakMeter}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioPeakMeter}{IAudioPeakMeter}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}{IAudio\+Peak\+Meter}} \mbox{\hyperlink{devicetopology_8h_ad573645ce25069e465d68516de9f74ab}{IAudio\+Peak\+Meter}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a986806434fd0370384d58d1793addf2f}\label{devicetopology_8h_a986806434fd0370384d58d1793addf2f}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioPeakMeterVtbl@{IAudioPeakMeterVtbl}}
+\index{IAudioPeakMeterVtbl@{IAudioPeakMeterVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioPeakMeterVtbl}{IAudioPeakMeterVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_peak_meter_vtbl}{IAudio\+Peak\+Meter\+Vtbl}} \mbox{\hyperlink{struct_i_audio_peak_meter_vtbl}{IAudio\+Peak\+Meter\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}\label{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioTreble@{IAudioTreble}}
+\index{IAudioTreble@{IAudioTreble}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioTreble}{IAudioTreble}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}{IAudio\+Treble}} \mbox{\hyperlink{devicetopology_8h_a3ef1bf2f271f0005c3cb93c9d81d3f80}{IAudio\+Treble}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a07bee2d1955d46da3174ad5a8d813842}\label{devicetopology_8h_a07bee2d1955d46da3174ad5a8d813842}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioTrebleVtbl@{IAudioTrebleVtbl}}
+\index{IAudioTrebleVtbl@{IAudioTrebleVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioTrebleVtbl}{IAudioTrebleVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_treble_vtbl}{IAudio\+Treble\+Vtbl}} \mbox{\hyperlink{struct_i_audio_treble_vtbl}{IAudio\+Treble\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}\label{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioVolumeLevel@{IAudioVolumeLevel}}
+\index{IAudioVolumeLevel@{IAudioVolumeLevel}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioVolumeLevel}{IAudioVolumeLevel}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}} \mbox{\hyperlink{devicetopology_8h_acbf1b6a1081e8664f1fd024b6c9559b5}{IAudio\+Volume\+Level}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a3fdad45788128ac34a839eff6afc3df7}\label{devicetopology_8h_a3fdad45788128ac34a839eff6afc3df7}} 
+\index{devicetopology.h@{devicetopology.h}!IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}}
+\index{IAudioVolumeLevelVtbl@{IAudioVolumeLevelVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IAudioVolumeLevelVtbl}{IAudioVolumeLevelVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_audio_volume_level_vtbl}{IAudio\+Volume\+Level\+Vtbl}} \mbox{\hyperlink{struct_i_audio_volume_level_vtbl}{IAudio\+Volume\+Level\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}\label{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}} 
+\index{devicetopology.h@{devicetopology.h}!IConnector@{IConnector}}
+\index{IConnector@{IConnector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IConnector}{IConnector}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a92c69f471d25f9eae06298e6595bb70c}\label{devicetopology_8h_a92c69f471d25f9eae06298e6595bb70c}} 
+\index{devicetopology.h@{devicetopology.h}!IConnectorVtbl@{IConnectorVtbl}}
+\index{IConnectorVtbl@{IConnectorVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IConnectorVtbl}{IConnectorVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_connector_vtbl}{IConnector\+Vtbl}} \mbox{\hyperlink{struct_i_connector_vtbl}{IConnector\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}\label{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}} 
+\index{devicetopology.h@{devicetopology.h}!IControlChangeNotify@{IControlChangeNotify}}
+\index{IControlChangeNotify@{IControlChangeNotify}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IControlChangeNotify}{IControlChangeNotify}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}{IControl\+Change\+Notify}} \mbox{\hyperlink{devicetopology_8h_a214f342329b8752b5fbdd5f11db2ed43}{IControl\+Change\+Notify}}}
+
+\mbox{\Hypertarget{devicetopology_8h_acccb862786644ade72f5c4045a95475b}\label{devicetopology_8h_acccb862786644ade72f5c4045a95475b}} 
+\index{devicetopology.h@{devicetopology.h}!IControlChangeNotifyVtbl@{IControlChangeNotifyVtbl}}
+\index{IControlChangeNotifyVtbl@{IControlChangeNotifyVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IControlChangeNotifyVtbl}{IControlChangeNotifyVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_control_change_notify_vtbl}{IControl\+Change\+Notify\+Vtbl}} \mbox{\hyperlink{struct_i_control_change_notify_vtbl}{IControl\+Change\+Notify\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}\label{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}} 
+\index{devicetopology.h@{devicetopology.h}!IControlInterface@{IControlInterface}}
+\index{IControlInterface@{IControlInterface}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IControlInterface}{IControlInterface}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}{IControl\+Interface}} \mbox{\hyperlink{devicetopology_8h_a94ee688dc4631dcf7de2afa695948185}{IControl\+Interface}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a857a12719cd3e493ecbb3fb84e591543}\label{devicetopology_8h_a857a12719cd3e493ecbb3fb84e591543}} 
+\index{devicetopology.h@{devicetopology.h}!IControlInterfaceVtbl@{IControlInterfaceVtbl}}
+\index{IControlInterfaceVtbl@{IControlInterfaceVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IControlInterfaceVtbl}{IControlInterfaceVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_control_interface_vtbl}{IControl\+Interface\+Vtbl}} \mbox{\hyperlink{struct_i_control_interface_vtbl}{IControl\+Interface\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}\label{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}} 
+\index{devicetopology.h@{devicetopology.h}!IDeviceSpecificProperty@{IDeviceSpecificProperty}}
+\index{IDeviceSpecificProperty@{IDeviceSpecificProperty}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IDeviceSpecificProperty}{IDeviceSpecificProperty}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} \mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a55ae106476b327ea7f2f13d747281b26}\label{devicetopology_8h_a55ae106476b327ea7f2f13d747281b26}} 
+\index{devicetopology.h@{devicetopology.h}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IDeviceSpecificPropertyVtbl}{IDeviceSpecificPropertyVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_device_specific_property_vtbl}{IDevice\+Specific\+Property\+Vtbl}} \mbox{\hyperlink{struct_i_device_specific_property_vtbl}{IDevice\+Specific\+Property\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}\label{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}} 
+\index{devicetopology.h@{devicetopology.h}!IDeviceTopology@{IDeviceTopology}}
+\index{IDeviceTopology@{IDeviceTopology}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IDeviceTopology}{IDeviceTopology}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} \mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a6f65ebb8d5a70a1e808f0da18a2bedc4}\label{devicetopology_8h_a6f65ebb8d5a70a1e808f0da18a2bedc4}} 
+\index{devicetopology.h@{devicetopology.h}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IDeviceTopologyVtbl}{IDeviceTopologyVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_device_topology_vtbl}{IDevice\+Topology\+Vtbl}} \mbox{\hyperlink{struct_i_device_topology_vtbl}{IDevice\+Topology\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}\label{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}} 
+\index{devicetopology.h@{devicetopology.h}!IKsControl@{IKsControl}}
+\index{IKsControl@{IKsControl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsControl}{IKsControl}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKs\+Control}} \mbox{\hyperlink{devicetopology_8h_af7768dcb43e0eaaae7ac0ac562378e4d}{IKs\+Control}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a1212fc3820340cc5ae3a282d5c32fad7}\label{devicetopology_8h_a1212fc3820340cc5ae3a282d5c32fad7}} 
+\index{devicetopology.h@{devicetopology.h}!IKsControlVtbl@{IKsControlVtbl}}
+\index{IKsControlVtbl@{IKsControlVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsControlVtbl}{IKsControlVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_ks_control_vtbl}{IKs\+Control\+Vtbl}} \mbox{\hyperlink{struct_i_ks_control_vtbl}{IKs\+Control\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a585c794f267602027373173fc1775081}\label{devicetopology_8h_a585c794f267602027373173fc1775081}} 
+\index{devicetopology.h@{devicetopology.h}!IKsFormatSupport@{IKsFormatSupport}}
+\index{IKsFormatSupport@{IKsFormatSupport}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsFormatSupport}{IKsFormatSupport}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a585c794f267602027373173fc1775081}{IKs\+Format\+Support}} \mbox{\hyperlink{devicetopology_8h_a585c794f267602027373173fc1775081}{IKs\+Format\+Support}}}
+
+\mbox{\Hypertarget{devicetopology_8h_afc009288444940b659adfbb2aff717a4}\label{devicetopology_8h_afc009288444940b659adfbb2aff717a4}} 
+\index{devicetopology.h@{devicetopology.h}!IKsFormatSupportVtbl@{IKsFormatSupportVtbl}}
+\index{IKsFormatSupportVtbl@{IKsFormatSupportVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsFormatSupportVtbl}{IKsFormatSupportVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_ks_format_support_vtbl}{IKs\+Format\+Support\+Vtbl}} \mbox{\hyperlink{struct_i_ks_format_support_vtbl}{IKs\+Format\+Support\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}\label{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}} 
+\index{devicetopology.h@{devicetopology.h}!IKsJackDescription@{IKsJackDescription}}
+\index{IKsJackDescription@{IKsJackDescription}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsJackDescription}{IKsJackDescription}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}} \mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}}}
+
+\mbox{\Hypertarget{devicetopology_8h_ad5273fc68ec296239768b4718a201d0c}\label{devicetopology_8h_ad5273fc68ec296239768b4718a201d0c}} 
+\index{devicetopology.h@{devicetopology.h}!IKsJackDescriptionVtbl@{IKsJackDescriptionVtbl}}
+\index{IKsJackDescriptionVtbl@{IKsJackDescriptionVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IKsJackDescriptionVtbl}{IKsJackDescriptionVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_ks_jack_description_vtbl}{IKs\+Jack\+Description\+Vtbl}} \mbox{\hyperlink{struct_i_ks_jack_description_vtbl}{IKs\+Jack\+Description\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}\label{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}} 
+\index{devicetopology.h@{devicetopology.h}!IPart@{IPart}}
+\index{IPart@{IPart}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPart}{IPart}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}\label{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}} 
+\index{devicetopology.h@{devicetopology.h}!IPartsList@{IPartsList}}
+\index{IPartsList@{IPartsList}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPartsList}{IPartsList}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}} \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a1c74fb82c8033f85751bd151dc54b8bb}\label{devicetopology_8h_a1c74fb82c8033f85751bd151dc54b8bb}} 
+\index{devicetopology.h@{devicetopology.h}!IPartsListVtbl@{IPartsListVtbl}}
+\index{IPartsListVtbl@{IPartsListVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPartsListVtbl}{IPartsListVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_parts_list_vtbl}{IParts\+List\+Vtbl}} \mbox{\hyperlink{struct_i_parts_list_vtbl}{IParts\+List\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_aaafff51ea68df0304ffee91da2de7b42}\label{devicetopology_8h_aaafff51ea68df0304ffee91da2de7b42}} 
+\index{devicetopology.h@{devicetopology.h}!IPartVtbl@{IPartVtbl}}
+\index{IPartVtbl@{IPartVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPartVtbl}{IPartVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_part_vtbl}{IPart\+Vtbl}} \mbox{\hyperlink{struct_i_part_vtbl}{IPart\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}\label{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}} 
+\index{devicetopology.h@{devicetopology.h}!IPerChannelDbLevel@{IPerChannelDbLevel}}
+\index{IPerChannelDbLevel@{IPerChannelDbLevel}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPerChannelDbLevel}{IPerChannelDbLevel}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}{IPer\+Channel\+Db\+Level}} \mbox{\hyperlink{devicetopology_8h_a32fe99744d7ec8080119fb32ce0c72d6}{IPer\+Channel\+Db\+Level}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a3194449ef9bd8c22702ed5e736839421}\label{devicetopology_8h_a3194449ef9bd8c22702ed5e736839421}} 
+\index{devicetopology.h@{devicetopology.h}!IPerChannelDbLevelVtbl@{IPerChannelDbLevelVtbl}}
+\index{IPerChannelDbLevelVtbl@{IPerChannelDbLevelVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IPerChannelDbLevelVtbl}{IPerChannelDbLevelVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_per_channel_db_level_vtbl}{IPer\+Channel\+Db\+Level\+Vtbl}} \mbox{\hyperlink{struct_i_per_channel_db_level_vtbl}{IPer\+Channel\+Db\+Level\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a699f46e395daf19f978800c852f09860}\label{devicetopology_8h_a699f46e395daf19f978800c852f09860}} 
+\index{devicetopology.h@{devicetopology.h}!ISubunit@{ISubunit}}
+\index{ISubunit@{ISubunit}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{ISubunit}{ISubunit}}
+{\footnotesize\ttfamily typedef interface \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}} \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a073e54727fe95049e9646c1c14be0a8c}\label{devicetopology_8h_a073e54727fe95049e9646c1c14be0a8c}} 
+\index{devicetopology.h@{devicetopology.h}!ISubunitVtbl@{ISubunitVtbl}}
+\index{ISubunitVtbl@{ISubunitVtbl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{ISubunitVtbl}{ISubunitVtbl}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_i_subunit_vtbl}{ISubunit\+Vtbl}} \mbox{\hyperlink{struct_i_subunit_vtbl}{ISubunit\+Vtbl}}}
+
+\mbox{\Hypertarget{devicetopology_8h_a41e18e129b705db5d504ebf0b333678c}\label{devicetopology_8h_a41e18e129b705db5d504ebf0b333678c}} 
+\index{devicetopology.h@{devicetopology.h}!PartType@{PartType}}
+\index{PartType@{PartType}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{PartType}{PartType}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0012}} \mbox{\hyperlink{devicetopology_8h_a41e18e129b705db5d504ebf0b333678c}{Part\+Type}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}\label{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011}{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0011}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412f}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0011}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{In@{In}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!In@{In}}}\mbox{\Hypertarget{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fad8ff8dfc9381018e97fce86d909f8975}\label{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fad8ff8dfc9381018e97fce86d909f8975}} 
+In&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Out@{Out}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Out@{Out}}}\mbox{\Hypertarget{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fabba45258e8122cd853f27f4c8b5d3871}\label{devicetopology_8h_aab6c7474a070d22bf61ccf21b532412fabba45258e8122cd853f27f4c8b5d3871}} 
+Out&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}\label{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012}{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0012}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0012}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Connector@{Connector}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Connector@{Connector}}}\mbox{\Hypertarget{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625a1e25becda2d56f14b0cbb1a2c2a78dc4}\label{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625a1e25becda2d56f14b0cbb1a2c2a78dc4}} 
+Connector&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Subunit@{Subunit}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Subunit@{Subunit}}}\mbox{\Hypertarget{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625aeef87e4e89a7d56e68e973ecac87d04c}\label{devicetopology_8h_ad01704421e18fb1745eb6f7049f4c625aeef87e4e89a7d56e68e973ecac87d04c}} 
+Subunit&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013}}
+\index{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013@{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013}{\_\_MIDL\_\_\_MIDL\_itf\_devicetopology\_0000\_0000\_0013}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7}{\+\_\+\+\_\+\+MIDL\+\_\+\+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+0013}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Unknown\_Connector@{Unknown\_Connector}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Unknown\_Connector@{Unknown\_Connector}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a2f00bf101168380764404de13c93fd43}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a2f00bf101168380764404de13c93fd43}} 
+Unknown\+\_\+\+Connector&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Physical\_Internal@{Physical\_Internal}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Physical\_Internal@{Physical\_Internal}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7afc8450237ef6399fbd37b9ad3586755f}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7afc8450237ef6399fbd37b9ad3586755f}} 
+Physical\+\_\+\+Internal&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Physical\_External@{Physical\_External}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Physical\_External@{Physical\_External}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ad81723825bbadb6ccefd0f545209b490}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ad81723825bbadb6ccefd0f545209b490}} 
+Physical\+\_\+\+External&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Software\_IO@{Software\_IO}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Software\_IO@{Software\_IO}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a5ffedc12283a136af0b67b2cba913a09}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a5ffedc12283a136af0b67b2cba913a09}} 
+Software\+\_\+\+IO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Software\_Fixed@{Software\_Fixed}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Software\_Fixed@{Software\_Fixed}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ab38b1f5517bd1fff96936dc159c5af3d}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7ab38b1f5517bd1fff96936dc159c5af3d}} 
+Software\+\_\+\+Fixed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Network@{Network}!devicetopology.h@{devicetopology.h}}\index{devicetopology.h@{devicetopology.h}!Network@{Network}}}\mbox{\Hypertarget{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a80537b922c8f6fc87c728e968f548334}\label{devicetopology_8h_a1ac1de0f2dde78cddcec4d28acf283c7a80537b922c8f6fc87c728e968f548334}} 
+Network&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{devicetopology_8h_a5dd4c301756ef44933014b9714b45c1b}\label{devicetopology_8h_a5dd4c301756ef44933014b9714b45c1b}} 
+\index{devicetopology.h@{devicetopology.h}!DEFINE\_GUID@{DEFINE\_GUID}}
+\index{DEFINE\_GUID@{DEFINE\_GUID}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_GUID()}{DEFINE\_GUID()}}
+{\footnotesize\ttfamily DEFINE\+\_\+\+GUID (\begin{DoxyParamCaption}\item[{EVENTCONTEXT\+\_\+\+VOLUMESLIDER}]{,  }\item[{0x\+E2\+C2\+E9\+DE}]{,  }\item[{0x09\+B1}]{,  }\item[{0x4\+B04}]{,  }\item[{0x84}]{,  }\item[{0x\+E5}]{,  }\item[{0x07}]{,  }\item[{0x93}]{,  }\item[{0x12}]{,  }\item[{0x25}]{,  }\item[{0x\+EE}]{,  }\item[{0x04}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{devicetopology_8h_a4e1013bc7cb2d87ec31b705e73a927ad}\label{devicetopology_8h_a4e1013bc7cb2d87ec31b705e73a927ad}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec}}
+\index{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec@{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec}{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_c\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+c\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{devicetopology_8h_aa5d14eccb2017e44386ef0bc7f9a3d4b}\label{devicetopology_8h_aa5d14eccb2017e44386ef0bc7f9a3d4b}} 
+\index{devicetopology.h@{devicetopology.h}!\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec}}
+\index{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec@{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec}{\_\_MIDL\_itf\_devicetopology\_0000\_0000\_v0\_0\_s\_ifspec}}
+{\footnotesize\ttfamily RPC\+\_\+\+IF\+\_\+\+HANDLE \+\_\+\+\_\+\+MIDL\+\_\+itf\+\_\+devicetopology\+\_\+0000\+\_\+0000\+\_\+v0\+\_\+0\+\_\+s\+\_\+ifspec\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{devicetopology_8h_a42cc8067f15f5c66b05c0bd21a563223}\label{devicetopology_8h_a42cc8067f15f5c66b05c0bd21a563223}} 
+\index{devicetopology.h@{devicetopology.h}!CLSID\_DeviceTopology@{CLSID\_DeviceTopology}}
+\index{CLSID\_DeviceTopology@{CLSID\_DeviceTopology}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{CLSID\_DeviceTopology}{CLSID\_DeviceTopology}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} CLSID\+\_\+\+Device\+Topology}
+
+\mbox{\Hypertarget{devicetopology_8h_a983478816ac190025f7177285592b35e}\label{devicetopology_8h_a983478816ac190025f7177285592b35e}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioAutoGainControl@{IID\_IAudioAutoGainControl}}
+\index{IID\_IAudioAutoGainControl@{IID\_IAudioAutoGainControl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioAutoGainControl}{IID\_IAudioAutoGainControl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Auto\+Gain\+Control}
+
+\mbox{\Hypertarget{devicetopology_8h_a5437c2bef053e3f44b05ba087d181727}\label{devicetopology_8h_a5437c2bef053e3f44b05ba087d181727}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioBass@{IID\_IAudioBass}}
+\index{IID\_IAudioBass@{IID\_IAudioBass}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioBass}{IID\_IAudioBass}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Bass}
+
+\mbox{\Hypertarget{devicetopology_8h_ae3d1dc7ebb6e2681d9d927fdabaa1b44}\label{devicetopology_8h_ae3d1dc7ebb6e2681d9d927fdabaa1b44}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioChannelConfig@{IID\_IAudioChannelConfig}}
+\index{IID\_IAudioChannelConfig@{IID\_IAudioChannelConfig}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioChannelConfig}{IID\_IAudioChannelConfig}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Channel\+Config}
+
+\mbox{\Hypertarget{devicetopology_8h_a0cb5b27cc1e23ba867e664dfdf532f94}\label{devicetopology_8h_a0cb5b27cc1e23ba867e664dfdf532f94}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioInputSelector@{IID\_IAudioInputSelector}}
+\index{IID\_IAudioInputSelector@{IID\_IAudioInputSelector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioInputSelector}{IID\_IAudioInputSelector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Input\+Selector}
+
+\mbox{\Hypertarget{devicetopology_8h_ab135457a65e7f6980c0ad4e35218aefa}\label{devicetopology_8h_ab135457a65e7f6980c0ad4e35218aefa}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioLoudness@{IID\_IAudioLoudness}}
+\index{IID\_IAudioLoudness@{IID\_IAudioLoudness}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioLoudness}{IID\_IAudioLoudness}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Loudness}
+
+\mbox{\Hypertarget{devicetopology_8h_acc360c6fdea77f258c1fc6b71af4e1d5}\label{devicetopology_8h_acc360c6fdea77f258c1fc6b71af4e1d5}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioMidrange@{IID\_IAudioMidrange}}
+\index{IID\_IAudioMidrange@{IID\_IAudioMidrange}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioMidrange}{IID\_IAudioMidrange}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Midrange}
+
+\mbox{\Hypertarget{devicetopology_8h_a6712b5916871cd92ab1705d38638ddbc}\label{devicetopology_8h_a6712b5916871cd92ab1705d38638ddbc}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioMute@{IID\_IAudioMute}}
+\index{IID\_IAudioMute@{IID\_IAudioMute}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioMute}{IID\_IAudioMute}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Mute}
+
+\mbox{\Hypertarget{devicetopology_8h_a9a922eff6d2b9cdbb618edd229f0c0e8}\label{devicetopology_8h_a9a922eff6d2b9cdbb618edd229f0c0e8}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioOutputSelector@{IID\_IAudioOutputSelector}}
+\index{IID\_IAudioOutputSelector@{IID\_IAudioOutputSelector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioOutputSelector}{IID\_IAudioOutputSelector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Output\+Selector}
+
+\mbox{\Hypertarget{devicetopology_8h_aa4cf443a8a36aa0a2bba137def735e4e}\label{devicetopology_8h_aa4cf443a8a36aa0a2bba137def735e4e}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioPeakMeter@{IID\_IAudioPeakMeter}}
+\index{IID\_IAudioPeakMeter@{IID\_IAudioPeakMeter}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioPeakMeter}{IID\_IAudioPeakMeter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Peak\+Meter}
+
+\mbox{\Hypertarget{devicetopology_8h_ac845c6927ee1178da984aecc7a5f8e2a}\label{devicetopology_8h_ac845c6927ee1178da984aecc7a5f8e2a}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioTreble@{IID\_IAudioTreble}}
+\index{IID\_IAudioTreble@{IID\_IAudioTreble}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioTreble}{IID\_IAudioTreble}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Treble}
+
+\mbox{\Hypertarget{devicetopology_8h_a5513e2e287be5d7b66f9b794142b0a92}\label{devicetopology_8h_a5513e2e287be5d7b66f9b794142b0a92}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IAudioVolumeLevel@{IID\_IAudioVolumeLevel}}
+\index{IID\_IAudioVolumeLevel@{IID\_IAudioVolumeLevel}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IAudioVolumeLevel}{IID\_IAudioVolumeLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IAudio\+Volume\+Level}
+
+\mbox{\Hypertarget{devicetopology_8h_aa7300adb9faaa2395e04d58d291a3548}\label{devicetopology_8h_aa7300adb9faaa2395e04d58d291a3548}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IConnector@{IID\_IConnector}}
+\index{IID\_IConnector@{IID\_IConnector}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IConnector}{IID\_IConnector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IConnector}
+
+\mbox{\Hypertarget{devicetopology_8h_a0cb2e56ea862b86ebfe53fc12019f330}\label{devicetopology_8h_a0cb2e56ea862b86ebfe53fc12019f330}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IControlChangeNotify@{IID\_IControlChangeNotify}}
+\index{IID\_IControlChangeNotify@{IID\_IControlChangeNotify}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IControlChangeNotify}{IID\_IControlChangeNotify}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IControl\+Change\+Notify}
+
+\mbox{\Hypertarget{devicetopology_8h_a10d177455cb63b79622ad3d216140235}\label{devicetopology_8h_a10d177455cb63b79622ad3d216140235}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IControlInterface@{IID\_IControlInterface}}
+\index{IID\_IControlInterface@{IID\_IControlInterface}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IControlInterface}{IID\_IControlInterface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IControl\+Interface}
+
+\mbox{\Hypertarget{devicetopology_8h_a2ef286802cee817227ffd28d41fd14e7}\label{devicetopology_8h_a2ef286802cee817227ffd28d41fd14e7}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IDeviceSpecificProperty@{IID\_IDeviceSpecificProperty}}
+\index{IID\_IDeviceSpecificProperty@{IID\_IDeviceSpecificProperty}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IDeviceSpecificProperty}{IID\_IDeviceSpecificProperty}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IDevice\+Specific\+Property}
+
+\mbox{\Hypertarget{devicetopology_8h_a03a260138455f159c30b404a3fb44f6f}\label{devicetopology_8h_a03a260138455f159c30b404a3fb44f6f}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IDeviceTopology@{IID\_IDeviceTopology}}
+\index{IID\_IDeviceTopology@{IID\_IDeviceTopology}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IDeviceTopology}{IID\_IDeviceTopology}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IDevice\+Topology}
+
+\mbox{\Hypertarget{devicetopology_8h_a2b5d5649651b98cf65f80a6990566ca1}\label{devicetopology_8h_a2b5d5649651b98cf65f80a6990566ca1}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IKsControl@{IID\_IKsControl}}
+\index{IID\_IKsControl@{IID\_IKsControl}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IKsControl}{IID\_IKsControl}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IKs\+Control}
+
+\mbox{\Hypertarget{devicetopology_8h_adb05f0e5bbacd3514d9a2a750476a729}\label{devicetopology_8h_adb05f0e5bbacd3514d9a2a750476a729}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IKsFormatSupport@{IID\_IKsFormatSupport}}
+\index{IID\_IKsFormatSupport@{IID\_IKsFormatSupport}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IKsFormatSupport}{IID\_IKsFormatSupport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IKs\+Format\+Support}
+
+\mbox{\Hypertarget{devicetopology_8h_a593b209e0630b6ca692700735c9c57ed}\label{devicetopology_8h_a593b209e0630b6ca692700735c9c57ed}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IKsJackDescription@{IID\_IKsJackDescription}}
+\index{IID\_IKsJackDescription@{IID\_IKsJackDescription}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IKsJackDescription}{IID\_IKsJackDescription}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IKs\+Jack\+Description}
+
+\mbox{\Hypertarget{devicetopology_8h_a4c0d83b085d214a5f92c943ed849f43b}\label{devicetopology_8h_a4c0d83b085d214a5f92c943ed849f43b}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IPart@{IID\_IPart}}
+\index{IID\_IPart@{IID\_IPart}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IPart}{IID\_IPart}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IPart}
+
+\mbox{\Hypertarget{devicetopology_8h_ac6ddb6cf9930600b50d4d7f2e1291a09}\label{devicetopology_8h_ac6ddb6cf9930600b50d4d7f2e1291a09}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IPartsList@{IID\_IPartsList}}
+\index{IID\_IPartsList@{IID\_IPartsList}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IPartsList}{IID\_IPartsList}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IParts\+List}
+
+\mbox{\Hypertarget{devicetopology_8h_a29b56d25f689b35d3515e8ff2b34cfda}\label{devicetopology_8h_a29b56d25f689b35d3515e8ff2b34cfda}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_IPerChannelDbLevel@{IID\_IPerChannelDbLevel}}
+\index{IID\_IPerChannelDbLevel@{IID\_IPerChannelDbLevel}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_IPerChannelDbLevel}{IID\_IPerChannelDbLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+IPer\+Channel\+Db\+Level}
+
+\mbox{\Hypertarget{devicetopology_8h_a2ef6725c04d983f7a9bab5b2c3dbf9fe}\label{devicetopology_8h_a2ef6725c04d983f7a9bab5b2c3dbf9fe}} 
+\index{devicetopology.h@{devicetopology.h}!IID\_ISubunit@{IID\_ISubunit}}
+\index{IID\_ISubunit@{IID\_ISubunit}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{IID\_ISubunit}{IID\_ISubunit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} IID\+\_\+\+ISubunit}
+
+\mbox{\Hypertarget{devicetopology_8h_a77dc7cc3db6136fa01f7bf501e24ec45}\label{devicetopology_8h_a77dc7cc3db6136fa01f7bf501e24ec45}} 
+\index{devicetopology.h@{devicetopology.h}!LIBID\_DevTopologyLib@{LIBID\_DevTopologyLib}}
+\index{LIBID\_DevTopologyLib@{LIBID\_DevTopologyLib}!devicetopology.h@{devicetopology.h}}
+\doxysubsubsection{\texorpdfstring{LIBID\_DevTopologyLib}{LIBID\_DevTopologyLib}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\+\_\+C}} const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} LIBID\+\_\+\+Dev\+Topology\+Lib}
+

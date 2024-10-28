@@ -1,0 +1,75 @@
+\doxysection{Hexeng2\+D/src/\+Renderer/\+Renderer.hpp File Reference}
+\hypertarget{Renderer_8hpp}{}\label{Renderer_8hpp}\index{Hexeng2D/src/Renderer/Renderer.hpp@{Hexeng2D/src/Renderer/Renderer.hpp}}
+
+
+Most of the stuff in this file are internal. You should just take a look at Renderer\+::init() and Renderer\+::stop().  
+
+
+{\ttfamily \#include $<$thread$>$}\newline
+{\ttfamily \#include \"{}glad/glad.\+h\"{}}\newline
+{\ttfamily \#include \"{}GLFW/glfw3.\+h\"{}}\newline
+{\ttfamily \#include \"{}Shader.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Index\+Buffer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Vertex\+Array.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Mesh.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Macros.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}../\+Vectors.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Layer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Uniform.\+hpp\"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1ToBeInit}{Hexeng\+::\+Renderer\+::\+To\+Be\+Init}}
+\item 
+class \mbox{\hyperlink{classHexeng_1_1Renderer_1_1ToBeDelete}{Hexeng\+::\+Renderer\+::\+To\+Be\+Delete}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng\+::\+Renderer}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_af9df33f6bd8cd59d33a3092d2eefbb81}{Hexeng\+::\+Renderer\+::init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the \doxylink{namespaceHexeng_1_1Renderer}{Renderer} and Open\+GL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_af098070b5537d1b7ffd7919fc3959410}{Hexeng\+::\+Renderer\+::stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the \doxylink{namespaceHexeng_1_1Renderer}{Renderer} and Open\+GL. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae165c99de5cf99ac80acdf09a7255357}{Hexeng\+::\+Renderer\+::draw}} (const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{Vertex\+Array}} \&va, const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{Index\+Buffer}} \&ib, const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \&shader)
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aaa53593db153e61eda515ffd12eec6be}{Hexeng\+::\+Renderer\+::clear}} ()
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}{Hexeng\+::\+Renderer\+::refresh\+\_\+uniforms}} ()
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aac19da9701ce667192b9c1238673575e}{Hexeng\+::\+Renderer\+::draw\+\_\+scene}} (int scene\+\_\+parameter)
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ac894a3744a3db51bde8a850e795a1b90}{Hexeng\+::\+Renderer\+::draw\+\_\+current\+\_\+scene}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a814caeee43e035dcc4553008005c38a2}{Hexeng\+::\+Renderer\+::u\+\_\+transform}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad9c30ce596f05f9bac3b9307b93d0b09}{Hexeng\+::\+Renderer\+::u\+\_\+rotation\+\_\+angle}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aaef45b1f638ee97e0d47cf6ca3994f90}{Hexeng\+::\+Renderer\+::u\+\_\+window\+\_\+size}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3110b47a91786fe079c2d6e98ff28bc8}{Hexeng\+::\+Renderer\+::u\+\_\+scale}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3c5aba5cf2514d1001a8d5c0709bfeb5}{Hexeng\+::\+Renderer\+::u\+\_\+color\+\_\+filter}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aa434a90cbe161e311cd1e18ea2eba032}{Hexeng\+::\+Renderer\+::u\+\_\+color}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a755cc8c40a02877a878da35310bf4204}{Hexeng\+::\+Renderer\+::uniform\+\_\+list}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_adf75475005c6a48fa348e63bd108a3c4}{Hexeng\+::\+Renderer\+::pending\+\_\+actions}}
+\item 
+\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::thread\+::id \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae17cf4eca3eead093175cf21d01b15cc}{Hexeng\+::\+Renderer\+::thread\+\_\+id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Most of the stuff in this file are internal. You should just take a look at Renderer\+::init() and Renderer\+::stop(). 
+

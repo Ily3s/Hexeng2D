@@ -1,0 +1,167 @@
+\hypertarget{struct_i_device_specific_property_vtbl}{}\doxysection{IDevice\+Specific\+Property\+Vtbl Struct Reference}
+\label{struct_i_device_specific_property_vtbl}\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+
+
+{\ttfamily \#include $<$devicetopology.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a94da97a60405e9b01641945acc452802}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_a35072a7a6ef750d6b0e1b20219f0153e}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_af9b606cf04207323f0cb2084135ad270}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_a9b73e79417168ceef0ca86d6b3340c87}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Type)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_a1f026e5f7519994db90a74d3a1b854cf}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Value)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_a74ad9077f8f1e715429bfa805d254375}{HRESULT}} (STDMETHODCALLTYPE $\ast$Set\+Value)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_specific_property_vtbl_a9978f454bdf9b12d09c8f12e760283d2}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get4\+BRange)(\mbox{\hyperlink{devicetopology_8h_aa8942016eefe4a31f160d79b3256cb7f}{IDevice\+Specific\+Property}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a77f8414fc5b90461ce21531b070f0298}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a8047c290fd471a096e9f2761a630e471}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} VARTYPE $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a7b6fd84fe7db8fcb03ad33e2adb25858}{p\+VType}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a9cfd189dbf31ba60b82cc9d3013bb902}{pv\+Value}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{sal_8h_a9a66acb8f87800f41a837406c837cb32}{\+\_\+\+\_\+inout}} DWORD $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a08ed5230991ad4cea82caf78997a7432}{pcb\+Value}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_add16e94884aceae7e76b67030179efe0}{pv\+Value}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} DWORD \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a374fa73371305bbad05f7375c7dc5ad8}{cb\+Value}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} DWORD \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_device_specific_property_vtbl_a06fd13e918cf7dcb5c86112bcb3def73}{pguid\+Event\+Context}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_adab19440faa003db0110d355a9cdf1b6}{pl\+Min}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_af91c303148d0b65907d8eebf744958d2}{pl\+Max}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG $\ast$ \mbox{\hyperlink{struct_i_device_specific_property_vtbl_ac5505cba6d33acf434bb675cdc7840ec}{pl\+Stepping}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a9978f454bdf9b12d09c8f12e760283d2}\label{struct_i_device_specific_property_vtbl_a9978f454bdf9b12d09c8f12e760283d2}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get4\+BRange }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a9b73e79417168ceef0ca86d6b3340c87}\label{struct_i_device_specific_property_vtbl_a9b73e79417168ceef0ca86d6b3340c87}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a1f026e5f7519994db90a74d3a1b854cf}\label{struct_i_device_specific_property_vtbl_a1f026e5f7519994db90a74d3a1b854cf}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a94da97a60405e9b01641945acc452802}\label{struct_i_device_specific_property_vtbl_a94da97a60405e9b01641945acc452802}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IDevice\+Specific\+Property\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a74ad9077f8f1e715429bfa805d254375}\label{struct_i_device_specific_property_vtbl_a74ad9077f8f1e715429bfa805d254375}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Set\+Value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a35072a7a6ef750d6b0e1b20219f0153e}\label{struct_i_device_specific_property_vtbl_a35072a7a6ef750d6b0e1b20219f0153e}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_af9b606cf04207323f0cb2084135ad270}\label{struct_i_device_specific_property_vtbl_af9b606cf04207323f0cb2084135ad270}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IDevice\+Specific\+Property\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a374fa73371305bbad05f7375c7dc5ad8}\label{struct_i_device_specific_property_vtbl_a374fa73371305bbad05f7375c7dc5ad8}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!cbValue@{cbValue}}
+\index{cbValue@{cbValue}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{cbValue}{cbValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} DWORD IDevice\+Specific\+Property\+Vtbl\+::cb\+Value}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a08ed5230991ad4cea82caf78997a7432}\label{struct_i_device_specific_property_vtbl_a08ed5230991ad4cea82caf78997a7432}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!pcbValue@{pcbValue}}
+\index{pcbValue@{pcbValue}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{pcbValue}{pcbValue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{sal_8h_a9a66acb8f87800f41a837406c837cb32}{\+\_\+\+\_\+inout}} DWORD$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pcb\+Value}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a06fd13e918cf7dcb5c86112bcb3def73}\label{struct_i_device_specific_property_vtbl_a06fd13e918cf7dcb5c86112bcb3def73}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!pguidEventContext@{pguidEventContext}}
+\index{pguidEventContext@{pguidEventContext}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{pguidEventContext}{pguidEventContext}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} DWORD \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\+\_\+\+\_\+in\+\_\+opt}} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} IDevice\+Specific\+Property\+Vtbl\+::pguid\+Event\+Context}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_af91c303148d0b65907d8eebf744958d2}\label{struct_i_device_specific_property_vtbl_af91c303148d0b65907d8eebf744958d2}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!plMax@{plMax}}
+\index{plMax@{plMax}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{plMax}{plMax}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pl\+Max}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_adab19440faa003db0110d355a9cdf1b6}\label{struct_i_device_specific_property_vtbl_adab19440faa003db0110d355a9cdf1b6}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!plMin@{plMin}}
+\index{plMin@{plMin}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{plMin}{plMin}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pl\+Min}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_ac5505cba6d33acf434bb675cdc7840ec}\label{struct_i_device_specific_property_vtbl_ac5505cba6d33acf434bb675cdc7840ec}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!plStepping@{plStepping}}
+\index{plStepping@{plStepping}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{plStepping}{plStepping}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LONG$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pl\+Stepping}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a8047c290fd471a096e9f2761a630e471}\label{struct_i_device_specific_property_vtbl_a8047c290fd471a096e9f2761a630e471}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IDevice\+Specific\+Property\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a7b6fd84fe7db8fcb03ad33e2adb25858}\label{struct_i_device_specific_property_vtbl_a7b6fd84fe7db8fcb03ad33e2adb25858}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!pVType@{pVType}}
+\index{pVType@{pVType}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{pVType}{pVType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} VARTYPE$\ast$ IDevice\+Specific\+Property\+Vtbl\+::p\+VType}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a9cfd189dbf31ba60b82cc9d3013bb902}\label{struct_i_device_specific_property_vtbl_a9cfd189dbf31ba60b82cc9d3013bb902}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!pvValue@{pvValue}}
+\index{pvValue@{pvValue}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{pvValue}{pvValue}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pv\+Value}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_add16e94884aceae7e76b67030179efe0}\label{struct_i_device_specific_property_vtbl_add16e94884aceae7e76b67030179efe0}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!pvValue@{pvValue}}
+\index{pvValue@{pvValue}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{pvValue}{pvValue}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ IDevice\+Specific\+Property\+Vtbl\+::pv\+Value}
+
+\mbox{\Hypertarget{struct_i_device_specific_property_vtbl_a77f8414fc5b90461ce21531b070f0298}\label{struct_i_device_specific_property_vtbl_a77f8414fc5b90461ce21531b070f0298}} 
+\index{IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}!riid@{riid}}
+\index{riid@{riid}!IDeviceSpecificPropertyVtbl@{IDeviceSpecificPropertyVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IDevice\+Specific\+Property\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{devicetopology_8h}{devicetopology.\+h}}\end{DoxyCompactItemize}

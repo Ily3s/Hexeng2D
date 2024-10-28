@@ -1,0 +1,253 @@
+\hypertarget{struct_pa_asio_stream}{}\doxysection{Pa\+Asio\+Stream Struct Reference}
+\label{struct_pa_asio_stream}\index{PaAsioStream@{PaAsioStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_asio_stream_ac67b5dffdcbfde1debd7dfca34e8a526}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_asio_stream_a32a7ade601d41f7469a8eb14b3dd1828}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_asio_stream_ac48d721d10bcdf041cc097b08493d684}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_asio_host_api_representation}{Pa\+Asio\+Host\+Api\+Representation}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_aadaa880567a2dffd41250a28cdbf126f}{asio\+Host\+Api}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_asio_stream_a6a4170ebada9b0e6068a704cedae5cdb}{frames\+Per\+Host\+Callback}}
+\item 
+ASIOBuffer\+Info $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_abd7d016cead4b9363d2c8c6bdd85846d}{asio\+Buffer\+Infos}}
+\item 
+ASIOChannel\+Info $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_a66dc7fa62cc467b47df44ccaa4580d6f}{asio\+Channel\+Infos}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_a069cea1d45e377a6763350a3b0de5302}{asio\+Input\+Latency\+Frames}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_a27a6dcaf68446e88becd22c68152fa60}{asio\+Output\+Latency\+Frames}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_acf80c90b4ca3454b3643b2873724fdca}{input\+Channel\+Count}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_a8d05870e5bf5bbace1bd680f3b300e8e}{output\+Channel\+Count}}
+\item 
+bool \mbox{\hyperlink{struct_pa_asio_stream_af03bbc90652180dfed1499eae58f076d}{post\+Output}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asio_stream_ac907e7cf08200d9ebeed13c17cb5c6e2}{buffer\+Ptrs}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asio_stream_af25193d33adf5418364e04c10d6e8b86}{input\+Buffer\+Ptrs}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_asio_stream_a96357cfec93b4ff57750eb15467dc36a}{output\+Buffer\+Ptrs}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}{Pa\+Asio\+Buffer\+Converter}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_a0cba4fd052886fae39f3a7e45ec35034}{input\+Buffer\+Converter}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_a26c73578d78f8581d21ad2b3c45e642f}{input\+Shift}}
+\item 
+\mbox{\hyperlink{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}{Pa\+Asio\+Buffer\+Converter}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_a554712919295460d9e88a03c32c8fb9a}{output\+Buffer\+Converter}}
+\item 
+long \mbox{\hyperlink{struct_pa_asio_stream_a996681ee962b66ef8c5b316f529fe6a6}{output\+Shift}}
+\item 
+volatile bool \mbox{\hyperlink{struct_pa_asio_stream_a138a1dc47e2ad061591f9d8dc7d07926}{stop\+Processing}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_a64c1de9b0213087469905a2934227bd4}{stop\+Playout\+Count}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_asio_stream_acecaa140151e2d54cc9a904ec8d67244}{completed\+Buffers\+Played\+Event}}
+\item 
+bool \mbox{\hyperlink{struct_pa_asio_stream_ad53dcc5be9046ad25a61359aa3010796}{stream\+Finished\+Callback\+Called}}
+\item 
+int \mbox{\hyperlink{struct_pa_asio_stream_a32266ca70b73b4bad7c7605ff6308ac7}{is\+Stopped}}
+\item 
+volatile int \mbox{\hyperlink{struct_pa_asio_stream_a58968563c91f34801e82f695ca1ad7bc}{is\+Active}}
+\item 
+volatile bool \mbox{\hyperlink{struct_pa_asio_stream_aa21c6cf2c250d832d8e6022347701230}{zero\+Output}}
+\item 
+volatile long \mbox{\hyperlink{struct_pa_asio_stream_aa57477dfd1c26729a2d518e57e78c885}{reenter\+Count}}
+\item 
+volatile long \mbox{\hyperlink{struct_pa_asio_stream_a9e032d37004fd0385330108fad387ccc}{reenter\+Error}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} \mbox{\hyperlink{struct_pa_asio_stream_a3fca0112299e71c6007600a8a85ae421}{callback\+Flags}}
+\item 
+\mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}} $\ast$ \mbox{\hyperlink{struct_pa_asio_stream_a9a43b2884ff0bd92b02e94863c359106}{blocking\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_asio_stream_abd7d016cead4b9363d2c8c6bdd85846d}\label{struct_pa_asio_stream_abd7d016cead4b9363d2c8c6bdd85846d}} 
+\index{PaAsioStream@{PaAsioStream}!asioBufferInfos@{asioBufferInfos}}
+\index{asioBufferInfos@{asioBufferInfos}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{asioBufferInfos}{asioBufferInfos}}
+{\footnotesize\ttfamily ASIOBuffer\+Info$\ast$ Pa\+Asio\+Stream\+::asio\+Buffer\+Infos}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a66dc7fa62cc467b47df44ccaa4580d6f}\label{struct_pa_asio_stream_a66dc7fa62cc467b47df44ccaa4580d6f}} 
+\index{PaAsioStream@{PaAsioStream}!asioChannelInfos@{asioChannelInfos}}
+\index{asioChannelInfos@{asioChannelInfos}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{asioChannelInfos}{asioChannelInfos}}
+{\footnotesize\ttfamily ASIOChannel\+Info$\ast$ Pa\+Asio\+Stream\+::asio\+Channel\+Infos}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_aadaa880567a2dffd41250a28cdbf126f}\label{struct_pa_asio_stream_aadaa880567a2dffd41250a28cdbf126f}} 
+\index{PaAsioStream@{PaAsioStream}!asioHostApi@{asioHostApi}}
+\index{asioHostApi@{asioHostApi}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{asioHostApi}{asioHostApi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_asio_host_api_representation}{Pa\+Asio\+Host\+Api\+Representation}}$\ast$ Pa\+Asio\+Stream\+::asio\+Host\+Api}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a069cea1d45e377a6763350a3b0de5302}\label{struct_pa_asio_stream_a069cea1d45e377a6763350a3b0de5302}} 
+\index{PaAsioStream@{PaAsioStream}!asioInputLatencyFrames@{asioInputLatencyFrames}}
+\index{asioInputLatencyFrames@{asioInputLatencyFrames}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{asioInputLatencyFrames}{asioInputLatencyFrames}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::asio\+Input\+Latency\+Frames}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a27a6dcaf68446e88becd22c68152fa60}\label{struct_pa_asio_stream_a27a6dcaf68446e88becd22c68152fa60}} 
+\index{PaAsioStream@{PaAsioStream}!asioOutputLatencyFrames@{asioOutputLatencyFrames}}
+\index{asioOutputLatencyFrames@{asioOutputLatencyFrames}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{asioOutputLatencyFrames}{asioOutputLatencyFrames}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::asio\+Output\+Latency\+Frames}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a9a43b2884ff0bd92b02e94863c359106}\label{struct_pa_asio_stream_a9a43b2884ff0bd92b02e94863c359106}} 
+\index{PaAsioStream@{PaAsioStream}!blockingState@{blockingState}}
+\index{blockingState@{blockingState}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{blockingState}{blockingState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_asio_stream_blocking_state}{Pa\+Asio\+Stream\+Blocking\+State}}$\ast$ Pa\+Asio\+Stream\+::blocking\+State}
+
+Blocking i/o data struct, or NULL when using callback interface. \mbox{\Hypertarget{struct_pa_asio_stream_ac48d721d10bcdf041cc097b08493d684}\label{struct_pa_asio_stream_ac48d721d10bcdf041cc097b08493d684}} 
+\index{PaAsioStream@{PaAsioStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Asio\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_ac907e7cf08200d9ebeed13c17cb5c6e2}\label{struct_pa_asio_stream_ac907e7cf08200d9ebeed13c17cb5c6e2}} 
+\index{PaAsioStream@{PaAsioStream}!bufferPtrs@{bufferPtrs}}
+\index{bufferPtrs@{bufferPtrs}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{bufferPtrs}{bufferPtrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asio\+Stream\+::buffer\+Ptrs}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a3fca0112299e71c6007600a8a85ae421}\label{struct_pa_asio_stream_a3fca0112299e71c6007600a8a85ae421}} 
+\index{PaAsioStream@{PaAsioStream}!callbackFlags@{callbackFlags}}
+\index{callbackFlags@{callbackFlags}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{callbackFlags}{callbackFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} Pa\+Asio\+Stream\+::callback\+Flags}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_acecaa140151e2d54cc9a904ec8d67244}\label{struct_pa_asio_stream_acecaa140151e2d54cc9a904ec8d67244}} 
+\index{PaAsioStream@{PaAsioStream}!completedBuffersPlayedEvent@{completedBuffersPlayedEvent}}
+\index{completedBuffersPlayedEvent@{completedBuffersPlayedEvent}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{completedBuffersPlayedEvent}{completedBuffersPlayedEvent}}
+{\footnotesize\ttfamily HANDLE Pa\+Asio\+Stream\+::completed\+Buffers\+Played\+Event}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a32a7ade601d41f7469a8eb14b3dd1828}\label{struct_pa_asio_stream_a32a7ade601d41f7469a8eb14b3dd1828}} 
+\index{PaAsioStream@{PaAsioStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Asio\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a6a4170ebada9b0e6068a704cedae5cdb}\label{struct_pa_asio_stream_a6a4170ebada9b0e6068a704cedae5cdb}} 
+\index{PaAsioStream@{PaAsioStream}!framesPerHostCallback@{framesPerHostCallback}}
+\index{framesPerHostCallback@{framesPerHostCallback}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{framesPerHostCallback}{framesPerHostCallback}}
+{\footnotesize\ttfamily unsigned long Pa\+Asio\+Stream\+::frames\+Per\+Host\+Callback}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a0cba4fd052886fae39f3a7e45ec35034}\label{struct_pa_asio_stream_a0cba4fd052886fae39f3a7e45ec35034}} 
+\index{PaAsioStream@{PaAsioStream}!inputBufferConverter@{inputBufferConverter}}
+\index{inputBufferConverter@{inputBufferConverter}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{inputBufferConverter}{inputBufferConverter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}{Pa\+Asio\+Buffer\+Converter}}$\ast$ Pa\+Asio\+Stream\+::input\+Buffer\+Converter}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_af25193d33adf5418364e04c10d6e8b86}\label{struct_pa_asio_stream_af25193d33adf5418364e04c10d6e8b86}} 
+\index{PaAsioStream@{PaAsioStream}!inputBufferPtrs@{inputBufferPtrs}}
+\index{inputBufferPtrs@{inputBufferPtrs}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{inputBufferPtrs}{inputBufferPtrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asio\+Stream\+::input\+Buffer\+Ptrs\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_acf80c90b4ca3454b3643b2873724fdca}\label{struct_pa_asio_stream_acf80c90b4ca3454b3643b2873724fdca}} 
+\index{PaAsioStream@{PaAsioStream}!inputChannelCount@{inputChannelCount}}
+\index{inputChannelCount@{inputChannelCount}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{inputChannelCount}{inputChannelCount}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::input\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a26c73578d78f8581d21ad2b3c45e642f}\label{struct_pa_asio_stream_a26c73578d78f8581d21ad2b3c45e642f}} 
+\index{PaAsioStream@{PaAsioStream}!inputShift@{inputShift}}
+\index{inputShift@{inputShift}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{inputShift}{inputShift}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::input\+Shift}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a58968563c91f34801e82f695ca1ad7bc}\label{struct_pa_asio_stream_a58968563c91f34801e82f695ca1ad7bc}} 
+\index{PaAsioStream@{PaAsioStream}!isActive@{isActive}}
+\index{isActive@{isActive}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{isActive}{isActive}}
+{\footnotesize\ttfamily volatile int Pa\+Asio\+Stream\+::is\+Active}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a32266ca70b73b4bad7c7605ff6308ac7}\label{struct_pa_asio_stream_a32266ca70b73b4bad7c7605ff6308ac7}} 
+\index{PaAsioStream@{PaAsioStream}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{isStopped}{isStopped}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+::is\+Stopped}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a554712919295460d9e88a03c32c8fb9a}\label{struct_pa_asio_stream_a554712919295460d9e88a03c32c8fb9a}} 
+\index{PaAsioStream@{PaAsioStream}!outputBufferConverter@{outputBufferConverter}}
+\index{outputBufferConverter@{outputBufferConverter}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{outputBufferConverter}{outputBufferConverter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__asio_8cpp_aa79f309d7deff671e242cca72615652a}{Pa\+Asio\+Buffer\+Converter}}$\ast$ Pa\+Asio\+Stream\+::output\+Buffer\+Converter}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a96357cfec93b4ff57750eb15467dc36a}\label{struct_pa_asio_stream_a96357cfec93b4ff57750eb15467dc36a}} 
+\index{PaAsioStream@{PaAsioStream}!outputBufferPtrs@{outputBufferPtrs}}
+\index{outputBufferPtrs@{outputBufferPtrs}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{outputBufferPtrs}{outputBufferPtrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Asio\+Stream\+::output\+Buffer\+Ptrs\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a8d05870e5bf5bbace1bd680f3b300e8e}\label{struct_pa_asio_stream_a8d05870e5bf5bbace1bd680f3b300e8e}} 
+\index{PaAsioStream@{PaAsioStream}!outputChannelCount@{outputChannelCount}}
+\index{outputChannelCount@{outputChannelCount}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{outputChannelCount}{outputChannelCount}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::output\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a996681ee962b66ef8c5b316f529fe6a6}\label{struct_pa_asio_stream_a996681ee962b66ef8c5b316f529fe6a6}} 
+\index{PaAsioStream@{PaAsioStream}!outputShift@{outputShift}}
+\index{outputShift@{outputShift}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{outputShift}{outputShift}}
+{\footnotesize\ttfamily long Pa\+Asio\+Stream\+::output\+Shift}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_af03bbc90652180dfed1499eae58f076d}\label{struct_pa_asio_stream_af03bbc90652180dfed1499eae58f076d}} 
+\index{PaAsioStream@{PaAsioStream}!postOutput@{postOutput}}
+\index{postOutput@{postOutput}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{postOutput}{postOutput}}
+{\footnotesize\ttfamily bool Pa\+Asio\+Stream\+::post\+Output}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_aa57477dfd1c26729a2d518e57e78c885}\label{struct_pa_asio_stream_aa57477dfd1c26729a2d518e57e78c885}} 
+\index{PaAsioStream@{PaAsioStream}!reenterCount@{reenterCount}}
+\index{reenterCount@{reenterCount}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{reenterCount}{reenterCount}}
+{\footnotesize\ttfamily volatile long Pa\+Asio\+Stream\+::reenter\+Count}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a9e032d37004fd0385330108fad387ccc}\label{struct_pa_asio_stream_a9e032d37004fd0385330108fad387ccc}} 
+\index{PaAsioStream@{PaAsioStream}!reenterError@{reenterError}}
+\index{reenterError@{reenterError}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{reenterError}{reenterError}}
+{\footnotesize\ttfamily volatile long Pa\+Asio\+Stream\+::reenter\+Error}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a64c1de9b0213087469905a2934227bd4}\label{struct_pa_asio_stream_a64c1de9b0213087469905a2934227bd4}} 
+\index{PaAsioStream@{PaAsioStream}!stopPlayoutCount@{stopPlayoutCount}}
+\index{stopPlayoutCount@{stopPlayoutCount}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{stopPlayoutCount}{stopPlayoutCount}}
+{\footnotesize\ttfamily int Pa\+Asio\+Stream\+::stop\+Playout\+Count}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_a138a1dc47e2ad061591f9d8dc7d07926}\label{struct_pa_asio_stream_a138a1dc47e2ad061591f9d8dc7d07926}} 
+\index{PaAsioStream@{PaAsioStream}!stopProcessing@{stopProcessing}}
+\index{stopProcessing@{stopProcessing}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{stopProcessing}{stopProcessing}}
+{\footnotesize\ttfamily volatile bool Pa\+Asio\+Stream\+::stop\+Processing}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_ad53dcc5be9046ad25a61359aa3010796}\label{struct_pa_asio_stream_ad53dcc5be9046ad25a61359aa3010796}} 
+\index{PaAsioStream@{PaAsioStream}!streamFinishedCallbackCalled@{streamFinishedCallbackCalled}}
+\index{streamFinishedCallbackCalled@{streamFinishedCallbackCalled}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{streamFinishedCallbackCalled}{streamFinishedCallbackCalled}}
+{\footnotesize\ttfamily bool Pa\+Asio\+Stream\+::stream\+Finished\+Callback\+Called}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_ac67b5dffdcbfde1debd7dfca34e8a526}\label{struct_pa_asio_stream_ac67b5dffdcbfde1debd7dfca34e8a526}} 
+\index{PaAsioStream@{PaAsioStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Asio\+Stream\+::stream\+Representation}
+
+\mbox{\Hypertarget{struct_pa_asio_stream_aa21c6cf2c250d832d8e6022347701230}\label{struct_pa_asio_stream_aa21c6cf2c250d832d8e6022347701230}} 
+\index{PaAsioStream@{PaAsioStream}!zeroOutput@{zeroOutput}}
+\index{zeroOutput@{zeroOutput}!PaAsioStream@{PaAsioStream}}
+\doxysubsubsection{\texorpdfstring{zeroOutput}{zeroOutput}}
+{\footnotesize\ttfamily volatile bool Pa\+Asio\+Stream\+::zero\+Output}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/asio/\mbox{\hyperlink{pa__asio_8cpp}{pa\+\_\+asio.\+cpp}}\end{DoxyCompactItemize}

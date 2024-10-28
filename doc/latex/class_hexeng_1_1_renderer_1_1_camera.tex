@@ -1,0 +1,97 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_camera}{}\doxysection{Hexeng\+::Renderer\+::Camera Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_camera}\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_ae96de59aa2cda89ef90ae36bf44518b5}{refresh\+\_\+pos}} ()
+\begin{DoxyCompactList}\small\item\em After updating the position, you may want to call this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}{position}} = \{ 0, 0, 0 \}
+\begin{DoxyCompactList}\small\item\em Can be updated at any moment. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_add8bb0a82f100d56f98ca6cb188e4856}{fov}} = 120
+\begin{DoxyCompactList}\small\item\em Can be updated at any moment. \end{DoxyCompactList}\item 
+static const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}{xy\+\_\+position}} = \&Camera\+::s\+\_\+xy\+\_\+position
+\begin{DoxyCompactList}\small\item\em Access to the x and y position of the cam. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a834e4e869446be644f61b4b456604f31}{Layer}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a4ec8b05d6ac6afc5dee39f90c7363193}{Contextual\+Layer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_ae96de59aa2cda89ef90ae36bf44518b5}\label{class_hexeng_1_1_renderer_1_1_camera_ae96de59aa2cda89ef90ae36bf44518b5}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!refresh\_pos@{refresh\_pos}}
+\index{refresh\_pos@{refresh\_pos}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{refresh\_pos()}{refresh\_pos()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Camera\+::refresh\+\_\+pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+After updating the position, you may want to call this function. 
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_a4ec8b05d6ac6afc5dee39f90c7363193}\label{class_hexeng_1_1_renderer_1_1_camera_a4ec8b05d6ac6afc5dee39f90c7363193}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!ContextualLayer@{ContextualLayer}}
+\index{ContextualLayer@{ContextualLayer}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{ContextualLayer}{ContextualLayer}}
+{\footnotesize\ttfamily friend class Contextual\+Layer\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_a834e4e869446be644f61b4b456604f31}\label{class_hexeng_1_1_renderer_1_1_camera_a834e4e869446be644f61b4b456604f31}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!Layer@{Layer}}
+\index{Layer@{Layer}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{Layer}{Layer}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_add8bb0a82f100d56f98ca6cb188e4856}\label{class_hexeng_1_1_renderer_1_1_camera_add8bb0a82f100d56f98ca6cb188e4856}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!fov@{fov}}
+\index{fov@{fov}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{fov}{fov}}
+{\footnotesize\ttfamily int Hexeng\+::\+Renderer\+::\+Camera\+::fov = 120\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Can be updated at any moment. 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}\label{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!position@{position}}
+\index{position@{position}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec3}{Vec3}}$<$ int $>$ Hexeng\+::\+Renderer\+::\+Camera\+::position = \{ 0, 0, 0 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Can be updated at any moment. 
+
+\begin{DoxyNote}{Note}
+After updating this value, you may want to call \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_ae96de59aa2cda89ef90ae36bf44518b5}{refresh\+\_\+pos()}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}\label{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}} 
+\index{Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}!xy\_position@{xy\_position}}
+\index{xy\_position@{xy\_position}!Hexeng::Renderer::Camera@{Hexeng::Renderer::Camera}}
+\doxysubsubsection{\texorpdfstring{xy\_position}{xy\_position}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$ Hexeng\+::\+Renderer\+::\+Camera\+::xy\+\_\+position = \&Camera\+::s\+\_\+xy\+\_\+position\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Access to the x and y position of the cam. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_camera_8cpp}{Camera.\+cpp}}\end{DoxyCompactItemize}

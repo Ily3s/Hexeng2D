@@ -1,0 +1,103 @@
+\hypertarget{classportaudio_1_1_asio_device_adapter}{}\doxysection{portaudio\+::Asio\+Device\+Adapter Class Reference}
+\label{classportaudio_1_1_asio_device_adapter}\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+
+
+Adapts the given \mbox{\hyperlink{classportaudio_1_1_device}{Device}} to an ASIO specific extension.  
+
+
+
+
+{\ttfamily \#include $<$Asio\+Device\+Adapter.\+hxx$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_ab30f3df69909b27b1dd0e1fa830bdc36}{Asio\+Device\+Adapter}} (\mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&\mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_afcaa2c9e543033fd49561b4e594b7e40}{device}})
+\item 
+\mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_afcaa2c9e543033fd49561b4e594b7e40}{device}} ()
+\item 
+long \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a636536a46fa1209e4fd4345cabd1bf10}{min\+Buffer\+Size}} () const
+\item 
+long \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_abf930e1cedb3077fc655dbabcd391968}{max\+Buffer\+Size}} () const
+\item 
+long \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a924a8a8ff7e259737a4e6c31d309c502}{preferred\+Buffer\+Size}} () const
+\item 
+long \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a17a0d15a79c36226756a57f6c3889f39}{granularity}} () const
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a4ed805775f2e002409f00ffe94808188}{show\+Control\+Panel}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$system\+Specific)
+\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a5dfa354edc4372be319002f72fbe6bdb}{input\+Channel\+Name}} (int channel\+Index) const
+\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter_a8dfd4f4ad83c83a337e29abfb66974eb}{output\+Channel\+Name}} (int channel\+Index) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adapts the given \mbox{\hyperlink{classportaudio_1_1_device}{Device}} to an ASIO specific extension. 
+
+Deleting the \mbox{\hyperlink{classportaudio_1_1_asio_device_adapter}{Asio\+Device\+Adapter}} does not affect the underlying \mbox{\hyperlink{classportaudio_1_1_device}{Device}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_ab30f3df69909b27b1dd0e1fa830bdc36}\label{classportaudio_1_1_asio_device_adapter_ab30f3df69909b27b1dd0e1fa830bdc36}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!AsioDeviceAdapter@{AsioDeviceAdapter}}
+\index{AsioDeviceAdapter@{AsioDeviceAdapter}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{AsioDeviceAdapter()}{AsioDeviceAdapter()}}
+{\footnotesize\ttfamily portaudio\+::\+Asio\+Device\+Adapter\+::\+Asio\+Device\+Adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&}]{device }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_afcaa2c9e543033fd49561b4e594b7e40}\label{classportaudio_1_1_asio_device_adapter_afcaa2c9e543033fd49561b4e594b7e40}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!device@{device}}
+\index{device@{device}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{device()}{device()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& portaudio\+::\+Asio\+Device\+Adapter\+::device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a17a0d15a79c36226756a57f6c3889f39}\label{classportaudio_1_1_asio_device_adapter_a17a0d15a79c36226756a57f6c3889f39}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!granularity@{granularity}}
+\index{granularity@{granularity}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{granularity()}{granularity()}}
+{\footnotesize\ttfamily long portaudio\+::\+Asio\+Device\+Adapter\+::granularity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a5dfa354edc4372be319002f72fbe6bdb}\label{classportaudio_1_1_asio_device_adapter_a5dfa354edc4372be319002f72fbe6bdb}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!inputChannelName@{inputChannelName}}
+\index{inputChannelName@{inputChannelName}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{inputChannelName()}{inputChannelName()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Asio\+Device\+Adapter\+::input\+Channel\+Name (\begin{DoxyParamCaption}\item[{int}]{channel\+Index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_abf930e1cedb3077fc655dbabcd391968}\label{classportaudio_1_1_asio_device_adapter_abf930e1cedb3077fc655dbabcd391968}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!maxBufferSize@{maxBufferSize}}
+\index{maxBufferSize@{maxBufferSize}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{maxBufferSize()}{maxBufferSize()}}
+{\footnotesize\ttfamily long portaudio\+::\+Asio\+Device\+Adapter\+::max\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a636536a46fa1209e4fd4345cabd1bf10}\label{classportaudio_1_1_asio_device_adapter_a636536a46fa1209e4fd4345cabd1bf10}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!minBufferSize@{minBufferSize}}
+\index{minBufferSize@{minBufferSize}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{minBufferSize()}{minBufferSize()}}
+{\footnotesize\ttfamily long portaudio\+::\+Asio\+Device\+Adapter\+::min\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a8dfd4f4ad83c83a337e29abfb66974eb}\label{classportaudio_1_1_asio_device_adapter_a8dfd4f4ad83c83a337e29abfb66974eb}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!outputChannelName@{outputChannelName}}
+\index{outputChannelName@{outputChannelName}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{outputChannelName()}{outputChannelName()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Asio\+Device\+Adapter\+::output\+Channel\+Name (\begin{DoxyParamCaption}\item[{int}]{channel\+Index }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a924a8a8ff7e259737a4e6c31d309c502}\label{classportaudio_1_1_asio_device_adapter_a924a8a8ff7e259737a4e6c31d309c502}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!preferredBufferSize@{preferredBufferSize}}
+\index{preferredBufferSize@{preferredBufferSize}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{preferredBufferSize()}{preferredBufferSize()}}
+{\footnotesize\ttfamily long portaudio\+::\+Asio\+Device\+Adapter\+::preferred\+Buffer\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_asio_device_adapter_a4ed805775f2e002409f00ffe94808188}\label{classportaudio_1_1_asio_device_adapter_a4ed805775f2e002409f00ffe94808188}} 
+\index{portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}!showControlPanel@{showControlPanel}}
+\index{showControlPanel@{showControlPanel}!portaudio::AsioDeviceAdapter@{portaudio::AsioDeviceAdapter}}
+\doxysubsubsection{\texorpdfstring{showControlPanel()}{showControlPanel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Asio\+Device\+Adapter\+::show\+Control\+Panel (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{system\+Specific }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_asio_device_adapter_8hxx}{Asio\+Device\+Adapter.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_asio_device_adapter_8cxx}{Asio\+Device\+Adapter.\+cxx}}\end{DoxyCompactItemize}

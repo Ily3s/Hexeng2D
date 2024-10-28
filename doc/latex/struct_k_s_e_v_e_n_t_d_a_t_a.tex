@@ -1,0 +1,108 @@
+\hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a}{}\doxysection{KSEVENTDATA Struct Reference}
+\label{struct_k_s_e_v_e_n_t_d_a_t_a}\index{KSEVENTDATA@{KSEVENTDATA}}
+
+
+{\ttfamily \#include $<$ks.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ULONG \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_a3c9b214e2570e72540e3b4d44fd664c0}{Notification\+Type}}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>struct \{\\
+\>\>HANDLE \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_ad9a2147d949213d27c3ffa441dee9239}{Event}}\\
+\>\>ULONG\_PTR \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_abcd051f7cade9808bc01a0c81eb9cdab}{Reserved}} \mbox{[}2\mbox{]}\\
+\>\} \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_a6ed029e731472ea3681dd70473000535}{EventHandle}}\\
+\>struct \{\\
+\>\>HANDLE \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_a05bc538f061e5301351d5d9c205a9bc5}{Semaphore}}\\
+\>\>ULONG \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_a25486f28449e7f54fdf1d97426e2f135}{Reserved}}\\
+\>\>LONG \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_a1406875dc7efd16bb775487d2ca8c64c}{Adjustment}}\\
+\>\} \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_aaba2fa90f3a3cb2b4266ac09eb06bd21}{SemaphoreHandle}}\\
+\>struct \{\\
+\>\>PVOID \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_aa8f0264453d52333d3624402a5a139c8}{Unused}}\\
+\>\>LONG\_PTR \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_ae2fcdc59b528aa0ecbb7223a35a1aa9d}{Alignment}} \mbox{[}2\mbox{]}\\
+\>\} \mbox{\hyperlink{struct_k_s_e_v_e_n_t_d_a_t_a_acd8b828e2e2c99d4ac634130bc8ddb1b}{Alignment}}\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a0cb84446e149d6f8eefd559831e519ce}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a0cb84446e149d6f8eefd559831e519ce}} 
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+MINGW\+\_\+\+EXTENSION union  \{ ... \}  KSEVENTDATA\+::@37}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a1406875dc7efd16bb775487d2ca8c64c}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a1406875dc7efd16bb775487d2ca8c64c}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Adjustment@{Adjustment}}
+\index{Adjustment@{Adjustment}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Adjustment}{Adjustment}}
+{\footnotesize\ttfamily LONG KSEVENTDATA\+::\+Adjustment}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_ae2fcdc59b528aa0ecbb7223a35a1aa9d}\label{struct_k_s_e_v_e_n_t_d_a_t_a_ae2fcdc59b528aa0ecbb7223a35a1aa9d}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Alignment}{Alignment}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily LONG\+\_\+\+PTR KSEVENTDATA\+::\+Alignment\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_acd8b828e2e2c99d4ac634130bc8ddb1b}\label{struct_k_s_e_v_e_n_t_d_a_t_a_acd8b828e2e2c99d4ac634130bc8ddb1b}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{}{}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily struct  \{ ... \}  KSEVENTDATA\+::\+Alignment}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_ad9a2147d949213d27c3ffa441dee9239}\label{struct_k_s_e_v_e_n_t_d_a_t_a_ad9a2147d949213d27c3ffa441dee9239}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Event@{Event}}
+\index{Event@{Event}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Event}{Event}}
+{\footnotesize\ttfamily HANDLE KSEVENTDATA\+::\+Event}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a6ed029e731472ea3681dd70473000535}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a6ed029e731472ea3681dd70473000535}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!EventHandle@{EventHandle}}
+\index{EventHandle@{EventHandle}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  KSEVENTDATA\+::\+Event\+Handle}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a3c9b214e2570e72540e3b4d44fd664c0}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a3c9b214e2570e72540e3b4d44fd664c0}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!NotificationType@{NotificationType}}
+\index{NotificationType@{NotificationType}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{NotificationType}{NotificationType}}
+{\footnotesize\ttfamily ULONG KSEVENTDATA\+::\+Notification\+Type}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_abcd051f7cade9808bc01a0c81eb9cdab}\label{struct_k_s_e_v_e_n_t_d_a_t_a_abcd051f7cade9808bc01a0c81eb9cdab}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Reserved@{Reserved}}
+\index{Reserved@{Reserved}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Reserved}{Reserved}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ULONG\+\_\+\+PTR KSEVENTDATA\+::\+Reserved\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a25486f28449e7f54fdf1d97426e2f135}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a25486f28449e7f54fdf1d97426e2f135}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Reserved@{Reserved}}
+\index{Reserved@{Reserved}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Reserved}{Reserved}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ULONG KSEVENTDATA\+::\+Reserved}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_a05bc538f061e5301351d5d9c205a9bc5}\label{struct_k_s_e_v_e_n_t_d_a_t_a_a05bc538f061e5301351d5d9c205a9bc5}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Semaphore@{Semaphore}}
+\index{Semaphore@{Semaphore}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Semaphore}{Semaphore}}
+{\footnotesize\ttfamily HANDLE KSEVENTDATA\+::\+Semaphore}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_aaba2fa90f3a3cb2b4266ac09eb06bd21}\label{struct_k_s_e_v_e_n_t_d_a_t_a_aaba2fa90f3a3cb2b4266ac09eb06bd21}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!SemaphoreHandle@{SemaphoreHandle}}
+\index{SemaphoreHandle@{SemaphoreHandle}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  KSEVENTDATA\+::\+Semaphore\+Handle}
+
+\mbox{\Hypertarget{struct_k_s_e_v_e_n_t_d_a_t_a_aa8f0264453d52333d3624402a5a139c8}\label{struct_k_s_e_v_e_n_t_d_a_t_a_aa8f0264453d52333d3624402a5a139c8}} 
+\index{KSEVENTDATA@{KSEVENTDATA}!Unused@{Unused}}
+\index{Unused@{Unused}!KSEVENTDATA@{KSEVENTDATA}}
+\doxysubsubsection{\texorpdfstring{Unused}{Unused}}
+{\footnotesize\ttfamily PVOID KSEVENTDATA\+::\+Unused}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{ks_8h}{ks.\+h}}\end{DoxyCompactItemize}

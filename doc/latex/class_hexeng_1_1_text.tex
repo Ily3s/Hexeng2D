@@ -1,0 +1,178 @@
+\hypertarget{class_hexeng_1_1_text}{}\doxysection{Hexeng\+::Text Class Reference}
+\label{class_hexeng_1_1_text}\index{Hexeng::Text@{Hexeng::Text}}
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_text}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text_ad13cabce634eca6c17063fcd207200be}{Text}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text_a5385596dd1335c85336a1344f848e5be}{Text}} (std\+::u32string text, \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&font, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}{position}}, int font\+\_\+size, \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}} ha=\mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}} va=\mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} c=\mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ box=\{0, 0\}, std\+::function$<$ void(const std\+::u32string \&)$>$ use\+\_\+what\+\_\+doesnt\+\_\+fit=nullptr)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text_aabcca760a44eb7fe3f93482b7432658c}{Text}} (const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}} $\ast$$\ast$language, std\+::u32string text, \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&font, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a4840714190a5e2d48136cef014de0b22}{position}}, int font\+\_\+size, \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}} ha=\mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}} va=\mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} c=\mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ box=\{0, 0\}, std\+::function$<$ void(const std\+::u32string \&)$>$ use\+\_\+what\+\_\+doesnt\+\_\+fit=nullptr)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text_a7e752e44a539ba608c119f29bf6265ad}{Text}} (const \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \& \mbox{\hyperlink{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text_ab6851c37f1ca22a716b1d55b1a064085}{Text}} (\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \& \mbox{\hyperlink{class_hexeng_1_1_text_ad5d7201255faa8f2288f0fad58905a60}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&) noexcept
+\item 
+size\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}{set\+\_\+enabled\+\_\+chars}} (std\+::vector$<$ bool $>$ enabled\+\_\+chars)
+\begin{DoxyCompactList}\small\item\em Set a list of character that needs to be rendered  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_hexeng_1_1_text_a2e2c2fbc062e45f23331d3bd0403e6af}{reload\+\_\+language}} ()
+\begin{DoxyCompactList}\small\item\em Refresh all the texts with the new language.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_text_ad13cabce634eca6c17063fcd207200be}\label{class_hexeng_1_1_text_ad13cabce634eca6c17063fcd207200be}} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_text_a5385596dd1335c85336a1344f848e5be}\label{class_hexeng_1_1_text_a5385596dd1335c85336a1344f848e5be}} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{std\+::u32string}]{text,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&}]{font,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{position,  }\item[{int}]{font\+\_\+size,  }\item[{\mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}}}]{ha = {\ttfamily \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}}}]{va = {\ttfamily \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}}}]{c = {\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{box = {\ttfamily \{0,~0\}},  }\item[{std\+::function$<$ void(const std\+::u32string \&)$>$}]{use\+\_\+what\+\_\+doesnt\+\_\+fit = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to be written. Format \+: UTF-\/32\\
+\hline
+{\em font} & The \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} that will be used to texture the Mesh\\
+\hline
+{\em position} & The absolute position of a certain point of the \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}. The relative position of this point to the \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} is defined by va and ha\\
+\hline
+{\em font\+\_\+size} & A size in the Hexeng2D coordinate system\\
+\hline
+{\em ha} & Defines the x position of the text relative to position\\
+\hline
+{\em va} & Defines the y position of the text relative to position\\
+\hline
+{\em c} & The color of the text\\
+\hline
+{\em box} & A box that must contain the text\\
+\hline
+{\em use\+\_\+what\+\_\+doesnt\+\_\+fit} & A function that uses what doesn\textquotesingle{}t fit in the box\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_text_aabcca760a44eb7fe3f93482b7432658c}\label{class_hexeng_1_1_text_aabcca760a44eb7fe3f93482b7432658c}} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}} $\ast$$\ast$}]{language,  }\item[{std\+::u32string}]{text,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&}]{font,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{position,  }\item[{int}]{font\+\_\+size,  }\item[{\mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}}}]{ha = {\ttfamily \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}}}]{va = {\ttfamily \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}}}]{c = {\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{box = {\ttfamily \{0,~0\}},  }\item[{std\+::function$<$ void(const std\+::u32string \&)$>$}]{use\+\_\+what\+\_\+doesnt\+\_\+fit = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em language} & A pointer to the current language\textquotesingle{}s pointer. It is a pointer to a pointer so that it is easier to switch languages\\
+\hline
+{\em text} & The text to be written. Format \+: UTF-\/32\\
+\hline
+{\em font} & The \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} that will be used to texture the Mesh\\
+\hline
+{\em position} & The absolute position of a certain point of the \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}. The relative position of this point to the \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} is defined by va and ha\\
+\hline
+{\em font\+\_\+size} & A size in the Hexeng2D coordinate system\\
+\hline
+{\em ha} & Defines the x position of the text relative to position\\
+\hline
+{\em va} & Defines the y position of the text relative to position\\
+\hline
+{\em c} & The color of the text\\
+\hline
+{\em box} & A box that must contain the text\\
+\hline
+{\em use\+\_\+what\+\_\+doesnt\+\_\+fit} & A function that uses what doesn\textquotesingle{}t fit in the box\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_text_a7e752e44a539ba608c119f29bf6265ad}\label{class_hexeng_1_1_text_a7e752e44a539ba608c119f29bf6265ad}} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_text_ab6851c37f1ca22a716b1d55b1a064085}\label{class_hexeng_1_1_text_ab6851c37f1ca22a716b1d55b1a064085}} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}\label{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}} 
+\index{Hexeng::Text@{Hexeng::Text}!get\_char\_count@{get\_char\_count}}
+\index{get\_char\_count@{get\_char\_count}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{get\_char\_count()}{get\_char\_count()}}
+{\footnotesize\ttfamily size\+\_\+t Hexeng\+::\+Text\+::get\+\_\+char\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+
+
+\mbox{\Hypertarget{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}\label{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}} 
+\index{Hexeng::Text@{Hexeng::Text}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \& Hexeng\+::\+Text\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_text_ad5d7201255faa8f2288f0fad58905a60}\label{class_hexeng_1_1_text_ad5d7201255faa8f2288f0fad58905a60}} 
+\index{Hexeng::Text@{Hexeng::Text}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \& Hexeng\+::\+Text\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_text}{Text}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_text_a2e2c2fbc062e45f23331d3bd0403e6af}\label{class_hexeng_1_1_text_a2e2c2fbc062e45f23331d3bd0403e6af}} 
+\index{Hexeng::Text@{Hexeng::Text}!reload\_language@{reload\_language}}
+\index{reload\_language@{reload\_language}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{reload\_language()}{reload\_language()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Text\+::reload\+\_\+language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Refresh all the texts with the new language.  
+
+After switching languages, this function has to be called to refresh the texts. \mbox{\Hypertarget{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}\label{class_hexeng_1_1_text_a84d3a5bc70dde22ec6154c41520525ed}} 
+\index{Hexeng::Text@{Hexeng::Text}!set\_enabled\_chars@{set\_enabled\_chars}}
+\index{set\_enabled\_chars@{set\_enabled\_chars}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{set\_enabled\_chars()}{set\_enabled\_chars()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Text\+::set\+\_\+enabled\+\_\+chars (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$}]{enabled\+\_\+chars }\end{DoxyParamCaption})}
+
+
+
+Set a list of character that needs to be rendered  
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled\+\_\+chars} & A list of bools that indicates if a character have to be rendered. Its size has to be equal to \mbox{\hyperlink{class_hexeng_1_1_text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count()}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8hpp}{Text.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8cpp}{Text.\+cpp}}\end{DoxyCompactItemize}

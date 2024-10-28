@@ -1,0 +1,153 @@
+\hypertarget{_mesh_8hpp_source}{}\doxysection{Mesh.\+hpp}
+\label{_mesh_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Mesh.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Mesh.hpp}}
+\mbox{\hyperlink{_mesh_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef MESH\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define MESH\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vertex_array_8hpp}{VertexArray.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_texture_8hpp}{Texture.hpp}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_index_buffer_8hpp}{IndexBuffer.hpp}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_shader_8hpp}{Shader.hpp}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uniform_8hpp}{Uniform.hpp}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}../Color.hpp"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_default_shaders_8hpp}{DefaultShaders.hpp}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method}{BlendingMethod}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22         GLenum \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method_abc0c6b88473bc7eaab641a1924c03172}{src}} = GL\_SRC\_ALPHA;}
+\DoxyCodeLine{23         GLenum \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method_a0069b1e47daf105eb662d68487c9dfd3}{dest}} = GL\_ONE\_MINUS\_SRC\_ALPHA;}
+\DoxyCodeLine{24     \};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{27     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29     \textcolor{keyword}{public}:}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af8c650dae02f4c186d9da35007e8622d}{Mesh}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{41         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}(\textcolor{keyword}{const} \textcolor{keywordtype}{void}* vb, \textcolor{keywordtype}{size\_t} vb\_size, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}\& pos, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\& layout, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}* ib, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}* tex, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* shader, GLenum type = GL\_TRIANGLES);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}\&\& moving) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{44         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}\&\& moving) \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af2e904f71059db6e7fdd0e79e8d824bf}{get\_texture}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_texture; \}}
+\DoxyCodeLine{47         \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a1fda39f7e229081e68c9d8e456760668}{get\_vao}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \&m\_vao; \}}
+\DoxyCodeLine{48         \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_af0f23574a4525588ad3442c53bfb5cf0}{get\_shader}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_shader; \}}
+\DoxyCodeLine{49         \textcolor{keyword}{inline} \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}* \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a0868a156e0d4807cf1dd109cd561390a}{get\_ib}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_ib; \}}
+\DoxyCodeLine{50         \textcolor{keyword}{inline} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}*\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a2708560fa3f6f89a911bc5df4ae21feb}{access\_texture}}() \{ \textcolor{keywordflow}{return} m\_texture; \}}
+\DoxyCodeLine{51         \textcolor{keyword}{inline} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}*\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a7e303aa5edd2e987a0372bfad10c08e6}{access\_shader}}() \{ \textcolor{keywordflow}{return} m\_shader; \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{54         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} position\{ 0, 0 \};}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{float} scale = 1.0f;}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{60         \textcolor{keywordtype}{float} rotation = 0;}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{64         \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} color\_filter = Color4::white;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{67         \textcolor{keywordtype}{float}\& opacity = color\_filter.\mbox{\hyperlink{class_hexeng_1_1_color4_afd1026374bf5611aed205518f99cc759}{A}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71         \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} color = \{0.0f, 0.0f, 0.0f, 0.0f\};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{74         \textcolor{keywordtype}{bool} enable = \textcolor{keyword}{true};}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{77         \textcolor{keywordtype}{bool}* enable\_ptr = \&enable;}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{80         \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method}{BlendingMethod}} blending\_method = \{ GL\_SRC\_ALPHA, GL\_ONE\_MINUS\_SRC\_ALPHA \};}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         \textcolor{keywordtype}{void} update\_position();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}{draw}}(std::unordered\_map<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, std::vector<void*>>\& parents\_uniforms = s\_empty\_uniform\_list);}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86         std::vector<std::pair<UniformInterface*, void*>> uniforms = \{\};}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{89         \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} unload();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keyword}{protected}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keyword}{static} std::unordered\_map<UniformInterface*, std::vector<void*>> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a6efbfca237c0914656d423a91016547c}{s\_empty\_uniform\_list}};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95         \textcolor{keyword}{friend} \textcolor{keyword}{class }\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}};}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} m\_transform\{ 0.0f, 0.0f \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99         GLenum m\_type = GL\_TRIANGLES;}
+\DoxyCodeLine{100         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a78835fbfa3b119234142ef1673c08454}{m\_vao}};}
+\DoxyCodeLine{101         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{VertexBuffer}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_a383bcd0699f85db2f667ca575c728fe2}{m\_vb}};}
+\DoxyCodeLine{102         \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}* m\_ib = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{103         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}* m\_texture = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{104         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* m\_shader = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{105         \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}* m\_layout = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{106     \};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{116     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}}
+\DoxyCodeLine{117     \{}
+\DoxyCodeLine{118     public :}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120         std::vector<Mesh*> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_ad57da385f9ae81649e038727fa159fb1}{meshes}};}
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}(std::vector<Mesh*>\&\& meshes);}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a366e00af7621651cae5adcc64cb400a4}{SuperMesh}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_ab48aa601b92d84932f2451e7648cc9db}{SuperMesh}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{127         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh_a889ad9a4dcc71811dca486377d84ef77}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\&\&) noexcept;}
+\DoxyCodeLine{130         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{SuperMesh}}\&\&) noexcept;}
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132         \textcolor{keywordtype}{void} draw(std::unordered\_map<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, std::vector<\textcolor{keywordtype}{void}*>>\& parents\_uniforms = s\_empty\_uniform\_list) override;}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134         virtual \textcolor{keywordtype}{void} load() override;}
+\DoxyCodeLine{135         virtual \textcolor{keywordtype}{void} unload() override;}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     protected :}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139         \textcolor{keywordtype}{void} m\_update\_childs\_positions(std::unordered\_map<\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{UniformInterface}}*, std::vector<\textcolor{keywordtype}{void}*>>\& parents\_uniforms);}
+\DoxyCodeLine{140     \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{ToBeInit}};}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} : public \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}}
+\DoxyCodeLine{145     \{}
+\DoxyCodeLine{146     public :}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{151         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}>\& vertecies, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} pos = \{ 0, 0 \}, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} color = Color4::white, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}* = \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}});}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_ae9548ff6ac503fc14609b77e072cf9de}{Polygon}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{154 }
+\DoxyCodeLine{155         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a3f1d4d6ad76ebfed8382e12546f6e903}{Polygon}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{156         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a2fe5511e2e05e33916875a98a07a5390}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{157 }
+\DoxyCodeLine{158         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\&\&) noexcept;}
+\DoxyCodeLine{159         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}\&\&) noexcept;}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161         inline static const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\& get\_vertex\_layout() \{ \textcolor{keywordflow}{return} s\_vertex\_layout; \}}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{163     private :}
+\DoxyCodeLine{164 }
+\DoxyCodeLine{165         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}} m\_index\_buffer;}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167         \textcolor{keywordtype}{void} m\_construct\_ib(\textcolor{keyword}{const} std::vector<\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}>\& vertecies);}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_is\_acute(\textcolor{keyword}{const} std::array<\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}, 3>\& triangle);}
+\DoxyCodeLine{170         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_is\_in\_triangle(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} point, \textcolor{keyword}{const} std::array<\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}}, 3>\& triangle);}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}} s\_vertex\_layout;}
+\DoxyCodeLine{173         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{ToBeInit}} s\_init\_layout;}
+\DoxyCodeLine{174     \};}
+\DoxyCodeLine{175 }
+\DoxyCodeLine{176 \}}
+\DoxyCodeLine{177 }
+\DoxyCodeLine{178 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !MESH\_HPP}}
+
+\end{DoxyCode}

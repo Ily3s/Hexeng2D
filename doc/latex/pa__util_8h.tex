@@ -1,0 +1,133 @@
+\hypertarget{pa__util_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+util.h File Reference}
+\label{pa__util_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_util.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_util.h}}
+
+
+Prototypes for utility functions used by Port\+Audio implementations.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__util_8h_a41956cda7a9cc69dd178425551a44cbe}{Pa\+Util\+\_\+\+Get\+Host\+Api\+Representation}} (struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__util_8h_a07ed030327e33935a807f671f4840936}{Pa\+Util\+\_\+\+Device\+Index\+To\+Host\+Api\+Device\+Index}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} $\ast$host\+Api\+Device, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$host\+Api)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__util_8h_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}} (\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} host\+Api\+Type, long error\+Code, const char $\ast$error\+Text)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{pa__util_8h_ae76628db9a9f49e1077b3892ea70177f}{Pa\+Util\+\_\+\+Allocate\+Memory}} (long \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__util_8h_a27a8f85d109600ef246e5c642c5c3cad}{Pa\+Util\+\_\+\+Free\+Memory}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$block)
+\item 
+int \mbox{\hyperlink{pa__util_8h_a649c15da99171e24ab937c3cc5f868e9}{Pa\+Util\+\_\+\+Count\+Currently\+Allocated\+Blocks}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__util_8h_aa31df78e35fdb6bbef1da3179ded31be}{Pa\+Util\+\_\+\+Initialize\+Clock}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+double \mbox{\hyperlink{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}{Pa\+Util\+\_\+\+Get\+Time}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Prototypes for utility functions used by Port\+Audio implementations. 
+
+Some functions declared here are defined in \mbox{\hyperlink{pa__front_8c}{pa\+\_\+front.\+c}} while others are implemented separately for each platform. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__util_8h_ae76628db9a9f49e1077b3892ea70177f}\label{pa__util_8h_ae76628db9a9f49e1077b3892ea70177f}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_AllocateMemory@{PaUtil\_AllocateMemory}}
+\index{PaUtil\_AllocateMemory@{PaUtil\_AllocateMemory}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_AllocateMemory()}{PaUtil\_AllocateMemory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ Pa\+Util\+\_\+\+Allocate\+Memory (\begin{DoxyParamCaption}\item[{long}]{size }\end{DoxyParamCaption})}
+
+Allocate size bytes, guaranteed to be aligned to a FIXME byte boundary \mbox{\Hypertarget{pa__util_8h_a649c15da99171e24ab937c3cc5f868e9}\label{pa__util_8h_a649c15da99171e24ab937c3cc5f868e9}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_CountCurrentlyAllocatedBlocks@{PaUtil\_CountCurrentlyAllocatedBlocks}}
+\index{PaUtil\_CountCurrentlyAllocatedBlocks@{PaUtil\_CountCurrentlyAllocatedBlocks}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_CountCurrentlyAllocatedBlocks()}{PaUtil\_CountCurrentlyAllocatedBlocks()}}
+{\footnotesize\ttfamily int Pa\+Util\+\_\+\+Count\+Currently\+Allocated\+Blocks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Return the number of currently allocated blocks. This function can be used for detecting memory leaks.
+
+\begin{DoxyNote}{Note}
+Allocations will only be tracked if PA\+\_\+\+TRACK\+\_\+\+MEMORY is \#defined. If it isn\textquotesingle{}t, this function will always return 0. 
+\end{DoxyNote}
+\mbox{\Hypertarget{pa__util_8h_a07ed030327e33935a807f671f4840936}\label{pa__util_8h_a07ed030327e33935a807f671f4840936}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_DeviceIndexToHostApiDeviceIndex@{PaUtil\_DeviceIndexToHostApiDeviceIndex}}
+\index{PaUtil\_DeviceIndexToHostApiDeviceIndex@{PaUtil\_DeviceIndexToHostApiDeviceIndex}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DeviceIndexToHostApiDeviceIndex()}{PaUtil\_DeviceIndexToHostApiDeviceIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Device\+Index\+To\+Host\+Api\+Device\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} $\ast$}]{host\+Api\+Device,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$}]{host\+Api }\end{DoxyParamCaption})}
+
+Convert a Port\+Audio device index into a host API specific device index. 
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Device} & Pointer to a device index, on success this will receive the converted device index value. \\
+\hline
+{\em device} & The Port\+Audio device index to convert. \\
+\hline
+{\em host\+Api} & The host api which the index should be converted for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success returns Pa\+No\+Error and places the converted index in the host\+Api\+Device parameter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__util_8h_a27a8f85d109600ef246e5c642c5c3cad}\label{pa__util_8h_a27a8f85d109600ef246e5c642c5c3cad}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_FreeMemory@{PaUtil\_FreeMemory}}
+\index{PaUtil\_FreeMemory@{PaUtil\_FreeMemory}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_FreeMemory()}{PaUtil\_FreeMemory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Free\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{block }\end{DoxyParamCaption})}
+
+Release block if non-\/\+NULL. block may be NULL \mbox{\Hypertarget{pa__util_8h_a41956cda7a9cc69dd178425551a44cbe}\label{pa__util_8h_a41956cda7a9cc69dd178425551a44cbe}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_GetHostApiRepresentation@{PaUtil\_GetHostApiRepresentation}}
+\index{PaUtil\_GetHostApiRepresentation@{PaUtil\_GetHostApiRepresentation}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetHostApiRepresentation()}{PaUtil\_GetHostApiRepresentation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Util\+\_\+\+Get\+Host\+Api\+Representation (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}]{type }\end{DoxyParamCaption})}
+
+Retrieve a specific host API representation. This function can be used by implementations to retrieve a pointer to their representation in host api specific extension functions which aren\textquotesingle{}t passed a rep pointer by \mbox{\hyperlink{pa__front_8c}{pa\+\_\+front.\+c}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api} & A pointer to a host API representation pointer. Upon success this will receive the requested representation pointer.\\
+\hline
+{\em type} & A valid host API type identifier.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An error code. If the result is Pa\+No\+Error then a pointer to the requested host API representation will be stored in $\ast$host\+Api. If the host API specified by type is not found, this function returns pa\+Host\+Api\+Not\+Found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}\label{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_GetTime@{PaUtil\_GetTime}}
+\index{PaUtil\_GetTime@{PaUtil\_GetTime}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetTime()}{PaUtil\_GetTime()}}
+{\footnotesize\ttfamily double Pa\+Util\+\_\+\+Get\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Return the system time in seconds. Used to implement CPU load functions
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__util_8h_aa31df78e35fdb6bbef1da3179ded31be}{Pa\+Util\+\_\+\+Initialize\+Clock}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__util_8h_aa31df78e35fdb6bbef1da3179ded31be}\label{pa__util_8h_aa31df78e35fdb6bbef1da3179ded31be}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_InitializeClock@{PaUtil\_InitializeClock}}
+\index{PaUtil\_InitializeClock@{PaUtil\_InitializeClock}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeClock()}{PaUtil\_InitializeClock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Initialize\+Clock (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Initialize the clock used by \mbox{\hyperlink{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}{Pa\+Util\+\_\+\+Get\+Time()}}. Call this before calling Pa\+Util\+\_\+\+Get\+Time.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}{Pa\+Util\+\_\+\+Get\+Time}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__util_8h_a9c3ad627c13c1d695fef054c216667f7}\label{pa__util_8h_a9c3ad627c13c1d695fef054c216667f7}} 
+\index{pa\_util.h@{pa\_util.h}!PaUtil\_SetLastHostErrorInfo@{PaUtil\_SetLastHostErrorInfo}}
+\index{PaUtil\_SetLastHostErrorInfo@{PaUtil\_SetLastHostErrorInfo}!pa\_util.h@{pa\_util.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SetLastHostErrorInfo()}{PaUtil\_SetLastHostErrorInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}]{host\+Api\+Type,  }\item[{long}]{error\+Code,  }\item[{const char $\ast$}]{error\+Text }\end{DoxyParamCaption})}
+
+Set the host error information returned by Pa\+\_\+\+Get\+Last\+Host\+Error\+Info. This function and the pa\+Unanticipated\+Host\+Error error code should be used as a last resort. Implementors should use existing PA error codes where possible, or nominate new ones. Note that at it is always better to use \mbox{\hyperlink{pa__util_8h_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info()}} and pa\+Unanticipated\+Host\+Error than to return an ambiguous or inaccurate Pa\+Error code.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api\+Type} & The host API which encountered the error (ie of the caller)\\
+\hline
+{\em error\+Code} & The error code returned by the native API function.\\
+\hline
+{\em error\+Text} & A string describing the error. Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info makes a copy of the string, so it is not necessary for the pointer to remain valid after the call to \mbox{\hyperlink{pa__util_8h_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info()}} returns. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,53 @@
+\doxysection{Button.\+hpp}
+\hypertarget{Button_8hpp_source}{}\label{Button_8hpp_source}\index{Hexeng2D/src/EventManager/Button.hpp@{Hexeng2D/src/EventManager/Button.hpp}}
+\mbox{\hyperlink{Button_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BUTTON\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BUTTON\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{InputEvent_8hpp}{InputEvent.hpp}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1EventManager}{Hexeng::EventManager}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffac}{ButtonEvent}}}
+\DoxyCodeLine{00015\ \ \ \ \ \{}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffacada95feece334f0612031adf21d057ab9}{HOVER}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffacab36087a3f7e8653a2cfe1ca46df7b74b}{UNHOVER}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffaca40600390b96d1c218ae0d475f977e25b}{CLICK}},}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffaca4dd2695912aafd9450d36abaa0cda733}{UNCLICK}},}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffaca45debd3c164d923204d4a211f549a097}{KEEP\_CLICKING}}}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}}}
+\DoxyCodeLine{00024\ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ private\ :}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_was\_hovered\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_was\_clicking\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_click\_outside\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ public\ :}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ mouse\_button\ =\ GLFW\_MOUSE\_BUTTON\_1;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::function<void(\textcolor{keywordtype}{void})>\ hover,\ unhover,\ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_afce58409a65e488ea4774b424361ce53}{click}},\ unclick,\ keep\_clicking;}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ min\{0,\ 0\},\ max\{0,\ 0\};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_afe6db3914ff8f0268a98aa0e4ec875f2}{Button}}(\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ min,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ max,\ std::unordered\_map<\mbox{\hyperlink{namespaceHexeng_1_1EventManager_a58b590a76487f0aa195632bdcac0ffac}{ButtonEvent}},\ std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>>\ events,\ \textcolor{keywordtype}{int}\ mouse\_button\ =\ GLFW\_MOUSE\_BUTTON\_1,\ Range\ range\ =\ Range::GLOBAL);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a2e5563345d5ee8fa074bf60073f43b52}{Button}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button_a28dbcc4ff9352ccfe30254a8c8505788}{Button}}(\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}}\&\&)\ noexcept;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Button}{Button}}\&\&)\ noexcept;}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

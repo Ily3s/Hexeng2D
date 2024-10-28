@@ -1,0 +1,118 @@
+\hypertarget{querying_devices_tut_query1}{}\doxysection{Querying Devices}\label{querying_devices_tut_query1}
+It is often fine to use the default device as we did previously in this tutorial, but there are times when you\textquotesingle{}ll want to explicitly choose the device from a list of available devices on the system. To see a working example of this, check out \mbox{\hyperlink{pa__devs_8c}{pa\+\_\+devs.\+c}} in the tests/ directory of the Port\+Audio source code. To do so, you\textquotesingle{}ll need to first initialize Port\+Audio and Query for the number of Devices\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} numDevices;}
+\DoxyCodeLine{}
+\DoxyCodeLine{numDevices = \mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\_GetDeviceCount}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( numDevices < 0 )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    printf( \textcolor{stringliteral}{"{}ERROR: Pa\_CountDevices returned 0x\%x\(\backslash\)n"{}}, numDevices );}
+\DoxyCodeLine{    err = numDevices;}
+\DoxyCodeLine{    \textcolor{keywordflow}{goto} error;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+If you want to get information about each device, simply loop through as follows\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const}   \mbox{\hyperlink{struct_pa_device_info}{PaDeviceInfo}} *deviceInfo;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{for}( i=0; i<numDevices; i++ )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{    deviceInfo = \mbox{\hyperlink{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}{Pa\_GetDeviceInfo}}( i );}
+\DoxyCodeLine{    ...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+The Pa\+\_\+\+Device\+Info structure contains a wealth of information such as the name of the devices, the default latency associated with the devices and more. The structure has the following fields\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int}     structVersion}
+\DoxyCodeLine{\textcolor{keyword}{const} \textcolor{keywordtype}{char} *    \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{PaHostApiIndex}}  hostApi}
+\DoxyCodeLine{\textcolor{keywordtype}{int}     maxInputChannels}
+\DoxyCodeLine{\textcolor{keywordtype}{int}     maxOutputChannels}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}  defaultLowInputLatency}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}  defaultLowOutputLatency}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}  defaultHighInputLatency}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{PaTime}}  defaultHighOutputLatency}
+\DoxyCodeLine{\textcolor{keywordtype}{double}  defaultSampleRate}
+
+\end{DoxyCode}
+
+
+You may notice that you can\textquotesingle{}t determine, from this information alone, whether or not a particular sample rate is supported. This is because some devices support ranges of sample rates, others support, a list of sample rates, and still others support some sample rates and number of channels combinations but not others. To get around this, Port\+Audio offers a function for testing a particular device with a given format\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *inputParameters;}
+\DoxyCodeLine{\textcolor{keyword}{const} \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *outputParameters;}
+\DoxyCodeLine{\textcolor{keywordtype}{double} desiredSampleRate;}
+\DoxyCodeLine{...}
+\DoxyCodeLine{PaError err;}
+\DoxyCodeLine{}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}{Pa\_IsFormatSupported}}( inputParameters, outputParameters, desiredSampleRate );}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err == \mbox{\hyperlink{portaudio_8h_a400df642339bf4112333060af6a43c0f}{paFormatIsSupported}} )}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   printf( \textcolor{stringliteral}{"{}Hooray!\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{else}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{   printf(\textcolor{stringliteral}{"{}Too Bad.\(\backslash\)n"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Filling in the input\+Parameters and output\+Parameters fields is shown in a moment.
+
+Once you\textquotesingle{}ve found a configuration you like, or one you\textquotesingle{}d like to go ahead and try, you can open the stream by filling in the \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} structures, and calling Pa\+\_\+\+Open\+Stream\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} srate = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}};}
+\DoxyCodeLine{\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} framesPerBuffer = ... ; \textcolor{comment}{//could be paFramesPerBufferUnspecified, in which case PortAudio will do its best to manage it for you, but, on some platforms, the framesPerBuffer will change in each call to the callback}}
+\DoxyCodeLine{\mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} outputParameters;}
+\DoxyCodeLine{\mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} inputParameters;}
+\DoxyCodeLine{}
+\DoxyCodeLine{bzero( \&inputParameters, \textcolor{keyword}{sizeof}( inputParameters ) ); \textcolor{comment}{//not necessary if you are filling in all the fields}}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_a861ff361da71fc2572dd356c9c9878ca}{channelCount}} = inChan;}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aebaf648b4d11dd1252a747b76b8da084}{device}} = inDevNum;}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aff01b9fa0710ad1654471e97665c06a9}{hostApiSpecificStreamInfo}} = NULL;}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_ad8d2d3063757b812f9e5f8709f41052b}{sampleFormat}} = \mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{paFloat32}};}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aa1e80ac0551162fd091db8936ccbe9a0}{suggestedLatency}} = \mbox{\hyperlink{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}{Pa\_GetDeviceInfo}}(inDevNum)-\/>\mbox{\hyperlink{struct_pa_device_info_aad6629064b8c7cf043d237ea0a5cc534}{defaultLowInputLatency}} ;}
+\DoxyCodeLine{inputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aff01b9fa0710ad1654471e97665c06a9}{hostApiSpecificStreamInfo}} = NULL; \textcolor{comment}{//See you specific host's API docs for info on using this field}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{bzero( \&outputParameters, \textcolor{keyword}{sizeof}( outputParameters ) ); \textcolor{comment}{//not necessary if you are filling in all the fields}}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_a861ff361da71fc2572dd356c9c9878ca}{channelCount}} = outChan;}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aebaf648b4d11dd1252a747b76b8da084}{device}} = outDevNum;}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aff01b9fa0710ad1654471e97665c06a9}{hostApiSpecificStreamInfo}} = NULL;}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_ad8d2d3063757b812f9e5f8709f41052b}{sampleFormat}} = \mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{paFloat32}};}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aa1e80ac0551162fd091db8936ccbe9a0}{suggestedLatency}} = \mbox{\hyperlink{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}{Pa\_GetDeviceInfo}}(outDevNum)-\/>\mbox{\hyperlink{struct_pa_device_info_a89e60515505eea8d668ede3a26a19ac6}{defaultLowOutputLatency}} ;}
+\DoxyCodeLine{outputParameters.\mbox{\hyperlink{struct_pa_stream_parameters_aff01b9fa0710ad1654471e97665c06a9}{hostApiSpecificStreamInfo}} = NULL; \textcolor{comment}{//See you specific host's API docs for info on using this field}}
+\DoxyCodeLine{}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\_OpenStream}}(}
+\DoxyCodeLine{                \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}},}
+\DoxyCodeLine{                \&inputParameters,}
+\DoxyCodeLine{                \&outputParameters,}
+\DoxyCodeLine{                srate,}
+\DoxyCodeLine{                framesPerBuffer,}
+\DoxyCodeLine{                \mbox{\hyperlink{portaudio_8h_ad33384abe3754a39f4773f2561773595}{paNoFlag}}, \textcolor{comment}{//flags that can be used to define dither, clip settings and more}}
+\DoxyCodeLine{                portAudioCallback, \textcolor{comment}{//your callback function}}
+\DoxyCodeLine{                (\textcolor{keywordtype}{void} *)\textcolor{keyword}{this} ); \textcolor{comment}{//data to be passed to callback. In C++, it is frequently (void *)this}}
+\DoxyCodeLine{\textcolor{comment}{//don't forget to check errors!}}
+
+\end{DoxyCode}
+
+
+Previous\+: \mbox{\hyperlink{utility_functions}{Utility Functions}} $\vert$ Next\+: \mbox{\hyperlink{blocking_read_write}{Blocking Read/\+Write Functions}} 

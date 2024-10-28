@@ -1,0 +1,151 @@
+\doxysection{Hexeng\+::Save\+Var Struct Reference}
+\hypertarget{structHexeng_1_1SaveVar}{}\label{structHexeng_1_1SaveVar}\index{Hexeng::SaveVar@{Hexeng::SaveVar}}
+
+
+Get be pushed in a \doxylink{classHexeng_1_1SaveFile}{Save\+File}.  
+
+
+
+
+{\ttfamily \#include $<$Save\+System.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structHexeng_1_1SaveVar_afd8aca089f7f2cc36b7c4450f306b85d}{Save\+Var}} ()=default
+\item 
+\mbox{\hyperlink{structHexeng_1_1SaveVar_aeac59e2b6cd8ccb3b75a6faedd26836b}{Save\+Var}} (uint64\+\_\+t id\+\_\+p, void \texorpdfstring{$\ast$}{*}val\+\_\+p, uint64\+\_\+t unit\+\_\+size\+\_\+p, std\+::function$<$ uint64\+\_\+t(void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$ get\+\_\+size\+\_\+p, std\+::function$<$ void(uint64\+\_\+t, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$ reserve\+\_\+p)
+\begin{DoxyCompactList}\small\item\em This constructor is designed for heap allocated (dynamic size and location, std\+::vector for example) variables. 
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+p} & A unique id to identify this variable in a save.\\
+\hline
+{\em val\+\_\+p} & The pointer to the data itself.\\
+\hline
+{\em unit\+\_\+size\+\_\+p} & The size (in bytes) of one element of the data. For example, if the data is an array of int32\+\_\+t or just one single int32\+\_\+t, unit\+\_\+size\+\_\+p has to be 4\\
+\hline
+{\em get\+\_\+size\+\_\+p} & A function that get called during a save. The function takes in parameter a ptr to the ptr to the data (void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), and returns the size of the data. What you want to do in this function is modify the location of the data in case it has changed, and, return the size of the data. For example, with std\+::vector vec, you want to do \{\mbox{[}\mbox{]}(void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr) \{\texorpdfstring{$\ast$}{*}val\+\_\+ptr = \&vec\mbox{[}0\mbox{]}; return vec.\+size();\}\}\\
+\hline
+{\em reserve\+\_\+p} & A function that get called during the load of a save. This function takes in parameter the size (in bytes) of the saved variable (uint64\+\_\+t), and, a ptr to the ptr to the var (void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} ptr). In this function, you may want to reserve enough space to load what\textquotesingle{}s in the save using the uint64\+\_\+t. And you also want to set the ptr to the data to the data\textquotesingle{}s new location (\texorpdfstring{$\ast$}{*}ptr = new\+\_\+location). For example, with std\+::vector vec, you want to do \{\mbox{[}\mbox{]}(uint64\+\_\+t size, void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr) \{vec.\+reserve(size); \texorpdfstring{$\ast$}{*}val\+\_\+ptr = \&vec\mbox{[}0\mbox{]};\}\}\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+\mbox{\hyperlink{structHexeng_1_1SaveVar_a569793586bcb42afa692d28c9cbf4301}{Save\+Var}} (uint64\+\_\+t id\+\_\+p, void \texorpdfstring{$\ast$}{*}val\+\_\+p, uint64\+\_\+t size\+\_\+p, uint64\+\_\+t unit\+\_\+size\+\_\+p)
+\begin{DoxyCompactList}\small\item\em This constructor is for stack allocated variables (static size and location) only. 
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+p} & A unique id to identify this variable in a save.\\
+\hline
+{\em val\+\_\+p} & The pointer to the data itself.\\
+\hline
+{\em size\+\_\+p} & The total size of the data.\\
+\hline
+{\em unit\+\_\+size\+\_\+p} & The size (in bytes) of one element of the data. For example, if the data is an array of int32\+\_\+t or just one single int32\+\_\+t, unit\+\_\+size\+\_\+p has to be 4\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structHexeng_1_1SaveVar_a7b25f5ec603f75edb9e2e7f5b3032d17}{id}} = 0
+\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{structHexeng_1_1SaveVar_a5a62ace221191173f037432de1484748}{value}} = nullptr
+\item 
+uint64\+\_\+t \mbox{\hyperlink{structHexeng_1_1SaveVar_a6dce7c7feea5bdce5c6099d422eebced}{unit\+\_\+size}} = 0
+\item 
+std\+::function$<$ uint64\+\_\+t(void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$ \mbox{\hyperlink{structHexeng_1_1SaveVar_a734f39720e116b654bc05f160d854f37}{get\+\_\+size}} = nullptr
+\item 
+std\+::function$<$ void(uint64\+\_\+t, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$ \mbox{\hyperlink{structHexeng_1_1SaveVar_a42172b2f7556d8a6e3e55a7fe242d6a4}{reserve}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Get be pushed in a \doxylink{classHexeng_1_1SaveFile}{Save\+File}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{structHexeng_1_1SaveVar_afd8aca089f7f2cc36b7c4450f306b85d}\label{structHexeng_1_1SaveVar_afd8aca089f7f2cc36b7c4450f306b85d} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!SaveVar@{SaveVar}}
+\index{SaveVar@{SaveVar}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{SaveVar()}{SaveVar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Save\+Var\+::\+Save\+Var (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{structHexeng_1_1SaveVar_aeac59e2b6cd8ccb3b75a6faedd26836b}\label{structHexeng_1_1SaveVar_aeac59e2b6cd8ccb3b75a6faedd26836b} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!SaveVar@{SaveVar}}
+\index{SaveVar@{SaveVar}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{SaveVar()}{SaveVar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Save\+Var\+::\+Save\+Var (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id\+\_\+p,  }\item[{void \texorpdfstring{$\ast$}{*}}]{val\+\_\+p,  }\item[{uint64\+\_\+t}]{unit\+\_\+size\+\_\+p,  }\item[{std\+::function$<$ uint64\+\_\+t(void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$}]{get\+\_\+size\+\_\+p,  }\item[{std\+::function$<$ void(uint64\+\_\+t, void \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}val\+\_\+ptr)$>$}]{reserve\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+This constructor is designed for heap allocated (dynamic size and location, std\+::vector for example) variables. 
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+p} & A unique id to identify this variable in a save.\\
+\hline
+{\em val\+\_\+p} & The pointer to the data itself.\\
+\hline
+{\em unit\+\_\+size\+\_\+p} & The size (in bytes) of one element of the data. For example, if the data is an array of int32\+\_\+t or just one single int32\+\_\+t, unit\+\_\+size\+\_\+p has to be 4\\
+\hline
+{\em get\+\_\+size\+\_\+p} & A function that get called during a save. The function takes in parameter a ptr to the ptr to the data (void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}), and returns the size of the data. What you want to do in this function is modify the location of the data in case it has changed, and, return the size of the data. For example, with std\+::vector vec, you want to do \{\mbox{[}\mbox{]}(void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr) \{\texorpdfstring{$\ast$}{*}val\+\_\+ptr = \&vec\mbox{[}0\mbox{]}; return vec.\+size();\}\}\\
+\hline
+{\em reserve\+\_\+p} & A function that get called during the load of a save. This function takes in parameter the size (in bytes) of the saved variable (uint64\+\_\+t), and, a ptr to the ptr to the var (void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} ptr). In this function, you may want to reserve enough space to load what\textquotesingle{}s in the save using the uint64\+\_\+t. And you also want to set the ptr to the data to the data\textquotesingle{}s new location (\texorpdfstring{$\ast$}{*}ptr = new\+\_\+location). For example, with std\+::vector vec, you want to do \{\mbox{[}\mbox{]}(uint64\+\_\+t size, void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr) \{vec.\+reserve(size); \texorpdfstring{$\ast$}{*}val\+\_\+ptr = \&vec\mbox{[}0\mbox{]};\}\}\\
+\hline
+\end{DoxyParams}
+
+
+\Hypertarget{structHexeng_1_1SaveVar_a569793586bcb42afa692d28c9cbf4301}\label{structHexeng_1_1SaveVar_a569793586bcb42afa692d28c9cbf4301} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!SaveVar@{SaveVar}}
+\index{SaveVar@{SaveVar}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{SaveVar()}{SaveVar()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Save\+Var\+::\+Save\+Var (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{id\+\_\+p,  }\item[{void \texorpdfstring{$\ast$}{*}}]{val\+\_\+p,  }\item[{uint64\+\_\+t}]{size\+\_\+p,  }\item[{uint64\+\_\+t}]{unit\+\_\+size\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+This constructor is for stack allocated variables (static size and location) only. 
+\begin{DoxyParams}{Parameters}
+{\em id\+\_\+p} & A unique id to identify this variable in a save.\\
+\hline
+{\em val\+\_\+p} & The pointer to the data itself.\\
+\hline
+{\em size\+\_\+p} & The total size of the data.\\
+\hline
+{\em unit\+\_\+size\+\_\+p} & The size (in bytes) of one element of the data. For example, if the data is an array of int32\+\_\+t or just one single int32\+\_\+t, unit\+\_\+size\+\_\+p has to be 4\\
+\hline
+\end{DoxyParams}
+
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structHexeng_1_1SaveVar_a734f39720e116b654bc05f160d854f37}\label{structHexeng_1_1SaveVar_a734f39720e116b654bc05f160d854f37} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{get\_size}{get\_size}}
+{\footnotesize\ttfamily std\+::function$<$uint64\+\_\+t(void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr)$>$ Hexeng\+::\+Save\+Var\+::get\+\_\+size = nullptr}
+
+\Hypertarget{structHexeng_1_1SaveVar_a7b25f5ec603f75edb9e2e7f5b3032d17}\label{structHexeng_1_1SaveVar_a7b25f5ec603f75edb9e2e7f5b3032d17} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!id@{id}}
+\index{id@{id}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily uint64\+\_\+t Hexeng\+::\+Save\+Var\+::id = 0}
+
+\Hypertarget{structHexeng_1_1SaveVar_a42172b2f7556d8a6e3e55a7fe242d6a4}\label{structHexeng_1_1SaveVar_a42172b2f7556d8a6e3e55a7fe242d6a4} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!reserve@{reserve}}
+\index{reserve@{reserve}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{reserve}{reserve}}
+{\footnotesize\ttfamily std\+::function$<$void(uint64\+\_\+t, void\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} val\+\_\+ptr)$>$ Hexeng\+::\+Save\+Var\+::reserve = nullptr}
+
+\Hypertarget{structHexeng_1_1SaveVar_a6dce7c7feea5bdce5c6099d422eebced}\label{structHexeng_1_1SaveVar_a6dce7c7feea5bdce5c6099d422eebced} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!unit\_size@{unit\_size}}
+\index{unit\_size@{unit\_size}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{unit\_size}{unit\_size}}
+{\footnotesize\ttfamily uint64\+\_\+t Hexeng\+::\+Save\+Var\+::unit\+\_\+size = 0}
+
+\Hypertarget{structHexeng_1_1SaveVar_a5a62ace221191173f037432de1484748}\label{structHexeng_1_1SaveVar_a5a62ace221191173f037432de1484748} 
+\index{Hexeng::SaveVar@{Hexeng::SaveVar}!value@{value}}
+\index{value@{value}!Hexeng::SaveVar@{Hexeng::SaveVar}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily void\texorpdfstring{$\ast$}{*} Hexeng\+::\+Save\+Var\+::value = nullptr}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\mbox{\hyperlink{SaveSystem_8hpp}{Save\+System.\+hpp}}\end{DoxyCompactItemize}

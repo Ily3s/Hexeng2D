@@ -1,0 +1,83 @@
+\hypertarget{class_hexeng_1_1_save_file}{}\doxysection{Hexeng\+::Save\+File Class Reference}
+\label{class_hexeng_1_1_save_file}\index{Hexeng::SaveFile@{Hexeng::SaveFile}}
+
+
+A save instance. It isn\textquotesingle{}t closely related to a filepath but rather to a bunch of variables references.   
+
+
+
+
+{\ttfamily \#include $<$Save\+System.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_save_file_a7e2a02e100361674bd260af1cfae797a}{Save\+File}} ()=default
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_save_file_aa03a0eb48940bd35a94b3551ada8aa67}{add\+\_\+var}} (const \mbox{\hyperlink{struct_hexeng_1_1_save_var}{Save\+Var}} \&var)
+\begin{DoxyCompactList}\small\item\em Add a variable to the instance  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_save_file_a7222aa6b9fd4fcc5f8ad2f3431a39a15}{save}} (const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em Create or overwrite a save file at filepath that stores all the variables of the instance.  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_save_file_a9e3e8360ed2a2061e949d061816a6909}{load}} (const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em Set the variables of the instance to what\textquotesingle{}s in the file at filepath.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A save instance. It isn\textquotesingle{}t closely related to a filepath but rather to a bunch of variables references.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_save_file_a7e2a02e100361674bd260af1cfae797a}\label{class_hexeng_1_1_save_file_a7e2a02e100361674bd260af1cfae797a}} 
+\index{Hexeng::SaveFile@{Hexeng::SaveFile}!SaveFile@{SaveFile}}
+\index{SaveFile@{SaveFile}!Hexeng::SaveFile@{Hexeng::SaveFile}}
+\doxysubsubsection{\texorpdfstring{SaveFile()}{SaveFile()}}
+{\footnotesize\ttfamily Hexeng\+::\+Save\+File\+::\+Save\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_save_file_aa03a0eb48940bd35a94b3551ada8aa67}\label{class_hexeng_1_1_save_file_aa03a0eb48940bd35a94b3551ada8aa67}} 
+\index{Hexeng::SaveFile@{Hexeng::SaveFile}!add\_var@{add\_var}}
+\index{add\_var@{add\_var}!Hexeng::SaveFile@{Hexeng::SaveFile}}
+\doxysubsubsection{\texorpdfstring{add\_var()}{add\_var()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Save\+File\+::add\+\_\+var (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_hexeng_1_1_save_var}{Save\+Var}} \&}]{var }\end{DoxyParamCaption})}
+
+
+
+Add a variable to the instance  
+
+\mbox{\Hypertarget{class_hexeng_1_1_save_file_a9e3e8360ed2a2061e949d061816a6909}\label{class_hexeng_1_1_save_file_a9e3e8360ed2a2061e949d061816a6909}} 
+\index{Hexeng::SaveFile@{Hexeng::SaveFile}!load@{load}}
+\index{load@{load}!Hexeng::SaveFile@{Hexeng::SaveFile}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Save\+File\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Set the variables of the instance to what\textquotesingle{}s in the file at filepath.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Has to be the path to a save that exists and has been previously created with \mbox{\hyperlink{class_hexeng_1_1_save_file_a7222aa6b9fd4fcc5f8ad2f3431a39a15}{save()}}\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_save_file_a7222aa6b9fd4fcc5f8ad2f3431a39a15}\label{class_hexeng_1_1_save_file_a7222aa6b9fd4fcc5f8ad2f3431a39a15}} 
+\index{Hexeng::SaveFile@{Hexeng::SaveFile}!save@{save}}
+\index{save@{save}!Hexeng::SaveFile@{Hexeng::SaveFile}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Save\+File\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Create or overwrite a save file at filepath that stores all the variables of the instance.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & Has to be a valid filepath to a file in an existing directory\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_save_system_8hpp}{Save\+System.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_save_system_8cpp}{Save\+System.\+cpp}}\end{DoxyCompactItemize}

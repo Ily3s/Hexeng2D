@@ -1,0 +1,172 @@
+\doxysection{Batch\+Renderer.\+hpp}
+\hypertarget{BatchRenderer_8hpp_source}{}\label{BatchRenderer_8hpp_source}\index{Hexeng2D/src/Renderer/BatchRenderer.hpp@{Hexeng2D/src/Renderer/BatchRenderer.hpp}}
+\mbox{\hyperlink{BatchRenderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BATCH\_RENDERER\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BATCH\_RENDERER\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Texture_8hpp}{Texture.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DefaultShaders_8hpp}{DefaultShaders.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Color_8hpp}{Color.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00015\ \{}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}}
+\DoxyCodeLine{00019\ \ \ \ \ \{}
+\DoxyCodeLine{00020\ \ \ \ \ public\ :}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a29f84222613a25127e16ce48ce5a0cff}{BatchingShader}}(\textcolor{keywordtype}{size\_t}\ size);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a4d43ca81f4d4f097f2b975800a048bfb}{BatchingShader}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a6cefeadbea8f8927e524caf536951a8e}{BatchingShader}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a09d391a779b17936098fb389561e4994}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader_a73c4e18a2c755bc6fef75fd6f22b021b}{BatchingShader}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&\&)\ noexcept;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchingShader}{BatchingShader}}\&\&)\ noexcept;}
+\DoxyCodeLine{00033\ \ \ \ \ \};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00036\ \ \ \ \ class\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ public\ :}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a1b7fbe377ade0830abc243ab56246805}{TALayout}}(\textcolor{keyword}{const}\ std::string\&\ filepath);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_afd104ea2a8261207af05e9c1f86d615e}{TALayout}}(\textcolor{keywordtype}{float}\ aspect\_ratio,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ size);}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_aec40317dd9bf7576a3527630d1431e42}{TALayout}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a247e3c8448bba9d177794da69f1f7620}{TALayout}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_a66a3cee36c67daf5813804bc2aa9d0e1}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout_ae2287fc98d3138f1b1708bf04833b657}{TALayout}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&\&)\ noexcept;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}\&\&)\ noexcept;}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ private\ :}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ friend\ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ friend\ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}};}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord}{fTexCoord}}\ get\_coords(\mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord}{fTexCoord}}\ get\_coords(\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}<\textcolor{keywordtype}{int}>\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ m\_is\_grid\ =\ false;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}<\textcolor{keywordtype}{int}>\ m\_size\ =\ \{\ 0,\ 0\ \};}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ m\_cell\_size\ =\ \{\ 0,\ 0\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ std::unordered\_map<uint32\_t,\ fTexCoord>\ m\_map;}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}}
+\DoxyCodeLine{00074\ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas_a7fc87c9f5ebac1bbe94eaee61bb65a73}{TextureAtlas}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings\ =\ \{\});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas_a125f2d94e683ce887d5baeae07d8868c}{TextureAtlas}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas_ade1d1ba077e6df78b6f6585d35a3a88e}{TextureAtlas}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas_ae58b06ea05f2fff92fd3dd4038036de2}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas_af0d2538a2b6080c66f15c7ba2b3af739}{TextureAtlas}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&\&)\ noexcept;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureAtlas}{TextureAtlas}}\&\&)\ noexcept;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ static\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}<\textcolor{keywordtype}{float}>\ u\_bleeding\_correction;}
+\DoxyCodeLine{00090\ \ \ \ \ private:}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ friend\ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ m\_bleeding\_correction\ =\ 0.5;}
+\DoxyCodeLine{00094\ \ \ \ \ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ class\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\ :\ public\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Mesh}}}
+\DoxyCodeLine{00104\ \ \ \ \ \{}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance_a26794b40fb66070c1d567dda54ea486f}{BatchInstance}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance_ac1b91a99b0f325b701400f2038c04664}{BatchInstance}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}*\ layout,\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&batching\_shader\_250);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance_adbdb7ecefa0a11398feba771309ff017}{BatchInstance}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance_ae81b9cf2d66b87e9d2b994945b89fa3d}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance_a97af5b9be7e8d61307513138014c2b85}{BatchInstance}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&\&)\ noexcept;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}\&\&)\ noexcept;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ construct\_batch();}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ draw(std::unordered\_map<\mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{UniformInterface}}*,\ std::vector<\textcolor{keywordtype}{void}*>>\&\ parents\_uniforms\ =\ s\_empty\_uniform\_list)\ override;}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ static\ \textcolor{keywordtype}{int}\ get\_max\_quads();}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ private:}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TALayout}{TALayout}}*\ m\_layout;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{IndexBuffer}}\ m\_index\_buffer;}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ std::vector<uint32\_t>\ m\_raw\_ib;}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ std::vector<\textcolor{keywordtype}{float}>\ m\_raw\_vb;}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ std::vector<\textcolor{keywordtype}{float}>\ m\_uniforms;}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_uniforms\_id\ =\ -\/1;}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ friend\ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ std::vector<\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}*>\ m\_quads;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ m\_add\_quad(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}*,\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord}{fTexCoord}});}
+\DoxyCodeLine{00145\ \ \ \ \ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \ \ \ \ class\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1ToBeInit}{ToBeInit}};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ class\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}}
+\DoxyCodeLine{00150\ \ \ \ \ \{}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_afd5d5e836d1619a98777d5329a346614}{BatchQuad}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_a10dfd929347c7619b456c6ca9cbf15f4}{BatchQuad}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}*\ bi,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ cell\_coords,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ pos,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0.0f);}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_a06b188df7b71547ea14cf0b3e0eded1a}{BatchQuad}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}*\ bi,\ \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ pos,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{float}\ rotation\ =\ 0.0f);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_a488221bc6a47a01142d06795d2c90443}{BatchQuad}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_a55814db8457c3955c3b9b77e5c846042}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad_a602c7ef42d72bcf329d33954d6bc8322}{BatchQuad}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchQuad}{BatchQuad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}<\textcolor{keywordtype}{int}>\ position\ =\ \{\ 0,\ 0\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ scale\ =\ 1.0f;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ rotation\ =\ 0.0f;}
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}\ color\_filter\ =\ Color4::white;}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\&\ opacity\ =\ color\_filter.\mbox{\hyperlink{classHexeng_1_1Color4_afd1026374bf5611aed205518f99cc759}{A}};}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}\ color\ =\ \{0.0f,\ 0.0f,\ 0.0f,\ 0.0f\};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}};}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1BatchInstance}{BatchInstance}}*\ m\_batch\_instance\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1ToBeInit}{ToBeInit}}\ s\_init\_vl;}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{VertexLayout}}\ s\_vertex\_layout;}
+\DoxyCodeLine{00196\ \ \ \ \ \};}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

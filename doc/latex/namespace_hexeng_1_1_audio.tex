@@ -1,0 +1,71 @@
+\hypertarget{namespace_hexeng_1_1_audio}{}\doxysection{Hexeng\+::Audio Namespace Reference}
+\label{namespace_hexeng_1_1_audio}\index{Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}} that cannot be played multiple times at once, it isn\textquotesingle{}t related to a position in space.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} that can be played multiple times at once, it isn\textquotesingle{}t related to a position in space.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}}
+\begin{DoxyCompactList}\small\item\em Abstract Base class of \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} and \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_music}{Music}}.  \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_audio_1_1_sound_data}{Sound\+Data}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_spatial_sound}{Spatial\+Sound}}
+\begin{DoxyCompactList}\small\item\em A \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound}{Sound}} that can be played multiple times at once, from a location in space.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}{init}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_audio_a9a6715ae7586295f097e9ab04812629a}{terminate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Pa\+Error \mbox{\hyperlink{namespace_hexeng_1_1_audio_a2c1dd4b9716abcc057019cbf403dca47}{e}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_audio_a119b01002d4413d01417c0a3794b1edf}{sounds}}
+\item 
+const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$ \mbox{\hyperlink{namespace_hexeng_1_1_audio_ade90f1b2e4cb6e40205b9b485b583e90}{receiver}} = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}{Renderer\+::\+Camera\+::xy\+\_\+position}}
+\begin{DoxyCompactList}\small\item\em The position of the microphone in the \mbox{\hyperlink{namespace_hexeng}{Hexeng}} coordinates system. It is set by default to the camera\textquotesingle{}s position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}\label{namespace_hexeng_1_1_audio_a5e90001d8341df3b91d84182715726bc}} 
+\index{Hexeng::Audio@{Hexeng::Audio}!init@{init}}
+\index{init@{init}!Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} Hexeng\+::\+Audio\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_audio_a9a6715ae7586295f097e9ab04812629a}\label{namespace_hexeng_1_1_audio_a9a6715ae7586295f097e9ab04812629a}} 
+\index{Hexeng::Audio@{Hexeng::Audio}!terminate@{terminate}}
+\index{terminate@{terminate}!Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsubsection{\texorpdfstring{terminate()}{terminate()}}
+{\footnotesize\ttfamily void \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} Hexeng\+::\+Audio\+::terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_audio_a2c1dd4b9716abcc057019cbf403dca47}\label{namespace_hexeng_1_1_audio_a2c1dd4b9716abcc057019cbf403dca47}} 
+\index{Hexeng::Audio@{Hexeng::Audio}!e@{e}}
+\index{e@{e}!Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsubsection{\texorpdfstring{e}{e}}
+{\footnotesize\ttfamily Pa\+Error Hexeng\+::\+Audio\+::e}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_audio_ade90f1b2e4cb6e40205b9b485b583e90}\label{namespace_hexeng_1_1_audio_ade90f1b2e4cb6e40205b9b485b583e90}} 
+\index{Hexeng::Audio@{Hexeng::Audio}!receiver@{receiver}}
+\index{receiver@{receiver}!Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsubsection{\texorpdfstring{receiver}{receiver}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $\ast$ Hexeng\+::\+Audio\+::receiver = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a13f12fe4c1f0b22f66421f79dfe69b7e}{Renderer\+::\+Camera\+::xy\+\_\+position}}}
+
+
+
+The position of the microphone in the \mbox{\hyperlink{namespace_hexeng}{Hexeng}} coordinates system. It is set by default to the camera\textquotesingle{}s position. 
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_audio_a119b01002d4413d01417c0a3794b1edf}\label{namespace_hexeng_1_1_audio_a119b01002d4413d01417c0a3794b1edf}} 
+\index{Hexeng::Audio@{Hexeng::Audio}!sounds@{sounds}}
+\index{sounds@{sounds}!Hexeng::Audio@{Hexeng::Audio}}
+\doxysubsubsection{\texorpdfstring{sounds}{sounds}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_hexeng_1_1_audio_1_1_sound_base}{Sound\+Base}}$\ast$$>$ Hexeng\+::\+Audio\+::sounds}
+

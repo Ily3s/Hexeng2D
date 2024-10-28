@@ -1,0 +1,339 @@
+\hypertarget{struct_pa_util_buffer_processor}{}\doxysection{Pa\+Util\+Buffer\+Processor Struct Reference}
+\label{struct_pa_util_buffer_processor}\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+
+
+The main buffer processor data structure.  
+
+
+
+
+{\ttfamily \#include $<$pa\+\_\+process.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a2a61168f6d216e6aaade39b77452bcb9}{frames\+Per\+User\+Buffer}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_aeec9ebf0c415b1e8aa4b1667ebbc839a}{frames\+Per\+Host\+Buffer}}
+\item 
+\mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a71c934464b2671889ec3e20192e6e8d9}{host\+Buffer\+Size\+Mode}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a58c81d2f3c782274e0ab7ad6ab006034}{use\+Non\+Adapting\+Process}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_ad791f8650ed327dc106a6f97c3ec5799}{user\+Output\+Sample\+Format\+Is\+Equal\+To\+Host}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a8667d06325ee28d95c48159ff49e044e}{user\+Input\+Sample\+Format\+Is\+Equal\+To\+Host}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a583f3db6161dbf7a79fb9b56f7c578a0}{frames\+Per\+Temp\+Buffer}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_a878ec922a2464a3d57119d175f362366}{input\+Channel\+Count}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_ad7d3d4973cfe90f69dbb2fcf16a59d92}{bytes\+Per\+Host\+Input\+Sample}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_aaa4aba8c617b56f63f165e35b28fe393}{bytes\+Per\+User\+Input\+Sample}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a08fb4a5b71ccc3aa1893d8e6c035d192}{user\+Input\+Is\+Interleaved}}
+\item 
+\mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a8bad04b047411362da5a81c38dde04af}{input\+Converter}}
+\item 
+\mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a032b5f8772cc7fe2ec6a43219afdf367}{input\+Zeroer}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_af2c3ba9b0cc5bd8eb2fad8b73b40ad18}{output\+Channel\+Count}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_a8a796dfdfac7c79bfffe8a44e690b358}{bytes\+Per\+Host\+Output\+Sample}}
+\item 
+unsigned int \mbox{\hyperlink{struct_pa_util_buffer_processor_aa390974cb52943cf40efed34c1daf52b}{bytes\+Per\+User\+Output\+Sample}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a3be95f50566a88ebdc2697cde95d042e}{user\+Output\+Is\+Interleaved}}
+\item 
+\mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_ac6a539ab66c9a4a71d8603e7ed7394ad}{output\+Converter}}
+\item 
+\mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a25fadc2a2170fbd7c8ca85b06860ca3c}{output\+Zeroer}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a4deddc94ba71c17171e8ae823b89e832}{initial\+Frames\+In\+Temp\+Input\+Buffer}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_aec8e9dfce47109ff1f1d8cfa3c411c74}{initial\+Frames\+In\+Temp\+Output\+Buffer}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a327f8e240df961caa6c47bb9a35a9b76}{temp\+Input\+Buffer}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_ad4fa78d30f36f82c45278b9fda2322f9}{temp\+Input\+Buffer\+Ptrs}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a8b1a7ccf36beec18977244c4dd9c6af2}{frames\+In\+Temp\+Input\+Buffer}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a6aaded76991a6014bc78290fca38124e}{temp\+Output\+Buffer}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a893544dc94d125b204167cf61f87ff9a}{temp\+Output\+Buffer\+Ptrs}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a7cb25636fa0e415bdbd87469b5fa4a03}{frames\+In\+Temp\+Output\+Buffer}}
+\item 
+\mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_addae164599da4e3cad4498350cc9e39e}{time\+Info}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a269d950005d05b2c15d13d0e643c936e}{callback\+Status\+Flags}}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a5bcaa1f67c5f868a2947c1026880f6d6}{host\+Input\+Is\+Interleaved}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_a9a72a362c2a3b03b6badd0ecfd72837c}{host\+Input\+Frame\+Count}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{struct_pa_util_channel_descriptor}{Pa\+Util\+Channel\+Descriptor}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a03ea3d7816db14d4fc8ee8bde013d99e}{host\+Input\+Channels}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{struct_pa_util_buffer_processor_a3be5c10e3f9e36326103443929547e25}{host\+Output\+Is\+Interleaved}}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_buffer_processor_ac5e048842fdfdee1764ab049a1306cfe}{host\+Output\+Frame\+Count}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{struct_pa_util_channel_descriptor}{Pa\+Util\+Channel\+Descriptor}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_a6d78b9d008d30e6addc9a83470756831}{host\+Output\+Channels}} \mbox{[}2\mbox{]}
+\item 
+\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} \mbox{\hyperlink{struct_pa_util_buffer_processor_a113fbcc8dab47dc9eb29b9541520084b}{dither\+Generator}}
+\item 
+double \mbox{\hyperlink{struct_pa_util_buffer_processor_aea54ceb550e1d66824d6f8cf55af8489}{sample\+Period}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_af6577f767ed4c58d5e511d125e6b1c4a}{stream\+Callback}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_util_buffer_processor_aa0c7b972bd1494d40373e9e13475af4b}{user\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main buffer processor data structure. 
+
+Allocate one of these, initialize it with Pa\+Util\+\_\+\+Initialize\+Buffer\+Processor and terminate it with Pa\+Util\+\_\+\+Terminate\+Buffer\+Processor. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_ad7d3d4973cfe90f69dbb2fcf16a59d92}\label{struct_pa_util_buffer_processor_ad7d3d4973cfe90f69dbb2fcf16a59d92}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!bytesPerHostInputSample@{bytesPerHostInputSample}}
+\index{bytesPerHostInputSample@{bytesPerHostInputSample}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{bytesPerHostInputSample}{bytesPerHostInputSample}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::bytes\+Per\+Host\+Input\+Sample}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a8a796dfdfac7c79bfffe8a44e690b358}\label{struct_pa_util_buffer_processor_a8a796dfdfac7c79bfffe8a44e690b358}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!bytesPerHostOutputSample@{bytesPerHostOutputSample}}
+\index{bytesPerHostOutputSample@{bytesPerHostOutputSample}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{bytesPerHostOutputSample}{bytesPerHostOutputSample}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::bytes\+Per\+Host\+Output\+Sample}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_aaa4aba8c617b56f63f165e35b28fe393}\label{struct_pa_util_buffer_processor_aaa4aba8c617b56f63f165e35b28fe393}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!bytesPerUserInputSample@{bytesPerUserInputSample}}
+\index{bytesPerUserInputSample@{bytesPerUserInputSample}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{bytesPerUserInputSample}{bytesPerUserInputSample}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::bytes\+Per\+User\+Input\+Sample}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_aa390974cb52943cf40efed34c1daf52b}\label{struct_pa_util_buffer_processor_aa390974cb52943cf40efed34c1daf52b}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!bytesPerUserOutputSample@{bytesPerUserOutputSample}}
+\index{bytesPerUserOutputSample@{bytesPerUserOutputSample}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{bytesPerUserOutputSample}{bytesPerUserOutputSample}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::bytes\+Per\+User\+Output\+Sample}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a269d950005d05b2c15d13d0e643c936e}\label{struct_pa_util_buffer_processor_a269d950005d05b2c15d13d0e643c936e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!callbackStatusFlags@{callbackStatusFlags}}
+\index{callbackStatusFlags@{callbackStatusFlags}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{callbackStatusFlags}{callbackStatusFlags}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} Pa\+Util\+Buffer\+Processor\+::callback\+Status\+Flags}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a113fbcc8dab47dc9eb29b9541520084b}\label{struct_pa_util_buffer_processor_a113fbcc8dab47dc9eb29b9541520084b}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!ditherGenerator@{ditherGenerator}}
+\index{ditherGenerator@{ditherGenerator}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{ditherGenerator}{ditherGenerator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} Pa\+Util\+Buffer\+Processor\+::dither\+Generator}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a8b1a7ccf36beec18977244c4dd9c6af2}\label{struct_pa_util_buffer_processor_a8b1a7ccf36beec18977244c4dd9c6af2}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!framesInTempInputBuffer@{framesInTempInputBuffer}}
+\index{framesInTempInputBuffer@{framesInTempInputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{framesInTempInputBuffer}{framesInTempInputBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::frames\+In\+Temp\+Input\+Buffer}
+
+frames remaining in input buffer from previous adaption iteration \mbox{\Hypertarget{struct_pa_util_buffer_processor_a7cb25636fa0e415bdbd87469b5fa4a03}\label{struct_pa_util_buffer_processor_a7cb25636fa0e415bdbd87469b5fa4a03}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!framesInTempOutputBuffer@{framesInTempOutputBuffer}}
+\index{framesInTempOutputBuffer@{framesInTempOutputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{framesInTempOutputBuffer}{framesInTempOutputBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::frames\+In\+Temp\+Output\+Buffer}
+
+frames remaining in input buffer from previous adaption iteration \mbox{\Hypertarget{struct_pa_util_buffer_processor_aeec9ebf0c415b1e8aa4b1667ebbc839a}\label{struct_pa_util_buffer_processor_aeec9ebf0c415b1e8aa4b1667ebbc839a}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!framesPerHostBuffer@{framesPerHostBuffer}}
+\index{framesPerHostBuffer@{framesPerHostBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{framesPerHostBuffer}{framesPerHostBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::frames\+Per\+Host\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a583f3db6161dbf7a79fb9b56f7c578a0}\label{struct_pa_util_buffer_processor_a583f3db6161dbf7a79fb9b56f7c578a0}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!framesPerTempBuffer@{framesPerTempBuffer}}
+\index{framesPerTempBuffer@{framesPerTempBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{framesPerTempBuffer}{framesPerTempBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::frames\+Per\+Temp\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a2a61168f6d216e6aaade39b77452bcb9}\label{struct_pa_util_buffer_processor_a2a61168f6d216e6aaade39b77452bcb9}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!framesPerUserBuffer@{framesPerUserBuffer}}
+\index{framesPerUserBuffer@{framesPerUserBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{framesPerUserBuffer}{framesPerUserBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::frames\+Per\+User\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a71c934464b2671889ec3e20192e6e8d9}\label{struct_pa_util_buffer_processor_a71c934464b2671889ec3e20192e6e8d9}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostBufferSizeMode@{hostBufferSizeMode}}
+\index{hostBufferSizeMode@{hostBufferSizeMode}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostBufferSizeMode}{hostBufferSizeMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}} Pa\+Util\+Buffer\+Processor\+::host\+Buffer\+Size\+Mode}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a03ea3d7816db14d4fc8ee8bde013d99e}\label{struct_pa_util_buffer_processor_a03ea3d7816db14d4fc8ee8bde013d99e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostInputChannels@{hostInputChannels}}
+\index{hostInputChannels@{hostInputChannels}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostInputChannels}{hostInputChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_channel_descriptor}{Pa\+Util\+Channel\+Descriptor}}$\ast$ Pa\+Util\+Buffer\+Processor\+::host\+Input\+Channels\mbox{[}2\mbox{]}}
+
+pointers to arrays of channel descriptors. pointers are NULL for half-\/duplex output processing. host\+Input\+Channels\mbox{[}i\mbox{]}.data is NULL when the caller calls \mbox{\hyperlink{pa__process_8c_a3d34489fac9940436629e312524d9f94}{Pa\+Util\+\_\+\+Set\+No\+Input()}} \mbox{\Hypertarget{struct_pa_util_buffer_processor_a9a72a362c2a3b03b6badd0ecfd72837c}\label{struct_pa_util_buffer_processor_a9a72a362c2a3b03b6badd0ecfd72837c}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostInputFrameCount@{hostInputFrameCount}}
+\index{hostInputFrameCount@{hostInputFrameCount}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostInputFrameCount}{hostInputFrameCount}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::host\+Input\+Frame\+Count\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a5bcaa1f67c5f868a2947c1026880f6d6}\label{struct_pa_util_buffer_processor_a5bcaa1f67c5f868a2947c1026880f6d6}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostInputIsInterleaved@{hostInputIsInterleaved}}
+\index{hostInputIsInterleaved@{hostInputIsInterleaved}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostInputIsInterleaved}{hostInputIsInterleaved}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::host\+Input\+Is\+Interleaved}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a6d78b9d008d30e6addc9a83470756831}\label{struct_pa_util_buffer_processor_a6d78b9d008d30e6addc9a83470756831}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostOutputChannels@{hostOutputChannels}}
+\index{hostOutputChannels@{hostOutputChannels}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostOutputChannels}{hostOutputChannels}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_channel_descriptor}{Pa\+Util\+Channel\+Descriptor}}$\ast$ Pa\+Util\+Buffer\+Processor\+::host\+Output\+Channels\mbox{[}2\mbox{]}}
+
+pointers to arrays of channel descriptors. pointers are NULL for half-\/duplex input processing. host\+Output\+Channels\mbox{[}i\mbox{]}.data is NULL when the caller calls \mbox{\hyperlink{pa__process_8c_ad8300bdb4ebf2aaad4b0bf8813af5695}{Pa\+Util\+\_\+\+Set\+No\+Output()}} \mbox{\Hypertarget{struct_pa_util_buffer_processor_ac5e048842fdfdee1764ab049a1306cfe}\label{struct_pa_util_buffer_processor_ac5e048842fdfdee1764ab049a1306cfe}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostOutputFrameCount@{hostOutputFrameCount}}
+\index{hostOutputFrameCount@{hostOutputFrameCount}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostOutputFrameCount}{hostOutputFrameCount}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::host\+Output\+Frame\+Count\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a3be5c10e3f9e36326103443929547e25}\label{struct_pa_util_buffer_processor_a3be5c10e3f9e36326103443929547e25}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!hostOutputIsInterleaved@{hostOutputIsInterleaved}}
+\index{hostOutputIsInterleaved@{hostOutputIsInterleaved}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{hostOutputIsInterleaved}{hostOutputIsInterleaved}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::host\+Output\+Is\+Interleaved}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a4deddc94ba71c17171e8ae823b89e832}\label{struct_pa_util_buffer_processor_a4deddc94ba71c17171e8ae823b89e832}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!initialFramesInTempInputBuffer@{initialFramesInTempInputBuffer}}
+\index{initialFramesInTempInputBuffer@{initialFramesInTempInputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{initialFramesInTempInputBuffer}{initialFramesInTempInputBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::initial\+Frames\+In\+Temp\+Input\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_aec8e9dfce47109ff1f1d8cfa3c411c74}\label{struct_pa_util_buffer_processor_aec8e9dfce47109ff1f1d8cfa3c411c74}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!initialFramesInTempOutputBuffer@{initialFramesInTempOutputBuffer}}
+\index{initialFramesInTempOutputBuffer@{initialFramesInTempOutputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{initialFramesInTempOutputBuffer}{initialFramesInTempOutputBuffer}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Buffer\+Processor\+::initial\+Frames\+In\+Temp\+Output\+Buffer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a878ec922a2464a3d57119d175f362366}\label{struct_pa_util_buffer_processor_a878ec922a2464a3d57119d175f362366}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!inputChannelCount@{inputChannelCount}}
+\index{inputChannelCount@{inputChannelCount}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{inputChannelCount}{inputChannelCount}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::input\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a8bad04b047411362da5a81c38dde04af}\label{struct_pa_util_buffer_processor_a8bad04b047411362da5a81c38dde04af}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!inputConverter@{inputConverter}}
+\index{inputConverter@{inputConverter}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{inputConverter}{inputConverter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}}$\ast$ Pa\+Util\+Buffer\+Processor\+::input\+Converter}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a032b5f8772cc7fe2ec6a43219afdf367}\label{struct_pa_util_buffer_processor_a032b5f8772cc7fe2ec6a43219afdf367}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!inputZeroer@{inputZeroer}}
+\index{inputZeroer@{inputZeroer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{inputZeroer}{inputZeroer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}}$\ast$ Pa\+Util\+Buffer\+Processor\+::input\+Zeroer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_af2c3ba9b0cc5bd8eb2fad8b73b40ad18}\label{struct_pa_util_buffer_processor_af2c3ba9b0cc5bd8eb2fad8b73b40ad18}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!outputChannelCount@{outputChannelCount}}
+\index{outputChannelCount@{outputChannelCount}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{outputChannelCount}{outputChannelCount}}
+{\footnotesize\ttfamily unsigned int Pa\+Util\+Buffer\+Processor\+::output\+Channel\+Count}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_ac6a539ab66c9a4a71d8603e7ed7394ad}\label{struct_pa_util_buffer_processor_ac6a539ab66c9a4a71d8603e7ed7394ad}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!outputConverter@{outputConverter}}
+\index{outputConverter@{outputConverter}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{outputConverter}{outputConverter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}}$\ast$ Pa\+Util\+Buffer\+Processor\+::output\+Converter}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a25fadc2a2170fbd7c8ca85b06860ca3c}\label{struct_pa_util_buffer_processor_a25fadc2a2170fbd7c8ca85b06860ca3c}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!outputZeroer@{outputZeroer}}
+\index{outputZeroer@{outputZeroer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{outputZeroer}{outputZeroer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}}$\ast$ Pa\+Util\+Buffer\+Processor\+::output\+Zeroer}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_aea54ceb550e1d66824d6f8cf55af8489}\label{struct_pa_util_buffer_processor_aea54ceb550e1d66824d6f8cf55af8489}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!samplePeriod@{samplePeriod}}
+\index{samplePeriod@{samplePeriod}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{samplePeriod}{samplePeriod}}
+{\footnotesize\ttfamily double Pa\+Util\+Buffer\+Processor\+::sample\+Period}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_af6577f767ed4c58d5e511d125e6b1c4a}\label{struct_pa_util_buffer_processor_af6577f767ed4c58d5e511d125e6b1c4a}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!streamCallback@{streamCallback}}
+\index{streamCallback@{streamCallback}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{streamCallback}{streamCallback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}$\ast$ Pa\+Util\+Buffer\+Processor\+::stream\+Callback}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a327f8e240df961caa6c47bb9a35a9b76}\label{struct_pa_util_buffer_processor_a327f8e240df961caa6c47bb9a35a9b76}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!tempInputBuffer@{tempInputBuffer}}
+\index{tempInputBuffer@{tempInputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{tempInputBuffer}{tempInputBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Util\+Buffer\+Processor\+::temp\+Input\+Buffer}
+
+used for slips, block adaption, and conversion. \mbox{\Hypertarget{struct_pa_util_buffer_processor_ad4fa78d30f36f82c45278b9fda2322f9}\label{struct_pa_util_buffer_processor_ad4fa78d30f36f82c45278b9fda2322f9}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!tempInputBufferPtrs@{tempInputBufferPtrs}}
+\index{tempInputBufferPtrs@{tempInputBufferPtrs}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{tempInputBufferPtrs}{tempInputBufferPtrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Util\+Buffer\+Processor\+::temp\+Input\+Buffer\+Ptrs}
+
+storage for non-\/interleaved buffer pointers, NULL for interleaved user input \mbox{\Hypertarget{struct_pa_util_buffer_processor_a6aaded76991a6014bc78290fca38124e}\label{struct_pa_util_buffer_processor_a6aaded76991a6014bc78290fca38124e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!tempOutputBuffer@{tempOutputBuffer}}
+\index{tempOutputBuffer@{tempOutputBuffer}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{tempOutputBuffer}{tempOutputBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Util\+Buffer\+Processor\+::temp\+Output\+Buffer}
+
+used for slips, block adaption, and conversion. \mbox{\Hypertarget{struct_pa_util_buffer_processor_a893544dc94d125b204167cf61f87ff9a}\label{struct_pa_util_buffer_processor_a893544dc94d125b204167cf61f87ff9a}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!tempOutputBufferPtrs@{tempOutputBufferPtrs}}
+\index{tempOutputBufferPtrs@{tempOutputBufferPtrs}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{tempOutputBufferPtrs}{tempOutputBufferPtrs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ Pa\+Util\+Buffer\+Processor\+::temp\+Output\+Buffer\+Ptrs}
+
+storage for non-\/interleaved buffer pointers, NULL for interleaved user output \mbox{\Hypertarget{struct_pa_util_buffer_processor_addae164599da4e3cad4498350cc9e39e}\label{struct_pa_util_buffer_processor_addae164599da4e3cad4498350cc9e39e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!timeInfo@{timeInfo}}
+\index{timeInfo@{timeInfo}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{timeInfo}{timeInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}}$\ast$ Pa\+Util\+Buffer\+Processor\+::time\+Info}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a58c81d2f3c782274e0ab7ad6ab006034}\label{struct_pa_util_buffer_processor_a58c81d2f3c782274e0ab7ad6ab006034}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!useNonAdaptingProcess@{useNonAdaptingProcess}}
+\index{useNonAdaptingProcess@{useNonAdaptingProcess}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{useNonAdaptingProcess}{useNonAdaptingProcess}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::use\+Non\+Adapting\+Process}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_aa0c7b972bd1494d40373e9e13475af4b}\label{struct_pa_util_buffer_processor_aa0c7b972bd1494d40373e9e13475af4b}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!userData@{userData}}
+\index{userData@{userData}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{userData}{userData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Util\+Buffer\+Processor\+::user\+Data}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a08fb4a5b71ccc3aa1893d8e6c035d192}\label{struct_pa_util_buffer_processor_a08fb4a5b71ccc3aa1893d8e6c035d192}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!userInputIsInterleaved@{userInputIsInterleaved}}
+\index{userInputIsInterleaved@{userInputIsInterleaved}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{userInputIsInterleaved}{userInputIsInterleaved}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::user\+Input\+Is\+Interleaved}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a8667d06325ee28d95c48159ff49e044e}\label{struct_pa_util_buffer_processor_a8667d06325ee28d95c48159ff49e044e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!userInputSampleFormatIsEqualToHost@{userInputSampleFormatIsEqualToHost}}
+\index{userInputSampleFormatIsEqualToHost@{userInputSampleFormatIsEqualToHost}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{userInputSampleFormatIsEqualToHost}{userInputSampleFormatIsEqualToHost}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::user\+Input\+Sample\+Format\+Is\+Equal\+To\+Host}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_a3be95f50566a88ebdc2697cde95d042e}\label{struct_pa_util_buffer_processor_a3be95f50566a88ebdc2697cde95d042e}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!userOutputIsInterleaved@{userOutputIsInterleaved}}
+\index{userOutputIsInterleaved@{userOutputIsInterleaved}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{userOutputIsInterleaved}{userOutputIsInterleaved}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::user\+Output\+Is\+Interleaved}
+
+\mbox{\Hypertarget{struct_pa_util_buffer_processor_ad791f8650ed327dc106a6f97c3ec5799}\label{struct_pa_util_buffer_processor_ad791f8650ed327dc106a6f97c3ec5799}} 
+\index{PaUtilBufferProcessor@{PaUtilBufferProcessor}!userOutputSampleFormatIsEqualToHost@{userOutputSampleFormatIsEqualToHost}}
+\index{userOutputSampleFormatIsEqualToHost@{userOutputSampleFormatIsEqualToHost}!PaUtilBufferProcessor@{PaUtilBufferProcessor}}
+\doxysubsubsection{\texorpdfstring{userOutputSampleFormatIsEqualToHost}{userOutputSampleFormatIsEqualToHost}}
+{\footnotesize\ttfamily int Pa\+Util\+Buffer\+Processor\+::user\+Output\+Sample\+Format\+Is\+Equal\+To\+Host}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/common/\mbox{\hyperlink{pa__process_8h}{pa\+\_\+process.\+h}}\end{DoxyCompactItemize}

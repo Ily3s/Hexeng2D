@@ -1,0 +1,28 @@
+var dir_5af23b5b4783c1b449cea38a86663840 =
+[
+    [ "pa_allocation.c", "pa__allocation_8c.html", "pa__allocation_8c" ],
+    [ "pa_allocation.h", "pa__allocation_8h.html", "pa__allocation_8h" ],
+    [ "pa_converters.c", "pa__converters_8c.html", "pa__converters_8c" ],
+    [ "pa_converters.h", "pa__converters_8h.html", "pa__converters_8h" ],
+    [ "pa_cpuload.c", "pa__cpuload_8c.html", "pa__cpuload_8c" ],
+    [ "pa_cpuload.h", "pa__cpuload_8h.html", "pa__cpuload_8h" ],
+    [ "pa_debugprint.c", "pa__debugprint_8c.html", "pa__debugprint_8c" ],
+    [ "pa_debugprint.h", "pa__debugprint_8h.html", "pa__debugprint_8h" ],
+    [ "pa_dither.c", "pa__dither_8c.html", "pa__dither_8c" ],
+    [ "pa_dither.h", "pa__dither_8h.html", "pa__dither_8h" ],
+    [ "pa_endianness.h", "pa__endianness_8h.html", "pa__endianness_8h" ],
+    [ "pa_front.c", "pa__front_8c.html", "pa__front_8c" ],
+    [ "pa_gitrevision.h", "pa__gitrevision_8h.html", "pa__gitrevision_8h" ],
+    [ "pa_hostapi.h", "pa__hostapi_8h.html", "pa__hostapi_8h" ],
+    [ "pa_memorybarrier.h", "pa__memorybarrier_8h.html", null ],
+    [ "pa_process.c", "pa__process_8c.html", "pa__process_8c" ],
+    [ "pa_process.h", "pa__process_8h.html", "pa__process_8h" ],
+    [ "pa_ringbuffer.c", "pa__ringbuffer_8c.html", "pa__ringbuffer_8c" ],
+    [ "pa_ringbuffer.h", "pa__ringbuffer_8h.html", "pa__ringbuffer_8h" ],
+    [ "pa_stream.c", "pa__stream_8c.html", "pa__stream_8c" ],
+    [ "pa_stream.h", "pa__stream_8h.html", "pa__stream_8h" ],
+    [ "pa_trace.c", "pa__trace_8c.html", "pa__trace_8c" ],
+    [ "pa_trace.h", "pa__trace_8h.html", "pa__trace_8h" ],
+    [ "pa_types.h", "pa__types_8h.html", "pa__types_8h" ],
+    [ "pa_util.h", "pa__util_8h.html", "pa__util_8h" ]
+];

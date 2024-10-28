@@ -1,0 +1,95 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_polygon}{}\doxysection{Hexeng\+::Renderer\+::Polygon Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_polygon}\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+
+
+{\ttfamily \#include $<$Mesh.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_polygon}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_ac14b4f80846ab59197c13a176f0cea24}{Polygon}} (const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $>$ \&vertecies, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ pos=\{ 0, 0 \}, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}}=\mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\+\_\+shader}})
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_ae9548ff6ac503fc14609b77e072cf9de}{Polygon}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a3f1d4d6ad76ebfed8382e12546f6e903}{Polygon}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a2fe5511e2e05e33916875a98a07a5390}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a87f509de9e79ce6025b67cabf83e5611}{Polygon}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_ab74821703b45a1d7e00a49ad1d2c2aa8}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon_a5d5595b3dff2ba86885266eedccfc5b5}{get\+\_\+vertex\+\_\+layout}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_ac14b4f80846ab59197c13a176f0cea24}\label{class_hexeng_1_1_renderer_1_1_polygon_ac14b4f80846ab59197c13a176f0cea24}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $>$ \&}]{vertecies,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{pos = {\ttfamily \{~0,~0~\}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}}}]{color = {\ttfamily \mbox{\hyperlink{class_hexeng_1_1_color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\+\_\+shader}}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em vertecies} & All vertecies coordinates in the Hexeng2D coordinate system, in clockwise order.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you want to make a custom shader for the polygon, take a look at Default\+Shaders.\+glsl / .hpp / .cpp, copy paste poly\+\_\+shader and modify it as you want. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_ae9548ff6ac503fc14609b77e072cf9de}\label{class_hexeng_1_1_renderer_1_1_polygon_ae9548ff6ac503fc14609b77e072cf9de}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_a3f1d4d6ad76ebfed8382e12546f6e903}\label{class_hexeng_1_1_renderer_1_1_polygon_a3f1d4d6ad76ebfed8382e12546f6e903}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_a87f509de9e79ce6025b67cabf83e5611}\label{class_hexeng_1_1_renderer_1_1_polygon_a87f509de9e79ce6025b67cabf83e5611}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_a5d5595b3dff2ba86885266eedccfc5b5}\label{class_hexeng_1_1_renderer_1_1_polygon_a5d5595b3dff2ba86885266eedccfc5b5}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!get\_vertex\_layout@{get\_vertex\_layout}}
+\index{get\_vertex\_layout@{get\_vertex\_layout}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{get\_vertex\_layout()}{get\_vertex\_layout()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \& Hexeng\+::\+Renderer\+::\+Polygon\+::get\+\_\+vertex\+\_\+layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_a2fe5511e2e05e33916875a98a07a5390}\label{class_hexeng_1_1_renderer_1_1_polygon_a2fe5511e2e05e33916875a98a07a5390}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \& Hexeng\+::\+Renderer\+::\+Polygon\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_polygon_ab74821703b45a1d7e00a49ad1d2c2aa8}\label{class_hexeng_1_1_renderer_1_1_polygon_ab74821703b45a1d7e00a49ad1d2c2aa8}} 
+\index{Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Polygon@{Hexeng::Renderer::Polygon}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \& Hexeng\+::\+Renderer\+::\+Polygon\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_mesh_8hpp}{Mesh.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

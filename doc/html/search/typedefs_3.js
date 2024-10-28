@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['callbackfunptr_0',['CallbackFunPtr',['../classportaudio_1_1_fun_callback_stream.html#abad4a65493bda517c7df8d7cee847784',1,'portaudio::FunCallbackStream::CallbackFunPtr()'],['../classportaudio_1_1_mem_fun_callback_stream.html#a429144c3e6505f0aebb61df638048027',1,'portaudio::MemFunCallbackStream::CallbackFunPtr()']]],
+  ['cc_5fbyte_5fpair_1',['CC_BYTE_PAIR',['../ksmedia_8h.html#a92b8754fcc19c8910ac3bb94701a2ecf',1,'ksmedia.h']]],
+  ['cc_5fhw_5ffield_2',['CC_HW_FIELD',['../ksmedia_8h.html#ab495beb9cd49842b33431b36c9343754',1,'ksmedia.h']]],
+  ['clamp_3',['clamp',['../glad_8h.html#abd92661d757c8e8c0e50c1b9c3ce496e',1,'glad.h']]],
+  ['clsid_4',['CLSID',['../pa__win__wasapi_8c.html#adc22ec05e28b8fcd9b14c13247b62337',1,'pa_win_wasapi.c']]],
+  ['color_5',['color',['../glad_8h.html#a69995a929d818b8b467d4593c24d98bc',1,'glad.h']]],
+  ['colornumber_6',['colorNumber',['../glad_8h.html#aa0cc7c98d48d41e532115fa975a55d8e',1,'glad.h']]],
+  ['column_7',['column',['../glad_8h.html#ab27984371329e8f1c3fda7ffe49d1496',1,'glad.h']]],
+  ['columnbufsize_8',['columnBufSize',['../glad_8h.html#a7e9f13be32a4f6d70fc97ec3f6a3ded7',1,'glad.h']]],
+  ['comdlg_5ffilterspec_9',['COMDLG_FILTERSPEC',['../_sh_types_8h.html#a347cf251d70cf52031a4e950d35a1235',1,'ShTypes.h']]],
+  ['compoundcondition_10',['CompoundCondition',['../structuredquery_8h.html#a05919065e24905152c3539f75221682e',1,'structuredquery.h']]],
+  ['condition_5foperation_11',['CONDITION_OPERATION',['../structuredquery_8h.html#a67b00fbb2f037007d08d1331c2810e9b',1,'structuredquery.h']]],
+  ['condition_5ftype_12',['CONDITION_TYPE',['../structuredquery_8h.html#a6ed80d069cc90674b8a42c3a1d7420e6',1,'structuredquery.h']]],
+  ['conditionfactory_13',['ConditionFactory',['../structuredquery_8h.html#a9554c50ec70123d2b8f3e1a7f84ce6e6',1,'structuredquery.h']]],
+  ['connectortype_14',['ConnectorType',['../devicetopology_8h.html#a8eff30f37ccdb6db24e6286f0e1b595c',1,'devicetopology.h']]],
+  ['coords_15',['coords',['../glad_8h.html#acdbd39c05bd58b1a6ce737d0189ee608',1,'glad.h']]],
+  ['count_16',['count',['../glad_8h.html#a31eafbeac9256b106b6acfd78f305200',1,'glad.h']]]
+];

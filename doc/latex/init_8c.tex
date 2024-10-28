@@ -1,0 +1,75 @@
+\hypertarget{init_8c}{}\doxysection{Hexeng2\+D/dependencies/glfw/src/init.c File Reference}
+\label{init_8c}\index{Hexeng2D/dependencies/glfw/src/init.c@{Hexeng2D/dependencies/glfw/src/init.c}}
+{\ttfamily \#include \char`\"{}internal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mappings.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{init_8c_af725e1f466a710a1fc590ff3726f1151}{\+\_\+glfw\+\_\+strdup}} (const char $\ast$\mbox{\hyperlink{glad_8h_a6ffd2192cbc75d017665e95207ee36a7}{source}})
+\item 
+float \mbox{\hyperlink{init_8c_af27e3c452fbb2a7133339f77b72fcf37}{\+\_\+glfw\+\_\+fminf}} (float \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, float \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})
+\item 
+float \mbox{\hyperlink{init_8c_a159e9723ec02405ea951cea91b1cff30}{\+\_\+glfw\+\_\+fmaxf}} (float \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, float \mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{init_8c_a3287b282ec57a4a89127ae51f49f10f5}{\+\_\+glfw\+Input\+Error}} (int code, const char $\ast$\mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}},...)
+\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} int \mbox{\hyperlink{group__init_gab41771f0215a2e0afb4cf1cf98082d40}{glfw\+Init}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\begin{DoxyCompactList}\small\item\em Initializes the GLFW library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{group__init_gafd90e6fd4819ea9e22e5e739519a6504}{glfw\+Terminate}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\begin{DoxyCompactList}\small\item\em Terminates the GLFW library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{group__init_gac85e41aab1c2bd6fc740f4377d9e7e9f}{glfw\+Init\+Hint}} (int hint, int \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}})
+\begin{DoxyCompactList}\small\item\em Sets the specified init hint to the desired value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{group__init_ga2402c7824ac0194c13722790ff9559ff}{glfw\+Get\+Version}} (int $\ast$major, int $\ast$minor, int $\ast$rev)
+\begin{DoxyCompactList}\small\item\em Retrieves the version of the GLFW library. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char $\ast$ \mbox{\hyperlink{group__init_gae5952184a0db36e24d1de7805b8b0945}{glfw\+Get\+Version\+String}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\begin{DoxyCompactList}\small\item\em Returns a string describing the compile-\/time configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} int \mbox{\hyperlink{group__init_gaee7bac4c7e1b2769207747c1b5ae2f9e}{glfw\+Get\+Error}} (const char $\ast$$\ast$description)
+\begin{DoxyCompactList}\small\item\em Returns and clears the last error for the calling thread. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} \mbox{\hyperlink{group__init_gaa684e3f8b44b6a35000119d524d49e6d}{GLFWerrorfun}} \mbox{\hyperlink{group__init_ga746e2757d069eaea423349aca6ae097a}{glfw\+Set\+Error\+Callback}} (\mbox{\hyperlink{group__init_gaa684e3f8b44b6a35000119d524d49e6d}{GLFWerrorfun}} cbfun)
+\begin{DoxyCompactList}\small\item\em Sets the error callback. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct___g_l_f_wlibrary}{\+\_\+\+GLFWlibrary}} \mbox{\hyperlink{init_8c_a3007bc654ca6468ee69759007f70ba1e}{\+\_\+glfw}} = \{ \mbox{\hyperlink{group__init_gac877fe3b627d21ef3a0a23e0a73ba8c5}{GLFW\+\_\+\+FALSE}} \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{init_8c_a159e9723ec02405ea951cea91b1cff30}\label{init_8c_a159e9723ec02405ea951cea91b1cff30}} 
+\index{init.c@{init.c}!\_glfw\_fmaxf@{\_glfw\_fmaxf}}
+\index{\_glfw\_fmaxf@{\_glfw\_fmaxf}!init.c@{init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_fmaxf()}{\_glfw\_fmaxf()}}
+{\footnotesize\ttfamily float \+\_\+glfw\+\_\+fmaxf (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{init_8c_af27e3c452fbb2a7133339f77b72fcf37}\label{init_8c_af27e3c452fbb2a7133339f77b72fcf37}} 
+\index{init.c@{init.c}!\_glfw\_fminf@{\_glfw\_fminf}}
+\index{\_glfw\_fminf@{\_glfw\_fminf}!init.c@{init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_fminf()}{\_glfw\_fminf()}}
+{\footnotesize\ttfamily float \+\_\+glfw\+\_\+fminf (\begin{DoxyParamCaption}\item[{float}]{a,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{init_8c_af725e1f466a710a1fc590ff3726f1151}\label{init_8c_af725e1f466a710a1fc590ff3726f1151}} 
+\index{init.c@{init.c}!\_glfw\_strdup@{\_glfw\_strdup}}
+\index{\_glfw\_strdup@{\_glfw\_strdup}!init.c@{init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfw\_strdup()}{\_glfw\_strdup()}}
+{\footnotesize\ttfamily char $\ast$ \+\_\+glfw\+\_\+strdup (\begin{DoxyParamCaption}\item[{const char $\ast$}]{source }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{init_8c_a3287b282ec57a4a89127ae51f49f10f5}\label{init_8c_a3287b282ec57a4a89127ae51f49f10f5}} 
+\index{init.c@{init.c}!\_glfwInputError@{\_glfwInputError}}
+\index{\_glfwInputError@{\_glfwInputError}!init.c@{init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwInputError()}{\_glfwInputError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Input\+Error (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{init_8c_a3007bc654ca6468ee69759007f70ba1e}\label{init_8c_a3007bc654ca6468ee69759007f70ba1e}} 
+\index{init.c@{init.c}!\_glfw@{\_glfw}}
+\index{\_glfw@{\_glfw}!init.c@{init.c}}
+\doxysubsubsection{\texorpdfstring{\_glfw}{\_glfw}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct___g_l_f_wlibrary}{\+\_\+\+GLFWlibrary}} \+\_\+glfw = \{ \mbox{\hyperlink{group__init_gac877fe3b627d21ef3a0a23e0a73ba8c5}{GLFW\+\_\+\+FALSE}} \}}
+

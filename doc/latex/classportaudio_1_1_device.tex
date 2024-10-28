@@ -1,0 +1,204 @@
+\hypertarget{classportaudio_1_1_device}{}\doxysection{portaudio\+::Device Class Reference}
+\label{classportaudio_1_1_device}\index{portaudio::Device@{portaudio::Device}}
+
+
+Class which represents a Port\+Audio device in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$Device.\+hxx$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{classportaudio_1_1_device_a67d01d63454855e5f62d698df2297cf4}{index}} () const
+\item 
+const char $\ast$ \mbox{\hyperlink{classportaudio_1_1_device_a419338d11c5b744cdac4642f1cd8f393}{name}} () const
+\item 
+int \mbox{\hyperlink{classportaudio_1_1_device_a5763e6849f544cc8f4cfbf54437b9c3e}{max\+Input\+Channels}} () const
+\item 
+int \mbox{\hyperlink{classportaudio_1_1_device_a8fee63b1555aafc4347a5228538945c6}{max\+Output\+Channels}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_device_aa7687003e829f7576c1a5eb8a78f8aa1}{default\+Low\+Input\+Latency}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_device_ac7bdbe6dc2d8feae9af338938c6f8585}{default\+High\+Input\+Latency}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_device_a27a5e5f0607a30f18f1a4096532ee439}{default\+Low\+Output\+Latency}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_device_aa665b50a6d2d7300d8210a400e5aaaca}{default\+High\+Output\+Latency}} () const
+\item 
+double \mbox{\hyperlink{classportaudio_1_1_device_aa9d42381985b36f3cf44b47183f9d4d8}{default\+Sample\+Rate}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_aa44c0da4da5b1ed562ec9c58d21fae59}{is\+Input\+Only\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_acd409ad1e0424175b82f8ace3bf5e616}{is\+Output\+Only\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_aa8c5c55d3fc4084a7718a9299917630c}{is\+Full\+Duplex\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_a05f7684b8734a8b239157d40ef4c5c53}{is\+System\+Default\+Input\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_abd5334d623f97ae2ee03d7a65405a9d7}{is\+System\+Default\+Output\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_a698f99d912f5999c2763352bf9ae5577}{is\+Host\+Api\+Default\+Input\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_afe930193fdae0ce62d701cc288052767}{is\+Host\+Api\+Default\+Output\+Device}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_a186992b45f576a4e3616f07258c430ba}{operator==}} (const \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_device_a89b214b3884a73b079efa25ffb10917f}{operator!=}} (const \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&rhs) const
+\item 
+\mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} \& \mbox{\hyperlink{classportaudio_1_1_device_acda90ddd84617d9f2bc79f83985d49fd}{host\+Api}} ()
+\item 
+const \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} \& \mbox{\hyperlink{classportaudio_1_1_device_a60513e8c2a8c96f40b23b4964abf3111}{host\+Api}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classportaudio_1_1_device_af18a9ee98e70982bfe2975391d7221a5}{System}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which represents a Port\+Audio device in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. 
+
+A single physical device in the system may have multiple Port\+Audio \mbox{\hyperlink{classportaudio_1_1_device}{Device}} representations using different \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} \textquotesingle{}s though. A \mbox{\hyperlink{classportaudio_1_1_device}{Device}} can be half-\/duplex or full-\/duplex. A half-\/duplex \mbox{\hyperlink{classportaudio_1_1_device}{Device}} can be used to create a half-\/duplex \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. A full-\/duplex \mbox{\hyperlink{classportaudio_1_1_device}{Device}} can be used to create a full-\/duplex \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. If supported by the \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}}, two half-\/duplex Devices can even be used to create a full-\/duplex \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}.
+
+Note that \mbox{\hyperlink{classportaudio_1_1_device}{Device}} objects are very light-\/weight and can be passed around by-\/value. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_device_ac7bdbe6dc2d8feae9af338938c6f8585}\label{classportaudio_1_1_device_ac7bdbe6dc2d8feae9af338938c6f8585}} 
+\index{portaudio::Device@{portaudio::Device}!defaultHighInputLatency@{defaultHighInputLatency}}
+\index{defaultHighInputLatency@{defaultHighInputLatency}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{defaultHighInputLatency()}{defaultHighInputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Device\+::default\+High\+Input\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_aa665b50a6d2d7300d8210a400e5aaaca}\label{classportaudio_1_1_device_aa665b50a6d2d7300d8210a400e5aaaca}} 
+\index{portaudio::Device@{portaudio::Device}!defaultHighOutputLatency@{defaultHighOutputLatency}}
+\index{defaultHighOutputLatency@{defaultHighOutputLatency}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{defaultHighOutputLatency()}{defaultHighOutputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Device\+::default\+High\+Output\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_aa7687003e829f7576c1a5eb8a78f8aa1}\label{classportaudio_1_1_device_aa7687003e829f7576c1a5eb8a78f8aa1}} 
+\index{portaudio::Device@{portaudio::Device}!defaultLowInputLatency@{defaultLowInputLatency}}
+\index{defaultLowInputLatency@{defaultLowInputLatency}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{defaultLowInputLatency()}{defaultLowInputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Device\+::default\+Low\+Input\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a27a5e5f0607a30f18f1a4096532ee439}\label{classportaudio_1_1_device_a27a5e5f0607a30f18f1a4096532ee439}} 
+\index{portaudio::Device@{portaudio::Device}!defaultLowOutputLatency@{defaultLowOutputLatency}}
+\index{defaultLowOutputLatency@{defaultLowOutputLatency}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{defaultLowOutputLatency()}{defaultLowOutputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Device\+::default\+Low\+Output\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_aa9d42381985b36f3cf44b47183f9d4d8}\label{classportaudio_1_1_device_aa9d42381985b36f3cf44b47183f9d4d8}} 
+\index{portaudio::Device@{portaudio::Device}!defaultSampleRate@{defaultSampleRate}}
+\index{defaultSampleRate@{defaultSampleRate}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{defaultSampleRate()}{defaultSampleRate()}}
+{\footnotesize\ttfamily double portaudio\+::\+Device\+::default\+Sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_acda90ddd84617d9f2bc79f83985d49fd}\label{classportaudio_1_1_device_acda90ddd84617d9f2bc79f83985d49fd}} 
+\index{portaudio::Device@{portaudio::Device}!hostApi@{hostApi}}
+\index{hostApi@{hostApi}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{hostApi()}{hostApi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} \& portaudio\+::\+Device\+::host\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a60513e8c2a8c96f40b23b4964abf3111}\label{classportaudio_1_1_device_a60513e8c2a8c96f40b23b4964abf3111}} 
+\index{portaudio::Device@{portaudio::Device}!hostApi@{hostApi}}
+\index{hostApi@{hostApi}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{hostApi()}{hostApi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} \& portaudio\+::\+Device\+::host\+Api (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a67d01d63454855e5f62d698df2297cf4}\label{classportaudio_1_1_device_a67d01d63454855e5f62d698df2297cf4}} 
+\index{portaudio::Device@{portaudio::Device}!index@{index}}
+\index{index@{index}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} portaudio\+::\+Device\+::index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_aa8c5c55d3fc4084a7718a9299917630c}\label{classportaudio_1_1_device_aa8c5c55d3fc4084a7718a9299917630c}} 
+\index{portaudio::Device@{portaudio::Device}!isFullDuplexDevice@{isFullDuplexDevice}}
+\index{isFullDuplexDevice@{isFullDuplexDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isFullDuplexDevice()}{isFullDuplexDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+Full\+Duplex\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a698f99d912f5999c2763352bf9ae5577}\label{classportaudio_1_1_device_a698f99d912f5999c2763352bf9ae5577}} 
+\index{portaudio::Device@{portaudio::Device}!isHostApiDefaultInputDevice@{isHostApiDefaultInputDevice}}
+\index{isHostApiDefaultInputDevice@{isHostApiDefaultInputDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isHostApiDefaultInputDevice()}{isHostApiDefaultInputDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+Host\+Api\+Default\+Input\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_afe930193fdae0ce62d701cc288052767}\label{classportaudio_1_1_device_afe930193fdae0ce62d701cc288052767}} 
+\index{portaudio::Device@{portaudio::Device}!isHostApiDefaultOutputDevice@{isHostApiDefaultOutputDevice}}
+\index{isHostApiDefaultOutputDevice@{isHostApiDefaultOutputDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isHostApiDefaultOutputDevice()}{isHostApiDefaultOutputDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+Host\+Api\+Default\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_aa44c0da4da5b1ed562ec9c58d21fae59}\label{classportaudio_1_1_device_aa44c0da4da5b1ed562ec9c58d21fae59}} 
+\index{portaudio::Device@{portaudio::Device}!isInputOnlyDevice@{isInputOnlyDevice}}
+\index{isInputOnlyDevice@{isInputOnlyDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isInputOnlyDevice()}{isInputOnlyDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+Input\+Only\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_acd409ad1e0424175b82f8ace3bf5e616}\label{classportaudio_1_1_device_acd409ad1e0424175b82f8ace3bf5e616}} 
+\index{portaudio::Device@{portaudio::Device}!isOutputOnlyDevice@{isOutputOnlyDevice}}
+\index{isOutputOnlyDevice@{isOutputOnlyDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isOutputOnlyDevice()}{isOutputOnlyDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+Output\+Only\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a05f7684b8734a8b239157d40ef4c5c53}\label{classportaudio_1_1_device_a05f7684b8734a8b239157d40ef4c5c53}} 
+\index{portaudio::Device@{portaudio::Device}!isSystemDefaultInputDevice@{isSystemDefaultInputDevice}}
+\index{isSystemDefaultInputDevice@{isSystemDefaultInputDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isSystemDefaultInputDevice()}{isSystemDefaultInputDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+System\+Default\+Input\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_abd5334d623f97ae2ee03d7a65405a9d7}\label{classportaudio_1_1_device_abd5334d623f97ae2ee03d7a65405a9d7}} 
+\index{portaudio::Device@{portaudio::Device}!isSystemDefaultOutputDevice@{isSystemDefaultOutputDevice}}
+\index{isSystemDefaultOutputDevice@{isSystemDefaultOutputDevice}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{isSystemDefaultOutputDevice()}{isSystemDefaultOutputDevice()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::is\+System\+Default\+Output\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a5763e6849f544cc8f4cfbf54437b9c3e}\label{classportaudio_1_1_device_a5763e6849f544cc8f4cfbf54437b9c3e}} 
+\index{portaudio::Device@{portaudio::Device}!maxInputChannels@{maxInputChannels}}
+\index{maxInputChannels@{maxInputChannels}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{maxInputChannels()}{maxInputChannels()}}
+{\footnotesize\ttfamily int portaudio\+::\+Device\+::max\+Input\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a8fee63b1555aafc4347a5228538945c6}\label{classportaudio_1_1_device_a8fee63b1555aafc4347a5228538945c6}} 
+\index{portaudio::Device@{portaudio::Device}!maxOutputChannels@{maxOutputChannels}}
+\index{maxOutputChannels@{maxOutputChannels}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{maxOutputChannels()}{maxOutputChannels()}}
+{\footnotesize\ttfamily int portaudio\+::\+Device\+::max\+Output\+Channels (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a419338d11c5b744cdac4642f1cd8f393}\label{classportaudio_1_1_device_a419338d11c5b744cdac4642f1cd8f393}} 
+\index{portaudio::Device@{portaudio::Device}!name@{name}}
+\index{name@{name}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily const char $\ast$ portaudio\+::\+Device\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a89b214b3884a73b079efa25ffb10917f}\label{classportaudio_1_1_device_a89b214b3884a73b079efa25ffb10917f}} 
+\index{portaudio::Device@{portaudio::Device}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_device_a186992b45f576a4e3616f07258c430ba}\label{classportaudio_1_1_device_a186992b45f576a4e3616f07258c430ba}} 
+\index{portaudio::Device@{portaudio::Device}!operator==@{operator==}}
+\index{operator==@{operator==}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Device\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_device_af18a9ee98e70982bfe2975391d7221a5}\label{classportaudio_1_1_device_af18a9ee98e70982bfe2975391d7221a5}} 
+\index{portaudio::Device@{portaudio::Device}!System@{System}}
+\index{System@{System}!portaudio::Device@{portaudio::Device}}
+\doxysubsubsection{\texorpdfstring{System}{System}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classportaudio_1_1_system}{System}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_device_8hxx}{Device.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_device_8cxx}{Device.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,56 @@
+\hypertarget{write__wav_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/write\+\_\+wav.c File Reference}
+\label{write__wav_8c}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.c@{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}write\+\_\+wav.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{write__wav_8c_acb389a9d61dbff505b6b2eb6ad2843c8}{WAV\+\_\+\+HEADER\+\_\+\+SIZE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{write__wav_8c_a2ccf8f4887bd22ac43f3e5c7a9e16799}{Audio\+\_\+\+WAV\+\_\+\+Open\+Writer}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer, const char $\ast$file\+Name, int frame\+Rate, int samples\+Per\+Frame)
+\item 
+long \mbox{\hyperlink{write__wav_8c_acf9e3951bed222ba08f37c45fe24d77d}{Audio\+\_\+\+WAV\+\_\+\+Write\+Shorts}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer, short $\ast$\mbox{\hyperlink{glad_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}}, int num\+Samples)
+\item 
+long \mbox{\hyperlink{write__wav_8c_adb4825adde65afffe3ea3d5ef840bd5f}{Audio\+\_\+\+WAV\+\_\+\+Close\+Writer}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{write__wav_8c_acb389a9d61dbff505b6b2eb6ad2843c8}\label{write__wav_8c_acb389a9d61dbff505b6b2eb6ad2843c8}} 
+\index{write\_wav.c@{write\_wav.c}!WAV\_HEADER\_SIZE@{WAV\_HEADER\_SIZE}}
+\index{WAV\_HEADER\_SIZE@{WAV\_HEADER\_SIZE}!write\_wav.c@{write\_wav.c}}
+\doxysubsubsection{\texorpdfstring{WAV\_HEADER\_SIZE}{WAV\_HEADER\_SIZE}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+HEADER\+\_\+\+SIZE}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        (4 + 4 + 4 + \textcolor{comment}{/* RIFF+size+WAVE */} \(\backslash\)}
+\DoxyCodeLine{        4 + 4 + 16 + \textcolor{comment}{/* fmt chunk */} \(\backslash\)}
+\DoxyCodeLine{        4 + 4 ) \textcolor{comment}{/* data chunk */}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{write__wav_8c_adb4825adde65afffe3ea3d5ef840bd5f}\label{write__wav_8c_adb4825adde65afffe3ea3d5ef840bd5f}} 
+\index{write\_wav.c@{write\_wav.c}!Audio\_WAV\_CloseWriter@{Audio\_WAV\_CloseWriter}}
+\index{Audio\_WAV\_CloseWriter@{Audio\_WAV\_CloseWriter}!write\_wav.c@{write\_wav.c}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_CloseWriter()}{Audio\_WAV\_CloseWriter()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Close\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{write__wav_8c_a2ccf8f4887bd22ac43f3e5c7a9e16799}\label{write__wav_8c_a2ccf8f4887bd22ac43f3e5c7a9e16799}} 
+\index{write\_wav.c@{write\_wav.c}!Audio\_WAV\_OpenWriter@{Audio\_WAV\_OpenWriter}}
+\index{Audio\_WAV\_OpenWriter@{Audio\_WAV\_OpenWriter}!write\_wav.c@{write\_wav.c}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_OpenWriter()}{Audio\_WAV\_OpenWriter()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Open\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer,  }\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{frame\+Rate,  }\item[{int}]{samples\+Per\+Frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{write__wav_8c_acf9e3951bed222ba08f37c45fe24d77d}\label{write__wav_8c_acf9e3951bed222ba08f37c45fe24d77d}} 
+\index{write\_wav.c@{write\_wav.c}!Audio\_WAV\_WriteShorts@{Audio\_WAV\_WriteShorts}}
+\index{Audio\_WAV\_WriteShorts@{Audio\_WAV\_WriteShorts}!write\_wav.c@{write\_wav.c}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_WriteShorts()}{Audio\_WAV\_WriteShorts()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Write\+Shorts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer,  }\item[{short $\ast$}]{samples,  }\item[{int}]{num\+Samples }\end{DoxyParamCaption})}
+

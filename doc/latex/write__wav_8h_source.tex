@@ -1,0 +1,109 @@
+\hypertarget{write__wav_8h_source}{}\doxysection{write\+\_\+wav.\+h}
+\label{write__wav_8h_source}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.h@{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.h}}
+\mbox{\hyperlink{write__wav_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Latest Version at: http://www.portaudio.com}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright (c) 1999-\/2010 Phil Burk and Ross Bencina}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{8 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{9 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{10 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{12 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{14 \textcolor{comment}{ *}}
+\DoxyCodeLine{15 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{16 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{19 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{20 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{21 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{22 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{24 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{25 \textcolor{comment}{ */}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{/*}}
+\DoxyCodeLine{28 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{29 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{30 \textcolor{comment}{ *}}
+\DoxyCodeLine{31 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{32 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{33 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{34 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{35 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{36 \textcolor{comment}{ */}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef \_WAV\_WRITER\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define \_WAV\_WRITER\_H}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{/*}}
+\DoxyCodeLine{41 \textcolor{comment}{ * WAV file writer.}}
+\DoxyCodeLine{42 \textcolor{comment}{ *}}
+\DoxyCodeLine{43 \textcolor{comment}{ * Author: Phil Burk}}
+\DoxyCodeLine{44 \textcolor{comment}{ */}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{47 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{comment}{/* Define WAV Chunk and FORM types as 4 byte integers. */}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define RIFF\_ID   (('R'<<24) | ('I'<<16) | ('F'<<8) | 'F')}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define WAVE\_ID   (('W'<<24) | ('A'<<16) | ('V'<<8) | 'E')}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define FMT\_ID    (('f'<<24) | ('m'<<16) | ('t'<<8) | ' ')}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define DATA\_ID   (('d'<<24) | ('a'<<16) | ('t'<<8) | 'a')}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define FACT\_ID   (('f'<<24) | ('a'<<16) | ('c'<<8) | 't')}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{comment}{/* Errors returned by Audio\_ParseSampleImage\_WAV */}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define WAV\_ERR\_CHUNK\_SIZE     (-\/1)   }\textcolor{comment}{/* Chunk size is illegal or past file size. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#define WAV\_ERR\_FILE\_TYPE      (-\/2)   }\textcolor{comment}{/* Not a WAV file. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define WAV\_ERR\_ILLEGAL\_VALUE  (-\/3)   }\textcolor{comment}{/* Illegal or unsupported value. Eg. 927 bits/sample */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define WAV\_ERR\_FORMAT\_TYPE    (-\/4)   }\textcolor{comment}{/* Unsupported format, eg. compressed. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define WAV\_ERR\_TRUNCATED      (-\/5)   }\textcolor{comment}{/* End of file missing. */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{/* WAV PCM data format ID */}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define WAVE\_FORMAT\_PCM        (1)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define WAVE\_FORMAT\_IMA\_ADPCM  (0x0011)}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\_Writer\_s}}}
+\DoxyCodeLine{70 \{}
+\DoxyCodeLine{71     FILE *\mbox{\hyperlink{struct_w_a_v___writer__s_a273407f275b72472fa44a353abc3a83d}{fid}};}
+\DoxyCodeLine{72     \textcolor{comment}{/* Offset in file for data size. */}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int}   \mbox{\hyperlink{struct_w_a_v___writer__s_afdd3a21bb15aef80748a23b25f7eeb07}{dataSizeOffset}};}
+\DoxyCodeLine{74     \textcolor{keywordtype}{int}   \mbox{\hyperlink{struct_w_a_v___writer__s_ab7042408b535fa561a12f7523612eb52}{dataSize}};}
+\DoxyCodeLine{75 \} \mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\_Writer}};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{/*********************************************************************************}}
+\DoxyCodeLine{78 \textcolor{comment}{ * Open named file and write WAV header to the file.}}
+\DoxyCodeLine{79 \textcolor{comment}{ * The header includes the DATA chunk type and size.}}
+\DoxyCodeLine{80 \textcolor{comment}{ * Returns number of bytes written to file or negative error code.}}
+\DoxyCodeLine{81 \textcolor{comment}{ */}}
+\DoxyCodeLine{82 \textcolor{keywordtype}{long} \mbox{\hyperlink{write__wav_8h_a2ccf8f4887bd22ac43f3e5c7a9e16799}{Audio\_WAV\_OpenWriter}}( \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\_Writer}} *writer, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fileName, \textcolor{keywordtype}{int} frameRate, \textcolor{keywordtype}{int} samplesPerFrame );}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{/*********************************************************************************}}
+\DoxyCodeLine{85 \textcolor{comment}{ * Write to the data chunk portion of a WAV file.}}
+\DoxyCodeLine{86 \textcolor{comment}{ * Returns bytes written or negative error code.}}
+\DoxyCodeLine{87 \textcolor{comment}{ */}}
+\DoxyCodeLine{88 \textcolor{keywordtype}{long} \mbox{\hyperlink{write__wav_8h_acf9e3951bed222ba08f37c45fe24d77d}{Audio\_WAV\_WriteShorts}}( \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\_Writer}} *writer,}
+\DoxyCodeLine{89         \textcolor{keywordtype}{short} *\mbox{\hyperlink{glad_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}},}
+\DoxyCodeLine{90         \textcolor{keywordtype}{int} numSamples}
+\DoxyCodeLine{91         );}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/*********************************************************************************}}
+\DoxyCodeLine{94 \textcolor{comment}{ * Close WAV file.}}
+\DoxyCodeLine{95 \textcolor{comment}{ * Update chunk sizes so it can be read by audio applications.}}
+\DoxyCodeLine{96 \textcolor{comment}{ */}}
+\DoxyCodeLine{97 \textcolor{keywordtype}{long} \mbox{\hyperlink{write__wav_8h_adb4825adde65afffe3ea3d5ef840bd5f}{Audio\_WAV\_CloseWriter}}( \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\_Writer}} *writer );}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{100 \};}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_WAV\_WRITER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

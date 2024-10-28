@@ -1,0 +1,253 @@
+\doxysection{Hexeng\+::Text Class Reference}
+\hypertarget{classHexeng_1_1Text}{}\label{classHexeng_1_1Text}\index{Hexeng::Text@{Hexeng::Text}}
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Text\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1Text}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text_ad13cabce634eca6c17063fcd207200be}{Text}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text_ae737a6c1cd1144e393a03ebe27a0b835}{Text}} (std\+::u32string text, \mbox{\hyperlink{classHexeng_1_1Font}{Font}} \&font, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae6a89730d518558899624b8f1fb1310a}{position}}, int font\+\_\+size, \mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}} ha=\mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}, \mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}} va=\mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}, \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} c=\mbox{\hyperlink{classHexeng_1_1Color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ box=\{0, 0\}, std\+::function$<$ void(const std\+::u32string \&)$>$ use\+\_\+what\+\_\+doesnt\+\_\+fit=nullptr)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text_ae1f2d6eadbf050d328d35fc45f2997f5}{Text}} (const \mbox{\hyperlink{classHexeng_1_1Language}{Language}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}language, std\+::u32string text, \mbox{\hyperlink{classHexeng_1_1Font}{Font}} \&font, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae6a89730d518558899624b8f1fb1310a}{position}}, int font\+\_\+size, \mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}} ha=\mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}, \mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}} va=\mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}, \mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} c=\mbox{\hyperlink{classHexeng_1_1Color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}, \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ box=\{0, 0\}, std\+::function$<$ void(const std\+::u32string \&)$>$ use\+\_\+what\+\_\+doesnt\+\_\+fit=nullptr)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text_a7e752e44a539ba608c119f29bf6265ad}{Text}} (const \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \& \mbox{\hyperlink{classHexeng_1_1Text_a0f14a4f092792ef10479eea01becc149}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text_ab6851c37f1ca22a716b1d55b1a064085}{Text}} (\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \& \mbox{\hyperlink{classHexeng_1_1Text_ad5d7201255faa8f2288f0fad58905a60}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&\&) noexcept
+\item 
+size\+\_\+t \mbox{\hyperlink{classHexeng_1_1Text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count}} ()
+\begin{DoxyCompactList}\small\item\em \begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Text_a84d3a5bc70dde22ec6154c41520525ed}{set\+\_\+enabled\+\_\+chars}} (std\+::vector$<$ bool $>$ enabled\+\_\+chars)
+\begin{DoxyCompactList}\small\item\em Set a list of character that needs to be rendered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Hexeng\+::\+Renderer\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_af8c650dae02f4c186d9da35007e8622d}{Mesh}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_aa8a8c942d75f17857cd91aabc1deadcf}{Mesh}} (const void \texorpdfstring{$\ast$}{*}vb, size\+\_\+t vb\+\_\+size, const \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \&pos, const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{Vertex\+Layout}} \&layout, const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{Index\+Buffer}} \texorpdfstring{$\ast$}{*}ib, \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}} \texorpdfstring{$\ast$}{*}tex, \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shader, GLenum type=GL\+\_\+\+TRIANGLES)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a184b8bae5a7dbca0dbfafd5701f50286}{Mesh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Mesh}} \&\&moving) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Mesh}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a75f5fb56509551fe0cf65050afa24227}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Mesh}} \&\&moving) noexcept
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{Vertex\+Array}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a1fda39f7e229081e68c9d8e456760668}{get\+\_\+vao}} () const
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_af0f23574a4525588ad3442c53bfb5cf0}{get\+\_\+shader}} () const
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{Index\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a0868a156e0d4807cf1dd109cd561390a}{get\+\_\+ib}} () const
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}\& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a7e303aa5edd2e987a0372bfad10c08e6}{access\+\_\+shader}} ()
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ad3b9c0b9b2a40f19cc39db098d16ec6e}{update\+\_\+position}} ()
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a4215b04576d1d667db005e4540680ecb}{draw}} (std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*}, std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ $>$ \&parents\+\_\+uniforms=\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a7367dcccd1d278d1a3865182840c7e21}{s\+\_\+empty\+\_\+uniform\+\_\+list}})
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_aa463617a358bdfac7b050b9c30cf47a6}{load}} ()
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a721580d220544ccdf0ec3e8b5509efd9}{unload}} ()
+\item 
+const GLenum \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a7472abfc2af95c2268dbf0d6c15483da}{get\+\_\+type}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Text_a05a17ba2b0e2e59d3d60c18077a29ef2}{reload\+\_\+language}} ()
+\begin{DoxyCompactList}\small\item\em Refresh all the texts with the new language. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Hexeng\+::\+Renderer\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae6a89730d518558899624b8f1fb1310a}{position}} \{ 0, 0 \}
+\item 
+float \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a4f5ccbfcc527b200926b3931913945ae}{scale}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a36335cd573eb71e62b0af55630149907}{rotation}} = 0
+\item 
+\mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a7e08e710764c74ab4c0fa7f07749a84c}{color\+\_\+filter}} = \mbox{\hyperlink{classHexeng_1_1Color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}
+\begin{DoxyCompactList}\small\item\em Absorbtion color. \end{DoxyCompactList}\item 
+float \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a553949dd59a43118fc12f17fb5cc6d2e}{opacity}} = color\+\_\+filter.\+A
+\item 
+\mbox{\hyperlink{classHexeng_1_1Color4}{Color4}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_aa6f1d0462b748ebdd8c04cd395859ae3}{color}} = \{0.\+0f, 0.\+0f, 0.\+0f, 0.\+0f\}
+\begin{DoxyCompactList}\small\item\em Emission color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ac157d2c658a4486822d23f336526d675}{texture}} = nullptr
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}} = true
+\item 
+bool \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae4568b0e22f935bba0f7075eafc4ebb9}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ae40894f674b607fa8c8c5f77a92e13a4}{enable}}
+\item 
+\mbox{\hyperlink{structHexeng_1_1Renderer_1_1BlendingMethod}{Blending\+Method}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a4ea3e4ff55e0feb6e5e5ebbd18f2af36}{blending\+\_\+method}} = \{ GL\+\_\+\+SRC\+\_\+\+ALPHA, GL\+\_\+\+ONE\+\_\+\+MINUS\+\_\+\+SRC\+\_\+\+ALPHA \}
+\item 
+std\+::vector$<$ std\+::pair$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*}, void \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a88aa484fb2d1eda816819ad09ea293bc}{uniforms}} = \{\}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Hexeng\+::\+Renderer\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a999d743797e6bd12b194a115634db1fd}{m\+\_\+transform}} \{ 0.\+0f, 0.\+0f \}
+\item 
+GLenum \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a6e21ebe3772ff914bb71211d105c1684}{m\+\_\+type}} = GL\+\_\+\+TRIANGLES
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{Vertex\+Array}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a78835fbfa3b119234142ef1673c08454}{m\+\_\+vao}}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexBuffer}{Vertex\+Buffer}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a383bcd0699f85db2f667ca575c728fe2}{m\+\_\+vb}}
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{Index\+Buffer}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a548e82e1c845cc8f597f629f3afc626f}{m\+\_\+ib}} = nullptr
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_ac5748990ed845cf8d6bd55f9a9d9f334}{m\+\_\+shader}} = nullptr
+\item 
+const \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{Vertex\+Layout}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a06e3943947b53475298fad224055c2ef}{m\+\_\+layout}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Hexeng\+::\+Renderer\+::\+Mesh}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*}, std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh_a7367dcccd1d278d1a3865182840c7e21}{s\+\_\+empty\+\_\+uniform\+\_\+list}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Text_ad13cabce634eca6c17063fcd207200be}\label{classHexeng_1_1Text_ad13cabce634eca6c17063fcd207200be} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1Text_ae737a6c1cd1144e393a03ebe27a0b835}\label{classHexeng_1_1Text_ae737a6c1cd1144e393a03ebe27a0b835} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{std\+::u32string}]{text,  }\item[{\mbox{\hyperlink{classHexeng_1_1Font}{Font}} \&}]{font,  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$}]{position,  }\item[{int}]{font\+\_\+size,  }\item[{\mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}}}]{ha = {\ttfamily \mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}}}]{va = {\ttfamily \mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}}]{c = {\ttfamily \mbox{\hyperlink{classHexeng_1_1Color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}},  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$}]{box = {\ttfamily \{0,~0\}},  }\item[{std\+::function$<$ void(const std\+::u32string \&)$>$}]{use\+\_\+what\+\_\+doesnt\+\_\+fit = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to be written. Format \+: UTF-\/32\\
+\hline
+{\em font} & The \doxylink{classHexeng_1_1Font}{Font} that will be used to texture the Mesh\\
+\hline
+{\em position} & The absolute position of a certain point of the \doxylink{classHexeng_1_1Text}{Text}. The relative position of this point to the \doxylink{classHexeng_1_1Text}{Text} is defined by va and ha\\
+\hline
+{\em font\+\_\+size} & A size in the Hexeng2D coordinate system\\
+\hline
+{\em ha} & Defines the x position of the text relative to position\\
+\hline
+{\em va} & Defines the y position of the text relative to position\\
+\hline
+{\em c} & The color of the text\\
+\hline
+{\em box} & A box that must contain the text\\
+\hline
+{\em use\+\_\+what\+\_\+doesnt\+\_\+fit} & A function that uses what doesn\textquotesingle{}t fit in the box\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHexeng_1_1Text_ae1f2d6eadbf050d328d35fc45f2997f5}\label{classHexeng_1_1Text_ae1f2d6eadbf050d328d35fc45f2997f5} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Language}{Language}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{language,  }\item[{std\+::u32string}]{text,  }\item[{\mbox{\hyperlink{classHexeng_1_1Font}{Font}} \&}]{font,  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$}]{position,  }\item[{int}]{font\+\_\+size,  }\item[{\mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418}{Horizontal\+Align}}}]{ha = {\ttfamily \mbox{\hyperlink{namespaceHexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{Horizontal\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{Vertical\+Align}}}]{va = {\ttfamily \mbox{\hyperlink{namespaceHexeng_ac960e1eb4420a8e5e61f4314bb733b3eac397289ee45877be0cd49811fe245b4e}{Vertical\+Align\+::\+CENTER}}},  }\item[{\mbox{\hyperlink{classHexeng_1_1Color4}{Color4}}}]{c = {\ttfamily \mbox{\hyperlink{classHexeng_1_1Color4_aca71b3af7c61faa4cd07b5a550b44307}{Color4\+::white}}},  }\item[{\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$}]{box = {\ttfamily \{0,~0\}},  }\item[{std\+::function$<$ void(const std\+::u32string \&)$>$}]{use\+\_\+what\+\_\+doesnt\+\_\+fit = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em language} & A pointer to the current language\textquotesingle{}s pointer. It is a pointer to a pointer so that it is easier to switch languages\\
+\hline
+{\em text} & The text to be written. Format \+: UTF-\/32\\
+\hline
+{\em font} & The \doxylink{classHexeng_1_1Font}{Font} that will be used to texture the Mesh\\
+\hline
+{\em position} & The absolute position of a certain point of the \doxylink{classHexeng_1_1Text}{Text}. The relative position of this point to the \doxylink{classHexeng_1_1Text}{Text} is defined by va and ha\\
+\hline
+{\em font\+\_\+size} & A size in the Hexeng2D coordinate system\\
+\hline
+{\em ha} & Defines the x position of the text relative to position\\
+\hline
+{\em va} & Defines the y position of the text relative to position\\
+\hline
+{\em c} & The color of the text\\
+\hline
+{\em box} & A box that must contain the text\\
+\hline
+{\em use\+\_\+what\+\_\+doesnt\+\_\+fit} & A function that uses what doesn\textquotesingle{}t fit in the box\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHexeng_1_1Text_a7e752e44a539ba608c119f29bf6265ad}\label{classHexeng_1_1Text_a7e752e44a539ba608c119f29bf6265ad} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Text_ab6851c37f1ca22a716b1d55b1a064085}\label{classHexeng_1_1Text_ab6851c37f1ca22a716b1d55b1a064085} 
+\index{Hexeng::Text@{Hexeng::Text}!Text@{Text}}
+\index{Text@{Text}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Text\+::\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Text_a77a80f7227a96cf864a309c60e61ede6}\label{classHexeng_1_1Text_a77a80f7227a96cf864a309c60e61ede6} 
+\index{Hexeng::Text@{Hexeng::Text}!get\_char\_count@{get\_char\_count}}
+\index{get\_char\_count@{get\_char\_count}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{get\_char\_count()}{get\_char\_count()}}
+{\footnotesize\ttfamily size\+\_\+t Hexeng\+::\+Text\+::get\+\_\+char\+\_\+count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\begin{DoxyReturn}{Returns}
+The size of characters being rendered (spaces don\textquotesingle{}t count)
+\end{DoxyReturn}
+
+
+\Hypertarget{classHexeng_1_1Text_a0f14a4f092792ef10479eea01becc149}\label{classHexeng_1_1Text_a0f14a4f092792ef10479eea01becc149} 
+\index{Hexeng::Text@{Hexeng::Text}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \& Hexeng\+::\+Text\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\Hypertarget{classHexeng_1_1Text_ad5d7201255faa8f2288f0fad58905a60}\label{classHexeng_1_1Text_ad5d7201255faa8f2288f0fad58905a60} 
+\index{Hexeng::Text@{Hexeng::Text}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Text}{Text}} \& Hexeng\+::\+Text\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Text}{Text}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classHexeng_1_1Text_a05a17ba2b0e2e59d3d60c18077a29ef2}\label{classHexeng_1_1Text_a05a17ba2b0e2e59d3d60c18077a29ef2} 
+\index{Hexeng::Text@{Hexeng::Text}!reload\_language@{reload\_language}}
+\index{reload\_language@{reload\_language}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{reload\_language()}{reload\_language()}}
+{\footnotesize\ttfamily static void Hexeng\+::\+Text\+::reload\+\_\+language (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Refresh all the texts with the new language. 
+
+After switching languages, this function has to be called to refresh the texts. \Hypertarget{classHexeng_1_1Text_a84d3a5bc70dde22ec6154c41520525ed}\label{classHexeng_1_1Text_a84d3a5bc70dde22ec6154c41520525ed} 
+\index{Hexeng::Text@{Hexeng::Text}!set\_enabled\_chars@{set\_enabled\_chars}}
+\index{set\_enabled\_chars@{set\_enabled\_chars}!Hexeng::Text@{Hexeng::Text}}
+\doxysubsubsection{\texorpdfstring{set\_enabled\_chars()}{set\_enabled\_chars()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Text\+::set\+\_\+enabled\+\_\+chars (\begin{DoxyParamCaption}\item[{std\+::vector$<$ bool $>$}]{enabled\+\_\+chars }\end{DoxyParamCaption})}
+
+
+
+Set a list of character that needs to be rendered. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enabled\+\_\+chars} & A list of bools that indicates if a character have to be rendered. Its size has to be equal to \doxylink{classHexeng_1_1Text_a77a80f7227a96cf864a309c60e61ede6}{get\+\_\+char\+\_\+count()} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\mbox{\hyperlink{Text_8hpp}{Text.\+hpp}}\end{DoxyCompactItemize}

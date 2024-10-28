@@ -1,0 +1,76 @@
+\hypertarget{struct_pa_util_stream_representation}{}\doxysection{Pa\+Util\+Stream\+Representation Struct Reference}
+\label{struct_pa_util_stream_representation}\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+
+
+{\ttfamily \#include $<$pa\+\_\+stream.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned long \mbox{\hyperlink{struct_pa_util_stream_representation_a6f317d637618d5d4fee13c11c65b8c4a}{magic}}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} $\ast$ \mbox{\hyperlink{struct_pa_util_stream_representation_ab920ec2330973059213cf785f1132e28}{next\+Open\+Stream}}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}} $\ast$ \mbox{\hyperlink{struct_pa_util_stream_representation_a08e6fbd36674c306fd09b981e6f9a898}{stream\+Interface}}
+\item 
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$ \mbox{\hyperlink{struct_pa_util_stream_representation_a87c11103277fc073b4f2ab82e30d48d9}{stream\+Callback}}
+\item 
+\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} $\ast$ \mbox{\hyperlink{struct_pa_util_stream_representation_a9132c3be1600907f747c38d64f4a4a3e}{stream\+Finished\+Callback}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_util_stream_representation_a5d47c8cae02066d877bc7c670adb61ad}{user\+Data}}
+\item 
+\mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} \mbox{\hyperlink{struct_pa_util_stream_representation_a13c2b5318f73dde9a11fd9d874763d4a}{stream\+Info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Non host specific data for a stream. This data is used by pa\+\_\+front to forward to the appropriate functions in the stream\+Interface structure. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_util_stream_representation_a6f317d637618d5d4fee13c11c65b8c4a}\label{struct_pa_util_stream_representation_a6f317d637618d5d4fee13c11c65b8c4a}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!magic@{magic}}
+\index{magic@{magic}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+Stream\+Representation\+::magic}
+
+set to PA\+\_\+\+STREAM\+\_\+\+MAGIC \mbox{\Hypertarget{struct_pa_util_stream_representation_ab920ec2330973059213cf785f1132e28}\label{struct_pa_util_stream_representation_ab920ec2330973059213cf785f1132e28}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!nextOpenStream@{nextOpenStream}}
+\index{nextOpenStream@{nextOpenStream}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{nextOpenStream}{nextOpenStream}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}}$\ast$ Pa\+Util\+Stream\+Representation\+::next\+Open\+Stream}
+
+field used by multi-\/api code \mbox{\Hypertarget{struct_pa_util_stream_representation_a87c11103277fc073b4f2ab82e30d48d9}\label{struct_pa_util_stream_representation_a87c11103277fc073b4f2ab82e30d48d9}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!streamCallback@{streamCallback}}
+\index{streamCallback@{streamCallback}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{streamCallback}{streamCallback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}$\ast$ Pa\+Util\+Stream\+Representation\+::stream\+Callback}
+
+\mbox{\Hypertarget{struct_pa_util_stream_representation_a9132c3be1600907f747c38d64f4a4a3e}\label{struct_pa_util_stream_representation_a9132c3be1600907f747c38d64f4a4a3e}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!streamFinishedCallback@{streamFinishedCallback}}
+\index{streamFinishedCallback@{streamFinishedCallback}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{streamFinishedCallback}{streamFinishedCallback}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}}$\ast$ Pa\+Util\+Stream\+Representation\+::stream\+Finished\+Callback}
+
+\mbox{\Hypertarget{struct_pa_util_stream_representation_a13c2b5318f73dde9a11fd9d874763d4a}\label{struct_pa_util_stream_representation_a13c2b5318f73dde9a11fd9d874763d4a}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!streamInfo@{streamInfo}}
+\index{streamInfo@{streamInfo}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{streamInfo}{streamInfo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} Pa\+Util\+Stream\+Representation\+::stream\+Info}
+
+\mbox{\Hypertarget{struct_pa_util_stream_representation_a08e6fbd36674c306fd09b981e6f9a898}\label{struct_pa_util_stream_representation_a08e6fbd36674c306fd09b981e6f9a898}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!streamInterface@{streamInterface}}
+\index{streamInterface@{streamInterface}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{streamInterface}{streamInterface}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_interface}{Pa\+Util\+Stream\+Interface}}$\ast$ Pa\+Util\+Stream\+Representation\+::stream\+Interface}
+
+\mbox{\Hypertarget{struct_pa_util_stream_representation_a5d47c8cae02066d877bc7c670adb61ad}\label{struct_pa_util_stream_representation_a5d47c8cae02066d877bc7c670adb61ad}} 
+\index{PaUtilStreamRepresentation@{PaUtilStreamRepresentation}!userData@{userData}}
+\index{userData@{userData}!PaUtilStreamRepresentation@{PaUtilStreamRepresentation}}
+\doxysubsubsection{\texorpdfstring{userData}{userData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Util\+Stream\+Representation\+::user\+Data}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/common/\mbox{\hyperlink{pa__stream_8h}{pa\+\_\+stream.\+h}}\end{DoxyCompactItemize}

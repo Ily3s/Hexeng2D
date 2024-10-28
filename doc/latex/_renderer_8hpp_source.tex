@@ -1,0 +1,78 @@
+\hypertarget{_renderer_8hpp_source}{}\doxysection{Renderer.\+hpp}
+\label{_renderer_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Renderer.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Renderer.hpp}}
+\mbox{\hyperlink{_renderer_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef RENDERER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define RENDERER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}GLFW/glfw3.h"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_shader_8hpp}{Shader.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_index_buffer_8hpp}{IndexBuffer.hpp}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vertex_array_8hpp}{VertexArray.hpp}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_layer_8hpp}{Layer.hpp}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_uniform_8hpp}{Uniform.hpp}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{22     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}{init}}();}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{26     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}}();}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}{draw}}(\textcolor{keyword}{const} VertexArray\& va, \textcolor{keyword}{const} IndexBuffer\& ib, \textcolor{keyword}{const} Shader\& shader);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}{clear}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}{refresh\_uniforms}}();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac19da9701ce667192b9c1238673575e}{draw\_scene}}(\textcolor{keywordtype}{int} scene\_parameter);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}{draw\_current\_scene}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<Vec2<float>> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}{u\_transform}};}
+\DoxyCodeLine{39     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<float> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}{u\_rotation\_angle}};}
+\DoxyCodeLine{40     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<Vec2<int>> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\_window\_size}};}
+\DoxyCodeLine{41     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<float> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\_scale}};}
+\DoxyCodeLine{42     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<Color4> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{u\_color\_filter}};}
+\DoxyCodeLine{43     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} Uniform<Color4> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::vector<UniformInterface*> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\_list}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{ToBeInit}}}
+\DoxyCodeLine{48     \{}
+\DoxyCodeLine{49     \textcolor{keyword}{private}:}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keyword}{friend} \textcolor{keywordtype}{void} init();}
+\DoxyCodeLine{52         \textcolor{keyword}{static} \textcolor{keywordtype}{bool} start\_init;}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{public}:}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{ToBeInit}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> init\_object, \textcolor{keywordtype}{int} order = 0);}
+\DoxyCodeLine{57     \};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_delete}{ToBeDelete}}}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61     \textcolor{keyword}{private}:}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63         \textcolor{keyword}{friend} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}}();}
+\DoxyCodeLine{64         \textcolor{keyword}{static} std::unordered\_map<\textcolor{keywordtype}{void}*, std::function<void(\textcolor{keywordtype}{void})>> objects;}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66     \textcolor{keyword}{public}:}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_delete}{ToBeDelete}}(\textcolor{keywordtype}{void}* obj\_ptr, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> delete\_function);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70         \textcolor{keyword}{static} \textcolor{keywordtype}{void} remove(\textcolor{keywordtype}{void}* obj\_ptr);}
+\DoxyCodeLine{71     \};}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::vector<std::function<void(\textcolor{keywordtype}{void})>> \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a925910558363c233fd21534728fb7275}{pending\_actions}};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !RENDERER\_HPP}}
+
+\end{DoxyCode}

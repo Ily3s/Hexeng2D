@@ -1,0 +1,165 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector}{}\doxysection{Hexeng\+::Renderer\+::Texture\+Vector Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_texture_vector}\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+
+
+Allows to push multiple textures linearly to form a unique texture that is in fact a one dimentional array of textures.   
+
+
+
+
+{\ttfamily \#include $<$Texture.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Texture\+Vector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_hexeng_1_1_renderer_1_1_texture_vector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_afbe1711903523d5e751a785992938b1e}{Texture\+Vector}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_a192432f6c0c9975ca09bec76af576527}{Texture\+Vector}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_aeaabf6419f12c8ddd071f5f96884c699}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_ace7a8cbe7395243acb716f8a06aa178c}{Texture\+Vector}} (const std\+::string \&filepath, const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&settings=\{\})
+\begin{DoxyCompactList}\small\item\em Same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_aa66244f22a7d7ac2e954c6f8a5a73664}{Texture\+::\+Texture}}(const std\+::string\& filepath, const Tex\+Sett\+List\& settings = \{\}) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_a7963965926149a83aef1637629576d21}{Texture\+Vector}} (uint8\+\_\+t $\ast$\&\&tex\+\_\+buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ size, const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&settings=\{\})
+\begin{DoxyCompactList}\small\item\em Same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_aa66244f22a7d7ac2e954c6f8a5a73664}{Texture\+::\+Texture}}(uint8\+\_\+t$\ast$\&\& pixel\+\_\+buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2$<$int$>$}} size, const Tex\+Sett\+List\& settings = \{\}) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_a51ed86d1902000bf2db33d067e904fbd}{Texture\+Vector}} (const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&settings)
+\begin{DoxyCompactList}\small\item\em Only specify settings for the moment. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & A map of \{Tex\+Sett, (unsigned int) value\}. Take a look at Tex\+Sett for more infos.\\
+\hline
+\end{DoxyParams}
+\end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_ab0bde02828b1faa2be5e224b71f85ebc}{push}} (const uint8\+\_\+t $\ast$tex\+\_\+buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ size)
+\begin{DoxyCompactList}\small\item\em Push back a texture to the array using a pixel buffer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_ac8767544b13679c7a64b15f130513450}{push}} (const std\+::string \&filepath)
+\begin{DoxyCompactList}\small\item\em Push back a texture to the array using the filepath to an image. \end{DoxyCompactList}\item 
+const std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Tex\+Coord}} $>$ \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_af7d3cd885b57b13f884f1722baa09894}{get\+\_\+coordinates}} () const
+\begin{DoxyCompactList}\small\item\em The coordinates of the textures you have pushed to the vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Allows to push multiple textures linearly to form a unique texture that is in fact a one dimentional array of textures.  
+
+\begin{DoxyNote}{Note}
+If the different textures are not the same size, this may be unoptimized for memory. Also if you\textquotesingle{}re looking for a texture for batch rendering or similar, you should use \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}} instead. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_afbe1711903523d5e751a785992938b1e}\label{class_hexeng_1_1_renderer_1_1_texture_vector_afbe1711903523d5e751a785992938b1e}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!TextureVector@{TextureVector}}
+\index{TextureVector@{TextureVector}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{TextureVector()}{TextureVector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::\+Texture\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_a192432f6c0c9975ca09bec76af576527}\label{class_hexeng_1_1_renderer_1_1_texture_vector_a192432f6c0c9975ca09bec76af576527}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!TextureVector@{TextureVector}}
+\index{TextureVector@{TextureVector}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{TextureVector()}{TextureVector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::\+Texture\+Vector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_ace7a8cbe7395243acb716f8a06aa178c}\label{class_hexeng_1_1_renderer_1_1_texture_vector_ace7a8cbe7395243acb716f8a06aa178c}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!TextureVector@{TextureVector}}
+\index{TextureVector@{TextureVector}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{TextureVector()}{TextureVector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::\+Texture\+Vector (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&}]{settings = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_aa66244f22a7d7ac2e954c6f8a5a73664}{Texture\+::\+Texture}}(const std\+::string\& filepath, const Tex\+Sett\+List\& settings = \{\}) 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_a7963965926149a83aef1637629576d21}\label{class_hexeng_1_1_renderer_1_1_texture_vector_a7963965926149a83aef1637629576d21}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!TextureVector@{TextureVector}}
+\index{TextureVector@{TextureVector}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{TextureVector()}{TextureVector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::\+Texture\+Vector (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$\&\&}]{tex\+\_\+buffer,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{size,  }\item[{const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&}]{settings = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+
+
+Same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_aa66244f22a7d7ac2e954c6f8a5a73664}{Texture\+::\+Texture}}(uint8\+\_\+t$\ast$\&\& pixel\+\_\+buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2$<$int$>$}} size, const Tex\+Sett\+List\& settings = \{\}) 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_a51ed86d1902000bf2db33d067e904fbd}\label{class_hexeng_1_1_renderer_1_1_texture_vector_a51ed86d1902000bf2db33d067e904fbd}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!TextureVector@{TextureVector}}
+\index{TextureVector@{TextureVector}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{TextureVector()}{TextureVector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::\+Texture\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} \&}]{settings }\end{DoxyParamCaption})}
+
+
+
+Only specify settings for the moment. 
+\begin{DoxyParams}{Parameters}
+{\em settings} & A map of \{Tex\+Sett, (unsigned int) value\}. Take a look at Tex\+Sett for more infos.\\
+\hline
+\end{DoxyParams}
+
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_af7d3cd885b57b13f884f1722baa09894}\label{class_hexeng_1_1_renderer_1_1_texture_vector_af7d3cd885b57b13f884f1722baa09894}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!get\_coordinates@{get\_coordinates}}
+\index{get\_coordinates@{get\_coordinates}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{get\_coordinates()}{get\_coordinates()}}
+{\footnotesize\ttfamily const std\+::vector$<$ \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Tex\+Coord}} $>$ \& Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::get\+\_\+coordinates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+The coordinates of the textures you have pushed to the vector. 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_aeaabf6419f12c8ddd071f5f96884c699}\label{class_hexeng_1_1_renderer_1_1_texture_vector_aeaabf6419f12c8ddd071f5f96884c699}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \& Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_ac8767544b13679c7a64b15f130513450}\label{class_hexeng_1_1_renderer_1_1_texture_vector_ac8767544b13679c7a64b15f130513450}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!push@{push}}
+\index{push@{push}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::push (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})}
+
+
+
+Push back a texture to the array using the filepath to an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The filepath to the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The color format, sized format, bytes per pixel and channels number of the image file have to respect what has been specified in Tex\+Sett\+List during construction of this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} or what\textquotesingle{}s by default (GL\+\_\+\+RGBA, GL\+\_\+\+RGBA8, 4, 4). 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_texture_vector_ab0bde02828b1faa2be5e224b71f85ebc}\label{class_hexeng_1_1_renderer_1_1_texture_vector_ab0bde02828b1faa2be5e224b71f85ebc}} 
+\index{Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}!push@{push}}
+\index{push@{push}!Hexeng::Renderer::TextureVector@{Hexeng::Renderer::TextureVector}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Texture\+Vector\+::push (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{tex\+\_\+buffer,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{size }\end{DoxyParamCaption})}
+
+
+
+Push back a texture to the array using a pixel buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tex\+\_\+buffer} & The pixel buffer. Note that, unlike with constructors, you still have responsability of the buffer after the call of this function. \\
+\hline
+{\em size} & The size of the the dimentions (lenght, width) of the texture buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+The color format, sized format, bytes per pixel and channels number of the texture buffer have to respect what has been specified in Tex\+Sett\+List during construction of this \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}} or what\textquotesingle{}s by default (GL\+\_\+\+RGBA, GL\+\_\+\+RGBA8, 4, 4). 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_texture_8hpp}{Texture.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_texture_8cpp}{Texture.\+cpp}}\end{DoxyCompactItemize}

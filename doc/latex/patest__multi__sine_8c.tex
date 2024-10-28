@@ -1,0 +1,91 @@
+\hypertarget{patest__multi__sine_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+multi\+\_\+sine.c File Reference}
+\label{patest__multi__sine_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_multi\_sine.c@{Hexeng2D/dependencies/portaudio/test/patest\_multi\_sine.c}}
+
+
+Play a different sine wave on each channel.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__multi__sine_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__multi__sine_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(128)
+\item 
+\#define \mbox{\hyperlink{patest__multi__sine_8c_a1854c5451a684e97c2caf32f4eed6690}{FREQ\+\_\+\+INCR}}~(300.\+0 / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\item 
+\#define \mbox{\hyperlink{patest__multi__sine_8c_ac69ee46f4a51ed14f0d68628c2dec71d}{MAX\+\_\+\+CHANNELS}}~(64)
+\item 
+\#define \mbox{\hyperlink{patest__multi__sine_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__multi__sine_8c_a4e1a7dd05b97e23b3dd1aed354405b63}{test}} (short interleaved)
+\item 
+int \mbox{\hyperlink{patest__multi__sine_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Play a different sine wave on each channel. 
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__multi__sine_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__multi__sine_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(128)}
+
+\mbox{\Hypertarget{patest__multi__sine_8c_a1854c5451a684e97c2caf32f4eed6690}\label{patest__multi__sine_8c_a1854c5451a684e97c2caf32f4eed6690}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!FREQ\_INCR@{FREQ\_INCR}}
+\index{FREQ\_INCR@{FREQ\_INCR}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{FREQ\_INCR}{FREQ\_INCR}}
+{\footnotesize\ttfamily \#define FREQ\+\_\+\+INCR~(300.\+0 / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{patest__multi__sine_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__multi__sine_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__multi__sine_8c_ac69ee46f4a51ed14f0d68628c2dec71d}\label{patest__multi__sine_8c_ac69ee46f4a51ed14f0d68628c2dec71d}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!MAX\_CHANNELS@{MAX\_CHANNELS}}
+\index{MAX\_CHANNELS@{MAX\_CHANNELS}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHANNELS}{MAX\_CHANNELS}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHANNELS~(64)}
+
+\mbox{\Hypertarget{patest__multi__sine_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__multi__sine_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__multi__sine_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__multi__sine_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!main@{main}}
+\index{main@{main}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__multi__sine_8c_a4e1a7dd05b97e23b3dd1aed354405b63}\label{patest__multi__sine_8c_a4e1a7dd05b97e23b3dd1aed354405b63}} 
+\index{patest\_multi\_sine.c@{patest\_multi\_sine.c}!test@{test}}
+\index{test@{test}!patest\_multi\_sine.c@{patest\_multi\_sine.c}}
+\doxysubsubsection{\texorpdfstring{test()}{test()}}
+{\footnotesize\ttfamily int test (\begin{DoxyParamCaption}\item[{short}]{interleaved }\end{DoxyParamCaption})}
+

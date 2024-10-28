@@ -1,0 +1,50 @@
+\hypertarget{_scene_8hpp_source}{}\doxysection{Scene.\+hpp}
+\label{_scene_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Scene.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Scene.hpp}}
+\mbox{\hyperlink{_scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SCENE\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SCENE\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_macros_8hpp}{Macros.hpp}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_layer_8hpp}{Renderer/Layer.hpp}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_event_manager_8hpp}{EventManager/EventManager.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_physics_8hpp}{Physics/Physics.hpp}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keyword}{enum class} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} SceneComponent}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14         \mbox{\hyperlink{_scene_8hpp_aae2cf4f2bb9064d02ab52e32f7220ebe}{LAYERS}},}
+\DoxyCodeLine{15         \mbox{\hyperlink{_scene_8hpp_a0383e5bf22653a832beeabda82c1eeb3}{EVENTS}},}
+\DoxyCodeLine{16         \mbox{\hyperlink{_scene_8hpp_a8fdf3fc65f3b668233c61c598787f545}{HITBOXES}},}
+\DoxyCodeLine{17         \mbox{\hyperlink{_scene_8hpp_a900ca122d6505e3a6c0afe6389b8b0b4}{PHYS\_VECS}},}
+\DoxyCodeLine{18         PHYS\_ENTITIES}
+\DoxyCodeLine{19     \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_scene}{Scene}}}
+\DoxyCodeLine{22     \{}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24     \textcolor{keyword}{public}:}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26         std::vector<Renderer::Layer*> \mbox{\hyperlink{class_hexeng_1_1_scene_a8c069265fe950f25536d5205d3ebd443}{layers}};}
+\DoxyCodeLine{27         std::vector<EventManager::Event*> \mbox{\hyperlink{class_hexeng_1_1_scene_a17f98e47bfe59908c0046a39e2ad4d16}{events}};}
+\DoxyCodeLine{28         std::vector<Physics::PhysicsVecs*> \mbox{\hyperlink{class_hexeng_1_1_scene_a2c1f4205024fc28b89c51b11d28d0ef5}{physics\_vecs}};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         \mbox{\hyperlink{class_hexeng_1_1_scene}{Scene}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keyword}{const} std::unordered\_map<SceneComponent, std::vector<void*>>\& components = \{\});}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{33         \textcolor{keywordtype}{void} unload();}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keyword}{static} \textcolor{keywordtype}{void} switch\_scene(\textcolor{keywordtype}{int} new\_scene\_id);}
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} std::unordered\_map<int, Scene*> \mbox{\hyperlink{namespace_hexeng_a376fc6aef639f23d64d3f43458ad0e9c}{scenes}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41     \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keyword}{extern} \textcolor{keywordtype}{int} \mbox{\hyperlink{namespace_hexeng_a4b11bd221d6782d039d79b7e4612b02f}{scene\_id}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !SCENE\_HPP}}
+
+\end{DoxyCode}

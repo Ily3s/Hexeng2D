@@ -1,0 +1,87 @@
+\hypertarget{test__audio__analyzer_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/test\+\_\+audio\+\_\+analyzer.c File Reference}
+\label{test__audio__analyzer_8c}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/test\_audio\_analyzer.c@{Hexeng2D/dependencies/portaudio/qa/loopback/src/test\_audio\_analyzer.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}qa\+\_\+tools.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}audio\+\_\+analyzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}test\+\_\+audio\+\_\+analyzer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}write\+\_\+wav.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}biquad\+\_\+filter.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_af19e095bf3ce66f4ee6568cfaf9941a4}{FRAMES\+\_\+\+PER\+\_\+\+BLOCK}}~(64)
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_a2935ac69b4ecbf5c6f2fd33fcc3612d4}{PRINT\+\_\+\+REPORTS}}~0
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_aa35c426d1b1d86e9349e256f1819887d}{TEST\+\_\+\+SAVED\+\_\+\+WAVE}}~(0)
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_adb4feafe5da19da9570c1145351e1f89}{NUM\+\_\+\+TONES}}~(5)
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}~512
+\item 
+\#define \mbox{\hyperlink{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}{BUFFER\+\_\+\+SIZE}}~512
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{test__audio__analyzer_8c_ad3cf3b24e555bbae9e2daf607d458ca4}{Pa\+Qa\+\_\+\+Fill\+With\+Sine}} (\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$recording, double sample\+Rate, double freq, double amp)
+\item 
+int \mbox{\hyperlink{test__audio__analyzer_8c_a5e542ff033899b8794caf83e6d15aa4c}{Pa\+Qa\+\_\+\+Test\+Analyzer}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}\label{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZE~512}
+
+\mbox{\Hypertarget{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}\label{test__audio__analyzer_8c_a6b20d41d6252e9871430c242cb1a56e7}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!BUFFER\_SIZE@{BUFFER\_SIZE}}
+\index{BUFFER\_SIZE@{BUFFER\_SIZE}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{BUFFER\_SIZE}{BUFFER\_SIZE}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define BUFFER\+\_\+\+SIZE~512}
+
+\mbox{\Hypertarget{test__audio__analyzer_8c_af19e095bf3ce66f4ee6568cfaf9941a4}\label{test__audio__analyzer_8c_af19e095bf3ce66f4ee6568cfaf9941a4}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!FRAMES\_PER\_BLOCK@{FRAMES\_PER\_BLOCK}}
+\index{FRAMES\_PER\_BLOCK@{FRAMES\_PER\_BLOCK}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BLOCK}{FRAMES\_PER\_BLOCK}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BLOCK~(64)}
+
+\mbox{\Hypertarget{test__audio__analyzer_8c_adb4feafe5da19da9570c1145351e1f89}\label{test__audio__analyzer_8c_adb4feafe5da19da9570c1145351e1f89}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!NUM\_TONES@{NUM\_TONES}}
+\index{NUM\_TONES@{NUM\_TONES}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_TONES}{NUM\_TONES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+TONES~(5)}
+
+\mbox{\Hypertarget{test__audio__analyzer_8c_a2935ac69b4ecbf5c6f2fd33fcc3612d4}\label{test__audio__analyzer_8c_a2935ac69b4ecbf5c6f2fd33fcc3612d4}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!PRINT\_REPORTS@{PRINT\_REPORTS}}
+\index{PRINT\_REPORTS@{PRINT\_REPORTS}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PRINT\_REPORTS}{PRINT\_REPORTS}}
+{\footnotesize\ttfamily \#define PRINT\+\_\+\+REPORTS~0}
+
+\mbox{\Hypertarget{test__audio__analyzer_8c_aa35c426d1b1d86e9349e256f1819887d}\label{test__audio__analyzer_8c_aa35c426d1b1d86e9349e256f1819887d}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!TEST\_SAVED\_WAVE@{TEST\_SAVED\_WAVE}}
+\index{TEST\_SAVED\_WAVE@{TEST\_SAVED\_WAVE}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{TEST\_SAVED\_WAVE}{TEST\_SAVED\_WAVE}}
+{\footnotesize\ttfamily \#define TEST\+\_\+\+SAVED\+\_\+\+WAVE~(0)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__audio__analyzer_8c_ad3cf3b24e555bbae9e2daf607d458ca4}\label{test__audio__analyzer_8c_ad3cf3b24e555bbae9e2daf607d458ca4}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!PaQa\_FillWithSine@{PaQa\_FillWithSine}}
+\index{PaQa\_FillWithSine@{PaQa\_FillWithSine}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_FillWithSine()}{PaQa\_FillWithSine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Qa\+\_\+\+Fill\+With\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audio__analyzer_8h_a214b606326ed70659e7e89e33db73203}{Pa\+Qa\+Recording}} $\ast$}]{recording,  }\item[{double}]{sample\+Rate,  }\item[{double}]{freq,  }\item[{double}]{amp }\end{DoxyParamCaption})}
+
+Easy way to generate a sine tone recording. \mbox{\Hypertarget{test__audio__analyzer_8c_a5e542ff033899b8794caf83e6d15aa4c}\label{test__audio__analyzer_8c_a5e542ff033899b8794caf83e6d15aa4c}} 
+\index{test\_audio\_analyzer.c@{test\_audio\_analyzer.c}!PaQa\_TestAnalyzer@{PaQa\_TestAnalyzer}}
+\index{PaQa\_TestAnalyzer@{PaQa\_TestAnalyzer}!test\_audio\_analyzer.c@{test\_audio\_analyzer.c}}
+\doxysubsubsection{\texorpdfstring{PaQa\_TestAnalyzer()}{PaQa\_TestAnalyzer()}}
+{\footnotesize\ttfamily int Pa\+Qa\+\_\+\+Test\+Analyzer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Test the audio analyzer by itself without any Port\+Audio calls. 

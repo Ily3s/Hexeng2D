@@ -1,0 +1,39 @@
+\doxysection{Default\+Shaders.\+hpp}
+\hypertarget{DefaultShaders_8hpp_source}{}\label{DefaultShaders_8hpp_source}\index{Hexeng2D/src/Renderer/DefaultShaders.hpp@{Hexeng2D/src/Renderer/DefaultShaders.hpp}}
+\mbox{\hyperlink{DefaultShaders_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DEFAULT\_SHADERS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DEFAULT\_SHADERS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Macros.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Shader_8hpp}{Shader.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Uniform_8hpp}{Uniform.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}../Color.hpp"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{class\ }BatchingShader;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ Shader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}};}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ Shader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}};}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ Shader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}};}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ Shader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}};}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ Shader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}};}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ BatchingShader\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aaf1506ab4234047bcbe2e8db671644c2}{batching\_shader\_250}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_addaa2eb3dff3ca142f000931e2047ac0}{basic\_vs}};}
+\DoxyCodeLine{00023\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_aeed2835860b3a69ea92a32070d1b6f1c}{poly\_vs}};}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a5ff203c070f041f197fbb5a329af1565}{poly\_fs}};}
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a1cc5bca216d7f14b2cab6a8ad4a63116}{batching\_vs}};}
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a23e5baeea211abf397e7fda70dc93a5e}{batching\_fs}};}
+\DoxyCodeLine{00027\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a9ec0b290caf1e11ab9029ef3814eb0f4}{font\_fs}};}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a2912a3705d43044f704e16dafd1706cf}{line\_fs}};}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_afc9a16fac4702d3efacd9978cf63a945}{basic\_fs}};}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a6fe903c80f5b0a04a36c95c1cfd08137}{tex\_vector\_vs}};}
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

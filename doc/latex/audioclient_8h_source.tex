@@ -1,0 +1,1183 @@
+\hypertarget{audioclient_8h_source}{}\doxysection{audioclient.\+h}
+\label{audioclient_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/audioclient.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/audioclient.h}}
+\mbox{\hyperlink{audioclient_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{/* this ALWAYS GENERATED file contains the definitions for the interfaces */}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6  \textcolor{comment}{/* File created by MIDL compiler version 7.00.0499 */}}
+\DoxyCodeLine{7 \textcolor{comment}{/* Compiler settings for audioclient.idl:}}
+\DoxyCodeLine{8 \textcolor{comment}{    Oicf, W1, Zp8, env=Win32 (32b run)}}
+\DoxyCodeLine{9 \textcolor{comment}{    protocol : dce , ms\_ext, c\_ext, robust}}
+\DoxyCodeLine{10 \textcolor{comment}{    error checks: allocation ref bounds\_check enum stub\_data }}
+\DoxyCodeLine{11 \textcolor{comment}{    VC \_\_declspec() decoration level: }}
+\DoxyCodeLine{12 \textcolor{comment}{         \_\_declspec(uuid()), \_\_declspec(selectany), \_\_declspec(novtable)}}
+\DoxyCodeLine{13 \textcolor{comment}{         DECLSPEC\_UUID(), MIDL\_INTERFACE()}}
+\DoxyCodeLine{14 \textcolor{comment}{*/}}
+\DoxyCodeLine{15 \textcolor{comment}{//@@MIDL\_FILE\_HEADING(  )}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma warning( disable: 4049 )  }\textcolor{comment}{/* more than 64k source lines */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{/* verify that the <rpcndr.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCNDR\_H\_VERSION\_\_ 475}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{comment}{/* verify that the <rpcsal.h> version is high enough to compile this file*/}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#ifndef \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define \_\_REQUIRED\_RPCSAL\_H\_VERSION\_\_ 100}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include "{}rpc.h"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include "{}rpcndr.h"{}}}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#ifndef \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#error this stub requires an updated version of <rpcndr.h>}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// \_\_RPCNDR\_H\_VERSION\_\_}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#ifndef COM\_NO\_WINDOWS\_H}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#include "{}windows.h"{}}}
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}ole2.h"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/*COM\_NO\_WINDOWS\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef \_\_audioclient\_h\_\_}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define \_\_audioclient\_h\_\_}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#if defined(\_MSC\_VER) \&\& (\_MSC\_VER >= 1020)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{/* Forward Declarations */} }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#ifndef \_\_IAudioClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define \_\_IAudioClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}};}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioClient\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#ifndef \_\_IAudioRenderClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define \_\_IAudioRenderClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{59 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}};}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioRenderClient\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#ifndef \_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define \_\_IAudioCaptureClient\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{65 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}};}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioCaptureClient\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#ifndef \_\_IAudioClock\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define \_\_IAudioClock\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{71 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}};}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioClock\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#ifndef \_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define \_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{77 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}};}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_ISimpleAudioVolume\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#ifndef \_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define \_\_IAudioStreamVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{83 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}};}
+\DoxyCodeLine{84 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioStreamVolume\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#ifndef \_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define \_\_IChannelAudioVolume\_FWD\_DEFINED\_\_}}
+\DoxyCodeLine{89 \textcolor{keyword}{typedef} \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}};}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IChannelAudioVolume\_FWD\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{/* header files for imported files */}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#include "{}wtypes.h"{}}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#include "{}unknwn.h"{}}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_audio_session_types_8h}{AudioSessionTypes.h}}"{}}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{99 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}\{}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{/* interface \_\_MIDL\_itf\_audioclient\_0000\_0000 */}}
+\DoxyCodeLine{104 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{107 \textcolor{keyword}{typedef} \textcolor{comment}{/* [hidden][restricted] */} \textcolor{keyword}{struct }WAVEFORMATEX}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109     WORD wFormatTag;}
+\DoxyCodeLine{110     WORD nChannels;}
+\DoxyCodeLine{111     DWORD nSamplesPerSec;}
+\DoxyCodeLine{112     DWORD nAvgBytesPerSec;}
+\DoxyCodeLine{113     WORD nBlockAlign;}
+\DoxyCodeLine{114     WORD wBitsPerSample;}
+\DoxyCodeLine{115     WORD cbSize;}
+\DoxyCodeLine{116     \}   WAVEFORMATEX;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#include <mmreg.h>}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{122 \textcolor{keyword}{typedef} \textcolor{comment}{/* [hidden][restricted] */} LONGLONG \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}};}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define \_IKsControl\_}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ks_8h}{ks.h}}>}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{ksmedia_8h}{ksmedia.h}}>}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{enum} \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589a}{\_AUDCLNT\_BUFFERFLAGS}}}
+\DoxyCodeLine{131     \{   \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aad6ffc05249d99301124a1a1235dbbfdb}{AUDCLNT\_BUFFERFLAGS\_DATA\_DISCONTINUITY}}    = 0x1,}
+\DoxyCodeLine{132     \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa620b66922033e10a4ff864ff6a8975a0}{AUDCLNT\_BUFFERFLAGS\_SILENT}}    = 0x2,}
+\DoxyCodeLine{133     \mbox{\hyperlink{audioclient_8h_aaada7b4873c5ea8e7cde061c348b589aa9c787c6f99db793566d95554b9e92ac8}{AUDCLNT\_BUFFERFLAGS\_TIMESTAMP\_ERROR}}  = 0x4}
+\DoxyCodeLine{134     \} ;}
+\DoxyCodeLine{135 }
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_ac0826bfd90eb31d2b541f6b20d548754}{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{138 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_a669ff1b614ab14c84fa5c9cf34ef53a9}{\_\_MIDL\_itf\_audioclient\_0000\_0000\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#ifndef \_\_IAudioClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define \_\_IAudioClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{comment}{/* interface IAudioClient */}}
+\DoxyCodeLine{144 \textcolor{comment}{/* [local][unique][uuid][object] */} }
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a1d181241a66c99b1d7ca0a950e2da904}{IID\_IAudioClient}};}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{150     }
+\DoxyCodeLine{151     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}1CB9AD4C-\/DBFA-\/4c32-\/B178-\/C2F568A703B2"{}})}
+\DoxyCodeLine{152     \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} : public IUnknown}
+\DoxyCodeLine{153     \{}
+\DoxyCodeLine{154     \textcolor{keyword}{public}:}
+\DoxyCodeLine{155         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE Initialize( }
+\DoxyCodeLine{156             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{157             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  AUDCLNT\_SHAREMODE ShareMode,}
+\DoxyCodeLine{158             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{159             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD StreamFlags,}
+\DoxyCodeLine{160             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{161             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} hnsBufferDuration,}
+\DoxyCodeLine{162             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{163             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} hnsPeriodicity,}
+\DoxyCodeLine{164             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{165             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} WAVEFORMATEX *pFormat,}
+\DoxyCodeLine{166             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{167             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} AudioSessionGuid) = 0;}
+\DoxyCodeLine{168         }
+\DoxyCodeLine{169         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetBufferSize( }
+\DoxyCodeLine{170             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{171             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *pNumBufferFrames) = 0;}
+\DoxyCodeLine{172         }
+\DoxyCodeLine{173         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetStreamLatency( }
+\DoxyCodeLine{174             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{175             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *phnsLatency) = 0;}
+\DoxyCodeLine{176         }
+\DoxyCodeLine{177         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetCurrentPadding( }
+\DoxyCodeLine{178             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{179             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *pNumPaddingFrames) = 0;}
+\DoxyCodeLine{180         }
+\DoxyCodeLine{181         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE IsFormatSupported( }
+\DoxyCodeLine{182             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{183             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  AUDCLNT\_SHAREMODE ShareMode,}
+\DoxyCodeLine{184             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{185             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} WAVEFORMATEX *pFormat,}
+\DoxyCodeLine{186             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{187             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  WAVEFORMATEX **ppClosestMatch) = 0;}
+\DoxyCodeLine{188         }
+\DoxyCodeLine{189         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetMixFormat( }
+\DoxyCodeLine{190             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{191             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  WAVEFORMATEX **ppDeviceFormat) = 0;}
+\DoxyCodeLine{192         }
+\DoxyCodeLine{193         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetDevicePeriod( }
+\DoxyCodeLine{194             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{195             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *phnsDefaultDevicePeriod,}
+\DoxyCodeLine{196             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{197             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *phnsMinimumDevicePeriod) = 0;}
+\DoxyCodeLine{198         }
+\DoxyCodeLine{199         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE Start( \textcolor{keywordtype}{void}) = 0;}
+\DoxyCodeLine{200         }
+\DoxyCodeLine{201         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE Stop( \textcolor{keywordtype}{void}) = 0;}
+\DoxyCodeLine{202         }
+\DoxyCodeLine{203         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE Reset( \textcolor{keywordtype}{void}) = 0;}
+\DoxyCodeLine{204         }
+\DoxyCodeLine{205         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE SetEventHandle( }
+\DoxyCodeLine{206             \textcolor{comment}{/* [in] */} HANDLE eventHandle) = 0;}
+\DoxyCodeLine{207         }
+\DoxyCodeLine{208         \textcolor{keyword}{virtual} HRESULT STDMETHODCALLTYPE GetService( }
+\DoxyCodeLine{209             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{210             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID riid,}
+\DoxyCodeLine{211             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{212             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **ppv) = 0;}
+\DoxyCodeLine{213         }
+\DoxyCodeLine{214     \};}
+\DoxyCodeLine{215     }
+\DoxyCodeLine{216 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{217 }
+\DoxyCodeLine{218     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudioClientVtbl}}}
+\DoxyCodeLine{219     \{}
+\DoxyCodeLine{220         BEGIN\_INTERFACE}
+\DoxyCodeLine{221         }
+\DoxyCodeLine{222         \mbox{\hyperlink{struct_i_audio_client_vtbl_abc3f79ac770baec44ef984e2d467203f}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{223             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{224             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_client_vtbl_ab975afebe7ac3eff154b2bbde0490cf6}{riid}},}
+\DoxyCodeLine{225             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{226             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_client_vtbl_af28cfc2beda55dd9f19fe7c6f27dc950}{ppvObject}});}
+\DoxyCodeLine{227         }
+\DoxyCodeLine{228         \mbox{\hyperlink{struct_i_audio_client_vtbl_afd684ccffd33964cb213d2da7ffb12f7}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{229             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This);}
+\DoxyCodeLine{230         }
+\DoxyCodeLine{231         \mbox{\hyperlink{struct_i_audio_client_vtbl_a8a50860f5307389146317b3fa7a5afe5}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{232             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This);}
+\DoxyCodeLine{233         }
+\DoxyCodeLine{234         \mbox{\hyperlink{struct_i_audio_client_vtbl_ac65551a3df9f91927da6ec3953c2f575}{HRESULT}} ( STDMETHODCALLTYPE *Initialize )( }
+\DoxyCodeLine{235             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{236             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{237             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  AUDCLNT\_SHAREMODE \mbox{\hyperlink{struct_i_audio_client_vtbl_aeb3c2e00a923b0d0f5abbfe34e069c1e}{ShareMode}},}
+\DoxyCodeLine{238             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{239             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_audio_client_vtbl_a4c09038199eeb68300b0a31bdcac8913}{StreamFlags}},}
+\DoxyCodeLine{240             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{241             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} \mbox{\hyperlink{struct_i_audio_client_vtbl_a890929b32f177c96805c53e446fc075a}{hnsBufferDuration}},}
+\DoxyCodeLine{242             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{243             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} \mbox{\hyperlink{struct_i_audio_client_vtbl_a2bd94de18e52e2f483ff1588ae1395fb}{hnsPeriodicity}},}
+\DoxyCodeLine{244             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{245             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} WAVEFORMATEX *\mbox{\hyperlink{struct_i_audio_client_vtbl_aadff9c4a15c70dcb4017ac96fe7d4618}{pFormat}},}
+\DoxyCodeLine{246             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{247             \mbox{\hyperlink{sal_8h_a9c2d0f2980e51b51bb405ee2a31a3353}{\_\_in\_opt}}  \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_audio_client_vtbl_a44b9370bb1ae744a00221c894dcd37e7}{AudioSessionGuid}});}
+\DoxyCodeLine{248         }
+\DoxyCodeLine{249         \mbox{\hyperlink{struct_i_audio_client_vtbl_a1bd4f582f7afbc917ca06fe9e029f78c}{HRESULT}} ( STDMETHODCALLTYPE *GetBufferSize )( }
+\DoxyCodeLine{250             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{251             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{252             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_client_vtbl_af4381df5059bc5e2c153626ae2ecde7f}{pNumBufferFrames}});}
+\DoxyCodeLine{253         }
+\DoxyCodeLine{254         \mbox{\hyperlink{struct_i_audio_client_vtbl_ac800722606c0ca36274aec8d70740e8a}{HRESULT}} ( STDMETHODCALLTYPE *GetStreamLatency )( }
+\DoxyCodeLine{255             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{256             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{257             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *\mbox{\hyperlink{struct_i_audio_client_vtbl_a9769a8d9ebf61414d53befca3259fddc}{phnsLatency}});}
+\DoxyCodeLine{258         }
+\DoxyCodeLine{259         \mbox{\hyperlink{struct_i_audio_client_vtbl_a0fdf15db0d74b0e4052f2410f59a59ce}{HRESULT}} ( STDMETHODCALLTYPE *GetCurrentPadding )( }
+\DoxyCodeLine{260             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{261             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{262             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_client_vtbl_a917f56ed290e4ee86ad5dd4ec68967b7}{pNumPaddingFrames}});}
+\DoxyCodeLine{263         }
+\DoxyCodeLine{264         \mbox{\hyperlink{struct_i_audio_client_vtbl_a64bb7eb33a2fa4dbf465bf67ac32dfcc}{HRESULT}} ( STDMETHODCALLTYPE *IsFormatSupported )( }
+\DoxyCodeLine{265             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{266             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{267             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  AUDCLNT\_SHAREMODE \mbox{\hyperlink{struct_i_audio_client_vtbl_aeb3c2e00a923b0d0f5abbfe34e069c1e}{ShareMode}},}
+\DoxyCodeLine{268             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{269             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} WAVEFORMATEX *\mbox{\hyperlink{struct_i_audio_client_vtbl_aa89752d29bff554c4b6a580362f5d6e7}{pFormat}},}
+\DoxyCodeLine{270             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{271             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  WAVEFORMATEX **\mbox{\hyperlink{struct_i_audio_client_vtbl_a690b0f60f22b91482b2cec7c25163463}{ppClosestMatch}});}
+\DoxyCodeLine{272         }
+\DoxyCodeLine{273         \mbox{\hyperlink{struct_i_audio_client_vtbl_a3fd8ab344ce4ca8307297b9c62520811}{HRESULT}} ( STDMETHODCALLTYPE *GetMixFormat )( }
+\DoxyCodeLine{274             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{275             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{276             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  WAVEFORMATEX **\mbox{\hyperlink{struct_i_audio_client_vtbl_a9714d3e11214f4e2bbcf714a2b7fb797}{ppDeviceFormat}});}
+\DoxyCodeLine{277         }
+\DoxyCodeLine{278         \mbox{\hyperlink{struct_i_audio_client_vtbl_abda2c4fc66e4035c3e859d633f64539b}{HRESULT}} ( STDMETHODCALLTYPE *GetDevicePeriod )( }
+\DoxyCodeLine{279             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{280             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{281             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *\mbox{\hyperlink{struct_i_audio_client_vtbl_a1136677819c67c676248a7a084fd20f9}{phnsDefaultDevicePeriod}},}
+\DoxyCodeLine{282             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{283             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\_TIME}} *\mbox{\hyperlink{struct_i_audio_client_vtbl_a772bb263c9000d5178d4f5157309ff7d}{phnsMinimumDevicePeriod}});}
+\DoxyCodeLine{284         }
+\DoxyCodeLine{285         \mbox{\hyperlink{struct_i_audio_client_vtbl_ac59221bf71a774f8a4e4b57df344ddc8}{HRESULT}} ( STDMETHODCALLTYPE *Start )( }
+\DoxyCodeLine{286             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This);}
+\DoxyCodeLine{287         }
+\DoxyCodeLine{288         \mbox{\hyperlink{struct_i_audio_client_vtbl_a79f16a14c23ed5679a8aee2b38340f90}{HRESULT}} ( STDMETHODCALLTYPE *Stop )( }
+\DoxyCodeLine{289             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This);}
+\DoxyCodeLine{290         }
+\DoxyCodeLine{291         \mbox{\hyperlink{struct_i_audio_client_vtbl_a6294637bd9317508b6efff3945036cc9}{HRESULT}} ( STDMETHODCALLTYPE *Reset )( }
+\DoxyCodeLine{292             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This);}
+\DoxyCodeLine{293         }
+\DoxyCodeLine{294         \mbox{\hyperlink{struct_i_audio_client_vtbl_a1fa551b3e0f10a69287c85e0550fac7f}{HRESULT}} ( STDMETHODCALLTYPE *SetEventHandle )( }
+\DoxyCodeLine{295             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{296             \textcolor{comment}{/* [in] */} HANDLE \mbox{\hyperlink{struct_i_audio_client_vtbl_a644805297f63122456dbe678b342bfb8}{eventHandle}});}
+\DoxyCodeLine{297         }
+\DoxyCodeLine{298         \mbox{\hyperlink{struct_i_audio_client_vtbl_ac3bb578fd7ba2949d8fea91afe446eba}{HRESULT}} ( STDMETHODCALLTYPE *GetService )( }
+\DoxyCodeLine{299             \mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}} * This,}
+\DoxyCodeLine{300             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{301             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  REFIID \mbox{\hyperlink{struct_i_audio_client_vtbl_a077ae9988553560212184f2b85aca501}{riid}},}
+\DoxyCodeLine{302             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{303             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_client_vtbl_a2a67b61de9eb0245ec3b9db4566581db}{ppv}});}
+\DoxyCodeLine{304         }
+\DoxyCodeLine{305         END\_INTERFACE}
+\DoxyCodeLine{306     \} \mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudioClientVtbl}};}
+\DoxyCodeLine{307 }
+\DoxyCodeLine{308     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudioClient}}}
+\DoxyCodeLine{309     \{}
+\DoxyCodeLine{310         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_client_vtbl}{IAudioClientVtbl}} *lpVtbl;}
+\DoxyCodeLine{311     \};}
+\DoxyCodeLine{312 }
+\DoxyCodeLine{313     }
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{316 }
+\DoxyCodeLine{317 }
+\DoxyCodeLine{318 \textcolor{preprocessor}{\#define IAudioClient\_QueryInterface(This,riid,ppvObject)    \(\backslash\)}}
+\DoxyCodeLine{319 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{320 }
+\DoxyCodeLine{321 \textcolor{preprocessor}{\#define IAudioClient\_AddRef(This)   \(\backslash\)}}
+\DoxyCodeLine{322 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{323 }
+\DoxyCodeLine{324 \textcolor{preprocessor}{\#define IAudioClient\_Release(This)  \(\backslash\)}}
+\DoxyCodeLine{325 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{326 }
+\DoxyCodeLine{327 }
+\DoxyCodeLine{328 \textcolor{preprocessor}{\#define IAudioClient\_Initialize(This,ShareMode,StreamFlags,hnsBufferDuration,hnsPeriodicity,pFormat,AudioSessionGuid)   \(\backslash\)}}
+\DoxyCodeLine{329 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Initialize(This,ShareMode,StreamFlags,hnsBufferDuration,hnsPeriodicity,pFormat,AudioSessionGuid) ) }}
+\DoxyCodeLine{330 }
+\DoxyCodeLine{331 \textcolor{preprocessor}{\#define IAudioClient\_GetBufferSize(This,pNumBufferFrames)   \(\backslash\)}}
+\DoxyCodeLine{332 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetBufferSize(This,pNumBufferFrames) ) }}
+\DoxyCodeLine{333 }
+\DoxyCodeLine{334 \textcolor{preprocessor}{\#define IAudioClient\_GetStreamLatency(This,phnsLatency) \(\backslash\)}}
+\DoxyCodeLine{335 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetStreamLatency(This,phnsLatency) ) }}
+\DoxyCodeLine{336 }
+\DoxyCodeLine{337 \textcolor{preprocessor}{\#define IAudioClient\_GetCurrentPadding(This,pNumPaddingFrames)  \(\backslash\)}}
+\DoxyCodeLine{338 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetCurrentPadding(This,pNumPaddingFrames) ) }}
+\DoxyCodeLine{339 }
+\DoxyCodeLine{340 \textcolor{preprocessor}{\#define IAudioClient\_IsFormatSupported(This,ShareMode,pFormat,ppClosestMatch)   \(\backslash\)}}
+\DoxyCodeLine{341 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> IsFormatSupported(This,ShareMode,pFormat,ppClosestMatch) ) }}
+\DoxyCodeLine{342 }
+\DoxyCodeLine{343 \textcolor{preprocessor}{\#define IAudioClient\_GetMixFormat(This,ppDeviceFormat)  \(\backslash\)}}
+\DoxyCodeLine{344 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMixFormat(This,ppDeviceFormat) ) }}
+\DoxyCodeLine{345 }
+\DoxyCodeLine{346 \textcolor{preprocessor}{\#define IAudioClient\_GetDevicePeriod(This,phnsDefaultDevicePeriod,phnsMinimumDevicePeriod)  \(\backslash\)}}
+\DoxyCodeLine{347 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetDevicePeriod(This,phnsDefaultDevicePeriod,phnsMinimumDevicePeriod) ) }}
+\DoxyCodeLine{348 }
+\DoxyCodeLine{349 \textcolor{preprocessor}{\#define IAudioClient\_Start(This)    \(\backslash\)}}
+\DoxyCodeLine{350 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Start(This) ) }}
+\DoxyCodeLine{351 }
+\DoxyCodeLine{352 \textcolor{preprocessor}{\#define IAudioClient\_Stop(This) \(\backslash\)}}
+\DoxyCodeLine{353 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Stop(This) ) }}
+\DoxyCodeLine{354 }
+\DoxyCodeLine{355 \textcolor{preprocessor}{\#define IAudioClient\_Reset(This)    \(\backslash\)}}
+\DoxyCodeLine{356 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Reset(This) ) }}
+\DoxyCodeLine{357 }
+\DoxyCodeLine{358 \textcolor{preprocessor}{\#define IAudioClient\_SetEventHandle(This,eventHandle)   \(\backslash\)}}
+\DoxyCodeLine{359 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetEventHandle(This,eventHandle) ) }}
+\DoxyCodeLine{360 }
+\DoxyCodeLine{361 \textcolor{preprocessor}{\#define IAudioClient\_GetService(This,riid,ppv)  \(\backslash\)}}
+\DoxyCodeLine{362 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetService(This,riid,ppv) ) }}
+\DoxyCodeLine{363 }
+\DoxyCodeLine{364 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{365 }
+\DoxyCodeLine{366 }
+\DoxyCodeLine{367 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370 }
+\DoxyCodeLine{371 }
+\DoxyCodeLine{372 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioClient\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{373 }
+\DoxyCodeLine{374 }
+\DoxyCodeLine{375 \textcolor{preprocessor}{\#ifndef \_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{376 \textcolor{preprocessor}{\#define \_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{377 }
+\DoxyCodeLine{378 \textcolor{comment}{/* interface IAudioRenderClient */}}
+\DoxyCodeLine{379 \textcolor{comment}{/* [local][unique][helpstring][uuid][object] */} }
+\DoxyCodeLine{380 }
+\DoxyCodeLine{381 }
+\DoxyCodeLine{382 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a46adbae934f4c0619841137f4676c8ea}{IID\_IAudioRenderClient}};}
+\DoxyCodeLine{383 }
+\DoxyCodeLine{384 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{385     }
+\DoxyCodeLine{386     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}F294ACFC-\/3146-\/4483-\/A7BF-\/ADDCA7C260E2"{}})}
+\DoxyCodeLine{387     \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} : public IUnknown}
+\DoxyCodeLine{388     \{}
+\DoxyCodeLine{389     \textcolor{keyword}{public}:}
+\DoxyCodeLine{390         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_client_vtbl_abc3f79ac770baec44ef984e2d467203f}{HRESULT}} STDMETHODCALLTYPE GetBuffer( }
+\DoxyCodeLine{391             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{392             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 NumFramesRequested,}
+\DoxyCodeLine{393             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{394             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BYTE **ppData) = 0;}
+\DoxyCodeLine{395         }
+\DoxyCodeLine{396         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_client_vtbl_abc3f79ac770baec44ef984e2d467203f}{HRESULT}} STDMETHODCALLTYPE ReleaseBuffer( }
+\DoxyCodeLine{397             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{398             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 NumFramesWritten,}
+\DoxyCodeLine{399             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{400             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD dwFlags) = 0;}
+\DoxyCodeLine{401         }
+\DoxyCodeLine{402     \};}
+\DoxyCodeLine{403     }
+\DoxyCodeLine{404 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{405 }
+\DoxyCodeLine{406     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudioRenderClientVtbl}}}
+\DoxyCodeLine{407     \{}
+\DoxyCodeLine{408         BEGIN\_INTERFACE}
+\DoxyCodeLine{409         }
+\DoxyCodeLine{410         \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a1fb875cbc5833a455aa8c3e6f91b0517}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{411             \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} * This,}
+\DoxyCodeLine{412             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_render_client_vtbl_ac7a3b16f458323acde4d00ab613aa158}{riid}},}
+\DoxyCodeLine{413             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{414             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_render_client_vtbl_af8c00fd1e916873b122146d7c592da09}{ppvObject}});}
+\DoxyCodeLine{415         }
+\DoxyCodeLine{416         \mbox{\hyperlink{struct_i_audio_render_client_vtbl_ab0cc62fc14ba2f1c6e75bbcae56d91cf}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{417             \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} * This);}
+\DoxyCodeLine{418         }
+\DoxyCodeLine{419         \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a816988b04683d8b66ff423347ebfcc23}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{420             \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} * This);}
+\DoxyCodeLine{421         }
+\DoxyCodeLine{422         \mbox{\hyperlink{struct_i_audio_render_client_vtbl_aae6897ef098dbd4d15323bc03aa1f7f1}{HRESULT}} ( STDMETHODCALLTYPE *GetBuffer )( }
+\DoxyCodeLine{423             \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} * This,}
+\DoxyCodeLine{424             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{425             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_render_client_vtbl_afd9e82dcd5c05fbb72b34fdabb624910}{NumFramesRequested}},}
+\DoxyCodeLine{426             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{427             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BYTE **\mbox{\hyperlink{struct_i_audio_render_client_vtbl_a50063af1e9bd8c7528f180f3fe00afbb}{ppData}});}
+\DoxyCodeLine{428         }
+\DoxyCodeLine{429         \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a1e3abdcefdcbb085a56f852c56d7d869}{HRESULT}} ( STDMETHODCALLTYPE *ReleaseBuffer )( }
+\DoxyCodeLine{430             \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}} * This,}
+\DoxyCodeLine{431             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{432             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_render_client_vtbl_ae9ddd5d44bae4c0b873e4d2bc2e8c357}{NumFramesWritten}},}
+\DoxyCodeLine{433             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{434             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  DWORD \mbox{\hyperlink{struct_i_audio_render_client_vtbl_acc37ce168c6676a42e89ca35de6472e5}{dwFlags}});}
+\DoxyCodeLine{435         }
+\DoxyCodeLine{436         END\_INTERFACE}
+\DoxyCodeLine{437     \} \mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudioRenderClientVtbl}};}
+\DoxyCodeLine{438 }
+\DoxyCodeLine{439     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudioRenderClient}}}
+\DoxyCodeLine{440     \{}
+\DoxyCodeLine{441         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_render_client_vtbl}{IAudioRenderClientVtbl}} *lpVtbl;}
+\DoxyCodeLine{442     \};}
+\DoxyCodeLine{443 }
+\DoxyCodeLine{444     }
+\DoxyCodeLine{445 }
+\DoxyCodeLine{446 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{447 }
+\DoxyCodeLine{448 }
+\DoxyCodeLine{449 \textcolor{preprocessor}{\#define IAudioRenderClient\_QueryInterface(This,riid,ppvObject)  \(\backslash\)}}
+\DoxyCodeLine{450 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{451 }
+\DoxyCodeLine{452 \textcolor{preprocessor}{\#define IAudioRenderClient\_AddRef(This) \(\backslash\)}}
+\DoxyCodeLine{453 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{454 }
+\DoxyCodeLine{455 \textcolor{preprocessor}{\#define IAudioRenderClient\_Release(This)    \(\backslash\)}}
+\DoxyCodeLine{456 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{457 }
+\DoxyCodeLine{458 }
+\DoxyCodeLine{459 \textcolor{preprocessor}{\#define IAudioRenderClient\_GetBuffer(This,NumFramesRequested,ppData)    \(\backslash\)}}
+\DoxyCodeLine{460 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetBuffer(This,NumFramesRequested,ppData) ) }}
+\DoxyCodeLine{461 }
+\DoxyCodeLine{462 \textcolor{preprocessor}{\#define IAudioRenderClient\_ReleaseBuffer(This,NumFramesWritten,dwFlags) \(\backslash\)}}
+\DoxyCodeLine{463 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> ReleaseBuffer(This,NumFramesWritten,dwFlags) ) }}
+\DoxyCodeLine{464 }
+\DoxyCodeLine{465 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{466 }
+\DoxyCodeLine{467 }
+\DoxyCodeLine{468 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{469 }
+\DoxyCodeLine{470 }
+\DoxyCodeLine{471 }
+\DoxyCodeLine{472 }
+\DoxyCodeLine{473 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioRenderClient\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{474 }
+\DoxyCodeLine{475 }
+\DoxyCodeLine{476 \textcolor{preprocessor}{\#ifndef \_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{477 \textcolor{preprocessor}{\#define \_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{478 }
+\DoxyCodeLine{479 \textcolor{comment}{/* interface IAudioCaptureClient */}}
+\DoxyCodeLine{480 \textcolor{comment}{/* [local][unique][helpstring][uuid][object] */} }
+\DoxyCodeLine{481 }
+\DoxyCodeLine{482 }
+\DoxyCodeLine{483 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_aafb60c940e006a4bb990685b8a6d402e}{IID\_IAudioCaptureClient}};}
+\DoxyCodeLine{484 }
+\DoxyCodeLine{485 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{486     }
+\DoxyCodeLine{487     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}C8ADBD64-\/E71E-\/48a0-\/A4DE-\/185C395CD317"{}})}
+\DoxyCodeLine{488     \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} : public IUnknown}
+\DoxyCodeLine{489     \{}
+\DoxyCodeLine{490     \textcolor{keyword}{public}:}
+\DoxyCodeLine{491         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a1fb875cbc5833a455aa8c3e6f91b0517}{HRESULT}} STDMETHODCALLTYPE GetBuffer( }
+\DoxyCodeLine{492             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{493             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BYTE **\mbox{\hyperlink{struct_i_audio_render_client_vtbl_a50063af1e9bd8c7528f180f3fe00afbb}{ppData}},}
+\DoxyCodeLine{494             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{495             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *pNumFramesToRead,}
+\DoxyCodeLine{496             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{497             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *pdwFlags,}
+\DoxyCodeLine{498             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{499             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *pu64DevicePosition,}
+\DoxyCodeLine{500             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{501             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *pu64QPCPosition) = 0;}
+\DoxyCodeLine{502         }
+\DoxyCodeLine{503         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a1fb875cbc5833a455aa8c3e6f91b0517}{HRESULT}} STDMETHODCALLTYPE ReleaseBuffer( }
+\DoxyCodeLine{504             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{505             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 NumFramesRead) = 0;}
+\DoxyCodeLine{506         }
+\DoxyCodeLine{507         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_render_client_vtbl_a1fb875cbc5833a455aa8c3e6f91b0517}{HRESULT}} STDMETHODCALLTYPE GetNextPacketSize( }
+\DoxyCodeLine{508             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{509             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *pNumFramesInNextPacket) = 0;}
+\DoxyCodeLine{510         }
+\DoxyCodeLine{511     \};}
+\DoxyCodeLine{512     }
+\DoxyCodeLine{513 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{514 }
+\DoxyCodeLine{515     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudioCaptureClientVtbl}}}
+\DoxyCodeLine{516     \{}
+\DoxyCodeLine{517         BEGIN\_INTERFACE}
+\DoxyCodeLine{518         }
+\DoxyCodeLine{519         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ac8052eacb49311c4229c97864b0e3598}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{520             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This,}
+\DoxyCodeLine{521             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_adde7dcf4e05e090fe9b06821531edd4f}{riid}},}
+\DoxyCodeLine{522             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{523             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a12a06742a0ff338d0bdc554755ff9724}{ppvObject}});}
+\DoxyCodeLine{524         }
+\DoxyCodeLine{525         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a9b5ecdd3a400088aae993bf9757bca25}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{526             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This);}
+\DoxyCodeLine{527         }
+\DoxyCodeLine{528         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ab5cf94f20326e19264361d44392bbdab}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{529             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This);}
+\DoxyCodeLine{530         }
+\DoxyCodeLine{531         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ad8623773a58c0befbeb57cfa6a202fce}{HRESULT}} ( STDMETHODCALLTYPE *GetBuffer )( }
+\DoxyCodeLine{532             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This,}
+\DoxyCodeLine{533             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{534             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BYTE **\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a98282ba19bf589f5d2b00595a2006ecc}{ppData}},}
+\DoxyCodeLine{535             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{536             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a2ea0f56fbc1dc13df320f4e471dc7502}{pNumFramesToRead}},}
+\DoxyCodeLine{537             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{538             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ac94bbd3f09043f13325bfe9378972a27}{pdwFlags}},}
+\DoxyCodeLine{539             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{540             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_adce2c24dcf7a47a805b673fb3fbeb19e}{pu64DevicePosition}},}
+\DoxyCodeLine{541             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{542             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a32c29c256ece73be059a20674ffccac7}{pu64QPCPosition}});}
+\DoxyCodeLine{543         }
+\DoxyCodeLine{544         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a72ce1d030e56222adf1936dac20c7bbc}{HRESULT}} ( STDMETHODCALLTYPE *ReleaseBuffer )( }
+\DoxyCodeLine{545             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This,}
+\DoxyCodeLine{546             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{547             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ad9aaf0687f5e2501dfa2703d215827db}{NumFramesRead}});}
+\DoxyCodeLine{548         }
+\DoxyCodeLine{549         \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a6af80e29891d7eb6462e5cadc6154242}{HRESULT}} ( STDMETHODCALLTYPE *GetNextPacketSize )( }
+\DoxyCodeLine{550             \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}} * This,}
+\DoxyCodeLine{551             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{552             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a1cd269f5a9d1e53ab1d91e42df505b68}{pNumFramesInNextPacket}});}
+\DoxyCodeLine{553         }
+\DoxyCodeLine{554         END\_INTERFACE}
+\DoxyCodeLine{555     \} \mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudioCaptureClientVtbl}};}
+\DoxyCodeLine{556 }
+\DoxyCodeLine{557     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudioCaptureClient}}}
+\DoxyCodeLine{558     \{}
+\DoxyCodeLine{559         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_capture_client_vtbl}{IAudioCaptureClientVtbl}} *lpVtbl;}
+\DoxyCodeLine{560     \};}
+\DoxyCodeLine{561 }
+\DoxyCodeLine{562     }
+\DoxyCodeLine{563 }
+\DoxyCodeLine{564 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{565 }
+\DoxyCodeLine{566 }
+\DoxyCodeLine{567 \textcolor{preprocessor}{\#define IAudioCaptureClient\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{568 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{569 }
+\DoxyCodeLine{570 \textcolor{preprocessor}{\#define IAudioCaptureClient\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{571 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{572 }
+\DoxyCodeLine{573 \textcolor{preprocessor}{\#define IAudioCaptureClient\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{574 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{575 }
+\DoxyCodeLine{576 }
+\DoxyCodeLine{577 \textcolor{preprocessor}{\#define IAudioCaptureClient\_GetBuffer(This,ppData,pNumFramesToRead,pdwFlags,pu64DevicePosition,pu64QPCPosition) \(\backslash\)}}
+\DoxyCodeLine{578 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetBuffer(This,ppData,pNumFramesToRead,pdwFlags,pu64DevicePosition,pu64QPCPosition) ) }}
+\DoxyCodeLine{579 }
+\DoxyCodeLine{580 \textcolor{preprocessor}{\#define IAudioCaptureClient\_ReleaseBuffer(This,NumFramesRead)   \(\backslash\)}}
+\DoxyCodeLine{581 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> ReleaseBuffer(This,NumFramesRead) ) }}
+\DoxyCodeLine{582 }
+\DoxyCodeLine{583 \textcolor{preprocessor}{\#define IAudioCaptureClient\_GetNextPacketSize(This,pNumFramesInNextPacket)  \(\backslash\)}}
+\DoxyCodeLine{584 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetNextPacketSize(This,pNumFramesInNextPacket) ) }}
+\DoxyCodeLine{585 }
+\DoxyCodeLine{586 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{587 }
+\DoxyCodeLine{588 }
+\DoxyCodeLine{589 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{590 }
+\DoxyCodeLine{591 }
+\DoxyCodeLine{592 }
+\DoxyCodeLine{593 }
+\DoxyCodeLine{594 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioCaptureClient\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{595 }
+\DoxyCodeLine{596 }
+\DoxyCodeLine{597 \textcolor{comment}{/* interface \_\_MIDL\_itf\_audioclient\_0000\_0003 */}}
+\DoxyCodeLine{598 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{599 }
+\DoxyCodeLine{600 \textcolor{preprocessor}{\#define AUDIOCLOCK\_CHARACTERISTIC\_FIXED\_FREQ  0x00000001}}
+\DoxyCodeLine{601 }
+\DoxyCodeLine{602 }
+\DoxyCodeLine{603 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_a61e33450bb695edd778c64154613ec24}{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{604 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_ab6440de14179db2a2dd7701d30b55551}{\_\_MIDL\_itf\_audioclient\_0000\_0003\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{605 }
+\DoxyCodeLine{606 \textcolor{preprocessor}{\#ifndef \_\_IAudioClock\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{607 \textcolor{preprocessor}{\#define \_\_IAudioClock\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{608 }
+\DoxyCodeLine{609 \textcolor{comment}{/* interface IAudioClock */}}
+\DoxyCodeLine{610 \textcolor{comment}{/* [local][unique][uuid][object] */} }
+\DoxyCodeLine{611 }
+\DoxyCodeLine{612 }
+\DoxyCodeLine{613 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a08697e2e15fe39cdc5644c2884a22e4e}{IID\_IAudioClock}};}
+\DoxyCodeLine{614 }
+\DoxyCodeLine{615 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{616     }
+\DoxyCodeLine{617     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}CD63314F-\/3FBA-\/4a1b-\/812C-\/EF96358728E7"{}})}
+\DoxyCodeLine{618     \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} : public IUnknown}
+\DoxyCodeLine{619     \{}
+\DoxyCodeLine{620     \textcolor{keyword}{public}:}
+\DoxyCodeLine{621         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ac8052eacb49311c4229c97864b0e3598}{HRESULT}} STDMETHODCALLTYPE GetFrequency( }
+\DoxyCodeLine{622             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{623             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT64 *pu64Frequency) = 0;}
+\DoxyCodeLine{624         }
+\DoxyCodeLine{625         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ac8052eacb49311c4229c97864b0e3598}{HRESULT}} STDMETHODCALLTYPE GetPosition( }
+\DoxyCodeLine{626             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{627             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT64 *pu64Position,}
+\DoxyCodeLine{628             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{629             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *\mbox{\hyperlink{struct_i_audio_capture_client_vtbl_a32c29c256ece73be059a20674ffccac7}{pu64QPCPosition}}) = 0;}
+\DoxyCodeLine{630         }
+\DoxyCodeLine{631         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_capture_client_vtbl_ac8052eacb49311c4229c97864b0e3598}{HRESULT}} STDMETHODCALLTYPE GetCharacteristics( }
+\DoxyCodeLine{632             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{633             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *pdwCharacteristics) = 0;}
+\DoxyCodeLine{634         }
+\DoxyCodeLine{635     \};}
+\DoxyCodeLine{636     }
+\DoxyCodeLine{637 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{638 }
+\DoxyCodeLine{639     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudioClockVtbl}}}
+\DoxyCodeLine{640     \{}
+\DoxyCodeLine{641         BEGIN\_INTERFACE}
+\DoxyCodeLine{642         }
+\DoxyCodeLine{643         \mbox{\hyperlink{struct_i_audio_clock_vtbl_a10d117074bc0cb0328da5f3d1399e7ad}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{644             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This,}
+\DoxyCodeLine{645             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_clock_vtbl_ae5112c231e7b7a6e97176edcd69bf501}{riid}},}
+\DoxyCodeLine{646             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{647             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_clock_vtbl_ab2d1d14b2a915f06f8153a3b85436a09}{ppvObject}});}
+\DoxyCodeLine{648         }
+\DoxyCodeLine{649         \mbox{\hyperlink{struct_i_audio_clock_vtbl_a05f317d497d1494855af3717313a5b74}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{650             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This);}
+\DoxyCodeLine{651         }
+\DoxyCodeLine{652         \mbox{\hyperlink{struct_i_audio_clock_vtbl_a95144bc825c9309cd7f5c23d097a1423}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{653             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This);}
+\DoxyCodeLine{654         }
+\DoxyCodeLine{655         \mbox{\hyperlink{struct_i_audio_clock_vtbl_aeb8b9435f6d02405d0052672592cca4e}{HRESULT}} ( STDMETHODCALLTYPE *GetFrequency )( }
+\DoxyCodeLine{656             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This,}
+\DoxyCodeLine{657             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{658             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT64 *\mbox{\hyperlink{struct_i_audio_clock_vtbl_a3cf7801c2293359f52ba908eb4454c0b}{pu64Frequency}});}
+\DoxyCodeLine{659         }
+\DoxyCodeLine{660         \mbox{\hyperlink{struct_i_audio_clock_vtbl_afbc525c7b9a2b271fa446e687a863dbf}{HRESULT}} ( STDMETHODCALLTYPE *GetPosition )( }
+\DoxyCodeLine{661             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This,}
+\DoxyCodeLine{662             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{663             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT64 *\mbox{\hyperlink{struct_i_audio_clock_vtbl_a46f5530e76bd1ede82bef1acaf025588}{pu64Position}},}
+\DoxyCodeLine{664             \textcolor{comment}{/* [unique][out] */} }
+\DoxyCodeLine{665             \mbox{\hyperlink{sal_8h_a1ab4597e9d0c9bcc3f676c58b25019fe}{\_\_out\_opt}}  UINT64 *\mbox{\hyperlink{struct_i_audio_clock_vtbl_a1b2d08a23c0bdaa3dea369057be0ea56}{pu64QPCPosition}});}
+\DoxyCodeLine{666         }
+\DoxyCodeLine{667         \mbox{\hyperlink{struct_i_audio_clock_vtbl_a5ab79378bd572d98466f0ee783ca781d}{HRESULT}} ( STDMETHODCALLTYPE *GetCharacteristics )( }
+\DoxyCodeLine{668             \mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}} * This,}
+\DoxyCodeLine{669             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{670             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  DWORD *\mbox{\hyperlink{struct_i_audio_clock_vtbl_ace378c6c5b7862f015146a3581891dcc}{pdwCharacteristics}});}
+\DoxyCodeLine{671         }
+\DoxyCodeLine{672         END\_INTERFACE}
+\DoxyCodeLine{673     \} \mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudioClockVtbl}};}
+\DoxyCodeLine{674 }
+\DoxyCodeLine{675     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ab3ff14d1ce3862add1ec9aa4ecb5080c}{IAudioClock}}}
+\DoxyCodeLine{676     \{}
+\DoxyCodeLine{677         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_clock_vtbl}{IAudioClockVtbl}} *lpVtbl;}
+\DoxyCodeLine{678     \};}
+\DoxyCodeLine{679 }
+\DoxyCodeLine{680     }
+\DoxyCodeLine{681 }
+\DoxyCodeLine{682 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{683 }
+\DoxyCodeLine{684 }
+\DoxyCodeLine{685 \textcolor{preprocessor}{\#define IAudioClock\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{686 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{687 }
+\DoxyCodeLine{688 \textcolor{preprocessor}{\#define IAudioClock\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{689 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{690 }
+\DoxyCodeLine{691 \textcolor{preprocessor}{\#define IAudioClock\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{692 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{693 }
+\DoxyCodeLine{694 }
+\DoxyCodeLine{695 \textcolor{preprocessor}{\#define IAudioClock\_GetFrequency(This,pu64Frequency)    \(\backslash\)}}
+\DoxyCodeLine{696 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetFrequency(This,pu64Frequency) ) }}
+\DoxyCodeLine{697 }
+\DoxyCodeLine{698 \textcolor{preprocessor}{\#define IAudioClock\_GetPosition(This,pu64Position,pu64QPCPosition)  \(\backslash\)}}
+\DoxyCodeLine{699 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetPosition(This,pu64Position,pu64QPCPosition) ) }}
+\DoxyCodeLine{700 }
+\DoxyCodeLine{701 \textcolor{preprocessor}{\#define IAudioClock\_GetCharacteristics(This,pdwCharacteristics) \(\backslash\)}}
+\DoxyCodeLine{702 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetCharacteristics(This,pdwCharacteristics) ) }}
+\DoxyCodeLine{703 }
+\DoxyCodeLine{704 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{705 }
+\DoxyCodeLine{706 }
+\DoxyCodeLine{707 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{708 }
+\DoxyCodeLine{709 }
+\DoxyCodeLine{710 }
+\DoxyCodeLine{711 }
+\DoxyCodeLine{712 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioClock\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{713 }
+\DoxyCodeLine{714 }
+\DoxyCodeLine{715 \textcolor{preprocessor}{\#ifndef \_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{716 \textcolor{preprocessor}{\#define \_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{717 }
+\DoxyCodeLine{718 \textcolor{comment}{/* interface ISimpleAudioVolume */}}
+\DoxyCodeLine{719 \textcolor{comment}{/* [local][unique][uuid][object] */} }
+\DoxyCodeLine{720 }
+\DoxyCodeLine{721 }
+\DoxyCodeLine{722 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a543077c535509f82bfb13f807be26994}{IID\_ISimpleAudioVolume}};}
+\DoxyCodeLine{723 }
+\DoxyCodeLine{724 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{725     }
+\DoxyCodeLine{726     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}87CE5498-\/68D6-\/44E5-\/9215-\/6DA47EF883D8"{}})}
+\DoxyCodeLine{727     \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} : public IUnknown}
+\DoxyCodeLine{728     \{}
+\DoxyCodeLine{729     \textcolor{keyword}{public}:}
+\DoxyCodeLine{730         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_clock_vtbl_a10d117074bc0cb0328da5f3d1399e7ad}{HRESULT}} STDMETHODCALLTYPE SetMasterVolume( }
+\DoxyCodeLine{731             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{732             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} fLevel,}
+\DoxyCodeLine{733             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} EventContext) = 0;}
+\DoxyCodeLine{734         }
+\DoxyCodeLine{735         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_clock_vtbl_a10d117074bc0cb0328da5f3d1399e7ad}{HRESULT}} STDMETHODCALLTYPE GetMasterVolume( }
+\DoxyCodeLine{736             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{737             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *pfLevel) = 0;}
+\DoxyCodeLine{738         }
+\DoxyCodeLine{739         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_clock_vtbl_a10d117074bc0cb0328da5f3d1399e7ad}{HRESULT}} STDMETHODCALLTYPE SetMute( }
+\DoxyCodeLine{740             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{741             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} BOOL bMute,}
+\DoxyCodeLine{742             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} EventContext) = 0;}
+\DoxyCodeLine{743         }
+\DoxyCodeLine{744         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_clock_vtbl_a10d117074bc0cb0328da5f3d1399e7ad}{HRESULT}} STDMETHODCALLTYPE GetMute( }
+\DoxyCodeLine{745             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{746             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BOOL *pbMute) = 0;}
+\DoxyCodeLine{747         }
+\DoxyCodeLine{748     \};}
+\DoxyCodeLine{749     }
+\DoxyCodeLine{750 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{751 }
+\DoxyCodeLine{752     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimpleAudioVolumeVtbl}}}
+\DoxyCodeLine{753     \{}
+\DoxyCodeLine{754         BEGIN\_INTERFACE}
+\DoxyCodeLine{755         }
+\DoxyCodeLine{756         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{757             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This,}
+\DoxyCodeLine{758             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a3ac3e9a09d98c902de6fe173aa868bc1}{riid}},}
+\DoxyCodeLine{759             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{760             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a13d23c293f79d9717749349baeaf5dce}{ppvObject}});}
+\DoxyCodeLine{761         }
+\DoxyCodeLine{762         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_af6e622d5bb8861e1c203ff3d138f8cd0}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{763             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This);}
+\DoxyCodeLine{764         }
+\DoxyCodeLine{765         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_aac9857f7115bb6e70a98279902d43acb}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{766             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This);}
+\DoxyCodeLine{767         }
+\DoxyCodeLine{768         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_aef9d404b160d05b0794cbdca203e7cab}{HRESULT}} ( STDMETHODCALLTYPE *SetMasterVolume )( }
+\DoxyCodeLine{769             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This,}
+\DoxyCodeLine{770             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{771             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a25f46aa26265c8ca1522802f3f2ba1c7}{fLevel}},}
+\DoxyCodeLine{772             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_ad5ffe5e09cd10c0c145f8b83b9b2af81}{EventContext}});}
+\DoxyCodeLine{773         }
+\DoxyCodeLine{774         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a11db593063b045ef0620f8388317c410}{HRESULT}} ( STDMETHODCALLTYPE *GetMasterVolume )( }
+\DoxyCodeLine{775             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This,}
+\DoxyCodeLine{776             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{777             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_adac9e6ab94d274122b56d561abde6b35}{pfLevel}});}
+\DoxyCodeLine{778         }
+\DoxyCodeLine{779         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a86f92477da980e5d73917865db684ee5}{HRESULT}} ( STDMETHODCALLTYPE *SetMute )( }
+\DoxyCodeLine{780             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This,}
+\DoxyCodeLine{781             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{782             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} BOOL \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a4d2e8166304b1d7630b9fdf4faca4d67}{bMute}},}
+\DoxyCodeLine{783             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a8fa97fd6965de87b110334273eb4fbf7}{EventContext}});}
+\DoxyCodeLine{784         }
+\DoxyCodeLine{785         \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_acf16ea486050c2dc6df9a481713c0ee2}{HRESULT}} ( STDMETHODCALLTYPE *GetMute )( }
+\DoxyCodeLine{786             \mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}} * This,}
+\DoxyCodeLine{787             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{788             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  BOOL *\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_ad5daabadd9726de484b3ea6e7ec07e91}{pbMute}});}
+\DoxyCodeLine{789         }
+\DoxyCodeLine{790         END\_INTERFACE}
+\DoxyCodeLine{791     \} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimpleAudioVolumeVtbl}};}
+\DoxyCodeLine{792 }
+\DoxyCodeLine{793     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_aa027700db2186e704eaf5b1e583d907c}{ISimpleAudioVolume}}}
+\DoxyCodeLine{794     \{}
+\DoxyCodeLine{795         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl}{ISimpleAudioVolumeVtbl}} *lpVtbl;}
+\DoxyCodeLine{796     \};}
+\DoxyCodeLine{797 }
+\DoxyCodeLine{798     }
+\DoxyCodeLine{799 }
+\DoxyCodeLine{800 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{801 }
+\DoxyCodeLine{802 }
+\DoxyCodeLine{803 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_QueryInterface(This,riid,ppvObject)  \(\backslash\)}}
+\DoxyCodeLine{804 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{805 }
+\DoxyCodeLine{806 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_AddRef(This) \(\backslash\)}}
+\DoxyCodeLine{807 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{808 }
+\DoxyCodeLine{809 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_Release(This)    \(\backslash\)}}
+\DoxyCodeLine{810 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{811 }
+\DoxyCodeLine{812 }
+\DoxyCodeLine{813 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_SetMasterVolume(This,fLevel,EventContext)    \(\backslash\)}}
+\DoxyCodeLine{814 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetMasterVolume(This,fLevel,EventContext) ) }}
+\DoxyCodeLine{815 }
+\DoxyCodeLine{816 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_GetMasterVolume(This,pfLevel)    \(\backslash\)}}
+\DoxyCodeLine{817 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMasterVolume(This,pfLevel) ) }}
+\DoxyCodeLine{818 }
+\DoxyCodeLine{819 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_SetMute(This,bMute,EventContext) \(\backslash\)}}
+\DoxyCodeLine{820 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetMute(This,bMute,EventContext) ) }}
+\DoxyCodeLine{821 }
+\DoxyCodeLine{822 \textcolor{preprocessor}{\#define ISimpleAudioVolume\_GetMute(This,pbMute) \(\backslash\)}}
+\DoxyCodeLine{823 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetMute(This,pbMute) ) }}
+\DoxyCodeLine{824 }
+\DoxyCodeLine{825 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{826 }
+\DoxyCodeLine{827 }
+\DoxyCodeLine{828 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{829 }
+\DoxyCodeLine{830 }
+\DoxyCodeLine{831 }
+\DoxyCodeLine{832 }
+\DoxyCodeLine{833 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_ISimpleAudioVolume\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{834 }
+\DoxyCodeLine{835 }
+\DoxyCodeLine{836 \textcolor{preprocessor}{\#ifndef \_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{837 \textcolor{preprocessor}{\#define \_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{838 }
+\DoxyCodeLine{839 \textcolor{comment}{/* interface IAudioStreamVolume */}}
+\DoxyCodeLine{840 \textcolor{comment}{/* [local][unique][uuid][object] */} }
+\DoxyCodeLine{841 }
+\DoxyCodeLine{842 }
+\DoxyCodeLine{843 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_ac43f627252f2e6640c3f9be49218e65d}{IID\_IAudioStreamVolume}};}
+\DoxyCodeLine{844 }
+\DoxyCodeLine{845 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{846     }
+\DoxyCodeLine{847     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}93014887-\/242D-\/4068-\/8A15-\/CF5E93B90FE3"{}})}
+\DoxyCodeLine{848     \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} : public IUnknown}
+\DoxyCodeLine{849     \{}
+\DoxyCodeLine{850     \textcolor{keyword}{public}:}
+\DoxyCodeLine{851         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} STDMETHODCALLTYPE GetChannelCount( }
+\DoxyCodeLine{852             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{853             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *pdwCount) = 0;}
+\DoxyCodeLine{854         }
+\DoxyCodeLine{855         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} STDMETHODCALLTYPE SetChannelVolume( }
+\DoxyCodeLine{856             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{857             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 dwIndex,}
+\DoxyCodeLine{858             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{859             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a25f46aa26265c8ca1522802f3f2ba1c7}{fLevel}}) = 0;}
+\DoxyCodeLine{860         }
+\DoxyCodeLine{861         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} STDMETHODCALLTYPE GetChannelVolume( }
+\DoxyCodeLine{862             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{863             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 dwIndex,}
+\DoxyCodeLine{864             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{865             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_adac9e6ab94d274122b56d561abde6b35}{pfLevel}}) = 0;}
+\DoxyCodeLine{866         }
+\DoxyCodeLine{867         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} STDMETHODCALLTYPE SetAllVolumes( }
+\DoxyCodeLine{868             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{869             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 dwCount,}
+\DoxyCodeLine{870             \textcolor{comment}{/* [size\_is][in] */} }
+\DoxyCodeLine{871             \mbox{\hyperlink{sal_8h_a5b981c24028d475066e2e6af9b9f2e5d}{\_\_in\_ecount}}(dwCount)  \textcolor{keyword}{const} \textcolor{keywordtype}{float} *pfVolumes) = 0;}
+\DoxyCodeLine{872         }
+\DoxyCodeLine{873         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_simple_audio_volume_vtbl_a16cf9f441ed8b35af617071cb6d619f7}{HRESULT}} STDMETHODCALLTYPE GetAllVolumes( }
+\DoxyCodeLine{874             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{875             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 dwCount,}
+\DoxyCodeLine{876             \textcolor{comment}{/* [size\_is][out] */} }
+\DoxyCodeLine{877             \mbox{\hyperlink{sal_8h_acb09b0b17b53b4f131f616fe6097125a}{\_\_out\_ecount}}(dwCount)  \textcolor{keywordtype}{float} *pfVolumes) = 0;}
+\DoxyCodeLine{878         }
+\DoxyCodeLine{879     \};}
+\DoxyCodeLine{880     }
+\DoxyCodeLine{881 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{882 }
+\DoxyCodeLine{883     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudioStreamVolumeVtbl}}}
+\DoxyCodeLine{884     \{}
+\DoxyCodeLine{885         BEGIN\_INTERFACE}
+\DoxyCodeLine{886         }
+\DoxyCodeLine{887         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{888             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{889             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_aa0b28249abbeee71ae2b852d9950b4ff}{riid}},}
+\DoxyCodeLine{890             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{891             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a59cd8b13777d8692e2e9b9cb2f3fdeef}{ppvObject}});}
+\DoxyCodeLine{892         }
+\DoxyCodeLine{893         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a080f97754171865032ed9c0a1ad6a710}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{894             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This);}
+\DoxyCodeLine{895         }
+\DoxyCodeLine{896         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a4e0397b1a745e3eabb2eb8d36aa35d27}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{897             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This);}
+\DoxyCodeLine{898         }
+\DoxyCodeLine{899         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a94d0ef3ae2e2185a617ee64269d2e1a7}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelCount )( }
+\DoxyCodeLine{900             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{901             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{902             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a2d190b0784dfb69966bb939efea621fb}{pdwCount}});}
+\DoxyCodeLine{903         }
+\DoxyCodeLine{904         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a41db04c655f42bbc3c173a8069e8d854}{HRESULT}} ( STDMETHODCALLTYPE *SetChannelVolume )( }
+\DoxyCodeLine{905             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{906             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{907             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}{dwIndex}},}
+\DoxyCodeLine{908             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{909             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a214cca90cdceed4f5f2e2b9e2b601110}{fLevel}});}
+\DoxyCodeLine{910         }
+\DoxyCodeLine{911         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_ade8c125032d53613283d88d0c21571a5}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelVolume )( }
+\DoxyCodeLine{912             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{913             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{914             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}{dwIndex}},}
+\DoxyCodeLine{915             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{916             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a94c2d7ee2965c34db6b8ecdce92979d4}{pfLevel}});}
+\DoxyCodeLine{917         }
+\DoxyCodeLine{918         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a8acedac27960a91591947b00949d0b8f}{HRESULT}} ( STDMETHODCALLTYPE *SetAllVolumes )( }
+\DoxyCodeLine{919             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{920             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{921             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}},}
+\DoxyCodeLine{922             \textcolor{comment}{/* [size\_is][in] */} }
+\DoxyCodeLine{923             \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a6f3d54f7901625fdf624ed19476e6699}{\_\_in\_ecount}}(\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}})  \textcolor{keyword}{const} \textcolor{keywordtype}{float} *pfVolumes);}
+\DoxyCodeLine{924         }
+\DoxyCodeLine{925         \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a89a1650992c3195cd3cfdb2601c8b707}{HRESULT}} ( STDMETHODCALLTYPE *GetAllVolumes )( }
+\DoxyCodeLine{926             \mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}} * This,}
+\DoxyCodeLine{927             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{928             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}},}
+\DoxyCodeLine{929             \textcolor{comment}{/* [size\_is][out] */} }
+\DoxyCodeLine{930             \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a2b240c0cf02ab10b4f0aadcdc4b11a4c}{\_\_out\_ecount}}(\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}})  \textcolor{keywordtype}{float} *pfVolumes);}
+\DoxyCodeLine{931         }
+\DoxyCodeLine{932         END\_INTERFACE}
+\DoxyCodeLine{933     \} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudioStreamVolumeVtbl}};}
+\DoxyCodeLine{934 }
+\DoxyCodeLine{935     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_ae2909fedf5fb48235bdf718200c31024}{IAudioStreamVolume}}}
+\DoxyCodeLine{936     \{}
+\DoxyCodeLine{937         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl}{IAudioStreamVolumeVtbl}} *lpVtbl;}
+\DoxyCodeLine{938     \};}
+\DoxyCodeLine{939 }
+\DoxyCodeLine{940     }
+\DoxyCodeLine{941 }
+\DoxyCodeLine{942 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{943 }
+\DoxyCodeLine{944 }
+\DoxyCodeLine{945 \textcolor{preprocessor}{\#define IAudioStreamVolume\_QueryInterface(This,riid,ppvObject)  \(\backslash\)}}
+\DoxyCodeLine{946 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{947 }
+\DoxyCodeLine{948 \textcolor{preprocessor}{\#define IAudioStreamVolume\_AddRef(This) \(\backslash\)}}
+\DoxyCodeLine{949 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{950 }
+\DoxyCodeLine{951 \textcolor{preprocessor}{\#define IAudioStreamVolume\_Release(This)    \(\backslash\)}}
+\DoxyCodeLine{952 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{953 }
+\DoxyCodeLine{954 }
+\DoxyCodeLine{955 \textcolor{preprocessor}{\#define IAudioStreamVolume\_GetChannelCount(This,pdwCount)   \(\backslash\)}}
+\DoxyCodeLine{956 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelCount(This,pdwCount) ) }}
+\DoxyCodeLine{957 }
+\DoxyCodeLine{958 \textcolor{preprocessor}{\#define IAudioStreamVolume\_SetChannelVolume(This,dwIndex,fLevel)    \(\backslash\)}}
+\DoxyCodeLine{959 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetChannelVolume(This,dwIndex,fLevel) ) }}
+\DoxyCodeLine{960 }
+\DoxyCodeLine{961 \textcolor{preprocessor}{\#define IAudioStreamVolume\_GetChannelVolume(This,dwIndex,pfLevel)   \(\backslash\)}}
+\DoxyCodeLine{962 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelVolume(This,dwIndex,pfLevel) ) }}
+\DoxyCodeLine{963 }
+\DoxyCodeLine{964 \textcolor{preprocessor}{\#define IAudioStreamVolume\_SetAllVolumes(This,dwCount,pfVolumes)    \(\backslash\)}}
+\DoxyCodeLine{965 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetAllVolumes(This,dwCount,pfVolumes) ) }}
+\DoxyCodeLine{966 }
+\DoxyCodeLine{967 \textcolor{preprocessor}{\#define IAudioStreamVolume\_GetAllVolumes(This,dwCount,pfVolumes)    \(\backslash\)}}
+\DoxyCodeLine{968 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetAllVolumes(This,dwCount,pfVolumes) ) }}
+\DoxyCodeLine{969 }
+\DoxyCodeLine{970 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{971 }
+\DoxyCodeLine{972 }
+\DoxyCodeLine{973 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{974 }
+\DoxyCodeLine{975 }
+\DoxyCodeLine{976 }
+\DoxyCodeLine{977 }
+\DoxyCodeLine{978 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IAudioStreamVolume\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{979 }
+\DoxyCodeLine{980 }
+\DoxyCodeLine{981 \textcolor{preprocessor}{\#ifndef \_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{982 \textcolor{preprocessor}{\#define \_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_}}
+\DoxyCodeLine{983 }
+\DoxyCodeLine{984 \textcolor{comment}{/* interface IChannelAudioVolume */}}
+\DoxyCodeLine{985 \textcolor{comment}{/* [local][unique][uuid][object] */} }
+\DoxyCodeLine{986 }
+\DoxyCodeLine{987 }
+\DoxyCodeLine{988 \mbox{\hyperlink{pa__win__wdmks_8c_abbaccfbed35b945162c27ef6d3748e77}{EXTERN\_C}} \textcolor{keyword}{const} \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{audioclient_8h_a3b4951c891ecc1f83c4ad7560368c02c}{IID\_IChannelAudioVolume}};}
+\DoxyCodeLine{989 }
+\DoxyCodeLine{990 \textcolor{preprocessor}{\#if defined(\_\_cplusplus) \&\& !defined(CINTERFACE)}}
+\DoxyCodeLine{991     }
+\DoxyCodeLine{992     MIDL\_INTERFACE(\textcolor{stringliteral}{"{}1C158861-\/B533-\/4B30-\/B1CF-\/E853E51C59B8"{}})}
+\DoxyCodeLine{993     \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} : public IUnknown}
+\DoxyCodeLine{994     \{}
+\DoxyCodeLine{995     \textcolor{keyword}{public}:}
+\DoxyCodeLine{996         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} STDMETHODCALLTYPE GetChannelCount( }
+\DoxyCodeLine{997             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{998             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a2d190b0784dfb69966bb939efea621fb}{pdwCount}}) = 0;}
+\DoxyCodeLine{999         }
+\DoxyCodeLine{1000         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} STDMETHODCALLTYPE SetChannelVolume( }
+\DoxyCodeLine{1001             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1002             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}{dwIndex}},}
+\DoxyCodeLine{1003             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1004             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a214cca90cdceed4f5f2e2b9e2b601110}{fLevel}},}
+\DoxyCodeLine{1005             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} EventContext) = 0;}
+\DoxyCodeLine{1006         }
+\DoxyCodeLine{1007         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} STDMETHODCALLTYPE GetChannelVolume( }
+\DoxyCodeLine{1008             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1009             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a26ffc54bae06fbae053a243667cf7615}{dwIndex}},}
+\DoxyCodeLine{1010             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{1011             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a94c2d7ee2965c34db6b8ecdce92979d4}{pfLevel}}) = 0;}
+\DoxyCodeLine{1012         }
+\DoxyCodeLine{1013         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} STDMETHODCALLTYPE SetAllVolumes( }
+\DoxyCodeLine{1014             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1015             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}},}
+\DoxyCodeLine{1016             \textcolor{comment}{/* [size\_is][in] */} }
+\DoxyCodeLine{1017             \mbox{\hyperlink{sal_8h_a5b981c24028d475066e2e6af9b9f2e5d}{\_\_in\_ecount}}(\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}})  \textcolor{keyword}{const} \textcolor{keywordtype}{float} *pfVolumes,}
+\DoxyCodeLine{1018             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} EventContext) = 0;}
+\DoxyCodeLine{1019         }
+\DoxyCodeLine{1020         \textcolor{keyword}{virtual} \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_a36d55a1790779ef8aae7e63dd2b023c1}{HRESULT}} STDMETHODCALLTYPE GetAllVolumes( }
+\DoxyCodeLine{1021             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1022             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}},}
+\DoxyCodeLine{1023             \textcolor{comment}{/* [size\_is][out] */} }
+\DoxyCodeLine{1024             \mbox{\hyperlink{sal_8h_acb09b0b17b53b4f131f616fe6097125a}{\_\_out\_ecount}}(\mbox{\hyperlink{struct_i_audio_stream_volume_vtbl_af2354bd92fa75d7c292aac1170bd8845}{dwCount}})  \textcolor{keywordtype}{float} *pfVolumes) = 0;}
+\DoxyCodeLine{1025         }
+\DoxyCodeLine{1026     \};}
+\DoxyCodeLine{1027     }
+\DoxyCodeLine{1028 \textcolor{preprocessor}{\#else   }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1029 }
+\DoxyCodeLine{1030     \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannelAudioVolumeVtbl}}}
+\DoxyCodeLine{1031     \{}
+\DoxyCodeLine{1032         BEGIN\_INTERFACE}
+\DoxyCodeLine{1033         }
+\DoxyCodeLine{1034         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6c6be2d3a89427b6ccb0776175227fe3}{HRESULT}} ( STDMETHODCALLTYPE *QueryInterface )( }
+\DoxyCodeLine{1035             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1036             \textcolor{comment}{/* [in] */} REFIID \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_aa8529bbe5dd53fac0d214f5942833f72}{riid}},}
+\DoxyCodeLine{1037             \textcolor{comment}{/* [iid\_is][out] */} }
+\DoxyCodeLine{1038             \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\_\_RPC\_\_deref\_out}}  \textcolor{keywordtype}{void} **\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a7777be8bd394bfc3b7866128e63c17f0}{ppvObject}});}
+\DoxyCodeLine{1039         }
+\DoxyCodeLine{1040         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_adf76d4b5f52aabfa3dae39a45802ddf9}{ULONG}} ( STDMETHODCALLTYPE *AddRef )( }
+\DoxyCodeLine{1041             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This);}
+\DoxyCodeLine{1042         }
+\DoxyCodeLine{1043         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a0a728d25cb92c64bc999c70e5fe88ede}{ULONG}} ( STDMETHODCALLTYPE *Release )( }
+\DoxyCodeLine{1044             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This);}
+\DoxyCodeLine{1045         }
+\DoxyCodeLine{1046         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a55c3df5afc2d5f89ea118497887897d2}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelCount )( }
+\DoxyCodeLine{1047             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1048             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{1049             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  UINT32 *\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a05e755546fa526a7a54c511276f52563}{pdwCount}});}
+\DoxyCodeLine{1050         }
+\DoxyCodeLine{1051         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a1c7e551b5bc9866b00f7870de1681f49}{HRESULT}} ( STDMETHODCALLTYPE *SetChannelVolume )( }
+\DoxyCodeLine{1052             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1053             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1054             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a987733c39abb241d1e0b9428e9cb89b4}{dwIndex}},}
+\DoxyCodeLine{1055             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1056             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  \textcolor{keyword}{const} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a7199b2fb0f1bbeceb2dfd964fcd3f081}{fLevel}},}
+\DoxyCodeLine{1057             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a0647d9cc251cffc408440c82883078fe}{EventContext}});}
+\DoxyCodeLine{1058         }
+\DoxyCodeLine{1059         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a7c3db72d0cc492692bb52f4c2e24d650}{HRESULT}} ( STDMETHODCALLTYPE *GetChannelVolume )( }
+\DoxyCodeLine{1060             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1061             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1062             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a987733c39abb241d1e0b9428e9cb89b4}{dwIndex}},}
+\DoxyCodeLine{1063             \textcolor{comment}{/* [out] */} }
+\DoxyCodeLine{1064             \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\_\_out}}  \textcolor{keywordtype}{float} *\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6eae61b232e1be061f0ab818cb2800d5}{pfLevel}});}
+\DoxyCodeLine{1065         }
+\DoxyCodeLine{1066         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a7143071c64f1fa69e086499532140a8a}{HRESULT}} ( STDMETHODCALLTYPE *SetAllVolumes )( }
+\DoxyCodeLine{1067             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1068             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1069             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6919d94fec4a1d2b47c8a1452748d745}{dwCount}},}
+\DoxyCodeLine{1070             \textcolor{comment}{/* [size\_is][in] */} }
+\DoxyCodeLine{1071             \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a48e4a1476aa12c608295cc5eb77f4e3f}{\_\_in\_ecount}}(\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6919d94fec4a1d2b47c8a1452748d745}{dwCount}})  \textcolor{keyword}{const} \textcolor{keywordtype}{float} *pfVolumes,}
+\DoxyCodeLine{1072             \textcolor{comment}{/* [unique][in] */} \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}} \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_af68dc0265aea3b154720692dee18934f}{EventContext}});}
+\DoxyCodeLine{1073         }
+\DoxyCodeLine{1074         \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a7c4023fd14799e1689d2b4980e98928b}{HRESULT}} ( STDMETHODCALLTYPE *GetAllVolumes )( }
+\DoxyCodeLine{1075             \mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}} * This,}
+\DoxyCodeLine{1076             \textcolor{comment}{/* [in] */} }
+\DoxyCodeLine{1077             \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\_\_in}}  UINT32 \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6919d94fec4a1d2b47c8a1452748d745}{dwCount}},}
+\DoxyCodeLine{1078             \textcolor{comment}{/* [size\_is][out] */} }
+\DoxyCodeLine{1079             \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_aaa9923c11649748b2fddbb9d802db26e}{\_\_out\_ecount}}(\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl_a6919d94fec4a1d2b47c8a1452748d745}{dwCount}})  \textcolor{keywordtype}{float} *pfVolumes);}
+\DoxyCodeLine{1080         }
+\DoxyCodeLine{1081         END\_INTERFACE}
+\DoxyCodeLine{1082     \} \mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannelAudioVolumeVtbl}};}
+\DoxyCodeLine{1083 }
+\DoxyCodeLine{1084     \textcolor{keyword}{interface }\mbox{\hyperlink{audioclient_8h_a46abbe93dca3b592534afab4d91d75f9}{IChannelAudioVolume}}}
+\DoxyCodeLine{1085     \{}
+\DoxyCodeLine{1086         CONST\_VTBL \textcolor{keyword}{struct }\mbox{\hyperlink{struct_i_channel_audio_volume_vtbl}{IChannelAudioVolumeVtbl}} *lpVtbl;}
+\DoxyCodeLine{1087     \};}
+\DoxyCodeLine{1088 }
+\DoxyCodeLine{1089     }
+\DoxyCodeLine{1090 }
+\DoxyCodeLine{1091 \textcolor{preprocessor}{\#ifdef COBJMACROS}}
+\DoxyCodeLine{1092 }
+\DoxyCodeLine{1093 }
+\DoxyCodeLine{1094 \textcolor{preprocessor}{\#define IChannelAudioVolume\_QueryInterface(This,riid,ppvObject) \(\backslash\)}}
+\DoxyCodeLine{1095 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> QueryInterface(This,riid,ppvObject) ) }}
+\DoxyCodeLine{1096 }
+\DoxyCodeLine{1097 \textcolor{preprocessor}{\#define IChannelAudioVolume\_AddRef(This)    \(\backslash\)}}
+\DoxyCodeLine{1098 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> AddRef(This) ) }}
+\DoxyCodeLine{1099 }
+\DoxyCodeLine{1100 \textcolor{preprocessor}{\#define IChannelAudioVolume\_Release(This)   \(\backslash\)}}
+\DoxyCodeLine{1101 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> Release(This) ) }}
+\DoxyCodeLine{1102 }
+\DoxyCodeLine{1103 }
+\DoxyCodeLine{1104 \textcolor{preprocessor}{\#define IChannelAudioVolume\_GetChannelCount(This,pdwCount)  \(\backslash\)}}
+\DoxyCodeLine{1105 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelCount(This,pdwCount) ) }}
+\DoxyCodeLine{1106 }
+\DoxyCodeLine{1107 \textcolor{preprocessor}{\#define IChannelAudioVolume\_SetChannelVolume(This,dwIndex,fLevel,EventContext)  \(\backslash\)}}
+\DoxyCodeLine{1108 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetChannelVolume(This,dwIndex,fLevel,EventContext) ) }}
+\DoxyCodeLine{1109 }
+\DoxyCodeLine{1110 \textcolor{preprocessor}{\#define IChannelAudioVolume\_GetChannelVolume(This,dwIndex,pfLevel)  \(\backslash\)}}
+\DoxyCodeLine{1111 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetChannelVolume(This,dwIndex,pfLevel) ) }}
+\DoxyCodeLine{1112 }
+\DoxyCodeLine{1113 \textcolor{preprocessor}{\#define IChannelAudioVolume\_SetAllVolumes(This,dwCount,pfVolumes,EventContext)  \(\backslash\)}}
+\DoxyCodeLine{1114 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> SetAllVolumes(This,dwCount,pfVolumes,EventContext) ) }}
+\DoxyCodeLine{1115 }
+\DoxyCodeLine{1116 \textcolor{preprocessor}{\#define IChannelAudioVolume\_GetAllVolumes(This,dwCount,pfVolumes)   \(\backslash\)}}
+\DoxyCodeLine{1117 \textcolor{preprocessor}{    ( (This)-\/>lpVtbl -\/> GetAllVolumes(This,dwCount,pfVolumes) ) }}
+\DoxyCodeLine{1118 }
+\DoxyCodeLine{1119 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* COBJMACROS */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1120 }
+\DoxyCodeLine{1121 }
+\DoxyCodeLine{1122 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* C style interface */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1123 }
+\DoxyCodeLine{1124 }
+\DoxyCodeLine{1125 }
+\DoxyCodeLine{1126 }
+\DoxyCodeLine{1127 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{/* \_\_IChannelAudioVolume\_INTERFACE\_DEFINED\_\_ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{1128 }
+\DoxyCodeLine{1129 }
+\DoxyCodeLine{1130 \textcolor{comment}{/* interface \_\_MIDL\_itf\_audioclient\_0000\_0007 */}}
+\DoxyCodeLine{1131 \textcolor{comment}{/* [local] */} }
+\DoxyCodeLine{1132 }
+\DoxyCodeLine{1133 \textcolor{preprocessor}{\#define FACILITY\_AUDCLNT 0x889}}
+\DoxyCodeLine{1134 \textcolor{preprocessor}{\#define AUDCLNT\_ERR(n) MAKE\_HRESULT(SEVERITY\_ERROR, FACILITY\_AUDCLNT, n)}}
+\DoxyCodeLine{1135 \textcolor{preprocessor}{\#define AUDCLNT\_SUCCESS(n) MAKE\_SCODE(SEVERITY\_SUCCESS, FACILITY\_AUDCLNT, n)}}
+\DoxyCodeLine{1136 \textcolor{preprocessor}{\#define AUDCLNT\_E\_NOT\_INITIALIZED            AUDCLNT\_ERR(0x001)}}
+\DoxyCodeLine{1137 \textcolor{preprocessor}{\#define AUDCLNT\_E\_ALREADY\_INITIALIZED        AUDCLNT\_ERR(0x002)}}
+\DoxyCodeLine{1138 \textcolor{preprocessor}{\#define AUDCLNT\_E\_WRONG\_ENDPOINT\_TYPE        AUDCLNT\_ERR(0x003)}}
+\DoxyCodeLine{1139 \textcolor{preprocessor}{\#define AUDCLNT\_E\_DEVICE\_INVALIDATED         AUDCLNT\_ERR(0x004)}}
+\DoxyCodeLine{1140 \textcolor{preprocessor}{\#define AUDCLNT\_E\_NOT\_STOPPED                AUDCLNT\_ERR(0x005)}}
+\DoxyCodeLine{1141 \textcolor{preprocessor}{\#define AUDCLNT\_E\_BUFFER\_TOO\_LARGE           AUDCLNT\_ERR(0x006)}}
+\DoxyCodeLine{1142 \textcolor{preprocessor}{\#define AUDCLNT\_E\_OUT\_OF\_ORDER               AUDCLNT\_ERR(0x007)}}
+\DoxyCodeLine{1143 \textcolor{preprocessor}{\#define AUDCLNT\_E\_UNSUPPORTED\_FORMAT         AUDCLNT\_ERR(0x008)}}
+\DoxyCodeLine{1144 \textcolor{preprocessor}{\#define AUDCLNT\_E\_INVALID\_SIZE               AUDCLNT\_ERR(0x009)}}
+\DoxyCodeLine{1145 \textcolor{preprocessor}{\#define AUDCLNT\_E\_DEVICE\_IN\_USE              AUDCLNT\_ERR(0x00a)}}
+\DoxyCodeLine{1146 \textcolor{preprocessor}{\#define AUDCLNT\_E\_BUFFER\_OPERATION\_PENDING   AUDCLNT\_ERR(0x00b)}}
+\DoxyCodeLine{1147 \textcolor{preprocessor}{\#define AUDCLNT\_E\_THREAD\_NOT\_REGISTERED      AUDCLNT\_ERR(0x00c)}}
+\DoxyCodeLine{1148 \textcolor{preprocessor}{\#define AUDCLNT\_E\_EXCLUSIVE\_MODE\_NOT\_ALLOWED AUDCLNT\_ERR(0x00e)}}
+\DoxyCodeLine{1149 \textcolor{preprocessor}{\#define AUDCLNT\_E\_ENDPOINT\_CREATE\_FAILED     AUDCLNT\_ERR(0x00f)}}
+\DoxyCodeLine{1150 \textcolor{preprocessor}{\#define AUDCLNT\_E\_SERVICE\_NOT\_RUNNING        AUDCLNT\_ERR(0x010)}}
+\DoxyCodeLine{1151 \textcolor{preprocessor}{\#define AUDCLNT\_E\_EVENTHANDLE\_NOT\_EXPECTED     AUDCLNT\_ERR(0x011)}}
+\DoxyCodeLine{1152 \textcolor{preprocessor}{\#define AUDCLNT\_E\_EXCLUSIVE\_MODE\_ONLY          AUDCLNT\_ERR(0x012)}}
+\DoxyCodeLine{1153 \textcolor{preprocessor}{\#define AUDCLNT\_E\_BUFDURATION\_PERIOD\_NOT\_EQUAL AUDCLNT\_ERR(0x013)}}
+\DoxyCodeLine{1154 \textcolor{preprocessor}{\#define AUDCLNT\_E\_EVENTHANDLE\_NOT\_SET          AUDCLNT\_ERR(0x014)}}
+\DoxyCodeLine{1155 \textcolor{preprocessor}{\#define AUDCLNT\_E\_INCORRECT\_BUFFER\_SIZE        AUDCLNT\_ERR(0x015)}}
+\DoxyCodeLine{1156 \textcolor{preprocessor}{\#define AUDCLNT\_E\_BUFFER\_SIZE\_ERROR            AUDCLNT\_ERR(0x016)}}
+\DoxyCodeLine{1157 \textcolor{preprocessor}{\#define AUDCLNT\_E\_CPUUSAGE\_EXCEEDED            AUDCLNT\_ERR(0x017)}}
+\DoxyCodeLine{1158 \textcolor{preprocessor}{\#define AUDCLNT\_S\_BUFFER\_EMPTY              AUDCLNT\_SUCCESS(0x001)}}
+\DoxyCodeLine{1159 \textcolor{preprocessor}{\#define AUDCLNT\_S\_THREAD\_ALREADY\_REGISTERED AUDCLNT\_SUCCESS(0x002)}}
+\DoxyCodeLine{1160 \textcolor{preprocessor}{\#define AUDCLNT\_S\_POSITION\_STALLED         AUDCLNT\_SUCCESS(0x003)}}
+\DoxyCodeLine{1161 }
+\DoxyCodeLine{1162 }
+\DoxyCodeLine{1163 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_a090bcc97e5e923528edb64182d06b5f7}{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_c\_ifspec}};}
+\DoxyCodeLine{1164 \textcolor{keyword}{extern} RPC\_IF\_HANDLE \mbox{\hyperlink{audioclient_8h_afd137ad42f2ee642ba876dfcf544bb5e}{\_\_MIDL\_itf\_audioclient\_0000\_0007\_v0\_0\_s\_ifspec}};}
+\DoxyCodeLine{1165 }
+\DoxyCodeLine{1166 \textcolor{comment}{/* Additional Prototypes for ALL interfaces */}}
+\DoxyCodeLine{1167 }
+\DoxyCodeLine{1168 \textcolor{comment}{/* end of Additional Prototypes */}}
+\DoxyCodeLine{1169 }
+\DoxyCodeLine{1170 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{1171 \}}
+\DoxyCodeLine{1172 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1173 }
+\DoxyCodeLine{1174 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{1175 }
+\DoxyCodeLine{1176 }
+\DoxyCodeLine{1177 }
+
+\end{DoxyCode}

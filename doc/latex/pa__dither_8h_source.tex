@@ -1,0 +1,80 @@
+\hypertarget{pa__dither_8h_source}{}\doxysection{pa\+\_\+dither.\+h}
+\label{pa__dither_8h_source}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_dither.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_dither.h}}
+\mbox{\hyperlink{pa__dither_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_DITHER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_DITHER\_H}}
+\DoxyCodeLine{3 \textcolor{comment}{/*}}
+\DoxyCodeLine{4 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Portable Audio I/O Library triangular dither generator}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Copyright (c) 1999-\/2002 Phil Burk, Ross Bencina}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{11 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{12 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{17 \textcolor{comment}{ *}}
+\DoxyCodeLine{18 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{19 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{20 \textcolor{comment}{ *}}
+\DoxyCodeLine{21 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{22 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{23 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{24 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{25 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{26 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{27 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{28 \textcolor{comment}{ */}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{comment}{/*}}
+\DoxyCodeLine{31 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{32 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{33 \textcolor{comment}{ *}}
+\DoxyCodeLine{34 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{36 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{37 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{38 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{39 \textcolor{comment}{ */}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{pa__types_8h}{pa\_types.h}}"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{51 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}}}
+\DoxyCodeLine{52 \{}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{/* Note that the linear congruential algorithm requires 32 bit integers}}
+\DoxyCodeLine{56 \textcolor{comment}{ * because it uses arithmetic overflow. So use PaUint32 instead of}}
+\DoxyCodeLine{57 \textcolor{comment}{ * unsigned long so it will work on 64 bit systems.}}
+\DoxyCodeLine{58 \textcolor{comment}{ */}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}}\{}
+\DoxyCodeLine{62     \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{PaUint32}} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator_a4448ff52eda0652c282e21cef3400ef3}{previous}};}
+\DoxyCodeLine{63     \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{PaUint32}} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator_a4826e30e892e0cab422fc936bc8d5d08}{randSeed1}};}
+\DoxyCodeLine{64     \mbox{\hyperlink{pa__types_8h_a9cff423f720226e66a7826c30509c465}{PaUint32}} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator_af580b9d65bd8d8494e6b5200f9e535d1}{randSeed2}};}
+\DoxyCodeLine{65 \} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__dither_8h_a71ef942619476398a43d199db526e085}{PaUtil\_InitializeTriangularDitherState}}( \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}} *ditherState );}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 }
+\DoxyCodeLine{84 \mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{PaInt32}} \mbox{\hyperlink{pa__dither_8h_a7153f4621805c62eefb62a2a7dffcad5}{PaUtil\_Generate16BitTriangularDither}}( \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}} *ditherState );}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 }
+\DoxyCodeLine{99 \textcolor{keywordtype}{float} \mbox{\hyperlink{pa__dither_8h_a13826c2fc42a1a394224828a3dc7a832}{PaUtil\_GenerateFloatTriangularDither}}( \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{PaUtilTriangularDitherGenerator}} *ditherState );}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{104 \}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* \_\_cplusplus */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* PA\_DITHER\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

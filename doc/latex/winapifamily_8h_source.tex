@@ -1,0 +1,26 @@
+\hypertarget{winapifamily_8h_source}{}\doxysection{winapifamily.\+h}
+\label{winapifamily_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/winapifamily.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/winapifamily.h}}
+\mbox{\hyperlink{winapifamily_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#ifndef \_INC\_WINAPIFAMILY}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define \_INC\_WINAPIFAMILY}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define WINAPI\_PARTITION\_DESKTOP 0x1}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define WINAPI\_PARTITION\_APP     0x2    }}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_APP WINAPI\_PARTITION\_APP}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_DESKTOP\_APP (WINAPI\_PARTITION\_DESKTOP \(\backslash\)}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{                   | WINAPI\_PARTITION\_APP)    }}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{/* WINAPI\_FAMILY can be either desktop + App, or App.  */}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#ifndef WINAPI\_FAMILY}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define WINAPI\_FAMILY WINAPI\_FAMILY\_DESKTOP\_APP}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_PARTITION(v) ((WINAPI\_FAMILY \& v) == v)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define WINAPI\_FAMILY\_ONE\_PARTITION(vset, v) ((WINAPI\_FAMILY \& vset) == v)}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

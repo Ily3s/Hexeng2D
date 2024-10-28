@@ -1,0 +1,84 @@
+\doxysection{Hexeng\+::Event\+Manager\+::Mouse\+Button\+Event Class Reference}
+\hypertarget{classHexeng_1_1EventManager_1_1MouseButtonEvent}{}\label{classHexeng_1_1EventManager_1_1MouseButtonEvent}\index{Hexeng::EventManager::MouseButtonEvent@{Hexeng::EventManager::MouseButtonEvent}}
+
+
+{\ttfamily \#include $<$Input\+Event.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Event\+Manager\+::Mouse\+Button\+Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1EventManager_1_1MouseButtonEvent}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1MouseButtonEvent_a70712d6ad3a9eb2eaf54bf12252b69ed}{Mouse\+Button\+Event}} (int button\+\_\+code, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, unsigned int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, execute action (in the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop) if the mouse button button\+\_\+code is pressed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1MouseButtonEvent_a35468cfbd5ed9d90efae4180122cb027}{Mouse\+Button\+Event}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Hexeng\+::\+Event\+Manager\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a5711271a518fa6c88c1f2bdd11cd5ef0}{Event}} (std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, action is executed (in the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop) if condition is true. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a2691ff0955f087b58a7712a7dd9a3650}{Event}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ab38283183a3091dcaafbd42572cd75e4}{Event}} (const \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a4042c75fe0cc52d6139711924050a108}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a576ee3c3b859103de952518bdffe9c5f}{Event}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a604c8431e48974681d6674afc3093300}{operator=}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Event}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event}{Hexeng\+::\+Event\+Manager\+::\+Event}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}} = nullptr
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a187f6edfdf2757eac90456c96360180d}{action}} = nullptr
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}} = 1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_aba9cf00b0808e9e28a184fcb42ed68e2}{clock}} = 0
+\item 
+Range \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}} = Range\+::\+GLOBAL
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ae55059c3e71feb0cc9fa91914dea06db}{enable}} = true
+\item 
+bool \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ab04af2cc9855c54bb664c597db1ba0c3}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{classHexeng_1_1EventManager_1_1Event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1MouseButtonEvent_a70712d6ad3a9eb2eaf54bf12252b69ed}\label{classHexeng_1_1EventManager_1_1MouseButtonEvent_a70712d6ad3a9eb2eaf54bf12252b69ed} 
+\index{Hexeng::EventManager::MouseButtonEvent@{Hexeng::EventManager::MouseButtonEvent}!MouseButtonEvent@{MouseButtonEvent}}
+\index{MouseButtonEvent@{MouseButtonEvent}!Hexeng::EventManager::MouseButtonEvent@{Hexeng::EventManager::MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{MouseButtonEvent()}{MouseButtonEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Mouse\+Button\+Event\+::\+Mouse\+Button\+Event (\begin{DoxyParamCaption}\item[{int}]{button\+\_\+code,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL},  }\item[{unsigned int}]{pertick = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Every pertick ticks, execute action (in the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop) if the mouse button button\+\_\+code is pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+button\+\_\+code is a glfw button code 
+\end{DoxyNote}
+\Hypertarget{classHexeng_1_1EventManager_1_1MouseButtonEvent_a35468cfbd5ed9d90efae4180122cb027}\label{classHexeng_1_1EventManager_1_1MouseButtonEvent_a35468cfbd5ed9d90efae4180122cb027} 
+\index{Hexeng::EventManager::MouseButtonEvent@{Hexeng::EventManager::MouseButtonEvent}!MouseButtonEvent@{MouseButtonEvent}}
+\index{MouseButtonEvent@{MouseButtonEvent}!Hexeng::EventManager::MouseButtonEvent@{Hexeng::EventManager::MouseButtonEvent}}
+\doxysubsubsection{\texorpdfstring{MouseButtonEvent()}{MouseButtonEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Mouse\+Button\+Event\+::\+Mouse\+Button\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{InputEvent_8hpp}{Input\+Event.\+hpp}}\end{DoxyCompactItemize}

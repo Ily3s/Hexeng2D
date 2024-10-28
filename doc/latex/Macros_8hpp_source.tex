@@ -1,0 +1,98 @@
+\doxysection{Macros.\+hpp}
+\hypertarget{Macros_8hpp_source}{}\label{Macros_8hpp_source}\index{Hexeng2D/src/Macros.hpp@{Hexeng2D/src/Macros.hpp}}
+\mbox{\hyperlink{Macros_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MACROS\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MACROS\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ HXG\_DEBUG\_LEVEL}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#ifdef\ \_DEBUG}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ HXG\_DEBUG\_LEVEL\ 2}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ HXG\_DEBUG\_LEVEL\ 1}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#if\ HXG\_DEBUG\_LEVEL\ >=\ 2}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_ERROR(str)\ std::cout\ <<\ "{}[ERROR]\ "{}}\ <<\ str\ <<\ std::endl;\ ::exit(-\/1)}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#elif\ HXG\_DEBUG\_LEVEL\ ==\ 1}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_ERROR(str)\ std::cout\ <<\ "{}[ERROR]\ "{}}\ <<\ str\ <<\ std::endl}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#elif\ HXG\_DEBUG\_LEVEL\ ==\ 0}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_ERROR(str)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#if\ HXG\_DEBUG\_LEVEL\ >=\ 3}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_WARNING(str)\ std::cout\ <<\ "{}[WARNING]\ "{}}\ <<\ str\ <<\ std::endl;\ ::exit(-\/1)}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#elif\ HXG\_DEBUG\_LEVEL\ >=\ 1}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_WARNING(str)\ std::cout\ <<\ "{}[WARNING]\ "{}}\ <<\ str\ <<\ std::endl;}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#elif\ HXG\_DEBUG\_LEVEL\ ==\ 0}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ HXG\_LOG\_WARNING(str)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#if\ HXG\_DEBUG\_LEVEL\ !=\ 0}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ HXG\_ASSERT(cond,\ action)\ \(\backslash\)}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{if\ (!cond)\ \{\ action\ \}"{}"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ HXG\_ASSERT(cond,\ action)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#if\ HXG\_DEBUG\_LEVEL\ >=\ 2}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ HXG\_GL(x)\ \(\backslash\)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\(\backslash\)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{while\ (glGetError()\ !=\ GL\_NO\_ERROR);\(\backslash\)}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{x;\(\backslash\)}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\{\(\backslash\)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\ \ \ \ int\ i\ =\ 0;\(\backslash\)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\ \ \ \ for\ (;\ GLenum\ error\ =\ glGetError();\ ++i)\(\backslash\)}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\ \ \ \ \{\(\backslash\)}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ std::cout\ <<\ "{}[OpenGL\ Error]\ ("{}}\ <<\ error\ <<\ "{})\ in\ file\ \(\backslash\)"{}"{}\ <<\ \_\_FILE\_\_\ <<\ "{}\(\backslash\)"{}\ at\ line\ "{}\ <<\ \_\_LINE\_\_\(\backslash\)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ <<\ "{}\ at\ function\ \(\backslash\)"{}"{}\ <<\ \#x\ <<\ '\(\backslash\)"{}'\ <<\ std::endl;\(\backslash\)}
+\DoxyCodeLine{00051\ \ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{00052\ \ \ \ \ if\ (i)\(\backslash\)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \_\_debugbreak();\(\backslash\)}
+\DoxyCodeLine{00054\ \}"{}"{}}
+\DoxyCodeLine{00055\ \#else}
+\DoxyCodeLine{00056\ \#define\ HXG\_GL(x)\ x}
+\DoxyCodeLine{00057\ \#endif}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \#if\ HXG\_DEBUG\_LEVEL\ >=\ 2}
+\DoxyCodeLine{00060\ \#define\ HXG\_GLFW(x)\ \(\backslash\)}
+\DoxyCodeLine{00061\ \(\backslash\)}
+\DoxyCodeLine{00062\ while\ (glfwGetError(NULL)\ !=\ GLFW\_NO\_ERROR);\(\backslash\)}
+\DoxyCodeLine{00063\ x;\(\backslash\)}
+\DoxyCodeLine{00064\ \{\(\backslash\)}
+\DoxyCodeLine{00065\ \ \ \ \ int\ i\ =\ 0;\(\backslash\)}
+\DoxyCodeLine{00066\ \ \ \ \ for\ (;\ int\ error\ =\ glfwGetError(NULL);\ ++i)\(\backslash\)}
+\DoxyCodeLine{00067\ \ \ \ \ \{\(\backslash\)}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ std::cout\ <<\ "{}[GLFW\ Error]\ ("{}\ <<\ error\ <<\ "{})\ in\ file\ \(\backslash\)"{}"{}\ <<\ \_\_FILE\_\_\ <<\ "{}\(\backslash\)"{}\ at\ line\ "{}\ <<\ \_\_LINE\_\_\(\backslash\)}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ <<\ "{}\ at\ function\ \(\backslash\)"{}"{}\ <<\ \#x\ <<\ '\(\backslash\)"{}'\ <<\ std::endl;\(\backslash\)}
+\DoxyCodeLine{00070\ \ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{00071\ \ \ \ \ if\ (i)\(\backslash\)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_\_debugbreak();\(\backslash\)}
+\DoxyCodeLine{00073\ \}"{}"{}}
+\DoxyCodeLine{00074\ \#else}
+\DoxyCodeLine{00075\ \#define\ HXG\_GLFW(x)\ x}
+\DoxyCodeLine{00076\ \#endif}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \#ifdef\ \_MSC\_VER}
+\DoxyCodeLine{00079\ \ \ \ \ \#ifdef\ Hexeng2D\_EXPORTS}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \#define\ HXG\_DECLSPEC\ \_\_declspec(dllexport)}
+\DoxyCodeLine{00081\ \ \ \ \ \#else}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \#define\ HXG\_DECLSPEC\ \_\_declspec(dllimport)}
+\DoxyCodeLine{00083\ \ \ \ \ \#endif}
+\DoxyCodeLine{00084\ \#elif\ defined(\_\_GNUC\_\_)}
+\DoxyCodeLine{00085\ \ \ \ \ \#ifdef\ Hexeng2D\_EXPORTS}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \#define\ HXG\_DECLSPEC\ \_\_attribute\_\_((visibility("{}default"{})))}
+\DoxyCodeLine{00087\ \ \ \ \ \#else}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \#define\ HXG\_DECLSPEC}
+\DoxyCodeLine{00089\ \ \ \ \ \#endif}
+\DoxyCodeLine{00090\ \#else}
+\DoxyCodeLine{00091\ \ \ \ \ \#define\ \ HXG\_DECLSPEC}
+\DoxyCodeLine{00092\ \#endif}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \#endif\ //\ !MACROS\_HPP}
+
+\end{DoxyCode}

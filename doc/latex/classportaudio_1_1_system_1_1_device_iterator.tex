@@ -1,0 +1,160 @@
+\hypertarget{classportaudio_1_1_system_1_1_device_iterator}{}\doxysection{portaudio\+::System\+::Device\+Iterator Class Reference}
+\label{classportaudio_1_1_system_1_1_device_iterator}\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+
+
+Iterator class for iterating through all Devices in a \mbox{\hyperlink{classportaudio_1_1_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$System\+Device\+Iterator.\+hxx$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::bidirectional\+\_\+iterator\+\_\+tag \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a937d4b9bc319a53285b5f67fb784aeb3}{iterator\+\_\+category}}
+\item 
+typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a7a5edd66daeb6546c7717d2514e7804e}{value\+\_\+type}}
+\item 
+typedef ptrdiff\+\_\+t \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a249b0344098059e35dc0340b20879bf4}{difference\+\_\+type}}
+\item 
+typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}} $\ast$ \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_aacd426e630b8d6526f7a0570dfafa8ee}{pointer}}
+\item 
+typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a828c6489c4aaecc29cee8d861aee349f}{reference}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_aff747c2c816c6eae9eab4df201ff9082}{operator$\ast$}} () const
+\item 
+\mbox{\hyperlink{classportaudio_1_1_device}{Device}} $\ast$ \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_af83cde029aec04ef3b2d81de3a87c1a8}{operator-\/$>$}} () const
+\item 
+\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_ac63d62792265b7b015d4bfe2a3261354}{operator++}} ()
+\item 
+\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_af2ea58205b3a9662cc1cff6caee484b7}{operator++}} (int)
+\item 
+\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a73017a4fdb10f8960ec0302723a85b23}{operator-\/-\/}} ()
+\item 
+\mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a17678e89505bba4e3619748f511d875e}{operator-\/-\/}} (int)
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_ae917a5a479113259f33f1a72b9fdc095}{operator==}} (const \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_addf6289b6785406779efbe5dbb91af58}{operator!=}} (const \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \&rhs) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_af18a9ee98e70982bfe2975391d7221a5}{System}}
+\item 
+class \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a711915ab08cef70dfff5040953063ef2}{Host\+Api}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Iterator class for iterating through all Devices in a \mbox{\hyperlink{classportaudio_1_1_system}{System}}. 
+
+Devices will be iterated by iterating all Devices in each \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}} in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. Compliant with the STL bidirectional iterator concept. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a249b0344098059e35dc0340b20879bf4}\label{classportaudio_1_1_system_1_1_device_iterator_a249b0344098059e35dc0340b20879bf4}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!difference\_type@{difference\_type}}
+\index{difference\_type@{difference\_type}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{difference\_type}{difference\_type}}
+{\footnotesize\ttfamily typedef ptrdiff\+\_\+t \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a249b0344098059e35dc0340b20879bf4}{portaudio\+::\+System\+::\+Device\+Iterator\+::difference\+\_\+type}}}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a937d4b9bc319a53285b5f67fb784aeb3}\label{classportaudio_1_1_system_1_1_device_iterator_a937d4b9bc319a53285b5f67fb784aeb3}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!iterator\_category@{iterator\_category}}
+\index{iterator\_category@{iterator\_category}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{iterator\_category}{iterator\_category}}
+{\footnotesize\ttfamily typedef std\+::bidirectional\+\_\+iterator\+\_\+tag \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a937d4b9bc319a53285b5f67fb784aeb3}{portaudio\+::\+System\+::\+Device\+Iterator\+::iterator\+\_\+category}}}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_aacd426e630b8d6526f7a0570dfafa8ee}\label{classportaudio_1_1_system_1_1_device_iterator_aacd426e630b8d6526f7a0570dfafa8ee}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!pointer@{pointer}}
+\index{pointer@{pointer}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{pointer}{pointer}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}}$\ast$ \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_aacd426e630b8d6526f7a0570dfafa8ee}{portaudio\+::\+System\+::\+Device\+Iterator\+::pointer}}}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a828c6489c4aaecc29cee8d861aee349f}\label{classportaudio_1_1_system_1_1_device_iterator_a828c6489c4aaecc29cee8d861aee349f}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!reference@{reference}}
+\index{reference@{reference}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{reference}{reference}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}}\& \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a828c6489c4aaecc29cee8d861aee349f}{portaudio\+::\+System\+::\+Device\+Iterator\+::reference}}}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a7a5edd66daeb6546c7717d2514e7804e}\label{classportaudio_1_1_system_1_1_device_iterator_a7a5edd66daeb6546c7717d2514e7804e}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!value\_type@{value\_type}}
+\index{value\_type@{value\_type}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{value\_type}{value\_type}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator_a7a5edd66daeb6546c7717d2514e7804e}{portaudio\+::\+System\+::\+Device\+Iterator\+::value\+\_\+type}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_addf6289b6785406779efbe5dbb91af58}\label{classportaudio_1_1_system_1_1_device_iterator_addf6289b6785406779efbe5dbb91af58}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool portaudio\+::\+System\+::\+Device\+Iterator\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_aff747c2c816c6eae9eab4df201ff9082}\label{classportaudio_1_1_system_1_1_device_iterator_aff747c2c816c6eae9eab4df201ff9082}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_device}{Device}} \& portaudio\+::\+System\+::\+Device\+Iterator\+::operator$\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_ac63d62792265b7b015d4bfe2a3261354}\label{classportaudio_1_1_system_1_1_device_iterator_ac63d62792265b7b015d4bfe2a3261354}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{System\+::\+Device\+Iterator}} \& portaudio\+::\+System\+::\+Device\+Iterator\+::operator++ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_af2ea58205b3a9662cc1cff6caee484b7}\label{classportaudio_1_1_system_1_1_device_iterator_af2ea58205b3a9662cc1cff6caee484b7}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator++@{operator++}}
+\index{operator++@{operator++}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator++()}{operator++()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{System\+::\+Device\+Iterator}} portaudio\+::\+System\+::\+Device\+Iterator\+::operator++ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a73017a4fdb10f8960ec0302723a85b23}\label{classportaudio_1_1_system_1_1_device_iterator_a73017a4fdb10f8960ec0302723a85b23}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{System\+::\+Device\+Iterator}} \& portaudio\+::\+System\+::\+Device\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a17678e89505bba4e3619748f511d875e}\label{classportaudio_1_1_system_1_1_device_iterator_a17678e89505bba4e3619748f511d875e}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/-\/()}{operator--()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{System\+::\+Device\+Iterator}} portaudio\+::\+System\+::\+Device\+Iterator\+::operator-\/-\/ (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_af83cde029aec04ef3b2d81de3a87c1a8}\label{classportaudio_1_1_system_1_1_device_iterator_af83cde029aec04ef3b2d81de3a87c1a8}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator-\/$>$()}{operator->()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classportaudio_1_1_device}{Device}} $\ast$ portaudio\+::\+System\+::\+Device\+Iterator\+::operator-\/$>$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_ae917a5a479113259f33f1a72b9fdc095}\label{classportaudio_1_1_system_1_1_device_iterator_ae917a5a479113259f33f1a72b9fdc095}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!operator==@{operator==}}
+\index{operator==@{operator==}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool portaudio\+::\+System\+::\+Device\+Iterator\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classportaudio_1_1_system_1_1_device_iterator}{Device\+Iterator}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_a711915ab08cef70dfff5040953063ef2}\label{classportaudio_1_1_system_1_1_device_iterator_a711915ab08cef70dfff5040953063ef2}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!HostApi@{HostApi}}
+\index{HostApi@{HostApi}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{HostApi}{HostApi}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classportaudio_1_1_host_api}{Host\+Api}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_system_1_1_device_iterator_af18a9ee98e70982bfe2975391d7221a5}\label{classportaudio_1_1_system_1_1_device_iterator_af18a9ee98e70982bfe2975391d7221a5}} 
+\index{portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}!System@{System}}
+\index{System@{System}!portaudio::System::DeviceIterator@{portaudio::System::DeviceIterator}}
+\doxysubsubsection{\texorpdfstring{System}{System}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classportaudio_1_1_system}{System}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_system_device_iterator_8hxx}{System\+Device\+Iterator.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_system_device_iterator_8cxx}{System\+Device\+Iterator.\+cxx}}\end{DoxyCompactItemize}

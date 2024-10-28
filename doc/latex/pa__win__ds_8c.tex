@@ -1,0 +1,413 @@
+\hypertarget{pa__win__ds_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/dsound/pa\+\_\+win\+\_\+ds.c File Reference}
+\label{pa__win__ds_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/dsound/pa\_win\_ds.c@{Hexeng2D/dependencies/portaudio/src/hostapi/dsound/pa\_win\_ds.c}}
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$initguid.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$objbase.\+h$>$}\newline
+{\ttfamily \#include $<$dsound.\+h$>$}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+ds.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+ds\+\_\+dynlink.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+waveformat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+wdmks\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+coinitialize.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_ds_device_info}{Pa\+Win\+Ds\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_ds_host_api_representation}{Pa\+Win\+Ds\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_ds_stream}{Pa\+Win\+Ds\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d}{DSDevice\+Name\+And\+GUID}}
+\item 
+struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d_vector}{DSDevice\+Name\+And\+GUIDVector}}
+\item 
+struct \mbox{\hyperlink{struct_d_s_device_names_and_g_u_i_ds}{DSDevice\+Names\+And\+GUIDs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ac50762666aa00bd3a4308158510f1748}{\+\_\+\+WIN32\+\_\+\+WINNT}}~0x0400 /$\ast$ required to get waitable timer APIs $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a23947988dc14003c9a057e134f845b00}{DIRECTSOUND\+\_\+\+VERSION}}~0x0300
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a2cc0fd3db30536013559ac413c67bc56}{CREATE\+\_\+\+THREAD}}~(HANDLE)\+\_\+beginthreadex
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}}~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}}~unsigned
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a0409eac2927fc10d51fe45d0fd056aa2}{PA\+\_\+\+WIN\+\_\+\+DS\+\_\+\+USE\+\_\+\+WAITABLE\+\_\+\+TIMER\+\_\+\+OBJECT}}~/$\ast$ use waitable timer where possible, otherwise we use \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} Wait\+For\+Single\+Object \mbox{\hyperlink{glad_8h_ad29bb0d8468b264a4e3d9204366cfaab}{timeout}} $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ac42e964219ea4889a963d264ccb84ac6}{DWORD\+\_\+\+PTR}}~unsigned long
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}});
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a282d89c6287becdd02e67f5d9cecf7c2}{ERR\+\_\+\+RPT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_adae9a3acc3a48efb0b8038e5650041d8}{DBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_afa693e2086a0b0f5a309e98effdc4ee6}{DBUGX}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a076aa76e20a31d0df6b9ffd28f37458f}{PA\+\_\+\+USE\+\_\+\+HIGH\+\_\+\+LATENCY}}~(0)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ad72e49717f1cafb1733ffbb49b451ee6}{PA\+\_\+\+DS\+\_\+\+WIN\+\_\+9\+X\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(.\+140)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a506128798517154598496c25689df03b}{PA\+\_\+\+DS\+\_\+\+WIN\+\_\+\+NT\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(.\+280)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_abbe45eb413e1e410326553a0f79e2317}{PA\+\_\+\+DS\+\_\+\+WIN\+\_\+\+WDM\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+}}~(.\+120)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_aae8d9fab69db35b033ddd090cb194593}{PA\+\_\+\+DS\+\_\+\+MINIMUM\+\_\+\+POLLING\+\_\+\+PERIOD\+\_\+\+SECONDS}}~(0.\+001) /$\ast$ 1ms $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a1ad1e681e1ffbaba1509ec3633d93907}{PA\+\_\+\+DS\+\_\+\+MAXIMUM\+\_\+\+POLLING\+\_\+\+PERIOD\+\_\+\+SECONDS}}~(0.\+100) /$\ast$ 100ms $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a281463efd9480072dc2c8b211bbc3c02}{PA\+\_\+\+DS\+\_\+\+POLLING\+\_\+\+JITTER\+\_\+\+SECONDS}}~(0.\+001) /$\ast$ 1ms $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a13fff9741d6239be1f6e4094cd43dfd7}{SECONDS\+\_\+\+PER\+\_\+\+MSEC}}~(0.\+001)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ab13a106e0399002725b3d198d4a26cfb}{MSECS\+\_\+\+PER\+\_\+\+SECOND}}~(1000)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a911da5795cf8f4f2257b5d0037a05289}{PA\+\_\+\+DS\+\_\+\+SET\+\_\+\+LAST\+\_\+\+DIRECTSOUND\+\_\+\+ERROR}}(hr)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5a888ef503d4dee954bb3582a65eb9a0}{pa\+Direct\+Sound}}, hr, \char`\"{}Direct\+Sound error\char`\"{} )
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a1ffb7039e629ff79737d1a8257346d6f}{PA\+\_\+\+LATENCY\+\_\+\+ENV\+\_\+\+NAME}}~(\char`\"{}PA\+\_\+\+MIN\+\_\+\+LATENCY\+\_\+\+MSEC\char`\"{})
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a33b30aeeb2f4f16c126c6bae4169dd0c}{PA\+\_\+\+ENV\+\_\+\+BUF\+\_\+\+SIZE}}~(32)
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a77d8595aeb17c41aa2c3dd98050148c6}{PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+}}~(13) /$\ast$ must match array \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{length}} below $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_aa80e47850c5a9e2f6127c43a8c323d0d}{DSSPEAKER\+\_\+7\+POINT1}}~0x00000007
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ab94f9f6bf720539c8467e88934761049}{DSSPEAKER\+\_\+7\+POINT1\+\_\+\+SURROUND}}~0x00000008
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a7bffc17ef5e32281c1d6bacb218f524b}{DSSPEAKER\+\_\+5\+POINT1\+\_\+\+SURROUND}}~0x00000009
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ac3b7ca59fa659d6d491fa21aa06a1199}{WAVE\+\_\+\+FORMAT\+\_\+48\+M08}}~0x00001000    /$\ast$ 48     k\+Hz, Mono,   8-\/bit  $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ae340aac7798bbb571b4fdd3f8d7fdb45}{WAVE\+\_\+\+FORMAT\+\_\+48\+S08}}~0x00002000    /$\ast$ 48     k\+Hz, Stereo, 8-\/bit  $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a4f6267170a11cd550b142f5e26ef4921}{WAVE\+\_\+\+FORMAT\+\_\+48\+M16}}~0x00004000    /$\ast$ 48     k\+Hz, Mono,   16-\/bit $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a14119ba18885cf562939c5309a1034af}{WAVE\+\_\+\+FORMAT\+\_\+48\+S16}}~0x00008000    /$\ast$ 48     k\+Hz, Stereo, 16-\/bit $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_ae3e97351611d1c3ccea5602a5561cdd5}{WAVE\+\_\+\+FORMAT\+\_\+96\+M08}}~0x00010000    /$\ast$ 96     k\+Hz, Mono,   8-\/bit  $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a6e8ba45ccaa5e2da1b136aeb70bfb8fe}{WAVE\+\_\+\+FORMAT\+\_\+96\+S08}}~0x00020000    /$\ast$ 96     k\+Hz, Stereo, 8-\/bit  $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_a81ea496d58be8dbab530da330369d6ea}{WAVE\+\_\+\+FORMAT\+\_\+96\+M16}}~0x00040000    /$\ast$ 96     k\+Hz, Mono,   16-\/bit $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__win__ds_8c_abe9cc1475a1899b0d97c6d4cc5c60ff0}{WAVE\+\_\+\+FORMAT\+\_\+96\+S16}}~0x00080000    /$\ast$ 96     k\+Hz, Stereo, 16-\/bit $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_ds_device_info}{Pa\+Win\+Ds\+Device\+Info}} \mbox{\hyperlink{pa__win__ds_8c_a2961af24edcdc4d28c5d86f2b8bed317}{Pa\+Win\+Ds\+Device\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_win_ds_stream}{Pa\+Win\+Ds\+Stream}} \mbox{\hyperlink{pa__win__ds_8c_a1d7bd0ef3bcac345218cbe24ab39b7a8}{Pa\+Win\+Ds\+Stream}}
+\item 
+typedef struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d}{DSDevice\+Name\+And\+GUID}} \mbox{\hyperlink{pa__win__ds_8c_a18672a4823d3aea72b6855bff8583153}{DSDevice\+Name\+And\+GUID}}
+\item 
+typedef struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d_vector}{DSDevice\+Name\+And\+GUIDVector}} \mbox{\hyperlink{pa__win__ds_8c_a6ee4de00c19d4a9cb3e5fe9dbb47bd76}{DSDevice\+Name\+And\+GUIDVector}}
+\item 
+typedef struct \mbox{\hyperlink{struct_d_s_device_names_and_g_u_i_ds}{DSDevice\+Names\+And\+GUIDs}} \mbox{\hyperlink{pa__win__ds_8c_a8c2a43a03a0ec235bae676db9068fcac}{DSDevice\+Names\+And\+GUIDs}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} \mbox{\hyperlink{pa__win__ds_8c_af8f8a8ef4c1f1a39686109801807a4ee}{Processing\+Thread\+Proc}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Arg)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__ds_8c_a29c9db337ce20b8667e979badf261cfd}{Pa\+Win\+Ds\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GUID \mbox{\hyperlink{pa__win__ds_8c_a88af7d2c1391c61f3cdd825504fe7148}{IID\+\_\+\+IRoland\+VSCEmulated1}} = \{0xc2ad1800, 0xb243, 0x11ce, 0xa8, 0xa4, 0x00, 0xaa, 0x00, 0x6c, 0x45, 0x01\}
+\item 
+GUID \mbox{\hyperlink{pa__win__ds_8c_a085160c215981a39738e39e42b1f2323}{IID\+\_\+\+IRoland\+VSCEmulated2}} = \{0xc2ad1800, 0xb243, 0x11ce, 0xa8, 0xa4, 0x00, 0xaa, 0x00, 0x6c, 0x45, 0x02\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__ds_8c_ac50762666aa00bd3a4308158510f1748}\label{pa__win__ds_8c_ac50762666aa00bd3a4308158510f1748}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!\_WIN32\_WINNT@{\_WIN32\_WINNT}}
+\index{\_WIN32\_WINNT@{\_WIN32\_WINNT}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{\_WIN32\_WINNT}{\_WIN32\_WINNT}}
+{\footnotesize\ttfamily \#define \+\_\+\+WIN32\+\_\+\+WINNT~0x0400 /$\ast$ required to get waitable timer APIs $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a2cc0fd3db30536013559ac413c67bc56}\label{pa__win__ds_8c_a2cc0fd3db30536013559ac413c67bc56}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!CREATE\_THREAD@{CREATE\_THREAD}}
+\index{CREATE\_THREAD@{CREATE\_THREAD}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{CREATE\_THREAD}{CREATE\_THREAD}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+THREAD~(HANDLE)\+\_\+beginthreadex}
+
+\mbox{\Hypertarget{pa__win__ds_8c_adae9a3acc3a48efb0b8038e5650041d8}\label{pa__win__ds_8c_adae9a3acc3a48efb0b8038e5650041d8}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DBUG@{DBUG}}
+\index{DBUG@{DBUG}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DBUG}{DBUG}}
+{\footnotesize\ttfamily \#define DBUG(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})}
+
+\mbox{\Hypertarget{pa__win__ds_8c_afa693e2086a0b0f5a309e98effdc4ee6}\label{pa__win__ds_8c_afa693e2086a0b0f5a309e98effdc4ee6}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DBUGX@{DBUGX}}
+\index{DBUGX@{DBUGX}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DBUGX}{DBUGX}}
+{\footnotesize\ttfamily \#define DBUGX(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a23947988dc14003c9a057e134f845b00}\label{pa__win__ds_8c_a23947988dc14003c9a057e134f845b00}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DIRECTSOUND\_VERSION@{DIRECTSOUND\_VERSION}}
+\index{DIRECTSOUND\_VERSION@{DIRECTSOUND\_VERSION}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DIRECTSOUND\_VERSION}{DIRECTSOUND\_VERSION}}
+{\footnotesize\ttfamily \#define DIRECTSOUND\+\_\+\+VERSION~0x0300}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a7bffc17ef5e32281c1d6bacb218f524b}\label{pa__win__ds_8c_a7bffc17ef5e32281c1d6bacb218f524b}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSSPEAKER\_5POINT1\_SURROUND@{DSSPEAKER\_5POINT1\_SURROUND}}
+\index{DSSPEAKER\_5POINT1\_SURROUND@{DSSPEAKER\_5POINT1\_SURROUND}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSSPEAKER\_5POINT1\_SURROUND}{DSSPEAKER\_5POINT1\_SURROUND}}
+{\footnotesize\ttfamily \#define DSSPEAKER\+\_\+5\+POINT1\+\_\+\+SURROUND~0x00000009}
+
+\mbox{\Hypertarget{pa__win__ds_8c_aa80e47850c5a9e2f6127c43a8c323d0d}\label{pa__win__ds_8c_aa80e47850c5a9e2f6127c43a8c323d0d}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSSPEAKER\_7POINT1@{DSSPEAKER\_7POINT1}}
+\index{DSSPEAKER\_7POINT1@{DSSPEAKER\_7POINT1}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSSPEAKER\_7POINT1}{DSSPEAKER\_7POINT1}}
+{\footnotesize\ttfamily \#define DSSPEAKER\+\_\+7\+POINT1~0x00000007}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ab94f9f6bf720539c8467e88934761049}\label{pa__win__ds_8c_ab94f9f6bf720539c8467e88934761049}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSSPEAKER\_7POINT1\_SURROUND@{DSSPEAKER\_7POINT1\_SURROUND}}
+\index{DSSPEAKER\_7POINT1\_SURROUND@{DSSPEAKER\_7POINT1\_SURROUND}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSSPEAKER\_7POINT1\_SURROUND}{DSSPEAKER\_7POINT1\_SURROUND}}
+{\footnotesize\ttfamily \#define DSSPEAKER\+\_\+7\+POINT1\+\_\+\+SURROUND~0x00000008}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ac42e964219ea4889a963d264ccb84ac6}\label{pa__win__ds_8c_ac42e964219ea4889a963d264ccb84ac6}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DWORD\_PTR@{DWORD\_PTR}}
+\index{DWORD\_PTR@{DWORD\_PTR}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DWORD\_PTR}{DWORD\_PTR}}
+{\footnotesize\ttfamily \#define DWORD\+\_\+\+PTR~unsigned long}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a282d89c6287becdd02e67f5d9cecf7c2}\label{pa__win__ds_8c_a282d89c6287becdd02e67f5d9cecf7c2}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!ERR\_RPT@{ERR\_RPT}}
+\index{ERR\_RPT@{ERR\_RPT}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{ERR\_RPT}{ERR\_RPT}}
+{\footnotesize\ttfamily \#define ERR\+\_\+\+RPT(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ab13a106e0399002725b3d198d4a26cfb}\label{pa__win__ds_8c_ab13a106e0399002725b3d198d4a26cfb}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!MSECS\_PER\_SECOND@{MSECS\_PER\_SECOND}}
+\index{MSECS\_PER\_SECOND@{MSECS\_PER\_SECOND}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{MSECS\_PER\_SECOND}{MSECS\_PER\_SECOND}}
+{\footnotesize\ttfamily \#define MSECS\+\_\+\+PER\+\_\+\+SECOND~(1000)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a77d8595aeb17c41aa2c3dd98050148c6}\label{pa__win__ds_8c_a77d8595aeb17c41aa2c3dd98050148c6}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+\index{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_@{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}{PA\_DEFAULTSAMPLERATESEARCHORDER\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEFAULTSAMPLERATESEARCHORDER\+\_\+\+COUNT\+\_\+~(13) /$\ast$ must match array \mbox{\hyperlink{glad_8h_ab8deb215e5fa725f23a79257d7b494dd}{length}} below $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a1ad1e681e1ffbaba1509ec3633d93907}\label{pa__win__ds_8c_a1ad1e681e1ffbaba1509ec3633d93907}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS@{PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS}}
+\index{PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS@{PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS}{PA\_DS\_MAXIMUM\_POLLING\_PERIOD\_SECONDS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+MAXIMUM\+\_\+\+POLLING\+\_\+\+PERIOD\+\_\+\+SECONDS~(0.\+100) /$\ast$ 100ms $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_aae8d9fab69db35b033ddd090cb194593}\label{pa__win__ds_8c_aae8d9fab69db35b033ddd090cb194593}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS@{PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS}}
+\index{PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS@{PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS}{PA\_DS\_MINIMUM\_POLLING\_PERIOD\_SECONDS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+MINIMUM\+\_\+\+POLLING\+\_\+\+PERIOD\+\_\+\+SECONDS~(0.\+001) /$\ast$ 1ms $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a281463efd9480072dc2c8b211bbc3c02}\label{pa__win__ds_8c_a281463efd9480072dc2c8b211bbc3c02}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_POLLING\_JITTER\_SECONDS@{PA\_DS\_POLLING\_JITTER\_SECONDS}}
+\index{PA\_DS\_POLLING\_JITTER\_SECONDS@{PA\_DS\_POLLING\_JITTER\_SECONDS}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_POLLING\_JITTER\_SECONDS}{PA\_DS\_POLLING\_JITTER\_SECONDS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+POLLING\+\_\+\+JITTER\+\_\+\+SECONDS~(0.\+001) /$\ast$ 1ms $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a911da5795cf8f4f2257b5d0037a05289}\label{pa__win__ds_8c_a911da5795cf8f4f2257b5d0037a05289}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR@{PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR}}
+\index{PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR@{PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR}{PA\_DS\_SET\_LAST\_DIRECTSOUND\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+SET\+\_\+\+LAST\+\_\+\+DIRECTSOUND\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{hr }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5a888ef503d4dee954bb3582a65eb9a0}{pa\+Direct\+Sound}}, hr, \char`\"{}Direct\+Sound error\char`\"{} )}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ad72e49717f1cafb1733ffbb49b451ee6}\label{pa__win__ds_8c_ad72e49717f1cafb1733ffbb49b451ee6}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_}}
+\index{PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_}{PA\_DS\_WIN\_9X\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+WIN\+\_\+9\+X\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(.\+140)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a506128798517154598496c25689df03b}\label{pa__win__ds_8c_a506128798517154598496c25689df03b}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_}}
+\index{PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_}{PA\_DS\_WIN\_NT\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+WIN\+\_\+\+NT\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(.\+280)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_abbe45eb413e1e410326553a0f79e2317}\label{pa__win__ds_8c_abbe45eb413e1e410326553a0f79e2317}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_}}
+\index{PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_@{PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_}{PA\_DS\_WIN\_WDM\_DEFAULT\_LATENCY\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DS\+\_\+\+WIN\+\_\+\+WDM\+\_\+\+DEFAULT\+\_\+\+LATENCY\+\_\+~(.\+120)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a33b30aeeb2f4f16c126c6bae4169dd0c}\label{pa__win__ds_8c_a33b30aeeb2f4f16c126c6bae4169dd0c}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_ENV\_BUF\_SIZE@{PA\_ENV\_BUF\_SIZE}}
+\index{PA\_ENV\_BUF\_SIZE@{PA\_ENV\_BUF\_SIZE}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ENV\_BUF\_SIZE}{PA\_ENV\_BUF\_SIZE}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ENV\+\_\+\+BUF\+\_\+\+SIZE~(32)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a1ffb7039e629ff79737d1a8257346d6f}\label{pa__win__ds_8c_a1ffb7039e629ff79737d1a8257346d6f}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_LATENCY\_ENV\_NAME@{PA\_LATENCY\_ENV\_NAME}}
+\index{PA\_LATENCY\_ENV\_NAME@{PA\_LATENCY\_ENV\_NAME}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_LATENCY\_ENV\_NAME}{PA\_LATENCY\_ENV\_NAME}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+LATENCY\+\_\+\+ENV\+\_\+\+NAME~(\char`\"{}PA\+\_\+\+MIN\+\_\+\+LATENCY\+\_\+\+MSEC\char`\"{})}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}\label{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}}
+\index{PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_FUNC}{PA\_THREAD\_FUNC}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+FUNC~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_af90ebf49f32d984f4cea06ca90506e40}\label{pa__win__ds_8c_af90ebf49f32d984f4cea06ca90506e40}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_THREAD\_ID@{PA\_THREAD\_ID}}
+\index{PA\_THREAD\_ID@{PA\_THREAD\_ID}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_ID}{PA\_THREAD\_ID}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+ID~unsigned}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a076aa76e20a31d0df6b9ffd28f37458f}\label{pa__win__ds_8c_a076aa76e20a31d0df6b9ffd28f37458f}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_USE\_HIGH\_LATENCY@{PA\_USE\_HIGH\_LATENCY}}
+\index{PA\_USE\_HIGH\_LATENCY@{PA\_USE\_HIGH\_LATENCY}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_USE\_HIGH\_LATENCY}{PA\_USE\_HIGH\_LATENCY}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+USE\+\_\+\+HIGH\+\_\+\+LATENCY~(0)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a0409eac2927fc10d51fe45d0fd056aa2}\label{pa__win__ds_8c_a0409eac2927fc10d51fe45d0fd056aa2}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT@{PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT}}
+\index{PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT@{PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT}{PA\_WIN\_DS\_USE\_WAITABLE\_TIMER\_OBJECT}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WIN\+\_\+\+DS\+\_\+\+USE\+\_\+\+WAITABLE\+\_\+\+TIMER\+\_\+\+OBJECT~/$\ast$ use waitable timer where possible, otherwise we use \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} Wait\+For\+Single\+Object \mbox{\hyperlink{glad_8h_ad29bb0d8468b264a4e3d9204366cfaab}{timeout}} $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}\label{pa__win__ds_8c_ad61844ab25ea35139950e67e9693bc9f}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PRINT@{PRINT}}
+\index{PRINT@{PRINT}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PRINT}{PRINT}}
+{\footnotesize\ttfamily \#define PRINT(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}});}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a13fff9741d6239be1f6e4094cd43dfd7}\label{pa__win__ds_8c_a13fff9741d6239be1f6e4094cd43dfd7}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!SECONDS\_PER\_MSEC@{SECONDS\_PER\_MSEC}}
+\index{SECONDS\_PER\_MSEC@{SECONDS\_PER\_MSEC}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{SECONDS\_PER\_MSEC}{SECONDS\_PER\_MSEC}}
+{\footnotesize\ttfamily \#define SECONDS\+\_\+\+PER\+\_\+\+MSEC~(0.\+001)}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ac3b7ca59fa659d6d491fa21aa06a1199}\label{pa__win__ds_8c_ac3b7ca59fa659d6d491fa21aa06a1199}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_48M08@{WAVE\_FORMAT\_48M08}}
+\index{WAVE\_FORMAT\_48M08@{WAVE\_FORMAT\_48M08}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_48M08}{WAVE\_FORMAT\_48M08}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+48\+M08~0x00001000    /$\ast$ 48     k\+Hz, Mono,   8-\/bit  $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a4f6267170a11cd550b142f5e26ef4921}\label{pa__win__ds_8c_a4f6267170a11cd550b142f5e26ef4921}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_48M16@{WAVE\_FORMAT\_48M16}}
+\index{WAVE\_FORMAT\_48M16@{WAVE\_FORMAT\_48M16}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_48M16}{WAVE\_FORMAT\_48M16}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+48\+M16~0x00004000    /$\ast$ 48     k\+Hz, Mono,   16-\/bit $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ae340aac7798bbb571b4fdd3f8d7fdb45}\label{pa__win__ds_8c_ae340aac7798bbb571b4fdd3f8d7fdb45}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_48S08@{WAVE\_FORMAT\_48S08}}
+\index{WAVE\_FORMAT\_48S08@{WAVE\_FORMAT\_48S08}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_48S08}{WAVE\_FORMAT\_48S08}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+48\+S08~0x00002000    /$\ast$ 48     k\+Hz, Stereo, 8-\/bit  $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a14119ba18885cf562939c5309a1034af}\label{pa__win__ds_8c_a14119ba18885cf562939c5309a1034af}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_48S16@{WAVE\_FORMAT\_48S16}}
+\index{WAVE\_FORMAT\_48S16@{WAVE\_FORMAT\_48S16}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_48S16}{WAVE\_FORMAT\_48S16}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+48\+S16~0x00008000    /$\ast$ 48     k\+Hz, Stereo, 16-\/bit $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_ae3e97351611d1c3ccea5602a5561cdd5}\label{pa__win__ds_8c_ae3e97351611d1c3ccea5602a5561cdd5}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_96M08@{WAVE\_FORMAT\_96M08}}
+\index{WAVE\_FORMAT\_96M08@{WAVE\_FORMAT\_96M08}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_96M08}{WAVE\_FORMAT\_96M08}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+96\+M08~0x00010000    /$\ast$ 96     k\+Hz, Mono,   8-\/bit  $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a81ea496d58be8dbab530da330369d6ea}\label{pa__win__ds_8c_a81ea496d58be8dbab530da330369d6ea}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_96M16@{WAVE\_FORMAT\_96M16}}
+\index{WAVE\_FORMAT\_96M16@{WAVE\_FORMAT\_96M16}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_96M16}{WAVE\_FORMAT\_96M16}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+96\+M16~0x00040000    /$\ast$ 96     k\+Hz, Mono,   16-\/bit $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a6e8ba45ccaa5e2da1b136aeb70bfb8fe}\label{pa__win__ds_8c_a6e8ba45ccaa5e2da1b136aeb70bfb8fe}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_96S08@{WAVE\_FORMAT\_96S08}}
+\index{WAVE\_FORMAT\_96S08@{WAVE\_FORMAT\_96S08}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_96S08}{WAVE\_FORMAT\_96S08}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+96\+S08~0x00020000    /$\ast$ 96     k\+Hz, Stereo, 8-\/bit  $\ast$/}
+
+\mbox{\Hypertarget{pa__win__ds_8c_abe9cc1475a1899b0d97c6d4cc5c60ff0}\label{pa__win__ds_8c_abe9cc1475a1899b0d97c6d4cc5c60ff0}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!WAVE\_FORMAT\_96S16@{WAVE\_FORMAT\_96S16}}
+\index{WAVE\_FORMAT\_96S16@{WAVE\_FORMAT\_96S16}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_96S16}{WAVE\_FORMAT\_96S16}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+96\+S16~0x00080000    /$\ast$ 96     k\+Hz, Stereo, 16-\/bit $\ast$/}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__ds_8c_a18672a4823d3aea72b6855bff8583153}\label{pa__win__ds_8c_a18672a4823d3aea72b6855bff8583153}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSDeviceNameAndGUID@{DSDeviceNameAndGUID}}
+\index{DSDeviceNameAndGUID@{DSDeviceNameAndGUID}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSDeviceNameAndGUID}{DSDeviceNameAndGUID}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d}{DSDevice\+Name\+And\+GUID}} \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d}{DSDevice\+Name\+And\+GUID}}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a6ee4de00c19d4a9cb3e5fe9dbb47bd76}\label{pa__win__ds_8c_a6ee4de00c19d4a9cb3e5fe9dbb47bd76}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSDeviceNameAndGUIDVector@{DSDeviceNameAndGUIDVector}}
+\index{DSDeviceNameAndGUIDVector@{DSDeviceNameAndGUIDVector}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSDeviceNameAndGUIDVector}{DSDeviceNameAndGUIDVector}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d_vector}{DSDevice\+Name\+And\+GUIDVector}} \mbox{\hyperlink{struct_d_s_device_name_and_g_u_i_d_vector}{DSDevice\+Name\+And\+GUIDVector}}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a8c2a43a03a0ec235bae676db9068fcac}\label{pa__win__ds_8c_a8c2a43a03a0ec235bae676db9068fcac}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!DSDeviceNamesAndGUIDs@{DSDeviceNamesAndGUIDs}}
+\index{DSDeviceNamesAndGUIDs@{DSDeviceNamesAndGUIDs}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{DSDeviceNamesAndGUIDs}{DSDeviceNamesAndGUIDs}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_d_s_device_names_and_g_u_i_ds}{DSDevice\+Names\+And\+GUIDs}} \mbox{\hyperlink{struct_d_s_device_names_and_g_u_i_ds}{DSDevice\+Names\+And\+GUIDs}}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a2961af24edcdc4d28c5d86f2b8bed317}\label{pa__win__ds_8c_a2961af24edcdc4d28c5d86f2b8bed317}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PaWinDsDeviceInfo@{PaWinDsDeviceInfo}}
+\index{PaWinDsDeviceInfo@{PaWinDsDeviceInfo}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PaWinDsDeviceInfo}{PaWinDsDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_ds_device_info}{Pa\+Win\+Ds\+Device\+Info}} \mbox{\hyperlink{struct_pa_win_ds_device_info}{Pa\+Win\+Ds\+Device\+Info}}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a1d7bd0ef3bcac345218cbe24ab39b7a8}\label{pa__win__ds_8c_a1d7bd0ef3bcac345218cbe24ab39b7a8}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PaWinDsStream@{PaWinDsStream}}
+\index{PaWinDsStream@{PaWinDsStream}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PaWinDsStream}{PaWinDsStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_win_ds_stream}{Pa\+Win\+Ds\+Stream}} \mbox{\hyperlink{struct_pa_win_ds_stream}{Pa\+Win\+Ds\+Stream}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__ds_8c_a29c9db337ce20b8667e979badf261cfd}\label{pa__win__ds_8c_a29c9db337ce20b8667e979badf261cfd}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!PaWinDs\_Initialize@{PaWinDs\_Initialize}}
+\index{PaWinDs\_Initialize@{PaWinDs\_Initialize}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{PaWinDs\_Initialize()}{PaWinDs\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Win\+Ds\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__ds_8c_af8f8a8ef4c1f1a39686109801807a4ee}\label{pa__win__ds_8c_af8f8a8ef4c1f1a39686109801807a4ee}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!ProcessingThreadProc@{ProcessingThreadProc}}
+\index{ProcessingThreadProc@{ProcessingThreadProc}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{ProcessingThreadProc()}{ProcessingThreadProc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} Processing\+Thread\+Proc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Arg }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__win__ds_8c_a88af7d2c1391c61f3cdd825504fe7148}\label{pa__win__ds_8c_a88af7d2c1391c61f3cdd825504fe7148}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!IID\_IRolandVSCEmulated1@{IID\_IRolandVSCEmulated1}}
+\index{IID\_IRolandVSCEmulated1@{IID\_IRolandVSCEmulated1}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{IID\_IRolandVSCEmulated1}{IID\_IRolandVSCEmulated1}}
+{\footnotesize\ttfamily GUID IID\+\_\+\+IRoland\+VSCEmulated1 = \{0xc2ad1800, 0xb243, 0x11ce, 0xa8, 0xa4, 0x00, 0xaa, 0x00, 0x6c, 0x45, 0x01\}}
+
+\mbox{\Hypertarget{pa__win__ds_8c_a085160c215981a39738e39e42b1f2323}\label{pa__win__ds_8c_a085160c215981a39738e39e42b1f2323}} 
+\index{pa\_win\_ds.c@{pa\_win\_ds.c}!IID\_IRolandVSCEmulated2@{IID\_IRolandVSCEmulated2}}
+\index{IID\_IRolandVSCEmulated2@{IID\_IRolandVSCEmulated2}!pa\_win\_ds.c@{pa\_win\_ds.c}}
+\doxysubsubsection{\texorpdfstring{IID\_IRolandVSCEmulated2}{IID\_IRolandVSCEmulated2}}
+{\footnotesize\ttfamily GUID IID\+\_\+\+IRoland\+VSCEmulated2 = \{0xc2ad1800, 0xb243, 0x11ce, 0xa8, 0xa4, 0x00, 0xaa, 0x00, 0x6c, 0x45, 0x02\}}
+

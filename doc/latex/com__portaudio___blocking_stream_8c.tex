@@ -1,0 +1,145 @@
+\hypertarget{com__portaudio___blocking_stream_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/bindings/java/c/src/com\+\_\+portaudio\+\_\+\+Blocking\+Stream.c File Reference}
+\label{com__portaudio___blocking_stream_8c}\index{Hexeng2D/dependencies/portaudio/bindings/java/c/src/com\_portaudio\_BlockingStream.c@{Hexeng2D/dependencies/portaudio/bindings/java/c/src/com\_portaudio\_BlockingStream.c}}
+{\ttfamily \#include \char`\"{}com\+\_\+portaudio\+\_\+\+Blocking\+Stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jpa\+\_\+tools.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}}~(0)
+\item 
+\#define \mbox{\hyperlink{com__portaudio___blocking_stream_8c_aa8cecfc5c5c054d2875c03e77b7be15d}{TRUE}}~(!\mbox{\hyperlink{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a8eb5b076e84b57ab34e23b3f5fbcbbe1}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Read\+Available}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT jint JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_ad5cad4f2cad9952f16adc64fc75b1ab0}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Write\+Available}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a1f4c9e534d82d572b53639e2fba75099}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+write\+Floats}} (JNIEnv $\ast$env, jobject blocking\+Stream, jfloat\+Array \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, jint num\+Frames)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a9c57ee7857ccd396856c5f908016042a}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+read\+Floats}} (JNIEnv $\ast$env, jobject blocking\+Stream, jfloat\+Array \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, jint num\+Frames)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_abdd7b40959c6f926c81d8839ed7cbc97}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+write\+Shorts}} (JNIEnv $\ast$env, jobject blocking\+Stream, jfloat\+Array \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, jint num\+Frames)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a1091f9d54032e56a8e126e8bb1770f7b}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+read\+Shorts}} (JNIEnv $\ast$env, jobject blocking\+Stream, jfloat\+Array \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, jint num\+Frames)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a4320a7d37895d31062f4284517982b4e}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+start}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_ae544ebb624939601d1f6b92e62375099}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+stop}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a4c931d5b0a3bd63bf92a81db90241291}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+abort}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a3c58c19bb777d83a1a0e07663450e4b2}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+close}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a918e247543fa44e0243e076d8a2e2397}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+is\+Stopped}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT jboolean JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a1e8c7fd37c418e011cfe682d408c27b7}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+is\+Active}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT jdouble JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_ab51d7de28d1e39c30585af78882bc79e}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Time}} (JNIEnv $\ast$env, jobject blocking\+Stream)
+\item 
+JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL \mbox{\hyperlink{com__portaudio___blocking_stream_8c_a930f12e4caf058e1488a4f31d1fe3e21}{Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Info}} (JNIEnv $\ast$env, jobject blocking\+Stream, jobject stream\+Info)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}\label{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{FALSE}{FALSE}}
+{\footnotesize\ttfamily \#define FALSE~(0)}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_aa8cecfc5c5c054d2875c03e77b7be15d}\label{com__portaudio___blocking_stream_8c_aa8cecfc5c5c054d2875c03e77b7be15d}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{TRUE}{TRUE}}
+{\footnotesize\ttfamily \#define TRUE~(!\mbox{\hyperlink{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a4c931d5b0a3bd63bf92a81db90241291}\label{com__portaudio___blocking_stream_8c_a4c931d5b0a3bd63bf92a81db90241291}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_abort@{Java\_com\_portaudio\_BlockingStream\_abort}}
+\index{Java\_com\_portaudio\_BlockingStream\_abort@{Java\_com\_portaudio\_BlockingStream\_abort}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_abort()}{Java\_com\_portaudio\_BlockingStream\_abort()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+abort (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a3c58c19bb777d83a1a0e07663450e4b2}\label{com__portaudio___blocking_stream_8c_a3c58c19bb777d83a1a0e07663450e4b2}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_close@{Java\_com\_portaudio\_BlockingStream\_close}}
+\index{Java\_com\_portaudio\_BlockingStream\_close@{Java\_com\_portaudio\_BlockingStream\_close}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_close()}{Java\_com\_portaudio\_BlockingStream\_close()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+close (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a930f12e4caf058e1488a4f31d1fe3e21}\label{com__portaudio___blocking_stream_8c_a930f12e4caf058e1488a4f31d1fe3e21}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_getInfo@{Java\_com\_portaudio\_BlockingStream\_getInfo}}
+\index{Java\_com\_portaudio\_BlockingStream\_getInfo@{Java\_com\_portaudio\_BlockingStream\_getInfo}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_getInfo()}{Java\_com\_portaudio\_BlockingStream\_getInfo()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Info (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream,  }\item[{jobject}]{stream\+Info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a8eb5b076e84b57ab34e23b3f5fbcbbe1}\label{com__portaudio___blocking_stream_8c_a8eb5b076e84b57ab34e23b3f5fbcbbe1}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_getReadAvailable@{Java\_com\_portaudio\_BlockingStream\_getReadAvailable}}
+\index{Java\_com\_portaudio\_BlockingStream\_getReadAvailable@{Java\_com\_portaudio\_BlockingStream\_getReadAvailable}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_getReadAvailable()}{Java\_com\_portaudio\_BlockingStream\_getReadAvailable()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Read\+Available (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_ab51d7de28d1e39c30585af78882bc79e}\label{com__portaudio___blocking_stream_8c_ab51d7de28d1e39c30585af78882bc79e}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_getTime@{Java\_com\_portaudio\_BlockingStream\_getTime}}
+\index{Java\_com\_portaudio\_BlockingStream\_getTime@{Java\_com\_portaudio\_BlockingStream\_getTime}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_getTime()}{Java\_com\_portaudio\_BlockingStream\_getTime()}}
+{\footnotesize\ttfamily JNIEXPORT jdouble JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Time (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_ad5cad4f2cad9952f16adc64fc75b1ab0}\label{com__portaudio___blocking_stream_8c_ad5cad4f2cad9952f16adc64fc75b1ab0}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_getWriteAvailable@{Java\_com\_portaudio\_BlockingStream\_getWriteAvailable}}
+\index{Java\_com\_portaudio\_BlockingStream\_getWriteAvailable@{Java\_com\_portaudio\_BlockingStream\_getWriteAvailable}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_getWriteAvailable()}{Java\_com\_portaudio\_BlockingStream\_getWriteAvailable()}}
+{\footnotesize\ttfamily JNIEXPORT jint JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+get\+Write\+Available (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a1e8c7fd37c418e011cfe682d408c27b7}\label{com__portaudio___blocking_stream_8c_a1e8c7fd37c418e011cfe682d408c27b7}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_isActive@{Java\_com\_portaudio\_BlockingStream\_isActive}}
+\index{Java\_com\_portaudio\_BlockingStream\_isActive@{Java\_com\_portaudio\_BlockingStream\_isActive}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_isActive()}{Java\_com\_portaudio\_BlockingStream\_isActive()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+is\+Active (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a918e247543fa44e0243e076d8a2e2397}\label{com__portaudio___blocking_stream_8c_a918e247543fa44e0243e076d8a2e2397}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_isStopped@{Java\_com\_portaudio\_BlockingStream\_isStopped}}
+\index{Java\_com\_portaudio\_BlockingStream\_isStopped@{Java\_com\_portaudio\_BlockingStream\_isStopped}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_isStopped()}{Java\_com\_portaudio\_BlockingStream\_isStopped()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+is\+Stopped (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a9c57ee7857ccd396856c5f908016042a}\label{com__portaudio___blocking_stream_8c_a9c57ee7857ccd396856c5f908016042a}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_readFloats@{Java\_com\_portaudio\_BlockingStream\_readFloats}}
+\index{Java\_com\_portaudio\_BlockingStream\_readFloats@{Java\_com\_portaudio\_BlockingStream\_readFloats}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_readFloats()}{Java\_com\_portaudio\_BlockingStream\_readFloats()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+read\+Floats (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream,  }\item[{jfloat\+Array}]{buffer,  }\item[{jint}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a1091f9d54032e56a8e126e8bb1770f7b}\label{com__portaudio___blocking_stream_8c_a1091f9d54032e56a8e126e8bb1770f7b}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_readShorts@{Java\_com\_portaudio\_BlockingStream\_readShorts}}
+\index{Java\_com\_portaudio\_BlockingStream\_readShorts@{Java\_com\_portaudio\_BlockingStream\_readShorts}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_readShorts()}{Java\_com\_portaudio\_BlockingStream\_readShorts()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+read\+Shorts (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream,  }\item[{jfloat\+Array}]{buffer,  }\item[{jint}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a4320a7d37895d31062f4284517982b4e}\label{com__portaudio___blocking_stream_8c_a4320a7d37895d31062f4284517982b4e}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_start@{Java\_com\_portaudio\_BlockingStream\_start}}
+\index{Java\_com\_portaudio\_BlockingStream\_start@{Java\_com\_portaudio\_BlockingStream\_start}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_start()}{Java\_com\_portaudio\_BlockingStream\_start()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+start (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_ae544ebb624939601d1f6b92e62375099}\label{com__portaudio___blocking_stream_8c_ae544ebb624939601d1f6b92e62375099}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_stop@{Java\_com\_portaudio\_BlockingStream\_stop}}
+\index{Java\_com\_portaudio\_BlockingStream\_stop@{Java\_com\_portaudio\_BlockingStream\_stop}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_stop()}{Java\_com\_portaudio\_BlockingStream\_stop()}}
+{\footnotesize\ttfamily JNIEXPORT \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+stop (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_a1f4c9e534d82d572b53639e2fba75099}\label{com__portaudio___blocking_stream_8c_a1f4c9e534d82d572b53639e2fba75099}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_writeFloats@{Java\_com\_portaudio\_BlockingStream\_writeFloats}}
+\index{Java\_com\_portaudio\_BlockingStream\_writeFloats@{Java\_com\_portaudio\_BlockingStream\_writeFloats}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_writeFloats()}{Java\_com\_portaudio\_BlockingStream\_writeFloats()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+write\+Floats (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream,  }\item[{jfloat\+Array}]{buffer,  }\item[{jint}]{num\+Frames }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{com__portaudio___blocking_stream_8c_abdd7b40959c6f926c81d8839ed7cbc97}\label{com__portaudio___blocking_stream_8c_abdd7b40959c6f926c81d8839ed7cbc97}} 
+\index{com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}!Java\_com\_portaudio\_BlockingStream\_writeShorts@{Java\_com\_portaudio\_BlockingStream\_writeShorts}}
+\index{Java\_com\_portaudio\_BlockingStream\_writeShorts@{Java\_com\_portaudio\_BlockingStream\_writeShorts}!com\_portaudio\_BlockingStream.c@{com\_portaudio\_BlockingStream.c}}
+\doxysubsubsection{\texorpdfstring{Java\_com\_portaudio\_BlockingStream\_writeShorts()}{Java\_com\_portaudio\_BlockingStream\_writeShorts()}}
+{\footnotesize\ttfamily JNIEXPORT jboolean JNICALL Java\+\_\+com\+\_\+portaudio\+\_\+\+Blocking\+Stream\+\_\+write\+Shorts (\begin{DoxyParamCaption}\item[{JNIEnv $\ast$}]{env,  }\item[{jobject}]{blocking\+Stream,  }\item[{jfloat\+Array}]{buffer,  }\item[{jint}]{num\+Frames }\end{DoxyParamCaption})}
+

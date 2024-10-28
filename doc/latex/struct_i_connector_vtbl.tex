@@ -1,0 +1,183 @@
+\hypertarget{struct_i_connector_vtbl}{}\doxysection{IConnector\+Vtbl Struct Reference}
+\label{struct_i_connector_vtbl}\index{IConnectorVtbl@{IConnectorVtbl}}
+
+
+{\ttfamily \#include $<$devicetopology.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_connector_vtbl_adcc32e2c45386b3151bdf564e8edc8a6}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_aa29727c0f3b728f41e7d39068d9a1297}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a823273baa0d0db2ad08a61dbf2003884}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a8cfe0a17338e4bd92e9a70f5cf7ba802}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Type)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a3864216fadeebba0c17161c3185927e8}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Data\+Flow)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a0273734c97aa342526f3e8976d1421e0}{HRESULT}} (STDMETHODCALLTYPE $\ast$Connect\+To)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_af004dba615707b208eab494349649132}{HRESULT}} (STDMETHODCALLTYPE $\ast$Disconnect)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_abec2a1af9ff5f6dc84e5516f2a712e0f}{HRESULT}} (STDMETHODCALLTYPE $\ast$Is\+Connected)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a891f70f29c85cb8bd8f714fd15a99b02}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Connected\+To)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_ae1020c9f173ae128ab0dbb3e26ea2856}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Connector\+Id\+Connected\+To)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_connector_vtbl_a758a9680fdc2620c476bf786879922dd}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Device\+Id\+Connected\+To)(\mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_connector_vtbl_a130cb515391a31ac36c8308765d14e9e}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_a5de0485de0f12318fb7567432c725c37}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}{Connector\+Type}} $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_ac8ce7d9309d1c05a07c62cb7d2efd94a}{p\+Type}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}{Data\+Flow}} $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_aee205b802c0845a8b2153531f815b2c6}{p\+Flow}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_a6f8fb12246cdaf9ff105de6281be8d4e}{p\+Connect\+To}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} BOOL $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_a9a8261edd98f8ee36f8d11ab048645d5}{pb\+Connected}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_afe4f6f5bd1675289f3687670ec9196b6}{pp\+Con\+To}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_a328e9302de134490233ed45553bb2a12}{ppwstr\+Connector\+Id}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR $\ast$ \mbox{\hyperlink{struct_i_connector_vtbl_ab039c22ccf7076e5e9d8f3a79ff796ce}{ppwstr\+Device\+Id}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_connector_vtbl_a0273734c97aa342526f3e8976d1421e0}\label{struct_i_connector_vtbl_a0273734c97aa342526f3e8976d1421e0}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Connect\+To }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_af004dba615707b208eab494349649132}\label{struct_i_connector_vtbl_af004dba615707b208eab494349649132}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Disconnect }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a891f70f29c85cb8bd8f714fd15a99b02}\label{struct_i_connector_vtbl_a891f70f29c85cb8bd8f714fd15a99b02}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Connected\+To }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_ae1020c9f173ae128ab0dbb3e26ea2856}\label{struct_i_connector_vtbl_ae1020c9f173ae128ab0dbb3e26ea2856}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Connector\+Id\+Connected\+To }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a3864216fadeebba0c17161c3185927e8}\label{struct_i_connector_vtbl_a3864216fadeebba0c17161c3185927e8}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Data\+Flow }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a758a9680fdc2620c476bf786879922dd}\label{struct_i_connector_vtbl_a758a9680fdc2620c476bf786879922dd}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Device\+Id\+Connected\+To }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a8cfe0a17338e4bd92e9a70f5cf7ba802}\label{struct_i_connector_vtbl_a8cfe0a17338e4bd92e9a70f5cf7ba802}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_abec2a1af9ff5f6dc84e5516f2a712e0f}\label{struct_i_connector_vtbl_abec2a1af9ff5f6dc84e5516f2a712e0f}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Is\+Connected }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_adcc32e2c45386b3151bdf564e8edc8a6}\label{struct_i_connector_vtbl_adcc32e2c45386b3151bdf564e8edc8a6}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IConnector\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_aa29727c0f3b728f41e7d39068d9a1297}\label{struct_i_connector_vtbl_aa29727c0f3b728f41e7d39068d9a1297}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a823273baa0d0db2ad08a61dbf2003884}\label{struct_i_connector_vtbl_a823273baa0d0db2ad08a61dbf2003884}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IConnector\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_connector_vtbl_a9a8261edd98f8ee36f8d11ab048645d5}\label{struct_i_connector_vtbl_a9a8261edd98f8ee36f8d11ab048645d5}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!pbConnected@{pbConnected}}
+\index{pbConnected@{pbConnected}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{pbConnected}{pbConnected}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} BOOL$\ast$ IConnector\+Vtbl\+::pb\+Connected}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a6f8fb12246cdaf9ff105de6281be8d4e}\label{struct_i_connector_vtbl_a6f8fb12246cdaf9ff105de6281be8d4e}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!pConnectTo@{pConnectTo}}
+\index{pConnectTo@{pConnectTo}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{pConnectTo}{pConnectTo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}}$\ast$ IConnector\+Vtbl\+::p\+Connect\+To}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_aee205b802c0845a8b2153531f815b2c6}\label{struct_i_connector_vtbl_aee205b802c0845a8b2153531f815b2c6}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!pFlow@{pFlow}}
+\index{pFlow@{pFlow}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{pFlow}{pFlow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_af578df88e7b98f8c42865c93f9559899}{Data\+Flow}}$\ast$ IConnector\+Vtbl\+::p\+Flow}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_afe4f6f5bd1675289f3687670ec9196b6}\label{struct_i_connector_vtbl_afe4f6f5bd1675289f3687670ec9196b6}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ppConTo@{ppConTo}}
+\index{ppConTo@{ppConTo}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppConTo}{ppConTo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}}$\ast$$\ast$ IConnector\+Vtbl\+::pp\+Con\+To}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a5de0485de0f12318fb7567432c725c37}\label{struct_i_connector_vtbl_a5de0485de0f12318fb7567432c725c37}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IConnector\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a328e9302de134490233ed45553bb2a12}\label{struct_i_connector_vtbl_a328e9302de134490233ed45553bb2a12}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ppwstrConnectorId@{ppwstrConnectorId}}
+\index{ppwstrConnectorId@{ppwstrConnectorId}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppwstrConnectorId}{ppwstrConnectorId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR$\ast$ IConnector\+Vtbl\+::ppwstr\+Connector\+Id}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_ab039c22ccf7076e5e9d8f3a79ff796ce}\label{struct_i_connector_vtbl_ab039c22ccf7076e5e9d8f3a79ff796ce}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!ppwstrDeviceId@{ppwstrDeviceId}}
+\index{ppwstrDeviceId@{ppwstrDeviceId}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{ppwstrDeviceId}{ppwstrDeviceId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR$\ast$ IConnector\+Vtbl\+::ppwstr\+Device\+Id}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_ac8ce7d9309d1c05a07c62cb7d2efd94a}\label{struct_i_connector_vtbl_ac8ce7d9309d1c05a07c62cb7d2efd94a}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!pType@{pType}}
+\index{pType@{pType}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{pType}{pType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a8eff30f37ccdb6db24e6286f0e1b595c}{Connector\+Type}}$\ast$ IConnector\+Vtbl\+::p\+Type}
+
+\mbox{\Hypertarget{struct_i_connector_vtbl_a130cb515391a31ac36c8308765d14e9e}\label{struct_i_connector_vtbl_a130cb515391a31ac36c8308765d14e9e}} 
+\index{IConnectorVtbl@{IConnectorVtbl}!riid@{riid}}
+\index{riid@{riid}!IConnectorVtbl@{IConnectorVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IConnector\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{devicetopology_8h}{devicetopology.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,1511 @@
+\hypertarget{portaudio_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/portaudio.h File Reference}
+\label{portaudio_8h}\index{Hexeng2D/dependencies/portaudio/include/portaudio.h@{Hexeng2D/dependencies/portaudio/include/portaudio.h}}
+
+
+The portable Port\+Audio API.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}}
+\item 
+struct \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}{pa\+Make\+Version\+Number}}(major,  minor,  subminor)~    (((major)\&0x\+FF)$<$$<$16 $\vert$ ((minor)\&0x\+FF)$<$$<$8 $\vert$ ((subminor)\&0x\+FF))
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a8c26dd5e6f28bb4cda7a1f5460282297}{pa\+No\+Device}}~((\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}})-\/1)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a14795fe3377c3b037025a61e550d44b5}{pa\+Use\+Host\+Api\+Specific\+Device\+Specification}}~((\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}})-\/2)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000001)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}{pa\+Int32}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000002)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}{pa\+Int24}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000004)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000008)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}{pa\+Int8}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000010)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}{pa\+UInt8}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000020)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_aba595f6b645c8134a8ac3004957b9ff7}{pa\+Custom\+Format}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00010000)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a1d79f0b88812cef5364b276dbbc898b5}{pa\+Non\+Interleaved}}~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x80000000)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a400df642339bf4112333060af6a43c0f}{pa\+Format\+Is\+Supported}}~(0)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}{pa\+Frames\+Per\+Buffer\+Unspecified}}~(0)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ad33384abe3754a39f4773f2561773595}{pa\+No\+Flag}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a837b8a81be3f7e36c96003e0d8dcec12}{pa\+Clip\+Off}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000001)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}{pa\+Dither\+Off}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000002)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ad89be5ed5279fc4c4a8495c775e1d5d5}{pa\+Never\+Drop\+Input}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000004)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ad7b862a223edd680d7985c33c847e31d}{pa\+Prime\+Output\+Buffers\+Using\+Stream\+Callback}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000008)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a8522957e1bf814b9782d3a0e314c8b51}{pa\+Platform\+Specific\+Flags}}~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}})0x\+FFFF0000)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_a57d1879f52406bdedfdda8f79f458e15}{pa\+Input\+Underflow}}~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000001)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_aea144f0edaf02d0ac8b113f41fb95c47}{pa\+Input\+Overflow}}~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000002)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_aa17c91c859b12ebbf53a1440def53c89}{pa\+Output\+Underflow}}~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000004)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ac22bb260d47b348bd3aab8813fd45462}{pa\+Output\+Overflow}}~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000008)
+\item 
+\#define \mbox{\hyperlink{portaudio_8h_ad6616980c2259866a39eb2b76fa4697d}{pa\+Priming\+Output}}~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000010)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}} \mbox{\hyperlink{portaudio_8h_a38b6ad73a2d8d78e3a556273321ae9d0}{Pa\+Version\+Info}}
+\item 
+typedef int \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}
+\item 
+typedef enum \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}{Pa\+Error\+Code}} \mbox{\hyperlink{portaudio_8h_a06b9de8a0f242a1d3beb2326f65ebce3}{Pa\+Error\+Code}}
+\item 
+typedef int \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}
+\item 
+typedef int \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}
+\item 
+typedef enum \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{portaudio_8h_a7e36542045f98de11a13f548113dc895}{Pa\+Host\+Api\+Type\+Id}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} \mbox{\hyperlink{portaudio_8h_ae32c4bc6235b2d0e5233d2148b4dfef0}{Pa\+Host\+Api\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}} \mbox{\hyperlink{portaudio_8h_aae5f7523aa88f6e1ab05230103bd3560}{Pa\+Host\+Error\+Info}}
+\item 
+typedef double \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}
+\item 
+typedef unsigned long \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} \mbox{\hyperlink{portaudio_8h_a6c6fa3fb5640759651ae5a5e69e45cdc}{Pa\+Device\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} \mbox{\hyperlink{portaudio_8h_a978b2ed65ea4740d6999a402b0c3ee76}{Pa\+Stream\+Parameters}}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}}
+\item 
+typedef unsigned long \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} \mbox{\hyperlink{portaudio_8h_a1832c268abf8a9074265c436c7f1207d}{Pa\+Stream\+Callback\+Time\+Info}}
+\item 
+typedef unsigned long \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}
+\item 
+typedef enum \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}} \mbox{\hyperlink{portaudio_8h_a602b93feba60c685a74b154f08508702}{Pa\+Stream\+Callback\+Result}}
+\item 
+typedef int \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}(const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output, unsigned long frame\+Count, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}}(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} \mbox{\hyperlink{portaudio_8h_a65f7a59ec586145cf5de77fccd1ecac9}{Pa\+Stream\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}{Pa\+Error\+Code}} \{ \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{pa\+No\+Error}} = 0
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a12769658a78482b4265673f7c08fbb57}{pa\+Not\+Initialized}} = -\/10000
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{pa\+Unanticipated\+Host\+Error}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a46c51714378540c67c46895e726fb787}{pa\+Invalid\+Channel\+Count}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a30a98097c3b6d9789077b72c26ae7c24}{pa\+Invalid\+Sample\+Rate}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3442d8018bfa4329847d87df68b564a3}{pa\+Invalid\+Device}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aa5e7d0d9ea49ef845a93c89a3d138294}{pa\+Invalid\+Flag}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a69660cd762aec2672fd3393e0971e99c}{pa\+Sample\+Format\+Not\+Supported}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a795db60c291d92362b87edbc0bdb56cc}{pa\+Bad\+IODevice\+Combination}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ad58986a9b5064d5a29c7ed0837bfc621}{pa\+Insufficient\+Memory}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a5a07d92bec4707ab34a01893bf24940e}{pa\+Buffer\+Too\+Big}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a0711883755e19ee598cefa1db34d98cb}{pa\+Buffer\+Too\+Small}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3fbb82a5d01ed678642426f1f5058e2c}{pa\+Null\+Callback}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aef50bc6456d8bcbd94d1690dfb8d447a}{pa\+Bad\+Stream\+Ptr}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a26ddab3d4dace3978ec6d5b3ccc10e87}{pa\+Timed\+Out}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4851f9f753cdad3e7a89380d6589816c}{pa\+Internal\+Error}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a467dac712e45745d8b0d8cd429fd1a01}{pa\+Device\+Unavailable}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a44f6cce375a3d38af28652179a400403}{pa\+Incompatible\+Host\+Api\+Specific\+Stream\+Info}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a43201ac8bea6578d4a13024315c24117}{pa\+Stream\+Is\+Stopped}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a9e05b6974d01fcce82c5d94b575ff1b2}{pa\+Stream\+Is\+Not\+Stopped}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a25d517e59ea2e846119d972d5f1c53bb}{pa\+Input\+Overflowed}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a77657d34c5e91a2962e7df7730441eee}{pa\+Output\+Underflowed}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4b470a48b5fd9cf04591b1fbdd2ad26a}{pa\+Host\+Api\+Not\+Found}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a99cc1bb53662f07a06876ec1818356a7}{pa\+Invalid\+Host\+Api}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ae7bc144c8e0548287c6a3af67974df5a}{pa\+Can\+Not\+Read\+From\+ACallback\+Stream}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af389ed20229971db693046093281b255}{pa\+Can\+Not\+Write\+To\+ACallback\+Stream}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4a708b0414ebca1a78f9084671bd0a0c}{pa\+Can\+Not\+Read\+From\+An\+Output\+Only\+Stream}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af718bcda33019db4a3b9ec6bdefc6e9d}{pa\+Can\+Not\+Write\+To\+An\+Input\+Only\+Stream}}
+, \newline
+\mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a82f2e0e1c05189caf15b5f6c016edac6}{pa\+Incompatible\+Stream\+Host\+Api}}
+, \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a8679fc0a41ce0517d89a53b9c182a4b8}{pa\+Bad\+Buffer\+Ptr}}
+ \}
+\item 
+enum \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \{ \newline
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}{pa\+In\+Development}} =0
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5a888ef503d4dee954bb3582a65eb9a0}{pa\+Direct\+Sound}} =1
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea92db20780c2d5a900ea6a9e988b4da0c}{pa\+MME}} =2
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}{pa\+ASIO}} =3
+, \newline
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea069313b969ea3d41a275720879aa5ba8}{pa\+Sound\+Manager}} =4
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa7295ccb885c47b70c829f8236161d1a}{pa\+Core\+Audio}} =5
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea9afdcbf978e7b8b48db08a7c5208ebe4}{pa\+OSS}} =7
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5fb23d8b2cf3e2e714298de5ab1b83e1}{pa\+ALSA}} =8
+, \newline
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea40c3e003e36409b4a1aae360625c69a9}{pa\+AL}} =9
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeab6ef5d4eff3f3e80b90148a4b871b501}{pa\+Be\+OS}} =10
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeacb4ba221afe42867d96ab345ee13d78d}{pa\+WDMKS}} =11
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaf51e19fba6cd8946f06af332e61ad190}{pa\+JACK}} =12
+, \newline
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa27b155bf2883aef821dfb6eba89e456}{pa\+WASAPI}} =13
+, \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea4651a7c2fb6e75843c130d82be7c7c4f}{pa\+Audio\+Science\+HPI}} =14
+ \}
+\item 
+enum \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}} \{ \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3}{pa\+Continue}} =0
+, \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650}{pa\+Complete}} =1
+, \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2}{pa\+Abort}} =2
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\+\_\+\+Get\+Version}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+const char $\ast$ \mbox{\hyperlink{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}{Pa\+\_\+\+Get\+Version\+Text}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+const \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}} $\ast$ \mbox{\hyperlink{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}{Pa\+\_\+\+Get\+Version\+Info}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+const char $\ast$ \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\+\_\+\+Get\+Error\+Text}} (\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} error\+Code)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{portaudio_8h_ae55c77f9b7e3f8eb301a6f1c0e2347ac}{Pa\+\_\+\+Get\+Default\+Host\+Api}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+const \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} $\ast$ \mbox{\hyperlink{portaudio_8h_afdd67ffc394c90f3ee78d51e51f8f22f}{Pa\+\_\+\+Get\+Host\+Api\+Info}} (\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api)
+\item 
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{portaudio_8h_a081c3975126d20b4226facfb7ba0620f}{Pa\+\_\+\+Host\+Api\+Type\+Id\+To\+Host\+Api\+Index}} (\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}{Pa\+\_\+\+Host\+Api\+Device\+Index\+To\+Device\+Index}} (\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api, int host\+Api\+Device\+Index)
+\item 
+const \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}} $\ast$ \mbox{\hyperlink{portaudio_8h_a1d0652aef223200f9401bb28fe04a3ad}{Pa\+\_\+\+Get\+Last\+Host\+Error\+Info}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}{Pa\+\_\+\+Get\+Default\+Input\+Device}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} \mbox{\hyperlink{portaudio_8h_adc955dfab007624000695c48d4f876dc}{Pa\+\_\+\+Get\+Default\+Output\+Device}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+const \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} $\ast$ \mbox{\hyperlink{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}{Pa\+\_\+\+Get\+Device\+Info}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}{Pa\+\_\+\+Is\+Format\+Supported}} (const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$input\+Parameters, const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$output\+Parameters, double sample\+Rate, unsigned long frames\+Per\+Buffer, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} stream\+Flags, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, int num\+Input\+Channels, int num\+Output\+Channels, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format, double sample\+Rate, unsigned long frames\+Per\+Buffer, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$stream\+Callback, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}{Pa\+\_\+\+Close\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_aa11e7b06b2cde8621551f5d527965838}{Pa\+\_\+\+Set\+Stream\+Finished\+Callback}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} $\ast$stream\+Finished\+Callback)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\+\_\+\+Start\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}{Pa\+\_\+\+Is\+Stream\+Stopped}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}{Pa\+\_\+\+Is\+Stream\+Active}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+const \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} $\ast$ \mbox{\hyperlink{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}{Pa\+\_\+\+Get\+Stream\+Info}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+double \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\+\_\+\+Get\+Stream\+Cpu\+Load}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}{Pa\+\_\+\+Read\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a075a6efb503a728213bdae24347ed27d}{Pa\+\_\+\+Write\+Stream}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, unsigned long frames)
+\item 
+signed long \mbox{\hyperlink{portaudio_8h_ad04c33f045fa58d7b705b56b1fd3e816}{Pa\+\_\+\+Get\+Stream\+Read\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+signed long \mbox{\hyperlink{portaudio_8h_a25595acf48733ec32045aa189c3caa61}{Pa\+\_\+\+Get\+Stream\+Write\+Available}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{portaudio_8h_a541ed0b734df2631bc4c229acf92abc1}{Pa\+\_\+\+Get\+Sample\+Size}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{portaudio_8h_a1b3c20044c9401c42add29475636e83d}{Pa\+\_\+\+Sleep}} (long msec)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The portable Port\+Audio API. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{portaudio_8h_a837b8a81be3f7e36c96003e0d8dcec12}\label{portaudio_8h_a837b8a81be3f7e36c96003e0d8dcec12}} 
+\index{portaudio.h@{portaudio.h}!paClipOff@{paClipOff}}
+\index{paClipOff@{paClipOff}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paClipOff}{paClipOff}}
+{\footnotesize\ttfamily \#define pa\+Clip\+Off~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000001)}
+
+Disable default clipping of out of range samples. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_aba595f6b645c8134a8ac3004957b9ff7}\label{portaudio_8h_aba595f6b645c8134a8ac3004957b9ff7}} 
+\index{portaudio.h@{portaudio.h}!paCustomFormat@{paCustomFormat}}
+\index{paCustomFormat@{paCustomFormat}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paCustomFormat}{paCustomFormat}}
+{\footnotesize\ttfamily \#define pa\+Custom\+Format~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00010000)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}\label{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}} 
+\index{portaudio.h@{portaudio.h}!paDitherOff@{paDitherOff}}
+\index{paDitherOff@{paDitherOff}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paDitherOff}{paDitherOff}}
+{\footnotesize\ttfamily \#define pa\+Dither\+Off~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000002)}
+
+Disable default dithering. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}\label{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}} 
+\index{portaudio.h@{portaudio.h}!paFloat32@{paFloat32}}
+\index{paFloat32@{paFloat32}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paFloat32}{paFloat32}}
+{\footnotesize\ttfamily \#define pa\+Float32~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000001)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a400df642339bf4112333060af6a43c0f}\label{portaudio_8h_a400df642339bf4112333060af6a43c0f}} 
+\index{portaudio.h@{portaudio.h}!paFormatIsSupported@{paFormatIsSupported}}
+\index{paFormatIsSupported@{paFormatIsSupported}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paFormatIsSupported}{paFormatIsSupported}}
+{\footnotesize\ttfamily \#define pa\+Format\+Is\+Supported~(0)}
+
+Return code for Pa\+\_\+\+Is\+Format\+Supported indicating success. \mbox{\Hypertarget{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}\label{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}} 
+\index{portaudio.h@{portaudio.h}!paFramesPerBufferUnspecified@{paFramesPerBufferUnspecified}}
+\index{paFramesPerBufferUnspecified@{paFramesPerBufferUnspecified}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paFramesPerBufferUnspecified}{paFramesPerBufferUnspecified}}
+{\footnotesize\ttfamily \#define pa\+Frames\+Per\+Buffer\+Unspecified~(0)}
+
+Can be passed as the frames\+Per\+Buffer parameter to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} or \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream()}} to indicate that the stream callback will accept buffers of any size. \mbox{\Hypertarget{portaudio_8h_aea144f0edaf02d0ac8b113f41fb95c47}\label{portaudio_8h_aea144f0edaf02d0ac8b113f41fb95c47}} 
+\index{portaudio.h@{portaudio.h}!paInputOverflow@{paInputOverflow}}
+\index{paInputOverflow@{paInputOverflow}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInputOverflow}{paInputOverflow}}
+{\footnotesize\ttfamily \#define pa\+Input\+Overflow~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000002)}
+
+In a stream opened with pa\+Frames\+Per\+Buffer\+Unspecified, indicates that data prior to the first sample of the input buffer was discarded due to an overflow, possibly because the stream callback is using too much CPU time. Otherwise indicates that data prior to one or more samples in the input buffer was discarded. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a57d1879f52406bdedfdda8f79f458e15}\label{portaudio_8h_a57d1879f52406bdedfdda8f79f458e15}} 
+\index{portaudio.h@{portaudio.h}!paInputUnderflow@{paInputUnderflow}}
+\index{paInputUnderflow@{paInputUnderflow}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInputUnderflow}{paInputUnderflow}}
+{\footnotesize\ttfamily \#define pa\+Input\+Underflow~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000001)}
+
+In a stream opened with pa\+Frames\+Per\+Buffer\+Unspecified, indicates that input data is all silence (zeros) because no real data is available. In a stream opened without pa\+Frames\+Per\+Buffer\+Unspecified, it indicates that one or more zero samples have been inserted into the input buffer to compensate for an input underflow. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}\label{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}} 
+\index{portaudio.h@{portaudio.h}!paInt16@{paInt16}}
+\index{paInt16@{paInt16}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInt16}{paInt16}}
+{\footnotesize\ttfamily \#define pa\+Int16~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000008)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}\label{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}} 
+\index{portaudio.h@{portaudio.h}!paInt24@{paInt24}}
+\index{paInt24@{paInt24}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInt24}{paInt24}}
+{\footnotesize\ttfamily \#define pa\+Int24~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000004)}
+
+Packed 24 bit format. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}\label{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}} 
+\index{portaudio.h@{portaudio.h}!paInt32@{paInt32}}
+\index{paInt32@{paInt32}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInt32}{paInt32}}
+{\footnotesize\ttfamily \#define pa\+Int32~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000002)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}\label{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}} 
+\index{portaudio.h@{portaudio.h}!paInt8@{paInt8}}
+\index{paInt8@{paInt8}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paInt8}{paInt8}}
+{\footnotesize\ttfamily \#define pa\+Int8~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000010)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}\label{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}} 
+\index{portaudio.h@{portaudio.h}!paMakeVersionNumber@{paMakeVersionNumber}}
+\index{paMakeVersionNumber@{paMakeVersionNumber}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paMakeVersionNumber}{paMakeVersionNumber}}
+{\footnotesize\ttfamily \#define pa\+Make\+Version\+Number(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{subminor }\end{DoxyParamCaption})~    (((major)\&0x\+FF)$<$$<$16 $\vert$ ((minor)\&0x\+FF)$<$$<$8 $\vert$ ((subminor)\&0x\+FF))}
+
+Generate a packed integer version number in the same format used by \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\+\_\+\+Get\+Version()}}. Use this to compare a specified version number with the currently running version. For example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\_GetVersion}}() < \mbox{\hyperlink{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}{paMakeVersionNumber}}(19,5,1) ) \{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\+\_\+\+Get\+Version}}, \mbox{\hyperlink{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}{Pa\+\_\+\+Get\+Version\+Info}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+\mbox{\Hypertarget{portaudio_8h_ad89be5ed5279fc4c4a8495c775e1d5d5}\label{portaudio_8h_ad89be5ed5279fc4c4a8495c775e1d5d5}} 
+\index{portaudio.h@{portaudio.h}!paNeverDropInput@{paNeverDropInput}}
+\index{paNeverDropInput@{paNeverDropInput}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paNeverDropInput}{paNeverDropInput}}
+{\footnotesize\ttfamily \#define pa\+Never\+Drop\+Input~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000004)}
+
+Flag requests that where possible a full duplex stream will not discard overflowed input samples without calling the stream callback. This flag is only valid for full duplex callback streams and only when used in combination with the pa\+Frames\+Per\+Buffer\+Unspecified (0) frames\+Per\+Buffer parameter. Using this flag incorrectly results in a pa\+Invalid\+Flag error being returned from Pa\+\_\+\+Open\+Stream and Pa\+\_\+\+Open\+Default\+Stream.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}, \mbox{\hyperlink{portaudio_8h_ac1e20b97c1858a59bc62823573c59f0b}{pa\+Frames\+Per\+Buffer\+Unspecified}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a8c26dd5e6f28bb4cda7a1f5460282297}\label{portaudio_8h_a8c26dd5e6f28bb4cda7a1f5460282297}} 
+\index{portaudio.h@{portaudio.h}!paNoDevice@{paNoDevice}}
+\index{paNoDevice@{paNoDevice}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paNoDevice}{paNoDevice}}
+{\footnotesize\ttfamily \#define pa\+No\+Device~((\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}})-\/1)}
+
+A special Pa\+Device\+Index value indicating that no device is available, or should be used.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ad33384abe3754a39f4773f2561773595}\label{portaudio_8h_ad33384abe3754a39f4773f2561773595}} 
+\index{portaudio.h@{portaudio.h}!paNoFlag@{paNoFlag}}
+\index{paNoFlag@{paNoFlag}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paNoFlag}{paNoFlag}}
+{\footnotesize\ttfamily \#define pa\+No\+Flag~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a1d79f0b88812cef5364b276dbbc898b5}\label{portaudio_8h_a1d79f0b88812cef5364b276dbbc898b5}} 
+\index{portaudio.h@{portaudio.h}!paNonInterleaved@{paNonInterleaved}}
+\index{paNonInterleaved@{paNonInterleaved}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paNonInterleaved}{paNonInterleaved}}
+{\footnotesize\ttfamily \#define pa\+Non\+Interleaved~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x80000000)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ac22bb260d47b348bd3aab8813fd45462}\label{portaudio_8h_ac22bb260d47b348bd3aab8813fd45462}} 
+\index{portaudio.h@{portaudio.h}!paOutputOverflow@{paOutputOverflow}}
+\index{paOutputOverflow@{paOutputOverflow}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paOutputOverflow}{paOutputOverflow}}
+{\footnotesize\ttfamily \#define pa\+Output\+Overflow~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000008)}
+
+Indicates that output data will be discarded because no room is available. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_aa17c91c859b12ebbf53a1440def53c89}\label{portaudio_8h_aa17c91c859b12ebbf53a1440def53c89}} 
+\index{portaudio.h@{portaudio.h}!paOutputUnderflow@{paOutputUnderflow}}
+\index{paOutputUnderflow@{paOutputUnderflow}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paOutputUnderflow}{paOutputUnderflow}}
+{\footnotesize\ttfamily \#define pa\+Output\+Underflow~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000004)}
+
+Indicates that output data (or a gap) was inserted, possibly because the stream callback is using too much CPU time. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a8522957e1bf814b9782d3a0e314c8b51}\label{portaudio_8h_a8522957e1bf814b9782d3a0e314c8b51}} 
+\index{portaudio.h@{portaudio.h}!paPlatformSpecificFlags@{paPlatformSpecificFlags}}
+\index{paPlatformSpecificFlags@{paPlatformSpecificFlags}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paPlatformSpecificFlags}{paPlatformSpecificFlags}}
+{\footnotesize\ttfamily \#define pa\+Platform\+Specific\+Flags~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}})0x\+FFFF0000)}
+
+A mask specifying the platform specific bits. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ad7b862a223edd680d7985c33c847e31d}\label{portaudio_8h_ad7b862a223edd680d7985c33c847e31d}} 
+\index{portaudio.h@{portaudio.h}!paPrimeOutputBuffersUsingStreamCallback@{paPrimeOutputBuffersUsingStreamCallback}}
+\index{paPrimeOutputBuffersUsingStreamCallback@{paPrimeOutputBuffersUsingStreamCallback}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paPrimeOutputBuffersUsingStreamCallback}{paPrimeOutputBuffersUsingStreamCallback}}
+{\footnotesize\ttfamily \#define pa\+Prime\+Output\+Buffers\+Using\+Stream\+Callback~((\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}) 0x00000008)}
+
+Call the stream callback to fill initial output buffers, rather than the default behavior of priming the buffers with zeros (silence). This flag has no effect for input-\/only and blocking read/write streams.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ad6616980c2259866a39eb2b76fa4697d}\label{portaudio_8h_ad6616980c2259866a39eb2b76fa4697d}} 
+\index{portaudio.h@{portaudio.h}!paPrimingOutput@{paPrimingOutput}}
+\index{paPrimingOutput@{paPrimingOutput}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paPrimingOutput}{paPrimingOutput}}
+{\footnotesize\ttfamily \#define pa\+Priming\+Output~((\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}) 0x00000010)}
+
+Some of all of the output data will be used to prime the stream, input data may be zero. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}\label{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}} 
+\index{portaudio.h@{portaudio.h}!paUInt8@{paUInt8}}
+\index{paUInt8@{paUInt8}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paUInt8}{paUInt8}}
+{\footnotesize\ttfamily \#define pa\+UInt8~((\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}) 0x00000020)}
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a14795fe3377c3b037025a61e550d44b5}\label{portaudio_8h_a14795fe3377c3b037025a61e550d44b5}} 
+\index{portaudio.h@{portaudio.h}!paUseHostApiSpecificDeviceSpecification@{paUseHostApiSpecificDeviceSpecification}}
+\index{paUseHostApiSpecificDeviceSpecification@{paUseHostApiSpecificDeviceSpecification}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{paUseHostApiSpecificDeviceSpecification}{paUseHostApiSpecificDeviceSpecification}}
+{\footnotesize\ttfamily \#define pa\+Use\+Host\+Api\+Specific\+Device\+Specification~((\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}})-\/2)}
+
+A special Pa\+Device\+Index value indicating that the device(s) to be used are specified in the host api specific stream info structure.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}\label{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}} 
+\index{portaudio.h@{portaudio.h}!PaDeviceIndex@{PaDeviceIndex}}
+\index{PaDeviceIndex@{PaDeviceIndex}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaDeviceIndex}{PaDeviceIndex}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}
+
+The type used to refer to audio devices. Values of this type usually range from 0 to (\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count()}}-\/1), and may also take on the Pa\+No\+Device and pa\+Use\+Host\+Api\+Specific\+Device\+Specification values.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count}}, \mbox{\hyperlink{portaudio_8h_a8c26dd5e6f28bb4cda7a1f5460282297}{pa\+No\+Device}}, \mbox{\hyperlink{portaudio_8h_a14795fe3377c3b037025a61e550d44b5}{pa\+Use\+Host\+Api\+Specific\+Device\+Specification}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a6c6fa3fb5640759651ae5a5e69e45cdc}\label{portaudio_8h_a6c6fa3fb5640759651ae5a5e69e45cdc}} 
+\index{portaudio.h@{portaudio.h}!PaDeviceInfo@{PaDeviceInfo}}
+\index{PaDeviceInfo@{PaDeviceInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaDeviceInfo}{PaDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}}}
+
+A structure providing information and capabilities of Port\+Audio devices. Devices may support input, output or both input and output. \mbox{\Hypertarget{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}\label{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}} 
+\index{portaudio.h@{portaudio.h}!PaError@{PaError}}
+\index{PaError@{PaError}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaError}{PaError}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}}
+
+Error codes returned by Port\+Audio functions. Note that with the exception of pa\+No\+Error, all Pa\+Error\+Codes are negative. \mbox{\Hypertarget{portaudio_8h_a06b9de8a0f242a1d3beb2326f65ebce3}\label{portaudio_8h_a06b9de8a0f242a1d3beb2326f65ebce3}} 
+\index{portaudio.h@{portaudio.h}!PaErrorCode@{PaErrorCode}}
+\index{PaErrorCode@{PaErrorCode}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaErrorCode}{PaErrorCode}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}{Pa\+Error\+Code}} \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}{Pa\+Error\+Code}}}
+
+\mbox{\Hypertarget{portaudio_8h_aeef6da084c57c70aa94be97411e19930}\label{portaudio_8h_aeef6da084c57c70aa94be97411e19930}} 
+\index{portaudio.h@{portaudio.h}!PaHostApiIndex@{PaHostApiIndex}}
+\index{PaHostApiIndex@{PaHostApiIndex}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaHostApiIndex}{PaHostApiIndex}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}
+
+The type used to enumerate to host APIs at runtime. Values of this type range from 0 to (\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count()}}-\/1).
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ae32c4bc6235b2d0e5233d2148b4dfef0}\label{portaudio_8h_ae32c4bc6235b2d0e5233d2148b4dfef0}} 
+\index{portaudio.h@{portaudio.h}!PaHostApiInfo@{PaHostApiInfo}}
+\index{PaHostApiInfo@{PaHostApiInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaHostApiInfo}{PaHostApiInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}}}
+
+A structure containing information about a particular host API. \mbox{\Hypertarget{portaudio_8h_a7e36542045f98de11a13f548113dc895}\label{portaudio_8h_a7e36542045f98de11a13f548113dc895}} 
+\index{portaudio.h@{portaudio.h}!PaHostApiTypeId@{PaHostApiTypeId}}
+\index{PaHostApiTypeId@{PaHostApiTypeId}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaHostApiTypeId}{PaHostApiTypeId}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}
+
+Unchanging unique identifiers for each supported host API. This type is used in the \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} structure. The values are guaranteed to be unique and to never change, thus allowing code to be written that conditionally uses host API specific extensions.
+
+New type ids will be allocated when support for a host API reaches \char`\"{}public alpha\char`\"{} status, prior to that developers should use the pa\+In\+Development type id.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_aae5f7523aa88f6e1ab05230103bd3560}\label{portaudio_8h_aae5f7523aa88f6e1ab05230103bd3560}} 
+\index{portaudio.h@{portaudio.h}!PaHostErrorInfo@{PaHostErrorInfo}}
+\index{PaHostErrorInfo@{PaHostErrorInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaHostErrorInfo}{PaHostErrorInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}} \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}}}
+
+Structure used to return information about a host error condition. \mbox{\Hypertarget{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}\label{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}} 
+\index{portaudio.h@{portaudio.h}!PaSampleFormat@{PaSampleFormat}}
+\index{PaSampleFormat@{PaSampleFormat}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaSampleFormat}{PaSampleFormat}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}
+
+A type used to specify one or more sample formats. Each value indicates a possible format for sound data passed to and from the stream callback, Pa\+\_\+\+Read\+Stream and Pa\+\_\+\+Write\+Stream.
+
+The standard formats pa\+Float32, pa\+Int16, pa\+Int32, pa\+Int24, pa\+Int8 and a\+UInt8 are usually implemented by all implementations.
+
+The floating point representation (pa\+Float32) uses +1.\+0 and -\/1.\+0 as the maximum and minimum respectively.
+
+pa\+UInt8 is an unsigned 8 bit format where 128 is considered \char`\"{}ground\char`\"{}
+
+The pa\+Non\+Interleaved flag indicates that audio data is passed as an array of pointers to separate buffers, one buffer for each channel. Usually, when this flag is not used, audio data is passed as a single buffer with all channels interleaved.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}}, \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} 
+
+\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}, \mbox{\hyperlink{portaudio_8h_ab284f8e0a161d78ede863aec45461dbd}{pa\+Int16}}, \mbox{\hyperlink{portaudio_8h_a6fea69f3d81b628288325c06310b2fcf}{pa\+Int32}}, \mbox{\hyperlink{portaudio_8h_a7f891a0bd9e94a94a8f446c176b749e7}{pa\+Int24}}, \mbox{\hyperlink{portaudio_8h_a058ecfb48ac9f0efad7a7b0d446efe3e}{pa\+Int8}} 
+
+\mbox{\hyperlink{portaudio_8h_ad826044e4ffe7b16bf990803ab77df37}{pa\+UInt8}}, \mbox{\hyperlink{portaudio_8h_aba595f6b645c8134a8ac3004957b9ff7}{pa\+Custom\+Format}}, \mbox{\hyperlink{portaudio_8h_a1d79f0b88812cef5364b276dbbc898b5}{pa\+Non\+Interleaved}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a19874734f89958fccf86785490d53b4c}\label{portaudio_8h_a19874734f89958fccf86785490d53b4c}} 
+\index{portaudio.h@{portaudio.h}!PaStream@{PaStream}}
+\index{PaStream@{PaStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStream}{PaStream}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}}}
+
+A single Pa\+Stream can provide multiple channels of real-\/time streaming audio input and output to a client application. A stream provides access to audio hardware represented by one or more Pa\+Devices. Depending on the underlying Host API, it may be possible to open multiple streams using the same device, however this behavior is implementation defined. Portable applications should assume that a Pa\+Device may be simultaneously used by at most one Pa\+Stream.
+
+Pointers to Pa\+Stream objects are passed between Port\+Audio functions that operate on streams.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}}, \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}}, \mbox{\hyperlink{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}{Pa\+\_\+\+Close\+Stream}}, \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\+\_\+\+Start\+Stream}}, \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream}}, \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream}}, \mbox{\hyperlink{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}{Pa\+\_\+\+Is\+Stream\+Active}}, \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time}}, \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\+\_\+\+Get\+Stream\+Cpu\+Load}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}\label{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}} 
+\index{portaudio.h@{portaudio.h}!PaStreamCallback@{PaStreamCallback}}
+\index{PaStreamCallback@{PaStreamCallback}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamCallback}{PaStreamCallback}}
+{\footnotesize\ttfamily typedef int Pa\+Stream\+Callback(const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output, unsigned long frame\+Count, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)}
+
+Functions of type Pa\+Stream\+Callback are implemented by Port\+Audio clients. They consume, process or generate audio in response to requests from an active Port\+Audio stream.
+
+When a stream is running, Port\+Audio calls the stream callback periodically. The callback function is responsible for processing buffers of audio samples passed via the input and output parameters.
+
+The Port\+Audio stream callback runs at very high or real-\/time priority. It is required to consistently meet its time deadlines. Do not allocate memory, access the file system, call library functions or call other functions from the stream callback that may block or take an unpredictable amount of time to complete.
+
+In order for a stream to maintain glitch-\/free operation the callback must consume and return audio data faster than it is recorded and/or played. Port\+Audio anticipates that each callback invocation may execute for a duration approaching the duration of frame\+Count audio frames at the stream sample rate. It is reasonable to expect to be able to utilise 70\% or more of the available CPU time in the Port\+Audio callback. However, due to buffer size adaption and other factors, not all host APIs are able to guarantee audio stability under heavy CPU load with arbitrary fixed callback buffer sizes. When high callback CPU utilisation is required the most robust behavior can be achieved by using pa\+Frames\+Per\+Buffer\+Unspecified as the \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} frames\+Per\+Buffer parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & and\\
+\hline
+{\em output} & are either arrays of interleaved samples or; if non-\/interleaved samples were requested using the pa\+Non\+Interleaved sample format flag, an array of buffer pointers, one non-\/interleaved buffer for each channel.\\
+\hline
+\end{DoxyParams}
+The format, packing and number of channels used by the buffers are determined by parameters to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em frame\+Count} & The number of sample frames to be processed by the stream callback.\\
+\hline
+{\em time\+Info} & Timestamps indicating the ADC capture time of the first sample in the input buffer, the DAC output time of the first sample in the output buffer and the time the callback was invoked. See \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} and \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}}\\
+\hline
+{\em status\+Flags} & Flags indicating whether input and/or output buffers have been inserted or will be dropped to overcome underflow or overflow conditions.\\
+\hline
+{\em user\+Data} & The value of a user supplied pointer passed to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} intended for storing synthesis data etc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The stream callback should return one of the values in the \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}} enumeration. To ensure that the callback continues to be called, it should return pa\+Continue (0). Either pa\+Complete or pa\+Abort can be returned to finish stream processing, after either of these values is returned the callback will not be called again. If pa\+Abort is returned the stream will finish as soon as possible. If pa\+Complete is returned, the stream will continue until all buffers generated by the callback have been played. This may be useful in applications such as soundfile players where a specific duration of output is required. However, it is not necessary to utilize this mechanism as \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}}, \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream()}} or \mbox{\hyperlink{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}{Pa\+\_\+\+Close\+Stream()}} can also be used to stop the stream. The callback must always fill the entire output buffer irrespective of its return value.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+With the exception of \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\+\_\+\+Get\+Stream\+Cpu\+Load()}} it is not permissible to call Port\+Audio API functions from within the stream callback. 
+\end{DoxyNote}
+\mbox{\Hypertarget{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}\label{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}} 
+\index{portaudio.h@{portaudio.h}!PaStreamCallbackFlags@{PaStreamCallbackFlags}}
+\index{PaStreamCallbackFlags@{PaStreamCallbackFlags}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamCallbackFlags}{PaStreamCallbackFlags}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}}
+
+Flag bit constants for the status\+Flags to Pa\+Stream\+Callback.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a57d1879f52406bdedfdda8f79f458e15}{pa\+Input\+Underflow}}, \mbox{\hyperlink{portaudio_8h_aea144f0edaf02d0ac8b113f41fb95c47}{pa\+Input\+Overflow}}, \mbox{\hyperlink{portaudio_8h_aa17c91c859b12ebbf53a1440def53c89}{pa\+Output\+Underflow}}, \mbox{\hyperlink{portaudio_8h_ac22bb260d47b348bd3aab8813fd45462}{pa\+Output\+Overflow}}, \mbox{\hyperlink{portaudio_8h_ad6616980c2259866a39eb2b76fa4697d}{pa\+Priming\+Output}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a602b93feba60c685a74b154f08508702}\label{portaudio_8h_a602b93feba60c685a74b154f08508702}} 
+\index{portaudio.h@{portaudio.h}!PaStreamCallbackResult@{PaStreamCallbackResult}}
+\index{PaStreamCallbackResult@{PaStreamCallbackResult}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamCallbackResult}{PaStreamCallbackResult}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}} \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}}}
+
+Allowable return values for the Pa\+Stream\+Callback. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a1832c268abf8a9074265c436c7f1207d}\label{portaudio_8h_a1832c268abf8a9074265c436c7f1207d}} 
+\index{portaudio.h@{portaudio.h}!PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}}
+\index{PaStreamCallbackTimeInfo@{PaStreamCallbackTimeInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamCallbackTimeInfo}{PaStreamCallbackTimeInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}}}
+
+Timing information for the buffers passed to the stream callback.
+
+Time values are expressed in seconds and are synchronised with the time base used by \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}} for the associated stream.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}, \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}\label{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}} 
+\index{portaudio.h@{portaudio.h}!PaStreamFinishedCallback@{PaStreamFinishedCallback}}
+\index{PaStreamFinishedCallback@{PaStreamFinishedCallback}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamFinishedCallback}{PaStreamFinishedCallback}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Stream\+Finished\+Callback(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)}
+
+Functions of type Pa\+Stream\+Finished\+Callback are implemented by Port\+Audio clients. They can be registered with a stream using the Pa\+\_\+\+Set\+Stream\+Finished\+Callback function. Once registered they are called when the stream becomes inactive (ie once a call to \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} will not block). A stream will become inactive after the stream callback returns non-\/zero, or when Pa\+\_\+\+Stop\+Stream or Pa\+\_\+\+Abort\+Stream is called. For a stream providing audio output, if the stream callback returns pa\+Complete, or \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} is called, the stream finished callback will not be called until all generated sample data has been played.
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+Data} & The user\+Data parameter supplied to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_aa11e7b06b2cde8621551f5d527965838}{Pa\+\_\+\+Set\+Stream\+Finished\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}\label{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}} 
+\index{portaudio.h@{portaudio.h}!PaStreamFlags@{PaStreamFlags}}
+\index{PaStreamFlags@{PaStreamFlags}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamFlags}{PaStreamFlags}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}
+
+Flags used to control the behavior of a stream. They are passed as parameters to Pa\+\_\+\+Open\+Stream or Pa\+\_\+\+Open\+Default\+Stream. Multiple flags may be ORed together.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{portaudio_8h_a0a12735ac191200f696a43b87667b714}{Pa\+\_\+\+Open\+Default\+Stream}} 
+
+\mbox{\hyperlink{portaudio_8h_ad33384abe3754a39f4773f2561773595}{pa\+No\+Flag}}, \mbox{\hyperlink{portaudio_8h_a837b8a81be3f7e36c96003e0d8dcec12}{pa\+Clip\+Off}}, \mbox{\hyperlink{portaudio_8h_add037e93aec78fa8d67f7a59ed500707}{pa\+Dither\+Off}}, \mbox{\hyperlink{portaudio_8h_ad89be5ed5279fc4c4a8495c775e1d5d5}{pa\+Never\+Drop\+Input}}, \mbox{\hyperlink{portaudio_8h_ad7b862a223edd680d7985c33c847e31d}{pa\+Prime\+Output\+Buffers\+Using\+Stream\+Callback}}, \mbox{\hyperlink{portaudio_8h_a8522957e1bf814b9782d3a0e314c8b51}{pa\+Platform\+Specific\+Flags}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a65f7a59ec586145cf5de77fccd1ecac9}\label{portaudio_8h_a65f7a59ec586145cf5de77fccd1ecac9}} 
+\index{portaudio.h@{portaudio.h}!PaStreamInfo@{PaStreamInfo}}
+\index{PaStreamInfo@{PaStreamInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamInfo}{PaStreamInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}}}
+
+A structure containing unchanging information about an open stream. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}{Pa\+\_\+\+Get\+Stream\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a978b2ed65ea4740d6999a402b0c3ee76}\label{portaudio_8h_a978b2ed65ea4740d6999a402b0c3ee76}} 
+\index{portaudio.h@{portaudio.h}!PaStreamParameters@{PaStreamParameters}}
+\index{PaStreamParameters@{PaStreamParameters}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamParameters}{PaStreamParameters}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}}}
+
+Parameters for one direction (input or output) of a stream. \mbox{\Hypertarget{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}\label{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}} 
+\index{portaudio.h@{portaudio.h}!PaTime@{PaTime}}
+\index{PaTime@{PaTime}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaTime}{PaTime}}
+{\footnotesize\ttfamily typedef double \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}}
+
+The type used to represent monotonic time in seconds. Pa\+Time is used for the fields of the \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} argument to the Pa\+Stream\+Callback and as the result of \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time()}}.
+
+Pa\+Time values have unspecified origin.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}, \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}}, \mbox{\hyperlink{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}{Pa\+\_\+\+Get\+Stream\+Time}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a38b6ad73a2d8d78e3a556273321ae9d0}\label{portaudio_8h_a38b6ad73a2d8d78e3a556273321ae9d0}} 
+\index{portaudio.h@{portaudio.h}!PaVersionInfo@{PaVersionInfo}}
+\index{PaVersionInfo@{PaVersionInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaVersionInfo}{PaVersionInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}} \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}}}
+
+A structure containing Port\+Audio API version information. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}{Pa\+\_\+\+Get\+Version\+Info}}, \mbox{\hyperlink{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}{pa\+Make\+Version\+Number}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}} 
+\index{portaudio.h@{portaudio.h}!PaErrorCode@{PaErrorCode}}
+\index{PaErrorCode@{PaErrorCode}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaErrorCode}{PaErrorCode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7}{Pa\+Error\+Code}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paNoError@{paNoError}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paNoError@{paNoError}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}} 
+pa\+No\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paNotInitialized@{paNotInitialized}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paNotInitialized@{paNotInitialized}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a12769658a78482b4265673f7c08fbb57}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a12769658a78482b4265673f7c08fbb57}} 
+pa\+Not\+Initialized&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paUnanticipatedHostError@{paUnanticipatedHostError}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paUnanticipatedHostError@{paUnanticipatedHostError}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}} 
+pa\+Unanticipated\+Host\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInvalidChannelCount@{paInvalidChannelCount}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInvalidChannelCount@{paInvalidChannelCount}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a46c51714378540c67c46895e726fb787}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a46c51714378540c67c46895e726fb787}} 
+pa\+Invalid\+Channel\+Count&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInvalidSampleRate@{paInvalidSampleRate}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInvalidSampleRate@{paInvalidSampleRate}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a30a98097c3b6d9789077b72c26ae7c24}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a30a98097c3b6d9789077b72c26ae7c24}} 
+pa\+Invalid\+Sample\+Rate&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInvalidDevice@{paInvalidDevice}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInvalidDevice@{paInvalidDevice}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3442d8018bfa4329847d87df68b564a3}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3442d8018bfa4329847d87df68b564a3}} 
+pa\+Invalid\+Device&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInvalidFlag@{paInvalidFlag}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInvalidFlag@{paInvalidFlag}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aa5e7d0d9ea49ef845a93c89a3d138294}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aa5e7d0d9ea49ef845a93c89a3d138294}} 
+pa\+Invalid\+Flag&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paSampleFormatNotSupported@{paSampleFormatNotSupported}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paSampleFormatNotSupported@{paSampleFormatNotSupported}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a69660cd762aec2672fd3393e0971e99c}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a69660cd762aec2672fd3393e0971e99c}} 
+pa\+Sample\+Format\+Not\+Supported&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBadIODeviceCombination@{paBadIODeviceCombination}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBadIODeviceCombination@{paBadIODeviceCombination}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a795db60c291d92362b87edbc0bdb56cc}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a795db60c291d92362b87edbc0bdb56cc}} 
+pa\+Bad\+IODevice\+Combination&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInsufficientMemory@{paInsufficientMemory}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInsufficientMemory@{paInsufficientMemory}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ad58986a9b5064d5a29c7ed0837bfc621}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ad58986a9b5064d5a29c7ed0837bfc621}} 
+pa\+Insufficient\+Memory&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBufferTooBig@{paBufferTooBig}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBufferTooBig@{paBufferTooBig}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a5a07d92bec4707ab34a01893bf24940e}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a5a07d92bec4707ab34a01893bf24940e}} 
+pa\+Buffer\+Too\+Big&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBufferTooSmall@{paBufferTooSmall}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBufferTooSmall@{paBufferTooSmall}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a0711883755e19ee598cefa1db34d98cb}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a0711883755e19ee598cefa1db34d98cb}} 
+pa\+Buffer\+Too\+Small&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paNullCallback@{paNullCallback}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paNullCallback@{paNullCallback}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3fbb82a5d01ed678642426f1f5058e2c}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a3fbb82a5d01ed678642426f1f5058e2c}} 
+pa\+Null\+Callback&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBadStreamPtr@{paBadStreamPtr}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBadStreamPtr@{paBadStreamPtr}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aef50bc6456d8bcbd94d1690dfb8d447a}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aef50bc6456d8bcbd94d1690dfb8d447a}} 
+pa\+Bad\+Stream\+Ptr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paTimedOut@{paTimedOut}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paTimedOut@{paTimedOut}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a26ddab3d4dace3978ec6d5b3ccc10e87}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a26ddab3d4dace3978ec6d5b3ccc10e87}} 
+pa\+Timed\+Out&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInternalError@{paInternalError}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInternalError@{paInternalError}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4851f9f753cdad3e7a89380d6589816c}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4851f9f753cdad3e7a89380d6589816c}} 
+pa\+Internal\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paDeviceUnavailable@{paDeviceUnavailable}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paDeviceUnavailable@{paDeviceUnavailable}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a467dac712e45745d8b0d8cd429fd1a01}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a467dac712e45745d8b0d8cd429fd1a01}} 
+pa\+Device\+Unavailable&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paIncompatibleHostApiSpecificStreamInfo@{paIncompatibleHostApiSpecificStreamInfo}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paIncompatibleHostApiSpecificStreamInfo@{paIncompatibleHostApiSpecificStreamInfo}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a44f6cce375a3d38af28652179a400403}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a44f6cce375a3d38af28652179a400403}} 
+pa\+Incompatible\+Host\+Api\+Specific\+Stream\+Info&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paStreamIsStopped@{paStreamIsStopped}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paStreamIsStopped@{paStreamIsStopped}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a43201ac8bea6578d4a13024315c24117}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a43201ac8bea6578d4a13024315c24117}} 
+pa\+Stream\+Is\+Stopped&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paStreamIsNotStopped@{paStreamIsNotStopped}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paStreamIsNotStopped@{paStreamIsNotStopped}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a9e05b6974d01fcce82c5d94b575ff1b2}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a9e05b6974d01fcce82c5d94b575ff1b2}} 
+pa\+Stream\+Is\+Not\+Stopped&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInputOverflowed@{paInputOverflowed}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInputOverflowed@{paInputOverflowed}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a25d517e59ea2e846119d972d5f1c53bb}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a25d517e59ea2e846119d972d5f1c53bb}} 
+pa\+Input\+Overflowed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paOutputUnderflowed@{paOutputUnderflowed}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paOutputUnderflowed@{paOutputUnderflowed}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a77657d34c5e91a2962e7df7730441eee}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a77657d34c5e91a2962e7df7730441eee}} 
+pa\+Output\+Underflowed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paHostApiNotFound@{paHostApiNotFound}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paHostApiNotFound@{paHostApiNotFound}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4b470a48b5fd9cf04591b1fbdd2ad26a}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4b470a48b5fd9cf04591b1fbdd2ad26a}} 
+pa\+Host\+Api\+Not\+Found&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInvalidHostApi@{paInvalidHostApi}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInvalidHostApi@{paInvalidHostApi}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a99cc1bb53662f07a06876ec1818356a7}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a99cc1bb53662f07a06876ec1818356a7}} 
+pa\+Invalid\+Host\+Api&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paCanNotReadFromACallbackStream@{paCanNotReadFromACallbackStream}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paCanNotReadFromACallbackStream@{paCanNotReadFromACallbackStream}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ae7bc144c8e0548287c6a3af67974df5a}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7ae7bc144c8e0548287c6a3af67974df5a}} 
+pa\+Can\+Not\+Read\+From\+ACallback\+Stream&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paCanNotWriteToACallbackStream@{paCanNotWriteToACallbackStream}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paCanNotWriteToACallbackStream@{paCanNotWriteToACallbackStream}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af389ed20229971db693046093281b255}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af389ed20229971db693046093281b255}} 
+pa\+Can\+Not\+Write\+To\+ACallback\+Stream&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paCanNotReadFromAnOutputOnlyStream@{paCanNotReadFromAnOutputOnlyStream}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paCanNotReadFromAnOutputOnlyStream@{paCanNotReadFromAnOutputOnlyStream}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4a708b0414ebca1a78f9084671bd0a0c}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4a708b0414ebca1a78f9084671bd0a0c}} 
+pa\+Can\+Not\+Read\+From\+An\+Output\+Only\+Stream&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paCanNotWriteToAnInputOnlyStream@{paCanNotWriteToAnInputOnlyStream}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paCanNotWriteToAnInputOnlyStream@{paCanNotWriteToAnInputOnlyStream}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af718bcda33019db4a3b9ec6bdefc6e9d}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7af718bcda33019db4a3b9ec6bdefc6e9d}} 
+pa\+Can\+Not\+Write\+To\+An\+Input\+Only\+Stream&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paIncompatibleStreamHostApi@{paIncompatibleStreamHostApi}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paIncompatibleStreamHostApi@{paIncompatibleStreamHostApi}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a82f2e0e1c05189caf15b5f6c016edac6}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a82f2e0e1c05189caf15b5f6c016edac6}} 
+pa\+Incompatible\+Stream\+Host\+Api&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBadBufferPtr@{paBadBufferPtr}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBadBufferPtr@{paBadBufferPtr}}}\mbox{\Hypertarget{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a8679fc0a41ce0517d89a53b9c182a4b8}\label{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a8679fc0a41ce0517d89a53b9c182a4b8}} 
+pa\+Bad\+Buffer\+Ptr&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}} 
+\index{portaudio.h@{portaudio.h}!PaHostApiTypeId@{PaHostApiTypeId}}
+\index{PaHostApiTypeId@{PaHostApiTypeId}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaHostApiTypeId}{PaHostApiTypeId}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}
+
+Unchanging unique identifiers for each supported host API. This type is used in the \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} structure. The values are guaranteed to be unique and to never change, thus allowing code to be written that conditionally uses host API specific extensions.
+
+New type ids will be allocated when support for a host API reaches \char`\"{}public alpha\char`\"{} status, prior to that developers should use the pa\+In\+Development type id.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paInDevelopment@{paInDevelopment}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paInDevelopment@{paInDevelopment}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea6d01a3fac7c228e8481efd5fd269f26d}} 
+pa\+In\+Development&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paDirectSound@{paDirectSound}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paDirectSound@{paDirectSound}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5a888ef503d4dee954bb3582a65eb9a0}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5a888ef503d4dee954bb3582a65eb9a0}} 
+pa\+Direct\+Sound&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paMME@{paMME}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paMME@{paMME}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea92db20780c2d5a900ea6a9e988b4da0c}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea92db20780c2d5a900ea6a9e988b4da0c}} 
+pa\+MME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paASIO@{paASIO}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paASIO@{paASIO}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea540d6dd219e6a6856347b66c4637adbe}} 
+pa\+ASIO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paSoundManager@{paSoundManager}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paSoundManager@{paSoundManager}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea069313b969ea3d41a275720879aa5ba8}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea069313b969ea3d41a275720879aa5ba8}} 
+pa\+Sound\+Manager&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paCoreAudio@{paCoreAudio}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paCoreAudio@{paCoreAudio}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa7295ccb885c47b70c829f8236161d1a}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa7295ccb885c47b70c829f8236161d1a}} 
+pa\+Core\+Audio&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paOSS@{paOSS}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paOSS@{paOSS}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea9afdcbf978e7b8b48db08a7c5208ebe4}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea9afdcbf978e7b8b48db08a7c5208ebe4}} 
+pa\+OSS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paALSA@{paALSA}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paALSA@{paALSA}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5fb23d8b2cf3e2e714298de5ab1b83e1}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5fb23d8b2cf3e2e714298de5ab1b83e1}} 
+pa\+ALSA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAL@{paAL}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paAL@{paAL}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea40c3e003e36409b4a1aae360625c69a9}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea40c3e003e36409b4a1aae360625c69a9}} 
+pa\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paBeOS@{paBeOS}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paBeOS@{paBeOS}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeab6ef5d4eff3f3e80b90148a4b871b501}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeab6ef5d4eff3f3e80b90148a4b871b501}} 
+pa\+Be\+OS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWDMKS@{paWDMKS}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paWDMKS@{paWDMKS}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeacb4ba221afe42867d96ab345ee13d78d}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeacb4ba221afe42867d96ab345ee13d78d}} 
+pa\+WDMKS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paJACK@{paJACK}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paJACK@{paJACK}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaf51e19fba6cd8946f06af332e61ad190}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaf51e19fba6cd8946f06af332e61ad190}} 
+pa\+JACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paWASAPI@{paWASAPI}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paWASAPI@{paWASAPI}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa27b155bf2883aef821dfb6eba89e456}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa27b155bf2883aef821dfb6eba89e456}} 
+pa\+WASAPI&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAudioScienceHPI@{paAudioScienceHPI}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paAudioScienceHPI@{paAudioScienceHPI}}}\mbox{\Hypertarget{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea4651a7c2fb6e75843c130d82be7c7c4f}\label{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea4651a7c2fb6e75843c130d82be7c7c4f}} 
+pa\+Audio\+Science\+HPI&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}\label{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}} 
+\index{portaudio.h@{portaudio.h}!PaStreamCallbackResult@{PaStreamCallbackResult}}
+\index{PaStreamCallbackResult@{PaStreamCallbackResult}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{PaStreamCallbackResult}{PaStreamCallbackResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32}{Pa\+Stream\+Callback\+Result}}}
+
+Allowable return values for the Pa\+Stream\+Callback. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paContinue@{paContinue}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paContinue@{paContinue}}}\mbox{\Hypertarget{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3}\label{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acba49cbf0e3bf605bb3deecef3b4fce3}} 
+pa\+Continue&Signal that the stream should continue invoking the callback and processing audio. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paComplete@{paComplete}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paComplete@{paComplete}}}\mbox{\Hypertarget{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650}\label{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32aa01800db52ead393d8b0016f63d76650}} 
+pa\+Complete&Signal that the stream should stop invoking the callback and finish once all output samples have played. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{paAbort@{paAbort}!portaudio.h@{portaudio.h}}\index{portaudio.h@{portaudio.h}!paAbort@{paAbort}}}\mbox{\Hypertarget{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2}\label{portaudio_8h_ae9bfb9c4e1895326f30f80d415c66c32acaf141eb5d71420ffb4474da1dbd8de2}} 
+pa\+Abort&Signal that the stream should stop invoking the callback and finish as soon as possible. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{portaudio_8h_a138e57abde4e833c457b64895f638a25}\label{portaudio_8h_a138e57abde4e833c457b64895f638a25}} 
+\index{portaudio.h@{portaudio.h}!Pa\_AbortStream@{Pa\_AbortStream}}
+\index{Pa\_AbortStream@{Pa\_AbortStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_AbortStream()}{Pa\_AbortStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Abort\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Terminates audio processing immediately without waiting for pending buffers to complete. \mbox{\Hypertarget{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}\label{portaudio_8h_a92f56f88cbd14da0e8e03077e835d104}} 
+\index{portaudio.h@{portaudio.h}!Pa\_CloseStream@{Pa\_CloseStream}}
+\index{Pa\_CloseStream@{Pa\_CloseStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_CloseStream()}{Pa\_CloseStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Close\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Closes an audio stream. If the audio stream is active it discards any pending buffers as if \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream()}} had been called. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000010}{Todo}}]REVIEW\+: shouldn\textquotesingle{}t we close anyway? see\+: \href{http://www.portaudio.com/trac/ticket/115}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/115}} \end{DoxyRefDesc}
+\mbox{\Hypertarget{portaudio_8h_ae55c77f9b7e3f8eb301a6f1c0e2347ac}\label{portaudio_8h_ae55c77f9b7e3f8eb301a6f1c0e2347ac}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetDefaultHostApi@{Pa\_GetDefaultHostApi}}
+\index{Pa\_GetDefaultHostApi@{Pa\_GetDefaultHostApi}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetDefaultHostApi()}{Pa\_GetDefaultHostApi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} Pa\+\_\+\+Get\+Default\+Host\+Api (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the index of the default host API. The default host API will be the lowest common denominator host API on the current platform and is unlikely to provide the best performance.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value ranging from 0 to (\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count()}}-\/1) indicating the default host API index or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}\label{portaudio_8h_abf9f2f82da95553d5adb929af670f74b}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetDefaultInputDevice@{Pa\_GetDefaultInputDevice}}
+\index{Pa\_GetDefaultInputDevice@{Pa\_GetDefaultInputDevice}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetDefaultInputDevice()}{Pa\_GetDefaultInputDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+\_\+\+Get\+Default\+Input\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the index of the default input device. The result can be used in the input\+Device parameter to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}.
+
+\begin{DoxyReturn}{Returns}
+The default input device index for the default host API, or pa\+No\+Device if no default input device is available or an error was encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_adc955dfab007624000695c48d4f876dc}\label{portaudio_8h_adc955dfab007624000695c48d4f876dc}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetDefaultOutputDevice@{Pa\_GetDefaultOutputDevice}}
+\index{Pa\_GetDefaultOutputDevice@{Pa\_GetDefaultOutputDevice}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetDefaultOutputDevice()}{Pa\_GetDefaultOutputDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+\_\+\+Get\+Default\+Output\+Device (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the index of the default output device. The result can be used in the output\+Device parameter to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}.
+
+\begin{DoxyReturn}{Returns}
+The default output device index for the default host API, or pa\+No\+Device if no default output device is available or an error was encountered.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+On the PC, the user can specify a default device by setting an environment variable. For example, to use device \#1. 
+\begin{DoxyPre}
+ set PA\_RECOMMENDED\_OUTPUT\_DEVICE=1
+\end{DoxyPre}
+ The user should first determine the available device ids by using the supplied application \char`\"{}pa\+\_\+devs\char`\"{}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}\label{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetDeviceCount@{Pa\_GetDeviceCount}}
+\index{Pa\_GetDeviceCount@{Pa\_GetDeviceCount}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetDeviceCount()}{Pa\_GetDeviceCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+\_\+\+Get\+Device\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the number of available devices. The number of available devices may be zero.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of available devices or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}\label{portaudio_8h_ab7a149915fdbf90cff993d588619e7e8}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetDeviceInfo@{Pa\_GetDeviceInfo}}
+\index{Pa\_GetDeviceInfo@{Pa\_GetDeviceInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetDeviceInfo()}{Pa\_GetDeviceInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} $\ast$ Pa\+\_\+\+Get\+Device\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} structure containing information about the specified device. \begin{DoxyReturn}{Returns}
+A pointer to an immutable \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} structure. If the device parameter is out of range the function returns NULL.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & A valid device index in the range 0 to (\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count()}}-\/1)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Port\+Audio manages the memory referenced by the returned pointer, the client must not manipulate or free the memory. The pointer is only guaranteed to be valid between calls to \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}} and \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}}.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}}, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}\label{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetErrorText@{Pa\_GetErrorText}}
+\index{Pa\_GetErrorText@{Pa\_GetErrorText}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetErrorText()}{Pa\_GetErrorText()}}
+{\footnotesize\ttfamily const char $\ast$ Pa\+\_\+\+Get\+Error\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}}}]{error\+Code }\end{DoxyParamCaption})}
+
+Translate the supplied Port\+Audio error code into a human readable message. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000008}{Todo}}]could catenate the last host error text to result in the case of pa\+Unanticipated\+Host\+Error. see\+: \href{http://www.portaudio.com/trac/ticket/114}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/114}} \end{DoxyRefDesc}
+\mbox{\Hypertarget{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}\label{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetHostApiCount@{Pa\_GetHostApiCount}}
+\index{Pa\_GetHostApiCount@{Pa\_GetHostApiCount}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetHostApiCount()}{Pa\_GetHostApiCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} Pa\+\_\+\+Get\+Host\+Api\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the number of available host APIs. Even if a host API is available it may have no devices available.
+
+\begin{DoxyReturn}{Returns}
+A non-\/negative value indicating the number of available host APIs or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_afdd67ffc394c90f3ee78d51e51f8f22f}\label{portaudio_8h_afdd67ffc394c90f3ee78d51e51f8f22f}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetHostApiInfo@{Pa\_GetHostApiInfo}}
+\index{Pa\_GetHostApiInfo@{Pa\_GetHostApiInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetHostApiInfo()}{Pa\_GetHostApiInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} $\ast$ Pa\+\_\+\+Get\+Host\+Api\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a structure containing information about a specific host Api.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api} & A valid host API index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count()}}-\/1)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to an immutable \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} structure describing a specific host API. If the host\+Api parameter is out of range or an error is encountered, the function returns NULL.
+\end{DoxyReturn}
+The returned structure is owned by the Port\+Audio implementation and must not be manipulated or freed. The pointer is only guaranteed to be valid between calls to \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}} and \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}}. \mbox{\Hypertarget{portaudio_8h_a1d0652aef223200f9401bb28fe04a3ad}\label{portaudio_8h_a1d0652aef223200f9401bb28fe04a3ad}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetLastHostErrorInfo@{Pa\_GetLastHostErrorInfo}}
+\index{Pa\_GetLastHostErrorInfo@{Pa\_GetLastHostErrorInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetLastHostErrorInfo()}{Pa\_GetLastHostErrorInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pa_host_error_info}{Pa\+Host\+Error\+Info}} $\ast$ Pa\+\_\+\+Get\+Last\+Host\+Error\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Return information about the last host error encountered. The error information returned by \mbox{\hyperlink{portaudio_8h_a1d0652aef223200f9401bb28fe04a3ad}{Pa\+\_\+\+Get\+Last\+Host\+Error\+Info()}} will never be modified asynchronously by errors occurring in other Port\+Audio owned threads (such as the thread that manages the stream callback.)
+
+This function is provided as a last resort, primarily to enhance debugging by providing clients with access to all available error information.
+
+\begin{DoxyReturn}{Returns}
+A pointer to an immutable structure constraining information about the host error. The values in this structure will only be valid if a Port\+Audio function has previously returned the pa\+Unanticipated\+Host\+Error error code. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_a541ed0b734df2631bc4c229acf92abc1}\label{portaudio_8h_a541ed0b734df2631bc4c229acf92abc1}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetSampleSize@{Pa\_GetSampleSize}}
+\index{Pa\_GetSampleSize@{Pa\_GetSampleSize}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetSampleSize()}{Pa\_GetSampleSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Get\+Sample\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{format }\end{DoxyParamCaption})}
+
+Retrieve the size of a given sample format in bytes.
+
+\begin{DoxyReturn}{Returns}
+The size in bytes of a single sample in the specified format, or pa\+Sample\+Format\+Not\+Supported if the format is not supported. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}\label{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetStreamCpuLoad@{Pa\_GetStreamCpuLoad}}
+\index{Pa\_GetStreamCpuLoad@{Pa\_GetStreamCpuLoad}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetStreamCpuLoad()}{Pa\_GetStreamCpuLoad()}}
+{\footnotesize\ttfamily double Pa\+\_\+\+Get\+Stream\+Cpu\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve CPU usage information for the specified stream. The \char`\"{}\+CPU Load\char`\"{} is a fraction of total CPU time consumed by a callback stream\textquotesingle{}s audio processing routines including, but not limited to the client supplied stream callback. This function does not work with blocking read/write streams.
+
+This function may be called from the stream callback function or the application.
+
+\begin{DoxyReturn}{Returns}
+A floating point value, typically between 0.\+0 and 1.\+0, where 1.\+0 indicates that the stream callback is consuming the maximum number of CPU cycles possible to maintain real-\/time operation. A value of 0.\+5 would imply that Port\+Audio and the stream callback was consuming roughly 50\% of the available CPU time. The return value may exceed 1.\+0. A value of 0.\+0 will always be returned for a blocking read/write stream, or if an error occurs. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}\label{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetStreamInfo@{Pa\_GetStreamInfo}}
+\index{Pa\_GetStreamInfo@{Pa\_GetStreamInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetStreamInfo()}{Pa\_GetStreamInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} $\ast$ Pa\+\_\+\+Get\+Stream\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve a pointer to a \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} structure containing information about the specified stream. \begin{DoxyReturn}{Returns}
+A pointer to an immutable \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} structure. If the stream parameter is invalid, or an error is encountered, the function returns NULL.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & A pointer to an open stream previously created with Pa\+\_\+\+Open\+Stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Port\+Audio manages the memory referenced by the returned pointer, the client must not manipulate or free the memory. The pointer is only guaranteed to be valid until the specified stream is closed.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_ad04c33f045fa58d7b705b56b1fd3e816}\label{portaudio_8h_ad04c33f045fa58d7b705b56b1fd3e816}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetStreamReadAvailable@{Pa\_GetStreamReadAvailable}}
+\index{Pa\_GetStreamReadAvailable@{Pa\_GetStreamReadAvailable}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetStreamReadAvailable()}{Pa\_GetStreamReadAvailable()}}
+{\footnotesize\ttfamily signed long Pa\+\_\+\+Get\+Stream\+Read\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of frames that can be read from the stream without waiting.
+
+\begin{DoxyReturn}{Returns}
+Returns a non-\/negative value representing the maximum number of frames that can be read from the stream without blocking or busy waiting or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}\label{portaudio_8h_a2b3fb60e6949f37f7f134105ff425749}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetStreamTime@{Pa\_GetStreamTime}}
+\index{Pa\_GetStreamTime@{Pa\_GetStreamTime}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetStreamTime()}{Pa\_GetStreamTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+\_\+\+Get\+Stream\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Returns the current time in seconds for a stream according to the same clock used to generate callback \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} timestamps. The time values are monotonically increasing and have unspecified origin.
+
+Pa\+\_\+\+Get\+Stream\+Time returns valid time values for the entire life of the stream, from when the stream is opened until it is closed. Starting and stopping the stream does not affect the passage of time returned by Pa\+\_\+\+Get\+Stream\+Time.
+
+This time may be used for synchronizing other events to the audio stream, for example synchronizing audio to MIDI.
+
+\begin{DoxyReturn}{Returns}
+The stream\textquotesingle{}s current time in seconds, or 0 if an error occurred.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}}, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}, \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a25595acf48733ec32045aa189c3caa61}\label{portaudio_8h_a25595acf48733ec32045aa189c3caa61}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetStreamWriteAvailable@{Pa\_GetStreamWriteAvailable}}
+\index{Pa\_GetStreamWriteAvailable@{Pa\_GetStreamWriteAvailable}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetStreamWriteAvailable()}{Pa\_GetStreamWriteAvailable()}}
+{\footnotesize\ttfamily signed long Pa\+\_\+\+Get\+Stream\+Write\+Available (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Retrieve the number of frames that can be written to the stream without waiting.
+
+\begin{DoxyReturn}{Returns}
+Returns a non-\/negative value representing the maximum number of frames that can be written to the stream without blocking or busy waiting or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}\label{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetVersion@{Pa\_GetVersion}}
+\index{Pa\_GetVersion@{Pa\_GetVersion}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetVersion()}{Pa\_GetVersion()}}
+{\footnotesize\ttfamily int Pa\+\_\+\+Get\+Version (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve the release number of the currently running Port\+Audio build. For example, for version \char`\"{}19.\+5.\+1\char`\"{} this will return 0x00130501.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}{pa\+Make\+Version\+Number}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}\label{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetVersionInfo@{Pa\_GetVersionInfo}}
+\index{Pa\_GetVersionInfo@{Pa\_GetVersionInfo}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetVersionInfo()}{Pa\_GetVersionInfo()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}} $\ast$ Pa\+\_\+\+Get\+Version\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve version information for the currently running Port\+Audio build. \begin{DoxyReturn}{Returns}
+A pointer to an immutable \mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}} structure.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function can be called at any time. It does not require Port\+Audio to be initialized. The structure pointed to is statically allocated. Do not attempt to free it or modify it.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_version_info}{Pa\+Version\+Info}}, \mbox{\hyperlink{portaudio_8h_ac20e3ac459960f140910d94b5a61125e}{pa\+Make\+Version\+Number}} 
+\end{DoxySeeAlso}
+\begin{DoxyVersion}{Version}
+Available as of 19.\+5.\+0. 
+\end{DoxyVersion}
+\mbox{\Hypertarget{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}\label{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}} 
+\index{portaudio.h@{portaudio.h}!Pa\_GetVersionText@{Pa\_GetVersionText}}
+\index{Pa\_GetVersionText@{Pa\_GetVersionText}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_GetVersionText()}{Pa\_GetVersionText()}}
+{\footnotesize\ttfamily const char $\ast$ Pa\+\_\+\+Get\+Version\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Retrieve a textual description of the current Port\+Audio build, e.\+g. \char`\"{}\+Port\+Audio V19.\+5.\+0-\/devel, revision 1952\+M\char`\"{}. The format of the text may change in the future. Do not try to parse the returned string.
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]As of 19.\+5.\+0, use \mbox{\hyperlink{portaudio_8h_a9372542b03922af46db8e0b0b2a3afdb}{Pa\+\_\+\+Get\+Version\+Info()}}-\/\texorpdfstring{$>$}{>}version\+Text instead. \end{DoxyRefDesc}
+\mbox{\Hypertarget{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}\label{portaudio_8h_a54f306b5e5258323c95a27c5722258cd}} 
+\index{portaudio.h@{portaudio.h}!Pa\_HostApiDeviceIndexToDeviceIndex@{Pa\_HostApiDeviceIndexToDeviceIndex}}
+\index{Pa\_HostApiDeviceIndexToDeviceIndex@{Pa\_HostApiDeviceIndexToDeviceIndex}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_HostApiDeviceIndexToDeviceIndex()}{Pa\_HostApiDeviceIndexToDeviceIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} Pa\+\_\+\+Host\+Api\+Device\+Index\+To\+Device\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api,  }\item[{int}]{host\+Api\+Device\+Index }\end{DoxyParamCaption})}
+
+Convert a host-\/\+API-\/specific device index to standard Port\+Audio device index. This function may be used in conjunction with the device\+Count field of \mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} to enumerate all devices for the specified host API.
+
+
+\begin{DoxyParams}{Parameters}
+{\em host\+Api} & A valid host API index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count()}}-\/1)\\
+\hline
+{\em host\+Api\+Device\+Index} & A valid per-\/host device index in the range 0 to (Pa\+\_\+\+Get\+Host\+Api\+Info(host\+Api)-\/\texorpdfstring{$>$}{>}device\+Count-\/1)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A non-\/negative Pa\+Device\+Index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_acfe4d3c5ec1a343f459981bfa2057f8d}{Pa\+\_\+\+Get\+Device\+Count()}}-\/1) or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+A pa\+Invalid\+Host\+Api error code indicates that the host API index specified by the host\+Api parameter is out of range.
+
+A pa\+Invalid\+Device error code indicates that the host\+Api\+Device\+Index parameter is out of range.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_host_api_info}{Pa\+Host\+Api\+Info}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a081c3975126d20b4226facfb7ba0620f}\label{portaudio_8h_a081c3975126d20b4226facfb7ba0620f}} 
+\index{portaudio.h@{portaudio.h}!Pa\_HostApiTypeIdToHostApiIndex@{Pa\_HostApiTypeIdToHostApiIndex}}
+\index{Pa\_HostApiTypeIdToHostApiIndex@{Pa\_HostApiTypeIdToHostApiIndex}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_HostApiTypeIdToHostApiIndex()}{Pa\_HostApiTypeIdToHostApiIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} Pa\+\_\+\+Host\+Api\+Type\+Id\+To\+Host\+Api\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}}}]{type }\end{DoxyParamCaption})}
+
+Convert a static host API unique identifier, into a runtime host API index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & A unique host API identifier belonging to the Pa\+Host\+Api\+Type\+Id enumeration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A valid Pa\+Host\+Api\+Index ranging from 0 to (\mbox{\hyperlink{portaudio_8h_a19dbdb7c8702e3f4bfc0cdb99dac3dd9}{Pa\+\_\+\+Get\+Host\+Api\+Count()}}-\/1) or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+The pa\+Host\+Api\+Not\+Found error code indicates that the host API specified by the type parameter is not available.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{Pa\+Host\+Api\+Type\+Id}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_abed859482d156622d9332dff9b2d89da}\label{portaudio_8h_abed859482d156622d9332dff9b2d89da}} 
+\index{portaudio.h@{portaudio.h}!Pa\_Initialize@{Pa\_Initialize}}
+\index{Pa\_Initialize@{Pa\_Initialize}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_Initialize()}{Pa\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Library initialization function -\/ call this before using Port\+Audio. This function initializes internal data structures and prepares underlying host APIs for use. With the exception of \mbox{\hyperlink{portaudio_8h_a66da08bcf908e0849c62a6b47f50d7b4}{Pa\+\_\+\+Get\+Version()}}, \mbox{\hyperlink{portaudio_8h_a5bc90e52be8c57a8a7dc8f44693412f0}{Pa\+\_\+\+Get\+Version\+Text()}}, and \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\+\_\+\+Get\+Error\+Text()}}, this function MUST be called before using any other Port\+Audio API functions.
+
+If \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}} is called multiple times, each successful call must be matched with a corresponding call to \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}}. Pairs of calls to \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}/\+Pa\+\_\+\+Terminate() may overlap, and are not required to be fully nested.
+
+Note that if \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}} returns an error code, \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}} should NOT be called.
+
+\begin{DoxyReturn}{Returns}
+pa\+No\+Error if successful, otherwise an error code indicating the cause of failure.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}\label{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}} 
+\index{portaudio.h@{portaudio.h}!Pa\_IsFormatSupported@{Pa\_IsFormatSupported}}
+\index{Pa\_IsFormatSupported@{Pa\_IsFormatSupported}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_IsFormatSupported()}{Pa\_IsFormatSupported()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Is\+Format\+Supported (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{input\+Parameters,  }\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{output\+Parameters,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+Determine whether it would be possible to open a stream with the specified parameters.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Parameters} & A structure that describes the input parameters used to open a stream. The suggested\+Latency field is ignored. See \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} for a description of these parameters. input\+Parameters must be NULL for output-\/only streams.\\
+\hline
+{\em output\+Parameters} & A structure that describes the output parameters used to open a stream. The suggested\+Latency field is ignored. See \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} for a description of these parameters. output\+Parameters must be NULL for input-\/only streams.\\
+\hline
+{\em sample\+Rate} & The required sample\+Rate. For full-\/duplex streams it is the sample rate for both input and output\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 if the format is supported, and an error code indicating why the format is not supported otherwise. The constant pa\+Format\+Is\+Supported is provided to compare with the return value for success.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a400df642339bf4112333060af6a43c0f}{pa\+Format\+Is\+Supported}}, \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}\label{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}} 
+\index{portaudio.h@{portaudio.h}!Pa\_IsStreamActive@{Pa\_IsStreamActive}}
+\index{Pa\_IsStreamActive@{Pa\_IsStreamActive}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_IsStreamActive()}{Pa\_IsStreamActive()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Is\+Stream\+Active (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Determine whether the stream is active. A stream is active after a successful call to \mbox{\hyperlink{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}{Pa\+\_\+\+Start\+Stream()}}, until it becomes inactive either as a result of a call to \mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream()}} or \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream()}}, or as a result of a return value other than pa\+Continue from the stream callback. In the latter case, the stream is considered inactive after the last buffer has finished playing.
+
+\begin{DoxyReturn}{Returns}
+Returns one (1) when the stream is active (ie playing or recording audio), zero (0) when not playing or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream}}, \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream}}, \mbox{\hyperlink{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}{Pa\+\_\+\+Is\+Stream\+Stopped}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}\label{portaudio_8h_a52d778c985ae9d566de7e13529cc771f}} 
+\index{portaudio.h@{portaudio.h}!Pa\_IsStreamStopped@{Pa\_IsStreamStopped}}
+\index{Pa\_IsStreamStopped@{Pa\_IsStreamStopped}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_IsStreamStopped()}{Pa\_IsStreamStopped()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Is\+Stream\+Stopped (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Determine whether the stream is stopped. A stream is considered to be stopped prior to a successful call to Pa\+\_\+\+Start\+Stream and after a successful call to Pa\+\_\+\+Stop\+Stream or Pa\+\_\+\+Abort\+Stream. If a stream callback returns a value other than pa\+Continue the stream is NOT considered to be stopped.
+
+\begin{DoxyReturn}{Returns}
+Returns one (1) when the stream is stopped, zero (0) when the stream is running or, a Pa\+Error\+Code (which are always negative) if Port\+Audio is not initialized or an error is encountered.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_af18dd60220251286c337631a855e38a0}{Pa\+\_\+\+Stop\+Stream}}, \mbox{\hyperlink{portaudio_8h_a138e57abde4e833c457b64895f638a25}{Pa\+\_\+\+Abort\+Stream}}, \mbox{\hyperlink{portaudio_8h_a1f8709c4971932643681a6f374c4bb5a}{Pa\+\_\+\+Is\+Stream\+Active}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a0a12735ac191200f696a43b87667b714}\label{portaudio_8h_a0a12735ac191200f696a43b87667b714}} 
+\index{portaudio.h@{portaudio.h}!Pa\_OpenDefaultStream@{Pa\_OpenDefaultStream}}
+\index{Pa\_OpenDefaultStream@{Pa\_OpenDefaultStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_OpenDefaultStream()}{Pa\_OpenDefaultStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Open\+Default\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$}]{stream,  }\item[{int}]{num\+Input\+Channels,  }\item[{int}]{num\+Output\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format,  }\item[{double}]{sample\+Rate,  }\item[{unsigned long}]{frames\+Per\+Buffer,  }\item[{\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$}]{stream\+Callback,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+A simplified version of \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} that opens the default input and/or output devices.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The address of a Pa\+Stream pointer which will receive a pointer to the newly opened stream.\\
+\hline
+{\em num\+Input\+Channels} & The number of channels of sound that will be supplied to the stream callback or returned by Pa\+\_\+\+Read\+Stream. It can range from 1 to the value of max\+Input\+Channels in the \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} record for the default input device. If 0 the stream is opened as an output-\/only stream.\\
+\hline
+{\em num\+Output\+Channels} & The number of channels of sound to be delivered to the stream callback or passed to Pa\+\_\+\+Write\+Stream. It can range from 1 to the value of max\+Output\+Channels in the \mbox{\hyperlink{struct_pa_device_info}{Pa\+Device\+Info}} record for the default output device. If 0 the stream is opened as an output-\/only stream.\\
+\hline
+{\em sample\+Format} & The sample format of both the input and output buffers provided to the callback or passed to and from Pa\+\_\+\+Read\+Stream and Pa\+\_\+\+Write\+Stream. sample\+Format may be any of the formats described by the Pa\+Sample\+Format enumeration.\\
+\hline
+{\em sample\+Rate} & Same as Pa\+\_\+\+Open\+Stream parameter of the same name. \\
+\hline
+{\em frames\+Per\+Buffer} & Same as Pa\+\_\+\+Open\+Stream parameter of the same name. \\
+\hline
+{\em stream\+Callback} & Same as Pa\+\_\+\+Open\+Stream parameter of the same name. \\
+\hline
+{\em user\+Data} & Same as Pa\+\_\+\+Open\+Stream parameter of the same name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+As for Pa\+\_\+\+Open\+Stream
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream}}, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a443ad16338191af364e3be988014cbbe}\label{portaudio_8h_a443ad16338191af364e3be988014cbbe}} 
+\index{portaudio.h@{portaudio.h}!Pa\_OpenStream@{Pa\_OpenStream}}
+\index{Pa\_OpenStream@{Pa\_OpenStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_OpenStream()}{Pa\_OpenStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Open\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$$\ast$}]{stream,  }\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{input\+Parameters,  }\item[{const \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} $\ast$}]{output\+Parameters,  }\item[{double}]{sample\+Rate,  }\item[{unsigned long}]{frames\+Per\+Buffer,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{stream\+Flags,  }\item[{\mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}} $\ast$}]{stream\+Callback,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Opens a stream for either input, output or both.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & The address of a Pa\+Stream pointer which will receive a pointer to the newly opened stream.\\
+\hline
+{\em input\+Parameters} & A structure that describes the input parameters used by the opened stream. See \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} for a description of these parameters. input\+Parameters must be NULL for output-\/only streams.\\
+\hline
+{\em output\+Parameters} & A structure that describes the output parameters used by the opened stream. See \mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}} for a description of these parameters. output\+Parameters must be NULL for input-\/only streams.\\
+\hline
+{\em sample\+Rate} & The desired sample\+Rate. For full-\/duplex streams it is the sample rate for both input and output. Note that the actual sample\+Rate may differ very slightly from the desired rate because of hardware limitations. The exact rate can be queried using \mbox{\hyperlink{portaudio_8h_ab9207d6191bb1f1725470a9cae98436d}{Pa\+\_\+\+Get\+Stream\+Info()}}. If nothing close to the desired sample\+Rate is available then the open will fail and return an error.\\
+\hline
+{\em frames\+Per\+Buffer} & The number of frames passed to the stream callback function, or the preferred block granularity for a blocking read/write stream. The special value pa\+Frames\+Per\+Buffer\+Unspecified (0) may be used to request that the stream callback will receive an optimal (and possibly varying) number of frames based on host requirements and the requested latency settings. Note\+: With some host APIs, the use of non-\/zero frames\+Per\+Buffer for a callback stream may introduce an additional layer of buffering which could introduce additional latency. Port\+Audio guarantees that the additional latency will be kept to the theoretical minimum however, it is strongly recommended that a non-\/zero frames\+Per\+Buffer value only be used when your algorithm requires a fixed number of frames per stream callback.\\
+\hline
+{\em stream\+Flags} & Flags which modify the behavior of the streaming process. This parameter may contain a combination of flags ORed together. Some flags may only be relevant to certain buffer formats.\\
+\hline
+{\em stream\+Callback} & A pointer to a client supplied function that is responsible for processing and filling input and output buffers. If this parameter is NULL the stream will be opened in \textquotesingle{}blocking read/write\textquotesingle{} mode. In blocking mode, the client can receive sample data using Pa\+\_\+\+Read\+Stream and write sample data using Pa\+\_\+\+Write\+Stream, the number of samples that may be read or written without blocking is returned by Pa\+\_\+\+Get\+Stream\+Read\+Available and Pa\+\_\+\+Get\+Stream\+Write\+Available respectively.\\
+\hline
+{\em user\+Data} & A client supplied pointer which is passed to the stream callback function. It could for example, contain a pointer to instance data necessary for processing the audio buffers. This parameter is ignored if stream\+Callback is NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} returns pa\+No\+Error and places a pointer to a valid Pa\+Stream in the stream argument. The stream is inactive (stopped). If a call to \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}} fails, a non-\/zero error code is returned (see Pa\+Error for possible error codes) and the value of stream is invalid.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_stream_parameters}{Pa\+Stream\+Parameters}}, \mbox{\hyperlink{portaudio_8h_a8a60fb2a5ec9cbade3f54a9c978e2710}{Pa\+Stream\+Callback}}, \mbox{\hyperlink{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}{Pa\+\_\+\+Read\+Stream}}, \mbox{\hyperlink{portaudio_8h_a075a6efb503a728213bdae24347ed27d}{Pa\+\_\+\+Write\+Stream}}, \mbox{\hyperlink{portaudio_8h_ad04c33f045fa58d7b705b56b1fd3e816}{Pa\+\_\+\+Get\+Stream\+Read\+Available}}, \mbox{\hyperlink{portaudio_8h_a25595acf48733ec32045aa189c3caa61}{Pa\+\_\+\+Get\+Stream\+Write\+Available}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}\label{portaudio_8h_a0b62d4b74b5d3d88368e9e4c0b8b2dc7}} 
+\index{portaudio.h@{portaudio.h}!Pa\_ReadStream@{Pa\_ReadStream}}
+\index{Pa\_ReadStream@{Pa\_ReadStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_ReadStream()}{Pa\_ReadStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Read\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+Read samples from an input stream. The function doesn\textquotesingle{}t return until the entire buffer has been filled -\/ this may involve waiting for the operating system to supply the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & A pointer to an open stream previously created with Pa\+\_\+\+Open\+Stream.\\
+\hline
+{\em buffer} & A pointer to a buffer of sample frames. The buffer contains samples in the format specified by the input\+Parameters-\/\texorpdfstring{$>$}{>}sample\+Format field used to open the stream, and the number of channels specified by input\+Parameters-\/\texorpdfstring{$>$}{>}num\+Channels. If non-\/interleaved samples were requested using the pa\+Non\+Interleaved sample format flag, buffer is a pointer to the first element of an array of buffer pointers, one non-\/interleaved buffer for each channel.\\
+\hline
+{\em frames} & The number of frames to be read into buffer. This parameter is not constrained to a specific range, however high performance applications will want to match this parameter to the frames\+Per\+Buffer parameter used when opening the stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success Pa\+No\+Error will be returned, or Pa\+Input\+Overflowed if input data was discarded by Port\+Audio after the previous call and before this call. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{portaudio_8h_aa11e7b06b2cde8621551f5d527965838}\label{portaudio_8h_aa11e7b06b2cde8621551f5d527965838}} 
+\index{portaudio.h@{portaudio.h}!Pa\_SetStreamFinishedCallback@{Pa\_SetStreamFinishedCallback}}
+\index{Pa\_SetStreamFinishedCallback@{Pa\_SetStreamFinishedCallback}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_SetStreamFinishedCallback()}{Pa\_SetStreamFinishedCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Set\+Stream\+Finished\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} $\ast$}]{stream\+Finished\+Callback }\end{DoxyParamCaption})}
+
+Register a stream finished callback function which will be called when the stream becomes inactive. See the description of Pa\+Stream\+Finished\+Callback for further details about when the callback will be called.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & a pointer to a Pa\+Stream that is in the stopped state -\/ if the stream is not stopped, the stream\textquotesingle{}s finished callback will remain unchanged and an error code will be returned.\\
+\hline
+{\em stream\+Finished\+Callback} & a pointer to a function with the same signature as Pa\+Stream\+Finished\+Callback, that will be called when the stream becomes inactive. Passing NULL for this parameter will un-\/register a previously registered stream finished callback function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+on success returns pa\+No\+Error, otherwise an error code indicating the cause of the error.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a1b3c20044c9401c42add29475636e83d}\label{portaudio_8h_a1b3c20044c9401c42add29475636e83d}} 
+\index{portaudio.h@{portaudio.h}!Pa\_Sleep@{Pa\_Sleep}}
+\index{Pa\_Sleep@{Pa\_Sleep}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_Sleep()}{Pa\_Sleep()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+\_\+\+Sleep (\begin{DoxyParamCaption}\item[{long}]{msec }\end{DoxyParamCaption})}
+
+Put the caller to sleep for at least \textquotesingle{}msec\textquotesingle{} milliseconds. This function is provided only as a convenience for authors of portable code (such as the tests and examples in the Port\+Audio distribution.)
+
+The function may sleep longer than requested so don\textquotesingle{}t rely on this for accurate musical timing. \mbox{\Hypertarget{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}\label{portaudio_8h_a7432aadd26c40452da12fa99fc1a047b}} 
+\index{portaudio.h@{portaudio.h}!Pa\_StartStream@{Pa\_StartStream}}
+\index{Pa\_StartStream@{Pa\_StartStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_StartStream()}{Pa\_StartStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Start\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Commences audio processing. \mbox{\Hypertarget{portaudio_8h_af18dd60220251286c337631a855e38a0}\label{portaudio_8h_af18dd60220251286c337631a855e38a0}} 
+\index{portaudio.h@{portaudio.h}!Pa\_StopStream@{Pa\_StopStream}}
+\index{Pa\_StopStream@{Pa\_StopStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_StopStream()}{Pa\_StopStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Stop\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream }\end{DoxyParamCaption})}
+
+Terminates audio processing. It waits until all pending audio buffers have been played before it returns. \mbox{\Hypertarget{portaudio_8h_a0db317604e916e8bd6098e60e6237221}\label{portaudio_8h_a0db317604e916e8bd6098e60e6237221}} 
+\index{portaudio.h@{portaudio.h}!Pa\_Terminate@{Pa\_Terminate}}
+\index{Pa\_Terminate@{Pa\_Terminate}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_Terminate()}{Pa\_Terminate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Terminate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Library termination function -\/ call this when finished using Port\+Audio. This function deallocates all resources allocated by Port\+Audio since it was initialized by a call to \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}. In cases where Pa\+\_\+\+Initialise() has been called multiple times, each call must be matched with a corresponding call to \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}}. The final matching call to \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}} will automatically close any Port\+Audio streams that are still open.
+
+\mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}} MUST be called before exiting a program which uses Port\+Audio. Failure to do so may result in serious resource leaks, such as audio devices not being available until the next reboot.
+
+\begin{DoxyReturn}{Returns}
+pa\+No\+Error if successful, otherwise an error code indicating the cause of failure.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{portaudio_8h_a075a6efb503a728213bdae24347ed27d}\label{portaudio_8h_a075a6efb503a728213bdae24347ed27d}} 
+\index{portaudio.h@{portaudio.h}!Pa\_WriteStream@{Pa\_WriteStream}}
+\index{Pa\_WriteStream@{Pa\_WriteStream}!portaudio.h@{portaudio.h}}
+\doxysubsubsection{\texorpdfstring{Pa\_WriteStream()}{Pa\_WriteStream()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+\_\+\+Write\+Stream (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{stream,  }\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer,  }\item[{unsigned long}]{frames }\end{DoxyParamCaption})}
+
+Write samples to an output stream. This function doesn\textquotesingle{}t return until the entire buffer has been written -\/ this may involve waiting for the operating system to consume the data.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & A pointer to an open stream previously created with Pa\+\_\+\+Open\+Stream.\\
+\hline
+{\em buffer} & A pointer to a buffer of sample frames. The buffer contains samples in the format specified by the output\+Parameters-\/\texorpdfstring{$>$}{>}sample\+Format field used to open the stream, and the number of channels specified by output\+Parameters-\/\texorpdfstring{$>$}{>}num\+Channels. If non-\/interleaved samples were requested using the pa\+Non\+Interleaved sample format flag, buffer is a pointer to the first element of an array of buffer pointers, one non-\/interleaved buffer for each channel.\\
+\hline
+{\em frames} & The number of frames to be written from buffer. This parameter is not constrained to a specific range, however high performance applications will want to match this parameter to the frames\+Per\+Buffer parameter used when opening the stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success Pa\+No\+Error will be returned, or pa\+Output\+Underflowed if additional output data was inserted after the previous call and before this call. 
+\end{DoxyReturn}

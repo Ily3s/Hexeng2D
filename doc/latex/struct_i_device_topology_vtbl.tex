@@ -1,0 +1,207 @@
+\hypertarget{struct_i_device_topology_vtbl}{}\doxysection{IDevice\+Topology\+Vtbl Struct Reference}
+\label{struct_i_device_topology_vtbl}\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+
+
+{\ttfamily \#include $<$devicetopology.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_device_topology_vtbl_ab746c03f1cac55a919e2dccfa43d61e8}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_aa9b44bc8644523c2e928755675ffa568}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_ab9c0248388b77c51d09f3e5ceae345db}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_a533b959d2bc0eed681c0bc1f2654804d}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Connector\+Count)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_a459d66e715f34f6fcc286dd54532b360}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Connector)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_af9db4e499eb1c4b474388d4cc2ea2c68}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Subunit\+Count)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_a56596b816e48f0906b70e844fb89742b}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Subunit)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_ad9b3eb88fb1e828d33accff5def2dd8f}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Part\+By\+Id)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_a4f08490f3e317c73b60470b50dc46b5c}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Device\+Id)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_device_topology_vtbl_a20ced4ca40a3b70b001bedc5d56d5594}{HRESULT}} (STDMETHODCALLTYPE $\ast$Get\+Signal\+Path)(\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_device_topology_vtbl_a889bb4c3f428d49897c3d71bc92a238d}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a5fbda440ff0cbc0e9723c9fb5c84eac2}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT $\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a408195f7b0d2c91aaa32fff15f37d850}{p\+Count}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{struct_i_device_topology_vtbl_aa32c6d96f822d89c8b4e5ebd397af956}{n\+Index}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a2b68a777a086913c92507042db2676ac}{pp\+Connector}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_af968531344327d34c13d269c427ed515}{pp\+Subunit}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{struct_i_device_topology_vtbl_a5b5c8129f0339326140197b66c0311db}{n\+Id}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_ae04785f0aeacfcdcc0ad41260c071303}{pp\+Part}}
+\item 
+\mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR $\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a30e9bdf6ea82c34b136dccfb368f87b1}{ppwstr\+Device\+Id}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} $\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a8dbe6e2e90e01c9c5b6dc864d068d8d3}{p\+IPart\+From}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} $\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_a74706b142e309df3b3c7357432415903}{p\+IPart\+To}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} BOOL \mbox{\hyperlink{struct_i_device_topology_vtbl_ac2ca4e5a1e5a8e0e0ee263612b5c17a0}{b\+Reject\+Mixed\+Paths}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} BOOL \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_device_topology_vtbl_acf45e61a7c1d6bc12cc836d1424c8562}{pp\+Parts}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a459d66e715f34f6fcc286dd54532b360}\label{struct_i_device_topology_vtbl_a459d66e715f34f6fcc286dd54532b360}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Connector }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a533b959d2bc0eed681c0bc1f2654804d}\label{struct_i_device_topology_vtbl_a533b959d2bc0eed681c0bc1f2654804d}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Connector\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a4f08490f3e317c73b60470b50dc46b5c}\label{struct_i_device_topology_vtbl_a4f08490f3e317c73b60470b50dc46b5c}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Device\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_ad9b3eb88fb1e828d33accff5def2dd8f}\label{struct_i_device_topology_vtbl_ad9b3eb88fb1e828d33accff5def2dd8f}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Part\+By\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a20ced4ca40a3b70b001bedc5d56d5594}\label{struct_i_device_topology_vtbl_a20ced4ca40a3b70b001bedc5d56d5594}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Signal\+Path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a56596b816e48f0906b70e844fb89742b}\label{struct_i_device_topology_vtbl_a56596b816e48f0906b70e844fb89742b}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Subunit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_af9db4e499eb1c4b474388d4cc2ea2c68}\label{struct_i_device_topology_vtbl_af9db4e499eb1c4b474388d4cc2ea2c68}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Get\+Subunit\+Count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_ab746c03f1cac55a919e2dccfa43d61e8}\label{struct_i_device_topology_vtbl_ab746c03f1cac55a919e2dccfa43d61e8}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IDevice\+Topology\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_aa9b44bc8644523c2e928755675ffa568}\label{struct_i_device_topology_vtbl_aa9b44bc8644523c2e928755675ffa568}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_ab9c0248388b77c51d09f3e5ceae345db}\label{struct_i_device_topology_vtbl_ab9c0248388b77c51d09f3e5ceae345db}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IDevice\+Topology\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_ac2ca4e5a1e5a8e0e0ee263612b5c17a0}\label{struct_i_device_topology_vtbl_ac2ca4e5a1e5a8e0e0ee263612b5c17a0}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!bRejectMixedPaths@{bRejectMixedPaths}}
+\index{bRejectMixedPaths@{bRejectMixedPaths}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{bRejectMixedPaths}{bRejectMixedPaths}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} BOOL IDevice\+Topology\+Vtbl\+::b\+Reject\+Mixed\+Paths}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a5b5c8129f0339326140197b66c0311db}\label{struct_i_device_topology_vtbl_a5b5c8129f0339326140197b66c0311db}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!nId@{nId}}
+\index{nId@{nId}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{nId}{nId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT IDevice\+Topology\+Vtbl\+::n\+Id}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_aa32c6d96f822d89c8b4e5ebd397af956}\label{struct_i_device_topology_vtbl_aa32c6d96f822d89c8b4e5ebd397af956}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!nIndex@{nIndex}}
+\index{nIndex@{nIndex}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{nIndex}{nIndex}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT IDevice\+Topology\+Vtbl\+::n\+Index}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a408195f7b0d2c91aaa32fff15f37d850}\label{struct_i_device_topology_vtbl_a408195f7b0d2c91aaa32fff15f37d850}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!pCount@{pCount}}
+\index{pCount@{pCount}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{pCount}{pCount}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} UINT $\ast$ IDevice\+Topology\+Vtbl\+::p\+Count}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a8dbe6e2e90e01c9c5b6dc864d068d8d3}\label{struct_i_device_topology_vtbl_a8dbe6e2e90e01c9c5b6dc864d068d8d3}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!pIPartFrom@{pIPartFrom}}
+\index{pIPartFrom@{pIPartFrom}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{pIPartFrom}{pIPartFrom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}$\ast$ IDevice\+Topology\+Vtbl\+::p\+IPart\+From}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a74706b142e309df3b3c7357432415903}\label{struct_i_device_topology_vtbl_a74706b142e309df3b3c7357432415903}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!pIPartTo@{pIPartTo}}
+\index{pIPartTo@{pIPartTo}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{pIPartTo}{pIPartTo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}$\ast$ IDevice\+Topology\+Vtbl\+::p\+IPart\+To}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a2b68a777a086913c92507042db2676ac}\label{struct_i_device_topology_vtbl_a2b68a777a086913c92507042db2676ac}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppConnector@{ppConnector}}
+\index{ppConnector@{ppConnector}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppConnector}{ppConnector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_abb4c3c1135aab6c47cff22e7c16efb74}{\+\_\+\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a51f898e3bb3480805837711f3fcf328b}{IConnector}}$\ast$$\ast$ IDevice\+Topology\+Vtbl\+::pp\+Connector}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_ae04785f0aeacfcdcc0ad41260c071303}\label{struct_i_device_topology_vtbl_ae04785f0aeacfcdcc0ad41260c071303}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppPart@{ppPart}}
+\index{ppPart@{ppPart}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppPart}{ppPart}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}$\ast$$\ast$ IDevice\+Topology\+Vtbl\+::pp\+Part}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_acf45e61a7c1d6bc12cc836d1424c8562}\label{struct_i_device_topology_vtbl_acf45e61a7c1d6bc12cc836d1424c8562}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppParts@{ppParts}}
+\index{ppParts@{ppParts}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppParts}{ppParts}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} BOOL \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a8e228d62a050f73b40337e38a9d1fc04}{IParts\+List}}$\ast$$\ast$ IDevice\+Topology\+Vtbl\+::pp\+Parts}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_af968531344327d34c13d269c427ed515}\label{struct_i_device_topology_vtbl_af968531344327d34c13d269c427ed515}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppSubunit@{ppSubunit}}
+\index{ppSubunit@{ppSubunit}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppSubunit}{ppSubunit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} UINT \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{devicetopology_8h_a699f46e395daf19f978800c852f09860}{ISubunit}}$\ast$$\ast$ IDevice\+Topology\+Vtbl\+::pp\+Subunit}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a5fbda440ff0cbc0e9723c9fb5c84eac2}\label{struct_i_device_topology_vtbl_a5fbda440ff0cbc0e9723c9fb5c84eac2}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IDevice\+Topology\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a30e9bdf6ea82c34b136dccfb368f87b1}\label{struct_i_device_topology_vtbl_a30e9bdf6ea82c34b136dccfb368f87b1}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!ppwstrDeviceId@{ppwstrDeviceId}}
+\index{ppwstrDeviceId@{ppwstrDeviceId}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{ppwstrDeviceId}{ppwstrDeviceId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a7dec33add44f7afd0eb61b1249a35298}{\+\_\+\+\_\+deref\+\_\+out}} LPWSTR$\ast$ IDevice\+Topology\+Vtbl\+::ppwstr\+Device\+Id}
+
+\mbox{\Hypertarget{struct_i_device_topology_vtbl_a889bb4c3f428d49897c3d71bc92a238d}\label{struct_i_device_topology_vtbl_a889bb4c3f428d49897c3d71bc92a238d}} 
+\index{IDeviceTopologyVtbl@{IDeviceTopologyVtbl}!riid@{riid}}
+\index{riid@{riid}!IDeviceTopologyVtbl@{IDeviceTopologyVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IDevice\+Topology\+Vtbl\+::riid}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{devicetopology_8h}{devicetopology.\+h}}\end{DoxyCompactItemize}

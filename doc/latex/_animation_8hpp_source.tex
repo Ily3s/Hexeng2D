@@ -1,0 +1,55 @@
+\hypertarget{_animation_8hpp_source}{}\doxysection{Animation.\+hpp}
+\label{_animation_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Animation.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Animation.hpp}}
+\mbox{\hyperlink{_animation_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ANIMATION\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ANIMATION\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11     \textcolor{keyword}{struct }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}{AnimationStep}}}
+\DoxyCodeLine{12     \{}
+\DoxyCodeLine{16         \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}{AnimationStep}}(std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{float})> up\_anim, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> keypoint, \textcolor{keywordtype}{float} timestamp);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18         std::function<void(\textcolor{keywordtype}{float})> \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step_a8103b7bd76620303ee6ad2c8d1785a8b}{up\_anim}};}
+\DoxyCodeLine{19         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step_a5bd722169e394f5db76cf0966a63dca8}{keypoint}};}
+\DoxyCodeLine{20         \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step_a94057094b2cc41ab3c2bae75488518ca}{timestamp}};}
+\DoxyCodeLine{21     \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}}}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25     public :}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{28         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}}(std::vector<AnimationStep> steps, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})> terminate, \textcolor{keywordtype}{bool} repeat = \textcolor{keyword}{false});}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30         std::vector<AnimationStep> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a79fd174f726539749c9bf4f797e3ece7}{steps}};}
+\DoxyCodeLine{31         std::function<void(\textcolor{keywordtype}{void})> \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation_a47083225ded54f4c8682390763babade}{terminate}};}
+\DoxyCodeLine{32         \textcolor{keywordtype}{bool} repeat = \textcolor{keyword}{false};}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{void} play();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{38         \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}}();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     private :}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42         \textcolor{keyword}{friend} \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \textcolor{keywordtype}{void} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}{draw\_current\_scene}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44         \textcolor{keyword}{static} std::vector<Animation*> s\_animations;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46         \textcolor{keywordtype}{size\_t} m\_current\_step = 0;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \textcolor{keywordtype}{float} m\_time = 0.0f;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50         \textcolor{keyword}{static} \textcolor{keywordtype}{void} s\_update\_animations();}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

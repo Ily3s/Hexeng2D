@@ -1,0 +1,50 @@
+\doxysection{Scene.\+hpp}
+\hypertarget{Scene_8hpp_source}{}\label{Scene_8hpp_source}\index{Hexeng2D/src/Scene.hpp@{Hexeng2D/src/Scene.hpp}}
+\mbox{\hyperlink{Scene_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SCENE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SCENE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Macros_8hpp}{Macros.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Layer_8hpp}{Renderer/Layer.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{EventManager_8hpp}{EventManager/EventManager.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Physics_8hpp}{Physics/Physics.hpp}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng}{Hexeng}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ SceneComponent}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Scene_8hpp_aae2cf4f2bb9064d02ab52e32f7220ebe}{LAYERS}},}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Scene_8hpp_a0383e5bf22653a832beeabda82c1eeb3}{EVENTS}},}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Scene_8hpp_a8fdf3fc65f3b668233c61c598787f545}{HITBOXES}},}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Scene_8hpp_a900ca122d6505e3a6c0afe6389b8b0b4}{PHYS\_VECS}},}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ PHYS\_ENTITIES}
+\DoxyCodeLine{00019\ \ \ \ \ \};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Scene}{Scene}}}
+\DoxyCodeLine{00022\ \ \ \ \ \{}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::vector<Renderer::Layer*>\ \mbox{\hyperlink{classHexeng_1_1Scene_a8c069265fe950f25536d5205d3ebd443}{layers}};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ std::vector<EventManager::Event*>\ \mbox{\hyperlink{classHexeng_1_1Scene_a17f98e47bfe59908c0046a39e2ad4d16}{events}};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ std::vector<Physics::PhysicsVecs*>\ \mbox{\hyperlink{classHexeng_1_1Scene_a2c1f4205024fc28b89c51b11d28d0ef5}{physics\_vecs}};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Scene_a4561dbad02a2249315aba0a06e1fa204}{Scene}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::unordered\_map<SceneComponent,\ std::vector<void*>>\&\ components\ =\ \{\});}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Scene_aaba3311ae5ab4d4babcf3c5d8e207c5a}{load}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Scene_abcce907168e37dd2aff29ee6358b7983}{unload}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Scene_ad9f4e198f75c1452c162fac67e96ed3e}{switch\_scene}}(\textcolor{keywordtype}{int}\ new\_scene\_id);}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::unordered\_map<int,\ Scene*>\ \mbox{\hyperlink{namespaceHexeng_a88756a2f672418bb5fab6f3818eac66f}{scenes}};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceHexeng_a4b11bd221d6782d039d79b7e4612b02f}{scene\_id}};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !SCENE\_HPP}}
+
+\end{DoxyCode}

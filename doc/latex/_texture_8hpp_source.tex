@@ -1,0 +1,113 @@
+\hypertarget{_texture_8hpp_source}{}\doxysection{Texture.\+hpp}
+\label{_texture_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Texture.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Texture.hpp}}
+\mbox{\hyperlink{_texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TEXTURE\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TEXTURE\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}glad/glad.h"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}stb/stb\_image.h"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{14 \{}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{19     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{TexSett}}}
+\DoxyCodeLine{20     \{}
+\DoxyCodeLine{22         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{MAG\_FILTER}},}
+\DoxyCodeLine{24         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{MIN\_FILTER}},}
+\DoxyCodeLine{26         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{BASE\_FORMAT}},}
+\DoxyCodeLine{28         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{SIZED\_FORMAT}},}
+\DoxyCodeLine{30         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{BPP}},}
+\DoxyCodeLine{32         \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\_NB}}}
+\DoxyCodeLine{33     \};}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keyword}{using }\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}} = std::unordered\_map<TexSett, GLuint>;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}}
+\DoxyCodeLine{38     \{}
+\DoxyCodeLine{39     \textcolor{keyword}{public}:}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{44         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}(\textcolor{keyword}{const} std::string\& filepath, \textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\& settings = \{\});}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{51         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}(uint8\_t*\&\& pixel\_buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} size, \textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\& settings = \{\});}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{\string~Texture}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a119c03a0dace6ae8732b4b44644ec450}{Texture}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57         \textcolor{keywordtype}{void} bind(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} slot = GL\_TEXTURE0) \textcolor{keyword}{const};}
+\DoxyCodeLine{58         \textcolor{keyword}{static} \textcolor{keywordtype}{void} unbind();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} unload();}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70         \textcolor{keywordtype}{void} load();}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a5510ffae86665b56696587963bcb0ee9}{Texture}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{73         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a2f8990cb81e7e08b88f6104eb7c404e3}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\&\&) noexcept;}
+\DoxyCodeLine{76         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}\&\&) noexcept;}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     protected:}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80         GLuint m\_id = 0;}
+\DoxyCodeLine{81         std::\textcolor{keywordtype}{string} m\_filepath;}
+\DoxyCodeLine{82         uint8\_t* m\_texbuffer = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{83         GLuint m\_mag\_filter = GL\_LINEAR, m\_min\_filter = GL\_LINEAR;}
+\DoxyCodeLine{84         GLuint m\_base\_format = GL\_RGBA, m\_sized\_format = GL\_RGBA8;}
+\DoxyCodeLine{85         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}> m\_size\{ 0, 0 \};}
+\DoxyCodeLine{86         \textcolor{keywordtype}{int} m\_BPP = 4, m\_channels\_nb = 4;}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keywordtype}{void} m\_build\_settings(\textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\& settings, std::vector<TexSett> necessary);}
+\DoxyCodeLine{89         \textcolor{keywordtype}{void} m\_construct\_texture();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keyword}{public}:}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93         \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_aacfe1f7c27f220fb5baa5826ffee0fc8}{get\_width}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_size.x; \}}
+\DoxyCodeLine{94         \textcolor{keyword}{inline} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a49c559c2cdea5af7642a211bc7c70169}{get\_height}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_size.y; \}}
+\DoxyCodeLine{95         \textcolor{keyword}{inline} \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a4e6a58f532b426a467409428ba735081}{get\_size}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_size; \}}
+\DoxyCodeLine{96         \textcolor{keyword}{inline} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_a0c6db2f62beb7a0f8409abffcd37f250}{get\_id}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} m\_id; \}}
+\DoxyCodeLine{97     \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{TexCoord}}}
+\DoxyCodeLine{100     \{}
+\DoxyCodeLine{101         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord_a82f3e4083a9815c06543a2d6c1174747}{bot\_left}}, \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord_a0b9b3ccae7a99043918854a893ab7ef6}{top\_left}}, \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord_a9b70a529afdf7c8482e2db2d06316990}{top\_right}}, \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord_a438848d05c2a40119e65154d544f4c15}{bot\_right}};}
+\DoxyCodeLine{102     \};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{109     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}}
+\DoxyCodeLine{110     \{}
+\DoxyCodeLine{111     \textcolor{keyword}{public}:}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector_afbe1711903523d5e751a785992938b1e}{TextureVector}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}\&\&) noexcept;}
+\DoxyCodeLine{116         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}\&\&) noexcept;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{119         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}(const std::\textcolor{keywordtype}{string}\& filepath, const \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\& settings = \{\});}
+\DoxyCodeLine{120 }
+\DoxyCodeLine{122         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{TextureVector}}(uint8\_t*\&\& tex\_buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} size, \textcolor{keyword}{const} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\& settings = \{\});}
+\DoxyCodeLine{123 }
+\DoxyCodeLine{126         TextureVector(\textcolor{keyword}{const} TexSettList\& settings);}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{135         \textcolor{keywordtype}{void} push(\textcolor{keyword}{const} uint8\_t* tex\_buffer, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} size);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{142         \textcolor{keywordtype}{void} push(\textcolor{keyword}{const} std::string\& filepath);}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{145         \textcolor{keyword}{const} std::vector<TexCoord>\& get\_coordinates() \textcolor{keyword}{const};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147     \textcolor{keyword}{private}:}
+\DoxyCodeLine{148 }
+\DoxyCodeLine{149         std::vector<TexCoord> m\_coords;}
+\DoxyCodeLine{150     \};}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{152 \}}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !TEXTURE\_HPP}}
+
+\end{DoxyCode}

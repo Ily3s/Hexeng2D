@@ -1,0 +1,51 @@
+\hypertarget{_button_8hpp_source}{}\doxysection{Button.\+hpp}
+\label{_button_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/Button.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/EventManager/Button.hpp}}
+\mbox{\hyperlink{_button_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef BUTTON\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define BUTTON\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_input_event_8hpp}{InputEvent.hpp}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Hexeng::EventManager}}}
+\DoxyCodeLine{9 \{}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{14     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffac}{ButtonEvent}}}
+\DoxyCodeLine{15     \{}
+\DoxyCodeLine{16         \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacada95feece334f0612031adf21d057ab9}{HOVER}},}
+\DoxyCodeLine{17         \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffacab36087a3f7e8653a2cfe1ca46df7b74b}{UNHOVER}},}
+\DoxyCodeLine{18         \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca40600390b96d1c218ae0d475f977e25b}{CLICK}},}
+\DoxyCodeLine{19         \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca4dd2695912aafd9450d36abaa0cda733}{UNCLICK}},}
+\DoxyCodeLine{20         \mbox{\hyperlink{namespace_hexeng_1_1_event_manager_a58b590a76487f0aa195632bdcac0ffaca45debd3c164d923204d4a211f549a097}{KEEP\_CLICKING}}}
+\DoxyCodeLine{21     \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}}}
+\DoxyCodeLine{24     \{}
+\DoxyCodeLine{25     private :}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27         \textcolor{keywordtype}{bool} m\_was\_hovered = \textcolor{keyword}{false};}
+\DoxyCodeLine{28         \textcolor{keywordtype}{bool} m\_was\_clicking = \textcolor{keyword}{false};}
+\DoxyCodeLine{29         \textcolor{keywordtype}{bool} m\_click\_outside = \textcolor{keyword}{false};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     public :}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1;}
+\DoxyCodeLine{34         std::function<void(\textcolor{keywordtype}{void})> hover, unhover, \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_afce58409a65e488ea4774b424361ce53}{click}}, unclick, keep\_clicking;}
+\DoxyCodeLine{35         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min\{0, 0\}, max\{0, 0\};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{44         }
+\DoxyCodeLine{45         Button(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} min, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} max, std::unordered\_map<ButtonEvent, std::function<\textcolor{keywordtype}{void}(\textcolor{keywordtype}{void})>> events, \textcolor{keywordtype}{int} mouse\_button = GLFW\_MOUSE\_BUTTON\_1, Range range = Range::GLOBAL);}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button_a2e5563345d5ee8fa074bf60073f43b52}{Button}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
+\DoxyCodeLine{50         \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_button}{Button}}\&\&) noexcept;}
+\DoxyCodeLine{51     \};}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

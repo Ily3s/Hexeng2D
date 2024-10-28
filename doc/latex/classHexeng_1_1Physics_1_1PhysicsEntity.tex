@@ -1,0 +1,156 @@
+\doxysection{Hexeng\+::Physics\+::Physics\+Entity Class Reference}
+\hypertarget{classHexeng_1_1Physics_1_1PhysicsEntity}{}\label{classHexeng_1_1Physics_1_1PhysicsEntity}\index{Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}}
+
+
+{\ttfamily \#include $<$Physics.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Physics\+::Physics\+Entity\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1Physics_1_1PhysicsEntity}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity_ae72ce3bf5a66f2faff52fa3cd415c755}{Physics\+Entity}} (std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ rectangles, int solidity)
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity_aa6009b0883ea4a6c82261642a977cd1e}{on\+\_\+collision}} (std\+::pair$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*} $>$) override
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity_a659a71d6f7ec65d59ee8107af423e8cf}{Physics\+Entity}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \&\&other) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \& \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity_a8dcfb12c31e93a0dce213804cadc8d7f}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \&\&other) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hexeng\+::\+Physics\+::\+Hit\+Box}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_ad3057bb5e1a3dd9fbd393edd17aeab0d}{Hit\+Box}} (const std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ \&rectangles, int solidity, bool \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a442e07ece0709714633744cac168e285}{enable\+\_\+collision}}=true)
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a7eb5295f544addae4da58f4e5eeed84c}{Hit\+Box}} (const \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \& \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a5a5feb2fca702e3b053ffb4bb519f36c}{operator=}} (const \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&)=delete
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a816cc379b1652d2be3f149488f26510c}{Hit\+Box}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \& \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_ad229bf98f3b182374cef8a00e4d425c3}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_ae4ad1adc708c8c030a35d78d1ee89225}{Hit\+Box}} ()=default
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a465eda86f7b99c281dc0fdd99c93c3c9}{view\+\_\+prev\+\_\+state}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a906a496966aab2e2325bbdda739c7292}{view\+\_\+prev\+\_\+state\+\_\+x}} ()
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_af97b36ec6c348cfa065db9cd2aadfe0e}{view\+\_\+prev\+\_\+state\+\_\+y}} ()
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a2e034ad6b1f665ec24fc13b706c77b3e}{on\+\_\+collision}} (std\+::pair$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*} $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs}{Hexeng\+::\+Physics\+::\+Physics\+Vecs}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_a01fa34b68969ecd671b4dac0208b0886}{move}} (\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ offset)
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_ae9ddfb334d4be96ebc152146361b7145}{link}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Renderer\+::\+Mesh}} \&mesh)
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_a53cf7b69042707fb0202a4bee80147f0}{update}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hexeng\+::\+Physics\+::\+Hit\+Box}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_ae1d9af0a93fcb19f122a31350846a0d1}{load\+\_\+collisions}} ()
+\item 
+static std\+::pair$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a318d8f70993e8b14bf501e6dce9b2c9a}{is\+\_\+colliding}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&hb1, \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&hb2)
+\item 
+static bool \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a0469a32a0d2c5f98768bbcbacc24fc06}{is\+\_\+colliding}} (const \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \&hb1, const \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \&hb2)
+\item 
+static \mbox{\hyperlink{namespaceHexeng_1_1Physics_a1e3c431ba3d97f9b5c7d2c2185d6c2ae}{From}} \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a9f1c7abf4fb011e3ece4dae9a3313ba7}{where\+\_\+colliding}} (\mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&hb1, \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \&hb2)
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a98b888b1a0f956d648bd6533deebcb0c}{set\+\_\+visuallisers\+\_\+z}} (int z\+\_\+pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs}{Hexeng\+::\+Physics\+::\+Physics\+Vecs}}}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_aeda20d85a02eb4d673aba8ef5bcb420a}{update\+\_\+vecs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs}{Hexeng\+::\+Physics\+::\+Physics\+Vecs}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_a4fb5a87787b145f2795de538bd3a1720}{transform}} \{ 0.\+0f, 0.\+0f \}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_aeb2cb065e64b1bf8210580eaf59065ca}{position}} \{ 0, 0 \}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_ae33656271934e958f8197ad04a0daafe}{instant\+\_\+speed}} \{ 0, 0 \}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_a22d6f959a2b14401e2e95ecdeb3b0fe1}{velocity}} \{ 0, 0 \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hexeng\+::\+Physics\+::\+Hit\+Box}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classHexeng_1_1EventManager_1_1EventGate}{Event\+Manager\+::\+Event\+Gate}} \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a9bbd28be93bfe81882f33543d3f9b77c}{collisions\+\_\+evt}}
+\item 
+static bool \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_acbd3aa7f85ecdcc73352ad0ecd0e22c0}{enable\+\_\+visuallisers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs}{Hexeng\+::\+Physics\+::\+Physics\+Vecs}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ float $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_a64e796228a37f055d42f8f2b08987a95}{acceleration}}
+\item 
+static \mbox{\hyperlink{classHexeng_1_1EventManager_1_1EventGate}{Event\+Manager\+::\+Event\+Gate}} \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsVecs_acd3ee269808e0fd7ad4bb919598a6b6f}{update\+\_\+evt}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hexeng\+::\+Physics\+::\+Hit\+Box}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_ab0a2375fb2dc263e32a1ebbceb95b0dd}{m\+\_\+rectangles}}
+\item 
+int \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a5bd5507e8abad0c5ec64ddaa027231c0}{m\+\_\+solidity}} = 0
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a442e07ece0709714633744cac168e285}{enable\+\_\+collision}} = false
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{Renderer\+::\+Debug\+Quad}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a9c877f6ffb9fb789fc87e270d3d7c1ba}{visuallisers}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hexeng\+::\+Physics\+::\+Hit\+Box}}}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unordered\+\_\+map$<$ int, std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox}{Hit\+Box}} \texorpdfstring{$\ast$}{*} $>$ $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a4467bc2d9acc780739cb49a8ba3205e1}{s\+\_\+colliders}}
+\item 
+static std\+::unordered\+\_\+map$<$ int, \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Layer}{Renderer\+::\+Layer}} $>$ \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a52a7324789e214a24843584e03b4c4d5}{visuallisers\+\_\+layers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Physics_1_1PhysicsEntity_ae72ce3bf5a66f2faff52fa3cd415c755}\label{classHexeng_1_1Physics_1_1PhysicsEntity_ae72ce3bf5a66f2faff52fa3cd415c755} 
+\index{Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}!PhysicsEntity@{PhysicsEntity}}
+\index{PhysicsEntity@{PhysicsEntity}!Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}}
+\doxysubsubsection{\texorpdfstring{PhysicsEntity()}{PhysicsEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Hexeng\+::\+Physics\+::\+Physics\+Entity\+::\+Physics\+Entity (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} $>$}]{rectangles,  }\item[{int}]{solidity }\end{DoxyParamCaption})}
+
+\Hypertarget{classHexeng_1_1Physics_1_1PhysicsEntity_a659a71d6f7ec65d59ee8107af423e8cf}\label{classHexeng_1_1Physics_1_1PhysicsEntity_a659a71d6f7ec65d59ee8107af423e8cf} 
+\index{Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}!PhysicsEntity@{PhysicsEntity}}
+\index{PhysicsEntity@{PhysicsEntity}!Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}}
+\doxysubsubsection{\texorpdfstring{PhysicsEntity()}{PhysicsEntity()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Hexeng\+::\+Physics\+::\+Physics\+Entity\+::\+Physics\+Entity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Physics_1_1PhysicsEntity_aa6009b0883ea4a6c82261642a977cd1e}\label{classHexeng_1_1Physics_1_1PhysicsEntity_aa6009b0883ea4a6c82261642a977cd1e} 
+\index{Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}!on\_collision@{on\_collision}}
+\index{on\_collision@{on\_collision}!Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}}
+\doxysubsubsection{\texorpdfstring{on\_collision()}{on\_collision()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Physics\+::\+Physics\+Entity\+::on\+\_\+collision (\begin{DoxyParamCaption}\item[{std\+::pair$<$ \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*}, \mbox{\hyperlink{structHexeng_1_1Physics_1_1RectangleHitBox}{Rectangle\+Hit\+Box}} \texorpdfstring{$\ast$}{*} $>$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classHexeng_1_1Physics_1_1HitBox_a2e034ad6b1f665ec24fc13b706c77b3e}{Hexeng\+::\+Physics\+::\+Hit\+Box}}.
+
+\Hypertarget{classHexeng_1_1Physics_1_1PhysicsEntity_a8dcfb12c31e93a0dce213804cadc8d7f}\label{classHexeng_1_1Physics_1_1PhysicsEntity_a8dcfb12c31e93a0dce213804cadc8d7f} 
+\index{Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Physics::PhysicsEntity@{Hexeng::Physics::PhysicsEntity}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \& Hexeng\+::\+Physics\+::\+Physics\+Entity\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Physics_1_1PhysicsEntity}{Physics\+Entity}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Physics/\mbox{\hyperlink{Physics_8hpp}{Physics.\+hpp}}\end{DoxyCompactItemize}

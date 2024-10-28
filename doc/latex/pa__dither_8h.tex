@@ -1,0 +1,97 @@
+\hypertarget{pa__dither_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+dither.h File Reference}
+\label{pa__dither_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_dither.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_dither.h}}
+
+
+Functions for generating dither noise.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+types.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}}
+\begin{DoxyCompactList}\small\item\em State needed to generate a dither signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} \mbox{\hyperlink{pa__dither_8h_a61db805fd511365057c06a7499a3db10}{Pa\+Util\+Triangular\+Dither\+Generator}}
+\begin{DoxyCompactList}\small\item\em State needed to generate a dither signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__dither_8h_a71ef942619476398a43d199db526e085}{Pa\+Util\+\_\+\+Initialize\+Triangular\+Dither\+State}} (\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$dither\+State)
+\begin{DoxyCompactList}\small\item\em Initialize dither state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{Pa\+Int32}} \mbox{\hyperlink{pa__dither_8h_a7153f4621805c62eefb62a2a7dffcad5}{Pa\+Util\+\_\+\+Generate16\+Bit\+Triangular\+Dither}} (\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$dither\+State)
+\begin{DoxyCompactList}\small\item\em Calculate 2 LSB dither signal with a triangular distribution. Ranged for adding to a 1 bit right-\/shifted 32 bit integer prior to \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}15. eg\+: \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{pa__dither_8h_a13826c2fc42a1a394224828a3dc7a832}{Pa\+Util\+\_\+\+Generate\+Float\+Triangular\+Dither}} (\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$dither\+State)
+\begin{DoxyCompactList}\small\item\em Calculate 2 LSB dither signal with a triangular distribution. Ranged for adding to a pre-\/scaled float. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions for generating dither noise. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__dither_8h_a61db805fd511365057c06a7499a3db10}\label{pa__dither_8h_a61db805fd511365057c06a7499a3db10}} 
+\index{pa\_dither.h@{pa\_dither.h}!PaUtilTriangularDitherGenerator@{PaUtilTriangularDitherGenerator}}
+\index{PaUtilTriangularDitherGenerator@{PaUtilTriangularDitherGenerator}!pa\_dither.h@{pa\_dither.h}}
+\doxysubsubsection{\texorpdfstring{PaUtilTriangularDitherGenerator}{PaUtilTriangularDitherGenerator}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}}}
+
+
+
+State needed to generate a dither signal. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__dither_8h_a7153f4621805c62eefb62a2a7dffcad5}\label{pa__dither_8h_a7153f4621805c62eefb62a2a7dffcad5}} 
+\index{pa\_dither.h@{pa\_dither.h}!PaUtil\_Generate16BitTriangularDither@{PaUtil\_Generate16BitTriangularDither}}
+\index{PaUtil\_Generate16BitTriangularDither@{PaUtil\_Generate16BitTriangularDither}!pa\_dither.h@{pa\_dither.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_Generate16BitTriangularDither()}{PaUtil\_Generate16BitTriangularDither()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__types_8h_a0ee78118ce1421aba7239c18f0ceaa22}{Pa\+Int32}} Pa\+Util\+\_\+\+Generate16\+Bit\+Triangular\+Dither (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$}]{dither\+State }\end{DoxyParamCaption})}
+
+
+
+Calculate 2 LSB dither signal with a triangular distribution. Ranged for adding to a 1 bit right-\/shifted 32 bit integer prior to \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>}15. eg\+: 
+
+
+\begin{DoxyPre}
+    signed long in = *
+    signed long dither = PaUtil\_Generate16BitTriangularDither( ditherState );
+    signed short out = (signed short)(((in>>1) + dither) >> 15);
+\end{DoxyPre}
+ \begin{DoxyReturn}{Returns}
+A signed 32-\/bit integer with a range of +32767 to -\/32768 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__dither_8h_a13826c2fc42a1a394224828a3dc7a832}\label{pa__dither_8h_a13826c2fc42a1a394224828a3dc7a832}} 
+\index{pa\_dither.h@{pa\_dither.h}!PaUtil\_GenerateFloatTriangularDither@{PaUtil\_GenerateFloatTriangularDither}}
+\index{PaUtil\_GenerateFloatTriangularDither@{PaUtil\_GenerateFloatTriangularDither}!pa\_dither.h@{pa\_dither.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GenerateFloatTriangularDither()}{PaUtil\_GenerateFloatTriangularDither()}}
+{\footnotesize\ttfamily float Pa\+Util\+\_\+\+Generate\+Float\+Triangular\+Dither (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$}]{dither\+State }\end{DoxyParamCaption})}
+
+
+
+Calculate 2 LSB dither signal with a triangular distribution. Ranged for adding to a pre-\/scaled float. 
+
+
+\begin{DoxyPre}
+    float in = *
+    float dither = PaUtil\_GenerateFloatTriangularDither( ditherState );
+    // use smaller scaler to prevent overflow when we add the dither
+    signed short out = (signed short)(in*(32766.0f) + dither );
+\end{DoxyPre}
+ \begin{DoxyReturn}{Returns}
+A float with a range of -\/2.\+0 to +1.\+99999. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__dither_8h_a71ef942619476398a43d199db526e085}\label{pa__dither_8h_a71ef942619476398a43d199db526e085}} 
+\index{pa\_dither.h@{pa\_dither.h}!PaUtil\_InitializeTriangularDitherState@{PaUtil\_InitializeTriangularDitherState}}
+\index{PaUtil\_InitializeTriangularDitherState@{PaUtil\_InitializeTriangularDitherState}!pa\_dither.h@{pa\_dither.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeTriangularDitherState()}{PaUtil\_InitializeTriangularDitherState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Initialize\+Triangular\+Dither\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$}]{dither\+State }\end{DoxyParamCaption})}
+
+
+
+Initialize dither state. 
+

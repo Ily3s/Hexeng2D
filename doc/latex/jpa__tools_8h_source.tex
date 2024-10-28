@@ -1,0 +1,68 @@
+\hypertarget{jpa__tools_8h_source}{}\doxysection{jpa\+\_\+tools.\+h}
+\label{jpa__tools_8h_source}\index{Hexeng2D/dependencies/portaudio/bindings/java/c/src/jpa\_tools.h@{Hexeng2D/dependencies/portaudio/bindings/java/c/src/jpa\_tools.h}}
+\mbox{\hyperlink{jpa__tools_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Portable Audio I/O Library}}
+\DoxyCodeLine{3 \textcolor{comment}{ * Java Binding for PortAudio}}
+\DoxyCodeLine{4 \textcolor{comment}{ *}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Based on the Open Source API proposed by Ross Bencina}}
+\DoxyCodeLine{6 \textcolor{comment}{ * Copyright (c) 2008 Ross Bencina}}
+\DoxyCodeLine{7 \textcolor{comment}{ *}}
+\DoxyCodeLine{8 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{9 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{10 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{11 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{12 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{13 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{15 \textcolor{comment}{ *}}
+\DoxyCodeLine{16 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{17 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{20 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{21 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{22 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{23 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{24 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{25 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{26 \textcolor{comment}{ */}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{/*}}
+\DoxyCodeLine{29 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however, }}
+\DoxyCodeLine{30 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{31 \textcolor{comment}{ *}}
+\DoxyCodeLine{32 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{33 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{34 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also }}
+\DoxyCodeLine{35 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the }}
+\DoxyCodeLine{36 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{37 \textcolor{comment}{ */}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{com__portaudio___port_audio_8h}{com\_portaudio\_PortAudio.h}}"{}}}
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#ifndef JPA\_TOOLS\_H}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define JPA\_TOOLS\_H}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 jint \mbox{\hyperlink{jpa__tools_8h_a4b417c59dd7e276d173d2c0e63ee5f1b}{jpa\_GetIntField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName );}
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} \mbox{\hyperlink{jpa__tools_8h_aa4179cc1bec196c9568c1d5283d03948}{jpa\_SetIntField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName, jint \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}} );}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 jlong \mbox{\hyperlink{jpa__tools_8h_ab80118f18bb28789d5ec62bba1b78155}{jpa\_GetLongField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName );}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{jpa__tools_8h_a6da709dd09a0e2771cfcaead671aab1f}{jpa\_SetLongField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName, jlong \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}} );}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 jdouble \mbox{\hyperlink{jpa__tools_8h_a5b398a9dd84d613d188491fc584f5994}{jpa\_GetDoubleField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName );}
+\DoxyCodeLine{52 \textcolor{keywordtype}{void} \mbox{\hyperlink{jpa__tools_8h_a77d439f9d4194416d34d093ac15c855c}{jpa\_SetDoubleField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName, jdouble \mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}} );}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keywordtype}{void} \mbox{\hyperlink{jpa__tools_8h_a42f94e22c6455623dd45ab5f9dced92b}{jpa\_SetStringField}}( JNIEnv *env, jclass cls, jobject obj, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *fieldName, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{glad_8h_a00c583381eee9c272e088ff2da20162d}{value}} );}
+\DoxyCodeLine{55 \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *\mbox{\hyperlink{jpa__tools_8h_a77240703212fd39641effb5b45d9d49f}{jpa\_FillStreamParameters}}( JNIEnv *env, jobject jstreamParam, \mbox{\hyperlink{struct_pa_stream_parameters}{PaStreamParameters}} *myParams );}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 jint \mbox{\hyperlink{jpa__tools_8h_a6ddd698047fe5a3d597faa748a7ef09d}{jpa\_CheckError}}( JNIEnv *env, \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} err );}
+\DoxyCodeLine{58 jint \mbox{\hyperlink{jpa__tools_8h_a5acce41ca8a1b66025f0b4d20c3b040c}{jpa\_ThrowError}}( JNIEnv *env, \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{glad_8h_ab80c1e4575327a199e2d451f98f8bbaf}{message}} );}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *\mbox{\hyperlink{jpa__tools_8h_aa6a646117c1834d7daa7c42235564e1f}{jpa\_GetStreamPointer}}( JNIEnv *env, jobject blockingStream );}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif }\textcolor{comment}{/* JPA\_TOOLS\_H */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

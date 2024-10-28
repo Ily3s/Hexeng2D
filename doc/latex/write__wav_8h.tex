@@ -1,0 +1,153 @@
+\hypertarget{write__wav_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/write\+\_\+wav.h File Reference}
+\label{write__wav_8h}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.h@{Hexeng2D/dependencies/portaudio/qa/loopback/src/write\_wav.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\+\_\+\+Writer\+\_\+s}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_ae3c7c719001aa00e0c2b50cfec958d9a}{RIFF\+\_\+\+ID}}~((\textquotesingle{}R\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}I\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}F\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}F\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_aa4545bb5cad6709fdef7be4f7b054451}{WAVE\+\_\+\+ID}}~((\textquotesingle{}W\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}A\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}V\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}E\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a8f3ffb5d25758c4fe0b4dd1ff9f77e3a}{FMT\+\_\+\+ID}}~((\textquotesingle{}\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}}\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}m\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}t\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{} \textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a55aa586df150c1192826a1c57dd87401}{DATA\+\_\+\+ID}}~((\textquotesingle{}d\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}t\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_aeef3f1c1878eb39e040eb79b1480cf6c}{FACT\+\_\+\+ID}}~((\textquotesingle{}\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}}\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}c\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}t\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a54ff35ae83f136d1e28c792213b4b770}{WAV\+\_\+\+ERR\+\_\+\+CHUNK\+\_\+\+SIZE}}~(-\/1)   /$\ast$ Chunk \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}} is illegal or past file size. $\ast$/
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_ab293e26f93b9c073af3c4f473f5ea94d}{WAV\+\_\+\+ERR\+\_\+\+FILE\+\_\+\+TYPE}}~(-\/2)   /$\ast$ Not \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} WAV file. $\ast$/
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a750495344fa9a1c102a67d51cdb5215c}{WAV\+\_\+\+ERR\+\_\+\+ILLEGAL\+\_\+\+VALUE}}~(-\/3)   /$\ast$ Illegal or unsupported value. Eg. 927 bits/sample $\ast$/
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a5b7b3ed7640c7138f3ffcda26f1b53b3}{WAV\+\_\+\+ERR\+\_\+\+FORMAT\+\_\+\+TYPE}}~(-\/4)   /$\ast$ Unsupported \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, eg. compressed. $\ast$/
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a40e7d55486939e3602ef28821fba0caa}{WAV\+\_\+\+ERR\+\_\+\+TRUNCATED}}~(-\/5)   /$\ast$ End of file missing. $\ast$/
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_abf8ff615d1a5d5b851f5c0b40bf16fef}{WAVE\+\_\+\+FORMAT\+\_\+\+PCM}}~(1)
+\item 
+\#define \mbox{\hyperlink{write__wav_8h_a315f0ad8814e4f3da951782b83873c2d}{WAVE\+\_\+\+FORMAT\+\_\+\+IMA\+\_\+\+ADPCM}}~(0x0011)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\+\_\+\+Writer\+\_\+s}} \mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long \mbox{\hyperlink{write__wav_8h_a2ccf8f4887bd22ac43f3e5c7a9e16799}{Audio\+\_\+\+WAV\+\_\+\+Open\+Writer}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer, const char $\ast$file\+Name, int frame\+Rate, int samples\+Per\+Frame)
+\item 
+long \mbox{\hyperlink{write__wav_8h_acf9e3951bed222ba08f37c45fe24d77d}{Audio\+\_\+\+WAV\+\_\+\+Write\+Shorts}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer, short $\ast$\mbox{\hyperlink{glad_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}}, int num\+Samples)
+\item 
+long \mbox{\hyperlink{write__wav_8h_adb4825adde65afffe3ea3d5ef840bd5f}{Audio\+\_\+\+WAV\+\_\+\+Close\+Writer}} (\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$writer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{write__wav_8h_a55aa586df150c1192826a1c57dd87401}\label{write__wav_8h_a55aa586df150c1192826a1c57dd87401}} 
+\index{write\_wav.h@{write\_wav.h}!DATA\_ID@{DATA\_ID}}
+\index{DATA\_ID@{DATA\_ID}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{DATA\_ID}{DATA\_ID}}
+{\footnotesize\ttfamily \#define DATA\+\_\+\+ID~((\textquotesingle{}d\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}t\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{})}
+
+\mbox{\Hypertarget{write__wav_8h_aeef3f1c1878eb39e040eb79b1480cf6c}\label{write__wav_8h_aeef3f1c1878eb39e040eb79b1480cf6c}} 
+\index{write\_wav.h@{write\_wav.h}!FACT\_ID@{FACT\_ID}}
+\index{FACT\_ID@{FACT\_ID}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{FACT\_ID}{FACT\_ID}}
+{\footnotesize\ttfamily \#define FACT\+\_\+\+ID~((\textquotesingle{}\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}}\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}c\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}t\textquotesingle{})}
+
+\mbox{\Hypertarget{write__wav_8h_a8f3ffb5d25758c4fe0b4dd1ff9f77e3a}\label{write__wav_8h_a8f3ffb5d25758c4fe0b4dd1ff9f77e3a}} 
+\index{write\_wav.h@{write\_wav.h}!FMT\_ID@{FMT\_ID}}
+\index{FMT\_ID@{FMT\_ID}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{FMT\_ID}{FMT\_ID}}
+{\footnotesize\ttfamily \#define FMT\+\_\+\+ID~((\textquotesingle{}\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}}\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}m\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}t\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{} \textquotesingle{})}
+
+\mbox{\Hypertarget{write__wav_8h_ae3c7c719001aa00e0c2b50cfec958d9a}\label{write__wav_8h_ae3c7c719001aa00e0c2b50cfec958d9a}} 
+\index{write\_wav.h@{write\_wav.h}!RIFF\_ID@{RIFF\_ID}}
+\index{RIFF\_ID@{RIFF\_ID}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{RIFF\_ID}{RIFF\_ID}}
+{\footnotesize\ttfamily \#define RIFF\+\_\+\+ID~((\textquotesingle{}R\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}I\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}F\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}F\textquotesingle{})}
+
+\mbox{\Hypertarget{write__wav_8h_a54ff35ae83f136d1e28c792213b4b770}\label{write__wav_8h_a54ff35ae83f136d1e28c792213b4b770}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_ERR\_CHUNK\_SIZE@{WAV\_ERR\_CHUNK\_SIZE}}
+\index{WAV\_ERR\_CHUNK\_SIZE@{WAV\_ERR\_CHUNK\_SIZE}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_ERR\_CHUNK\_SIZE}{WAV\_ERR\_CHUNK\_SIZE}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+ERR\+\_\+\+CHUNK\+\_\+\+SIZE~(-\/1)   /$\ast$ Chunk \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}} is illegal or past file size. $\ast$/}
+
+\mbox{\Hypertarget{write__wav_8h_ab293e26f93b9c073af3c4f473f5ea94d}\label{write__wav_8h_ab293e26f93b9c073af3c4f473f5ea94d}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_ERR\_FILE\_TYPE@{WAV\_ERR\_FILE\_TYPE}}
+\index{WAV\_ERR\_FILE\_TYPE@{WAV\_ERR\_FILE\_TYPE}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_ERR\_FILE\_TYPE}{WAV\_ERR\_FILE\_TYPE}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+ERR\+\_\+\+FILE\+\_\+\+TYPE~(-\/2)   /$\ast$ Not \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} WAV file. $\ast$/}
+
+\mbox{\Hypertarget{write__wav_8h_a5b7b3ed7640c7138f3ffcda26f1b53b3}\label{write__wav_8h_a5b7b3ed7640c7138f3ffcda26f1b53b3}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_ERR\_FORMAT\_TYPE@{WAV\_ERR\_FORMAT\_TYPE}}
+\index{WAV\_ERR\_FORMAT\_TYPE@{WAV\_ERR\_FORMAT\_TYPE}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_ERR\_FORMAT\_TYPE}{WAV\_ERR\_FORMAT\_TYPE}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+ERR\+\_\+\+FORMAT\+\_\+\+TYPE~(-\/4)   /$\ast$ Unsupported \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}}, eg. compressed. $\ast$/}
+
+\mbox{\Hypertarget{write__wav_8h_a750495344fa9a1c102a67d51cdb5215c}\label{write__wav_8h_a750495344fa9a1c102a67d51cdb5215c}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_ERR\_ILLEGAL\_VALUE@{WAV\_ERR\_ILLEGAL\_VALUE}}
+\index{WAV\_ERR\_ILLEGAL\_VALUE@{WAV\_ERR\_ILLEGAL\_VALUE}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_ERR\_ILLEGAL\_VALUE}{WAV\_ERR\_ILLEGAL\_VALUE}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+ERR\+\_\+\+ILLEGAL\+\_\+\+VALUE~(-\/3)   /$\ast$ Illegal or unsupported value. Eg. 927 bits/sample $\ast$/}
+
+\mbox{\Hypertarget{write__wav_8h_a40e7d55486939e3602ef28821fba0caa}\label{write__wav_8h_a40e7d55486939e3602ef28821fba0caa}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_ERR\_TRUNCATED@{WAV\_ERR\_TRUNCATED}}
+\index{WAV\_ERR\_TRUNCATED@{WAV\_ERR\_TRUNCATED}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_ERR\_TRUNCATED}{WAV\_ERR\_TRUNCATED}}
+{\footnotesize\ttfamily \#define WAV\+\_\+\+ERR\+\_\+\+TRUNCATED~(-\/5)   /$\ast$ End of file missing. $\ast$/}
+
+\mbox{\Hypertarget{write__wav_8h_a315f0ad8814e4f3da951782b83873c2d}\label{write__wav_8h_a315f0ad8814e4f3da951782b83873c2d}} 
+\index{write\_wav.h@{write\_wav.h}!WAVE\_FORMAT\_IMA\_ADPCM@{WAVE\_FORMAT\_IMA\_ADPCM}}
+\index{WAVE\_FORMAT\_IMA\_ADPCM@{WAVE\_FORMAT\_IMA\_ADPCM}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_IMA\_ADPCM}{WAVE\_FORMAT\_IMA\_ADPCM}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+\+IMA\+\_\+\+ADPCM~(0x0011)}
+
+\mbox{\Hypertarget{write__wav_8h_abf8ff615d1a5d5b851f5c0b40bf16fef}\label{write__wav_8h_abf8ff615d1a5d5b851f5c0b40bf16fef}} 
+\index{write\_wav.h@{write\_wav.h}!WAVE\_FORMAT\_PCM@{WAVE\_FORMAT\_PCM}}
+\index{WAVE\_FORMAT\_PCM@{WAVE\_FORMAT\_PCM}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_PCM}{WAVE\_FORMAT\_PCM}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+\+PCM~(1)}
+
+\mbox{\Hypertarget{write__wav_8h_aa4545bb5cad6709fdef7be4f7b054451}\label{write__wav_8h_aa4545bb5cad6709fdef7be4f7b054451}} 
+\index{write\_wav.h@{write\_wav.h}!WAVE\_ID@{WAVE\_ID}}
+\index{WAVE\_ID@{WAVE\_ID}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAVE\_ID}{WAVE\_ID}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+ID~((\textquotesingle{}W\textquotesingle{}$<$$<$24) $\vert$ (\textquotesingle{}A\textquotesingle{}$<$$<$16) $\vert$ (\textquotesingle{}V\textquotesingle{}$<$$<$8) $\vert$ \textquotesingle{}E\textquotesingle{})}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}\label{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}} 
+\index{write\_wav.h@{write\_wav.h}!WAV\_Writer@{WAV\_Writer}}
+\index{WAV\_Writer@{WAV\_Writer}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{WAV\_Writer}{WAV\_Writer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_w_a_v___writer__s}{WAV\+\_\+\+Writer\+\_\+s}} \mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{write__wav_8h_adb4825adde65afffe3ea3d5ef840bd5f}\label{write__wav_8h_adb4825adde65afffe3ea3d5ef840bd5f}} 
+\index{write\_wav.h@{write\_wav.h}!Audio\_WAV\_CloseWriter@{Audio\_WAV\_CloseWriter}}
+\index{Audio\_WAV\_CloseWriter@{Audio\_WAV\_CloseWriter}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_CloseWriter()}{Audio\_WAV\_CloseWriter()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Close\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{write__wav_8h_a2ccf8f4887bd22ac43f3e5c7a9e16799}\label{write__wav_8h_a2ccf8f4887bd22ac43f3e5c7a9e16799}} 
+\index{write\_wav.h@{write\_wav.h}!Audio\_WAV\_OpenWriter@{Audio\_WAV\_OpenWriter}}
+\index{Audio\_WAV\_OpenWriter@{Audio\_WAV\_OpenWriter}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_OpenWriter()}{Audio\_WAV\_OpenWriter()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Open\+Writer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer,  }\item[{const char $\ast$}]{file\+Name,  }\item[{int}]{frame\+Rate,  }\item[{int}]{samples\+Per\+Frame }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{write__wav_8h_acf9e3951bed222ba08f37c45fe24d77d}\label{write__wav_8h_acf9e3951bed222ba08f37c45fe24d77d}} 
+\index{write\_wav.h@{write\_wav.h}!Audio\_WAV\_WriteShorts@{Audio\_WAV\_WriteShorts}}
+\index{Audio\_WAV\_WriteShorts@{Audio\_WAV\_WriteShorts}!write\_wav.h@{write\_wav.h}}
+\doxysubsubsection{\texorpdfstring{Audio\_WAV\_WriteShorts()}{Audio\_WAV\_WriteShorts()}}
+{\footnotesize\ttfamily long Audio\+\_\+\+WAV\+\_\+\+Write\+Shorts (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{write__wav_8h_a25797605ad98e1a52d1bec5b8ac6d715}{WAV\+\_\+\+Writer}} $\ast$}]{writer,  }\item[{short $\ast$}]{samples,  }\item[{int}]{num\+Samples }\end{DoxyParamCaption})}
+

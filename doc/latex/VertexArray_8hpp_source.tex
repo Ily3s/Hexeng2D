@@ -1,0 +1,47 @@
+\doxysection{Vertex\+Array.\+hpp}
+\hypertarget{VertexArray_8hpp_source}{}\label{VertexArray_8hpp_source}\index{Hexeng2D/src/Renderer/VertexArray.hpp@{Hexeng2D/src/Renderer/VertexArray.hpp}}
+\mbox{\hyperlink{VertexArray_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ VERTEX\_ARRAY\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ VERTEX\_ARRAY\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VertexLayout_8hpp}{VertexLayout.hpp}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{VertexBuffer_8hpp}{VertexBuffer.hpp}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{IndexBuffer_8hpp}{IndexBuffer.hpp}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Macros.hpp"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}}
+\DoxyCodeLine{00013\ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_a3ba550e5d7e46576cc87cddfee5d601c}{VertexArray}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_a785f56c2a80028e3dda37241f816cb32}{\string~VertexArray}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_a29543f7f959af21a0b0ae38368604c76}{VertexArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexBuffer}{VertexBuffer}}\&\ vb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{VertexLayout}}\&\ layout,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{IndexBuffer}}\&\ ib);}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_aee94267bea0692c546914baf2adddf95}{VertexArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexBuffer}{VertexBuffer}}\&\ vb,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{VertexLayout}}\&\ layout);}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_a209a1e9a73e3e1af12006cdd9e191b7a}{VertexArray}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_ab8047b962288c3fc9ec617cd38780688}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray_aec1379b778da1b825a40385b17a01548}{VertexArray}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&\&)\ noexcept;}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexArray}{VertexArray}}\&\&)\ noexcept;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ bind()\ const;}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ unbind()\ const;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_init()\ const;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ private:}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ m\_id\ =\ 0;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !VERTEX\_ARRAY\_HPP}}
+
+\end{DoxyCode}

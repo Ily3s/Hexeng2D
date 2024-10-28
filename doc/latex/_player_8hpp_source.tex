@@ -1,0 +1,56 @@
+\hypertarget{_player_8hpp_source}{}\doxysection{Player.\+hpp}
+\label{_player_8hpp_source}\index{C:/dev/repos/Hexeng2D/Sandbox/src/Player.hpp@{C:/dev/repos/Hexeng2D/Sandbox/src/Player.hpp}}
+\mbox{\hyperlink{_player_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PLAYER\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PLAYER\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_renderer_8hpp}{Renderer/Renderer.hpp}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_shader_8hpp}{Renderer/Shader.hpp}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_texture_8hpp}{Renderer/Texture.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_camera_8hpp}{Renderer/Camera.hpp}}"{}}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_8hpp}{Renderer/Mesh.hpp}}"{}}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_physics_8hpp}{Physics/Physics.hpp}}"{}}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_event_manager_8hpp}{EventManager/EventManager.hpp}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vectors_8hpp}{Vectors.hpp}}"{}}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{using namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_player}{Player}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{static} \mbox{\hyperlink{class_player}{Player}}* instance;}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public}:}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Renderer::Quad}} \mbox{\hyperlink{class_player_a44e7791f25f73898551042f594cecae2}{quad}};}
+\DoxyCodeLine{24     \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Renderer::SuperMesh}} \mbox{\hyperlink{class_player_aa67c3ab61d5f1225fe4418ba29dcbbb9}{mesh}};}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_entity}{Physics::PhysicsEntity}} \mbox{\hyperlink{class_player_a5904736271416a17311ee4a72ccf51c2}{physics}};}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_player_a0349855298626faed9f05f86965ff689}{speed}} = 4;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \mbox{\hyperlink{class_player}{Player}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} pos, \textcolor{keywordtype}{float} size, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Renderer::Texture}}* tex);}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \mbox{\hyperlink{class_player}{Player}}* Player::instance = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \mbox{\hyperlink{class_player_af9efa77eb9d219f0013eaa980ef5c2e8}{Player::Player}}(\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} pos, \textcolor{keywordtype}{float} size, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Renderer::Texture}}* tex)}
+\DoxyCodeLine{34     : quad(\{ 0, 0 \}, size, tex, \textcolor{keyword}{true}),}
+\DoxyCodeLine{35     mesh(\{ \&quad \}),}
+\DoxyCodeLine{36     physics(\{ \{ -\/tex-\/>get\_size()*size / 2, tex-\/>get\_size()*size / 2\} \}, 1)}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     physics.position = pos;}
+\DoxyCodeLine{39     physics.link(mesh);}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{keywordflow}{if} (instance)}
+\DoxyCodeLine{42         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     instance = \textcolor{keyword}{this};}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{EventManager::Event}} follow\_cam = \{ []() \{\textcolor{keywordflow}{return} \textcolor{keyword}{true}; \}, [\textcolor{keyword}{this}]()}
+\DoxyCodeLine{47         \{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}{Renderer::Camera::position}}.\mbox{\hyperlink{class_hexeng_1_1_vec3_ae85f69c6d24a4e64489054fb564616d0}{x}} = physics.position.x; \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_a869695efff75645757a5c9d6101ae3ea}{Renderer::Camera::position}}.\mbox{\hyperlink{class_hexeng_1_1_vec3_ad22896f83925c809a6ae8717a74cf239}{y}} = physics.position.y; \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera_ae96de59aa2cda89ef90ae36bf44518b5}{Renderer::Camera::refresh\_pos}}(); \} \};}
+\DoxyCodeLine{48 \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,88 @@
+\hypertarget{patest__suggested__vs__streaminfo__latency_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+suggested\+\_\+vs\+\_\+streaminfo\+\_\+latency.c File Reference}
+\label{patest__suggested__vs__streaminfo__latency_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_suggested\_vs\_streaminfo\_latency.c@{Hexeng2D/dependencies/portaudio/test/patest\_suggested\_vs\_streaminfo\_latency.c}}
+
+
+Print suggested vs. \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} reported actual latency.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~2
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_ae5597ce31d23d11493e6e674fe257d73}{NUM\+\_\+\+CHANNELS}}~(2)
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_a95ee9473d3efbef35ae098b6c95fc031}{SUGGESTED\+\_\+\+LATENCY\+\_\+\+START\+\_\+\+SECONDS}}~(0.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_adc8ef264dbaa73e59b75e17b1a26e797}{SUGGESTED\+\_\+\+LATENCY\+\_\+\+END\+\_\+\+SECONDS}}~(2.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_ab0383c4a8af9ec6525c9e81311b0cd08}{SUGGESTED\+\_\+\+LATENCY\+\_\+\+INCREMENT\+\_\+\+SECONDS}}~(0.\+0005) /$\ast$ half \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} millisecond increments $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__suggested__vs__streaminfo__latency_8c_ac0f2228420376f4db7e1274f2b41667c}{main}} (int argc, const char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Print suggested vs. \mbox{\hyperlink{struct_pa_stream_info}{Pa\+Stream\+Info}} reported actual latency. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}}
+\end{DoxyAuthor}
+Opens streams with a sequence of suggested latency values from 0 to 2 seconds in .5ms intervals and gathers the resulting actual latency values. Output a csv file and graph suggested vs. actual. Run with frames\+Per\+Buffer unspecified, powers of 2 and multiples of 50 and prime number buffer sizes. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__suggested__vs__streaminfo__latency_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~2}
+
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_ae5597ce31d23d11493e6e674fe257d73}\label{patest__suggested__vs__streaminfo__latency_8c_ae5597ce31d23d11493e6e674fe257d73}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!NUM\_CHANNELS@{NUM\_CHANNELS}}
+\index{NUM\_CHANNELS@{NUM\_CHANNELS}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_CHANNELS}{NUM\_CHANNELS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+CHANNELS~(2)}
+
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__suggested__vs__streaminfo__latency_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_adc8ef264dbaa73e59b75e17b1a26e797}\label{patest__suggested__vs__streaminfo__latency_8c_adc8ef264dbaa73e59b75e17b1a26e797}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!SUGGESTED\_LATENCY\_END\_SECONDS@{SUGGESTED\_LATENCY\_END\_SECONDS}}
+\index{SUGGESTED\_LATENCY\_END\_SECONDS@{SUGGESTED\_LATENCY\_END\_SECONDS}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SUGGESTED\_LATENCY\_END\_SECONDS}{SUGGESTED\_LATENCY\_END\_SECONDS}}
+{\footnotesize\ttfamily \#define SUGGESTED\+\_\+\+LATENCY\+\_\+\+END\+\_\+\+SECONDS~(2.\+0)}
+
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_ab0383c4a8af9ec6525c9e81311b0cd08}\label{patest__suggested__vs__streaminfo__latency_8c_ab0383c4a8af9ec6525c9e81311b0cd08}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!SUGGESTED\_LATENCY\_INCREMENT\_SECONDS@{SUGGESTED\_LATENCY\_INCREMENT\_SECONDS}}
+\index{SUGGESTED\_LATENCY\_INCREMENT\_SECONDS@{SUGGESTED\_LATENCY\_INCREMENT\_SECONDS}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SUGGESTED\_LATENCY\_INCREMENT\_SECONDS}{SUGGESTED\_LATENCY\_INCREMENT\_SECONDS}}
+{\footnotesize\ttfamily \#define SUGGESTED\+\_\+\+LATENCY\+\_\+\+INCREMENT\+\_\+\+SECONDS~(0.\+0005) /$\ast$ half \mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}} millisecond increments $\ast$/}
+
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_a95ee9473d3efbef35ae098b6c95fc031}\label{patest__suggested__vs__streaminfo__latency_8c_a95ee9473d3efbef35ae098b6c95fc031}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!SUGGESTED\_LATENCY\_START\_SECONDS@{SUGGESTED\_LATENCY\_START\_SECONDS}}
+\index{SUGGESTED\_LATENCY\_START\_SECONDS@{SUGGESTED\_LATENCY\_START\_SECONDS}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{SUGGESTED\_LATENCY\_START\_SECONDS}{SUGGESTED\_LATENCY\_START\_SECONDS}}
+{\footnotesize\ttfamily \#define SUGGESTED\+\_\+\+LATENCY\+\_\+\+START\+\_\+\+SECONDS~(0.\+0)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__suggested__vs__streaminfo__latency_8c_ac0f2228420376f4db7e1274f2b41667c}\label{patest__suggested__vs__streaminfo__latency_8c_ac0f2228420376f4db7e1274f2b41667c}} 
+\index{patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}!main@{main}}
+\index{main@{main}!patest\_suggested\_vs\_streaminfo\_latency.c@{patest\_suggested\_vs\_streaminfo\_latency.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{const char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

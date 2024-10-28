@@ -1,0 +1,171 @@
+\hypertarget{class_hexeng_1_1_font}{}\doxysection{Hexeng\+::Font Class Reference}
+\label{class_hexeng_1_1_font}\index{Hexeng::Font@{Hexeng::Font}}
+
+
+Loads a font from a ttf file that will be used when writing \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}.   
+
+
+
+
+{\ttfamily \#include $<$Text.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_font_ac946f677fc1fd4c57d549ede545cb63a}{get\+\_\+advancement}} (int c)
+\item 
+\mbox{\hyperlink{struct_hexeng_1_1_char_box}{Char\+Box}} \mbox{\hyperlink{class_hexeng_1_1_font_a2f9261ed51047fa2f4162ff0536091a0}{get\+\_\+box}} (int c)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font_a96211c0fd02fe64ccda8e198f1fc9969}{Font}} (const std\+::string \&path, float \mbox{\hyperlink{class_hexeng_1_1_font_a00ca957886bb81e0801731a783d6aa80}{quality}}=0.\+1f)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font_a8b4918e93d9d83e23727513e06afbe8f}{Font}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font_a77dfff094eec9c0caaf1815cbf7c52f0}{Font}} (const \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \& \mbox{\hyperlink{class_hexeng_1_1_font_aad5a9ca9a9d9a98584b64b4e2c8a2ccb}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font_a452f7d5df8033b37c933592fceb05191}{Font}} (\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&\&) noexcept=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \& \mbox{\hyperlink{class_hexeng_1_1_font_abcad9a6194e7d52176a5dd28084b1419}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&\&) noexcept=default
+\item 
+void \mbox{\hyperlink{class_hexeng_1_1_font_a714e3d2e5b353201217ddbdb37bfdaf2}{add\+\_\+char}} (char32\+\_\+t c)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Renderer\+::\+Texture\+Vector}} \mbox{\hyperlink{class_hexeng_1_1_font_a0c3ca666eb784b84749ac70c943d9928}{texture}} \{ \{\{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{Renderer\+::\+Tex\+Sett\+::\+BASE\+\_\+\+FORMAT}}, GL\+\_\+\+RED\}, \{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{Renderer\+::\+Tex\+Sett\+::\+SIZED\+\_\+\+FORMAT}}, GL\+\_\+\+R8\}\} \}
+\item 
+std\+::unordered\+\_\+map$<$ char32\+\_\+t, \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Renderer\+::\+Tex\+Coord}} $>$ \mbox{\hyperlink{class_hexeng_1_1_font_ad8ba1cb2d2609588099a05380e2d7fb0}{char\+\_\+map}}
+\item 
+float \mbox{\hyperlink{class_hexeng_1_1_font_a00ca957886bb81e0801731a783d6aa80}{quality}} = 0.\+1f
+\item 
+stbtt\+\_\+fontinfo \mbox{\hyperlink{class_hexeng_1_1_font_a19b6f4d683f4bda22663d1d63e582538}{font\+\_\+info}} \{\}
+\item 
+std\+::unique\+\_\+ptr$<$ uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ \mbox{\hyperlink{class_hexeng_1_1_font_ad1194832a0d971961779409a4802cb23}{file\+\_\+buffer}} = nullptr
+\item 
+int \mbox{\hyperlink{class_hexeng_1_1_font_a31660387bc1e95df022fd4632c4fa092}{line\+\_\+height}} = 0
+\item 
+int \mbox{\hyperlink{class_hexeng_1_1_font_a480c75c253f56f1f3164fc467c988aca}{line\+\_\+offset}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Loads a font from a ttf file that will be used when writing \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}.  
+
+\begin{DoxyNote}{Note}
+Only the constructor should be used by the user. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_font_a96211c0fd02fe64ccda8e198f1fc9969}\label{class_hexeng_1_1_font_a96211c0fd02fe64ccda8e198f1fc9969}} 
+\index{Hexeng::Font@{Hexeng::Font}!Font@{Font}}
+\index{Font@{Font}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Font\+::\+Font (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{path,  }\item[{float}]{quality = {\ttfamily 0.1f} }\end{DoxyParamCaption})}
+
+\begin{DoxyNote}{Note}
+Quality is recommanded to be within \mbox{[}0.\+01f, 1.\+0f\mbox{]} 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_font_a8b4918e93d9d83e23727513e06afbe8f}\label{class_hexeng_1_1_font_a8b4918e93d9d83e23727513e06afbe8f}} 
+\index{Hexeng::Font@{Hexeng::Font}!Font@{Font}}
+\index{Font@{Font}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Font\+::\+Font (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a77dfff094eec9c0caaf1815cbf7c52f0}\label{class_hexeng_1_1_font_a77dfff094eec9c0caaf1815cbf7c52f0}} 
+\index{Hexeng::Font@{Hexeng::Font}!Font@{Font}}
+\index{Font@{Font}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Font\+::\+Font (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a452f7d5df8033b37c933592fceb05191}\label{class_hexeng_1_1_font_a452f7d5df8033b37c933592fceb05191}} 
+\index{Hexeng::Font@{Hexeng::Font}!Font@{Font}}
+\index{Font@{Font}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{Font()}{Font()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Font\+::\+Font (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_font_a714e3d2e5b353201217ddbdb37bfdaf2}\label{class_hexeng_1_1_font_a714e3d2e5b353201217ddbdb37bfdaf2}} 
+\index{Hexeng::Font@{Hexeng::Font}!add\_char@{add\_char}}
+\index{add\_char@{add\_char}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{add\_char()}{add\_char()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Font\+::add\+\_\+char (\begin{DoxyParamCaption}\item[{char32\+\_\+t}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_ac946f677fc1fd4c57d549ede545cb63a}\label{class_hexeng_1_1_font_ac946f677fc1fd4c57d549ede545cb63a}} 
+\index{Hexeng::Font@{Hexeng::Font}!get\_advancement@{get\_advancement}}
+\index{get\_advancement@{get\_advancement}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{get\_advancement()}{get\_advancement()}}
+{\footnotesize\ttfamily float Hexeng\+::\+Font\+::get\+\_\+advancement (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a2f9261ed51047fa2f4162ff0536091a0}\label{class_hexeng_1_1_font_a2f9261ed51047fa2f4162ff0536091a0}} 
+\index{Hexeng::Font@{Hexeng::Font}!get\_box@{get\_box}}
+\index{get\_box@{get\_box}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{get\_box()}{get\_box()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_hexeng_1_1_char_box}{Char\+Box}} Hexeng\+::\+Font\+::get\+\_\+box (\begin{DoxyParamCaption}\item[{int}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_aad5a9ca9a9d9a98584b64b4e2c8a2ccb}\label{class_hexeng_1_1_font_aad5a9ca9a9d9a98584b64b4e2c8a2ccb}} 
+\index{Hexeng::Font@{Hexeng::Font}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \& Hexeng\+::\+Font\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_abcad9a6194e7d52176a5dd28084b1419}\label{class_hexeng_1_1_font_abcad9a6194e7d52176a5dd28084b1419}} 
+\index{Hexeng::Font@{Hexeng::Font}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \& Hexeng\+::\+Font\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_font}{Font}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_font_ad8ba1cb2d2609588099a05380e2d7fb0}\label{class_hexeng_1_1_font_ad8ba1cb2d2609588099a05380e2d7fb0}} 
+\index{Hexeng::Font@{Hexeng::Font}!char\_map@{char\_map}}
+\index{char\_map@{char\_map}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{char\_map}{char\_map}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$char32\+\_\+t, \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Renderer\+::\+Tex\+Coord}}$>$ Hexeng\+::\+Font\+::char\+\_\+map}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_ad1194832a0d971961779409a4802cb23}\label{class_hexeng_1_1_font_ad1194832a0d971961779409a4802cb23}} 
+\index{Hexeng::Font@{Hexeng::Font}!file\_buffer@{file\_buffer}}
+\index{file\_buffer@{file\_buffer}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{file\_buffer}{file\_buffer}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$uint8\+\_\+t\mbox{[}$\,$\mbox{]}$>$ Hexeng\+::\+Font\+::file\+\_\+buffer = nullptr}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a19b6f4d683f4bda22663d1d63e582538}\label{class_hexeng_1_1_font_a19b6f4d683f4bda22663d1d63e582538}} 
+\index{Hexeng::Font@{Hexeng::Font}!font\_info@{font\_info}}
+\index{font\_info@{font\_info}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{font\_info}{font\_info}}
+{\footnotesize\ttfamily stbtt\+\_\+fontinfo Hexeng\+::\+Font\+::font\+\_\+info \{\}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a31660387bc1e95df022fd4632c4fa092}\label{class_hexeng_1_1_font_a31660387bc1e95df022fd4632c4fa092}} 
+\index{Hexeng::Font@{Hexeng::Font}!line\_height@{line\_height}}
+\index{line\_height@{line\_height}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{line\_height}{line\_height}}
+{\footnotesize\ttfamily int Hexeng\+::\+Font\+::line\+\_\+height = 0}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a480c75c253f56f1f3164fc467c988aca}\label{class_hexeng_1_1_font_a480c75c253f56f1f3164fc467c988aca}} 
+\index{Hexeng::Font@{Hexeng::Font}!line\_offset@{line\_offset}}
+\index{line\_offset@{line\_offset}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{line\_offset}{line\_offset}}
+{\footnotesize\ttfamily int Hexeng\+::\+Font\+::line\+\_\+offset = 0}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a00ca957886bb81e0801731a783d6aa80}\label{class_hexeng_1_1_font_a00ca957886bb81e0801731a783d6aa80}} 
+\index{Hexeng::Font@{Hexeng::Font}!quality@{quality}}
+\index{quality@{quality}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{quality}{quality}}
+{\footnotesize\ttfamily float Hexeng\+::\+Font\+::quality = 0.\+1f}
+
+\mbox{\Hypertarget{class_hexeng_1_1_font_a0c3ca666eb784b84749ac70c943d9928}\label{class_hexeng_1_1_font_a0c3ca666eb784b84749ac70c943d9928}} 
+\index{Hexeng::Font@{Hexeng::Font}!texture@{texture}}
+\index{texture@{texture}!Hexeng::Font@{Hexeng::Font}}
+\doxysubsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Renderer\+::\+Texture\+Vector}} Hexeng\+::\+Font\+::texture \{ \{\{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{Renderer\+::\+Tex\+Sett\+::\+BASE\+\_\+\+FORMAT}}, GL\+\_\+\+RED\}, \{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{Renderer\+::\+Tex\+Sett\+::\+SIZED\+\_\+\+FORMAT}}, GL\+\_\+\+R8\}\} \}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8hpp}{Text.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\mbox{\hyperlink{_text_8cpp}{Text.\+cpp}}\end{DoxyCompactItemize}

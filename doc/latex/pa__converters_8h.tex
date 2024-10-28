@@ -1,0 +1,150 @@
+\hypertarget{pa__converters_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+converters.h File Reference}
+\label{pa__converters_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_converters.h}}
+
+
+Conversion functions used to convert buffers of samples from one format to another.  
+
+
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}}(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$destination\+Buffer, signed int destination\+Stride, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$source\+Buffer, signed int source\+Stride, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}}, struct \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$dither\+Generator)
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}}(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$destination\+Buffer, signed int destination\+Stride, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{pa__converters_8h_a74195475fe92d6b7b71de247f2b08184}{Pa\+Util\+\_\+\+Select\+Closest\+Available\+Format}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} available\+Formats, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} \mbox{\hyperlink{glad_8h_a9303e5bd082e7abbe51d2311108c9db1}{format}})
+\item 
+\mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} source\+Format, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} destination\+Format, \mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}} \mbox{\hyperlink{glad_8h_a3d4f56e54693280c6d9b1177c12c867d}{flags}})
+\item 
+\mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} destination\+Format)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}} \mbox{\hyperlink{pa__converters_8h_ad600a701983981d00371cb22ed6fb648}{pa\+Converters}}
+\item 
+\mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}} \mbox{\hyperlink{pa__converters_8h_a5c96b77dd6fb2969291dbbb09c5fec94}{pa\+Zeroers}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Conversion functions used to convert buffers of samples from one format to another. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}\label{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}} 
+\index{pa\_converters.h@{pa\_converters.h}!PaUtilConverter@{PaUtilConverter}}
+\index{PaUtilConverter@{PaUtilConverter}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{PaUtilConverter}{PaUtilConverter}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+Converter(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$destination\+Buffer, signed int destination\+Stride, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$source\+Buffer, signed int source\+Stride, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}}, struct \mbox{\hyperlink{struct_pa_util_triangular_dither_generator}{Pa\+Util\+Triangular\+Dither\+Generator}} $\ast$dither\+Generator)}
+
+The generic sample converter prototype. Sample converters convert count samples from source\+Buffer to destination\+Buffer. The actual type of the data pointed to by these parameters varys for different converter functions. 
+\begin{DoxyParams}{Parameters}
+{\em destination\+Buffer} & A pointer to the first sample of the destination. \\
+\hline
+{\em destination\+Stride} & An offset between successive destination samples expressed in samples (not bytes.) It may be negative. \\
+\hline
+{\em source\+Buffer} & A pointer to the first sample of the source. \\
+\hline
+{\em source\+Stride} & An offset between successive source samples expressed in samples (not bytes.) It may be negative. \\
+\hline
+{\em count} & The number of samples to convert. \\
+\hline
+{\em dither\+State} & State information used to calculate dither. Converters that do not perform dithering will ignore this parameter, in which case NULL or invalid dither state may be passed. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}\label{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}} 
+\index{pa\_converters.h@{pa\_converters.h}!PaUtilZeroer@{PaUtilZeroer}}
+\index{PaUtilZeroer@{PaUtilZeroer}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{PaUtilZeroer}{PaUtilZeroer}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+Zeroer(\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$destination\+Buffer, signed int destination\+Stride, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})}
+
+The generic buffer zeroer prototype. Buffer zeroers copy count zeros to destination\+Buffer. The actual type of the data pointed to varys for different zeroer functions. 
+\begin{DoxyParams}{Parameters}
+{\em destination\+Buffer} & A pointer to the first sample of the destination. \\
+\hline
+{\em destination\+Stride} & An offset between successive destination samples expressed in samples (not bytes.) It may be negative. \\
+\hline
+{\em count} & The number of samples to zero. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__converters_8h_a74195475fe92d6b7b71de247f2b08184}\label{pa__converters_8h_a74195475fe92d6b7b71de247f2b08184}} 
+\index{pa\_converters.h@{pa\_converters.h}!PaUtil\_SelectClosestAvailableFormat@{PaUtil\_SelectClosestAvailableFormat}}
+\index{PaUtil\_SelectClosestAvailableFormat@{PaUtil\_SelectClosestAvailableFormat}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectClosestAvailableFormat()}{PaUtil\_SelectClosestAvailableFormat()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} Pa\+Util\+\_\+\+Select\+Closest\+Available\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{available\+Formats,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{format }\end{DoxyParamCaption})}
+
+Choose an available sample format which is most appropriate for representing the requested format. If the requested format is not available higher quality formats are considered before lower quality formats. 
+\begin{DoxyParams}{Parameters}
+{\em available\+Formats} & A variable containing the logical OR of all available formats. \\
+\hline
+{\em format} & The desired format. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The most appropriate available format for representing the requested format. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}\label{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}} 
+\index{pa\_converters.h@{pa\_converters.h}!PaUtil\_SelectConverter@{PaUtil\_SelectConverter}}
+\index{PaUtil\_SelectConverter@{PaUtil\_SelectConverter}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectConverter()}{PaUtil\_SelectConverter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}} $\ast$ Pa\+Util\+\_\+\+Select\+Converter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{source\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{destination\+Format,  }\item[{\mbox{\hyperlink{portaudio_8h_a37c7ac3ace7d2dd1430f40ecdee4ebb6}{Pa\+Stream\+Flags}}}]{flags }\end{DoxyParamCaption})}
+
+Find a sample converter function for the given source and destinations formats and flags (clip and dither.) \begin{DoxyReturn}{Returns}
+A pointer to a Pa\+Util\+Converter which will perform the requested conversion, or NULL if the given format conversion is not supported. For conversions where clipping or dithering is not necessary, the clip and dither flags are ignored and a non-\/clipping or dithering version is returned. If the source and destination formats are the same, a function which copies data of the appropriate size will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}\label{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}} 
+\index{pa\_converters.h@{pa\_converters.h}!PaUtil\_SelectZeroer@{PaUtil\_SelectZeroer}}
+\index{PaUtil\_SelectZeroer@{PaUtil\_SelectZeroer}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_SelectZeroer()}{PaUtil\_SelectZeroer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}} $\ast$ Pa\+Util\+\_\+\+Select\+Zeroer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{destination\+Format }\end{DoxyParamCaption})}
+
+Find a buffer zeroer function for the given destination format. \begin{DoxyReturn}{Returns}
+A pointer to a Pa\+Util\+Zeroer which will perform the requested zeroing. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__converters_8h_ad600a701983981d00371cb22ed6fb648}\label{pa__converters_8h_ad600a701983981d00371cb22ed6fb648}} 
+\index{pa\_converters.h@{pa\_converters.h}!paConverters@{paConverters}}
+\index{paConverters@{paConverters}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{paConverters}{paConverters}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}} pa\+Converters\hspace{0.3cm}{\ttfamily [extern]}}
+
+A table of pointers to all required converter functions. \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter()}} uses this table to lookup the appropriate conversion functions. The fields of this structure are initialized with default conversion functions. Fields may be NULL, indicating that no conversion function is available. User code may substitute optimised conversion functions by assigning different function pointers to these fields.
+
+\begin{DoxyNote}{Note}
+If the PA\+\_\+\+NO\+\_\+\+STANDARD\+\_\+\+CONVERTERS preprocessor variable is defined, Port\+Audio\textquotesingle{}s standard converters will not be compiled, and all fields of this structure will be initialized to NULL. In such cases, users should supply their own conversion functions if the require Port\+Audio to open a stream that requires sample conversion.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_util_converter_table}{Pa\+Util\+Converter\+Table}}, \mbox{\hyperlink{pa__converters_8h_a4f65f7c2e9e185e7f8caebe85ae9575c}{Pa\+Util\+Converter}}, \mbox{\hyperlink{pa__converters_8h_a869673efe8cc48b9cfaf7285a6a1e4b7}{Pa\+Util\+\_\+\+Select\+Converter}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__converters_8h_a5c96b77dd6fb2969291dbbb09c5fec94}\label{pa__converters_8h_a5c96b77dd6fb2969291dbbb09c5fec94}} 
+\index{pa\_converters.h@{pa\_converters.h}!paZeroers@{paZeroers}}
+\index{paZeroers@{paZeroers}!pa\_converters.h@{pa\_converters.h}}
+\doxysubsubsection{\texorpdfstring{paZeroers}{paZeroers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}} pa\+Zeroers\hspace{0.3cm}{\ttfamily [extern]}}
+
+A table of pointers to all required zeroer functions. \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer()}} uses this table to lookup the appropriate conversion functions. The fields of this structure are initialized with default conversion functions. User code may substitute optimised conversion functions by assigning different function pointers to these fields.
+
+\begin{DoxyNote}{Note}
+If the PA\+\_\+\+NO\+\_\+\+STANDARD\+\_\+\+ZEROERS preprocessor variable is defined, Port\+Audio\textquotesingle{}s standard zeroers will not be compiled, and all fields of this structure will be initialized to NULL. In such cases, users should supply their own zeroing functions for the sample sizes which they intend to use.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_pa_util_zeroer_table}{Pa\+Util\+Zeroer\+Table}}, \mbox{\hyperlink{pa__converters_8h_a6f0dab7cde48b5f41801024ed20be7e7}{Pa\+Util\+Zeroer}}, \mbox{\hyperlink{pa__converters_8h_a3e239a0c1d09956a782c3176e8dd2359}{Pa\+Util\+\_\+\+Select\+Zeroer}} 
+\end{DoxySeeAlso}

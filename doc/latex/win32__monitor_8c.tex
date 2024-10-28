@@ -1,0 +1,126 @@
+\hypertarget{win32__monitor_8c}{}\doxysection{Hexeng2\+D/dependencies/glfw/src/win32\+\_\+monitor.c File Reference}
+\label{win32__monitor_8c}\index{Hexeng2D/dependencies/glfw/src/win32\_monitor.c@{Hexeng2D/dependencies/glfw/src/win32\_monitor.c}}
+{\ttfamily \#include \char`\"{}internal.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$wchar.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_a345b11644c658a9a94b0eeb4ed4a0618}{\+\_\+glfw\+Poll\+Monitors\+Win32}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_a52d8e36bf649dcb15198832d92206ce2}{\+\_\+glfw\+Set\+Video\+Mode\+Win32}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, const \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$desired)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_af4b02765bc562c8265503bb97c0cd8e9}{\+\_\+glfw\+Restore\+Video\+Mode\+Win32}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_a7f1868535334122b19eefca607adae27}{\+\_\+glfw\+Get\+Monitor\+Content\+Scale\+Win32}} (HMONITOR handle, float $\ast$xscale, float $\ast$yscale)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_a0dcf01b53eb877c4e823ba63fe8ecbca}{\+\_\+glfw\+Platform\+Free\+Monitor}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_ac3047b94f0248b06b160f08992939796}{\+\_\+glfw\+Platform\+Get\+Monitor\+Pos}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, int $\ast$xpos, int $\ast$ypos)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_acaffbb192928a16cf1742151757a867c}{\+\_\+glfw\+Platform\+Get\+Monitor\+Content\+Scale}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, float $\ast$xscale, float $\ast$yscale)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_ad3bed68d40919e525ddd445bcde90b2b}{\+\_\+glfw\+Platform\+Get\+Monitor\+Workarea}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, int $\ast$xpos, int $\ast$ypos, int $\ast$\mbox{\hyperlink{glad_8h_a6879d830f164725df67adeeabca3ea47}{width}}, int $\ast$\mbox{\hyperlink{glad_8h_a60075de22f90a1223dc0bea98d2ee4d5}{height}})
+\item 
+\mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$ \mbox{\hyperlink{win32__monitor_8c_a5efe2824e8779cb098c34a5764cf3c73}{\+\_\+glfw\+Platform\+Get\+Video\+Modes}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, int $\ast$\mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_ab8336e546a783459b673772b591ffacd}{\+\_\+glfw\+Platform\+Get\+Video\+Mode}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$\mbox{\hyperlink{glad_8h_a1e71d9c196e4683cc06c4b54d53f7ef5}{mode}})
+\item 
+\mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \mbox{\hyperlink{win32__monitor_8c_ac4bf2f5025cc6800bbe44615e5404c36}{\+\_\+glfw\+Platform\+Get\+Gamma\+Ramp}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, \mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}} $\ast$ramp)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{win32__monitor_8c_abcaf1fc34700bd62b558caccce3ab45b}{\+\_\+glfw\+Platform\+Set\+Gamma\+Ramp}} (\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$monitor, const \mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}} $\ast$ramp)
+\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char $\ast$ \mbox{\hyperlink{win32__monitor_8c_a811fca2e6d7621e64defdce843da0bec}{glfw\+Get\+Win32\+Adapter}} (\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}} $\ast$handle)
+\item 
+\mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char $\ast$ \mbox{\hyperlink{win32__monitor_8c_ac6be5ad74417778649b67502ebb31f10}{glfw\+Get\+Win32\+Monitor}} (\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}} $\ast$handle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{win32__monitor_8c_a7f1868535334122b19eefca607adae27}\label{win32__monitor_8c_a7f1868535334122b19eefca607adae27}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwGetMonitorContentScaleWin32@{\_glfwGetMonitorContentScaleWin32}}
+\index{\_glfwGetMonitorContentScaleWin32@{\_glfwGetMonitorContentScaleWin32}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwGetMonitorContentScaleWin32()}{\_glfwGetMonitorContentScaleWin32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Get\+Monitor\+Content\+Scale\+Win32 (\begin{DoxyParamCaption}\item[{HMONITOR}]{handle,  }\item[{float $\ast$}]{xscale,  }\item[{float $\ast$}]{yscale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_a0dcf01b53eb877c4e823ba63fe8ecbca}\label{win32__monitor_8c_a0dcf01b53eb877c4e823ba63fe8ecbca}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformFreeMonitor@{\_glfwPlatformFreeMonitor}}
+\index{\_glfwPlatformFreeMonitor@{\_glfwPlatformFreeMonitor}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformFreeMonitor()}{\_glfwPlatformFreeMonitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Free\+Monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_ac4bf2f5025cc6800bbe44615e5404c36}\label{win32__monitor_8c_ac4bf2f5025cc6800bbe44615e5404c36}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetGammaRamp@{\_glfwPlatformGetGammaRamp}}
+\index{\_glfwPlatformGetGammaRamp@{\_glfwPlatformGetGammaRamp}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetGammaRamp()}{\_glfwPlatformGetGammaRamp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{internal_8h_ac5743c31bece872e24528b5a45e354c5}{GLFWbool}} \+\_\+glfw\+Platform\+Get\+Gamma\+Ramp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{\mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}} $\ast$}]{ramp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_acaffbb192928a16cf1742151757a867c}\label{win32__monitor_8c_acaffbb192928a16cf1742151757a867c}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetMonitorContentScale@{\_glfwPlatformGetMonitorContentScale}}
+\index{\_glfwPlatformGetMonitorContentScale@{\_glfwPlatformGetMonitorContentScale}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetMonitorContentScale()}{\_glfwPlatformGetMonitorContentScale()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Get\+Monitor\+Content\+Scale (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{float $\ast$}]{xscale,  }\item[{float $\ast$}]{yscale }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_ac3047b94f0248b06b160f08992939796}\label{win32__monitor_8c_ac3047b94f0248b06b160f08992939796}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetMonitorPos@{\_glfwPlatformGetMonitorPos}}
+\index{\_glfwPlatformGetMonitorPos@{\_glfwPlatformGetMonitorPos}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetMonitorPos()}{\_glfwPlatformGetMonitorPos()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Get\+Monitor\+Pos (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{int $\ast$}]{xpos,  }\item[{int $\ast$}]{ypos }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_ad3bed68d40919e525ddd445bcde90b2b}\label{win32__monitor_8c_ad3bed68d40919e525ddd445bcde90b2b}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetMonitorWorkarea@{\_glfwPlatformGetMonitorWorkarea}}
+\index{\_glfwPlatformGetMonitorWorkarea@{\_glfwPlatformGetMonitorWorkarea}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetMonitorWorkarea()}{\_glfwPlatformGetMonitorWorkarea()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Get\+Monitor\+Workarea (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{int $\ast$}]{xpos,  }\item[{int $\ast$}]{ypos,  }\item[{int $\ast$}]{width,  }\item[{int $\ast$}]{height }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_ab8336e546a783459b673772b591ffacd}\label{win32__monitor_8c_ab8336e546a783459b673772b591ffacd}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetVideoMode@{\_glfwPlatformGetVideoMode}}
+\index{\_glfwPlatformGetVideoMode@{\_glfwPlatformGetVideoMode}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetVideoMode()}{\_glfwPlatformGetVideoMode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Get\+Video\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{\mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_a5efe2824e8779cb098c34a5764cf3c73}\label{win32__monitor_8c_a5efe2824e8779cb098c34a5764cf3c73}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformGetVideoModes@{\_glfwPlatformGetVideoModes}}
+\index{\_glfwPlatformGetVideoModes@{\_glfwPlatformGetVideoModes}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformGetVideoModes()}{\_glfwPlatformGetVideoModes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$ \+\_\+glfw\+Platform\+Get\+Video\+Modes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{int $\ast$}]{count }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_abcaf1fc34700bd62b558caccce3ab45b}\label{win32__monitor_8c_abcaf1fc34700bd62b558caccce3ab45b}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPlatformSetGammaRamp@{\_glfwPlatformSetGammaRamp}}
+\index{\_glfwPlatformSetGammaRamp@{\_glfwPlatformSetGammaRamp}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPlatformSetGammaRamp()}{\_glfwPlatformSetGammaRamp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Platform\+Set\+Gamma\+Ramp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{const \mbox{\hyperlink{struct_g_l_f_wgammaramp}{GLFWgammaramp}} $\ast$}]{ramp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_a345b11644c658a9a94b0eeb4ed4a0618}\label{win32__monitor_8c_a345b11644c658a9a94b0eeb4ed4a0618}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwPollMonitorsWin32@{\_glfwPollMonitorsWin32}}
+\index{\_glfwPollMonitorsWin32@{\_glfwPollMonitorsWin32}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwPollMonitorsWin32()}{\_glfwPollMonitorsWin32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Poll\+Monitors\+Win32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_af4b02765bc562c8265503bb97c0cd8e9}\label{win32__monitor_8c_af4b02765bc562c8265503bb97c0cd8e9}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwRestoreVideoModeWin32@{\_glfwRestoreVideoModeWin32}}
+\index{\_glfwRestoreVideoModeWin32@{\_glfwRestoreVideoModeWin32}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwRestoreVideoModeWin32()}{\_glfwRestoreVideoModeWin32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Restore\+Video\+Mode\+Win32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_a52d8e36bf649dcb15198832d92206ce2}\label{win32__monitor_8c_a52d8e36bf649dcb15198832d92206ce2}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!\_glfwSetVideoModeWin32@{\_glfwSetVideoModeWin32}}
+\index{\_glfwSetVideoModeWin32@{\_glfwSetVideoModeWin32}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{\_glfwSetVideoModeWin32()}{\_glfwSetVideoModeWin32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \+\_\+glfw\+Set\+Video\+Mode\+Win32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct___g_l_f_wmonitor}{\+\_\+\+GLFWmonitor}} $\ast$}]{monitor,  }\item[{const \mbox{\hyperlink{struct_g_l_f_wvidmode}{GLFWvidmode}} $\ast$}]{desired }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_a811fca2e6d7621e64defdce843da0bec}\label{win32__monitor_8c_a811fca2e6d7621e64defdce843da0bec}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!glfwGetWin32Adapter@{glfwGetWin32Adapter}}
+\index{glfwGetWin32Adapter@{glfwGetWin32Adapter}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{glfwGetWin32Adapter()}{glfwGetWin32Adapter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char $\ast$ glfw\+Get\+Win32\+Adapter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}} $\ast$}]{handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{win32__monitor_8c_ac6be5ad74417778649b67502ebb31f10}\label{win32__monitor_8c_ac6be5ad74417778649b67502ebb31f10}} 
+\index{win32\_monitor.c@{win32\_monitor.c}!glfwGetWin32Monitor@{glfwGetWin32Monitor}}
+\index{glfwGetWin32Monitor@{glfwGetWin32Monitor}!win32\_monitor.c@{win32\_monitor.c}}
+\doxysubsubsection{\texorpdfstring{glfwGetWin32Monitor()}{glfwGetWin32Monitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glfw3_8h_a56da5036b2cc259351ae22fd6439bb47}{GLFWAPI}} const char $\ast$ glfw\+Get\+Win32\+Monitor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__monitor_ga8d9efd1cde9426692c73fe40437d0ae3}{GLFWmonitor}} $\ast$}]{handle }\end{DoxyParamCaption})}
+

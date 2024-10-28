@@ -1,0 +1,207 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_quad}{}\doxysection{Hexeng\+::Renderer\+::Quad Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_quad}\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+
+
+{\ttfamily \#include $<$Quad.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Quad\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_hexeng_1_1_renderer_1_1_quad}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_afad3cf0e274b3917ca72e98dbd1f9907}{Quad}} (\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ pos, const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&size, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$texture, bool centered=true, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}})
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a94bde87e17b79ca45260f62a9f394e9c}{Quad}} (const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&pos, float size, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$texture, bool centerd=true, \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$shader=\&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}})
+\begin{DoxyCompactList}\small\item\em The same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_afad3cf0e274b3917ca72e98dbd1f9907}{Quad(\+Vec2$<$int$>$, const Vec2$<$int$>$\&, Texture$\ast$, bool, Shader$\ast$)}} except the size is a multiplier of the texture size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}{Quad}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ad4e46614faf2271e5ff1a64934c11fba}{$\sim$\+Quad}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a50c4ef335bb3a3c991c7d4055a959621}{Quad}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a836963c2c12308e9daf527f31c000fdc}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a43047ca23b896f0cdbaf76c65d844ac9}{get\+\_\+min}} ()
+\begin{DoxyCompactList}\small\item\em Get the bottom left coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ac57f97dff5b53ced0ebf6e53de55f1af}{get\+\_\+max}} ()
+\begin{DoxyCompactList}\small\item\em Get the top right coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_af5303694f87e73b5678bf36837a20366}{get\+\_\+size}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ac57f97dff5b53ced0ebf6e53de55f1af}{get\+\_\+max()}} -\/ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a43047ca23b896f0cdbaf76c65d844ac9}{get\+\_\+min()}} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a3eb5f5b066bba12bdf55dbc232c4ab42}{get\+\_\+vertex\+\_\+layout}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a2811a6f1aaf033b0f9568baad81a0c7a}{s\+\_\+index\+\_\+buffer}}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ad70733da1295ad0642ea7ffcd2969b12}{s\+\_\+edge\+\_\+index\+\_\+buffer}}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ab864a2e4e369c7842dea280018bd6153}{s\+\_\+init\+\_\+components}}
+\item 
+static \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a27d72f5e67a099363777a1c23990e52c}{s\+\_\+vertex\+\_\+layout}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} is in fact a rectangle, but it\textquotesingle{}s shorter to say a quad. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_afad3cf0e274b3917ca72e98dbd1f9907}\label{class_hexeng_1_1_renderer_1_1_quad_afad3cf0e274b3917ca72e98dbd1f9907}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{Quad()}{Quad()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$}]{pos,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{size,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{bool}]{centered = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}. \\
+\hline
+{\em size} & The dimentions (lenght, width) of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}. \\
+\hline
+{\em centered} & If set to true, pos is the center of the quad, if set to false, pos is the bottom left of the quad. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If you want to make a custom shader for the quad, take a look at Default\+Shaders .glsl/.hpp/.cpp, copy paste basic\+\_\+shader and modify it as you want. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a94bde87e17b79ca45260f62a9f394e9c}\label{class_hexeng_1_1_renderer_1_1_quad_a94bde87e17b79ca45260f62a9f394e9c}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{Quad()}{Quad()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ \&}]{pos,  }\item[{float}]{size,  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}} $\ast$}]{texture,  }\item[{bool}]{centerd = {\ttfamily true},  }\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} $\ast$}]{shader = {\ttfamily \&\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}} }\end{DoxyParamCaption})}
+
+
+
+The same as \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_afad3cf0e274b3917ca72e98dbd1f9907}{Quad(\+Vec2$<$int$>$, const Vec2$<$int$>$\&, Texture$\ast$, bool, Shader$\ast$)}} except the size is a multiplier of the texture size. 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}\label{class_hexeng_1_1_renderer_1_1_quad_a611f55c2addbeed5e5a1aa77613b04a6}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{Quad()}{Quad()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_ad4e46614faf2271e5ff1a64934c11fba}\label{class_hexeng_1_1_renderer_1_1_quad_ad4e46614faf2271e5ff1a64934c11fba}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!````~Quad@{$\sim$Quad}}
+\index{````~Quad@{$\sim$Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{$\sim$Quad()}{~Quad()}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::$\sim$\+Quad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a50c4ef335bb3a3c991c7d4055a959621}\label{class_hexeng_1_1_renderer_1_1_quad_a50c4ef335bb3a3c991c7d4055a959621}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!Quad@{Quad}}
+\index{Quad@{Quad}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{Quad()}{Quad()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Quad\+::\+Quad (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_ac57f97dff5b53ced0ebf6e53de55f1af}\label{class_hexeng_1_1_renderer_1_1_quad_ac57f97dff5b53ced0ebf6e53de55f1af}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!get\_max@{get\_max}}
+\index{get\_max@{get\_max}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{get\_max()}{get\_max()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ Hexeng\+::\+Renderer\+::\+Quad\+::get\+\_\+max (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the top right coordinates. 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a43047ca23b896f0cdbaf76c65d844ac9}\label{class_hexeng_1_1_renderer_1_1_quad_a43047ca23b896f0cdbaf76c65d844ac9}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!get\_min@{get\_min}}
+\index{get\_min@{get\_min}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{get\_min()}{get\_min()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ Hexeng\+::\+Renderer\+::\+Quad\+::get\+\_\+min (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the bottom left coordinates. 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_af5303694f87e73b5678bf36837a20366}\label{class_hexeng_1_1_renderer_1_1_quad_af5303694f87e73b5678bf36837a20366}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!get\_size@{get\_size}}
+\index{get\_size@{get\_size}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{get\_size()}{get\_size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ Hexeng\+::\+Renderer\+::\+Quad\+::get\+\_\+size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ac57f97dff5b53ced0ebf6e53de55f1af}{get\+\_\+max()}} -\/ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a43047ca23b896f0cdbaf76c65d844ac9}{get\+\_\+min()}} 
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a3eb5f5b066bba12bdf55dbc232c4ab42}\label{class_hexeng_1_1_renderer_1_1_quad_a3eb5f5b066bba12bdf55dbc232c4ab42}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!get\_vertex\_layout@{get\_vertex\_layout}}
+\index{get\_vertex\_layout@{get\_vertex\_layout}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{get\_vertex\_layout()}{get\_vertex\_layout()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} \& Hexeng\+::\+Renderer\+::\+Quad\+::get\+\_\+vertex\+\_\+layout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a836963c2c12308e9daf527f31c000fdc}\label{class_hexeng_1_1_renderer_1_1_quad_a836963c2c12308e9daf527f31c000fdc}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \& Hexeng\+::\+Renderer\+::\+Quad\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_ad70733da1295ad0642ea7ffcd2969b12}\label{class_hexeng_1_1_renderer_1_1_quad_ad70733da1295ad0642ea7ffcd2969b12}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!s\_edge\_index\_buffer@{s\_edge\_index\_buffer}}
+\index{s\_edge\_index\_buffer@{s\_edge\_index\_buffer}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{s\_edge\_index\_buffer}{s\_edge\_index\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} Hexeng\+::\+Renderer\+::\+Quad\+::s\+\_\+edge\+\_\+index\+\_\+buffer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a2811a6f1aaf033b0f9568baad81a0c7a}\label{class_hexeng_1_1_renderer_1_1_quad_a2811a6f1aaf033b0f9568baad81a0c7a}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!s\_index\_buffer@{s\_index\_buffer}}
+\index{s\_index\_buffer@{s\_index\_buffer}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{s\_index\_buffer}{s\_index\_buffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} Hexeng\+::\+Renderer\+::\+Quad\+::s\+\_\+index\+\_\+buffer\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_ab864a2e4e369c7842dea280018bd6153}\label{class_hexeng_1_1_renderer_1_1_quad_ab864a2e4e369c7842dea280018bd6153}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!s\_init\_components@{s\_init\_components}}
+\index{s\_init\_components@{s\_init\_components}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{s\_init\_components}{s\_init\_components}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} Hexeng\+::\+Renderer\+::\+Quad\+::s\+\_\+init\+\_\+components\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ []() \{}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} index\_buffer[]}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            0, 1, 2,}
+\DoxyCodeLine{            2, 3, 0}
+\DoxyCodeLine{        \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} edge\_index\_buffer[]}
+\DoxyCodeLine{        \{}
+\DoxyCodeLine{            0, 1,}
+\DoxyCodeLine{            1, 2,}
+\DoxyCodeLine{            2, 3,}
+\DoxyCodeLine{            3, 0,}
+\DoxyCodeLine{            0, 2}
+\DoxyCodeLine{        \};}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a27d72f5e67a099363777a1c23990e52c}{s\_vertex\_layout}} = \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}(\{ \{ 2, GL\_FLOAT \}, \{ 2, GL\_FLOAT \} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_a2811a6f1aaf033b0f9568baad81a0c7a}{s\_index\_buffer}} = IndexBuffer(index\_buffer, GL\_UNSIGNED\_BYTE, 6);}
+\DoxyCodeLine{        \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad_ad70733da1295ad0642ea7ffcd2969b12}{s\_edge\_index\_buffer}} = IndexBuffer(edge\_index\_buffer, GL\_UNSIGNED\_BYTE, 10);}
+\DoxyCodeLine{    \}, 1 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_quad_a27d72f5e67a099363777a1c23990e52c}\label{class_hexeng_1_1_renderer_1_1_quad_a27d72f5e67a099363777a1c23990e52c}} 
+\index{Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}!s\_vertex\_layout@{s\_vertex\_layout}}
+\index{s\_vertex\_layout@{s\_vertex\_layout}!Hexeng::Renderer::Quad@{Hexeng::Renderer::Quad}}
+\doxysubsubsection{\texorpdfstring{s\_vertex\_layout}{s\_vertex\_layout}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}} Hexeng\+::\+Renderer\+::\+Quad\+::s\+\_\+vertex\+\_\+layout\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_quad_8hpp}{Quad.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_quad_8cpp}{Quad.\+cpp}}\end{DoxyCompactItemize}

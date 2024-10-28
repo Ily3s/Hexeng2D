@@ -1,0 +1,51 @@
+\doxysection{Hexeng2\+D/src/\+Hexeng.cpp File Reference}
+\hypertarget{Hexeng_8cpp}{}\label{Hexeng_8cpp}\index{Hexeng2D/src/Hexeng.cpp@{Hexeng2D/src/Hexeng.cpp}}
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include \"{}Hexeng.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Macros.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Renderer/\+Renderer.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Color.\+hpp\"{}}\newline
+{\ttfamily \#include \"{}Scene.\+hpp\"{}}\newline
+\doxysubsubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespaceHexeng_1_1Settings}{Hexeng\+::\+Settings}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespaceHexeng_a31584ddd77dfb31ea89a5e0acf7dc72d}{Hexeng\+::game\+\_\+loop}} (std\+::function$<$ void()$>$ pre=nullptr, std\+::function$<$ void()$>$ post=nullptr)
+\begin{DoxyCompactList}\small\item\em Starts the game loop. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{namespaceHexeng_1_1Settings_a63c078556ae3f433b9e0557721b8ed0f}{Hexeng\+::\+Settings\+::get\+\_\+ratio}} ()
+\item 
+void \mbox{\hyperlink{namespaceHexeng_abe71842ede9e3ca1e5232aa6990df493}{Hexeng\+::\+\_\+resize\+\_\+callback}} (GLFWwindow \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{namespaceHexeng_a174cdd73131759dc661d7e97400ca23a}{window}}, int x, int y)
+\item 
+void \mbox{\hyperlink{namespaceHexeng_a7cfcc962f2d288761ffc9a65242af5b3}{Hexeng\+::resize\+\_\+window}} (int x, int y)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+GLFWwindow \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{namespaceHexeng_a174cdd73131759dc661d7e97400ca23a}{Hexeng\+::window}} = nullptr
+\item 
+float \mbox{\hyperlink{namespaceHexeng_a01de6715ebc2bebf6aeb61172101cb7e}{Hexeng\+::frame\+\_\+time}} = 0.\+0f
+\item 
+bool \mbox{\hyperlink{namespaceHexeng_ab54a2e7cf470932d48cc187a2cf8f21f}{Hexeng\+::exit}} = false
+\begin{DoxyCompactList}\small\item\em Set to true to exit next frame. \end{DoxyCompactList}\item 
+std\+::mutex \mbox{\hyperlink{namespaceHexeng_a86bc2f21dd4e72e56a23d18a1226f627}{Hexeng\+::safe\+\_\+render\+\_\+mutex}}
+\item 
+bool \mbox{\hyperlink{namespaceHexeng_1_1Settings_af07c6deae13aee4299565ba29261e494}{Hexeng\+::\+Settings\+::enable\+\_\+vsync}} = true
+\item 
+std\+::string \mbox{\hyperlink{namespaceHexeng_1_1Settings_a01f9883bbdfb72f79379f00c0a1c2224}{Hexeng\+::\+Settings\+::window\+\_\+name}} = \"{}Game made with Hexeng2\+D\"{}
+\item 
+bool \mbox{\hyperlink{namespaceHexeng_1_1Settings_aac17e662da68a88ca342aa4b90e34c65}{Hexeng\+::\+Settings\+::fullscreen}} = false
+\item 
+\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}$<$ int $>$ \mbox{\hyperlink{namespaceHexeng_1_1Settings_ac812ba2898520fd0cd9be4139b7e7227}{Hexeng\+::\+Settings\+::window\+\_\+size}} = \{ 1280, 720 \}
+\item 
+float \mbox{\hyperlink{namespaceHexeng_1_1Settings_a1ac86b27f313d69df1090a8e927644ad}{Hexeng\+::\+Settings\+::master\+\_\+volume}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{namespaceHexeng_1_1Settings_ab5f36e22f2247e93a90f3453c978a302}{Hexeng\+::\+Settings\+::sound\+\_\+volume}} = 1.\+0f
+\item 
+float \mbox{\hyperlink{namespaceHexeng_1_1Settings_a26265a89df084d350274237fae05b108}{Hexeng\+::\+Settings\+::music\+\_\+volume}} = 1.\+0f
+\end{DoxyCompactItemize}

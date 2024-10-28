@@ -1,0 +1,72 @@
+\hypertarget{pa__win__wdmks__utils_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/os/win/pa\+\_\+win\+\_\+wdmks\+\_\+utils.c File Reference}
+\label{pa__win__wdmks__utils_8c}\index{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_wdmks\_utils.c@{Hexeng2D/dependencies/portaudio/src/os/win/pa\_win\_wdmks\_utils.c}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include $<$winioctl.\+h$>$}\newline
+{\ttfamily \#include $<$ks.\+h$>$}\newline
+{\ttfamily \#include $<$ksmedia.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+wdmks\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks__utils_8c_a37d17ddda1e36eb0f54d80a946b897f0}{WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT}}~0x0003
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks__utils_8c_a64bce7914451446d8490dc31fe9002d6}{\+\_\+\+WAVEFORMATEXTENSIBLE\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks__utils_8c_a1e17109615e2164b333b3b3879c39f4b}{\+\_\+\+INC\+\_\+\+MMREG}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wdmks__utils_8c_affd0547752c5519a4582d5bdc68765f3}{pa\+\_\+\+IS\+\_\+\+VALID\+\_\+\+WAVEFORMATEX\+\_\+\+GUID}}(Guid)~    (!memcmp(((PUSHORT)\&pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+WAVEFORMATEX) + 1, ((PUSHORT)(Guid)) + 1, sizeof(GUID) -\/ sizeof(USHORT)))
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__wdmks__utils_8c_a71529a34736bde9e802d5daecf41c60c}{Pa\+Win\+\_\+\+WDMKS\+\_\+\+Query\+Filter\+Maximum\+Channel\+Count}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$wchar\+Device\+Path, int is\+Input)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__wdmks__utils_8c_a1e17109615e2164b333b3b3879c39f4b}\label{pa__win__wdmks__utils_8c_a1e17109615e2164b333b3b3879c39f4b}} 
+\index{pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}!\_INC\_MMREG@{\_INC\_MMREG}}
+\index{\_INC\_MMREG@{\_INC\_MMREG}!pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}}
+\doxysubsubsection{\texorpdfstring{\_INC\_MMREG}{\_INC\_MMREG}}
+{\footnotesize\ttfamily \#define \+\_\+\+INC\+\_\+\+MMREG}
+
+\mbox{\Hypertarget{pa__win__wdmks__utils_8c_a64bce7914451446d8490dc31fe9002d6}\label{pa__win__wdmks__utils_8c_a64bce7914451446d8490dc31fe9002d6}} 
+\index{pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}!\_WAVEFORMATEXTENSIBLE\_@{\_WAVEFORMATEXTENSIBLE\_}}
+\index{\_WAVEFORMATEXTENSIBLE\_@{\_WAVEFORMATEXTENSIBLE\_}!pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}}
+\doxysubsubsection{\texorpdfstring{\_WAVEFORMATEXTENSIBLE\_}{\_WAVEFORMATEXTENSIBLE\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+WAVEFORMATEXTENSIBLE\+\_\+}
+
+\mbox{\Hypertarget{pa__win__wdmks__utils_8c_affd0547752c5519a4582d5bdc68765f3}\label{pa__win__wdmks__utils_8c_affd0547752c5519a4582d5bdc68765f3}} 
+\index{pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}!pa\_IS\_VALID\_WAVEFORMATEX\_GUID@{pa\_IS\_VALID\_WAVEFORMATEX\_GUID}}
+\index{pa\_IS\_VALID\_WAVEFORMATEX\_GUID@{pa\_IS\_VALID\_WAVEFORMATEX\_GUID}!pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}}
+\doxysubsubsection{\texorpdfstring{pa\_IS\_VALID\_WAVEFORMATEX\_GUID}{pa\_IS\_VALID\_WAVEFORMATEX\_GUID}}
+{\footnotesize\ttfamily \#define pa\+\_\+\+IS\+\_\+\+VALID\+\_\+\+WAVEFORMATEX\+\_\+\+GUID(\begin{DoxyParamCaption}\item[{}]{Guid }\end{DoxyParamCaption})~    (!memcmp(((PUSHORT)\&pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+WAVEFORMATEX) + 1, ((PUSHORT)(Guid)) + 1, sizeof(GUID) -\/ sizeof(USHORT)))}
+
+\mbox{\Hypertarget{pa__win__wdmks__utils_8c_a37d17ddda1e36eb0f54d80a946b897f0}\label{pa__win__wdmks__utils_8c_a37d17ddda1e36eb0f54d80a946b897f0}} 
+\index{pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}!WAVE\_FORMAT\_IEEE\_FLOAT@{WAVE\_FORMAT\_IEEE\_FLOAT}}
+\index{WAVE\_FORMAT\_IEEE\_FLOAT@{WAVE\_FORMAT\_IEEE\_FLOAT}!pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_IEEE\_FLOAT}{WAVE\_FORMAT\_IEEE\_FLOAT}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT~0x0003}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wdmks__utils_8c_a71529a34736bde9e802d5daecf41c60c}\label{pa__win__wdmks__utils_8c_a71529a34736bde9e802d5daecf41c60c}} 
+\index{pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}!PaWin\_WDMKS\_QueryFilterMaximumChannelCount@{PaWin\_WDMKS\_QueryFilterMaximumChannelCount}}
+\index{PaWin\_WDMKS\_QueryFilterMaximumChannelCount@{PaWin\_WDMKS\_QueryFilterMaximumChannelCount}!pa\_win\_wdmks\_utils.c@{pa\_win\_wdmks\_utils.c}}
+\doxysubsubsection{\texorpdfstring{PaWin\_WDMKS\_QueryFilterMaximumChannelCount()}{PaWin\_WDMKS\_QueryFilterMaximumChannelCount()}}
+{\footnotesize\ttfamily int Pa\+Win\+\_\+\+WDMKS\+\_\+\+Query\+Filter\+Maximum\+Channel\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{wchar\+Device\+Path,  }\item[{int}]{is\+Input }\end{DoxyParamCaption})}
+
+Query for the maximum number of channels supported by any pin of the specified device. Returns 0 if the query fails for any reason.
+
+
+\begin{DoxyParams}{Parameters}
+{\em wchar\+Device\+Path} & A system level PnP interface path, supplied as a WCHAR unicode string. Declared as void$\ast$ to avoid introducing a dependency on wchar\+\_\+t here.\\
+\hline
+{\em is\+Input} & A flag specifying whether to query for input (non-\/zero) or output (zero) channels. \\
+\hline
+\end{DoxyParams}

@@ -1,0 +1,147 @@
+\hypertarget{patest__maxsines_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+maxsines.c File Reference}
+\label{patest__maxsines_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_maxsines.c@{Hexeng2D/dependencies/portaudio/test/patest\_maxsines.c}}
+
+
+How many sine waves can we calculate and play in less than 80\% CPU Load.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a87ff49addd1c58256bfc38ae94ab5734}{MAX\+\_\+\+SINES}}~(2000)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a0f986fcf5d0b1620404975b5086f2ba2}{MAX\+\_\+\+USAGE}}~(0.\+5)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_addd6f50172b0556ca0225631ef7cb6f9}{FREQ\+\_\+\+TO\+\_\+\+PHASE\+\_\+\+INC}}(freq)~(freq/(float)\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a3eb99e954f887af9ce174b8158f3b993}{MIN\+\_\+\+PHASE\+\_\+\+INC}}~\mbox{\hyperlink{patest__maxsines_8c_addd6f50172b0556ca0225631ef7cb6f9}{FREQ\+\_\+\+TO\+\_\+\+PHASE\+\_\+\+INC}}(200.\+0f)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a563294831e4d20c83059844f70262d6e}{MAX\+\_\+\+PHASE\+\_\+\+INC}}~(\mbox{\hyperlink{patest__maxsines_8c_a3eb99e954f887af9ce174b8158f3b993}{MIN\+\_\+\+PHASE\+\_\+\+INC}} $\ast$ (1 $<$$<$ 5))
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(512)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}}~(3.\+14159265)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a4912c64aec0c943b7985db6cb61ff83a}{TWOPI}}~(\mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 2.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__maxsines_8c_a032503e76d6f69bc67e99e909c8125da}{TABLE\+\_\+\+SIZE}}~(1024)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} \mbox{\hyperlink{patest__maxsines_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{patest__maxsines_8c_aacd8c9f6a4739f4b76071a5d530216d3}{Lookup\+Sine}} (\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}}, float phase)
+\item 
+int \mbox{\hyperlink{patest__maxsines_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+How many sine waves can we calculate and play in less than 80\% CPU Load. 
+
+\begin{DoxyAuthor}{Author}
+Ross Bencina \href{mailto:rossb@audiomulch.com}{\texttt{ rossb@audiomulch.\+com}} 
+
+Phil Burk \href{mailto:philburk@softsynth.com}{\texttt{ philburk@softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__maxsines_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__maxsines_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(512)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_addd6f50172b0556ca0225631ef7cb6f9}\label{patest__maxsines_8c_addd6f50172b0556ca0225631ef7cb6f9}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!FREQ\_TO\_PHASE\_INC@{FREQ\_TO\_PHASE\_INC}}
+\index{FREQ\_TO\_PHASE\_INC@{FREQ\_TO\_PHASE\_INC}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{FREQ\_TO\_PHASE\_INC}{FREQ\_TO\_PHASE\_INC}}
+{\footnotesize\ttfamily \#define FREQ\+\_\+\+TO\+\_\+\+PHASE\+\_\+\+INC(\begin{DoxyParamCaption}\item[{}]{freq }\end{DoxyParamCaption})~(freq/(float)\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{patest__maxsines_8c_ae71449b1cc6e6250b91f539153a7a0d3}\label{patest__maxsines_8c_ae71449b1cc6e6250b91f539153a7a0d3}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!M\_PI@{M\_PI}}
+\index{M\_PI@{M\_PI}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{M\_PI}{M\_PI}}
+{\footnotesize\ttfamily \#define M\+\_\+\+PI~(3.\+14159265)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a563294831e4d20c83059844f70262d6e}\label{patest__maxsines_8c_a563294831e4d20c83059844f70262d6e}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!MAX\_PHASE\_INC@{MAX\_PHASE\_INC}}
+\index{MAX\_PHASE\_INC@{MAX\_PHASE\_INC}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_PHASE\_INC}{MAX\_PHASE\_INC}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PHASE\+\_\+\+INC~(\mbox{\hyperlink{patest__maxsines_8c_a3eb99e954f887af9ce174b8158f3b993}{MIN\+\_\+\+PHASE\+\_\+\+INC}} $\ast$ (1 $<$$<$ 5))}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a87ff49addd1c58256bfc38ae94ab5734}\label{patest__maxsines_8c_a87ff49addd1c58256bfc38ae94ab5734}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!MAX\_SINES@{MAX\_SINES}}
+\index{MAX\_SINES@{MAX\_SINES}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_SINES}{MAX\_SINES}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SINES~(2000)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a0f986fcf5d0b1620404975b5086f2ba2}\label{patest__maxsines_8c_a0f986fcf5d0b1620404975b5086f2ba2}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!MAX\_USAGE@{MAX\_USAGE}}
+\index{MAX\_USAGE@{MAX\_USAGE}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_USAGE}{MAX\_USAGE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+USAGE~(0.\+5)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a3eb99e954f887af9ce174b8158f3b993}\label{patest__maxsines_8c_a3eb99e954f887af9ce174b8158f3b993}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!MIN\_PHASE\_INC@{MIN\_PHASE\_INC}}
+\index{MIN\_PHASE\_INC@{MIN\_PHASE\_INC}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{MIN\_PHASE\_INC}{MIN\_PHASE\_INC}}
+{\footnotesize\ttfamily \#define MIN\+\_\+\+PHASE\+\_\+\+INC~\mbox{\hyperlink{patest__maxsines_8c_addd6f50172b0556ca0225631ef7cb6f9}{FREQ\+\_\+\+TO\+\_\+\+PHASE\+\_\+\+INC}}(200.\+0f)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__maxsines_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a032503e76d6f69bc67e99e909c8125da}\label{patest__maxsines_8c_a032503e76d6f69bc67e99e909c8125da}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!TABLE\_SIZE@{TABLE\_SIZE}}
+\index{TABLE\_SIZE@{TABLE\_SIZE}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{TABLE\_SIZE}{TABLE\_SIZE}}
+{\footnotesize\ttfamily \#define TABLE\+\_\+\+SIZE~(1024)}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a4912c64aec0c943b7985db6cb61ff83a}\label{patest__maxsines_8c_a4912c64aec0c943b7985db6cb61ff83a}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!TWOPI@{TWOPI}}
+\index{TWOPI@{TWOPI}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{TWOPI}{TWOPI}}
+{\footnotesize\ttfamily \#define TWOPI~(\mbox{\hyperlink{paex__mono__asio__channel__select_8c_ae71449b1cc6e6250b91f539153a7a0d3}{M\+\_\+\+PI}} $\ast$ 2.\+0)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{patest__maxsines_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}\label{patest__maxsines_8c_a6ad5c62f9ba4b92a80918ace9aba2dcb}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!paTestData@{paTestData}}
+\index{paTestData@{paTestData}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{paTestData}{paTestData}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__maxsines_8c_aacd8c9f6a4739f4b76071a5d530216d3}\label{patest__maxsines_8c_aacd8c9f6a4739f4b76071a5d530216d3}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!LookupSine@{LookupSine}}
+\index{LookupSine@{LookupSine}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{LookupSine()}{LookupSine()}}
+{\footnotesize\ttfamily float Lookup\+Sine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}} $\ast$}]{data,  }\item[{float}]{phase }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{patest__maxsines_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__maxsines_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_maxsines.c@{patest\_maxsines.c}!main@{main}}
+\index{main@{main}!patest\_maxsines.c@{patest\_maxsines.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

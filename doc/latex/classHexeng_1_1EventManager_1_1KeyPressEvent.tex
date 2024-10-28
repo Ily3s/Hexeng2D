@@ -1,0 +1,123 @@
+\doxysection{Hexeng\+::Event\+Manager\+::Key\+Press\+Event Class Reference}
+\hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent}{}\label{classHexeng_1_1EventManager_1_1KeyPressEvent}\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+
+
+Unlike other events, \doxylink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event} isn\textquotesingle{}t related to the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop.  
+
+
+
+
+{\ttfamily \#include $<$Input\+Event.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_ab30c70312cd777ea6ea223fc5b3b662d}{Key\+Press\+Event}} (int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_ab6ffbd5b38009e2835ad865e47b0480c}{key\+\_\+code}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a909320563ae20ba7953849984f220b07}{action}}, int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a8114518cd6b0ae6d48230e53915fabec}{mode}}=GLFW\+\_\+\+PRESS)
+\begin{DoxyCompactList}\small\item\em Executes action each time the key or button key\+\_\+code is triggered in the \"{}mode\"{} mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a2a2514d6c784ab1f0ca43186da6826ac}{Key\+Press\+Event}} ()=default
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a3c69d199f7e83cad652c3873c8356993}{Key\+Press\+Event}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \& \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a19f470fe45b9b0d76b0a9538a7e816f1}{operator=}} (\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a909320563ae20ba7953849984f220b07}{action}}
+\item 
+int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_ab6ffbd5b38009e2835ad865e47b0480c}{key\+\_\+code}} = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+1
+\item 
+int \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a8114518cd6b0ae6d48230e53915fabec}{mode}} = GLFW\+\_\+\+PRESS
+\item 
+bool \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a17aa84781f7388dc3e2bc122b975a12a}{enable}} = true
+\item 
+bool \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a79e181e4b2ff8f974078f7419f08d6ed}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a17aa84781f7388dc3e2bc122b975a12a}{enable}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unlike other events, \doxylink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event} isn\textquotesingle{}t related to the \doxylink{namespaceHexeng_1_1EventManager}{Event\+Manager} loop. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_ab30c70312cd777ea6ea223fc5b3b662d}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_ab30c70312cd777ea6ea223fc5b3b662d} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!KeyPressEvent@{KeyPressEvent}}
+\index{KeyPressEvent@{KeyPressEvent}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{KeyPressEvent()}{KeyPressEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::\+Key\+Press\+Event (\begin{DoxyParamCaption}\item[{int}]{key\+\_\+code,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{int}]{mode = {\ttfamily GLFW\+\_\+PRESS} }\end{DoxyParamCaption})}
+
+
+
+Executes action each time the key or button key\+\_\+code is triggered in the \"{}mode\"{} mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\+\_\+code} & A glfw key or button code\\
+\hline
+{\em mode} & The mode of the trigger (GLFW\+\_\+\+PRESS, GLFW\+\_\+\+RELEASE, ...)\\
+\hline
+\end{DoxyParams}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a2a2514d6c784ab1f0ca43186da6826ac}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a2a2514d6c784ab1f0ca43186da6826ac} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!KeyPressEvent@{KeyPressEvent}}
+\index{KeyPressEvent@{KeyPressEvent}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{KeyPressEvent()}{KeyPressEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::\+Key\+Press\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a3c69d199f7e83cad652c3873c8356993}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a3c69d199f7e83cad652c3873c8356993} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!KeyPressEvent@{KeyPressEvent}}
+\index{KeyPressEvent@{KeyPressEvent}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{KeyPressEvent()}{KeyPressEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::\+Key\+Press\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a19f470fe45b9b0d76b0a9538a7e816f1}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a19f470fe45b9b0d76b0a9538a7e816f1} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \& Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent}{Key\+Press\+Event}} \&\&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a909320563ae20ba7953849984f220b07}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a909320563ae20ba7953849984f220b07} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!action@{action}}
+\index{action@{action}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::action}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a17aa84781f7388dc3e2bc122b975a12a}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a17aa84781f7388dc3e2bc122b975a12a} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!enable@{enable}}
+\index{enable@{enable}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::enable = true}
+
+\begin{DoxyNote}{Note}
+Can always be modified. Useless if enable\+\_\+ptr != \&enable. 
+\end{DoxyNote}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a79e181e4b2ff8f974078f7419f08d6ed}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a79e181e4b2ff8f974078f7419f08d6ed} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!enable\_ptr@{enable\_ptr}}
+\index{enable\_ptr@{enable\_ptr}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
+{\footnotesize\ttfamily bool\texorpdfstring{$\ast$}{*} Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::enable\+\_\+ptr = \&\mbox{\hyperlink{classHexeng_1_1EventManager_1_1KeyPressEvent_a17aa84781f7388dc3e2bc122b975a12a}{enable}}}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_ab6ffbd5b38009e2835ad865e47b0480c}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_ab6ffbd5b38009e2835ad865e47b0480c} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!key\_code@{key\_code}}
+\index{key\_code@{key\_code}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{key\_code}{key\_code}}
+{\footnotesize\ttfamily int Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::key\+\_\+code = GLFW\+\_\+\+MOUSE\+\_\+\+BUTTON\+\_\+1}
+
+\Hypertarget{classHexeng_1_1EventManager_1_1KeyPressEvent_a8114518cd6b0ae6d48230e53915fabec}\label{classHexeng_1_1EventManager_1_1KeyPressEvent_a8114518cd6b0ae6d48230e53915fabec} 
+\index{Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}!mode@{mode}}
+\index{mode@{mode}!Hexeng::EventManager::KeyPressEvent@{Hexeng::EventManager::KeyPressEvent}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily int Hexeng\+::\+Event\+Manager\+::\+Key\+Press\+Event\+::mode = GLFW\+\_\+\+PRESS}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{InputEvent_8hpp}{Input\+Event.\+hpp}}\end{DoxyCompactItemize}

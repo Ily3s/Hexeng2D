@@ -1,0 +1,226 @@
+\doxysection{Hexeng\+::Renderer\+::Uniform\texorpdfstring{$<$}{<} VEC \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classHexeng_1_1Renderer_1_1Uniform}{}\label{classHexeng_1_1Renderer_1_1Uniform}\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+
+
+{\ttfamily \#include $<$Uniform.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Uniform\texorpdfstring{$<$}{<} VEC \texorpdfstring{$>$}{>}\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHexeng_1_1Renderer_1_1Uniform}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a613973534f3d201c6a4fff5017750c72}{Uniform}} (const \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a607da14eb07319980e17c275131c0046}{Uniform\+Args}} \&arguments=\{\})
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a2b465478f0e80ff874b4c05290da13f9}{Uniform}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}} \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a4385730d9ef846964ed04a413ac83147}{operator=}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}} \&\&) noexcept
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_ad94bb5026e3cebf5a2b381b73fbceda6}{refresh}} ()
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in all shaders that implement it, using the \"{}controller\"{} variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a85161d31ad3c6cbf235c80e2ae80dd22}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad) override
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in the \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} shad, using the \"{}controller\"{} variable. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a3b5c5fb9a97fe49c66531ba00a835a6e}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad, void \texorpdfstring{$\ast$}{*}value) override
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in the \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} shad, using value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_ad5047cc80d6447ab5f6fa2e6ab983200}{refresh}} (void \texorpdfstring{$\ast$}{*}value) override
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform in all shaders that implement it, using value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_ad4448643389ec78dabc9aaee519fad09}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad, const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&values) override
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform (in the shader shad) using a multiples entries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_a7af29bb0ca0d70307460349f3934c10b}{refresh}} (const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&values) override
+\begin{DoxyCompactList}\small\item\em Refreshes the uniform using a multiples entries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8dd5c236308a98ef356a871c9e6cb6c5}{Uniform\+Interface}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_adf104f574a2ba75b8b3bcedc6a4a9b37}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad, void \texorpdfstring{$\ast$}{*}value)=0
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a13806143301731451ada3507a8c01ebf}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad)=0
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_af7e78416c58b42225bcead63f1bd875f}{refresh}} ()=0
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8d8483a8da74f05615ce40607af1a58f}{refresh}} (void \texorpdfstring{$\ast$}{*}value)=0
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a05ef143b40554cfb0b3e9ba51125c718}{refresh}} (\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}shad, const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&values)=0
+\item 
+virtual void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_ac3aa0a9a1bc622a1430f5c9044f3e32f}{refresh}} (const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&values)=0
+\item 
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_aa4d29fe8ae660a688bccd4bc7d9fbeca}{add\+\_\+shaders}} (const std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*} $>$ \&shad\+\_\+list)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const VEC \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform_adc515417a7f9b6024052b9064eb0fcab}{value\+\_\+ptr}} = nullptr
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}, int $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a803b272e8f613f4d2eac6e9bee5f3e5a}{shader\+\_\+list}}
+\item 
+std\+::string \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a64c1a479f261949637cc0ccf1763bfbb}{uniform\+\_\+name}}
+\item 
+\mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8729e52e79f0b2c0bf32f730a17651c9}{fusion\+\_\+mode}} = \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{Uniform\+Fusion\+Mode\+::\+SUM}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Attributes inherited from \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface}{Uniform\+Interface}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a21e595a97faad352b7d11c486feac8c7}{necessary\+\_\+uniforms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename VEC$>$\newline
+class Hexeng\+::\+Renderer\+::\+Uniform$<$ VEC $>$}
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em VEC} & The type of value that the uniform deals with.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyNote}{Note}
+VEC is not necessarily a Vec$<$\+T$>$, it can also be a native type like int or float. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a613973534f3d201c6a4fff5017750c72}\label{classHexeng_1_1Renderer_1_1Uniform_a613973534f3d201c6a4fff5017750c72} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!Uniform@{Uniform}}
+\index{Uniform@{Uniform}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{Uniform()}{Uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::\+Uniform (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceHexeng_1_1Renderer_a607da14eb07319980e17c275131c0046}{Uniform\+Args}} \&}]{arguments = {\ttfamily \{\}} }\end{DoxyParamCaption})}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a2b465478f0e80ff874b4c05290da13f9}\label{classHexeng_1_1Renderer_1_1Uniform_a2b465478f0e80ff874b4c05290da13f9} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!Uniform@{Uniform}}
+\index{Uniform@{Uniform}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{Uniform()}{Uniform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::\+Uniform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ VEC $>$ \&\&}]{moving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a4385730d9ef846964ed04a413ac83147}\label{classHexeng_1_1Renderer_1_1Uniform_a4385730d9ef846964ed04a413ac83147} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ VEC $>$ \& \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Uniform}}$<$ VEC $>$ \&\&}]{moving }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_ad94bb5026e3cebf5a2b381b73fbceda6}\label{classHexeng_1_1Renderer_1_1Uniform_ad94bb5026e3cebf5a2b381b73fbceda6} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in all shaders that implement it, using the \"{}controller\"{} variable. 
+
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_af7e78416c58b42225bcead63f1bd875f}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a7af29bb0ca0d70307460349f3934c10b}\label{classHexeng_1_1Renderer_1_1Uniform_a7af29bb0ca0d70307460349f3934c10b} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform using a multiples entries. 
+
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_ac3aa0a9a1bc622a1430f5c9044f3e32f}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a85161d31ad3c6cbf235c80e2ae80dd22}\label{classHexeng_1_1Renderer_1_1Uniform_a85161d31ad3c6cbf235c80e2ae80dd22} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in the \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} shad, using the \"{}controller\"{} variable. 
+
+\begin{DoxyPrecond}{Precondition}
+shad must be a shader that implements this uniform and must be already bound. 
+\end{DoxyPrecond}
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a13806143301731451ada3507a8c01ebf}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_ad4448643389ec78dabc9aaee519fad09}\label{classHexeng_1_1Renderer_1_1Uniform_ad4448643389ec78dabc9aaee519fad09} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shad,  }\item[{const std\+::vector$<$ void \texorpdfstring{$\ast$}{*} $>$ \&}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform (in the shader shad) using a multiples entries. 
+
+\begin{DoxyPrecond}{Precondition}
+shad must be a shader that implements this uniform and must be already bound. 
+\end{DoxyPrecond}
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a05ef143b40554cfb0b3e9ba51125c718}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_a3b5c5fb9a97fe49c66531ba00a835a6e}\label{classHexeng_1_1Renderer_1_1Uniform_a3b5c5fb9a97fe49c66531ba00a835a6e} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}} \texorpdfstring{$\ast$}{*}}]{shad,  }\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in the \doxylink{classHexeng_1_1Renderer_1_1Shader}{Shader} shad, using value. 
+
+\begin{DoxyPrecond}{Precondition}
+shad must be a shader that implements this uniform and must be already bound. 
+\end{DoxyPrecond}
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_adf104f574a2ba75b8b3bcedc6a4a9b37}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_ad5047cc80d6447ab5f6fa2e6ab983200}\label{classHexeng_1_1Renderer_1_1Uniform_ad5047cc80d6447ab5f6fa2e6ab983200} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!refresh@{refresh}}
+\index{refresh@{refresh}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+void \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::refresh (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Refreshes the uniform in all shaders that implement it, using value. 
+
+
+
+Implements \mbox{\hyperlink{classHexeng_1_1Renderer_1_1UniformInterface_a8d8483a8da74f05615ce40607af1a58f}{Hexeng\+::\+Renderer\+::\+Uniform\+Interface}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classHexeng_1_1Renderer_1_1Uniform_adc515417a7f9b6024052b9064eb0fcab}\label{classHexeng_1_1Renderer_1_1Uniform_adc515417a7f9b6024052b9064eb0fcab} 
+\index{Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}!value\_ptr@{value\_ptr}}
+\index{value\_ptr@{value\_ptr}!Hexeng::Renderer::Uniform$<$ VEC $>$@{Hexeng::Renderer::Uniform$<$ VEC $>$}}
+\doxysubsubsection{\texorpdfstring{value\_ptr}{value\_ptr}}
+{\footnotesize\ttfamily template$<$typename VEC $>$ \\
+const VEC\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Uniform}{Hexeng\+::\+Renderer\+::\+Uniform}}$<$ VEC $>$\+::value\+\_\+ptr = nullptr}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{Uniform_8hpp}{Uniform.\+hpp}}\end{DoxyCompactItemize}

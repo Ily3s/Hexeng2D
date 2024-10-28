@@ -1,0 +1,38 @@
+\hypertarget{_physics_8hpp_source}{}\doxysection{Physics.\+hpp}
+\label{_physics_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Physics.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Physics/Physics.hpp}}
+\mbox{\hyperlink{_physics_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PHYSICS\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PHYSICS\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_hibox_8hpp}{Hibox.hpp}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mouvement_8hpp}{Mouvement.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_mesh_8hpp}{Renderer/Mesh.hpp}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{17 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_physics}{Hexeng::Physics}}}
+\DoxyCodeLine{18 \{}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_entity}{PhysicsEntity}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_hit_box}{HitBox}}, \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_vecs}{PhysicsVecs}}}
+\DoxyCodeLine{21     \{}
+\DoxyCodeLine{22     private :}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24         \textcolor{keyword}{static} std::vector<PhysicsEntity*> s\_entities;}
+\DoxyCodeLine{25         \textcolor{keyword}{static} \textcolor{keywordtype}{void} update\_positions\_all();}
+\DoxyCodeLine{26         \textcolor{keywordtype}{void} update\_positions();}
+\DoxyCodeLine{27         \textcolor{keywordtype}{void} update\_rec\_position(\mbox{\hyperlink{struct_hexeng_1_1_physics_1_1_rectangle_hit_box}{RectangleHitBox}}\& rec);}
+\DoxyCodeLine{28         \textcolor{keyword}{static} \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_gate}{EventManager::EventGate}} update\_position\_evt;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     public :}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32         \mbox{\hyperlink{class_hexeng_1_1_physics_1_1_physics_entity}{PhysicsEntity}}(std::vector<RectangleHitBox> rectangles, \textcolor{keywordtype}{int} solidity);}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34         \textcolor{keywordtype}{void} on\_collision(std::pair<RectangleHitBox*, RectangleHitBox*>) \textcolor{keyword}{override};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

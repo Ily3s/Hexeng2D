@@ -1,0 +1,261 @@
+\hypertarget{struct_pa_wasapi_stream}{}\doxysection{Pa\+Wasapi\+Stream Struct Reference}
+\label{struct_pa_wasapi_stream}\index{PaWasapiStream@{PaWasapiStream}}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} \mbox{\hyperlink{struct_pa_wasapi_stream_a05e4c67863aa5f87417a7c0ea031d1ee}{stream\+Representation}}
+\item 
+\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} \mbox{\hyperlink{struct_pa_wasapi_stream_aec37a2f4bcafd3f1a595a46e5393bd64}{cpu\+Load\+Measurer}}
+\item 
+\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} \mbox{\hyperlink{struct_pa_wasapi_stream_ae7e8fbc3c2a11f64f16a7f393c5e9c63}{buffer\+Processor}}
+\item 
+\mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} \mbox{\hyperlink{struct_pa_wasapi_stream_a0800ee4bf755e3ea24aa501c1ae4edc9}{in}}
+\item 
+\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a79c5cda43724aea8ff7d283a2ac66976}{capture\+Client\+Parent}}
+\item 
+IStream $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a315d06c7f23d23f05f90579a80d0530d}{capture\+Client\+Stream}}
+\item 
+\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a39f6a52addd1b6454fc7e151446fcd2c}{capture\+Client}}
+\item 
+\mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudio\+Endpoint\+Volume}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a035111d1e825146eae105bd83d810397}{in\+Vol}}
+\item 
+\mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} \mbox{\hyperlink{struct_pa_wasapi_stream_a995c67eb832e26e5f9e092e06d93799d}{out}}
+\item 
+\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a28a861cf6e64e4f1b45d4f774052cc42}{render\+Client\+Parent}}
+\item 
+IStream $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_ad546e7693db4ddf90b1ad148c43292bd}{render\+Client\+Stream}}
+\item 
+\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a6abc7bc5a7514d6de28dec4a623c2e93}{render\+Client}}
+\item 
+\mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudio\+Endpoint\+Volume}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_a91aaed1fbd340608a77d1515e4445214}{out\+Vol}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_ac69c31cb5e9c6bb1b6736c660533cbfa}{event}} \mbox{[}\mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051eacac8c5a7329bfb86776b1d827f2f2e83}{S\+\_\+\+COUNT}}\mbox{]}
+\item 
+\mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}} \mbox{\hyperlink{struct_pa_wasapi_stream_a4fcab5da3c205bf8b13519a37d771e7a}{buffer\+Mode}}
+\item 
+volatile BOOL \mbox{\hyperlink{struct_pa_wasapi_stream_ac1313a56adbfbc1ce31b0f1ff30ab207}{running}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}} \mbox{\hyperlink{struct_pa_wasapi_stream_abc0700afb38a68d4cbd42ee54aca2d82}{dw\+Thread\+Id}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_ad3e65e6b5962b82233fbe966a676c286}{h\+Thread}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_afae3ff3b21cdba0ada40c7f8660d667b}{h\+Close\+Request}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_a868659eb654efd86e5bd0ed49c623656}{h\+Thread\+Start}}
+\begin{DoxyCompactList}\small\item\em signalled by thread on start \end{DoxyCompactList}\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_ad03150fdcbb572f9faf8fed472333e50}{h\+Thread\+Exit}}
+\begin{DoxyCompactList}\small\item\em signalled by thread on exit \end{DoxyCompactList}\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_a2298014f2cc2a5af5608ce2171c46429}{h\+Blocking\+Op\+Stream\+RD}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_a0be8d98886549882563c9b16c2b3009f}{h\+Blocking\+Op\+Stream\+WR}}
+\item 
+\mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} \mbox{\hyperlink{struct_pa_wasapi_stream_ae0471e5b5c15f54c59c57980d9faec48}{host\+Process\+Override\+Output}}
+\item 
+\mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} \mbox{\hyperlink{struct_pa_wasapi_stream_a07ec66d5779ded1801200467021884e1}{host\+Process\+Override\+Input}}
+\item 
+BOOL \mbox{\hyperlink{struct_pa_wasapi_stream_a2497dda1ef25d7673f3a67553c2b5a0e}{b\+Blocking}}
+\item 
+HANDLE \mbox{\hyperlink{struct_pa_wasapi_stream_aae3a56871d156b6d8cfa2e070b408103}{h\+Av\+Task}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} \mbox{\hyperlink{struct_pa_wasapi_stream_a49a89c3dc97a1a541891b75f303ef7f0}{n\+Thread\+Priority}}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}} \mbox{\hyperlink{struct_pa_wasapi_stream_a6db707609cf3daf9e545fe430c0e25f0}{fn\+State\+Handler}}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{struct_pa_wasapi_stream_ad23783e113ff64c5cb1d92dfe95fcb89}{p\+State\+Handler\+User\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a2497dda1ef25d7673f3a67553c2b5a0e}\label{struct_pa_wasapi_stream_a2497dda1ef25d7673f3a67553c2b5a0e}} 
+\index{PaWasapiStream@{PaWasapiStream}!bBlocking@{bBlocking}}
+\index{bBlocking@{bBlocking}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{bBlocking}{bBlocking}}
+{\footnotesize\ttfamily BOOL Pa\+Wasapi\+Stream\+::b\+Blocking}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a4fcab5da3c205bf8b13519a37d771e7a}\label{struct_pa_wasapi_stream_a4fcab5da3c205bf8b13519a37d771e7a}} 
+\index{PaWasapiStream@{PaWasapiStream}!bufferMode@{bufferMode}}
+\index{bufferMode@{bufferMode}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{bufferMode}{bufferMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__process_8h_a16c84d8c0ac62944797f530bf852484f}{Pa\+Util\+Host\+Buffer\+Size\+Mode}} Pa\+Wasapi\+Stream\+::buffer\+Mode}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ae7e8fbc3c2a11f64f16a7f393c5e9c63}\label{struct_pa_wasapi_stream_ae7e8fbc3c2a11f64f16a7f393c5e9c63}} 
+\index{PaWasapiStream@{PaWasapiStream}!bufferProcessor@{bufferProcessor}}
+\index{bufferProcessor@{bufferProcessor}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{bufferProcessor}{bufferProcessor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} Pa\+Wasapi\+Stream\+::buffer\+Processor}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a39f6a52addd1b6454fc7e151446fcd2c}\label{struct_pa_wasapi_stream_a39f6a52addd1b6454fc7e151446fcd2c}} 
+\index{PaWasapiStream@{PaWasapiStream}!captureClient@{captureClient}}
+\index{captureClient@{captureClient}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{captureClient}{captureClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}$\ast$ Pa\+Wasapi\+Stream\+::capture\+Client}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a79c5cda43724aea8ff7d283a2ac66976}\label{struct_pa_wasapi_stream_a79c5cda43724aea8ff7d283a2ac66976}} 
+\index{PaWasapiStream@{PaWasapiStream}!captureClientParent@{captureClientParent}}
+\index{captureClientParent@{captureClientParent}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{captureClientParent}{captureClientParent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}$\ast$ Pa\+Wasapi\+Stream\+::capture\+Client\+Parent}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a315d06c7f23d23f05f90579a80d0530d}\label{struct_pa_wasapi_stream_a315d06c7f23d23f05f90579a80d0530d}} 
+\index{PaWasapiStream@{PaWasapiStream}!captureClientStream@{captureClientStream}}
+\index{captureClientStream@{captureClientStream}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{captureClientStream}{captureClientStream}}
+{\footnotesize\ttfamily IStream$\ast$ Pa\+Wasapi\+Stream\+::capture\+Client\+Stream}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_aec37a2f4bcafd3f1a595a46e5393bd64}\label{struct_pa_wasapi_stream_aec37a2f4bcafd3f1a595a46e5393bd64}} 
+\index{PaWasapiStream@{PaWasapiStream}!cpuLoadMeasurer@{cpuLoadMeasurer}}
+\index{cpuLoadMeasurer@{cpuLoadMeasurer}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{cpuLoadMeasurer}{cpuLoadMeasurer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} Pa\+Wasapi\+Stream\+::cpu\+Load\+Measurer}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_abc0700afb38a68d4cbd42ee54aca2d82}\label{struct_pa_wasapi_stream_abc0700afb38a68d4cbd42ee54aca2d82}} 
+\index{PaWasapiStream@{PaWasapiStream}!dwThreadId@{dwThreadId}}
+\index{dwThreadId@{dwThreadId}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{dwThreadId}{dwThreadId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}} Pa\+Wasapi\+Stream\+::dw\+Thread\+Id}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ac69c31cb5e9c6bb1b6736c660533cbfa}\label{struct_pa_wasapi_stream_ac69c31cb5e9c6bb1b6736c660533cbfa}} 
+\index{PaWasapiStream@{PaWasapiStream}!event@{event}}
+\index{event@{event}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::event\mbox{[}\mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051eacac8c5a7329bfb86776b1d827f2f2e83}{S\+\_\+\+COUNT}}\mbox{]}}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a6db707609cf3daf9e545fe430c0e25f0}\label{struct_pa_wasapi_stream_a6db707609cf3daf9e545fe430c0e25f0}} 
+\index{PaWasapiStream@{PaWasapiStream}!fnStateHandler@{fnStateHandler}}
+\index{fnStateHandler@{fnStateHandler}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{fnStateHandler}{fnStateHandler}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}} Pa\+Wasapi\+Stream\+::fn\+State\+Handler}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_aae3a56871d156b6d8cfa2e070b408103}\label{struct_pa_wasapi_stream_aae3a56871d156b6d8cfa2e070b408103}} 
+\index{PaWasapiStream@{PaWasapiStream}!hAvTask@{hAvTask}}
+\index{hAvTask@{hAvTask}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hAvTask}{hAvTask}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Av\+Task}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a2298014f2cc2a5af5608ce2171c46429}\label{struct_pa_wasapi_stream_a2298014f2cc2a5af5608ce2171c46429}} 
+\index{PaWasapiStream@{PaWasapiStream}!hBlockingOpStreamRD@{hBlockingOpStreamRD}}
+\index{hBlockingOpStreamRD@{hBlockingOpStreamRD}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hBlockingOpStreamRD}{hBlockingOpStreamRD}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Blocking\+Op\+Stream\+RD}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a0be8d98886549882563c9b16c2b3009f}\label{struct_pa_wasapi_stream_a0be8d98886549882563c9b16c2b3009f}} 
+\index{PaWasapiStream@{PaWasapiStream}!hBlockingOpStreamWR@{hBlockingOpStreamWR}}
+\index{hBlockingOpStreamWR@{hBlockingOpStreamWR}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hBlockingOpStreamWR}{hBlockingOpStreamWR}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Blocking\+Op\+Stream\+WR}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_afae3ff3b21cdba0ada40c7f8660d667b}\label{struct_pa_wasapi_stream_afae3ff3b21cdba0ada40c7f8660d667b}} 
+\index{PaWasapiStream@{PaWasapiStream}!hCloseRequest@{hCloseRequest}}
+\index{hCloseRequest@{hCloseRequest}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hCloseRequest}{hCloseRequest}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Close\+Request}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a07ec66d5779ded1801200467021884e1}\label{struct_pa_wasapi_stream_a07ec66d5779ded1801200467021884e1}} 
+\index{PaWasapiStream@{PaWasapiStream}!hostProcessOverrideInput@{hostProcessOverrideInput}}
+\index{hostProcessOverrideInput@{hostProcessOverrideInput}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hostProcessOverrideInput}{hostProcessOverrideInput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} Pa\+Wasapi\+Stream\+::host\+Process\+Override\+Input}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ae0471e5b5c15f54c59c57980d9faec48}\label{struct_pa_wasapi_stream_ae0471e5b5c15f54c59c57980d9faec48}} 
+\index{PaWasapiStream@{PaWasapiStream}!hostProcessOverrideOutput@{hostProcessOverrideOutput}}
+\index{hostProcessOverrideOutput@{hostProcessOverrideOutput}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hostProcessOverrideOutput}{hostProcessOverrideOutput}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} Pa\+Wasapi\+Stream\+::host\+Process\+Override\+Output}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ad3e65e6b5962b82233fbe966a676c286}\label{struct_pa_wasapi_stream_ad3e65e6b5962b82233fbe966a676c286}} 
+\index{PaWasapiStream@{PaWasapiStream}!hThread@{hThread}}
+\index{hThread@{hThread}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hThread}{hThread}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Thread}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ad03150fdcbb572f9faf8fed472333e50}\label{struct_pa_wasapi_stream_ad03150fdcbb572f9faf8fed472333e50}} 
+\index{PaWasapiStream@{PaWasapiStream}!hThreadExit@{hThreadExit}}
+\index{hThreadExit@{hThreadExit}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hThreadExit}{hThreadExit}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Thread\+Exit}
+
+
+
+signalled by thread on exit 
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a868659eb654efd86e5bd0ed49c623656}\label{struct_pa_wasapi_stream_a868659eb654efd86e5bd0ed49c623656}} 
+\index{PaWasapiStream@{PaWasapiStream}!hThreadStart@{hThreadStart}}
+\index{hThreadStart@{hThreadStart}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{hThreadStart}{hThreadStart}}
+{\footnotesize\ttfamily HANDLE Pa\+Wasapi\+Stream\+::h\+Thread\+Start}
+
+
+
+signalled by thread on start 
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a0800ee4bf755e3ea24aa501c1ae4edc9}\label{struct_pa_wasapi_stream_a0800ee4bf755e3ea24aa501c1ae4edc9}} 
+\index{PaWasapiStream@{PaWasapiStream}!in@{in}}
+\index{in@{in}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{in}{in}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} Pa\+Wasapi\+Stream\+::in}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a035111d1e825146eae105bd83d810397}\label{struct_pa_wasapi_stream_a035111d1e825146eae105bd83d810397}} 
+\index{PaWasapiStream@{PaWasapiStream}!inVol@{inVol}}
+\index{inVol@{inVol}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{inVol}{inVol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudio\+Endpoint\+Volume}}$\ast$ Pa\+Wasapi\+Stream\+::in\+Vol}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a49a89c3dc97a1a541891b75f303ef7f0}\label{struct_pa_wasapi_stream_a49a89c3dc97a1a541891b75f303ef7f0}} 
+\index{PaWasapiStream@{PaWasapiStream}!nThreadPriority@{nThreadPriority}}
+\index{nThreadPriority@{nThreadPriority}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{nThreadPriority}{nThreadPriority}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} Pa\+Wasapi\+Stream\+::n\+Thread\+Priority}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a995c67eb832e26e5f9e092e06d93799d}\label{struct_pa_wasapi_stream_a995c67eb832e26e5f9e092e06d93799d}} 
+\index{PaWasapiStream@{PaWasapiStream}!out@{out}}
+\index{out@{out}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{out}{out}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} Pa\+Wasapi\+Stream\+::out}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a91aaed1fbd340608a77d1515e4445214}\label{struct_pa_wasapi_stream_a91aaed1fbd340608a77d1515e4445214}} 
+\index{PaWasapiStream@{PaWasapiStream}!outVol@{outVol}}
+\index{outVol@{outVol}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{outVol}{outVol}}
+{\footnotesize\ttfamily \mbox{\hyperlink{endpointvolume_8h_a0aa518a24cb3834bf372f46cfc94e3cf}{IAudio\+Endpoint\+Volume}}$\ast$ Pa\+Wasapi\+Stream\+::out\+Vol}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ad23783e113ff64c5cb1d92dfe95fcb89}\label{struct_pa_wasapi_stream_ad23783e113ff64c5cb1d92dfe95fcb89}} 
+\index{PaWasapiStream@{PaWasapiStream}!pStateHandlerUserData@{pStateHandlerUserData}}
+\index{pStateHandlerUserData@{pStateHandlerUserData}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{pStateHandlerUserData}{pStateHandlerUserData}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$ Pa\+Wasapi\+Stream\+::p\+State\+Handler\+User\+Data}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a6abc7bc5a7514d6de28dec4a623c2e93}\label{struct_pa_wasapi_stream_a6abc7bc5a7514d6de28dec4a623c2e93}} 
+\index{PaWasapiStream@{PaWasapiStream}!renderClient@{renderClient}}
+\index{renderClient@{renderClient}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{renderClient}{renderClient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}$\ast$ Pa\+Wasapi\+Stream\+::render\+Client}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a28a861cf6e64e4f1b45d4f774052cc42}\label{struct_pa_wasapi_stream_a28a861cf6e64e4f1b45d4f774052cc42}} 
+\index{PaWasapiStream@{PaWasapiStream}!renderClientParent@{renderClientParent}}
+\index{renderClientParent@{renderClientParent}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{renderClientParent}{renderClientParent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}$\ast$ Pa\+Wasapi\+Stream\+::render\+Client\+Parent}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ad546e7693db4ddf90b1ad148c43292bd}\label{struct_pa_wasapi_stream_ad546e7693db4ddf90b1ad148c43292bd}} 
+\index{PaWasapiStream@{PaWasapiStream}!renderClientStream@{renderClientStream}}
+\index{renderClientStream@{renderClientStream}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{renderClientStream}{renderClientStream}}
+{\footnotesize\ttfamily IStream$\ast$ Pa\+Wasapi\+Stream\+::render\+Client\+Stream}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_ac1313a56adbfbc1ce31b0f1ff30ab207}\label{struct_pa_wasapi_stream_ac1313a56adbfbc1ce31b0f1ff30ab207}} 
+\index{PaWasapiStream@{PaWasapiStream}!running@{running}}
+\index{running@{running}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{running}{running}}
+{\footnotesize\ttfamily volatile BOOL Pa\+Wasapi\+Stream\+::running}
+
+\mbox{\Hypertarget{struct_pa_wasapi_stream_a05e4c67863aa5f87417a7c0ea031d1ee}\label{struct_pa_wasapi_stream_a05e4c67863aa5f87417a7c0ea031d1ee}} 
+\index{PaWasapiStream@{PaWasapiStream}!streamRepresentation@{streamRepresentation}}
+\index{streamRepresentation@{streamRepresentation}!PaWasapiStream@{PaWasapiStream}}
+\doxysubsubsection{\texorpdfstring{streamRepresentation}{streamRepresentation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_stream_representation}{Pa\+Util\+Stream\+Representation}} Pa\+Wasapi\+Stream\+::stream\+Representation}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/\mbox{\hyperlink{pa__win__wasapi_8c}{pa\+\_\+win\+\_\+wasapi.\+c}}\end{DoxyCompactItemize}

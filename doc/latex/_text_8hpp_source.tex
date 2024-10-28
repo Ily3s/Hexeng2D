@@ -1,0 +1,140 @@
+\hypertarget{_text_8hpp_source}{}\doxysection{Text.\+hpp}
+\label{_text_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Text.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Text.hpp}}
+\mbox{\hyperlink{_text_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef TEXT\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define TEXT\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}stb/stb\_truetype.h"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_texture_8hpp}{Renderer/Texture.hpp}}"{}}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_macros_8hpp}{Macros.hpp}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_quad_8hpp}{Renderer/Quad.hpp}}"{}}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_color_8hpp}{Color.hpp}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}}}
+\DoxyCodeLine{16 \{}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_hexeng_1_1_char_box}{CharBox}}}
+\DoxyCodeLine{19     \{}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<float>}} \mbox{\hyperlink{struct_hexeng_1_1_char_box_a431e2d762ae0bb4c49d8426dffae9fac}{min}}, \mbox{\hyperlink{struct_hexeng_1_1_char_box_a2505310bd13212b3e787baf82476bc92}{max}};}
+\DoxyCodeLine{21     \};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{27     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}}
+\DoxyCodeLine{28     \{}
+\DoxyCodeLine{29     public :}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Renderer::TextureVector}} texture\{ \{\{Renderer::TexSett::BASE\_FORMAT, GL\_RED\}, \{Renderer::TexSett::SIZED\_FORMAT, GL\_R8\}\} \};}
+\DoxyCodeLine{32         std::unordered\_map<char32\_t, Renderer::TexCoord> \mbox{\hyperlink{class_hexeng_1_1_font_ad8ba1cb2d2609588099a05380e2d7fb0}{char\_map}};}
+\DoxyCodeLine{33         \textcolor{keywordtype}{float} quality = 0.1f;}
+\DoxyCodeLine{34         stbtt\_fontinfo font\_info\{\};}
+\DoxyCodeLine{35         std::unique\_ptr<uint8\_t[]> file\_buffer = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{36         \textcolor{keywordtype}{int} line\_height = 0, line\_offset = 0;}
+\DoxyCodeLine{37         \textcolor{keywordtype}{float} get\_advancement(\textcolor{keywordtype}{int} c);}
+\DoxyCodeLine{38         \mbox{\hyperlink{struct_hexeng_1_1_char_box}{CharBox}} get\_box(\textcolor{keywordtype}{int} c);}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{41         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}(\textcolor{keyword}{const} std::string\& path, \textcolor{keywordtype}{float} quality = 0.1f);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43         \mbox{\hyperlink{class_hexeng_1_1_font_a8b4918e93d9d83e23727513e06afbe8f}{Font}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45         \mbox{\hyperlink{class_hexeng_1_1_font_a77dfff094eec9c0caaf1815cbf7c52f0}{Font}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{46         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\& \mbox{\hyperlink{class_hexeng_1_1_font_aad5a9ca9a9d9a98584b64b4e2c8a2ccb}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48         \mbox{\hyperlink{class_hexeng_1_1_font_a452f7d5df8033b37c933592fceb05191}{Font}}(\mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\&\&) noexcept = default;}
+\DoxyCodeLine{49         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\&\&) noexcept = default;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51         \textcolor{keywordtype}{void} add\_char(\textcolor{keywordtype}{char32\_t} c);}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     private :}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55         std::\textcolor{keywordtype}{string} m\_filepath;}
+\DoxyCodeLine{56     \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{65     class \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}}
+\DoxyCodeLine{66     \{}
+\DoxyCodeLine{67     public :}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{69         \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}(\textcolor{keyword}{const} std::string\& filepath);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{76         \textcolor{keyword}{static} \textcolor{keywordtype}{void} set\_reference\_language(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}* language);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{84         \textcolor{keyword}{const} std::u32string\& get\_translation(\textcolor{keyword}{const} std::u32string\& input) \textcolor{keyword}{const};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86     private :}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88         \textcolor{keyword}{static} std::unordered\_map<std::u32string, size\_t> s\_reference;}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90         std::unordered\_map<size\_t, std::u32string> m\_language\_table;}
+\DoxyCodeLine{91     \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}}}
+\DoxyCodeLine{94     \{}
+\DoxyCodeLine{95         LEFT,}
+\DoxyCodeLine{96         \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{CENTER}},}
+\DoxyCodeLine{97         RIGHT}
+\DoxyCodeLine{98     \};}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100     \textcolor{keyword}{enum class} \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}}}
+\DoxyCodeLine{101     \{}
+\DoxyCodeLine{102         TOP,}
+\DoxyCodeLine{103         \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418ac397289ee45877be0cd49811fe245b4e}{CENTER}},}
+\DoxyCodeLine{104         BOT}
+\DoxyCodeLine{105     \};}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_text}{Text}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Renderer::Mesh}}}
+\DoxyCodeLine{108     \{}
+\DoxyCodeLine{109     public :}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111         \mbox{\hyperlink{class_hexeng_1_1_text_ad13cabce634eca6c17063fcd207200be}{Text}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{123         }
+\DoxyCodeLine{124         \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}(std::u32string text, \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\& font, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} position, \textcolor{keywordtype}{int} font\_size,}
+\DoxyCodeLine{125             \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}} ha= HorizontalAlign::CENTER, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}} va= VerticalAlign::CENTER, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} c= Color4::white,}
+\DoxyCodeLine{126             \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} box = \{0, 0\}, std::function<void(\textcolor{keyword}{const} std::u32string\&)> use\_what\_doesnt\_fit = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{140         }
+\DoxyCodeLine{141         \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}** language, std::u32string text, \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}\& font, \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} position, \textcolor{keywordtype}{int} font\_size,}
+\DoxyCodeLine{142             \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}} ha = HorizontalAlign::CENTER, \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}} va = VerticalAlign::CENTER, \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} c= Color4::white,}
+\DoxyCodeLine{143             \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2<int>}} box = \{0, 0\}, std::function<void(\textcolor{keyword}{const} std::u32string\&)> use\_what\_doesnt\_fit = \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{144 }
+\DoxyCodeLine{145         \mbox{\hyperlink{class_hexeng_1_1_text_a7e752e44a539ba608c119f29bf6265ad}{Text}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{146         \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\& \mbox{\hyperlink{class_hexeng_1_1_text_a0f14a4f092792ef10479eea01becc149}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148         \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}(\mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\&\&) noexcept;}
+\DoxyCodeLine{149         \mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_text}{Text}}\&\&) noexcept;}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{155         static \textcolor{keywordtype}{void} reload\_language();}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{158         \textcolor{keywordtype}{size\_t} get\_char\_count();}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{165         \textcolor{keywordtype}{void} set\_enabled\_chars(std::vector<\textcolor{keywordtype}{bool}> enabled\_chars);}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167     private :}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169         Renderer::IndexBuffer m\_index\_buffer;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171         std::u32string m\_text;}
+\DoxyCodeLine{172         \mbox{\hyperlink{class_hexeng_1_1_font}{Font}}* m\_font;}
+\DoxyCodeLine{173         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}> m\_pos;}
+\DoxyCodeLine{174         \textcolor{keywordtype}{int} m\_font\_size;}
+\DoxyCodeLine{175         \mbox{\hyperlink{namespace_hexeng_a7bfb19a8e2302f5993179497569ff418}{HorizontalAlign}} m\_ha;}
+\DoxyCodeLine{176         \mbox{\hyperlink{namespace_hexeng_ac960e1eb4420a8e5e61f4314bb733b3e}{VerticalAlign}} m\_va;}
+\DoxyCodeLine{177         const \mbox{\hyperlink{class_hexeng_1_1_language}{Language}}** m\_language = \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179         static std::vector<\mbox{\hyperlink{class_hexeng_1_1_text}{Text}}*> s\_translated\_texts;}
+\DoxyCodeLine{180 }
+\DoxyCodeLine{181         std::vector<uint32\_t> m\_raw\_ib;}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183         \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}<\textcolor{keywordtype}{int}> m\_box = \{ 0, 0 \};}
+\DoxyCodeLine{184         std::function<void(\textcolor{keyword}{const} std::u32string\&)> m\_use\_extra = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{185     \};}
+\DoxyCodeLine{186 }
+\DoxyCodeLine{187 \}}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

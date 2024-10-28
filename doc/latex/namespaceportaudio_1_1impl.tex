@@ -1,0 +1,25 @@
+\hypertarget{namespaceportaudio_1_1impl}{}\doxysection{portaudio\+::impl Namespace Reference}
+\label{namespaceportaudio_1_1impl}\index{portaudio::impl@{portaudio::impl}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespaceportaudio_1_1impl_aed5b1714d87972dec1744b028e746038}{callback\+Interface\+To\+Pa\+Callback\+Adapter}} (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, unsigned long num\+Frames, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\item 
+int \mbox{\hyperlink{namespaceportaudio_1_1impl_a86f66659f56c9468b9a7fd1bf57115c1}{cpp\+Callback\+To\+Pa\+Callback\+Adapter}} (const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$input\+Buffer, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$output\+Buffer, unsigned long num\+Frames, const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$time\+Info, \mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}} status\+Flags, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$user\+Data)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceportaudio_1_1impl_aed5b1714d87972dec1744b028e746038}\label{namespaceportaudio_1_1impl_aed5b1714d87972dec1744b028e746038}} 
+\index{portaudio::impl@{portaudio::impl}!callbackInterfaceToPaCallbackAdapter@{callbackInterfaceToPaCallbackAdapter}}
+\index{callbackInterfaceToPaCallbackAdapter@{callbackInterfaceToPaCallbackAdapter}!portaudio::impl@{portaudio::impl}}
+\doxysubsubsection{\texorpdfstring{callbackInterfaceToPaCallbackAdapter()}{callbackInterfaceToPaCallbackAdapter()}}
+{\footnotesize\ttfamily int portaudio\+::impl\+::callback\+Interface\+To\+Pa\+Callback\+Adapter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{input\+Buffer,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{output\+Buffer,  }\item[{unsigned long}]{num\+Frames,  }\item[{const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$}]{time\+Info,  }\item[{\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}}]{status\+Flags,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Adapts any \mbox{\hyperlink{classportaudio_1_1_callback_interface}{Callback\+Interface}} object to a C-\/callable function (ie this function). A pointer to the object should be passed as \`{}`user\+Data'\textquotesingle{} when setting up the callback. \mbox{\Hypertarget{namespaceportaudio_1_1impl_a86f66659f56c9468b9a7fd1bf57115c1}\label{namespaceportaudio_1_1impl_a86f66659f56c9468b9a7fd1bf57115c1}} 
+\index{portaudio::impl@{portaudio::impl}!cppCallbackToPaCallbackAdapter@{cppCallbackToPaCallbackAdapter}}
+\index{cppCallbackToPaCallbackAdapter@{cppCallbackToPaCallbackAdapter}!portaudio::impl@{portaudio::impl}}
+\doxysubsubsection{\texorpdfstring{cppCallbackToPaCallbackAdapter()}{cppCallbackToPaCallbackAdapter()}}
+{\footnotesize\ttfamily int portaudio\+::impl\+::cpp\+Callback\+To\+Pa\+Callback\+Adapter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{input\+Buffer,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{output\+Buffer,  }\item[{unsigned long}]{num\+Frames,  }\item[{const \mbox{\hyperlink{struct_pa_stream_callback_time_info}{Pa\+Stream\+Callback\+Time\+Info}} $\ast$}]{time\+Info,  }\item[{\mbox{\hyperlink{portaudio_8h_a55a005924bcfa0424594f4f65cd4ae82}{Pa\+Stream\+Callback\+Flags}}}]{status\+Flags,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{user\+Data }\end{DoxyParamCaption})}
+
+Adapts any a C++ callback to a C-\/callable function (ie this function). A pointer to a struct with the C++ function pointer and the actual user data should be passed as the \`{}`user\+Data'\textquotesingle{} parameter when setting up the callback. 

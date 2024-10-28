@@ -1,0 +1,538 @@
+\hypertarget{namespace_hexeng_1_1_renderer}{}\doxysection{Hexeng\+::Renderer Namespace Reference}
+\label{namespace_hexeng_1_1_renderer}\index{Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_animation}{Animation}}
+\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_animation_step}{Animation\+Step}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_instance}{Batch\+Instance}}
+\begin{DoxyCompactList}\small\item\em An instance that can gather 250 quads on the same layer at max and render them together.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_batch_quad}{Batch\+Quad}}
+\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_blending_method}{Blending\+Method}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_camera}{Camera}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_quad}{Debug\+Quad}}
+\begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_debug_square}{Debug\+Square}}
+\begin{DoxyCompactList}\small\item\em Meant to be used internally by the engine only. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}}
+\begin{DoxyCompactList}\small\item\em A layer of meshes, at a certain depth z.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_polygon}{Polygon}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_quad}{Quad}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_square}{Square}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}
+\begin{DoxyCompactList}\small\item\em A bunch of meshes that shares some attributes. For example, a player got legs and arms that can move individually, but the position of the legs and arms are relative to the position of the body. In this example, legs and arms are Meshes, the body is a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_super_mesh}{Super\+Mesh}}.  \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Tex\+Coord}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Texture}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_atlas}{Texture\+Atlas}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Texture\+Vector}}
+\begin{DoxyCompactList}\small\item\em Allows to push multiple textures linearly to form a unique texture that is in fact a one dimentional array of textures.  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_delete}{To\+Be\+Delete}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}}
+\begin{DoxyCompactList}\small\item\em The virtual base class of all templated instances of \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}  \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{Vertex\+Buffer}}
+\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_vertex_element}{Vertex\+Element}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{Vertex\+Layout}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Tex\+Sett\+List}} = std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Tex\+Sett}}, GLuint $>$
+\item 
+using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}{Uniform\+Arg}} = std\+::pair$<$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}}, const void $\ast$ $>$
+\item 
+using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{Uniform\+Args}} = std\+::unordered\+\_\+map$<$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}}, const void $\ast$ $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}{ABSOLUTE}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{RELATIVE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Is the layer\textquotesingle{}s position relative to the cam\textquotesingle{}s position or to the center of the screen ?  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}{Shader\+Type}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}{VERTEX\+\_\+\+SHADER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}{TESSELLATION\+\_\+\+CONTROL}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}{TESSELLATION\+\_\+\+EVALUATION}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}{GEOMETRY\+\_\+\+SHADER}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}{FRAGMENT\+\_\+\+SHADER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}{COMPUTE\+\_\+\+SHADER}}
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Tex\+Sett}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{MAG\+\_\+\+FILTER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{MIN\+\_\+\+FILTER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{BASE\+\_\+\+FORMAT}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{SIZED\+\_\+\+FORMAT}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{BPP}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\+\_\+\+NB}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum of possible texture settings you can specify to a texture constructor.  \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Uniform\+Fusion\+Mode}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}{SUM}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}{MULTIPLY}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}{AVERAGE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. \end{DoxyCompactList}\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}} \{ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}{NAME}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}{CONTROLLLER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}{SHADERS}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}{FUSION\+\_\+\+MODE}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum of settings you can specify the Uniform constructor by using Uniform\+Args. The documentation of the possible values of this enum concern what should be the value that goes with this enum in Uniform\+Args.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a19e4b01b1f03f908d7fae1ef506e10de}{fusion}} (std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ $>$ bidim\+\_\+v)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}{init}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}{refresh\+\_\+uniforms}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}{stop}} ()
+\begin{DoxyCompactList}\small\item\em Stops the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}{draw}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&va, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&ib, const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \&shader)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}{clear}} ()
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac19da9701ce667192b9c1238673575e}{draw\+\_\+scene}} (int scene\+\_\+parameter)
+\item 
+void \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}{draw\+\_\+current\+\_\+scene}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\+\_\+vector\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\+\_\+shader}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}{init\+\_\+presets}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}{global\+\_\+layers}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}{uniform\+\_\+list}}
+\item 
+std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a925910558363c233fd21534728fb7275}{pending\+\_\+actions}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}{u\+\_\+transform}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}{u\+\_\+rotation\+\_\+angle}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\+\_\+window\+\_\+size}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\+\_\+scale}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{u\+\_\+color\+\_\+filter}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\+\_\+color}}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}{init\+\_\+uniforms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}\label{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!TexSettList@{TexSettList}}
+\index{TexSettList@{TexSettList}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{TexSettList}{TexSettList}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Hexeng\+::\+Renderer\+::\+Tex\+Sett\+List}} = typedef std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Tex\+Sett}}, GLuint$>$}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}\label{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!UniformArg@{UniformArg}}
+\index{UniformArg@{UniformArg}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{UniformArg}{UniformArg}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a286629b6769dcfa33acc21376696ad2b}{Hexeng\+::\+Renderer\+::\+Uniform\+Arg}} = typedef std\+::pair$<$\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}}, const void$\ast$$>$}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}\label{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!UniformArgs@{UniformArgs}}
+\index{UniformArgs@{UniformArgs}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{UniformArgs}{UniformArgs}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a607da14eb07319980e17c275131c0046}{Hexeng\+::\+Renderer\+::\+Uniform\+Args}} = typedef std\+::unordered\+\_\+map$<$\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Uniform\+Arg\+Type}}, const void$\ast$$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!Position@{Position}}
+\index{Position@{Position}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Hexeng\+::\+Renderer\+::\+Position}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Is the layer\textquotesingle{}s position relative to the cam\textquotesingle{}s position or to the center of the screen ?  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ABSOLUTE@{ABSOLUTE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!ABSOLUTE@{ABSOLUTE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7a3a0bc063b6db8cae0361657958be836f}} 
+ABSOLUTE&The position is relative to the center of the screen. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RELATIVE@{RELATIVE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!RELATIVE@{RELATIVE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}\label{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}} 
+RELATIVE&The position is relative to the cam\textquotesingle{}s position. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!ShaderType@{ShaderType}}
+\index{ShaderType@{ShaderType}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{ShaderType}{ShaderType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811f}{Hexeng\+::\+Renderer\+::\+Shader\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{VERTEX\_SHADER@{VERTEX\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!VERTEX\_SHADER@{VERTEX\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa9861721c6c2dfbdc35d20746c386a090}} 
+VERTEX\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TESSELLATION\_CONTROL@{TESSELLATION\_CONTROL}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!TESSELLATION\_CONTROL@{TESSELLATION\_CONTROL}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa6d64bf3ebe99e5b073a1b951d9e7ce72}} 
+TESSELLATION\+\_\+\+CONTROL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TESSELLATION\_EVALUATION@{TESSELLATION\_EVALUATION}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!TESSELLATION\_EVALUATION@{TESSELLATION\_EVALUATION}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fa8c342df328469662555b1e75cf07815b}} 
+TESSELLATION\+\_\+\+EVALUATION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GEOMETRY\_SHADER@{GEOMETRY\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!GEOMETRY\_SHADER@{GEOMETRY\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faa722bdad7ad66e0cd0297ddc6d5c50aa}} 
+GEOMETRY\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FRAGMENT\_SHADER@{FRAGMENT\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!FRAGMENT\_SHADER@{FRAGMENT\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811faaf58ae9f6cade42be9607c7298fd97d1}} 
+FRAGMENT\+\_\+\+SHADER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPUTE\_SHADER@{COMPUTE\_SHADER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!COMPUTE\_SHADER@{COMPUTE\_SHADER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}\label{namespace_hexeng_1_1_renderer_a3607bedb924b0e6c7032dcd7f3f4811fae6ae2d0a1bee9d966dcae11a201a3c56}} 
+COMPUTE\+\_\+\+SHADER&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!TexSett@{TexSett}}
+\index{TexSett@{TexSett}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{TexSett}{TexSett}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Hexeng\+::\+Renderer\+::\+Tex\+Sett}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum of possible texture settings you can specify to a texture constructor.  
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAG\_FILTER@{MAG\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MAG\_FILTER@{MAG\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}} 
+MAG\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed in\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIN\_FILTER@{MIN\_FILTER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MIN\_FILTER@{MIN\_FILTER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}} 
+MIN\+\_\+\+FILTER&Behaviour of a texture when it gets \char`\"{}zoomed out\char`\"{}. By default, it\textquotesingle{}s set to GL\+\_\+\+LINEAR. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BASE\_FORMAT@{BASE\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BASE\_FORMAT@{BASE\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}} 
+BASE\+\_\+\+FORMAT&The color format of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SIZED\_FORMAT@{SIZED\_FORMAT}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SIZED\_FORMAT@{SIZED\_FORMAT}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}} 
+SIZED\+\_\+\+FORMAT&The color format with the size of each channel of the texture. By default, it\textquotesingle{}s set to GL\+\_\+\+RGBA8. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BPP@{BPP}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!BPP@{BPP}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}} 
+BPP&The number of bytes per pixel. By default, it is set to 4. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHANNELS\_NB@{CHANNELS\_NB}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!CHANNELS\_NB@{CHANNELS\_NB}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}\label{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}} 
+CHANNELS\+\_\+\+NB&The number of channels. By default, it is set to 4. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!UniformArgType@{UniformArgType}}
+\index{UniformArgType@{UniformArgType}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{UniformArgType}{UniformArgType}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443}{Hexeng\+::\+Renderer\+::\+Uniform\+Arg\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+An enum of settings you can specify the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}} constructor by using Uniform\+Args. The documentation of the possible values of this enum concern what should be the value that goes with this enum in Uniform\+Args.  
+
+\begin{DoxyNote}{Note}
+The least important of these values are SHADERS, as you can just do uniform.\+add\+\_\+shaders instead. 
+\end{DoxyNote}
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NAME@{NAME}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!NAME@{NAME}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aad32e604e17467fc435538334fbddf3e}} 
+NAME&The name of the uniform, const char $\ast$. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONTROLLLER@{CONTROLLLER}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!CONTROLLLER@{CONTROLLLER}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443af7f9a2340a777ade4731d6e646ba472f}} 
+CONTROLLLER&The \char`\"{}controller\char`\"{} of the uniform, const VEC $\ast$. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SHADERS@{SHADERS}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SHADERS@{SHADERS}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443adfc87a226603afdc892d8af0b634c336}} 
+SHADERS&A list of all shaders that implement the uniform, const std\+::vector$<$\+Shader$\ast$$>$$\ast$. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FUSION\_MODE@{FUSION\_MODE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!FUSION\_MODE@{FUSION\_MODE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}\label{namespace_hexeng_1_1_renderer_ae0fdd0cd7c1995619f86ef94fe43c443aa918e7c49020e3af73c76cb049073972}} 
+FUSION\+\_\+\+MODE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!UniformFusionMode@{UniformFusionMode}}
+\index{UniformFusionMode@{UniformFusionMode}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{UniformFusionMode}{UniformFusionMode}}
+{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5}{Hexeng\+::\+Renderer\+::\+Uniform\+Fusion\+Mode}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Defines how should a uniform get \char`\"{}combined\char`\"{} with another uniform. 
+
+For example, a position should get summed (SUM), but a zoom, should get multiplied (MULTIPLY) \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SUM@{SUM}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!SUM@{SUM}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a6970bdc2201030b9c03fbdcf3973858a}} 
+SUM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MULTIPLY@{MULTIPLY}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!MULTIPLY@{MULTIPLY}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a080aaf8d817ada96fca7096b7b55bd30}} 
+MULTIPLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVERAGE@{AVERAGE}!Hexeng::Renderer@{Hexeng::Renderer}}\index{Hexeng::Renderer@{Hexeng::Renderer}!AVERAGE@{AVERAGE}}}\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}\label{namespace_hexeng_1_1_renderer_a3deab9446172878fbb19f57f4ebbe9e5a16de38737a9f8366e9b2042b4e9b6290}} 
+AVERAGE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}\label{namespace_hexeng_1_1_renderer_aaa53593db153e61eda515ffd12eec6be}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!clear@{clear}}
+\index{clear@{clear}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}\label{namespace_hexeng_1_1_renderer_ae165c99de5cf99ac80acdf09a7255357}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!draw@{draw}}
+\index{draw@{draw}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::draw (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{Vertex\+Array}} \&}]{va,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{Index\+Buffer}} \&}]{ib,  }\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} \&}]{shader }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}\label{namespace_hexeng_1_1_renderer_ac894a3744a3db51bde8a850e795a1b90}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!draw\_current\_scene@{draw\_current\_scene}}
+\index{draw\_current\_scene@{draw\_current\_scene}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{draw\_current\_scene()}{draw\_current\_scene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::draw\+\_\+current\+\_\+scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aac19da9701ce667192b9c1238673575e}\label{namespace_hexeng_1_1_renderer_aac19da9701ce667192b9c1238673575e}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!draw\_scene@{draw\_scene}}
+\index{draw\_scene@{draw\_scene}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{draw\_scene()}{draw\_scene()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::draw\+\_\+scene (\begin{DoxyParamCaption}\item[{int}]{scene\+\_\+parameter }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a19e4b01b1f03f908d7fae1ef506e10de}\label{namespace_hexeng_1_1_renderer_a19e4b01b1f03f908d7fae1ef506e10de}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!fusion@{fusion}}
+\index{fusion@{fusion}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{fusion()}{fusion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ Hexeng\+::\+Renderer\+::fusion (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ $>$}]{bidim\+\_\+v }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}\label{namespace_hexeng_1_1_renderer_af9df33f6bd8cd59d33a3092d2eefbb81}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!init@{init}}
+\index{init@{init}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. 
+
+\begin{DoxyNote}{Note}
+You should call this function before constructing any graphical objects such as a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} or a \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}}. 
+\end{DoxyNote}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}\label{namespace_hexeng_1_1_renderer_abca1c59bd1e9a6f1e369fe0b087c0c0f}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!refresh\_uniforms@{refresh\_uniforms}}
+\index{refresh\_uniforms@{refresh\_uniforms}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{refresh\_uniforms()}{refresh\_uniforms()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::refresh\+\_\+uniforms (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}\label{namespace_hexeng_1_1_renderer_af098070b5537d1b7ffd7919fc3959410}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!stop@{stop}}
+\index{stop@{stop}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} void Hexeng\+::\+Renderer\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Stops the \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Renderer}} and Open\+GL. 
+
+\begin{DoxyNote}{Note}
+You should call this function after the game loop exits. 
+\end{DoxyNote}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}\label{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!basic\_shader@{basic\_shader}}
+\index{basic\_shader@{basic\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{basic\_shader}{basic\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::basic\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}\label{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!batching\_shader@{batching\_shader}}
+\index{batching\_shader@{batching\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{batching\_shader}{batching\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::batching\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}\label{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!font\_shader@{font\_shader}}
+\index{font\_shader@{font\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{font\_shader}{font\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::font\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}\label{namespace_hexeng_1_1_renderer_a01b5e4f62a914fb2e135afce59a154af}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!global\_layers@{global\_layers}}
+\index{global\_layers@{global\_layers}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{global\_layers}{global\_layers}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} $\ast$ $>$ Hexeng\+::\+Renderer\+::global\+\_\+layers}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}\label{namespace_hexeng_1_1_renderer_ab4393b85fdba8ef268e75f555cba2c88}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!init\_presets@{init\_presets}}
+\index{init\_presets@{init\_presets}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{init\_presets}{init\_presets}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} Hexeng\+::\+Renderer\+::init\+\_\+presets}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ []() \{}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, basic\_vs\}, \{ShaderType::FRAGMENT\_SHADER, basic\_fs\} \});}
+\DoxyCodeLine{        line\_shader = Shader(\{ \{ShaderType::VERTEX\_SHADER,basic\_vs\} , \{ShaderType::FRAGMENT\_SHADER, line\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, tex\_vector\_vs\}, \{ShaderType::FRAGMENT\_SHADER, font\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, tex\_vector\_vs\}, \{ShaderType::FRAGMENT\_SHADER, basic\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, batching\_vs\}, \{ShaderType::FRAGMENT\_SHADER, batching\_fs\} \});}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}} = Shader(\{ \{ShaderType::VERTEX\_SHADER, poly\_vs\}, \{ShaderType::FRAGMENT\_SHADER, poly\_fs\} \});}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a11140de05cb174c6d6d7c0297ce18aca}{basic\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}{line\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab247f80958c1576dc92a1f38e589aba9}{font\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}{tex\_vector\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ab226688adeb4084283280edb96e79608}{batching\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}{poly\_shader}}.\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader_ac5483c4cce87bf9cb19559264dc3ec7a}{add\_necessary\_uniforms}}();}
+\DoxyCodeLine{    \}, 1 \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}\label{namespace_hexeng_1_1_renderer_a96bab53645f7f1b0e90ec3120724ce27}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!init\_uniforms@{init\_uniforms}}
+\index{init\_uniforms@{init\_uniforms}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{init\_uniforms}{init\_uniforms}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_to_be_init}{To\+Be\+Init}} Hexeng\+::\+Renderer\+::init\+\_\+uniforms}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{ []() \{}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}{u\_transform}} = \{\{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_transform"{}}\}\}\};}
+\DoxyCodeLine{        u\_rotation\_angle = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_rotation\_angle"{}}\}\} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}{u\_window\_size}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_window\_size"{}}\},\{UniformArgType::CONTROLLLER, \&Settings::window\_size \} \} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}{u\_scale}} = \{ \{ \{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_scale"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::MULTIPLY\} \} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}{u\_color\_filter}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color\_filter"{}}\}, \{UniformArgType::FUSION\_MODE, (\textcolor{keywordtype}{void}*)UniformFusionMode::MULTIPLY\}\} \};}
+\DoxyCodeLine{        \mbox{\hyperlink{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}{u\_color}} = \{ \{\{UniformArgType::NAME, \textcolor{stringliteral}{"{}u\_color"{}}\}\} \};}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_transform);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_window\_size);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_rotation\_angle);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_scale);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_color\_filter);}
+\DoxyCodeLine{        UniformInterface::necessary\_uniforms.push\_back(\&u\_color);}
+\DoxyCodeLine{    \} \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}\label{namespace_hexeng_1_1_renderer_af51eb72d88ba8bfceda6a108eca36692}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!line\_shader@{line\_shader}}
+\index{line\_shader@{line\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{line\_shader}{line\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::line\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a925910558363c233fd21534728fb7275}\label{namespace_hexeng_1_1_renderer_a925910558363c233fd21534728fb7275}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!pending\_actions@{pending\_actions}}
+\index{pending\_actions@{pending\_actions}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{pending\_actions}{pending\_actions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ std\+::function$<$ void(void)$>$ $>$ Hexeng\+::\+Renderer\+::pending\+\_\+actions}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}\label{namespace_hexeng_1_1_renderer_aef0c0e0a4d014075593f440242e729e5}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!poly\_shader@{poly\_shader}}
+\index{poly\_shader@{poly\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{poly\_shader}{poly\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::poly\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}\label{namespace_hexeng_1_1_renderer_a4c606a36dd386b7ff3f2b0fd90b5aa0b}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!tex\_vector\_shader@{tex\_vector\_shader}}
+\index{tex\_vector\_shader@{tex\_vector\_shader}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{tex\_vector\_shader}{tex\_vector\_shader}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_shader}{Shader}} Hexeng\+::\+Renderer\+::tex\+\_\+vector\+\_\+shader}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}\label{namespace_hexeng_1_1_renderer_aac818b2a90ca043be07e7a65f8bd64f1}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_color@{u\_color}}
+\index{u\_color@{u\_color}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_color}{u\_color}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}\label{namespace_hexeng_1_1_renderer_adf89b1776dd05fd7a25ca3a52258c86a}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_color\_filter@{u\_color\_filter}}
+\index{u\_color\_filter@{u\_color\_filter}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_color\_filter}{u\_color\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_color4}{Color4}} $>$ Hexeng\+::\+Renderer\+::u\+\_\+color\+\_\+filter}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}\label{namespace_hexeng_1_1_renderer_a848bb6c521a31868ddd7e6debcf84f4c}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_rotation\_angle@{u\_rotation\_angle}}
+\index{u\_rotation\_angle@{u\_rotation\_angle}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_rotation\_angle}{u\_rotation\_angle}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ Hexeng\+::\+Renderer\+::u\+\_\+rotation\+\_\+angle}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}\label{namespace_hexeng_1_1_renderer_a97ec6598439eb16c681d93b2bcd47175}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_scale@{u\_scale}}
+\index{u\_scale@{u\_scale}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_scale}{u\_scale}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ float $>$ Hexeng\+::\+Renderer\+::u\+\_\+scale}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}\label{namespace_hexeng_1_1_renderer_af2b245beb8f834f084c196ae418ec8a1}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_transform@{u\_transform}}
+\index{u\_transform@{u\_transform}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_transform}{u\_transform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ float $>$ $>$ Hexeng\+::\+Renderer\+::u\+\_\+transform}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}\label{namespace_hexeng_1_1_renderer_a8d99f36e29ded35df58d1ddefeb02d33}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!u\_window\_size@{u\_window\_size}}
+\index{u\_window\_size@{u\_window\_size}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{u\_window\_size}{u\_window\_size}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform}{Uniform}}$<$ \mbox{\hyperlink{class_hexeng_1_1_vec2}{Vec2}}$<$ int $>$ $>$ Hexeng\+::\+Renderer\+::u\+\_\+window\+\_\+size}
+
+\mbox{\Hypertarget{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}\label{namespace_hexeng_1_1_renderer_a755cc8c40a02877a878da35310bf4204}} 
+\index{Hexeng::Renderer@{Hexeng::Renderer}!uniform\_list@{uniform\_list}}
+\index{uniform\_list@{uniform\_list}!Hexeng::Renderer@{Hexeng::Renderer}}
+\doxysubsubsection{\texorpdfstring{uniform\_list}{uniform\_list}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}} std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_uniform_interface}{Uniform\+Interface}} $\ast$ $>$ Hexeng\+::\+Renderer\+::uniform\+\_\+list}
+

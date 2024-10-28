@@ -1,0 +1,43 @@
+\hypertarget{_texture_8hpp}{}\doxysection{C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\+Texture.hpp File Reference}
+\label{_texture_8hpp}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Texture.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/Texture.hpp}}
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \char`\"{}../\+Macros.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}glad/glad.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stb/stb\+\_\+image.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+Vectors.\+hpp\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture}{Hexeng\+::\+Renderer\+::\+Texture}}
+\item 
+struct \mbox{\hyperlink{struct_hexeng_1_1_renderer_1_1_tex_coord}{Hexeng\+::\+Renderer\+::\+Tex\+Coord}}
+\item 
+class \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_texture_vector}{Hexeng\+::\+Renderer\+::\+Texture\+Vector}}
+\begin{DoxyCompactList}\small\item\em Allows to push multiple textures linearly to form a unique texture that is in fact a one dimentional array of textures.  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng}{Hexeng}}
+\item 
+namespace \mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng\+::\+Renderer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{Hexeng\+::\+Renderer\+::\+Tex\+Sett\+List}} = std\+::unordered\+\_\+map$<$ Tex\+Sett, GLuint $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925}{Hexeng\+::\+Renderer\+::\+Tex\+Sett}} \{ \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{Hexeng\+::\+Renderer\+::\+MAG\+\_\+\+FILTER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{Hexeng\+::\+Renderer\+::\+MIN\+\_\+\+FILTER}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{Hexeng\+::\+Renderer\+::\+BASE\+\_\+\+FORMAT}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{Hexeng\+::\+Renderer\+::\+SIZED\+\_\+\+FORMAT}}
+, \newline
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{Hexeng\+::\+Renderer\+::\+BPP}}
+, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{Hexeng\+::\+Renderer\+::\+CHANNELS\+\_\+\+NB}}
+ \}
+\begin{DoxyCompactList}\small\item\em An enum of possible texture settings you can specify to a texture constructor.  \end{DoxyCompactList}\end{DoxyCompactItemize}

@@ -1,0 +1,1263 @@
+\hypertarget{pa__linux__alsa_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/alsa/pa\+\_\+linux\+\_\+alsa.c File Reference}
+\label{pa__linux__alsa_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/alsa/pa\_linux\_alsa.c@{Hexeng2D/dependencies/portaudio/src/hostapi/alsa/pa\_linux\_alsa.c}}
+{\ttfamily \#include $<$alsa/asoundlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/poll.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$pthread.\+h$>$}\newline
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+unix\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+endianness.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+linux\+\_\+alsa.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_alsa_stream_component}{Pa\+Alsa\+Stream\+Component}}
+\item 
+struct \mbox{\hyperlink{struct_pa_alsa_stream}{Pa\+Alsa\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_pa_alsa_host_api_representation}{Pa\+Alsa\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_alsa_device_info}{Pa\+Alsa\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_hw_dev_info}{Hw\+Dev\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a705350c14c1f28bb8d6d57dafbf9ccff}{ALSA\+\_\+\+PCM\+\_\+\+NEW\+\_\+\+HW\+\_\+\+PARAMS\+\_\+\+API}}
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a5b61c3b8eee0c6801209e39a760b928a}{ALSA\+\_\+\+PCM\+\_\+\+NEW\+\_\+\+SW\+\_\+\+PARAMS\+\_\+\+API}}
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_aff83aac9633496129e2cdf9442c4ad87}{SND\+\_\+\+PCM\+\_\+\+TSTAMP\+\_\+\+ENABLE}}~SND\+\_\+\+PCM\+\_\+\+TSTAMP\+\_\+\+MMAP
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_ad58ac533f6bb5499e822284ce6a4f377}{ALSA\+\_\+\+VERSION\+\_\+\+INT}}(major,  minor,  subminor)~((major $<$$<$ 16) $\vert$ (minor $<$$<$ 8) $\vert$ subminor)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_af59870a8b44c748c2933363c8d96b296}{RATE\+\_\+\+MAX\+\_\+\+DEVIATE\+\_\+\+RATIO}}~100
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a6b3079cec4e6dda96f8e58cd9a5ac4de}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~typedef typeof(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}\#\#\+\_\+ft; static \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}\#\#\+\_\+ft $\ast$alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = 0
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr,  \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}})~do \{ size\+\_\+t \+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size = alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\#\#\+\_\+sizeof(); ($\ast$ptr) = (\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\#\#\+\_\+t $\ast$) alloca(\+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size); memset($\ast$ptr, 0, \+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size); \} while (0)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_aa154c2bb63aa4b6f8aad17e8c828396c}{alsa\+\_\+snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+alloca}}(ptr)~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+hw\+\_\+params)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a008e32f49ee6737893486a40b089827f}{alsa\+\_\+snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+alloca}}(ptr)~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+sw\+\_\+params)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_aaa0a47047adc52963b11d9be20235346}{alsa\+\_\+snd\+\_\+pcm\+\_\+info\+\_\+alloca}}(ptr)~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+info)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_ad6363b683f708bbe9616906956fea5a9}{alsa\+\_\+snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+alloca}}(ptr)~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+ctl\+\_\+card\+\_\+info)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a52087bf8ca51ff0145dd1ed1a7fa6650}{alsa\+\_\+snd\+\_\+pcm\+\_\+status\+\_\+alloca}}(ptr)~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+status)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a60348909c2d3bf5811e39782977197c1}{alsa\+\_\+snd\+\_\+config\+\_\+for\+\_\+each}}(pos,  next,  node)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a6089c526fbee9e2052de21f6226b8fab}{PA\+\_\+\+ALSA\+\_\+\+PATHNAME}}~\char`\"{}libasound.\+so\char`\"{}
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_a1c197e670a65e133f35ba5486097f864}{\+\_\+\+PA\+\_\+\+LOAD\+\_\+\+FUNC}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = \&\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_af6598be0b460d5228f0c6f386d9bf306}{ENSURE\+\_\+}}(expr,  code)
+\item 
+\#define \mbox{\hyperlink{pa__linux__alsa_8c_adfe580bff275a80ee5935113c053d30d}{ASSERT\+\_\+\+CALL\+\_\+}}(expr,  success)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_alsa_stream}{Pa\+Alsa\+Stream}} \mbox{\hyperlink{pa__linux__alsa_8c_a6c851e7398133511e4a365ae2a5d29c7}{Pa\+Alsa\+Stream}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_alsa_host_api_representation}{Pa\+Alsa\+Host\+Api\+Representation}} \mbox{\hyperlink{pa__linux__alsa_8c_a1bdf289c7d6eda3ae452a72bab8e289b}{Pa\+Alsa\+Host\+Api\+Representation}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_alsa_device_info}{Pa\+Alsa\+Device\+Info}} \mbox{\hyperlink{pa__linux__alsa_8c_ac2cdfc5693f7d3b6e0497a9a7e942c6e}{Pa\+Alsa\+Device\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64}{Stream\+Direction}} \{ \mbox{\hyperlink{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64aa262f813f93316ac1bf9e9cd12b09385}{Stream\+Direction\+\_\+\+In}}
+, \mbox{\hyperlink{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64ae177efd435a0afd9a45c4efc3b63b229}{Stream\+Direction\+\_\+\+Out}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a9126f716fb60ebe606012f379127eff2}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+open)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a82d056b0ca4ead55cd47f0c16bc91b77}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+close)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a213a0aac0e4796d121c212c13497de4a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+nonblock)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aa6ab6e790c56308a6ca92314b213e0a2}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+frames\+\_\+to\+\_\+bytes)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a7d09c78a5de6741c39c4559ee2a4f2d7}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+prepare)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a777d29fe6e93ee5c42276e59cd9f56fb}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+start)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a39b9b812e742855e07ef257e09f95adb}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+resume)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5c3c0596d8f773efdaed028ce43fa9c4}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+wait)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a8221435d0fdf3e26d433edbc70b8da84}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+state)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae09f06e8dc74e131770e51b616d56592}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+avail\+\_\+update)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a3e8c5e9216f38a7c672291aef8a692fb}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+areas\+\_\+silence)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a07c0d639b80d6e526717b84808d44831}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+mmap\+\_\+begin)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a97185509e6e2dbe136036d4e719ee637}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+mmap\+\_\+commit)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a295692e4381b5b7e030192ff8350f661}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+readi)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a4454ab20358b46ee23bff6ac1b65665c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+readn)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aea2b52c92706c07846712eef5ab65887}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+writei)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a4bc42e7cca0cab8c0fcacc9c003716cb}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+writen)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_abb4ac32f5255ffa2df467d86b97961e9}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+drain)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a089d5c4d5ce9b4ebd224a1353350349c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+recover)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af575195db45007e0813de71b6f0fca4b}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+drop)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a3e07ca2a96cf0b6b7edd84fc5c26283d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+area\+\_\+copy)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a80ccf442cb0d14d6749e174279bce3b8}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+poll\+\_\+descriptors)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a580aa57284ba87635dc280fda6433038}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+poll\+\_\+descriptors\+\_\+count)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a92416882cdf255dc8800daaff4d9d5bc}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+poll\+\_\+descriptors\+\_\+revents)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a75f94cf3d2ae2ad60ff7bf831222590a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+format\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a179c9b170746499e072857f21c7a3196}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+link)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a81e7a06093fadc0b3d3eb4aaca8faede}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+delay)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a84e6dce1b316e340b75f9fb5a5b907ca}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+sizeof)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ac781e0f2e164ce73e26c684a2f87abaf}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+malloc)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a9af252edcdcde17e803ce3e57130e3f1}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+free)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a2a74332bba092589d23d30c55f259714}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+any)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_abae57b0f6fcf70f307b118eb02fb0fd7}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+access)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae85e75f99f11a01b7e4f25c36433a668}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+format)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a9ea10acc1749c19f2c47c96f613f747d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+channels)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a2e6b1d12889a92e65a6f0413d4cdad22}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate\+\_\+near)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a75bb1d18852ef30c04cb514dd63646be}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate)
+\begin{DoxyCompactList}\small\item\em !! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a0ef106803f4c3764a894ca11a1e3073e}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate\+\_\+resample)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a75dec8a5aa6ddeff01e821fc7741540c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a247de743d9ad97a6990b9195131b18d2}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size\+\_\+near)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5eb6eaeb70f626d15b5d2f8b8191a5ea}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size\+\_\+min)
+\begin{DoxyCompactList}\small\item\em !! \end{DoxyCompactList}\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5be3890558f57b2c7a0aeb54e46a529c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+period\+\_\+size\+\_\+near)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a93d6f74c54661b192f62b428bda3d845}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+periods\+\_\+integer)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a49773419c25c96c1653ff79b51738171}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+periods\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aaee75bc87789693c300aaabd0a819a34}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+buffer\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_abcba42a7a8437164475cf58f610a67bc}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+channels\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a084d3b20813dc041949ae233ba6efbf3}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+channels\+\_\+max)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af9f5ee763c428b8a86b789f063171828}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+period\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ab9db6ef2d8db9902bd21bdbc3eb33aa1}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+format)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a01791dc6f0497287ba0252c0b2f9b08e}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+access)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a8a13e4c5bac4bd3c4031d7b74274090c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+dump)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a404f4f9734fdfdd6204349cdf433e30f}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aebf5651fd1540b3cd0978a153a25e21c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+periods\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a67df056a61b544cc5c9df8057d6e3fe9}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+periods\+\_\+max)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a48b29f2c2dc54c904641385a48967e9c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+period\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aa78d0dfd9c0ee4cd6017345922de06db}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+period\+\_\+size\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ac7eed4682a5810d94179d6102eb385e1}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+period\+\_\+size\+\_\+max)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aaed0d83ee9eeb1fe20d491c9b083d310}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+buffer\+\_\+size\+\_\+max)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a543960b1f03bc01eb2aacea201bda35a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a7d81109577cf3e3fd0f9f34d6e1686a3}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+max)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a982dbcfe5d57676003905e856c8a07cb}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+numden)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae971bba8f190232d820afe13b1e295da}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+sizeof)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af9bd31f071efd0d9176ac6eca1393eb9}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+malloc)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a3722024c98008cc79acf99e6f9c20012}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+current)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a3e017b5ea1fe9b7e9ee4926b56a7192b}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+avail\+\_\+min)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a40e1c777ff4176af4878ac9d9fcb8ab9}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ab110b257b129a6a4d52851ba8046d510}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+free)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a788f6d60ea11b6d460aabdc7b0a4ae1f}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+start\+\_\+threshold)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aa576262741a90a33945d88d72400de24}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+stop\+\_\+threshold)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a65509c90c7c54e3ef3b8ae9d7fd13d88}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+get\+\_\+boundary)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5e4ad1d3659501f377dcdaa634258c32}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+silence\+\_\+threshold)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a04e67a8e5cd45eca96c8a418f3e5934c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+silence\+\_\+size)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae89ef56a988006fbc1df6bbfa06f376f}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+xfer\+\_\+align)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ac15ab4310ab947aa77f7d1a4e31b9aff}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+tstamp\+\_\+mode)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_addf53b1917459a820848c6f4c6c24ca6}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_afefc5491f47a11211a753bf798fa7c38}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+sizeof)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aa332e8e61a48f2c5f5893e95581569c8}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+malloc)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af87d6992a5f057437e991be30b4d8ea5}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+free)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a49f6ea989a05f8cbd0516ffc0977684d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+device)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5d577400d8e9ca091ff0011e2daeef4e}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+subdevice)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a98a41bc22c7dc351dd4bd63e6b50bd84}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+stream)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ab9555fd29558ff8104e7d9dac61ddd0b}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+get\+\_\+name)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a78e0fc13ddfe13673e3181daac09a5e8}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+info\+\_\+get\+\_\+card)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a188657086d4aa0fe09e7ad9c4cf21d2a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+pcm\+\_\+next\+\_\+device)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a09a7bc6bbe7032a904ac188afa681b2d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+pcm\+\_\+info)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a397c826dbacb5548338f8954784a0729}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+open)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a3fe32205cdddb152bd2d65814f796e6d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+close)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ac3d638900c16e2851fc16413631a0f3d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+malloc)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af08507d5635a97fc1f2896497c5e0800}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+free)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a56f1f1c94ca4a341b786d884d89eee27}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+card\+\_\+info)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a5b9fe547addbbf90edbf2b9a1fcbed1d}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+sizeof)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a04feff72c45826cc4f124f58e16fa73b}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+get\+\_\+name)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a8d5fbd265d4b8c82eeb872be21fcc2a9}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a459dcb407e54341412b59e70d5e210c8}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+update)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a4d392f3f6096a3676c10e466f0ae4955}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+search)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a76a139b1b0d011b3efc8d2342cd43027}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+iterator\+\_\+entry)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_af62117900dba2fd683c8f707ebdb361a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+iterator\+\_\+first)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae01863718e07e44d57c9778054b08d64}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+iterator\+\_\+end)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a4a5849c9e2d66c24a42c600360bc1144}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+iterator\+\_\+next)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a7c5314306f6e0b90047bc7051e15e7f3}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+get\+\_\+string)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a1c0ef406f11c268324f3b425b2b4477c}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+get\+\_\+id)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_aff93bd12ee75baf5ddbe8eff1a95103a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+config\+\_\+update\+\_\+free\+\_\+global)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a64b2d17a6ddc51bf97c496f908dcd5e2}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ae05aecd01ab48f610e3441b020a79202}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status\+\_\+sizeof)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_ab729d03db1d598f780444335adddbce6}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+tstamp)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a2e246c23a455dcb7269c4b4c5673e2b0}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+state)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a6f1ee41e11f3868ce3330aefe5837667}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+trigger\+\_\+tstamp)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_abd9335b75b89182bc8f5ed76d72e2de3}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+delay)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a1fa698cf1ac7fbfffcf40530322456aa}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+card\+\_\+next)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a53379e529dbbe551a280ed8fd930657a}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+asoundlib\+\_\+version)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a61172a2f8ab196238e53aa0ddea2dde7}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+strerror)
+\item 
+\mbox{\hyperlink{pa__linux__alsa_8c_a2fdb175a9abd507d1e13b709c3501906}{\+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC}} (snd\+\_\+output\+\_\+stdio\+\_\+attach)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8c_a7517c2e54801c8bd73c2f6db30aeaff9}{Pa\+Alsa\+\_\+\+Set\+Library\+Path\+Name}} (const char $\ast$path\+Name)
+\item 
+int \mbox{\hyperlink{pa__linux__alsa_8c_ade14c5bdbcdc7fb418cba123379ed529}{Pa\+Alsa\+\_\+\+Set\+Num\+Periods}} (int num\+Periods)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8c_a68bdfa54581e698d5958b6463faf43d4}{Pa\+Alsa\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} host\+Api\+Index)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8c_ac33a394742540a3b6666d77698a72e82}{Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info}} (\mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} $\ast$info)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__linux__alsa_8c_accc41e7fd89dc0a6163d54a4f25fb242}{Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int enable)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8c_ac31edeb99ef568fc89418d77bd4ca624}{Pa\+Alsa\+\_\+\+Get\+Stream\+Input\+Card}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int $\ast$card)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8c_a04d7cd7252120eadf0ab3141ba5a7d93}{Pa\+Alsa\+\_\+\+Get\+Stream\+Output\+Card}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$s, int $\ast$card)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__linux__alsa_8c_a2992cf7c30de5aaea222ec762fc56ad1}{Pa\+Alsa\+\_\+\+Set\+Retries\+Busy}} (int retries)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_hw_dev_info}{Hw\+Dev\+Info}} \mbox{\hyperlink{pa__linux__alsa_8c_a678f357aa9293068bbedbfe6be43af35}{predefined\+Names}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}\label{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_\_alsa\_snd\_alloca@{\_\_alsa\_snd\_alloca}}
+\index{\_\_alsa\_snd\_alloca@{\_\_alsa\_snd\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_\_alsa\_snd\_alloca}{\_\_alsa\_snd\_alloca}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr,  }\item[{}]{\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}} }\end{DoxyParamCaption})~do \{ size\+\_\+t \+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size = alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\#\#\+\_\+sizeof(); ($\ast$ptr) = (\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}\#\#\+\_\+t $\ast$) alloca(\+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size); memset($\ast$ptr, 0, \+\_\+\+\_\+alsa\+\_\+alloca\+\_\+size); \} while (0)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a6b3079cec4e6dda96f8e58cd9a5ac4de}\label{pa__linux__alsa_8c_a6b3079cec4e6dda96f8e58cd9a5ac4de}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC}{\_PA\_DEFINE\_FUNC}}
+{\footnotesize\ttfamily \#define \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~typedef typeof(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}) \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}\#\#\+\_\+ft; static \mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}\#\#\+\_\+ft $\ast$alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = 0}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a1c197e670a65e133f35ba5486097f864}\label{pa__linux__alsa_8c_a1c197e670a65e133f35ba5486097f864}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_LOAD\_FUNC@{\_PA\_LOAD\_FUNC}}
+\index{\_PA\_LOAD\_FUNC@{\_PA\_LOAD\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_LOAD\_FUNC}{\_PA\_LOAD\_FUNC}}
+{\footnotesize\ttfamily \#define \+\_\+\+PA\+\_\+\+LOAD\+\_\+\+FUNC(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~alsa\+\_\+\#\#\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} = \&\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}}}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a705350c14c1f28bb8d6d57dafbf9ccff}\label{pa__linux__alsa_8c_a705350c14c1f28bb8d6d57dafbf9ccff}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!ALSA\_PCM\_NEW\_HW\_PARAMS\_API@{ALSA\_PCM\_NEW\_HW\_PARAMS\_API}}
+\index{ALSA\_PCM\_NEW\_HW\_PARAMS\_API@{ALSA\_PCM\_NEW\_HW\_PARAMS\_API}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{ALSA\_PCM\_NEW\_HW\_PARAMS\_API}{ALSA\_PCM\_NEW\_HW\_PARAMS\_API}}
+{\footnotesize\ttfamily \#define ALSA\+\_\+\+PCM\+\_\+\+NEW\+\_\+\+HW\+\_\+\+PARAMS\+\_\+\+API}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5b61c3b8eee0c6801209e39a760b928a}\label{pa__linux__alsa_8c_a5b61c3b8eee0c6801209e39a760b928a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!ALSA\_PCM\_NEW\_SW\_PARAMS\_API@{ALSA\_PCM\_NEW\_SW\_PARAMS\_API}}
+\index{ALSA\_PCM\_NEW\_SW\_PARAMS\_API@{ALSA\_PCM\_NEW\_SW\_PARAMS\_API}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{ALSA\_PCM\_NEW\_SW\_PARAMS\_API}{ALSA\_PCM\_NEW\_SW\_PARAMS\_API}}
+{\footnotesize\ttfamily \#define ALSA\+\_\+\+PCM\+\_\+\+NEW\+\_\+\+SW\+\_\+\+PARAMS\+\_\+\+API}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a60348909c2d3bf5811e39782977197c1}\label{pa__linux__alsa_8c_a60348909c2d3bf5811e39782977197c1}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_config\_for\_each@{alsa\_snd\_config\_for\_each}}
+\index{alsa\_snd\_config\_for\_each@{alsa\_snd\_config\_for\_each}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_config\_for\_each}{alsa\_snd\_config\_for\_each}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+config\+\_\+for\+\_\+each(\begin{DoxyParamCaption}\item[{}]{pos,  }\item[{}]{next,  }\item[{}]{node }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (pos = alsa\_snd\_config\_iterator\_first(node),\(\backslash\)}
+\DoxyCodeLine{         next = alsa\_snd\_config\_iterator\_next(pos);\(\backslash\)}
+\DoxyCodeLine{         pos != alsa\_snd\_config\_iterator\_end(node); pos = next, next = alsa\_snd\_config\_iterator\_next(pos))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__linux__alsa_8c_ad6363b683f708bbe9616906956fea5a9}\label{pa__linux__alsa_8c_ad6363b683f708bbe9616906956fea5a9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_ctl\_card\_info\_alloca@{alsa\_snd\_ctl\_card\_info\_alloca}}
+\index{alsa\_snd\_ctl\_card\_info\_alloca@{alsa\_snd\_ctl\_card\_info\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_ctl\_card\_info\_alloca}{alsa\_snd\_ctl\_card\_info\_alloca}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+ctl\+\_\+card\+\_\+info)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aa154c2bb63aa4b6f8aad17e8c828396c}\label{pa__linux__alsa_8c_aa154c2bb63aa4b6f8aad17e8c828396c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_pcm\_hw\_params\_alloca@{alsa\_snd\_pcm\_hw\_params\_alloca}}
+\index{alsa\_snd\_pcm\_hw\_params\_alloca@{alsa\_snd\_pcm\_hw\_params\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_pcm\_hw\_params\_alloca}{alsa\_snd\_pcm\_hw\_params\_alloca}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+hw\+\_\+params)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aaa0a47047adc52963b11d9be20235346}\label{pa__linux__alsa_8c_aaa0a47047adc52963b11d9be20235346}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_pcm\_info\_alloca@{alsa\_snd\_pcm\_info\_alloca}}
+\index{alsa\_snd\_pcm\_info\_alloca@{alsa\_snd\_pcm\_info\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_pcm\_info\_alloca}{alsa\_snd\_pcm\_info\_alloca}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+pcm\+\_\+info\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+info)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a52087bf8ca51ff0145dd1ed1a7fa6650}\label{pa__linux__alsa_8c_a52087bf8ca51ff0145dd1ed1a7fa6650}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_pcm\_status\_alloca@{alsa\_snd\_pcm\_status\_alloca}}
+\index{alsa\_snd\_pcm\_status\_alloca@{alsa\_snd\_pcm\_status\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_pcm\_status\_alloca}{alsa\_snd\_pcm\_status\_alloca}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+pcm\+\_\+status\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+status)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a008e32f49ee6737893486a40b089827f}\label{pa__linux__alsa_8c_a008e32f49ee6737893486a40b089827f}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!alsa\_snd\_pcm\_sw\_params\_alloca@{alsa\_snd\_pcm\_sw\_params\_alloca}}
+\index{alsa\_snd\_pcm\_sw\_params\_alloca@{alsa\_snd\_pcm\_sw\_params\_alloca}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{alsa\_snd\_pcm\_sw\_params\_alloca}{alsa\_snd\_pcm\_sw\_params\_alloca}}
+{\footnotesize\ttfamily \#define alsa\+\_\+snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+alloca(\begin{DoxyParamCaption}\item[{}]{ptr }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__linux__alsa_8c_a64a0322b1e1b4e01d1cf02d6afd1d8bf}{\+\_\+\+\_\+alsa\+\_\+snd\+\_\+alloca}}(ptr, snd\+\_\+pcm\+\_\+sw\+\_\+params)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ad58ac533f6bb5499e822284ce6a4f377}\label{pa__linux__alsa_8c_ad58ac533f6bb5499e822284ce6a4f377}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!ALSA\_VERSION\_INT@{ALSA\_VERSION\_INT}}
+\index{ALSA\_VERSION\_INT@{ALSA\_VERSION\_INT}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{ALSA\_VERSION\_INT}{ALSA\_VERSION\_INT}}
+{\footnotesize\ttfamily \#define ALSA\+\_\+\+VERSION\+\_\+\+INT(\begin{DoxyParamCaption}\item[{}]{major,  }\item[{}]{minor,  }\item[{}]{subminor }\end{DoxyParamCaption})~((major $<$$<$ 16) $\vert$ (minor $<$$<$ 8) $\vert$ subminor)}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_adfe580bff275a80ee5935113c053d30d}\label{pa__linux__alsa_8c_adfe580bff275a80ee5935113c053d30d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!ASSERT\_CALL\_@{ASSERT\_CALL\_}}
+\index{ASSERT\_CALL\_@{ASSERT\_CALL\_}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{ASSERT\_CALL\_}{ASSERT\_CALL\_}}
+{\footnotesize\ttfamily \#define ASSERT\+\_\+\+CALL\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{success }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{\(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} \_\_pa\_assert\_error\_id;\(\backslash\)}
+\DoxyCodeLine{        \_\_pa\_assert\_error\_id = (expr);\(\backslash\)}
+\DoxyCodeLine{        assert( success == \_\_pa\_assert\_error\_id );\(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__linux__alsa_8c_af6598be0b460d5228f0c6f386d9bf306}\label{pa__linux__alsa_8c_af6598be0b460d5228f0c6f386d9bf306}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!ENSURE\_@{ENSURE\_}}
+\index{ENSURE\_@{ENSURE\_}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{ENSURE\_}{ENSURE\_}}
+{\footnotesize\ttfamily \#define ENSURE\+\_\+(\begin{DoxyParamCaption}\item[{}]{expr,  }\item[{}]{code }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    \textcolor{keywordflow}{do} \{ \(\backslash\)}
+\DoxyCodeLine{        \textcolor{keywordtype}{int} \_\_pa\_unsure\_error\_id;\(\backslash\)}
+\DoxyCodeLine{        if( \mbox{\hyperlink{pa__unix__util_8h_a9acc330d508b9a3b775cfdf7ce405e7d}{UNLIKELY}}( (\_\_pa\_unsure\_error\_id = (expr)) < 0 ) ) \(\backslash\)}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            \textcolor{comment}{/* PaUtil\_SetLastHostErrorInfo should only be used in the main thread */} \(\backslash\)}
+\DoxyCodeLine{            if( (code) == \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{paUnanticipatedHostError}} \&\& pthread\_equal( pthread\_self(), \mbox{\hyperlink{pa__unix__util_8c_a786fbebfd9d315bc39dec32568a4dfe1}{paUnixMainThread}}) ) \(\backslash\)}
+\DoxyCodeLine{            \{ \(\backslash\)}
+\DoxyCodeLine{                PaUtil\_SetLastHostErrorInfo( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aea5fb23d8b2cf3e2e714298de5ab1b83e1}{paALSA}}, \_\_pa\_unsure\_error\_id, alsa\_snd\_strerror( \_\_pa\_unsure\_error\_id ) ); \(\backslash\)}
+\DoxyCodeLine{            \} \(\backslash\)}
+\DoxyCodeLine{            PaUtil\_DebugPrint( \textcolor{stringliteral}{"{}Expression '"{}} \#expr \textcolor{stringliteral}{"{}' failed in '"{}} \_\_FILE\_\_ \textcolor{stringliteral}{"{}', line: "{}} \mbox{\hyperlink{pa__jack_8c_a8fdb5acc9bc207e117671b79ddf1df0f}{STRINGIZE}}( \_\_LINE\_\_ ) \textcolor{stringliteral}{"{}\(\backslash\)n"{}} ); \(\backslash\)}
+\DoxyCodeLine{            if( (code) == \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a47726071f5dccc656d5e3ff20bbfc5a0}{paUnanticipatedHostError}} ) \(\backslash\)}
+\DoxyCodeLine{                PA\_DEBUG(( \textcolor{stringliteral}{"{}Host error description: \%s\(\backslash\)n"{}}, alsa\_snd\_strerror( \_\_pa\_unsure\_error\_id ) )); \(\backslash\)}
+\DoxyCodeLine{            result = (code); \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keywordflow}{goto} error; \(\backslash\)}
+\DoxyCodeLine{        \} \(\backslash\)}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{while} (0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a6089c526fbee9e2052de21f6226b8fab}\label{pa__linux__alsa_8c_a6089c526fbee9e2052de21f6226b8fab}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PA\_ALSA\_PATHNAME@{PA\_ALSA\_PATHNAME}}
+\index{PA\_ALSA\_PATHNAME@{PA\_ALSA\_PATHNAME}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PA\_ALSA\_PATHNAME}{PA\_ALSA\_PATHNAME}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+ALSA\+\_\+\+PATHNAME~\char`\"{}libasound.\+so\char`\"{}}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af59870a8b44c748c2933363c8d96b296}\label{pa__linux__alsa_8c_af59870a8b44c748c2933363c8d96b296}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!RATE\_MAX\_DEVIATE\_RATIO@{RATE\_MAX\_DEVIATE\_RATIO}}
+\index{RATE\_MAX\_DEVIATE\_RATIO@{RATE\_MAX\_DEVIATE\_RATIO}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{RATE\_MAX\_DEVIATE\_RATIO}{RATE\_MAX\_DEVIATE\_RATIO}}
+{\footnotesize\ttfamily \#define RATE\+\_\+\+MAX\+\_\+\+DEVIATE\+\_\+\+RATIO~100}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aff83aac9633496129e2cdf9442c4ad87}\label{pa__linux__alsa_8c_aff83aac9633496129e2cdf9442c4ad87}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!SND\_PCM\_TSTAMP\_ENABLE@{SND\_PCM\_TSTAMP\_ENABLE}}
+\index{SND\_PCM\_TSTAMP\_ENABLE@{SND\_PCM\_TSTAMP\_ENABLE}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{SND\_PCM\_TSTAMP\_ENABLE}{SND\_PCM\_TSTAMP\_ENABLE}}
+{\footnotesize\ttfamily \#define SND\+\_\+\+PCM\+\_\+\+TSTAMP\+\_\+\+ENABLE~SND\+\_\+\+PCM\+\_\+\+TSTAMP\+\_\+\+MMAP}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8c_ac2cdfc5693f7d3b6e0497a9a7e942c6e}\label{pa__linux__alsa_8c_ac2cdfc5693f7d3b6e0497a9a7e942c6e}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsaDeviceInfo@{PaAlsaDeviceInfo}}
+\index{PaAlsaDeviceInfo@{PaAlsaDeviceInfo}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsaDeviceInfo}{PaAlsaDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_alsa_device_info}{Pa\+Alsa\+Device\+Info}} \mbox{\hyperlink{struct_pa_alsa_device_info}{Pa\+Alsa\+Device\+Info}}}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a1bdf289c7d6eda3ae452a72bab8e289b}\label{pa__linux__alsa_8c_a1bdf289c7d6eda3ae452a72bab8e289b}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsaHostApiRepresentation@{PaAlsaHostApiRepresentation}}
+\index{PaAlsaHostApiRepresentation@{PaAlsaHostApiRepresentation}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsaHostApiRepresentation}{PaAlsaHostApiRepresentation}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_alsa_host_api_representation}{Pa\+Alsa\+Host\+Api\+Representation}} \mbox{\hyperlink{struct_pa_alsa_host_api_representation}{Pa\+Alsa\+Host\+Api\+Representation}}}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a6c851e7398133511e4a365ae2a5d29c7}\label{pa__linux__alsa_8c_a6c851e7398133511e4a365ae2a5d29c7}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsaStream@{PaAlsaStream}}
+\index{PaAlsaStream@{PaAlsaStream}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsaStream}{PaAlsaStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_alsa_stream}{Pa\+Alsa\+Stream}} \mbox{\hyperlink{struct_pa_alsa_stream}{Pa\+Alsa\+Stream}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64}\label{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!StreamDirection@{StreamDirection}}
+\index{StreamDirection@{StreamDirection}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{StreamDirection}{StreamDirection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64}{Stream\+Direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamDirection\_In@{StreamDirection\_In}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!StreamDirection\_In@{StreamDirection\_In}}}\mbox{\Hypertarget{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64aa262f813f93316ac1bf9e9cd12b09385}\label{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64aa262f813f93316ac1bf9e9cd12b09385}} 
+Stream\+Direction\+\_\+\+In&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{StreamDirection\_Out@{StreamDirection\_Out}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!StreamDirection\_Out@{StreamDirection\_Out}}}\mbox{\Hypertarget{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64ae177efd435a0afd9a45c4efc3b63b229}\label{pa__linux__alsa_8c_a72f714624a59d5421dc6b234893a0c64ae177efd435a0afd9a45c4efc3b63b229}} 
+Stream\+Direction\+\_\+\+Out&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a53379e529dbbe551a280ed8fd930657a}\label{pa__linux__alsa_8c_a53379e529dbbe551a280ed8fd930657a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+asoundlib\+\_\+version}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a1fa698cf1ac7fbfffcf40530322456aa}\label{pa__linux__alsa_8c_a1fa698cf1ac7fbfffcf40530322456aa}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+card\+\_\+next}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a8d5fbd265d4b8c82eeb872be21fcc2a9}\label{pa__linux__alsa_8c_a8d5fbd265d4b8c82eeb872be21fcc2a9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [3/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a1c0ef406f11c268324f3b425b2b4477c}\label{pa__linux__alsa_8c_a1c0ef406f11c268324f3b425b2b4477c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [4/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+get\+\_\+id}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a7c5314306f6e0b90047bc7051e15e7f3}\label{pa__linux__alsa_8c_a7c5314306f6e0b90047bc7051e15e7f3}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [5/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+get\+\_\+string}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae01863718e07e44d57c9778054b08d64}\label{pa__linux__alsa_8c_ae01863718e07e44d57c9778054b08d64}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [6/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+iterator\+\_\+end}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a76a139b1b0d011b3efc8d2342cd43027}\label{pa__linux__alsa_8c_a76a139b1b0d011b3efc8d2342cd43027}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [7/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+iterator\+\_\+entry}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af62117900dba2fd683c8f707ebdb361a}\label{pa__linux__alsa_8c_af62117900dba2fd683c8f707ebdb361a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [8/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+iterator\+\_\+first}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a4a5849c9e2d66c24a42c600360bc1144}\label{pa__linux__alsa_8c_a4a5849c9e2d66c24a42c600360bc1144}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [9/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+iterator\+\_\+next}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a4d392f3f6096a3676c10e466f0ae4955}\label{pa__linux__alsa_8c_a4d392f3f6096a3676c10e466f0ae4955}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [10/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+search}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a459dcb407e54341412b59e70d5e210c8}\label{pa__linux__alsa_8c_a459dcb407e54341412b59e70d5e210c8}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [11/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+update}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aff93bd12ee75baf5ddbe8eff1a95103a}\label{pa__linux__alsa_8c_aff93bd12ee75baf5ddbe8eff1a95103a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [12/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+config\+\_\+update\+\_\+free\+\_\+global}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a56f1f1c94ca4a341b786d884d89eee27}\label{pa__linux__alsa_8c_a56f1f1c94ca4a341b786d884d89eee27}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [13/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+card\+\_\+info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af08507d5635a97fc1f2896497c5e0800}\label{pa__linux__alsa_8c_af08507d5635a97fc1f2896497c5e0800}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [14/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+free}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a04feff72c45826cc4f124f58e16fa73b}\label{pa__linux__alsa_8c_a04feff72c45826cc4f124f58e16fa73b}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [15/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+get\+\_\+name}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ac3d638900c16e2851fc16413631a0f3d}\label{pa__linux__alsa_8c_ac3d638900c16e2851fc16413631a0f3d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [16/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+malloc}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5b9fe547addbbf90edbf2b9a1fcbed1d}\label{pa__linux__alsa_8c_a5b9fe547addbbf90edbf2b9a1fcbed1d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [17/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+card\+\_\+info\+\_\+sizeof}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a3fe32205cdddb152bd2d65814f796e6d}\label{pa__linux__alsa_8c_a3fe32205cdddb152bd2d65814f796e6d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [18/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+close}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a397c826dbacb5548338f8954784a0729}\label{pa__linux__alsa_8c_a397c826dbacb5548338f8954784a0729}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [19/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+open}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a09a7bc6bbe7032a904ac188afa681b2d}\label{pa__linux__alsa_8c_a09a7bc6bbe7032a904ac188afa681b2d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [20/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+pcm\+\_\+info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a188657086d4aa0fe09e7ad9c4cf21d2a}\label{pa__linux__alsa_8c_a188657086d4aa0fe09e7ad9c4cf21d2a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [21/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+ctl\+\_\+pcm\+\_\+next\+\_\+device}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a2fdb175a9abd507d1e13b709c3501906}\label{pa__linux__alsa_8c_a2fdb175a9abd507d1e13b709c3501906}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [22/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+output\+\_\+stdio\+\_\+attach}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a3e07ca2a96cf0b6b7edd84fc5c26283d}\label{pa__linux__alsa_8c_a3e07ca2a96cf0b6b7edd84fc5c26283d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [23/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+area\+\_\+copy}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a3e8c5e9216f38a7c672291aef8a692fb}\label{pa__linux__alsa_8c_a3e8c5e9216f38a7c672291aef8a692fb}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [24/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+areas\+\_\+silence}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae09f06e8dc74e131770e51b616d56592}\label{pa__linux__alsa_8c_ae09f06e8dc74e131770e51b616d56592}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [25/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+avail\+\_\+update}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a82d056b0ca4ead55cd47f0c16bc91b77}\label{pa__linux__alsa_8c_a82d056b0ca4ead55cd47f0c16bc91b77}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [26/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+close}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a81e7a06093fadc0b3d3eb4aaca8faede}\label{pa__linux__alsa_8c_a81e7a06093fadc0b3d3eb4aaca8faede}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [27/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+delay}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_abb4ac32f5255ffa2df467d86b97961e9}\label{pa__linux__alsa_8c_abb4ac32f5255ffa2df467d86b97961e9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [28/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+drain}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af575195db45007e0813de71b6f0fca4b}\label{pa__linux__alsa_8c_af575195db45007e0813de71b6f0fca4b}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [29/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+drop}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a75f94cf3d2ae2ad60ff7bf831222590a}\label{pa__linux__alsa_8c_a75f94cf3d2ae2ad60ff7bf831222590a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [30/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+format\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aa6ab6e790c56308a6ca92314b213e0a2}\label{pa__linux__alsa_8c_aa6ab6e790c56308a6ca92314b213e0a2}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [31/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+frames\+\_\+to\+\_\+bytes}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a404f4f9734fdfdd6204349cdf433e30f}\label{pa__linux__alsa_8c_a404f4f9734fdfdd6204349cdf433e30f}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [32/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a2a74332bba092589d23d30c55f259714}\label{pa__linux__alsa_8c_a2a74332bba092589d23d30c55f259714}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [33/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+any}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a8a13e4c5bac4bd3c4031d7b74274090c}\label{pa__linux__alsa_8c_a8a13e4c5bac4bd3c4031d7b74274090c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [34/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+dump}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a9af252edcdcde17e803ce3e57130e3f1}\label{pa__linux__alsa_8c_a9af252edcdcde17e803ce3e57130e3f1}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [35/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+free}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aaee75bc87789693c300aaabd0a819a34}\label{pa__linux__alsa_8c_aaee75bc87789693c300aaabd0a819a34}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [36/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+buffer\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aaed0d83ee9eeb1fe20d491c9b083d310}\label{pa__linux__alsa_8c_aaed0d83ee9eeb1fe20d491c9b083d310}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [37/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+buffer\+\_\+size\+\_\+max}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a084d3b20813dc041949ae233ba6efbf3}\label{pa__linux__alsa_8c_a084d3b20813dc041949ae233ba6efbf3}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [38/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+channels\+\_\+max}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_abcba42a7a8437164475cf58f610a67bc}\label{pa__linux__alsa_8c_abcba42a7a8437164475cf58f610a67bc}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [39/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+channels\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ac7eed4682a5810d94179d6102eb385e1}\label{pa__linux__alsa_8c_ac7eed4682a5810d94179d6102eb385e1}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [40/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+period\+\_\+size\+\_\+max}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aa78d0dfd9c0ee4cd6017345922de06db}\label{pa__linux__alsa_8c_aa78d0dfd9c0ee4cd6017345922de06db}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [41/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+period\+\_\+size\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a67df056a61b544cc5c9df8057d6e3fe9}\label{pa__linux__alsa_8c_a67df056a61b544cc5c9df8057d6e3fe9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [42/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+periods\+\_\+max}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aebf5651fd1540b3cd0978a153a25e21c}\label{pa__linux__alsa_8c_aebf5651fd1540b3cd0978a153a25e21c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [43/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+periods\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a7d81109577cf3e3fd0f9f34d6e1686a3}\label{pa__linux__alsa_8c_a7d81109577cf3e3fd0f9f34d6e1686a3}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [44/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+max}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a543960b1f03bc01eb2aacea201bda35a}\label{pa__linux__alsa_8c_a543960b1f03bc01eb2aacea201bda35a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [45/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a982dbcfe5d57676003905e856c8a07cb}\label{pa__linux__alsa_8c_a982dbcfe5d57676003905e856c8a07cb}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [46/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+get\+\_\+rate\+\_\+numden}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ac781e0f2e164ce73e26c684a2f87abaf}\label{pa__linux__alsa_8c_ac781e0f2e164ce73e26c684a2f87abaf}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [47/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+malloc}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_abae57b0f6fcf70f307b118eb02fb0fd7}\label{pa__linux__alsa_8c_abae57b0f6fcf70f307b118eb02fb0fd7}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [48/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+access}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a75dec8a5aa6ddeff01e821fc7741540c}\label{pa__linux__alsa_8c_a75dec8a5aa6ddeff01e821fc7741540c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [49/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5eb6eaeb70f626d15b5d2f8b8191a5ea}\label{pa__linux__alsa_8c_a5eb6eaeb70f626d15b5d2f8b8191a5ea}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [50/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+
+
+!! 
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a247de743d9ad97a6990b9195131b18d2}\label{pa__linux__alsa_8c_a247de743d9ad97a6990b9195131b18d2}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [51/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+buffer\+\_\+size\+\_\+near}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a9ea10acc1749c19f2c47c96f613f747d}\label{pa__linux__alsa_8c_a9ea10acc1749c19f2c47c96f613f747d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [52/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+channels}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae85e75f99f11a01b7e4f25c36433a668}\label{pa__linux__alsa_8c_ae85e75f99f11a01b7e4f25c36433a668}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [53/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+format}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a48b29f2c2dc54c904641385a48967e9c}\label{pa__linux__alsa_8c_a48b29f2c2dc54c904641385a48967e9c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [54/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+period\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5be3890558f57b2c7a0aeb54e46a529c}\label{pa__linux__alsa_8c_a5be3890558f57b2c7a0aeb54e46a529c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [55/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+period\+\_\+size\+\_\+near}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a93d6f74c54661b192f62b428bda3d845}\label{pa__linux__alsa_8c_a93d6f74c54661b192f62b428bda3d845}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [56/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+periods\+\_\+integer}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a49773419c25c96c1653ff79b51738171}\label{pa__linux__alsa_8c_a49773419c25c96c1653ff79b51738171}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [57/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+periods\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a75bb1d18852ef30c04cb514dd63646be}\label{pa__linux__alsa_8c_a75bb1d18852ef30c04cb514dd63646be}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [58/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate}]{ }\end{DoxyParamCaption})}
+
+
+
+!! 
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a2e6b1d12889a92e65a6f0413d4cdad22}\label{pa__linux__alsa_8c_a2e6b1d12889a92e65a6f0413d4cdad22}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [59/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate\+\_\+near}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a0ef106803f4c3764a894ca11a1e3073e}\label{pa__linux__alsa_8c_a0ef106803f4c3764a894ca11a1e3073e}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [60/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+set\+\_\+rate\+\_\+resample}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a84e6dce1b316e340b75f9fb5a5b907ca}\label{pa__linux__alsa_8c_a84e6dce1b316e340b75f9fb5a5b907ca}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [61/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+sizeof}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a01791dc6f0497287ba0252c0b2f9b08e}\label{pa__linux__alsa_8c_a01791dc6f0497287ba0252c0b2f9b08e}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [62/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+access}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ab9db6ef2d8db9902bd21bdbc3eb33aa1}\label{pa__linux__alsa_8c_ab9db6ef2d8db9902bd21bdbc3eb33aa1}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [63/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+format}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af9f5ee763c428b8a86b789f063171828}\label{pa__linux__alsa_8c_af9f5ee763c428b8a86b789f063171828}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [64/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+hw\+\_\+params\+\_\+test\+\_\+period\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_addf53b1917459a820848c6f4c6c24ca6}\label{pa__linux__alsa_8c_addf53b1917459a820848c6f4c6c24ca6}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [65/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af87d6992a5f057437e991be30b4d8ea5}\label{pa__linux__alsa_8c_af87d6992a5f057437e991be30b4d8ea5}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [66/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+free}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a78e0fc13ddfe13673e3181daac09a5e8}\label{pa__linux__alsa_8c_a78e0fc13ddfe13673e3181daac09a5e8}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [67/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+get\+\_\+card}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ab9555fd29558ff8104e7d9dac61ddd0b}\label{pa__linux__alsa_8c_ab9555fd29558ff8104e7d9dac61ddd0b}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [68/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+get\+\_\+name}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aa332e8e61a48f2c5f5893e95581569c8}\label{pa__linux__alsa_8c_aa332e8e61a48f2c5f5893e95581569c8}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [69/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+malloc}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a49f6ea989a05f8cbd0516ffc0977684d}\label{pa__linux__alsa_8c_a49f6ea989a05f8cbd0516ffc0977684d}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [70/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+device}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a98a41bc22c7dc351dd4bd63e6b50bd84}\label{pa__linux__alsa_8c_a98a41bc22c7dc351dd4bd63e6b50bd84}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [71/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+stream}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5d577400d8e9ca091ff0011e2daeef4e}\label{pa__linux__alsa_8c_a5d577400d8e9ca091ff0011e2daeef4e}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [72/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+set\+\_\+subdevice}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_afefc5491f47a11211a753bf798fa7c38}\label{pa__linux__alsa_8c_afefc5491f47a11211a753bf798fa7c38}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [73/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+info\+\_\+sizeof}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a179c9b170746499e072857f21c7a3196}\label{pa__linux__alsa_8c_a179c9b170746499e072857f21c7a3196}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [74/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+link}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a07c0d639b80d6e526717b84808d44831}\label{pa__linux__alsa_8c_a07c0d639b80d6e526717b84808d44831}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [75/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+mmap\+\_\+begin}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a97185509e6e2dbe136036d4e719ee637}\label{pa__linux__alsa_8c_a97185509e6e2dbe136036d4e719ee637}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [76/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+mmap\+\_\+commit}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a213a0aac0e4796d121c212c13497de4a}\label{pa__linux__alsa_8c_a213a0aac0e4796d121c212c13497de4a}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [77/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+nonblock}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a9126f716fb60ebe606012f379127eff2}\label{pa__linux__alsa_8c_a9126f716fb60ebe606012f379127eff2}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [78/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+open}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a80ccf442cb0d14d6749e174279bce3b8}\label{pa__linux__alsa_8c_a80ccf442cb0d14d6749e174279bce3b8}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [79/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+poll\+\_\+descriptors}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a580aa57284ba87635dc280fda6433038}\label{pa__linux__alsa_8c_a580aa57284ba87635dc280fda6433038}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [80/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+poll\+\_\+descriptors\+\_\+count}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a92416882cdf255dc8800daaff4d9d5bc}\label{pa__linux__alsa_8c_a92416882cdf255dc8800daaff4d9d5bc}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [81/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+poll\+\_\+descriptors\+\_\+revents}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a7d09c78a5de6741c39c4559ee2a4f2d7}\label{pa__linux__alsa_8c_a7d09c78a5de6741c39c4559ee2a4f2d7}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [82/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+prepare}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a295692e4381b5b7e030192ff8350f661}\label{pa__linux__alsa_8c_a295692e4381b5b7e030192ff8350f661}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [83/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+readi}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a4454ab20358b46ee23bff6ac1b65665c}\label{pa__linux__alsa_8c_a4454ab20358b46ee23bff6ac1b65665c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [84/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+readn}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a089d5c4d5ce9b4ebd224a1353350349c}\label{pa__linux__alsa_8c_a089d5c4d5ce9b4ebd224a1353350349c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [85/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+recover}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a39b9b812e742855e07ef257e09f95adb}\label{pa__linux__alsa_8c_a39b9b812e742855e07ef257e09f95adb}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [86/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+resume}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a777d29fe6e93ee5c42276e59cd9f56fb}\label{pa__linux__alsa_8c_a777d29fe6e93ee5c42276e59cd9f56fb}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [87/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+start}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a8221435d0fdf3e26d433edbc70b8da84}\label{pa__linux__alsa_8c_a8221435d0fdf3e26d433edbc70b8da84}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [88/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+state}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a64b2d17a6ddc51bf97c496f908dcd5e2}\label{pa__linux__alsa_8c_a64b2d17a6ddc51bf97c496f908dcd5e2}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [89/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_abd9335b75b89182bc8f5ed76d72e2de3}\label{pa__linux__alsa_8c_abd9335b75b89182bc8f5ed76d72e2de3}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [90/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+delay}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a2e246c23a455dcb7269c4b4c5673e2b0}\label{pa__linux__alsa_8c_a2e246c23a455dcb7269c4b4c5673e2b0}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [91/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+state}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a6f1ee41e11f3868ce3330aefe5837667}\label{pa__linux__alsa_8c_a6f1ee41e11f3868ce3330aefe5837667}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [92/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+trigger\+\_\+tstamp}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ab729d03db1d598f780444335adddbce6}\label{pa__linux__alsa_8c_ab729d03db1d598f780444335adddbce6}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [93/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status\+\_\+get\+\_\+tstamp}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae05aecd01ab48f610e3441b020a79202}\label{pa__linux__alsa_8c_ae05aecd01ab48f610e3441b020a79202}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [94/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+status\+\_\+sizeof}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a40e1c777ff4176af4878ac9d9fcb8ab9}\label{pa__linux__alsa_8c_a40e1c777ff4176af4878ac9d9fcb8ab9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [95/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a3722024c98008cc79acf99e6f9c20012}\label{pa__linux__alsa_8c_a3722024c98008cc79acf99e6f9c20012}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [96/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+current}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ab110b257b129a6a4d52851ba8046d510}\label{pa__linux__alsa_8c_ab110b257b129a6a4d52851ba8046d510}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [97/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+free}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a65509c90c7c54e3ef3b8ae9d7fd13d88}\label{pa__linux__alsa_8c_a65509c90c7c54e3ef3b8ae9d7fd13d88}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [98/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+get\+\_\+boundary}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_af9bd31f071efd0d9176ac6eca1393eb9}\label{pa__linux__alsa_8c_af9bd31f071efd0d9176ac6eca1393eb9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [99/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+malloc}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a3e017b5ea1fe9b7e9ee4926b56a7192b}\label{pa__linux__alsa_8c_a3e017b5ea1fe9b7e9ee4926b56a7192b}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [100/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+avail\+\_\+min}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a04e67a8e5cd45eca96c8a418f3e5934c}\label{pa__linux__alsa_8c_a04e67a8e5cd45eca96c8a418f3e5934c}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [101/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+silence\+\_\+size}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5e4ad1d3659501f377dcdaa634258c32}\label{pa__linux__alsa_8c_a5e4ad1d3659501f377dcdaa634258c32}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [102/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+silence\+\_\+threshold}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a788f6d60ea11b6d460aabdc7b0a4ae1f}\label{pa__linux__alsa_8c_a788f6d60ea11b6d460aabdc7b0a4ae1f}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [103/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+start\+\_\+threshold}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aa576262741a90a33945d88d72400de24}\label{pa__linux__alsa_8c_aa576262741a90a33945d88d72400de24}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [104/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+stop\+\_\+threshold}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ac15ab4310ab947aa77f7d1a4e31b9aff}\label{pa__linux__alsa_8c_ac15ab4310ab947aa77f7d1a4e31b9aff}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [105/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+tstamp\+\_\+mode}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae89ef56a988006fbc1df6bbfa06f376f}\label{pa__linux__alsa_8c_ae89ef56a988006fbc1df6bbfa06f376f}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [106/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+set\+\_\+xfer\+\_\+align}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_ae971bba8f190232d820afe13b1e295da}\label{pa__linux__alsa_8c_ae971bba8f190232d820afe13b1e295da}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [107/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+sw\+\_\+params\+\_\+sizeof}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a5c3c0596d8f773efdaed028ce43fa9c4}\label{pa__linux__alsa_8c_a5c3c0596d8f773efdaed028ce43fa9c4}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [108/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+wait}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_aea2b52c92706c07846712eef5ab65887}\label{pa__linux__alsa_8c_aea2b52c92706c07846712eef5ab65887}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [109/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+writei}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a4bc42e7cca0cab8c0fcacc9c003716cb}\label{pa__linux__alsa_8c_a4bc42e7cca0cab8c0fcacc9c003716cb}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [110/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+pcm\+\_\+writen}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_a61172a2f8ab196238e53aa0ddea2dde7}\label{pa__linux__alsa_8c_a61172a2f8ab196238e53aa0ddea2dde7}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}}
+\index{\_PA\_DEFINE\_FUNC@{\_PA\_DEFINE\_FUNC}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{\_PA\_DEFINE\_FUNC()}{\_PA\_DEFINE\_FUNC()}\hspace{0.1cm}{\footnotesize\ttfamily [111/111]}}
+{\footnotesize\ttfamily \+\_\+\+PA\+\_\+\+DEFINE\+\_\+\+FUNC (\begin{DoxyParamCaption}\item[{snd\+\_\+strerror}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__linux__alsa_8c_accc41e7fd89dc0a6163d54a4f25fb242}\label{pa__linux__alsa_8c_accc41e7fd89dc0a6163d54a4f25fb242}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_EnableRealtimeScheduling@{PaAlsa\_EnableRealtimeScheduling}}
+\index{PaAlsa\_EnableRealtimeScheduling@{PaAlsa\_EnableRealtimeScheduling}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_EnableRealtimeScheduling()}{PaAlsa\_EnableRealtimeScheduling()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Enable\+Realtime\+Scheduling (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int}]{enable }\end{DoxyParamCaption})}
+
+Instruct whether to enable real-\/time priority when starting the audio thread.
+
+If this is turned on by the stream is started, the audio callback thread will be created with the FIFO scheduling policy, which is suitable for realtime operation. \mbox{\Hypertarget{pa__linux__alsa_8c_ac31edeb99ef568fc89418d77bd4ca624}\label{pa__linux__alsa_8c_ac31edeb99ef568fc89418d77bd4ca624}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_GetStreamInputCard@{PaAlsa\_GetStreamInputCard}}
+\index{PaAlsa\_GetStreamInputCard@{PaAlsa\_GetStreamInputCard}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_GetStreamInputCard()}{PaAlsa\_GetStreamInputCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Get\+Stream\+Input\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int $\ast$}]{card }\end{DoxyParamCaption})}
+
+Get the ALSA-\/lib card index of this stream\textquotesingle{}s input device. \mbox{\Hypertarget{pa__linux__alsa_8c_a04d7cd7252120eadf0ab3141ba5a7d93}\label{pa__linux__alsa_8c_a04d7cd7252120eadf0ab3141ba5a7d93}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_GetStreamOutputCard@{PaAlsa\_GetStreamOutputCard}}
+\index{PaAlsa\_GetStreamOutputCard@{PaAlsa\_GetStreamOutputCard}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_GetStreamOutputCard()}{PaAlsa\_GetStreamOutputCard()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Get\+Stream\+Output\+Card (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{s,  }\item[{int $\ast$}]{card }\end{DoxyParamCaption})}
+
+Get the ALSA-\/lib card index of this stream\textquotesingle{}s output device. \mbox{\Hypertarget{pa__linux__alsa_8c_a68bdfa54581e698d5958b6463faf43d4}\label{pa__linux__alsa_8c_a68bdfa54581e698d5958b6463faf43d4}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_Initialize@{PaAlsa\_Initialize}}
+\index{PaAlsa\_Initialize@{PaAlsa\_Initialize}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_Initialize()}{PaAlsa\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{host\+Api\+Index }\end{DoxyParamCaption})}
+
+Uncommented because Alsa\+Error\+Handler is unused for anything good yet. If Alsa\+Error\+Handler is to be used, do not forget to register this callback in Pa\+Alsa\+\_\+\+Initialize, and unregister in Terminate. If Alsa\+Error\+Handler is to be used, do not forget to unregister callback pointer in Terminate function.\mbox{\Hypertarget{pa__linux__alsa_8c_ac33a394742540a3b6666d77698a72e82}\label{pa__linux__alsa_8c_ac33a394742540a3b6666d77698a72e82}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_InitializeStreamInfo@{PaAlsa\_InitializeStreamInfo}}
+\index{PaAlsa\_InitializeStreamInfo@{PaAlsa\_InitializeStreamInfo}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_InitializeStreamInfo()}{PaAlsa\_InitializeStreamInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Initialize\+Stream\+Info (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_alsa_stream_info}{Pa\+Alsa\+Stream\+Info}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+Initialize host API specific structure, call this before setting relevant attributes. \mbox{\Hypertarget{pa__linux__alsa_8c_a7517c2e54801c8bd73c2f6db30aeaff9}\label{pa__linux__alsa_8c_a7517c2e54801c8bd73c2f6db30aeaff9}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_SetLibraryPathName@{PaAlsa\_SetLibraryPathName}}
+\index{PaAlsa\_SetLibraryPathName@{PaAlsa\_SetLibraryPathName}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetLibraryPathName()}{PaAlsa\_SetLibraryPathName()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Alsa\+\_\+\+Set\+Library\+Path\+Name (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path\+Name }\end{DoxyParamCaption})}
+
+Set the path and name of ALSA library file if Port\+Audio is configured to load it dynamically (see PA\+\_\+\+ALSA\+\_\+\+DYNAMIC). This setting will overwrite the default name set by PA\+\_\+\+ALSA\+\_\+\+PATHNAME define. 
+\begin{DoxyParams}{Parameters}
+{\em path\+Name} & Full path with filename. Only filename can be used, but dlopen() will lookup default searchable directories (/usr/lib;/usr/local/lib) then. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__linux__alsa_8c_ade14c5bdbcdc7fb418cba123379ed529}\label{pa__linux__alsa_8c_ade14c5bdbcdc7fb418cba123379ed529}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_SetNumPeriods@{PaAlsa\_SetNumPeriods}}
+\index{PaAlsa\_SetNumPeriods@{PaAlsa\_SetNumPeriods}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetNumPeriods()}{PaAlsa\_SetNumPeriods()}}
+{\footnotesize\ttfamily int Pa\+Alsa\+\_\+\+Set\+Num\+Periods (\begin{DoxyParamCaption}\item[{int}]{num\+Periods }\end{DoxyParamCaption})}
+
+Set the number of periods (buffer fragments) to configure devices with.
+
+By default the number of periods is 4, this is the lowest number of periods that works well on the author\textquotesingle{}s soundcard. 
+\begin{DoxyParams}{Parameters}
+{\em num\+Periods} & The number of periods. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a2992cf7c30de5aaea222ec762fc56ad1}\label{pa__linux__alsa_8c_a2992cf7c30de5aaea222ec762fc56ad1}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!PaAlsa\_SetRetriesBusy@{PaAlsa\_SetRetriesBusy}}
+\index{PaAlsa\_SetRetriesBusy@{PaAlsa\_SetRetriesBusy}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{PaAlsa\_SetRetriesBusy()}{PaAlsa\_SetRetriesBusy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Alsa\+\_\+\+Set\+Retries\+Busy (\begin{DoxyParamCaption}\item[{int}]{retries }\end{DoxyParamCaption})}
+
+Set the maximum number of times to retry opening busy device (sleeping for a short interval inbetween). 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__linux__alsa_8c_a678f357aa9293068bbedbfe6be43af35}\label{pa__linux__alsa_8c_a678f357aa9293068bbedbfe6be43af35}} 
+\index{pa\_linux\_alsa.c@{pa\_linux\_alsa.c}!predefinedNames@{predefinedNames}}
+\index{predefinedNames@{predefinedNames}!pa\_linux\_alsa.c@{pa\_linux\_alsa.c}}
+\doxysubsubsection{\texorpdfstring{predefinedNames}{predefinedNames}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_hw_dev_info}{Hw\+Dev\+Info}} predefined\+Names\mbox{[}$\,$\mbox{]}}
+

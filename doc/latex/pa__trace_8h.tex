@@ -1,0 +1,108 @@
+\hypertarget{pa__trace_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+trace.h File Reference}
+\label{pa__trace_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_trace.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_trace.h}}
+
+
+Real-\/time safe event trace logging facility for debugging.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_a707086044875cca709b989209dadc086}{PA\+\_\+\+TRACE\+\_\+\+REALTIME\+\_\+\+EVENTS}}~(0)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_af3ea8880d4c946ab3fe3146446d7394d}{PA\+\_\+\+MAX\+\_\+\+TRACE\+\_\+\+RECORDS}}~(2048)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_ac7b7bbffe3e633111d58e3cd74a5fcdb}{Pa\+Util\+\_\+\+Reset\+Trace\+Messages}}()~/$\ast$ noop $\ast$/
+\begin{DoxyCompactList}\small\item\em Clear the trace buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pa__trace_8h_a7111d66746fb69f58b8edf9d5f50326f}{Pa\+Util\+\_\+\+Add\+Trace\+Message}}(msg,  \mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}})~/$\ast$ noop $\ast$/
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_ad43add0acb5375a276d29146cf14d0ad}{Pa\+Util\+\_\+\+Dump\+Trace\+Messages}}()~/$\ast$ noop $\ast$/
+\begin{DoxyCompactList}\small\item\em Print all messages in the trace buffer to stdout and clear the trace buffer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pa__trace_8h_a3217a6b513a2eb1f9b33575db4dbaf88}{Pa\+Util\+\_\+\+Initialize\+High\+Speed\+Log}}(ph\+Log,  max\+Size\+In\+Bytes)~(0)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_a420557d267bf7da721717f21bb343806}{Pa\+Util\+\_\+\+Reset\+High\+Speed\+Log\+Time\+Ref}}(h\+Log)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_ade6031f4912c0cef34f49e0e87eb94ae}{Pa\+Util\+\_\+\+Add\+High\+Speed\+Log\+Message}}(...)~(0)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_afa4fb96d2b3c205afb012af0f0e3eb8a}{Pa\+Util\+\_\+\+Dump\+High\+Speed\+Log}}(h\+Log,  file\+Name)
+\item 
+\#define \mbox{\hyperlink{pa__trace_8h_a1214bcb36bdf43df4769d0c16655e487}{Pa\+Util\+\_\+\+Discard\+High\+Speed\+Log}}(h\+Log)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Real-\/time safe event trace logging facility for debugging. 
+
+Allows data to be logged to a fixed size trace buffer in a real-\/time execution context (such as at interrupt time). Each log entry consists of a message comprising a string pointer and an int. The trace buffer may be dumped to stdout later.
+
+This facility is only active if PA\+\_\+\+TRACE\+\_\+\+REALTIME\+\_\+\+EVENTS is set to 1, otherwise the trace functions expand to no-\/ops. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__trace_8h_af3ea8880d4c946ab3fe3146446d7394d}\label{pa__trace_8h_af3ea8880d4c946ab3fe3146446d7394d}} 
+\index{pa\_trace.h@{pa\_trace.h}!PA\_MAX\_TRACE\_RECORDS@{PA\_MAX\_TRACE\_RECORDS}}
+\index{PA\_MAX\_TRACE\_RECORDS@{PA\_MAX\_TRACE\_RECORDS}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PA\_MAX\_TRACE\_RECORDS}{PA\_MAX\_TRACE\_RECORDS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+MAX\+\_\+\+TRACE\+\_\+\+RECORDS~(2048)}
+
+Maximum number of records stored in trace buffer \mbox{\Hypertarget{pa__trace_8h_a707086044875cca709b989209dadc086}\label{pa__trace_8h_a707086044875cca709b989209dadc086}} 
+\index{pa\_trace.h@{pa\_trace.h}!PA\_TRACE\_REALTIME\_EVENTS@{PA\_TRACE\_REALTIME\_EVENTS}}
+\index{PA\_TRACE\_REALTIME\_EVENTS@{PA\_TRACE\_REALTIME\_EVENTS}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PA\_TRACE\_REALTIME\_EVENTS}{PA\_TRACE\_REALTIME\_EVENTS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+TRACE\+\_\+\+REALTIME\+\_\+\+EVENTS~(0)}
+
+Set to 1 to enable logging using the trace functions defined below \mbox{\Hypertarget{pa__trace_8h_ade6031f4912c0cef34f49e0e87eb94ae}\label{pa__trace_8h_ade6031f4912c0cef34f49e0e87eb94ae}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_AddHighSpeedLogMessage@{PaUtil\_AddHighSpeedLogMessage}}
+\index{PaUtil\_AddHighSpeedLogMessage@{PaUtil\_AddHighSpeedLogMessage}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_AddHighSpeedLogMessage}{PaUtil\_AddHighSpeedLogMessage}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Add\+High\+Speed\+Log\+Message(\begin{DoxyParamCaption}\item[{}]{... }\end{DoxyParamCaption})~(0)}
+
+\mbox{\Hypertarget{pa__trace_8h_a7111d66746fb69f58b8edf9d5f50326f}\label{pa__trace_8h_a7111d66746fb69f58b8edf9d5f50326f}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_AddTraceMessage@{PaUtil\_AddTraceMessage}}
+\index{PaUtil\_AddTraceMessage@{PaUtil\_AddTraceMessage}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_AddTraceMessage}{PaUtil\_AddTraceMessage}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Add\+Trace\+Message(\begin{DoxyParamCaption}\item[{}]{msg,  }\item[{}]{\mbox{\hyperlink{glad_8h_a77bef421a06300ba60fc8c18453bcaef}{data}} }\end{DoxyParamCaption})~/$\ast$ noop $\ast$/}
+
+\mbox{\Hypertarget{pa__trace_8h_a1214bcb36bdf43df4769d0c16655e487}\label{pa__trace_8h_a1214bcb36bdf43df4769d0c16655e487}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_DiscardHighSpeedLog@{PaUtil\_DiscardHighSpeedLog}}
+\index{PaUtil\_DiscardHighSpeedLog@{PaUtil\_DiscardHighSpeedLog}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DiscardHighSpeedLog}{PaUtil\_DiscardHighSpeedLog}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Discard\+High\+Speed\+Log(\begin{DoxyParamCaption}\item[{}]{h\+Log }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__trace_8h_afa4fb96d2b3c205afb012af0f0e3eb8a}\label{pa__trace_8h_afa4fb96d2b3c205afb012af0f0e3eb8a}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_DumpHighSpeedLog@{PaUtil\_DumpHighSpeedLog}}
+\index{PaUtil\_DumpHighSpeedLog@{PaUtil\_DumpHighSpeedLog}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DumpHighSpeedLog}{PaUtil\_DumpHighSpeedLog}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Dump\+High\+Speed\+Log(\begin{DoxyParamCaption}\item[{}]{h\+Log,  }\item[{}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__trace_8h_ad43add0acb5375a276d29146cf14d0ad}\label{pa__trace_8h_ad43add0acb5375a276d29146cf14d0ad}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_DumpTraceMessages@{PaUtil\_DumpTraceMessages}}
+\index{PaUtil\_DumpTraceMessages@{PaUtil\_DumpTraceMessages}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DumpTraceMessages}{PaUtil\_DumpTraceMessages}}
+{\footnotesize\ttfamily Pa\+Util\+\_\+\+Dump\+Trace\+Messages(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~/$\ast$ noop $\ast$/}
+
+
+
+Print all messages in the trace buffer to stdout and clear the trace buffer. 
+
+\mbox{\Hypertarget{pa__trace_8h_a3217a6b513a2eb1f9b33575db4dbaf88}\label{pa__trace_8h_a3217a6b513a2eb1f9b33575db4dbaf88}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_InitializeHighSpeedLog@{PaUtil\_InitializeHighSpeedLog}}
+\index{PaUtil\_InitializeHighSpeedLog@{PaUtil\_InitializeHighSpeedLog}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeHighSpeedLog}{PaUtil\_InitializeHighSpeedLog}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Initialize\+High\+Speed\+Log(\begin{DoxyParamCaption}\item[{}]{ph\+Log,  }\item[{}]{max\+Size\+In\+Bytes }\end{DoxyParamCaption})~(0)}
+
+\mbox{\Hypertarget{pa__trace_8h_a420557d267bf7da721717f21bb343806}\label{pa__trace_8h_a420557d267bf7da721717f21bb343806}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_ResetHighSpeedLogTimeRef@{PaUtil\_ResetHighSpeedLogTimeRef}}
+\index{PaUtil\_ResetHighSpeedLogTimeRef@{PaUtil\_ResetHighSpeedLogTimeRef}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ResetHighSpeedLogTimeRef}{PaUtil\_ResetHighSpeedLogTimeRef}}
+{\footnotesize\ttfamily \#define Pa\+Util\+\_\+\+Reset\+High\+Speed\+Log\+Time\+Ref(\begin{DoxyParamCaption}\item[{}]{h\+Log }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__trace_8h_ac7b7bbffe3e633111d58e3cd74a5fcdb}\label{pa__trace_8h_ac7b7bbffe3e633111d58e3cd74a5fcdb}} 
+\index{pa\_trace.h@{pa\_trace.h}!PaUtil\_ResetTraceMessages@{PaUtil\_ResetTraceMessages}}
+\index{PaUtil\_ResetTraceMessages@{PaUtil\_ResetTraceMessages}!pa\_trace.h@{pa\_trace.h}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ResetTraceMessages}{PaUtil\_ResetTraceMessages}}
+{\footnotesize\ttfamily Pa\+Util\+\_\+\+Reset\+Trace\+Messages(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~/$\ast$ noop $\ast$/}
+
+
+
+Clear the trace buffer. 
+

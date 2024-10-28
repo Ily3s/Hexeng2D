@@ -1,0 +1,69 @@
+\hypertarget{_macros_8hpp}{}\doxysection{C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Macros.hpp File Reference}
+\label{_macros_8hpp}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Macros.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Macros.hpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cassert$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_aa69c97dad52d425dc2d722071fe03af0}{HXG\+\_\+\+DEBUG\+\_\+\+LEVEL}}~1
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}{HXG\+\_\+\+LOG\+\_\+\+ERROR}}(str)~std\+::cout $<$$<$ \char`\"{}\mbox{[}ERROR\mbox{]} \char`\"{} $<$$<$ str $<$$<$ std\+::endl
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_aa5dbbd273beb0d42100493349854bff1}{HXG\+\_\+\+LOG\+\_\+\+WARNING}}(str)~std\+::cout $<$$<$ \char`\"{}\mbox{[}WARNING\mbox{]} \char`\"{} $<$$<$ str $<$$<$ std\+::endl;
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_a82e050215316c8002338b4129c26651c}{HXG\+\_\+\+ASSERT}}(cond,  action)~if (!cond) \{ action \}\char`\"{}\char`\"{}
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}{HXG\+\_\+\+GL}}(x)~x
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_a487117621855a14ef31f996d66868f3f}{HXG\+\_\+\+GLFW}}(x)~x
+\item 
+\#define \mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\+\_\+\+DECLSPEC}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_macros_8hpp_a82e050215316c8002338b4129c26651c}\label{_macros_8hpp_a82e050215316c8002338b4129c26651c}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_ASSERT@{HXG\_ASSERT}}
+\index{HXG\_ASSERT@{HXG\_ASSERT}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_ASSERT}{HXG\_ASSERT}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+ASSERT(\begin{DoxyParamCaption}\item[{}]{cond,  }\item[{}]{action }\end{DoxyParamCaption})~if (!cond) \{ action \}\char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{_macros_8hpp_aa69c97dad52d425dc2d722071fe03af0}\label{_macros_8hpp_aa69c97dad52d425dc2d722071fe03af0}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_DEBUG\_LEVEL@{HXG\_DEBUG\_LEVEL}}
+\index{HXG\_DEBUG\_LEVEL@{HXG\_DEBUG\_LEVEL}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_DEBUG\_LEVEL}{HXG\_DEBUG\_LEVEL}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+DEBUG\+\_\+\+LEVEL~1}
+
+\begin{DoxyNote}{Note}
+HXG\+\_\+\+DEBUG\+\_\+\+LEVEL Should be defined before including this file. Possible values \+: 0, 1, 2, 3 
+\end{DoxyNote}
+\mbox{\Hypertarget{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}\label{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_DECLSPEC@{HXG\_DECLSPEC}}
+\index{HXG\_DECLSPEC@{HXG\_DECLSPEC}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_DECLSPEC}{HXG\_DECLSPEC}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+DECLSPEC}
+
+\mbox{\Hypertarget{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}\label{_macros_8hpp_a4b5ef1cfc7d7edc315442fa4c4e44368}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_GL@{HXG\_GL}}
+\index{HXG\_GL@{HXG\_GL}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_GL}{HXG\_GL}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+GL(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+\mbox{\Hypertarget{_macros_8hpp_a487117621855a14ef31f996d66868f3f}\label{_macros_8hpp_a487117621855a14ef31f996d66868f3f}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_GLFW@{HXG\_GLFW}}
+\index{HXG\_GLFW@{HXG\_GLFW}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_GLFW}{HXG\_GLFW}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+GLFW(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+\mbox{\Hypertarget{_macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}\label{_macros_8hpp_a2b40080fecd7293baa087fe5e10b8bb1}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_LOG\_ERROR@{HXG\_LOG\_ERROR}}
+\index{HXG\_LOG\_ERROR@{HXG\_LOG\_ERROR}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_LOG\_ERROR}{HXG\_LOG\_ERROR}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+LOG\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{str }\end{DoxyParamCaption})~std\+::cout $<$$<$ \char`\"{}\mbox{[}ERROR\mbox{]} \char`\"{} $<$$<$ str $<$$<$ std\+::endl}
+
+\mbox{\Hypertarget{_macros_8hpp_aa5dbbd273beb0d42100493349854bff1}\label{_macros_8hpp_aa5dbbd273beb0d42100493349854bff1}} 
+\index{Macros.hpp@{Macros.hpp}!HXG\_LOG\_WARNING@{HXG\_LOG\_WARNING}}
+\index{HXG\_LOG\_WARNING@{HXG\_LOG\_WARNING}!Macros.hpp@{Macros.hpp}}
+\doxysubsubsection{\texorpdfstring{HXG\_LOG\_WARNING}{HXG\_LOG\_WARNING}}
+{\footnotesize\ttfamily \#define HXG\+\_\+\+LOG\+\_\+\+WARNING(\begin{DoxyParamCaption}\item[{}]{str }\end{DoxyParamCaption})~std\+::cout $<$$<$ \char`\"{}\mbox{[}WARNING\mbox{]} \char`\"{} $<$$<$ str $<$$<$ std\+::endl;}
+

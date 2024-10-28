@@ -1,0 +1,158 @@
+\hypertarget{class_hexeng_1_1_event_manager_1_1_event}{}\doxysection{Hexeng\+::Event\+Manager\+::Event Class Reference}
+\label{class_hexeng_1_1_event_manager_1_1_event}\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+
+
+{\ttfamily \#include $<$Event\+Manager.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Event\+Manager\+::Event\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.249071cm]{class_hexeng_1_1_event_manager_1_1_event}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}{Event}} (std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}}, std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}{action}}, Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}}=Range\+::\+GLOBAL, uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}}=1)
+\begin{DoxyCompactList}\small\item\em Every pertick ticks, action is executed (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if condition is true.  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}{Event}} ()=default
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ab38283183a3091dcaafbd42572cd75e4}{Event}} (const \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \& \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a4042c75fe0cc52d6139711924050a108}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a576ee3c3b859103de952518bdffe9c5f}{Event}} (\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \& \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a604c8431e48974681d6674afc3093300}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&\&) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::function$<$ bool(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a07bc55b9feba499f7fdbf89df9ab0c33}{condition}} = nullptr
+\item 
+std\+::function$<$ void(void)$>$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}{action}} = nullptr
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}{pertick}} = 1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_aba9cf00b0808e9e28a184fcb42ed68e2}{clock}} = 0
+\item 
+Range \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}{range}} = Range\+::\+GLOBAL
+\item 
+bool \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}} = true
+\item 
+bool $\ast$ \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}{enable\+\_\+ptr}} = \&\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyNote}{Note}
+One tick of the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} is set to 10ms. If the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} is overloaded however, it can be more than 10ms. 
+\end{DoxyNote}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}\label{class_hexeng_1_1_event_manager_1_1_event_a5711271a518fa6c88c1f2bdd11cd5ef0}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
+\index{Event@{Event}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}\item[{std\+::function$<$ bool(void)$>$}]{condition,  }\item[{std\+::function$<$ void(void)$>$}]{action,  }\item[{Range}]{range = {\ttfamily Range\+:\+:GLOBAL},  }\item[{uint32\+\_\+t}]{pertick = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Every pertick ticks, action is executed (in the \mbox{\hyperlink{namespace_hexeng_1_1_event_manager}{Event\+Manager}} loop) if condition is true.  
+
+
+\begin{DoxyParams}{Parameters}
+{\em range} & If range is set to local, the event is related to the scene. If it is set to global, the event is global and executed independently\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}\label{class_hexeng_1_1_event_manager_1_1_event_a2691ff0955f087b58a7712a7dd9a3650}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
+\index{Event@{Event}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_ab38283183a3091dcaafbd42572cd75e4}\label{class_hexeng_1_1_event_manager_1_1_event_ab38283183a3091dcaafbd42572cd75e4}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
+\index{Event@{Event}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a576ee3c3b859103de952518bdffe9c5f}\label{class_hexeng_1_1_event_manager_1_1_event_a576ee3c3b859103de952518bdffe9c5f}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!Event@{Event}}
+\index{Event@{Event}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{Event()}{Event()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Event\+Manager\+::\+Event\+::\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a4042c75fe0cc52d6139711924050a108}\label{class_hexeng_1_1_event_manager_1_1_event_a4042c75fe0cc52d6139711924050a108}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \& Hexeng\+::\+Event\+Manager\+::\+Event\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a604c8431e48974681d6674afc3093300}\label{class_hexeng_1_1_event_manager_1_1_event_a604c8431e48974681d6674afc3093300}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \& Hexeng\+::\+Event\+Manager\+::\+Event\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event}{Event}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}\label{class_hexeng_1_1_event_manager_1_1_event_a187f6edfdf2757eac90456c96360180d}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!action@{action}}
+\index{action@{action}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily std\+::function$<$void(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Event\+::action = nullptr}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_aba9cf00b0808e9e28a184fcb42ed68e2}\label{class_hexeng_1_1_event_manager_1_1_event_aba9cf00b0808e9e28a184fcb42ed68e2}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!clock@{clock}}
+\index{clock@{clock}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{clock}{clock}}
+{\footnotesize\ttfamily uint32\+\_\+t Hexeng\+::\+Event\+Manager\+::\+Event\+::clock = 0}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a07bc55b9feba499f7fdbf89df9ab0c33}\label{class_hexeng_1_1_event_manager_1_1_event_a07bc55b9feba499f7fdbf89df9ab0c33}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!condition@{condition}}
+\index{condition@{condition}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{condition}{condition}}
+{\footnotesize\ttfamily std\+::function$<$bool(void)$>$ Hexeng\+::\+Event\+Manager\+::\+Event\+::condition = nullptr}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}\label{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!enable@{enable}}
+\index{enable@{enable}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{enable}{enable}}
+{\footnotesize\ttfamily bool Hexeng\+::\+Event\+Manager\+::\+Event\+::enable = true}
+
+\begin{DoxyNote}{Note}
+Can always be modified. Useless if enable\+\_\+ptr != \&enable. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}\label{class_hexeng_1_1_event_manager_1_1_event_ab04af2cc9855c54bb664c597db1ba0c3}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!enable\_ptr@{enable\_ptr}}
+\index{enable\_ptr@{enable\_ptr}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{enable\_ptr}{enable\_ptr}}
+{\footnotesize\ttfamily bool$\ast$ Hexeng\+::\+Event\+Manager\+::\+Event\+::enable\+\_\+ptr = \&\mbox{\hyperlink{class_hexeng_1_1_event_manager_1_1_event_ae55059c3e71feb0cc9fa91914dea06db}{enable}}}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}\label{class_hexeng_1_1_event_manager_1_1_event_a3452a062fff71cef6c5e3e4d28d06d07}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!pertick@{pertick}}
+\index{pertick@{pertick}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{pertick}{pertick}}
+{\footnotesize\ttfamily uint32\+\_\+t Hexeng\+::\+Event\+Manager\+::\+Event\+::pertick = 1}
+
+\mbox{\Hypertarget{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}\label{class_hexeng_1_1_event_manager_1_1_event_a8c53eed00aff203970a95f6ad3e6ebd1}} 
+\index{Hexeng::EventManager::Event@{Hexeng::EventManager::Event}!range@{range}}
+\index{range@{range}!Hexeng::EventManager::Event@{Hexeng::EventManager::Event}}
+\doxysubsubsection{\texorpdfstring{range}{range}}
+{\footnotesize\ttfamily Range Hexeng\+::\+Event\+Manager\+::\+Event\+::range = Range\+::\+GLOBAL}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_event_manager_8hpp}{Event\+Manager.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Event\+Manager/\mbox{\hyperlink{_event_manager_8cpp}{Event\+Manager.\+cpp}}\end{DoxyCompactItemize}

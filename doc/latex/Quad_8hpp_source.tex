@@ -1,0 +1,95 @@
+\doxysection{Quad.\+hpp}
+\hypertarget{Quad_8hpp_source}{}\label{Quad_8hpp_source}\index{Hexeng2D/src/Renderer/Quad.hpp@{Hexeng2D/src/Renderer/Quad.hpp}}
+\mbox{\hyperlink{Quad_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ BASIC\_QUAD\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ BASIC\_QUAD\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../Macros.hpp"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Mesh_8hpp}{Mesh.hpp}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Renderer_8hpp}{Renderer.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{DefaultShaders_8hpp}{DefaultShaders.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}\ :\ \textcolor{keyword}{public}\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Mesh}{Mesh}}}
+\DoxyCodeLine{00016\ \ \ \ \ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_adaff21d65bf5cb0d12eccfdef57ffc67}{Quad}}(\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ size,\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}*\ texture,\ \textcolor{keywordtype}{bool}\ centered\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&basic\_shader);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_ab1b245619b9174453026c48e2dc9ebe4}{Quad}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ pos,\ \textcolor{keywordtype}{float}\ size,\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}*\ texture,\ \textcolor{keywordtype}{bool}\ centerd\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&basic\_shader);}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a611f55c2addbeed5e5a1aa77613b04a6}{Quad}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_ad4e46614faf2271e5ff1a64934c11fba}{\string~Quad}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a50c4ef335bb3a3c991c7d4055a959621}{Quad}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ inline\ static\ const\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{VertexLayout}}\&\ get\_vertex\_layout()\ \{\ \textcolor{keywordflow}{return}\ s\_vertex\_layout;\ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ m\_min\{\ 0,\ 0\ \},\ m\_max\{\ 0,\ 0\ \},\ m\_size\{\ 0,\ 0\ \};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a5f90328584320c5982eb358232050600}{get\_min}}()\ \{\ \textcolor{keywordflow}{return}\ m\_min;\ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_ac24d2b8b76155caa16990c1c38481a6c}{get\_max}}()\ \{\ \textcolor{keywordflow}{return}\ m\_max;\ \}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a710fec691e7c7225751bc80ac80c0a27}{get\_size}}()\ \{\ \textcolor{keywordflow}{return}\ m\_size;\ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ protected\ :}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{IndexBuffer}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a2811a6f1aaf033b0f9568baad81a0c7a}{s\_index\_buffer}};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1IndexBuffer}{IndexBuffer}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_ad70733da1295ad0642ea7ffcd2969b12}{s\_edge\_index\_buffer}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1ToBeInit}{ToBeInit}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_ab864a2e4e369c7842dea280018bd6153}{s\_init\_components}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1VertexLayout}{VertexLayout}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad_a27d72f5e67a099363777a1c23990e52c}{s\_vertex\_layout}};}
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square}{Square}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}}
+\DoxyCodeLine{00063\ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square_ac52b5507c6c83e38a8332a07bf095347}{Square}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ pos,\ \textcolor{keywordtype}{float}\ size,\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}*\ texture,\ \textcolor{keywordtype}{bool}\ centered\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&basic\_shader);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square_a7a2b4de6b031685bda433b20056f697c}{Square}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square_a87912aa388fa37f85a37e7cb8eb9cce7}{\string~Square}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square_a12bf509068aa934ea0f87a3ae0813190}{Square}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square}{Square}}\&\&)\ noexcept;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square}{Square}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square}{Square}}\&\&)\ noexcept;}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00078\ \ \ \ \ class\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{DebugQuad}}\ :\ public\ virtual\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Quad}{Quad}}}
+\DoxyCodeLine{00079\ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad_a0f3bbfc1ccad8dfcf6f347dc567ed308}{DebugQuad}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ pos,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ size,\ \textcolor{keywordtype}{bool}\ centered\ =\ \textcolor{keyword}{true},\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&line\_shader);}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad_a8403823505052285cf78d301ddd415e6}{DebugQuad}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad_a961638e665adf55a1f5f04d94d6090ef}{DebugQuad}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{DebugQuad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{DebugQuad}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{DebugQuad}}\&\&)\ noexcept;}
+\DoxyCodeLine{00088\ \ \ \ \ \};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \ \ \ \ class\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare}{DebugSquare}}\ :\ public\ virtual\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugQuad}{DebugQuad}},\ public\ virtual\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Square}{Square}}}
+\DoxyCodeLine{00092\ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare_a371b21a32a28aab3826bed2320f6e01c}{DebugSquare}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\&\ pos,\ \textcolor{keywordtype}{float}\ size,\ \textcolor{keywordtype}{bool}\ centered\ =\ \textcolor{keyword}{false},\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Shader}{Shader}}*\ shader\ =\ \&line\_shader);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare_a6d4e1f58781ab8e5d9787786d314c031}{DebugSquare}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare_ac41a3a8d4dc2d51e743f3d21486f06c3}{DebugSquare}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare}{DebugSquare}}\&\&)\ noexcept;}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare}{DebugSquare}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1DebugSquare}{DebugSquare}}\&\&)\ noexcept;}
+\DoxyCodeLine{00101\ \ \ \ \ \};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !BASIC\_QUAD\_HPP}}
+
+\end{DoxyCode}

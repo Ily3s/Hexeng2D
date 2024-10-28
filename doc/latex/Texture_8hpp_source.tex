@@ -1,0 +1,148 @@
+\doxysection{Texture.\+hpp}
+\hypertarget{Texture_8hpp_source}{}\label{Texture_8hpp_source}\index{Hexeng2D/src/Renderer/Texture.hpp@{Hexeng2D/src/Renderer/Texture.hpp}}
+\mbox{\hyperlink{Texture_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TEXTURE\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TEXTURE\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../Macros.hpp"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}glad/glad.h"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}stb/stb\_image.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}../Vectors.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925}{TexSett}}}
+\DoxyCodeLine{00020\ \ \ \ \ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925a01984fb67dbe79e8c5988ead8190713b}{MAG\_FILTER}},}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925ace50e4b8cff1659a2ada9779dadc0563}{MIN\_FILTER}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925ae75ab17a550f46adbbe891b819cf951d}{FILTER}},}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925a3bf692e6d7a9f678e2caa2bd865127cb}{BASE\_FORMAT}},}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925a757811ec247ec616ebc17b43c89de460}{SIZED\_FORMAT}},}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{BPP}},}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925a1a5a90bd7306d57dd74aed65bcea7d94}{CHANNELS\_NB}}}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\ =\ std::unordered\_map<TexSett,\ GLuint>;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}}
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a25eee88dff9b64667524e7fa36c1d12e}{Image}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keywordtype}{int}\ channels\_nb\ =\ 0);}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_aad8bfe5ea2beabf9f8ade687770acb29}{\string~Image}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a68e161d63dd9606c5a21e05a2f4435f5}{Image}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_a9e9ce20996be2b79afd44b7d5894266c}{Image}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_ae0c99bef816684ecebb52e50987fc00d}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image_ad1f4e2d55e741efba7c1d620702f63f9}{Image}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&\&)\ noexcept;}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Image}{Image}}\&\&)\ noexcept;}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ public:}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::\textcolor{keywordtype}{string}\ filepath;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ uint8\_t*\ pixel\_buffer\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}<\textcolor{keywordtype}{int}>\ size\{\ 0,\ 0\ \};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ae551b16fb02268a84da5dfb56de27925af159e3b5b75d56b92e5123cc548f8e96}{BPP}}\ =\ 4;}
+\DoxyCodeLine{00061\ \ \ \ \ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}}
+\DoxyCodeLine{00064\ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_aa66244f22a7d7ac2e954c6f8a5a73664}{Texture}}(\textcolor{keyword}{const}\ std::string\&\ filepath,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings\ =\ \{\});}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a1d8772b1eb8738fb0e868683ca585bf4}{Texture}}(uint8\_t*\&\&\ pixel\_buffer,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ size,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings\ =\ \{\});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_adb06d3100c9529eeddeb2b6f92a2259e}{\string~Texture}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a119c03a0dace6ae8732b4b44644ec450}{Texture}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_adbb995957a8bd425dbdce366fb3ea181}{bind}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ slot\ =\ GL\_TEXTURE0)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a95e523c66573790041adad4c0e68ee0e}{unbind}}();}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a7f209b6c02fee84f4e738280374b6c5e}{unload}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a6e8a6553748e8ec3a1eae2a131c9f67c}{load}}();}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a5510ffae86665b56696587963bcb0ee9}{Texture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a2f8990cb81e7e08b88f6104eb7c404e3}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&)\ =\ \textcolor{keyword}{delete};}
+\DoxyCodeLine{00100\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a468f23556d93a1410f9ca6f593243843}{Texture}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&\&)\ noexcept;}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}\&\&)\ noexcept;}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ static\ uint8\_t*\ to\_pixel\_buff(const\ std::\textcolor{keywordtype}{string}\&\ filepath);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ static\ \textcolor{keywordtype}{void}\ free\_pixel\_buff(uint8\_t*);}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00107\ \ \ \ \ protected:}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ GLuint\ m\_id\ =\ 0;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::\textcolor{keywordtype}{string}\ m\_filepath;}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ uint8\_t*\ m\_texbuffer\ =\ \textcolor{keywordtype}{nullptr};}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ GLuint\ m\_mag\_filter\ =\ GL\_LINEAR,\ m\_min\_filter\ =\ GL\_LINEAR;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ GLuint\ m\_base\_format\ =\ GL\_RGBA,\ m\_sized\_format\ =\ GL\_RGBA8;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2}}<\textcolor{keywordtype}{int}>\ m\_size\{\ 0,\ 0\ \};}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ m\_BPP\ =\ 4,\ m\_channels\_nb\ =\ 4;}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_ab05febacdb51263d0a7c7655b373165e}{m\_build\_settings}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings,\ std::vector<TexSett>\ necessary);}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_ad8ede2aceebd911903f63298d89e16d2}{m\_construct\_texture}}();}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_aacfe1f7c27f220fb5baa5826ffee0fc8}{get\_width}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_size.x;\ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a49c559c2cdea5af7642a211bc7c70169}{get\_height}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_size.y;\ \}}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a4e6a58f532b426a467409428ba735081}{get\_size}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_size;\ \}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture_a0c6db2f62beb7a0f8409abffcd37f250}{get\_id}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_id;\ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structHexeng_1_1Renderer_1_1iTexCoord}{iTexCoord}}}
+\DoxyCodeLine{00129\ \ \ \ \ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1iTexCoord_ab248dd7ba1a683f1b468181d56f297be}{bot\_left}},\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1iTexCoord_afc4078f6b4934d48bb59a781b6b59f67}{top\_right}};}
+\DoxyCodeLine{00131\ \ \ \ \ \};}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord}{fTexCoord}}}
+\DoxyCodeLine{00134\ \ \ \ \ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord_a87d096d07d94d15746946c959b301b28}{bot\_left}},\ \mbox{\hyperlink{structHexeng_1_1Renderer_1_1fTexCoord_a24f161ca269c1a35e1bcb23cc34f6765}{top\_right}};}
+\DoxyCodeLine{00136\ \ \ \ \ \};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ todo\ :\ TextureVector::reserve,\ operator[]\ ...}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector}{TextureVector}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1Texture}{Texture}}}
+\DoxyCodeLine{00146\ \ \ \ \ \{}
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_afbe1711903523d5e751a785992938b1e}{TextureVector}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_a192432f6c0c9975ca09bec76af576527}{TextureVector}}(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector}{TextureVector}}\&\&)\ noexcept;}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector}{TextureVector}}\&\ operator=(\mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector}{TextureVector}}\&\&)\ noexcept;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector}{TextureVector}}(const\ std::\textcolor{keywordtype}{string}\&\ filepath,\ const\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings\ =\ \{\});}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_a7963965926149a83aef1637629576d21}{TextureVector}}(uint8\_t*\&\&\ tex\_buffer,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ size,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings\ =\ \{\});}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_a51ed86d1902000bf2db33d067e904fbd}{TextureVector}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespaceHexeng_1_1Renderer_ad0bbbfdbfe75ba5ce75ef652ab6ceaf3}{TexSettList}}\&\ settings);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_ab0bde02828b1faa2be5e224b71f85ebc}{push}}(\textcolor{keyword}{const}\ uint8\_t*\ tex\_buffer,\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ size);}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_ac8767544b13679c7a64b15f130513450}{push}}(\textcolor{keyword}{const}\ std::string\&\ filepath);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::vector<iTexCoord>\&\ \mbox{\hyperlink{classHexeng_1_1Renderer_1_1TextureVector_aaf088da08de0e4863b395857caff603e}{get\_coordinates}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ std::vector<iTexCoord>\ m\_coords;}
+\DoxyCodeLine{00186\ \ \ \ \ \};}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !TEXTURE\_HPP}}
+
+\end{DoxyCode}

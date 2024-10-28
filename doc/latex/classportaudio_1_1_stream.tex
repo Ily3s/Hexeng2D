@@ -1,0 +1,192 @@
+\hypertarget{classportaudio_1_1_stream}{}\doxysection{portaudio\+::Stream Class Reference}
+\label{classportaudio_1_1_stream}\index{portaudio::Stream@{portaudio::Stream}}
+
+
+A \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} represents an active or inactive input and/or output data stream in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}.  
+
+
+
+
+{\ttfamily \#include $<$Stream.\+hxx$>$}
+
+Inheritance diagram for portaudio\+::Stream\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.700405cm]{classportaudio_1_1_stream}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classportaudio_1_1_stream_a2f817fa08f53b6bfd5b21cd1e4ff8017}{$\sim$\+Stream}} ()
+\item 
+virtual \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} if it\textquotesingle{}s open, else does nothing. ///. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classportaudio_1_1_stream_adde8369cef2dda64269ec98acda7e6b0}{is\+Open}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} is open. ///. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_af8ce6e44b26fbb06c2cc997400bb0190}{set\+Stream\+Finished\+Callback}} (\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} $\ast$callback)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_aa6d924b80c15d05c44462c013ede4b82}{start}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_a24215c2e6e1da8784ba4fdc5ada5870b}{stop}} ()
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classportaudio_1_1_stream_a318edab97a30e0b5101c70e993efc1b5}{abort}} ()
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_stream_a9053e15a7bb2cc609a20125c09ee5e6b}{is\+Stopped}} () const
+\item 
+bool \mbox{\hyperlink{classportaudio_1_1_stream_a46a4ffbc55ca8fa46448202b8bb4b4f7}{is\+Active}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_stream_abb20de898fea0ed5ce6e6523faececb0}{input\+Latency}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_stream_a276d10b4f9abaf596264ef36617a9636}{output\+Latency}} () const
+\item 
+double \mbox{\hyperlink{classportaudio_1_1_stream_a00cff4e7219de127e15755c92e6ed07a}{sample\+Rate}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{classportaudio_1_1_stream_a74e9a8c877e8c70530fc21df7be5de09}{time}} () const
+\item 
+const \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ \mbox{\hyperlink{classportaudio_1_1_stream_ac9caba0d169cc2377943c9b958e2dc02}{pa\+Stream}} () const
+\item 
+\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ \mbox{\hyperlink{classportaudio_1_1_stream_ae8d35b27df8422dcb1e78247c0d310e6}{pa\+Stream}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classportaudio_1_1_stream_a33e6dfdd637fd4d13b4847f0323c5e21}{Stream}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ \mbox{\hyperlink{classportaudio_1_1_stream_a6bae9e3e4a73b78044d9b42115929bbb}{stream\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} represents an active or inactive input and/or output data stream in the \mbox{\hyperlink{classportaudio_1_1_system}{System}}. 
+
+Concrete \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} classes should ensure themselves being in a closed state at destruction (i.\+e. by calling their own \mbox{\hyperlink{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}{close()}} method in their deconstructor). Following good C++ programming practices, care must be taken to ensure no exceptions are thrown by the deconstructor of these classes. As a consequence, clients need to explicitly call \mbox{\hyperlink{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}{close()}} to ensure the stream closed successfully.
+
+The \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} object can be used to manipulate the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}\textquotesingle{}s state. Also, time-\/constant and time-\/varying information about the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} can be retrieved. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_stream_a2f817fa08f53b6bfd5b21cd1e4ff8017}\label{classportaudio_1_1_stream_a2f817fa08f53b6bfd5b21cd1e4ff8017}} 
+\index{portaudio::Stream@{portaudio::Stream}!````~Stream@{$\sim$Stream}}
+\index{````~Stream@{$\sim$Stream}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{$\sim$Stream()}{~Stream()}}
+{\footnotesize\ttfamily portaudio\+::\+Stream\+::$\sim$\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_a33e6dfdd637fd4d13b4847f0323c5e21}\label{classportaudio_1_1_stream_a33e6dfdd637fd4d13b4847f0323c5e21}} 
+\index{portaudio::Stream@{portaudio::Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{Stream()}{Stream()}}
+{\footnotesize\ttfamily portaudio\+::\+Stream\+::\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_stream_a318edab97a30e0b5101c70e993efc1b5}\label{classportaudio_1_1_stream_a318edab97a30e0b5101c70e993efc1b5}} 
+\index{portaudio::Stream@{portaudio::Stream}!abort@{abort}}
+\index{abort@{abort}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+::abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}\label{classportaudio_1_1_stream_acb79f85f43b9f87b1e3c495d5f02ae58}} 
+\index{portaudio::Stream@{portaudio::Stream}!close@{close}}
+\index{close@{close}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Closes the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} if it\textquotesingle{}s open, else does nothing. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_abb20de898fea0ed5ce6e6523faececb0}\label{classportaudio_1_1_stream_abb20de898fea0ed5ce6e6523faececb0}} 
+\index{portaudio::Stream@{portaudio::Stream}!inputLatency@{inputLatency}}
+\index{inputLatency@{inputLatency}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{inputLatency()}{inputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Stream\+::input\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the best known input latency for the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. This value may differ from the suggested input latency set in the \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}}. Includes all sources of latency known to Port\+Audio such as internal buffering, and Host API reported latency. Doesn\textquotesingle{}t include any estimates of unknown latency. \mbox{\Hypertarget{classportaudio_1_1_stream_a46a4ffbc55ca8fa46448202b8bb4b4f7}\label{classportaudio_1_1_stream_a46a4ffbc55ca8fa46448202b8bb4b4f7}} 
+\index{portaudio::Stream@{portaudio::Stream}!isActive@{isActive}}
+\index{isActive@{isActive}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Stream\+::is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_adde8369cef2dda64269ec98acda7e6b0}\label{classportaudio_1_1_stream_adde8369cef2dda64269ec98acda7e6b0}} 
+\index{portaudio::Stream@{portaudio::Stream}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Stream\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} is open. ///. 
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_a9053e15a7bb2cc609a20125c09ee5e6b}\label{classportaudio_1_1_stream_a9053e15a7bb2cc609a20125c09ee5e6b}} 
+\index{portaudio::Stream@{portaudio::Stream}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{isStopped()}{isStopped()}}
+{\footnotesize\ttfamily bool portaudio\+::\+Stream\+::is\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_a276d10b4f9abaf596264ef36617a9636}\label{classportaudio_1_1_stream_a276d10b4f9abaf596264ef36617a9636}} 
+\index{portaudio::Stream@{portaudio::Stream}!outputLatency@{outputLatency}}
+\index{outputLatency@{outputLatency}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{outputLatency()}{outputLatency()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Stream\+::output\+Latency (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the best known output latency for the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. This value may differ from the suggested output latency set in the \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}}. Includes all sources of latency known to Port\+Audio such as internal buffering, and Host API reported latency. Doesn\textquotesingle{}t include any estimates of unknown latency. \mbox{\Hypertarget{classportaudio_1_1_stream_ae8d35b27df8422dcb1e78247c0d310e6}\label{classportaudio_1_1_stream_ae8d35b27df8422dcb1e78247c0d310e6}} 
+\index{portaudio::Stream@{portaudio::Stream}!paStream@{paStream}}
+\index{paStream@{paStream}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{paStream()}{paStream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ portaudio\+::\+Stream\+::pa\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Accessor (non-\/const) for Port\+Audio Pa\+Stream pointer, useful for interfacing with Port\+Audio add-\/ons such as Port\+Mixer for instance. Normally accessing this pointer should not be needed as Port\+Audio\+Cpp aims to provide all of Port\+Audio\textquotesingle{}s functionality. \mbox{\Hypertarget{classportaudio_1_1_stream_ac9caba0d169cc2377943c9b958e2dc02}\label{classportaudio_1_1_stream_ac9caba0d169cc2377943c9b958e2dc02}} 
+\index{portaudio::Stream@{portaudio::Stream}!paStream@{paStream}}
+\index{paStream@{paStream}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{paStream()}{paStream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$ portaudio\+::\+Stream\+::pa\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Accessor (const) for Port\+Audio Pa\+Stream pointer, useful for interfacing with Port\+Audio add-\/ons such as Port\+Mixer for instance. Normally accessing this pointer should not be needed as Port\+Audio\+Cpp aims to provide all of Port\+Audio\textquotesingle{}s functionality. \mbox{\Hypertarget{classportaudio_1_1_stream_a00cff4e7219de127e15755c92e6ed07a}\label{classportaudio_1_1_stream_a00cff4e7219de127e15755c92e6ed07a}} 
+\index{portaudio::Stream@{portaudio::Stream}!sampleRate@{sampleRate}}
+\index{sampleRate@{sampleRate}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{sampleRate()}{sampleRate()}}
+{\footnotesize\ttfamily double portaudio\+::\+Stream\+::sample\+Rate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Returns the sample rate of the \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}}. Usually this will be the best known estimate of the used sample rate. For instance when opening a \mbox{\hyperlink{classportaudio_1_1_stream}{Stream}} setting 44100.\+0 Hz in the \mbox{\hyperlink{classportaudio_1_1_stream_parameters}{Stream\+Parameters}}, the actual sample rate might be something like 44103.\+2 Hz (due to imperfections in the sound card hardware). \mbox{\Hypertarget{classportaudio_1_1_stream_af8ce6e44b26fbb06c2cc997400bb0190}\label{classportaudio_1_1_stream_af8ce6e44b26fbb06c2cc997400bb0190}} 
+\index{portaudio::Stream@{portaudio::Stream}!setStreamFinishedCallback@{setStreamFinishedCallback}}
+\index{setStreamFinishedCallback@{setStreamFinishedCallback}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{setStreamFinishedCallback()}{setStreamFinishedCallback()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+::set\+Stream\+Finished\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ab2530ee0cb756c67726f9074d3482ef2}{Pa\+Stream\+Finished\+Callback}} $\ast$}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_aa6d924b80c15d05c44462c013ede4b82}\label{classportaudio_1_1_stream_aa6d924b80c15d05c44462c013ede4b82}} 
+\index{portaudio::Stream@{portaudio::Stream}!start@{start}}
+\index{start@{start}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_a24215c2e6e1da8784ba4fdc5ada5870b}\label{classportaudio_1_1_stream_a24215c2e6e1da8784ba4fdc5ada5870b}} 
+\index{portaudio::Stream@{portaudio::Stream}!stop@{stop}}
+\index{stop@{stop}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} portaudio\+::\+Stream\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classportaudio_1_1_stream_a74e9a8c877e8c70530fc21df7be5de09}\label{classportaudio_1_1_stream_a74e9a8c877e8c70530fc21df7be5de09}} 
+\index{portaudio::Stream@{portaudio::Stream}!time@{time}}
+\index{time@{time}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} portaudio\+::\+Stream\+::time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classportaudio_1_1_stream_a6bae9e3e4a73b78044d9b42115929bbb}\label{classportaudio_1_1_stream_a6bae9e3e4a73b78044d9b42115929bbb}} 
+\index{portaudio::Stream@{portaudio::Stream}!stream\_@{stream\_}}
+\index{stream\_@{stream\_}!portaudio::Stream@{portaudio::Stream}}
+\doxysubsubsection{\texorpdfstring{stream\_}{stream\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}}$\ast$ portaudio\+::\+Stream\+::stream\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/include/portaudiocpp/\mbox{\hyperlink{_stream_8hxx}{Stream.\+hxx}}\item 
+Hexeng2\+D/dependencies/portaudio/bindings/cpp/source/portaudiocpp/\mbox{\hyperlink{_stream_8cxx}{Stream.\+cxx}}\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\hypertarget{_audio_session_types_8h_source}{}\doxysection{Audio\+Session\+Types.\+h}
+\label{_audio_session_types_8h_source}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/AudioSessionTypes.h@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/AudioSessionTypes.h}}
+\mbox{\hyperlink{_audio_session_types_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{winapifamily_8h}{winapifamily.h}}>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_\_AUDIOSESSIONTYPES\_\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_\_AUDIOSESSIONTYPES\_\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#if WINAPI\_FAMILY\_PARTITION (WINAPI\_PARTITION\_APP)}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#if defined (\_\_WIDL\_\_)}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define MIDL\_SIZE\_IS(x) [size\_is (x)]}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define MIDL\_STRING [string]}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#define MIDL\_ANYSIZE\_ARRAY}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#define MIDL\_SIZE\_IS(x)}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define MIDL\_STRING}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define MIDL\_ANYSIZE\_ARRAY ANYSIZE\_ARRAY}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \_AudioSessionState \{}
+\DoxyCodeLine{23   AudioSessionStateInactive = 0,}
+\DoxyCodeLine{24   AudioSessionStateActive = 1,}
+\DoxyCodeLine{25   AudioSessionStateExpired = 2}
+\DoxyCodeLine{26 \} AudioSessionState;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \_AUDCLNT\_SHAREMODE \{}
+\DoxyCodeLine{29   AUDCLNT\_SHAREMODE\_SHARED,}
+\DoxyCodeLine{30   AUDCLNT\_SHAREMODE\_EXCLUSIVE}
+\DoxyCodeLine{31 \} AUDCLNT\_SHAREMODE;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{enum} \_AUDIO\_STREAM\_CATEGORY \{}
+\DoxyCodeLine{34   AudioCategory\_Other = 0,}
+\DoxyCodeLine{35   AudioCategory\_ForegroundOnlyMedia,}
+\DoxyCodeLine{36   AudioCategory\_BackgroundCapableMedia,}
+\DoxyCodeLine{37   AudioCategory\_Communications,}
+\DoxyCodeLine{38   AudioCategory\_Alerts,}
+\DoxyCodeLine{39   AudioCategory\_SoundEffects,}
+\DoxyCodeLine{40   AudioCategory\_GameEffects,}
+\DoxyCodeLine{41   AudioCategory\_GameMedia,}
+\DoxyCodeLine{42   AudioCategory\_GameChat,}
+\DoxyCodeLine{43   AudioCategory\_Speech,}
+\DoxyCodeLine{44   AudioCategory\_Movie,}
+\DoxyCodeLine{45   AudioCategory\_Media}
+\DoxyCodeLine{46 \} AUDIO\_STREAM\_CATEGORY;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define AUDCLNT\_STREAMFLAGS\_CROSSPROCESS 0x00010000}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define AUDCLNT\_STREAMFLAGS\_LOOPBACK 0x00020000}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define AUDCLNT\_STREAMFLAGS\_EVENTCALLBACK 0x00040000}}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#define AUDCLNT\_STREAMFLAGS\_NOPERSIST 0x00080000}}
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#define AUDCLNT\_STREAMFLAGS\_RATEADJUST 0x00100000}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define AUDCLNT\_SESSIONFLAGS\_EXPIREWHENUNOWNED 0x10000000}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define AUDCLNT\_SESSIONFLAGS\_DISPLAY\_HIDE 0x20000000}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define AUDCLNT\_SESSIONFLAGS\_DISPLAY\_HIDEWHENEXPIRED 0x40000000}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,493 @@
+\hypertarget{pa__win__waveformat_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/include/pa\+\_\+win\+\_\+waveformat.h File Reference}
+\label{pa__win__waveformat_8h}\index{Hexeng2D/dependencies/portaudio/include/pa\_win\_waveformat.h@{Hexeng2D/dependencies/portaudio/include/pa\_win\_waveformat.h}}
+
+
+Windows specific Port\+Audio API extension and utilities header file.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x1)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x2)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x4)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+LOW\+\_\+\+FREQUENCY}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x8)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+LEFT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x10)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+RIGHT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x20)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ac86ae340df03d1fc7ae783281b54ea45}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT\+\_\+\+OF\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x40)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a500e8ea517cb3f08457fd5fa44581394}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT\+\_\+\+OF\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x80)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a11448bc9a6534d399ebf502e7b05bdc1}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x100)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a82e7fa37df0a98e986876f33760e9611}{PAWIN\+\_\+\+SPEAKER\+\_\+\+SIDE\+\_\+\+LEFT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x200)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a6399ac0bb0b62025e751a0a9d7200239}{PAWIN\+\_\+\+SPEAKER\+\_\+\+SIDE\+\_\+\+RIGHT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x400)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_af2a0ef7645d60e498937f4f0b95e74cb}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x800)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_adcd88dc62c5c7527430c88f654af8d6e}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+LEFT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x1000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a2caba8333d45f3ccd51a43840aa117ec}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x2000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a7d8a9b4c99c261e130a684b0ef02c6a0}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+RIGHT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x4000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_abfbd54fa2159df260849c314df19399a}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+LEFT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x8000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ab65e3ca000dcfc045058ec80c002eeb0}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+CENTER}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x10000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_acbc6a6261c78d8395cf9bb0745f41dbf}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+RIGHT}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x20000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a2a5ad2f7e7b9a5277bf435adf3fda459}{PAWIN\+\_\+\+SPEAKER\+\_\+\+RESERVED}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x7\+FFC0000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a38fb565af4532bd3cd56d945f46ba2cf}{PAWIN\+\_\+\+SPEAKER\+\_\+\+ALL}}~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x80000000)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a30a114015578e358fae0df7a702fad6d}{PAWIN\+\_\+\+SPEAKER\+\_\+\+DIRECTOUT}}~0
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a971a5d0585f7e3b5aa385387e696563b}{PAWIN\+\_\+\+SPEAKER\+\_\+\+MONO}}~(\mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER}})
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a98c53c20c74393bf16db511b0ffb2045}{PAWIN\+\_\+\+SPEAKER\+\_\+\+STEREO}}~(\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT}} $\vert$ \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT}})
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_aee2d3ea2a7c6f9f43a8380503dba06fc}{PAWIN\+\_\+\+SPEAKER\+\_\+\+QUAD}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ae7a0126d86eb98f8d66ecbc3d51f8d41}{PAWIN\+\_\+\+SPEAKER\+\_\+\+SURROUND}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a30e5b5586af11f179a88f945d00338e6}{PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ac17bfb1c34b09d30a98feb861e1ff96d}{PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a6c68c894059713cf64d31f52d2ae0bef}{PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1\+\_\+\+SURROUND}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a933c599ae53055096d8b8a509f960623}{PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1\+\_\+\+SURROUND}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a82ac045bb61dba3fc5ce51b9fee9a23b}{PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1\+\_\+\+BACK}}~\mbox{\hyperlink{pa__win__waveformat_8h_a30e5b5586af11f179a88f945d00338e6}{PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ac10eece35775c76057649e02809a08ce}{PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1\+\_\+\+WIDE}}~\mbox{\hyperlink{pa__win__waveformat_8h_ac17bfb1c34b09d30a98feb861e1ff96d}{PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_afc8017b1ae3257ccec4911372d6816ad}{PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+LEFT}}~\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a2b71a1247235c0172e2b0f14bbe5f763}{PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+CENTER}}~\mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ac397e431d28dee46aee7382bbe846dbf}{PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+RIGHT}}~\mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a8340a0f0725f437c7f5652f864e793e1}{PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+REAR\+\_\+\+LEFT}}~\mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+LEFT}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a120d98a68c00e267b80e1efde8a61231}{PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+REAR\+\_\+\+RIGHT}}~\mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+RIGHT}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a4951dfa9e29a10d4642bb9162746c8c9}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+MIDDLE}}~\mbox{\hyperlink{pa__win__waveformat_8h_af2a0ef7645d60e498937f4f0b95e74cb}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+CENTER}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_acec7f383a654b4ff4819cb7ba52e3031}{PAWIN\+\_\+\+SPEAKER\+\_\+\+SUPER\+\_\+\+WOOFER}}~\mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+LOW\+\_\+\+FREQUENCY}}
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}~18
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a18f598724b0ca16bd3d3f12af864cfdc}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEXTENSIBLE}}~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}} + 22)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a0198bb12de03c97940efc6a36e3e9aa1}{PAWIN\+\_\+\+INDEXOF\+\_\+\+WVALIDBITSPERSAMPLE}}~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+0)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ad579c781b3b34d66394742d6ad17cea5}{PAWIN\+\_\+\+INDEXOF\+\_\+\+DWCHANNELMASK}}~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+2)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a5736af338e94eabe2743f6c4dc021a74}{PAWIN\+\_\+\+INDEXOF\+\_\+\+SUBFORMAT}}~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+6)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ac2ae24c889c5f0d4dbff04c2b157bc92}{PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+PCM}}~(1)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a5b5f4691b5d8120bb6b9a5020133dd73}{PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT}}~(3)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_a966075e7a20f32d911ccb9fdc8790fac}{PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+DOLBY\+\_\+\+AC3\+\_\+\+SPDIF}}~(0x0092)
+\item 
+\#define \mbox{\hyperlink{pa__win__waveformat_8h_ad6c8b3d704eed226c51d5c8663849c9c}{PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+WMA\+\_\+\+SPDIF}}~(0x0164)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned long \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pa__win__waveformat_8h_ab26e932e222866ce6d1590e2d7e33896}{Pa\+Win\+\_\+\+Sample\+Format\+To\+Linear\+Wave\+Format\+Tag}} (\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__win__waveformat_8h_a0d39d3ba4a04ea6c0274544ebeb2f33b}{Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Ex}} (\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$wave\+Format, int num\+Channels, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format, int wave\+Format\+Tag, double sample\+Rate)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__win__waveformat_8h_ac3391f1ab413c0cebd9be096e6092667}{Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Extensible}} (\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$wave\+Format, int num\+Channels, \mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}} sample\+Format, int wave\+Format\+Tag, double sample\+Rate, \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} channel\+Mask)
+\item 
+\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} \mbox{\hyperlink{pa__win__waveformat_8h_a896ca4135770c9fcaa5ae16f7a51a703}{Pa\+Win\+\_\+\+Default\+Channel\+Mask}} (int num\+Channels)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Windows specific Port\+Audio API extension and utilities header file. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__waveformat_8h_ad579c781b3b34d66394742d6ad17cea5}\label{pa__win__waveformat_8h_ad579c781b3b34d66394742d6ad17cea5}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_INDEXOF\_DWCHANNELMASK@{PAWIN\_INDEXOF\_DWCHANNELMASK}}
+\index{PAWIN\_INDEXOF\_DWCHANNELMASK@{PAWIN\_INDEXOF\_DWCHANNELMASK}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_INDEXOF\_DWCHANNELMASK}{PAWIN\_INDEXOF\_DWCHANNELMASK}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+INDEXOF\+\_\+\+DWCHANNELMASK~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+2)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a5736af338e94eabe2743f6c4dc021a74}\label{pa__win__waveformat_8h_a5736af338e94eabe2743f6c4dc021a74}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_INDEXOF\_SUBFORMAT@{PAWIN\_INDEXOF\_SUBFORMAT}}
+\index{PAWIN\_INDEXOF\_SUBFORMAT@{PAWIN\_INDEXOF\_SUBFORMAT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_INDEXOF\_SUBFORMAT}{PAWIN\_INDEXOF\_SUBFORMAT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+INDEXOF\+\_\+\+SUBFORMAT~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+6)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a0198bb12de03c97940efc6a36e3e9aa1}\label{pa__win__waveformat_8h_a0198bb12de03c97940efc6a36e3e9aa1}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE@{PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE}}
+\index{PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE@{PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE}{PAWIN\_INDEXOF\_WVALIDBITSPERSAMPLE}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+INDEXOF\+\_\+\+WVALIDBITSPERSAMPLE~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}}+0)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}\label{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SIZEOF\_WAVEFORMATEX@{PAWIN\_SIZEOF\_WAVEFORMATEX}}
+\index{PAWIN\_SIZEOF\_WAVEFORMATEX@{PAWIN\_SIZEOF\_WAVEFORMATEX}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SIZEOF\_WAVEFORMATEX}{PAWIN\_SIZEOF\_WAVEFORMATEX}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX~18}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a18f598724b0ca16bd3d3f12af864cfdc}\label{pa__win__waveformat_8h_a18f598724b0ca16bd3d3f12af864cfdc}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE@{PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE}}
+\index{PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE@{PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE}{PAWIN\_SIZEOF\_WAVEFORMATEXTENSIBLE}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEXTENSIBLE~(\mbox{\hyperlink{pa__win__waveformat_8h_af801af74fc9ff4c560798504ab62595b}{PAWIN\+\_\+\+SIZEOF\+\_\+\+WAVEFORMATEX}} + 22)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a30e5b5586af11f179a88f945d00338e6}\label{pa__win__waveformat_8h_a30e5b5586af11f179a88f945d00338e6}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_5POINT1@{PAWIN\_SPEAKER\_5POINT1}}
+\index{PAWIN\_SPEAKER\_5POINT1@{PAWIN\_SPEAKER\_5POINT1}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_5POINT1}{PAWIN\_SPEAKER\_5POINT1}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\_SPEAKER\_FRONT\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\_SPEAKER\_LOW\_FREQUENCY}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\_SPEAKER\_BACK\_LEFT}}  | \mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\_SPEAKER\_BACK\_RIGHT}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_a82ac045bb61dba3fc5ce51b9fee9a23b}\label{pa__win__waveformat_8h_a82ac045bb61dba3fc5ce51b9fee9a23b}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_5POINT1\_BACK@{PAWIN\_SPEAKER\_5POINT1\_BACK}}
+\index{PAWIN\_SPEAKER\_5POINT1\_BACK@{PAWIN\_SPEAKER\_5POINT1\_BACK}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_5POINT1\_BACK}{PAWIN\_SPEAKER\_5POINT1\_BACK}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1\+\_\+\+BACK~\mbox{\hyperlink{pa__win__waveformat_8h_a30e5b5586af11f179a88f945d00338e6}{PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a6c68c894059713cf64d31f52d2ae0bef}\label{pa__win__waveformat_8h_a6c68c894059713cf64d31f52d2ae0bef}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_5POINT1\_SURROUND@{PAWIN\_SPEAKER\_5POINT1\_SURROUND}}
+\index{PAWIN\_SPEAKER\_5POINT1\_SURROUND@{PAWIN\_SPEAKER\_5POINT1\_SURROUND}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_5POINT1\_SURROUND}{PAWIN\_SPEAKER\_5POINT1\_SURROUND}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+5\+POINT1\+\_\+\+SURROUND}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\_SPEAKER\_FRONT\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\_SPEAKER\_LOW\_FREQUENCY}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a82e7fa37df0a98e986876f33760e9611}{PAWIN\_SPEAKER\_SIDE\_LEFT}}  | \mbox{\hyperlink{pa__win__waveformat_8h_a6399ac0bb0b62025e751a0a9d7200239}{PAWIN\_SPEAKER\_SIDE\_RIGHT}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac17bfb1c34b09d30a98feb861e1ff96d}\label{pa__win__waveformat_8h_ac17bfb1c34b09d30a98feb861e1ff96d}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_7POINT1@{PAWIN\_SPEAKER\_7POINT1}}
+\index{PAWIN\_SPEAKER\_7POINT1@{PAWIN\_SPEAKER\_7POINT1}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_7POINT1}{PAWIN\_SPEAKER\_7POINT1}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\_SPEAKER\_FRONT\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\_SPEAKER\_LOW\_FREQUENCY}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\_SPEAKER\_BACK\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\_SPEAKER\_BACK\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_ac86ae340df03d1fc7ae783281b54ea45}{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_a500e8ea517cb3f08457fd5fa44581394}{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_a933c599ae53055096d8b8a509f960623}\label{pa__win__waveformat_8h_a933c599ae53055096d8b8a509f960623}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_7POINT1\_SURROUND@{PAWIN\_SPEAKER\_7POINT1\_SURROUND}}
+\index{PAWIN\_SPEAKER\_7POINT1\_SURROUND@{PAWIN\_SPEAKER\_7POINT1\_SURROUND}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_7POINT1\_SURROUND}{PAWIN\_SPEAKER\_7POINT1\_SURROUND}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1\+\_\+\+SURROUND}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\_SPEAKER\_FRONT\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\_SPEAKER\_LOW\_FREQUENCY}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\_SPEAKER\_BACK\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\_SPEAKER\_BACK\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a82e7fa37df0a98e986876f33760e9611}{PAWIN\_SPEAKER\_SIDE\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a6399ac0bb0b62025e751a0a9d7200239}{PAWIN\_SPEAKER\_SIDE\_RIGHT}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac10eece35775c76057649e02809a08ce}\label{pa__win__waveformat_8h_ac10eece35775c76057649e02809a08ce}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_7POINT1\_WIDE@{PAWIN\_SPEAKER\_7POINT1\_WIDE}}
+\index{PAWIN\_SPEAKER\_7POINT1\_WIDE@{PAWIN\_SPEAKER\_7POINT1\_WIDE}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_7POINT1\_WIDE}{PAWIN\_SPEAKER\_7POINT1\_WIDE}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1\+\_\+\+WIDE~\mbox{\hyperlink{pa__win__waveformat_8h_ac17bfb1c34b09d30a98feb861e1ff96d}{PAWIN\+\_\+\+SPEAKER\+\_\+7\+POINT1}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a38fb565af4532bd3cd56d945f46ba2cf}\label{pa__win__waveformat_8h_a38fb565af4532bd3cd56d945f46ba2cf}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_ALL@{PAWIN\_SPEAKER\_ALL}}
+\index{PAWIN\_SPEAKER\_ALL@{PAWIN\_SPEAKER\_ALL}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_ALL}{PAWIN\_SPEAKER\_ALL}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+ALL~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x80000000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a11448bc9a6534d399ebf502e7b05bdc1}\label{pa__win__waveformat_8h_a11448bc9a6534d399ebf502e7b05bdc1}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_BACK\_CENTER@{PAWIN\_SPEAKER\_BACK\_CENTER}}
+\index{PAWIN\_SPEAKER\_BACK\_CENTER@{PAWIN\_SPEAKER\_BACK\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_BACK\_CENTER}{PAWIN\_SPEAKER\_BACK\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x100)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}\label{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_BACK\_LEFT@{PAWIN\_SPEAKER\_BACK\_LEFT}}
+\index{PAWIN\_SPEAKER\_BACK\_LEFT@{PAWIN\_SPEAKER\_BACK\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_BACK\_LEFT}{PAWIN\_SPEAKER\_BACK\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+LEFT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x10)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}\label{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_BACK\_RIGHT@{PAWIN\_SPEAKER\_BACK\_RIGHT}}
+\index{PAWIN\_SPEAKER\_BACK\_RIGHT@{PAWIN\_SPEAKER\_BACK\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_BACK\_RIGHT}{PAWIN\_SPEAKER\_BACK\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+RIGHT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x20)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a30a114015578e358fae0df7a702fad6d}\label{pa__win__waveformat_8h_a30a114015578e358fae0df7a702fad6d}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_DIRECTOUT@{PAWIN\_SPEAKER\_DIRECTOUT}}
+\index{PAWIN\_SPEAKER\_DIRECTOUT@{PAWIN\_SPEAKER\_DIRECTOUT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_DIRECTOUT}{PAWIN\_SPEAKER\_DIRECTOUT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+DIRECTOUT~0}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}\label{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_FRONT\_CENTER@{PAWIN\_SPEAKER\_FRONT\_CENTER}}
+\index{PAWIN\_SPEAKER\_FRONT\_CENTER@{PAWIN\_SPEAKER\_FRONT\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_FRONT\_CENTER}{PAWIN\_SPEAKER\_FRONT\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x4)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}\label{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_FRONT\_LEFT@{PAWIN\_SPEAKER\_FRONT\_LEFT}}
+\index{PAWIN\_SPEAKER\_FRONT\_LEFT@{PAWIN\_SPEAKER\_FRONT\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_FRONT\_LEFT}{PAWIN\_SPEAKER\_FRONT\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x1)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac86ae340df03d1fc7ae783281b54ea45}\label{pa__win__waveformat_8h_ac86ae340df03d1fc7ae783281b54ea45}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER@{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER}}
+\index{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER@{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER}{PAWIN\_SPEAKER\_FRONT\_LEFT\_OF\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT\+\_\+\+OF\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x40)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}\label{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_FRONT\_RIGHT}}
+\index{PAWIN\_SPEAKER\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_FRONT\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_FRONT\_RIGHT}{PAWIN\_SPEAKER\_FRONT\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x2)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a500e8ea517cb3f08457fd5fa44581394}\label{pa__win__waveformat_8h_a500e8ea517cb3f08457fd5fa44581394}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER@{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER}}
+\index{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER@{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER}{PAWIN\_SPEAKER\_FRONT\_RIGHT\_OF\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT\+\_\+\+OF\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x80)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a2b71a1247235c0172e2b0f14bbe5f763}\label{pa__win__waveformat_8h_a2b71a1247235c0172e2b0f14bbe5f763}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER@{PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER}}
+\index{PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER@{PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER}{PAWIN\_SPEAKER\_GROUND\_FRONT\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+CENTER~\mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_afc8017b1ae3257ccec4911372d6816ad}\label{pa__win__waveformat_8h_afc8017b1ae3257ccec4911372d6816ad}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT@{PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT}}
+\index{PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT@{PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT}{PAWIN\_SPEAKER\_GROUND\_FRONT\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+LEFT~\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac397e431d28dee46aee7382bbe846dbf}\label{pa__win__waveformat_8h_ac397e431d28dee46aee7382bbe846dbf}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT}}
+\index{PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT}{PAWIN\_SPEAKER\_GROUND\_FRONT\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+FRONT\+\_\+\+RIGHT~\mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a8340a0f0725f437c7f5652f864e793e1}\label{pa__win__waveformat_8h_a8340a0f0725f437c7f5652f864e793e1}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT@{PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT}}
+\index{PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT@{PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT}{PAWIN\_SPEAKER\_GROUND\_REAR\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+REAR\+\_\+\+LEFT~\mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+LEFT}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a120d98a68c00e267b80e1efde8a61231}\label{pa__win__waveformat_8h_a120d98a68c00e267b80e1efde8a61231}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT@{PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT}}
+\index{PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT@{PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT}{PAWIN\_SPEAKER\_GROUND\_REAR\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+GROUND\+\_\+\+REAR\+\_\+\+RIGHT~\mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\+\_\+\+SPEAKER\+\_\+\+BACK\+\_\+\+RIGHT}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}\label{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_LOW\_FREQUENCY@{PAWIN\_SPEAKER\_LOW\_FREQUENCY}}
+\index{PAWIN\_SPEAKER\_LOW\_FREQUENCY@{PAWIN\_SPEAKER\_LOW\_FREQUENCY}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_LOW\_FREQUENCY}{PAWIN\_SPEAKER\_LOW\_FREQUENCY}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+LOW\+\_\+\+FREQUENCY~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x8)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a971a5d0585f7e3b5aa385387e696563b}\label{pa__win__waveformat_8h_a971a5d0585f7e3b5aa385387e696563b}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_MONO@{PAWIN\_SPEAKER\_MONO}}
+\index{PAWIN\_SPEAKER\_MONO@{PAWIN\_SPEAKER\_MONO}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_MONO}{PAWIN\_SPEAKER\_MONO}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+MONO~(\mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+CENTER}})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_aee2d3ea2a7c6f9f43a8380503dba06fc}\label{pa__win__waveformat_8h_aee2d3ea2a7c6f9f43a8380503dba06fc}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_QUAD@{PAWIN\_SPEAKER\_QUAD}}
+\index{PAWIN\_SPEAKER\_QUAD@{PAWIN\_SPEAKER\_QUAD}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_QUAD}{PAWIN\_SPEAKER\_QUAD}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+QUAD}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_a349671e5793cf44cab1e9fc3284626d4}{PAWIN\_SPEAKER\_BACK\_LEFT}}  | \mbox{\hyperlink{pa__win__waveformat_8h_a002739a3be2662e622f5c5b47463c48a}{PAWIN\_SPEAKER\_BACK\_RIGHT}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_a2a5ad2f7e7b9a5277bf435adf3fda459}\label{pa__win__waveformat_8h_a2a5ad2f7e7b9a5277bf435adf3fda459}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_RESERVED@{PAWIN\_SPEAKER\_RESERVED}}
+\index{PAWIN\_SPEAKER\_RESERVED@{PAWIN\_SPEAKER\_RESERVED}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_RESERVED}{PAWIN\_SPEAKER\_RESERVED}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+RESERVED~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x7\+FFC0000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a82e7fa37df0a98e986876f33760e9611}\label{pa__win__waveformat_8h_a82e7fa37df0a98e986876f33760e9611}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_SIDE\_LEFT@{PAWIN\_SPEAKER\_SIDE\_LEFT}}
+\index{PAWIN\_SPEAKER\_SIDE\_LEFT@{PAWIN\_SPEAKER\_SIDE\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_SIDE\_LEFT}{PAWIN\_SPEAKER\_SIDE\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+SIDE\+\_\+\+LEFT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x200)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a6399ac0bb0b62025e751a0a9d7200239}\label{pa__win__waveformat_8h_a6399ac0bb0b62025e751a0a9d7200239}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_SIDE\_RIGHT@{PAWIN\_SPEAKER\_SIDE\_RIGHT}}
+\index{PAWIN\_SPEAKER\_SIDE\_RIGHT@{PAWIN\_SPEAKER\_SIDE\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_SIDE\_RIGHT}{PAWIN\_SPEAKER\_SIDE\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+SIDE\+\_\+\+RIGHT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x400)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a98c53c20c74393bf16db511b0ffb2045}\label{pa__win__waveformat_8h_a98c53c20c74393bf16db511b0ffb2045}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_STEREO@{PAWIN\_SPEAKER\_STEREO}}
+\index{PAWIN\_SPEAKER\_STEREO@{PAWIN\_SPEAKER\_STEREO}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_STEREO}{PAWIN\_SPEAKER\_STEREO}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+STEREO~(\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+LEFT}} $\vert$ \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\+\_\+\+SPEAKER\+\_\+\+FRONT\+\_\+\+RIGHT}})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_acec7f383a654b4ff4819cb7ba52e3031}\label{pa__win__waveformat_8h_acec7f383a654b4ff4819cb7ba52e3031}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_SUPER\_WOOFER@{PAWIN\_SPEAKER\_SUPER\_WOOFER}}
+\index{PAWIN\_SPEAKER\_SUPER\_WOOFER@{PAWIN\_SPEAKER\_SUPER\_WOOFER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_SUPER\_WOOFER}{PAWIN\_SPEAKER\_SUPER\_WOOFER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+SUPER\+\_\+\+WOOFER~\mbox{\hyperlink{pa__win__waveformat_8h_ad14a2144606b0b4b7d6f4939147a13b4}{PAWIN\+\_\+\+SPEAKER\+\_\+\+LOW\+\_\+\+FREQUENCY}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ae7a0126d86eb98f8d66ecbc3d51f8d41}\label{pa__win__waveformat_8h_ae7a0126d86eb98f8d66ecbc3d51f8d41}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_SURROUND@{PAWIN\_SPEAKER\_SURROUND}}
+\index{PAWIN\_SPEAKER\_SURROUND@{PAWIN\_SPEAKER\_SURROUND}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_SURROUND}{PAWIN\_SPEAKER\_SURROUND}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+SURROUND}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                    (\mbox{\hyperlink{pa__win__waveformat_8h_a5ffaa4e607947a1ae402a395a2a9d0cd}{PAWIN\_SPEAKER\_FRONT\_LEFT}} | \mbox{\hyperlink{pa__win__waveformat_8h_a2512cdae0ba3c5bd6dda6c270ec9d595}{PAWIN\_SPEAKER\_FRONT\_RIGHT}} | \(\backslash\)}
+\DoxyCodeLine{                                                    \mbox{\hyperlink{pa__win__waveformat_8h_aa09ef5d0e27f68904512d9f6ac721570}{PAWIN\_SPEAKER\_FRONT\_CENTER}} | \mbox{\hyperlink{pa__win__waveformat_8h_a11448bc9a6534d399ebf502e7b05bdc1}{PAWIN\_SPEAKER\_BACK\_CENTER}})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__waveformat_8h_ab65e3ca000dcfc045058ec80c002eeb0}\label{pa__win__waveformat_8h_ab65e3ca000dcfc045058ec80c002eeb0}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_BACK\_CENTER@{PAWIN\_SPEAKER\_TOP\_BACK\_CENTER}}
+\index{PAWIN\_SPEAKER\_TOP\_BACK\_CENTER@{PAWIN\_SPEAKER\_TOP\_BACK\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_BACK\_CENTER}{PAWIN\_SPEAKER\_TOP\_BACK\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x10000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_abfbd54fa2159df260849c314df19399a}\label{pa__win__waveformat_8h_abfbd54fa2159df260849c314df19399a}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_BACK\_LEFT@{PAWIN\_SPEAKER\_TOP\_BACK\_LEFT}}
+\index{PAWIN\_SPEAKER\_TOP\_BACK\_LEFT@{PAWIN\_SPEAKER\_TOP\_BACK\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_BACK\_LEFT}{PAWIN\_SPEAKER\_TOP\_BACK\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+LEFT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x8000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_acbc6a6261c78d8395cf9bb0745f41dbf}\label{pa__win__waveformat_8h_acbc6a6261c78d8395cf9bb0745f41dbf}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT@{PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT}}
+\index{PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT@{PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT}{PAWIN\_SPEAKER\_TOP\_BACK\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+BACK\+\_\+\+RIGHT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x20000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_af2a0ef7645d60e498937f4f0b95e74cb}\label{pa__win__waveformat_8h_af2a0ef7645d60e498937f4f0b95e74cb}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_CENTER@{PAWIN\_SPEAKER\_TOP\_CENTER}}
+\index{PAWIN\_SPEAKER\_TOP\_CENTER@{PAWIN\_SPEAKER\_TOP\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_CENTER}{PAWIN\_SPEAKER\_TOP\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x800)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a2caba8333d45f3ccd51a43840aa117ec}\label{pa__win__waveformat_8h_a2caba8333d45f3ccd51a43840aa117ec}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER@{PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER}}
+\index{PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER@{PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER}{PAWIN\_SPEAKER\_TOP\_FRONT\_CENTER}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+CENTER~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x2000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_adcd88dc62c5c7527430c88f654af8d6e}\label{pa__win__waveformat_8h_adcd88dc62c5c7527430c88f654af8d6e}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT@{PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT}}
+\index{PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT@{PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT}{PAWIN\_SPEAKER\_TOP\_FRONT\_LEFT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+LEFT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x1000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a7d8a9b4c99c261e130a684b0ef02c6a0}\label{pa__win__waveformat_8h_a7d8a9b4c99c261e130a684b0ef02c6a0}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT}}
+\index{PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT@{PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT}{PAWIN\_SPEAKER\_TOP\_FRONT\_RIGHT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+FRONT\+\_\+\+RIGHT~((\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}})0x4000)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a4951dfa9e29a10d4642bb9162746c8c9}\label{pa__win__waveformat_8h_a4951dfa9e29a10d4642bb9162746c8c9}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_SPEAKER\_TOP\_MIDDLE@{PAWIN\_SPEAKER\_TOP\_MIDDLE}}
+\index{PAWIN\_SPEAKER\_TOP\_MIDDLE@{PAWIN\_SPEAKER\_TOP\_MIDDLE}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_SPEAKER\_TOP\_MIDDLE}{PAWIN\_SPEAKER\_TOP\_MIDDLE}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+MIDDLE~\mbox{\hyperlink{pa__win__waveformat_8h_af2a0ef7645d60e498937f4f0b95e74cb}{PAWIN\+\_\+\+SPEAKER\+\_\+\+TOP\+\_\+\+CENTER}}}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a966075e7a20f32d911ccb9fdc8790fac}\label{pa__win__waveformat_8h_a966075e7a20f32d911ccb9fdc8790fac}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF@{PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF}}
+\index{PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF@{PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF}{PAWIN\_WAVE\_FORMAT\_DOLBY\_AC3\_SPDIF}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+DOLBY\+\_\+\+AC3\+\_\+\+SPDIF~(0x0092)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a5b5f4691b5d8120bb6b9a5020133dd73}\label{pa__win__waveformat_8h_a5b5f4691b5d8120bb6b9a5020133dd73}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT@{PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT}}
+\index{PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT@{PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT}{PAWIN\_WAVE\_FORMAT\_IEEE\_FLOAT}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT~(3)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac2ae24c889c5f0d4dbff04c2b157bc92}\label{pa__win__waveformat_8h_ac2ae24c889c5f0d4dbff04c2b157bc92}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_WAVE\_FORMAT\_PCM@{PAWIN\_WAVE\_FORMAT\_PCM}}
+\index{PAWIN\_WAVE\_FORMAT\_PCM@{PAWIN\_WAVE\_FORMAT\_PCM}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_WAVE\_FORMAT\_PCM}{PAWIN\_WAVE\_FORMAT\_PCM}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+PCM~(1)}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ad6c8b3d704eed226c51d5c8663849c9c}\label{pa__win__waveformat_8h_ad6c8b3d704eed226c51d5c8663849c9c}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF@{PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF}}
+\index{PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF@{PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF}{PAWIN\_WAVE\_FORMAT\_WMA\_SPDIF}}
+{\footnotesize\ttfamily \#define PAWIN\+\_\+\+WAVE\+\_\+\+FORMAT\+\_\+\+WMA\+\_\+\+SPDIF~(0x0164)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}\label{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PaWinWaveFormatChannelMask@{PaWinWaveFormatChannelMask}}
+\index{PaWinWaveFormatChannelMask@{PaWinWaveFormatChannelMask}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PaWinWaveFormatChannelMask}{PaWinWaveFormatChannelMask}}
+{\footnotesize\ttfamily typedef unsigned long \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__waveformat_8h_a896ca4135770c9fcaa5ae16f7a51a703}\label{pa__win__waveformat_8h_a896ca4135770c9fcaa5ae16f7a51a703}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PaWin\_DefaultChannelMask@{PaWin\_DefaultChannelMask}}
+\index{PaWin\_DefaultChannelMask@{PaWin\_DefaultChannelMask}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PaWin\_DefaultChannelMask()}{PaWin\_DefaultChannelMask()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}} Pa\+Win\+\_\+\+Default\+Channel\+Mask (\begin{DoxyParamCaption}\item[{int}]{num\+Channels }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_a0d39d3ba4a04ea6c0274544ebeb2f33b}\label{pa__win__waveformat_8h_a0d39d3ba4a04ea6c0274544ebeb2f33b}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PaWin\_InitializeWaveFormatEx@{PaWin\_InitializeWaveFormatEx}}
+\index{PaWin\_InitializeWaveFormatEx@{PaWin\_InitializeWaveFormatEx}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PaWin\_InitializeWaveFormatEx()}{PaWin\_InitializeWaveFormatEx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Ex (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$}]{wave\+Format,  }\item[{int}]{num\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format,  }\item[{int}]{wave\+Format\+Tag,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ac3391f1ab413c0cebd9be096e6092667}\label{pa__win__waveformat_8h_ac3391f1ab413c0cebd9be096e6092667}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PaWin\_InitializeWaveFormatExtensible@{PaWin\_InitializeWaveFormatExtensible}}
+\index{PaWin\_InitializeWaveFormatExtensible@{PaWin\_InitializeWaveFormatExtensible}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PaWin\_InitializeWaveFormatExtensible()}{PaWin\_InitializeWaveFormatExtensible()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Win\+\_\+\+Initialize\+Wave\+Format\+Extensible (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} $\ast$}]{wave\+Format,  }\item[{int}]{num\+Channels,  }\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format,  }\item[{int}]{wave\+Format\+Tag,  }\item[{double}]{sample\+Rate,  }\item[{\mbox{\hyperlink{pa__win__waveformat_8h_ad7a5a909f82e3f45d4c690d09d53a3f4}{Pa\+Win\+Wave\+Format\+Channel\+Mask}}}]{channel\+Mask }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__waveformat_8h_ab26e932e222866ce6d1590e2d7e33896}\label{pa__win__waveformat_8h_ab26e932e222866ce6d1590e2d7e33896}} 
+\index{pa\_win\_waveformat.h@{pa\_win\_waveformat.h}!PaWin\_SampleFormatToLinearWaveFormatTag@{PaWin\_SampleFormatToLinearWaveFormatTag}}
+\index{PaWin\_SampleFormatToLinearWaveFormatTag@{PaWin\_SampleFormatToLinearWaveFormatTag}!pa\_win\_waveformat.h@{pa\_win\_waveformat.h}}
+\doxysubsubsection{\texorpdfstring{PaWin\_SampleFormatToLinearWaveFormatTag()}{PaWin\_SampleFormatToLinearWaveFormatTag()}}
+{\footnotesize\ttfamily int Pa\+Win\+\_\+\+Sample\+Format\+To\+Linear\+Wave\+Format\+Tag (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a4582d93c2c2e60e12be3d74c5fe00b96}{Pa\+Sample\+Format}}}]{sample\+Format }\end{DoxyParamCaption})}
+

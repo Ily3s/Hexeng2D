@@ -1,0 +1,151 @@
+\hypertarget{struct_i_m_m_notification_client_vtbl}{}\doxysection{IMMNotification\+Client\+Vtbl Struct Reference}
+\label{struct_i_m_m_notification_client_vtbl}\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+
+
+{\ttfamily \#include $<$mmdeviceapi.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}{HRESULT}} (STDMETHODCALLTYPE $\ast$Query\+Interface)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aba00c1aa02052e75ff41626f204003b2}{ULONG}} (STDMETHODCALLTYPE $\ast$Add\+Ref)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a566c67d4870a9308a688f5c67149d7fd}{ULONG}} (STDMETHODCALLTYPE $\ast$Release)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This)
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a1a7c91fa9aaa8094da215368a284f9b1}{HRESULT}} (STDMETHODCALLTYPE $\ast$On\+Device\+State\+Changed)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a22a3e974f6ffa35c3159bec8d0a79c0b}{HRESULT}} (STDMETHODCALLTYPE $\ast$On\+Device\+Added)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3311d8cf335d09a237301e93f2365cc5}{HRESULT}} (STDMETHODCALLTYPE $\ast$On\+Device\+Removed)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a7bea99e906a7334cf705832fa4d1fc13}{HRESULT}} (STDMETHODCALLTYPE $\ast$On\+Default\+Device\+Changed)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\item 
+\mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a5e3496d3e920e6a89ed5d71416f04f6d}{HRESULT}} (STDMETHODCALLTYPE $\ast$On\+Property\+Value\+Changed)(\mbox{\hyperlink{mmdeviceapi_8h_a649fdb1d4867aa915327ca568a7bb278}{IMMNotification\+Client}} $\ast$This
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_af2b3dcf1fb84fcc0873123eff8b87e36}{riid}}
+\item 
+BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$ \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a1b4e43842113132d3a016dd920709fe9}{ppv\+Object}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}{pwstr\+Device\+Id}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} DWORD \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a0f7cc5a4eeb4e9dbd332be1657dd191f}{dw\+New\+State}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_ab72bdeb569a768b52b8bd58a5e8adad4}{flow}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_ac5e66caa511911fb3f6591755ef61975}{role}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a3103aa4d2922dc61fccc683297519049}{pwstr\+Default\+Device\+Id}}
+\item 
+\mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}} \mbox{\hyperlink{struct_i_m_m_notification_client_vtbl_a4877840e1abb51a8243a665e59c17a05}{key}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a7bea99e906a7334cf705832fa4d1fc13}\label{struct_i_m_m_notification_client_vtbl_a7bea99e906a7334cf705832fa4d1fc13}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{On\+Default\+Device\+Changed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a22a3e974f6ffa35c3159bec8d0a79c0b}\label{struct_i_m_m_notification_client_vtbl_a22a3e974f6ffa35c3159bec8d0a79c0b}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{On\+Device\+Added }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a3311d8cf335d09a237301e93f2365cc5}\label{struct_i_m_m_notification_client_vtbl_a3311d8cf335d09a237301e93f2365cc5}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{On\+Device\+Removed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a1a7c91fa9aaa8094da215368a284f9b1}\label{struct_i_m_m_notification_client_vtbl_a1a7c91fa9aaa8094da215368a284f9b1}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{On\+Device\+State\+Changed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a5e3496d3e920e6a89ed5d71416f04f6d}\label{struct_i_m_m_notification_client_vtbl_a5e3496d3e920e6a89ed5d71416f04f6d}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{On\+Property\+Value\+Changed }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}\label{struct_i_m_m_notification_client_vtbl_a3b879dbdb17c63ac9bbd98cc42b13fc2}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!HRESULT@{HRESULT}}
+\index{HRESULT@{HRESULT}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{HRESULT()}{HRESULT()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE IMMNotification\+Client\+Vtbl\+::\+HRESULT (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Query\+Interface }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_aba00c1aa02052e75ff41626f204003b2}\label{struct_i_m_m_notification_client_vtbl_aba00c1aa02052e75ff41626f204003b2}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Add\+Ref }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a566c67d4870a9308a688f5c67149d7fd}\label{struct_i_m_m_notification_client_vtbl_a566c67d4870a9308a688f5c67149d7fd}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!ULONG@{ULONG}}
+\index{ULONG@{ULONG}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{ULONG()}{ULONG()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily IMMNotification\+Client\+Vtbl\+::\+ULONG (\begin{DoxyParamCaption}\item[{STDMETHODCALLTYPE $\ast$}]{Release }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a0f7cc5a4eeb4e9dbd332be1657dd191f}\label{struct_i_m_m_notification_client_vtbl_a0f7cc5a4eeb4e9dbd332be1657dd191f}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!dwNewState@{dwNewState}}
+\index{dwNewState@{dwNewState}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{dwNewState}{dwNewState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} DWORD IMMNotification\+Client\+Vtbl\+::dw\+New\+State}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_ab72bdeb569a768b52b8bd58a5e8adad4}\label{struct_i_m_m_notification_client_vtbl_ab72bdeb569a768b52b8bd58a5e8adad4}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!flow@{flow}}
+\index{flow@{flow}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{flow}{flow}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} IMMNotification\+Client\+Vtbl\+::flow}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a4877840e1abb51a8243a665e59c17a05}\label{struct_i_m_m_notification_client_vtbl_a4877840e1abb51a8243a665e59c17a05}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!key@{key}}
+\index{key@{key}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} const \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}} IMMNotification\+Client\+Vtbl\+::key}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a1b4e43842113132d3a016dd920709fe9}\label{struct_i_m_m_notification_client_vtbl_a1b4e43842113132d3a016dd920709fe9}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!ppvObject@{ppvObject}}
+\index{ppvObject@{ppvObject}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{ppvObject}{ppvObject}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID \mbox{\hyperlink{rpcsal_8h_a23bc188526f10656f9c79d950f6c3192}{\+\_\+\+\_\+\+RPC\+\_\+\+\_\+deref\+\_\+out}} \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}$\ast$$\ast$ IMMNotification\+Client\+Vtbl\+::ppv\+Object}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_a3103aa4d2922dc61fccc683297519049}\label{struct_i_m_m_notification_client_vtbl_a3103aa4d2922dc61fccc683297519049}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!pwstrDefaultDeviceId@{pwstrDefaultDeviceId}}
+\index{pwstrDefaultDeviceId@{pwstrDefaultDeviceId}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{pwstrDefaultDeviceId}{pwstrDefaultDeviceId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR IMMNotification\+Client\+Vtbl\+::pwstr\+Default\+Device\+Id}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}\label{struct_i_m_m_notification_client_vtbl_aa6e7eaf1605e744b878808890c8fac0e}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!pwstrDeviceId@{pwstrDeviceId}}
+\index{pwstrDeviceId@{pwstrDeviceId}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{pwstrDeviceId}{pwstrDeviceId}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} LPCWSTR IMMNotification\+Client\+Vtbl\+::pwstr\+Device\+Id}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_af2b3dcf1fb84fcc0873123eff8b87e36}\label{struct_i_m_m_notification_client_vtbl_af2b3dcf1fb84fcc0873123eff8b87e36}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!riid@{riid}}
+\index{riid@{riid}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{riid}{riid}}
+{\footnotesize\ttfamily BEGIN\+\_\+\+INTERFACE REFIID IMMNotification\+Client\+Vtbl\+::riid}
+
+\mbox{\Hypertarget{struct_i_m_m_notification_client_vtbl_ac5e66caa511911fb3f6591755ef61975}\label{struct_i_m_m_notification_client_vtbl_ac5e66caa511911fb3f6591755ef61975}} 
+\index{IMMNotificationClientVtbl@{IMMNotificationClientVtbl}!role@{role}}
+\index{role@{role}!IMMNotificationClientVtbl@{IMMNotificationClientVtbl}}
+\doxysubsubsection{\texorpdfstring{role}{role}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_ad001c2e4d328d377293cc3aadc45facc}{EData\+Flow}} \mbox{\hyperlink{sal_8h_a3f6b8655e1aa9dfc15a9029f0343009e}{\+\_\+\+\_\+in}} \mbox{\hyperlink{mmdeviceapi_8h_a4231dc15ce42c015db08aed04a94fc1e}{ERole}} IMMNotification\+Client\+Vtbl\+::role}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/mingw-\/include/\mbox{\hyperlink{mmdeviceapi_8h}{mmdeviceapi.\+h}}\end{DoxyCompactItemize}

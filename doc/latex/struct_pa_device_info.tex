@@ -1,0 +1,100 @@
+\hypertarget{struct_pa_device_info}{}\doxysection{Pa\+Device\+Info Struct Reference}
+\label{struct_pa_device_info}\index{PaDeviceInfo@{PaDeviceInfo}}
+
+
+{\ttfamily \#include $<$portaudio.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{struct_pa_device_info_a2d726add4cd2af78a94c052b3a7df568}{struct\+Version}}
+\item 
+const char $\ast$ \mbox{\hyperlink{struct_pa_device_info_a1bc26d68f1d89472ae67eaa49a542aea}{name}}
+\item 
+\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{struct_pa_device_info_afe741e4d185069577f7e74b78fdef5a4}{host\+Api}}
+\item 
+int \mbox{\hyperlink{struct_pa_device_info_ad0baeeb2b6ceaf7fc9bb76109a7555e9}{max\+Input\+Channels}}
+\item 
+int \mbox{\hyperlink{struct_pa_device_info_a48f908b21e8a11fdf0a88132b18fe7b0}{max\+Output\+Channels}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_device_info_aad6629064b8c7cf043d237ea0a5cc534}{default\+Low\+Input\+Latency}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_device_info_a89e60515505eea8d668ede3a26a19ac6}{default\+Low\+Output\+Latency}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_device_info_a4214826038fcaf374beb9816024e6c9f}{default\+High\+Input\+Latency}}
+\item 
+\mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} \mbox{\hyperlink{struct_pa_device_info_a2a43dbc2b158806a937065bda037070e}{default\+High\+Output\+Latency}}
+\item 
+double \mbox{\hyperlink{struct_pa_device_info_a68f435353bfe1a4c9b632203a9afcacb}{default\+Sample\+Rate}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A structure providing information and capabilities of Port\+Audio devices. Devices may support input, output or both input and output. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_pa_device_info_a4214826038fcaf374beb9816024e6c9f}\label{struct_pa_device_info_a4214826038fcaf374beb9816024e6c9f}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!defaultHighInputLatency@{defaultHighInputLatency}}
+\index{defaultHighInputLatency@{defaultHighInputLatency}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{defaultHighInputLatency}{defaultHighInputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Device\+Info\+::default\+High\+Input\+Latency}
+
+Default latency values for robust non-\/interactive applications (eg. playing sound files). \mbox{\Hypertarget{struct_pa_device_info_a2a43dbc2b158806a937065bda037070e}\label{struct_pa_device_info_a2a43dbc2b158806a937065bda037070e}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!defaultHighOutputLatency@{defaultHighOutputLatency}}
+\index{defaultHighOutputLatency@{defaultHighOutputLatency}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{defaultHighOutputLatency}{defaultHighOutputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Device\+Info\+::default\+High\+Output\+Latency}
+
+\mbox{\Hypertarget{struct_pa_device_info_aad6629064b8c7cf043d237ea0a5cc534}\label{struct_pa_device_info_aad6629064b8c7cf043d237ea0a5cc534}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!defaultLowInputLatency@{defaultLowInputLatency}}
+\index{defaultLowInputLatency@{defaultLowInputLatency}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{defaultLowInputLatency}{defaultLowInputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Device\+Info\+::default\+Low\+Input\+Latency}
+
+Default latency values for interactive performance. \mbox{\Hypertarget{struct_pa_device_info_a89e60515505eea8d668ede3a26a19ac6}\label{struct_pa_device_info_a89e60515505eea8d668ede3a26a19ac6}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!defaultLowOutputLatency@{defaultLowOutputLatency}}
+\index{defaultLowOutputLatency@{defaultLowOutputLatency}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{defaultLowOutputLatency}{defaultLowOutputLatency}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_af17a7e6d0471a23071acf8dbd7bbe4bd}{Pa\+Time}} Pa\+Device\+Info\+::default\+Low\+Output\+Latency}
+
+\mbox{\Hypertarget{struct_pa_device_info_a68f435353bfe1a4c9b632203a9afcacb}\label{struct_pa_device_info_a68f435353bfe1a4c9b632203a9afcacb}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!defaultSampleRate@{defaultSampleRate}}
+\index{defaultSampleRate@{defaultSampleRate}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{defaultSampleRate}{defaultSampleRate}}
+{\footnotesize\ttfamily double Pa\+Device\+Info\+::default\+Sample\+Rate}
+
+\mbox{\Hypertarget{struct_pa_device_info_afe741e4d185069577f7e74b78fdef5a4}\label{struct_pa_device_info_afe741e4d185069577f7e74b78fdef5a4}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!hostApi@{hostApi}}
+\index{hostApi@{hostApi}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{hostApi}{hostApi}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} Pa\+Device\+Info\+::host\+Api}
+
+note this is a host API index, not a type id \mbox{\Hypertarget{struct_pa_device_info_ad0baeeb2b6ceaf7fc9bb76109a7555e9}\label{struct_pa_device_info_ad0baeeb2b6ceaf7fc9bb76109a7555e9}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!maxInputChannels@{maxInputChannels}}
+\index{maxInputChannels@{maxInputChannels}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{maxInputChannels}{maxInputChannels}}
+{\footnotesize\ttfamily int Pa\+Device\+Info\+::max\+Input\+Channels}
+
+\mbox{\Hypertarget{struct_pa_device_info_a48f908b21e8a11fdf0a88132b18fe7b0}\label{struct_pa_device_info_a48f908b21e8a11fdf0a88132b18fe7b0}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!maxOutputChannels@{maxOutputChannels}}
+\index{maxOutputChannels@{maxOutputChannels}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{maxOutputChannels}{maxOutputChannels}}
+{\footnotesize\ttfamily int Pa\+Device\+Info\+::max\+Output\+Channels}
+
+\mbox{\Hypertarget{struct_pa_device_info_a1bc26d68f1d89472ae67eaa49a542aea}\label{struct_pa_device_info_a1bc26d68f1d89472ae67eaa49a542aea}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!name@{name}}
+\index{name@{name}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily const char$\ast$ Pa\+Device\+Info\+::name}
+
+\mbox{\Hypertarget{struct_pa_device_info_a2d726add4cd2af78a94c052b3a7df568}\label{struct_pa_device_info_a2d726add4cd2af78a94c052b3a7df568}} 
+\index{PaDeviceInfo@{PaDeviceInfo}!structVersion@{structVersion}}
+\index{structVersion@{structVersion}!PaDeviceInfo@{PaDeviceInfo}}
+\doxysubsubsection{\texorpdfstring{structVersion}{structVersion}}
+{\footnotesize\ttfamily int Pa\+Device\+Info\+::struct\+Version}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/include/\mbox{\hyperlink{portaudio_8h}{portaudio.\+h}}\end{DoxyCompactItemize}

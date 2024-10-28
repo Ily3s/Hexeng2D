@@ -1,0 +1,87 @@
+\hypertarget{pa__cpuload_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+cpuload.c File Reference}
+\label{pa__cpuload_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_cpuload.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_cpuload.c}}
+
+
+Functions to assist in measuring the CPU utilization of a callback stream. Used to implement the \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\+\_\+\+Get\+Stream\+Cpu\+Load()}} function.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__cpuload_8c_ad7bc948ad89f917a6c3602a85f7900f2}{LOWPASS\+\_\+\+COEFFICIENT\+\_\+0}}~(0.\+9)
+\item 
+\#define \mbox{\hyperlink{pa__cpuload_8c_a140596284a7429f84f15197b400bd73e}{LOWPASS\+\_\+\+COEFFICIENT\+\_\+1}}~(0.\+99999 -\/ \mbox{\hyperlink{pa__cpuload_8c_ad7bc948ad89f917a6c3602a85f7900f2}{LOWPASS\+\_\+\+COEFFICIENT\+\_\+0}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__cpuload_8c_a8cffac188367367b6c5c5ed8e0b1fe46}{Pa\+Util\+\_\+\+Initialize\+Cpu\+Load\+Measurer}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer, double sample\+Rate)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__cpuload_8c_a31e622efc7504297b2191c3fe616b2ee}{Pa\+Util\+\_\+\+Reset\+Cpu\+Load\+Measurer}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__cpuload_8c_a83fdceefb7dff41725ba4f1f13a80f79}{Pa\+Util\+\_\+\+Begin\+Cpu\+Load\+Measurement}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__cpuload_8c_a8c29cc1cf3b6fd9bf18a2c3fc9f0ef2a}{Pa\+Util\+\_\+\+End\+Cpu\+Load\+Measurement}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer, unsigned long frames\+Processed)
+\item 
+double \mbox{\hyperlink{pa__cpuload_8c_af7bff59bbfe46a388e21633bf49ea0d6}{Pa\+Util\+\_\+\+Get\+Cpu\+Load}} (\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$measurer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to assist in measuring the CPU utilization of a callback stream. Used to implement the \mbox{\hyperlink{portaudio_8h_a83b8c624464dd7bb6a01b06ab596c115}{Pa\+\_\+\+Get\+Stream\+Cpu\+Load()}} function. 
+
+\begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000005}{Todo}}]Dynamically calculate the coefficients used to smooth the CPU Load Measurements over time to provide a uniform characterisation of CPU Load independent of rate at which Pa\+Util\+\_\+\+Begin\+Cpu\+Load\+Measurement / Pa\+Util\+\_\+\+End\+Cpu\+Load\+Measurement are called. see \href{http://www.portaudio.com/trac/ticket/113}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/113}} \end{DoxyRefDesc}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__cpuload_8c_ad7bc948ad89f917a6c3602a85f7900f2}\label{pa__cpuload_8c_ad7bc948ad89f917a6c3602a85f7900f2}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!LOWPASS\_COEFFICIENT\_0@{LOWPASS\_COEFFICIENT\_0}}
+\index{LOWPASS\_COEFFICIENT\_0@{LOWPASS\_COEFFICIENT\_0}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{LOWPASS\_COEFFICIENT\_0}{LOWPASS\_COEFFICIENT\_0}}
+{\footnotesize\ttfamily \#define LOWPASS\+\_\+\+COEFFICIENT\+\_\+0~(0.\+9)}
+
+\mbox{\Hypertarget{pa__cpuload_8c_a140596284a7429f84f15197b400bd73e}\label{pa__cpuload_8c_a140596284a7429f84f15197b400bd73e}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!LOWPASS\_COEFFICIENT\_1@{LOWPASS\_COEFFICIENT\_1}}
+\index{LOWPASS\_COEFFICIENT\_1@{LOWPASS\_COEFFICIENT\_1}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{LOWPASS\_COEFFICIENT\_1}{LOWPASS\_COEFFICIENT\_1}}
+{\footnotesize\ttfamily \#define LOWPASS\+\_\+\+COEFFICIENT\+\_\+1~(0.\+99999 -\/ \mbox{\hyperlink{pa__cpuload_8c_ad7bc948ad89f917a6c3602a85f7900f2}{LOWPASS\+\_\+\+COEFFICIENT\+\_\+0}})}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__cpuload_8c_a83fdceefb7dff41725ba4f1f13a80f79}\label{pa__cpuload_8c_a83fdceefb7dff41725ba4f1f13a80f79}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!PaUtil\_BeginCpuLoadMeasurement@{PaUtil\_BeginCpuLoadMeasurement}}
+\index{PaUtil\_BeginCpuLoadMeasurement@{PaUtil\_BeginCpuLoadMeasurement}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_BeginCpuLoadMeasurement()}{PaUtil\_BeginCpuLoadMeasurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Begin\+Cpu\+Load\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$}]{measurer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__cpuload_8c_a8c29cc1cf3b6fd9bf18a2c3fc9f0ef2a}\label{pa__cpuload_8c_a8c29cc1cf3b6fd9bf18a2c3fc9f0ef2a}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!PaUtil\_EndCpuLoadMeasurement@{PaUtil\_EndCpuLoadMeasurement}}
+\index{PaUtil\_EndCpuLoadMeasurement@{PaUtil\_EndCpuLoadMeasurement}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_EndCpuLoadMeasurement()}{PaUtil\_EndCpuLoadMeasurement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+End\+Cpu\+Load\+Measurement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$}]{measurer,  }\item[{unsigned long}]{frames\+Processed }\end{DoxyParamCaption})}
+
+FIXME \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000006}{Todo}}]these coefficients shouldn\textquotesingle{}t be hardwired see\+: \href{http://www.portaudio.com/trac/ticket/113}{\texttt{ http\+://www.\+portaudio.\+com/trac/ticket/113}} \end{DoxyRefDesc}
+\mbox{\Hypertarget{pa__cpuload_8c_af7bff59bbfe46a388e21633bf49ea0d6}\label{pa__cpuload_8c_af7bff59bbfe46a388e21633bf49ea0d6}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!PaUtil\_GetCpuLoad@{PaUtil\_GetCpuLoad}}
+\index{PaUtil\_GetCpuLoad@{PaUtil\_GetCpuLoad}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetCpuLoad()}{PaUtil\_GetCpuLoad()}}
+{\footnotesize\ttfamily double Pa\+Util\+\_\+\+Get\+Cpu\+Load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$}]{measurer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__cpuload_8c_a8cffac188367367b6c5c5ed8e0b1fe46}\label{pa__cpuload_8c_a8cffac188367367b6c5c5ed8e0b1fe46}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!PaUtil\_InitializeCpuLoadMeasurer@{PaUtil\_InitializeCpuLoadMeasurer}}
+\index{PaUtil\_InitializeCpuLoadMeasurer@{PaUtil\_InitializeCpuLoadMeasurer}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_InitializeCpuLoadMeasurer()}{PaUtil\_InitializeCpuLoadMeasurer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Initialize\+Cpu\+Load\+Measurer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$}]{measurer,  }\item[{double}]{sample\+Rate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__cpuload_8c_a31e622efc7504297b2191c3fe616b2ee}\label{pa__cpuload_8c_a31e622efc7504297b2191c3fe616b2ee}} 
+\index{pa\_cpuload.c@{pa\_cpuload.c}!PaUtil\_ResetCpuLoadMeasurer@{PaUtil\_ResetCpuLoadMeasurer}}
+\index{PaUtil\_ResetCpuLoadMeasurer@{PaUtil\_ResetCpuLoadMeasurer}!pa\_cpuload.c@{pa\_cpuload.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_ResetCpuLoadMeasurer()}{PaUtil\_ResetCpuLoadMeasurer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Reset\+Cpu\+Load\+Measurer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_cpu_load_measurer}{Pa\+Util\+Cpu\+Load\+Measurer}} $\ast$}]{measurer }\end{DoxyParamCaption})}
+

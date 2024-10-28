@@ -1,0 +1,4 @@
+var struct_k_s_p_r_o_p_e_r_t_y___a_l_l_o_c_a_t_o_r___c_o_n_t_r_o_l___c_a_p_t_u_r_e___c_a_p_s___s =
+[
+    [ "InterleavedCapSupported", "struct_k_s_p_r_o_p_e_r_t_y___a_l_l_o_c_a_t_o_r___c_o_n_t_r_o_l___c_a_p_t_u_r_e___c_a_p_s___s.html#a98d053a0692025ea823b0d4ad94c84a3", null ]
+];

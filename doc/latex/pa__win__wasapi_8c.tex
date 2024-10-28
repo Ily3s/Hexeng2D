@@ -1,0 +1,1514 @@
+\hypertarget{pa__win__wasapi_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/hostapi/wasapi/pa\+\_\+win\+\_\+wasapi.c File Reference}
+\label{pa__win__wasapi_8c}\index{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/pa\_win\_wasapi.c@{Hexeng2D/dependencies/portaudio/src/hostapi/wasapi/pa\_win\_wasapi.c}}
+
+
+WASAPI implementation of support for a host API.  
+
+
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$mmreg.\+h$>$}\newline
+{\ttfamily \#include $<$malloc.\+h$>$}\newline
+{\ttfamily \#include $<$memory.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+hostapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+stream.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+cpuload.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+process.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+wasapi.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+debugprint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+ringbuffer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+win\+\_\+coinitialize.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$basetyps.\+h$>$}\newline
+{\ttfamily \#include $<$rpcsal.\+h$>$}\newline
+{\ttfamily \#include $<$sal.\+h$>$}\newline
+{\ttfamily \#include $<$sdkddkver.\+h$>$}\newline
+{\ttfamily \#include $<$propkeydef.\+h$>$}\newline
+{\ttfamily \#include $<$audioclient.\+h$>$}\newline
+{\ttfamily \#include $<$mmdeviceapi.\+h$>$}\newline
+{\ttfamily \#include $<$endpointvolume.\+h$>$}\newline
+{\ttfamily \#include $<$functiondiscoverykeys.\+h$>$}\newline
+{\ttfamily \#include $<$devicetopology.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct__tagpropertykey}{\+\_\+tagpropertykey}}
+\item 
+struct \mbox{\hyperlink{struct___b_y_t_e___b_l_o_b}{\+\_\+\+BYTE\+\_\+\+BLOB}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_device_info}{Pa\+Wasapi\+Device\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_host_api_representation}{Pa\+Wasapi\+Host\+Api\+Representation}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_audio_client_params}{Pa\+Wasapi\+Audio\+Client\+Params}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}}
+\item 
+struct \mbox{\hyperlink{struct_pa_wasapi_stream}{Pa\+Wasapi\+Stream}}
+\item 
+struct \mbox{\hyperlink{struct_thread_idle_scheduler}{Thread\+Idle\+Scheduler}}
+\item 
+struct \mbox{\hyperlink{struct___system_timer}{\+\_\+\+System\+Timer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a3b2acfbc50d2f1eb2dddfbb0c9a6e4d3}{PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT}}~0
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a966cd377b9f3fdeb1432460c33352af1}{WINVER}}~0x0600
+\begin{DoxyCompactList}\small\item\em Poll mode time slots logging. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ac50762666aa00bd3a4308158510f1748}{\+\_\+\+WIN32\+\_\+\+WINNT}}~\mbox{\hyperlink{win32__platform_8h_a966cd377b9f3fdeb1432460c33352af1}{WINVER}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}~\+\_\+\+\_\+stdcall
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a2af3763fd2e78c9898c10762f9ef3ef4}{\+\_\+\+\_\+unaligned}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a4fbde7228bc501f58ba33c4f6b668626}{\+\_\+\+\_\+\+C89\+\_\+\+NAMELESS}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a47e37ab430bf80d50648a0d5ac18b103}{\+\_\+\+\_\+\+LPCGUID\+\_\+\+DEFINED\+\_\+\+\_\+}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a7d2c965c2e6466eb96707b5034ccd693}{PROPERTYKEY\+\_\+\+DEFINED}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a673c1f31132e45e35ddee6d1d92b9bb1}{\+\_\+\+\_\+\+MIDL\+\_\+\+CONST}}~const
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af1ecaf25e5207f6c04582d5081d99b00}{NONAMELESSUNION}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a37d17ddda1e36eb0f54d80a946b897f0}{WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT}}~0x0003
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_adc323f9409c3f1374367fecf9a2e3496}{\+\_\+\+\_\+\+MINGW\+\_\+\+EXTENSION}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a8dbf8c07441f5b076bfc6eea06513cb7}{COBJMACROS}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af11aade3f3741fb554915d10d3f514eb}{INITGUID}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a5270bc6f60431a3ab7cc5f171493b5dd}{\+\_\+\+\_\+\+DEFINE\+\_\+\+GUID}}(\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8)~static const GUID \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ad5dca404e98a4186b60cba66787c5e1a}{\+\_\+\+\_\+\+DEFINE\+\_\+\+IID}}(\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8)~static const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a684dc8a813711bb4515ee0c59cf4311f}{\+\_\+\+\_\+\+DEFINE\+\_\+\+CLSID}}(\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8)~static const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a76de14f466267894ffd0f226ec89911d}{PA\+\_\+\+DEFINE\+\_\+\+CLSID}}(class\+Name,  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8)~    \mbox{\hyperlink{pa__win__wasapi_8c_a684dc8a813711bb4515ee0c59cf4311f}{\+\_\+\+\_\+\+DEFINE\+\_\+\+CLSID}}(pa\+\_\+\+CLSID\+\_\+\#\#class\+Name, 0x\#\#l, 0x\#\#w1, 0x\#\#w2, 0x\#\#b1, 0x\#\#b2, 0x\#\#b3, 0x\#\#b4, 0x\#\#b5, 0x\#\#b6, 0x\#\#b7, 0x\#\#b8)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_aca414f4cad142fa0dd6cd229095fcac2}{PA\+\_\+\+DEFINE\+\_\+\+IID}}(interface\+Name,  l,  w1,  w2,  b1,  b2,  b3,  b4,  b5,  b6,  b7,  b8)~    \mbox{\hyperlink{pa__win__wasapi_8c_ad5dca404e98a4186b60cba66787c5e1a}{\+\_\+\+\_\+\+DEFINE\+\_\+\+IID}}(pa\+\_\+\+IID\+\_\+\#\#interface\+Name, 0x\#\#l, 0x\#\#w1, 0x\#\#w2, 0x\#\#b1, 0x\#\#b2, 0x\#\#b3, 0x\#\#b4, 0x\#\#b5, 0x\#\#b6, 0x\#\#b7, 0x\#\#b8)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a0a9408819040e2ff021281f9e0971a35}{CREATE\+\_\+\+THREAD}}(PROC)~(HANDLE)\+\_\+beginthreadex( NULL, 0, (PROC), \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, 0, \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}-\/$>$dw\+Thread\+Id )
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}}~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af90ebf49f32d984f4cea06ca90506e40}{PA\+\_\+\+THREAD\+\_\+\+ID}}~unsigned
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a8fb76fb0aad37662875d8c84422b7d7d}{AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+ERROR}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x018)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a7d7f5a942a92bc351ee138fb96551d6f}{AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+NOT\+\_\+\+ALIGNED}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x019)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_afa7cffa38411eb69296e902cfda00b22}{AUDCLNT\+\_\+\+E\+\_\+\+INVALID\+\_\+\+DEVICE\+\_\+\+PERIOD}}~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x020)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_aa6ea6157142790cce266f31e4722f648}{AUDCLNT\+\_\+\+STREAMFLAGS\+\_\+\+SRC\+\_\+\+DEFAULT\+\_\+\+QUALITY}}~0x08000000
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a88a3f69d169939958b45b5664ae2b233}{AUDCLNT\+\_\+\+STREAMFLAGS\+\_\+\+AUTOCONVERTPCM}}~0x80000000
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a3ab26c923daec0521c9649e033432c75}{PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN}}~256
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ac6b9e42187e4c8ea988175ae91d1548b}{PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+LEN}}~128
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a1ffa289724d1c8dbeefe0116b976158e}{STATIC\+\_\+\+ARRAY\+\_\+\+SIZE}}(array)~(sizeof(array)/sizeof(array\mbox{[}0\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ad61844ab25ea35139950e67e9693bc9f}{PRINT}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}})~\mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}});
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}{PA\+\_\+\+SKELETON\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR}}(error\+Code,  error\+Text)~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa27b155bf2883aef821dfb6eba89e456}{pa\+WASAPI}}, error\+Code, error\+Text )
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af46190c73acf456c64118d4df2afd503}{PA\+\_\+\+WASAPI\+\_\+\+\_\+\+IS\+\_\+\+FULLDUPLEX}}(STREAM)~((STREAM)-\/$>$in.\+client\+Proc \&\& (STREAM)-\/$>$out.\+client\+Proc)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a1e9952fda08455274b0399512ddd1830}{IF\+\_\+\+FAILED\+\_\+\+JUMP}}(hr,  \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}})~if(FAILED(hr)) goto \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}};
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a6ab838f91461092984ade025965e713e}{IF\+\_\+\+FAILED\+\_\+\+INTERNAL\+\_\+\+ERROR\+\_\+\+JUMP}}(hr,  error,  \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}})~if(FAILED(hr)) \{ error = \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4851f9f753cdad3e7a89380d6589816c}{pa\+Internal\+Error}}; goto \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}}; \}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ad951b4a0c360e7157d8229beea6c6336}{SAFE\+\_\+\+CLOSE}}(\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})~if ((\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}) != NULL) \{ Close\+Handle((\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})); (\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}) = NULL; \}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_aaafc777c741d97e2d33f43fbdd949f2c}{SAFE\+\_\+\+RELEASE}}(punk)~if ((punk) != NULL) \{ (punk)-\/$>$lp\+Vtbl-\/$>$Release((punk)); (punk) = NULL; \}
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_aaa99ea4974b034b9c0ed40a450076802}{\+\_\+\+Get\+Proc}}(fun,  \mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}},  \mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}})
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a5dfbea2594297c34125d552ea1338244}{Log\+Host\+Error}}(HRES)~\+\_\+\+\_\+\+Log\+Host\+Error(HRES, \+\_\+\+\_\+\+FUNCTION\+\_\+\+\_\+, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a633e8a11ad96f367826d8cadb02236c2}{Log\+Pa\+Error}}(PAERR)~\+\_\+\+\_\+\+Log\+Pa\+Error(PAERR, \+\_\+\+\_\+\+FUNCTION\+\_\+\+\_\+, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a6d765e6132c93a5601f277322ae4f98c}{HDA\+\_\+\+PACKET\+\_\+\+SIZE}}~(128)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}{REFTIMES\+\_\+\+PER\+\_\+\+SEC}}~10000000\+LL
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}{REFTIMES\+\_\+\+PER\+\_\+\+MILLISEC}}~10000\+LL
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}{REFTIMES\+\_\+\+PER\+\_\+\+SEC}}~10000000\+LL
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}{REFTIMES\+\_\+\+PER\+\_\+\+MILLISEC}}~10000\+LL
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a25c75f977297903ade9f1557a0f25d73}{NTSTATUS\+\_\+\+SUCCESS}}~((\mbox{\hyperlink{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}{NTSTATUS}})0x00000000L)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_ada6662bf23deb36ae82097ee77924945}{\+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+1\+\_\+\+TO\+\_\+2}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a7a033fd62998defc98fd8b3318b1f437}{\+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+FLT32}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a0dcd21c9e597e6295abca02c11622736}{\+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+INT32}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_a12872b4e5be48d44a65a4b47531a65b3}{\+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+INT64}}(TYPE)
+\item 
+\#define \mbox{\hyperlink{pa__win__wasapi_8c_aa55d5cb14030dd39ad1e24a82216f71b}{\+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+L}}(TYPE)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}} \mbox{\hyperlink{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}{AVRT\+\_\+\+PRIORITY}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a37790f227e70ff2c3ca5254ccdbfae0f}{PAVRT\+\_\+\+PRIORITY}}
+\item 
+typedef const GUID $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}}
+\item 
+typedef GUID \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}}
+\item 
+typedef GUID \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}}
+\item 
+typedef struct \mbox{\hyperlink{struct__tagpropertykey}{\+\_\+tagpropertykey}} \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}}
+\item 
+typedef struct \mbox{\hyperlink{struct___b_y_t_e___b_l_o_b}{\+\_\+\+BYTE\+\_\+\+BLOB}} \mbox{\hyperlink{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}{BYTE\+\_\+\+BLOB}}
+\item 
+typedef \mbox{\hyperlink{rpcsal_8h_a21fd41c8ce57ed4bb654bc7d456bd054}{\+\_\+\+\_\+\+RPC\+\_\+unique\+\_\+pointer}} \mbox{\hyperlink{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}{BYTE\+\_\+\+BLOB}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_afe91709fff40390914215d21253da001}{UP\+\_\+\+BYTE\+\_\+\+BLOB}}
+\item 
+typedef LONGLONG \mbox{\hyperlink{pa__win__wasapi_8c_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\+\_\+\+TIME}}
+\item 
+typedef LONG \mbox{\hyperlink{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}{NTSTATUS}}
+\item 
+typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a9f92cb8ea38a742ac087799b68d12bf3}{Mix\+Mono\+To\+StereoF}}) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\+\_\+\+\_\+to, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\+\_\+\+\_\+from, UINT32 \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a5af889b68d15f627b3ecabae43c21c17}{FAv\+Rt\+Create\+Thread\+Ordering\+Group}}) (PHANDLE, PLARGE\+\_\+\+INTEGER, GUID $\ast$, PLARGE\+\_\+\+INTEGER)
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_ac3606eb65325156589051bdd9ce5d915}{FAv\+Rt\+Delete\+Thread\+Ordering\+Group}}) (HANDLE)
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a71e6b55e2b0a0e44dae969c07ecce8a6}{FAv\+Rt\+Wait\+On\+Thread\+Ordering\+Group}}) (HANDLE)
+\item 
+typedef HANDLE(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_ab155754499992c6d0273dc4fb7d3fd57}{FAv\+Set\+Mm\+Thread\+Characteristics}}) (LPCSTR, LPDWORD)
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a00005277f6e80b50489b77a3641c50f3}{FAv\+Revert\+Mm\+Thread\+Characteristics}}) (HANDLE)
+\item 
+typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_aded1895cd1ae97b0a2b8371935f5a3a6}{FAv\+Set\+Mm\+Thread\+Priority}}) (HANDLE, \mbox{\hyperlink{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}{AVRT\+\_\+\+PRIORITY}})
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_device_info}{Pa\+Wasapi\+Device\+Info}} \mbox{\hyperlink{pa__win__wasapi_8c_af0ca51cef87cef3ea02b3588aad60759}{Pa\+Wasapi\+Device\+Info}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_audio_client_params}{Pa\+Wasapi\+Audio\+Client\+Params}} \mbox{\hyperlink{pa__win__wasapi_8c_a1d939628364c7dda299a760dd83ec6c7}{Pa\+Wasapi\+Audio\+Client\+Params}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} \mbox{\hyperlink{pa__win__wasapi_8c_ac831d08a261ae5ef383625fe75011696}{Pa\+Wasapi\+Sub\+Stream}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} \mbox{\hyperlink{pa__win__wasapi_8c_a70a828b18a9b5cd53d791a1b4ee3e1cc}{Pa\+Wasapi\+Host\+Processor}}
+\item 
+typedef struct \mbox{\hyperlink{struct_pa_wasapi_stream}{Pa\+Wasapi\+Stream}} \mbox{\hyperlink{pa__win__wasapi_8c_a061f8de11204903d0c1da280bc1dcd73}{Pa\+Wasapi\+Stream}}
+\item 
+typedef struct \mbox{\hyperlink{struct_thread_idle_scheduler}{Thread\+Idle\+Scheduler}} \mbox{\hyperlink{pa__win__wasapi_8c_ada629fdc17fb2555d82c1085c0011517}{Thread\+Idle\+Scheduler}}
+\item 
+typedef struct \mbox{\hyperlink{struct___system_timer}{\+\_\+\+System\+Timer}} \mbox{\hyperlink{pa__win__wasapi_8c_af711978d15c75c853631d76cbb33e5aa}{System\+Timer}}
+\item 
+typedef UINT32($\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a949fa21ebe968b6a5a38bd434e5eb4f6}{ALIGN\+\_\+\+FUNC}}) (UINT32 \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}}, UINT32 align)
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}{EWindows\+Version}} \mbox{\hyperlink{pa__win__wasapi_8c_ac85243ab9fe9165c3d0e884c8e73e55b}{EWindows\+Version}}
+\item 
+typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}{EMix\+Direction}} \mbox{\hyperlink{pa__win__wasapi_8c_a58c3dc1caa0784fb1b6a86db6569f784}{EMix\+Direction}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}} \{ \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a82f37aa1743cab1c69da7d5ff49d6a8a}{AVRT\+\_\+\+PRIORITY\+\_\+\+LOW}} = -\/1
+, \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9ddb04ddf34535472b8f54f043d3a652}{AVRT\+\_\+\+PRIORITY\+\_\+\+NORMAL}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a3d1e82a3e67940c08fff4233d7ec928f}{AVRT\+\_\+\+PRIORITY\+\_\+\+HIGH}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9868458188819915b729402bfa060ba2}{AVRT\+\_\+\+PRIORITY\+\_\+\+CRITICAL}}
+ \}
+\item 
+enum \{ \mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea217b06ba7bf37ab6dc9d9751f1cf6b24}{S\+\_\+\+INPUT}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea9c7ef9e6df306bfb79b635afee6c1adf}{S\+\_\+\+OUTPUT}} = 1
+, \mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051eacac8c5a7329bfb86776b1d827f2f2e83}{S\+\_\+\+COUNT}} = 2
+, \mbox{\hyperlink{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea973c488a4609f21d89d641b762de9fe7}{S\+\_\+\+FULLDUPLEX}} = 0
+ \}
+\item 
+enum \{ \mbox{\hyperlink{pa__win__wasapi_8c_a79e9f285d34216706a748fd7ba8941b7a7b6c7e83009a14df464dd680e87feaf2}{WASAPI\+\_\+\+PACKETS\+\_\+\+PER\+\_\+\+INPUT\+\_\+\+BUFFER}} = 6
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}{EWindows\+Version}} \{ \newline
+\mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a34af6dcbce17b7e942bd8901fc89f701}{WINDOWS\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ad24275f02eb3bf7b4e1ed8e759016e5f}{WINDOWS\+\_\+\+VISTA\+\_\+\+SERVER2008}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a3fa4d45ad3f6f0249620f1165ee1ed4f}{WINDOWS\+\_\+7\+\_\+\+SERVER2008\+R2}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a282960d50b4587c87046a8333bf2c38c}{WINDOWS\+\_\+8\+\_\+\+SERVER2012}}
+, \newline
+\mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ab5cea250cefffe760d8947ae4c3107d0}{WINDOWS\+\_\+8\+\_\+1\+\_\+\+SERVER2012\+R2}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a5b9050d995ef03019284af641563c15f}{WINDOWS\+\_\+10\+\_\+\+SERVER2016}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a16952920e317737f75be9de6682f0d06}{WINDOWS\+\_\+\+FUTURE}}
+ \}
+\item 
+enum \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}{EMix\+Direction}} \{ \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594ab2ffbd89db8f6270bf898848a9b77668}{MIX\+\_\+\+DIR\+\_\+\+\_\+1\+TO2}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a4a73cefc3d25fc95e94adf7b14ab3583}{MIX\+\_\+\+DIR\+\_\+\+\_\+2\+TO1}}
+, \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a0858f41d4d725a8638f791327d303f33}{MIX\+\_\+\+DIR\+\_\+\+\_\+2\+TO1\+\_\+L}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a1ece8a6630af9313888eab6508beec15}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}}, 1cb9ad4c, dbfa, 4c32, b1, 78, c2, f5, 68, a7, 03, b2)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a3b95fbf20416e2ff902c8a1cc149b2c2}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (IAudio\+Client2, 726778cd, f60a, 4eda, 82, de, e4, 76, 10, cd, 78, aa)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a8e419ae4e653835e15a93e6682714c67}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (IAudio\+Client3, 7ed4ee07, 8e67, 4cd4, 8c, 1\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, 2\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}, 7\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, 59, 87, ad, 42)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_aa5af9cc6b076410d262f921bfd2a0859}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}}, 1be09788, 6894, 4089, 85, 86, 9\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, 2\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, 6c, 26, 5\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}, c5)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a7352e0e14e250246f7aed4c9bfebe118}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}, a95664d2, 9614, 4f35, a7, 46, de, 8d, b6, 36, 17, e6)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a217e090bc41b002bac8c67d506e7c293}{PA\+\_\+\+DEFINE\+\_\+\+CLSID}} (\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}, bcde0395, e52f, 467c, 8e, 3d, c4, 57, 92, 91, 69, 2e)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_ae55f342ce51f789b74ae90ef9f8b8afd}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}, f294acfc, 3146, 4483, a7, bf, ad, dc, a7, c2, 60, e2)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_acb9f29dd14a7e4a38a3d768cd3f745e9}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}, c8adbd64, e71e, 48a0, a4, de, 18, 5c, 39, 5c, d3, 17)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_ae4739ba48dcd72f329d79eb9b4fe4cdb}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}}, 2A07407E, 6497, 4A18, 97, 87, 32, f7, 9\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}, d0, d9, 8\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}})
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a028039501a67cfcf87ff71f37e2ade6a}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}, AE2\+DE0\+E4, 5BCA, 4F2D, aa, 46, 5d, 13, f8, fd, b3, a9)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a8e34cd8eb85293ec3a3225127754633f}{PA\+\_\+\+DEFINE\+\_\+\+IID}} (\mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}}, 4509F757, 2D46, 4637, 8e, 62, ce, 7d, b9, 44, f5, 7\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}})
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a18656159e0f57f9de0b9fb6c36c98f2d}{\+\_\+\+\_\+\+DEFINE\+\_\+\+GUID}} (pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+PCM, 0x00000001, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_aa40505d86e5d43a64feee42314677279}{\+\_\+\+\_\+\+DEFINE\+\_\+\+GUID}} (pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+ADPCM, 0x00000002, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a68918bf0b41c53e2172ac6d55d9812ab}{\+\_\+\+\_\+\+DEFINE\+\_\+\+GUID}} (pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+IEEE\+\_\+\+FLOAT, 0x00000003, 0x0000, 0x0010, 0x80, 0x00, 0x00, 0xaa, 0x00, 0x38, 0x9b, 0x71)
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} \mbox{\hyperlink{pa__win__wasapi_8c_ac575016ee1e9d6275cbc5004b2409036}{Proc\+Thread\+Event}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} \mbox{\hyperlink{pa__win__wasapi_8c_aae20a143b3c891a38a7e918ee4b1d6b8}{Proc\+Thread\+Poll}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_aee283a859c061cfde8881e3d9f2a1cb2}{param}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a56a0d6a3498d2ca95227d2e5c9975c40}{Pa\+Wasapi\+\_\+\+Initialize}} (\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$host\+Api, \mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}} \mbox{\hyperlink{glad_8h_a57f14e05b1900f16a2da82ade47d0c6d}{index}})
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List}} ()
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8c_adb5f9ba32018e00630e9181cc86d97bb}{Pa\+Wasapi\+\_\+\+Get\+Device\+Current\+Format}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, int b\+Output)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8c_a5076434a69a9ef02e1966f3ea65da937}{Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8c_a80dfb8c49a4a12ca177afbaac9db3d06}{Pa\+Wasapi\+\_\+\+Get\+Device\+Mix\+Format}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Format, unsigned int format\+Size, \mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+int \mbox{\hyperlink{pa__win__wasapi_8c_ac914f9b877451fc998298e4beec10208}{Pa\+Wasapi\+\_\+\+Get\+Device\+Role}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a739878064482dc638ed89b68a7dff00f}{Pa\+Wasapi\+\_\+\+Get\+IMMDevice}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+IMMDevice)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_ab9ac66d7e4bedab8b7ec38146526eb24}{Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, unsigned int $\ast$p\+Input, unsigned int $\ast$p\+Output)
+\item 
+unsigned long \mbox{\hyperlink{pa__win__wasapi_8c_afe88b93d518a48a088c658b7c8ab25b1}{Pa\+Util\+\_\+\+Get\+Output\+Frame\+Count}} (\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$bp)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_ad18e3aede8d98f7144f6279c22b88c87}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+Task, \mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}} priority\+Class)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_ac1a76bc94a9144ed456575fec190323d}{Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+Task)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_aee7cb6ee52ae7c55f12db908be2feecb}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int $\ast$p\+Jack\+Count)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_ae61299a2f58f2bf55f9849b64914ae66}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description}} (\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}} device, int jack\+Index, \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} $\ast$p\+Jack\+Description)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a25c33a7937780119df74e951d9bfaf00}{Pa\+Wasapi\+\_\+\+Get\+Audio\+Client}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$p\+Audio\+Client, int b\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a7f85ba84da29809aa47438c8708465a4}{Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id}} (const unsigned short $\ast$p\+Id, int b\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a7ac47bc66f443d6713f011a7937b0b69}{Pa\+Wasapi\+Winrt\+\_\+\+Populate\+Device\+List}} (const unsigned short $\ast$$\ast$p\+Id, const unsigned short $\ast$$\ast$p\+Name, const \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} $\ast$p\+Role, unsigned int \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}}, int b\+Output)
+\item 
+\mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} \mbox{\hyperlink{pa__win__wasapi_8c_a730e026069b18726e0fea2308868f820}{Pa\+Wasapi\+\_\+\+Set\+Stream\+State\+Handler}} (\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$p\+Stream, \mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}} fn\+State\+Handler, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$p\+User\+Data)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a5af889b68d15f627b3ecabae43c21c17}{FAv\+Rt\+Create\+Thread\+Ordering\+Group}} \mbox{\hyperlink{pa__win__wasapi_8c_ad998bad539a112ce8182c22c5cf0481e}{p\+Av\+Rt\+Create\+Thread\+Ordering\+Group}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_ac3606eb65325156589051bdd9ce5d915}{FAv\+Rt\+Delete\+Thread\+Ordering\+Group}} \mbox{\hyperlink{pa__win__wasapi_8c_a5604278b62c1f5c62e906ab2e53ba6ab}{p\+Av\+Rt\+Delete\+Thread\+Ordering\+Group}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a71e6b55e2b0a0e44dae969c07ecce8a6}{FAv\+Rt\+Wait\+On\+Thread\+Ordering\+Group}} \mbox{\hyperlink{pa__win__wasapi_8c_ab0d78159e0a0e2a6575ca053983461d8}{p\+Av\+Rt\+Wait\+On\+Thread\+Ordering\+Group}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_ab155754499992c6d0273dc4fb7d3fd57}{FAv\+Set\+Mm\+Thread\+Characteristics}} \mbox{\hyperlink{pa__win__wasapi_8c_a892964d92daf945b57491f24eb331056}{p\+Av\+Set\+Mm\+Thread\+Characteristics}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_a00005277f6e80b50489b77a3641c50f3}{FAv\+Revert\+Mm\+Thread\+Characteristics}} \mbox{\hyperlink{pa__win__wasapi_8c_a800438cc51e4a6661c2cdb986a16e093}{p\+Av\+Revert\+Mm\+Thread\+Characteristics}} = NULL
+\item 
+\mbox{\hyperlink{pa__win__wasapi_8c_aded1895cd1ae97b0a2b8371935f5a3a6}{FAv\+Set\+Mm\+Thread\+Priority}} \mbox{\hyperlink{pa__win__wasapi_8c_a00926c56ee41e2e33e834e6552a9fe0d}{p\+Av\+Set\+Mm\+Thread\+Priority}} = NULL
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+WASAPI implementation of support for a host API. 
+
+\begin{DoxyNote}{Note}
+pa\+\_\+wasapi currently requires minimum VC 2005, and the latest Vista SDK 
+\end{DoxyNote}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a4fbde7228bc501f58ba33c4f6b668626}\label{pa__win__wasapi_8c_a4fbde7228bc501f58ba33c4f6b668626}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_C89\_NAMELESS@{\_\_C89\_NAMELESS}}
+\index{\_\_C89\_NAMELESS@{\_\_C89\_NAMELESS}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_C89\_NAMELESS}{\_\_C89\_NAMELESS}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+C89\+\_\+\+NAMELESS}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a684dc8a813711bb4515ee0c59cf4311f}\label{pa__win__wasapi_8c_a684dc8a813711bb4515ee0c59cf4311f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_CLSID@{\_\_DEFINE\_CLSID}}
+\index{\_\_DEFINE\_CLSID@{\_\_DEFINE\_CLSID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_CLSID}{\_\_DEFINE\_CLSID}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DEFINE\+\_\+\+CLSID(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8 }\end{DoxyParamCaption})~static const \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}} \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a5270bc6f60431a3ab7cc5f171493b5dd}\label{pa__win__wasapi_8c_a5270bc6f60431a3ab7cc5f171493b5dd}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}}
+\index{\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_GUID}{\_\_DEFINE\_GUID}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DEFINE\+\_\+\+GUID(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8 }\end{DoxyParamCaption})~static const GUID \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad5dca404e98a4186b60cba66787c5e1a}\label{pa__win__wasapi_8c_ad5dca404e98a4186b60cba66787c5e1a}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_IID@{\_\_DEFINE\_IID}}
+\index{\_\_DEFINE\_IID@{\_\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_IID}{\_\_DEFINE\_IID}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+DEFINE\+\_\+\+IID(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}},  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8 }\end{DoxyParamCaption})~static const \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}} \mbox{\hyperlink{glad_8h_a0788d3762d0c3c76e4c094d8078b4c27}{n}} \mbox{\hyperlink{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}{GUID\+\_\+\+SECT}} = \{l,w1,w2,\{b1,b2,b3,b4,b5,b6,b7,b8\}\}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a47e37ab430bf80d50648a0d5ac18b103}\label{pa__win__wasapi_8c_a47e37ab430bf80d50648a0d5ac18b103}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_LPCGUID\_DEFINED\_\_@{\_\_LPCGUID\_DEFINED\_\_}}
+\index{\_\_LPCGUID\_DEFINED\_\_@{\_\_LPCGUID\_DEFINED\_\_}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_LPCGUID\_DEFINED\_\_}{\_\_LPCGUID\_DEFINED\_\_}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+LPCGUID\+\_\+\+DEFINED\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a673c1f31132e45e35ddee6d1d92b9bb1}\label{pa__win__wasapi_8c_a673c1f31132e45e35ddee6d1d92b9bb1}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_MIDL\_CONST@{\_\_MIDL\_CONST}}
+\index{\_\_MIDL\_CONST@{\_\_MIDL\_CONST}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_MIDL\_CONST}{\_\_MIDL\_CONST}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+MIDL\+\_\+\+CONST~const}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_adc323f9409c3f1374367fecf9a2e3496}\label{pa__win__wasapi_8c_adc323f9409c3f1374367fecf9a2e3496}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_MINGW\_EXTENSION@{\_\_MINGW\_EXTENSION}}
+\index{\_\_MINGW\_EXTENSION@{\_\_MINGW\_EXTENSION}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_MINGW\_EXTENSION}{\_\_MINGW\_EXTENSION}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+MINGW\+\_\+\+EXTENSION}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a2af3763fd2e78c9898c10762f9ef3ef4}\label{pa__win__wasapi_8c_a2af3763fd2e78c9898c10762f9ef3ef4}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_unaligned@{\_\_unaligned}}
+\index{\_\_unaligned@{\_\_unaligned}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_unaligned}{\_\_unaligned}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+unaligned}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aaa99ea4974b034b9c0ed40a450076802}\label{pa__win__wasapi_8c_aaa99ea4974b034b9c0ed40a450076802}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_GetProc@{\_GetProc}}
+\index{\_GetProc@{\_GetProc}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_GetProc}{\_GetProc}}
+{\footnotesize\ttfamily \#define \+\_\+\+Get\+Proc(\begin{DoxyParamCaption}\item[{}]{fun,  }\item[{}]{\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}},  }\item[{}]{\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}} }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                        \{                                                        \(\backslash\)}
+\DoxyCodeLine{                                        fun = (\mbox{\hyperlink{glad_8h_a890efa53b3d7deeeced6f3a0d6653ed3}{type}}) GetProcAddress(hDInputDLL,\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}});       \(\backslash\)}
+\DoxyCodeLine{                                        if (fun == NULL) \{                                  \(\backslash\)}
+\DoxyCodeLine{                                            PRINT((\textcolor{stringliteral}{"{}GetProcAddr failed for \%s"{}} ,\mbox{\hyperlink{glad_8h_aaced7cfc21e7d37775d6921bb8177239}{name}}));     \(\backslash\)}
+\DoxyCodeLine{                                            \textcolor{keywordflow}{return} \mbox{\hyperlink{com__portaudio___blocking_stream_8c_aa93f0eb578d23995850d61f7d61c55c1}{FALSE}};                                   \(\backslash\)}
+\DoxyCodeLine{                                        \}                                                   \(\backslash\)}
+\DoxyCodeLine{                                    \}                                                       \(\backslash\)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ada6662bf23deb36ae82097ee77924945}\label{pa__win__wasapi_8c_ada6662bf23deb36ae82097ee77924945}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2}}
+\index{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2}{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_1\_TO\_2}}
+{\footnotesize\ttfamily \#define \+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+1\+\_\+\+TO\+\_\+2(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE * \_\_restrict to = (TYPE *)\_\_to;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict from = (\textcolor{keyword}{const} TYPE *)\_\_from;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} = from + \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\(\backslash\)}
+\DoxyCodeLine{    while (from != \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        to[0] = to[1] = *from ++;\(\backslash\)}
+\DoxyCodeLine{        to += 2;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7a033fd62998defc98fd8b3318b1f437}\label{pa__win__wasapi_8c_a7a033fd62998defc98fd8b3318b1f437}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32}}
+\index{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32}{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_FLT32}}
+{\footnotesize\ttfamily \#define \+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+FLT32(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE * \_\_restrict to = (TYPE *)\_\_to;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict from = (\textcolor{keyword}{const} TYPE *)\_\_from;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} = to + \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\(\backslash\)}
+\DoxyCodeLine{    while (to != \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        *to ++ = (TYPE)((\textcolor{keywordtype}{float})(from[0] + from[1]) * 0.5f);\(\backslash\)}
+\DoxyCodeLine{        from += 2;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a0dcd21c9e597e6295abca02c11622736}\label{pa__win__wasapi_8c_a0dcd21c9e597e6295abca02c11622736}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32}}
+\index{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32}{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT32}}
+{\footnotesize\ttfamily \#define \+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+INT32(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE * \_\_restrict to = (TYPE *)\_\_to;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict from = (\textcolor{keyword}{const} TYPE *)\_\_from;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} = to + \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\(\backslash\)}
+\DoxyCodeLine{    while (to != \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        *to ++ = (TYPE)(((INT32)from[0] + (INT32)from[1]) >> 1);\(\backslash\)}
+\DoxyCodeLine{        from += 2;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a12872b4e5be48d44a65a4b47531a65b3}\label{pa__win__wasapi_8c_a12872b4e5be48d44a65a4b47531a65b3}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64}}
+\index{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64}{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_INT64}}
+{\footnotesize\ttfamily \#define \+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+\+INT64(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE * \_\_restrict to = (TYPE *)\_\_to;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict from = (\textcolor{keyword}{const} TYPE *)\_\_from;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} = to + \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\(\backslash\)}
+\DoxyCodeLine{    while (to != \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        *to ++ = (TYPE)(((INT64)from[0] + (INT64)from[1]) >> 1);\(\backslash\)}
+\DoxyCodeLine{        from += 2;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_aa55d5cb14030dd39ad1e24a82216f71b}\label{pa__win__wasapi_8c_aa55d5cb14030dd39ad1e24a82216f71b}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L}}
+\index{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L@{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L}{\_WASAPI\_MONO\_TO\_STEREO\_MIXER\_2\_TO\_1\_L}}
+{\footnotesize\ttfamily \#define \+\_\+\+WASAPI\+\_\+\+MONO\+\_\+\+TO\+\_\+\+STEREO\+\_\+\+MIXER\+\_\+2\+\_\+\+TO\+\_\+1\+\_\+L(\begin{DoxyParamCaption}\item[{}]{TYPE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{    TYPE * \_\_restrict to = (TYPE *)\_\_to;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict from = (\textcolor{keyword}{const} TYPE *)\_\_from;\(\backslash\)}
+\DoxyCodeLine{    \textcolor{keyword}{const} TYPE * \_\_restrict \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}} = to + \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}};\(\backslash\)}
+\DoxyCodeLine{    while (to != \mbox{\hyperlink{glad_8h_a432111147038972f06e049e18a837002}{end}})\(\backslash\)}
+\DoxyCodeLine{    \{\(\backslash\)}
+\DoxyCodeLine{        *to ++ = from[0];\(\backslash\)}
+\DoxyCodeLine{        from += 2;\(\backslash\)}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac50762666aa00bd3a4308158510f1748}\label{pa__win__wasapi_8c_ac50762666aa00bd3a4308158510f1748}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_WIN32\_WINNT@{\_WIN32\_WINNT}}
+\index{\_WIN32\_WINNT@{\_WIN32\_WINNT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_WIN32\_WINNT}{\_WIN32\_WINNT}}
+{\footnotesize\ttfamily \#define \+\_\+\+WIN32\+\_\+\+WINNT~\mbox{\hyperlink{win32__platform_8h_a966cd377b9f3fdeb1432460c33352af1}{WINVER}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a8fb76fb0aad37662875d8c84422b7d7d}\label{pa__win__wasapi_8c_a8fb76fb0aad37662875d8c84422b7d7d}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AUDCLNT\_E\_BUFFER\_ERROR@{AUDCLNT\_E\_BUFFER\_ERROR}}
+\index{AUDCLNT\_E\_BUFFER\_ERROR@{AUDCLNT\_E\_BUFFER\_ERROR}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFFER\_ERROR}{AUDCLNT\_E\_BUFFER\_ERROR}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+ERROR~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x018)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7d7f5a942a92bc351ee138fb96551d6f}\label{pa__win__wasapi_8c_a7d7f5a942a92bc351ee138fb96551d6f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED@{AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED}}
+\index{AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED@{AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED}{AUDCLNT\_E\_BUFFER\_SIZE\_NOT\_ALIGNED}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+BUFFER\+\_\+\+SIZE\+\_\+\+NOT\+\_\+\+ALIGNED~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x019)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_afa7cffa38411eb69296e902cfda00b22}\label{pa__win__wasapi_8c_afa7cffa38411eb69296e902cfda00b22}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD@{AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD}}
+\index{AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD@{AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD}{AUDCLNT\_E\_INVALID\_DEVICE\_PERIOD}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+E\+\_\+\+INVALID\+\_\+\+DEVICE\+\_\+\+PERIOD~\mbox{\hyperlink{audioclient_8h_ad054bd2b5228366ccce81ab79fe369d4}{AUDCLNT\+\_\+\+ERR}}(0x020)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a88a3f69d169939958b45b5664ae2b233}\label{pa__win__wasapi_8c_a88a3f69d169939958b45b5664ae2b233}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM@{AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM}}
+\index{AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM@{AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM}{AUDCLNT\_STREAMFLAGS\_AUTOCONVERTPCM}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+STREAMFLAGS\+\_\+\+AUTOCONVERTPCM~0x80000000}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aa6ea6157142790cce266f31e4722f648}\label{pa__win__wasapi_8c_aa6ea6157142790cce266f31e4722f648}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY@{AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY}}
+\index{AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY@{AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY}{AUDCLNT\_STREAMFLAGS\_SRC\_DEFAULT\_QUALITY}}
+{\footnotesize\ttfamily \#define AUDCLNT\+\_\+\+STREAMFLAGS\+\_\+\+SRC\+\_\+\+DEFAULT\+\_\+\+QUALITY~0x08000000}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a8dbf8c07441f5b076bfc6eea06513cb7}\label{pa__win__wasapi_8c_a8dbf8c07441f5b076bfc6eea06513cb7}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!COBJMACROS@{COBJMACROS}}
+\index{COBJMACROS@{COBJMACROS}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{COBJMACROS}{COBJMACROS}}
+{\footnotesize\ttfamily \#define COBJMACROS}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a0a9408819040e2ff021281f9e0971a35}\label{pa__win__wasapi_8c_a0a9408819040e2ff021281f9e0971a35}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!CREATE\_THREAD@{CREATE\_THREAD}}
+\index{CREATE\_THREAD@{CREATE\_THREAD}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{CREATE\_THREAD}{CREATE\_THREAD}}
+{\footnotesize\ttfamily \#define CREATE\+\_\+\+THREAD(\begin{DoxyParamCaption}\item[{}]{PROC }\end{DoxyParamCaption})~(HANDLE)\+\_\+beginthreadex( NULL, 0, (PROC), \mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}, 0, \&\mbox{\hyperlink{glad_8h_ad02d2488127e1cf9a27262c4ee30ba85}{stream}}-\/$>$dw\+Thread\+Id )}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}\label{pa__win__wasapi_8c_a979170f3a1187ea0059d94e632570a05}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!GUID\_SECT@{GUID\_SECT}}
+\index{GUID\_SECT@{GUID\_SECT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{GUID\_SECT}{GUID\_SECT}}
+{\footnotesize\ttfamily \#define GUID\+\_\+\+SECT}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a6d765e6132c93a5601f277322ae4f98c}\label{pa__win__wasapi_8c_a6d765e6132c93a5601f277322ae4f98c}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!HDA\_PACKET\_SIZE@{HDA\_PACKET\_SIZE}}
+\index{HDA\_PACKET\_SIZE@{HDA\_PACKET\_SIZE}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{HDA\_PACKET\_SIZE}{HDA\_PACKET\_SIZE}}
+{\footnotesize\ttfamily \#define HDA\+\_\+\+PACKET\+\_\+\+SIZE~(128)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a6ab838f91461092984ade025965e713e}\label{pa__win__wasapi_8c_a6ab838f91461092984ade025965e713e}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!IF\_FAILED\_INTERNAL\_ERROR\_JUMP@{IF\_FAILED\_INTERNAL\_ERROR\_JUMP}}
+\index{IF\_FAILED\_INTERNAL\_ERROR\_JUMP@{IF\_FAILED\_INTERNAL\_ERROR\_JUMP}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{IF\_FAILED\_INTERNAL\_ERROR\_JUMP}{IF\_FAILED\_INTERNAL\_ERROR\_JUMP}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+FAILED\+\_\+\+INTERNAL\+\_\+\+ERROR\+\_\+\+JUMP(\begin{DoxyParamCaption}\item[{}]{hr,  }\item[{}]{error,  }\item[{}]{\mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}} }\end{DoxyParamCaption})~if(FAILED(hr)) \{ error = \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7a4851f9f753cdad3e7a89380d6589816c}{pa\+Internal\+Error}}; goto \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}}; \}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a1e9952fda08455274b0399512ddd1830}\label{pa__win__wasapi_8c_a1e9952fda08455274b0399512ddd1830}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!IF\_FAILED\_JUMP@{IF\_FAILED\_JUMP}}
+\index{IF\_FAILED\_JUMP@{IF\_FAILED\_JUMP}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{IF\_FAILED\_JUMP}{IF\_FAILED\_JUMP}}
+{\footnotesize\ttfamily \#define IF\+\_\+\+FAILED\+\_\+\+JUMP(\begin{DoxyParamCaption}\item[{}]{hr,  }\item[{}]{\mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}} }\end{DoxyParamCaption})~if(FAILED(hr)) goto \mbox{\hyperlink{glad_8h_acf58677e3c889698626acb55f6c474f5}{label}};}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af11aade3f3741fb554915d10d3f514eb}\label{pa__win__wasapi_8c_af11aade3f3741fb554915d10d3f514eb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!INITGUID@{INITGUID}}
+\index{INITGUID@{INITGUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{INITGUID}{INITGUID}}
+{\footnotesize\ttfamily \#define INITGUID}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a5dfbea2594297c34125d552ea1338244}\label{pa__win__wasapi_8c_a5dfbea2594297c34125d552ea1338244}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!LogHostError@{LogHostError}}
+\index{LogHostError@{LogHostError}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{LogHostError}{LogHostError}}
+{\footnotesize\ttfamily \#define Log\+Host\+Error(\begin{DoxyParamCaption}\item[{}]{HRES }\end{DoxyParamCaption})~\+\_\+\+\_\+\+Log\+Host\+Error(HRES, \+\_\+\+\_\+\+FUNCTION\+\_\+\+\_\+, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a633e8a11ad96f367826d8cadb02236c2}\label{pa__win__wasapi_8c_a633e8a11ad96f367826d8cadb02236c2}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!LogPaError@{LogPaError}}
+\index{LogPaError@{LogPaError}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{LogPaError}{LogPaError}}
+{\footnotesize\ttfamily \#define Log\+Pa\+Error(\begin{DoxyParamCaption}\item[{}]{PAERR }\end{DoxyParamCaption})~\+\_\+\+\_\+\+Log\+Pa\+Error(PAERR, \+\_\+\+\_\+\+FUNCTION\+\_\+\+\_\+, \+\_\+\+\_\+\+FILE\+\_\+\+\_\+, \+\_\+\+\_\+\+LINE\+\_\+\+\_\+)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af1ecaf25e5207f6c04582d5081d99b00}\label{pa__win__wasapi_8c_af1ecaf25e5207f6c04582d5081d99b00}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!NONAMELESSUNION@{NONAMELESSUNION}}
+\index{NONAMELESSUNION@{NONAMELESSUNION}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{NONAMELESSUNION}{NONAMELESSUNION}}
+{\footnotesize\ttfamily \#define NONAMELESSUNION}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a25c75f977297903ade9f1557a0f25d73}\label{pa__win__wasapi_8c_a25c75f977297903ade9f1557a0f25d73}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!NTSTATUS\_SUCCESS@{NTSTATUS\_SUCCESS}}
+\index{NTSTATUS\_SUCCESS@{NTSTATUS\_SUCCESS}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{NTSTATUS\_SUCCESS}{NTSTATUS\_SUCCESS}}
+{\footnotesize\ttfamily \#define NTSTATUS\+\_\+\+SUCCESS~((\mbox{\hyperlink{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}{NTSTATUS}})0x00000000L)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a76de14f466267894ffd0f226ec89911d}\label{pa__win__wasapi_8c_a76de14f466267894ffd0f226ec89911d}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_CLSID@{PA\_DEFINE\_CLSID}}
+\index{PA\_DEFINE\_CLSID@{PA\_DEFINE\_CLSID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_CLSID}{PA\_DEFINE\_CLSID}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEFINE\+\_\+\+CLSID(\begin{DoxyParamCaption}\item[{}]{class\+Name,  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8 }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__win__wasapi_8c_a684dc8a813711bb4515ee0c59cf4311f}{\+\_\+\+\_\+\+DEFINE\+\_\+\+CLSID}}(pa\+\_\+\+CLSID\+\_\+\#\#class\+Name, 0x\#\#l, 0x\#\#w1, 0x\#\#w2, 0x\#\#b1, 0x\#\#b2, 0x\#\#b3, 0x\#\#b4, 0x\#\#b5, 0x\#\#b6, 0x\#\#b7, 0x\#\#b8)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aca414f4cad142fa0dd6cd229095fcac2}\label{pa__win__wasapi_8c_aca414f4cad142fa0dd6cd229095fcac2}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID}{PA\_DEFINE\_IID}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+DEFINE\+\_\+\+IID(\begin{DoxyParamCaption}\item[{}]{interface\+Name,  }\item[{}]{l,  }\item[{}]{w1,  }\item[{}]{w2,  }\item[{}]{b1,  }\item[{}]{b2,  }\item[{}]{b3,  }\item[{}]{b4,  }\item[{}]{b5,  }\item[{}]{b6,  }\item[{}]{b7,  }\item[{}]{b8 }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__win__wasapi_8c_ad5dca404e98a4186b60cba66787c5e1a}{\+\_\+\+\_\+\+DEFINE\+\_\+\+IID}}(pa\+\_\+\+IID\+\_\+\#\#interface\+Name, 0x\#\#l, 0x\#\#w1, 0x\#\#w2, 0x\#\#b1, 0x\#\#b2, 0x\#\#b3, 0x\#\#b4, 0x\#\#b5, 0x\#\#b6, 0x\#\#b7, 0x\#\#b8)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}\label{pa__win__wasapi_8c_a771580ff4e4b9a948ebd1fb0fc9f17d7}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_SKELETON\_SET\_LAST\_HOST\_ERROR@{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}}
+\index{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR@{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}{PA\_SKELETON\_SET\_LAST\_HOST\_ERROR}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+SKELETON\+\_\+\+SET\+\_\+\+LAST\+\_\+\+HOST\+\_\+\+ERROR(\begin{DoxyParamCaption}\item[{}]{error\+Code,  }\item[{}]{error\+Text }\end{DoxyParamCaption})~    \mbox{\hyperlink{pa__front_8c_a9c3ad627c13c1d695fef054c216667f7}{Pa\+Util\+\_\+\+Set\+Last\+Host\+Error\+Info}}( \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5aeaa27b155bf2883aef821dfb6eba89e456}{pa\+WASAPI}}, error\+Code, error\+Text )}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad744bd36cb3631b1dc11beb41dcc238c}\label{pa__win__wasapi_8c_ad744bd36cb3631b1dc11beb41dcc238c}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}}
+\index{PA\_THREAD\_FUNC@{PA\_THREAD\_FUNC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_FUNC}{PA\_THREAD\_FUNC}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+FUNC~static unsigned \mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af90ebf49f32d984f4cea06ca90506e40}\label{pa__win__wasapi_8c_af90ebf49f32d984f4cea06ca90506e40}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_THREAD\_ID@{PA\_THREAD\_ID}}
+\index{PA\_THREAD\_ID@{PA\_THREAD\_ID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_THREAD\_ID}{PA\_THREAD\_ID}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+THREAD\+\_\+\+ID~unsigned}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af46190c73acf456c64118d4df2afd503}\label{pa__win__wasapi_8c_af46190c73acf456c64118d4df2afd503}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_WASAPI\_\_IS\_FULLDUPLEX@{PA\_WASAPI\_\_IS\_FULLDUPLEX}}
+\index{PA\_WASAPI\_\_IS\_FULLDUPLEX@{PA\_WASAPI\_\_IS\_FULLDUPLEX}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WASAPI\_\_IS\_FULLDUPLEX}{PA\_WASAPI\_\_IS\_FULLDUPLEX}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WASAPI\+\_\+\+\_\+\+IS\+\_\+\+FULLDUPLEX(\begin{DoxyParamCaption}\item[{}]{STREAM }\end{DoxyParamCaption})~((STREAM)-\/$>$in.\+client\+Proc \&\& (STREAM)-\/$>$out.\+client\+Proc)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a3ab26c923daec0521c9649e033432c75}\label{pa__win__wasapi_8c_a3ab26c923daec0521c9649e033432c75}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_WASAPI\_DEVICE\_ID\_LEN@{PA\_WASAPI\_DEVICE\_ID\_LEN}}
+\index{PA\_WASAPI\_DEVICE\_ID\_LEN@{PA\_WASAPI\_DEVICE\_ID\_LEN}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WASAPI\_DEVICE\_ID\_LEN}{PA\_WASAPI\_DEVICE\_ID\_LEN}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN~256}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac6b9e42187e4c8ea988175ae91d1548b}\label{pa__win__wasapi_8c_ac6b9e42187e4c8ea988175ae91d1548b}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_WASAPI\_DEVICE\_NAME\_LEN@{PA\_WASAPI\_DEVICE\_NAME\_LEN}}
+\index{PA\_WASAPI\_DEVICE\_NAME\_LEN@{PA\_WASAPI\_DEVICE\_NAME\_LEN}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WASAPI\_DEVICE\_NAME\_LEN}{PA\_WASAPI\_DEVICE\_NAME\_LEN}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+LEN~128}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a3b2acfbc50d2f1eb2dddfbb0c9a6e4d3}\label{pa__win__wasapi_8c_a3b2acfbc50d2f1eb2dddfbb0c9a6e4d3}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT@{PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT}}
+\index{PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT@{PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT}{PA\_WASAPI\_MAX\_CONST\_DEVICE\_COUNT}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT~0}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad61844ab25ea35139950e67e9693bc9f}\label{pa__win__wasapi_8c_ad61844ab25ea35139950e67e9693bc9f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PRINT@{PRINT}}
+\index{PRINT@{PRINT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PRINT}{PRINT}}
+{\footnotesize\ttfamily \#define PRINT(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}} }\end{DoxyParamCaption})~\mbox{\hyperlink{pa__debugprint_8h_a6452e5dde90d9c4ef698559e3f928b17}{PA\+\_\+\+DEBUG}}(\mbox{\hyperlink{glad_8h_a78d5aac12144d7f8f26224e085394fbb}{x}});}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7d2c965c2e6466eb96707b5034ccd693}\label{pa__win__wasapi_8c_a7d2c965c2e6466eb96707b5034ccd693}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PROPERTYKEY\_DEFINED@{PROPERTYKEY\_DEFINED}}
+\index{PROPERTYKEY\_DEFINED@{PROPERTYKEY\_DEFINED}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PROPERTYKEY\_DEFINED}{PROPERTYKEY\_DEFINED}}
+{\footnotesize\ttfamily \#define PROPERTYKEY\+\_\+\+DEFINED}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}\label{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!REFTIMES\_PER\_MILLISEC@{REFTIMES\_PER\_MILLISEC}}
+\index{REFTIMES\_PER\_MILLISEC@{REFTIMES\_PER\_MILLISEC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{REFTIMES\_PER\_MILLISEC}{REFTIMES\_PER\_MILLISEC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define REFTIMES\+\_\+\+PER\+\_\+\+MILLISEC~10000\+LL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}\label{pa__win__wasapi_8c_af9f1f980d99b0c1568771a74cd275f08}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!REFTIMES\_PER\_MILLISEC@{REFTIMES\_PER\_MILLISEC}}
+\index{REFTIMES\_PER\_MILLISEC@{REFTIMES\_PER\_MILLISEC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{REFTIMES\_PER\_MILLISEC}{REFTIMES\_PER\_MILLISEC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define REFTIMES\+\_\+\+PER\+\_\+\+MILLISEC~10000\+LL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}\label{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!REFTIMES\_PER\_SEC@{REFTIMES\_PER\_SEC}}
+\index{REFTIMES\_PER\_SEC@{REFTIMES\_PER\_SEC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{REFTIMES\_PER\_SEC}{REFTIMES\_PER\_SEC}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define REFTIMES\+\_\+\+PER\+\_\+\+SEC~10000000\+LL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}\label{pa__win__wasapi_8c_a920e4c6a2c837ff4374cf5eb69a554eb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!REFTIMES\_PER\_SEC@{REFTIMES\_PER\_SEC}}
+\index{REFTIMES\_PER\_SEC@{REFTIMES\_PER\_SEC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{REFTIMES\_PER\_SEC}{REFTIMES\_PER\_SEC}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define REFTIMES\+\_\+\+PER\+\_\+\+SEC~10000000\+LL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad951b4a0c360e7157d8229beea6c6336}\label{pa__win__wasapi_8c_ad951b4a0c360e7157d8229beea6c6336}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!SAFE\_CLOSE@{SAFE\_CLOSE}}
+\index{SAFE\_CLOSE@{SAFE\_CLOSE}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{SAFE\_CLOSE}{SAFE\_CLOSE}}
+{\footnotesize\ttfamily \#define SAFE\+\_\+\+CLOSE(\begin{DoxyParamCaption}\item[{}]{\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}} }\end{DoxyParamCaption})~if ((\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}) != NULL) \{ Close\+Handle((\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}})); (\mbox{\hyperlink{glad_8h_afa0fb1b5e976920c0abeff2dca3ed774}{h}}) = NULL; \}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aaafc777c741d97e2d33f43fbdd949f2c}\label{pa__win__wasapi_8c_aaafc777c741d97e2d33f43fbdd949f2c}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!SAFE\_RELEASE@{SAFE\_RELEASE}}
+\index{SAFE\_RELEASE@{SAFE\_RELEASE}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{SAFE\_RELEASE}{SAFE\_RELEASE}}
+{\footnotesize\ttfamily \#define SAFE\+\_\+\+RELEASE(\begin{DoxyParamCaption}\item[{}]{punk }\end{DoxyParamCaption})~if ((punk) != NULL) \{ (punk)-\/$>$lp\+Vtbl-\/$>$Release((punk)); (punk) = NULL; \}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a1ffa289724d1c8dbeefe0116b976158e}\label{pa__win__wasapi_8c_a1ffa289724d1c8dbeefe0116b976158e}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!STATIC\_ARRAY\_SIZE@{STATIC\_ARRAY\_SIZE}}
+\index{STATIC\_ARRAY\_SIZE@{STATIC\_ARRAY\_SIZE}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{STATIC\_ARRAY\_SIZE}{STATIC\_ARRAY\_SIZE}}
+{\footnotesize\ttfamily \#define STATIC\+\_\+\+ARRAY\+\_\+\+SIZE(\begin{DoxyParamCaption}\item[{}]{array }\end{DoxyParamCaption})~(sizeof(array)/sizeof(array\mbox{[}0\mbox{]}))}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a37d17ddda1e36eb0f54d80a946b897f0}\label{pa__win__wasapi_8c_a37d17ddda1e36eb0f54d80a946b897f0}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WAVE\_FORMAT\_IEEE\_FLOAT@{WAVE\_FORMAT\_IEEE\_FLOAT}}
+\index{WAVE\_FORMAT\_IEEE\_FLOAT@{WAVE\_FORMAT\_IEEE\_FLOAT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{WAVE\_FORMAT\_IEEE\_FLOAT}{WAVE\_FORMAT\_IEEE\_FLOAT}}
+{\footnotesize\ttfamily \#define WAVE\+\_\+\+FORMAT\+\_\+\+IEEE\+\_\+\+FLOAT~0x0003}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}\label{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINAPI@{WINAPI}}
+\index{WINAPI@{WINAPI}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{WINAPI}{WINAPI}}
+{\footnotesize\ttfamily \#define WINAPI~\+\_\+\+\_\+stdcall}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a966cd377b9f3fdeb1432460c33352af1}\label{pa__win__wasapi_8c_a966cd377b9f3fdeb1432460c33352af1}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINVER@{WINVER}}
+\index{WINVER@{WINVER}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{WINVER}{WINVER}}
+{\footnotesize\ttfamily \#define WINVER~0x0600}
+
+
+
+Poll mode time slots logging. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a949fa21ebe968b6a5a38bd434e5eb4f6}\label{pa__win__wasapi_8c_a949fa21ebe968b6a5a38bd434e5eb4f6}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!ALIGN\_FUNC@{ALIGN\_FUNC}}
+\index{ALIGN\_FUNC@{ALIGN\_FUNC}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{ALIGN\_FUNC}{ALIGN\_FUNC}}
+{\footnotesize\ttfamily typedef UINT32($\ast$ ALIGN\+\_\+\+FUNC) (UINT32 \mbox{\hyperlink{glad_8h_a30522dbcc3e66083fcf2bf64d1fad76a}{v}}, UINT32 align)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}\label{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AVRT\_PRIORITY@{AVRT\_PRIORITY}}
+\index{AVRT\_PRIORITY@{AVRT\_PRIORITY}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{AVRT\_PRIORITY}{AVRT\_PRIORITY}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}} \mbox{\hyperlink{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}{AVRT\+\_\+\+PRIORITY}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}\label{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!BYTE\_BLOB@{BYTE\_BLOB}}
+\index{BYTE\_BLOB@{BYTE\_BLOB}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{BYTE\_BLOB}{BYTE\_BLOB}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___b_y_t_e___b_l_o_b}{\+\_\+\+BYTE\+\_\+\+BLOB}} \mbox{\hyperlink{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}{BYTE\+\_\+\+BLOB}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}\label{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!CLSID@{CLSID}}
+\index{CLSID@{CLSID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{CLSID}{CLSID}}
+{\footnotesize\ttfamily typedef GUID \mbox{\hyperlink{pa__win__wasapi_8c_adc22ec05e28b8fcd9b14c13247b62337}{CLSID}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a58c3dc1caa0784fb1b6a86db6569f784}\label{pa__win__wasapi_8c_a58c3dc1caa0784fb1b6a86db6569f784}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!EMixDirection@{EMixDirection}}
+\index{EMixDirection@{EMixDirection}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{EMixDirection}{EMixDirection}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}{EMix\+Direction}} \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}{EMix\+Direction}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac85243ab9fe9165c3d0e884c8e73e55b}\label{pa__win__wasapi_8c_ac85243ab9fe9165c3d0e884c8e73e55b}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!EWindowsVersion@{EWindowsVersion}}
+\index{EWindowsVersion@{EWindowsVersion}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{EWindowsVersion}{EWindowsVersion}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}{EWindows\+Version}} \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}{EWindows\+Version}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a00005277f6e80b50489b77a3641c50f3}\label{pa__win__wasapi_8c_a00005277f6e80b50489b77a3641c50f3}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvRevertMmThreadCharacteristics@{FAvRevertMmThreadCharacteristics}}
+\index{FAvRevertMmThreadCharacteristics@{FAvRevertMmThreadCharacteristics}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvRevertMmThreadCharacteristics}{FAvRevertMmThreadCharacteristics}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Revert\+Mm\+Thread\+Characteristics) (HANDLE)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a5af889b68d15f627b3ecabae43c21c17}\label{pa__win__wasapi_8c_a5af889b68d15f627b3ecabae43c21c17}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvRtCreateThreadOrderingGroup@{FAvRtCreateThreadOrderingGroup}}
+\index{FAvRtCreateThreadOrderingGroup@{FAvRtCreateThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvRtCreateThreadOrderingGroup}{FAvRtCreateThreadOrderingGroup}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Rt\+Create\+Thread\+Ordering\+Group) (PHANDLE, PLARGE\+\_\+\+INTEGER, GUID $\ast$, PLARGE\+\_\+\+INTEGER)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac3606eb65325156589051bdd9ce5d915}\label{pa__win__wasapi_8c_ac3606eb65325156589051bdd9ce5d915}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvRtDeleteThreadOrderingGroup@{FAvRtDeleteThreadOrderingGroup}}
+\index{FAvRtDeleteThreadOrderingGroup@{FAvRtDeleteThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvRtDeleteThreadOrderingGroup}{FAvRtDeleteThreadOrderingGroup}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Rt\+Delete\+Thread\+Ordering\+Group) (HANDLE)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a71e6b55e2b0a0e44dae969c07ecce8a6}\label{pa__win__wasapi_8c_a71e6b55e2b0a0e44dae969c07ecce8a6}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvRtWaitOnThreadOrderingGroup@{FAvRtWaitOnThreadOrderingGroup}}
+\index{FAvRtWaitOnThreadOrderingGroup@{FAvRtWaitOnThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvRtWaitOnThreadOrderingGroup}{FAvRtWaitOnThreadOrderingGroup}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Rt\+Wait\+On\+Thread\+Ordering\+Group) (HANDLE)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ab155754499992c6d0273dc4fb7d3fd57}\label{pa__win__wasapi_8c_ab155754499992c6d0273dc4fb7d3fd57}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvSetMmThreadCharacteristics@{FAvSetMmThreadCharacteristics}}
+\index{FAvSetMmThreadCharacteristics@{FAvSetMmThreadCharacteristics}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvSetMmThreadCharacteristics}{FAvSetMmThreadCharacteristics}}
+{\footnotesize\ttfamily typedef HANDLE(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Set\+Mm\+Thread\+Characteristics) (LPCSTR, LPDWORD)}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aded1895cd1ae97b0a2b8371935f5a3a6}\label{pa__win__wasapi_8c_aded1895cd1ae97b0a2b8371935f5a3a6}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!FAvSetMmThreadPriority@{FAvSetMmThreadPriority}}
+\index{FAvSetMmThreadPriority@{FAvSetMmThreadPriority}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{FAvSetMmThreadPriority}{FAvSetMmThreadPriority}}
+{\footnotesize\ttfamily typedef BOOL(\mbox{\hyperlink{pa__win__wasapi_8c_a9aa60e1ead64be77ad551e745cbfd4d3}{WINAPI}} $\ast$ FAv\+Set\+Mm\+Thread\+Priority) (HANDLE, \mbox{\hyperlink{pa__win__wasapi_8c_a7fd2a20f0014cb6523ba4a10d894c188}{AVRT\+\_\+\+PRIORITY}})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}\label{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!IID@{IID}}
+\index{IID@{IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{IID}{IID}}
+{\footnotesize\ttfamily typedef GUID \mbox{\hyperlink{pa__win__wasapi_8c_a14e79c4897cf2d04c4974f27218ab242}{IID}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}\label{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!LPCGUID@{LPCGUID}}
+\index{LPCGUID@{LPCGUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{LPCGUID}{LPCGUID}}
+{\footnotesize\ttfamily typedef const GUID$\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a9c061ab1f26db8746b3dab38991f48a0}{LPCGUID}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a9f92cb8ea38a742ac087799b68d12bf3}\label{pa__win__wasapi_8c_a9f92cb8ea38a742ac087799b68d12bf3}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!MixMonoToStereoF@{MixMonoToStereoF}}
+\index{MixMonoToStereoF@{MixMonoToStereoF}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{MixMonoToStereoF}{MixMonoToStereoF}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}($\ast$ Mix\+Mono\+To\+StereoF) (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\+\_\+\+\_\+to, const \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\+\_\+\+\_\+from, UINT32 \mbox{\hyperlink{glad_8h_a31eafbeac9256b106b6acfd78f305200}{count}})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}\label{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!NTSTATUS@{NTSTATUS}}
+\index{NTSTATUS@{NTSTATUS}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{NTSTATUS}{NTSTATUS}}
+{\footnotesize\ttfamily typedef LONG \mbox{\hyperlink{pa__win__wasapi_8c_a77a2f6628aaa056315f8c8ad2c466fdc}{NTSTATUS}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a37790f227e70ff2c3ca5254ccdbfae0f}\label{pa__win__wasapi_8c_a37790f227e70ff2c3ca5254ccdbfae0f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PAVRT\_PRIORITY@{PAVRT\_PRIORITY}}
+\index{PAVRT\_PRIORITY@{PAVRT\_PRIORITY}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PAVRT\_PRIORITY}{PAVRT\_PRIORITY}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}} $\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_a37790f227e70ff2c3ca5254ccdbfae0f}{PAVRT\+\_\+\+PRIORITY}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a1d939628364c7dda299a760dd83ec6c7}\label{pa__win__wasapi_8c_a1d939628364c7dda299a760dd83ec6c7}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiAudioClientParams@{PaWasapiAudioClientParams}}
+\index{PaWasapiAudioClientParams@{PaWasapiAudioClientParams}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiAudioClientParams}{PaWasapiAudioClientParams}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_audio_client_params}{Pa\+Wasapi\+Audio\+Client\+Params}} \mbox{\hyperlink{struct_pa_wasapi_audio_client_params}{Pa\+Wasapi\+Audio\+Client\+Params}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af0ca51cef87cef3ea02b3588aad60759}\label{pa__win__wasapi_8c_af0ca51cef87cef3ea02b3588aad60759}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiDeviceInfo@{PaWasapiDeviceInfo}}
+\index{PaWasapiDeviceInfo@{PaWasapiDeviceInfo}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiDeviceInfo}{PaWasapiDeviceInfo}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_device_info}{Pa\+Wasapi\+Device\+Info}} \mbox{\hyperlink{struct_pa_wasapi_device_info}{Pa\+Wasapi\+Device\+Info}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a70a828b18a9b5cd53d791a1b4ee3e1cc}\label{pa__win__wasapi_8c_a70a828b18a9b5cd53d791a1b4ee3e1cc}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiHostProcessor@{PaWasapiHostProcessor}}
+\index{PaWasapiHostProcessor@{PaWasapiHostProcessor}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiHostProcessor}{PaWasapiHostProcessor}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}} \mbox{\hyperlink{struct_pa_wasapi_host_processor}{Pa\+Wasapi\+Host\+Processor}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a061f8de11204903d0c1da280bc1dcd73}\label{pa__win__wasapi_8c_a061f8de11204903d0c1da280bc1dcd73}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiStream@{PaWasapiStream}}
+\index{PaWasapiStream@{PaWasapiStream}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiStream}{PaWasapiStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_stream}{Pa\+Wasapi\+Stream}} \mbox{\hyperlink{struct_pa_wasapi_stream}{Pa\+Wasapi\+Stream}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac831d08a261ae5ef383625fe75011696}\label{pa__win__wasapi_8c_ac831d08a261ae5ef383625fe75011696}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiSubStream@{PaWasapiSubStream}}
+\index{PaWasapiSubStream@{PaWasapiSubStream}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiSubStream}{PaWasapiSubStream}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}} \mbox{\hyperlink{struct_pa_wasapi_sub_stream}{Pa\+Wasapi\+Sub\+Stream}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}\label{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PROPERTYKEY@{PROPERTYKEY}}
+\index{PROPERTYKEY@{PROPERTYKEY}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PROPERTYKEY}{PROPERTYKEY}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct__tagpropertykey}{\+\_\+tagpropertykey}} \mbox{\hyperlink{pa__win__wasapi_8c_a78d642848ff859c1887c69473dede7b7}{PROPERTYKEY}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a83927f70641d4e9a344563bd9ddb15ae}\label{pa__win__wasapi_8c_a83927f70641d4e9a344563bd9ddb15ae}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!REFERENCE\_TIME@{REFERENCE\_TIME}}
+\index{REFERENCE\_TIME@{REFERENCE\_TIME}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{REFERENCE\_TIME}{REFERENCE\_TIME}}
+{\footnotesize\ttfamily typedef LONGLONG \mbox{\hyperlink{ksmedia_8h_a83927f70641d4e9a344563bd9ddb15ae}{REFERENCE\+\_\+\+TIME}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_af711978d15c75c853631d76cbb33e5aa}\label{pa__win__wasapi_8c_af711978d15c75c853631d76cbb33e5aa}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!SystemTimer@{SystemTimer}}
+\index{SystemTimer@{SystemTimer}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{SystemTimer}{SystemTimer}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___system_timer}{\+\_\+\+System\+Timer}} \mbox{\hyperlink{pa__win__wasapi_8c_af711978d15c75c853631d76cbb33e5aa}{System\+Timer}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ada629fdc17fb2555d82c1085c0011517}\label{pa__win__wasapi_8c_ada629fdc17fb2555d82c1085c0011517}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!ThreadIdleScheduler@{ThreadIdleScheduler}}
+\index{ThreadIdleScheduler@{ThreadIdleScheduler}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{ThreadIdleScheduler}{ThreadIdleScheduler}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_thread_idle_scheduler}{Thread\+Idle\+Scheduler}} \mbox{\hyperlink{struct_thread_idle_scheduler}{Thread\+Idle\+Scheduler}}}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_afe91709fff40390914215d21253da001}\label{pa__win__wasapi_8c_afe91709fff40390914215d21253da001}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!UP\_BYTE\_BLOB@{UP\_BYTE\_BLOB}}
+\index{UP\_BYTE\_BLOB@{UP\_BYTE\_BLOB}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{UP\_BYTE\_BLOB}{UP\_BYTE\_BLOB}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{rpcsal_8h_a21fd41c8ce57ed4bb654bc7d456bd054}{\+\_\+\+\_\+\+RPC\+\_\+unique\+\_\+pointer}} \mbox{\hyperlink{pa__win__wasapi_8c_a9a586399b5ffd9ac7825b18a863c143c}{BYTE\+\_\+\+BLOB}}$\ast$ \mbox{\hyperlink{pa__win__wasapi_8c_afe91709fff40390914215d21253da001}{UP\+\_\+\+BYTE\+\_\+\+BLOB}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051e}\label{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051e}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_INPUT@{S\_INPUT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!S\_INPUT@{S\_INPUT}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea217b06ba7bf37ab6dc9d9751f1cf6b24}\label{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea217b06ba7bf37ab6dc9d9751f1cf6b24}} 
+S\+\_\+\+INPUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_OUTPUT@{S\_OUTPUT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!S\_OUTPUT@{S\_OUTPUT}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea9c7ef9e6df306bfb79b635afee6c1adf}\label{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea9c7ef9e6df306bfb79b635afee6c1adf}} 
+S\+\_\+\+OUTPUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_COUNT@{S\_COUNT}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!S\_COUNT@{S\_COUNT}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051eacac8c5a7329bfb86776b1d827f2f2e83}\label{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051eacac8c5a7329bfb86776b1d827f2f2e83}} 
+S\+\_\+\+COUNT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_FULLDUPLEX@{S\_FULLDUPLEX}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!S\_FULLDUPLEX@{S\_FULLDUPLEX}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea973c488a4609f21d89d641b762de9fe7}\label{pa__win__wasapi_8c_a7859c0a3efa8b1c360f5c2376baf051ea973c488a4609f21d89d641b762de9fe7}} 
+S\+\_\+\+FULLDUPLEX&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a79e9f285d34216706a748fd7ba8941b7}\label{pa__win__wasapi_8c_a79e9f285d34216706a748fd7ba8941b7}} 
+\doxysubsubsection{\texorpdfstring{anonymous enum}{anonymous enum}}
+{\footnotesize\ttfamily anonymous enum}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WASAPI\_PACKETS\_PER\_INPUT\_BUFFER@{WASAPI\_PACKETS\_PER\_INPUT\_BUFFER}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WASAPI\_PACKETS\_PER\_INPUT\_BUFFER@{WASAPI\_PACKETS\_PER\_INPUT\_BUFFER}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a79e9f285d34216706a748fd7ba8941b7a7b6c7e83009a14df464dd680e87feaf2}\label{pa__win__wasapi_8c_a79e9f285d34216706a748fd7ba8941b7a7b6c7e83009a14df464dd680e87feaf2}} 
+WASAPI\+\_\+\+PACKETS\+\_\+\+PER\+\_\+\+INPUT\+\_\+\+BUFFER&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}\label{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_AVRT\_PRIORITY@{\_AVRT\_PRIORITY}}
+\index{\_AVRT\_PRIORITY@{\_AVRT\_PRIORITY}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_AVRT\_PRIORITY}{\_AVRT\_PRIORITY}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6}{\+\_\+\+AVRT\+\_\+\+PRIORITY}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVRT\_PRIORITY\_LOW@{AVRT\_PRIORITY\_LOW}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AVRT\_PRIORITY\_LOW@{AVRT\_PRIORITY\_LOW}}}\mbox{\Hypertarget{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a82f37aa1743cab1c69da7d5ff49d6a8a}\label{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a82f37aa1743cab1c69da7d5ff49d6a8a}} 
+AVRT\+\_\+\+PRIORITY\+\_\+\+LOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVRT\_PRIORITY\_NORMAL@{AVRT\_PRIORITY\_NORMAL}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AVRT\_PRIORITY\_NORMAL@{AVRT\_PRIORITY\_NORMAL}}}\mbox{\Hypertarget{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9ddb04ddf34535472b8f54f043d3a652}\label{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9ddb04ddf34535472b8f54f043d3a652}} 
+AVRT\+\_\+\+PRIORITY\+\_\+\+NORMAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVRT\_PRIORITY\_HIGH@{AVRT\_PRIORITY\_HIGH}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AVRT\_PRIORITY\_HIGH@{AVRT\_PRIORITY\_HIGH}}}\mbox{\Hypertarget{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a3d1e82a3e67940c08fff4233d7ec928f}\label{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a3d1e82a3e67940c08fff4233d7ec928f}} 
+AVRT\+\_\+\+PRIORITY\+\_\+\+HIGH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AVRT\_PRIORITY\_CRITICAL@{AVRT\_PRIORITY\_CRITICAL}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!AVRT\_PRIORITY\_CRITICAL@{AVRT\_PRIORITY\_CRITICAL}}}\mbox{\Hypertarget{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9868458188819915b729402bfa060ba2}\label{pa__win__wasapi_8c_add7d79439251a024ba77c19ad515b8f6a9868458188819915b729402bfa060ba2}} 
+AVRT\+\_\+\+PRIORITY\+\_\+\+CRITICAL&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}\label{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!EMixDirection@{EMixDirection}}
+\index{EMixDirection@{EMixDirection}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{EMixDirection}{EMixDirection}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594}{EMix\+Direction}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIX\_DIR\_\_1TO2@{MIX\_DIR\_\_1TO2}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!MIX\_DIR\_\_1TO2@{MIX\_DIR\_\_1TO2}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594ab2ffbd89db8f6270bf898848a9b77668}\label{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594ab2ffbd89db8f6270bf898848a9b77668}} 
+MIX\+\_\+\+DIR\+\_\+\+\_\+1\+TO2&mix one channel to L and R \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIX\_DIR\_\_2TO1@{MIX\_DIR\_\_2TO1}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!MIX\_DIR\_\_2TO1@{MIX\_DIR\_\_2TO1}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a4a73cefc3d25fc95e94adf7b14ab3583}\label{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a4a73cefc3d25fc95e94adf7b14ab3583}} 
+MIX\+\_\+\+DIR\+\_\+\+\_\+2\+TO1&mix L and R channels to one channel \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MIX\_DIR\_\_2TO1\_L@{MIX\_DIR\_\_2TO1\_L}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!MIX\_DIR\_\_2TO1\_L@{MIX\_DIR\_\_2TO1\_L}}}\mbox{\Hypertarget{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a0858f41d4d725a8638f791327d303f33}\label{pa__win__wasapi_8c_a19ac83f929d9e0f81447c5cfc65f2594a0858f41d4d725a8638f791327d303f33}} 
+MIX\+\_\+\+DIR\+\_\+\+\_\+2\+TO1\+\_\+L&mix only L channel (of total 2 channels) to one channel \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!EWindowsVersion@{EWindowsVersion}}
+\index{EWindowsVersion@{EWindowsVersion}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{EWindowsVersion}{EWindowsVersion}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966}{EWindows\+Version}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_UNKNOWN@{WINDOWS\_UNKNOWN}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_UNKNOWN@{WINDOWS\_UNKNOWN}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a34af6dcbce17b7e942bd8901fc89f701}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a34af6dcbce17b7e942bd8901fc89f701}} 
+WINDOWS\+\_\+\+UNKNOWN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_VISTA\_SERVER2008@{WINDOWS\_VISTA\_SERVER2008}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_VISTA\_SERVER2008@{WINDOWS\_VISTA\_SERVER2008}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ad24275f02eb3bf7b4e1ed8e759016e5f}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ad24275f02eb3bf7b4e1ed8e759016e5f}} 
+WINDOWS\+\_\+\+VISTA\+\_\+\+SERVER2008&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_7\_SERVER2008R2@{WINDOWS\_7\_SERVER2008R2}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_7\_SERVER2008R2@{WINDOWS\_7\_SERVER2008R2}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a3fa4d45ad3f6f0249620f1165ee1ed4f}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a3fa4d45ad3f6f0249620f1165ee1ed4f}} 
+WINDOWS\+\_\+7\+\_\+\+SERVER2008\+R2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_8\_SERVER2012@{WINDOWS\_8\_SERVER2012}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_8\_SERVER2012@{WINDOWS\_8\_SERVER2012}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a282960d50b4587c87046a8333bf2c38c}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a282960d50b4587c87046a8333bf2c38c}} 
+WINDOWS\+\_\+8\+\_\+\+SERVER2012&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_8\_1\_SERVER2012R2@{WINDOWS\_8\_1\_SERVER2012R2}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_8\_1\_SERVER2012R2@{WINDOWS\_8\_1\_SERVER2012R2}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ab5cea250cefffe760d8947ae4c3107d0}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966ab5cea250cefffe760d8947ae4c3107d0}} 
+WINDOWS\+\_\+8\+\_\+1\+\_\+\+SERVER2012\+R2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_10\_SERVER2016@{WINDOWS\_10\_SERVER2016}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_10\_SERVER2016@{WINDOWS\_10\_SERVER2016}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a5b9050d995ef03019284af641563c15f}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a5b9050d995ef03019284af641563c15f}} 
+WINDOWS\+\_\+10\+\_\+\+SERVER2016&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WINDOWS\_FUTURE@{WINDOWS\_FUTURE}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!WINDOWS\_FUTURE@{WINDOWS\_FUTURE}}}\mbox{\Hypertarget{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a16952920e317737f75be9de6682f0d06}\label{pa__win__wasapi_8c_aec13744cba5f4a8e731ab1e136a2f966a16952920e317737f75be9de6682f0d06}} 
+WINDOWS\+\_\+\+FUTURE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8c_aa40505d86e5d43a64feee42314677279}\label{pa__win__wasapi_8c_aa40505d86e5d43a64feee42314677279}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}}
+\index{\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_GUID()}{\_\_DEFINE\_GUID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+DEFINE\+\_\+\+GUID (\begin{DoxyParamCaption}\item[{pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+ADPCM}]{,  }\item[{0x00000002}]{,  }\item[{0x0000}]{,  }\item[{0x0010}]{,  }\item[{0x80}]{,  }\item[{0x00}]{,  }\item[{0x00}]{,  }\item[{0xaa}]{,  }\item[{0x00}]{,  }\item[{0x38}]{,  }\item[{0x9b}]{,  }\item[{0x71}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a68918bf0b41c53e2172ac6d55d9812ab}\label{pa__win__wasapi_8c_a68918bf0b41c53e2172ac6d55d9812ab}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}}
+\index{\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_GUID()}{\_\_DEFINE\_GUID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+DEFINE\+\_\+\+GUID (\begin{DoxyParamCaption}\item[{pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+IEEE\+\_\+\+FLOAT}]{,  }\item[{0x00000003}]{,  }\item[{0x0000}]{,  }\item[{0x0010}]{,  }\item[{0x80}]{,  }\item[{0x00}]{,  }\item[{0x00}]{,  }\item[{0xaa}]{,  }\item[{0x00}]{,  }\item[{0x38}]{,  }\item[{0x9b}]{,  }\item[{0x71}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a18656159e0f57f9de0b9fb6c36c98f2d}\label{pa__win__wasapi_8c_a18656159e0f57f9de0b9fb6c36c98f2d}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}}
+\index{\_\_DEFINE\_GUID@{\_\_DEFINE\_GUID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{\_\_DEFINE\_GUID()}{\_\_DEFINE\_GUID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \+\_\+\+\_\+\+DEFINE\+\_\+\+GUID (\begin{DoxyParamCaption}\item[{pa\+\_\+\+KSDATAFORMAT\+\_\+\+SUBTYPE\+\_\+\+PCM}]{,  }\item[{0x00000001}]{,  }\item[{0x0000}]{,  }\item[{0x0010}]{,  }\item[{0x80}]{,  }\item[{0x00}]{,  }\item[{0x00}]{,  }\item[{0xaa}]{,  }\item[{0x00}]{,  }\item[{0x38}]{,  }\item[{0x9b}]{,  }\item[{0x71}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a217e090bc41b002bac8c67d506e7c293}\label{pa__win__wasapi_8c_a217e090bc41b002bac8c67d506e7c293}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_CLSID@{PA\_DEFINE\_CLSID}}
+\index{PA\_DEFINE\_CLSID@{PA\_DEFINE\_CLSID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_CLSID()}{PA\_DEFINE\_CLSID()}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+CLSID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}}]{,  }\item[{bcde0395}]{,  }\item[{e52f}]{,  }\item[{467c}]{,  }\item[{8e}]{,  }\item[{3d}]{,  }\item[{c4}]{,  }\item[{57}]{,  }\item[{92}]{,  }\item[{91}]{,  }\item[{69}]{,  }\item[{2e}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_acb9f29dd14a7e4a38a3d768cd3f745e9}\label{pa__win__wasapi_8c_acb9f29dd14a7e4a38a3d768cd3f745e9}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audioclient_8h_a2d3108bb1604145f734949a5cb7a578a}{IAudio\+Capture\+Client}}}]{,  }\item[{c8adbd64}]{,  }\item[{e71e}]{,  }\item[{48a0}]{,  }\item[{a4}]{,  }\item[{de}]{,  }\item[{18}]{,  }\item[{5c}]{,  }\item[{39}]{,  }\item[{5c}]{,  }\item[{d3}]{,  }\item[{17}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a1ece8a6630af9313888eab6508beec15}\label{pa__win__wasapi_8c_a1ece8a6630af9313888eab6508beec15}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audioclient_8h_ace13012ab56d9326b7aabeab5d477652}{IAudio\+Client}}}]{,  }\item[{1cb9ad4c}]{,  }\item[{dbfa}]{,  }\item[{4c32}]{,  }\item[{b1}]{,  }\item[{78}]{,  }\item[{c2}]{,  }\item[{f5}]{,  }\item[{68}]{,  }\item[{a7}]{,  }\item[{03}]{,  }\item[{b2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a3b95fbf20416e2ff902c8a1cc149b2c2}\label{pa__win__wasapi_8c_a3b95fbf20416e2ff902c8a1cc149b2c2}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{IAudio\+Client2}]{,  }\item[{726778cd}]{,  }\item[{f60a}]{,  }\item[{4eda}]{,  }\item[{82}]{,  }\item[{de}]{,  }\item[{e4}]{,  }\item[{76}]{,  }\item[{10}]{,  }\item[{cd}]{,  }\item[{78}]{,  }\item[{aa}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a8e419ae4e653835e15a93e6682714c67}\label{pa__win__wasapi_8c_a8e419ae4e653835e15a93e6682714c67}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{IAudio\+Client3}]{,  }\item[{7ed4ee07}]{,  }\item[{8e67}]{,  }\item[{4cd4}]{,  }\item[{8c}]{,  }\item[{1\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}}]{,  }\item[{2\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}}]{,  }\item[{7\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}}]{,  }\item[{59}]{,  }\item[{87}]{,  }\item[{ad}]{,  }\item[{42}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ae55f342ce51f789b74ae90ef9f8b8afd}\label{pa__win__wasapi_8c_ae55f342ce51f789b74ae90ef9f8b8afd}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{audioclient_8h_a3d3202e827ce9328a16178551d97746e}{IAudio\+Render\+Client}}}]{,  }\item[{f294acfc}]{,  }\item[{3146}]{,  }\item[{4483}]{,  }\item[{a7}]{,  }\item[{bf}]{,  }\item[{ad}]{,  }\item[{dc}]{,  }\item[{a7}]{,  }\item[{c2}]{,  }\item[{60}]{,  }\item[{e2}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ae4739ba48dcd72f329d79eb9b4fe4cdb}\label{pa__win__wasapi_8c_ae4739ba48dcd72f329d79eb9b4fe4cdb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{devicetopology_8h_a4997c6c4616c3245d515eafd2ce686d0}{IDevice\+Topology}}}]{,  }\item[{2A07407E}]{,  }\item[{6497}]{,  }\item[{4A18}]{,  }\item[{97}]{,  }\item[{87}]{,  }\item[{32}]{,  }\item[{f7}]{,  }\item[{9\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}}]{,  }\item[{d0}]{,  }\item[{d9}]{,  }\item[{8\mbox{\hyperlink{glad_8h_a6a8efad2e332fcd916bde9e19ddef215}{f}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a8e34cd8eb85293ec3a3225127754633f}\label{pa__win__wasapi_8c_a8e34cd8eb85293ec3a3225127754633f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{devicetopology_8h_a309e1781c2a5279a8dcd39a197a59003}{IKs\+Jack\+Description}}}]{,  }\item[{4509F757}]{,  }\item[{2D46}]{,  }\item[{4637}]{,  }\item[{8e}]{,  }\item[{62}]{,  }\item[{ce}]{,  }\item[{7d}]{,  }\item[{b9}]{,  }\item[{44}]{,  }\item[{f5}]{,  }\item[{7\mbox{\hyperlink{glad_8h_a6eba317e3cf44d6d26c04a5a8f197dcb}{b}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7352e0e14e250246f7aed4c9bfebe118}\label{pa__win__wasapi_8c_a7352e0e14e250246f7aed4c9bfebe118}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mmdeviceapi_8h_a105bf1359b5d6cd4fb24828cc6ab2874}{IMMDevice\+Enumerator}}}]{,  }\item[{a95664d2}]{,  }\item[{9614}]{,  }\item[{4f35}]{,  }\item[{a7}]{,  }\item[{46}]{,  }\item[{de}]{,  }\item[{8d}]{,  }\item[{b6}]{,  }\item[{36}]{,  }\item[{17}]{,  }\item[{e6}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aa5af9cc6b076410d262f921bfd2a0859}\label{pa__win__wasapi_8c_aa5af9cc6b076410d262f921bfd2a0859}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{mmdeviceapi_8h_a32d63499f58b0065348b8c09c18d9f36}{IMMEndpoint}}}]{,  }\item[{1be09788}]{,  }\item[{6894}]{,  }\item[{4089}]{,  }\item[{85}]{,  }\item[{86}]{,  }\item[{9\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}}]{,  }\item[{2\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}}]{,  }\item[{6c}]{,  }\item[{26}]{,  }\item[{5\mbox{\hyperlink{glad_8h_ac8729153468b5dcf13f971b21d84d4e5}{a}}}]{,  }\item[{c5}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a028039501a67cfcf87ff71f37e2ade6a}\label{pa__win__wasapi_8c_a028039501a67cfcf87ff71f37e2ade6a}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PA\_DEFINE\_IID@{PA\_DEFINE\_IID}}
+\index{PA\_DEFINE\_IID@{PA\_DEFINE\_IID}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PA\_DEFINE\_IID()}{PA\_DEFINE\_IID()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily PA\+\_\+\+DEFINE\+\_\+\+IID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{devicetopology_8h_adabb5bd8e19759521e1498eef1d0b56f}{IPart}}}]{,  }\item[{AE2\+DE0\+E4}]{,  }\item[{5BCA}]{,  }\item[{4F2D}]{,  }\item[{aa}]{,  }\item[{46}]{,  }\item[{5d}]{,  }\item[{13}]{,  }\item[{f8}]{,  }\item[{fd}]{,  }\item[{b3}]{,  }\item[{a9}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_afe88b93d518a48a088c658b7c8ab25b1}\label{pa__win__wasapi_8c_afe88b93d518a48a088c658b7c8ab25b1}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaUtil\_GetOutputFrameCount@{PaUtil\_GetOutputFrameCount}}
+\index{PaUtil\_GetOutputFrameCount@{PaUtil\_GetOutputFrameCount}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GetOutputFrameCount()}{PaUtil\_GetOutputFrameCount()}}
+{\footnotesize\ttfamily unsigned long Pa\+Util\+\_\+\+Get\+Output\+Frame\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_buffer_processor}{Pa\+Util\+Buffer\+Processor}} $\ast$}]{bp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a25c33a7937780119df74e951d9bfaf00}\label{pa__win__wasapi_8c_a25c33a7937780119df74e951d9bfaf00}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetAudioClient@{PaWasapi\_GetAudioClient}}
+\index{PaWasapi\_GetAudioClient@{PaWasapi\_GetAudioClient}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetAudioClient()}{PaWasapi\_GetAudioClient()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Audio\+Client (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+Audio\+Client,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Returns pointer to WASAPI\textquotesingle{}s IAudio\+Client object of the stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Audio\+Client} & Pointer to pointer of IAudio\+Client. \\
+\hline
+{\em b\+Output} & TRUE (1) for output stream, FALSE (0) for input stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_adb5f9ba32018e00630e9181cc86d97bb}\label{pa__win__wasapi_8c_adb5f9ba32018e00630e9181cc86d97bb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetDeviceCurrentFormat@{PaWasapi\_GetDeviceCurrentFormat}}
+\index{PaWasapi\_GetDeviceCurrentFormat@{PaWasapi\_GetDeviceCurrentFormat}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceCurrentFormat()}{PaWasapi\_GetDeviceCurrentFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Current\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Get current audio format of the device assigned to the opened stream.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. Use this function to reconfirm format if PA\textquotesingle{}s processor is overridden and pa\+Win\+Wasapi\+Redirect\+Host\+Processor flag is specified.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em b\+Output} & TRUE (1) for output stream, FALSE (0) for input stream.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a5076434a69a9ef02e1966f3ea65da937}\label{pa__win__wasapi_8c_a5076434a69a9ef02e1966f3ea65da937}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}}
+\index{PaWasapi\_GetDeviceDefaultFormat@{PaWasapi\_GetDeviceDefaultFormat}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceDefaultFormat()}{PaWasapi\_GetDeviceDefaultFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Default\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get default audio format for the device in Shared Mode.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure and obtained by getting the device property with a PKEY\+\_\+\+Audio\+Engine\+\_\+\+Device\+Format key.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a80dfb8c49a4a12ca177afbaac9db3d06}\label{pa__win__wasapi_8c_a80dfb8c49a4a12ca177afbaac9db3d06}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetDeviceMixFormat@{PaWasapi\_GetDeviceMixFormat}}
+\index{PaWasapi\_GetDeviceMixFormat@{PaWasapi\_GetDeviceMixFormat}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceMixFormat()}{PaWasapi\_GetDeviceMixFormat()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Mix\+Format (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Format,  }\item[{unsigned int}]{format\+Size,  }\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get mix audio format for the device in Shared Mode.
+
+Format is represented by \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structureand obtained by IAudio\+Client\+::\+Get\+Mix\+Format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Format} & Pointer to \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure. \\
+\hline
+{\em format\+Size} & Size of \mbox{\hyperlink{struct_pa_win_wave_format}{Pa\+Win\+Wave\+Format}} or WAVEFORMATEXTENSIBLE structure in bytes. \\
+\hline
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating the number of bytes copied into format descriptor or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac914f9b877451fc998298e4beec10208}\label{pa__win__wasapi_8c_ac914f9b877451fc998298e4beec10208}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}}
+\index{PaWasapi\_GetDeviceRole@{PaWasapi\_GetDeviceRole}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetDeviceRole()}{PaWasapi\_GetDeviceRole()}}
+{\footnotesize\ttfamily int Pa\+Wasapi\+\_\+\+Get\+Device\+Role (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device }\end{DoxyParamCaption})}
+
+Get device role (Pa\+Wasapi\+Device\+Role enum).
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/negative value indicating device role or, a Pa\+Error\+Code (which is always negative) if Port\+Audio is not initialized or an error is encountered. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ab9ac66d7e4bedab8b7ec38146526eb24}\label{pa__win__wasapi_8c_ab9ac66d7e4bedab8b7ec38146526eb24}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}}
+\index{PaWasapi\_GetFramesPerHostBuffer@{PaWasapi\_GetFramesPerHostBuffer}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetFramesPerHostBuffer()}{PaWasapi\_GetFramesPerHostBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Frames\+Per\+Host\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{unsigned int $\ast$}]{p\+Input,  }\item[{unsigned int $\ast$}]{p\+Output }\end{DoxyParamCaption})}
+
+Get number of frames per host buffer.
+
+It is max value of frames of WASAPI buffer which can be locked for operations. Use this method as helper to find out max values of input\+Frames/output\+Frames of Pa\+Wasapi\+Host\+Processor\+Callback.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em p\+Input} & Pointer to variable to receive number of input frames. Can be NULL. \\
+\hline
+{\em p\+Output} & Pointer to variable to receive number of output frames. Can be NULL.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_ae3d91dd8eaeff3cbe9ff3bfafc5e6006}{Pa\+Wasapi\+Host\+Processor\+Callback}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a739878064482dc638ed89b68a7dff00f}\label{pa__win__wasapi_8c_a739878064482dc638ed89b68a7dff00f}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetIMMDevice@{PaWasapi\_GetIMMDevice}}
+\index{PaWasapi\_GetIMMDevice@{PaWasapi\_GetIMMDevice}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetIMMDevice()}{PaWasapi\_GetIMMDevice()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+IMMDevice (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+IMMDevice }\end{DoxyParamCaption})}
+
+Get device IMMDevice pointer
+
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em p\+Audio\+Client} & Pointer to pointer of IMMDevice.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_aee7cb6ee52ae7c55f12db908be2feecb}\label{pa__win__wasapi_8c_aee7cb6ee52ae7c55f12db908be2feecb}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}}
+\index{PaWasapi\_GetJackCount@{PaWasapi\_GetJackCount}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackCount()}{PaWasapi\_GetJackCount()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Count (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int $\ast$}]{p\+Jack\+Count }\end{DoxyParamCaption})}
+
+Get number of jacks associated with a WASAPI device.
+
+Use this method to determine if there are any jacks associated with the provided WASAPI device. Not all audio devices will support this capability. This is valid for both input and output devices.
+
+\begin{DoxyNote}{Note}
+Not available on UWP platform.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em p\+Jack\+Count} & Pointer to variable to receive number of jacks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_ae61299a2f58f2bf55f9849b64914ae66}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Description}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ae61299a2f58f2bf55f9849b64914ae66}\label{pa__win__wasapi_8c_ae61299a2f58f2bf55f9849b64914ae66}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}}
+\index{PaWasapi\_GetJackDescription@{PaWasapi\_GetJackDescription}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_GetJackDescription()}{PaWasapi\_GetJackDescription()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Get\+Jack\+Description (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_ad79317e65bde63d76c4b8e711ac5a361}{Pa\+Device\+Index}}}]{device,  }\item[{int}]{jack\+Index,  }\item[{\mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}} $\ast$}]{p\+Jack\+Description }\end{DoxyParamCaption})}
+
+Get the jack description associated with a WASAPI device and jack number.
+
+Before this function is called, use Pa\+Wasapi\+\_\+\+Get\+Jack\+Count to determine the number of jacks associated with device. If jcount is greater than zero, then each jack from 0 to jcount can be queried with this function to get the jack description.
+
+\begin{DoxyNote}{Note}
+Not available on UWP platform.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em device} & Device index. \\
+\hline
+{\em jack\+Index} & Jack index. \\
+\hline
+{\em p\+Jack\+Description} & Pointer to \mbox{\hyperlink{struct_pa_wasapi_jack_description}{Pa\+Wasapi\+Jack\+Description}}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__win__wasapi_8h_aee7cb6ee52ae7c55f12db908be2feecb}{Pa\+Wasapi\+\_\+\+Get\+Jack\+Count}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a56a0d6a3498d2ca95227d2e5c9975c40}\label{pa__win__wasapi_8c_a56a0d6a3498d2ca95227d2e5c9975c40}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_Initialize@{PaWasapi\_Initialize}}
+\index{PaWasapi\_Initialize@{PaWasapi\_Initialize}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_Initialize()}{PaWasapi\_Initialize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Initialize (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_host_api_representation}{Pa\+Util\+Host\+Api\+Representation}} $\ast$$\ast$}]{host\+Api,  }\item[{\mbox{\hyperlink{portaudio_8h_aeef6da084c57c70aa94be97411e19930}{Pa\+Host\+Api\+Index}}}]{index }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a730e026069b18726e0fea2308868f820}\label{pa__win__wasapi_8c_a730e026069b18726e0fea2308868f820}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_SetStreamStateHandler@{PaWasapi\_SetStreamStateHandler}}
+\index{PaWasapi\_SetStreamStateHandler@{PaWasapi\_SetStreamStateHandler}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_SetStreamStateHandler()}{PaWasapi\_SetStreamStateHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Set\+Stream\+State\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{Pa\+Stream}} $\ast$}]{p\+Stream,  }\item[{\mbox{\hyperlink{pa__win__wasapi_8h_a1a04fafd591bdf954c464cb50e75ec25}{Pa\+Wasapi\+Stream\+State\+Callback}}}]{fn\+State\+Handler,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+User\+Data }\end{DoxyParamCaption})}
+
+Set stream state handler.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Stream} & Pointer to Pa\+Stream object. \\
+\hline
+{\em fn\+State\+Handler} & Pointer to state handling function. \\
+\hline
+{\em p\+User\+Data} & Pointer to user data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad18e3aede8d98f7144f6279c22b88c87}\label{pa__win__wasapi_8c_ad18e3aede8d98f7144f6279c22b88c87}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}}
+\index{PaWasapi\_ThreadPriorityBoost@{PaWasapi\_ThreadPriorityBoost}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityBoost()}{PaWasapi\_ThreadPriorityBoost()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Boost (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$$\ast$}]{p\+Task,  }\item[{\mbox{\hyperlink{pa__win__wasapi_8h_a561291b0188f6f29246ea669b48e2661}{Pa\+Wasapi\+Thread\+Priority}}}]{priority\+Class }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS).
+
+Use it for Blocking Interface only inside the thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Task} & Handle to pointer to priority task. Must be used with Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority method to revert thread priority to initial state.\\
+\hline
+{\em priority\+Class} & Id of thread priority of Pa\+Wasapi\+Thread\+Priority type. Specifying e\+Thread\+Priority\+None does nothing.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Revert\+Thread\+Priority 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac1a76bc94a9144ed456575fec190323d}\label{pa__win__wasapi_8c_ac1a76bc94a9144ed456575fec190323d}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}}
+\index{PaWasapi\_ThreadPriorityRevert@{PaWasapi\_ThreadPriorityRevert}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_ThreadPriorityRevert()}{PaWasapi\_ThreadPriorityRevert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Thread\+Priority\+Revert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{p\+Task }\end{DoxyParamCaption})}
+
+Boost thread priority of calling thread (MMCSS).
+
+Use it for Blocking Interface only inside the thread which makes calls to Pa\+\_\+\+Write\+Stream/\+Pa\+\_\+\+Read\+Stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Task} & Task handle obtained by Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority method.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+Pa\+Wasapi\+\_\+\+Boost\+Thread\+Priority 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{pa__win__wasapi_8c_aedab0cfcdddbd5bb46f5831b44bc90a1}\label{pa__win__wasapi_8c_aedab0cfcdddbd5bb46f5831b44bc90a1}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapi\_UpdateDeviceList@{PaWasapi\_UpdateDeviceList}}
+\index{PaWasapi\_UpdateDeviceList@{PaWasapi\_UpdateDeviceList}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapi\_UpdateDeviceList()}{PaWasapi\_UpdateDeviceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+\_\+\+Update\+Device\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Update device list.
+
+This function is available if PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT is defined during compile time with maximum constant WASAPI device count (recommended value -\/ 32). If PA\+\_\+\+WASAPI\+\_\+\+MAX\+\_\+\+CONST\+\_\+\+DEVICE\+\_\+\+COUNT is set to 0 (or not defined) during compile time the implementation will not define \mbox{\hyperlink{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List()}} and thus updating device list can only be possible by calling \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\+\_\+\+Terminate()}} and then \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}.
+
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7ac47bc66f443d6713f011a7937b0b69}\label{pa__win__wasapi_8c_a7ac47bc66f443d6713f011a7937b0b69}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiWinrt\_PopulateDeviceList@{PaWasapiWinrt\_PopulateDeviceList}}
+\index{PaWasapiWinrt\_PopulateDeviceList@{PaWasapiWinrt\_PopulateDeviceList}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiWinrt\_PopulateDeviceList()}{PaWasapiWinrt\_PopulateDeviceList()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+Winrt\+\_\+\+Populate\+Device\+List (\begin{DoxyParamCaption}\item[{const unsigned short $\ast$$\ast$}]{p\+Id,  }\item[{const unsigned short $\ast$$\ast$}]{p\+Name,  }\item[{const \mbox{\hyperlink{pa__win__wasapi_8h_a9456f380d3e74aa733b80315010a40de}{Pa\+Wasapi\+Device\+Role}} $\ast$}]{p\+Role,  }\item[{unsigned int}]{count,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Populate the device list.
+
+By default the implementation will rely on DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER and DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE as default devices. If device Id is provided by \mbox{\hyperlink{pa__win__wasapi_8h_a7f85ba84da29809aa47438c8708465a4}{Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id()}} then those device Ids will be used as default and only devices for the device list.
+
+By populating the device list you can provide an additional available audio devices of the system to PA which are obtainable by\+: Windows\+::\+Devices\+::\+Enumeration\+::\+Device\+Information\+::\+Find\+All\+Async(selector) where selector is obtainable by Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Audio\+Render\+Selector() or Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Audio\+Capture\+Selector() API.
+
+After the call completes, memory referenced by pointers can be freed, as implementation keeps its own copy.
+
+You must call \mbox{\hyperlink{pa__win__wasapi_8h_aedab0cfcdddbd5bb46f5831b44bc90a1}{Pa\+Wasapi\+\_\+\+Update\+Device\+List()}} to update the internal device list of the implementation after calling this function.
+
+See an example in the IMPORTANT notes.
+
+\begin{DoxyNote}{Note}
+UWP/\+Win\+RT platform only.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Id} & Array of device Ids, pointer to the array of pointers of 16-\/bit Unicode string (WCHAR). If NULL and count is also 0 then device Ids will be reset to the default. Required. \\
+\hline
+{\em p\+Name} & Array of device Names, pointer to the array of pointers of 16-\/bit Unicode string (WCHAR). Optional. \\
+\hline
+{\em p\+Role} & Array of device Roles, see Pa\+Wasapi\+Device\+Role and \mbox{\hyperlink{pa__win__wasapi_8h_ac914f9b877451fc998298e4beec10208}{Pa\+Wasapi\+\_\+\+Get\+Device\+Role()}} for more details. Optional. \\
+\hline
+{\em count} & Number of devices, the number of array elements (p\+Id, p\+Name, p\+Role). Maximum count of devices is limited by PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+MAX\+\_\+\+COUNT. \\
+\hline
+{\em b\+Output} & TRUE (1) for output (render), FALSE (0) for input (capture).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. Will return pa\+Incompatible\+Stream\+Host\+Api if library is not compiled for UWP/\+Win\+RT platform. If Id is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. If Name is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+NAME\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a7f85ba84da29809aa47438c8708465a4}\label{pa__win__wasapi_8c_a7f85ba84da29809aa47438c8708465a4}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!PaWasapiWinrt\_SetDefaultDeviceId@{PaWasapiWinrt\_SetDefaultDeviceId}}
+\index{PaWasapiWinrt\_SetDefaultDeviceId@{PaWasapiWinrt\_SetDefaultDeviceId}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{PaWasapiWinrt\_SetDefaultDeviceId()}{PaWasapiWinrt\_SetDefaultDeviceId()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{Pa\+Error}} Pa\+Wasapi\+Winrt\+\_\+\+Set\+Default\+Device\+Id (\begin{DoxyParamCaption}\item[{const unsigned short $\ast$}]{p\+Id,  }\item[{int}]{b\+Output }\end{DoxyParamCaption})}
+
+Set default device Id.
+
+By default implementation will use the DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER and DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE Ids if device Id is not provided explicitly. These default Ids will not allow to use Exclusive mode on UWP/\+Win\+RT platform and thus you must provide device Id explicitly via this API before calling the \mbox{\hyperlink{portaudio_8h_a443ad16338191af364e3be988014cbbe}{Pa\+\_\+\+Open\+Stream()}}.
+
+Device Ids on UWP platform are obtainable via\+: Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Default\+Audio\+Render\+Id() or Windows\+::\+Media\+::\+Devices\+::\+Media\+Device\+::\+Get\+Default\+Audio\+Capture\+Id() API.
+
+After the call completes, memory referenced by pointers can be freed, as implementation keeps its own copy.
+
+Call this function before calling \mbox{\hyperlink{portaudio_8h_abdb313743d6efef26cecdae787a2bd3d}{Pa\+\_\+\+Is\+Format\+Supported()}} when Exclusive mode is requested.
+
+See an example in the IMPORTANT notes.
+
+\begin{DoxyNote}{Note}
+UWP/\+Win\+RT platform only.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Id} & Device Id, pointer to the 16-\/bit Unicode string (WCHAR). If NULL then device Id will be reset to the default, e.\+g. DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+RENDER or DEVINTERFACE\+\_\+\+AUDIO\+\_\+\+CAPTURE. \\
+\hline
+{\em b\+Output} & TRUE (1) for output (render), FALSE (0) for input (capture).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Error code indicating success or failure. Will return pa\+Incompatible\+Stream\+Host\+Api if library is not compiled for UWP/\+Win\+RT platform. If Id is longer than PA\+\_\+\+WASAPI\+\_\+\+DEVICE\+\_\+\+ID\+\_\+\+LEN characters pa\+Buffer\+Too\+Big will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{pa__win__wasapi_8c_ac575016ee1e9d6275cbc5004b2409036}\label{pa__win__wasapi_8c_ac575016ee1e9d6275cbc5004b2409036}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!ProcThreadEvent@{ProcThreadEvent}}
+\index{ProcThreadEvent@{ProcThreadEvent}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{ProcThreadEvent()}{ProcThreadEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} Proc\+Thread\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{param }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_aae20a143b3c891a38a7e918ee4b1d6b8}\label{pa__win__wasapi_8c_aae20a143b3c891a38a7e918ee4b1d6b8}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!ProcThreadPoll@{ProcThreadPoll}}
+\index{ProcThreadPoll@{ProcThreadPoll}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{ProcThreadPoll()}{ProcThreadPoll()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__ds_8c_ad744bd36cb3631b1dc11beb41dcc238c}{PA\+\_\+\+THREAD\+\_\+\+FUNC}} Proc\+Thread\+Poll (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{param }\end{DoxyParamCaption})}
+
+Do first loop without waiting as time could be spent when calling other APIs before Process\+XXXBuffer.
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{pa__win__wasapi_8c_a800438cc51e4a6661c2cdb986a16e093}\label{pa__win__wasapi_8c_a800438cc51e4a6661c2cdb986a16e093}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvRevertMmThreadCharacteristics@{pAvRevertMmThreadCharacteristics}}
+\index{pAvRevertMmThreadCharacteristics@{pAvRevertMmThreadCharacteristics}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvRevertMmThreadCharacteristics}{pAvRevertMmThreadCharacteristics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_a00005277f6e80b50489b77a3641c50f3}{FAv\+Revert\+Mm\+Thread\+Characteristics}} p\+Av\+Revert\+Mm\+Thread\+Characteristics = NULL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ad998bad539a112ce8182c22c5cf0481e}\label{pa__win__wasapi_8c_ad998bad539a112ce8182c22c5cf0481e}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvRtCreateThreadOrderingGroup@{pAvRtCreateThreadOrderingGroup}}
+\index{pAvRtCreateThreadOrderingGroup@{pAvRtCreateThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvRtCreateThreadOrderingGroup}{pAvRtCreateThreadOrderingGroup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_a5af889b68d15f627b3ecabae43c21c17}{FAv\+Rt\+Create\+Thread\+Ordering\+Group}} p\+Av\+Rt\+Create\+Thread\+Ordering\+Group = NULL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a5604278b62c1f5c62e906ab2e53ba6ab}\label{pa__win__wasapi_8c_a5604278b62c1f5c62e906ab2e53ba6ab}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvRtDeleteThreadOrderingGroup@{pAvRtDeleteThreadOrderingGroup}}
+\index{pAvRtDeleteThreadOrderingGroup@{pAvRtDeleteThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvRtDeleteThreadOrderingGroup}{pAvRtDeleteThreadOrderingGroup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_ac3606eb65325156589051bdd9ce5d915}{FAv\+Rt\+Delete\+Thread\+Ordering\+Group}} p\+Av\+Rt\+Delete\+Thread\+Ordering\+Group = NULL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_ab0d78159e0a0e2a6575ca053983461d8}\label{pa__win__wasapi_8c_ab0d78159e0a0e2a6575ca053983461d8}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvRtWaitOnThreadOrderingGroup@{pAvRtWaitOnThreadOrderingGroup}}
+\index{pAvRtWaitOnThreadOrderingGroup@{pAvRtWaitOnThreadOrderingGroup}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvRtWaitOnThreadOrderingGroup}{pAvRtWaitOnThreadOrderingGroup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_a71e6b55e2b0a0e44dae969c07ecce8a6}{FAv\+Rt\+Wait\+On\+Thread\+Ordering\+Group}} p\+Av\+Rt\+Wait\+On\+Thread\+Ordering\+Group = NULL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a892964d92daf945b57491f24eb331056}\label{pa__win__wasapi_8c_a892964d92daf945b57491f24eb331056}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvSetMmThreadCharacteristics@{pAvSetMmThreadCharacteristics}}
+\index{pAvSetMmThreadCharacteristics@{pAvSetMmThreadCharacteristics}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvSetMmThreadCharacteristics}{pAvSetMmThreadCharacteristics}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_ab155754499992c6d0273dc4fb7d3fd57}{FAv\+Set\+Mm\+Thread\+Characteristics}} p\+Av\+Set\+Mm\+Thread\+Characteristics = NULL}
+
+\mbox{\Hypertarget{pa__win__wasapi_8c_a00926c56ee41e2e33e834e6552a9fe0d}\label{pa__win__wasapi_8c_a00926c56ee41e2e33e834e6552a9fe0d}} 
+\index{pa\_win\_wasapi.c@{pa\_win\_wasapi.c}!pAvSetMmThreadPriority@{pAvSetMmThreadPriority}}
+\index{pAvSetMmThreadPriority@{pAvSetMmThreadPriority}!pa\_win\_wasapi.c@{pa\_win\_wasapi.c}}
+\doxysubsubsection{\texorpdfstring{pAvSetMmThreadPriority}{pAvSetMmThreadPriority}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__win__wasapi_8c_aded1895cd1ae97b0a2b8371935f5a3a6}{FAv\+Set\+Mm\+Thread\+Priority}} p\+Av\+Set\+Mm\+Thread\+Priority = NULL}
+

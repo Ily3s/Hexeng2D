@@ -1,0 +1,95 @@
+\hypertarget{test__rw__echo_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/pablio/test\+\_\+rw\+\_\+echo.c File Reference}
+\label{test__rw__echo_8c}\index{Hexeng2D/dependencies/portaudio/pablio/test\_rw\_echo.c@{Hexeng2D/dependencies/portaudio/pablio/test\_rw\_echo.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pablio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__rw__echo_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(22050)
+\item 
+\#define \mbox{\hyperlink{test__rw__echo_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(20)
+\item 
+\#define \mbox{\hyperlink{test__rw__echo_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}~(2)
+\item 
+\#define \mbox{\hyperlink{test__rw__echo_8c_ac8dd1acee55f0954233d3f7a4204c2f8}{SAMPLE\+\_\+\+TYPE}}~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}
+\item 
+\#define \mbox{\hyperlink{test__rw__echo_8c_ad7b7d34dd089e24c72d31f97971a36fb}{NUM\+\_\+\+ECHO\+\_\+\+FRAMES}}~(2$\ast$\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \mbox{\hyperlink{test__rw__echo_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__rw__echo_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}} \mbox{\hyperlink{test__rw__echo_8c_a39c8d1039645bc924aecc49d76f472a0}{samples}} \mbox{[}\mbox{\hyperlink{test__rw__echo_8c_ad7b7d34dd089e24c72d31f97971a36fb}{NUM\+\_\+\+ECHO\+\_\+\+FRAMES}}\mbox{]}\mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]} = \{0.\+0\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test__rw__echo_8c_ad7b7d34dd089e24c72d31f97971a36fb}\label{test__rw__echo_8c_ad7b7d34dd089e24c72d31f97971a36fb}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!NUM\_ECHO\_FRAMES@{NUM\_ECHO\_FRAMES}}
+\index{NUM\_ECHO\_FRAMES@{NUM\_ECHO\_FRAMES}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_ECHO\_FRAMES}{NUM\_ECHO\_FRAMES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+ECHO\+\_\+\+FRAMES~(2$\ast$\mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{test__rw__echo_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{test__rw__echo_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(20)}
+
+\mbox{\Hypertarget{test__rw__echo_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{test__rw__echo_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(22050)}
+
+\mbox{\Hypertarget{test__rw__echo_8c_ac8dd1acee55f0954233d3f7a4204c2f8}\label{test__rw__echo_8c_ac8dd1acee55f0954233d3f7a4204c2f8}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!SAMPLE\_TYPE@{SAMPLE\_TYPE}}
+\index{SAMPLE\_TYPE@{SAMPLE\_TYPE}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_TYPE}{SAMPLE\_TYPE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+TYPE~\mbox{\hyperlink{portaudio_8h_a2f16d29916725b8791eae60ab9e0b081}{pa\+Float32}}}
+
+\mbox{\Hypertarget{test__rw__echo_8c_a8746ae57f53e99e184ab1e64e71d24c5}\label{test__rw__echo_8c_a8746ae57f53e99e184ab1e64e71d24c5}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!SAMPLES\_PER\_FRAME@{SAMPLES\_PER\_FRAME}}
+\index{SAMPLES\_PER\_FRAME@{SAMPLES\_PER\_FRAME}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLES\_PER\_FRAME}{SAMPLES\_PER\_FRAME}}
+{\footnotesize\ttfamily \#define SAMPLES\+\_\+\+PER\+\_\+\+FRAME~(2)}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{test__rw__echo_8c_a5a95753fed006cd1d78bda53bda5580a}\label{test__rw__echo_8c_a5a95753fed006cd1d78bda53bda5580a}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!SAMPLE@{SAMPLE}}
+\index{SAMPLE@{SAMPLE}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE}{SAMPLE}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__rw__echo_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{test__rw__echo_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!main@{main}}
+\index{main@{main}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test__rw__echo_8c_a39c8d1039645bc924aecc49d76f472a0}\label{test__rw__echo_8c_a39c8d1039645bc924aecc49d76f472a0}} 
+\index{test\_rw\_echo.c@{test\_rw\_echo.c}!samples@{samples}}
+\index{samples@{samples}!test\_rw\_echo.c@{test\_rw\_echo.c}}
+\doxysubsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily \mbox{\hyperlink{pa__fuzz_8c_a5a95753fed006cd1d78bda53bda5580a}{SAMPLE}} \mbox{\hyperlink{glad_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}}\mbox{[}\mbox{\hyperlink{test__rw__echo_8c_ad7b7d34dd089e24c72d31f97971a36fb}{NUM\+\_\+\+ECHO\+\_\+\+FRAMES}}\mbox{]}\mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]} = \{0.\+0\}}
+

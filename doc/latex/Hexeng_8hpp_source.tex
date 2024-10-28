@@ -1,0 +1,63 @@
+\doxysection{Hexeng.\+hpp}
+\hypertarget{Hexeng_8hpp_source}{}\label{Hexeng_8hpp_source}\index{Hexeng2D/src/Hexeng.hpp@{Hexeng2D/src/Hexeng.hpp}}
+\mbox{\hyperlink{Hexeng_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ HEXENG\_HPP}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ HEXENG\_HPP}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <mutex>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Macros_8hpp}{Macros.hpp}}"{}}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Vectors_8hpp}{Vectors.hpp}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{keyword}{struct\ }GLFWwindow;}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceHexeng}{Hexeng}}}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ GLFWwindow*\ \mbox{\hyperlink{namespaceHexeng_ab1e99a3caf096cca1a061390e4ee7310}{window}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceHexeng_a31584ddd77dfb31ea89a5e0acf7dc72d}{game\_loop}}(std::function<\textcolor{keywordtype}{void}()>\ pre\ =\ \textcolor{keyword}{nullptr},\ std::function<\textcolor{keywordtype}{void}()>\ post\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{namespace\ }Settings}
+\DoxyCodeLine{00027\ \ \ \ \ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_af07c6deae13aee4299565ba29261e494}{enable\_vsync}};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::string\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a01f9883bbdfb72f79379f00c0a1c2224}{window\_name}};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_aac17e662da68a88ca342aa4b90e34c65}{fullscreen}};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a67374cfed01c8261e70dc0bace648c3c}{window\_size}};}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a63c078556ae3f433b9e0557721b8ed0f}{get\_ratio}}();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a1ac86b27f313d69df1090a8e927644ad}{master\_volume}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_ab5f36e22f2247e93a90f3453c978a302}{sound\_volume}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a26265a89df084d350274237fae05b108}{music\_volume}};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_a510b46d302586a9cbf82bec0161eef07}{toX}}(\textcolor{keywordtype}{float}\ x)\ \{\ \textcolor{keywordflow}{return}\ x\ /\ (\textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{float}\textcolor{keyword}{>}(1080)\ *\ \mbox{\hyperlink{namespaceHexeng_1_1Settings_a63c078556ae3f433b9e0557721b8ed0f}{Settings::get\_ratio}}()\ /\ 2);\ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_a134bbcc3536817d8774c3685f2f81ee8}{toY}}(\textcolor{keywordtype}{float}\ y)\ \{\ \textcolor{keywordflow}{return}\ y\ /\ (1080\ /\ 2);\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<float>}}\ \mbox{\hyperlink{namespaceHexeng_ad9476ddac0f172a13bf18ca3ac550776}{toCoord}}(\mbox{\hyperlink{classHexeng_1_1Vec2}{Vec2<int>}}\ vec)\ \{\ \textcolor{keywordflow}{return}\ \{\ \mbox{\hyperlink{namespaceHexeng_a510b46d302586a9cbf82bec0161eef07}{toX}}(vec.\mbox{\hyperlink{classHexeng_1_1Vec2_a7e7924af1200c5c7adfe74b7ad14f9b6}{x}}),\ \mbox{\hyperlink{namespaceHexeng_a134bbcc3536817d8774c3685f2f81ee8}{toY}}(vec.\mbox{\hyperlink{classHexeng_1_1Vec2_a8af081a52b757717e2ddb2859881f279}{y}})\ \};\ \}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceHexeng_abe71842ede9e3ca1e5232aa6990df493}{\_resize\_callback}}(GLFWwindow*\ \mbox{\hyperlink{namespaceHexeng_ab1e99a3caf096cca1a061390e4ee7310}{window}},\ \textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespaceHexeng_a7cfcc962f2d288761ffc9a65242af5b3}{resize\_window}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y);}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ Range}
+\DoxyCodeLine{00068\ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{Hexeng_8hpp_ad9a9110964a4d3537dccd0031a2509a9}{LOCAL}},}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ GLOBAL}
+\DoxyCodeLine{00071\ \ \ \ \ \};}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{namespaceHexeng_a01de6715ebc2bebf6aeb61172101cb7e}{frame\_time}};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{namespaceHexeng_ab54a2e7cf470932d48cc187a2cf8f21f}{exit}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{Macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}}\ \textcolor{keyword}{extern}\ std::mutex\ \mbox{\hyperlink{namespaceHexeng_a86bc2f21dd4e72e56a23d18a1226f627}{safe\_render\_mutex}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

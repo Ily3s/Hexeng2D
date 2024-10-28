@@ -1,0 +1,86 @@
+\hypertarget{pa__linux__alsa_8h_source}{}\doxysection{pa\+\_\+linux\+\_\+alsa.\+h}
+\label{pa__linux__alsa_8h_source}\index{Hexeng2D/dependencies/portaudio/include/pa\_linux\_alsa.h@{Hexeng2D/dependencies/portaudio/include/pa\_linux\_alsa.h}}
+\mbox{\hyperlink{pa__linux__alsa_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef PA\_LINUX\_ALSA\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define PA\_LINUX\_ALSA\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{ * \$Id\$}}
+\DoxyCodeLine{6 \textcolor{comment}{ * PortAudio Portable Real-\/Time Audio Library}}
+\DoxyCodeLine{7 \textcolor{comment}{ * ALSA-\/specific extensions}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ * Copyright (c) 1999-\/2000 Ross Bencina and Phil Burk}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ * Permission is hereby granted, free of charge, to any person obtaining}}
+\DoxyCodeLine{12 \textcolor{comment}{ * a copy of this software and associated documentation files}}
+\DoxyCodeLine{13 \textcolor{comment}{ * (the "{}Software"{}), to deal in the Software without restriction,}}
+\DoxyCodeLine{14 \textcolor{comment}{ * including without limitation the rights to use, copy, modify, merge,}}
+\DoxyCodeLine{15 \textcolor{comment}{ * publish, distribute, sublicense, and/or sell copies of the Software,}}
+\DoxyCodeLine{16 \textcolor{comment}{ * and to permit persons to whom the Software is furnished to do so,}}
+\DoxyCodeLine{17 \textcolor{comment}{ * subject to the following conditions:}}
+\DoxyCodeLine{18 \textcolor{comment}{ *}}
+\DoxyCodeLine{19 \textcolor{comment}{ * The above copyright notice and this permission notice shall be}}
+\DoxyCodeLine{20 \textcolor{comment}{ * included in all copies or substantial portions of the Software.}}
+\DoxyCodeLine{21 \textcolor{comment}{ *}}
+\DoxyCodeLine{22 \textcolor{comment}{ * THE SOFTWARE IS PROVIDED "{}AS IS"{}, WITHOUT WARRANTY OF ANY KIND,}}
+\DoxyCodeLine{23 \textcolor{comment}{ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF}}
+\DoxyCodeLine{24 \textcolor{comment}{ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.}}
+\DoxyCodeLine{25 \textcolor{comment}{ * IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR}}
+\DoxyCodeLine{26 \textcolor{comment}{ * ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF}}
+\DoxyCodeLine{27 \textcolor{comment}{ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION}}
+\DoxyCodeLine{28 \textcolor{comment}{ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.}}
+\DoxyCodeLine{29 \textcolor{comment}{ */}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{/*}}
+\DoxyCodeLine{32 \textcolor{comment}{ * The text above constitutes the entire PortAudio license; however,}}
+\DoxyCodeLine{33 \textcolor{comment}{ * the PortAudio community also makes the following non-\/binding requests:}}
+\DoxyCodeLine{34 \textcolor{comment}{ *}}
+\DoxyCodeLine{35 \textcolor{comment}{ * Any person wishing to distribute modifications to the Software is}}
+\DoxyCodeLine{36 \textcolor{comment}{ * requested to send the modifications to the original developer so that}}
+\DoxyCodeLine{37 \textcolor{comment}{ * they can be incorporated into the canonical version. It is also}}
+\DoxyCodeLine{38 \textcolor{comment}{ * requested that these non-\/binding requests be included along with the}}
+\DoxyCodeLine{39 \textcolor{comment}{ * license above.}}
+\DoxyCodeLine{40 \textcolor{comment}{ */}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{portaudio_8h}{portaudio.h}}"{}}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{50 \textcolor{keyword}{extern} \textcolor{stringliteral}{"{}C"{}} \{}
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_pa_alsa_stream_info}{PaAlsaStreamInfo}}}
+\DoxyCodeLine{54 \{}
+\DoxyCodeLine{55     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_alsa_stream_info_aef7d7bcb7ebeb75d78496cc4821bbb85}{size}};}
+\DoxyCodeLine{56     \mbox{\hyperlink{portaudio_8h_a8eaebe3d39c5ea45598da8f86dc2e5ae}{PaHostApiTypeId}} \mbox{\hyperlink{struct_pa_alsa_stream_info_a57cc8d7a4f599b88c1d05e974f3d3db8}{hostApiType}};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \mbox{\hyperlink{struct_pa_alsa_stream_info_afb13c4ff1d97547735d7b19c1006b65c}{version}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *\mbox{\hyperlink{struct_pa_alsa_stream_info_a442fbbb635cda0cece4e7af397d453f9}{deviceString}};}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 \mbox{\hyperlink{struct_pa_alsa_stream_info}{PaAlsaStreamInfo}};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{64 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__linux__alsa_8h_ac33a394742540a3b6666d77698a72e82}{PaAlsa\_InitializeStreamInfo}}( \mbox{\hyperlink{struct_pa_alsa_stream_info}{PaAlsaStreamInfo}} *info );}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{71 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__linux__alsa_8h_accc41e7fd89dc0a6163d54a4f25fb242}{PaAlsa\_EnableRealtimeScheduling}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *s, \textcolor{keywordtype}{int} enable );}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#if 0}}
+\DoxyCodeLine{74 \textcolor{keywordtype}{void} PaAlsa\_EnableWatchdog( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *s, \textcolor{keywordtype}{int} enable );}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__linux__alsa_8h_ac31edeb99ef568fc89418d77bd4ca624}{PaAlsa\_GetStreamInputCard}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *s, \textcolor{keywordtype}{int} *card );}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__linux__alsa_8h_a04d7cd7252120eadf0ab3141ba5a7d93}{PaAlsa\_GetStreamOutputCard}}( \mbox{\hyperlink{portaudio_8h_a19874734f89958fccf86785490d53b4c}{PaStream}} *s, \textcolor{keywordtype}{int} *card );}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{89 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__linux__alsa_8h_a76f60d6f1ba6a298c038a9f3a6dccc53}{PaAlsa\_SetNumPeriods}}( \textcolor{keywordtype}{int} numPeriods );}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{94 \mbox{\hyperlink{portaudio_8h_a4949e4a8ef9f9dbe8cbee414ce69841d}{PaError}} \mbox{\hyperlink{pa__linux__alsa_8h_a2992cf7c30de5aaea222ec762fc56ad1}{PaAlsa\_SetRetriesBusy}}( \textcolor{keywordtype}{int} retries );}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{101 \textcolor{keywordtype}{void} \mbox{\hyperlink{pa__linux__alsa_8h_a7517c2e54801c8bd73c2f6db30aeaff9}{PaAlsa\_SetLibraryPathName}}( \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pathName );}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#ifdef \_\_cplusplus}}
+\DoxyCodeLine{104 \}}
+\DoxyCodeLine{105 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

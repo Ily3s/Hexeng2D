@@ -1,0 +1,25 @@
+var dir_d6e4f870af59a163ad5eef7de4d0b2e4 =
+[
+    [ "audioclient.h", "audioclient_8h.html", "audioclient_8h" ],
+    [ "AudioSessionTypes.h", "_audio_session_types_8h.html", null ],
+    [ "devicetopology.h", "devicetopology_8h.html", "devicetopology_8h" ],
+    [ "endpointvolume.h", "endpointvolume_8h.html", "endpointvolume_8h" ],
+    [ "functiondiscoverykeys.h", "functiondiscoverykeys_8h.html", "functiondiscoverykeys_8h" ],
+    [ "functiondiscoverykeys_devpkey.h", "functiondiscoverykeys__devpkey_8h.html", "functiondiscoverykeys__devpkey_8h" ],
+    [ "ks.h", "ks_8h.html", "ks_8h" ],
+    [ "ksguid.h", "ksguid_8h.html", "ksguid_8h" ],
+    [ "ksmedia.h", "ksmedia_8h.html", "ksmedia_8h" ],
+    [ "ksproxy.h", "ksproxy_8h.html", "ksproxy_8h" ],
+    [ "ksuuids.h", "ksuuids_8h.html", "ksuuids_8h" ],
+    [ "mmdeviceapi.h", "mmdeviceapi_8h.html", "mmdeviceapi_8h" ],
+    [ "PropIdl.h", "_prop_idl_8h.html", "_prop_idl_8h" ],
+    [ "propkey.h", "propkey_8h.html", "propkey_8h" ],
+    [ "propkeydef.h", "propkeydef_8h.html", "propkeydef_8h" ],
+    [ "propsys.h", "propsys_8h.html", "propsys_8h" ],
+    [ "rpcsal.h", "rpcsal_8h.html", "rpcsal_8h" ],
+    [ "sal.h", "sal_8h.html", "sal_8h" ],
+    [ "sdkddkver.h", "sdkddkver_8h.html", "sdkddkver_8h" ],
+    [ "ShTypes.h", "_sh_types_8h.html", "_sh_types_8h" ],
+    [ "structuredquery.h", "structuredquery_8h.html", "structuredquery_8h" ],
+    [ "winapifamily.h", "winapifamily_8h.html", "winapifamily_8h" ]
+];

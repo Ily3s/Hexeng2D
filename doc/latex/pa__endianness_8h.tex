@@ -1,0 +1,46 @@
+\hypertarget{pa__endianness_8h}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+endianness.h File Reference}
+\label{pa__endianness_8h}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_endianness.h@{Hexeng2D/dependencies/portaudio/src/common/pa\_endianness.h}}
+
+
+Configure endianness symbols for the target processor.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__endianness_8h_a3841f8c474f6678523791c8df95335f0}{PA\+\_\+\+BIG\+\_\+\+ENDIAN}}
+\item 
+\#define \mbox{\hyperlink{pa__endianness_8h_a2d2db7e27e9958cc2a8ce70b522171a2}{PA\+\_\+\+VALIDATE\+\_\+\+ENDIANNESS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configure endianness symbols for the target processor. 
+
+Arrange for either the PA\+\_\+\+LITTLE\+\_\+\+ENDIAN or PA\+\_\+\+BIG\+\_\+\+ENDIAN preprocessor symbols to be defined. The one that is defined reflects the endianness of the target platform and may be used to implement conditional compilation of byte-\/order dependent code.
+
+If either PA\+\_\+\+LITTLE\+\_\+\+ENDIAN or PA\+\_\+\+BIG\+\_\+\+ENDIAN is defined already, then no attempt is made to override that setting. This may be useful if you have a better way of determining the platform\textquotesingle{}s endianness. The autoconf mechanism uses this for example.
+
+A PA\+\_\+\+VALIDATE\+\_\+\+ENDIANNESS macro is provided to compare the compile time and runtime endianness and raise an assertion if they don\textquotesingle{}t match. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__endianness_8h_a3841f8c474f6678523791c8df95335f0}\label{pa__endianness_8h_a3841f8c474f6678523791c8df95335f0}} 
+\index{pa\_endianness.h@{pa\_endianness.h}!PA\_BIG\_ENDIAN@{PA\_BIG\_ENDIAN}}
+\index{PA\_BIG\_ENDIAN@{PA\_BIG\_ENDIAN}!pa\_endianness.h@{pa\_endianness.h}}
+\doxysubsubsection{\texorpdfstring{PA\_BIG\_ENDIAN}{PA\_BIG\_ENDIAN}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+BIG\+\_\+\+ENDIAN}
+
+\mbox{\Hypertarget{pa__endianness_8h_a2d2db7e27e9958cc2a8ce70b522171a2}\label{pa__endianness_8h_a2d2db7e27e9958cc2a8ce70b522171a2}} 
+\index{pa\_endianness.h@{pa\_endianness.h}!PA\_VALIDATE\_ENDIANNESS@{PA\_VALIDATE\_ENDIANNESS}}
+\index{PA\_VALIDATE\_ENDIANNESS@{PA\_VALIDATE\_ENDIANNESS}!pa\_endianness.h@{pa\_endianness.h}}
+\doxysubsubsection{\texorpdfstring{PA\_VALIDATE\_ENDIANNESS}{PA\_VALIDATE\_ENDIANNESS}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+VALIDATE\+\_\+\+ENDIANNESS}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{        \{ \(\backslash\)}
+\DoxyCodeLine{            \textcolor{keyword}{const} \textcolor{keywordtype}{long} nativeOne = 1; \(\backslash\)}
+\DoxyCodeLine{            assert( \textcolor{stringliteral}{"{}PortAudio: compile time and runtime endianness don't match"{}} \&\& (((\textcolor{keywordtype}{char} *)\&nativeOne)[0]) == 0 ); \(\backslash\)}
+\DoxyCodeLine{        \}}
+
+\end{DoxyCode}

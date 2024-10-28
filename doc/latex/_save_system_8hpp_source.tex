@@ -1,0 +1,57 @@
+\hypertarget{_save_system_8hpp_source}{}\doxysection{Save\+System.\+hpp}
+\label{_save_system_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/SaveSystem.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/SaveSystem.hpp}}
+\mbox{\hyperlink{_save_system_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef SAVE\_SYSTEM\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define SAVE\_SYSTEM\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_hexeng_8hpp}{Hexeng.hpp}}"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng}{Hexeng}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15     \textcolor{keyword}{struct }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{struct_hexeng_1_1_save_var}{SaveVar}}}
+\DoxyCodeLine{16     \{}
+\DoxyCodeLine{17         uint64\_t \textcolor{keywordtype}{id} = 0;}
+\DoxyCodeLine{18         \textcolor{keywordtype}{void}* value = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{19         uint64\_t unit\_size = 0;}
+\DoxyCodeLine{20         std::function<uint64\_t(\textcolor{keywordtype}{void}** val\_ptr)> get\_size = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{21         std::function<void(uint64\_t, \textcolor{keywordtype}{void}** val\_ptr)> reserve = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23         \mbox{\hyperlink{struct_hexeng_1_1_save_var_afd8aca089f7f2cc36b7c4450f306b85d}{SaveVar}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{39         \mbox{\hyperlink{struct_hexeng_1_1_save_var}{SaveVar}}(uint64\_t id\_p, \textcolor{keywordtype}{void}* val\_p, uint64\_t unit\_size\_p,}
+\DoxyCodeLine{40             std::function<uint64\_t(\textcolor{keywordtype}{void}** val\_ptr)> get\_size\_p,}
+\DoxyCodeLine{41             std::function<\textcolor{keywordtype}{void}(uint64\_t, \textcolor{keywordtype}{void}** val\_ptr)> reserve\_p);}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{49         \mbox{\hyperlink{struct_hexeng_1_1_save_var}{SaveVar}}(uint64\_t id\_p, \textcolor{keywordtype}{void}* val\_p, uint64\_t size\_p, uint64\_t unit\_size\_p);}
+\DoxyCodeLine{50     \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{55     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_save_file}{SaveFile}}}
+\DoxyCodeLine{56     \{}
+\DoxyCodeLine{57     public :}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59         \mbox{\hyperlink{class_hexeng_1_1_save_file_a7e2a02e100361674bd260af1cfae797a}{SaveFile}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{64         \textcolor{keywordtype}{void} add\_var(\textcolor{keyword}{const} \mbox{\hyperlink{struct_hexeng_1_1_save_var}{SaveVar}}\& var);}
+\DoxyCodeLine{65 }
+\DoxyCodeLine{70         \textcolor{keywordtype}{void} save(\textcolor{keyword}{const} std::string\& filepath);}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{76         \textcolor{keywordtype}{void} load(\textcolor{keyword}{const} std::string\& filepath);}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78     private :}
+\DoxyCodeLine{79         }
+\DoxyCodeLine{80         std::fstream m\_file;}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82         std::vector<SaveVar> m\_vars;}
+\DoxyCodeLine{83         std::unordered\_map<uint64\_t, SaveVar> m\_var\_map;}
+\DoxyCodeLine{84     \};}
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \}}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

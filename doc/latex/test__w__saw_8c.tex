@@ -1,0 +1,97 @@
+\hypertarget{test__w__saw_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/pablio/test\+\_\+w\+\_\+saw.c File Reference}
+\label{test__w__saw_8c}\index{Hexeng2D/dependencies/portaudio/pablio/test\_w\_saw.c@{Hexeng2D/dependencies/portaudio/pablio/test\_w\_saw.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}pablio.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_a40d4ce5dac355662b3ee76bc605f1430}{NUM\+\_\+\+SECONDS}}~(6)
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}~(2)
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_a84142cd3e3bf14c4ecd4b6707a808c39}{FREQUENCY}}~(220.\+0f)
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_a7aa12872ea6b7fc2a7275a8c49318f39}{PHASE\+\_\+\+INCREMENT}}~(2.\+0f $\ast$ \mbox{\hyperlink{test__w__saw_8c_a84142cd3e3bf14c4ecd4b6707a808c39}{FREQUENCY}} / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})
+\item 
+\#define \mbox{\hyperlink{test__w__saw_8c_af19e095bf3ce66f4ee6568cfaf9941a4}{FRAMES\+\_\+\+PER\+\_\+\+BLOCK}}~(100)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{test__w__saw_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{test__w__saw_8c_a94626faaa63b760b18846801142cc64f}{samples}} \mbox{[}\mbox{\hyperlink{test__rw_8c_af19e095bf3ce66f4ee6568cfaf9941a4}{FRAMES\+\_\+\+PER\+\_\+\+BLOCK}}\mbox{]}\mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]}
+\item 
+float \mbox{\hyperlink{test__w__saw_8c_a176837568a7aa31eeb3ee679d3d82428}{phases}} \mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{test__w__saw_8c_af19e095bf3ce66f4ee6568cfaf9941a4}\label{test__w__saw_8c_af19e095bf3ce66f4ee6568cfaf9941a4}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!FRAMES\_PER\_BLOCK@{FRAMES\_PER\_BLOCK}}
+\index{FRAMES\_PER\_BLOCK@{FRAMES\_PER\_BLOCK}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BLOCK}{FRAMES\_PER\_BLOCK}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BLOCK~(100)}
+
+\mbox{\Hypertarget{test__w__saw_8c_a84142cd3e3bf14c4ecd4b6707a808c39}\label{test__w__saw_8c_a84142cd3e3bf14c4ecd4b6707a808c39}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!FREQUENCY@{FREQUENCY}}
+\index{FREQUENCY@{FREQUENCY}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{FREQUENCY}{FREQUENCY}}
+{\footnotesize\ttfamily \#define FREQUENCY~(220.\+0f)}
+
+\mbox{\Hypertarget{test__w__saw_8c_a40d4ce5dac355662b3ee76bc605f1430}\label{test__w__saw_8c_a40d4ce5dac355662b3ee76bc605f1430}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!NUM\_SECONDS@{NUM\_SECONDS}}
+\index{NUM\_SECONDS@{NUM\_SECONDS}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_SECONDS}{NUM\_SECONDS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+SECONDS~(6)}
+
+\mbox{\Hypertarget{test__w__saw_8c_a7aa12872ea6b7fc2a7275a8c49318f39}\label{test__w__saw_8c_a7aa12872ea6b7fc2a7275a8c49318f39}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!PHASE\_INCREMENT@{PHASE\_INCREMENT}}
+\index{PHASE\_INCREMENT@{PHASE\_INCREMENT}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{PHASE\_INCREMENT}{PHASE\_INCREMENT}}
+{\footnotesize\ttfamily \#define PHASE\+\_\+\+INCREMENT~(2.\+0f $\ast$ \mbox{\hyperlink{test__w__saw_8c_a84142cd3e3bf14c4ecd4b6707a808c39}{FREQUENCY}} / \mbox{\hyperlink{pa__fuzz_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}})}
+
+\mbox{\Hypertarget{test__w__saw_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{test__w__saw_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{test__w__saw_8c_a8746ae57f53e99e184ab1e64e71d24c5}\label{test__w__saw_8c_a8746ae57f53e99e184ab1e64e71d24c5}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!SAMPLES\_PER\_FRAME@{SAMPLES\_PER\_FRAME}}
+\index{SAMPLES\_PER\_FRAME@{SAMPLES\_PER\_FRAME}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLES\_PER\_FRAME}{SAMPLES\_PER\_FRAME}}
+{\footnotesize\ttfamily \#define SAMPLES\+\_\+\+PER\+\_\+\+FRAME~(2)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{test__w__saw_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{test__w__saw_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!main@{main}}
+\index{main@{main}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{test__w__saw_8c_a176837568a7aa31eeb3ee679d3d82428}\label{test__w__saw_8c_a176837568a7aa31eeb3ee679d3d82428}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!phases@{phases}}
+\index{phases@{phases}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{phases}{phases}}
+{\footnotesize\ttfamily float phases\mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]}}
+
+\mbox{\Hypertarget{test__w__saw_8c_a94626faaa63b760b18846801142cc64f}\label{test__w__saw_8c_a94626faaa63b760b18846801142cc64f}} 
+\index{test\_w\_saw.c@{test\_w\_saw.c}!samples@{samples}}
+\index{samples@{samples}!test\_w\_saw.c@{test\_w\_saw.c}}
+\doxysubsubsection{\texorpdfstring{samples}{samples}}
+{\footnotesize\ttfamily float \mbox{\hyperlink{glad_8h_aba70cd077c2c52c15358c231c6d293aa}{samples}}\mbox{[}\mbox{\hyperlink{test__rw_8c_af19e095bf3ce66f4ee6568cfaf9941a4}{FRAMES\+\_\+\+PER\+\_\+\+BLOCK}}\mbox{]}\mbox{[}\mbox{\hyperlink{test__rw_8c_a8746ae57f53e99e184ab1e64e71d24c5}{SAMPLES\+\_\+\+PER\+\_\+\+FRAME}}\mbox{]}}
+

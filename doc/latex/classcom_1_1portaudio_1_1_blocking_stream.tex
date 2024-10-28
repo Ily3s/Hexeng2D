@@ -1,0 +1,216 @@
+\hypertarget{classcom_1_1portaudio_1_1_blocking_stream}{}\doxysection{com.\+portaudio.\+Blocking\+Stream Class Reference}
+\label{classcom_1_1portaudio_1_1_blocking_stream}\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a4cb237d1596fcfb10adf7e21166bfd10}{get\+Read\+Available}} ()
+\item 
+native int \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a24fcac3b87ee7f15cbf97c9f821009dd}{get\+Write\+Available}} ()
+\item 
+boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_ab6004b6eb81636c73053841b32c371fa}{read}} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_ab12ce694b065cb1729fff4815345b4a9}{write}} (float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a3817b1e550497d46eb20459d9a41dc03}{read}} (short\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a4a7b50bb6f5f7cb1cb95748ec20ca874}{write}} (short\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}}, int num\+Frames)
+\item 
+native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a8acbba9e18de0678780d1209548f9c8d}{start}} ()
+\item 
+native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a912f5332bc0c5f610ec94bf583a3e2d6}{stop}} ()
+\item 
+native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a9897ea14063ab8e9cf01da7f0c71dcf3}{abort}} ()
+\item 
+native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a8aa21c90665dbd02b7578ec83aa7bc38}{close}} ()
+\item 
+native boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_af7302d39a2f9d2fc698f6bec0cc22abc}{is\+Stopped}} ()
+\item 
+native boolean \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_abe5907d29a3873b1ed0c5f53aa349d51}{is\+Active}} ()
+\item 
+String \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a2ae8348af5928fd48cd6da8e1cef762e}{to\+String}} ()
+\item 
+native double \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a1768a144ac219d3ce7682ac8422d20f2}{get\+Time}} ()
+\item 
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_info}{Stream\+Info}} \mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a760ca3c640acd287074bfa222b052270}{get\+Info}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_blocking_stream_a0039bea2839321cea21e95036a309d0d}{Blocking\+Stream}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a stream for blocking read/write I/O.
+
+This Java object contains the pointer to a \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} stream stored as a long. It is passed to \mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}} when calling stream related functions.
+
+To create one of these, call Port\+Audio.\+open\+Stream().
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcom_1_1portaudio_1_1_port_audio}{Port\+Audio}}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Phil Burk 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a0039bea2839321cea21e95036a309d0d}\label{classcom_1_1portaudio_1_1_blocking_stream_a0039bea2839321cea21e95036a309d0d}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!BlockingStream@{BlockingStream}}
+\index{BlockingStream@{BlockingStream}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{BlockingStream()}{BlockingStream()}}
+{\footnotesize\ttfamily com.\+portaudio.\+Blocking\+Stream.\+Blocking\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a9897ea14063ab8e9cf01da7f0c71dcf3}\label{classcom_1_1portaudio_1_1_blocking_stream_a9897ea14063ab8e9cf01da7f0c71dcf3}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!abort@{abort}}
+\index{abort@{abort}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{abort()}{abort()}}
+{\footnotesize\ttfamily native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Blocking\+Stream.\+abort (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Stop immediately and lose any data that was written but not played. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a8aa21c90665dbd02b7578ec83aa7bc38}\label{classcom_1_1portaudio_1_1_blocking_stream_a8aa21c90665dbd02b7578ec83aa7bc38}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!close@{close}}
+\index{close@{close}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Blocking\+Stream.\+close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Close the stream and zero out the pointer. Do not reference the stream after this. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a760ca3c640acd287074bfa222b052270}\label{classcom_1_1portaudio_1_1_blocking_stream_a760ca3c640acd287074bfa222b052270}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!getInfo@{getInfo}}
+\index{getInfo@{getInfo}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{getInfo()}{getInfo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classcom_1_1portaudio_1_1_stream_info}{Stream\+Info}} com.\+portaudio.\+Blocking\+Stream.\+get\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a4cb237d1596fcfb10adf7e21166bfd10}\label{classcom_1_1portaudio_1_1_blocking_stream_a4cb237d1596fcfb10adf7e21166bfd10}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!getReadAvailable@{getReadAvailable}}
+\index{getReadAvailable@{getReadAvailable}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{getReadAvailable()}{getReadAvailable()}}
+{\footnotesize\ttfamily native int com.\+portaudio.\+Blocking\+Stream.\+get\+Read\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+number of frames that can be read without blocking. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a1768a144ac219d3ce7682ac8422d20f2}\label{classcom_1_1portaudio_1_1_blocking_stream_a1768a144ac219d3ce7682ac8422d20f2}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!getTime@{getTime}}
+\index{getTime@{getTime}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily native double com.\+portaudio.\+Blocking\+Stream.\+get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Get audio time related to this stream. Note that it may not start at 0.\+0. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a24fcac3b87ee7f15cbf97c9f821009dd}\label{classcom_1_1portaudio_1_1_blocking_stream_a24fcac3b87ee7f15cbf97c9f821009dd}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!getWriteAvailable@{getWriteAvailable}}
+\index{getWriteAvailable@{getWriteAvailable}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{getWriteAvailable()}{getWriteAvailable()}}
+{\footnotesize\ttfamily native int com.\+portaudio.\+Blocking\+Stream.\+get\+Write\+Available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+number of frames that can be written without blocking. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_abe5907d29a3873b1ed0c5f53aa349d51}\label{classcom_1_1portaudio_1_1_blocking_stream_abe5907d29a3873b1ed0c5f53aa349d51}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!isActive@{isActive}}
+\index{isActive@{isActive}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{isActive()}{isActive()}}
+{\footnotesize\ttfamily native boolean com.\+portaudio.\+Blocking\+Stream.\+is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_af7302d39a2f9d2fc698f6bec0cc22abc}\label{classcom_1_1portaudio_1_1_blocking_stream_af7302d39a2f9d2fc698f6bec0cc22abc}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!isStopped@{isStopped}}
+\index{isStopped@{isStopped}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{isStopped()}{isStopped()}}
+{\footnotesize\ttfamily native boolean com.\+portaudio.\+Blocking\+Stream.\+is\+Stopped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_ab6004b6eb81636c73053841b32c371fa}\label{classcom_1_1portaudio_1_1_blocking_stream_ab6004b6eb81636c73053841b32c371fa}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!read@{read}}
+\index{read@{read}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+portaudio.\+Blocking\+Stream.\+read (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Read 32-\/bit floating point data from the stream into the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \\
+\hline
+{\em num\+Frames} & number of frames to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an input overflow occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a3817b1e550497d46eb20459d9a41dc03}\label{classcom_1_1portaudio_1_1_blocking_stream_a3817b1e550497d46eb20459d9a41dc03}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!read@{read}}
+\index{read@{read}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+portaudio.\+Blocking\+Stream.\+read (\begin{DoxyParamCaption}\item[{short\mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Read 16-\/bit integer data to the stream from the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \\
+\hline
+{\em num\+Frames} & number of frames to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an input overflow occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a8acbba9e18de0678780d1209548f9c8d}\label{classcom_1_1portaudio_1_1_blocking_stream_a8acbba9e18de0678780d1209548f9c8d}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!start@{start}}
+\index{start@{start}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Blocking\+Stream.\+start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Atart audio I/O. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a912f5332bc0c5f610ec94bf583a3e2d6}\label{classcom_1_1portaudio_1_1_blocking_stream_a912f5332bc0c5f610ec94bf583a3e2d6}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!stop@{stop}}
+\index{stop@{stop}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily native \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} com.\+portaudio.\+Blocking\+Stream.\+stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Wait for the stream to play all of the data that has been written then stop. \mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a2ae8348af5928fd48cd6da8e1cef762e}\label{classcom_1_1portaudio_1_1_blocking_stream_a2ae8348af5928fd48cd6da8e1cef762e}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!toString@{toString}}
+\index{toString@{toString}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String com.\+portaudio.\+Blocking\+Stream.\+to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_ab12ce694b065cb1729fff4815345b4a9}\label{classcom_1_1portaudio_1_1_blocking_stream_ab12ce694b065cb1729fff4815345b4a9}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!write@{write}}
+\index{write@{write}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily boolean com.\+portaudio.\+Blocking\+Stream.\+write (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Write 32-\/bit floating point data to the stream from the array. The data should be in the range -\/1.\+0 to +1.\+0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \\
+\hline
+{\em num\+Frames} & number of frames to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an output underflow occurred 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcom_1_1portaudio_1_1_blocking_stream_a4a7b50bb6f5f7cb1cb95748ec20ca874}\label{classcom_1_1portaudio_1_1_blocking_stream_a4a7b50bb6f5f7cb1cb95748ec20ca874}} 
+\index{com.portaudio.BlockingStream@{com.portaudio.BlockingStream}!write@{write}}
+\index{write@{write}!com.portaudio.BlockingStream@{com.portaudio.BlockingStream}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily boolean com.\+portaudio.\+Blocking\+Stream.\+write (\begin{DoxyParamCaption}\item[{short\mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{int}]{num\+Frames }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Write 16-\/bit integer data to the stream from the array.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & \\
+\hline
+{\em num\+Frames} & number of frames to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an output underflow occurred 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Hexeng2\+D/dependencies/portaudio/bindings/java/jportaudio/src/com/portaudio/\mbox{\hyperlink{_blocking_stream_8java}{Blocking\+Stream.\+java}}\end{DoxyCompactItemize}

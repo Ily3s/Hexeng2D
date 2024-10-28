@@ -1,0 +1,30 @@
+\hypertarget{initializing_portaudio_tut_init1}{}\doxysection{Initializing Port\+Audio}\label{initializing_portaudio_tut_init1}
+Before making any other calls to Port\+Audio, you \textquotesingle{}must\textquotesingle{} call \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\+\_\+\+Initialize()}}. This will trigger a scan of available devices which can be queried later. Like most PA functions, it will return a result of type pa\+Error. If the result is not pa\+No\+Error, then an error has occurred. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_abed859482d156622d9332dff9b2d89da}{Pa\_Initialize}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} ) \textcolor{keywordflow}{goto} error;}
+
+\end{DoxyCode}
+
+
+You can get a text message that explains the error message by passing it to Pa\+\_\+\+Get\+Error\+Text( err ). For Example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{printf(  \textcolor{stringliteral}{"{}PortAudio error: \%s\(\backslash\)n"{}}, \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}}( err ) );}
+
+\end{DoxyCode}
+
+
+It is also important, when you are done with Port\+Audio, to Terminate it\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{err = \mbox{\hyperlink{portaudio_8h_a0db317604e916e8bd6098e60e6237221}{Pa\_Terminate}}();}
+\DoxyCodeLine{\textcolor{keywordflow}{if}( err != \mbox{\hyperlink{portaudio_8h_a2e45bf8b5145f131a91c128af2bdaec7aeb09d15a48b6c1034728a9c518cfe4ba}{paNoError}} )}
+\DoxyCodeLine{   printf(  \textcolor{stringliteral}{"{}PortAudio error: \%s\(\backslash\)n"{}}, \mbox{\hyperlink{portaudio_8h_ae84ae07ba25bf959e00f3b0ab4d17acb}{Pa\_GetErrorText}}( err ) );}
+
+\end{DoxyCode}
+
+
+Previous\+: \mbox{\hyperlink{writing_a_callback}{Writing a Callback Function}} $\vert$ Next\+: \mbox{\hyperlink{open_default_stream}{Opening a Stream Using Defaults}} 

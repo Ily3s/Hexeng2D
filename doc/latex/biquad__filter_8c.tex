@@ -1,0 +1,56 @@
+\hypertarget{biquad__filter_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/qa/loopback/src/biquad\+\_\+filter.c File Reference}
+\label{biquad__filter_8c}\index{Hexeng2D/dependencies/portaudio/qa/loopback/src/biquad\_filter.c@{Hexeng2D/dependencies/portaudio/qa/loopback/src/biquad\_filter.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}biquad\+\_\+filter.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{biquad__filter_8c_acf00c97a8405bc917a7dd1b46e4669c4}{FILTER\+\_\+\+PI}}~(3.\+141592653589793238462643)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{biquad__filter_8c_aa302a7fc0cb71ad72013dcfe9b875ce3}{Biquad\+Filter\+\_\+\+Setup\+High\+Pass}} (\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$\mbox{\hyperlink{glad_8h_ab0762b2c24f4aab7c062c0710f8a3788}{filter}}, double ratio, double Q)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{biquad__filter_8c_ad03fda9b4f22950f65f43139541a8377}{Biquad\+Filter\+\_\+\+Setup\+Notch}} (\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$\mbox{\hyperlink{glad_8h_ab0762b2c24f4aab7c062c0710f8a3788}{filter}}, double ratio, double Q)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{biquad__filter_8c_af0bea0119ae481833a2bcea97ea98489}{Biquad\+Filter\+\_\+\+Filter}} (\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$\mbox{\hyperlink{glad_8h_ab0762b2c24f4aab7c062c0710f8a3788}{filter}}, float $\ast$inputs, float $\ast$outputs, int num\+Samples)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{biquad__filter_8c_acf00c97a8405bc917a7dd1b46e4669c4}\label{biquad__filter_8c_acf00c97a8405bc917a7dd1b46e4669c4}} 
+\index{biquad\_filter.c@{biquad\_filter.c}!FILTER\_PI@{FILTER\_PI}}
+\index{FILTER\_PI@{FILTER\_PI}!biquad\_filter.c@{biquad\_filter.c}}
+\doxysubsubsection{\texorpdfstring{FILTER\_PI}{FILTER\_PI}}
+{\footnotesize\ttfamily \#define FILTER\+\_\+\+PI~(3.\+141592653589793238462643)}
+
+Unit\+\_\+\+Biquad\+Filter implements a second order IIR filter.
+
+Here is the equation that we use for this filter\+: \mbox{\hyperlink{glad_8h_a5e247fc24ceb70d83f6ad59149b8910a}{y(n)}} = a0$\ast$x(n) + a1$\ast$x(n-\/1) + a2$\ast$x(n-\/2) -\/ b1$\ast$y(n-\/1) -\/ b2$\ast$y(n-\/2)
+
+\begin{DoxyAuthor}{Author}
+(C) 2002 Phil Burk, Soft\+Synth.\+com, All Rights Reserved 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{biquad__filter_8c_af0bea0119ae481833a2bcea97ea98489}\label{biquad__filter_8c_af0bea0119ae481833a2bcea97ea98489}} 
+\index{biquad\_filter.c@{biquad\_filter.c}!BiquadFilter\_Filter@{BiquadFilter\_Filter}}
+\index{BiquadFilter\_Filter@{BiquadFilter\_Filter}!biquad\_filter.c@{biquad\_filter.c}}
+\doxysubsubsection{\texorpdfstring{BiquadFilter\_Filter()}{BiquadFilter\_Filter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Biquad\+Filter\+\_\+\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$}]{filter,  }\item[{float $\ast$}]{inputs,  }\item[{float $\ast$}]{outputs,  }\item[{int}]{num\+Samples }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{biquad__filter_8c_aa302a7fc0cb71ad72013dcfe9b875ce3}\label{biquad__filter_8c_aa302a7fc0cb71ad72013dcfe9b875ce3}} 
+\index{biquad\_filter.c@{biquad\_filter.c}!BiquadFilter\_SetupHighPass@{BiquadFilter\_SetupHighPass}}
+\index{BiquadFilter\_SetupHighPass@{BiquadFilter\_SetupHighPass}!biquad\_filter.c@{biquad\_filter.c}}
+\doxysubsubsection{\texorpdfstring{BiquadFilter\_SetupHighPass()}{BiquadFilter\_SetupHighPass()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Biquad\+Filter\+\_\+\+Setup\+High\+Pass (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$}]{filter,  }\item[{double}]{ratio,  }\item[{double}]{Q }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{biquad__filter_8c_ad03fda9b4f22950f65f43139541a8377}\label{biquad__filter_8c_ad03fda9b4f22950f65f43139541a8377}} 
+\index{biquad\_filter.c@{biquad\_filter.c}!BiquadFilter\_SetupNotch@{BiquadFilter\_SetupNotch}}
+\index{BiquadFilter\_SetupNotch@{BiquadFilter\_SetupNotch}!biquad\_filter.c@{biquad\_filter.c}}
+\doxysubsubsection{\texorpdfstring{BiquadFilter\_SetupNotch()}{BiquadFilter\_SetupNotch()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Biquad\+Filter\+\_\+\+Setup\+Notch (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{biquad__filter_8h_afa49b6f48312d45bcc364b66d75affc5}{Biquad\+Filter}} $\ast$}]{filter,  }\item[{double}]{ratio,  }\item[{double}]{Q }\end{DoxyParamCaption})}
+

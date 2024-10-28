@@ -1,0 +1,137 @@
+\hypertarget{class_hexeng_1_1_renderer_1_1_layer}{}\doxysection{Hexeng\+::Renderer\+::Layer Class Reference}
+\label{class_hexeng_1_1_renderer_1_1_layer}\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+
+
+A layer of meshes, at a certain depth z.   
+
+
+
+
+{\ttfamily \#include $<$Layer.\+hpp$>$}
+
+Inheritance diagram for Hexeng\+::Renderer\+::Layer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_hexeng_1_1_renderer_1_1_layer}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}{Layer}} (std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&\&mesh\+\_\+vector, int z\+\_\+pos, \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} pos=\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}, Range range=Range\+::\+LOCAL)
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}{operator=}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}{Layer}} (const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&)=delete
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a5cdd2f4a7371ac9246bb76e7d4123308}{operator=}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a3f9b56553845e4f08932fa3e9dc880e9}{Layer}} (\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&\&) noexcept
+\item 
+\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a05a95c27ba30c563b23dc053df5ab0ca}{Layer}} ()=default
+\item 
+virtual void \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a291d62b7a6aac44d4ce59ce713883178}{draw}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}{z\+\_\+position}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Range \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a98136e4c569595b17e905d5ef1a837d1}{m\+\_\+range}} = Range\+::\+LOCAL
+\item 
+\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}{m\+\_\+position\+\_\+mode}} = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A layer of meshes, at a certain depth z.  
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}\label{class_hexeng_1_1_renderer_1_1_layer_af562b290d256f171160327139d704685}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{Layer()}{Layer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_mesh}{Mesh}} $\ast$ $>$ \&\&}]{mesh\+\_\+vector,  }\item[{int}]{z\+\_\+pos,  }\item[{\mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}}}]{pos = {\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}},  }\item[{Range}]{range = {\ttfamily Range\+:\+:LOCAL} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em z\+\_\+pos} & The depth of the \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \\
+\hline
+{\em pos} & The position mode of the layer (take a look at Position). \\
+\hline
+{\em range} & If set to Range\+::\+LOCAL, the layer needs to be added to a scene. If set to Range\+::\+GLOBAL, the layer will apear on all scenes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}\label{class_hexeng_1_1_renderer_1_1_layer_ab3e0e9f3ede918883531104fd14eb092}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{Layer()}{Layer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a3f9b56553845e4f08932fa3e9dc880e9}\label{class_hexeng_1_1_renderer_1_1_layer_a3f9b56553845e4f08932fa3e9dc880e9}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{Layer()}{Layer()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a05a95c27ba30c563b23dc053df5ab0ca}\label{class_hexeng_1_1_renderer_1_1_layer_a05a95c27ba30c563b23dc053df5ab0ca}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!Layer@{Layer}}
+\index{Layer@{Layer}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{Layer()}{Layer()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Hexeng\+::\+Renderer\+::\+Layer\+::\+Layer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a291d62b7a6aac44d4ce59ce713883178}\label{class_hexeng_1_1_renderer_1_1_layer_a291d62b7a6aac44d4ce59ce713883178}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!draw@{draw}}
+\index{draw@{draw}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hexeng\+::\+Renderer\+::\+Layer\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}\label{class_hexeng_1_1_renderer_1_1_layer_a9437ef9f48d96be4b4003f33b805598c}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& Hexeng\+::\+Renderer\+::\+Layer\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a5cdd2f4a7371ac9246bb76e7d4123308}\label{class_hexeng_1_1_renderer_1_1_layer_a5cdd2f4a7371ac9246bb76e7d4123308}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!operator=@{operator=}}
+\index{operator=@{operator=}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \& Hexeng\+::\+Renderer\+::\+Layer\+::operator= (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_layer}{Layer}} \&\&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}\label{class_hexeng_1_1_renderer_1_1_layer_a51e2d5079e18599f56c025c46d807272}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!m\_position\_mode@{m\_position\_mode}}
+\index{m\_position\_mode@{m\_position\_mode}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{m\_position\_mode}{m\_position\_mode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7}{Position}} Hexeng\+::\+Renderer\+::\+Layer\+::m\+\_\+position\+\_\+mode = \mbox{\hyperlink{namespace_hexeng_1_1_renderer_a5b6159edcd913e497d863303e15671f7ac3cb497d8ec3c88b9024774b775358e2}{Position\+::\+RELATIVE}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a98136e4c569595b17e905d5ef1a837d1}\label{class_hexeng_1_1_renderer_1_1_layer_a98136e4c569595b17e905d5ef1a837d1}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!m\_range@{m\_range}}
+\index{m\_range@{m\_range}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{m\_range}{m\_range}}
+{\footnotesize\ttfamily Range Hexeng\+::\+Renderer\+::\+Layer\+::m\+\_\+range = Range\+::\+LOCAL\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}\label{class_hexeng_1_1_renderer_1_1_layer_a6f38fee64b97f88a7d703ac7289bfa5e}} 
+\index{Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}!z\_position@{z\_position}}
+\index{z\_position@{z\_position}!Hexeng::Renderer::Layer@{Hexeng::Renderer::Layer}}
+\doxysubsubsection{\texorpdfstring{z\_position}{z\_position}}
+{\footnotesize\ttfamily int Hexeng\+::\+Renderer\+::\+Layer\+::z\+\_\+position = 0}
+
+\begin{DoxyNote}{Note}
+Can always be modified. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_layer_8hpp}{Layer.\+hpp}}\item 
+C\+:/dev/repos/\+Hexeng2\+D/\+Hexeng2\+D/src/\+Renderer/\mbox{\hyperlink{_layer_8cpp}{Layer.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,82 @@
+\hypertarget{pa__allocation_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/src/common/pa\+\_\+allocation.c File Reference}
+\label{pa__allocation_8c}\index{Hexeng2D/dependencies/portaudio/src/common/pa\_allocation.c@{Hexeng2D/dependencies/portaudio/src/common/pa\_allocation.c}}
+
+
+Allocation Group implementation.  
+
+
+{\ttfamily \#include \char`\"{}pa\+\_\+allocation.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_pa_util_allocation_group_link}{Pa\+Util\+Allocation\+Group\+Link}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pa__allocation_8c_a0c787f6c86ae2fcefec0e20592c4827a}{PA\+\_\+\+INITIAL\+\_\+\+LINK\+\_\+\+COUNT\+\_\+}}~16
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$ \mbox{\hyperlink{pa__allocation_8c_a591880f1ce5dcff2c9aa663ac54fc919}{Pa\+Util\+\_\+\+Create\+Allocation\+Group}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__allocation_8c_aefcb1143eaa768c2b555bd203f1c9deb}{Pa\+Util\+\_\+\+Destroy\+Allocation\+Group}} (\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$group)
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ \mbox{\hyperlink{pa__allocation_8c_ac09f900a0c196879a8d0721a997a05bb}{Pa\+Util\+\_\+\+Group\+Allocate\+Memory}} (\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$group, long \mbox{\hyperlink{glad_8h_adead0e00f1033fff2918e18853add2b1}{size}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__allocation_8c_a9a53cc44b24fb0d201ee0ae9b7b6b64d}{Pa\+Util\+\_\+\+Group\+Free\+Memory}} (\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$group, \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$\mbox{\hyperlink{glad_8h_a3667f558219c90437106b544a3ca00b8}{buffer}})
+\item 
+\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} \mbox{\hyperlink{pa__allocation_8c_aa83a07899e8db63d415d03f68b1f8a3d}{Pa\+Util\+\_\+\+Free\+All\+Allocations}} (\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$group)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Allocation Group implementation. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pa__allocation_8c_a0c787f6c86ae2fcefec0e20592c4827a}\label{pa__allocation_8c_a0c787f6c86ae2fcefec0e20592c4827a}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PA\_INITIAL\_LINK\_COUNT\_@{PA\_INITIAL\_LINK\_COUNT\_}}
+\index{PA\_INITIAL\_LINK\_COUNT\_@{PA\_INITIAL\_LINK\_COUNT\_}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PA\_INITIAL\_LINK\_COUNT\_}{PA\_INITIAL\_LINK\_COUNT\_}}
+{\footnotesize\ttfamily \#define PA\+\_\+\+INITIAL\+\_\+\+LINK\+\_\+\+COUNT\+\_\+~16}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pa__allocation_8c_a591880f1ce5dcff2c9aa663ac54fc919}\label{pa__allocation_8c_a591880f1ce5dcff2c9aa663ac54fc919}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PaUtil\_CreateAllocationGroup@{PaUtil\_CreateAllocationGroup}}
+\index{PaUtil\_CreateAllocationGroup@{PaUtil\_CreateAllocationGroup}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_CreateAllocationGroup()}{PaUtil\_CreateAllocationGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$ Pa\+Util\+\_\+\+Create\+Allocation\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+
+Create an allocation group. \mbox{\Hypertarget{pa__allocation_8c_aefcb1143eaa768c2b555bd203f1c9deb}\label{pa__allocation_8c_aefcb1143eaa768c2b555bd203f1c9deb}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PaUtil\_DestroyAllocationGroup@{PaUtil\_DestroyAllocationGroup}}
+\index{PaUtil\_DestroyAllocationGroup@{PaUtil\_DestroyAllocationGroup}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_DestroyAllocationGroup()}{PaUtil\_DestroyAllocationGroup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Destroy\+Allocation\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+
+Destroy an allocation group, but not the memory allocated through the group. \mbox{\Hypertarget{pa__allocation_8c_aa83a07899e8db63d415d03f68b1f8a3d}\label{pa__allocation_8c_aa83a07899e8db63d415d03f68b1f8a3d}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PaUtil\_FreeAllAllocations@{PaUtil\_FreeAllAllocations}}
+\index{PaUtil\_FreeAllAllocations@{PaUtil\_FreeAllAllocations}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_FreeAllAllocations()}{PaUtil\_FreeAllAllocations()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Free\+All\+Allocations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$}]{group }\end{DoxyParamCaption})}
+
+Free all blocks of memory which have been allocated through the allocation group. This function doesn\textquotesingle{}t destroy the group itself. \mbox{\Hypertarget{pa__allocation_8c_ac09f900a0c196879a8d0721a997a05bb}\label{pa__allocation_8c_ac09f900a0c196879a8d0721a997a05bb}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PaUtil\_GroupAllocateMemory@{PaUtil\_GroupAllocateMemory}}
+\index{PaUtil\_GroupAllocateMemory@{PaUtil\_GroupAllocateMemory}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GroupAllocateMemory()}{PaUtil\_GroupAllocateMemory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$ Pa\+Util\+\_\+\+Group\+Allocate\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$}]{group,  }\item[{long}]{size }\end{DoxyParamCaption})}
+
+Allocate a block of memory though an allocation group. \mbox{\Hypertarget{pa__allocation_8c_a9a53cc44b24fb0d201ee0ae9b7b6b64d}\label{pa__allocation_8c_a9a53cc44b24fb0d201ee0ae9b7b6b64d}} 
+\index{pa\_allocation.c@{pa\_allocation.c}!PaUtil\_GroupFreeMemory@{PaUtil\_GroupFreeMemory}}
+\index{PaUtil\_GroupFreeMemory@{PaUtil\_GroupFreeMemory}!pa\_allocation.c@{pa\_allocation.c}}
+\doxysubsubsection{\texorpdfstring{PaUtil\_GroupFreeMemory()}{PaUtil\_GroupFreeMemory()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} Pa\+Util\+\_\+\+Group\+Free\+Memory (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pa_util_allocation_group}{Pa\+Util\+Allocation\+Group}} $\ast$}]{group,  }\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}} $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Free a block of memory that was previously allocated though an allocation group. Calling this function is a relatively time consuming operation. Under normal circumstances clients should call Pa\+Util\+\_\+\+Free\+All\+Allocations to free all allocated blocks simultaneously. \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{pa__allocation_8h_aa83a07899e8db63d415d03f68b1f8a3d}{Pa\+Util\+\_\+\+Free\+All\+Allocations}} 
+\end{DoxySeeAlso}

@@ -1,0 +1,143 @@
+\hypertarget{patest__sync_8c}{}\doxysection{Hexeng2\+D/dependencies/portaudio/test/patest\+\_\+sync.c File Reference}
+\label{patest__sync_8c}\index{Hexeng2D/dependencies/portaudio/test/patest\_sync.c@{Hexeng2D/dependencies/portaudio/test/patest\_sync.c}}
+
+
+Test time stamping and synchronization of audio and video.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}portaudio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pa\+\_\+util.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpa_test_data}{pa\+Test\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ae135d625843bc12c1b71c629812aa89e}{NUM\+\_\+\+BEEPS}}~(6)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_a4b76a0c2859cfd819a343a780070ee2b}{SAMPLE\+\_\+\+RATE}}~(44100)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ac32e7bee9d8c1ee37bfae3e48852535d}{SAMPLE\+\_\+\+PERIOD}}~(1.\+0/44100.\+0)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_af4f62216aa14e0407faa6631e9ec4c62}{FRAMES\+\_\+\+PER\+\_\+\+BUFFER}}~(256)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ad84a59cd16b03a51bd7abbaee9d95700}{BEEP\+\_\+\+DURATION}}~(400)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_a455cc7a8edce891b121de950e50f73cc}{LATENCY\+\_\+\+MSEC}}~(2000)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ac9e50124a4351e67a9d8678e5e19763c}{SLEEP\+\_\+\+MSEC}}~(10)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ab949f03d24e211d2ac9cba33fa641619}{TIMEOUT\+\_\+\+MSEC}}~(15000)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_ac1f0ea4fb5b1a07eac371d9c00909b0a}{STATE\+\_\+\+BKG\+\_\+\+IDLE}}~(0)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_a35be3332e2da95a33cb0cfb454bd92b2}{STATE\+\_\+\+BKG\+\_\+\+PENDING}}~(1)
+\item 
+\#define \mbox{\hyperlink{patest__sync_8c_a8a9f4494e163d351d1607d8ea487f136}{STATE\+\_\+\+BKG\+\_\+\+BEEPING}}~(2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{patest__sync_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Test time stamping and synchronization of audio and video. 
+
+A high latency is used so we can hear the difference in time. Random durations are used so we know we are hearing the right beep and not the one before or after.
+
+Sequence of events\+:
+\begin{DoxyEnumerate}
+\item Foreground requests a beep.
+\item Background randomly schedules a beep.
+\item Foreground waits for the beep to be heard based on \mbox{\hyperlink{pa__util_8h_a9598384d28d22d589f607ca1069cc04c}{Pa\+Util\+\_\+\+Get\+Time()}}.
+\item Foreground outputs video (printf) in sync with audio.
+\item Repeat.
+\end{DoxyEnumerate}
+
+\begin{DoxyAuthor}{Author}
+Phil Burk \href{http://www.softsynth.com}{\texttt{ http\+://www.\+softsynth.\+com}} 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{patest__sync_8c_ad84a59cd16b03a51bd7abbaee9d95700}\label{patest__sync_8c_ad84a59cd16b03a51bd7abbaee9d95700}} 
+\index{patest\_sync.c@{patest\_sync.c}!BEEP\_DURATION@{BEEP\_DURATION}}
+\index{BEEP\_DURATION@{BEEP\_DURATION}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{BEEP\_DURATION}{BEEP\_DURATION}}
+{\footnotesize\ttfamily \#define BEEP\+\_\+\+DURATION~(400)}
+
+\mbox{\Hypertarget{patest__sync_8c_af4f62216aa14e0407faa6631e9ec4c62}\label{patest__sync_8c_af4f62216aa14e0407faa6631e9ec4c62}} 
+\index{patest\_sync.c@{patest\_sync.c}!FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}}
+\index{FRAMES\_PER\_BUFFER@{FRAMES\_PER\_BUFFER}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{FRAMES\_PER\_BUFFER}{FRAMES\_PER\_BUFFER}}
+{\footnotesize\ttfamily \#define FRAMES\+\_\+\+PER\+\_\+\+BUFFER~(256)}
+
+\mbox{\Hypertarget{patest__sync_8c_a455cc7a8edce891b121de950e50f73cc}\label{patest__sync_8c_a455cc7a8edce891b121de950e50f73cc}} 
+\index{patest\_sync.c@{patest\_sync.c}!LATENCY\_MSEC@{LATENCY\_MSEC}}
+\index{LATENCY\_MSEC@{LATENCY\_MSEC}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{LATENCY\_MSEC}{LATENCY\_MSEC}}
+{\footnotesize\ttfamily \#define LATENCY\+\_\+\+MSEC~(2000)}
+
+\mbox{\Hypertarget{patest__sync_8c_ae135d625843bc12c1b71c629812aa89e}\label{patest__sync_8c_ae135d625843bc12c1b71c629812aa89e}} 
+\index{patest\_sync.c@{patest\_sync.c}!NUM\_BEEPS@{NUM\_BEEPS}}
+\index{NUM\_BEEPS@{NUM\_BEEPS}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{NUM\_BEEPS}{NUM\_BEEPS}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+BEEPS~(6)}
+
+\mbox{\Hypertarget{patest__sync_8c_ac32e7bee9d8c1ee37bfae3e48852535d}\label{patest__sync_8c_ac32e7bee9d8c1ee37bfae3e48852535d}} 
+\index{patest\_sync.c@{patest\_sync.c}!SAMPLE\_PERIOD@{SAMPLE\_PERIOD}}
+\index{SAMPLE\_PERIOD@{SAMPLE\_PERIOD}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_PERIOD}{SAMPLE\_PERIOD}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+PERIOD~(1.\+0/44100.\+0)}
+
+\mbox{\Hypertarget{patest__sync_8c_a4b76a0c2859cfd819a343a780070ee2b}\label{patest__sync_8c_a4b76a0c2859cfd819a343a780070ee2b}} 
+\index{patest\_sync.c@{patest\_sync.c}!SAMPLE\_RATE@{SAMPLE\_RATE}}
+\index{SAMPLE\_RATE@{SAMPLE\_RATE}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{SAMPLE\_RATE}{SAMPLE\_RATE}}
+{\footnotesize\ttfamily \#define SAMPLE\+\_\+\+RATE~(44100)}
+
+\mbox{\Hypertarget{patest__sync_8c_ac9e50124a4351e67a9d8678e5e19763c}\label{patest__sync_8c_ac9e50124a4351e67a9d8678e5e19763c}} 
+\index{patest\_sync.c@{patest\_sync.c}!SLEEP\_MSEC@{SLEEP\_MSEC}}
+\index{SLEEP\_MSEC@{SLEEP\_MSEC}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{SLEEP\_MSEC}{SLEEP\_MSEC}}
+{\footnotesize\ttfamily \#define SLEEP\+\_\+\+MSEC~(10)}
+
+\mbox{\Hypertarget{patest__sync_8c_a8a9f4494e163d351d1607d8ea487f136}\label{patest__sync_8c_a8a9f4494e163d351d1607d8ea487f136}} 
+\index{patest\_sync.c@{patest\_sync.c}!STATE\_BKG\_BEEPING@{STATE\_BKG\_BEEPING}}
+\index{STATE\_BKG\_BEEPING@{STATE\_BKG\_BEEPING}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{STATE\_BKG\_BEEPING}{STATE\_BKG\_BEEPING}}
+{\footnotesize\ttfamily \#define STATE\+\_\+\+BKG\+\_\+\+BEEPING~(2)}
+
+\mbox{\Hypertarget{patest__sync_8c_ac1f0ea4fb5b1a07eac371d9c00909b0a}\label{patest__sync_8c_ac1f0ea4fb5b1a07eac371d9c00909b0a}} 
+\index{patest\_sync.c@{patest\_sync.c}!STATE\_BKG\_IDLE@{STATE\_BKG\_IDLE}}
+\index{STATE\_BKG\_IDLE@{STATE\_BKG\_IDLE}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{STATE\_BKG\_IDLE}{STATE\_BKG\_IDLE}}
+{\footnotesize\ttfamily \#define STATE\+\_\+\+BKG\+\_\+\+IDLE~(0)}
+
+\mbox{\Hypertarget{patest__sync_8c_a35be3332e2da95a33cb0cfb454bd92b2}\label{patest__sync_8c_a35be3332e2da95a33cb0cfb454bd92b2}} 
+\index{patest\_sync.c@{patest\_sync.c}!STATE\_BKG\_PENDING@{STATE\_BKG\_PENDING}}
+\index{STATE\_BKG\_PENDING@{STATE\_BKG\_PENDING}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{STATE\_BKG\_PENDING}{STATE\_BKG\_PENDING}}
+{\footnotesize\ttfamily \#define STATE\+\_\+\+BKG\+\_\+\+PENDING~(1)}
+
+\mbox{\Hypertarget{patest__sync_8c_ab949f03d24e211d2ac9cba33fa641619}\label{patest__sync_8c_ab949f03d24e211d2ac9cba33fa641619}} 
+\index{patest\_sync.c@{patest\_sync.c}!TIMEOUT\_MSEC@{TIMEOUT\_MSEC}}
+\index{TIMEOUT\_MSEC@{TIMEOUT\_MSEC}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{TIMEOUT\_MSEC}{TIMEOUT\_MSEC}}
+{\footnotesize\ttfamily \#define TIMEOUT\+\_\+\+MSEC~(15000)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{patest__sync_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{patest__sync_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{patest\_sync.c@{patest\_sync.c}!main@{main}}
+\index{main@{main}!patest\_sync.c@{patest\_sync.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{glad_8h_a950fc91edb4504f62f1c577bf4727c29}{void}}}]{ }\end{DoxyParamCaption})}
+

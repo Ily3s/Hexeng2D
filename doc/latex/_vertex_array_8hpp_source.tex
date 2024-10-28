@@ -1,0 +1,47 @@
+\hypertarget{_vertex_array_8hpp_source}{}\doxysection{Vertex\+Array.\+hpp}
+\label{_vertex_array_8hpp_source}\index{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/VertexArray.hpp@{C:/dev/repos/Hexeng2D/Hexeng2D/src/Renderer/VertexArray.hpp}}
+\mbox{\hyperlink{_vertex_array_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef VERTEX\_ARRAY\_HPP}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define VERTEX\_ARRAY\_HPP}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vertex_layout_8hpp}{VertexLayout.hpp}}"{}}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_vertex_buffer_8hpp}{VertexBuffer.hpp}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_index_buffer_8hpp}{IndexBuffer.hpp}}"{}}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include "{}../Macros.hpp"{}}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_hexeng_1_1_renderer}{Hexeng::Renderer}}}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keyword}{class }\mbox{\hyperlink{_macros_8hpp_adf2c8db6ff0db146b7098ba9cb778a66}{HXG\_DECLSPEC}} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}}
+\DoxyCodeLine{13     \{}
+\DoxyCodeLine{14     \textcolor{keyword}{public}:}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a3ba550e5d7e46576cc87cddfee5d601c}{VertexArray}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{17         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{\string~VertexArray}}();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{VertexBuffer}}\& vb, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\& layout, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_index_buffer}{IndexBuffer}}\& ib);}
+\DoxyCodeLine{20         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_buffer}{VertexBuffer}}\& vb, \textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_layout}{VertexLayout}}\& layout);}
+\DoxyCodeLine{21         }
+\DoxyCodeLine{22         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_a209a1e9a73e3e1af12006cdd9e191b7a}{VertexArray}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{23         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\& \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array_ab8047b962288c3fc9ec617cd38780688}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{24         }
+\DoxyCodeLine{25         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\&\&) noexcept;}
+\DoxyCodeLine{26         \mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\& operator=(\mbox{\hyperlink{class_hexeng_1_1_renderer_1_1_vertex_array}{VertexArray}}\&\&) noexcept;}
+\DoxyCodeLine{27         }
+\DoxyCodeLine{28         \textcolor{keywordtype}{void} bind() const;}
+\DoxyCodeLine{29         \textcolor{keywordtype}{void} unbind() const;}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31         \textcolor{keywordtype}{bool} is\_init() const;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     private:}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} m\_id = 0;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \};}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// !VERTEX\_ARRAY\_HPP}}
+
+\end{DoxyCode}
