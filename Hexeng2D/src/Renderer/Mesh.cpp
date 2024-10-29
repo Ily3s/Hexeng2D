@@ -240,7 +240,7 @@ namespace Hexeng::Renderer
 			mesh->m_transform = {toX(mesh->position.x * cos(angle) + mesh->position.y * sin(angle)),
 								toY(mesh->position.y * cos(angle) - mesh->position.x * sin(angle))};
 
-			mesh->m_transform = m_transform + (mesh->m_transform - m_transform) * scale;
+			mesh->m_transform *= scale;
 		}
 	}
 
